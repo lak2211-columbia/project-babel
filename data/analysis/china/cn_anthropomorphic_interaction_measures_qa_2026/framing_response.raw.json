@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_011MHcsFpN1tRCT2ESFGsaEx",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"consumer_public_safety\",\"secondary_frames\":[\"fundamental_rights\",\"social_stability\",\"innovation_enablement\"],\"frame_confidence\":{\"existential_catastrophic\":0.05,\"national_security\":0.3,\"economic_competitiveness\":0.2,\"fundamental_rights\":0.55,\"social_stability\":0.45,\"innovation_enablement\":0.4,\"consumer_public_safety\":0.75,\"labor_transition\":0.05},\"rationale_summary\":\"The document primarily frames AI governance around protecting users—especially minors and the elderly—from harms such as emotional manipulation, addiction, self-harm, and privacy violations. The detailed provisions on intervention obligations, dependency warnings, and crisis response reinforce a consumer/public safety dominant frame. Secondary frames include fundamental rights (data rights, privacy, personal dignity), social stability (prohibitions on content threatening state security and social order), and innovation enablement (sandbox platforms, encouraging R&D).\",\"evidence_spans\":[{\"quote\":\"带来了危害未成年人身心健康、影响网络信息安全、威胁公民生命健康以及加剧伦理偏差等风险\",\"source_section\":\"制定背景\"},{\"quote\":\"发现用户正在面临或者已经遭受重大财产损失、明确表示实施自残自杀等威胁生命健康的极端情境的，采取提供相应援助等必要措施予以干预\",\"source_section\":\"干预提醒义务\"},{\"quote\":\"生成鼓励、美化、暗示自残自杀等损害用户身体健康，或者语言暴力等损害用户人格尊严与心理健康的内容\",\"source_section\":\"禁止活动\"},{\"quote\":\"过度迎合用户、诱导情感依赖或者沉迷，损害用户真实人际关系的\",\"source_section\":\"禁止活动\"},{\"quote\":\"鼓励拟人化互动服务创新发展，支持算法、框架、芯片等技术的自主创新\",\"source_section\":\"鼓励创新\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 5159,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 527,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

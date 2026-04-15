@@ -1,0 +1,61 @@
+{
+  "jurisdiction": "european_union",
+  "issuing_body": "European Commission / AI Office",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "binding_law",
+  "publication_date": null,
+  "effective_date": "2025-08-02",
+  "covered_application_domains": [
+    "general_purpose_models"
+  ],
+  "safety_requirements": [
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "All providers of general-purpose AI models are required to publish a summary of the content used to train their models, based on a template provided by the Commission.",
+          "source_section": "Introduction"
+        },
+        {
+          "quote": "The Summary must be made publicly available no later than when a model is placed on the Union market.",
+          "source_section": "Publication requirements"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "The Template provides a uniform baseline for information to be publicly disclosed in the Summary, consisting of three main sections: General information, List of data sources, Relevant data processing aspects.",
+          "source_section": "Template structure"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "civil_penalty",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "Non-compliance may result in fines of up to 3% of the provider's annual total worldwide turnover in the preceding financial year, or 15 000 000 Euros, whichever is higher.",
+          "source_section": "Enforcement"
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "Failure to provide this summary can lead to enforcement actions by the AI Office as of 2 August 2026.",
+          "source_section": "Enforcement"
+        }
+      ]
+    }
+  ],
+  "implementation_notes": "Template use is mandatory under Article 53(1)(d) of the AI Act. Obligation applies from 2 August 2025 for new models; existing models have until 2 August 2027. Enforcement actions possible from 2 August 2026. Applies to open-source model providers as well. Code of Practice adherence remains voluntary and addresses separate obligations.",
+  "confidence": 0.95
+}

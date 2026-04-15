@@ -1,0 +1,187 @@
+{
+  "source_id": "eu_prohibited_ai_practices_guidelines",
+  "title": "Commission publishes the Guidelines on prohibited artificial intelligence (AI) practices, as defined by the AI Act.",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": null,
+    "effective_date": null,
+    "covered_actors": [
+      "providers",
+      "deployers",
+      "importers",
+      "distributors",
+      "product manufacturers",
+      "public authorities",
+      "agencies",
+      "natural or legal persons"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "biometrics",
+      "law_enforcement",
+      "public_sector_use",
+      "critical_infrastructure"
+    ],
+    "prohibited_practices": [
+      "real-time remote biometric identification in public spaces for law enforcement (with exceptions)",
+      "AI systems used to infer emotions in the workplace (except medical or safety purposes)",
+      "manipulative and deceptive techniques by AI systems likely to cause significant harm",
+      "practices prohibited under Article 5 AI Act"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "the risk assessment and management done by the provider and the compliance with the other requirements for high-risk AI systems (e.g., data governance, transparency and human oversight)",
+            "source_section": "Page 17"
+          },
+          {
+            "quote": "The manufacturer of those products embedding AI systems should therefore take into account these prohibitions in their risk assessments and safety mitigating measures",
+            "source_section": "Page 52"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "compliance with the other requirements for high-risk AI systems (e.g., data governance, transparency and human oversight), as well as the deployer's obligations for appropriate use in accordance with the instructions of use and human oversight (Article 26)",
+            "source_section": "Page 17"
+          },
+          {
+            "quote": "provide appropriate information in the instructions of use for deployers and regarding the necessary human oversight",
+            "source_section": "Page 17"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "providers are also expected to take effective and verifiable measures to build in safeguards and prevent and mitigate such harmful behaviour and misuse",
+            "source_section": "Page 17"
+          },
+          {
+            "quote": "Deployers are thus expected not to use any AI system in a manner prohibited under Article 5 AI Act, including not to bypass any safety guardrails implemented by the providers of the system",
+            "source_section": "Page 17"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "providers are also expected to exclude use of their AI system for prohibited practices and provide appropriate information in the instructions of use for deployers",
+            "source_section": "Page 17"
+          },
+          {
+            "quote": "the placing on the market and the putting into service of such systems, as well as the use of other RBI systems, is not prohibited, but subject to the rules for high-risk AI systems",
+            "source_section": "Page 96"
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "The existence of national legislation that complies with the relevant requirements of the AI Act is therefore a pre-requisite of such use",
+            "source_section": "Page 96"
+          },
+          {
+            "quote": "In the absence of national legislation allowing and regulating such use, law enforcement authorities and entities acting on their behalf may not deploy such systems for law enforcement purposes",
+            "source_section": "Page 96"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "adequate safeguards with respect to the protection of fundamental rights and freedoms of individuals, to be assessed by the market surveillance authorities competent for the supervision of AI systems used in the area of law enforcement and justice",
+            "source_section": "Page 13-14"
+          },
+          {
+            "quote": "the activities of Europol and other Union security agencies, such as Frontex, fall within the scope of the AI Act",
+            "source_section": "Page 13"
+          }
+        ]
+      },
+      {
+        "label": "market_access_restriction",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "the prohibitions in Article 5(1)(a) and (b) AI Act cover not only the use, but also the placing on the market of the AI system, thus preventing harm early on by limiting access to such prohibited systems",
+            "source_section": "Page 52"
+          },
+          {
+            "quote": "providers also have a responsibility not to place on the market or put into service AI systems, including general-purpose AI systems, that are reasonably likely to behave or be directly used in a manner prohibited by Article 5 AI Act",
+            "source_section": "Page 17"
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "quote": "Recital 22 AI Act clarifies that the recipient national authorities and Union institutions, bodies, offices and agencies making use of such AI outputs in the Union remain accountable to ensure their use complies with Union law",
+            "source_section": "Page 14"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "European Commission"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "These are Commission guidelines interpreting Article 5 of the EU AI Act on prohibited practices. They are not themselves binding law but provide the Commission's interpretation. Ireland and Denmark have opt-out provisions for certain RBI prohibitions. Prohibitions apply to placing on market, putting into service, and use, including misuse. General-purpose AI systems are covered. Continuous compliance throughout AI lifecycle is required.",
+    "confidence": 0.88
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "social_stability",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "fundamental_rights": 0.85,
+      "consumer_public_safety": 0.6,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "The document consistently frames AI governance around protecting fundamental rights, democracy, rule of law, and human dignity. The risk classification system centers on 'unacceptable risks to fundamental rights and Union values.' Harms are analyzed in terms of physical, psychological, and societal impacts on individuals' rights and freedoms. Innovation enablement is a secondary but explicit goal.",
+    "evidence_spans": [
+      {
+        "quote": "Its aim is to promote innovation in and the uptake of AI, while ensuring a high level of protection of health, safety and fundamental rights in the Union, including democracy and the rule of law.",
+        "source_section": "Page 6"
+      },
+      {
+        "quote": "Unacceptable risk: AI systems posing unacceptable risks to fundamental rights and Union values are prohibited under Article 5 AI Act.",
+        "source_section": "Page 6"
+      },
+      {
+        "quote": "they strive to interpret the prohibitions in a proportionate manner that achieves the objectives of the AI Act to protect fundamental rights and safety",
+        "source_section": "Page 6"
+      },
+      {
+        "quote": "broader societal harms and contradict Union values of respect for human dignity, freedom, equality, democracy and the rule of law and fundamental rights enshrined in the Charter",
+        "source_section": "Page 32"
+      }
+    ]
+  }
+}

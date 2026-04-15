@@ -1,0 +1,166 @@
+{
+  "source_id": "jp_ai_contract_checklist_2025",
+  "title": "AIの利用・開発に関する契約チェックリスト",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "Ministry of Economy, Trade and Industry (METI), Japan",
+    "document_type": "standards_guideline",
+    "binding_strength": "standards_guideline",
+    "publication_date": "2025-02",
+    "effective_date": null,
+    "covered_actors": [
+      "AI利用者 (AI users / businesses using AI services)",
+      "AI提供者 (AI providers)",
+      "AI開発者 (AI developers)",
+      "ベンダ (vendors)",
+      "ユーザ (users)"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "public_sector_use"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "access_controls",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "ベンダがインプットを管理する義務を負うか",
+            "source_section": "A-3-3 管理・セキュリティ"
+          },
+          {
+            "quote": "対象システムのセキュリティ水準",
+            "source_section": "セキュリティに関する留意点"
+          },
+          {
+            "quote": "管理体制・セキュリティ体制が十分な水準にない場合、不必要な情報は提供しない",
+            "source_section": "A-3-3"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "適用法令によっては、ベンダに透明性確保の観点からアウトプット生成に関する一定の情報提供が求められる場合が想定される",
+            "source_section": "B-2-3 保証・情報提供"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.72,
+        "evidence": [
+          {
+            "quote": "利用目的に応じて、アウトプットの正確性や適法性を適切に評価し、人による確認を行うことが必要である",
+            "source_section": "B-2-2"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "個人情報の提供を伴う場合、ベンダによる個人情報の漏洩が生じた際はユーザによる監督機関への報告義務等が課せられる場合があるため、特に注意する",
+            "source_section": "A-3-3"
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "監査条項等",
+            "source_section": "セキュリティに関する留意点"
+          },
+          {
+            "quote": "ベンダによる管理体制について、ユーザによる監査・情報提供依頼が認められるか",
+            "source_section": "A-3-3"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.55,
+        "evidence": [
+          {
+            "quote": "ログの保存",
+            "source_section": "セキュリティに関する留意点"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "quote": "ユーザによる監督機関への報告義務等が課せられる場合があるため、特に注意する",
+            "source_section": "A-3-3"
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "チェックリストは、当事者間の適切な利益及びリスクの分配を目指し、ひいてはAIの利活用を促すことを目的として",
+            "source_section": "1 チェックリスト策定の背景・目的"
+          },
+          {
+            "quote": "我が国の事業者が実務上用いやすい形式のチェックリストを取りまとめたものである",
+            "source_section": "1 チェックリスト策定の背景・目的"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This document is a practical contract checklist published by METI in February 2025, aimed at businesses engaging in AI utilization and development. It is non-binding guidance to assist businesses—especially those unfamiliar with AI legal practice—in reviewing contract terms related to inputs, outputs, personal data handling under Japan's Act on the Protection of Personal Information (APPI), security, and log retention. It references the 'AI事業者ガイドライン' (AI Business Operator Guidelines v1.01, November 2024) and the prior 2019 'AI・データの利用に関する契約ガイドライン'. No penalties or enforcement authorities are named; the document is purely advisory.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "fundamental_rights",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.02,
+      "national_security": 0.03,
+      "economic_competitiveness": 0.15,
+      "fundamental_rights": 0.2,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.15,
+      "consumer_public_safety": 0.55,
+      "labor_transition": 0.01
+    },
+    "rationale_summary": "The document is primarily framed around protecting business users (consumers/enterprises) from legal and data-handling risks when contracting for AI services. It explicitly cites concerns about legal risks not being properly examined and data being used for unexpected purposes or provided to third parties causing unforeseen harm. While innovation enablement and economic competitiveness are mentioned as context, the checklist's core purpose is risk management and protection of data subjects and contracting parties—a consumer/public safety framing. Fundamental rights (personal data protection under Japan's APPI) appears as a strong secondary frame.",
+    "evidence_spans": [
+      {
+        "quote": "AIの利活用に関する契約に伴う法的なリスクを十分に検討できていない可能性",
+        "source_section": "1 チェックリスト策定の背景・目的及び想定読者"
+      },
+      {
+        "quote": "保護されるべきデータや情報が予期せぬ目的に利用され、また第三者に提供される等、想定外の不利益を被る可能性",
+        "source_section": "1 チェックリスト策定の背景・目的及び想定読者"
+      },
+      {
+        "quote": "当事者間の適切な利益及びリスクの分配を目指し、ひいてはAIの利活用を促すことを目的として",
+        "source_section": "1 チェックリスト策定の背景・目的及び想定読者"
+      },
+      {
+        "quote": "個人データの提供が伴う場合、ベンダによる自己目的利用や突合が認められる場合には委託として整理できず第三者提供に該当し、本人の同意が必要となる可能性",
+        "source_section": "A-3-1 利用目的"
+      }
+    ]
+  }
+}

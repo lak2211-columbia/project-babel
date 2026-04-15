@@ -1,0 +1,79 @@
+{
+  "jurisdiction": "south_korea",
+  "document_id": "kr_ai_privacy_risk_management_model_2024",
+  "canonical_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&mCode=D010030000&nttId=10870",
+  "attempts": [
+    {
+      "attempted_at": "2026-04-15T05:29:58.719564+00:00",
+      "attempt_number": 1,
+      "status": "browser_error",
+      "fetch_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&mCode=D010030000&nttId=10870",
+      "error": "browser fetch timed out for https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&mCode=D010030000&nttId=10870"
+    },
+    {
+      "attempted_at": "2026-04-15T05:30:51.180844+00:00",
+      "attempt_number": 2,
+      "status": "downloaded_new",
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "content_bytes": 77185,
+      "sha256": "eaace92180ea7a11e4f5d0cdcda2a2c73c3b5b0f1e1c869baa3d608d29a63341",
+      "artifact_state": "new",
+      "fetch_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&mCode=D010030000&nttId=10870",
+      "resolved_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&mCode=D010030000&nttId=10870",
+      "transport": "http",
+      "artifact_path": "data/raw/south_korea/kr_ai_privacy_risk_management_model_2024/source.html",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "attempted_at": "2026-04-15T05:35:04.827878+00:00",
+      "attempt_number": 1,
+      "status": "imported_local_updated",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_bytes": 2988102,
+      "sha256": "5aa264d1d5e33436fac39ac2539506aa141085236bd34fea33c801ca9a5daa15",
+      "artifact_state": "updated",
+      "fetch_url": "https://www.pipc.go.kr/np/cmm/fms/FileDown.do?atchFileId=FILE_000000000559239&fileSn=0&fileExtsn=pdf&cnvCnt=",
+      "resolved_url": "https://www.pipc.go.kr/np/cmm/fms/FileDown.do?atchFileId=FILE_000000000559239&fileSn=0&fileExtsn=pdf&cnvCnt=",
+      "transport": "manual_import",
+      "artifact_path": "data/raw/south_korea/kr_ai_privacy_risk_management_model_2024/source.pdf",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "attempted_at": "2026-04-15T05:47:27.516108+00:00",
+      "attempt_number": 1,
+      "status": "discovered_linked_artifact",
+      "content_type": "text/html;charset=utf-8",
+      "fetch_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS289&mCode=I050010000&nttId=10977",
+      "resolved_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS289&mCode=I050010000&nttId=10977",
+      "linked_urls": [
+        "https://www.pipc.go.kr/np/cmm/fms/FileDown.do?atchFileId=FILE_000000000559239&fileSn=0&fileExtsn=pdf&cnvCnt=",
+        "https://www.pipc.go.kr/np/cmm/fms/FileDown.do?atchFileId=FILE_000000000559239&fileSn=2&fileExtsn=pdf&cnvCnt="
+      ]
+    },
+    {
+      "attempted_at": "2026-04-15T05:47:29.558750+00:00",
+      "attempt_number": 2,
+      "status": "downloaded_unchanged",
+      "status_code": 200,
+      "content_type": "application/octet-stream",
+      "content_bytes": 2988102,
+      "sha256": "5aa264d1d5e33436fac39ac2539506aa141085236bd34fea33c801ca9a5daa15",
+      "artifact_state": "unchanged",
+      "fetch_url": "https://www.pipc.go.kr/np/cmm/fms/FileDown.do?atchFileId=FILE_000000000559239&fileSn=0&fileExtsn=pdf&cnvCnt=",
+      "resolved_url": "https://www.pipc.go.kr/np/cmm/fms/FileDown.do?atchFileId=FILE_000000000559239&fileSn=0&fileExtsn=pdf&cnvCnt=",
+      "transport": "http",
+      "artifact_path": "data/raw/south_korea/kr_ai_privacy_risk_management_model_2024/source.pdf",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "attempted_at": "2026-04-15T06:10:31.240981+00:00",
+      "attempt_number": 0,
+      "status": "skipped_existing"
+    }
+  ]
+}

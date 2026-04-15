@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01Rm1Zw5wKzuWH5MPTHVEadF",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"economic_competitiveness\",\"secondary_frames\":[\"consumer_public_safety\",\"fundamental_rights\",\"innovation_enablement\"],\"frame_confidence\":{\"existential_catastrophic\":0.05,\"national_security\":0.1,\"economic_competitiveness\":0.55,\"fundamental_rights\":0.45,\"social_stability\":0.2,\"innovation_enablement\":0.5,\"consumer_public_safety\":0.5,\"labor_transition\":0.1},\"rationale_summary\":\"The law's stated purpose explicitly pairs protection of citizens' rights with strengthening national competitiveness ('국가경쟁력을 강화'). The bulk of the legislation establishes industrial promotion frameworks—R&D support, startup activation, AI cluster zones, workforce development, international market access, and investment—making economic competitiveness the dominant frame. Consumer/public safety and fundamental rights protection are substantive secondary frames, addressed through high-impact AI obligations, transparency requirements, and safety research. Innovation enablement is also a strong secondary frame given the extensive support mechanisms for the AI industry.\",\"evidence_spans\":[{\"quote\":\"국민의 권익과 존엄성을 보호하고 국민의 삶의 질 향상과 국가경쟁력을 강화하는 데 이바지함을 목적으로 한다\",\"source_section\":\"제1조(목적)\"},{\"quote\":\"인공지능기술 및 인공지능산업의 진흥과 국가경쟁력 강화를 위하여 인공지능 기본계획\",\"source_section\":\"제6조(인공지능 기본계획의 수립)\"},{\"quote\":\"인공지능산업의 경쟁력 강화와 해외시장 진출을 촉진하기 위하여\",\"source_section\":\"제22조(국제협력 및 해외시장 진출의 지원)\"},{\"quote\":\"사람의 생명, 신체의 안전 및 기본권에 중대한 영향을 미치거나 위험을 초래할 우려가 있는 인공지능시스템\",\"source_section\":\"제2조(정의) 제4호\"},{\"quote\":\"인공지능과 관련하여 발생할 수 있는 위험으로부터 국민의 생명ㆍ신체ㆍ재산 등을 보호하고\",\"source_section\":\"제12조(인공지능안전연구소)\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 27811,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 622,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

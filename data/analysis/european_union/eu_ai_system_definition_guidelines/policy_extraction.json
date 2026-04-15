@@ -1,0 +1,61 @@
+{
+  "jurisdiction": "european_union",
+  "issuing_body": "European Commission",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "regulatory_guidance",
+  "publication_date": "2025-02-02",
+  "effective_date": "2025-02-02",
+  "covered_actors": [
+    "providers",
+    "market stakeholders",
+    "institutional stakeholders",
+    "relevant persons"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "biometrics",
+    "public_sector_use",
+    "employment",
+    "education",
+    "healthcare",
+    "finance",
+    "law_enforcement",
+    "defense"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "human_oversight",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "Systems that have the capability to operate with limited or no human intervention in specific use contexts...may, under certain conditions, trigger additional potential risks and human oversight considerations.",
+          "source_section": "Page 5"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "The Guidelines are not binding. Any authoritative interpretation of the AI Act may ultimately only be given by the Court of Justice of the European Union (CJEU).",
+          "source_section": "Page 2"
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "Court of Justice of the European Union (CJEU)",
+    "European Artificial Intelligence Board"
+  ],
+  "compliance_deadlines": [
+    "2 February 2025: AI system definition and Chapter I and II provisions, including Article 5 prohibited AI practices, entered into application"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "Guidelines are explicitly non-binding (paragraph 7: 'The Guidelines are not binding'). Authoritative interpretation rests solely with the CJEU. Guidelines were adopted in parallel with Commission guidelines on prohibited AI practices. They clarify the seven-element definition of 'AI system' under Article 3(1) of Regulation (EU) 2024/1689 and note that systems based solely on rules defined by natural persons or limited to basic data processing fall outside the AI system definition.",
+  "confidence": 0.92
+}

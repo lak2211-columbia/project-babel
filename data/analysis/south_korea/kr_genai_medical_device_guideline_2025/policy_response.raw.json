@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01AnbUNuQYxmKuATwcEmQRGc",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"jurisdiction\":\"south_korea\",\"issuing_body\":\"Ministry of Food and Drug Safety (MFDS), Medical Device Review Division\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2025-01-24\",\"effective_date\":\"2025-01-24\",\"covered_application_domains\":[\"healthcare\",\"general_purpose_models\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"ISO14971:2019에 기반한 위험관리 프로세스를 적용할 수 있다\",\"source_section\":\"III. 위험관리\"},{\"quote\":\"제조자는 해당 제품과 관련된 '위해요인'을 식별하고 ISO14971:2019에 따른 위험관리 프로세스를 적용할 수 있다\",\"source_section\":\"III. 위험관리\"}]},{\"label\":\"pre_deployment_testing\",\"confidence\":0.92,\"evidence\":[{\"quote\":\"분석적 성능 검증 지표... 성능에 대한 검증이 필요하며 고유의 기술적 특성을 고려한 성능 검증방법이 적용되어야 한다\",\"source_section\":\"IV.2. 분석적 성능 검증\"},{\"quote\":\"디지털의료기기소프트웨어 적합성 확인보고서와 소프트웨어 검증 및 유효성 확인 자료를 제출한다\",\"source_section\":\"IV.2. 성능 관련 제출자료\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.88,\"evidence\":[{\"quote\":\"출력 정보 활용 시 해당분야 임상의의 체계적인 검토와 분석을 통해 제품을 사용하고\",\"source_section\":\"IV.1.라. 사용 시 주의사항\"},{\"quote\":\"환각(Hallucination), 성능저하(Drift) 등 인공지능 기술의 특성으로 발생할 수 있는 현상과 제품 사용상 주의 등에 관한 사항을 기재한다\",\"source_section\":\"IV.1.라. 사용 시 주의사항\"}]},{\"label\":\"model_documentation\",\"confidence\":0.93,\"evidence\":[{\"quote\":\"①학습데이터의 정보, ②학습데이터의 업데이트 예상 주기, ③제3자가 제공하는 클라우드 서비스를 통해 개발ᆞ구현된 경우에는 클라우드의 서비스의 종류 및 구성 형태 등을 추가로 기재한다\",\"source_section\":\"IV.1.다. 성능(기능) 또는 특성\"},{\"quote\":\"신청제품에 적용된 생성형 인공지능 모델을 포함한 주요 모델에 대한 과학적(임상적) 원리를 기재한다\",\"source_section\":\"IV.1.가. 모양 및 구조\"}]},{\"label\":\"human_oversight\",\"confidence\":0.90,\"evidence\":[{\"quote\":\"출력 정보를 활용하기 전 반드시 해당분야 임상의가 체계적인 검토와 분석을 수행해야 합니다\",\"source_section\":\"IV.1.라. 작성 예시\"},{\"quote\":\"신청제품에서 생성된 정보의 신뢰성이 고려되어야 하며, 출력 정보 활용 시 해당분야 임상의의 체계적인 검토와 분석을 통해 제품을 사용\",\"source_section\":\"IV.1.라. 사용 시 주의사항\"}]},{\"label\":\"access_controls\",\"confidence\":0.80,\"evidence\":[{\"quote\":\"전자적 침해행위로부터의 보호 조치에 관한 자료를 제출한다\",\"source_section\":\"IV.2. 성능 관련 제출자료\"},{\"quote\":\"전자적 침해 행위로부터 안전하게 보호된 네트워크 환경에서만 사용해야 합니다\",\"source_section\":\"IV.1.라. 작성 예시\"}]},{\"label\":\"incident_reporting\",\"confidence\":0.70,\"evidence\":[{\"quote\":\"허가 이후에도 제품의 잠재적 이익 또는 위험성을 모니터링하기 위한 목적으로 실제 임상환경에서의 실사용데이터(RWD)를 수집·활용한 실사용증거(RWE) 자료를 마련하고 주기적으로 임상적 성능 검증을 수행할 것으로 권고한다\",\"source_section\":\"IV.3. 임상적 유효성 확인\"}]},{\"label\":\"registration_licensing\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"생성형 인공지능 의료기기의 제조·수입 허가·인증, 임상시험계획승인 등에 적용\",\"source_section\":\"I.2. 적용범위\"}]}],\"enforcement_mechanisms\":[{\"label\":\"licensing_requirement\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"생성형 인공지능 의료기기의 제조·수입 허가·인증, 임상시험계획승인 등에 적용\",\"source_section\":\"I.2. 적용범위\"},{\"quote\":\"디지털의료제품법 제2조(정의)에 따라 질병의 진단·치료 또는 예후를 예측하기 위한 목적 등으로 환자에게 적용\",\"source_section\":\"I.2. 적용범위\"}]},{\"label\":\"regulatory_supervision\",\"confidence\":0.80,\"evidence\":[{\"quote\":\"식품의약품안전처는 의료기기 규제적용의 필요성을 판단하기 위하여 국내·외 자료를 조사·분석하거나 주기적인 실태조사를 실시할 수 있다\",\"source_section\":\"II. 생성형 인공지능 의료기기의 예시\"}]},{\"label\":\"soft_enforcement\",\"confidence\":0.90,\"evidence\":[{\"quote\":\"본 안내서는 대외적으로 법적 효력을 가지는 것이 아니므로 본문의 기술방식('∼하여야 한다' 등)에도 불구하고 참고로만 활용하시기 바랍니다\",\"source_section\":\"서문\"}]}],\"implementation_notes\":\"This guideline is explicitly non-binding ('not legally effective externally') and serves as guidance for applicants seeking approval for generative AI medical devices under the Digital Medical Products Act. It covers foundation models used within medical applications, excluding general-purpose foundation models not embedded in specific medical applications. Key focus areas include hallucination risk, inconsistency, data quality, and bias management. Post-market real-world evidence collection is recommended but not mandated.\",\"confidence\":0.92}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 22929,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1884,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

@@ -1,0 +1,2251 @@
+{
+  "generated_at": "2026-04-15T17:33:06.556611+00:00",
+  "jurisdictions": [
+    {
+      "jurisdiction": "china",
+      "description": "Official State Council, CAC, and sectoral sources for China's AI governance regime and implementation measures.",
+      "coverage_snapshot": {
+        "portal_count": 6,
+        "seed_document_count": 19,
+        "target_range": {
+          "minimum": 30,
+          "target": 45,
+          "maximum": 60
+        },
+        "gap_to_minimum": 11,
+        "document_type_counts": {
+          "legislation": 6,
+          "regulatory_guidance": 7,
+          "standards_guideline": 3,
+          "strategy_paper": 3
+        },
+        "source_tier_counts": {
+          "policy_strategy": 3,
+          "regulatory_guidance": 7,
+          "statutory_rule": 6,
+          "technical_standard": 3
+        },
+        "policy_domain_counts": {
+          "civil_rights_nondiscrimination": 1,
+          "consumer_protection": 10,
+          "critical_infrastructure": 1,
+          "frontier_gpai": 5,
+          "healthcare_medical_devices": 1,
+          "industrial_innovation": 5,
+          "national_security": 1,
+          "platform_content_governance": 11,
+          "standards_assurance": 3
+        }
+      },
+      "portal_operations": [
+        {
+          "portal_id": "cn_cac",
+          "portal_name": "Cyberspace Administration of China",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "tags": [
+            "cac",
+            "content_governance",
+            "algorithmic_regulation"
+          ],
+          "existing_seed_count": 13,
+          "candidate_count": 4,
+          "family_count": 4,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "consultation_draft",
+            "implementation_guidance",
+            "sectoral_guidance",
+            "statutory_rule",
+            "strategy_architecture"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "consultation_draft": 1,
+            "implementation_guidance": 6,
+            "sectoral_guidance": 1,
+            "statutory_rule": 6,
+            "strategy_architecture": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "cn_cma_ai_measures",
+          "portal_name": "China Meteorological Administration AI Policy News",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "tags": [
+            "sectoral",
+            "meteorology",
+            "implementation"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 2,
+          "family_count": 2,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 2
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "cn_state_council_policy",
+          "portal_name": "State Council Policy Database",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "state_council",
+            "policy",
+            "ai_governance"
+          ],
+          "existing_seed_count": 7,
+          "candidate_count": 1,
+          "family_count": 1,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "statutory_rule",
+            "strategy_architecture",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1,
+            "statutory_rule": 4,
+            "strategy_architecture": 1,
+            "technical_standard": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "cn_english_state_council",
+          "portal_name": "State Council English Site",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "state_council",
+            "english",
+            "policy_rollout"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "cn_most_ai_governance",
+          "portal_name": "Ministry of Science and Technology AI Governance",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "most",
+            "ethics",
+            "governance_principles"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "strategy_architecture",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [
+            "implementation_guidance"
+          ],
+          "covered_bucket_counts": {
+            "strategy_architecture": 1,
+            "technical_standard": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "cn_tc260",
+          "portal_name": "TC260 Cybersecurity Standards Committee",
+          "issuer_type": "standards_body",
+          "portal_kind": "library",
+          "tags": [
+            "tc260",
+            "standards",
+            "ai_safety"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "technical_standard"
+          ],
+          "covered_coverage_buckets": [
+            "statutory_rule",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "statutory_rule": 1,
+            "technical_standard": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        }
+      ],
+      "priority_families": []
+    },
+    {
+      "jurisdiction": "european_union",
+      "description": "Official EU legal text, implementation guidance, and data-protection sources for the AI Act and related governance instruments.",
+      "coverage_snapshot": {
+        "portal_count": 5,
+        "seed_document_count": 18,
+        "target_range": {
+          "minimum": 40,
+          "target": 60,
+          "maximum": 80
+        },
+        "gap_to_minimum": 22,
+        "document_type_counts": {
+          "legislation": 1,
+          "regulatory_guidance": 13,
+          "voluntary_commitment": 4
+        },
+        "source_tier_counts": {
+          "implementation_resource": 5,
+          "regulatory_guidance": 8,
+          "statutory_rule": 1,
+          "voluntary_framework": 4
+        },
+        "policy_domain_counts": {
+          "civil_rights_nondiscrimination": 2,
+          "consumer_protection": 4,
+          "copyright_ip": 4,
+          "frontier_gpai": 18,
+          "industrial_innovation": 3,
+          "privacy_data_protection": 4,
+          "public_sector_governance": 1,
+          "standards_assurance": 9
+        }
+      },
+      "portal_operations": [
+        {
+          "portal_id": "eu_digital_strategy_ai",
+          "portal_name": "Shaping Europe's Digital Future - AI",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "commission",
+            "implementation",
+            "ai_act"
+          ],
+          "existing_seed_count": 15,
+          "candidate_count": 15,
+          "family_count": 15,
+          "high_signal_family_count": 2,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance",
+            "statutory_rule",
+            "voluntary_framework"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "enforcement_interpretation": 2,
+            "implementation_guidance": 10,
+            "sectoral_guidance": 4,
+            "statutory_rule": 1,
+            "voluntary_framework": 4
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 4,
+            "strategy_architecture": 3
+          },
+          "suggested_action": "expand_seed_documents",
+          "priority_families": [
+            {
+              "family_id": "title:study on artificial intelligence in healthcare dissects digital health technologies in europe",
+              "family_label": "study on artificial intelligence in healthcare dissects digital health technologies in europe",
+              "status": "new_family",
+              "member_count": 1,
+              "new_candidate_count": 1,
+              "source_role_counts": {
+                "wrapper_page": 1
+              },
+              "best_candidate_score": 10,
+              "best_recommendation": "promote_now",
+              "best_source_role": "wrapper_page",
+              "proposed_document_type": "strategy_paper",
+              "proposed_binding_strength": "strategy_statement",
+              "proposed_source_tier": "policy_strategy",
+              "proposed_policy_domains": [
+                "healthcare_medical_devices",
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "representative_title": "Study on Artificial Intelligence in healthcare dissects digital health technologies in Europe",
+              "representative_url": "https://digital-strategy.ec.europa.eu/en/library/study-artificial-intelligence-healthcare-dissects-digital-health-technologies-europe",
+              "members": [
+                {
+                  "title": "Study on Artificial Intelligence in healthcare dissects digital health technologies in Europe",
+                  "url": "https://digital-strategy.ec.europa.eu/en/library/study-artificial-intelligence-healthcare-dissects-digital-health-technologies-europe",
+                  "status": "new_candidate",
+                  "source_role": "wrapper_page",
+                  "family_id": "title:study on artificial intelligence in healthcare dissects digital health technologies in europe",
+                  "family_label": "study on artificial intelligence in healthcare dissects digital health technologies in europe",
+                  "score": 10,
+                  "recommendation": "promote_now",
+                  "proposed_document_type": "strategy_paper",
+                  "proposed_binding_strength": "strategy_statement",
+                  "proposed_source_tier": "policy_strategy",
+                  "proposed_policy_domains": [
+                    "healthcare_medical_devices",
+                    "frontier_gpai"
+                  ],
+                  "coverage_bucket": "implementation_guidance",
+                  "last_modified": null,
+                  "discovered_from": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+                  "score_reasons": [
+                    "AI-relevant title or URL",
+                    "instrument-like title",
+                    "wrapper_page role"
+                  ]
+                }
+              ]
+            },
+            {
+              "family_id": "title:the commission internal use of artificial intelligence",
+              "family_label": "the commission internal use of artificial intelligence",
+              "status": "new_family",
+              "member_count": 1,
+              "new_candidate_count": 1,
+              "source_role_counts": {
+                "wrapper_page": 1
+              },
+              "best_candidate_score": 10,
+              "best_recommendation": "promote_now",
+              "best_source_role": "wrapper_page",
+              "proposed_document_type": "strategy_paper",
+              "proposed_binding_strength": "strategy_statement",
+              "proposed_source_tier": "policy_strategy",
+              "proposed_policy_domains": [
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "representative_title": "The Commission internal use of Artificial Intelligence",
+              "representative_url": "https://digital-strategy.ec.europa.eu/en/library/commission-internal-use-artificial-intelligence",
+              "members": [
+                {
+                  "title": "The Commission internal use of Artificial Intelligence",
+                  "url": "https://digital-strategy.ec.europa.eu/en/library/commission-internal-use-artificial-intelligence",
+                  "status": "new_candidate",
+                  "source_role": "wrapper_page",
+                  "family_id": "title:the commission internal use of artificial intelligence",
+                  "family_label": "the commission internal use of artificial intelligence",
+                  "score": 10,
+                  "recommendation": "promote_now",
+                  "proposed_document_type": "strategy_paper",
+                  "proposed_binding_strength": "strategy_statement",
+                  "proposed_source_tier": "policy_strategy",
+                  "proposed_policy_domains": [
+                    "frontier_gpai"
+                  ],
+                  "coverage_bucket": "implementation_guidance",
+                  "last_modified": null,
+                  "discovered_from": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+                  "score_reasons": [
+                    "AI-relevant title or URL",
+                    "instrument-like title",
+                    "wrapper_page role"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "portal_id": "eu_ai_act_service_desk",
+          "portal_name": "AI Act Service Desk and Single Information Platform",
+          "issuer_type": "executive",
+          "portal_kind": "helpdesk",
+          "tags": [
+            "implementation",
+            "service_desk",
+            "compliance"
+          ],
+          "existing_seed_count": 5,
+          "candidate_count": 4,
+          "family_count": 4,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "enforcement_interpretation": 1,
+            "implementation_guidance": 5,
+            "sectoral_guidance": 3
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 4
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "eu_edpb_ai_privacy",
+          "portal_name": "European Data Protection Board AI Documents",
+          "issuer_type": "regulator",
+          "portal_kind": "library",
+          "tags": [
+            "gdpr",
+            "privacy",
+            "ai_models"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 3,
+          "family_count": 3,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "enforcement_interpretation": 2,
+            "implementation_guidance": 2,
+            "sectoral_guidance": 2
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 1
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "eu_edps_genai",
+          "portal_name": "European Data Protection Supervisor Generative AI Guidance",
+          "issuer_type": "regulator",
+          "portal_kind": "library",
+          "tags": [
+            "privacy",
+            "generative_ai",
+            "fundamental_rights"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 2,
+          "family_count": 2,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "eu_eur_lex",
+          "portal_name": "EUR-Lex",
+          "issuer_type": "legal_registry",
+          "portal_kind": "library",
+          "tags": [
+            "legal_text",
+            "official_journal",
+            "ai_act"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "statutory_rule": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        }
+      ],
+      "priority_families": [
+        {
+          "jurisdiction": "european_union",
+          "portal_id": "eu_digital_strategy_ai",
+          "portal_name": "Shaping Europe's Digital Future - AI",
+          "family_id": "title:study on artificial intelligence in healthcare dissects digital health technologies in europe",
+          "family_label": "study on artificial intelligence in healthcare dissects digital health technologies in europe",
+          "status": "new_family",
+          "member_count": 1,
+          "new_candidate_count": 1,
+          "source_role_counts": {
+            "wrapper_page": 1
+          },
+          "best_candidate_score": 10,
+          "best_recommendation": "promote_now",
+          "best_source_role": "wrapper_page",
+          "proposed_document_type": "strategy_paper",
+          "proposed_binding_strength": "strategy_statement",
+          "proposed_source_tier": "policy_strategy",
+          "proposed_policy_domains": [
+            "healthcare_medical_devices",
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "representative_title": "Study on Artificial Intelligence in healthcare dissects digital health technologies in Europe",
+          "representative_url": "https://digital-strategy.ec.europa.eu/en/library/study-artificial-intelligence-healthcare-dissects-digital-health-technologies-europe",
+          "members": [
+            {
+              "title": "Study on Artificial Intelligence in healthcare dissects digital health technologies in Europe",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/study-artificial-intelligence-healthcare-dissects-digital-health-technologies-europe",
+              "status": "new_candidate",
+              "source_role": "wrapper_page",
+              "family_id": "title:study on artificial intelligence in healthcare dissects digital health technologies in europe",
+              "family_label": "study on artificial intelligence in healthcare dissects digital health technologies in europe",
+              "score": 10,
+              "recommendation": "promote_now",
+              "proposed_document_type": "strategy_paper",
+              "proposed_binding_strength": "strategy_statement",
+              "proposed_source_tier": "policy_strategy",
+              "proposed_policy_domains": [
+                "healthcare_medical_devices",
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "last_modified": null,
+              "discovered_from": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+              "score_reasons": [
+                "AI-relevant title or URL",
+                "instrument-like title",
+                "wrapper_page role"
+              ]
+            }
+          ]
+        },
+        {
+          "jurisdiction": "european_union",
+          "portal_id": "eu_digital_strategy_ai",
+          "portal_name": "Shaping Europe's Digital Future - AI",
+          "family_id": "title:the commission internal use of artificial intelligence",
+          "family_label": "the commission internal use of artificial intelligence",
+          "status": "new_family",
+          "member_count": 1,
+          "new_candidate_count": 1,
+          "source_role_counts": {
+            "wrapper_page": 1
+          },
+          "best_candidate_score": 10,
+          "best_recommendation": "promote_now",
+          "best_source_role": "wrapper_page",
+          "proposed_document_type": "strategy_paper",
+          "proposed_binding_strength": "strategy_statement",
+          "proposed_source_tier": "policy_strategy",
+          "proposed_policy_domains": [
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "representative_title": "The Commission internal use of Artificial Intelligence",
+          "representative_url": "https://digital-strategy.ec.europa.eu/en/library/commission-internal-use-artificial-intelligence",
+          "members": [
+            {
+              "title": "The Commission internal use of Artificial Intelligence",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/commission-internal-use-artificial-intelligence",
+              "status": "new_candidate",
+              "source_role": "wrapper_page",
+              "family_id": "title:the commission internal use of artificial intelligence",
+              "family_label": "the commission internal use of artificial intelligence",
+              "score": 10,
+              "recommendation": "promote_now",
+              "proposed_document_type": "strategy_paper",
+              "proposed_binding_strength": "strategy_statement",
+              "proposed_source_tier": "policy_strategy",
+              "proposed_policy_domains": [
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "last_modified": null,
+              "discovered_from": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+              "score_reasons": [
+                "AI-relevant title or URL",
+                "instrument-like title",
+                "wrapper_page role"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jurisdiction": "japan",
+      "description": "Official Cabinet Secretariat, Cabinet Office, Digital Agency, METI, MIC, MEXT, PPC, MHLW, MAFF, CFA, and Cultural Affairs materials for Japan's AI governance approach.",
+      "coverage_snapshot": {
+        "portal_count": 14,
+        "seed_document_count": 32,
+        "target_range": {
+          "minimum": 40,
+          "target": 55,
+          "maximum": 70
+        },
+        "gap_to_minimum": 8,
+        "document_type_counts": {
+          "regulatory_guidance": 14,
+          "standards_guideline": 8,
+          "strategy_paper": 10
+        },
+        "source_tier_counts": {
+          "policy_strategy": 10,
+          "regulatory_guidance": 14,
+          "technical_standard": 8
+        },
+        "policy_domain_counts": {
+          "civil_rights_nondiscrimination": 1,
+          "copyright_ip": 3,
+          "education": 3,
+          "frontier_gpai": 20,
+          "healthcare_medical_devices": 3,
+          "industrial_innovation": 15,
+          "platform_content_governance": 1,
+          "privacy_data_protection": 4,
+          "public_sector_governance": 1,
+          "public_sector_procurement": 5,
+          "standards_assurance": 6
+        }
+      },
+      "portal_operations": [
+        {
+          "portal_id": "jp_ppc_guidance",
+          "portal_name": "Personal Information Protection Commission Guidance",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "tags": [
+            "privacy",
+            "ppc",
+            "personal_data"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 49,
+          "family_count": 44,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {
+            "enforcement_interpretation": 2,
+            "implementation_guidance": 35,
+            "strategy_architecture": 7
+          },
+          "suggested_action": "retune_discovery_filters",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_cao_ai_strategy",
+          "portal_name": "Cabinet Office AI Strategy",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "cabinet_office",
+            "ai_act",
+            "guidelines",
+            "cross_ministry"
+          ],
+          "existing_seed_count": 10,
+          "candidate_count": 22,
+          "family_count": 22,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "implementation_guidance": 2,
+            "strategy_architecture": 6,
+            "technical_standard": 2
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 6,
+            "strategy_architecture": 8
+          },
+          "suggested_action": "retune_discovery_filters",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_bunka_copyright_ai",
+          "portal_name": "Agency for Cultural Affairs AI Copyright Materials",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "copyright",
+            "culture",
+            "intellectual_property"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 15,
+          "family_count": 15,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 2,
+            "sectoral_guidance": 2
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 14
+          },
+          "suggested_action": "retune_discovery_filters",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_maff_ai_data",
+          "portal_name": "MAFF AI and Data Contract Guidance",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "agriculture",
+            "contracts",
+            "smart_agriculture"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 8,
+          "family_count": 6,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 2,
+            "sectoral_guidance": 2
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 5
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_cfa_genai",
+          "portal_name": "Children and Families Agency Generative AI Materials",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "children",
+            "families",
+            "generative_ai"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 5,
+          "family_count": 5,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "strategy_architecture"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1,
+            "strategy_architecture": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 1,
+            "strategy_architecture": 2
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_digital_agency_ai",
+          "portal_name": "Digital Agency AI Governance",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "digital_agency",
+            "government_procurement",
+            "public_sector_ai"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 3,
+          "family_count": 3,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 3
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_mext_genai",
+          "portal_name": "MEXT Generative AI Guidance",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "mext",
+            "education",
+            "generative_ai"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 3,
+          "family_count": 3,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 2,
+            "technical_standard": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 3
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_mhlw_ai_health_data",
+          "portal_name": "MHLW AI Health Data Guidance",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "healthcare",
+            "medical_data",
+            "ai_research"
+          ],
+          "existing_seed_count": 3,
+          "candidate_count": 3,
+          "family_count": 3,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 2,
+            "sectoral_guidance": 3,
+            "technical_standard": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_cas_human_centric_ai",
+          "portal_name": "Human-Centric AI Social Principles",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "cabinet_secretariat",
+            "principles",
+            "human_centric_ai"
+          ],
+          "existing_seed_count": 3,
+          "candidate_count": 2,
+          "family_count": 2,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "strategy_architecture",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [
+            "implementation_guidance"
+          ],
+          "covered_bucket_counts": {
+            "strategy_architecture": 2,
+            "technical_standard": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_meti_press_ai",
+          "portal_name": "METI AI Press Releases",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "meti",
+            "press",
+            "industry_policy"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "technical_standard": 2
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_meti_ai_governance_docs",
+          "portal_name": "METI AI Governance Study Materials",
+          "issuer_type": "executive",
+          "portal_kind": "library",
+          "tags": [
+            "meti",
+            "governance_guidelines",
+            "expert_group"
+          ],
+          "existing_seed_count": 4,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "strategy_architecture",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [
+            "implementation_guidance"
+          ],
+          "covered_bucket_counts": {
+            "strategy_architecture": 1,
+            "technical_standard": 3
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_regulatory_sandbox",
+          "portal_name": "Japan Regulatory Sandbox",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "sandbox",
+            "innovation",
+            "cabinet_secretariat"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_meti_data_contracts",
+          "portal_name": "METI AI and Data Contract Guidance",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "contracts",
+            "meti",
+            "data_governance"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 2,
+            "technical_standard": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_meti_content_ai",
+          "portal_name": "METI Content Industry AI Guidance",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "content_industry",
+            "generative_ai",
+            "meti"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        }
+      ],
+      "priority_families": []
+    },
+    {
+      "jurisdiction": "south_korea",
+      "description": "Official legal, public-sector, privacy, and medical-device sources for South Korea's AI framework and implementation.",
+      "coverage_snapshot": {
+        "portal_count": 7,
+        "seed_document_count": 16,
+        "target_range": {
+          "minimum": 25,
+          "target": 35,
+          "maximum": 50
+        },
+        "gap_to_minimum": 9,
+        "document_type_counts": {
+          "legislation": 2,
+          "regulatory_guidance": 14
+        },
+        "source_tier_counts": {
+          "regulatory_guidance": 14,
+          "statutory_rule": 2
+        },
+        "policy_domain_counts": {
+          "consumer_protection": 1,
+          "critical_infrastructure": 1,
+          "frontier_gpai": 13,
+          "healthcare_medical_devices": 1,
+          "privacy_data_protection": 7,
+          "public_sector_governance": 10,
+          "standards_assurance": 4
+        }
+      },
+      "portal_operations": [
+        {
+          "portal_id": "kr_msit_main",
+          "portal_name": "Ministry of Science and ICT",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "msit",
+            "policy",
+            "ai_governance"
+          ],
+          "existing_seed_count": 3,
+          "candidate_count": 4,
+          "family_count": 4,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "consultation_draft",
+            "implementation_guidance",
+            "sectoral_guidance",
+            "statutory_rule"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "consultation_draft": 1,
+            "implementation_guidance": 2,
+            "sectoral_guidance": 3,
+            "statutory_rule": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 4
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "kr_mfds_ai_medical",
+          "portal_name": "MFDS AI Medical Device Guidance",
+          "issuer_type": "regulator",
+          "portal_kind": "library",
+          "tags": [
+            "healthcare",
+            "medical_devices",
+            "generative_ai"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 4,
+          "family_count": 4,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 4
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "kr_nia_public_ai",
+          "portal_name": "NIA AI Governance Guidance",
+          "issuer_type": "executive",
+          "portal_kind": "library",
+          "tags": [
+            "public_sector",
+            "implementation",
+            "generative_ai",
+            "high_impact_ai",
+            "ai_basic_act"
+          ],
+          "existing_seed_count": 6,
+          "candidate_count": 3,
+          "family_count": 3,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "consultation_draft",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "consultation_draft": 1,
+            "implementation_guidance": 6,
+            "sectoral_guidance": 4
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 2
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "kr_law_center",
+          "portal_name": "Korean Law Information Center",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "tags": [
+            "law",
+            "registry",
+            "binding_law"
+          ],
+          "existing_seed_count": 3,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "statutory_rule"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 3,
+            "statutory_rule": 2
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "kr_msit_ai_request",
+          "portal_name": "MSIT High-Impact AI Confirmation Desk",
+          "issuer_type": "executive",
+          "portal_kind": "helpdesk",
+          "tags": [
+            "msit",
+            "high_impact_ai",
+            "implementation"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "kr_public_sector_ai_law",
+          "portal_name": "AI and Data-Based Administration Act",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "public_sector",
+            "administration",
+            "law"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "sectoral_guidance",
+            "statutory_rule"
+          ],
+          "missing_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "sectoral_guidance": 1,
+            "statutory_rule": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "kr_pipc_guidance",
+          "portal_name": "PIPC AI and Privacy Guidance",
+          "issuer_type": "regulator",
+          "portal_kind": "library",
+          "tags": [
+            "privacy",
+            "personal_data",
+            "generative_ai"
+          ],
+          "existing_seed_count": 5,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 5,
+            "sectoral_guidance": 5
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        }
+      ],
+      "priority_families": []
+    },
+    {
+      "jurisdiction": "united_states",
+      "description": "Official executive, standards, civil-rights, consumer-protection, and health-regulation sources for U.S. AI governance.",
+      "coverage_snapshot": {
+        "portal_count": 9,
+        "seed_document_count": 24,
+        "target_range": {
+          "minimum": 40,
+          "target": 55,
+          "maximum": 70
+        },
+        "gap_to_minimum": 16,
+        "document_type_counts": {
+          "executive_order": 1,
+          "legislation": 1,
+          "regulatory_guidance": 7,
+          "standards_guideline": 9,
+          "strategy_paper": 6
+        },
+        "source_tier_counts": {
+          "executive_action": 1,
+          "policy_strategy": 6,
+          "regulatory_guidance": 7,
+          "statutory_rule": 1,
+          "technical_standard": 9
+        },
+        "policy_domain_counts": {
+          "civil_rights_nondiscrimination": 5,
+          "consumer_protection": 5,
+          "finance": 3,
+          "frontier_gpai": 19,
+          "healthcare_medical_devices": 1,
+          "industrial_innovation": 4,
+          "national_security": 3,
+          "privacy_data_protection": 1,
+          "public_sector_governance": 3,
+          "public_sector_procurement": 1,
+          "standards_assurance": 14
+        }
+      },
+      "portal_operations": [
+        {
+          "portal_id": "us_nist_rmf",
+          "portal_name": "NIST AI Risk Management Framework",
+          "issuer_type": "standards_body",
+          "portal_kind": "library",
+          "tags": [
+            "risk_management",
+            "standards",
+            "implementation"
+          ],
+          "existing_seed_count": 9,
+          "candidate_count": 13,
+          "family_count": 13,
+          "high_signal_family_count": 2,
+          "expected_coverage_buckets": [
+            "technical_standard"
+          ],
+          "covered_coverage_buckets": [
+            "consultation_draft",
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "consultation_draft": 2,
+            "enforcement_interpretation": 1,
+            "implementation_guidance": 2,
+            "technical_standard": 7
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 2,
+            "strategy_architecture": 2
+          },
+          "suggested_action": "inspect_families",
+          "priority_families": [
+            {
+              "family_id": "title:ai rmf development",
+              "family_label": "ai rmf development",
+              "status": "new_family",
+              "member_count": 1,
+              "new_candidate_count": 1,
+              "source_role_counts": {
+                "primary_text": 1
+              },
+              "best_candidate_score": 12,
+              "best_recommendation": "promote_now",
+              "best_source_role": "primary_text",
+              "proposed_document_type": "standards_guideline",
+              "proposed_binding_strength": "standards_guideline",
+              "proposed_source_tier": "technical_standard",
+              "proposed_policy_domains": [
+                "standards_assurance",
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "representative_title": "AI RMF Development",
+              "representative_url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-development",
+              "members": [
+                {
+                  "title": "AI RMF Development",
+                  "url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-development",
+                  "status": "new_candidate",
+                  "source_role": "primary_text",
+                  "family_id": "title:ai rmf development",
+                  "family_label": "ai rmf development",
+                  "score": 12,
+                  "recommendation": "promote_now",
+                  "proposed_document_type": "standards_guideline",
+                  "proposed_binding_strength": "standards_guideline",
+                  "proposed_source_tier": "technical_standard",
+                  "proposed_policy_domains": [
+                    "standards_assurance",
+                    "frontier_gpai"
+                  ],
+                  "coverage_bucket": "implementation_guidance",
+                  "last_modified": null,
+                  "discovered_from": "https://www.nist.gov/itl/ai-risk-management-framework",
+                  "score_reasons": [
+                    "AI-relevant title or URL",
+                    "instrument-like title",
+                    "primary_text role"
+                  ]
+                }
+              ]
+            },
+            {
+              "family_id": "title:responses",
+              "family_label": "responses",
+              "status": "new_family",
+              "member_count": 1,
+              "new_candidate_count": 1,
+              "source_role_counts": {
+                "primary_text": 1
+              },
+              "best_candidate_score": 12,
+              "best_recommendation": "promote_now",
+              "best_source_role": "primary_text",
+              "proposed_document_type": "standards_guideline",
+              "proposed_binding_strength": "standards_guideline",
+              "proposed_source_tier": "technical_standard",
+              "proposed_policy_domains": [
+                "standards_assurance",
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "representative_title": "responses",
+              "representative_url": "https://www.nist.gov/itl/ai-risk-management-framework/comments-received-rfi-artificial-intelligence-risk-management",
+              "members": [
+                {
+                  "title": "responses",
+                  "url": "https://www.nist.gov/itl/ai-risk-management-framework/comments-received-rfi-artificial-intelligence-risk-management",
+                  "status": "new_candidate",
+                  "source_role": "primary_text",
+                  "family_id": "title:responses",
+                  "family_label": "responses",
+                  "score": 12,
+                  "recommendation": "promote_now",
+                  "proposed_document_type": "standards_guideline",
+                  "proposed_binding_strength": "standards_guideline",
+                  "proposed_source_tier": "technical_standard",
+                  "proposed_policy_domains": [
+                    "standards_assurance",
+                    "frontier_gpai"
+                  ],
+                  "coverage_bucket": "implementation_guidance",
+                  "last_modified": null,
+                  "discovered_from": "https://www.nist.gov/itl/ai-risk-management-framework",
+                  "score_reasons": [
+                    "AI-relevant title or URL",
+                    "instrument-like title",
+                    "primary_text role"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "portal_id": "us_nist_ai",
+          "portal_name": "NIST Artificial Intelligence",
+          "issuer_type": "standards_body",
+          "portal_kind": "portal",
+          "tags": [
+            "standards",
+            "nist",
+            "technical_guidance"
+          ],
+          "existing_seed_count": 7,
+          "candidate_count": 13,
+          "family_count": 13,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "technical_standard"
+          ],
+          "covered_coverage_buckets": [
+            "sectoral_guidance",
+            "strategy_architecture",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "sectoral_guidance": 1,
+            "strategy_architecture": 2,
+            "technical_standard": 5
+          },
+          "candidate_bucket_counts": {
+            "consultation_draft": 1,
+            "implementation_guidance": 7,
+            "strategy_architecture": 1
+          },
+          "suggested_action": "retune_discovery_filters",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_fda_ai_medical",
+          "portal_name": "FDA AI-Enabled Medical Device Guidance",
+          "issuer_type": "regulator",
+          "portal_kind": "library",
+          "tags": [
+            "fda",
+            "healthcare",
+            "medical_devices"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 8,
+          "family_count": 8,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 6
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_ostp_ai_rights",
+          "portal_name": "OSTP AI Bill of Rights",
+          "issuer_type": "executive",
+          "portal_kind": "library",
+          "tags": [
+            "ostp",
+            "civil_rights",
+            "rights_based_governance"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 5,
+          "family_count": 4,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "sectoral_guidance",
+            "statutory_rule",
+            "strategy_architecture"
+          ],
+          "missing_coverage_buckets": [
+            "implementation_guidance"
+          ],
+          "covered_bucket_counts": {
+            "sectoral_guidance": 1,
+            "statutory_rule": 1,
+            "strategy_architecture": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_ftc_ai_policy",
+          "portal_name": "FTC AI Policy and Reports",
+          "issuer_type": "regulator",
+          "portal_kind": "library",
+          "tags": [
+            "ftc",
+            "consumer_protection",
+            "ai_harms"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 3,
+          "family_count": 3,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance"
+          ],
+          "covered_bucket_counts": {
+            "strategy_architecture": 1
+          },
+          "candidate_bucket_counts": {
+            "strategy_architecture": 1
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_white_house_actions",
+          "portal_name": "White House Presidential Actions",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "executive",
+            "federal",
+            "ai_governance"
+          ],
+          "existing_seed_count": 4,
+          "candidate_count": 1,
+          "family_count": 1,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "strategy_architecture"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "implementation_guidance": 3,
+            "sectoral_guidance": 2,
+            "strategy_architecture": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 1
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_white_house_releases",
+          "portal_name": "White House Releases",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "executive",
+            "announcements",
+            "ai_governance"
+          ],
+          "existing_seed_count": 3,
+          "candidate_count": 1,
+          "family_count": 1,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "strategy_architecture"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "implementation_guidance": 2,
+            "sectoral_guidance": 2,
+            "strategy_architecture": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 1
+          },
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_cfpb_ai_finance",
+          "portal_name": "CFPB AI and Algorithmic Finance",
+          "issuer_type": "regulator",
+          "portal_kind": "library",
+          "tags": [
+            "cfpb",
+            "finance",
+            "consumer_protection"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 1,
+          "family_count": 1,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "strategy_architecture"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 2,
+            "strategy_architecture": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_interagency_ai_enforcement",
+          "portal_name": "Interagency AI Enforcement Statement",
+          "issuer_type": "multi_agency",
+          "portal_kind": "library",
+          "tags": [
+            "civil_rights",
+            "enforcement",
+            "algorithmic_discrimination"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "enforcement_interpretation": 1,
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        }
+      ],
+      "priority_families": [
+        {
+          "jurisdiction": "united_states",
+          "portal_id": "us_nist_rmf",
+          "portal_name": "NIST AI Risk Management Framework",
+          "family_id": "title:ai rmf development",
+          "family_label": "ai rmf development",
+          "status": "new_family",
+          "member_count": 1,
+          "new_candidate_count": 1,
+          "source_role_counts": {
+            "primary_text": 1
+          },
+          "best_candidate_score": 12,
+          "best_recommendation": "promote_now",
+          "best_source_role": "primary_text",
+          "proposed_document_type": "standards_guideline",
+          "proposed_binding_strength": "standards_guideline",
+          "proposed_source_tier": "technical_standard",
+          "proposed_policy_domains": [
+            "standards_assurance",
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "representative_title": "AI RMF Development",
+          "representative_url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-development",
+          "members": [
+            {
+              "title": "AI RMF Development",
+              "url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-development",
+              "status": "new_candidate",
+              "source_role": "primary_text",
+              "family_id": "title:ai rmf development",
+              "family_label": "ai rmf development",
+              "score": 12,
+              "recommendation": "promote_now",
+              "proposed_document_type": "standards_guideline",
+              "proposed_binding_strength": "standards_guideline",
+              "proposed_source_tier": "technical_standard",
+              "proposed_policy_domains": [
+                "standards_assurance",
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "last_modified": null,
+              "discovered_from": "https://www.nist.gov/itl/ai-risk-management-framework",
+              "score_reasons": [
+                "AI-relevant title or URL",
+                "instrument-like title",
+                "primary_text role"
+              ]
+            }
+          ]
+        },
+        {
+          "jurisdiction": "united_states",
+          "portal_id": "us_nist_rmf",
+          "portal_name": "NIST AI Risk Management Framework",
+          "family_id": "title:responses",
+          "family_label": "responses",
+          "status": "new_family",
+          "member_count": 1,
+          "new_candidate_count": 1,
+          "source_role_counts": {
+            "primary_text": 1
+          },
+          "best_candidate_score": 12,
+          "best_recommendation": "promote_now",
+          "best_source_role": "primary_text",
+          "proposed_document_type": "standards_guideline",
+          "proposed_binding_strength": "standards_guideline",
+          "proposed_source_tier": "technical_standard",
+          "proposed_policy_domains": [
+            "standards_assurance",
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "representative_title": "responses",
+          "representative_url": "https://www.nist.gov/itl/ai-risk-management-framework/comments-received-rfi-artificial-intelligence-risk-management",
+          "members": [
+            {
+              "title": "responses",
+              "url": "https://www.nist.gov/itl/ai-risk-management-framework/comments-received-rfi-artificial-intelligence-risk-management",
+              "status": "new_candidate",
+              "source_role": "primary_text",
+              "family_id": "title:responses",
+              "family_label": "responses",
+              "score": 12,
+              "recommendation": "promote_now",
+              "proposed_document_type": "standards_guideline",
+              "proposed_binding_strength": "standards_guideline",
+              "proposed_source_tier": "technical_standard",
+              "proposed_policy_domains": [
+                "standards_assurance",
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "last_modified": null,
+              "discovered_from": "https://www.nist.gov/itl/ai-risk-management-framework",
+              "score_reasons": [
+                "AI-relevant title or URL",
+                "instrument-like title",
+                "primary_text role"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "global_priority_families": [
+    {
+      "jurisdiction": "united_states",
+      "portal_id": "us_nist_rmf",
+      "portal_name": "NIST AI Risk Management Framework",
+      "family_id": "title:ai rmf development",
+      "family_label": "ai rmf development",
+      "status": "new_family",
+      "member_count": 1,
+      "new_candidate_count": 1,
+      "source_role_counts": {
+        "primary_text": 1
+      },
+      "best_candidate_score": 12,
+      "best_recommendation": "promote_now",
+      "best_source_role": "primary_text",
+      "proposed_document_type": "standards_guideline",
+      "proposed_binding_strength": "standards_guideline",
+      "proposed_source_tier": "technical_standard",
+      "proposed_policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "coverage_bucket": "implementation_guidance",
+      "representative_title": "AI RMF Development",
+      "representative_url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-development",
+      "members": [
+        {
+          "title": "AI RMF Development",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-development",
+          "status": "new_candidate",
+          "source_role": "primary_text",
+          "family_id": "title:ai rmf development",
+          "family_label": "ai rmf development",
+          "score": 12,
+          "recommendation": "promote_now",
+          "proposed_document_type": "standards_guideline",
+          "proposed_binding_strength": "standards_guideline",
+          "proposed_source_tier": "technical_standard",
+          "proposed_policy_domains": [
+            "standards_assurance",
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "last_modified": null,
+          "discovered_from": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "score_reasons": [
+            "AI-relevant title or URL",
+            "instrument-like title",
+            "primary_text role"
+          ]
+        }
+      ]
+    },
+    {
+      "jurisdiction": "united_states",
+      "portal_id": "us_nist_rmf",
+      "portal_name": "NIST AI Risk Management Framework",
+      "family_id": "title:responses",
+      "family_label": "responses",
+      "status": "new_family",
+      "member_count": 1,
+      "new_candidate_count": 1,
+      "source_role_counts": {
+        "primary_text": 1
+      },
+      "best_candidate_score": 12,
+      "best_recommendation": "promote_now",
+      "best_source_role": "primary_text",
+      "proposed_document_type": "standards_guideline",
+      "proposed_binding_strength": "standards_guideline",
+      "proposed_source_tier": "technical_standard",
+      "proposed_policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "coverage_bucket": "implementation_guidance",
+      "representative_title": "responses",
+      "representative_url": "https://www.nist.gov/itl/ai-risk-management-framework/comments-received-rfi-artificial-intelligence-risk-management",
+      "members": [
+        {
+          "title": "responses",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework/comments-received-rfi-artificial-intelligence-risk-management",
+          "status": "new_candidate",
+          "source_role": "primary_text",
+          "family_id": "title:responses",
+          "family_label": "responses",
+          "score": 12,
+          "recommendation": "promote_now",
+          "proposed_document_type": "standards_guideline",
+          "proposed_binding_strength": "standards_guideline",
+          "proposed_source_tier": "technical_standard",
+          "proposed_policy_domains": [
+            "standards_assurance",
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "last_modified": null,
+          "discovered_from": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "score_reasons": [
+            "AI-relevant title or URL",
+            "instrument-like title",
+            "primary_text role"
+          ]
+        }
+      ]
+    },
+    {
+      "jurisdiction": "european_union",
+      "portal_id": "eu_digital_strategy_ai",
+      "portal_name": "Shaping Europe's Digital Future - AI",
+      "family_id": "title:study on artificial intelligence in healthcare dissects digital health technologies in europe",
+      "family_label": "study on artificial intelligence in healthcare dissects digital health technologies in europe",
+      "status": "new_family",
+      "member_count": 1,
+      "new_candidate_count": 1,
+      "source_role_counts": {
+        "wrapper_page": 1
+      },
+      "best_candidate_score": 10,
+      "best_recommendation": "promote_now",
+      "best_source_role": "wrapper_page",
+      "proposed_document_type": "strategy_paper",
+      "proposed_binding_strength": "strategy_statement",
+      "proposed_source_tier": "policy_strategy",
+      "proposed_policy_domains": [
+        "healthcare_medical_devices",
+        "frontier_gpai"
+      ],
+      "coverage_bucket": "implementation_guidance",
+      "representative_title": "Study on Artificial Intelligence in healthcare dissects digital health technologies in Europe",
+      "representative_url": "https://digital-strategy.ec.europa.eu/en/library/study-artificial-intelligence-healthcare-dissects-digital-health-technologies-europe",
+      "members": [
+        {
+          "title": "Study on Artificial Intelligence in healthcare dissects digital health technologies in Europe",
+          "url": "https://digital-strategy.ec.europa.eu/en/library/study-artificial-intelligence-healthcare-dissects-digital-health-technologies-europe",
+          "status": "new_candidate",
+          "source_role": "wrapper_page",
+          "family_id": "title:study on artificial intelligence in healthcare dissects digital health technologies in europe",
+          "family_label": "study on artificial intelligence in healthcare dissects digital health technologies in europe",
+          "score": 10,
+          "recommendation": "promote_now",
+          "proposed_document_type": "strategy_paper",
+          "proposed_binding_strength": "strategy_statement",
+          "proposed_source_tier": "policy_strategy",
+          "proposed_policy_domains": [
+            "healthcare_medical_devices",
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "last_modified": null,
+          "discovered_from": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+          "score_reasons": [
+            "AI-relevant title or URL",
+            "instrument-like title",
+            "wrapper_page role"
+          ]
+        }
+      ]
+    },
+    {
+      "jurisdiction": "european_union",
+      "portal_id": "eu_digital_strategy_ai",
+      "portal_name": "Shaping Europe's Digital Future - AI",
+      "family_id": "title:the commission internal use of artificial intelligence",
+      "family_label": "the commission internal use of artificial intelligence",
+      "status": "new_family",
+      "member_count": 1,
+      "new_candidate_count": 1,
+      "source_role_counts": {
+        "wrapper_page": 1
+      },
+      "best_candidate_score": 10,
+      "best_recommendation": "promote_now",
+      "best_source_role": "wrapper_page",
+      "proposed_document_type": "strategy_paper",
+      "proposed_binding_strength": "strategy_statement",
+      "proposed_source_tier": "policy_strategy",
+      "proposed_policy_domains": [
+        "frontier_gpai"
+      ],
+      "coverage_bucket": "implementation_guidance",
+      "representative_title": "The Commission internal use of Artificial Intelligence",
+      "representative_url": "https://digital-strategy.ec.europa.eu/en/library/commission-internal-use-artificial-intelligence",
+      "members": [
+        {
+          "title": "The Commission internal use of Artificial Intelligence",
+          "url": "https://digital-strategy.ec.europa.eu/en/library/commission-internal-use-artificial-intelligence",
+          "status": "new_candidate",
+          "source_role": "wrapper_page",
+          "family_id": "title:the commission internal use of artificial intelligence",
+          "family_label": "the commission internal use of artificial intelligence",
+          "score": 10,
+          "recommendation": "promote_now",
+          "proposed_document_type": "strategy_paper",
+          "proposed_binding_strength": "strategy_statement",
+          "proposed_source_tier": "policy_strategy",
+          "proposed_policy_domains": [
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "last_modified": null,
+          "discovered_from": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+          "score_reasons": [
+            "AI-relevant title or URL",
+            "instrument-like title",
+            "wrapper_page role"
+          ]
+        }
+      ]
+    }
+  ],
+  "plan_json_path": "data/source_tracking/source_expansion_plan.json",
+  "plan_markdown_path": "docs/operations/source-expansion-plan.md"
+}

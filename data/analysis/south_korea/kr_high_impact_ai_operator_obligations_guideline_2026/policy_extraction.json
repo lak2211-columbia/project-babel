@@ -1,0 +1,169 @@
+{
+  "jurisdiction": "south_korea",
+  "issuing_body": "과학기술정보통신부 (Ministry of Science and ICT, Republic of Korea) / 한국지능정보사회진흥원 (NIA)",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "regulatory_guidance",
+  "publication_date": null,
+  "effective_date": "2026-01",
+  "covered_actors": [
+    "인공지능개발사업자 (AI developer)",
+    "인공지능이용사업자 (AI-using business operator)",
+    "국내대리인 (domestic agent)"
+  ],
+  "covered_application_domains": [
+    "critical_infrastructure",
+    "biometrics",
+    "public_sector_use",
+    "employment",
+    "education",
+    "healthcare",
+    "finance",
+    "law_enforcement"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "위험관리방안의 수립 운영1. ·",
+          "source_section": "추진배경 / 제34조 책무"
+        },
+        {
+          "quote": "인공지능 수명주기 전반에 걸쳐 나타날 수 있는 위험요소를 분석하였는가",
+          "source_section": "제3.1장 위험관리방안의 수립 운영"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "기술적으로 가능한 범위에서의 인공지능이 도출한 최종결과, 인공지능의 최종결과 도출에 활용된 주요 기준, 인공지능의 개발 활용에 사용된 학습용 데이터의 개요 등에 대한 설명 방안의 수립 시행",
+          "source_section": "제34조 제2호"
+        },
+        {
+          "quote": "인공지능사업자는 고영향 인공지능이나 생성형 인공지능을 이용한 제품 또는 서비스를 제공하려는 경우 제품 또는 서비스가 해당 인공지능에 기반하여 운용된다는 사실을 이용자에게 사전에 고지하여야 한다",
+          "source_section": "제31조"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "고영향 인공지능에 대한 사람의 관리 감독4. ·",
+          "source_section": "제34조 제4호"
+        },
+        {
+          "quote": "시스템 이용 중 사람이 통제할 수 있는 방안을 고려하여 인공지능 시스템을 설계 개발",
+          "source_section": "제3.4장 참조문서 EU AI Act 제14조"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "안전성 신뢰성 확보를 위한 조치의 내용을 확인할 수 있는 문서의 작성과 보관5. ·",
+          "source_section": "제34조 제5호"
+        },
+        {
+          "quote": "인공지능사업자는 법 제34조제1항 각 호의 조치를 이행하고 그 근거를 문서로 작성하여 5년간 보관해야 한다",
+          "source_section": "FAQ"
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "quote": "인공지능 시스템에서 문제가 발생할 경우, 시스템은 이를 운영자에게 전달하는 기능을 수행하는가",
+          "source_section": "제3.3장 참조문서 韓 13-2"
+        },
+        {
+          "quote": "운영 중 발생가능한 위험 대응을 위해 모니터링 수행 및 이상 발생 시 즉시 보고, 사용 중단",
+          "source_section": "제3.4장 참조문서 EU AI Act 제26조 제5항"
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "인공지능 시스템의 신뢰성 테스트 계획 수립",
+          "source_section": "제3.3장 참조문서 韓 03"
+        },
+        {
+          "quote": "고위험 인공지능이 의도된 목적대로 작동하는지 확인하기 위한 정기 테스트 설계",
+          "source_section": "제3.1장 참조문서 EU AI Act 제9조 제6항"
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "quote": "일정 규모 이상의 사업자는 독립성 객관성을 갖춘 내부 조직의 평가 또는 외부 독립기관의 검·인증을 통해 객관성을 확보해야 함",
+          "source_section": "가이드라인 적용 방법 1.2 이해관계자별 적용 방식"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "안전성 신뢰성 확보를 위한 조치의 내용을 확인할 수 있는 문서의 작성과 보관",
+          "source_section": "제34조 제5호"
+        },
+        {
+          "quote": "인공지능사업자는 법 제34조제1항 각 호의 조치를 이행하고 그 근거를 문서로 작성하여 5년간 보관해야 한다",
+          "source_section": "FAQ"
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "quote": "가이드라인 자체는 법적 구속력은 없으나 법상 의무 이행을 지원하기 위한 목적으로 제작되었다",
+          "source_section": "제1.1장 가이드라인 목적"
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "quote": "판단이 어려운 경우 과학기술정보통신부 장관에게 확인을 요청할 수 있다",
+          "source_section": "FAQ"
+        },
+        {
+          "quote": "과학기술정보통신부는 인공지능 기본법의 시행을 위한 하위법령 정비단을 출범시켰으며",
+          "source_section": "추진배경"
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "과학기술정보통신부 (Ministry of Science and ICT)"
+  ],
+  "compliance_deadlines": [
+    "2026년 1월 인공지능 기본법 시행 (AI Basic Act enters into force January 2026)"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "The guideline explicitly states it has no legal binding force ('가이드라인 자체는 법적 구속력은 없으나 법상 의무 이행을 지원하기 위한 목적으로 제작') but supports compliance with the legally binding obligations of Article 34 of the AI Basic Act (인공지능 기본법). Obligations under Article 34 include: (1) risk management plan establishment and operation; (2) explainability plan for AI outputs, key criteria, and training data; (3) user protection plan; (4) human oversight of high-impact AI; (5) documentation and retention of safety/reliability measures. High-impact AI domains are enumerated in the AI Basic Act and include energy supply, water treatment, healthcare, medical devices, nuclear facility management, biometric data for criminal investigation, hiring and loan review, transportation, public services decision-making, and student assessment in early/primary/secondary education.",
+  "confidence": 0.92
+}

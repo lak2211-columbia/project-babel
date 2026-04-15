@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01PdjyrU524WFagBf6H3jwNS",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"jurisdiction\":\"united_states\",\"issuing_body\":\"Consumer Financial Protection Bureau\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2023-06-06\",\"effective_date\":null,\"covered_application_domains\":[\"finance\"],\"safety_requirements\":[{\"label\":\"transparency_disclosure\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"Chatbots in consumer finance\",\"source_section\":\"Title\"}]},{\"label\":\"human_oversight\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"Chatbots in consumer finance\",\"source_section\":\"Title\"}]}],\"enforcement_mechanisms\":[{\"label\":\"regulatory_supervision\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"Consumer Financial Protection Bureau\",\"source_section\":\"Metadata\"}]},{\"label\":\"soft_enforcement\",\"confidence\":0.65,\"evidence\":[{\"quote\":\"Issue Spotlight\",\"source_section\":\"Description\"}]}],\"implementation_notes\":\"The document text is primarily binary/encoded PDF content with limited extractable plain text. Based on metadata: this is a CFPB Issue Spotlight on chatbots in consumer finance published June 6, 2023. Issue Spotlights are regulatory guidance/informational documents, not binding rules. The document likely examines risks and consumer protection concerns related to AI chatbots in financial services. Specific safety requirements and enforcement mechanisms cannot be confirmed from the encoded content alone; classifications are inferred from document type and issuing body context.\",\"confidence\":0.45}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 186033,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 333,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

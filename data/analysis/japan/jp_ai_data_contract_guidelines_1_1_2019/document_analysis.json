@@ -1,0 +1,79 @@
+{
+  "source_id": "jp_ai_data_contract_guidelines_1_1_2019",
+  "title": "AI・データの利用に関する契約ガイドライン 1.1版（全体版）",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "経済産業省 (Ministry of Economy, Trade and Industry, METI)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2019-12",
+    "effective_date": null,
+    "covered_actors": [
+      "data providers",
+      "data users",
+      "platform operators",
+      "businesses engaging in data contracts",
+      "cross-border transaction parties"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "healthcare"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [],
+    "enforcement_mechanisms": [
+      {
+        "label": "none_specified",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "AI・データの利用に関する契約ガイドライン 1.1 版",
+            "source_section": "Page 1"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "経済産業省 (METI)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This is a non-binding guideline (version 1.1, revised December 2019 from June 2018 original) providing model contract clauses and considerations for data contracts covering three types: data provision contracts, data creation contracts, and data sharing platform contracts. It explicitly states it does not restrict freedom of contract. Revision addressed alignment with guidelines on limited-provision data (限定提供データ).",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "fundamental_rights",
+      "national_security",
+      "economic_competitiveness"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.15,
+      "economic_competitiveness": 0.25,
+      "fundamental_rights": 0.2,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.05,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document is primarily framed around enabling data-driven innovation through clear contractual guidelines. Its stated purpose is to facilitate data transactions and AI utilization, with references to 'data-driven innovation creation' and IoT/AI platform case studies. Secondary framings include fundamental rights (personal data protection, GDPR compliance) and national security (export controls under FEFTA for dual-use technologies).",
+    "evidence_spans": [
+      {
+        "quote": "データに関する取引の推進を目的とした契約ガイドライン-データ駆動型イノベーションの創出に向けて-",
+        "source_section": "Page 11"
+      },
+      {
+        "quote": "武器、核兵器等、軍事転用可能な汎用品およびそれらに関する技術が安全保障上懸念のある国家やテロリストの手に渡ることを防ぐ目的で、輸出管理が行なわれている",
+        "source_section": "Page 48"
+      },
+      {
+        "quote": "個人情報保護に主眼を置いた越境移転規制が存在する",
+        "source_section": "Page 42"
+      }
+    ]
+  }
+}

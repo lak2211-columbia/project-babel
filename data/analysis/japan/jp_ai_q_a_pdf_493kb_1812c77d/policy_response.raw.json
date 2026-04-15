@@ -1,0 +1,56 @@
+{
+  "metadata_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01WUwDwh9x6tBZFLFYyJkPso",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"issuing_body\":\"農林水産省 (Ministry of Agriculture, Forestry and Fisheries, Japan)\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2024-03\",\"covered_actors\":[\"スマート農機等のメーカー・ベンダー (smart agricultural machinery manufacturers and vendors)\",\"農業者 (farmers)\",\"システムサービス提供事業者 (system service providers)\",\"集落営農組織 (community farming organizations)\",\"農業関係者 (agricultural stakeholders)\"],\"covered_application_domains\":[\"critical_infrastructure\"],\"prohibited_practices\":[],\"enforcement_authorities\":[\"農林水産省 (Ministry of Agriculture, Forestry and Fisheries)\",\"知財総合支援窓口 INPIT (Intellectual Property Support Centers)\"],\"compliance_deadlines\":[\"令和３年度 (FY2021) から農林水産省補助事業等においてガイドライン準拠が要件化\",\"次年度当初予算の公募は例年１月以降に開始されるため、それまでに契約ひな形の見直し等を完了する必要あり\"],\"penalties_summary\":\"ガイドラインに沿った契約であれば、データ流出等の場合は当事者間で取り決めた内容に従い損害賠償等の対応が行われる。ガイドライン自体に罰則規定はない。\",\"implementation_notes\":\"本文書は「農業分野におけるAI・データに関する契約ガイドライン」のQ&A改訂版。農林水産省補助事業等を活用する場合のみ要件化対象。自己資金導入の場合は要件化対象外だが準拠が望ましいとされる。チェックリストおよび契約ひな形が農林水産省HPに公開されている。\",\"confidence\":0.85}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 7989,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 502,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  },
+  "controls_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01YCXWmbULEzC4h7iAWwJi1g",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"safety_requirements\":[{\"label\":\"transparency_disclosure\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"ガイドラインに準拠した製品・サービスであることについて、各社のHPやカタログ等で農業者等に分かるよう工夫して掲載いただければ結構です。\",\"source_section\":\"問３（スマート農機等のメーカー、ベンダーの方に向けたQ&A）\"}]},{\"label\":\"model_documentation\",\"confidence\":0.6,\"evidence\":[{\"quote\":\"チェックリストと契約ひな形を農林水産省ホームページに掲載しておりますので、ガイドライン本体と併せて御活用ください。\",\"source_section\":\"問２（スマート農機等のメーカー、ベンダーの方に向けたQ&A）\"}]},{\"label\":\"access_controls\",\"confidence\":0.65,\"evidence\":[{\"quote\":\"データ等を利用できる地域等を制限すること（例えば、「日本国内でのみ利用することを許諾する。」と規定すること）も可能です\",\"source_section\":\"問２（対象データについて）\"}]}],\"enforcement_mechanisms\":[{\"label\":\"procurement_condition\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"農林水産省の補助金等について、ガイドラインへの準拠が令和３年度から要件化されますが\",\"source_section\":\"問１（要件化の対象について）\"},{\"quote\":\"農林水産省の補助事業等を用いて、スマート農機等を導入する場合のシステムサービス（ソフトウエア）の利用契約が対象になります。\",\"source_section\":\"問１（要件化の対象について）\"}]},{\"label\":\"soft_enforcement\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"農林水産省の補助事業等を活用しないで自己資金で導入する場合はガイドラインの要件化の対象外となりますが、ガイドラインに沿った契約内容とすることが望ましいです。\",\"source_section\":\"問１（農業者の方に向けたQ&A）\"}]},{\"label\":\"civil_penalty\",\"confidence\":0.55,\"evidence\":[{\"quote\":\"GLの内容に沿った契約であれば、当事者間で取り決めた内容に従って、損害賠償等の対応が行われるものと認識しています。\",\"source_section\":\"問５（ガイドラインに関する一般的な質問）\"}]}]}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 8687,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 682,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  }
+}

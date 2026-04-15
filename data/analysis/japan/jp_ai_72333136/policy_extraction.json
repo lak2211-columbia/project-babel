@@ -1,0 +1,114 @@
+{
+  "jurisdiction": "japan",
+  "issuing_body": "こども家庭庁 (Children and Families Agency, Japan)",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "strategy_statement",
+  "publication_date": "2025-03-31",
+  "effective_date": null,
+  "covered_actors": [
+    "地方公共団体 (local public entities)",
+    "自治体職員 (municipal government employees)",
+    "保育施設職員 (childcare facility staff)",
+    "住民 (residents)",
+    "協力事業者 (cooperating vendors)"
+  ],
+  "covered_application_domains": [
+    "public_sector_use",
+    "education",
+    "healthcare"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "団体が想定するセキュリティリスクと使用するデータに対して対応策や取扱い方針を講じているかを報告してもらい、本事業全体のセキュリティ方針に照らして適切であることを確認した。",
+          "source_section": "1.4 実証事業の進め方 実証事業における進捗及びセキュリティの管理方法"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "本事業において得られた知見・ノウハウ等は、報告書として公開するため、その権利はこども家庭庁に帰属することを了承する",
+          "source_section": "1.3 公募概要 応募条件と応募方法"
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "quote": "採択団体の担当職員は会議（オンライン会議含む）で定期的（最低でも1か月に1回以上を想定）に進捗状況等を報告する",
+          "source_section": "1.3 公募概要 応募条件と応募方法"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "生成AIの出力情報の確認に専門的な知見が必要な業務は生成AIの価値が実感されにくい",
+          "source_section": "2.2 自治体職員向けユースケースの総括"
+        },
+        {
+          "quote": "人による適切な指示と出力情報の検証が必要であり、かつ検証作業自体に専門性が必要となるため職員の負担になっている",
+          "source_section": "2.2 自治体職員向けユースケースの総括"
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "実証に用いた生成AIサービス詳細及びデジタル庁指定のリスクとその対応策を講じているかを報告してもらい、本事業全体のセキュリティ方針に照らして適切であることを確認した。",
+          "source_section": "1.4 実証事業の進め方 実証事業における進捗及びセキュリティの管理方法"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "採択団体の担当職員は会議（オンライン会議含む）で定期的（最低でも1か月に1回以上を想定）に進捗状況等を報告する",
+          "source_section": "1.3 公募概要 応募条件と応募方法"
+        },
+        {
+          "quote": "こども家庭庁及びこども家庭庁が指定する者による採択団体への現地調査（実証状況や現場の実態などを正確に把握するために行う調査）を受け入れる",
+          "source_section": "1.3 公募概要 応募条件と応募方法"
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "生成AIを利用した取組を実証的に実施した。また、調査と実証から生成AI利用時の論点・課題・効果等を整理し、ハンドブックとして公開することで、自治体や子育て関連事業者等における生成AIの適切な利用等を進めることを目的としている",
+          "source_section": "1.1 本事業の目的と実証事業の位置づけ"
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "こども家庭庁 (Children and Families Agency)",
+    "デジタル庁 (Digital Agency)"
+  ],
+  "compliance_deadlines": [
+    "実証期間: 2024年6月～2025年3月31日",
+    "公募応募締切: 2024年6月14日17時"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "This is a pilot project report (実証結果報告書) accompanying a practical handbook on generative AI adoption in child and family policy domains. Conducted by ABeam Consulting on behalf of the Children and Families Agency. 14 local government entities participated with 45 use cases across document creation, data analysis, chatbot deployment, image recognition, and audio transcription. No binding obligations or penalties are established; findings are intended to inform voluntary adoption guidance.",
+  "confidence": 0.85
+}

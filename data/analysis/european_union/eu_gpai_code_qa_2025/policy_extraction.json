@@ -1,0 +1,87 @@
+{
+  "jurisdiction": "european_union",
+  "issuing_body": "European Commission / AI Office",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "regulatory_guidance",
+  "publication_date": "2025-07-11",
+  "effective_date": "2025-08-02",
+  "covered_application_domains": [
+    "general_purpose_models"
+  ],
+  "safety_requirements": [
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "Transparency and Copyright, both addressing all providers of general-purpose AI models",
+          "source_section": "Code chapters overview"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "ensuring that general-purpose AI models placed on the European market are safe and transparent",
+          "source_section": "Introduction"
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "Safety and Security, relevant only to a limited number of providers of the most advanced models, subject to the AI Act's obligations for providers of general-purpose AI models with systemic risk",
+          "source_section": "Code chapters overview"
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "Providers must notify the AI Office of general-purpose AI models with systemic risk to be placed on the EU market without delay",
+          "source_section": "Compliance timeline"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "civil_penalty",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "from 2 August 2026 onwards, the Commission will enforce full compliance with all obligations for providers of general-purpose AI models with fines",
+          "source_section": "Compliance timeline"
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "the AI Office will offer to collaborate closely in particular with providers who adhere to the Code to ensure that models can continue to be placed on the EU market without delays",
+          "source_section": "Compliance timeline"
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "the AI Office will not consider them to have broken their commitments under the Code and will not reproach them for violating the AI Act. Instead, in such cases, the AI Office will consider them to act in good faith",
+          "source_section": "Compliance timeline"
+        }
+      ]
+    }
+  ],
+  "implementation_notes": "This document is a Q&A on a voluntary Code of Practice that helps providers demonstrate compliance with the binding AI Act. The Code itself does not impose new obligations but serves as a compliance pathway. Full enforcement with fines begins August 2026; models pre-dating August 2025 have until August 2027. The systemic risk threshold is set at 10^25 FLOPs of training compute.",
+  "confidence": 0.92
+}

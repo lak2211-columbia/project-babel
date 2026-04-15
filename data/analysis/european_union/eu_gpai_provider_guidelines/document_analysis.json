@@ -1,0 +1,137 @@
+{
+  "source_id": "eu_gpai_provider_guidelines",
+  "title": "Guidelines for providers of general-purpose AI models",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2026-03-26",
+    "effective_date": "2025-08-02",
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "providers should review their obligations, assess model risks, prepare for compliance",
+            "source_section": "Obligations overview"
+          },
+          {
+            "quote": "providers of the most advanced models, i.e. those that pose systemic risks, are legally obliged to notify the AI Office of these models",
+            "source_section": "Obligations overview"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "Reports of serious incident pursuant to Art 55(1)(c) of the AI Act",
+            "source_section": "EU SEND platform"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "Safety and Security Framework and Model Report pursuant to Measures 1.4 and 7.7 of the Safety and Security Chapter of the GPAI Code of Practice",
+            "source_section": "EU SEND platform"
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "Notifications of a general-purpose AI model with systemic risk pursuant to Art 51(2) and 52(2) of the AI Act",
+            "source_section": "EU SEND platform"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "Reports on how providers of general-purpose AI models who have not signed the General-Purpose AI Code of Practice intend to comply with the AI Act",
+            "source_section": "EU SEND platform"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "civil_penalty",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "The Commission will enforce compliance with the obligations for providers of GPAI models, including with fines",
+            "source_section": "Enforcement timeline"
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "The AI Office will support providers in their compliance, especially Code of Practice signatories",
+            "source_section": "Obligations overview"
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "Providers of general-purpose AI models must use the EU SEND platform to submit documents related to their obligations to the AI Office",
+            "source_section": "EU SEND platform"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "Guidelines are explicitly stated as 'not legally binding' but reflect the Commission's interpretation and will guide enforcement. Enforcement powers (including fines) enter into application 2 August 2026. Providers of models placed on market before 2 August 2025 have until 2 August 2027 to comply. The GPAI Code of Practice is a complementary voluntary tool.",
+    "confidence": 0.9
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "fundamental_rights"
+    ],
+    "frame_confidence": {
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.25,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document primarily frames AI governance as enabling confident innovation through clarity and pragmatic obligations. Repeated emphasis on helping actors 'innovate with confidence,' exemptions for open-source to 'promote transparency and innovation,' and the stated EU approach of promoting 'excellence and trust' while boosting 'research and industrial capacity' signals an innovation-enablement framing. Safety and fundamental rights appear as secondary justifications.",
+    "evidence_spans": [
+      {
+        "quote": "help actors in the AI ecosystem understand whether the obligations apply to them and what is expected of them, ensuring they can innovate with confidence",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "The guidelines for providers of GPAI model help stakeholders across the AI value chain innovate with clarity and confidence",
+        "source_section": "Conclusion"
+      },
+      {
+        "quote": "The EU's approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights",
+        "source_section": "Footer"
+      },
+      {
+        "quote": "clarify under what conditions providers of open-source AI models are exempt from certain obligations, to promote transparency and innovation",
+        "source_section": "Exemptions for open-source"
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "Take appropriate measures throughout the development of advanced AI systems, including prior to and throughout their deployment and placement on the market, to identify, evaluate, and mitigate risks across the AI lifecycle.",
+          "source_section": "Page 24"
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "establishing a safety framework of AI validation prior to their release to the market",
+          "source_section": "Page 9"
+        },
+        {
+          "quote": "employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming",
+          "source_section": "Page 24"
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming",
+          "source_section": "Page 24"
+        },
+        {
+          "quote": "The US announced that it would establish the US AI Safety Institute in the National Institute of Standards and Technology (NIST) to implement an AI risk management framework and evaluate red teaming.",
+          "source_section": "Page 9"
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "Work towards responsible information sharing and reporting of incidents among organizations developing advanced AI systems including with industry, governments, civil society, and academia.",
+          "source_section": "Page 24"
+        },
+        {
+          "quote": "encouraged to maintain appropriate documentation of reported incidents and to mitigate the identified risks and vulnerabilities",
+          "source_section": "Page 24"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "Publicly report advanced AI systems' capabilities, limitations and domains of appropriate and inappropriate use, to support ensuring sufficient transparency",
+          "source_section": "Page 24"
+        },
+        {
+          "quote": "provide and explain information summarizing the items listed below according to the knowledge and ability of each stakeholder",
+          "source_section": "Page 18"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "record or store logs of AI training processes, inference processes, rationales of decisions made by AI",
+          "source_section": "Page 18"
+        },
+        {
+          "quote": "Documentation of system architectures and the like",
+          "source_section": "Page 23"
+        },
+        {
+          "quote": "Make a reasonable explanation of what decision was made, starting with the source of the data, and document and publish it to ensure traceability.",
+          "source_section": "Page 24"
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "employing diverse internal and independent external testing measures",
+          "source_section": "Page 24"
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "Consider operational measures for information security and appropriate cyber/physical access control, etc.",
+          "source_section": "Page 25"
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "Develop and deploy reliable content authentication and provenance mechanisms, where technically feasible, such as watermarking or other techniques to enable users to identify AI-generated content.",
+          "source_section": "Page 25"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "Intervention by decisions made by humans",
+          "source_section": "Page 23"
+        },
+        {
+          "quote": "implement reliable, human-centric AI",
+          "source_section": "Page 25"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "it is important that each AI business actor provides stakeholders with information to the reasonable extent necessary",
+          "source_section": "Page 18"
+        },
+        {
+          "quote": "It is encouraged to introduce other mechanisms, such as labelling and disclaimer labelling",
+          "source_section": "Page 25"
+        },
+        {
+          "quote": "It is expected to establish and disclose AI governance policies and practices.",
+          "source_section": "Page 25"
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "Work towards responsible information sharing and reporting of incidents among organizations developing advanced AI systems",
+          "source_section": "Page 24"
+        },
+        {
+          "quote": "These include reports on monitoring results and documents related to security and safety risks.",
+          "source_section": "Page 24"
+        }
+      ]
+    }
+  ]
+}

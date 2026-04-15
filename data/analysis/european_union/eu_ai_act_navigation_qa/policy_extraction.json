@@ -1,0 +1,196 @@
+{
+  "jurisdiction": "european_union",
+  "issuing_body": "European Commission",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "regulatory_guidance",
+  "publication_date": "2026-01-28",
+  "effective_date": null,
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "biometrics",
+    "public_sector_use",
+    "employment",
+    "education",
+    "healthcare",
+    "finance",
+    "law_enforcement",
+    "defense"
+  ],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "Providers of high-risk AI systems need to carry out a risk assessment and design the system in a way that risks to health, safety and fundamental rights are minimised.",
+          "source_section": "High-risk AI systems - provider obligations"
+        },
+        {
+          "quote": "Providers of models with systemic risk must assess and mitigate these risks",
+          "source_section": "General-purpose AI models"
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "Before placing a high-risk AI system on the EU market or otherwise putting it into service, providers must subject it to a conformity assessment.",
+          "source_section": "High-risk AI systems - conformity assessment"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "The AI Act obliges providers of such models to document technical information about the models, and to disclose certain information to downstream system providers.",
+          "source_section": "General-purpose AI models"
+        },
+        {
+          "quote": "High-risk systems will also need to be trained and tested with sufficiently representative datasets... They must also be traceable and auditable, ensuring that appropriate documentation is kept",
+          "source_section": "Bias and discrimination"
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "Providers of high-risk AI systems remain responsible for the safety and compliance of the system throughout its lifecycle. Where necessary, they have to report and respond to serious incidents",
+          "source_section": "High-risk AI systems - provider obligations"
+        },
+        {
+          "quote": "conducting state-of-the-art model evaluations, reporting serious incidents, and ensuring adequate cybersecurity",
+          "source_section": "General-purpose AI models with systemic risk"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "The AI Act introduces specific transparency requirements for providers and deployers of certain interactive or generative AI systems (including chatbots or deep fakes).",
+          "source_section": "Transparency requirements"
+        },
+        {
+          "quote": "Providers of general-purpose AI models with systemic risks additionally have to assess and mitigate systemic risks",
+          "source_section": "General-purpose AI models"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "Deployers need to assign human oversight to a person in their organisation. That person or persons must be sufficiently equipped and enabled to exercise human oversight.",
+          "source_section": "Deployer obligations"
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "quote": "Depending on the type of high-risk AI system, the conformity assessment may have to be conducted by an independent conformity assessment body.",
+          "source_section": "Conformity assessment"
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "To enable supervision and ensure public transparency, providers of high-risk AI systems have to register the system in a public EU database.",
+          "source_section": "High-risk AI systems - provider obligations"
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "quote": "Providers of generative AI systems need to mark the AI outputs in a machine-readable format and ensure they are detectable as artificially generated or manipulated.",
+          "source_section": "Transparency requirements"
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "conducting state-of-the-art model evaluations, reporting serious incidents, and ensuring adequate cybersecurity of their models",
+          "source_section": "General-purpose AI models with systemic risk"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "civil_penalty",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "Up to €35m or 7% of the total worldwide annual turnover of the preceding financial year (whichever is higher) for infringements on prohibited practices or non-compliance related to requirements on data",
+          "source_section": "Penalties"
+        },
+        {
+          "quote": "Up to €15m or 3% of the total worldwide annual turnover of the preceding financial year for non-compliance with any of the other requirements",
+          "source_section": "Penalties"
+        }
+      ]
+    },
+    {
+      "label": "market_access_restriction",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "quote": "Before placing a high-risk AI system on the EU market or otherwise putting it into service, providers must subject it to a conformity assessment.",
+          "source_section": "Conformity assessment"
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "national competent authorities are responsible for overseeing and enforcing rules for AI systems, while the AI Office is responsible for governing and enforcing the obligations for providers of general-purpose AI models",
+          "source_section": "Governance"
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "they have to report and respond to serious incidents, take corrective actions in case of identified risks or non-compliance, provide information and cooperate with market surveillance authorities",
+          "source_section": "High-risk AI systems - provider obligations"
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "The GPAI Code of Practice is a voluntary tool, prepared by independent experts in a multi-stakeholder process, designed to help industry comply with the AI Act's obligations",
+          "source_section": "GPAI Code of Practice"
+        }
+      ]
+    }
+  ],
+  "implementation_notes": "This document is a Q&A/FAQ published by the European Commission explaining the EU AI Act (Regulation). The underlying AI Act is binding law; this document itself is regulatory guidance/explanatory material. Application dates are phased: prohibitions from 2 Feb 2025, GPAI rules from 2 Aug 2025, high-risk rules from 2 Aug 2026 (potentially delayed per Digital Omnibus proposal), Annex II products from 2 Aug 2027. The GPAI Code of Practice is voluntary but can serve as a compliance demonstration tool.",
+  "confidence": 0.95
+}

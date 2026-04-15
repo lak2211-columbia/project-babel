@@ -1,0 +1,103 @@
+{
+  "source_id": "jp_ai_guidelines_for_business_pdf",
+  "title": "AI Guidelines for Business Ver 1.0 (PDF)",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "Ministry of Internal Affairs and Communications / Ministry of Economy, Trade and Industry",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "voluntary_commitment",
+    "publication_date": "2024-04-19",
+    "effective_date": null,
+    "covered_application_domains": [
+      "general_purpose_models",
+      "public_sector_use",
+      "critical_infrastructure",
+      "employment",
+      "education",
+      "healthcare",
+      "finance"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "it is important to understand in advance the magnitude of risks that can arise from the mode of use in a given field and to align the degree of countermeasures with the magnitude of risk under a risk-based approach",
+            "source_section": "Introduction"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "help people who use AI in various business activities correctly recognize AI risks in light of international trends and stakeholder concerns",
+            "source_section": "Introduction"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "safe and secure use of AI will be promoted",
+            "source_section": "Introduction"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "a goal-based approach that seeks to achieve policy objectives through non-binding soft law while encouraging voluntary efforts by stakeholders",
+            "source_section": "Introduction"
+          },
+          {
+            "quote": "new set of Guidelines for business operators to implement AI social deployment and governance together as non-binding soft law",
+            "source_section": "Introduction"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "Document is explicitly non-binding soft law using a goal-based approach. It integrates three previous guidelines (AI R&D Guidelines, AI Utilization Guidelines, Governance Guidelines Ver.1.1). Intended as a living document to be updated via agile governance. Full policy details are in Parts 2-5 which are not fully represented in the extracted text.",
+    "confidence": 0.85
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "innovation_enablement",
+      "social_stability",
+      "fundamental_rights"
+    ],
+    "frame_confidence": {
+      "consumer_public_safety": 0.45,
+      "labor_transition": 0.1
+    },
+    "rationale_summary": "The document primarily frames AI governance around ensuring safe and secure use of AI in business contexts, reducing social risks such as misinformation, IP infringement, and other harms that arise from AI deployment. The goal-based, risk-based approach is centered on protecting society from AI risks while enabling innovation, with safety and security language dominant throughout.",
+    "evidence_spans": [
+      {
+        "quote": "these Guidelines present a unified direction for AI governance in Japan so that safe and secure use of AI will be promoted",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "with generative AI there are new social risks that previous AI did not pose, such as infringement of intellectual property rights and the generation and dissemination of misinformation and disinformation",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "it is important to understand in advance the magnitude of risks that can arise from the mode of use in a given field and to align the degree of countermeasures with the magnitude of risk under a risk-based approach",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "social friction caused by those risks can itself inhibit the use of AI",
+        "source_section": "Introduction"
+      }
+    ]
+  }
+}

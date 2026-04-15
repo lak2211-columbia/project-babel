@@ -1,0 +1,112 @@
+{
+  "source_id": "eu_gpai_code_of_practice",
+  "title": "The General-Purpose AI Code of Practice",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission / AI Office",
+    "document_type": "voluntary_commitment",
+    "binding_strength": "voluntary_commitment",
+    "publication_date": "2025-07-10",
+    "effective_date": null,
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "safety_requirements": [
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "The Transparency chapter offers a user-friendly Model Documentation Form which allows providers to easily document the information necessary to comply with the AI Act obligation to on model providers to ensure sufficient transparency.",
+            "source_section": "Transparency Chapter"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "offers a user-friendly Model Documentation Form (DOCX) which allows providers to easily document the information necessary to comply with the AI Act obligation",
+            "source_section": "Transparency Chapter"
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "The Safety and Security chapter outlines concrete state-of-the-art practices for managing systemic risks, i.e. risks from the most advanced models.",
+            "source_section": "Safety and Security Chapter"
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "The Copyright chapter offers providers practical solutions to meet the AI Act's obligation to put in place a policy to comply with EU copyright law.",
+            "source_section": "Copyright Chapter"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "AI model providers who voluntarily sign it can show they comply with the AI Act by adhering to the code. This will reduce their administrative burden and give them more legal certainty",
+            "source_section": "Introduction"
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "Signatory Taskforce, chaired by the AI Office, to facilitate a coherent application of the Code.",
+            "source_section": "Signatory Taskforce"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "The GPAI Code of Practice is a voluntary compliance tool endorsed by the European Commission and AI Board as adequate for demonstrating compliance with AI Act obligations (Articles 53 and 55). It is organized in three chapters: Transparency, Copyright, and Safety and Security. The Safety and Security chapter applies only to providers of GPAI models with systemic risk. Signatories sign voluntarily but gain legal certainty benefit. The code does not itself impose binding obligations; the underlying AI Act does.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "fundamental_rights",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "consumer_public_safety": 0.55,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document primarily frames AI governance around compliance with safety, transparency, and copyright obligations under the AI Act, with particular focus on managing systemic risks from advanced models. The Safety and Security chapter addresses risks from the most powerful models. Secondary frames include fundamental rights (explicitly mentioned in the EU's stated approach) and innovation enablement (reducing administrative burden, providing legal certainty to foster industry compliance).",
+    "evidence_spans": [
+      {
+        "quote": "helps industry comply with the AI Act legal obligations on safety, transparency and copyright of general-purpose AI models",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "outlines concrete state-of-the-art practices for managing systemic risks, i.e. risks from the most advanced models",
+        "source_section": "Safety and Security chapter"
+      },
+      {
+        "quote": "EU's approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights",
+        "source_section": "Closing statement"
+      },
+      {
+        "quote": "reduce their administrative burden and give them more legal certainty and trust",
+        "source_section": "Introduction"
+      }
+    ]
+  }
+}

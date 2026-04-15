@@ -1,0 +1,79 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "Consumer Financial Protection Bureau (CFPB)",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "regulatory_guidance",
+  "publication_date": "2022-05-26",
+  "effective_date": null,
+  "covered_application_domains": [
+    "finance"
+  ],
+  "safety_requirements": [
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "ECOA and Regulation B require creditors to provide statements of specific reasons to applicants against whom adverse action is taken.",
+          "source_section": "Response"
+        },
+        {
+          "quote": "the reasons disclosed must relate only to those factors actually scored in the system. Moreover, no factor that was a principal reason for adverse action may be excluded from disclosure.",
+          "source_section": "Analysis"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "A creditor's lack of understanding of its own methods is therefore not a cognizable defense against liability for violating ECOA and Regulation B's requirements.",
+          "source_section": "Analysis"
+        },
+        {
+          "quote": "creditors must still be able to validate the accuracy of those approximations, which may not be possible with less interpretable models.",
+          "source_section": "Footnote 1"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "quote": "ECOA and Regulation B do not permit creditors to use complex algorithms when doing so means they cannot provide the specific and accurate reasons for adverse actions.",
+          "source_section": "Response"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "Consumer Financial Protection Circulars are issued to all parties with authority to enforce federal consumer financial law.",
+          "source_section": "About Consumer Financial Protection Circulars"
+        },
+        {
+          "quote": "these laws are also enforced by state attorneys general and state regulators",
+          "source_section": "About Consumer Financial Protection Circulars"
+        }
+      ]
+    },
+    {
+      "label": "civil_penalty",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "quote": "A creditor cannot justify noncompliance with ECOA and Regulation B's requirements based on the mere fact that the technology it employs to evaluate applications is too complicated or opaque to understand.",
+          "source_section": "Analysis"
+        }
+      ]
+    }
+  ],
+  "implementation_notes": "This circular is explicitly a 'general statement of policy under the Administrative Procedure Act' and does not impose new legal requirements but clarifies that existing ECOA/Regulation B obligations apply to AI/ML-based credit decisions. Enforcement is shared across CFPB, state AGs, prudential regulators, and other federal agencies. Confidence reflects that the underlying legal obligations are binding, though the circular itself is not binding law.",
+  "confidence": 0.88
+}

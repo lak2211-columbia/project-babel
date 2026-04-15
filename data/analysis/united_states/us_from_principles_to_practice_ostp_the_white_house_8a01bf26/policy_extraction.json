@@ -1,0 +1,112 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "Office of Science and Technology Policy (OSTP), The White House",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "voluntary_commitment",
+  "publication_date": null,
+  "effective_date": null,
+  "covered_actors": [
+    "communities",
+    "industry",
+    "governments",
+    "developers",
+    "designers",
+    "deployers",
+    "policymakers",
+    "anyone impacted by automated systems"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "public_sector_use",
+    "critical_infrastructure",
+    "employment",
+    "education",
+    "healthcare",
+    "finance",
+    "law_enforcement"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "pre-deployment testing, ongoing monitoring, and governance structures for automated systems",
+          "source_section": "What you can do"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "These reporting expectations are important for transparency, so the American people can have confidence that their rights, opportunities, and access as well as their expectations about technologies are respected",
+          "source_section": "Reporting expectations"
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "guard the American public against many of the potential and actual harms identified by researchers, technologists, advocates, journalists, policymakers, and communities",
+          "source_section": "Introduction"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "ongoing monitoring, and governance structures for automated systems",
+          "source_section": "What you can do"
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "reports can be provided to the public, regulators, auditors, industry standards groups, or others engaged in independent review",
+          "source_section": "Reporting expectations"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "a blueprint for the development of additional technical standards and practices that should be tailored for particular sectors and contexts",
+          "source_section": "Introduction"
+        },
+        {
+          "quote": "The examples provided are not critiques or endorsements, but rather are offered as illustrative cases",
+          "source_section": "How these principles can move into practice"
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "the information should be provided to oversight bodies and privacy, civil liberties, or other ethics officers charged with safeguarding individuals' rights",
+          "source_section": "Reporting expectations"
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "This is a non-binding technical companion to the Blueprint for an AI Bill of Rights. It provides illustrative examples and practical steps but explicitly states expectations are a 'blueprint for the development of additional technical standards' rather than enforceable rules. Reporting expectations are directed at entities developing or using automated systems but are voluntary. The document covers five principles intended to guide design, use, and deployment of automated systems.",
+  "confidence": 0.92
+}

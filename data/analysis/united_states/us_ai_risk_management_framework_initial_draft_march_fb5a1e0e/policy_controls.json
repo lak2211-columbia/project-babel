@@ -1,0 +1,92 @@
+{
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "This voluntary framework provides a flexible, structured, and measurable process to address AI risks throughout the AI lifecycle",
+          "source_section": "Page 4"
+        },
+        {
+          "quote": "Appropriate methods and metrics are identified and applied... Approaches and metrics for quantitative or qualitative measurement of the enumerated risks... are identified and selected for implementation.",
+          "source_section": "Page 20"
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "Practical approaches for AI safety often relate to rigorous simulation and in-domain testing, real-time monitoring, and the ability to quickly shut down or modify misbehaving systems.",
+          "source_section": "Page 15"
+        },
+        {
+          "quote": "deploying the system in production environments subject to increased testing or other controls",
+          "source_section": "Page 20"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "Transparency reflects the extent to which information is available to a user when interacting with an AI system. Its scope spans from design decisions and training data to model training, the structure of the model, its intended use case",
+          "source_section": "Page 16"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "Explainable systems can be more easily debugged and monitored, and lend themselves to more thorough documentation, audit, and governance.",
+          "source_section": "Page 14"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "input from a broad and diverse set of stakeholders is required throughout the AI lifecycle to ensure that risks arising in social contexts are managed appropriately",
+          "source_section": "Page 13"
+        },
+        {
+          "quote": "Individual human operators and their organizations should be answerable and held accountable for the outcomes of AI systems",
+          "source_section": "Page 15"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "This voluntary framework provides a flexible, structured, and measurable process to address AI risks throughout the AI lifecycle",
+          "source_section": "Page 4"
+        },
+        {
+          "quote": "It is important to note that the AI RMF is neither a checklist nor should be used in any way to certify an AI system.",
+          "source_section": "Page 4"
+        }
+      ]
+    },
+    {
+      "label": "none_specified",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "using the AI RMF does not substitute for due diligence and judgment by organizations and individuals in deciding whether to design, develop, and deploy AI technologies",
+          "source_section": "Page 4"
+        }
+      ]
+    }
+  ]
+}

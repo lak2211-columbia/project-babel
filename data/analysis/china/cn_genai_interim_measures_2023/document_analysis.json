@@ -1,0 +1,198 @@
+{
+  "source_id": "cn_genai_interim_measures_2023",
+  "title": "生成式人工智能服务管理暂行办法",
+  "language": "zh",
+  "policy_extraction": {
+    "jurisdiction": "china",
+    "issuing_body": "国家互联网信息办公室 (Cyberspace Administration of China) et al.",
+    "document_type": "legislation",
+    "binding_strength": "binding_law",
+    "publication_date": "2023-07-10",
+    "effective_date": "2023-08-15",
+    "covered_application_domains": [
+      "general_purpose_models",
+      "public_sector_use"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估",
+            "source_section": "第十七条"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "采取有效措施，提升生成式人工智能服务的透明度，提高生成内容的准确性和可靠性",
+            "source_section": "第四条"
+          },
+          {
+            "quote": "提供者应当明确并公开其服务的适用人群、场合、用途",
+            "source_section": "第十条"
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "提供者应当按照《互联网信息服务深度合成管理规定》对图片、视频等生成内容进行标识",
+            "source_section": "第十二条"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "提供者发现违法内容的，应当及时采取停止生成、停止传输、消除等处置措施……并向有关主管部门报告",
+            "source_section": "第十四条"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "按要求对训练数据来源、规模、类型、标注规则、算法机制机理等予以说明，并提供必要的技术、数据等支持和协助",
+            "source_section": "第十九条"
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续",
+            "source_section": "第十七条"
+          },
+          {
+            "quote": "法律、行政法规规定提供生成式人工智能服务应当取得相关行政许可的，提供者应当依法取得许可",
+            "source_section": "第二十三条"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "采取有效措施防范未成年人用户过度依赖或者沉迷生成式人工智能服务",
+            "source_section": "第十条"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "提供者应当建立健全投诉、举报机制，设置便捷的投诉、举报入口",
+            "source_section": "第十五条"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "civil_penalty",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "由有关主管部门依照《中华人民共和国网络安全法》……等法律、行政法规的规定予以处罚",
+            "source_section": "第二十一条"
+          }
+        ]
+      },
+      {
+        "label": "criminal_penalty",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "构成犯罪的，依法追究刑事责任",
+            "source_section": "第二十一条"
+          }
+        ]
+      },
+      {
+        "label": "market_access_restriction",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "责令暂停提供相关服务",
+            "source_section": "第二十一条"
+          },
+          {
+            "quote": "国家网信部门应当通知有关机构采取技术措施和其他必要措施予以处置",
+            "source_section": "第二十条"
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "网信、发展改革、教育、科技、工业和信息化、公安、广播电视、新闻出版等部门，依据各自职责依法加强对生成式人工智能服务的管理",
+            "source_section": "第十六条"
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "提供者发现使用者利用生成式人工智能服务从事违法活动的，应当依法依约采取……处置措施，保存有关记录，并向有关主管部门报告",
+            "source_section": "第十四条"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "Interim measures applying to generative AI services provided to the public within China. Classified/tiered supervision approach indicated. Research and internal use not covered. Foreign providers offering services into China are also subject to these rules.",
+    "confidence": 0.95
+  },
+  "risk_framing": {
+    "dominant_frame": "social_stability",
+    "secondary_frames": [
+      "national_security",
+      "fundamental_rights",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "social_stability": 0.45,
+      "innovation_enablement": 0.25,
+      "consumer_public_safety": 0.1,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "The document's primary governance rationale centers on maintaining social order and ideological stability—prohibiting content that undermines state power, social stability, or socialist values. National security appears as a closely related secondary concern. The document also strongly promotes innovation and self-reliance in AI development, and addresses individual rights such as personal information protection.",
+    "evidence_spans": [
+      {
+        "quote": "维护国家安全和社会公共利益，保护公民、法人和其他组织的合法权益",
+        "source_section": "第一条"
+      },
+      {
+        "quote": "不得生成煽动颠覆国家政权、推翻社会主义制度，危害国家安全和利益……破坏国家统一和社会稳定",
+        "source_section": "第四条"
+      },
+      {
+        "quote": "坚持发展和安全并重、促进创新和依法治理相结合的原则，采取有效措施鼓励生成式人工智能创新发展",
+        "source_section": "第三条"
+      },
+      {
+        "quote": "鼓励生成式人工智能算法、框架、芯片及配套软件平台等基础技术的自主创新，平等互利开展国际交流与合作",
+        "source_section": "第六条"
+      }
+    ]
+  }
+}

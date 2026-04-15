@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01GDTu33wsDFKBDeo2xeS3oH",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"fundamental_rights\",\"secondary_frames\":[\"consumer_public_safety\",\"innovation_enablement\"],\"frame_confidence\":{\"fundamental_rights\":0.75,\"consumer_public_safety\":0.35,\"labor_transition\":0.0},\"rationale_summary\":\"The document frames AI governance primarily around enabling rights-holders to exercise their legal rights—copyright, data protection, non-discrimination, consumer protection—under Union law. The core justification for the transparency obligation is that parties with legitimate interests need information to assert their rights, not safety or competitiveness concerns.\",\"evidence_spans\":[{\"quote\":\"This increased transparency enables parties with legitimate interests to exercise their rights under Union law. These may refer to copyright, related rights, and other intellectual property rights, as well as other rights protected under Union law, such as data protection, consumer protection, non-discrimination, and freedom of science.\",\"source_section\":\"General\"},{\"quote\":\"The transparency of the training data will help rightsholders in obtaining relevant information on the content used in the training of general-purpose AI models.\",\"source_section\":\"Copyright section\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 3858,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 244,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

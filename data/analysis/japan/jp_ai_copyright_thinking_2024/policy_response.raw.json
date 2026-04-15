@@ -1,0 +1,56 @@
+{
+  "metadata_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01KF3E5ZwDQtNYHBqYQ39xXU",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"issuing_body\":\"文化審議会著作権分科会法制度小委員会 (Subcommittee on Legal Systems, Copyright Division, Council for Cultural Affairs, Agency for Cultural Affairs, Japan)\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2024-03-15\",\"effective_date\":null,\"covered_actors\":[\"AI開発事業者 (AI developers)\",\"AIサービス提供事業者 (AI service providers)\",\"AI利用者 (AI users)\",\"クリエイター・実演家等の権利者 (creators, performers, and other rights holders)\"],\"covered_application_domains\":[\"general_purpose_models\"],\"prohibited_practices\":[],\"enforcement_authorities\":[\"文化庁 (Agency for Cultural Affairs)\"],\"compliance_deadlines\":[],\"penalties_summary\":null,\"implementation_notes\":\"Document explicitly states it has no legal binding force ('本考え方自体が法的な拘束力を有するものではない'). It is interpretive guidance on how existing Japanese copyright law applies to generative AI, covering training/learning stage and generation/use stage. The document notes it may be revised as case law, technology, and international developments evolve. It references Article 30-4 (non-enjoyment-purpose use) and Article 47-5 of the Copyright Act as relevant rights-limitation provisions. No prohibited practices are formally established; the document clarifies existing law rather than imposing new rules.\",\"confidence\":0.92}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 10054,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 353,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  },
+  "controls_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01PDyZ5ocfnS2QxzL2oGikTN",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"safety_requirements\":[],\"enforcement_mechanisms\":[{\"label\":\"soft_enforcement\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"本考え方自体が法的な拘束力を有するものではなく、また現時点で存在する特定の生成AIやこれに関する技術について、確定的な法的評価を行うものではない\",\"source_section\":\"Page 1\"},{\"quote\":\"個別具体的な生成AIやこれに関する技術の法的な位置づけの説明については、これを提供する事業者等において適切に行われることが望まれる\",\"source_section\":\"Page 4\"}]}]}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 9789,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 168,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  }
+}

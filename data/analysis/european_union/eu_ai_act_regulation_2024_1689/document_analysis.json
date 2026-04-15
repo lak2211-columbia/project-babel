@@ -1,0 +1,196 @@
+{
+  "source_id": "eu_ai_act_regulation_2024_1689",
+  "title": "Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Parliament and Council of the European Union",
+    "document_type": "legislation",
+    "binding_strength": "binding_law",
+    "publication_date": "2024-07-12",
+    "effective_date": "2024-08-01",
+    "covered_actors": [
+      "providers",
+      "deployers",
+      "importers",
+      "distributors",
+      "product manufacturers",
+      "authorised representatives",
+      "operators"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "biometrics",
+      "public_sector_use",
+      "employment",
+      "education",
+      "healthcare",
+      "finance",
+      "law_enforcement",
+      "defense"
+    ],
+    "prohibited_practices": [
+      "subliminal manipulation techniques causing harm",
+      "exploitation of vulnerabilities of specific groups",
+      "social scoring by public authorities",
+      "real-time remote biometric identification in public spaces for law enforcement (with limited exceptions)",
+      "AI-based individual criminal risk assessment",
+      "untargeted scraping of facial images for recognition databases",
+      "emotion recognition in workplace and education",
+      "biometric categorisation inferring sensitive attributes"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "common rules for high-risk AI systems should be established",
+            "source_section": "Recital 7"
+          },
+          {
+            "quote": "rules regulating the placing on the market, the putting into service and the use of certain AI systems should be laid down",
+            "source_section": "Recital 8"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "the obligations placed on various operators involved in the AI value chain under this Regulation should apply without prejudice to national law",
+            "source_section": "Recital 9"
+          },
+          {
+            "quote": "specific requirements and obligations, including in respect of the transparency, technical documentation and record-keeping of AI systems",
+            "source_section": "Recital 9"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "specific requirements and obligations, including in respect of the transparency, technical documentation and record-keeping of AI systems",
+            "source_section": "Recital 9"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.88,
+        "evidence": [
+          {
+            "quote": "AI should be a human-centric technology. It should serve as a tool for people, with the ultimate aim of increasing human well-being",
+            "source_section": "Recital 6"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "restrictions of the use of AI systems for remote biometric identification for the purpose of law enforcement",
+            "source_section": "Recital 3"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "tasks and powers of the independent supervisory authorities competent to monitor compliance with those instruments",
+            "source_section": "Recital 10"
+          }
+        ]
+      },
+      {
+        "label": "market_access_restriction",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "rules regulating the placing on the market, the putting into service and the use of certain AI systems should be laid down",
+            "source_section": "Recital 8"
+          },
+          {
+            "quote": "preventing Member States from imposing restrictions on the development, marketing and use of AI systems, unless explicitly authorised by this Regulation",
+            "source_section": "Recital 1"
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "specific requirements and obligations, including in respect of the transparency, technical documentation and record-keeping of AI systems",
+            "source_section": "Recital 9"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "national market surveillance authorities",
+      "European AI Office",
+      "European Artificial Intelligence Board",
+      "national competent authorities designated by Member States"
+    ],
+    "compliance_deadlines": [
+      "Prohibited practices: 6 months after entry into force (approx. February 2025)",
+      "GPAI model obligations: 12 months after entry into force (approx. August 2025)",
+      "High-risk AI systems (Annex I): 24 months after entry into force (approx. August 2026)",
+      "High-risk AI systems (Annex I, certain sectors): 36 months after entry into force (approx. August 2027)"
+    ],
+    "penalties_summary": "Up to €35 million or 7% of global annual turnover for violations of prohibited practices; up to €15 million or 3% for other violations; up to €7.5 million or 1.5% for supplying incorrect information. SME/startup penalties scaled proportionately.",
+    "implementation_notes": "Regulation entered into force 20 days after publication (1 August 2024) with phased applicability. Complements existing EU law on data protection, product safety, consumer protection, and employment. Does not affect GDPR or Directive 2016/680 obligations. European AI Office established within Commission to oversee GPAI models. Member States must designate national competent authorities.",
+    "confidence": 0.95
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "innovation_enablement",
+      "consumer_public_safety",
+      "economic_competitiveness"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.05,
+      "national_security": 0.1,
+      "economic_competitiveness": 0.55,
+      "fundamental_rights": 0.85,
+      "social_stability": 0.3,
+      "innovation_enablement": 0.6,
+      "consumer_public_safety": 0.5,
+      "labor_transition": 0.1
+    },
+    "rationale_summary": "The EU AI Act consistently frames AI governance as necessary to protect fundamental rights, democracy, rule of law, and human dignity as enshrined in the EU Charter. While economic competitiveness and innovation enablement are prominent secondary themes, the primary justification for regulation is the protection of rights and freedoms. The document repeatedly references the Charter of Fundamental Rights, human-centric AI, and protection of natural persons as the core rationale.",
+    "evidence_spans": [
+      {
+        "quote": "ensuring a high level of protection of health, safety, fundamental rights as enshrined in the Charter of Fundamental Rights of the European Union, including democracy, the rule of law and environmental protection",
+        "source_section": "Recital 1"
+      },
+      {
+        "quote": "AI may generate risks and cause harm to public interests and fundamental rights that are protected by Union law",
+        "source_section": "Recital 5"
+      },
+      {
+        "quote": "it is vital for AI and its regulatory framework to be developed in accordance with Union values...the fundamental rights and freedoms enshrined in the Treaties",
+        "source_section": "Recital 6"
+      },
+      {
+        "quote": "AI should be a human-centric technology. It should serve as a tool for people, with the ultimate aim of increasing human well-being",
+        "source_section": "Recital 6"
+      },
+      {
+        "quote": "rules regulating the placing on the market...ensuring the smooth functioning of the internal market...supportive of new innovative solutions, enabling a European ecosystem",
+        "source_section": "Recital 8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01PbmheL4nfstnPRM6a8ohU6",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"consumer_public_safety\",\"secondary_frames\":[\"fundamental_rights\",\"innovation_enablement\",\"social_stability\",\"national_security\"],\"frame_confidence\":{\"existential_catastrophic\":0.05,\"national_security\":0.35,\"economic_competitiveness\":0.3,\"fundamental_rights\":0.5,\"social_stability\":0.45,\"innovation_enablement\":0.5,\"consumer_public_safety\":0.65,\"labor_transition\":0.1},\"rationale_summary\":\"The document's primary framing centers on ensuring AI is safe and appropriate for all users and stakeholders, emphasizing harm prevention (hallucinations, deepfakes, disinformation, cyberattacks, bias/discrimination) and accountability across the AI lifecycle. It consistently uses safety, transparency, and human-centric principles as the core governance rationale, directed at protecting citizens, consumers, and society from AI harms. Innovation enablement and fundamental rights are strong secondary frames, reflecting Japan's dual goal of promoting beneficial AI while protecting rights and dignity.\",\"evidence_spans\":[{\"quote\":\"Ensuring that AI utilization does not cause harm to human life, body, or property\",\"source_section\":\"Section 1(2) Main Elements\"},{\"quote\":\"social risks such as the generation and spread of disinformation or misinformation, aggravation of bias or discrimination, use on crime, excessive dependence, infringement of privacy or property rights\",\"source_section\":\"Section 1(2)\"},{\"quote\":\"Identifying and evaluating the risks of illegal activities such as various crimes including cyberattacks and fraud perpetrated through the misuse of AI\",\"source_section\":\"Section 2(3)\"},{\"quote\":\"Respecting human dignity and fundamental human rights, and complying with the laws and regulations\",\"source_section\":\"Section 1(2) Main Elements\"},{\"quote\":\"it is important to promote its social implementation and innovation\",\"source_section\":\"Section 1(2)\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 6860,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 434,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

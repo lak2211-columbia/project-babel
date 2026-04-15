@@ -1,0 +1,199 @@
+{
+  "source_id": "us_omb_m_25_22",
+  "title": "M-25-22: Driving Efficient Acquisition of Artificial Intelligence in Government",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "Office of Management and Budget",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "executive_action",
+    "publication_date": "2025-04-03",
+    "effective_date": "2025-04-03",
+    "covered_application_domains": [
+      "general_purpose_models",
+      "public_sector_use",
+      "critical_infrastructure",
+      "biometrics",
+      "employment",
+      "education",
+      "healthcare",
+      "finance",
+      "law_enforcement"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "agencies must identify reasonably foreseeable use cases arising from the use of an AI system or service, and to the greatest extent practicable, make an initial determination of whether a system is likely to host high-impact AI use cases",
+            "source_section": "Section 4(a)(ii)"
+          },
+          {
+            "quote": "the team must identify potential risks to the agency's implementation of the nine principles for use of AI in government",
+            "source_section": "Section 4(a)(i)"
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "any AI systems and services operated as an information system by or on behalf of an agency must receive an authorization to operate from an appropriate agency official prior to deployment",
+            "source_section": "Section 4(e)(i)"
+          },
+          {
+            "quote": "agencies must, to the greatest extent practicable, test proposed solutions to understand the capabilities and limitations of any offered AI system or service",
+            "source_section": "Section 4(d)"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "agencies must disclose in solicitations whether a planned use of an AI system meets the threshold of a high-impact use case",
+            "source_section": "Section 4(c)(i)"
+          },
+          {
+            "quote": "agencies should require sufficient descriptive information from vendors to complete the required AI Impact Assessment for high-impact use cases",
+            "source_section": "Section 4(c)(i)"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "agencies, are encouraged, where appropriate, to prioritize obtaining documentation that facilitates transparency and explainability, and that ensures an adequate means of tracking performance and effectiveness for procured AI",
+            "source_section": "Section 3(d)(v)"
+          },
+          {
+            "quote": "Contracts must detail the examination, testing, and validation procedures of the vendor",
+            "source_section": "Section 4(d)(iii)(E)(III)"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "Agencies must perform effective system oversight consistent with the terms of the contract. This includes monitoring system performance to ensure that any emerging risks to privacy, civil rights, and civil liberties are identified and mitigated as appropriate",
+            "source_section": "Section 4(e)(ii)"
+          },
+          {
+            "quote": "Contractual terms must provide the contracting agency the ability to regularly monitor and evaluate performance, risks, and effectiveness of an AI system or service",
+            "source_section": "Section 4(d)(iii)(E)"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "agencies should consider, where relevant, requiring vendors to provide a notification to relevant agency stakeholders prior to the integration of new AI enhancements, features, or components",
+            "source_section": "Section 4(d)(iii)(G)"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "The data used when conducting independent evaluations should not be accessible to the vendor",
+            "source_section": "Section 4(d)(iii)(E)(I)"
+          },
+          {
+            "quote": "ensuring contracts permanently prohibit the use of non-public inputted agency data and outputted results to further train publicly or commercially available AI algorithms",
+            "source_section": "Section 3(d)(iv)"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "procurement_condition",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "Contracts must ensure compliance with minimum risk management practices for high-impact use cases as required under M-25-21",
+            "source_section": "Section 4(d)(iii)(D)"
+          },
+          {
+            "quote": "agencies must include appropriate terms related to IP rights and lawful use of government data",
+            "source_section": "Section 4(c)(iii)"
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "agencies must inform vendors of reasonable transparency and documentation requirements that will be placed on the vendor to enable agency compliance with the requirements in OMB Memorandum M-25-21",
+            "source_section": "Section 4(c)(i)"
+          },
+          {
+            "quote": "Vendors must provide the access and time necessary for agencies to complete independent evaluation",
+            "source_section": "Section 4(d)(iii)(E)(II)"
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "The Chief AI Officer Council will periodically review agency processes to encourage best practices and interagency harmonization",
+            "source_section": "Section 3(d)"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "This memorandum rescinds M-24-18 and applies to contracts awarded pursuant to solicitations issued 180 days after issuance. It covers all federal agencies under 44 U.S.C. § 3502(1) except Intelligence Community elements and National Security Systems. Requirements are tiered by timeline (100, 180, 200, 270 days). Enforcement is primarily through procurement conditions and contract terms rather than civil or criminal penalties. Some requirements apply only to CFO Act agencies. The document references but does not re-state requirements from M-25-21 for high-impact AI use cases.",
+    "confidence": 0.88
+  },
+  "risk_framing": {
+    "dominant_frame": "economic_competitiveness",
+    "secondary_frames": [
+      "innovation_enablement",
+      "consumer_public_safety",
+      "fundamental_rights"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.1,
+      "economic_competitiveness": 0.75,
+      "fundamental_rights": 0.35,
+      "social_stability": 0.1,
+      "innovation_enablement": 0.5,
+      "consumer_public_safety": 0.4,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document is primarily framed around ensuring a competitive American AI marketplace, taxpayer value, and government efficiency. Its three grounding themes explicitly foreground competition, cost-effectiveness, and vendor lock-in avoidance. References to American AI leadership, buy-American policy, and marketplace competition dominate the stated rationale for governance. Risk management and rights protections appear as secondary concerns subordinate to efficient, competitive acquisition.",
+    "evidence_spans": [
+      {
+        "quote": "Ensuring the Government and the Public Benefit from a Competitive American AI Marketplace. Competition in the marketplace enables the government to acquire the best solutions at lower cost to the taxpayer.",
+        "source_section": "1. OVERVIEW"
+      },
+      {
+        "quote": "Executive Order 14179 recognizes the importance of American AI development to promote human flourishing, economic competitiveness, and national security. Consistent with applicable law, it is the policy of the United States to buy American and to maximize the use of AI products and services that are developed and produced in the United States.",
+        "source_section": "3. AGENCY-LEVEL REQUIREMENTS"
+      },
+      {
+        "quote": "Safeguarding Taxpayer Dollars by Tracking AI Performance and Managing Risk.",
+        "source_section": "1. OVERVIEW"
+      },
+      {
+        "quote": "Throughout the AI acquisition lifecycle, agencies shall consider and mitigate, as appropriate, risks to privacy, civil liberties, and civil rights.",
+        "source_section": "4. AI ACQUISITION LIFECYCLE GUIDANCE"
+      }
+    ]
+  }
+}

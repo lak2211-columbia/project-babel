@@ -1,0 +1,192 @@
+{
+  "source_id": "eu_gpai_code_copyright_chapter_2025",
+  "title": "Code of Practice for General-Purpose AI Models: Copyright Chapter",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission / AI Office – Working Group 1 (GPAI Code of Practice)",
+    "document_type": "voluntary_commitment",
+    "binding_strength": "voluntary_commitment",
+    "publication_date": null,
+    "effective_date": null,
+    "covered_actors": [
+      "providers of general-purpose AI models",
+      "Signatories",
+      "downstream AI system integrators",
+      "rightsholders",
+      "collective management organisations"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [
+      "circumventing effective technological measures (paywalls, subscription models) when web-crawling",
+      "scraping content from websites persistently and repeatedly infringing copyright on a commercial scale",
+      "generating outputs that reproduce copyright-protected training content in an infringing manner",
+      "copyright-infringing uses of a model as prohibited in acceptable use policies"
+    ],
+    "safety_requirements": [
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "Signatories are encouraged to make publicly available and keep up-to-date a summary of their copyright policy.",
+            "source_section": "Measure 1.1"
+          },
+          {
+            "quote": "Signatories commit to take appropriate measures to enable affected rightsholders to obtain information about the web crawlers employed, their robots.txt features and other measures",
+            "source_section": "Measure 1.3"
+          },
+          {
+            "quote": "draw up and make publicly available sufficiently detailed summaries about the content used by the Signatories for the training of their general-purpose AI models",
+            "source_section": "Page 3 Recital (f)"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "Signatories commit to describe that policy in a single document incorporating the Measures set out in this Chapter.",
+            "source_section": "Measure 1.1"
+          },
+          {
+            "quote": "to alert users to the prohibition of copyright infringing uses of the model in the documentation accompanying the model",
+            "source_section": "Measure 1.4"
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "to implement appropriate and proportionate technical safeguards to prevent their models from generating outputs that reproduce training content protected by Union law on copyright and related rights in an infringing manner",
+            "source_section": "Measure 1.4"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "quote": "not to circumvent effective technological measures... that are designed to prevent or restrict unauthorised acts in respect of works and other protected subject matter, in particular by respecting any technological denial or restriction of access imposed by subscription models or paywalls",
+            "source_section": "Measure 1.2"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "Signatories commit to put a mechanism in place to allow affected rightsholders and their authorised representatives... to submit, by electronic means, sufficiently precise and adequately substantiated complaints concerning the non-compliance of Signatories",
+            "source_section": "Measure 1.5"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "Signatories will assign responsibilities within their organisation for the implementation and overseeing of this policy.",
+            "source_section": "Measure 1.1"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "to enable the AI Office to assess compliance of providers of general-purpose AI models who choose to rely on the Code to demonstrate compliance with their obligations under the AI Act",
+            "source_section": "Page 2 Objectives"
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "Signatories commit to describe that policy in a single document incorporating the Measures set out in this Chapter",
+            "source_section": "Measure 1.1"
+          },
+          {
+            "quote": "providing a means for affected rightsholders to be automatically notified when such information is updated",
+            "source_section": "Measure 1.3"
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "adherence to the Code does not constitute conclusive evidence of compliance with these obligations under the AI Act",
+            "source_section": "Page 2 Objectives"
+          },
+          {
+            "quote": "Signatories are encouraged to make publicly available and keep up-to-date a summary of their copyright policy",
+            "source_section": "Measure 1.1"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "AI Office",
+      "courts of Member States",
+      "Court of Justice of the European Union"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": "The Code itself does not impose penalties; non-compliance may give rise to liability under Union law on copyright and related rights. Underlying AI Act obligations (Articles 53 and 55) carry their own enforcement regime. Adherence to the Code does not constitute conclusive evidence of compliance with the AI Act.",
+    "implementation_notes": "This is the Copyright Chapter of the broader GPAI Code of Practice, intended to help Signatories demonstrate compliance with Article 53(1)(c) of the EU AI Act. Adherence is voluntary and does not constitute compliance with Union copyright law per se. Measures are proportionate to provider size, with SME/startup considerations. A dynamic list of copyright-infringing websites will be maintained on an EU website to assist compliance with Measure 1.2.",
+    "confidence": 0.9
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "innovation_enablement",
+      "consumer_public_safety"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.02,
+      "national_security": 0.02,
+      "economic_competitiveness": 0.1,
+      "fundamental_rights": 0.75,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.35,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.01
+    },
+    "rationale_summary": "The document is primarily framed around protecting fundamental rights—specifically intellectual property rights enshrined in EU law—as the basis for AI governance obligations. The overarching objective explicitly references 'a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law.' The substantive measures are devoted to ensuring AI providers respect copyright and related rights of rightsholders. A secondary innovation-enablement frame is present through references to supporting innovation and accommodating SMEs/startups. Consumer/public safety appears marginally through output safeguard requirements.",
+    "evidence_spans": [
+      {
+        "quote": "promote the uptake of human-centric and trustworthy artificial intelligence, while ensuring a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law",
+        "source_section": "Page 2"
+      },
+      {
+        "quote": "providers of general-purpose AI models on the Union market must put in place a policy to comply with Union law on copyright and related rights, and in particular to identify and comply with, including through state-of-the-art technologies, a reservation of rights expressed by rightsholders",
+        "source_section": "Page 3"
+      },
+      {
+        "quote": "provides for exclusive rights that are preventive in nature and thus is based on prior consent save where an exception or limitation applies",
+        "source_section": "Page 3"
+      },
+      {
+        "quote": "implement appropriate and proportionate technical safeguards to prevent their models from generating outputs that reproduce training content protected by Union law on copyright and related rights in an infringing manner",
+        "source_section": "Page 6"
+      },
+      {
+        "quote": "The commitments in this Chapter that require proportionate measures should be commensurate and proportionate to the size of providers, taking due account of the interests of SMEs, including startups.",
+        "source_section": "Page 3"
+      }
+    ]
+  }
+}

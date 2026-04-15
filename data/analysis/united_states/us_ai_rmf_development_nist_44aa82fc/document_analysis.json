@@ -1,0 +1,85 @@
+{
+  "source_id": "us_ai_rmf_development_nist_44aa82fc",
+  "title": "AI RMF Development | NIST",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "NIST Information Technology Laboratory (ITL)",
+    "document_type": "standards_guideline",
+    "binding_strength": "voluntary_commitment",
+    "publication_date": "2023-01-26",
+    "effective_date": "2023-01-26",
+    "covered_actors": [
+      "private sector organizations",
+      "public sector organizations",
+      "AI product developers",
+      "AI service providers",
+      "AI system evaluators"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "NIST's Information Technology Laboratory (ITL) has developed a framework to better manage risks to individuals, organizations, and society associated with artificial intelligence (AI)",
+            "source_section": "Introduction"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "improve the ability to incorporate trustworthiness considerations into the design, development, use, and evaluation of AI products, services, and systems",
+            "source_section": "Introduction"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "The NIST AI Risk Management Framework (AI RMF) is intended for voluntary use",
+            "source_section": "Introduction"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "The AI RMF is explicitly intended for voluntary use. It was developed through a consensus-driven, open, transparent, and collaborative process including RFIs, public comment periods, and workshops. Companion resources include the AI RMF Playbook (released March 30, 2023), Video Explainer, Roadmap, and Crosswalks.",
+    "confidence": 0.95
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "innovation_enablement",
+      "fundamental_rights"
+    ],
+    "frame_confidence": {
+      "consumer_public_safety": 0.55,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document frames AI governance primarily around managing risks to individuals, organizations, and society through trustworthiness considerations—a consumer and public safety orientation. Secondary frames include innovation enablement (voluntary use, supporting existing efforts) and fundamental rights (trustworthiness across design and deployment).",
+    "evidence_spans": [
+      {
+        "quote": "developed a framework to better manage risks to individuals, organizations, and society associated with artificial intelligence",
+        "source_section": "Overview"
+      },
+      {
+        "quote": "intended for voluntary use and to improve the ability to incorporate trustworthiness considerations into the design, development, use, and evaluation of AI products, services, and systems",
+        "source_section": "Overview"
+      }
+    ]
+  }
+}

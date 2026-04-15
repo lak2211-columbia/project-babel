@@ -1,0 +1,182 @@
+{
+  "source_id": "cn_new_generation_ai_plan_2017",
+  "title": "国务院关于印发新一代人工智能发展规划的通知",
+  "language": "zh",
+  "policy_extraction": {
+    "jurisdiction": "china",
+    "issuing_body": "国务院 (State Council of China)",
+    "document_type": "strategy_paper",
+    "binding_strength": "strategy_statement",
+    "publication_date": "2017-07-08",
+    "effective_date": null,
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "public_sector_use",
+      "employment",
+      "education",
+      "healthcare",
+      "finance",
+      "law_enforcement",
+      "defense"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "增强风险意识，重视风险评估和防控，强化前瞻预防和约束引导",
+            "source_section": "建立人工智能安全监管和评估体系"
+          },
+          {
+            "quote": "加强对人工智能潜在危害与收益的评估，构建人工智能复杂场景下突发事件的解决方案",
+            "source_section": "制定促进人工智能发展的法律法规和伦理规范"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "建立健全公开透明的人工智能监管体系，实行设计问责和应用监督并重的双层监管结构，实现对人工智能算法设计、产品开发和成果应用等的全流程监管",
+            "source_section": "建立人工智能安全监管和评估体系"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "实行设计问责和应用监督并重的双层监管结构",
+            "source_section": "建立人工智能安全监管和评估体系"
+          },
+          {
+            "quote": "研究",
+            "source_section": null
+          },
+          {
+            "quote": "建立追溯和问责制度，明确人工智能法律主体以及相关权利、义务和责任等",
+            "source_section": "制定促进人工智能发展的法律法规和伦理规范"
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "建设跨领域的人工智能测试平台，推动人工智能安全认证，评估人工智能产品和系统的关键性能",
+            "source_section": "建立人工智能安全监管和评估体系"
+          },
+          {
+            "quote": "建立人工智能算法与平台安全性测试模型及评估模型，研发人工智能算法与平台安全性测评工具集",
+            "source_section": "人工智能基础数据与安全检测平台"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "坚持安全性、可用性、互操作性、可追溯性原则，逐步建立并完善人工智能基础共性、互联互通、行业应用、网络安全、隐私保护等技术标准",
+            "source_section": "建立人工智能技术标准和知识产权体系"
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.5,
+        "evidence": [
+          {
+            "quote": "重点围绕自动驾驶、服务机器人等应用基础较好的细分领域，加快研究制定相关安全管理法规",
+            "source_section": "制定促进人工智能发展的法律法规和伦理规范"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "建立健全公开透明的人工智能监管体系，实行设计问责和应用监督并重的双层监管结构",
+            "source_section": "建立人工智能安全监管和评估体系"
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "促进人工智能行业和企业自律，切实加强管理，加大对数据滥用、侵犯个人隐私、违背道德伦理等行为的惩戒力度",
+            "source_section": "建立人工智能安全监管和评估体系"
+          }
+        ]
+      },
+      {
+        "label": "civil_penalty",
+        "confidence": 0.4,
+        "evidence": [
+          {
+            "quote": "加大对数据滥用、侵犯个人隐私、违背道德伦理等行为的惩戒力度",
+            "source_section": "建立人工智能安全监管和评估体系"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "This is China's 2017 New Generation AI Development Plan (新一代人工智能发展规划), a high-level national strategy document issued by the State Council. It is primarily a strategy/roadmap document with three-phase goals to 2030. While it directs ministries to develop laws, regulations, and standards, it does not itself constitute binding law. Safety and governance provisions are largely aspirational with implementation delegated to future rulemaking. The document explicitly calls for future development of AI laws, ethics frameworks, safety monitoring systems, and standards—meaning most enforcement mechanisms are anticipated rather than operative at time of publication. Confidence scores for enforcement mechanisms are conservative given this forward-looking character.",
+    "confidence": 0.88
+  },
+  "risk_framing": {
+    "dominant_frame": "economic_competitiveness",
+    "secondary_frames": [
+      "national_security",
+      "social_stability",
+      "innovation_enablement",
+      "labor_transition"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.05,
+      "national_security": 0.7,
+      "economic_competitiveness": 0.9,
+      "fundamental_rights": 0.2,
+      "social_stability": 0.5,
+      "innovation_enablement": 0.65,
+      "consumer_public_safety": 0.3,
+      "labor_transition": 0.4
+    },
+    "rationale_summary": "The document overwhelmingly frames AI governance through the lens of economic competitiveness and national strategic advantage. The core motivation is to seize a first-mover advantage in AI, build internationally competitive industries, and drive economic growth. National security is a strong secondary frame, with explicit references to maintaining strategic initiative in international AI competition and supporting national defense. Social stability, labor transition, and innovation enablement also appear as secondary concerns.",
+    "evidence_spans": [
+      {
+        "quote": "为抢抓人工智能发展的重大战略机遇，构筑我国人工智能发展的先发优势，加快建设创新型国家和世界科技强国",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "人工智能成为国际竞争的新焦点。人工智能是引领未来的战略性技术，世界主要发达国家把发展人工智能作为提升国家竞争力、维护国家安全的重大战略",
+        "source_section": "Situation Analysis"
+      },
+      {
+        "quote": "人工智能产业竞争力进入国际第一方阵",
+        "source_section": "Strategic Goals"
+      },
+      {
+        "quote": "人工智能核心产业规模超过1万亿元，带动相关产业规模超过10万亿元",
+        "source_section": "Strategic Goals 2030"
+      },
+      {
+        "quote": "以人工智能提升国防实力，保障和维护国家安全",
+        "source_section": "Overall Deployment"
+      },
+      {
+        "quote": "近期重点关注对就业的影响，远期重点考虑对社会伦理的影响，确保把人工智能发展规制在安全可控范围内",
+        "source_section": "Security Oversight"
+      }
+    ]
+  }
+}

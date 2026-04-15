@@ -1,0 +1,165 @@
+{
+  "source_id": "eu_ai_act_standardisation_page",
+  "title": "Standardisation of the AI Act",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission / CEN-CENELEC JTC 21",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "standards_guideline",
+    "publication_date": null,
+    "effective_date": null,
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "law_enforcement",
+      "healthcare",
+      "employment",
+      "education",
+      "finance",
+      "biometrics",
+      "public_sector_use"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "risk management",
+            "source_section": "Ten key areas for standards development"
+          },
+          {
+            "quote": "standards currently under development focused on setting methodologies for risk management",
+            "source_section": "Market benchmarking"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "record keeping",
+            "source_section": "Ten key areas for standards development"
+          },
+          {
+            "quote": "governance and quality of datasets",
+            "source_section": "Ten key areas for standards development"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "transparency",
+            "source_section": "Ten key areas for standards development"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "human oversight",
+            "source_section": "Ten key areas for standards development"
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "conformity assessment",
+            "source_section": "Ten key areas for standards development"
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "These requirements need to be fulfilled before placement on the market, ensuring high-risk AI systems are monitored throughout their lifecycle",
+            "source_section": "Introduction"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "market_access_restriction",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "The latest that the rules would become applicable is 2 December 2027 for high-risk AI systems covered in Annex III AI Act",
+            "source_section": "Support tools and entry into application"
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "the Commission assesses whether they meet the intended objectives and legal requirements of the AI Act. After this final step, the standards are referenced in the Official Journal of the EU",
+            "source_section": "Standards development process"
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "The application of standards remains voluntary. Providers can choose any other framework to demonstrate their compliance with the AI Act. However, harmonised standards referenced in the Official Journal of the EU provide legal certainty.",
+            "source_section": "Voluntary application"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "This page describes the EU AI Act standardisation process led by CEN/CENELEC JTC 21. Standards are voluntary but create a presumption of conformity. The first harmonised standard (prEN 18286) entered public enquiry on 30 October 2025. Application of high-risk AI rules is linked to availability of support tools, with a latest deadline of 2 December 2027 (Annex III) or 2 August 2028 (Annex I). International alignment with ISO/IEC SC 42 is a stated priority.",
+    "confidence": 0.88
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "economic_competitiveness",
+      "consumer_public_safety",
+      "fundamental_rights"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.02,
+      "national_security": 0.05,
+      "economic_competitiveness": 0.25,
+      "fundamental_rights": 0.1,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.4,
+      "consumer_public_safety": 0.12,
+      "labor_transition": 0.01
+    },
+    "rationale_summary": "The document primarily frames AI standardisation as enabling innovation and global competitiveness through harmonised standards that foster trust, reduce compliance costs, and position the EU as a global benchmark-setter. While safety and fundamental rights are mentioned as underlying concerns of the AI Act, the standardisation page's own reasoning emphasises how standards support innovation, market acceptance, and the EU's leadership role.",
+    "evidence_spans": [
+      {
+        "quote": "Harmonised standards will offer legal certainty under the AI Act, support innovation, and position the EU to set global benchmarks for trustworthy AI.",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "Innovation and competitiveness: European harmonised standards foster trust and market acceptance, enabling developers who adopt them to compete on a global scale",
+        "source_section": "Key benefits"
+      },
+      {
+        "quote": "By fostering the development of European harmonised standards, the EU can advance and lead the safe development and adoption of AI systems globally.",
+        "source_section": "International alignment"
+      },
+      {
+        "quote": "European harmonised standards provide a clear pathway to compliance for businesses of all sizes.",
+        "source_section": "Key benefits"
+      }
+    ]
+  }
+}

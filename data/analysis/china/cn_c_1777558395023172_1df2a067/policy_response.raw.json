@@ -1,0 +1,56 @@
+{
+  "metadata_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01CtAwyDk3GAZdCXBZXKiwrR",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"issuing_body\":\"国家网信办、国家发展改革委、工业和信息化部、公安部、市场监管总局\",\"document_type\":\"legislation\",\"binding_strength\":\"binding_law\",\"publication_date\":\"2026-04-10\",\"effective_date\":\"2026-07-15\",\"covered_actors\":[\"拟人化互动服务提供者\",\"网络用户\",\"未成年人\",\"老年人\"],\"covered_application_domains\":[\"general_purpose_models\",\"public_sector_use\",\"education\",\"healthcare\"],\"prohibited_practices\":[\"生成危害国家安全、荣誉和利益的内容\",\"煽动颠覆国家政权、推翻社会主义制度的活动\"],\"enforcement_authorities\":[\"国家网信办\",\"国家发展改革委\",\"工业和信息化部\",\"公安部\",\"市场监管总局\"],\"compliance_deadlines\":[\"2026-07-15施行\"],\"penalties_summary\":null,\"implementation_notes\":\"《办法》规定安全评估、算法备案制度，并指导推动人工智能沙箱安全服务平台建设；对拟人化互动服务实行包容审慎和分类分级监管。\",\"confidence\":0.88}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 3391,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 321,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  },
+  "controls_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01Rxt1r6Qo5YCZJ3auJY6Wzf",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"规定了安全评估、算法备案、指导推动人工智能沙箱安全服务平台建设等制度\",\"source_section\":\"办法主要内容\"}]},{\"label\":\"registration_licensing\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"安全评估、算法备案\",\"source_section\":\"办法主要内容\"}]},{\"label\":\"access_controls\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"未成年人、老年人权益保护和个人信息保护等义务\",\"source_section\":\"办法主要内容\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"规定拟人化互动服务提供者的安全管理义务\",\"source_section\":\"办法主要内容\"}]}],\"enforcement_mechanisms\":[{\"label\":\"regulatory_supervision\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"对拟人化互动服务实行包容审慎和分类分级监管\",\"source_section\":\"办法主要内容\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"算法备案\",\"source_section\":\"办法主要内容\"}]}]}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 3311,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 327,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  }
+}

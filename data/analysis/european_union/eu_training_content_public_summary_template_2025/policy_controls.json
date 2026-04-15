@@ -1,0 +1,50 @@
+{
+  "safety_requirements": [
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "Article 53(1)(d) AI Act requires all providers of general-purpose AI models to draw up and make publicly available a sufficiently detailed public summary of the content used for the training of the model",
+          "source_section": "Page 2"
+        },
+        {
+          "quote": "the objective of the Summary is to increase transparency on the content used for the training of general-purpose AI models, including text and data protected by law",
+          "source_section": "Page 3"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "The Template consists of three main sections: 1. General information... 2. List of data sources... 3. Relevant data processing aspects",
+          "source_section": "Page 5"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "Providers of general-purpose AI models shall […] draw up and make publicly available a sufficiently detailed summary about the content used for training of the general-purpose AI model, according to a template provided by the AI Office",
+          "source_section": "Page 3"
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "the AI Office to provide a template for the summary, which should be simple, effective, and allow the provider to provide the required summary in narrative form",
+          "source_section": "Page 3"
+        }
+      ]
+    }
+  ]
+}

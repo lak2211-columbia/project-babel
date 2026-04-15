@@ -1,0 +1,781 @@
+{
+  "manifest_version": "2026-04-14",
+  "jurisdiction": "china",
+  "description": "Official State Council, CAC, and sectoral sources for China's AI governance regime and implementation measures.",
+  "source_portals": [
+    {
+      "id": "cn_state_council_policy",
+      "name": "State Council Policy Database",
+      "issuing_body": "State Council of the People's Republic of China",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.gov.cn/zhengce/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "zh"
+      ],
+      "priority": "high",
+      "coverage_notes": "Central policy and normative-document repository for State Council AI plans and policy guidance.",
+      "tags": [
+        "state_council",
+        "policy",
+        "ai_governance"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.gov.cn/zhengce/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "人工智能",
+            "算法",
+            "生成式",
+            "深度合成",
+            "标识"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "cn_cac",
+      "name": "Cyberspace Administration of China",
+      "issuing_body": "Cyberspace Administration of China",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.cac.gov.cn/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "zh"
+      ],
+      "priority": "high",
+      "coverage_notes": "Primary source for algorithmic, generative AI, labeling, and platform-governance rules.",
+      "tags": [
+        "cac",
+        "content_governance",
+        "algorithmic_regulation"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.cac.gov.cn/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "人工智能",
+            "算法",
+            "生成式",
+            "深度合成",
+            "标识"
+          ],
+          "exclude_title_patterns": [
+            "AI视频",
+            "文旅",
+            "论坛"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "cn_english_state_council",
+      "name": "State Council English Site",
+      "issuing_body": "State Council of the People's Republic of China",
+      "issuer_type": "executive",
+      "canonical_url": "https://english.www.gov.cn/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "medium",
+      "coverage_notes": "English-language summaries and ministry announcements relevant to AI policy rollout.",
+      "tags": [
+        "state_council",
+        "english",
+        "policy_rollout"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://english.www.gov.cn/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_url_patterns": [
+            "artificial-intelligence",
+            "/ai"
+          ],
+          "include_title_patterns": [
+            "AI",
+            "artificial intelligence"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "cn_most_ai_governance",
+      "name": "Ministry of Science and Technology AI Governance",
+      "issuing_body": "Ministry of Science and Technology",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.most.gov.cn/kjbgz/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "zh"
+      ],
+      "priority": "high",
+      "coverage_notes": "Primary source for China's national AI governance principles, ethics norms, and related soft-law governance documents.",
+      "tags": [
+        "most",
+        "ethics",
+        "governance_principles"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.most.gov.cn/kjbgz/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "人工智能",
+            "伦理",
+            "治理"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "cn_tc260",
+      "name": "TC260 Cybersecurity Standards Committee",
+      "issuing_body": "National Cybersecurity Standardization Technical Committee",
+      "issuer_type": "standards_body",
+      "canonical_url": "https://www.tc260.org.cn/",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "zh"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official standards and technical governance materials for AI safety and content-labeling implementation.",
+      "tags": [
+        "tc260",
+        "standards",
+        "ai_safety"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.tc260.org.cn/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_url_patterns": [
+            ".pdf"
+          ],
+          "include_title_patterns": [
+            "人工智能",
+            "安全",
+            "标识",
+            "生成"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "cn_cma_ai_measures",
+      "name": "China Meteorological Administration AI Policy News",
+      "issuing_body": "China Meteorological Administration",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.cma.gov.cn/en/news/NewsEvents/news/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "low",
+      "coverage_notes": "Sectoral implementation rules showing how AI governance is being operationalized in regulated domains.",
+      "tags": [
+        "sectoral",
+        "meteorology",
+        "implementation"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.cma.gov.cn/en/news/NewsEvents/news/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "AI",
+            "artificial intelligence"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    }
+  ],
+  "seed_documents": [
+    {
+      "id": "cn_new_generation_ai_plan_2017",
+      "title": "国务院关于印发新一代人工智能发展规划的通知",
+      "issuing_body": "State Council of the People's Republic of China",
+      "canonical_url": "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "industrial_innovation",
+        "national_security",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2017-07-20",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_state_council_policy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Foundational national strategy establishing China's top-level AI development and governance trajectory.",
+      "tags": [
+        "national_strategy",
+        "state_council",
+        "foundational"
+      ]
+    },
+    {
+      "id": "cn_ai_governance_principles_2019",
+      "title": "新一代人工智能治理原则——发展负责任的人工智能",
+      "issuing_body": "National New Generation Artificial Intelligence Governance Professional Committee / Ministry of Science and Technology",
+      "canonical_url": "https://www.most.gov.cn/kjbgz/201906/t20190617_147107.html",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "frontier_gpai",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2019-06-17",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_most_ai_governance"
+      ],
+      "priority": "high",
+      "relevance_notes": "China's foundational AI governance principles document setting responsible-AI framing, including safety, privacy, fairness, and governance responsiveness.",
+      "tags": [
+        "governance_principles",
+        "ethics",
+        "responsible_ai"
+      ]
+    },
+    {
+      "id": "cn_ai_ethics_norms_2021",
+      "title": "新一代人工智能伦理规范",
+      "issuing_body": "National New Generation Artificial Intelligence Governance Professional Committee / Ministry of Science and Technology",
+      "canonical_url": "https://www.most.gov.cn/kjbgz/202109/t20210926_177063.html",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "civil_rights_nondiscrimination"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2021-09-26",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_most_ai_governance"
+      ],
+      "priority": "high",
+      "relevance_notes": "National ethics norms elaborating privacy, fairness, controllability, and responsibility across the AI lifecycle.",
+      "tags": [
+        "ethics",
+        "governance",
+        "soft_law"
+      ]
+    },
+    {
+      "id": "cn_algorithm_governance_guidance_2021",
+      "title": "关于加强互联网信息服务算法综合治理的指导意见",
+      "issuing_body": "Cyberspace Administration of China and allied ministries",
+      "canonical_url": "https://www.cac.gov.cn/2021-09/29/c_1634507915623047.htm",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2021-09-29",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac"
+      ],
+      "priority": "high",
+      "relevance_notes": "Top-level interagency guidance setting China's comprehensive algorithm-governance approach across security, fairness, transparency, and innovation.",
+      "tags": [
+        "algorithm_governance",
+        "interagency",
+        "guidance"
+      ]
+    },
+    {
+      "id": "cn_algorithm_recommendation_provisions_2021",
+      "title": "互联网信息服务算法推荐管理规定",
+      "issuing_body": "Cyberspace Administration of China / MIIT / MPS / SAMR",
+      "canonical_url": "https://www.gov.cn/zhengce/zhengceku/2022-01/04/content_5666429.htm",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2021-12-31",
+      "effective_date": "2022-03-01",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac",
+        "cn_state_council_policy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Core binding algorithm-regulation rule covering recommendation systems, filing, transparency, user rights, and prohibited manipulative practices.",
+      "tags": [
+        "algorithm_regulation",
+        "binding_rule",
+        "platform_governance"
+      ]
+    },
+    {
+      "id": "cn_deep_synthesis_provisions_2022",
+      "title": "互联网信息服务深度合成管理规定",
+      "issuing_body": "Cyberspace Administration of China / MIIT / MPS",
+      "canonical_url": "https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2022-11-25",
+      "effective_date": "2023-01-10",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac",
+        "cn_state_council_policy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Binding deep-synthesis rule establishing labeling, identity verification, security assessment, and content-control obligations for synthetic media services.",
+      "tags": [
+        "deep_synthesis",
+        "binding_rule",
+        "synthetic_media"
+      ]
+    },
+    {
+      "id": "cn_genai_interim_measures_2023",
+      "title": "生成式人工智能服务管理暂行办法",
+      "issuing_body": "Cyberspace Administration of China and six other ministries",
+      "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "frontier_gpai",
+        "platform_content_governance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2023-07-10",
+      "effective_date": "2023-08-15",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac",
+        "cn_state_council_policy"
+      ],
+      "priority": "high",
+      "relevance_notes": "China's core generative-AI regulation covering content security, training data, provider duties, filing, and public-facing service obligations.",
+      "tags": [
+        "generative_ai",
+        "binding_rule",
+        "provider_obligations"
+      ]
+    },
+    {
+      "id": "cn_ai_standardization_guide_2024",
+      "title": "国家人工智能产业综合标准化体系建设指南",
+      "issuing_body": "State Council policy database / relevant ministries",
+      "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202407/P020240702716282797987.pdf",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-07-02",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "cn_state_council_policy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official standardization guide showing how China is structuring AI technical and industrial governance.",
+      "tags": [
+        "standards",
+        "standardization",
+        "industrial_policy"
+      ]
+    },
+    {
+      "id": "cn_ai_safety_governance_framework_2024",
+      "title": "人工智能安全治理框架",
+      "issuing_body": "National Cybersecurity Standardization Technical Committee",
+      "canonical_url": "https://www.tc260.org.cn/upload/2024-09-09/1725849142029046390.pdf",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-09-09",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "cn_tc260"
+      ],
+      "priority": "high",
+      "relevance_notes": "High-signal national AI safety framework mapping risk sources, governance measures, and technical safeguards for safe development and deployment.",
+      "tags": [
+        "ai_safety",
+        "framework",
+        "risk_governance"
+      ]
+    },
+    {
+      "id": "cn_ai_labeling_draft_2024",
+      "title": "国家互联网信息办公室关于《人工智能生成合成内容标识办法（征求意见稿）》公开征求意见的通知",
+      "issuing_body": "Cyberspace Administration of China",
+      "canonical_url": "https://www.cac.gov.cn/2024-09/14/c_1728000676244628.htm",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "draft",
+      "publication_date": "2024-09-14",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official consultation notice for AI-generated synthetic content labeling rules.",
+      "tags": [
+        "labeling",
+        "generated_content",
+        "cac"
+      ]
+    },
+    {
+      "id": "cn_ai_content_labeling_measures_2025",
+      "title": "人工智能生成合成内容标识办法",
+      "issuing_body": "Cyberspace Administration of China / MIIT / MPS / NRTA",
+      "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-03-14",
+      "effective_date": "2025-09-01",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac",
+        "cn_state_council_policy",
+        "cn_tc260"
+      ],
+      "priority": "high",
+      "relevance_notes": "Binding AI content-labeling rule operationalizing disclosure and traceability obligations across generated synthetic content workflows.",
+      "tags": [
+        "labeling",
+        "generated_content",
+        "binding_rule"
+      ]
+    },
+    {
+      "id": "cn_ai_labeling_expert_interpretation_2025",
+      "title": "专家解读｜深化生成合成内容标识治理，完善人工智能技术安全体系",
+      "issuing_body": "Cyberspace Administration of China",
+      "canonical_url": "https://www.cac.gov.cn/2025-03/15/c_1743755860373970.htm",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-03-15",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Official interpretive explanation of China's AI-generated content labeling governance framework.",
+      "tags": [
+        "labeling",
+        "interpretation",
+        "generated_content"
+      ]
+    },
+    {
+      "id": "cn_ai_abuse_cleanup_2025",
+      "title": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+      "issuing_body": "Cyberspace Administration of China",
+      "canonical_url": "https://www.cac.gov.cn/2025-06/20/c_1752129980667315.htm",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-06-20",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Official enforcement campaign update targeting misuse of AI technologies and missing content labels.",
+      "tags": [
+        "enforcement",
+        "platform_governance",
+        "ai_abuse"
+      ]
+    },
+    {
+      "id": "cn_meteorological_ai_measures_2025",
+      "title": "Measures for Artificial Intelligence Meteorological Application Services",
+      "issuing_body": "China Meteorological Administration / Cyberspace Administration of China",
+      "canonical_url": "https://www.cma.gov.cn/en/news/NewsEvents/news/202504/t20250429_7035460.html",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "critical_infrastructure",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-04-29",
+      "effective_date": "2025-06-01",
+      "languages": [
+        "en",
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cma_ai_measures",
+        "cn_cac"
+      ],
+      "priority": "low",
+      "relevance_notes": "Illustrative sectoral AI rule showing deployment controls in a regulated public-service domain.",
+      "tags": [
+        "sectoral_regulation",
+        "meteorology",
+        "implementation"
+      ]
+    },
+    {
+      "id": "cn_anthropomorphic_interaction_measures_2026",
+      "title": "人工智能拟人化互动服务管理暂行办法",
+      "issuing_body": "Cyberspace Administration of China and allied ministries",
+      "canonical_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-04-10",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac"
+      ],
+      "priority": "high",
+      "relevance_notes": "New CAC-led interim measures governing anthropomorphic AI interaction services, extending China's AI safety and consumer-protection governance into agentic interaction design.",
+      "tags": [
+        "anthropomorphic_ai",
+        "binding_rule",
+        "interaction_governance"
+      ]
+    },
+    {
+      "id": "cn_anthropomorphic_interaction_measures_qa_2026",
+      "title": "《人工智能拟人化互动服务管理暂行办法》答记者问",
+      "issuing_body": "Cyberspace Administration of China",
+      "canonical_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395284407.htm",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-04-10",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Official explanatory Q&A clarifying policy intent, scope, and governance logic for the anthropomorphic interaction measures.",
+      "tags": [
+        "anthropomorphic_ai",
+        "official_interpretation",
+        "cac"
+      ]
+    },
+    {
+      "id": "cn_ai_drug_regulation_implementation_opinion_interpretation_2026",
+      "title": "《国家药监局关于“人工智能+药品监管”的实施意见》政策解读",
+      "issuing_body": "State Council / National Medical Products Administration",
+      "canonical_url": "https://www.gov.cn/zhengce/202604/content_7064589.htm",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "healthcare_medical_devices",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-04-03",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_state_council_policy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official State Council policy interpretation explaining the NMPA implementation opinion on using AI in drug regulation, adding sectoral regulatory framing and rollout context.",
+      "tags": [
+        "healthcare",
+        "drug_regulation",
+        "official_interpretation"
+      ]
+    },
+    {
+      "id": "cn_anthropomorphic_interaction_expert_interpretation_2026",
+      "title": "专家解读｜人工智能拟人化互动服务的制度指引",
+      "issuing_body": "Cyberspace Administration of China",
+      "canonical_url": "https://www.cac.gov.cn/2026-04/10/c_1777558285804391.htm",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-04-10",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Official expert interpretation of the anthropomorphic AI interaction measures, useful for enforcement rationale and scope framing beyond the rule text and Q&A.",
+      "tags": [
+        "anthropomorphic_ai",
+        "official_interpretation",
+        "cac"
+      ]
+    },
+    {
+      "id": "cn_c_1777558395023172_1df2a067",
+      "title": "国家网信办等五部门联合公布《人工智能拟人化互动服务管理暂行办法》_中央网络安全和信息化委员会办公室",
+      "issuing_body": "Cyberspace Administration of China",
+      "canonical_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-04-10",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_cac"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from cn_cac; role=primary_text; bucket=implementation_guidance; family=国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+      "tags": [
+        "cac",
+        "content_governance",
+        "algorithmic_regulation",
+        "primary_text",
+        "auto_promoted"
+      ]
+    }
+  ]
+}

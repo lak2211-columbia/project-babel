@@ -1,0 +1,1503 @@
+{
+  "manifest_version": "2026-04-14",
+  "jurisdiction": "japan",
+  "description": "Official Cabinet Secretariat, Cabinet Office, Digital Agency, METI, MIC, MEXT, PPC, MHLW, MAFF, CFA, and Cultural Affairs materials for Japan's AI governance approach.",
+  "source_portals": [
+    {
+      "id": "jp_cas_human_centric_ai",
+      "name": "Human-Centric AI Social Principles",
+      "issuing_body": "Cabinet Secretariat",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Cabinet Secretariat landing page for human-centric AI principles and related government materials.",
+      "tags": [
+        "cabinet_secretariat",
+        "principles",
+        "human_centric_ai"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_url_patterns": [
+            "jinkouchinou",
+            ".pdf"
+          ],
+          "include_title_patterns": [
+            "AI",
+            "人工知能"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_meti_press_ai",
+      "name": "METI AI Press Releases",
+      "issuing_body": "Ministry of Economy, Trade and Industry",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.meti.go.jp/english/press/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Press-release surface for AI guidelines, standards, and industry-governance announcements.",
+      "tags": [
+        "meti",
+        "press",
+        "industry_policy"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.meti.go.jp/english/press/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "AI",
+            "Artificial Intelligence"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_meti_ai_governance_docs",
+      "name": "METI AI Governance Study Materials",
+      "issuing_body": "Ministry of Economy, Trade and Industry",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/",
+      "portal_kind": "library",
+      "retrieval_strategy": "browser",
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Meeting materials and PDFs for METI's AI governance guidelines and related expert-group work.",
+      "tags": [
+        "meti",
+        "governance_guidelines",
+        "expert_group"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_url_patterns": [
+            "ai_shakai_jisso",
+            ".pdf",
+            "_report.html"
+          ],
+          "include_title_patterns": [
+            "AI",
+            "ガイドライン",
+            "Governance",
+            "Guidelines"
+          ],
+          "browser_required": true,
+          "browser_wait_for_selector": "body",
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_regulatory_sandbox",
+      "name": "Japan Regulatory Sandbox",
+      "issuing_body": "Cabinet Secretariat",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.cas.go.jp/jp/seisaku/s-portal/regulatorysandbox_e.html",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Official portal for experimental regulatory pathways relevant to AI deployment and innovation enablement.",
+      "tags": [
+        "sandbox",
+        "innovation",
+        "cabinet_secretariat"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.cas.go.jp/jp/seisaku/s-portal/regulatorysandbox_e.html",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "AI",
+            "artificial intelligence"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    },
+    {
+      "id": "jp_cao_ai_strategy",
+      "name": "Cabinet Office AI Strategy",
+      "issuing_body": "Cabinet Office",
+      "issuer_type": "executive",
+      "canonical_url": "https://www8.cao.go.jp/cstp/ai/index.html",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Central Cabinet Office hub for the AI Act, government AI guidelines, and the cross-ministry index of official AI guidance.",
+      "tags": [
+        "cabinet_office",
+        "ai_act",
+        "guidelines",
+        "cross_ministry"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www8.cao.go.jp/cstp/ai/index.html",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "ＡＩ法",
+            "人工知能",
+            "AI",
+            "指針",
+            "ガイドライン"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_digital_agency_ai",
+      "name": "Digital Agency AI Governance",
+      "issuing_body": "Digital Agency",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.digital.go.jp/councils/ai-advisory-board",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Government-wide administrative AI procurement, utilization, and governance guidance for ministries and agencies.",
+      "tags": [
+        "digital_agency",
+        "government_procurement",
+        "public_sector_ai"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.digital.go.jp/councils/ai-advisory-board",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "生成AI",
+            "ガイドライン",
+            "AI"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_mext_genai",
+      "name": "MEXT Generative AI Guidance",
+      "issuing_body": "Ministry of Education, Culture, Sports, Science and Technology",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.mext.go.jp/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja"
+      ],
+      "priority": "high",
+      "coverage_notes": "Education-sector guidance for generative AI use in schools, universities, and colleges of technology.",
+      "tags": [
+        "mext",
+        "education",
+        "generative_ai"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.mext.go.jp/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "生成AI",
+            "大学",
+            "高専",
+            "初等中等教育"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_bunka_copyright_ai",
+      "name": "Agency for Cultural Affairs AI Copyright Materials",
+      "issuing_body": "Agency for Cultural Affairs",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.bunka.go.jp/seisaku/chosakuken/index.html",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official copyright-law interpretations and explanatory materials relevant to generative AI.",
+      "tags": [
+        "copyright",
+        "culture",
+        "intellectual_property"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.bunka.go.jp/seisaku/chosakuken/index.html",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "AI",
+            "著作権"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_ppc_guidance",
+      "name": "Personal Information Protection Commission Guidance",
+      "issuing_body": "Personal Information Protection Commission",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.ppc.go.jp/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official privacy and personal-data guidance for generative AI services and AI deployment.",
+      "tags": [
+        "privacy",
+        "ppc",
+        "personal_data"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.ppc.go.jp/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "生成AI",
+            "個人情報",
+            "AI"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_cfa_genai",
+      "name": "Children and Families Agency Generative AI Materials",
+      "issuing_body": "Children and Families Agency",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.cfa.go.jp/councils/kodomo_seisaku_DX",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Operational guidance for generative AI use in child and family policy and services.",
+      "tags": [
+        "children",
+        "families",
+        "generative_ai"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.cfa.go.jp/councils/kodomo_seisaku_DX",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "生成AI",
+            "ハンドブック"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    },
+    {
+      "id": "jp_mhlw_ai_health_data",
+      "name": "MHLW AI Health Data Guidance",
+      "issuing_body": "Ministry of Health, Labour and Welfare",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.mhlw.go.jp/general/seido/kousei/i-kenkyu/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official guidance on medical digital data use for AI research and development.",
+      "tags": [
+        "healthcare",
+        "medical_data",
+        "ai_research"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.mhlw.go.jp/general/seido/kousei/i-kenkyu/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "AI",
+            "人工知能",
+            "医療デジタルデータ"
+          ],
+          "exclude_title_patterns": [
+            "受精胚",
+            "生殖補助",
+            "遺伝子治療",
+            "動物実験"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_maff_ai_data",
+      "name": "MAFF AI and Data Contract Guidance",
+      "issuing_body": "Ministry of Agriculture, Forestry and Fisheries",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.maff.go.jp/j/kanbo/tizai/brand/keiyaku.html",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Agriculture-sector AI and data contract guidance, including practical compliance expectations for smart agriculture.",
+      "tags": [
+        "agriculture",
+        "contracts",
+        "smart_agriculture"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.maff.go.jp/j/kanbo/tizai/brand/keiyaku.html",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "AI",
+            "データ",
+            "契約",
+            "ガイドライン"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_meti_data_contracts",
+      "name": "METI AI and Data Contract Guidance",
+      "issuing_body": "Ministry of Economy, Trade and Industry",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.meti.go.jp/policy/mono_info_service/connected_industries/sharing_and_utilization.html",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja"
+      ],
+      "priority": "high",
+      "coverage_notes": "Cross-sector contract guidance, checklists, and related legal reference material for AI and data use.",
+      "tags": [
+        "contracts",
+        "meti",
+        "data_governance"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.meti.go.jp/policy/mono_info_service/connected_industries/sharing_and_utilization.html",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "AI",
+            "データ",
+            "契約",
+            "チェックリスト"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "jp_meti_content_ai",
+      "name": "METI Content Industry AI Guidance",
+      "issuing_body": "Ministry of Economy, Trade and Industry",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.meti.go.jp/policy/mono_info_service/contents/aiguidebook.html",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ja"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Content-sector guidance for lawful and responsible generative AI use in creative production.",
+      "tags": [
+        "content_industry",
+        "generative_ai",
+        "meti"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.meti.go.jp/policy/mono_info_service/contents/aiguidebook.html",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "生成AI",
+            "ガイドブック"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    }
+  ],
+  "seed_documents": [
+    {
+      "id": "jp_social_principles_human_centric_ai",
+      "title": "Social Principles of Human-Centric AI",
+      "issuing_body": "Cabinet Secretariat",
+      "canonical_url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/pdf/humancentricai.pdf",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "industrial_innovation",
+        "civil_rights_nondiscrimination"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2019-02-15",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cas_human_centric_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Foundational statement of Japan's high-level AI governance principles and human-centric framing.",
+      "tags": [
+        "principles",
+        "human_centric_ai",
+        "strategy"
+      ]
+    },
+    {
+      "id": "jp_ai_governance_guidelines_2021",
+      "title": "Governance Guidelines for Implementation of AI Principles",
+      "issuing_body": "Ministry of Economy, Trade and Industry",
+      "canonical_url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20210709_9.pdf",
+      "retrieval_urls": [
+        "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/2021070902_report.html"
+      ],
+      "browser_required": true,
+      "browser_wait_for_selector": "body",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2021-07-09",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_meti_ai_governance_docs",
+        "jp_cas_human_centric_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Detailed non-binding governance guidance translating Japan's AI principles into action targets for business.",
+      "tags": [
+        "governance_guidelines",
+        "implementation",
+        "business"
+      ]
+    },
+    {
+      "id": "jp_ai_governance_ver_1_1_report",
+      "title": "AI Governance in Japan Ver. 1.1",
+      "issuing_body": "Ministry of Economy, Trade and Industry",
+      "canonical_url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20210709_8.pdf",
+      "retrieval_urls": [
+        "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/2021070901_report.html"
+      ],
+      "browser_required": true,
+      "browser_wait_for_selector": "body",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "industrial_innovation",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2021-07-09",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_meti_ai_governance_docs"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Report contextualizing Japan's governance posture and the role of non-binding guidance in AI oversight.",
+      "tags": [
+        "governance_model",
+        "implementation",
+        "strategy"
+      ]
+    },
+    {
+      "id": "jp_ai_guidelines_for_business_ver_1_0",
+      "title": "AI Guidelines for Business Ver 1.0 (Provisional Translation)",
+      "issuing_body": "Ministry of Economy, Trade and Industry / Ministry of Internal Affairs and Communications",
+      "canonical_url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20240419_9.pdf",
+      "retrieval_urls": [
+        "https://www.meti.go.jp/english/press/2024/0419_002.html"
+      ],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "industrial_innovation",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-04-19",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_meti_press_ai",
+        "jp_meti_ai_governance_docs"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official English provisional translation of Japan's consolidated business-facing AI guidance integrating prior R&D, utilization, and governance materials.",
+      "tags": [
+        "business_guidelines",
+        "english_translation",
+        "generative_ai",
+        "implementation"
+      ]
+    },
+    {
+      "id": "jp_ai_guidelines_for_business_pdf",
+      "title": "AI Guidelines for Business Ver 1.0 (PDF)",
+      "issuing_body": "Ministry of Economy, Trade and Industry / Ministry of Internal Affairs and Communications",
+      "canonical_url": "https://www.meti.go.jp/press/2024/04/20240419004/20240419004-1.pdf",
+      "retrieval_urls": [
+        "https://www.meti.go.jp/press/2024/04/20240419004/20240419004.html"
+      ],
+      "browser_required": true,
+      "browser_wait_for_selector": "body",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "industrial_innovation",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-04-19",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_meti_press_ai",
+        "jp_meti_ai_governance_docs"
+      ],
+      "priority": "high",
+      "relevance_notes": "Primary PDF text of Japan's integrated AI Guidelines for Business.",
+      "tags": [
+        "business_guidelines",
+        "primary_text",
+        "ja"
+      ]
+    },
+    {
+      "id": "jp_ai_act_2025_overview_page",
+      "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（ＡＩ法）",
+      "issuing_body": "Cabinet Office",
+      "canonical_url": "https://www8.cao.go.jp/cstp/ai/ai_hou_gaiyou.pdf",
+      "retrieval_urls": [
+        "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
+        "https://laws.e-gov.go.jp/law/507AC0000000053"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-09-12",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official Cabinet Office overview PDF for Japan's 2025 AI Act, paired with the e-Gov law text for statutory verification.",
+      "tags": [
+        "ai_act",
+        "cabinet_office",
+        "overview"
+      ]
+    },
+    {
+      "id": "jp_ai_act_2025_overview_en_pdf",
+      "title": "the AI Act (Overview) (Provisional Translation)",
+      "issuing_body": "Cabinet Office",
+      "canonical_url": "https://www8.cao.go.jp/cstp/ai/ai_hou_gaiyou_en.pdf",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-09-12",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official English overview of Japan's AI Act, useful for cross-jurisdictional comparison of the law's scope and governance architecture.",
+      "tags": [
+        "ai_act",
+        "overview",
+        "english_translation"
+      ]
+    },
+    {
+      "id": "jp_ai_guideline_2025_page",
+      "title": "人工知能関連技術の研究開発及び活用の適正性確保に関する指針",
+      "issuing_body": "Cabinet Office",
+      "canonical_url": "https://www8.cao.go.jp/cstp/ai/ai_guideline/ai_gl_2025.pdf",
+      "retrieval_urls": [
+        "https://www8.cao.go.jp/cstp/ai/ai_guideline/ai_guideline.html"
+      ],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "industrial_innovation",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-12-19",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official full-text Cabinet Office PDF for the 2025 AI Guideline, capturing the operative cross-ministry guidance rather than the download hub page.",
+      "tags": [
+        "guideline",
+        "cabinet_office",
+        "cross_ministry"
+      ]
+    },
+    {
+      "id": "jp_ai_guideline_2025_en_pdf",
+      "title": "Guidelines for Ensuring the Proper Development and Use of AI-Related Technologies (Provisional Translation)",
+      "issuing_body": "Cabinet Office",
+      "canonical_url": "https://www8.cao.go.jp/cstp/ai/ai_guideline/ai_gl_eng_20260116.pdf",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "industrial_innovation",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-01-16",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official English translation of Japan's 2025 AI Guideline, covering the government's risk-management and proper-use expectations.",
+      "tags": [
+        "guideline",
+        "english_translation",
+        "ai_governance"
+      ]
+    },
+    {
+      "id": "jp_admin_genai_procurement_guideline_2025",
+      "title": "行政の進化と革新のための生成AIの調達・利活用に係るガイドライン",
+      "issuing_body": "Digital Agency / Digital Society Promotion Council Secretariat",
+      "canonical_url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/80419aea/20250527_resources_standard_guidelines_guideline_01.pdf",
+      "retrieval_urls": [
+        "https://www.digital.go.jp/news/3579c42d-b11c-4756-b66e-3d3e35175623"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "public_sector_procurement",
+        "public_sector_governance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-05-27",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_digital_agency_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Binding-style normative guidance for Japanese government procurement and use of generative AI, including governance roles, risk controls, and ministry compliance expectations.",
+      "tags": [
+        "public_sector_use",
+        "procurement",
+        "generative_ai",
+        "digital_agency"
+      ]
+    },
+    {
+      "id": "jp_school_genai_guideline_ver_2_2024",
+      "title": "初等中等教育段階における生成AIの利活用に関するガイドライン",
+      "issuing_body": "Ministry of Education, Culture, Sports, Science and Technology",
+      "canonical_url": "https://www.mext.go.jp/content/20241226-mxt_shuukyo02-000030823_001.pdf",
+      "retrieval_urls": [],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "education",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-12-26",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_mext_genai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Detailed school-sector guidance for teacher, student, and education-board use of generative AI, including risk examples and checklists.",
+      "tags": [
+        "education",
+        "schools",
+        "generative_ai",
+        "checklists"
+      ]
+    },
+    {
+      "id": "jp_university_genai_teaching_guidance_2023",
+      "title": "大学・高専における生成AIの教学面の取扱いについて（周知）",
+      "issuing_body": "Ministry of Education, Culture, Sports, Science and Technology",
+      "canonical_url": "https://www.mext.go.jp/content/20230714-mxt_senmon01-000030762_1.pdf",
+      "retrieval_urls": [
+        "https://www.mext.go.jp/b_menu/houdou/2023/mext_01260.html"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "education",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2023-07-13",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_mext_genai"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Higher-education guidance describing expected handling of generative AI in teaching and learning for universities and colleges of technology.",
+      "tags": [
+        "higher_education",
+        "universities",
+        "generative_ai"
+      ]
+    },
+    {
+      "id": "jp_ai_copyright_thinking_2024",
+      "title": "ＡＩと著作権に関する考え方について",
+      "issuing_body": "Agency for Cultural Affairs",
+      "canonical_url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/pdf/94037901_01.pdf",
+      "retrieval_urls": [],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "copyright_ip",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-03-15",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_bunka_copyright_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official cultural-agency interpretation of how copyright law applies to AI training and outputs, central to Japan's rights-based AI governance layer.",
+      "tags": [
+        "copyright",
+        "intellectual_property",
+        "generative_ai"
+      ]
+    },
+    {
+      "id": "jp_genai_privacy_alert_2023",
+      "title": "生成AIサービスの利用に関する注意喚起等について",
+      "issuing_body": "Personal Information Protection Commission",
+      "canonical_url": "https://www.ppc.go.jp/files/pdf/230602_alert_generative_AI_service.pdf",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "privacy_data_protection",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2023-06-02",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_ppc_guidance"
+      ],
+      "priority": "high",
+      "relevance_notes": "Privacy-regulator alert on generative AI service use, covering personal-data handling risks and user/provider precautions.",
+      "tags": [
+        "privacy",
+        "personal_data",
+        "generative_ai"
+      ]
+    },
+    {
+      "id": "jp_childcare_genai_handbook_2025",
+      "title": "生成AIの導入・活用に向けた実践ハンドブック",
+      "issuing_body": "Children and Families Agency",
+      "canonical_url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/c1890510-04d4-497b-9e23-a7f514016c7d/04f2c133/20250709_councils_kodomo_seisaku_DX_40.pdf",
+      "retrieval_urls": [],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "education",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-07-09",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cfa_genai"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Operational handbook for introducing and using generative AI in child and family policy contexts, including practical implementation concerns.",
+      "tags": [
+        "children",
+        "families",
+        "operations",
+        "generative_ai"
+      ]
+    },
+    {
+      "id": "jp_medical_digital_data_ai_guideline_2024",
+      "title": "医療デジタルデータのAI研究開発等への利活用に係るガイドライン",
+      "issuing_body": "Ministry of Health, Labour and Welfare",
+      "canonical_url": "https://www.mhlw.go.jp/content/001310044.pdf",
+      "retrieval_urls": [],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "healthcare_medical_devices",
+        "privacy_data_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-10-01",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_mhlw_ai_health_data"
+      ],
+      "priority": "high",
+      "relevance_notes": "Healthcare-sector guidance for lawful and appropriate use of medical digital data in AI research and development.",
+      "tags": [
+        "healthcare",
+        "medical_data",
+        "ai_research",
+        "privacy"
+      ]
+    },
+    {
+      "id": "jp_ai_data_contract_guidelines_1_1_2019",
+      "title": "AI・データの利用に関する契約ガイドライン 1.1版（全体版）",
+      "issuing_body": "Ministry of Economy, Trade and Industry",
+      "canonical_url": "https://www.meti.go.jp/policy/mono_info_service/connected_industries/sharing_and_utilization/20200619001.pdf",
+      "retrieval_urls": [
+        "https://www.meti.go.jp/policy/mono_info_service/connected_industries/sharing_and_utilization.html"
+      ],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "industrial_innovation",
+        "public_sector_procurement"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2019-12-01",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_meti_data_contracts"
+      ],
+      "priority": "high",
+      "relevance_notes": "Cross-sector contract guidance on AI and data use, including allocation of rights, responsibilities, and acceptable contractual structures.",
+      "tags": [
+        "contracts",
+        "data_governance",
+        "cross_sector"
+      ]
+    },
+    {
+      "id": "jp_ai_contract_checklist_2025",
+      "title": "AIの利用・開発に関する契約チェックリスト",
+      "issuing_body": "Ministry of Economy, Trade and Industry",
+      "canonical_url": "https://www.meti.go.jp/policy/mono_info_service/connected_industries/sharing_and_utilization/20250218003-ar.pdf",
+      "retrieval_urls": [
+        "https://www.meti.go.jp/policy/mono_info_service/connected_industries/sharing_and_utilization.html"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "industrial_innovation",
+        "public_sector_procurement"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-02-18",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_meti_data_contracts"
+      ],
+      "priority": "high",
+      "relevance_notes": "Practical contract checklist for allocating benefits, data-use rights, and risks in AI service deployment and development.",
+      "tags": [
+        "contracts",
+        "checklist",
+        "deployment",
+        "ai_services"
+      ]
+    },
+    {
+      "id": "jp_content_genai_guidebook_2024",
+      "title": "コンテンツ制作のための生成AI利活用ガイドブック",
+      "issuing_body": "Ministry of Economy, Trade and Industry",
+      "canonical_url": "https://www.meti.go.jp/policy/mono_info_service/contents/ai_guidebook_set.pdf",
+      "retrieval_urls": [
+        "https://www.meti.go.jp/policy/mono_info_service/contents/aiguidebook.html"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "copyright_ip",
+        "industrial_innovation",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-07-05",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_meti_content_ai"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Content-sector guidebook covering practical and legal considerations for generative AI use in creative production.",
+      "tags": [
+        "content_industry",
+        "copyright",
+        "generative_ai"
+      ]
+    },
+    {
+      "id": "jp_agri_ai_data_contract_guideline_2020",
+      "title": "農業分野におけるAI・データに関する契約ガイドライン～農業分野のノウハウの保護とデータ利活用促進のために～",
+      "issuing_body": "Ministry of Agriculture, Forestry and Fisheries",
+      "canonical_url": "https://www.maff.go.jp/j/kanbo/tizai/brand/attach/pdf/keiyaku-1.pdf",
+      "retrieval_urls": [
+        "https://www.maff.go.jp/j/kanbo/tizai/brand/keiyaku.html",
+        "https://www.maff.go.jp/j/kanbo/tizai/brand/attach/pdf/keiyaku-10.pdf",
+        "https://www.maff.go.jp/j/kanbo/tizai/brand/attach/pdf/keiyaku-2.pdf",
+        "https://www.maff.go.jp/j/kanbo/tizai/brand/attach/pdf/keiyaku-5.pdf"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "industrial_innovation",
+        "public_sector_procurement"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2020-03-12",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_maff_ai_data"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Agriculture-sector AI and data contract guidance linking smart-agriculture deployment to data protection and contract compliance; the source registry tracks the primary know-how volume plus the hub page and companion data-use volumes.",
+      "tags": [
+        "agriculture",
+        "contracts",
+        "smart_agriculture",
+        "data_governance"
+      ]
+    },
+    {
+      "id": "jp_medical_digital_data_ai_guideline_notice_2024",
+      "title": "「医療デジタルデータの AI 研究開発等への利活用に係るガイドライン」について",
+      "issuing_body": "Ministry of Health, Labour and Welfare",
+      "canonical_url": "https://www.mhlw.go.jp/content/001310039.pdf",
+      "retrieval_urls": [
+        "https://www.mhlw.go.jp/general/seido/kousei/i-kenkyu/"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "healthcare_medical_devices",
+        "privacy_data_protection",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-09-30",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_mhlw_ai_health_data"
+      ],
+      "priority": "high",
+      "relevance_notes": "MHLW cover notice issuing the medical digital data AI guideline and clarifying its formal administrative context.",
+      "tags": [
+        "healthcare",
+        "medical_data",
+        "ai_research",
+        "notice"
+      ]
+    },
+    {
+      "id": "jp_medical_digital_data_ai_guideline_points_2024",
+      "title": "「医療デジタルデータの AI 研究開発等への利活用に係るガイドライン」の留意点について",
+      "issuing_body": "Ministry of Health, Labour and Welfare",
+      "canonical_url": "https://www.mhlw.go.jp/content/001359625.pdf",
+      "retrieval_urls": [
+        "https://www.mhlw.go.jp/general/seido/kousei/i-kenkyu/"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "healthcare_medical_devices",
+        "privacy_data_protection",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-12-19",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_mhlw_ai_health_data"
+      ],
+      "priority": "high",
+      "relevance_notes": "Follow-up MHLW note highlighting practical interpretive points for applying the medical digital data AI guideline.",
+      "tags": [
+        "healthcare",
+        "medical_data",
+        "ai_research",
+        "implementation"
+      ]
+    },
+    {
+      "id": "jp_basic_ai_plan_page",
+      "title": "人工知能基本計画",
+      "issuing_body": "Cabinet Office",
+      "canonical_url": "https://www8.cao.go.jp/cstp/ai/ai_plan/aiplan_20251223.pdf",
+      "retrieval_urls": [
+        "https://www8.cao.go.jp/cstp/ai/ai_plan/ai_plan.html"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "frontier_gpai",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-12-23",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official Cabinet Office PDF of Japan's Basic AI Plan, anchoring the government's national AI policy direction and implementation roadmap.",
+      "tags": [
+        "ai_plan",
+        "national_strategy",
+        "cabinet_office"
+      ]
+    },
+    {
+      "id": "jp_ai_senryaku_5eb91d1a",
+      "title": "第14回 ＡＩ戦略会議 議事要旨",
+      "issuing_body": "Cabinet Office",
+      "canonical_url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/14kai/gijiyoushi.pdf",
+      "retrieval_urls": [
+        "https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-06-02",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official minutes of the 14th AI Strategy Council meeting, documenting current Cabinet Office coordination on Japan's AI law and the 2025 AI strategy agenda.",
+      "tags": [
+        "cabinet_office",
+        "ai_law",
+        "meeting_minutes",
+        "cross_ministry",
+        "implementation"
+      ]
+    },
+    {
+      "id": "jp_ai_68c2d8ca",
+      "title": "ＡＩ戦略推進関係省庁会議（第2回）議事要旨",
+      "issuing_body": "Cabinet Office",
+      "canonical_url": "https://www8.cao.go.jp/cstp/ai/ai_kankeishoutyou/2kai/gijiyoushi.pdf",
+      "retrieval_urls": [
+        "https://www8.cao.go.jp/cstp/ai/ai_kankeishoutyou/ai_kankeishoutyou.html"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-05-14",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official minutes of the inter-ministerial AI Strategy Promotion meeting coordinating cross-government implementation work.",
+      "tags": [
+        "cabinet_office",
+        "meeting_minutes",
+        "cross_ministry",
+        "implementation"
+      ]
+    },
+    {
+      "id": "jp_kaigi_3537a511",
+      "title": "ＡＩ戦略 2022",
+      "issuing_body": "Cabinet Office",
+      "canonical_url": "https://www8.cao.go.jp/cstp/ai/aistrategy2022_honbun.pdf",
+      "retrieval_urls": [
+        "https://www8.cao.go.jp/cstp/ai/senryaku/kaigi.html"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2022-04-22",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Core national AI Strategy 2022 document setting Japan's government-wide AI policy direction, implementation priorities, and risk framing.",
+      "tags": [
+        "cabinet_office",
+        "national_strategy",
+        "cross_ministry"
+      ]
+    },
+    {
+      "id": "jp_index_12711198",
+      "title": "人工知能技術戦略実行計画",
+      "issuing_body": "Cabinet Office",
+      "canonical_url": "https://www8.cao.go.jp/cstp/tyousakai/jinkochino/keikaku.pdf",
+      "retrieval_urls": [
+        "https://www8.cao.go.jp/cstp/tyousakai/jinkochino/index.html"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2018-08-17",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Execution plan for Japan's AI technology strategy, translating high-level national strategy into implementation targets and timelines.",
+      "tags": [
+        "cabinet_office",
+        "implementation_plan",
+        "cross_ministry"
+      ]
+    },
+    {
+      "id": "jp_ai_expert_panel_c4f43cef",
+      "title": "人工知能戦略専門調査会の設置について",
+      "issuing_body": "Cabinet Office",
+      "canonical_url": "https://www8.cao.go.jp/cstp/ai/ai_expert_panel/1kai/ai_ep_settigami.pdf",
+      "retrieval_urls": [
+        "https://www8.cao.go.jp/cstp/ai/ai_expert_panel/ai_expert_panel.html"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-09-12",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Cabinet Office document establishing the AI Strategy Expert Panel responsible for advising on AI-law guidance, planning, and research.",
+      "tags": [
+        "cabinet_office",
+        "expert_panel",
+        "cross_ministry"
+      ]
+    },
+    {
+      "id": "jp_ai_72333136",
+      "title": "生成AIの導入・活用に向けた実践ハンドブック 実証結果報告書",
+      "issuing_body": "Children and Families Agency",
+      "canonical_url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/c1890510-04d4-497b-9e23-a7f514016c7d/5d4c0283/20250813_councils_kodomo_seisaku_DX_43.pdf",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "platform_content_governance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-08-13",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cfa_genai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from jp_cfa_genai; role=primary_text; bucket=implementation_guidance; family=生成aiの導入・活用に向けた実践ハンドブック 実証結果報告書 8 4mb",
+      "tags": [
+        "children",
+        "families",
+        "generative_ai",
+        "primary_text",
+        "auto_promoted"
+      ]
+    },
+    {
+      "id": "jp_ai_pdf_80kb_7e18f8d0",
+      "title": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF：80KB）",
+      "issuing_body": "Cabinet Secretariat",
+      "canonical_url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/pdf/aigensoku.pdf",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2019-04-05",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_cas_human_centric_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from jp_cas_human_centric_ai; role=primary_text; bucket=implementation_guidance; family=人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+      "tags": [
+        "cabinet_secretariat",
+        "principles",
+        "human_centric_ai",
+        "primary_text",
+        "auto_promoted"
+      ]
+    },
+    {
+      "id": "jp_ai_q_a_pdf_493kb_1812c77d",
+      "title": "「農業分野におけるAI・データに関する契約ガイドライン」に関するQ＆A(PDF : 493KB)",
+      "issuing_body": "Ministry of Agriculture, Forestry and Fisheries",
+      "canonical_url": "https://www.maff.go.jp/j/kanbo/tizai/brand/attach/pdf/keiyaku-19.pdf",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "industrial_innovation",
+        "public_sector_procurement"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-03-29",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_maff_ai_data"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Practical Q&A companion to MAFF's agriculture-sector AI and data contract guideline, clarifying expected contractual treatment of AI, data use, and smart-agriculture deployments.",
+      "tags": [
+        "agriculture",
+        "contracts",
+        "smart_agriculture",
+        "data_governance",
+        "faq"
+      ]
+    },
+    {
+      "id": "jp_jp_bunka_copyright_ai_0a336ada",
+      "title": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について（令和8年3月24日）",
+      "issuing_body": "Agency for Cultural Affairs",
+      "canonical_url": "https://www.bunka.go.jp/seisaku/chosakuken/pdf/94350404_01.pdf",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "copyright_ip",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-03-25",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_bunka_copyright_ai"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Agency for Cultural Affairs interpretation clarifying how Japanese copyright-law provisions apply in light of the digital principles, with direct relevance to generative AI and training-use questions.",
+      "tags": [
+        "copyright",
+        "culture",
+        "intellectual_property",
+        "generative_ai",
+        "interpretation"
+      ]
+    }
+  ]
+}

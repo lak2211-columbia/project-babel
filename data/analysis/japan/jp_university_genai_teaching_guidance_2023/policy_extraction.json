@@ -1,0 +1,68 @@
+{
+  "jurisdiction": "japan",
+  "issuing_body": "文部科学省 高等教育局 専門教育課・大学教育・入試課 (Ministry of Education, Culture, Sports, Science and Technology)",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "regulatory_guidance",
+  "publication_date": "2023-07-13",
+  "effective_date": null,
+  "covered_application_domains": [
+    "education",
+    "general_purpose_models"
+  ],
+  "safety_requirements": [
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "生成 AI を利活用した場合には、適切に学修成果を評価するため、利活用した旨や利活用した生成 AI の種類・箇所等を明記させること",
+          "source_section": "留意すべき観点"
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "個々の教育の目的・内容や下記の留意すべき観点等を踏まえ、生成 AI の利活用可否や利活用不可の場面でこれに反した行為を行った際の措置等を含む対応を検討し",
+          "source_section": "利活用可否の検討"
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "quote": "機密情報や個人情報等を安易に生成 AI に入力することは避けることが必要",
+          "source_section": "機密情報や個人情報の流出・漏洩等の可能性"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "各大学・高専においては、本内容を参考にしつつ、行われている教育の実態や生成 AI に関する最新動向等を踏まえ、主体的・継続的に指針等の見直し",
+          "source_section": "基本的な考え方"
+        }
+      ]
+    },
+    {
+      "label": "none_specified",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "適切な対応を図っていただきますようお願いします",
+          "source_section": "周知文"
+        }
+      ]
+    }
+  ],
+  "implementation_notes": "This is a non-binding circular (事務連絡) from MEXT providing guidance to universities and colleges on handling generative AI in teaching. It does not impose legal obligations but strongly encourages institutions to develop their own guidelines. The document is advisory in nature, using language like '望ましい' (desirable) and 'お願いします' (request). No penalties or formal enforcement mechanisms are specified.",
+  "confidence": 0.88
+}

@@ -1,0 +1,134 @@
+{
+  "source_id": "kr_public_sector_ai_privacy_strengthening_2025",
+  "title": "공공기관 인공지능 활용 시 개인정보 보호 강화된다",
+  "language": "ko",
+  "policy_extraction": {
+    "jurisdiction": "south_korea",
+    "issuing_body": "개인정보보호위원회 (Personal Information Protection Commission)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "binding_law",
+    "publication_date": "2025-09-04",
+    "effective_date": "2025-09-05",
+    "covered_application_domains": [
+      "public_sector_use",
+      "general_purpose_models"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "공공기관은 일정 규모 이상 개인정보 파일을 구축‧운영하거나 변경할 경우 영향평가를 의무적으로 실시해야 한다",
+            "source_section": "개인정보 영향평가 의무"
+          },
+          {
+            "quote": "인공지능 시스템 학습 및 개발, 인공지능 시스템 운영 및 관리 등 2개 세부 평가분야를 신설",
+            "source_section": "고시 개정 내용"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "AI 학습용 데이터의 보유 및 파기를 명확히 규정하고 있는지 등을 검토하도록 했다",
+            "source_section": "인공지능 시스템 학습 및 개발"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "생성형 AI 서비스 제공시 허용되는 이용 방침(Acceptable Use Policy; AUP) 제공",
+            "source_section": "인공지능 시스템 운영 및 관리"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "생성형 AI 시스템의 부적절한 답변, 개인정보 유·노출에 대한 신고 기능 마련 등 정보주체 권리보장 방안 수립·시행",
+            "source_section": "인공지능 시스템 운영 및 관리"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "AI 개발 및 운영주체 간 책임성 명확화",
+            "source_section": "인공지능 시스템 운영 및 관리"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "민감정보·14세 미만 아동정보 등이 불필요하게 포함되지 않는지",
+            "source_section": "인공지능 시스템 학습 및 개발"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "개인정보보호위원회(위원장 고학수, 이하 '개인정보위')는 9월 3일(수) 제19회 전체회의를 개최하고, 「개인정보 영향평가에 관한 고시」 개정안을 의결하였다",
+            "source_section": "개요"
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "공공기관은 일정 규모 이상 개인정보 파일을 구축‧운영하거나 변경할 경우 영향평가를 의무적으로 실시해야 한다",
+            "source_section": "영향평가 의무"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "This regulatory guidance amends the 'Notification on Personal Information Impact Assessment' to add AI-specific evaluation domains for public sector entities. The assessment criteria are mandatory for public sector organizations above specified thresholds, but the document notes the criteria can also serve as voluntary reference for private sector entities. The two new evaluation domains cover AI system training/development and AI system operation/management. No explicit civil or criminal penalties are mentioned in this press release; enforcement is primarily through mandatory impact assessment obligations.",
+    "confidence": 0.88
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "social_stability"
+    ],
+    "frame_confidence": {
+      "fundamental_rights": 0.82,
+      "consumer_public_safety": 0.55,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document centers on protecting personal information rights of data subjects when public institutions deploy AI. The governance justification is framed around preventing privacy violations, ensuring legal bases for data processing, and protecting sensitive groups such as children—core fundamental rights concerns under Korea's Personal Information Protection Act.",
+    "evidence_spans": [
+      {
+        "quote": "개인정보 영향평가는 개인정보 처리가 필요한 사업 추진 시 사전에 개인정보에 미치는 영향을 분석하고 개선방안을 수립하여 개인정보 침해사고를 예방하는 제도이다",
+        "source_section": "본문"
+      },
+      {
+        "quote": "민감정보·14세 미만 아동정보 등이 불필요하게 포함되지 않는지",
+        "source_section": "평가항목"
+      },
+      {
+        "quote": "정보주체 권리보장 방안 수립·시행을 주요 평가기준으로 제시했다",
+        "source_section": "운영 및 관리"
+      }
+    ]
+  }
+}

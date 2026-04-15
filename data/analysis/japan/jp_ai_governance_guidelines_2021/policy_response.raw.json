@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01AmQc4h1qhzD7HZ32wGgGbz",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"jurisdiction\":\"japan\",\"issuing_body\":\"Ministry of Economy, Trade and Industry (METI) - Expert Group on How AI Principles Should be Implemented, AI Governance Guidelines WG\",\"document_type\":\"standards_guideline\",\"binding_strength\":\"voluntary_commitment\",\"publication_date\":\"2021-07-09\",\"effective_date\":null,\"covered_application_domains\":[\"general_purpose_models\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"Understanding positive and negative impacts that AI systems may have\",\"source_section\":\"C.1 CONDITIONS AND RISKS ANALYSIS\"},{\"quote\":\"Re-implementing Action Targets 1-1 to 1-3 in a timely manner\",\"source_section\":\"C.6 RE-ANALYSIS OF CONDITIONS AND RISKS\"}]},{\"label\":\"incident_reporting\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"Reducing incident-related burdens on users by preventing incidents and through early response\",\"source_section\":\"C.3 SYSTEM DESIGN\"},{\"quote\":\"Considering in advance actions to take in response to incidents/disputes\",\"source_section\":\"C.3 SYSTEM DESIGN\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"Ensuring readiness for explanation about implementation status of AI management systems\",\"source_section\":\"C.4 IMPLEMENTATION\"},{\"quote\":\"Considering proactively disclosing ranking implementation of AI governance as non-financial information\",\"source_section\":\"C.4 IMPLEMENTATION\"}]},{\"label\":\"human_oversight\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"Improving literacy of human resources responsible for AI management systems\",\"source_section\":\"C.3 SYSTEM DESIGN\"},{\"quote\":\"Verifying an AI management system works appropriately\",\"source_section\":\"C.5 EVALUATION\"},{\"quote\":\"Considering seeking feedback from outside stakeholders\",\"source_section\":\"C.5 EVALUATION\"}]},{\"label\":\"model_documentation\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"Ensuring readiness for explanation about operating status of individual AI systems\",\"source_section\":\"C.4 IMPLEMENTATION\"}]}],\"enforcement_mechanisms\":[{\"label\":\"none_specified\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"The Guidelines themselves are not legally binding.\",\"source_section\":\"2. Legal Effect of the Guidelines\"},{\"quote\":\"the Guidelines are also expected to support company voluntary efforts\",\"source_section\":\"2. Legal Effect of the Guidelines\"}]},{\"label\":\"soft_enforcement\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"widely shared material that is referred to by AI companies who are involved in AI business, typically the development and operation of AI systems, in their business transactions\",\"source_section\":\"2. Legal Effect of the Guidelines\"}]}],\"implementation_notes\":\"Document is explicitly non-binding (Ver. 1.0). It is framed as a voluntary guideline supporting METI's Social Principles of Human-centric AI. Action targets are described as general objectives for all AI companies, while implementation examples are discretionary. The document is intended as a living document subject to agile governance revision.\",\"confidence\":0.88}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 4724,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 711,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

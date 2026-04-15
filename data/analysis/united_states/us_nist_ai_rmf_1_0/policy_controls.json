@@ -1,0 +1,144 @@
+{
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "AI risk management efforts should prioritize the minimization of potential negative impacts",
+          "source_section": "Page 19"
+        },
+        {
+          "quote": "The AI system is evaluated regularly for safety risks – as identified in the MAP function. The AI system to be deployed is demonstrated to be safe, its residual negative risk does not exceed the risk tolerance",
+          "source_section": "Page 35"
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "AI systems should be tested before their deployment and regularly while in operation.",
+          "source_section": "Page 33"
+        },
+        {
+          "quote": "TEVV tasks for deployment include system validation and integration in production, with testing, and recalibration",
+          "source_section": "Page 41"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "may need to include human intervention in cases where the AI system cannot detect or correct errors",
+          "source_section": "Page 19"
+        },
+        {
+          "quote": "the ability to shut down, modify, or have human intervention into systems that deviate from intended or expected functionality",
+          "source_section": "Page 20"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "Transparency reflects the extent to which information about an AI system and its outputs is available to individuals interacting with such a system",
+          "source_section": "Page 20"
+        },
+        {
+          "quote": "Risks associated with transparency and accountability – as identified in the MAP function – are examined and documented",
+          "source_section": "Page 35"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "The AI model is explained, validated, and documented, and AI system output is interpreted within its context",
+          "source_section": "Page 35"
+        },
+        {
+          "quote": "Accuracy measurements should always be paired with clearly defined and realistic test sets…and details about test methodology; these should be included in associated documentation",
+          "source_section": "Page 19"
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "Incidents and errors are communicated to relevant AI actors, including affected communities. Processes for tracking, responding to, and recovering from incidents and errors are followed and documented.",
+          "source_section": "Page 38"
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "Processes for independent review can improve the effectiveness of testing and can mitigate internal biases and potential conflicts of interest",
+          "source_section": "Page 33"
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "Maintaining the provenance of training data and supporting attribution of the AI system's decisions to subsets of training data can assist with both transparency and accountability",
+          "source_section": "Page 21"
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "AI systems that can maintain confidentiality, integrity, and availability through protection mechanisms that prevent unauthorized access and use may be said to be secure",
+          "source_section": "Page 20"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "AI RMF use-case profiles are implementations of the AI RMF functions, categories, and subcategories for a specific setting or application based on the requirements, risk tolerance, and resources of the Framework user",
+          "source_section": "Page 38"
+        },
+        {
+          "quote": "It is incumbent on Framework users to continue applying the MEASURE function to AI systems as knowledge, methodologies, risks, and impacts evolve over time",
+          "source_section": "Page 33"
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "Processes for tracking, responding to, and recovering from incidents and errors are followed and documented",
+          "source_section": "Page 38"
+        },
+        {
+          "quote": "Post-deployment AI system monitoring plans are implemented, including mechanisms for capturing and evaluating input from users and other relevant AI actors",
+          "source_section": "Page 38"
+        }
+      ]
+    }
+  ]
+}

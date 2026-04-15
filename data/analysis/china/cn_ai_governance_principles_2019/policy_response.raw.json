@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01AoA5R52Cu451LHpYFopzyP",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"jurisdiction\":\"china\",\"issuing_body\":\"国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee)\",\"document_type\":\"strategy_paper\",\"binding_strength\":\"strategy_statement\",\"publication_date\":\"2019-06-17\",\"effective_date\":null,\"covered_application_domains\":[\"general_purpose_models\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"高度关注人工智能系统的安全，提高人工智能鲁棒性及抗干扰性，形成人工智能安全评估和管控能力\",\"source_section\":\"五、安全可控\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"人工智能系统应不断提升透明性、可解释性、可靠性、可控性，逐步实现可审核、可监督、可追溯、可信赖\",\"source_section\":\"五、安全可控\"},{\"quote\":\"人工智能应用过程中应确保人类知情权，告知可能产生的风险和影响\",\"source_section\":\"六、共担责任\"}]},{\"label\":\"human_oversight\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"逐步实现可审核、可监督、可追溯、可信赖\",\"source_section\":\"五、安全可控\"}]},{\"label\":\"model_documentation\",\"confidence\":0.6,\"evidence\":[{\"quote\":\"建立人工智能问责机制，明确研发者、使用者和受用者等的责任\",\"source_section\":\"六、共担责任\"}]}],\"enforcement_mechanisms\":[{\"label\":\"none_specified\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"人工智能研发者、使用者及其他相关方应具有高度的社会责任感和自律意识，严格遵守法律法规、伦理道德和标准规范\",\"source_section\":\"六、共担责任\"}]}],\"implementation_notes\":\"This document is a high-level principles framework (治理原则) issued by an advisory committee, not binding legislation. It outlines eight principles for responsible AI development but does not specify enforcement mechanisms or penalties. It functions as a strategy/guidance statement encouraging voluntary adherence and international cooperation.\",\"confidence\":0.9}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 4943,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 584,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

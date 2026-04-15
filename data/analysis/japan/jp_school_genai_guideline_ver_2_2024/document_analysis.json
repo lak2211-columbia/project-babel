@@ -1,0 +1,184 @@
+{
+  "source_id": "jp_school_genai_guideline_ver_2_2024",
+  "title": "初等中等教育段階における生成AIの利活用に関するガイドライン",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "文部科学省初等中等教育局",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2024-12-26",
+    "effective_date": null,
+    "covered_actors": [
+      "教職員",
+      "児童生徒",
+      "教育委員会",
+      "学校教育関係者"
+    ],
+    "covered_application_domains": [
+      "education",
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "リスクや懸念を踏まえつつ、最後は人間が判断し、生成AIの出力結果を踏まえた成果物に自ら責任を持つという基本姿勢が重要である",
+            "source_section": "２．基本的な考え方"
+          },
+          {
+            "quote": "学校現場において想定される代表的なリスクや懸念については、参考資料p.28を参照",
+            "source_section": "３．学校現場において押さえておくべきポイント"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "生成AIサービスの利用目的やその態様、リスク等の必要な情報を整理し、関係者に提供することが重要である",
+            "source_section": "⑤透明性の確保、関係者への説明責任"
+          },
+          {
+            "quote": "必要に応じて教職員や児童生徒、保護者等への説明の機会や問合せの窓口を設けることも考えられる",
+            "source_section": "⑤透明性の確保、関係者への説明責任"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "私用アカウントや教育情報セキュリティ管理者の許可を得ていない私用端末を用いてはならない",
+            "source_section": "３－１（３）②情報セキュリティの確保"
+          },
+          {
+            "quote": "プロンプトに重要性の高い情報である成績情報等を入力してはならない",
+            "source_section": "３－１（３）②情報セキュリティの確保"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "生成AIの出力はあくまでも参考の一つであることを認識し、教職員自らがチェックし推敲・完成させるなど、最後は自分で判断し、生成AIの出力を踏まえた成果物に自ら責任を持つという基本姿勢が重要である",
+            "source_section": "３－１（１）基本的な考え方"
+          },
+          {
+            "quote": "ハルシネーションやバイアス等の生成AIの特徴も意識した上で、出力された内容を取り入れるかどうかは教職員が判断しなくてはならない",
+            "source_section": "④公平性の確保"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "生成AIサービスの提供者が定める最新の利用規約を確認し、遵守する必要がある",
+            "source_section": "①安全性を考慮した適正利用"
+          },
+          {
+            "quote": "生成に用いたプロンプトなど、生成物の生成過程を確認可能な状態にしておくこと",
+            "source_section": "Box-3"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.5,
+        "evidence": [
+          {
+            "quote": "学校現場で利活用する際に必要となる情報を教育委員会に共有するなど、教育委員会と一体となって適切な生成AIの利活用を進めるべきである",
+            "source_section": "⑤透明性の確保、関係者への説明責任"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "本ガイドラインは…学校現場での生成AIの利活用を一律に禁止したり義務付けたりするものではない",
+            "source_section": "ガイドラインの位置付け及び構成"
+          },
+          {
+            "quote": "本ガイドラインでは…現時点の知見を基に可能な限り具体的に示した",
+            "source_section": "ガイドラインの位置付け及び構成"
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "教育委員会は、学校現場の実態に即した教育情報セキュリティポリシー等の策定・必要に応じた見直しを行い、教育委員会・学校現場においてはそれらを遵守する必要がある",
+            "source_section": "②情報セキュリティの確保"
+          },
+          {
+            "quote": "学校の管理職は、生成AIについてどのような運用が行われているかを把握した上で、適切な利活用がなされているかどうかを適時確認する必要がある",
+            "source_section": "⑤透明性の確保、関係者への説明責任"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "文部科学省初等中等教育局"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This is Ver. 2.0 of the guideline, revising the provisional Ver. 1.0 published July 2023. The document explicitly states it does not uniformly prohibit or mandate use of generative AI in schools ('学校現場での生成AIの利活用を一律に禁止したり義務付けたりするものではない'). It serves as reference material for school staff and education boards. No penalties or enforcement mechanisms are specified. Future revisions are anticipated as technology evolves.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "fundamental_rights",
+      "social_stability"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.02,
+      "national_security": 0.05,
+      "economic_competitiveness": 0.1,
+      "fundamental_rights": 0.2,
+      "social_stability": 0.15,
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.25,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "The document primarily frames AI governance in schools as enabling appropriate and effective use of generative AI to support student learning and teacher capabilities, while managing associated risks. The central thrust is how to utilize AI tools beneficially within the existing educational framework, emphasizing AI literacy, human-centered principles, and practical guidance for appropriate adoption rather than restriction. Consumer/public safety and fundamental rights appear as secondary framings through attention to information security, privacy, copyright, and age-appropriate use.",
+    "evidence_spans": [
+      {
+        "quote": "AI 時代を生きる子供たちが生成 AI をはじめとするテクノロジーをツールとして使いこなし、一人一人が才能を開花できるようになることは重要であり、生成 AI の学校における利活用は、そのための助けになり得るもの",
+        "source_section": "Page 3"
+      },
+      {
+        "quote": "学校現場での生成 AI の利活用を一律に禁止したり義務付けたりするものではない",
+        "source_section": "Page 4"
+      },
+      {
+        "quote": "生成 AI は使い方によって人間の能力を補助、拡張し、可能性を広げてくれる有用な道具にもなり得るものと捉えるべきである",
+        "source_section": "Page 7"
+      },
+      {
+        "quote": "AI の利用は、憲法及び国際的な規範の保障する基本的人権を侵すものであってはならない",
+        "source_section": "Page 7"
+      },
+      {
+        "quote": "情報セキュリティの確保が重要である",
+        "source_section": "Page 10"
+      }
+    ]
+  }
+}

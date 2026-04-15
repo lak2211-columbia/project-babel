@@ -1,0 +1,152 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "National Institute of Standards and Technology (NIST)",
+  "document_type": "standards_guideline",
+  "binding_strength": "voluntary_commitment",
+  "publication_date": "2022-08-18",
+  "effective_date": null,
+  "covered_actors": [
+    "AI designers",
+    "AI developers",
+    "AI deployers",
+    "AI evaluators",
+    "AI users",
+    "organizations developing AI systems",
+    "organizations deploying AI systems",
+    "organizations acquiring AI systems"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "public_sector_use",
+    "employment",
+    "education",
+    "healthcare",
+    "finance",
+    "law_enforcement"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "Potential positive and negative impacts to individuals, groups, communities, organizations, and society are regularly identified and documented.",
+          "source_section": "Page 27"
+        },
+        {
+          "quote": "Likelihood and magnitude of each identified impact based on expected use, past uses of AI systems in similar contexts, public incident reports, stakeholder feedback, or other data are identified and documented.",
+          "source_section": "Page 27"
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "AI systems should be tested before their deployment and regularly while in operation.",
+          "source_section": "Page 28"
+        },
+        {
+          "quote": "System performance or assurance criteria are measured qualitatively or quantitatively and demonstrated for conditions similar to deployment setting(s).",
+          "source_section": "Page 29"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "Accuracy measurements should always be paired with clearly defined test sets and details about test methodology; both should be included in associated documentation.",
+          "source_section": "Page 18"
+        },
+        {
+          "quote": "AI model is explained, validated, and documented. AI system output is interpreted within its context and to inform responsible use and governance.",
+          "source_section": "Page 29"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "One common strategy for managing risks in such settings is the use of a human 'in-the-loop' (HITL). Unclear expectations about how the HITL can provide oversight for systems, and imprecise governance structures for their configurations are two points for consideration in AI risk management.",
+          "source_section": "Page 17"
+        },
+        {
+          "quote": "The degree to which humans are empowered and incentivized to challenge AI system suggestions must be understood.",
+          "source_section": "Page 17"
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "Independent review improves the effectiveness of testing and can mitigate internal biases and potential conflicts of interest.",
+          "source_section": "Page 28"
+        },
+        {
+          "quote": "Internal experts who did not serve as front-line developers for the system and/or independent assessors are involved in regular assessments and updates.",
+          "source_section": "Page 28"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "Documentation should be used in transparency-enhancing and human review processes, and to bolster accountability in AI system teams.",
+          "source_section": "Page 24"
+        },
+        {
+          "quote": "Policies, processes, procedures, and practices across the organization related to the mapping, measuring, and managing of AI risks are in place, transparent, and implemented effectively.",
+          "source_section": "Page 24"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "AI RMF 2nd Draft for public comment by September 29, 2022",
+          "source_section": "Page 17"
+        },
+        {
+          "quote": "It is incumbent on Framework users to continue to execute the Govern function as cultures, stakeholder needs and expectations, and knowledge evolve over time.",
+          "source_section": "Page 24"
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "Systematic documentation practices established in Govern and utilized in Map and Measure bolster AI risk management efforts and increase transparency and accountability.",
+          "source_section": "Page 30"
+        },
+        {
+          "quote": "GOVERN 1.1: Legal and regulatory requirements involving AI are understood, managed, and documented.",
+          "source_section": "Page 24"
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [],
+  "compliance_deadlines": [
+    "Public comment period closes September 29, 2022"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "The AI RMF is explicitly voluntary and law- and regulation-agnostic. It is not a compliance mechanism and not intended to supersede existing regulations or laws. An accompanying NIST AI RMF Playbook provides suggested tactical actions. The framework is structured around four core functions: Govern, Map, Measure, and Manage.",
+  "confidence": 0.95
+}

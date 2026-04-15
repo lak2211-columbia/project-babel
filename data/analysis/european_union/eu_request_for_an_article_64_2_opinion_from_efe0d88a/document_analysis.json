@@ -1,0 +1,117 @@
+{
+  "source_id": "eu_request_for_an_article_64_2_opinion_from_efe0d88a",
+  "title": "Request for an article 64(2) opinion from the IE SA on AI models",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "Irish Data Protection Commission (IE SA)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2024-12",
+    "effective_date": null,
+    "covered_actors": [
+      "data controllers",
+      "supervisory authorities",
+      "AI model developers"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "what risks are associated with it",
+            "source_section": "Page 2"
+          },
+          {
+            "quote": "Existing research publications highlight some potential vulnerabilities that can exist in AI Models which could result in personal data being processed",
+            "source_section": "Page 1"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "what must be demonstrated by a data controller where personal data processing is claimed not to occur?",
+            "source_section": "Page 2"
+          },
+          {
+            "quote": "how can it be demonstrated that the AI Model does not process personal data?",
+            "source_section": "Page 3"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "the IE SA has received a number of complaints both from data subjects in Ireland and from data subjects throughout the EEA, by way of referrals from other SAs",
+            "source_section": "Page 1"
+          },
+          {
+            "quote": "the general regulation of processing taking place across the EU/EEA in this field by all supervisory authorities",
+            "source_section": "Page 1"
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.5,
+        "evidence": [
+          {
+            "quote": "an increasing number of data controllers are incorporating the use of AI Models within their business operations. This gives rise to the need for supervisory authorities to engage generally in the regulation",
+            "source_section": "Page 1"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "European Data Protection Board (EDPB)",
+      "Irish Data Protection Commission (IE SA)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This is a request by the Irish SA to the EDPB for an Article 64(2) GDPR opinion on AI model data processing questions. It is not itself a binding decision or guidance document; it poses questions for EDPB harmonisation. Explicitly limited to GDPR/LED application only, excluding the AI Act, DMA, DGA, DSA interplay.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "social_stability"
+    ],
+    "frame_confidence": {
+      "fundamental_rights": 0.85,
+      "consumer_public_safety": 0.55,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "The document is centrally framed around data subjects' fundamental rights under GDPR. The IE SA's request focuses on ensuring lawful processing of personal data in AI model development, protecting data subjects across the EU/EEA from rights violations, and achieving harmonized enforcement of data protection law. The language consistently foregrounds data subject rights, legal bases for processing, and compliance obligations rather than economic competitiveness, security threats, or societal disruption.",
+    "evidence_spans": [
+      {
+        "quote": "The training and use of AI Models, including so-called 'large language models', gives rise to a number of wide-ranging data protection concerns. The issues arising impact data subjects across the EU/EEA.",
+        "source_section": "Page 1"
+      },
+      {
+        "quote": "just because personal data is made public does not mean that it is no longer personal data. Careful consideration of this situation is required in order to demonstrate compliance under data protection legislation",
+        "source_section": "Page 2"
+      },
+      {
+        "quote": "what must be demonstrated by a data controller where personal data processing is claimed not to occur?",
+        "source_section": "Page 2"
+      },
+      {
+        "quote": "If an AI Model has been found to have been created, updated or developed using unlawfully processed personal data, what is the impact of this, if any, on the lawfulness of the continued or subsequent processing",
+        "source_section": "Page 4"
+      }
+    ]
+  }
+}

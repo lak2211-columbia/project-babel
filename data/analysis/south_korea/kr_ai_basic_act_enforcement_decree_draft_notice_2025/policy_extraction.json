@@ -1,0 +1,153 @@
+{
+  "jurisdiction": "south_korea",
+  "issuing_body": "Ministry of Science and ICT (과학기술정보통신부), Republic of Korea",
+  "document_type": "legislation",
+  "binding_strength": "binding_law",
+  "publication_date": "2025-11-12",
+  "effective_date": "2026-01-22",
+  "covered_actors": [
+    "인공지능사업자 (AI business operators)",
+    "고영향 인공지능 사업자 (high-impact AI operators)",
+    "중앙행정기관 (central administrative agencies)",
+    "지방자치단체 (local governments)",
+    "공공기관 (public institutions)",
+    "한국인공지능진흥협회 (Korea AI Promotion Association)"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "public_sector_use",
+    "defense",
+    "law_enforcement"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "인공지능사업자는 고영향 인공지능이나 생성형 인공지능을 이용한 제품 또는 서비스를 제공하기 전에 다음 각 호의 어느 하나에 해당하는 방법으로 법 제31조제1항에 따른 고지를 하여야 한다",
+          "source_section": "제22조(인공지능 투명성 확보 의무)"
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "고영향 인공지능 해당 여부를 판단하는 경우 사람의 생명, 신체의 안전 및 기본권에 초래할 수 있는 위험의 영향, 중대성, 빈도 등을 고려하도록 함",
+          "source_section": "제24조(고영향 인공지능의 확인 절차 등)"
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "법 제32조제1항에 따른 인공지능 안전성 확보 의무의 대상이 되는 인공지능시스템은 학습에 사용된 누적 연산량이 10의 26승 부동소수점 연산 이상인 인공지능시스템으로서 인공지능기술 발전 수준, 위험도 등을 고려하여 고시하는 기준에 해당하는 인공지능시스템으로 함",
+          "source_section": "제23조(인공지능 안전성 확보 의무)"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "인공지능사업자는 법 제34조제1항 각 호의 조치를 이행하고 그 근거를 문서로 5년간 보관해야 한다",
+          "source_section": "제26조(고영향 인공지능과 관련한 사업자의 책무)"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "위험관리방안의 주요 내용 등을 홈페이지 등에 게시하도록 함",
+          "source_section": "Section 2 자. 고영향 인공지능 사업자 책무(제26조)"
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "법 제35조 제3항에 따른 영향평가를 수행하는 경우 해당 고영향 인공지능의 사용 행태, 영향을 받을 수 있는 기본권 유형의 식별 등을 포함하여 수행하도록 함",
+          "source_section": "제27조(고영향 인공지능 영향평가의 포함사항)"
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "기계가 판독할 수 있는 방법. 다만, 이 경우에는 생성형 인공지능에 의하여 생성되었다는 사실을 1회 이상 안내 문구·음성 등으로 제공하여야 한다",
+          "source_section": "제22조 제2항"
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "고영향 인공지능 해당 여부에 대한 확인 요청을 받은 경우 30일 이내에 결과를 회신하도록 하며",
+          "source_section": "Section 2 아. 고영향 인공지능 확인(제24조 및 제25조)"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "안전연구소는 전년도 사업실적과 다음 연도의 사업계획을 매년 1월 31일까지 과학기술정보통신부장관에게 제출해야 한다",
+          "source_section": "제10조(인공지능안전연구소의 운영 등) 제5항"
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "과학기술정보통신부장관은 법 제33조제1항에 따라 고영향 인공지능에 해당하는지에 대하여 확인을 요청하려는 경우에는 별지 서식의 확인 요청서를 과학기술정보통신부장관에게 제출해야 한다",
+          "source_section": "제24조(고영향 인공지능의 확인 절차 등)"
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "법 제8조제3항에 따라 위원회로부터 법령·제도의 개선 또는 실천방안의 수립 등에 대한 권고 또는 의견의 표명을 받은 국가기관등의 장은 권고 또는 의견의 표명을 받은 날부터 3개월 이내 법령·제도 등의 개선방안과 실천방안 등을 수립하여 위원회에 보고해야 한다",
+          "source_section": "제7조(개선권고의 이행)"
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "국가인공지능위원회 (National AI Committee)",
+    "과학기술정보통신부장관 (Minister of Science and ICT)",
+    "인공지능안전연구소 (AI Safety Research Institute)",
+    "규제개혁위원회 (Regulatory Reform Committee)"
+  ],
+  "compliance_deadlines": [
+    "2026-01-22: Enforcement Decree effective date (parent Act enacted 2025-01-21, effective 2026-01-22)",
+    "안전연구소는 매년 1월 31일까지 전년도 사업실적과 다음 연도 사업계획 제출",
+    "국가기관등의 장은 위원회 권고 수령일로부터 3개월 이내 개선방안 수립 보고",
+    "고영향 인공지능 해당 여부 확인 요청 시 30일 이내 회신 (최대 30일 연장 가능)"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "This is an enforcement decree (시행령) draft for the AI Basic Act (법률 제20676호, enacted 2025-01-21, effective 2026-01-22). Key provisions: (1) AI systems with cumulative training compute ≥10^26 FLOPs are subject to safety assurance obligations; (2) Transparency obligations apply to AI business operators but are exempted for internal business use; (3) High-impact AI operators must document risk management measures and publish key contents publicly; (4) High-impact AI impact assessments must include use behavior analysis and fundamental rights identification; (5) National security and defense AI applications are explicitly excluded from the Act's scope. Legislative notice period: 2025-11-12 to 2025-12-22.",
+  "confidence": 0.88
+}

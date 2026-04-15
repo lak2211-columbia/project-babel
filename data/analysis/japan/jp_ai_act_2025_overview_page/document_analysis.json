@@ -1,0 +1,135 @@
+{
+  "source_id": "jp_ai_act_2025_overview_page",
+  "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（ＡＩ法）",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "内閣府・日本国政府（国会）",
+    "document_type": "legislation",
+    "binding_strength": "binding_law",
+    "publication_date": "2025-05-28",
+    "effective_date": "2025-09-01",
+    "covered_actors": [
+      "国",
+      "地方公共団体",
+      "研究開発機関",
+      "事業者",
+      "国民"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "public_sector_use"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "適正な研究開発・活用のため透明性の確保等",
+            "source_section": "基本理念"
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "イノベーションを促進しつつ、リスクに対応するため",
+            "source_section": "法律の必要性"
+          },
+          {
+            "quote": "権利利益を侵害する事案の分析・対策検討、調査",
+            "source_section": "基本的施策"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.5,
+        "evidence": [
+          {
+            "quote": "情報収集、権利利益を侵害する事案の分析・対策検討、調査",
+            "source_section": "基本的施策"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "事業者等への指導・助言・情報提供",
+            "source_section": "基本的施策"
+          },
+          {
+            "quote": "事業者は国等の施策に協力しなければならない",
+            "source_section": "責務"
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "AI戦略本部 本部長：内閣総理大臣 構成員：全ての国務大臣 関係行政機関等に対して必要な協力を求める",
+            "source_section": "法律の概要"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "AI戦略本部（本部長：内閣総理大臣、構成員：全ての国務大臣）",
+      "関係行政機関"
+    ],
+    "compliance_deadlines": [
+      "一部施行：令和７年６月４日（2025-06-04）",
+      "全面施行：令和７年９月１日（2025-09-01）"
+    ],
+    "penalties_summary": null,
+    "implementation_notes": "法律はイノベーション促進とリスク対応の両立を目指す。事業者は国等の施策に協力する義務を負う。AI基本計画により政府施策の基本方針を策定。附則に見直し規定あり。禁止行為の明示的規定は本概要には記載なし。",
+    "confidence": 0.82
+  },
+  "risk_framing": {
+    "dominant_frame": "economic_competitiveness",
+    "secondary_frames": [
+      "innovation_enablement",
+      "national_security"
+    ],
+    "frame_confidence": {
+      "economic_competitiveness": 0.75,
+      "innovation_enablement": 0.65,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "The document primarily frames AI governance around Japan's competitive position, noting that Japan's AI development lags behind other countries and setting an explicit goal of becoming the most AI-friendly nation in the world. National competitiveness, international norm-setting leadership, and economic development are central justifications. Innovation enablement is a strong secondary frame, as the law explicitly aims to balance innovation promotion with risk response. National security appears as a stated basic principle.",
+    "evidence_spans": [
+      {
+        "quote": "日本のAI開発・活用は遅れている。",
+        "source_section": "法律の必要性"
+      },
+      {
+        "quote": "国際競争力の向上",
+        "source_section": "基本理念"
+      },
+      {
+        "quote": "最もAIを開発・活用しやすい国へ。",
+        "source_section": "世界のモデルとなる法制度を構築"
+      },
+      {
+        "quote": "経済社会及び安全保障上重要",
+        "source_section": "基本理念"
+      },
+      {
+        "quote": "イノベーションを促進しつつ、リスクに対応するため",
+        "source_section": "法律の必要性"
+      }
+    ]
+  }
+}

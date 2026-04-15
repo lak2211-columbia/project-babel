@@ -1,0 +1,1087 @@
+{
+  "manifest_version": "2026-04-14",
+  "jurisdiction": "united_states",
+  "description": "Official executive, standards, civil-rights, consumer-protection, and health-regulation sources for U.S. AI governance.",
+  "source_portals": [
+    {
+      "id": "us_white_house_actions",
+      "name": "White House Presidential Actions",
+      "issuing_body": "Executive Office of the President",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.whitehouse.gov/presidential-actions/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Executive orders and presidential directives that shape federal AI policy.",
+      "tags": [
+        "executive",
+        "federal",
+        "ai_governance"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.whitehouse.gov/presidential-actions/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "Artificial Intelligence",
+            "AI"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    },
+    {
+      "id": "us_white_house_releases",
+      "name": "White House Releases",
+      "issuing_body": "Executive Office of the President",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.whitehouse.gov/releases/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Fact sheets, policy announcements, and implementation updates tied to AI governance.",
+      "tags": [
+        "executive",
+        "announcements",
+        "ai_governance"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.whitehouse.gov/releases/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "Artificial Intelligence",
+            "AI"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    },
+    {
+      "id": "us_nist_ai",
+      "name": "NIST Artificial Intelligence",
+      "issuing_body": "National Institute of Standards and Technology",
+      "issuer_type": "standards_body",
+      "canonical_url": "https://www.nist.gov/artificial-intelligence",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Federal technical standards, frameworks, and implementation resources for trustworthy AI.",
+      "tags": [
+        "standards",
+        "nist",
+        "technical_guidance"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.nist.gov/artificial-intelligence",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_url_patterns": [
+            "artificial-intelligence",
+            "ai-risk-management-framework",
+            "trustworthy-and-responsible-ai"
+          ],
+          "exclude_url_patterns": [
+            "/webform/",
+            "#main-content"
+          ],
+          "exclude_title_patterns": [
+            "Skip to main content",
+            "Was this page helpful?",
+            "Feedback"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "us_nist_rmf",
+      "name": "NIST AI Risk Management Framework",
+      "issuing_body": "National Institute of Standards and Technology",
+      "issuer_type": "standards_body",
+      "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Framework pages, profiles, and playbooks for AI risk management.",
+      "tags": [
+        "risk_management",
+        "standards",
+        "implementation"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_url_patterns": [
+            "ai-risk-management-framework",
+            "AI_RMF_Knowledge_Base"
+          ],
+          "exclude_url_patterns": [
+            "/webform/",
+            "#main-content"
+          ],
+          "exclude_title_patterns": [
+            "Skip to main content",
+            "Was this page helpful?",
+            "Feedback"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "us_ostp_ai_rights",
+      "name": "OSTP AI Bill of Rights",
+      "issuing_body": "White House Office of Science and Technology Policy",
+      "issuer_type": "executive",
+      "canonical_url": "https://bidenwhitehouse.archives.gov/ostp/ai-bill-of-rights/",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official White House OSTP materials on rights-protective AI governance, including the Blueprint for an AI Bill of Rights and companion implementation guidance.",
+      "tags": [
+        "ostp",
+        "civil_rights",
+        "rights_based_governance"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://bidenwhitehouse.archives.gov/ostp/ai-bill-of-rights/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "AI Bill of Rights",
+            "Blueprint",
+            "From Principles to Practice"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    },
+    {
+      "id": "us_ftc_ai_policy",
+      "name": "FTC AI Policy and Reports",
+      "issuing_body": "Federal Trade Commission",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.ftc.gov/reports/combatting-online-harms-through-innovation",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Official FTC reports and policy materials addressing consumer protection, bias, surveillance, and deceptive or unfair AI practices.",
+      "tags": [
+        "ftc",
+        "consumer_protection",
+        "ai_harms"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.ftc.gov/reports/combatting-online-harms-through-innovation",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "Artificial Intelligence",
+            "Online Harms",
+            "Report to Congress"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    },
+    {
+      "id": "us_interagency_ai_enforcement",
+      "name": "Interagency AI Enforcement Statement",
+      "issuing_body": "Department of Justice / EEOC / FTC / CFPB",
+      "issuer_type": "multi_agency",
+      "canonical_url": "https://www.justice.gov/opa/pr/justice-department-s-civil-rights-division-joins-officials-cfpb-eeoc-and-ftc-pledging",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official interagency civil-rights, consumer-protection, and equal-opportunity materials on unlawful discrimination and bias in automated systems.",
+      "tags": [
+        "civil_rights",
+        "enforcement",
+        "algorithmic_discrimination"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.justice.gov/opa/pr/justice-department-s-civil-rights-division-joins-officials-cfpb-eeoc-and-ftc-pledging",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "Joint Statement",
+            "Automated Systems",
+            "Discrimination"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    },
+    {
+      "id": "us_fda_ai_medical",
+      "name": "FDA AI-Enabled Medical Device Guidance",
+      "issuing_body": "Food and Drug Administration",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-artificial-intelligence",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official FDA guidance and supporting materials for AI-enabled medical devices, including premarket, lifecycle, and change-control expectations.",
+      "tags": [
+        "fda",
+        "healthcare",
+        "medical_devices"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-artificial-intelligence",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "Artificial Intelligence",
+            "Predetermined Change Control Plan",
+            "Guidance"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    },
+    {
+      "id": "us_cfpb_ai_finance",
+      "name": "CFPB AI and Algorithmic Finance",
+      "issuing_body": "Consumer Financial Protection Bureau",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.consumerfinance.gov/compliance/circulars/",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official CFPB circulars and research reports on algorithmic credit decisions, chatbot deployment, and AI-related consumer-finance harms.",
+      "tags": [
+        "cfpb",
+        "finance",
+        "consumer_protection"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.consumerfinance.gov/compliance/circulars/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "complex algorithms",
+            "Artificial Intelligence",
+            "adverse action"
+          ],
+          "max_candidates": 50
+        },
+        {
+          "url": "https://www.consumerfinance.gov/data-research/research-reports/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "chatbots",
+            "Artificial Intelligence",
+            "algorithm"
+          ],
+          "max_candidates": 50
+        }
+      ]
+    }
+  ],
+  "seed_documents": [
+    {
+      "id": "us_eo_14179_removing_barriers_ai",
+      "title": "Removing Barriers to American Leadership in Artificial Intelligence",
+      "issuing_body": "Executive Office of the President",
+      "canonical_url": "https://www.whitehouse.gov/presidential-actions/2025/01/removing-barriers-to-american-leadership-in-artificial-intelligence/",
+      "document_type": "executive_order",
+      "binding_strength": "executive_action",
+      "source_tier": "executive_action",
+      "policy_domains": [
+        "industrial_innovation",
+        "national_security",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-01-23",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_white_house_actions"
+      ],
+      "priority": "high",
+      "relevance_notes": "Core executive order resetting federal AI policy and directing the 2025 AI Action Plan.",
+      "tags": [
+        "executive_order",
+        "innovation",
+        "national_security"
+      ]
+    },
+    {
+      "id": "us_ai_action_plan_pdf",
+      "title": "Winning the Race: America's AI Action Plan",
+      "issuing_body": "Executive Office of the President",
+      "canonical_url": "https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "industrial_innovation",
+        "national_security",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-07-23",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_white_house_releases",
+        "us_white_house_actions"
+      ],
+      "priority": "high",
+      "relevance_notes": "Full text of the national AI Action Plan with policy actions across innovation, infrastructure, and security.",
+      "tags": [
+        "strategy",
+        "action_plan",
+        "federal_policy"
+      ]
+    },
+    {
+      "id": "us_omb_m_25_21",
+      "title": "M-25-21: Accelerating Federal Use of AI through Innovation, Governance, and Public Trust",
+      "issuing_body": "Office of Management and Budget",
+      "canonical_url": "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "public_sector_governance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-04-03",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_white_house_releases",
+        "us_white_house_actions"
+      ],
+      "priority": "high",
+      "relevance_notes": "OMB guidance governing federal agency use of AI, including high-impact AI governance requirements.",
+      "tags": [
+        "omb",
+        "federal_use",
+        "governance",
+        "high_impact_ai"
+      ]
+    },
+    {
+      "id": "us_omb_m_25_22",
+      "title": "M-25-22: Driving Efficient Acquisition of Artificial Intelligence in Government",
+      "issuing_body": "Office of Management and Budget",
+      "canonical_url": "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-22-Driving-Efficient-Acquisition-of-Artificial-Intelligence-in-Government.pdf",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "public_sector_procurement",
+        "public_sector_governance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-04-03",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_white_house_releases",
+        "us_white_house_actions"
+      ],
+      "priority": "high",
+      "relevance_notes": "OMB guidance for federal procurement of AI systems and services, including risk and market-research expectations.",
+      "tags": [
+        "omb",
+        "procurement",
+        "federal_use",
+        "high_impact_ai"
+      ]
+    },
+    {
+      "id": "us_nist_ai_rmf_1_0",
+      "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=936225",
+      "retrieval_urls": [
+        "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10"
+      ],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2023-01-26",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_nist_ai",
+        "us_nist_rmf"
+      ],
+      "priority": "high",
+      "relevance_notes": "Core U.S. technical governance framework for identifying and managing AI risk.",
+      "tags": [
+        "nist",
+        "risk_management",
+        "standards"
+      ]
+    },
+    {
+      "id": "us_nist_ai_rmf_playbook",
+      "title": "NIST AI RMF Playbook",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/nist-ai-rmf-playbook",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2022-07-08",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_nist_ai",
+        "us_nist_rmf"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Operational implementation companion for the NIST AI RMF.",
+      "tags": [
+        "nist",
+        "implementation",
+        "risk_management"
+      ]
+    },
+    {
+      "id": "us_nist_genai_profile",
+      "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "retrieval_urls": [
+        "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+        "https://doi.org/10.6028/NIST.AI.600-1"
+      ],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-07-26",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_nist_ai",
+        "us_nist_rmf"
+      ],
+      "priority": "high",
+      "relevance_notes": "NIST profile applying the AI RMF specifically to generative AI systems, with concrete risk-management guidance for foundation-model deployment.",
+      "tags": [
+        "nist",
+        "generative_ai",
+        "risk_management"
+      ]
+    },
+    {
+      "id": "us_ai_standards_nist",
+      "title": "AI Standards | NIST",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/artificial-intelligence/ai-standards",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2021-08-03",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_nist_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official NIST standards-program page covering AI standards strategy, zero-drafts development, global engagement, federal coordination, and RMF alignment with international standards.",
+      "tags": [
+        "nist",
+        "standards",
+        "global_engagement",
+        "federal_coordination"
+      ]
+    },
+    {
+      "id": "us_technical_contributions_ai_governance_nist",
+      "title": "Technical Contributions to AI Governance | NIST",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/artificial-intelligence/technical-contributions-ai-governance",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance",
+        "public_sector_governance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2021-07-26",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_nist_ai"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Official NIST overview of the ITL AI Program's technical and convening role in U.S. and international AI governance processes, including OECD, G7, NAIAC, and federal coordination bodies.",
+      "tags": [
+        "nist",
+        "ai_governance",
+        "federal_coordination",
+        "international_governance"
+      ]
+    },
+    {
+      "id": "us_ai_congressional_mandates_executive_orders_nist",
+      "title": "AI Congressional Mandates, Executive Orders and Actions | NIST",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/artificial-intelligence/ai-congressional-mandates-executive-orders-and-actions",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance",
+        "national_security",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-01-21",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_nist_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official NIST page cataloging the congressional mandates, executive orders, and action-plan directions that drive NIST's AI standards, risk-management, testing, and governance work.",
+      "tags": [
+        "nist",
+        "congressional_mandates",
+        "executive_orders",
+        "ai_governance"
+      ]
+    },
+    {
+      "id": "us_ai_bill_of_rights_blueprint_2022",
+      "title": "Blueprint for an AI Bill of Rights",
+      "issuing_body": "White House Office of Science and Technology Policy",
+      "canonical_url": "https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/10/Blueprint-for-an-AI-Bill-of-Rights.pdf",
+      "retrieval_urls": [
+        "https://bidenwhitehouse.archives.gov/ostp/ai-bill-of-rights/"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "civil_rights_nondiscrimination",
+        "privacy_data_protection",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2022-10-04",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_ostp_ai_rights"
+      ],
+      "priority": "high",
+      "relevance_notes": "Foundational U.S. rights-based AI governance framework centered on safe systems, algorithmic discrimination protections, data privacy, notice, and human fallback.",
+      "tags": [
+        "civil_rights",
+        "privacy",
+        "rights_framework"
+      ]
+    },
+    {
+      "id": "us_ftc_online_harms_ai_report_2022",
+      "title": "Combatting Online Harms Through Innovation: A Report to Congress",
+      "issuing_body": "Federal Trade Commission",
+      "canonical_url": "https://www.ftc.gov/system/files/ftc_gov/pdf/Combatting%20Online%20Harms%20Through%20Innovation%3B%20Federal%20Trade%20Commission%20Report%20to%20Congress.pdf",
+      "retrieval_urls": [
+        "https://www.ftc.gov/reports/combatting-online-harms-through-innovation",
+        "https://www.ftc.gov/news-events/news/press-releases/2022/06/ftc-report-warns-about-using-artificial-intelligence-combat-online-problems"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "consumer_protection",
+        "civil_rights_nondiscrimination"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2022-06-16",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_ftc_ai_policy"
+      ],
+      "priority": "medium",
+      "relevance_notes": "FTC report to Congress emphasizing inaccuracy, bias, discrimination, and surveillance risks in AI systems used to police online harms.",
+      "tags": [
+        "consumer_protection",
+        "bias",
+        "surveillance"
+      ]
+    },
+    {
+      "id": "us_joint_statement_ai_discrimination_2023",
+      "title": "Joint Statement on Enforcement Efforts Against Discrimination and Bias in Automated Systems",
+      "issuing_body": "Department of Justice / Equal Employment Opportunity Commission / Federal Trade Commission / Consumer Financial Protection Bureau",
+      "canonical_url": "https://www.ftc.gov/system/files/ftc_gov/pdf/EEOC-CRT-FTC-CFPB-AI-Joint-Statement%28final%29.pdf",
+      "retrieval_urls": [
+        "https://www.justice.gov/opa/pr/justice-department-s-civil-rights-division-joins-officials-cfpb-eeoc-and-ftc-pledging"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "civil_rights_nondiscrimination",
+        "consumer_protection",
+        "finance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2023-04-25",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_interagency_ai_enforcement"
+      ],
+      "priority": "high",
+      "relevance_notes": "Interagency statement clarifying that existing civil-rights, consumer-protection, fair-lending, and equal-opportunity laws apply to automated systems and AI.",
+      "tags": [
+        "civil_rights",
+        "enforcement",
+        "algorithmic_discrimination"
+      ]
+    },
+    {
+      "id": "us_fda_ai_pccp_guidance_2025",
+      "title": "Marketing Submission Recommendations for a Predetermined Change Control Plan for Artificial Intelligence-Enabled Device Software Functions",
+      "issuing_body": "Food and Drug Administration",
+      "canonical_url": "https://www.fda.gov/media/166704/download",
+      "retrieval_urls": [
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-artificial-intelligence",
+        "https://www.fda.gov/medical-devices/digital-health/guidances-digital-health-content"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "healthcare_medical_devices",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-08-18",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_fda_ai_medical"
+      ],
+      "priority": "high",
+      "relevance_notes": "Final FDA guidance for AI-enabled medical devices covering predetermined change control plans, validation, risk management, and continued safety and effectiveness.",
+      "tags": [
+        "healthcare",
+        "medical_devices",
+        "risk_management"
+      ]
+    },
+    {
+      "id": "us_cfpb_circular_2022_03_complex_algorithms",
+      "title": "Consumer Financial Protection Circular 2022-03: Adverse action notification requirements in connection with credit decisions based on complex algorithms",
+      "issuing_body": "Consumer Financial Protection Bureau",
+      "canonical_url": "https://files.consumerfinance.gov/f/documents/cfpb_2022-03_circular_2022-05.pdf",
+      "retrieval_urls": [
+        "https://www.consumerfinance.gov/compliance/circulars/circular-2022-03-adverse-action-notification-requirements-in-connection-with-credit-decisions-based-on-complex-algorithms/"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "finance",
+        "consumer_protection",
+        "civil_rights_nondiscrimination"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2022-05-26",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_cfpb_ai_finance"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official CFPB circular clarifying that lenders using complex algorithms in credit decisions must still provide specific reasons in adverse action notices under ECOA and Regulation B.",
+      "tags": [
+        "cfpb",
+        "finance",
+        "consumer_protection",
+        "algorithmic_credit"
+      ]
+    },
+    {
+      "id": "us_cfpb_chatbots_issue_spotlight_2023",
+      "title": "Chatbots in consumer finance",
+      "issuing_body": "Consumer Financial Protection Bureau",
+      "canonical_url": "https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "finance",
+        "consumer_protection",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2023-06-06",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_cfpb_ai_finance"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Official CFPB issue spotlight identifying legal and consumer-protection risks from chatbot deployment in financial services, especially when firms substitute away from live human support.",
+      "tags": [
+        "cfpb",
+        "consumer_protection",
+        "chatbots",
+        "finance"
+      ]
+    },
+    {
+      "id": "us_crosswalks_to_the_nist_artificial_intelligence_r_8c897d8c",
+      "title": "Crosswalks to the NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0) | NIST",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/crosswalks-nist-artificial-intelligence-risk-management-framework",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2023-01-25",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_nist_rmf"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from us_nist_rmf; role=primary_text; bucket=implementation_guidance; family=ai rmf crosswalk",
+      "tags": [
+        "risk_management",
+        "standards",
+        "implementation",
+        "primary_text",
+        "auto_promoted"
+      ]
+    },
+    {
+      "id": "us_roadmap_for_the_nist_artificial_intelligence_ris_bc6cf1d8",
+      "title": "Roadmap for the NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0) | NIST",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/roadmap-nist-artificial-intelligence-risk-management-framework-ai",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2023-01-24",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_nist_rmf"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from us_nist_rmf; role=primary_text; bucket=implementation_guidance; family=ai rmf roadmap",
+      "tags": [
+        "risk_management",
+        "standards",
+        "implementation",
+        "primary_text",
+        "auto_promoted"
+      ]
+    },
+    {
+      "id": "us_ai_risk_management_framework_engage_nist_0abb57bc",
+      "title": "AI Risk Management Framework - Engage | NIST",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-risk-management-framework-engage",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2021-07-13",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_nist_rmf"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from us_nist_rmf; role=primary_text; bucket=implementation_guidance; family=engage",
+      "tags": [
+        "risk_management",
+        "standards",
+        "implementation",
+        "primary_text",
+        "auto_promoted"
+      ]
+    },
+    {
+      "id": "us_ai_risk_management_framework_faqs_nist_56d7e05a",
+      "title": "AI Risk Management Framework FAQs | NIST",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-risk-management-framework-faqs",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2021-07-13",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_nist_rmf"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from us_nist_rmf; role=faq; bucket=enforcement_interpretation; family=faqs",
+      "tags": [
+        "risk_management",
+        "standards",
+        "implementation",
+        "faq",
+        "auto_promoted"
+      ]
+    },
+    {
+      "id": "us_ai_risk_management_framework_initial_draft_march_fb5a1e0e",
+      "title": "AI Risk Management Framework: Initial Draft - March 17, 2022",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/system/files/documents/2022/03/17/AI-RMF-1stdraft.pdf",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "draft",
+      "publication_date": "2022-03-17",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_nist_rmf"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from us_nist_rmf; role=consultation_draft; bucket=consultation_draft; family=initial draft of the ai risk management framework",
+      "tags": [
+        "risk_management",
+        "standards",
+        "implementation",
+        "consultation_draft",
+        "auto_promoted"
+      ]
+    },
+    {
+      "id": "us_ai_risk_management_framework_second_draft_august_e303aeb7",
+      "title": "AI Risk Management Framework: Second Draft - August 18, 2022",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/system/files/documents/2022/08/18/AI_RMF_2nd_draft.pdf",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "draft",
+      "publication_date": "2022-08-18",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_nist_rmf"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from us_nist_rmf; role=consultation_draft; bucket=consultation_draft; family=second draft of the ai risk management framework",
+      "tags": [
+        "risk_management",
+        "standards",
+        "implementation",
+        "consultation_draft",
+        "auto_promoted"
+      ]
+    },
+    {
+      "id": "us_ai_risk_management_framework_nist_e9c27a02",
+      "title": "AI Risk Management Framework | NIST",
+      "issuing_body": "National Institute of Standards and Technology",
+      "canonical_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "retrieval_urls": [
+        "https://www.nist.gov/itl/ai-risk-management-framework",
+        "https://doi.org/10.6028/NIST.AI.100-1"
+      ],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2021-07-12",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_nist_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from us_nist_ai; role=primary_text; bucket=implementation_guidance; family=ai risk management framework",
+      "tags": [
+        "standards",
+        "nist",
+        "technical_guidance",
+        "primary_text",
+        "auto_promoted"
+      ]
+    },
+    {
+      "id": "us_from_principles_to_practice_ostp_the_white_house_8a01bf26",
+      "title": "From Principles to Practice | OSTP | The White House",
+      "issuing_body": "White House Office of Science and Technology Policy",
+      "canonical_url": "https://bidenwhitehouse.archives.gov/ostp/ai-bill-of-rights/from-principles-to-practice/",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "civil_rights_nondiscrimination",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2022-10-04",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_ostp_ai_rights"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from us_ostp_ai_rights; role=primary_text; bucket=implementation_guidance; family=from principles to practice",
+      "tags": [
+        "ostp",
+        "civil_rights",
+        "rights_based_governance",
+        "primary_text",
+        "auto_promoted"
+      ]
+    }
+  ]
+}

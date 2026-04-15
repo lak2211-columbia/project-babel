@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01NWi1Cc2dfFdCV5WjNrfzVR",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"jurisdiction\":\"china\",\"issuing_body\":\"中央网络安全和信息化委员会办公室 / Cyberspace Administration of China (CAC)\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2025-06-20\",\"effective_date\":\"2025-04-01\",\"covered_application_domains\":[\"general_purpose_models\",\"healthcare\",\"finance\"],\"safety_requirements\":[{\"label\":\"content_provenance\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"推动生成合成内容标识加速落地\",\"source_section\":\"第一阶段工作概述\"},{\"quote\":\"阿里、快手、稀宇等重点平台积极推进元数据隐式标识落地落实\",\"source_section\":\"落实内容标识要求\"}]},{\"label\":\"red_teaming\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"抖音建立\"},{\"quote\":\"红蓝对抗\"},{\"quote\":\"机制，模拟攻击案例，修复潜在安全漏洞\",\"source_section\":\"强化安全管理措施\"}]},{\"label\":\"pre_deployment_testing\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"腾讯规范应用程序管理，提高准入门槛，优化巡查机制\",\"source_section\":\"处置违规AI产品\"}]},{\"label\":\"access_controls\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"切断违规产品营销引流渠道\",\"source_section\":\"第一阶段工作概述\"},{\"quote\":\"封堵和取消接入域名18个\",\"source_section\":\"江苏网信办\"}]},{\"label\":\"model_documentation\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"通义平台围绕数据生命周期建立安全管理体系，在数据采集、训练、使用等阶段加强训练语料管理\",\"source_section\":\"加强训练语料管理\"}]},{\"label\":\"human_oversight\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"北京网信办开设AI技术滥用治理举报渠道，形成\"},{\"quote\":\"用户标记—平台核查—联合处置\"},{\"quote\":\"工作模式\",\"source_section\":\"北京网信办\"}]}],\"enforcement_mechanisms\":[{\"label\":\"market_access_restriction\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"累计处置违规小程序、应用程序、智能体等AI产品3500余款\",\"source_section\":\"第一阶段工作概述\"},{\"quote\":\"驳回、处置违规小程序、应用程序等共计570余款\",\"source_section\":\"腾讯\"}]},{\"label\":\"regulatory_supervision\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"部署各地网信部门加大违规AI产品处置力度\",\"source_section\":\"第一阶段工作概述\"},{\"quote\":\"督促重点网站平台健全技术安全保障措施\",\"source_section\":\"第一阶段工作概述\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"形成处置处罚规范\",\"source_section\":\"下一步工作\"},{\"quote\":\"天津网信办采用\"},{\"quote\":\"人工+技术\"},{\"quote\":\"方式，开展大模型安全监测，通报4批次14个风险问题\",\"source_section\":\"天津网信办\"}]}],\"implementation_notes\":\"This is a progress report on Phase 1 of the 'Qinglang: Rectification of AI Technology Abuse' campaign launched April 2025. The document describes enforcement actions already taken and outlines Phase 2 plans focusing on AI-generated misinformation and vulgar content. Penalties are referenced prospectively ('形成处置处罚规范') but not yet fully specified. The document functions as both a regulatory guidance report and an enforcement action summary. Safety requirements are inferred from described platform actions rather than explicit legal mandates in this document.\",\"confidence\":0.82}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 5097,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1021,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

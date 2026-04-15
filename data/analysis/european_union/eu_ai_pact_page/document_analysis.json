@@ -1,0 +1,124 @@
+{
+  "source_id": "eu_ai_pact_page",
+  "title": "AI Pact",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission / AI Office",
+    "document_type": "voluntary_commitment",
+    "binding_strength": "voluntary_commitment",
+    "publication_date": "2024-09-25",
+    "effective_date": null,
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "healthcare",
+      "finance",
+      "employment"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "Identifying and mapping AI systems likely to be categorised as high-risk under the AI Act",
+            "source_section": "Pillar II core actions"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "Over half of these companies have pledged additional AI Pact commitments, such as human oversight, risk mitigation, and transparency in AI-generated content",
+            "source_section": "Pillar II"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "transparency in AI-generated content like deep fakes",
+            "source_section": "Pillar II"
+          },
+          {
+            "quote": "This initiative encourages organisations to proactively disclose the processes and practices they are implementing to anticipate compliance",
+            "source_section": "Pillar II"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "Adopting an AI governance strategy to foster the uptake of AI in the organisation and work towards future compliance with the AI Act",
+            "source_section": "Pillar II core actions"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "These pledges are not legally binding and do not impose any legal obligations on participants",
+            "source_section": "Pillar II"
+          },
+          {
+            "quote": "pledges which are 'declarations of engagement'",
+            "source_section": "Pillar II"
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "Participating companies have been invited to publicly report on their progress at an AI Pact event on 15 December",
+            "source_section": "Pillar II"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "The AI Pact is a voluntary initiative preparatory to the binding EU AI Act. Pillar I is a knowledge-sharing community open to all stakeholders. Pillar II involves voluntary pledges by providers and deployers. More than 230 companies have signed pledges. Reporting on progress is invited but not legally mandated.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "fundamental_rights",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "consumer_public_safety": 0.45,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document frames AI governance primarily around ensuring trustworthy, safe AI systems and compliance with the AI Act's safety and transparency requirements. It emphasizes risk categorization, human oversight, and safeguards. Fundamental rights and innovation enablement appear as secondary frames.",
+    "evidence_spans": [
+      {
+        "quote": "The EU's approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights.",
+        "source_section": null
+      },
+      {
+        "quote": "Promoting AI awareness and literacy among staff, ensuring ethical and responsible AI development",
+        "source_section": null
+      },
+      {
+        "quote": "human oversight, risk mitigation, and transparency in AI-generated content like deep fakes",
+        "source_section": null
+      },
+      {
+        "quote": "sharing knowledge and increasing the visibility and credibility of the safeguards put in place to demonstrate trustworthy AI",
+        "source_section": null
+      }
+    ]
+  }
+}

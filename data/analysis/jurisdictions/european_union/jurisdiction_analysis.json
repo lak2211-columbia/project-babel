@@ -1,0 +1,183 @@
+{
+  "jurisdiction": "european_union",
+  "analysis_method": "deterministic_v1",
+  "analysis_version": "0.1.0",
+  "generated_at": "2026-04-15T17:38:06.932622Z",
+  "source_count": 18,
+  "source_document_ids": [
+    "eu_ai_act_navigation_qa",
+    "eu_ai_act_regulation_2024_1689",
+    "eu_ai_act_standardisation_page",
+    "eu_ai_pact_page",
+    "eu_ai_system_definition_guidelines",
+    "eu_edpb_ai_models_opinion_28_2024",
+    "eu_edps_genai_guidance_2025",
+    "eu_gpai_code_copyright_chapter_2025",
+    "eu_gpai_code_qa_2025",
+    "eu_gpai_code_safety_security_chapter_2025",
+    "eu_gpai_code_transparency_chapter_2025",
+    "eu_gpai_provider_guidelines",
+    "eu_gpai_scope_obligations_guidelines_2025",
+    "eu_gpai_vademecum_2025",
+    "eu_prohibited_ai_practices_guidelines",
+    "eu_request_for_an_article_64_2_opinion_from_efe0d88a",
+    "eu_training_content_public_summary_template_2025",
+    "eu_training_content_template_faq_2025"
+  ],
+  "source_window_start": "2024-07-12",
+  "source_window_end": "2026-03-20",
+  "summary": "European Union's current AI governance record is guidance-heavy, with European Commission and European Commission / AI Office appearing most often in the source base. Across the analyzed documents, Fundamental rights is the clearest rationale, with Consumer and public safety as the next strongest layer, while transparency and disclosure, model documentation, and risk assessment recur most often in the operative expectations.",
+  "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from European Commission, European Commission / AI Office, and AI Office, and the corpus is weighted toward regulatory guidance and standards guidance.",
+  "framing_landscape": "Fundamental rights is the clearest rationale in the corpus, with Consumer and public safety and Innovation enablement still materially shaping how governance is justified.",
+  "implementation_and_enforcement": "Operationally, the sources most often point to transparency and disclosure, model documentation, and risk assessment. When the corpus gets concrete about consequences, it most often references regulatory supervision and reporting obligations.",
+  "source_coverage_note": "This readout is based on 18 analyzed documents spanning 2024-07-12 to 2026-03-20. The corpus is weighted toward regulatory guidance and standards guidance. On the binding side it leans toward regulatory guidance and voluntary commitment, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are Standardisation of the AI Act and AI Pact.",
+  "key_sources": [
+    {
+      "document_id": "eu_ai_act_regulation_2024_1689",
+      "title": "Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence",
+      "publication_date": "2024-07-12",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "dominant_frame": "fundamental_rights",
+      "contribution": "Statutory anchor for risk assessment and transparency and disclosure, with regulatory supervision as the clearest consequence or oversight hook."
+    },
+    {
+      "document_id": "eu_ai_act_navigation_qa",
+      "title": "Questions & Answers on the AI Act",
+      "publication_date": "2026-01-28",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "dominant_frame": "fundamental_rights",
+      "contribution": "Regulatory implementation anchor for risk assessment and pre-deployment testing, with civil penalties as the clearest consequence or oversight hook."
+    },
+    {
+      "document_id": "eu_training_content_template_faq_2025",
+      "title": "Template for general-purpose AI model providers to summarise their training content",
+      "publication_date": "2025-07-24",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "binding_law",
+      "dominant_frame": "fundamental_rights",
+      "contribution": "Statutory anchor for transparency and disclosure and model documentation, with civil penalties as the clearest consequence or oversight hook."
+    },
+    {
+      "document_id": "eu_prohibited_ai_practices_guidelines",
+      "title": "Commission publishes the Guidelines on prohibited artificial intelligence (AI) practices, as defined by the AI Act.",
+      "publication_date": "2025-02-04",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "dominant_frame": "fundamental_rights",
+      "contribution": "Regulatory implementation anchor for risk assessment and human oversight, with regulatory supervision as the clearest consequence or oversight hook."
+    }
+  ],
+  "top_document_types": [
+    {
+      "label": "regulatory_guidance",
+      "count": 12,
+      "share": 0.667
+    },
+    {
+      "label": "standards_guideline",
+      "count": 3,
+      "share": 0.167
+    },
+    {
+      "label": "voluntary_commitment",
+      "count": 2,
+      "share": 0.111
+    }
+  ],
+  "top_binding_strengths": [
+    {
+      "label": "regulatory_guidance",
+      "count": 10,
+      "share": 0.556
+    },
+    {
+      "label": "voluntary_commitment",
+      "count": 5,
+      "share": 0.278
+    },
+    {
+      "label": "binding_law",
+      "count": 2,
+      "share": 0.111
+    }
+  ],
+  "top_requirements": [
+    {
+      "label": "transparency_disclosure",
+      "count": 16,
+      "share": 0.889
+    },
+    {
+      "label": "model_documentation",
+      "count": 14,
+      "share": 0.778
+    },
+    {
+      "label": "risk_assessment",
+      "count": 12,
+      "share": 0.667
+    },
+    {
+      "label": "human_oversight",
+      "count": 10,
+      "share": 0.556
+    }
+  ],
+  "top_enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "count": 16,
+      "share": 0.889
+    },
+    {
+      "label": "reporting_obligation",
+      "count": 14,
+      "share": 0.778
+    },
+    {
+      "label": "soft_enforcement",
+      "count": 11,
+      "share": 0.611
+    },
+    {
+      "label": "civil_penalty",
+      "count": 5,
+      "share": 0.278
+    }
+  ],
+  "top_frames": [
+    {
+      "label": "fundamental_rights",
+      "score": 10.03,
+      "share": 0.385,
+      "document_mentions": 13
+    },
+    {
+      "label": "consumer_public_safety",
+      "score": 7.13,
+      "share": 0.274,
+      "document_mentions": 17
+    },
+    {
+      "label": "innovation_enablement",
+      "score": 4.18,
+      "share": 0.16,
+      "document_mentions": 8
+    },
+    {
+      "label": "economic_competitiveness",
+      "score": 1.39,
+      "share": 0.053,
+      "document_mentions": 4
+    }
+  ],
+  "key_institutions": [
+    "European Commission",
+    "European Commission / AI Office",
+    "AI Office",
+    "AI Board"
+  ],
+  "confidence": 0.803
+}

@@ -1,0 +1,128 @@
+{
+  "source_id": "jp_kaigi_3537a511",
+  "title": "ＡＩ戦略 2022",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)",
+    "document_type": "strategy_paper",
+    "binding_strength": "strategy_statement",
+    "publication_date": "2022-04-22",
+    "effective_date": null,
+    "covered_actors": [
+      "国 (national government)",
+      "地方自治体 (local governments)",
+      "民間企業 (private enterprises)",
+      "AI開発者・運用者 (AI developers and operators)"
+    ],
+    "covered_application_domains": [
+      "critical_infrastructure",
+      "public_sector_use",
+      "healthcare",
+      "defense"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "サイバーセキュリティやＡＩ倫理を含む、システムの安全性や健全性を担保する技術の開発や実装",
+            "source_section": "第一部 基本的事項 ５．戦略の推進にあたっての基本的考え方"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "公平性・透明性があり、責任ある形で運用され、安全であることが極めて重要",
+            "source_section": "第二部 （３）Resilient and Responsible AI"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.5,
+        "evidence": [
+          {
+            "quote": "Responsible AI の確立とサイバーセキュリティの強化に立脚した Resilient AI",
+            "source_section": "第二部 （３）Resilient and Responsible AI"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "民間セクターは、本戦略の趣旨をしっかりと理解したうえで、ＡＩ社会原則を遵守し",
+            "source_section": "第一部 ７．官民の役割分担"
+          }
+        ]
+      },
+      {
+        "label": "none_specified",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "国は、以上の観点を念頭におき、総合的なコーディネーターとして、以下の点にも留意しつつ、本戦略に記載される各種施策を着実に推進していく",
+            "source_section": "第一部 ５．戦略の推進にあたっての基本的考え方"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "AI戦略2022 is a non-binding national strategy document building on AI Strategy 2019 and 2021. It sets strategic goals (目標0–4) covering crisis resilience (AI for National Resilience, Planetary Resilience), social implementation of AI, and responsible/trustworthy AI. No specific compliance deadlines, penalties, or enforcement mechanisms are defined. The document references the 'Human-Centered AI Social Principles' (2019) as the foundational ethical framework.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "economic_competitiveness",
+    "secondary_frames": [
+      "national_security",
+      "social_stability",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.2,
+      "national_security": 0.55,
+      "economic_competitiveness": 0.75,
+      "fundamental_rights": 0.2,
+      "social_stability": 0.5,
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.3,
+      "labor_transition": 0.2
+    },
+    "rationale_summary": "The document frames AI governance primarily through economic competitiveness: it explicitly aims to strengthen Japan's industrial competitiveness, achieve top-runner status in real-world industries, improve labor productivity to match the US and Germany, and build international AI networks to expand market reach. National resilience (disaster response, pandemic preparedness) and social stability are strong secondary frames, especially in Strategic Goal 0. Innovation enablement appears throughout as a means to achieve these goals.",
+    "evidence_spans": [
+      {
+        "quote": "我が国自身の社会課題の克服や産業競争力の向上に向けて、ＡＩに関する総合的な政策パッケージを示すことである",
+        "source_section": "第一部 ３．戦略の目的"
+      },
+      {
+        "quote": "我が国が、実世界産業におけるＡＩの応用でトップ・ランナーとなり、産業競争力の強化が実現されること",
+        "source_section": "戦略目標２"
+      },
+      {
+        "quote": "国際競争力を維持し、日本の存亡をかけて、持続的かつ着実な対応が求められるものである",
+        "source_section": "第一部 ６．戦略目標"
+      },
+      {
+        "quote": "大きな危機を、最大のチャンスに転換する戦略を構築し、迅速に実施するというのが、戦略目標０の意図である。同時に、この戦略が我が国の産業競争力の向上を支えるために国が行うべき政策そのものになることを意図している",
+        "source_section": "第二部 １．（３）"
+      },
+      {
+        "quote": "ＡＩも含む重要技術については経済安全保障の観点から各種の取組が検討されていることから",
+        "source_section": "第一部 ５．戦略の推進にあたっての基本的考え方"
+      }
+    ]
+  }
+}

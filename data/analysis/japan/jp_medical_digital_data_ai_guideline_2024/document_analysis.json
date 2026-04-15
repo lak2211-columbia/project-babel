@@ -1,0 +1,158 @@
+{
+  "source_id": "jp_medical_digital_data_ai_guideline_2024",
+  "title": "医療デジタルデータのAI研究開発等への利活用に係るガイドライン",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "Ministry of Health, Labour and Welfare (厚生労働省) / Guidelines Drafting Group for AI R&D Utilization of Digital Data",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2024-03-31",
+    "effective_date": null,
+    "covered_actors": [
+      "医療機関等 (medical institutions)",
+      "学術研究機関等 (academic research institutions)",
+      "民間企業等 (private companies)",
+      "医療従事者 (healthcare professionals)",
+      "研究者 (researchers)",
+      "開発担当者 (development staff)"
+    ],
+    "covered_application_domains": [
+      "healthcare",
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [
+      "推奨されない仮名加工情報の取扱い (non-recommended handling of pseudonymized information, as described in section 3.4)"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "患者の権利利益を適切に保護することを前提として、医療情報の特性を考慮した仮名加工情報の適切な運用を整理するために",
+            "source_section": "まえがき"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "削除情報等の安全管理措置義務",
+            "source_section": "目次 3.8"
+          },
+          {
+            "quote": "安全管理措置（第 23 条）",
+            "source_section": "2.3"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "quote": "医療情報の特性を踏まえた仮名加工情報の作成手順やその運用に関する実践的なガイダンスとなるように取りまとめた",
+            "source_section": "まえがき"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "保有個人データに関する事項の公表等（第 32 条）",
+            "source_section": "2.3"
+          },
+          {
+            "quote": "取得に際しての利用目的の通知等（第 21 条）",
+            "source_section": "2.3"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "漏えい等の報告等（第 26 条）",
+            "source_section": "2.3"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "個人情報取扱事業者等の義務等に係る規律の全部又は一部の適用を受けるものを指す",
+            "source_section": "2.2"
+          },
+          {
+            "quote": "個人情報保護委員会",
+            "source_section": "1.2.3"
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "本ガイドラインは、これらの読者が医療情報を適切かつ効果的に利活用し、革新的な医療機器の開発を促進するための指針となることを目指している",
+            "source_section": "1.2.1"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "個人情報保護委員会 (Personal Information Protection Commission)",
+      "厚生労働省 (Ministry of Health, Labour and Welfare)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "Guideline focuses on pseudonymized medical information (仮名加工情報) under Japan's Act on Protection of Personal Information for use in AI R&D and medical device product development. Excludes: clinical trial data, anonymous processing (匿名加工情報), cross-border data transfers, advanced privacy-enhancing technologies, generative AI legal risks, and the Next-Generation Medical Infrastructure Act (次世代医療基盤法). Practical procedures for creating pseudonymized data from diagnostic text, physiological function tests, medical images, genetic test data, and multimodal data are provided.",
+    "confidence": 0.85
+  },
+  "risk_framing": {
+    "dominant_frame": "economic_competitiveness",
+    "secondary_frames": [
+      "fundamental_rights",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.05,
+      "economic_competitiveness": 0.65,
+      "fundamental_rights": 0.55,
+      "social_stability": 0.1,
+      "innovation_enablement": 0.5,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document opens by explicitly framing medical AI data utilization in the context of intensifying global R&D competition, positioning Japan's data governance as a matter of competitive capacity. The preface warns that privacy law 'greatly affects data resources that are the source of competitiveness.' Simultaneously, it foregrounds patient rights protection and privacy as a core constraint, making fundamental_rights a strong secondary frame. Innovation enablement is also present as the guideline aims to remove legal barriers to product development.",
+    "evidence_spans": [
+      {
+        "quote": "先端的な研究開発やイノベーションによる新産業の創出は、常に厳しいグローバルな競争にさらされており、個人情報保護法制はその競争力の源泉であるデータ資源の取扱いに大きく影響を及ぼす",
+        "source_section": "Page 2"
+      },
+      {
+        "quote": "病院に蓄積された膨大な医療情報を貴重なデータ資源として活用し、学術研究機関等や医療機関等のみならず、製品開発の担い手としての民間企業等をも巻き込んだ研究開発競争が世界的に激化している",
+        "source_section": "Page 2"
+      },
+      {
+        "quote": "患者の権利利益を適切に保護することを前提として、医療情報の特性を考慮した仮名加工情報の適切な運用を整理するために",
+        "source_section": "Page 2"
+      },
+      {
+        "quote": "患者の権利利益の保護と社会的な必要性とのバランスを考慮し、医療情報の利活用を調整するべきという考え方が注目されている",
+        "source_section": "Page 5"
+      }
+    ]
+  }
+}

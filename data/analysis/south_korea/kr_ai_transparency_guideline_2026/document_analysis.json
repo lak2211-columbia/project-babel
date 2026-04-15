@@ -1,0 +1,123 @@
+{
+  "source_id": "kr_ai_transparency_guideline_2026",
+  "title": "인공지능 투명성 확보 가이드라인",
+  "language": "ko",
+  "policy_extraction": {
+    "jurisdiction": "south_korea",
+    "issuing_body": "National Intelligence Agency (NIA) / Ministry of Science and ICT (과학기술정보통신부)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": null,
+    "effective_date": null,
+    "covered_actors": [
+      "인공지능사업자 (AI business operators)",
+      "AI개발사업자 (AI development operators)",
+      "AI이용사업자 (AI service operators)",
+      "overseas operators affecting Korean citizens"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "public_sector_use"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "고영향 인공지능이나 생성형 인공지능을 이용한 제품･서비스의 AI 기반 운용 사실을 사전 고지",
+            "source_section": "투명성 확보 의무 내용"
+          },
+          {
+            "quote": "인공지능 생성 결과물이 생성형 인공지능 또는 인공지능 시스템에 의해 생성되었다는 사실을 고지 및 표시",
+            "source_section": "투명성 확보 의무 내용"
+          },
+          {
+            "quote": "딥페이크 결과물을 제공하는 경우 해당 결과물이 AI에 의해 생성되었다는 사실을 이용자가 명확히 인식할 수 있는 방식으로 고지 또는 표시",
+            "source_section": "투명성 의무별 설명"
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.92,
+        "evidence": [
+          {
+            "quote": "(기계가 판독할 수 있는 방법) 디지털 워터마킹, 메타데이터 등을 활용한 비가시적인 방법",
+            "source_section": "외부 반출 시 표시 방법 예시"
+          },
+          {
+            "quote": "사후 식별 가능한 음성 워터마킹 기술, 메타데이터 등을 활용한 비가시적인 방법",
+            "source_section": "음성 생성물 표시 방법"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "제품 등에 직접 기재하거나, 계약서, 사용설명서, 이용약관 등에 기재",
+            "source_section": "사전에 고지하는 방법 (시행령 제23조 제1항)"
+          },
+          {
+            "quote": "기계가 판독할 수 있는 방법을 사용할 경우에는 최소 1회 이상 안내 문구･음성 등을 제공해야 함",
+            "source_section": "표시하는 방법 (시행령 제23조 제2항)"
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "과학기술정보통신부장관이 인정하는 방법",
+            "source_section": "사전에 고지하는 방법 (시행령 제23조 제1항)"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "과학기술정보통신부장관 (Minister of Science and ICT)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This guideline operationalizes Article 31 of Korea's AI Basic Act (인공지능 기본법), which imposes three transparency obligations: (1) prior notification that a product/service is operated by high-impact AI or generative AI; (2) labeling that AI-generated outputs were produced by generative AI; (3) labeling of deepfake outputs. The guideline clarifies that transparency obligations fall on the entity directly providing AI products/services to end-users, not upstream model developers unless they directly serve end-users. Foreign operators affecting Korean citizens are also covered. Detailed labeling methods are provided for text, image, video, audio, and other file formats, including both human-perceptible and machine-readable approaches. Artistic/creative works are afforded flexibility in labeling methods.",
+    "confidence": 0.82
+  },
+  "risk_framing": {
+    "dominant_frame": "social_stability",
+    "secondary_frames": [
+      "fundamental_rights",
+      "consumer_public_safety"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.05,
+      "national_security": 0.1,
+      "economic_competitiveness": 0.05,
+      "fundamental_rights": 0.55,
+      "social_stability": 0.7,
+      "innovation_enablement": 0.1,
+      "consumer_public_safety": 0.5,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document frames AI governance primarily around preventing social harms such as confusion, misinformation, deepfake abuse, digital sex crimes, and erosion of public trust. The stated purpose of transparency obligations is to prevent 'confusion and misrepresentation in information use and to enhance social trust.' Risk cases emphasize fake news affecting elections and markets, sexual exploitation, and academic fraud—all social stability concerns. Fundamental rights (especially protection from deepfake sexual abuse) and consumer/public safety are strong secondary frames.",
+    "evidence_spans": [
+      {
+        "quote": "정보 이용 과정에서의 혼동과 오인 방지 및 사회적 신뢰를 제고하기 위한 제도적 장치를 마련하는 데 목적이 있음",
+        "source_section": "투명성 확보 의무 개요"
+      },
+      {
+        "quote": "가짜뉴스는 이미 대중의 생활 곳곳에 침투하고 있어, 이에 대한 대책 마련이 시급",
+        "source_section": "참고자료 - 가짜뉴스 생성"
+      },
+      {
+        "quote": "생성형 인공지능을 오남용하여 성적 허위 영상물(성착취물)을 제작 및 유포하는 행위가 발생하고 있으며",
+        "source_section": "참고자료 - 디지털 성범죄"
+      }
+    ]
+  }
+}

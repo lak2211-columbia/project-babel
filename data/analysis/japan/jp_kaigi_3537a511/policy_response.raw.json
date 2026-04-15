@@ -1,0 +1,56 @@
+{
+  "metadata_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01MoYP3nyDgb1atc2fc434Jh",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"issuing_body\":\"統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)\",\"document_type\":\"strategy_paper\",\"binding_strength\":\"strategy_statement\",\"publication_date\":\"2022-04-22\",\"effective_date\":null,\"covered_actors\":[\"国 (national government)\",\"地方自治体 (local governments)\",\"民間企業 (private enterprises)\",\"AI開発者・運用者 (AI developers and operators)\"],\"covered_application_domains\":[\"critical_infrastructure\",\"public_sector_use\",\"healthcare\",\"defense\"],\"prohibited_practices\":[],\"enforcement_authorities\":[\"統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)\"],\"compliance_deadlines\":[],\"penalties_summary\":null,\"implementation_notes\":\"AI戦略2022 is a non-binding national strategy document building on AI Strategy 2019 and 2021. It sets strategic goals (目標0–4) covering crisis resilience (AI for National Resilience, Planetary Resilience), social implementation of AI, and responsible/trustworthy AI. No specific compliance deadlines, penalties, or enforcement mechanisms are defined. The document references the 'Human-Centered AI Social Principles' (2019) as the foundational ethical framework.\",\"confidence\":0.92}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 8462,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 310,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  },
+  "controls_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01MNjPt9wnrEaL3MZt4eQrqY",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.6,\"evidence\":[{\"quote\":\"サイバーセキュリティやＡＩ倫理を含む、システムの安全性や健全性を担保する技術の開発や実装\",\"source_section\":\"第一部 基本的事項 ５．戦略の推進にあたっての基本的考え方\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.6,\"evidence\":[{\"quote\":\"公平性・透明性があり、責任ある形で運用され、安全であることが極めて重要\",\"source_section\":\"第二部 （３）Resilient and Responsible AI\"}]},{\"label\":\"human_oversight\",\"confidence\":0.5,\"evidence\":[{\"quote\":\"Responsible AI の確立とサイバーセキュリティの強化に立脚した Resilient AI\",\"source_section\":\"第二部 （３）Resilient and Responsible AI\"}]}],\"enforcement_mechanisms\":[{\"label\":\"soft_enforcement\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"民間セクターは、本戦略の趣旨をしっかりと理解したうえで、ＡＩ社会原則を遵守し\",\"source_section\":\"第一部 ７．官民の役割分担\"}]},{\"label\":\"none_specified\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"国は、以上の観点を念頭におき、総合的なコーディネーターとして、以下の点にも留意しつつ、本戦略に記載される各種施策を着実に推進していく\",\"source_section\":\"第一部 ５．戦略の推進にあたっての基本的考え方\"}]}]}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 17536,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 457,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  }
+}

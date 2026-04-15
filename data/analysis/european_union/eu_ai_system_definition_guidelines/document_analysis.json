@@ -1,0 +1,90 @@
+{
+  "source_id": "eu_ai_system_definition_guidelines",
+  "title": "The Commission publishes guidelines on AI system definition to facilitate the first AI Act's rules application",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2025-02-02",
+    "effective_date": "2025-02-02",
+    "covered_actors": [
+      "providers",
+      "market stakeholders",
+      "institutional stakeholders",
+      "relevant persons"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "biometrics",
+      "public_sector_use",
+      "employment",
+      "education",
+      "healthcare",
+      "finance",
+      "law_enforcement",
+      "defense"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "human_oversight",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "Systems that have the capability to operate with limited or no human intervention in specific use contexts...may, under certain conditions, trigger additional potential risks and human oversight considerations.",
+            "source_section": "Page 5"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "The Guidelines are not binding. Any authoritative interpretation of the AI Act may ultimately only be given by the Court of Justice of the European Union (CJEU).",
+            "source_section": "Page 2"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Court of Justice of the European Union (CJEU)",
+      "European Artificial Intelligence Board"
+    ],
+    "compliance_deadlines": [
+      "2 February 2025: AI system definition and Chapter I and II provisions, including Article 5 prohibited AI practices, entered into application"
+    ],
+    "penalties_summary": null,
+    "implementation_notes": "Guidelines are explicitly non-binding (paragraph 7: 'The Guidelines are not binding'). Authoritative interpretation rests solely with the CJEU. Guidelines were adopted in parallel with Commission guidelines on prohibited AI practices. They clarify the seven-element definition of 'AI system' under Article 3(1) of Regulation (EU) 2024/1689 and note that systems based solely on rules defined by natural persons or limited to basic data processing fall outside the AI system definition.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "innovation_enablement",
+      "consumer_public_safety"
+    ],
+    "frame_confidence": {
+      "fundamental_rights": 0.65,
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.45,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "The document frames AI governance as necessary to ensure 'a high level of protection of health, safety, and fundamental rights in the Union, including democracy and the rule of law.' This rights-protective framing is the primary stated rationale, paired with a secondary emphasis on promoting innovation and uptake of AI.",
+    "evidence_spans": [
+      {
+        "quote": "Its aim is to promote innovation in and the uptake of AI, while ensuring a high level of protection of health, safety, and fundamental rights in the Union, including democracy and the rule of law.",
+        "source_section": "Page 2"
+      },
+      {
+        "quote": "Systems that have the capability to operate with limited or no human intervention in specific use contexts...may, under certain conditions, trigger additional potential risks and human oversight considerations.",
+        "source_section": "Page 5"
+      }
+    ]
+  }
+}

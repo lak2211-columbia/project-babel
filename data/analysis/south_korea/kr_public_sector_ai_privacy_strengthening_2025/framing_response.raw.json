@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_013CD4t2XLSbepTbSy1cvYsG",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"fundamental_rights\",\"secondary_frames\":[\"consumer_public_safety\",\"social_stability\"],\"frame_confidence\":{\"fundamental_rights\":0.82,\"consumer_public_safety\":0.55,\"labor_transition\":0.0},\"rationale_summary\":\"The document centers on protecting personal information rights of data subjects when public institutions deploy AI. The governance justification is framed around preventing privacy violations, ensuring legal bases for data processing, and protecting sensitive groups such as children—core fundamental rights concerns under Korea's Personal Information Protection Act.\",\"evidence_spans\":[{\"quote\":\"개인정보 영향평가는 개인정보 처리가 필요한 사업 추진 시 사전에 개인정보에 미치는 영향을 분석하고 개선방안을 수립하여 개인정보 침해사고를 예방하는 제도이다\",\"source_section\":\"본문\"},{\"quote\":\"민감정보·14세 미만 아동정보 등이 불필요하게 포함되지 않는지\",\"source_section\":\"평가항목\"},{\"quote\":\"정보주체 권리보장 방안 수립·시행을 주요 평가기준으로 제시했다\",\"source_section\":\"운영 및 관리\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 3855,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 321,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

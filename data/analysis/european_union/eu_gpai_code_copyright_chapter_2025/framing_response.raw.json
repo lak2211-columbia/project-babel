@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01Dt87hxz7RVSQJN249iDdAB",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"fundamental_rights\",\"secondary_frames\":[\"innovation_enablement\",\"consumer_public_safety\"],\"frame_confidence\":{\"existential_catastrophic\":0.02,\"national_security\":0.02,\"economic_competitiveness\":0.1,\"fundamental_rights\":0.75,\"social_stability\":0.05,\"innovation_enablement\":0.35,\"consumer_public_safety\":0.2,\"labor_transition\":0.01},\"rationale_summary\":\"The document is primarily framed around protecting fundamental rights—specifically intellectual property rights enshrined in EU law—as the basis for AI governance obligations. The overarching objective explicitly references 'a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law.' The substantive measures are devoted to ensuring AI providers respect copyright and related rights of rightsholders. A secondary innovation-enablement frame is present through references to supporting innovation and accommodating SMEs/startups. Consumer/public safety appears marginally through output safeguard requirements.\",\"evidence_spans\":[{\"quote\":\"promote the uptake of human-centric and trustworthy artificial intelligence, while ensuring a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law\",\"source_section\":\"Page 2\"},{\"quote\":\"providers of general-purpose AI models on the Union market must put in place a policy to comply with Union law on copyright and related rights, and in particular to identify and comply with, including through state-of-the-art technologies, a reservation of rights expressed by rightsholders\",\"source_section\":\"Page 3\"},{\"quote\":\"provides for exclusive rights that are preventive in nature and thus is based on prior consent save where an exception or limitation applies\",\"source_section\":\"Page 3\"},{\"quote\":\"implement appropriate and proportionate technical safeguards to prevent their models from generating outputs that reproduce training content protected by Union law on copyright and related rights in an infringing manner\",\"source_section\":\"Page 6\"},{\"quote\":\"The commitments in this Chapter that require proportionate measures should be commensurate and proportionate to the size of providers, taking due account of the interests of SMEs, including startups.\",\"source_section\":\"Page 3\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 4921,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 505,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

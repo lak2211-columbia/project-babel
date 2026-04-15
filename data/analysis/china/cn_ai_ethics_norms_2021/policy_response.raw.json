@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_017u6HLSo4BCjfmWaxkVPnUb",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"jurisdiction\":\"china\",\"issuing_body\":\"国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee)\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2021-09-25\",\"effective_date\":\"2021-09-25\",\"covered_application_domains\":[\"general_purpose_models\",\"public_sector_use\"],\"safety_requirements\":[{\"label\":\"human_oversight\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"保障人类拥有充分自主决策权，有权选择是否接受人工智能提供的服务，有权随时退出与人工智能的交互，有权随时中止人工智能系统的运行，确保人工智能始终处于人类控制之下\",\"source_section\":\"第三条（四）确保可控可信\"}]},{\"label\":\"risk_assessment\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"不低估不夸大伦理风险。主动开展或参与人工智能伦理问题讨论\",\"source_section\":\"第三条（六）提升伦理素养\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"充分尊重个人信息知情、同意等权利，依照合法、正当、必要和诚信原则处理个人信息\",\"source_section\":\"第三条（三）保护隐私安全\"}]}],\"enforcement_mechanisms\":[{\"label\":\"soft_enforcement\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"旨在将伦理道德融入人工智能全生命周期，为从事人工智能相关活动的自然人、法人和其他相关机构等提供伦理指引\",\"source_section\":\"前言\"},{\"quote\":\"积极引导负责任的人工智能研发与应用活动\",\"source_section\":\"前言\"}]},{\"label\":\"none_specified\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"建立人工智能问责机制，不回避责任审查，不逃避应负责任\",\"source_section\":\"第三条（五）强化责任担当\"}]}],\"implementation_notes\":\"This document is an ethics guideline (伦理规范) rather than binding law. It provides normative guidance for all actors in the AI lifecycle (managers, developers, suppliers, users) but does not specify legal penalties or mandatory enforcement mechanisms. Binding force is ambiguous; treated as regulatory guidance given the issuing body's authority, but closer to a soft-law instrument.\",\"confidence\":0.82}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 4636,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 651,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

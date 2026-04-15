@@ -1,0 +1,800 @@
+{
+  "manifest_version": "2026-04-15",
+  "jurisdiction": "south_korea",
+  "description": "Official legal, public-sector, privacy, and medical-device sources for South Korea's AI framework and implementation.",
+  "source_portals": [
+    {
+      "id": "kr_law_center",
+      "name": "Korean Law Information Center",
+      "issuing_body": "Ministry of Government Legislation",
+      "canonical_url": "https://www.law.go.kr/",
+      "portal_kind": "registry",
+      "retrieval_strategy": "browser",
+      "languages": [
+        "ko"
+      ],
+      "priority": "high",
+      "coverage_notes": "Canonical legal-text portal for Korean statutes and decrees.",
+      "tags": [
+        "law",
+        "registry",
+        "binding_law"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.law.go.kr/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "인공지능",
+            "AI"
+          ],
+          "browser_required": true,
+          "browser_wait_for_selector": "body",
+          "max_candidates": 100
+        }
+      ],
+      "issuer_type": "legal_registry"
+    },
+    {
+      "id": "kr_msit_ai_request",
+      "name": "MSIT High-Impact AI Confirmation Desk",
+      "issuing_body": "Ministry of Science and ICT",
+      "canonical_url": "https://www.msit.go.kr/user/ais/requestAi.do",
+      "portal_kind": "helpdesk",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ko"
+      ],
+      "priority": "high",
+      "coverage_notes": "Implementation portal for high-impact AI confirmation and guidance under Korea's AI framework.",
+      "tags": [
+        "msit",
+        "high_impact_ai",
+        "implementation"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.msit.go.kr/user/ais/requestAi.do",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "인공지능",
+            "AI"
+          ],
+          "browser_required": true,
+          "browser_wait_for_selector": "body",
+          "max_candidates": 50
+        }
+      ],
+      "issuer_type": "executive"
+    },
+    {
+      "id": "kr_msit_main",
+      "name": "Ministry of Science and ICT",
+      "issuing_body": "Ministry of Science and ICT",
+      "canonical_url": "https://www.msit.go.kr/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ko",
+        "en"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Primary ministry surface for AI policy announcements and implementation notices.",
+      "tags": [
+        "msit",
+        "policy",
+        "ai_governance"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.msit.go.kr/index.do",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "인공지능",
+            "AI ",
+            "고영향"
+          ],
+          "exclude_title_patterns": [
+            "KAIST",
+            "채용 공고"
+          ],
+          "browser_required": true,
+          "browser_wait_for_selector": "body",
+          "max_candidates": 100
+        }
+      ],
+      "issuer_type": "executive"
+    },
+    {
+      "id": "kr_public_sector_ai_law",
+      "name": "AI and Data-Based Administration Act",
+      "issuing_body": "Ministry of Government Legislation",
+      "canonical_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=283735&viewCls=lsRvsDocInfoR",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "ko"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Public-sector AI and data-governance law relevant to administrative deployment of AI.",
+      "tags": [
+        "public_sector",
+        "administration",
+        "law"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=283735&viewCls=lsRvsDocInfoR",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "인공지능",
+            "데이터",
+            "행정"
+          ],
+          "browser_required": true,
+          "browser_wait_for_selector": "body",
+          "max_candidates": 50
+        }
+      ],
+      "issuer_type": "executive"
+    },
+    {
+      "id": "kr_nia_public_ai",
+      "name": "NIA AI Governance Guidance",
+      "issuing_body": "National Information Society Agency",
+      "canonical_url": "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=27985&cbIdx=99953",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "ko"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official NIA library for Korean public-sector AI guidance and AI Basic Act implementation materials, including hyperscale adoption guidance and support-desk guideline packages.",
+      "tags": [
+        "public_sector",
+        "implementation",
+        "generative_ai",
+        "high_impact_ai",
+        "ai_basic_act"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=27985&cbIdx=99953",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "가이드라인",
+            "공공부문",
+            "AI"
+          ],
+          "max_candidates": 25
+        },
+        {
+          "url": "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=28987&cbIdx=99835",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "가이드라인",
+            "인공지능",
+            "고영향"
+          ],
+          "max_candidates": 25
+        }
+      ],
+      "issuer_type": "executive"
+    },
+    {
+      "id": "kr_pipc_guidance",
+      "name": "PIPC AI and Privacy Guidance",
+      "issuing_body": "Personal Information Protection Commission",
+      "canonical_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardList.do?bbsId=BS217&mCode=D010030000",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "ko"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official privacy-law guidance, press releases, and practical materials on generative AI development and public-sector AI deployment.",
+      "tags": [
+        "privacy",
+        "personal_data",
+        "generative_ai"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardList.do?bbsId=BS217&mCode=D010030000",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "생성형",
+            "인공지능",
+            "개인정보"
+          ],
+          "browser_required": true,
+          "max_candidates": 50
+        }
+      ],
+      "issuer_type": "regulator"
+    },
+    {
+      "id": "kr_mfds_ai_medical",
+      "name": "MFDS AI Medical Device Guidance",
+      "issuing_body": "Ministry of Food and Drug Safety",
+      "canonical_url": "https://www.mfds.go.kr/brd/m_1060/view.do?Data_stts_gubun=C1004&company_cd=&company_nm=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&page=6&seq=15628&srchFr=&srchTo=&srchTp=0&srchWord=%EC%9D%98%EB%A3%8C%EA%B8%B0%EA%B8%B0",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "ko"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Official review and compliance guidance for generative AI medical devices and other regulated digital-health applications.",
+      "tags": [
+        "healthcare",
+        "medical_devices",
+        "generative_ai"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.mfds.go.kr/brd/m_1060/view.do?Data_stts_gubun=C1004&company_cd=&company_nm=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&page=6&seq=15628&srchFr=&srchTo=&srchTp=0&srchWord=%EC%9D%98%EB%A3%8C%EA%B8%B0%EA%B8%B0",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "인공지능",
+            "의료기기",
+            "가이드라인"
+          ],
+          "browser_required": true,
+          "max_candidates": 25
+        }
+      ],
+      "issuer_type": "regulator"
+    }
+  ],
+  "seed_documents": [
+    {
+      "id": "kr_ai_basic_act",
+      "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법",
+      "issuing_body": "National Assembly / Ministry of Government Legislation",
+      "canonical_url": "https://www.law.go.kr/lsInfoP.do?lsiSeq=268543",
+      "browser_required": true,
+      "browser_click_selectors": [
+        "#bdyBtnKO"
+      ],
+      "browser_wait_for_selector": "#bodyContent",
+      "browser_min_text_length": 300,
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "publication_date": "2025-01-21",
+      "effective_date": "2026-01-22",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "kr_law_center",
+        "kr_msit_main"
+      ],
+      "priority": "high",
+      "relevance_notes": "Foundational Korean framework law for AI development, trust, governance planning, and high-impact AI controls.",
+      "tags": [
+        "framework_law",
+        "binding_law",
+        "high_impact_ai"
+      ],
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "frontier_gpai",
+        "critical_infrastructure",
+        "public_sector_governance"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_ai_basic_act_enforcement_decree",
+      "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 시행령",
+      "issuing_body": "President of the Republic of Korea / Ministry of Government Legislation",
+      "canonical_url": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%20%EB%B0%9C%EC%A0%84%EA%B3%BC%20%EC%8B%A0%EB%A2%B0%20%EA%B8%B0%EB%B0%98%20%EC%A1%B0%EC%84%B1%20%EB%93%B1%EC%97%90%20%EA%B4%80%ED%95%9C%20%EA%B8%B0%EB%B3%B8%EB%B2%95%20%EC%8B%9C%ED%96%89%EB%A0%B9",
+      "retrieval_urls": [
+        "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282879&chrClsCd=010202&urlMode=lsInfoP&efYd=20260122&ancYnChk=0"
+      ],
+      "browser_required": true,
+      "browser_click_selectors": [
+        "#bdyBtnKO"
+      ],
+      "browser_wait_for_selector": "#bodyContent",
+      "browser_min_text_length": 300,
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2026-01-20",
+      "effective_date": "2026-01-22",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "kr_law_center",
+        "kr_msit_main"
+      ],
+      "priority": "high",
+      "relevance_notes": "Key implementing decree for the AI Basic Act, including operational requirements and procedures.",
+      "tags": [
+        "enforcement_decree",
+        "implementation",
+        "high_impact_ai"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "public_sector_governance"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_ai_basic_act_enforcement_decree_draft_notice_2025",
+      "title": "인공지능 기본법 시행령 제정안 입법예고",
+      "issuing_body": "Ministry of Science and ICT",
+      "canonical_url": "https://www.msit.go.kr/ssm/file/fileDown.do?atchFileNo=51534&fileOrd=4",
+      "retrieval_urls": [
+        "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=84&mId=109&mPid=103&nttSeqNo=3186315&sCode=user"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2025-11-12",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "mixed",
+      "source_portal_ids": [
+        "kr_msit_main"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Official legislative notice for the draft enforcement decree under the AI Basic Act, useful for tracking the transition from framework law to implementing detail.",
+      "tags": [
+        "enforcement_decree",
+        "consultation_draft",
+        "implementation"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "public_sector_governance"
+      ],
+      "lifecycle_stage": "draft"
+    },
+    {
+      "id": "kr_ai_and_data_administration_act",
+      "title": "인공지능 및 데이터 기반 행정 활성화에 관한 법률",
+      "issuing_body": "National Assembly / Ministry of Government Legislation",
+      "canonical_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=283735",
+      "browser_required": true,
+      "browser_click_selectors": [
+        "#bdyBtnKO"
+      ],
+      "browser_wait_for_selector": "#bodyContent",
+      "browser_min_text_length": 300,
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "publication_date": "2026-02-27",
+      "effective_date": "2026-08-28",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "kr_public_sector_ai_law",
+        "kr_law_center"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Public-sector AI administration law expanding the legal basis for AI-enabled government services and data use.",
+      "tags": [
+        "public_sector_ai",
+        "administration",
+        "binding_law"
+      ],
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "public_sector_governance",
+        "privacy_data_protection"
+      ],
+      "lifecycle_stage": "adopted_not_yet_effective"
+    },
+    {
+      "id": "kr_public_sector_hyperscale_ai_guideline_2024",
+      "title": "공공부문 초거대 AI 도입‧활용 가이드라인",
+      "issuing_body": "National Information Society Agency",
+      "canonical_url": "https://www.nia.or.kr/common/board/Download.do?bcIdx=26677&cbIdx=99852&fileNo=1",
+      "retrieval_urls": [
+        "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=26677&cbIdx=99852"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2024-04-23",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_nia_public_ai"
+      ],
+      "priority": "medium",
+      "relevance_notes": "First public-sector hyperscale AI implementation guideline issued with the Digital Platform Government Committee, providing the baseline that the 2025 2.0 revision updates.",
+      "tags": [
+        "public_sector_use",
+        "implementation_guidance",
+        "generative_ai",
+        "version_history"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "public_sector_governance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "superseded"
+    },
+    {
+      "id": "kr_public_sector_hyperscale_ai_guideline_2_0",
+      "title": "공공부문 초거대 AI 도입·활용 가이드라인 2.0",
+      "issuing_body": "National Information Society Agency",
+      "canonical_url": "https://www.nia.or.kr/common/board/Download.do?bcIdx=27985&cbIdx=99953&fileNo=1",
+      "retrieval_urls": [
+        "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=27985&cbIdx=99953"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2025-04-16",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_nia_public_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Operational guidance for public-sector adoption, procurement, deployment procedures, and performance management for hyperscale and generative AI.",
+      "tags": [
+        "public_sector_use",
+        "implementation_guidance",
+        "generative_ai"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "public_sector_governance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_ai_transparency_guideline_2026",
+      "title": "인공지능 투명성 확보 가이드라인",
+      "issuing_body": "National Information Society Agency / Ministry of Science and ICT",
+      "canonical_url": "https://www.nia.or.kr/common/board/Download.do?bcIdx=28987&cbIdx=99835&fileNo=14",
+      "retrieval_urls": [
+        "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=28987&cbIdx=99835"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2026-01-26",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_nia_public_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official AI Basic Act implementation guideline explaining Korean transparency obligations, pre-notice expectations, and disclosure methods for AI systems and generated outputs.",
+      "tags": [
+        "transparency",
+        "implementation_guidance",
+        "ai_basic_act",
+        "generative_ai"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "consumer_protection",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_ai_safety_guideline_2026_draft",
+      "title": "인공지능 안전성 확보 가이드라인(안)",
+      "issuing_body": "National Information Society Agency / Ministry of Science and ICT",
+      "canonical_url": "https://www.nia.or.kr/common/board/Download.do?bcIdx=28987&cbIdx=99835&fileNo=15",
+      "retrieval_urls": [
+        "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=28987&cbIdx=99835"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2026-01-22",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_nia_public_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Draft AI Basic Act safety guideline circulated via the official support-desk package, detailing safety obligations, applicable legal provisions, and implementation expectations pending further finalization.",
+      "tags": [
+        "safety",
+        "implementation_guidance",
+        "consultation_draft",
+        "ai_basic_act"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "draft"
+    },
+    {
+      "id": "kr_high_impact_ai_operator_obligations_guideline_2026",
+      "title": "고영향 인공지능 사업자 책무 가이드라인",
+      "issuing_body": "National Information Society Agency / Ministry of Science and ICT",
+      "canonical_url": "https://www.nia.or.kr/common/board/Download.do?bcIdx=28987&cbIdx=99835&fileNo=23",
+      "retrieval_urls": [
+        "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=28987&cbIdx=99835"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2026-01-22",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_nia_public_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official implementation guideline for high-impact AI operator duties under Korea's AI Basic Act, covering scope, operative obligations, and compliance handling.",
+      "tags": [
+        "high_impact_ai",
+        "operator_duties",
+        "implementation_guidance",
+        "ai_basic_act"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "public_sector_governance",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_ai_impact_assessment_guideline_2026",
+      "title": "인공지능 영향평가 가이드라인",
+      "issuing_body": "National Information Society Agency / Ministry of Science and ICT",
+      "canonical_url": "https://www.nia.or.kr/common/board/Download.do?bcIdx=28987&cbIdx=99835&fileNo=24",
+      "retrieval_urls": [
+        "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=28987&cbIdx=99835"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2026-01-22",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_nia_public_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official AI impact-assessment guideline issued through the AI Basic Act support package, setting out evaluation stages, report structure, and follow-up practices for Korean AI deployments.",
+      "tags": [
+        "impact_assessment",
+        "implementation_guidance",
+        "ai_basic_act"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "public_sector_governance",
+        "privacy_data_protection"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_public_personal_data_ai_guide_2024",
+      "title": "인공지능(AI) 개발·서비스를 위한 공개된 개인정보 처리 안내서",
+      "issuing_body": "Personal Information Protection Commission",
+      "canonical_url": "https://www.pipc.go.kr/np/cmm/fms/FileDown.do?atchFileId=FILE_000000000558005&fileSn=0&fileExtsn=pdf&cnvCnt=",
+      "retrieval_urls": [
+        "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&mCode=D010030000&nttId=10375"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2024-07-19",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_pipc_guidance"
+      ],
+      "priority": "high",
+      "relevance_notes": "Primary PIPC guidance on the use of publicly available personal information in AI development and service delivery, clarifying lawful collection and downstream compliance expectations.",
+      "tags": [
+        "privacy",
+        "personal_data",
+        "artificial_intelligence"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "privacy_data_protection",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_ai_privacy_risk_management_model_2024",
+      "title": "인공지능(AI) 프라이버시 리스크 관리 모델",
+      "issuing_body": "Personal Information Protection Commission",
+      "canonical_url": "https://www.pipc.go.kr/np/cmm/fms/FileDown.do?atchFileId=FILE_000000000559239&fileSn=0&fileExtsn=pdf&cnvCnt=",
+      "retrieval_urls": [
+        "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS289&mCode=I050010000&nttId=10977",
+        "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&mCode=D010030000&nttId=10870"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2024-12-19",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_pipc_guidance"
+      ],
+      "priority": "high",
+      "relevance_notes": "PIPC risk-model guidance for identifying, assessing, and mitigating AI privacy risks across different AI use contexts and data-processing stages.",
+      "tags": [
+        "privacy",
+        "risk_management",
+        "artificial_intelligence"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "privacy_data_protection",
+        "frontier_gpai",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_genai_personal_data_guide_2025",
+      "title": "생성형 인공지능(AI) 개발·활용을 위한 개인정보 처리 안내서(2025.8.)",
+      "issuing_body": "Personal Information Protection Commission",
+      "canonical_url": "https://www.pipc.go.kr/np/cmm/fms/FileDown.do?atchFileId=FILE_000000000560009&fileSn=0&fileExtsn=pdf&cnvCnt=",
+      "retrieval_urls": [
+        "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&mCode=D010030000&nttId=11439",
+        "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS211&mCode=C040020000&nttId=11414"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2025-08-22",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_pipc_guidance"
+      ],
+      "priority": "high",
+      "relevance_notes": "Primary Korean privacy guidance for generative AI development and use, covering lifecycle-specific legal standards and safeguards for personal information.",
+      "tags": [
+        "privacy",
+        "personal_data",
+        "generative_ai"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "privacy_data_protection",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_public_sector_ai_privacy_strengthening_2025",
+      "title": "공공기관 인공지능 활용 시 개인정보 보호 강화된다",
+      "issuing_body": "Personal Information Protection Commission",
+      "canonical_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11475",
+      "browser_required": true,
+      "browser_min_text_length": 300,
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2025-09-04",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "kr_pipc_guidance"
+      ],
+      "priority": "medium",
+      "relevance_notes": "PIPC implementation release detailing AI-specific privacy impact assessment criteria for public institutions, including legal basis, data minimization, retention, acceptable use policies, and redress mechanisms.",
+      "tags": [
+        "public_sector_use",
+        "privacy",
+        "generative_ai"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "public_sector_governance",
+        "privacy_data_protection"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_public_sector_ai_privacy_pia_items_2025",
+      "title": "개인정보 영향평가 인공지능 분야 평가항목(안)",
+      "issuing_body": "Personal Information Protection Commission",
+      "canonical_url": "https://www.pipc.go.kr/np/cmm/fms/FileDown.do?atchFileId=FILE_000000000560063&fileSn=4&fileExtsn=pdf&cnvCnt=",
+      "retrieval_urls": [
+        "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11475"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2025-09-04",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_pipc_guidance"
+      ],
+      "priority": "high",
+      "relevance_notes": "Attachment-level PIPC criteria for AI-specific privacy impact assessment in public-sector deployments, covering legal basis, data minimization, retention, accountability, acceptable use constraints, and data-subject protection measures.",
+      "tags": [
+        "public_sector_use",
+        "privacy",
+        "impact_assessment",
+        "generative_ai"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "public_sector_governance",
+        "privacy_data_protection"
+      ],
+      "lifecycle_stage": "active"
+    },
+    {
+      "id": "kr_genai_medical_device_guideline_2025",
+      "title": "생성형 인공지능 의료기기 허가·심사 가이드라인",
+      "issuing_body": "Ministry of Food and Drug Safety",
+      "canonical_url": "https://www.mfds.go.kr/brd/m_1060/down.do?brd_id=data0011&seq=15628&data_tp=A&file_seq=1",
+      "retrieval_urls": [
+        "https://www.mfds.go.kr/brd/m_1060/view.do?Data_stts_gubun=C1004&company_cd=&company_nm=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&page=6&seq=15628&srchFr=&srchTo=&srchTp=0&srchWord=%EC%9D%98%EB%A3%8C%EA%B8%B0%EA%B8%B0"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "publication_date": "2025-01-24",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_mfds_ai_medical"
+      ],
+      "priority": "high",
+      "relevance_notes": "Sector-specific guidance for review and approval of generative AI medical devices, extending Korean AI governance into regulated healthcare deployment.",
+      "tags": [
+        "healthcare",
+        "medical_devices",
+        "generative_ai"
+      ],
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "healthcare_medical_devices",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active"
+    }
+  ]
+}

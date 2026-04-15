@@ -1,0 +1,202 @@
+{
+  "source_id": "kr_public_personal_data_ai_guide_2024",
+  "title": "인공지능(AI) 개발·서비스를 위한 공개된 개인정보 처리 안내서",
+  "language": "ko",
+  "policy_extraction": {
+    "jurisdiction": "south_korea",
+    "issuing_body": "Personal Information Protection Commission (개인정보보호위원회)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2024",
+    "effective_date": null,
+    "covered_actors": [
+      "AI developers (AI 개발자)",
+      "AI service providers (AI 서비스 제공자)",
+      "personal information controllers (개인정보처리자)",
+      "overseas AI developers and service providers targeting Korean data subjects"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "public_sector_use",
+      "healthcare",
+      "employment",
+      "finance"
+    ],
+    "prohibited_practices": [
+      "Development of AI systems for profiling and surveillance of individuals by combining with facial recognition databases",
+      "Development of AI systems for cyberattacks or identity fraud (phishing, smishing)",
+      "Processing publicly available personal information to explicitly disadvantage identified individuals without clear overriding public interest"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "개인정보처리자의 정당한 이익이 정보주체의 권리에 우선하는지 여부를 판단함에 있어 정보주체의 권리 침해 가능성을 심도있게 검토해야 함",
+            "source_section": "Page 9"
+          },
+          {
+            "quote": "AI 개발 목적·용도에 맞는 학습데이터 수집 기준을 사전에 정하고, AI 개발과 상당한 관련성이 없는 정보는 학습에서 제외하는 것이 바람직함",
+            "source_section": "Page 9"
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "AI 개발자 및 서비스 제공자는 (가칭)AI 프라이버시 레드팀을 구성·운영하여 기획·개발 시 예상하지 못한 개인정보 침해 유형을 시험·확인하고, AI 모델이 배포된 이후 정보주체에 미칠 수 있는 유해한 영향을 최소화하는 것이 권장됨",
+            "source_section": "Page 18"
+          }
+        ]
+      },
+      {
+        "label": "red_teaming",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "(가칭) AI 프라이버시 레드팀 구성·운영",
+            "source_section": "Page 18"
+          },
+          {
+            "quote": "레드팀은 내·외부 전문가로 구성될 수 있으나, 독립성·객관성 확보를 위해 외부 전문가를 포함하거나 외부 레드팀 그룹과 협업할 수 있음",
+            "source_section": "Page 18"
+          },
+          {
+            "quote": "악의적 행위자(malicious adversaries)에 의한 내·외부 공격 테스트 외, 일반적인 AI 이용 과정에서 발생할 수 있는 개인정보 유·노출, 거짓정보 생성 등 프라이버시 침해 위험도 주기적으로 식별하고 조치방안을 마련하는 것이 바람직함",
+            "source_section": "Page 18"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "오픈소스 모델을 개발하는 사업자는 프라이버시 보호를 고려한 이용방법과 조건의 범위를 명시한 라이선스 정책을 수립·배포하고",
+            "source_section": "Page 18"
+          },
+          {
+            "quote": "AI 개발자는 API 이용사업자가 개인정보 보호를 준수하도록 계약상 의무를 부과하고 상세한 사용지침, 기술문서 등을 제공할 수 있음",
+            "source_section": "Page 18"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "AI의 목적·용도를 미리 정의하기 어려운 한계를 고려하여 합리적 범위에서 예측가능한 AI 시스템 유형(type)과 기술적으로 구현할 수 있는 기능(functionality), 성능(capability)등을 대리변수(proxy)로 활용하여 정당한 이익의 내용을 구체화할 수 있음",
+            "source_section": "Page 9"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "API 호출 시 인가되지 않은 접근, 해킹 등으로 인한 유출, 위·변조 가능성을 방지하기 위해 암호화된 통신 채널을 마련할 필요",
+            "source_section": "Page 18"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "사람 피드백 기반 강화학습(RLHF) - 개인에 관한 콘텐츠 생성을 최소화하는 보상모델을 마련하고, 추가적인 강화학습 수행",
+            "source_section": "Page 16"
+          },
+          {
+            "quote": "학습데이터에 포함되는 민감한 개인정보를 사람이 일일이 개입하여 걸러낼 수도 있지만",
+            "source_section": "Page 18"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "quote": "오픈소스 모델이 악의적인 이용사업자에 의해 오·남용되어 개인정보를 침해하는 경우, 그 사실을 즉시 신고할 수 있는 기능·도구를 마련하는 것이 바람직함",
+            "source_section": "Page 18"
+          },
+          {
+            "quote": "레드팀 테스트 결과 사회적 파급력이 큰 중대한 취약점 발견 시 관련 정부부서와 공유하는 것이 바람직",
+            "source_section": "Page 18"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "본 안내서는 AI 개발·서비스를 위해 공개된 개인정보를 처리하는 경우 참고할 수 있는 법 해석 기준을 제시한 것으로서 법적 구속력이 없음",
+            "source_section": "Page 3"
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "개인정보보호위원회는 주기적 사전실태점검, 사전적정성 검토제 등을 통해 기술발전과 시장상황을 모니터링하고, 추가적인 연구와 의견수렴 등을 통해 개인정보 보호법을 AI 시대에 맞게 개정하는 작업도 추진해갈 예정임",
+            "source_section": "Page 5"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Personal Information Protection Commission (개인정보보호위원회)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "The document explicitly states it has no legal binding force ('법적 구속력이 없음') and presents legal interpretation standards as reference guidance. It applies to overseas AI actors targeting Korean data subjects. The guide covers the full AI lifecycle (training and service stages) and is subject to periodic revision as AI law, technology, and market conditions evolve. The PIPC plans to conduct periodic pre-emptive inspections and prior adequacy reviews, and to revise the Personal Information Protection Act to align with the AI era.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.02,
+      "national_security": 0.03,
+      "economic_competitiveness": 0.1,
+      "fundamental_rights": 0.75,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.15,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.01
+    },
+    "rationale_summary": "The document is primarily framed around protecting the fundamental right of informational self-determination (개인정보자기결정권) of data subjects whose publicly available personal information is used in AI training. The governance rationale centers on ensuring data subjects retain rights to access, correction, deletion, and processing suspension even when their data is publicly scraped. Secondary framings include consumer/public safety (preventing leakage and exposure of personal data through AI outputs) and innovation enablement (providing legal clarity to allow AI development within privacy law).",
+    "evidence_spans": [
+      {
+        "quote": "공개된 개인정보는 일반적으로 헌법상 개인정보자기결정권의 보호대상으로서, 타인의 수집·이용은 원칙적으로 개인정보자기결정권을 제한할 수 있음",
+        "source_section": "Page 5"
+      },
+      {
+        "quote": "AI 학습을 위해 웹 스크래핑을 통한 공개된 개인정보 처리가 이루어지고 있는 상황에서 개인정보의 공개와 이용에 관하여 실질적으로 결정하거나 통제할 수 없는 위치에 있는 정보주체의 권리 보장이 더욱 중요해짐",
+        "source_section": "Page 21"
+      },
+      {
+        "quote": "개인정보 보호법은 정보주체 이외로부터 수집한 개인정보에 대해 정보주체 요구 시 출처·목적 등을 알릴 의무(제20조)와 열람 요구권(제35조), 정정·삭제 요구권(제36조), 처리정지 요구권(제37조) 등을 규정하여 정보주체 권리를 보장함",
+        "source_section": "Page 21"
+      },
+      {
+        "quote": "AI 개발자 및 서비스 제공자는 개인정보 보호법상 공개된 개인정보 수집·이용 근거를 명확히 하고자 함",
+        "source_section": "Page 5"
+      }
+    ]
+  }
+}

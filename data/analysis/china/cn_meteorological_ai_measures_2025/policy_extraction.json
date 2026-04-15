@@ -1,0 +1,98 @@
+{
+  "jurisdiction": "china",
+  "issuing_body": "China Meteorological Administration (CMA) and Cyberspace Administration of China (CAC)",
+  "document_type": "legislation",
+  "binding_strength": "binding_law",
+  "publication_date": "2025-04-23",
+  "effective_date": "2025-06-01",
+  "covered_application_domains": [
+    "critical_infrastructure",
+    "general_purpose_models"
+  ],
+  "safety_requirements": [
+    {
+      "label": "registration_licensing",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "algorithm registration and security assessments",
+          "source_section": "stipulations"
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "algorithm registration and security assessments",
+          "source_section": "stipulations"
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "the labeling of AI-generated synthetic content",
+          "source_section": "stipulations"
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "algorithm safety review",
+          "source_section": "stipulations"
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "complaint reporting",
+          "source_section": "stipulations"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "information dissemination review",
+          "source_section": "stipulations"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "classified and grading supervision shall be conducted as to such services",
+          "source_section": "document proposal"
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "complaint reporting",
+          "source_section": "stipulations"
+        }
+      ]
+    }
+  ],
+  "implementation_notes": "This is described as the first departmental regulation in China to promote and regulate AI in a segmented area, and the first legal standard on AI meteorological application services among WMO members. It covers algorithm registration, security assessments, content labeling, safety review, cyber security, data security, and complaint reporting. Details on penalties are not provided in the available text.",
+  "confidence": 0.82
+}

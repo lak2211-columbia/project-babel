@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_019G27P3XBMXbMMmaJRLW79k",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"fundamental_rights\",\"secondary_frames\":[\"consumer_public_safety\",\"social_stability\"],\"frame_confidence\":{\"fundamental_rights\":0.82,\"consumer_public_safety\":0.65,\"labor_transition\":0.0},\"rationale_summary\":\"The document primarily frames AI risk in terms of consumers' legal rights under ECOA to receive specific reasons for adverse credit decisions. The core concern is that opaque algorithms may violate anti-discrimination law and deny individuals their statutory right to explanation and recourse. The framing centers on equal treatment, non-discrimination, and individual rights rather than safety, economic competitiveness, or national security.\",\"evidence_spans\":[{\"quote\":\"ECOA makes it unlawful for any creditor to discriminate against any applicant, with respect to any aspect of a credit transaction, on the basis of race, color, religion, national origin, sex or marital status\",\"source_section\":\"Analysis\"},{\"quote\":\"the notice requirement is intended to prevent discrimination ex ante because 'if creditors know they must explain their decisions . . . they [will] effectively be discouraged' from discriminatory practices\",\"source_section\":\"Analysis\"},{\"quote\":\"A creditor cannot justify noncompliance with ECOA and Regulation B's requirements based on the mere fact that the technology it employs to evaluate applications is too complicated or opaque to understand.\",\"source_section\":\"Analysis\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 4905,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 311,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "National Institute of Standards and Technology (NIST)",
+  "document_type": "standards_guideline",
+  "binding_strength": "voluntary_commitment",
+  "publication_date": null,
+  "effective_date": null,
+  "covered_actors": [
+    "organizations designing AI systems",
+    "organizations developing AI systems",
+    "organizations deploying AI systems",
+    "organizations using AI systems",
+    "AI actors"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "the goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI",
+          "source_section": "Introduction"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic",
+          "source_section": "Introduction"
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Crosswalks to the AI RMF 1.0 are voluntary resources. The framework is non-sector specific and use-case agnostic. NIST solicits ongoing public comments at AIframework@nist.gov. Alignment with international standards is cited as a top priority in the NIST Roadmap for the AI RMF.",
+  "confidence": 0.95
+}

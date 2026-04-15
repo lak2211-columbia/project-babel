@@ -1,0 +1,177 @@
+{
+  "source_id": "us_ai_risk_management_framework_initial_draft_march_fb5a1e0e",
+  "title": "AI Risk Management Framework: Initial Draft - March 17, 2022",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "National Institute of Standards and Technology (NIST)",
+    "document_type": "standards_guideline",
+    "binding_strength": "standards_guideline",
+    "publication_date": "2022-03-17",
+    "effective_date": null,
+    "covered_actors": [
+      "AI system stakeholders",
+      "operators and evaluators",
+      "external stakeholders",
+      "general public",
+      "business teams",
+      "design and development teams",
+      "internal risk management teams",
+      "compliance teams",
+      "academic, public, and private sector researchers",
+      "professional evaluators and auditors",
+      "system operators",
+      "trade groups",
+      "standards developing organizations",
+      "advocacy groups",
+      "civil society organizations"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "public_sector_use",
+      "employment",
+      "education",
+      "healthcare",
+      "finance",
+      "law_enforcement"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "This voluntary framework provides a flexible, structured, and measurable process to address AI risks throughout the AI lifecycle",
+            "source_section": "Page 4"
+          },
+          {
+            "quote": "Appropriate methods and metrics are identified and applied... Approaches and metrics for quantitative or qualitative measurement of the enumerated risks... are identified and selected for implementation.",
+            "source_section": "Page 20"
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "Practical approaches for AI safety often relate to rigorous simulation and in-domain testing, real-time monitoring, and the ability to quickly shut down or modify misbehaving systems.",
+            "source_section": "Page 15"
+          },
+          {
+            "quote": "deploying the system in production environments subject to increased testing or other controls",
+            "source_section": "Page 20"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "Transparency reflects the extent to which information is available to a user when interacting with an AI system. Its scope spans from design decisions and training data to model training, the structure of the model, its intended use case",
+            "source_section": "Page 16"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "Explainable systems can be more easily debugged and monitored, and lend themselves to more thorough documentation, audit, and governance.",
+            "source_section": "Page 14"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "input from a broad and diverse set of stakeholders is required throughout the AI lifecycle to ensure that risks arising in social contexts are managed appropriately",
+            "source_section": "Page 13"
+          },
+          {
+            "quote": "Individual human operators and their organizations should be answerable and held accountable for the outcomes of AI systems",
+            "source_section": "Page 15"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "This voluntary framework provides a flexible, structured, and measurable process to address AI risks throughout the AI lifecycle",
+            "source_section": "Page 4"
+          },
+          {
+            "quote": "It is important to note that the AI RMF is neither a checklist nor should be used in any way to certify an AI system.",
+            "source_section": "Page 4"
+          }
+        ]
+      },
+      {
+        "label": "none_specified",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "using the AI RMF does not substitute for due diligence and judgment by organizations and individuals in deciding whether to design, develop, and deploy AI technologies",
+            "source_section": "Page 4"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This is the first draft of the NIST AI RMF, published March 17, 2022. Part 3 was not yet developed at time of publication. The framework is explicitly voluntary and not a compliance mechanism; it is intended to be used alongside existing laws, regulations, and mandatory guidance. Developed under the National AI Initiative Act of 2020 (P.L. 116-283). Framework covers all sectors, organization sizes, and AI maturity levels.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "innovation_enablement",
+      "fundamental_rights",
+      "social_stability"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.05,
+      "national_security": 0.1,
+      "economic_competitiveness": 0.15,
+      "fundamental_rights": 0.35,
+      "social_stability": 0.3,
+      "innovation_enablement": 0.45,
+      "consumer_public_safety": 0.65,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "The document primarily frames AI governance as a matter of ensuring trustworthy, safe, and reliable AI systems that do not harm individuals or society. Core language centers on managing adverse impacts, ensuring accuracy, safety, privacy, and mitigating harmful bias for end users and communities. Innovation enablement is a secondary frame, as the document argues that managing risk builds trust and enables broader AI adoption. Fundamental rights and social stability appear as additional concerns via references to civil liberties, fairness, equity, and societal risk.",
+    "evidence_spans": [
+      {
+        "quote": "Ensuring that these inferences are helpful and not harmful in particular use cases – especially when inferences are rapidly scaled and amplified – is fundamental to trustworthy AI.",
+        "source_section": "Page 4"
+      },
+      {
+        "quote": "key characteristics which support trustworthiness, including accuracy, explainability and interpretability, privacy, reliability, robustness, safety, security (resilience) and mitigation of harmful bias",
+        "source_section": "Page 4"
+      },
+      {
+        "quote": "Cultivating trust and communication about how to understand and manage the risks of AI systems will help create opportunities for innovation and realize the full potential of this technology.",
+        "source_section": "Page 4"
+      },
+      {
+        "quote": "Their actions can designate boundaries for operation (technical or legal) and balance societal values and priorities related to civil liberties and rights, the economy, and security.",
+        "source_section": "Page 8"
+      },
+      {
+        "quote": "Identifying, mitigating, and minimizing risks and potential harms associated with AI technologies are essential steps towards the acceptance and widespread use of AI technologies.",
+        "source_section": "Page 8"
+      }
+    ]
+  }
+}

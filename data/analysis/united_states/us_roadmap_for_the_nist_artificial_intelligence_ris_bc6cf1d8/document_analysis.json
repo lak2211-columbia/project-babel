@@ -1,0 +1,134 @@
+{
+  "source_id": "us_roadmap_for_the_nist_artificial_intelligence_ris_bc6cf1d8",
+  "title": "Roadmap for the NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0) | NIST",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "National Institute of Standards and Technology (NIST)",
+    "document_type": "standards_guideline",
+    "binding_strength": "voluntary_commitment",
+    "publication_date": null,
+    "effective_date": null,
+    "covered_actors": [
+      "organizations designing, developing, deploying, or using AI systems",
+      "AI actors",
+      "private and public sector organizations"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "employment",
+      "law_enforcement",
+      "finance"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "develop tools, benchmarks, testbeds, and standardized methodologies for evaluating risks in AI and system trustworthiness",
+            "source_section": "Expanded TEVV efforts"
+          },
+          {
+            "quote": "Guidance on methods for developing reasonable risk tolerances",
+            "source_section": "Roadmap priorities"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "human oversight of AI systems and their operation in real world environments",
+            "source_section": "Guidance on human factors and human-AI teaming"
+          },
+          {
+            "quote": "NIST intends to investigate how human-AI teams should best be configured to reduce likelihood of negative impacts/harms",
+            "source_section": "Guidance on human factors and human-AI teaming"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "Guidance related to explainability and interpretability, and how to apply that guidance within the AI RMF",
+            "source_section": "Roadmap priorities"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "Profiles are a primary method for organizations to share real-life examples of how they put the AI RMF into practice",
+            "source_section": "AI RMF 1.0 Profiles"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic",
+            "source_section": "Introduction"
+          },
+          {
+            "quote": "goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems",
+            "source_section": "Introduction"
+          }
+        ]
+      },
+      {
+        "label": "none_specified",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "Organizations and individuals are encouraged to jointly or independently produce AI RMF profiles",
+            "source_section": "AI RMF 1.0 Profiles"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "NIST"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This Roadmap is a companion to AI RMF 1.0, voluntary and non-sector specific. Key priorities include international standards alignment, expanded TEVV efforts, AI RMF profiles, guidance on trustworthiness tradeoffs, measuring framework effectiveness, case studies, human factors guidance, explainability guidance, risk tolerance methods, and multi-disciplinary tutorials. NIST's involvement depends on available resources.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "fundamental_rights",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "consumer_public_safety": 0.55,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document primarily frames AI governance around managing risks to ensure trustworthy and responsible AI systems, focusing on protecting individuals, groups, and society from harms. Secondary framings include rights-preservation and enabling responsible innovation through voluntary, flexible frameworks.",
+    "evidence_spans": [
+      {
+        "quote": "the goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "NIST intends to investigate how human-AI teams should best be configured to reduce likelihood of negative impacts/harms to individuals, groups, communities, and society",
+        "source_section": "Top Priorities"
+      }
+    ]
+  }
+}

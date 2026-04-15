@@ -1,0 +1,56 @@
+{
+  "metadata_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01KquaytS8j94vD7hWVomWEZ",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"issuing_body\":\"National Information Society Agency (NIA), South Korea\",\"document_type\":\"strategy_paper\",\"binding_strength\":\"strategy_statement\",\"publication_date\":\"2025\",\"effective_date\":null,\"covered_actors\":[\"public sector agencies\",\"government ministries\",\"public institutions\",\"pilot project participants\",\"private AI companies as subcontractors\"],\"covered_application_domains\":[\"public_sector_use\",\"healthcare\",\"employment\",\"education\",\"law_enforcement\",\"finance\",\"critical_infrastructure\"],\"prohibited_practices\":[],\"enforcement_authorities\":[],\"compliance_deadlines\":[],\"penalties_summary\":null,\"implementation_notes\":\"This is a casebook documenting pilot/proof-of-concept AI service implementations across Korean public sector agencies under three strategic goals: social problem solving, public service innovation, and improving administrative work methods. Cases span 2023-2025 and involve large language model fine-tuning, RAG architectures, and multimodal AI. No binding obligations, prohibitions, or enforcement mechanisms are established; the document serves as a knowledge-sharing and demonstration resource.\",\"confidence\":0.92}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 9456,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 241,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  },
+  "controls_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01QWyLzssgYV6sUVoQrhsSzo",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"safety_requirements\":[],\"enforcement_mechanisms\":[{\"label\":\"none_specified\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"공공AI 서비스 실증 사례집\",\"source_section\":\"Page 2\"}]}]}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 8398,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 59,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  }
+}

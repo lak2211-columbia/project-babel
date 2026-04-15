@@ -1,0 +1,85 @@
+{
+  "source_id": "kr_high_impact_ai_confirmation_desk",
+  "title": "고영향 인공지능 확인 요청 안내",
+  "language": "ko",
+  "policy_extraction": {
+    "jurisdiction": "south_korea",
+    "issuing_body": "Ministry of Science and ICT (과학기술정보통신부)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": null,
+    "effective_date": null,
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "safety_requirements": [
+      {
+        "label": "registration_licensing",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "인공지능사업자가 고영향 인공지능 해당여부에 대한 확인을 요청할 수 있도록 마련된 온라인 접수 창구입니다",
+            "source_section": "본문 1항"
+          },
+          {
+            "quote": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 제33조에 따라",
+            "source_section": "본문 1항"
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "인공지능사업자는 자체적으로 해당 인공지능이 고영향 인공지능에 해당하는지 여부를 먼저 검토하신 뒤에",
+            "source_section": "본문 2항"
+          },
+          {
+            "quote": "'고영향 인공지능 판단 가이드라인'을 충분히 검토하여 자체적 판단을 우선적으로 진행하여 주시기 바랍니다",
+            "source_section": "본문 2항"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 제33조에 따라",
+            "source_section": "본문 1항"
+          },
+          {
+            "quote": "제출하신 자료 및 요청 내용은 관련 법령에 따라 확인 요청 처리 목적 범위 내에서 보호·관리 됩니다",
+            "source_section": "본문 4항"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "This is a procedural guidance page for the online submission portal for AI operators to request confirmation of whether their AI qualifies as 'high-impact AI' (고영향 인공지능) under Article 33 of South Korea's AI Basic Act. The page instructs operators to self-assess first using the judgment guideline before submitting a formal request. It references a helpdesk (aiact@sw.or.kr) that provides guidance but not direct determination. No explicit penalties or enforcement actions are described on this page.",
+    "confidence": 0.72
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "consumer_public_safety": 0.7,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document establishes a portal for AI businesses to confirm whether their AI qualifies as 'high-impact AI' under South Korea's AI Basic Act, emphasizing compliance and safety classification of AI systems that could significantly affect people. The framing centers on protecting the public from high-impact AI while supporting businesses with self-assessment guidelines.",
+    "evidence_spans": [
+      {
+        "quote": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 제33조에 따라, 인공지능사업자가 고영향 인공지능 해당여부에 대한 확인을 요청할 수 있도록 마련된 온라인 접수 창구입니다",
+        "source_section": "요청안내"
+      },
+      {
+        "quote": "고영향 인공지능 판단 가이드라인을 충분히 검토하여 자체적 판단을 우선적으로 진행하여 주시기 바랍니다",
+        "source_section": "요청안내"
+      }
+    ]
+  }
+}

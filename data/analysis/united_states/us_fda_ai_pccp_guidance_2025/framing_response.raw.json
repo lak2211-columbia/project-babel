@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_016NJqQ3KRiprxVvuR2GmKyR",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"consumer_public_safety\",\"secondary_frames\":[\"innovation_enablement\",\"fundamental_rights\"],\"frame_confidence\":{\"existential_catastrophic\":0.02,\"national_security\":0.01,\"economic_competitiveness\":0.06,\"fundamental_rights\":0.12,\"social_stability\":0.05,\"innovation_enablement\":0.2,\"consumer_public_safety\":0.75,\"labor_transition\":0.01},\"rationale_summary\":\"The document is primarily framed around ensuring the safety and effectiveness of AI-enabled medical devices for patients and users. The FDA's central rationale is that iterative AI modifications must be controlled to maintain 'a reasonable assurance of device safety and effectiveness.' Secondary framing around innovation enablement is present—the PCCP mechanism is explicitly described as 'least burdensome' and designed to 'promote the development of safe and effective AI-enabled devices'—but this serves the safety rationale rather than replacing it. Rights-based framing appears modestly in attention to bias, equitable representation across race, ethnicity, sex, and age in training/test data.\",\"evidence_spans\":[{\"quote\":\"This guidance is intended to provide a forward-thinking approach to promote the development of safe and effective AI-enabled devices.\",\"source_section\":\"I. Introduction\"},{\"quote\":\"FDA reviews the PCCP as part of a marketing submission for a device to ensure the continued safety and effectiveness of the device without necessitating additional marketing submissions for implementing each modification described in the PCCP.\",\"source_section\":\"I. Introduction\"},{\"quote\":\"the modifications can be implemented to the AI-DSF without triggering the need for a new marketing submission\",\"source_section\":\"V. Policy for Predetermined Change Control Plans\"},{\"quote\":\"Deviations from the authorized PCCP could significantly affect the safety or effectiveness of the device.\",\"source_section\":\"V. Policy for Predetermined Change Control Plans\"},{\"quote\":\"how the manufacturer plans to obtain and use training, tuning, and test data that are complete and representative of the proposed intended use populations (e.g., with respect to race, ethnicity, disease severity, sex, age, etc.) and intended environments\",\"source_section\":\"VII. Modification Protocol\"},{\"quote\":\"how the data management practices may reduce the potential to produce discriminatory outcomes\",\"source_section\":\"VII. Modification Protocol\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 34190,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 521,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

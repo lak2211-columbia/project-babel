@@ -1,0 +1,82 @@
+{
+  "jurisdiction": "japan",
+  "issuing_body": "厚生労働省大臣官房厚生科学課・医政局研究開発政策課",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "regulatory_guidance",
+  "publication_date": "2024-12-19",
+  "effective_date": null,
+  "covered_application_domains": [
+    "healthcare",
+    "general_purpose_models"
+  ],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "医療情報は、一般的に、個人情報保護法上の個人データに該当する上、同法上の要配慮個人情報にも該当し、極めて機微な性質を有していることから",
+          "source_section": "本文３"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "quote": "仮名加工情報を作成し、運用するにあたって不可欠である実践的な指針として",
+          "source_section": "本文３"
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "仮名加工情報の共同利用の範囲を無制限に設定してよいということにはならないことに留意されたい",
+          "source_section": "Q5"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "quote": "インフォームド・コンセントに係るオプトアウト手続き等を遵守されたい",
+          "source_section": "Q6"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "本ガイドラインは、厚生労働科学研究における成果物として",
+          "source_section": "本文２"
+        },
+        {
+          "quote": "御参考として周知をお願いしたところです",
+          "source_section": "本文"
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "quote": "個人情報保護法等の関係法令を遵守する必要がある",
+          "source_section": "Q2"
+        }
+      ]
+    }
+  ],
+  "implementation_notes": "This document is a clarification notice (事務連絡) issued alongside a pre-existing guideline on AI use of medical digital data published 2024-09-30. The guideline is explicitly non-binding, positioned as a reference tool for pseudonymized data handling under the Personal Information Protection Act. It covers only medical information stored at healthcare institutions for use in medical device R&D, excluding Next-Generation Medical Infrastructure Act data and registry data. No independent enforcement mechanisms are created by this document.",
+  "confidence": 0.82
+}

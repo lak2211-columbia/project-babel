@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01XdW8FwN9bjmxjZrHT92JSv",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"economic_competitiveness\",\"secondary_frames\":[\"innovation_enablement\",\"consumer_public_safety\"],\"frame_confidence\":{\"economic_competitiveness\":0.78,\"innovation_enablement\":0.65,\"consumer_public_safety\":0.4,\"labor_transition\":0.1},\"rationale_summary\":\"The document primarily frames AI governance in healthcare through an economic competitiveness lens, emphasizing market growth projections, EU vendor fragmentation relative to US dominance, cost avoidance potential, and the need to boost frontier technology investment. The concern that EU healthcare systems rely on solutions developed outside the EU and that EU startups face barriers to growth underscores a competitiveness rationale. Innovation enablement is a strong secondary frame given the focus on SME support and funding barriers.\",\"evidence_spans\":[{\"quote\":\"This area is a priority workstream for the AI Office, reflecting its importance for AI innovation and competitiveness.\"},{\"quote\":\"EU-based vendors are mainly active in core health IT and administrative solutions, with more limited presence in emerging areas such as AI, genomics and biological sensors. In these domains, healthcare systems often rely on solutions developed outside the EU, highlighting differences in market maturity and investment patterns.\"},{\"quote\":\"the EU digital health market is projected to grow from EUR 11 billion in 2023 to EUR 61,2 billion by 2035\"},{\"quote\":\"EU start-ups and scale-ups working on AI, virtual human twins, and digital therapeutics continue to face significant barriers to growth and cross-border expansion, notably limited access to funding and finance.\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 2772,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 354,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

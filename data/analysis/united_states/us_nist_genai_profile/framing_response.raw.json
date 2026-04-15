@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01JRQixGVmbcE32xJtuj3Cwi",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"consumer_public_safety\",\"secondary_frames\":[\"fundamental_rights\",\"social_stability\",\"national_security\"],\"frame_confidence\":{\"existential_catastrophic\":0.05,\"national_security\":0.45,\"economic_competitiveness\":0.1,\"fundamental_rights\":0.55,\"social_stability\":0.5,\"innovation_enablement\":0.2,\"consumer_public_safety\":0.75,\"labor_transition\":0.1},\"rationale_summary\":\"The document is primarily framed around protecting consumers and the public from concrete, tangible harms arising from GAI use. It enumerates specific risks—confabulation, harmful bias, obscene content, data privacy violations, dangerous content—and provides operational risk management actions focused on organizational safety governance, pre-deployment testing, and incident disclosure. The framing is grounded in trustworthiness, reliability, and harm reduction for individuals and communities who interact with GAI systems. Fundamental rights concerns (bias, privacy, CSAM, NCII) and social stability concerns (disinformation, information integrity, erosion of public trust) are strong secondary frames. National security appears as a secondary consideration specifically in CBRN and offensive cyber risk discussions.\",\"evidence_spans\":[{\"quote\":\"This document defines risks that are novel to or exacerbated by the use of GAI. After introducing and describing these risks, the document provides a set of suggested actions to help organizations govern, map, measure, and manage these risks.\",\"source_section\":\"Introduction\"},{\"quote\":\"Risks from confabulations may arise when users believe false content – often due to the confident nature of the response – leading users to act upon or promote the false information. This poses a challenge for many real-world applications, such as in healthcare, where a confabulated summary of patient information reports could cause doctors to make incorrect diagnoses.\",\"source_section\":\"2.2 Confabulation\"},{\"quote\":\"GAI can ease the production of and access to illegal non-consensual intimate imagery (NCII) of adults, and/or child sexual abuse material (CSAM). GAI-generated obscene, abusive or degrading content can create privacy, psychological and emotional, and even physical harms.\",\"source_section\":\"2.11 Obscene, Degrading, and/or Abusive Content\"},{\"quote\":\"Harmful bias in GAI models, which may stem from their training data, can also cause representational harms or perpetuate or exacerbate bias based on race, gender, disability, or other protected classes.\",\"source_section\":\"2.6 Harmful Bias and Homogenization\"},{\"quote\":\"When systems may raise national security risks, involve national security professionals in mapping, measuring, and managing those risks.\",\"source_section\":\"GOVERN 2.1\"},{\"quote\":\"Disinformation and misinformation – both of which may be facilitated by GAI – may erode public trust in true or valid evidence and information, with downstream effects.\",\"source_section\":\"2.8 Information Integrity\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 41805,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 675,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

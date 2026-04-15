@@ -1,0 +1,99 @@
+{
+  "source_id": "us_ai_standards_nist_2922d890",
+  "title": "AI Standards | NIST",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "National Institute of Standards and Technology (NIST)",
+    "document_type": "standards_guideline",
+    "binding_strength": "standards_guideline",
+    "publication_date": null,
+    "effective_date": null,
+    "covered_actors": [
+      "federal agencies",
+      "industry stakeholders",
+      "AI community",
+      "those designing, developing, deploying, or using AI systems"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "ISO/IEC FDIS23894 Information technology - Artificial intelligence - Guidance on risk management",
+            "source_section": "AI RMF Crosswalks"
+          },
+          {
+            "quote": "help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems",
+            "source_section": "AI RMF section"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "NIST leads and participates in the development of technical standards...that promote innovation and public trust in systems that use AI",
+            "source_section": "Overview"
+          },
+          {
+            "quote": "voluntary consensus standards",
+            "source_section": "AI Standards Zero Drafts project"
+          },
+          {
+            "quote": "NIST seeks out AI standards development opportunities, periodically collecting and analyzing information about agencies' AI standards-related priority activities and making recommendations",
+            "source_section": "Federal AI standards coordinator"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "NIST Information Technology Laboratory (ITL)",
+      "Interagency Committee on Standards Policy (ICSP)",
+      "ICSP AI Standards Coordination Working Group (AISCWG)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "NIST acts as federal AI standards coordinator, facilitating interagency coordination and international engagement. Key outputs include AI RMF, AI 100-5e2025 global engagement plan, AI Standards Zero Drafts project, and crosswalks to ISO/IEC and OECD standards. Standards developed are voluntary consensus standards. A report on evaluating AI standards development was released January 15, 2026.",
+    "confidence": 0.85
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "economic_competitiveness"
+    ],
+    "frame_confidence": {
+      "innovation_enablement": 0.65,
+      "consumer_public_safety": 0.5,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "The document primarily frames AI governance through the lens of enabling innovation while building public trust. NIST's standards work is explicitly oriented toward unleashing AI innovation and promoting trustworthy AI, rather than preventing catastrophic harm or addressing rights violations. Secondary framings include consumer/public safety (trustworthy and responsible AI, risk management) and economic competitiveness (U.S. leadership, global engagement).",
+    "evidence_spans": [
+      {
+        "quote": "NIST leads and participates in the development of technical standards, including international standards, that promote innovation and public trust in systems that use AI.",
+        "source_section": "Overview"
+      },
+      {
+        "quote": "helping standards meet the AI community's needs and unleash AI innovation",
+        "source_section": "AI Standards Zero Drafts"
+      },
+      {
+        "quote": "Recognizing the lack of formal or shared methods to measure the impact of standards development on the goals of innovation and trust",
+        "source_section": "Evaluating AI Standards Development"
+      },
+      {
+        "quote": "promote trustworthy and responsible development and use of AI systems",
+        "source_section": "AI RMF"
+      }
+    ]
+  }
+}

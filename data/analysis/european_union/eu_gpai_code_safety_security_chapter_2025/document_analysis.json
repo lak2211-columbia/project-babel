@@ -1,0 +1,251 @@
+{
+  "source_id": "eu_gpai_code_safety_security_chapter_2025",
+  "title": "Code of Practice for General-Purpose AI Models: Safety and Security Chapter",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission / AI Office",
+    "document_type": "standards_guideline",
+    "binding_strength": "voluntary_commitment",
+    "publication_date": null,
+    "effective_date": null,
+    "covered_actors": [
+      "providers of general-purpose AI models with systemic risk",
+      "signatories",
+      "SMEs and SMCs",
+      "licensees",
+      "downstream modifiers",
+      "downstream providers"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "a description of the results of their systemic risk identification and analysis",
+            "source_section": "Page 20"
+          },
+          {
+            "quote": "systemic risk estimates (pursuant to Measure 3.4)",
+            "source_section": "Page 20"
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "Signatories commit to reporting to the AI Office information about their model and their systemic risk assessment and mitigation processes and measures by creating a Safety and Security Model Report before placing a model on the market",
+            "source_section": "Page 18"
+          }
+        ]
+      },
+      {
+        "label": "red_teaming",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "Signatories will provide an adequate number of independent external evaluators with adequate free access to: (1) the model's most capable model version(s)",
+            "source_section": "Page 14"
+          },
+          {
+            "quote": "Model evaluation teams will be provided with: (1) adequate access to the model to conduct the model evaluations",
+            "source_section": "Page 40"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "Signatories will keep track of, document, and report to the AI Office and, as applicable, to national competent authorities",
+            "source_section": "Page 26"
+          },
+          {
+            "quote": "Signatories will provide the information in points (1) to (7) of Measure 9.2 in an initial report that is submitted to the AI Office...not later than two days after the Signatories become aware",
+            "source_section": "Page 26"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "quote": "Signatories commit to reporting...by creating a Safety and Security Model Report before placing a model on the market",
+            "source_section": "Page 18"
+          },
+          {
+            "quote": "Signatories will provide in the Model Report: (1) a description of the results of their systemic risk identification and analysis",
+            "source_section": "Page 20"
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "Signatories will provide an adequate number of independent external evaluators with adequate free access",
+            "source_section": "Page 14"
+          },
+          {
+            "quote": "establishing community-driven model evaluations and public leaderboards",
+            "source_section": "Page 14"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.88,
+        "evidence": [
+          {
+            "quote": "staging the access to the model, e.g. by limiting API access to vetted users, gradually expanding access based on post-market monitoring",
+            "source_section": "Page 17"
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "implementing privacy-preserving logging and metadata analysis techniques of the model's inputs and outputs using, e.g. watermarks, metadata, and/or other at least state-of-the-art provenance techniques",
+            "source_section": "Page 14"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "techniques to enable safe ecosystems of AI agents, such as model identifications, specialised communication protocols, or incident monitoring tools",
+            "source_section": "Page 17"
+          },
+          {
+            "quote": "monitoring aspects of models that are relevant for assessing and mitigating systemic risk",
+            "source_section": "Page 14"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "Signatories will publish suitable criteria for assessing applications",
+            "source_section": "Page 14"
+          },
+          {
+            "quote": "at least five, random samples of inputs and outputs from each relevant model evaluation...to facilitate independent interpretation",
+            "source_section": "Page 20"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "quote": "Signatories will keep track of, document, and report to the AI Office and, as applicable, to national competent authorities",
+            "source_section": "Page 26"
+          },
+          {
+            "quote": "notifying the AI Office of their Model Report (as specified in Measure 7.7)",
+            "source_section": "Page 18"
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "report to the AI Office and, as applicable, to national competent authorities",
+            "source_section": "Page 26"
+          },
+          {
+            "quote": "Signatories will provide a sufficiently large number of random samples of inputs and outputs from a relevant model evaluation if subsequently asked by the AI Office",
+            "source_section": "Page 20"
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "Signatories refrain from training their models on the inputs and/or outputs from such test runs without express permission from the evaluators",
+            "source_section": "Page 14"
+          },
+          {
+            "quote": "Signatories will not take any legal or technical retaliation against the independent external evaluators",
+            "source_section": "Page 14"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "European AI Office (AI Office)"
+    ],
+    "compliance_deadlines": [
+      "Framework must be confirmed no later than four weeks after notifying the Commission pursuant to Article 52(1) AI Act",
+      "Framework must be confirmed no later than two weeks before placing the model on the market"
+    ],
+    "penalties_summary": null,
+    "implementation_notes": "This Code of Practice is a voluntary instrument under the EU AI Act. Adherence serves as a means for providers to demonstrate compliance with Articles 53 and 55 AI Act obligations, but does not constitute conclusive evidence of compliance. SMEs and SMCs may benefit from simplified compliance paths including exemptions from some reporting commitments per Article 56(5) AI Act. The document is the Safety and Security Chapter specifically, focused on systemic risk assessment and mitigation across the model lifecycle.",
+    "confidence": 0.9
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "fundamental_rights",
+      "social_stability",
+      "existential_catastrophic",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.55,
+      "national_security": 0.4,
+      "economic_competitiveness": 0.2,
+      "fundamental_rights": 0.65,
+      "social_stability": 0.5,
+      "innovation_enablement": 0.45,
+      "consumer_public_safety": 0.75,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "The document primarily frames AI governance around protecting public health, safety, and fundamental rights from systemic risks posed by general-purpose AI models. The overarching objective explicitly references 'high level of protection of health, safety, and fundamental rights' and systemic risks defined as those with 'significant impact...on public health, safety, public security, fundamental rights, or the society as a whole.' Safety and security mitigations, systemic risk assessments, and mandatory reporting all center on preventing harms to users and society. Fundamental rights and social stability appear as strong secondary frames, with innovation enablement also present through the 'Principle of Innovation in AI Safety and Security.'",
+    "evidence_spans": [
+      {
+        "quote": "ensuring a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law, and environmental protection, against harmful effects of AI",
+        "source_section": "Page 2"
+      },
+      {
+        "quote": "systemic risk means a risk that is specific to the high-impact capabilities of general-purpose AI models, having a significant impact on the Union market due to their reach, or due to actual or reasonably foreseeable negative effects on public health, safety, public security, fundamental rights, or the society as a whole",
+        "source_section": "Page 34"
+      },
+      {
+        "quote": "risks of major accidents; risks to critical sectors or infrastructure, public mental health, freedom of expression and information, non-discrimination, privacy and the protection of personal data",
+        "source_section": "Page 34"
+      },
+      {
+        "quote": "Signatories will only proceed with the development, the making available on the market, and/or the use of the model, if the systemic risks stemming from the model are determined to be acceptable",
+        "source_section": "Page 16"
+      },
+      {
+        "quote": "this Chapter should encourage providers of general-purpose AI models with systemic risk to advance the state of the art in AI safety and security",
+        "source_section": "Page 4"
+      }
+    ]
+  }
+}

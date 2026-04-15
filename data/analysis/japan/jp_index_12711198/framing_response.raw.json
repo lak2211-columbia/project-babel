@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_019xEdXeL2vczCoFPNeYoFhU",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"economic_competitiveness\",\"secondary_frames\":[\"innovation_enablement\",\"labor_transition\"],\"frame_confidence\":{\"economic_competitiveness\":0.82,\"innovation_enablement\":0.65,\"labor_transition\":0.35},\"rationale_summary\":\"The document frames AI governance primarily as a competitiveness challenge, explicitly noting Japan's lag behind the US and China in research, talent, data, and venture support, and calling for Japan to 'win fierce competition' and 'lead the world.' The industrialization roadmap, sectoral productivity targets, and market acquisition goals further reinforce this frame. Innovation enablement is secondary, as the plan details R&D and social implementation programs. Labor/talent transition appears through extensive workforce development sections.\",\"evidence_spans\":[{\"quote\":\"米国のＩＴ企業や中国の企業等による覇権争いが激しさを増しており\",\"source_section\":\"Page 1\"},{\"quote\":\"我が国は米国や中国に比べると研究論文数やビジネスへの導入、人材の育成、データ連携、ベンチャー支援等で後れを取っている\",\"source_section\":\"Page 1\"},{\"quote\":\"熾烈な競争に打ち勝ち、我が国が世界をリードしていくためには\",\"source_section\":\"Page 1\"},{\"quote\":\"熾烈な国際競争下で世界に伍していくための本格的な計画を策定する\",\"source_section\":\"Page 1\"},{\"quote\":\"スマート農業技術の国内外への展開による１，０００億円以上の市場獲得\",\"source_section\":\"Page 2\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 15693,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 412,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

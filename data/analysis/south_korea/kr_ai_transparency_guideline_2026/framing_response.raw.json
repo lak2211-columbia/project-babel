@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01Lu4TdBPceQLZCd17KFeDaM",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"social_stability\",\"secondary_frames\":[\"fundamental_rights\",\"consumer_public_safety\"],\"frame_confidence\":{\"existential_catastrophic\":0.05,\"national_security\":0.1,\"economic_competitiveness\":0.05,\"fundamental_rights\":0.55,\"social_stability\":0.7,\"innovation_enablement\":0.1,\"consumer_public_safety\":0.5,\"labor_transition\":0.0},\"rationale_summary\":\"The document frames AI governance primarily around preventing social harms such as confusion, misinformation, deepfake abuse, digital sex crimes, and erosion of public trust. The stated purpose of transparency obligations is to prevent 'confusion and misrepresentation in information use and to enhance social trust.' Risk cases emphasize fake news affecting elections and markets, sexual exploitation, and academic fraud—all social stability concerns. Fundamental rights (especially protection from deepfake sexual abuse) and consumer/public safety are strong secondary frames.\",\"evidence_spans\":[{\"quote\":\"정보 이용 과정에서의 혼동과 오인 방지 및 사회적 신뢰를 제고하기 위한 제도적 장치를 마련하는 데 목적이 있음\",\"source_section\":\"투명성 확보 의무 개요\"},{\"quote\":\"가짜뉴스는 이미 대중의 생활 곳곳에 침투하고 있어, 이에 대한 대책 마련이 시급\",\"source_section\":\"참고자료 - 가짜뉴스 생성\"},{\"quote\":\"생성형 인공지능을 오남용하여 성적 허위 영상물(성착취물)을 제작 및 유포하는 행위가 발생하고 있으며\",\"source_section\":\"참고자료 - 디지털 성범죄\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 15328,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 463,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

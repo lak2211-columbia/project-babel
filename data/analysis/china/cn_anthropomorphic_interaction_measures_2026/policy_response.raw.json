@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01TwQdYJ4UsccT5A4wQRMQJH",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"jurisdiction\":\"china\",\"issuing_body\":\"国家互联网信息办公室 (Cyberspace Administration of China)\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"binding_law\",\"publication_date\":\"2026-04-10\",\"effective_date\":\"2026-07-15\",\"covered_application_domains\":[\"general_purpose_models\",\"education\",\"healthcare\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"上线拟人化互动服务，或者增设拟人化互动服务相关功能的；使用新技术、新应用，导致拟人化互动服务发生重大变化的；注册用户100万以上或者月活跃用户10万以上的\",\"source_section\":\"安全评估条款\"},{\"quote\":\"加强安全监测和风险评估，及时发现并纠正系统偏差\",\"source_section\":\"第十条\"}]},{\"label\":\"incident_reporting\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"发现用户正在面临或者已经遭受重大财产损失、明确表示实施自残自杀等威胁生命健康的极端情境的，应当采取提供相应援助等必要措施予以干预，并及时联络用户监护人或者紧急联系人\",\"source_section\":\"极端情境处置条款\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"应当以弹窗等显著方式动态提醒用户互动内容为人工智能服务生成\",\"source_section\":\"过度依赖提醒条款\"}]},{\"label\":\"model_documentation\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"按照国家有关规定对训练数据开展清洗、标注，增强训练数据的透明度、可靠性\",\"source_section\":\"训练数据条款\"}]},{\"label\":\"human_oversight\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"拟人化互动服务提供者应当配合网信部门和有关部门依法实施的监督检查，并提供必要的支持和协助\",\"source_section\":\"第二十九条\"}]},{\"label\":\"third_party_audit\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"自行或者委托专业机构对其处理未成年人个人信息遵守法律、行政法规的情况进行合规审计\",\"source_section\":\"合规审计条款\"}]},{\"label\":\"access_controls\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"拟人化互动服务提供者应当建立未成年人模式，提供未成年人模式切换、定期现实提醒、使用时长限制等个性化安全设置选项\",\"source_section\":\"未成年人保护条款\"}]}],\"enforcement_mechanisms\":[{\"label\":\"civil_penalty\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"责令停止提供相关服务，可以并处一万元以上十万元以下罚款；涉及危害公民生命健康安全且有危害后果的，并处十万元以上二十万元以下罚款\",\"source_section\":\"第三十条\"}]},{\"label\":\"regulatory_supervision\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"可以按照规定的权限和程序对拟人化互动服务提供者的法定代表人或者主要负责人进行约谈\",\"source_section\":\"第二十九条\"}]},{\"label\":\"market_access_restriction\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"可以要求其采取暂停用户账号注册或者其他相关服务等措施；拒不改正或者情节严重的，责令停止提供相关服务\",\"source_section\":\"第三十条\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"自行发现或者网信等有关主管部门通报的重大安全风险问题整改情况\",\"source_section\":\"安全评估内容条款\"}]}],\"implementation_notes\":\"This regulation specifically targets anthropomorphic/emotional AI interaction services (拟人化互动服务), explicitly excluding customer service, Q&A, work assistants, and educational tools without continuous emotional interaction. It was jointly issued by CAC, NDRC, MIIT, MPS, and SAMR. The document type is formally an interim administrative measure (暂行办法) which is binding regulation in China's legal system. Notable focus on minor protection, psychological health, and emotional dependency risks.\",\"confidence\":0.92}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 6624,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1193,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

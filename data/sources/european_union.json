@@ -1,0 +1,736 @@
+{
+  "manifest_version": "2026-04-14",
+  "jurisdiction": "european_union",
+  "description": "Official EU legal text, implementation guidance, and data-protection sources for the AI Act and related governance instruments.",
+  "source_portals": [
+    {
+      "id": "eu_eur_lex",
+      "name": "EUR-Lex",
+      "issuing_body": "European Union",
+      "issuer_type": "legal_registry",
+      "canonical_url": "https://eur-lex.europa.eu/",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Canonical legal text repository for EU regulations, directives, and official journal publications.",
+      "tags": [
+        "legal_text",
+        "official_journal",
+        "ai_act"
+      ]
+    },
+    {
+      "id": "eu_digital_strategy_ai",
+      "name": "Shaping Europe's Digital Future - AI",
+      "issuing_body": "European Commission",
+      "issuer_type": "executive",
+      "canonical_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Commission policy and implementation hub for the AI Act and related guidance.",
+      "tags": [
+        "commission",
+        "implementation",
+        "ai_act"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_url_patterns": [
+            "/en/"
+          ],
+          "include_title_patterns": [
+            "AI Act",
+            "GPAI",
+            "Artificial Intelligence",
+            "AI Office",
+            "AI Pact"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "eu_ai_act_service_desk",
+      "name": "AI Act Service Desk and Single Information Platform",
+      "issuing_body": "European Commission",
+      "issuer_type": "executive",
+      "canonical_url": "https://digital-strategy.ec.europa.eu/en/news/commission-launches-ai-act-service-desk-and-single-information-platform-support-ai-act",
+      "portal_kind": "helpdesk",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Implementation support surface for obligations, compliance tools, and rollout timelines.",
+      "tags": [
+        "implementation",
+        "service_desk",
+        "compliance"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://ai-act-service-desk.ec.europa.eu/en",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "AI Act",
+            "general-purpose AI",
+            "GPAI",
+            "guideline",
+            "obligation"
+          ],
+          "max_candidates": 100
+        }
+      ]
+    },
+    {
+      "id": "eu_edpb_ai_privacy",
+      "name": "European Data Protection Board AI Documents",
+      "issuing_body": "European Data Protection Board",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.edpb.europa.eu/our-work-tools/our-documents/opinion-board-art-64/opinion-282024-certain-data-protection-aspects_en",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Authoritative EU-wide GDPR interpretation for AI models, including anonymity, legitimate interest, and downstream use of models trained on unlawful data.",
+      "tags": [
+        "gdpr",
+        "privacy",
+        "ai_models"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.edpb.europa.eu/our-work-tools/our-documents/opinion-board-art-64/opinion-282024-certain-data-protection-aspects_en",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "Opinion 28/2024",
+            "AI models",
+            "Download"
+          ],
+          "max_candidates": 25
+        }
+      ]
+    },
+    {
+      "id": "eu_edps_genai",
+      "name": "European Data Protection Supervisor Generative AI Guidance",
+      "issuing_body": "European Data Protection Supervisor",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.edps.europa.eu/data-protection/our-work/publications/guidelines/2025-10-28-guidance-generative-ai-strengthening-data-protection-rapidly-changing-digital-era_en",
+      "portal_kind": "library",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "medium",
+      "coverage_notes": "Operational data-protection guidance for generative AI use and development within EU institutions and bodies, with broader relevance for rights-based EU AI governance.",
+      "tags": [
+        "privacy",
+        "generative_ai",
+        "fundamental_rights"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.edps.europa.eu/data-protection/our-work/publications/guidelines/2025-10-28-guidance-generative-ai-strengthening-data-protection-rapidly-changing-digital-era_en",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "Generative AI",
+            "guidance",
+            "Download"
+          ],
+          "max_candidates": 25
+        }
+      ]
+    }
+  ],
+  "seed_documents": [
+    {
+      "id": "eu_ai_act_regulation_2024_1689",
+      "title": "Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence",
+      "issuing_body": "European Union",
+      "canonical_url": "https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=xhtml&language=en&productionSystem=cellar&part=",
+      "retrieval_urls": [
+        "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "frontier_gpai",
+        "civil_rights_nondiscrimination",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-07-12",
+      "effective_date": "2024-08-01",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "eu_eur_lex",
+        "eu_digital_strategy_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Foundational binding EU law establishing the AI Act's risk-based regime.",
+      "tags": [
+        "ai_act",
+        "binding_law",
+        "risk_based_regulation"
+      ]
+    },
+    {
+      "id": "eu_ai_system_definition_guidelines",
+      "title": "The Commission publishes guidelines on AI system definition to facilitate the first AI Act's rules application",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://ec.europa.eu/newsroom/dae/redirection/document/112455",
+      "retrieval_urls": [
+        "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-02-06",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Non-binding but operationally important Commission guidance clarifying the AI Act's scope.",
+      "tags": [
+        "guidelines",
+        "scope",
+        "ai_definition"
+      ]
+    },
+    {
+      "id": "eu_gpai_provider_guidelines",
+      "title": "Guidelines for providers of general-purpose AI models",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-07-18",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai",
+        "eu_ai_act_service_desk"
+      ],
+      "priority": "high",
+      "relevance_notes": "Commission guidance clarifying who counts as a GPAI provider and how obligations apply.",
+      "tags": [
+        "gpai",
+        "guidelines",
+        "provider_obligations"
+      ]
+    },
+    {
+      "id": "eu_gpai_code_transparency_chapter_2025",
+      "title": "Code of Practice for General-Purpose AI Models: Transparency Chapter",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118120",
+      "retrieval_urls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+      ],
+      "document_type": "voluntary_commitment",
+      "binding_strength": "voluntary_commitment",
+      "source_tier": "voluntary_framework",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-07-10",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Authoritative transparency chapter of the GPAI Code of Practice, covering disclosure, provider communication, and compliance-facing documentation expectations.",
+      "tags": [
+        "gpai",
+        "code_of_practice",
+        "transparency"
+      ]
+    },
+    {
+      "id": "eu_gpai_code_copyright_chapter_2025",
+      "title": "Code of Practice for General-Purpose AI Models: Copyright Chapter",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118115",
+      "retrieval_urls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+      ],
+      "document_type": "voluntary_commitment",
+      "binding_strength": "voluntary_commitment",
+      "source_tier": "voluntary_framework",
+      "policy_domains": [
+        "frontier_gpai",
+        "copyright_ip"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-07-10",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Authoritative copyright chapter of the GPAI Code of Practice, covering rights-holder-facing obligations and copyright compliance commitments.",
+      "tags": [
+        "gpai",
+        "code_of_practice",
+        "copyright"
+      ]
+    },
+    {
+      "id": "eu_gpai_code_safety_security_chapter_2025",
+      "title": "Code of Practice for General-Purpose AI Models: Safety and Security Chapter",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+      "retrieval_urls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+      ],
+      "document_type": "voluntary_commitment",
+      "binding_strength": "voluntary_commitment",
+      "source_tier": "voluntary_framework",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-07-10",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Authoritative safety and security chapter of the GPAI Code of Practice, detailing model-risk evaluation and mitigation expectations for advanced models.",
+      "tags": [
+        "gpai",
+        "code_of_practice",
+        "safety_security"
+      ]
+    },
+    {
+      "id": "eu_gpai_vademecum_2025",
+      "title": "Vademecum of the GPAI Signatory Taskforce",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://ec.europa.eu/newsroom/dae/redirection/document/124170",
+      "retrieval_urls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-07-10",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Supplementary implementation guide prepared for GPAI Code signatories, useful for interpreting the voluntary code's operational expectations.",
+      "tags": [
+        "gpai",
+        "vademecum",
+        "implementation"
+      ]
+    },
+    {
+      "id": "eu_prohibited_ai_practices_guidelines",
+      "title": "Commission publishes the Guidelines on prohibited artificial intelligence (AI) practices, as defined by the AI Act.",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://ec.europa.eu/newsroom/dae/redirection/document/112367",
+      "retrieval_urls": [
+        "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "civil_rights_nondiscrimination",
+        "consumer_protection",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-02-04",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai",
+        "eu_ai_act_service_desk"
+      ],
+      "priority": "high",
+      "relevance_notes": "Commission guidance explaining the AI Act's prohibited practices, with practical examples and legal interpretation for early-stage implementation.",
+      "tags": [
+        "guidelines",
+        "prohibited_practices",
+        "ai_act"
+      ]
+    },
+    {
+      "id": "eu_edpb_ai_models_opinion_28_2024",
+      "title": "Opinion 28/2024 on certain data protection aspects related to the processing of personal data in the context of AI models",
+      "issuing_body": "European Data Protection Board",
+      "canonical_url": "https://www.edpb.europa.eu/system/files/2024-12/edpb_opinion_202428_ai-models_en.pdf",
+      "retrieval_urls": [
+        "https://www.edpb.europa.eu/our-work-tools/our-documents/opinion-board-art-64/opinion-282024-certain-data-protection-aspects_en"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "privacy_data_protection",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-12-18",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_edpb_ai_privacy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Core EU data-protection opinion for AI models, covering anonymity, legitimate interest, web scraping-related mitigation, and lawfulness of downstream deployment.",
+      "tags": [
+        "gdpr",
+        "privacy",
+        "ai_models"
+      ]
+    },
+    {
+      "id": "eu_edps_genai_guidance_2025",
+      "title": "Guidance on Generative AI, strengthening data protection in a rapidly changing digital era",
+      "issuing_body": "European Data Protection Supervisor",
+      "canonical_url": "https://www.edps.europa.eu/system/files/2025-10/25-10_28_revised_genai_orientations_en.pdf",
+      "retrieval_urls": [
+        "https://www.edps.europa.eu/data-protection/our-work/publications/guidelines/2025-10-28-guidance-generative-ai-strengthening-data-protection-rapidly-changing-digital-era_en"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "privacy_data_protection",
+        "frontier_gpai",
+        "public_sector_governance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-10-28",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_edps_genai"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Updated EDPS guidance on generative AI and personal data, focused on data-protection-by-design, DPIAs, governance, and lawful institutional use.",
+      "tags": [
+        "privacy",
+        "generative_ai",
+        "data_protection"
+      ]
+    },
+    {
+      "id": "eu_training_content_template_faq_2025",
+      "title": "Template for general-purpose AI model providers to summarise their training content",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://digital-strategy.ec.europa.eu/en/faqs/template-general-purpose-ai-model-providers-summarise-their-training-content",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "implementation_resource",
+      "policy_domains": [
+        "frontier_gpai",
+        "copyright_ip",
+        "privacy_data_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-07-24",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai",
+        "eu_ai_act_service_desk"
+      ],
+      "priority": "high",
+      "relevance_notes": "Operational AI Office guidance on the mandatory training-content summary under Article 53(1)(d), connecting transparency, copyright, and data-rights protection for GPAI models.",
+      "tags": [
+        "gpai",
+        "transparency",
+        "training_data"
+      ]
+    },
+    {
+      "id": "eu_gpai_code_qa_2025",
+      "title": "Questions and answers on the code of practice for General-Purpose AI",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://digital-strategy.ec.europa.eu/en/faqs/questions-and-answers-code-practice-general-purpose-ai",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "implementation_resource",
+      "policy_domains": [
+        "frontier_gpai",
+        "consumer_protection",
+        "copyright_ip"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-07-11",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai",
+        "eu_ai_act_service_desk"
+      ],
+      "priority": "medium",
+      "relevance_notes": "AI Office implementation Q&A clarifying the voluntary GPAI Code, its relationship to binding AI Act obligations, and the 2025-2027 enforcement timeline.",
+      "tags": [
+        "gpai",
+        "code_of_practice",
+        "implementation"
+      ]
+    },
+    {
+      "id": "eu_ai_pact_page",
+      "title": "AI Pact",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://digital-strategy.ec.europa.eu/en/policies/ai-pact",
+      "document_type": "voluntary_commitment",
+      "binding_strength": "voluntary_commitment",
+      "source_tier": "voluntary_framework",
+      "policy_domains": [
+        "frontier_gpai",
+        "industrial_innovation",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-02-26",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Official Commission coordination page for the AI Pact, capturing the EU's pre-enforcement voluntary compliance layer and early commitments around AI Act implementation.",
+      "tags": [
+        "ai_pact",
+        "voluntary",
+        "implementation"
+      ]
+    },
+    {
+      "id": "eu_ai_act_navigation_qa",
+      "title": "Questions & Answers on the AI Act",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://digital-strategy.ec.europa.eu/en/faqs/navigating-ai-act",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "implementation_resource",
+      "policy_domains": [
+        "frontier_gpai",
+        "consumer_protection",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-01-28",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Operational implementation Q&A that consolidates AI Act obligations, timelines, and entry points for providers and deployers across the Commission's implementation stack.",
+      "tags": [
+        "ai_act",
+        "faq",
+        "implementation"
+      ]
+    },
+    {
+      "id": "eu_ai_act_standardisation_page",
+      "title": "Standardisation of the AI Act",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://digital-strategy.ec.europa.eu/en/policies/ai-act-standardisation",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "implementation_resource",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-03-20",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Commission implementation page on harmonised standards and standardisation requests under the AI Act, linking legal obligations to the standards-assurance layer.",
+      "tags": [
+        "ai_act",
+        "standards",
+        "implementation"
+      ]
+    },
+    {
+      "id": "eu_gpai_scope_obligations_guidelines_2025",
+      "title": "Guidelines on the scope of the obligations for providers of GPAI models",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118343",
+      "retrieval_urls": [
+        "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-07-18",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Commission guidance clarifying the scope of AI Act obligations for general-purpose AI model providers, including threshold and role questions that affect compliance exposure.",
+      "tags": [
+        "gpai",
+        "scope",
+        "provider_obligations"
+      ]
+    },
+    {
+      "id": "eu_training_content_public_summary_template_2025",
+      "title": "Template for the public summary of training content of GPAI models",
+      "issuing_body": "European Commission",
+      "canonical_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118480",
+      "retrieval_urls": [
+        "https://digital-strategy.ec.europa.eu/en/library/explanatory-notice-and-template-public-summary-training-content-general-purpose-ai-models"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "implementation_resource",
+      "policy_domains": [
+        "frontier_gpai",
+        "copyright_ip",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-12-05",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_digital_strategy_ai",
+        "eu_ai_act_service_desk"
+      ],
+      "priority": "high",
+      "relevance_notes": "Commission explanatory notice and operational template for the AI Act's public training-content summary requirement for GPAI models.",
+      "tags": [
+        "gpai",
+        "training_data",
+        "transparency"
+      ]
+    },
+    {
+      "id": "eu_request_for_an_article_64_2_opinion_from_efe0d88a",
+      "title": "Request for an article 64(2) opinion from the IE SA on AI models",
+      "issuing_body": "European Data Protection Board",
+      "canonical_url": "https://www.edpb.europa.eu/system/files/2024-12/ie-sa-article-64-2-request-re-ai-model-processing-redacted-en.pdf",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "frontier_gpai",
+        "privacy_data_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-12-18",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "eu_edpb_ai_privacy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Auto-promoted from eu_edpb_ai_privacy; role=primary_text; bucket=implementation_guidance; family=request for an article 64 opinion from the ie sa on ai",
+      "tags": [
+        "gdpr",
+        "privacy",
+        "ai_models",
+        "primary_text",
+        "auto_promoted"
+      ]
+    }
+  ]
+}

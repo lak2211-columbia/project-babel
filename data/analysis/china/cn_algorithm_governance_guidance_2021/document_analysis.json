@@ -1,0 +1,135 @@
+{
+  "source_id": "cn_algorithm_governance_guidance_2021",
+  "title": "关于加强互联网信息服务算法综合治理的指导意见",
+  "language": "zh",
+  "policy_extraction": {
+    "jurisdiction": "china",
+    "issuing_body": "国家互联网信息办公室 (Cyberspace Administration of China) et al. (9 ministries)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2021-09-17",
+    "effective_date": null,
+    "covered_application_domains": [
+      "general_purpose_models",
+      "public_sector_use"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "积极开展算法安全评估。组织建立专业技术评估队伍，深入分析算法机制机理，评估算法设计、部署和使用等应用环节的缺陷和漏洞",
+            "source_section": "第八条"
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "有序推进算法备案工作。建立算法备案制度，梳理算法备案基本情况，健全算法分级分类体系，明确算法备案范围",
+            "source_section": "第九条"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "督促企业及时、合理、有效地公开算法基本原理、优化目标、决策标准等信息，做好算法结果解释",
+            "source_section": "第十三条"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "对算法监测、评估、备案等工作中发现的、以及网民举报并查实的涉算法违法违规行为，予以严厉打击",
+            "source_section": "第十一条"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "企业应建立算法安全责任制度和科技伦理审查制度，健全算法安全管理组织机构，加强风险防控和隐患排查治理",
+            "source_section": "第四条"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "网信部门会同宣传、教育、科技、工信、公安、文化和旅游、市场监管、广电等部门，建立部门协同联动长效机制，履行监管职责",
+            "source_section": "第三条"
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "政府积极受理网民举报投诉，企业自觉接受社会监督并及时做好结果反馈",
+            "source_section": "第六条"
+          }
+        ]
+      },
+      {
+        "label": "civil_penalty",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "对算法监测、评估、备案等工作中发现的、以及网民举报并查实的涉算法违法违规行为，予以严厉打击",
+            "source_section": "第十一条"
+          }
+        ]
+      }
+    ],
+    "implementation_notes": "This is a guidance document (指导意见) jointly issued by 9 ministries. It sets a 3-year goal to establish algorithm governance mechanisms. The document calls for creating regulations and standards as follow-up measures, indicating that binding legal rules are anticipated but not yet fully in place. Civil penalties are implied by references to punishing violations but specific penalty amounts are not stated in this document.",
+    "confidence": 0.82
+  },
+  "risk_framing": {
+    "dominant_frame": "social_stability",
+    "secondary_frames": [
+      "fundamental_rights",
+      "innovation_enablement",
+      "national_security"
+    ],
+    "frame_confidence": {
+      "social_stability": 0.75,
+      "consumer_public_safety": 0.3,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document primarily frames algorithm governance as necessary to maintain correct information order, ideological security, market order, and social order. The central concern is preventing algorithms from disrupting social stability, spreading harmful content, or undermining ideological alignment. Secondary concerns include protecting netizens' rights (fundamental_rights), supporting domestic algorithm innovation to build competitive strength (innovation_enablement), and maintaining ideological/national security.",
+    "evidence_spans": [
+      {
+        "quote": "算法不合理应用也影响了正常的传播秩序、市场秩序和社会秩序，给维护意识形态安全、社会公平公正和网民合法权益带来挑战",
+        "source_section": "指导意见前言"
+      },
+      {
+        "quote": "防止利用算法干扰社会舆论、打压竞争对手、侵害网民权益等行为，防范算法滥用带来意识形态、经济发展和社会管理等方面的风险隐患",
+        "source_section": "第十五条"
+      },
+      {
+        "quote": "坚持正确导向，强化科技伦理意识、安全意识和底线思维，充分发挥算法服务正能量传播作用，营造风清气正的网络空间",
+        "source_section": "基本原则"
+      },
+      {
+        "quote": "提升算法创新能力…提高算法自主可控能力…增强算法核心竞争力",
+        "source_section": "第十四条"
+      }
+    ]
+  }
+}

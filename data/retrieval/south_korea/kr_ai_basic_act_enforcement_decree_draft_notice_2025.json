@@ -1,0 +1,58 @@
+{
+  "jurisdiction": "south_korea",
+  "document_id": "kr_ai_basic_act_enforcement_decree_draft_notice_2025",
+  "canonical_url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=94&nttSeqNo=3186215&sCode=user",
+  "attempts": [
+    {
+      "attempted_at": "2026-04-15T05:29:23.599343+00:00",
+      "attempt_number": 1,
+      "status": "url_error",
+      "error": "[Errno 54] Connection reset by peer",
+      "fetch_url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=94&nttSeqNo=3186215&sCode=user"
+    },
+    {
+      "attempted_at": "2026-04-15T05:29:25.363214+00:00",
+      "attempt_number": 2,
+      "status": "url_error",
+      "error": "[Errno 54] Connection reset by peer",
+      "fetch_url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=94&nttSeqNo=3186215&sCode=user"
+    },
+    {
+      "attempted_at": "2026-04-15T05:46:41.608983+00:00",
+      "attempt_number": 1,
+      "status": "downloaded_new",
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "content_bytes": 129397,
+      "sha256": "6895e38fa810956c6483a1a7114e06a9c5c237b9b207402ff4c062795f1f8bc8",
+      "artifact_state": "new",
+      "fetch_url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=84&mId=109&mPid=103&nttSeqNo=3186315&sCode=user",
+      "resolved_url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=84&mId=109&mPid=103&nttSeqNo=3186315&sCode=user",
+      "transport": "http",
+      "artifact_path": "data/raw/south_korea/kr_ai_basic_act_enforcement_decree_draft_notice_2025/source.html",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "attempted_at": "2026-04-15T06:10:31.237316+00:00",
+      "attempt_number": 0,
+      "status": "skipped_existing"
+    },
+    {
+      "attempted_at": "2026-04-15T06:52:38.556712+00:00",
+      "attempt_number": 1,
+      "status": "imported_local_updated",
+      "status_code": 200,
+      "content_type": "application/octet-stream",
+      "content_bytes": 84095,
+      "sha256": "10941d912b4acfd50445c9d8441558f67579381605e30c2af0e3552b3e527917",
+      "artifact_state": "updated",
+      "fetch_url": "https://www.msit.go.kr/ssm/file/fileDown.do?atchFileNo=51534&fileOrd=4",
+      "resolved_url": "https://www.msit.go.kr/ssm/file/fileDown.do?atchFileNo=51534&fileOrd=4",
+      "transport": "manual_import",
+      "artifact_path": "data/raw/south_korea/kr_ai_basic_act_enforcement_decree_draft_notice_2025/source.bin",
+      "etag": null,
+      "last_modified": null
+    }
+  ]
+}

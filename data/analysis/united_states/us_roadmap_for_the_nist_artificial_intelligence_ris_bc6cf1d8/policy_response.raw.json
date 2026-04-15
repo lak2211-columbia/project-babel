@@ -1,0 +1,56 @@
+{
+  "metadata_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_01FSizGnc6j63j6k7GMYEbKD",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"issuing_body\":\"National Institute of Standards and Technology (NIST)\",\"document_type\":\"standards_guideline\",\"binding_strength\":\"voluntary_commitment\",\"publication_date\":null,\"effective_date\":null,\"covered_actors\":[\"organizations designing, developing, deploying, or using AI systems\",\"AI actors\",\"private and public sector organizations\"],\"covered_application_domains\":[\"general_purpose_models\",\"employment\",\"law_enforcement\",\"finance\"],\"prohibited_practices\":[],\"enforcement_authorities\":[\"NIST\"],\"compliance_deadlines\":[],\"penalties_summary\":null,\"implementation_notes\":\"This Roadmap is a companion to AI RMF 1.0, voluntary and non-sector specific. Key priorities include international standards alignment, expanded TEVV efforts, AI RMF profiles, guidance on trustworthiness tradeoffs, measuring framework effectiveness, case studies, human factors guidance, explainability guidance, risk tolerance methods, and multi-disciplinary tutorials. NIST's involvement depends on available resources.\",\"confidence\":0.92}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 3804,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 230,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  },
+  "controls_response": {
+    "model": "claude-sonnet-4-6",
+    "id": "msg_013J5xaNyXPiX56quFQ66WrD",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"develop tools, benchmarks, testbeds, and standardized methodologies for evaluating risks in AI and system trustworthiness\",\"source_section\":\"Expanded TEVV efforts\"},{\"quote\":\"Guidance on methods for developing reasonable risk tolerances\",\"source_section\":\"Roadmap priorities\"}]},{\"label\":\"human_oversight\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"human oversight of AI systems and their operation in real world environments\",\"source_section\":\"Guidance on human factors and human-AI teaming\"},{\"quote\":\"NIST intends to investigate how human-AI teams should best be configured to reduce likelihood of negative impacts/harms\",\"source_section\":\"Guidance on human factors and human-AI teaming\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"Guidance related to explainability and interpretability, and how to apply that guidance within the AI RMF\",\"source_section\":\"Roadmap priorities\"}]},{\"label\":\"model_documentation\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"Profiles are a primary method for organizations to share real-life examples of how they put the AI RMF into practice\",\"source_section\":\"AI RMF 1.0 Profiles\"}]}],\"enforcement_mechanisms\":[{\"label\":\"soft_enforcement\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic\",\"source_section\":\"Introduction\"},{\"quote\":\"goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems\",\"source_section\":\"Introduction\"}]},{\"label\":\"none_specified\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"Organizations and individuals are encouraged to jointly or independently produce AI RMF profiles\",\"source_section\":\"AI RMF 1.0 Profiles\"}]}]}"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 3724,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 453,
+      "service_tier": "standard",
+      "inference_geo": "global"
+    }
+  }
+}

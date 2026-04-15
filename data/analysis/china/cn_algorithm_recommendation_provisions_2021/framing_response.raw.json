@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_01H41A9c6yBFd13iLooTvAA3",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"dominant_frame\":\"social_stability\",\"secondary_frames\":[\"fundamental_rights\",\"consumer_public_safety\",\"national_security\"],\"frame_confidence\":{\"existential_catastrophic\":0.05,\"national_security\":0.55,\"economic_competitiveness\":0.1,\"fundamental_rights\":0.6,\"social_stability\":0.75,\"innovation_enablement\":0.1,\"consumer_public_safety\":0.55,\"labor_transition\":0.2},\"rationale_summary\":\"The document primarily frames algorithm recommendation governance as necessary to maintain social order and uphold 'socialist core values,' prevent disruption to economic and social order, and suppress harmful information. The recurring emphasis on 'social public interest,' 'social mobilization capability,' 'public opinion attributes,' and preventing content that disturbs social order places social stability as the dominant frame. Secondary frames include fundamental rights (user transparency, opt-out rights, protections for minors, elderly, and workers), consumer/public safety (fraud prevention, minor protection, anti-addiction), and national security (explicit mention of national security protection).\",\"evidence_spans\":[{\"quote\":\"弘扬社会主义核心价值观，维护国家安全和社会公共利益\",\"source_section\":\"第一条\"},{\"quote\":\"不得利用算法推荐服务从事危害国家安全和社会公共利益、扰乱经济秩序和社会秩序\",\"source_section\":\"第六条\"},{\"quote\":\"具有舆论属性或者社会动员能力的算法推荐服务提供者\",\"source_section\":\"第二十四条\"},{\"quote\":\"实施影响网络舆论或者规避监督管理行为\",\"source_section\":\"第十四条\"},{\"quote\":\"向用户提供不针对其个人特征的选项，或者向用户提供便捷的关闭算法推荐服务的选项\",\"source_section\":\"第十七条\"}]}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 6305,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 466,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

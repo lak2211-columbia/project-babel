@@ -1,0 +1,27 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_013K9n9BgWWbwQBk2LWQ9xbU",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"jurisdiction\":\"european_union\",\"issuing_body\":\"European Commission / CEN-CENELEC JTC 21\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"standards_guideline\",\"publication_date\":null,\"effective_date\":null,\"covered_application_domains\":[\"general_purpose_models\",\"critical_infrastructure\",\"law_enforcement\",\"healthcare\",\"employment\",\"education\",\"finance\",\"biometrics\",\"public_sector_use\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"risk management\",\"source_section\":\"Ten key areas for standards development\"},{\"quote\":\"standards currently under development focused on setting methodologies for risk management\",\"source_section\":\"Market benchmarking\"}]},{\"label\":\"model_documentation\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"record keeping\",\"source_section\":\"Ten key areas for standards development\"},{\"quote\":\"governance and quality of datasets\",\"source_section\":\"Ten key areas for standards development\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"transparency\",\"source_section\":\"Ten key areas for standards development\"}]},{\"label\":\"human_oversight\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"human oversight\",\"source_section\":\"Ten key areas for standards development\"}]},{\"label\":\"third_party_audit\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"conformity assessment\",\"source_section\":\"Ten key areas for standards development\"}]},{\"label\":\"pre_deployment_testing\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"These requirements need to be fulfilled before placement on the market, ensuring high-risk AI systems are monitored throughout their lifecycle\",\"source_section\":\"Introduction\"}]}],\"enforcement_mechanisms\":[{\"label\":\"market_access_restriction\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"The latest that the rules would become applicable is 2 December 2027 for high-risk AI systems covered in Annex III AI Act\",\"source_section\":\"Support tools and entry into application\"}]},{\"label\":\"regulatory_supervision\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"the Commission assesses whether they meet the intended objectives and legal requirements of the AI Act. After this final step, the standards are referenced in the Official Journal of the EU\",\"source_section\":\"Standards development process\"}]},{\"label\":\"soft_enforcement\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"The application of standards remains voluntary. Providers can choose any other framework to demonstrate their compliance with the AI Act. However, harmonised standards referenced in the Official Journal of the EU provide legal certainty.\",\"source_section\":\"Voluntary application\"}]}],\"implementation_notes\":\"This page describes the EU AI Act standardisation process led by CEN/CENELEC JTC 21. Standards are voluntary but create a presumption of conformity. The first harmonised standard (prEN 18286) entered public enquiry on 30 October 2025. Application of high-risk AI rules is linked to availability of support tools, with a latest deadline of 2 December 2027 (Annex III) or 2 August 2028 (Annex I). International alignment with ISO/IEC SC 42 is a stated priority.\",\"confidence\":0.88}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 4548,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 725,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  }
+}

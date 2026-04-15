@@ -1,0 +1,86 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "CFPB, DOJ Civil Rights Division, EEOC, FTC (Joint)",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "regulatory_guidance",
+  "publication_date": "2023",
+  "effective_date": null,
+  "covered_application_domains": [
+    "general_purpose_models",
+    "employment",
+    "finance",
+    "public_sector_use",
+    "law_enforcement",
+    "education"
+  ],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "deploy AI before taking steps to assess and mitigate risks",
+          "source_section": "FTC enforcement authorities"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "Many automated systems are 'black boxes' whose internal workings are not clear to most people",
+          "source_section": "Model Opacity and Access"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "quote": "the fact that the technology used to make a credit decision is too complex, opaque, or new is not a defense for violating these laws",
+          "source_section": "CFPB enforcement authorities"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "our agencies reiterate our resolve to monitor the development and use of automated systems",
+          "source_section": "Conclusion"
+        },
+        {
+          "quote": "The Consumer Financial Protection Bureau supervises, sets rules for, and enforces numerous federal consumer financial laws",
+          "source_section": "CFPB enforcement authorities"
+        }
+      ]
+    },
+    {
+      "label": "civil_penalty",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "pledge to vigorously use our collective authorities to protect individuals' rights regardless of whether legal violations occur through traditional means or advanced technologies",
+          "source_section": "Conclusion"
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "This document is for informational purposes only and does not provide technical assistance about how to comply with federal law. It does not constitute final agency action and does not have an immediate and direct legal effect. It does not create any new rights or obligations and it is not enforceable.",
+          "source_section": "Note"
+        }
+      ]
+    }
+  ],
+  "implementation_notes": "Document explicitly states it is not enforceable and creates no new rights or obligations, though it signals enforcement intent of existing laws by four agencies. The document reaffirms existing legal authorities apply to automated systems rather than creating new requirements.",
+  "confidence": 0.85
+}

@@ -1,0 +1,206 @@
+{
+  "source_id": "kr_ai_safety_guideline_2026_draft",
+  "title": "인공지능 안전성 확보 가이드라인(안)",
+  "language": "ko",
+  "policy_extraction": {
+    "jurisdiction": "south_korea",
+    "issuing_body": "대한민국 과학기술정보통신부 / 한국지능정보사회진흥원(NIA)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": null,
+    "effective_date": null,
+    "covered_actors": [
+      "인공지능사업자",
+      "인공지능개발사업자",
+      "인공지능이용사업자"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "인공지능사업자는 이용자 및 영향받는 자의 안전성을 확보하기 위하여 위험을 합리적으로 예상가능한 범위 내에서 식별하여야 한다.",
+            "source_section": "제4조(위험의 식별)"
+          },
+          {
+            "quote": "인공지능사업자는 제4조에 따라 식별된 위험을 체계적으로 관리하고 적절한 대응 방안을 마련하기 위하여 위험의 중대성 관리가능성, 위험의 실현가능성 및 그 영향의 심각성 빈도 등을 평가하여야 한다.",
+            "source_section": "제5조(위험의 평가 등)"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "quote": "인공지능사업자는 제1항에 따른 위험 식별과 관련하여 다음 각 호의 사항을 포함하여 문서화하고 체계적으로 관리하여야 한다.",
+            "source_section": "제4조(위험의 식별)"
+          },
+          {
+            "quote": "인공지능사업자는 제1항에 따른 위험완화조치를 시행한 경우, 다음 각 호의 사항을 포함하여 문서화하고 기록 관리하여야 한다.",
+            "source_section": "제6조(위험의 완화 조치)"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "quote": "다음 각 목의 사항을 포함한 사고발생 보고 : 사고발생 인지 시점으로부터 24시간 이내",
+            "source_section": "제8조(결과 제출) 제3항제1호"
+          },
+          {
+            "quote": "사고발생 보고일부터 7일 이내 초동조치 보고",
+            "source_section": "제8조(결과 제출) 제3항제2호"
+          },
+          {
+            "quote": "사고발생 보고일로부터 15일 이내 사고처리 결과에 관한 보고",
+            "source_section": "제8조(결과 제출) 제3항제3호"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "인공지능사업자는 위험을 평가하기 위하여 위험평가조직을 구성하고, 필요한 경우 외부 기관 또는 전문가를 위험평가 조직에 참여시킬 수 있다.",
+            "source_section": "제5조(위험의 평가 등)"
+          },
+          {
+            "quote": "안전사고 대응 조직 구성 및 구성원의 역할",
+            "source_section": "제7조(위험관리체계의 구축)"
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "과학기술정보통신부장관은 필요한 경우 인공지능사업자가 제출한 누적 연산량 관련 자료의 검증을 인공지능사업자의 동의를 받아 전문기관에 의뢰할 수 있다.",
+            "source_section": "제3조(적용 대상) 제4항"
+          },
+          {
+            "quote": "인공지능사업자는 제1항에 따른 위험평가의 결과를 검증하기 위하여 외부 기관 또는 전문가의 도움을 받을 수 있다.",
+            "source_section": "제5조(위험의 평가 등)"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.92,
+        "evidence": [
+          {
+            "quote": "인공지능사업자는 인공지능이 영 제24조제1항에 해당된다고 인지한 날로부터 3개월 이내에 제4조부터 제7조까지에 따른 조치 사항을 문서로 작성하여 과학기술정보통신부장관에게 제출하여야 한다.",
+            "source_section": "제8조(결과 제출) 제1항"
+          }
+        ]
+      },
+      {
+        "label": "compute_governance",
+        "confidence": 0.93,
+        "evidence": [
+          {
+            "quote": "학습에 사용된 누적 연산량이 10의 26승 부동소수점연산 이상일 것",
+            "source_section": "시행령 제24조제1항제1호"
+          },
+          {
+            "quote": "누적 연산량은 이론적 계산식, 하드웨어 사용 로그 등 객관적인 자료에 기반한 실측 또는 이에 준하는 방식으로 산정",
+            "source_section": "1-1. 시행령 제24조제1항 해당 판단"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "quote": "인공지능사업자는 제1항 각 호에 따른 사항의 이행 결과를 과학기술정보통신부장관에게 제출해야 한다.",
+            "source_section": "법 제32조 제2항"
+          },
+          {
+            "quote": "사고발생 인지 시점으로부터 24시간 이내",
+            "source_section": "제8조(결과 제출) 제3항제1호"
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "정부의 감독 점검 및 평가 과정에서는 사업자가 안전성 확보 의무를 이행하였는지 여부를 검토함에 있어 본 가이드라인을 참고 자료로 활용할 수 있다.",
+            "source_section": "1-2. 가이드라인의 적용 방법"
+          },
+          {
+            "quote": "과학기술정보통신부장관은 필요한 경우 인공지능사업자가 제출한 누적 연산량 관련 자료의 검증을 인공지능사업자의 동의를 받아 전문기관에 의뢰할 수 있다.",
+            "source_section": "제3조(적용 대상) 제4항"
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "본 가이드라인은 고시에서 규정한 인공지능 안전성 확보 의무를 실제 이행하는 데 필요한 기준과 절차를 체계적으로 정리한 참고 문서로서, 법령이나 고시를 대체하거나 새로운 의무를 부과하는 것을 목적으로 하지 않는다.",
+            "source_section": "1-1. 가이드라인의 목적"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "과학기술정보통신부"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This is a draft guideline (안) issued under Article 32 of the AI Basic Act and Article 24 of its Enforcement Decree, and the associated ministerial notice (고시 제2026-○○호). It is explicitly non-binding and does not replace or create new obligations beyond the underlying law. The document may change before final publication. It covers applicability determination, lifecycle risk management (identification, assessment, mitigation), safety incident monitoring, and reporting obligations. The compute threshold for coverage is referenced as 10^25 FLOPs. Government supervision and inspection may reference this guideline.",
+    "confidence": 0.82
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "fundamental_rights",
+      "social_stability"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.1,
+      "national_security": 0.1,
+      "economic_competitiveness": 0.05,
+      "fundamental_rights": 0.55,
+      "social_stability": 0.35,
+      "innovation_enablement": 0.1,
+      "consumer_public_safety": 0.75,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document is primarily framed around ensuring safety of AI systems to protect users and affected persons from harm—covering lifecycle risk management, incident monitoring, and safety measures. The repeated focus on protecting 'life, physical safety, and fundamental rights' of users and affected persons places consumer/public safety as the dominant frame, with fundamental rights as a strong secondary concern.",
+    "evidence_spans": [
+      {
+        "quote": "인공지능 수명주기 전반에 걸쳐, 사람의 생명 신체의 안전 또는 기본권이 침해될 위험 가능성과 그 잠재적 피해의 심각성",
+        "source_section": "Page 13"
+      },
+      {
+        "quote": "인공지능 관련 안전사고: 인공지능의 장애 등으로 인하여 사람의 생명 신체의 안전 또는 기본권에 직접적인 피해가 발생하거나 공공의 안전에 중대한 위해가 발생한 경우",
+        "source_section": "Page 13"
+      },
+      {
+        "quote": "딥페이크를 이용한 신원 도용, 자동화된 피싱 공격, 허위정보의 대규모 확산 사례 존재",
+        "source_section": "Page 29"
+      },
+      {
+        "quote": "사이버 공격 자동화, 생물학적 무기 설계 지원, 정치적 조작 캠페인 등",
+        "source_section": "Page 29"
+      }
+    ]
+  }
+}

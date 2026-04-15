@@ -1,0 +1,184 @@
+{
+  "jurisdiction": "china",
+  "analysis_method": "deterministic_v1",
+  "analysis_version": "0.1.0",
+  "generated_at": "2026-04-15T17:38:06.367999Z",
+  "source_count": 19,
+  "source_document_ids": [
+    "cn_ai_abuse_cleanup_2025",
+    "cn_ai_content_labeling_measures_2025",
+    "cn_ai_drug_regulation_implementation_opinion_interpretation_2026",
+    "cn_ai_ethics_norms_2021",
+    "cn_ai_governance_principles_2019",
+    "cn_ai_labeling_draft_2024",
+    "cn_ai_labeling_expert_interpretation_2025",
+    "cn_ai_safety_governance_framework_2024",
+    "cn_ai_standardization_guide_2024",
+    "cn_algorithm_governance_guidance_2021",
+    "cn_algorithm_recommendation_provisions_2021",
+    "cn_anthropomorphic_interaction_expert_interpretation_2026",
+    "cn_anthropomorphic_interaction_measures_2026",
+    "cn_anthropomorphic_interaction_measures_qa_2026",
+    "cn_c_1777558395023172_1df2a067",
+    "cn_deep_synthesis_provisions_2022",
+    "cn_genai_interim_measures_2023",
+    "cn_meteorological_ai_measures_2025",
+    "cn_new_generation_ai_plan_2017"
+  ],
+  "source_window_start": "2017-07-20",
+  "source_window_end": "2026-04-10",
+  "summary": "China's current AI governance record is guidance-heavy, with 国家互联网信息办公室 (Cyberspace Administration of China) and 国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee) appearing most often in the source base. Across the analyzed documents, Social stability and public order and Consumer and public safety both materially shape the jurisdiction's rationale, while transparency and disclosure, risk assessment, and human oversight recur most often in the operative expectations.",
+  "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from 国家互联网信息办公室 (Cyberspace Administration of China), 国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee), and 国家网信办、国家发展改革委、工业和信息化部、公安部、市场监管总局, and the corpus is weighted toward regulatory guidance and legislation.",
+  "framing_landscape": "The framing mix is relatively split: Social stability and public order leads, but Consumer and public safety is close enough that the jurisdiction should not be read through a single rationale alone.",
+  "implementation_and_enforcement": "Operationally, the sources most often point to transparency and disclosure, risk assessment, and human oversight. When the corpus gets concrete about consequences, it most often references regulatory supervision and reporting obligations.",
+  "source_coverage_note": "This readout is based on 19 analyzed documents spanning 2017-07-20 to 2026-04-10. The corpus is weighted toward regulatory guidance and legislation. On the binding side it leans toward regulatory guidance and binding law, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are 国家网信办等五部门联合公布《人工智能拟人化互动服务管理暂行办法》_中央网络安全和信息化委员会办公室 and 《人工智能拟人化互动服务管理暂行办法》答记者问.",
+  "key_sources": [
+    {
+      "document_id": "cn_anthropomorphic_interaction_measures_qa_2026",
+      "title": "《人工智能拟人化互动服务管理暂行办法》答记者问",
+      "publication_date": "2026-04-10",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "binding_law",
+      "dominant_frame": "consumer_public_safety",
+      "contribution": "Statutory anchor for risk assessment and pre-deployment testing, with regulatory supervision as the clearest consequence or oversight hook."
+    },
+    {
+      "document_id": "cn_anthropomorphic_interaction_measures_2026",
+      "title": "人工智能拟人化互动服务管理暂行办法",
+      "publication_date": "2026-04-10",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "binding_law",
+      "dominant_frame": "social_stability",
+      "contribution": "Statutory anchor for risk assessment and incident reporting, with civil penalties as the clearest consequence or oversight hook."
+    },
+    {
+      "document_id": "cn_deep_synthesis_provisions_2022",
+      "title": "互联网信息服务深度合成管理规定",
+      "publication_date": "2022-11-25",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "dominant_frame": "social_stability",
+      "contribution": "Statutory anchor for transparency and disclosure and risk assessment, with civil penalties as the clearest consequence or oversight hook."
+    },
+    {
+      "document_id": "cn_meteorological_ai_measures_2025",
+      "title": "Measures for Artificial Intelligence Meteorological Application Services",
+      "publication_date": "2025-04-29",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "dominant_frame": "innovation_enablement",
+      "contribution": "Statutory anchor for registration or licensing and risk assessment, with regulatory supervision as the clearest consequence or oversight hook."
+    }
+  ],
+  "top_document_types": [
+    {
+      "label": "regulatory_guidance",
+      "count": 10,
+      "share": 0.526
+    },
+    {
+      "label": "legislation",
+      "count": 5,
+      "share": 0.263
+    },
+    {
+      "label": "standards_guideline",
+      "count": 2,
+      "share": 0.105
+    }
+  ],
+  "top_binding_strengths": [
+    {
+      "label": "regulatory_guidance",
+      "count": 8,
+      "share": 0.421
+    },
+    {
+      "label": "binding_law",
+      "count": 7,
+      "share": 0.368
+    },
+    {
+      "label": "standards_guideline",
+      "count": 2,
+      "share": 0.105
+    }
+  ],
+  "top_requirements": [
+    {
+      "label": "transparency_disclosure",
+      "count": 18,
+      "share": 0.947
+    },
+    {
+      "label": "risk_assessment",
+      "count": 15,
+      "share": 0.789
+    },
+    {
+      "label": "human_oversight",
+      "count": 14,
+      "share": 0.737
+    },
+    {
+      "label": "model_documentation",
+      "count": 13,
+      "share": 0.684
+    }
+  ],
+  "top_enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "count": 16,
+      "share": 0.842
+    },
+    {
+      "label": "reporting_obligation",
+      "count": 11,
+      "share": 0.579
+    },
+    {
+      "label": "soft_enforcement",
+      "count": 8,
+      "share": 0.421
+    },
+    {
+      "label": "civil_penalty",
+      "count": 6,
+      "share": 0.316
+    }
+  ],
+  "top_frames": [
+    {
+      "label": "social_stability",
+      "score": 9.12,
+      "share": 0.287,
+      "document_mentions": 16
+    },
+    {
+      "label": "consumer_public_safety",
+      "score": 7.6,
+      "share": 0.239,
+      "document_mentions": 18
+    },
+    {
+      "label": "innovation_enablement",
+      "score": 3.82,
+      "share": 0.12,
+      "document_mentions": 8
+    },
+    {
+      "label": "fundamental_rights",
+      "score": 3.75,
+      "share": 0.118,
+      "document_mentions": 8
+    }
+  ],
+  "key_institutions": [
+    "国家互联网信息办公室 (Cyberspace Administration of China)",
+    "国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee)",
+    "国家网信办、国家发展改革委、工业和信息化部、公安部、市场监管总局",
+    "China Meteorological Administration (CMA) and Cyberspace Administration of China (CAC)"
+  ],
+  "confidence": 0.76
+}

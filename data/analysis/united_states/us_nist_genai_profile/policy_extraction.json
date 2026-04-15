@@ -1,0 +1,188 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "National Institute of Standards and Technology (NIST)",
+  "document_type": "standards_guideline",
+  "binding_strength": "standards_guideline",
+  "publication_date": "2024-07",
+  "effective_date": null,
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "healthcare",
+    "finance",
+    "law_enforcement",
+    "defense",
+    "employment",
+    "education"
+  ],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "Establish minimum thresholds for performance or assurance criteria and review as part of deployment approval (",
+          "source_section": "GV-1.3-002"
+        },
+        {
+          "quote": "Consider the following factors when updating or defining risk tiers for GAI: Abuses and impacts to information integrity; Dependencies between GAI and other IT or data systems; Harm to fundamental rights or public safety",
+          "source_section": "GV-1.3-001"
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "Establish a test plan and response policy, before developing highly capable models, to periodically evaluate whether the model may misuse CBRN information or capabilities and/or offensive cyber capabilities.",
+          "source_section": "GV-1.3-003"
+        },
+        {
+          "quote": "Robust test, evaluation, validation, and verification (TEVV) processes can be iteratively applied – and documented – in early stages of the AI lifecycle",
+          "source_section": "Appendix A.1.4"
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "AI Red-teaming: A structured testing exercise used to probe an AI system to find flaws and vulnerabilities such as inaccurate, harmful, or discriminatory outputs, often in a controlled environment and in collaboration with system developers.",
+          "source_section": "Appendix A.1.5"
+        },
+        {
+          "quote": "Perform AI red-teaming to assess resilience against: Abuse to facilitate attacks on other systems (e.g., malicious code generation, enhanced phishing content), GAI attacks (e.g., prompt injection), ML attacks",
+          "source_section": "MS-2.7-007"
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "Establish organizational policies and procedures for after action reviews of GAI system incident response and incident disclosures, to identify gaps",
+          "source_section": "GV-1.5-002"
+        },
+        {
+          "quote": "Report GAI incidents in compliance with legal and regulatory requirements (e.g., HIPAA breach reporting, e.g., OCR (2023) or NHTSA (2022) autonomous vehicle crash reporting requirements.",
+          "source_section": "MG-4.3-003"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "Establish transparency policies and processes for documenting the origin and history of training data and generated data for GAI applications to advance digital content transparency",
+          "source_section": "GV-1.2-001"
+        },
+        {
+          "quote": "Consider disclosing use of GAI to end users in relevant contexts, while considering the objective of disclosure, the context of use, the likelihood and magnitude of the risk posed",
+          "source_section": "MP-5.1-003"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "Document GAI model details including: Proposed use and organizational value; Assumptions and limitations, Data collection methodologies; Data provenance; Data quality; Model architecture",
+          "source_section": "MS-2.9-002"
+        },
+        {
+          "quote": "Review various transparency artifacts (e.g., system cards and model cards) for third-party models.",
+          "source_section": "MG-3.1-005"
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "quote": "Policies are in place to bolster oversight of GAI systems with independent evaluations or assessments of GAI models or systems where the type and robustness of evaluations are proportional to the identified risks.",
+          "source_section": "GV-3.2-001"
+        },
+        {
+          "quote": "Establish policies to evaluate risk-relevant capabilities of GAI and robustness of safety measures, both prior to deployment and on an ongoing basis, through internal and external evaluations.",
+          "source_section": "GV-1.2-002"
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "Implement a use-cased based supplier risk assessment framework to evaluate and monitor third-party entities' performance and adherence to content provenance standards and technologies to detect anomalies and unauthorized changes",
+          "source_section": "GV-6.1-005"
+        },
+        {
+          "quote": "LLM inputs and content delivered through these plugins is often distributed, with inconsistent or insufficient access control.",
+          "source_section": "Appendix A.1.8"
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "Establish policies for measuring the effectiveness of employed content provenance methodologies (e.g., cryptography, watermarking, steganography, etc.)",
+          "source_section": "GV4.3--001"
+        },
+        {
+          "quote": "Provenance data tracking and synthetic content detection can help facilitate greater information access about both authentic and synthetic content to users",
+          "source_section": "Appendix A.1.6"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "Define organizational responsibilities for periodic review of content provenance and incident monitoring for GAI systems.",
+          "source_section": "GV-1.5-001"
+        },
+        {
+          "quote": "Use human moderation systems where appropriate to review generated content in accordance with human-AI configuration policies",
+          "source_section": "MG-3.2-008"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "The AI RMF was released in January 2023, and is intended for voluntary use and to improve the ability of organizations to incorporate trustworthiness considerations into the design, development, use, and evaluation of AI products, services, and systems.",
+          "source_section": "Introduction"
+        },
+        {
+          "quote": "This document is a cross-sectoral profile of and companion resource for the AI Risk Management Framework (AI RMF 1.0) for Generative AI, pursuant to President Biden's Executive Order (EO) 14110",
+          "source_section": "Introduction"
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "quote": "Report GAI incidents in compliance with legal and regulatory requirements (e.g., HIPAA breach reporting, e.g., OCR (2023) or NHTSA (2022) autonomous vehicle crash reporting requirements.",
+          "source_section": "MG-4.3-003"
+        }
+      ]
+    }
+  ],
+  "implementation_notes": "NIST AI 600-1 is explicitly voluntary guidance serving as a companion to AI RMF 1.0, developed per EO 14110 Section 4.1(a)(i)(A). It provides suggested (not required) actions organized by AI RMF functions (Govern, Map, Measure, Manage). Four primary GAI considerations are addressed: Governance, Pre-Deployment Testing, Content Provenance, and Incident Disclosure. The document covers general-purpose/foundation models broadly across sectors. No binding enforcement mechanisms are created by this document itself; references to mandatory reporting (e.g., HIPAA) point to pre-existing external legal obligations rather than new requirements from this profile.",
+  "confidence": 0.95
+}

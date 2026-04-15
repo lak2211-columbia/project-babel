@@ -1,0 +1,196 @@
+{
+  "jurisdiction": "japan",
+  "issuing_body": "内閣（閣議決定）/ Cabinet of Japan",
+  "document_type": "strategy_paper",
+  "binding_strength": "strategy_statement",
+  "publication_date": "2025-12-23",
+  "effective_date": "2025-12-23",
+  "covered_actors": [
+    "政府・全省庁（government ministries and agencies）",
+    "地方自治体（local governments）",
+    "事業者（businesses/operators）",
+    "AI開発者・研究者（AI developers and researchers）",
+    "スタートアップ（startups）",
+    "中小企業（SMEs）",
+    "国民（citizens）"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "public_sector_use",
+    "employment",
+    "education",
+    "healthcare",
+    "finance",
+    "law_enforcement",
+    "defense",
+    "biometrics"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "ＡＩの技術進歩とともに変動するリスクを適時適切に把握し、ＡＩの透明性・公平性・安全性を始めとする適正性を確保する",
+          "source_section": "第１章"
+        },
+        {
+          "quote": "ＡＩがもたらすリスクに係る実態把握を行うとともに必要な措置を講ずる",
+          "source_section": "第３節"
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "行政においてＡＩを利用する際、判断の根拠等が不明瞭にならないようにするなど、国民へのアカウンタビリティを果たし、行政の信頼性を確保する",
+          "source_section": "第３節"
+        },
+        {
+          "quote": "適切な知的財産の保護と利活用につながる透明性の確保を図る",
+          "source_section": "第４節"
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "ＡＩの性能や信頼性を客観的に評価するための評価基盤やテストベッドを整備する",
+          "source_section": "第２節（１）⑤"
+        },
+        {
+          "quote": "ＡＩモデルの安全性にとどまらず、より広範な適正性に係る評価やセキュリティ面での対策を実行できる体制を構築し",
+          "source_section": "第３節（１）⑤"
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "quote": "ＡＩＳＩの機能を、政府を挙げて抜本的に強化する",
+          "source_section": "第３節（１）⑤"
+        },
+        {
+          "quote": "ＡＩモデルの技術的評価を適切に行い",
+          "source_section": "第３節"
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.5,
+      "evidence": [
+        {
+          "quote": "ＡＩ法第 16 条に基づく調査研究等を実施し、リスクへの対応等を適切に行う",
+          "source_section": "第３節（１）①"
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "ＡＩ生成コンテンツを判別する技術、ＡＩの制御機能等の開発を支援する",
+          "source_section": "第３節（１）⑥"
+        },
+        {
+          "quote": "例えば、ＡＩを利用して生成されたコンテンツに対する電子透かしや事後的な真偽判別支援技術など",
+          "source_section": "第３節（１）⑥ 脚注"
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "人とＡＩが協働する社会を実現するため、制度や社会の仕組みを先導的に見直し、継続的に変革する",
+          "source_section": "第４節"
+        },
+        {
+          "quote": "人とＡＩの役割分担の在り方を継続的に探究する",
+          "source_section": "第４節（４）①"
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "quote": "事業者等によるＡＩの研究及び開発・利活用における適正性の確保に向けた自主的な取組を促すとともに…ＡＩ法第13条に基づく指針その他各種ガイドライン等を整備し",
+          "source_section": "第３節（１）②"
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "ＡＩＳＩの機能を、政府を挙げて抜本的に強化する…人員を直ちに現行の２倍程度に拡充する",
+          "source_section": "第３節"
+        },
+        {
+          "quote": "人工知能戦略本部において基本計画の推進状況を把握の上、フォローアップを行う",
+          "source_section": "第４章第１節"
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "quote": "ＡＩ法第 16 条に基づく調査研究等を実施し、リスクへの対応等を適切に行う",
+          "source_section": "第３節（１）①"
+        },
+        {
+          "quote": "取組の進捗状況を適時適切に情報共有し、必要に応じて調整や連携の強化・促進を図ることが重要",
+          "source_section": "第４章第１節"
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "国民や事業者等の自主的かつ能動的な取組を促すよう、国としての基本的な考え方を提示する",
+          "source_section": "第３節"
+        },
+        {
+          "quote": "事業者等によるＡＩの研究及び開発・利活用における適正性の確保に向けた自主的な取組を促す",
+          "source_section": "第３節（１）②"
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "内閣府（Cabinet Office）",
+    "デジタル庁（Digital Agency）",
+    "総務省（Ministry of Internal Affairs and Communications）",
+    "経済産業省（Ministry of Economy, Trade and Industry）",
+    "文部科学省（Ministry of Education, Culture, Sports, Science and Technology）",
+    "厚生労働省（Ministry of Health, Labour and Welfare）",
+    "警察庁（National Police Agency）",
+    "防衛省（Ministry of Defense）",
+    "個人情報保護委員会（Personal Information Protection Commission）",
+    "AIセーフティ・インスティテュート（AISI）"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "This is Japan's first AI Basic Plan (人工知能基本計画), adopted by Cabinet decision on 23 December 2025 under Article 18(1) of the AI Act (令和7年法律第53号). It is a government strategy document, not binding legislation. Key pillars: (1) accelerating AI utilization, (2) strengthening AI development capacity, (3) leading AI governance, (4) continuous societal transformation. AISI to be doubled in staffing immediately. No explicit prohibited practices stated; focus is on innovation promotion balanced with risk response. No formal compliance deadlines specified.",
+  "confidence": 0.92
+}

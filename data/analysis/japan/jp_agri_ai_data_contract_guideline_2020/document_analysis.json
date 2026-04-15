@@ -1,0 +1,142 @@
+{
+  "source_id": "jp_agri_ai_data_contract_guideline_2020",
+  "title": "農業分野におけるAI・データに関する契約ガイドライン～農業分野のノウハウの保護とデータ利活用促進のために～",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries of Japan)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2020-03",
+    "effective_date": null,
+    "covered_actors": [
+      "農業関係者等 (agricultural stakeholders)",
+      "ＡＩ研究開発委託者 (AI R&D commissioners)",
+      "ＡＩ研究開発者 (AI developers/vendors)",
+      "農業普及指導員等 (agricultural extension officers)",
+      "第三者 (third parties)"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "public_sector_use"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "quote": "農業関係者等への配慮したデータ・ノウハウ等の取扱い",
+            "source_section": "Page 2"
+          },
+          {
+            "quote": "個人情報等の対応",
+            "source_section": "Page 2"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.55,
+        "evidence": [
+          {
+            "quote": "ＡＩの研究開発プロセスとその特徴",
+            "source_section": "Page 2"
+          },
+          {
+            "quote": "教師データの作成のプロセス",
+            "source_section": "Page 3"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.5,
+        "evidence": [
+          {
+            "quote": "人間中心のＡＩ社会原則と本ガイドライン",
+            "source_section": "Page 3"
+          },
+          {
+            "quote": "人間中心のＡＩ社会原則の概要",
+            "source_section": "Page 6"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "農業分野におけるＡＩ・データに関する契約ガイドライン",
+            "source_section": "Page 1"
+          },
+          {
+            "quote": "モデル契約書のポイントの提示方針",
+            "source_section": "Page 2"
+          }
+        ]
+      },
+      {
+        "label": "none_specified",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "契約ガイドライン－ノウハウ活用編－",
+            "source_section": "Page 1"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "農林水産省 (Ministry of Agriculture, Forestry and Fisheries)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This is a contractual guideline (契約ガイドライン) for AI and data use in the agricultural sector, focused on know-how protection and data utilization. It provides model contracts and term sheets for data/know-how provision, AI R&D commissioning, and third-party data sharing. It is non-binding guidance referencing METI AI contract guidelines. No penalties or mandatory compliance dates are specified.",
+    "confidence": 0.88
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "economic_competitiveness",
+      "consumer_public_safety"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.05,
+      "economic_competitiveness": 0.25,
+      "fundamental_rights": 0.1,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.65,
+      "consumer_public_safety": 0.15,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document is a contract guideline from Japan's Ministry of Agriculture aimed at promoting data utilization and protecting agricultural know-how in AI development. The primary framing is enabling innovation—facilitating AI adoption in agriculture through clear contract frameworks, IP protection, and data sharing arrangements. Economic competitiveness appears as a secondary frame through references to AI Strategy 2019 goals and commercialization. Consumer/public safety appears modestly through liability and personal data handling provisions.",
+    "evidence_spans": [
+      {
+        "quote": "農業分野におけるＡＩ利用の意義",
+        "source_section": "Page 2"
+      },
+      {
+        "quote": "ノウハウ活用編",
+        "source_section": "Page 1"
+      },
+      {
+        "quote": "農業関係者等におけるデータ・ノウハウの重要性",
+        "source_section": "Page 3"
+      },
+      {
+        "quote": "ＡＩ戦略 2019 に示される農業分野の具体目標",
+        "source_section": "Page 6"
+      },
+      {
+        "quote": "地域で保有するノウハウのＡＩの利用による継承",
+        "source_section": "Page 4"
+      }
+    ]
+  }
+}

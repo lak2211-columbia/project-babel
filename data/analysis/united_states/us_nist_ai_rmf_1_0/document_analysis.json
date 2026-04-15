@@ -1,0 +1,218 @@
+{
+  "source_id": "us_nist_ai_rmf_1_0",
+  "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "National Institute of Standards and Technology (NIST)",
+    "document_type": "standards_guideline",
+    "binding_strength": "voluntary_commitment",
+    "publication_date": "2023-01-26",
+    "effective_date": null,
+    "covered_actors": [
+      "AI developers",
+      "AI deployers",
+      "AI operators",
+      "AI evaluators",
+      "organizations acquiring AI systems",
+      "AI actors"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "healthcare",
+      "finance",
+      "law_enforcement",
+      "public_sector_use"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "AI risk management efforts should prioritize the minimization of potential negative impacts",
+            "source_section": "Page 19"
+          },
+          {
+            "quote": "The AI system is evaluated regularly for safety risks – as identified in the MAP function. The AI system to be deployed is demonstrated to be safe, its residual negative risk does not exceed the risk tolerance",
+            "source_section": "Page 35"
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "AI systems should be tested before their deployment and regularly while in operation.",
+            "source_section": "Page 33"
+          },
+          {
+            "quote": "TEVV tasks for deployment include system validation and integration in production, with testing, and recalibration",
+            "source_section": "Page 41"
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "may need to include human intervention in cases where the AI system cannot detect or correct errors",
+            "source_section": "Page 19"
+          },
+          {
+            "quote": "the ability to shut down, modify, or have human intervention into systems that deviate from intended or expected functionality",
+            "source_section": "Page 20"
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "Transparency reflects the extent to which information about an AI system and its outputs is available to individuals interacting with such a system",
+            "source_section": "Page 20"
+          },
+          {
+            "quote": "Risks associated with transparency and accountability – as identified in the MAP function – are examined and documented",
+            "source_section": "Page 35"
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "The AI model is explained, validated, and documented, and AI system output is interpreted within its context",
+            "source_section": "Page 35"
+          },
+          {
+            "quote": "Accuracy measurements should always be paired with clearly defined and realistic test sets…and details about test methodology; these should be included in associated documentation",
+            "source_section": "Page 19"
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "Incidents and errors are communicated to relevant AI actors, including affected communities. Processes for tracking, responding to, and recovering from incidents and errors are followed and documented.",
+            "source_section": "Page 38"
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "Processes for independent review can improve the effectiveness of testing and can mitigate internal biases and potential conflicts of interest",
+            "source_section": "Page 33"
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "Maintaining the provenance of training data and supporting attribution of the AI system's decisions to subsets of training data can assist with both transparency and accountability",
+            "source_section": "Page 21"
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "quote": "AI systems that can maintain confidentiality, integrity, and availability through protection mechanisms that prevent unauthorized access and use may be said to be secure",
+            "source_section": "Page 20"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "AI RMF use-case profiles are implementations of the AI RMF functions, categories, and subcategories for a specific setting or application based on the requirements, risk tolerance, and resources of the Framework user",
+            "source_section": "Page 38"
+          },
+          {
+            "quote": "It is incumbent on Framework users to continue applying the MEASURE function to AI systems as knowledge, methodologies, risks, and impacts evolve over time",
+            "source_section": "Page 33"
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "quote": "Processes for tracking, responding to, and recovering from incidents and errors are followed and documented",
+            "source_section": "Page 38"
+          },
+          {
+            "quote": "Post-deployment AI system monitoring plans are implemented, including mechanisms for capturing and evaluating input from users and other relevant AI actors",
+            "source_section": "Page 38"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "The AI RMF is explicitly voluntary: 'Like the AI RMF, the Playbook is voluntary and organizations can utilize the suggestions according to their needs and interests.' It does not prescribe risk tolerance and is intended to be flexible and to augment existing risk practices. It provides four core functions: GOVERN, MAP, MEASURE, MANAGE. No penalties or enforcement mechanisms are established.",
+    "confidence": 0.97
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "fundamental_rights",
+      "social_stability",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.1,
+      "national_security": 0.15,
+      "economic_competitiveness": 0.2,
+      "fundamental_rights": 0.6,
+      "social_stability": 0.55,
+      "innovation_enablement": 0.45,
+      "consumer_public_safety": 0.75,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "The AI RMF primarily frames AI governance as a matter of managing harms to individuals, communities, and society—emphasizing trustworthiness, risk management, and protection from negative impacts. The document's core reasoning centers on protecting people from AI system failures, biases, and unintended harms, aligning with consumer/public safety framing. Fundamental rights and social stability are strong secondary frames, as the document explicitly mentions civil liberties, equity, and societal impacts. Innovation enablement appears as a complementary frame since the document also stresses maximizing positive impacts and promoting beneficial AI use.",
+    "evidence_spans": [
+      {
+        "quote": "AI risk management offers a path to minimize potential negative impacts of AI systems, such as threats to civil liberties and rights, while also providing opportunities to maximize positive impacts.",
+        "source_section": "Page 9"
+      },
+      {
+        "quote": "Without proper controls, AI systems can amplify, perpetuate, or exacerbate inequitable or undesirable outcomes for individuals and communities.",
+        "source_section": "Page 6"
+      },
+      {
+        "quote": "In cases where an AI system presents unacceptable negative risk levels – such as where significant negative impacts are imminent, severe harms are actually occurring, or catastrophic risks are present – development and deployment should cease",
+        "source_section": "Page 13"
+      },
+      {
+        "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector-specific, and use-case agnostic",
+        "source_section": "Page 7"
+      },
+      {
+        "quote": "so society can benefit from AI while also being protected from its potential harms",
+        "source_section": "Page 7"
+      }
+    ]
+  }
+}

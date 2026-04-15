@@ -1,0 +1,79 @@
+{
+  "source_id": "us_crosswalks_to_the_nist_artificial_intelligence_r_8c897d8c",
+  "title": "Crosswalks to the NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0) | NIST",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "National Institute of Standards and Technology (NIST)",
+    "document_type": "standards_guideline",
+    "binding_strength": "voluntary_commitment",
+    "publication_date": null,
+    "effective_date": null,
+    "covered_actors": [
+      "organizations designing AI systems",
+      "organizations developing AI systems",
+      "organizations deploying AI systems",
+      "organizations using AI systems",
+      "AI actors"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "the goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI",
+            "source_section": "Introduction"
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic",
+            "source_section": "Introduction"
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "Crosswalks to the AI RMF 1.0 are voluntary resources. The framework is non-sector specific and use-case agnostic. NIST solicits ongoing public comments at AIframework@nist.gov. Alignment with international standards is cited as a top priority in the NIST Roadmap for the AI RMF.",
+    "confidence": 0.95
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "innovation_enablement",
+      "fundamental_rights"
+    ],
+    "frame_confidence": {
+      "consumer_public_safety": 0.5,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document frames AI governance primarily around managing AI risks to promote trustworthy and responsible AI systems, which aligns with consumer/public safety framing. Secondary frames include innovation enablement (voluntary, flexible framework) and fundamental rights (rights-preserving language).",
+    "evidence_spans": [
+      {
+        "quote": "the goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic",
+        "source_section": "Introduction"
+      },
+      {
+        "quote": "approaches that increase the trustworthiness of AI systems",
+        "source_section": "Introduction"
+      }
+    ]
+  }
+}

@@ -4,52 +4,92 @@
   "language": "ja",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)",
+    "issuing_body": "Cabinet Office / Integrated Innovation Strategy Promotion Council (統合イノベーション戦略推進会議)",
     "document_type": "strategy_paper",
     "binding_strength": "strategy_statement",
     "publication_date": "2022-04-22",
     "effective_date": null,
     "covered_actors": [
-      "国 (national government)",
-      "地方自治体 (local governments)",
-      "民間企業 (private enterprises)",
-      "AI開発者・運用者 (AI developers and operators)"
+      "National government, Cabinet Office, Digital Agency, and relevant ministries",
+      "Local governments (地方自治体)",
+      "Core National AI Research Centers (RIKEN AIP, AIST AIRC, NICT UCRI & CiNet) and public research institutions",
+      "Universities, colleges of technology (KOSEN), and elementary, junior high, and senior high schools",
+      "Private enterprises, SMEs (中小企業), and startups/ventures (ベンチャー企業)",
+      "Working adults, students, and citizens"
     ],
     "covered_application_domains": [
       "critical_infrastructure",
-      "public_sector_use",
       "healthcare",
+      "education",
+      "public_sector_use",
+      "employment",
       "defense"
     ],
     "prohibited_practices": [],
     "safety_requirements": [
       {
-        "label": "risk_assessment",
-        "confidence": 0.6,
+        "label": "training_data_governance",
+        "confidence": 0.85,
+        "obligation_strength": "aspirational",
         "evidence": [
           {
-            "quote": "サイバーセキュリティやＡＩ倫理を含む、システムの安全性や健全性を担保する技術の開発や実装",
-            "source_section": "第一部 基本的事項 ５．戦略の推進にあたっての基本的考え方"
+            "quote": "複数の国にわたる大規模なデータセットからの機械学習を前提とした個人情報保護を尊重した連合学習(Federated Learning)などの技術開発と適切な運用を実現する必要がある。",
+            "source_section": "第二部 ２．(3) Resilient and Responsible AI でのリーダーシップの確立 (Page 20)",
+            "quote_en": "It is necessary to achieve technical development and appropriate operation of technologies such as Federated Learning that respect personal-information protection when conducting machine learning across large-scale multi-country datasets.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 18401,
+            "end_char": 18491
+          },
+          {
+            "quote": "その他、ＡＩの利活用環境の重要な要素の一つとして、機微なデータや技術の海外流\n出対策も考慮したデータの取扱いルールについても、不断の改善努力が必要である。",
+            "source_section": "第三部 ３．(3) 人材や技術情報、データ取扱いルール等に関する追加的取組 (Page 28)",
+            "quote_en": "In addition, as a key element of the AI utilization environment, continuous efforts are needed to improve data-handling rules that also account for preventing the overseas leakage of sensitive data and technologies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 25014,
+            "end_char": 25091
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.85,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "さらに、安全保障上の要件からこれらのプラットフォームが、高度なサイバーセキュリティ技術で堅牢化されていることが前提となる。",
+            "source_section": "第二部 ２．(3) Resilient and Responsible AI でのリーダーシップの確立 (Page 20)",
+            "quote_en": "Furthermore, based on national security requirements, it is a prerequisite that these platforms be hardened with advanced cybersecurity technologies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 18004,
+            "end_char": 18065
+          },
+          {
+            "quote": "また、データの真正性、更には本人確認といった点における信頼確保が極めて重\n要である。既に、米国では政府調達分野でのトラスト基盤、ＥＵでは共通トラスト基盤の\n構築が進められており、我が国でも関連の検討が開始されているが、例えば、サプライチ\nェーン全体のセキュリティ確保（「サイバー・フィジカル・セキュリティ対策フレームワー\nク」）などの検討を加速していかなければならない。",
+            "source_section": "第四部 ３．データ関連基盤整備 (Page 39)",
+            "quote_en": "Ensuring trust in data authenticity and identity verification is extremely important; alongside US and EU trust-infrastructure efforts, Japan must accelerate work such as securing entire supply chains under the Cyber-Physical Security Framework.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 32036,
+            "end_char": 32221
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.6,
+        "confidence": 0.8,
+        "obligation_strength": "aspirational",
         "evidence": [
           {
-            "quote": "公平性・透明性があり、責任ある形で運用され、安全であることが極めて重要",
-            "source_section": "第二部 （３）Resilient and Responsible AI"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.5,
-        "evidence": [
-          {
-            "quote": "Responsible AI の確立とサイバーセキュリティの強化に立脚した Resilient AI",
-            "source_section": "第二部 （３）Resilient and Responsible AI"
+            "quote": "国の行政機関がＡＩを活用する際には、特に透明性、公平性、説明可能性等の確保が重\n要であることを理解したうえで、ＡＩの導入促進を図ることが必要である。このため、国\nの行政機関におけるＡＩ導入の基本的考え方の整理や、ＡＩ導入ガイドラインの策定等の\n総合的な対策を取りまとめ、実施していく。",
+            "source_section": "第四部 ４．ＡＩ時代のデジタル・ガバメント (Page 40)",
+            "quote_en": "When national administrative agencies utilize AI, it is necessary to promote AI adoption while understanding the importance of ensuring transparency, fairness, and explainability; accordingly, the government will compile and implement comprehensive measures including basic principles and AI adoption guidelines for national agencies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 32934,
+            "end_char": 33076
           }
         ]
       }
@@ -57,72 +97,155 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "民間セクターは、本戦略の趣旨をしっかりと理解したうえで、ＡＩ社会原則を遵守し",
-            "source_section": "第一部 ７．官民の役割分担"
-          }
-        ]
-      },
-      {
-        "label": "none_specified",
         "confidence": 0.9,
         "evidence": [
           {
-            "quote": "国は、以上の観点を念頭におき、総合的なコーディネーターとして、以下の点にも留意しつつ、本戦略に記載される各種施策を着実に推進していく",
-            "source_section": "第一部 ５．戦略の推進にあたっての基本的考え方"
+            "quote": "他方、民間セクターは、本戦略の趣旨をしっかりと理解したうえで、ＡＩ社会原則を遵守し、優秀な人材に対する国際的競争力のある報酬体系の導入を図りつつ、ＡＩ技術の社会実装の出口として実現に向けた一層の努力とともに、他国・地域との国際連携や、多様なステークホルダーとの協働を推進する必要がある。",
+            "source_section": "第一部 ７．官民の役割分担 (Page 10)",
+            "quote_en": "Meanwhile, the private sector should thoroughly understand the intent of this strategy, adhere to the AI Social Principles, introduce internationally competitive compensation for top talent, and advance social implementation, international cooperation, and multi-stakeholder collaboration.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7195,
+            "end_char": 7338
+          },
+          {
+            "quote": "このような状況下、我が国は、我が国の社会経済活動が過度に制約されることが無いよう、同志国を中心に、諸外国と連携して国際標準化活動の推進等の国際連携を実施していく必要がある。",
+            "source_section": "第四部 ６．倫理 (Page 42)",
+            "quote_en": "Under these circumstances, to ensure Japan's socio-economic activities are not excessively constrained, Japan must work with like-minded and other countries to promote international cooperation such as international standardization.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 34563,
+            "end_char": 34649
           }
         ]
       }
     ],
-    "enforcement_authorities": [
-      "統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)"
-    ],
+    "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "AI戦略2022 is a non-binding national strategy document building on AI Strategy 2019 and 2021. It sets strategic goals (目標0–4) covering crisis resilience (AI for National Resilience, Planetary Resilience), social implementation of AI, and responsible/trustworthy AI. No specific compliance deadlines, penalties, or enforcement mechanisms are defined. The document references the 'Human-Centered AI Social Principles' (2019) as the foundational ethical framework.",
-    "confidence": 0.92
+    "implementation_notes": "Japan's comprehensive national 'AI Strategy 2022', decided by the Integrated Innovation Strategy Promotion Council on April 22, 2022 (Reiwa 4), expanding AI Strategy 2019 and 2021 in response to COVID-19, mega-disaster risks, climate departure, and geopolitical shifts (subsequently superseded by the December 2025 First AI Basic Plan). Structured in four parts: Part 1 establishes Strategic Goals 0–4 (imminent crisis resilience, AI talent, real-world industrial competitiveness, inclusive sustainable society, and global research/education networks); Part 2 details 'AI for National Resilience' (disaster/armed-attack Digital Twins, global BCP/data-economy networks), 'AI for Planetary Resilience' (Nature-Positive Economy), and 'Resilient and Responsible AI' (XAI, Federated Learning, Security for AI / AI for Security); Part 3 promotes social implementation (human-AI collaboration, breaking black-box fears, physical-cyber 'Round 2 of DX', data-handling rule reviews, government adoption, and focusing on Japanese strengths); Part 4 sets 2025 education targets (1M high school grads, 500k university/KOSEN grads, 250k applied AI talent, 2,000 experts, 1M working adults/yr recurrent education), R&D network restructuring, trust-data infrastructure, Digital Government AI guidelines, SME/startup support, and international ethics/standardization (GPAI presidency) avoiding excessive regulatory constraints.",
+    "confidence": 0.94
   },
   "risk_framing": {
     "dominant_frame": "economic_competitiveness",
     "secondary_frames": [
+      "innovation_enablement",
+      "consumer_public_safety",
+      "labor_transition",
       "national_security",
-      "social_stability",
-      "innovation_enablement"
+      "fundamental_rights"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.2,
-      "national_security": 0.55,
-      "economic_competitiveness": 0.75,
-      "fundamental_rights": 0.2,
-      "social_stability": 0.5,
-      "innovation_enablement": 0.55,
-      "consumer_public_safety": 0.3,
-      "labor_transition": 0.2
+      "existential_catastrophic": 0.05,
+      "national_security": 0.72,
+      "economic_competitiveness": 0.95,
+      "fundamental_rights": 0.65,
+      "social_stability": 0.4,
+      "innovation_enablement": 0.92,
+      "consumer_public_safety": 0.88,
+      "labor_transition": 0.78
     },
-    "rationale_summary": "The document frames AI governance primarily through economic competitiveness: it explicitly aims to strengthen Japan's industrial competitiveness, achieve top-runner status in real-world industries, improve labor productivity to match the US and Germany, and build international AI networks to expand market reach. National resilience (disaster response, pandemic preparedness) and social stability are strong secondary frames, especially in Strategic Goal 0. Innovation enablement appears throughout as a means to achieve these goals.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.08,
+      "economic_competitiveness": 0.32,
+      "fundamental_rights": 0.04,
+      "social_stability": 0.02,
+      "innovation_enablement": 0.25,
+      "consumer_public_safety": 0.19,
+      "labor_transition": 0.1
+    },
+    "rationale_summary": "Economic competitiveness is the dominant frame of AI Strategy 2022: it casts international competitiveness as a matter of 'Japan's survival' (Strategic Goals 1–4), warns that Japan lost 'Round 1' of cyberspace DX to the US and risks falling permanently behind US and Chinese tech giants, charts a 'winning path' in physical-cyber 'Round 2 of DX' and real-world industries to close Japan's labor-productivity gap, boosts SMEs and startups, and explicitly reframes even Strategic Goal 0's crisis resilience into business-creation and industrial-competitiveness policy. Innovation enablement is a strong runner-up, driving Society 5.0 adoption, removing institutional barriers, building Responsible AI/XAI to dispel black-box hesitation, accelerating Digital Government uptake, and engaging international standards to prevent excessive regulatory constraints. Consumer and public safety is a prominent third frame centered on Part 2's Strategic Goal 0—protecting citizens' lives and property from pandemics, mega-earthquakes, floods, climate threats, and cyber/data-poisoning vulnerabilities. Labor transition (recasting AI as human-collaborative rather than job-replacing and scaling recurrent education to 1 million working adults per year), national security (economic security, geopolitical contingencies, armed-attack civilian protection, tech-outflow rules, cybersecurity hardening), and fundamental rights (Human-Centric AI principles, bias/privacy safeguards, government fairness/transparency) appear as substantive supporting frames.",
     "evidence_spans": [
       {
-        "quote": "我が国自身の社会課題の克服や産業競争力の向上に向けて、ＡＩに関する総合的な政策パッケージを示すことである",
-        "source_section": "第一部 ３．戦略の目的"
+        "quote": "これまでのサイバー空間の開拓プロ\nセスともいうべきＤＸにおいては、米国が大きく成長している反面、日本は世界的競争の\n中で優位を占めることができなかった。今後、現実空間（フィジカル空間）とサイバー空\n間の融合領域に主戦場が移り、ＤＸの二回戦ともいうべき状況に差し掛かってくる。日本\nがフィジカル空間での強みを生かしたＡＩの実装を進め、社会を変革することで、「勝ち\n筋」が見えてくる。",
+        "source_section": "第三部 １．社会実装をめぐる背景 (Page 23)",
+        "quote_en": "In DX—the pioneering of cyberspace thus far—the US grew strongly while Japan failed to gain an advantage in global competition. Going forward, the main battleground shifts to the fusion of physical space and cyberspace ('Round 2 of DX'), where Japan can find its 'winning path' by leveraging its physical-space strengths to implement AI and transform society.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 20742,
+        "end_char": 20932
       },
       {
-        "quote": "我が国が、実世界産業におけるＡＩの応用でトップ・ランナーとなり、産業競争力の強化が実現されること",
-        "source_section": "戦略目標２"
+        "quote": "一方で戦略目\n標１－４は我が国の持続可能な産業・社会の基盤づくりとなるものであり、国際競争力を\n維持し、日本の存亡をかけて、持続的かつ着実な対応が求められるものである。",
+        "source_section": "第一部 ６．戦略目標 (Page 6)",
+        "quote_en": "Meanwhile, Strategic Goals 1–4 form the foundation of Japan's sustainable industry and society, requiring sustained and steady action with Japan's survival at stake to maintain international competitiveness.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 3729,
+        "end_char": 3813
       },
       {
-        "quote": "国際競争力を維持し、日本の存亡をかけて、持続的かつ着実な対応が求められるものである",
-        "source_section": "第一部 ６．戦略目標"
+        "quote": "そのほか、ＡＩの処理の透明性や説\n明性を高めることでＡＩのブラックボックス性を打破するExplainable AI（XAI）に関する取組や、サイバーセキュリティとＡＩの融合領域の技術開発により、ＡＩの信頼性を向上させていくことが必要である。",
+        "source_section": "第三部 ３．(1) ＡＩのブラックボックス性の打破と不安の払しょく (Page 26)",
+        "quote_en": "In addition, it is necessary to improve AI trustworthiness through Explainable AI (XAI) initiatives that break the AI black box by increasing processing transparency and explainability, as well as R&D at the intersection of cybersecurity and AI.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 23209,
+        "end_char": 23329
       },
       {
-        "quote": "大きな危機を、最大のチャンスに転換する戦略を構築し、迅速に実施するというのが、戦略目標０の意図である。同時に、この戦略が我が国の産業競争力の向上を支えるために国が行うべき政策そのものになることを意図している",
-        "source_section": "第二部 １．（３）"
+        "quote": "我が国が、パンデミックや大規模災害などの差し迫った危機に対して、そこに住む\n人々の生命と財産を最大限に守ることができる体制と技術基盤を構築し、それを適正か\nつ持続的に運用するための仕組みが構築されること。",
+        "source_section": "第一部 ６．戦略目標（戦略目標０） (Page 6)",
+        "quote_en": "Establish systems, technical foundations, and mechanisms for proper sustainable operation so that Japan can maximally protect the lives and property of people living here against imminent crises such as pandemics and large-scale disasters.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 3847,
+        "end_char": 3949
       },
       {
-        "quote": "ＡＩも含む重要技術については経済安全保障の観点から各種の取組が検討されていることから",
-        "source_section": "第一部 ５．戦略の推進にあたっての基本的考え方"
+        "quote": "つまり、ＡＩを効果的に利活用し、多種多様な仕事を効率的に処理するためには、 「ＡＩは人の仕事を代替する」という思い込みを捨てることが必要である。たいていの場合、ＡＩは人を助け、人を支援する存在である。人は、ＡＩと協調していくことで、 労力を最小化し、利益を最大化することが可能となる。",
+        "source_section": "第三部 ２．社会実装の推進に臨む姿勢 (Page 24)",
+        "quote_en": "In short, to effectively utilize AI and handle diverse tasks efficiently, we must abandon the assumption that 'AI replaces human jobs'. In most cases, AI assists and supports humans; by collaborating with AI, humans can minimize effort and maximize benefits.",
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 21521,
+        "end_char": 21663
+      },
+      {
+        "quote": "⑤ その他、国際情勢の複雑化、社会経済構造の変化等に鑑み、ＡＩを含む重要技術につ\nいては経済安全保障の観点から各種の取組が検討されていることから、政府全体と\nして効果的な重点化が図られるよう、関係施策の調整を行うことが必要。",
+        "source_section": "第一部 ５．戦略の推進にあたっての基本的考え方 (Page 6)",
+        "quote_en": "Furthermore, given increasingly complex international affairs and socioeconomic structural changes, various initiatives are being considered for critical technologies including AI from the standpoint of economic security, requiring coordination across government for effective prioritization.",
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 3412,
+        "end_char": 3524
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:23:53.966690Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "2cd006a5688efe761aadb7eb19703475a848a03bd0ed390c207e8e294928d204",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 34673,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 13,
+      "exact_matches": 13,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 1
+    }
   }
 }

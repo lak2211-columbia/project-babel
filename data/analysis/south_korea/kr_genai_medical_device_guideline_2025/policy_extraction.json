@@ -1,116 +1,209 @@
 {
   "jurisdiction": "south_korea",
-  "issuing_body": "Ministry of Food and Drug Safety (MFDS), Medical Device Review Division",
+  "issuing_body": "Ministry of Food and Drug Safety",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2025-01-24",
-  "effective_date": "2025-01-24",
+  "effective_date": null,
+  "covered_actors": [
+    "Manufacturers and importers of generative AI medical devices (medical applications utilizing foundation models and applications incorporating medical foundation models) seeking pre-market approval, certification, or clinical trial plan approval",
+    "Clinicians, physicians, and medical institutions (임상의, 의료진, 의료기관) operating generative AI medical devices in clinical practice",
+    "Third-party commercial software (SOUP), foundation model, and cloud infrastructure providers referenced in device applications"
+  ],
   "covered_application_domains": [
     "healthcare",
     "general_purpose_models"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.95,
+      "confidence": 0.98,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "ISO14971:2019에 기반한 위험관리 프로세스를 적용할 수 있다",
-          "source_section": "III. 위험관리"
+          "quote": "생성형 인공지능 의료기기를 포함한 모든 의료기기는 식별된 위험이 허용할 수 있는 수준으로 통제되고 있는지를 검증하기 위해, ISO 14971:2019에 기반한 위험관리 프로세스를 적용할 수 있다.",
+          "source_section": "Ⅲ. 생성형 인공지능 의료기기의 위험관리",
+          "quote_en": "All medical devices, including generative AI medical devices, may apply an ISO 14971:2019-based risk management process to verify that identified risks are controlled to acceptable levels.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4715,
+          "end_char": 4824
         },
         {
-          "quote": "제조자는 해당 제품과 관련된 '위해요인'을 식별하고 ISO14971:2019에 따른 위험관리 프로세스를 적용할 수 있다",
-          "source_section": "III. 위험관리"
+          "quote": "동 가이드라인에서는 생성형 인공지능 의료기기의 특성을 기반으로 발생할 수 있는 ‘위해요인’을 식별하여 제시한다. 제조자는 해당 제품과 관련된 ‘위해요인’을 식별하고 ISO 14971:2019에 따른 위험관리 프로세스를 적용할 수 있다.",
+          "source_section": "Ⅲ. 생성형 인공지능 의료기기의 위험관리",
+          "quote_en": "This guideline identifies and presents hazards arising from the characteristics of generative AI medical devices; manufacturers may identify product-relevant hazards and apply ISO 14971:2019 risk management processes.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5462,
+          "end_char": 5593
         }
       ]
     },
     {
       "label": "pre_deployment_testing",
-      "confidence": 0.92,
+      "confidence": 0.99,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "분석적 성능 검증 지표... 성능에 대한 검증이 필요하며 고유의 기술적 특성을 고려한 성능 검증방법이 적용되어야 한다",
-          "source_section": "IV.2. 분석적 성능 검증"
+          "quote": "생성형 인공지능 의료기기는 「디지털의료제품법」에 따른 ‘디지털의료기기소프트웨어’로서, 규정 별표 1에 따른 별지 제2호 서식의 ‘디지털의료기기소프트웨어 적합성 확인보고서’와 ‘소프트 웨어 검증 및 유효성 확인 자료’를 제출한다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - 2. 분석적 성능 검증",
+          "quote_en": "As digital medical device software under the Digital Medical Products Act, generative AI medical devices submit the Digital Medical Device Software Conformity Confirmation Report and software verification and validation documentation.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 13855,
+          "end_char": 13982
         },
         {
-          "quote": "디지털의료기기소프트웨어 적합성 확인보고서와 소프트웨어 검증 및 유효성 확인 자료를 제출한다",
-          "source_section": "IV.2. 성능 관련 제출자료"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.88,
-      "evidence": [
-        {
-          "quote": "출력 정보 활용 시 해당분야 임상의의 체계적인 검토와 분석을 통해 제품을 사용하고",
-          "source_section": "IV.1.라. 사용 시 주의사항"
-        },
-        {
-          "quote": "환각(Hallucination), 성능저하(Drift) 등 인공지능 기술의 특성으로 발생할 수 있는 현상과 제품 사용상 주의 등에 관한 사항을 기재한다",
-          "source_section": "IV.1.라. 사용 시 주의사항"
+          "quote": "임상시험을 통해 생성형 인공지능 의료기기의 임상적 유효성을 확인 하고자 하는 경우 제품의 사용목적과 사용환경, 의도된 환자 및 사용자 프로필(임상임의 전공 및 경력, 교육, 지식 수준 등) 등 실제 임상 환경을 반영하여야 한다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - 3. 임상적 유효성 확인",
+          "quote_en": "When confirming clinical effectiveness of a generative AI medical device through clinical trials, the actual clinical environment—including intended use, setting, target patients, and user profiles—must be reflected.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 16659,
+          "end_char": 16786
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.93,
+      "confidence": 0.98,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "①학습데이터의 정보, ②학습데이터의 업데이트 예상 주기, ③제3자가 제공하는 클라우드 서비스를 통해 개발ᆞ구현된 경우에는 클라우드의 서비스의 종류 및 구성 형태 등을 추가로 기재한다",
-          "source_section": "IV.1.다. 성능(기능) 또는 특성"
+          "quote": "규정 제12조(모양 및 구조)의 ‘작용원리’는 신청제품이 입력정보를 이용하여 출력정보를 도출하는 과정에 사용된 생성형 인공지능 모델 (예. 파운데이션모델(FM), 거대언어모델(LLM), 생성적적대신경망(GAN), 변형오토인코더(VAE), 확산모델(DM), 시각언어모델(VLM), 거대멀티모달 모델(LMM) 등)을 포함한 주요 모델에 대한 과학적(임상적) 원리를 기재한다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - 1. 허가신청서 작성",
+          "quote_en": "Under Article 12 ('Operating Principles'), applicants describe the scientific and clinical principles of core generative AI models used (FM, LLM, GAN, VAE, DM, VLM, LMM, etc.) to derive outputs from inputs.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9816,
+          "end_char": 10023
         },
         {
-          "quote": "신청제품에 적용된 생성형 인공지능 모델을 포함한 주요 모델에 대한 과학적(임상적) 원리를 기재한다",
-          "source_section": "IV.1.가. 모양 및 구조"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "출력 정보를 활용하기 전 반드시 해당분야 임상의가 체계적인 검토와 분석을 수행해야 합니다",
-          "source_section": "IV.1.라. 작성 예시"
-        },
-        {
-          "quote": "신청제품에서 생성된 정보의 신뢰성이 고려되어야 하며, 출력 정보 활용 시 해당분야 임상의의 체계적인 검토와 분석을 통해 제품을 사용",
-          "source_section": "IV.1.라. 사용 시 주의사항"
+          "quote": "제조사는 해당 소프트웨어의 현재 버전을 포함하여 소프트웨어의 이력을 관리하며, 향후 새로운 기능 추가나 버그 수정 시 효율적으로 대응할 수 있도록 한다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - 1. 허가신청서 작성",
+          "quote_en": "Manufacturers must manage software version history including the current version to respond effectively to future feature additions or bug fixes.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10708,
+          "end_char": 10793
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.8,
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "전자적 침해행위로부터의 보호 조치에 관한 자료를 제출한다",
-          "source_section": "IV.2. 성능 관련 제출자료"
+          "quote": "전자적 침해행위로부터의 보호 조치에 관한 자료는 「의료기기의 사이버보안 허가·심사 가이드라인(민원인 안내서)」을 참고하고, 해당 가이드라인의 ‘표 2. 의료기기 사이버보안 요구사항’을 적용한 문서를 제출한다[14].",
+          "source_section": "Ⅳ. 허가·심사 방안 - 2. 분석적 성능 검증",
+          "quote_en": "For documentation on safeguards against electronic intrusion, applicants submit materials applying Table 2 (Medical Device Cybersecurity Requirements) of the MFDS Medical Device Cybersecurity Review Guideline.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14208,
+          "end_char": 14328
         },
         {
-          "quote": "전자적 침해 행위로부터 안전하게 보호된 네트워크 환경에서만 사용해야 합니다",
-          "source_section": "IV.1.라. 작성 예시"
+          "quote": "API 키를 제대로 관리하지 않으면, 키가 유출되어 악의적인 사용자가 중요한 정보에 접근하거나 비인가된 작업을 수행할 수 있다. API 키 관리가 불완전하거나 데이터와 명령 사이의 경계가 불명확할 때 API 취약점이 발생한다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - [표4. 생성형인공지능의료기기의보안위협]",
+          "quote_en": "Improper API key management can leak keys and let malicious users access sensitive information or perform unauthorized actions; API vulnerabilities arise from incomplete key management or unclear data-command boundaries.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 15098,
+          "end_char": 15224
         }
       ]
     },
     {
-      "label": "incident_reporting",
-      "confidence": 0.7,
+      "label": "human_oversight",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "허가 이후에도 제품의 잠재적 이익 또는 위험성을 모니터링하기 위한 목적으로 실제 임상환경에서의 실사용데이터(RWD)를 수집·활용한 실사용증거(RWE) 자료를 마련하고 주기적으로 임상적 성능 검증을 수행할 것으로 권고한다",
-          "source_section": "IV.3. 임상적 유효성 확인"
+          "quote": "신청제품은 해당제품에 적용된 생성형 인공지능 의료기기로부터 생성되는 정보의 신뢰성이 고려되어야 하며, 출력 정보 활용 시 해당분야 임상의의 체계적인 검토와 분석을 통해 제품을 사용하고 허가된 사용목적 및 적응증 외의 안전성ž유효성이 평가되지 않은 용도로는 사용하지 않도록 주의사항을 기재한다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - 1. 허가신청서 작성 (라. 사용 시 주의사항)",
+          "quote_en": "Precautions must state that output reliability must be considered, outputs must only be used after systematic review and analysis by a clinician in the relevant specialty, and the device must not be used for unapproved indications.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12484,
+          "end_char": 12647
+        },
+        {
+          "quote": "다) 신청제품에서 생성된 정보의 신뢰성을 확인하고, 출력 정보를 활용하기 전 반드시 해당분야 임상의가 체계적인 검토와 분석을 수행해야 합니다. 평가되지 않은 정보에 대해서는 주의가 필요합니다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - 1. 허가신청서 작성 (작성 예시)",
+          "quote_en": "Before utilizing generated output information, a clinician in the relevant specialty must verify reliability and perform systematic review and analysis; caution is required for unevaluated information.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 13221,
+          "end_char": 13328
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "특히, 인공지능 기술이 적용된 디지털의료기기의 경우에는 환각 (Hallucination), 성능저하(Drift) 등 인공지능 기술의 특성으로 발생할 수 있는 현상과 제품 사용상 주의 등에 관한 사항을 기재한다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - 1. 허가신청서 작성 (라. 사용 시 주의사항)",
+          "quote_en": "In particular, for AI-enabled digital medical devices, labeling precautions must disclose phenomena characteristic of AI technology such as hallucination and performance drift alongside usage warnings.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12648,
+          "end_char": 12765
+        },
+        {
+          "quote": "신청제품의 결과 분석에 상용 소프트웨어가 활용되는 경우 해당 소프트웨어는 제3자에 의해 별도로 관리되는 소프트웨어로, 버전이 변경됨에 따라 제품의 성능에 영향을 줄 수 있으므로 상용 소프트 웨어의 세부 버전 정보를 포함한 사용 시 주의사항을 기재한다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - 1. 허가신청서 작성 (라. 사용 시 주의사항)",
+          "quote_en": "Where third-party commercial software (SOUP) is used to analyze results, usage precautions must disclose its specific version details since version changes may affect device performance.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12904,
+          "end_char": 13044
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.94,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "또한, ①학습데이터의 정보, ②학습데이터의 업데이트 예상 주기, ③제3자가 제공하는 클라우드 서비스를 통해 개발ㆍ구현된 경우에는 클라우드의 서비스의 종류 및 구성 형태 등을 추가로 기재한다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - 1. 허가신청서 작성 (다. 성능(기능) 또는 특성)",
+          "quote_en": "Applications must additionally specify (1) training data information, (2) expected training data update cycle, and (3) type and configuration of any third-party cloud services used.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 11629,
+          "end_char": 11735
+        },
+        {
+          "quote": "제품 사용에 활용되는 환자의 개인의료정보는 의료법과 개인정보 보호법 아래에 사용되어야 함을 주의사항으로 기재한다.",
+          "source_section": "Ⅳ. 허가·심사 방안 - 1. 허가신청서 작성 (라. 사용 시 주의사항)",
+          "quote_en": "Usage precautions must state that patients' personal medical information used with the device must be handled in compliance with the Medical Service Act and the Personal Information Protection Act.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12420,
+          "end_char": 12483
         }
       ]
     },
     {
       "label": "registration_licensing",
-      "confidence": 0.95,
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "생성형 인공지능 의료기기의 제조·수입 허가·인증, 임상시험계획승인 등에 적용",
-          "source_section": "I.2. 적용범위"
+          "quote": "동 가이드라인은 생성형 인공지능 의료기기의 제조·수입 허가·인증, 임상시험계획승인 등에 적용하고, 의료기기 허가 후 관리나 사용자(의료 기관 등)의 관리적 보안 또는 사용자의 건강에 직접적으로 영향을 미치지 않는 개인정보유출 등은 의료법 및 개인정보보호법 등 타 법령을 준수 하도록 권고한다.",
+          "source_section": "Ⅰ. 개요 - 2. 적용범위",
+          "quote_en": "This guideline applies to manufacturing and import approval, certification, and clinical trial plan approval of generative AI medical devices.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3618,
+          "end_char": 3781
         }
       ]
     }
@@ -121,36 +214,62 @@
       "confidence": 0.95,
       "evidence": [
         {
-          "quote": "생성형 인공지능 의료기기의 제조·수입 허가·인증, 임상시험계획승인 등에 적용",
-          "source_section": "I.2. 적용범위"
-        },
-        {
-          "quote": "디지털의료제품법 제2조(정의)에 따라 질병의 진단·치료 또는 예후를 예측하기 위한 목적 등으로 환자에게 적용",
-          "source_section": "I.2. 적용범위"
+          "quote": "동 가이드라인은 생성형 인공지능 의료기기의 제조·수입 허가·인증, 임상시험계획승인 등에 적용하고, 의료기기 허가 후 관리나 사용자(의료 기관 등)의 관리적 보안 또는 사용자의 건강에 직접적으로 영향을 미치지 않는 개인정보유출 등은 의료법 및 개인정보보호법 등 타 법령을 준수 하도록 권고한다.",
+          "source_section": "Ⅰ. 개요 - 2. 적용범위",
+          "quote_en": "This guideline governs pre-market manufacturing/import approval, certification, and clinical trial plan approval for generative AI medical devices.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3618,
+          "end_char": 3781
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.8,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "식품의약품안전처는 의료기기 규제적용의 필요성을 판단하기 위하여 국내·외 자료를 조사·분석하거나 주기적인 실태조사를 실시할 수 있다",
-          "source_section": "II. 생성형 인공지능 의료기기의 예시"
+          "quote": "특히, 식품의약품안전처는 의료기기 규제적용의 필요성을 판단하기 위하여 국내·외 자료를 조사·분석하거나 주기적인 실태조사를 실시할 수 있다. 실태조사로 개발 중인 제품의 위해요소가 확인될 경우 의료 기기로 분류하여 관리할 수 있다.",
+          "source_section": "Ⅱ. 생성형 인공지능 의료기기의 예시",
+          "quote_en": "MFDS may survey domestic and foreign materials or conduct periodic status surveys to determine regulatory need, and may classify and regulate products under development as medical devices if hazards are identified.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4379,
+          "end_char": 4507
         }
       ]
     },
     {
       "label": "soft_enforcement",
-      "confidence": 0.9,
+      "confidence": 0.94,
       "evidence": [
         {
-          "quote": "본 안내서는 대외적으로 법적 효력을 가지는 것이 아니므로 본문의 기술방식('∼하여야 한다' 등)에도 불구하고 참고로만 활용하시기 바랍니다",
-          "source_section": "서문"
+          "quote": "본 안내서는 대외적으로 법적 효력을 가지는 것이 아니므로 본문의 기술 방식(‘∼하여야 한다’ 등)에도 불구하고 참고로만 활용하시기 바랍니다.",
+          "source_section": "안내서 머리말",
+          "quote_en": "This guide does not carry external legal binding force; notwithstanding phrasing such as 'shall/must' in the text, please use it for reference only.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1356,
+          "end_char": 1434
+        },
+        {
+          "quote": "또한, 허가 이후에도 제품의 잠재적 이익 또는 위험성을 모니터링 하기 위한 목적으로 실제 임상환경에서의 실사용데이터(RWD)를 수 집·활용한 실사용증거(RWE) 자료(※「의료기기 실사용증거(RWE) 작용 에 대한 가이드라인(민원인 안내서)」참조)를 마련하고 주기적으로 임상적 성능 검증을 수행할 것으로 권고한다[23].",
+          "source_section": "Ⅳ. 허가·심사 방안 - 3. 임상적 유효성 확인",
+          "quote_en": "Post-approval, MFDS recommends preparing Real-World Evidence (RWE) using Real-World Data (RWD) from clinical practice and conducting periodic clinical performance verification to monitor potential benefits and risks.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18794,
+          "end_char": 18972
         }
       ]
     }
   ],
-  "implementation_notes": "This guideline is explicitly non-binding ('not legally effective externally') and serves as guidance for applicants seeking approval for generative AI medical devices under the Digital Medical Products Act. It covers foundation models used within medical applications, excluding general-purpose foundation models not embedded in specific medical applications. Key focus areas include hallucination risk, inconsistency, data quality, and bias management. Post-market real-world evidence collection is recommended but not mandated.",
-  "confidence": 0.92
+  "enforcement_authorities": [
+    "Ministry of Food and Drug Safety (식품의약품안전처)",
+    "National Institute of Food and Drug Safety Evaluation — Medical Device Review Department / Digital Health Regulatory Support Division (식품의약품안전평가원 의료기기심사부 디지털헬스규제지원과)"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Issued 2025-01-24 as MFDS civil-petitioner guidance (안내서-1416-01) under the Digital Medical Products Act, explicitly non-binding on its face while detailing MFDS's review expectations for pre-market manufacturing/import approval, certification, and clinical trial plan approval of generative AI medical devices. Scopes regulatory oversight to medical applications utilizing foundation models and embedded medical foundation models (excluding simple EMR summarization/dictation tools). Sets out an ISO 14971:2019 hazard taxonomy tailored to GenAI (hallucination, inconsistency, irrelevancy, lack of uncertainty/explainability, 8 data-quality hazards, 7 bias types, automation bias, continuous learning), cybersecurity threat documentation (data leakage, plugin/extension/API key flaws), mandatory clinician systematic-review precautions, analytical NLP/radiology benchmarks (BLEU, ROUGE, METEOR, BERTScore, GREEN), multi-clinician 5-point A–E and ACR RADPEER clinical validation methods, and recommended post-market RWD/RWE periodic verification.",
+  "confidence": 0.97
 }

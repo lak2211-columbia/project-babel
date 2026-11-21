@@ -1,36 +1,75 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "consumer_public_safety",
-    "innovation_enablement"
+    "innovation_enablement",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.03,
-    "national_security": 0.04,
-    "economic_competitiveness": 0.08,
-    "fundamental_rights": 0.72,
-    "social_stability": 0.05,
-    "innovation_enablement": 0.12,
-    "consumer_public_safety": 0.15,
-    "labor_transition": 0.01
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.96,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.45,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is issued by South Korea's Personal Information Protection Commission and is explicitly grounded in personal data protection law, framing the governance of generative AI primarily as a matter of protecting individual rights (자유와 권리 보호, 존엄과 가치 구현). The stated purpose is to ensure lawful personal data processing, protect data subjects' rights (access, correction, deletion, objection to automated decisions), and reduce legal uncertainty—all anchored in fundamental rights principles. Secondary framings include consumer/public safety (technical safeguards, red-teaming, AUP) and innovation enablement (regulatory sandbox, pre-compliance reviews to support AI development).",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.58,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.34,
+    "consumer_public_safety": 0.08,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The guide is dominantly framed around fundamental_rights, anchoring generative AI lifecycle governance in PIPA's core mission of protecting individual freedom, rights, human dignity, and worth (PIPA Art. 1), preventing unauthorized scraping, student surveillance, opaque profiling by memory/multi-agent systems, and model memorization leaks, while enforcing meaningful opt-out, deletion, and automated-decision refusal/explanation rights. Fundamental_rights edges out innovation_enablement because lawful personal-data protection and data-subject rights form the binding normative floor across all four lifecycle stages. Innovation_enablement is a very strong secondary frame: PIPC explicitly publishes the guide to resolve on-the-ground legal uncertainty, support safe personal-data use for emerging AI technologies and services through sandboxes and sanction-exempting prior adequacy reviews, increase predictability and voluntary compliance capacity, and balance generative AI's innovation potential with privacy safeguards. Consumer_public_safety appears as a minor supporting rationale concerning citizen harms from financial/identity-theft misuse of leaked IDs or account numbers, voice-phishing prevention, and adversarial/cybersecurity attacks.",
   "evidence_spans": [
     {
-      "quote": "개인의 자유와 권리 보호 / 개인의 존엄과 가치 구현",
-      "source_section": "참고 - 개인정보 보호법"
+      "quote": "▸목적(§1): 개인의 자유와 권리 보호 / 개인의 존엄과 가치 구현 ▸원칙(§3): 목적 명확성 / 최소수집 / 투명성 / 안전한 관리 / 정보주체 권리보장 등",
+      "source_section": "Ⅰ. 개요 (1. 발간 배경 및 목적)",
+      "quote_en": "PIPA Purpose (Art. 1): protection of individual freedom and rights and realization of human dignity and worth; Principles (Art. 3): purpose specification, minimal collection, transparency, secure management, and guarantee of data-subject rights.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 3335,
+      "end_char": 3425
     },
     {
-      "quote": "정보주체는 완전히 자동화된 시스템으로 개인정보를 처리하여 이루어지는 결정이 자신의 권리 또는 의무에 중대한 영향을 미치는 경우에는 해당 결정을 거부할 수 있는 권리를 가진다",
-      "source_section": "제37조의2"
+      "quote": "생성형 AI는 학습데이터에 포함된 정보를 ‘암기’(memorization)하고 일종의 ‘영구 기억’(memory) 형태로 내재화하는 기술적 특성이 있어, 원본 정보가 출력 결과에 그대로 노출되거나 민감정보 추론 목적으로 운용되는 등 정보주체의 권익이 침해될 가능성이 존재합니다.",
+      "source_section": "Ⅲ. 생성형 AI 개발･활용 단계별 고려사항 (3. AI 학습 및 개발)",
+      "quote_en": "Because generative AI technically tends to memorize and internalize information from training data like permanent memory, there is a risk of infringing data subjects' rights and interests, such as exposing original information verbatim in outputs or inferring sensitive information.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 29425,
+      "end_char": 29580
     },
     {
-      "quote": "생성형 AI 개발･활용에 개인정보 보호 관점이 균형있게 반영되고, 현장의 예측 가능성과 자율적 준수 역량을 높여 신뢰와 책임에 기반한 AI 활용 환경 조성에 기여하고자",
-      "source_section": "Ⅰ. 개요"
+      "quote": "이에, 개인정보 보호위원회(이하, ‘위원회’)는 AI 심화 시대에 대응하여 개인정보 처리와 관련한 현장의 법적 불확실성을 해소하고, AI 신기술･신서비스 개발에 개인정보가 안전하게 활용될 수 있도록 지원하고 있습니다.",
+      "source_section": "Ⅰ. 개요 (1. 발간 배경 및 목적)",
+      "quote_en": "Accordingly, in response to the deepening AI era, PIPC is resolving legal uncertainty on the ground regarding personal data processing and supporting the safe utilization of personal data in developing new AI technologies and services.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2429,
+      "end_char": 2550
     },
     {
-      "quote": "정보주체의 열람, 정정･삭제 등의 요청이 있는 경우에는 시간･비용･기술적 측면에서 합리적으로 실현 가능한 범위에서 정보주체의 권리 보장 방안을 마련할 필요가 있습니다",
-      "source_section": "Ⅲ. 4 시스템 적용 및 관리"
+      "quote": "이를 통해 생성형 AI 개발･활용에 개인정보 보호 관점이 균형있게 반영되고, 현장의 예측 가능성과 자율적 준수 역량을 높여 신뢰와 책임에 기반한 AI 활용 환경 조성에 기여하고자",
+      "source_section": "Ⅰ. 개요 (1. 발간 배경 및 목적)",
+      "quote_en": "Through this guide, PIPC aims to reflect privacy protection in a balanced way in generative AI development and utilization, raising predictability and voluntary compliance capacity on the ground to foster a trustworthy and responsible AI environment.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2823,
+      "end_char": 2922
+    },
+    {
+      "quote": "특히, 개인식별 위험이 크고 범죄 등에 악용될 경우 국민에게 큰 피해를 야기할 수 있어 개인정보 보호법에서 특별히 보호하고 있는 주민등록번호와 그 밖의 고유식별정보, 계좌번호, 신용카드번호 등은 AI 학습 전 삭제 하거나 가명･익명화해야 합니다.",
+      "source_section": "Ⅲ. 생성형 AI 개발･활용 단계별 고려사항 (3. AI 학습 및 개발)",
+      "quote_en": "In particular, resident registration numbers, unique identifiers, bank account numbers, and credit card numbers—specially protected under PIPA because they carry high identification risks and can cause severe harm to citizens if abused in crimes—must be removed or pseudonymized/anonymized before AI training.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 32878,
+      "end_char": 33015
     }
   ]
 }

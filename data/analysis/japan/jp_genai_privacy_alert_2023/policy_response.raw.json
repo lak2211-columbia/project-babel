@@ -1,27 +1,59 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_013cm9A7dP9ZPtWSe8s6XrLF",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"jurisdiction\":\"japan\",\"issuing_body\":\"個人情報保護委員会 (Personal Information Protection Commission)\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2023-06-02\",\"effective_date\":null,\"covered_application_domains\":[\"general_purpose_models\",\"public_sector_use\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"入力された個人情報が、生成 AI の機械学習に利用されることがあり、他の情報と統計的に結びついた上で、また、正確又は不正確な内容で、生成AIサービスから出力されるリスクがある\",\"source_section\":\"(3) 一般の利用者における留意点\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"生成 AI サービスを提供する事業者の利用規約やプライバシーポリシー等を十分に確認し\",\"source_section\":\"(3) 一般の利用者における留意点\"}]},{\"label\":\"human_oversight\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"生成 AI サービスを利用して個人情報を取り扱う際には、このようなリスクを踏まえた上で適切に判断すること\",\"source_section\":\"(3) 一般の利用者における留意点\"}]}],\"enforcement_mechanisms\":[{\"label\":\"regulatory_supervision\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"当委員会は、個人情報の適正な取扱いが確保され、個人の権利利益が保護されるよう、生成 AI サービスの開発・利用状況を引き続き注視していく予定\",\"source_section\":\"本文\"}]},{\"label\":\"soft_enforcement\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"生成AIサービスの利用に関する注意喚起等を行うこととした\",\"source_section\":\"本文\"},{\"quote\":\"OpenAI に対しては、別添２のとおり、要配慮個人情報の取得及び利用目的の通知等についての注意喚起を行った\",\"source_section\":\"本文\"}]}],\"implementation_notes\":\"This is a guidance/alert document (注意喚起) from Japan's PPC issued on 2023-06-02, addressing use of generative AI services with personal data. It references the Act on the Protection of Personal Information (個人情報保護法) as the binding legal basis, but the document itself is advisory guidance rather than binding regulation. The PPC separately issued a notice to OpenAI. Guidance covers both private sector entities and public sector bodies.\",\"confidence\":0.85}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 5657,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "metadata_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 7882,
+      "candidatesTokenCount": 435,
+      "totalTokenCount": 9616,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 7882
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 435
+        }
+      ],
+      "thoughtsTokenCount": 1299,
+      "serviceTier": "standard"
     },
-    "output_tokens": 689,
-    "service_tier": "standard",
-    "inference_geo": "global"
+    "modelVersion": "gemini-4-neon",
+    "responseId": "uTABa4rbJ9_podAPv6Lm0Ag"
+  },
+  "controls_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 8035,
+      "candidatesTokenCount": 1195,
+      "totalTokenCount": 13155,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 8035
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1195
+        }
+      ],
+      "thoughtsTokenCount": 3925,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "0DABa8KsI8mZzLEPhMLWiA8"
   }
 }

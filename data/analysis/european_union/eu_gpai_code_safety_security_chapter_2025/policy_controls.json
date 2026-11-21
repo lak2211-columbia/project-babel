@@ -2,173 +2,364 @@
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.95,
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "a description of the results of their systemic risk identification and analysis",
-          "source_section": "Page 20"
+          "quote": "Signatories commit to adopting a state-of-the-art Safety and Security Framework (“Framework”). The purpose of the Framework is to outline the systemic risk management processes and measures that Signatories implement to ensure the systemic risks stemming from their models are acceptable.",
+          "source_section": "Commitment 1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "systemic risk estimates (pursuant to Measure 3.4)",
-          "source_section": "Page 20"
+          "quote": "Signatories will implement a full systemic risk assessment and mitigation process that involves four steps, without needing to duplicate parts of the model’s previous systemic risk assessments that are still appropriate:",
+          "source_section": "Measure 1.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "pre_deployment_testing",
-      "confidence": 0.95,
+      "confidence": 0.93,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "Signatories commit to reporting to the AI Office information about their model and their systemic risk assessment and mitigation processes and measures by creating a Safety and Security Model Report before placing a model on the market",
-          "source_section": "Page 18"
+          "quote": "Signatories will conduct at least state-of-the-art model evaluations in the modalities relevant to the systemic risk to assess the model’s capabilities, propensities, affordances, and/or effects, as specified in Appendix 3.",
+          "source_section": "Measure 3.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Signatories will conduct such a full systemic risk assessment and mitigation process at least before placing the model on the market and whenever the conditions specified in Measure 7.6, first and third paragraph, are met.",
+          "source_section": "Measure 1.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "red_teaming",
-      "confidence": 0.9,
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "Signatories will provide an adequate number of independent external evaluators with adequate free access to: (1) the model's most capable model version(s)",
-          "source_section": "Page 14"
+          "quote": "Signatories will ensure that the model evaluations assess the effectiveness of their safety mitigations at a breadth and depth appropriate for the extent to which systemic risk acceptance determination depends on the effectiveness of specific mitigations, including under adversarial pressure (e.g. finetuning attacks or jailbreaking).",
+          "source_section": "Appendix 3.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "Model evaluation teams will be provided with: (1) adequate access to the model to conduct the model evaluations",
-          "source_section": "Page 40"
+          "quote": "(2) validation of network and physical access management and security gap identification, through (a) frequent red-teaming as appropriate to mitigate systemic risks;",
+          "source_section": "Appendix 4.5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Signatories will ensure that the model evaluations are conducted with at least a state-of-the-art level of model elicitation that elicits the model’s capabilities, propensities, affordances, and/or effects, by using at least state-of-the-art techniques that: (1) minimise the risk of under-elicitation; and (2) minimise the risk of model deception during model evaluations (e.g. sandbagging);",
+          "source_section": "Appendix 3.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "(1) Chemical, biological, radiological and nuclear: Risks from enabling chemical, biological, radiological, and nuclear (CBRN) attacks or accidents.",
+          "source_section": "Appendix 1.4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "incident_reporting",
-      "confidence": 0.98,
+      "confidence": 0.99,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "Signatories will keep track of, document, and report to the AI Office and, as applicable, to national competent authorities",
-          "source_section": "Page 26"
+          "quote": "Signatories commit to implementing appropriate processes and measures for keeping track of, documenting, and reporting to the AI Office and, as applicable, to national competent authorities, without undue delay relevant information about serious incidents along the entire model lifecycle and possible corrective measures to address them, as specified in the Measures of this Commitment.",
+          "source_section": "Commitment 9",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "Signatories will provide the information in points (1) to (7) of Measure 9.2 in an initial report that is submitted to the AI Office...not later than two days after the Signatories become aware",
-          "source_section": "Page 26"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.97,
-      "evidence": [
-        {
-          "quote": "Signatories commit to reporting...by creating a Safety and Security Model Report before placing a model on the market",
-          "source_section": "Page 18"
-        },
-        {
-          "quote": "Signatories will provide in the Model Report: (1) a description of the results of their systemic risk identification and analysis",
-          "source_section": "Page 20"
-        }
-      ]
-    },
-    {
-      "label": "third_party_audit",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "Signatories will provide an adequate number of independent external evaluators with adequate free access",
-          "source_section": "Page 14"
-        },
-        {
-          "quote": "establishing community-driven model evaluations and public leaderboards",
-          "source_section": "Page 14"
-        }
-      ]
-    },
-    {
-      "label": "access_controls",
-      "confidence": 0.88,
-      "evidence": [
-        {
-          "quote": "staging the access to the model, e.g. by limiting API access to vetted users, gradually expanding access based on post-market monitoring",
-          "source_section": "Page 17"
-        }
-      ]
-    },
-    {
-      "label": "content_provenance",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "implementing privacy-preserving logging and metadata analysis techniques of the model's inputs and outputs using, e.g. watermarks, metadata, and/or other at least state-of-the-art provenance techniques",
-          "source_section": "Page 14"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "techniques to enable safe ecosystems of AI agents, such as model identifications, specialised communication protocols, or incident monitoring tools",
-          "source_section": "Page 17"
-        },
-        {
-          "quote": "monitoring aspects of models that are relevant for assessing and mitigating systemic risk",
-          "source_section": "Page 14"
+          "quote": "Signatories will provide the information in points (1) to (7) of Measure 9.2 in an initial report that is submitted to the AI Office and, as applicable, to national competent authorities, at the following points in time, save in exceptional circumstances, if the involvement of their model (directly or indirectly) led to:",
+          "source_section": "Measure 9.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "transparency_disclosure",
       "confidence": 0.85,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "Signatories will publish suitable criteria for assessing applications",
-          "source_section": "Page 14"
+          "quote": "If and insofar as necessary to assess and/or mitigate systemic risks, Signatories will publish (e.g. via their websites) a summarised version of their Framework and Model Report(s), and updates thereof (pursuant to Commitments 1 and 7), with removals to not undermine the effectiveness of safety and/or security mitigations and to protect sensitive commercial information.",
+          "source_section": "Measure 10.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Signatories commit to reporting to the AI Office information about their model and their systemic risk assessment and mitigation processes and measures by creating a Safety and Security Model Report (“Model Report”) before placing a model on the market (as specified in Measures 7.1 to 7.5).",
+          "source_section": "Commitment 7",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "at least five, random samples of inputs and outputs from each relevant model evaluation...to facilitate independent interpretation",
-          "source_section": "Page 20"
+          "quote": "Signatories will draw up and keep up-to-date the following information for the purpose of providing it to the AI Office upon request: (1) a detailed description of the model’s architecture;",
+          "source_section": "Measure 10.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "In addition to internal model evaluations, Signatories will ensure that adequately qualified independent external evaluators conduct model evaluations pursuant to this Appendix 3, with regards to the systemic risk, unless:",
+          "source_section": "Appendix 3.5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "(1) independent external validation of security mitigation effectiveness if internal expertise is inadequate, through (a) regular independent external security reviews as appropriate to mitigate systemic risks;",
+          "source_section": "Appendix 4.5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Signatories commit to implementing an adequate level of cybersecurity protection for their models and their physical infrastructure along the entire model lifecycle, as specified in the Measures for this Commitment, to ensure the systemic risks stemming from their models that could arise from unauthorised releases, unauthorised access, and/or model theft are acceptable (pursuant to Commitment 4).",
+          "source_section": "Commitment 6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Signatories will protect unreleased model parameters by implementing security mitigations that achieve the following mitigation objectives:",
+          "source_section": "Appendix 4.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.72,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "(9) implementing privacy-preserving logging and metadata analysis techniques of the model’s inputs and outputs using, e.g. watermarks, metadata, and/or other at least state-of-the-art provenance techniques;",
+          "source_section": "Measure 3.5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "agentic_autonomy_controls",
+      "confidence": 0.75,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "(7) techniques to enable safe ecosystems of AI agents, such as model identifications, specialised communication protocols, or incident monitoring tools;",
+          "source_section": "Measure 5.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "(3) reduction of the risk of model self-exfiltration, through (a) sandboxes around models, such as virtual machines and code execution isolation;",
+          "source_section": "Appendix 4.4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.8,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(4) reduction of the risk of sabotage to model training and use, through (a) checking training data for indications of tampering.",
+          "source_section": "Appendix 4.4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "(1) filtering and cleaning training data, e.g. data that might result in undesirable model propensities such as unfaithful chain-of-thought traces;",
+          "source_section": "Measure 5.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "open_weight_obligations",
+      "confidence": 0.9,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "A model is exempt from this Commitment if the model’s capabilities are inferior to the capabilities of at least one model for which the parameters are publicly available for download. Signatories will implement these security mitigations for a model until its parameters are made publicly available for download or securely deleted.",
+          "source_section": "Commitment 6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "reporting_obligation",
-      "confidence": 0.97,
+      "label": "soft_enforcement",
+      "confidence": 0.96,
       "evidence": [
         {
-          "quote": "Signatories will keep track of, document, and report to the AI Office and, as applicable, to national competent authorities",
-          "source_section": "Page 26"
+          "quote": "To serve as a guiding document for demonstrating compliance with the obligations provided for in Articles 53 and 55 AI Act, while recognising that adherence to the Code does not constitute conclusive evidence of compliance with these obligations under the AI Act.",
+          "source_section": "Preamble",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "Signatories will provide the AI Office with (unredacted) access to their Framework, and updates thereof, within five business days of either being confirmed.",
+          "source_section": "Measure 1.4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "notifying the AI Office of their Model Report (as specified in Measure 7.7)",
-          "source_section": "Page 18"
+          "quote": "Signatories will provide the AI Office with access to the Model Report (without redactions, unless they are required by national security laws to which Signatories are subject) by the time they place a model on the market, e.g. through a publicly accessible link or through a sufficiently secure channel specified by the AI Office.",
+          "source_section": "Measure 7.7",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.9,
+      "confidence": 0.85,
       "evidence": [
         {
-          "quote": "report to the AI Office and, as applicable, to national competent authorities",
-          "source_section": "Page 26"
+          "quote": "To ensure providers of general-purpose AI models comply with their obligations under the AI Act and to enable the AI Office to assess compliance of providers of general-purpose AI models who choose to rely on the Code to demonstrate compliance with their obligations under the AI Act.",
+          "source_section": "Preamble",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "Signatories will provide a sufficiently large number of random samples of inputs and outputs from a relevant model evaluation if subsequently asked by the AI Office",
-          "source_section": "Page 20"
-        }
-      ]
-    },
-    {
-      "label": "soft_enforcement",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "Signatories refrain from training their models on the inputs and/or outputs from such test runs without express permission from the evaluators",
-          "source_section": "Page 14"
-        },
-        {
-          "quote": "Signatories will not take any legal or technical retaliation against the independent external evaluators",
-          "source_section": "Page 14"
+          "quote": "Further, Signatories will provide a sufficiently large number of random samples of inputs and outputs from a relevant model evaluation if subsequently asked by the AI Office;",
+          "source_section": "Measure 7.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }

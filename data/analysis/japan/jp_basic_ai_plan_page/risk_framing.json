@@ -1,38 +1,87 @@
 {
-  "dominant_frame": "economic_competitiveness",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
+    "economic_competitiveness",
     "national_security",
     "consumer_public_safety",
-    "social_stability"
+    "labor_transition",
+    "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.55,
-    "economic_competitiveness": 0.85,
-    "fundamental_rights": 0.2,
-    "social_stability": 0.4,
-    "innovation_enablement": 0.65,
-    "consumer_public_safety": 0.45,
-    "labor_transition": 0.25
+    "existential_catastrophic": 0.0,
+    "national_security": 0.85,
+    "economic_competitiveness": 0.92,
+    "fundamental_rights": 0.65,
+    "social_stability": 0.45,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.75,
+    "labor_transition": 0.8
   },
-  "rationale_summary": "The document's central framing is Japan's competitive position in AI development globally. The subtitle '日本再起' (Japan's revival/resurgence) and repeated language about falling behind major nations, the need for 'counter-offensive' (反転攻勢), reducing digital deficit, and becoming 'the world's most AI-friendly country' all foreground economic competitiveness. Innovation enablement is a strong secondary frame. National security and consumer/public safety risks are acknowledged but positioned as conditions to be managed in service of the primary competitiveness goal.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.12,
+    "economic_competitiveness": 0.3,
+    "fundamental_rights": 0.05,
+    "social_stability": 0.03,
+    "innovation_enablement": 0.35,
+    "consumer_public_safety": 0.08,
+    "labor_transition": 0.07
+  },
+  "rationale_summary": "Japan's Basic AI Plan is primarily framed around innovation_enablement, explicitly aiming to make Japan 'the world's easiest country to develop and utilize AI' by balancing innovation promotion with agile, PDCA-based risk management, regulatory reviews, sandboxes, and voluntary trustworthy-AI ecosystems that unlock widespread public and private adoption. Economic_competitiveness is a close runner-up, motivating the overall strategy through industrial revival ('Japan's comeback'), overcoming lagging AI investment, curbing the digital trade deficit, and building domestic growth engines; however, innovation_enablement edges it out because the plan's governance mechanisms themselves are consistently justified as enabling a virtuous cycle of AI utilization and R&D rather than purely zero-sum economic rivalry. National_security (sovereignty, autonomy, defense, and cybersecurity), consumer_public_safety (mitigating fraud, deepfakes, accidents, and public anxiety), labor_transition (analyzing employment impacts and reskilling workers), and fundamental_rights (human-centric dignity, privacy, and non-discrimination) appear as meaningful secondary justifications, with minor social_stability references to disinformation and no existential_catastrophic framing.",
   "evidence_spans": [
     {
-      "quote": "産業競争力や安全保障に直結し、国力を左右するものとして、官民を挙げて取組が強化され、総力戦の体を成してきている。我が国としても出遅れることはできない。",
-      "source_section": "Page 3"
+      "quote": "「イノベーション促進とリスク対応の両立」を一層徹底することにより、人と ＡＩが絶えず協働できるよう、個人の尊厳が尊重される人間中心のＡＩ社会を堅持しつつ、 「信頼できるＡＩ」を追求し、 「世界で最もＡＩを開発・活用しやすい国」を実現していく。",
+      "source_section": "第１章 基本構想 ～「世界で最もＡＩを開発・活用しやすい国」を目指して～",
+      "quote_en": "By further thoroughly pursuing 'balancing innovation promotion and risk response,' while upholding a human-centric AI society where individual dignity is respected so that humans and AI can constantly collaborate, we will pursue 'trustworthy AI' and realize 'the world's easiest country to develop and utilize AI.'",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2805,
+      "end_char": 2926
     },
     {
-      "quote": "投資規模では出遅れたが、極めて広範な産業基盤を有する日本が、「信頼できるＡＩ」で勝ち筋を見つける好機である。",
-      "source_section": "Page 4"
+      "quote": "ＡＩイノベーションの好循環を実現し、信頼できるＡＩエコシステムを構築するため、技\n術開発・実証・評価・運用の各段階において、適正性の確保につながるＰＤＣＡサイクルを\n構築する。",
+      "source_section": "第３節 ＡＩガバナンスの主導",
+      "quote_en": "To realize a virtuous cycle of AI innovation and build a trustworthy AI ecosystem, we will establish a PDCA cycle leading to the assurance of appropriateness at each stage of technology development, demonstration, evaluation, and operation.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 9027,
+      "end_char": 9115
     },
     {
-      "quote": "「世界で最もＡＩを開発・活用しやすい国」を実現していく",
-      "source_section": "Page 4"
+      "quote": "投資規模では出遅れたが、極めて広範な産業基盤を有する日本が、「信頼でき\nるＡＩ」で勝ち筋を見つける好機である。",
+      "source_section": "第１章 基本構想 ～「世界で最もＡＩを開発・活用しやすい国」を目指して～",
+      "quote_en": "Although Japan has lagged behind in investment scale, this is a great opportunity for Japan, which possesses an extremely broad industrial base, to find a winning path with 'trustworthy AI.'",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 2086,
+      "end_char": 2141
     },
     {
-      "quote": "デジタル赤字抑止の観点からも世界展開を促す対外政策を進めるという、内外一体で取り組む必要がある。",
-      "source_section": "Page 3"
+      "quote": "国家主権と安全保障\nの観点も踏まえ、日本の自律性・不可欠性を確保する。",
+      "source_section": "第２節 ＡＩ開発力の戦略的強化",
+      "quote_en": "Taking into account national sovereignty and national security perspectives as well, we will secure Japan's autonomy and indispensability.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 6699,
+      "end_char": 6734
+    },
+    {
+      "quote": "ＡＩの技術進歩とともに変動するリスクを適時適切に把握し、Ａ Ｉの透明性・公平性・安全性を始めとする適正性を確保することで、安全・安心で 「信頼できるＡＩ」を体現し、国民が抱く不安を払拭していくことが不可欠である。",
+      "source_section": "第１章 基本構想 ～「世界で最もＡＩを開発・活用しやすい国」を目指して～",
+      "quote_en": "It is essential to timely and appropriately grasp risks that fluctuate with AI technological progress, ensure appropriateness including AI transparency, fairness, and safety, embody safe, secure, and 'trustworthy AI,' and dispel public anxiety.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 2584,
+      "end_char": 2690
+    },
+    {
+      "quote": "ＡＩの進展が雇用に与える影響について、産業構造や職種の変化を含めて丁寧に分析し、\n全ての世代が新しい働き方に適応できるよう、教育、リ ・スキリング支援等の対策を講ずるというプロセスを継続的に実施する。",
+      "source_section": "第４節 ＡＩ社会に向けた継続的変革",
+      "quote_en": "We will carefully analyze the impact of AI advancement on employment, including changes in industrial structure and occupations, and continuously implement a process of taking measures such as education and reskilling support so that all generations can adapt to new ways of working.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 11117,
+      "end_char": 11217
     }
   ]
 }

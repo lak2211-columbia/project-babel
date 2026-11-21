@@ -1,41 +1,86 @@
 {
   "dominant_frame": "consumer_public_safety",
   "secondary_frames": [
+    "innovation_enablement",
     "fundamental_rights",
-    "social_stability",
-    "innovation_enablement"
+    "national_security",
+    "social_stability"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.3,
-    "economic_competitiveness": 0.2,
-    "fundamental_rights": 0.55,
-    "social_stability": 0.45,
-    "innovation_enablement": 0.4,
-    "consumer_public_safety": 0.75,
-    "labor_transition": 0.05
+    "existential_catastrophic": 0.0,
+    "national_security": 0.72,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.72,
+    "social_stability": 0.7,
+    "innovation_enablement": 0.85,
+    "consumer_public_safety": 0.95,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance around protecting users—especially minors and the elderly—from harms such as emotional manipulation, addiction, self-harm, and privacy violations. The detailed provisions on intervention obligations, dependency warnings, and crisis response reinforce a consumer/public safety dominant frame. Secondary frames include fundamental rights (data rights, privacy, personal dignity), social stability (prohibitions on content threatening state security and social order), and innovation enablement (sandbox platforms, encouraging R&D).",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.13,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.14,
+    "social_stability": 0.13,
+    "innovation_enablement": 0.18,
+    "consumer_public_safety": 0.42,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The Q&A predominantly frames governance of anthropomorphic interactive AI services around consumer and public safety, centering on tangible psychological, physical, and financial harms to users—especially minors and the elderly—such as self-harm/suicide encouragement, emotional manipulation, addiction, major property loss, and threats to citizens' life and health. Innovation enablement is a prominent secondary frame because the document explicitly encourages R&D, application expansion in eldercare and childcare, and regulatory sandboxes for safe, orderly development, yet consumer_public_safety edges it out as the primary driver of the rules' core prohibitions, intervention duties, and vulnerable-group protections. Fundamental rights (personal information, privacy, and human dignity), national security (state secrets, state security, and regime threats), and social stability (social morality, ethical norms, and healthy interpersonal relationships) appear as supporting rationales.",
   "evidence_spans": [
     {
-      "quote": "带来了危害未成年人身心健康、影响网络信息安全、威胁公民生命健康以及加剧伦理偏差等风险",
-      "source_section": "制定背景"
+      "quote": "但也带来了危害未成年人身心健康、影响网络信息安全、威胁公民生命健康以及加剧伦理偏差等风险。制定《办法》，是积极回应风险挑战、促进人工智能拟人化互动服务健康发展和规范应用的重要举措。",
+      "source_section": "一、问：请介绍一下《办法》的出台背景？",
+      "quote_en": "However, it has also brought risks such as harming the physical and mental health of minors, affecting network information security, threatening citizens' life and health, and exacerbating ethical deviations. Formulating the Measures is an important step to actively respond to risk challenges and promote the healthy development and standardized application of anthropomorphic AI interactive services.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 381,
+      "end_char": 471
     },
     {
-      "quote": "发现用户正在面临或者已经遭受重大财产损失、明确表示实施自残自杀等威胁生命健康的极端情境的，采取提供相应援助等必要措施予以干预",
-      "source_section": "干预提醒义务"
+      "quote": "发现用户正在面临或者已经遭受重大财产损失、明确表示实施自残自杀等威胁生命健康的极端情境的，采取提供相应援助等必要措施予以干预，并及时联络用户监护人或者紧急联系人。",
+      "source_section": "七、问：《办法》规定拟人化互动服务提供者对用户的干预提醒义务主要有哪些？",
+      "quote_en": "Where a user is found to be facing or having suffered major property loss, or explicitly expressing intent to commit self-harm or suicide or other extreme situations threatening life and health, necessary measures such as providing corresponding assistance shall be taken to intervene, and the user's guardian or emergency contact shall be contacted in a timely manner.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 1999,
+      "end_char": 2080
     },
     {
-      "quote": "生成鼓励、美化、暗示自残自杀等损害用户身体健康，或者语言暴力等损害用户人格尊严与心理健康的内容",
-      "source_section": "禁止活动"
+      "quote": "同时，明确推动人工智能沙箱安全服务平台建设，鼓励拟人化互动服务提供者接入沙箱平台进行技术创新、安全测试，促进拟人化互动服务安全有序发展。",
+      "source_section": "四、问：《办法》明确的拟人化互动服务促进措施有哪些？",
+      "quote_en": "At the same time, it clearly promotes the construction of AI sandbox security service platforms, encourages providers of anthropomorphic interactive services to connect to sandbox platforms for technological innovation and safety testing, and promotes the safe and orderly development of anthropomorphic interactive services.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 928,
+      "end_char": 996
     },
     {
-      "quote": "过度迎合用户、诱导情感依赖或者沉迷，损害用户真实人际关系的",
-      "source_section": "禁止活动"
+      "quote": "四是\n保护用户权益。规定拟人化互动服务提供者的用户个人信息和隐私保护义务，要求向用户提供交互数据复制、删除等选项，提供便捷的拟人化互动服务退出途径",
+      "source_section": "六、问：《办法》明确的拟人化互动服务规范主要有哪些？",
+      "quote_en": "Fourth, protecting user rights and interests. It stipulates the obligations of anthropomorphic interactive service providers to protect users' personal information and privacy, requires providing users with options to copy and delete interaction data, and provides convenient exit channels from anthropomorphic interactive services.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 1728,
+      "end_char": 1801
     },
     {
-      "quote": "鼓励拟人化互动服务创新发展，支持算法、框架、芯片等技术的自主创新",
-      "source_section": "鼓励创新"
+      "quote": "一是\n生成危害国家安全、荣誉和利益，煽动颠覆国家政权、推翻社会主义制度，煽动分裂国家、破坏国家统一等的内容。",
+      "source_section": "五、问：《办法》规定提供拟人化互动服务不得从事哪些活动？",
+      "quote_en": "First, generating content that endangers national security, honor, and interests, incites subversion of state power or overthrow of the socialist system, or incites secession or undermines national unity.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 1052,
+      "end_char": 1106
+    },
+    {
+      "quote": "《办法》提出，提供拟人化互动服务，应当遵守法律、行政法规，尊重社会公德和伦理道德",
+      "source_section": "五、问：《办法》规定提供拟人化互动服务不得从事哪些活动？",
+      "quote_en": "The Measures propose that providing anthropomorphic interactive services shall comply with laws and administrative regulations and respect social morality and ethics.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 1001,
+      "end_char": 1041
     }
   ]
 }

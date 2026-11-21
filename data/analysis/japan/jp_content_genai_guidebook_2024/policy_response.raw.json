@@ -1,56 +1,59 @@
 {
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
   "metadata_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_017NhTFKoRViemV53WK9Q4DE",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"issuing_body\":\"経済産業省（Ministry of Economy, Trade and Industry）\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"voluntary_commitment\",\"publication_date\":\"2024-07\",\"effective_date\":null,\"covered_actors\":[\"コンテンツ制作に携わる産業界\",\"ゲーム産業事業者\",\"アニメ産業事業者\",\"広告産業事業者\",\"AI開発事業者\",\"AIサービス提供事業者\",\"クリエイター\",\"利用者（企業・団体）\"],\"covered_application_domains\":[\"general_purpose_models\"],\"prohibited_practices\":[],\"enforcement_authorities\":[\"経済産業省\",\"文化庁\",\"内閣府知的財産戦略推進事務局\",\"個人情報保護委員会\"],\"compliance_deadlines\":[],\"penalties_summary\":null,\"implementation_notes\":\"This is a non-binding guidebook (ガイドブック) intended to provide practical guidance for content production industries (game, anime, advertising) on appropriate use of generative AI. It explicitly states it does not interpret copyright law or guarantee legality. It is positioned below binding government guidelines (AI事業者ガイドライン) and is intended as a practical companion to those instruments. Content reflects information as of June 2024.\",\"confidence\":0.92}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 15264,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 322,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 29955,
+      "candidatesTokenCount": 377,
+      "totalTokenCount": 32652,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 29955
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 377
+        }
+      ],
+      "thoughtsTokenCount": 2320,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "sTABa9v-Gp7tkPIPk6u3qQ0"
   },
   "controls_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_01TtFcXjfoyYanZxmD6Ajj28",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.6,\"evidence\":[{\"quote\":\"権利侵害の可能性があり、留意が必要な活用シーン\",\"source_section\":\"3-2 各産業の活用シーンと留意点の概要\"},{\"quote\":\"AI生成物（やそれを編集・加工したもの）が他人の著作物などと同一・類似である場合は、著作権侵害などの可能性があるため、留意が必要です\",\"source_section\":\"3-1 想定される利用場面と留意点\"}]},{\"label\":\"human_oversight\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"2D画像については生成AIを利用しながらさらに編集・加工しており、人の手によって完成させている\",\"source_section\":\"2-1 ゲーム産業\"},{\"quote\":\"最終的な制作物は人の手によって完成させている\",\"source_section\":\"2-3 広告産業\"}]},{\"label\":\"content_provenance\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"画像検索等により、類似性の確認を実施した\",\"source_section\":\"2-1 ゲーム産業\"},{\"quote\":\"著作権などの権利・利益への配慮の観点から、画像検索等により、類似性の確認を実施した\",\"source_section\":\"2-3 広告産業\"},{\"quote\":\"プロンプトの入力においては、既存の著作物に類似したAI生成物が出力されないよう、固有名詞を入力しないようにした\",\"source_section\":\"2-3 広告産業\"}]},{\"label\":\"access_controls\",\"confidence\":0.55,\"evidence\":[{\"quote\":\"キャラクターが差別用語を発したり誹謗中傷を行ったりしないよう、あらかじめ出力させるべきでない言葉のリストを読み込ませている\",\"source_section\":\"2-2 アニメ産業\"},{\"quote\":\"不具合のある画像が生成または採用されないように、ネガティブ・プロンプト、ルールベースによって制御、監視している\",\"source_section\":\"2-1 ゲーム産業\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.5,\"evidence\":[{\"quote\":\"「全て生成AI技術で制作した」と分かったときの驚き\",\"source_section\":\"2-3 広告産業\"}]}],\"enforcement_mechanisms\":[{\"label\":\"soft_enforcement\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"本ガイドブックは著作権法を含む知的財産法等の解釈やその参考となる考え方を示すものではなく、適法性や妥当性等を保証するものでもありません\",\"source_section\":\"3 生成AIの活用シーンごとの留意点・対応策\"},{\"quote\":\"法的問題やコンテンツ制作における各種問題については、弁護士などの専門家にご相談ください\",\"source_section\":\"3 生成AIの活用シーンごとの留意点・対応策\"}]},{\"label\":\"none_specified\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"コンテンツ制作における生成AIの適切な利活用の方向性をお示しするものです\",\"source_section\":\"1-1 本ガイドブックの趣旨・目的\"}]}]}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 19050,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 910,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 30108,
+      "candidatesTokenCount": 656,
+      "totalTokenCount": 34979,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 30108
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 656
+        }
+      ],
+      "thoughtsTokenCount": 4215,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "yDABa4DlGOqdur8Pl7Xi8A0"
   }
 }

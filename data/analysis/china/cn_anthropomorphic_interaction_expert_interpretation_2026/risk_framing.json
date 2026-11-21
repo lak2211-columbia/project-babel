@@ -1,41 +1,85 @@
 {
-  "dominant_frame": "social_stability",
+  "dominant_frame": "consumer_public_safety",
   "secondary_frames": [
-    "consumer_public_safety",
+    "innovation_enablement",
     "fundamental_rights",
-    "innovation_enablement"
+    "social_stability"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.1,
-    "economic_competitiveness": 0.1,
-    "fundamental_rights": 0.2,
-    "social_stability": 0.55,
-    "innovation_enablement": 0.2,
-    "consumer_public_safety": 0.35,
+    "existential_catastrophic": 0.0,
+    "national_security": 0.35,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.7,
+    "social_stability": 0.65,
+    "innovation_enablement": 0.85,
+    "consumer_public_safety": 0.95,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI anthropomorphic interaction risks in terms of social stability—specifically the erosion of real human relationships, emotional dependency, social isolation, and harm to vulnerable groups (minors, elderly, psychologically fragile individuals). The governance rationale centers on preserving the social fabric and healthy human relationships, with secondary attention to consumer/public safety (crisis intervention, self-harm prevention) and fundamental rights (privacy, personal data protection), while also affirming innovation enablement as a co-equal policy goal.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.03,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.1,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.22,
+    "consumer_public_safety": 0.55,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document's dominant framing is consumer_public_safety, centering on preventing tangible psychological and physical harms to users—especially minors, the elderly, and emotionally vulnerable individuals—such as deep emotional dependency, behavioral addiction, and extreme life-threatening risks like self-harm or suicide. While innovation_enablement is a prominent runner-up—repeatedly invoking the principle of balancing development and security, encouraging technological innovation, and enabling beneficial applications in eldercare, education, and culture—consumer_public_safety edges it out because the concrete regulatory justifications across nearly every section are driven by safeguarding users' physical and mental health. Secondary rationales include fundamental_rights (protecting user privacy, personal information, and psychological autonomy) and social_stability (preventing erosion of human social relations and infiltration of illegal or harmful content), alongside a brief mention of national_security in content red lines.",
   "evidence_spans": [
     {
-      "quote": "持续给予用户情感认可和支持，为用户构建了一个稳定持续、无需承担现实责任的虚拟",
-      "source_section": null
+      "quote": "拟人化互动服务在应对人口老龄化挑战、缓解社会个体的孤独感、提供心理疏导等方面展现出积极价值，也带来了深度沉迷、威胁公民生命健康等有关安全风险。",
+      "source_section": "一、拟人化互动服务赋能作用和安全风险并存",
+      "quote_en": "Anthropomorphic interactive services have demonstrated positive value in addressing population aging challenges, alleviating individual loneliness, and providing psychological counseling, while also bringing related safety risks such as deep addiction and threats to citizens' lives and health.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 230,
+      "end_char": 301
     },
     {
-      "quote": "影响人类社会关系基础",
-      "source_section": null
+      "quote": "《办法》旨在构建保护未成年人的坚实防线，严防未成年人因心智尚未成熟而沉溺于虚拟情感依赖，防范违法和不良信息渗透与侵蚀。",
+      "source_section": "（三）强化幼老群体保护，保障心理安全底线",
+      "quote_en": "The Measures aim to build a solid line of defense to protect minors, strictly preventing minors from becoming addicted to virtual emotional dependency due to their immature minds, and preventing the infiltration and erosion of illegal and harmful information.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3030,
+      "end_char": 3089
     },
     {
-      "quote": "长期使用可能导致部分用户出现沉迷依赖、主动缩减现实社交频次，影响用户共情能力、处理分歧能力等现实社交技能",
-      "source_section": null
+      "quote": "《办法》明确坚持发展和安全并重、促进创新和依法治理相结合的原则，将为拟人化互动服务健康发展提供制度保障，也为全球人工智能治理提供中国方案。",
+      "source_section": "二、国内外拟人化互动服务治理制度探索不断推进",
+      "quote_en": "The Measures clearly adhere to the principles of giving equal weight to development and security and combining the promotion of innovation with law-based governance, which will provide institutional safeguards for the healthy development of anthropomorphic interactive services and offer a Chinese solution for global AI governance.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1656,
+      "end_char": 1725
     },
     {
-      "quote": "明确禁止将替代社会交往、控制用户心理、诱导沉迷依赖等作为服务目标",
-      "source_section": null
+      "quote": "对拟人化互动服务的治理，关键在促进技术创新发展的同时，有效防范风险与伦理问题。",
+      "source_section": "三、《办法》从多维度规范拟人化互动服务",
+      "quote_en": "The key to governing anthropomorphic interactive services lies in effectively preventing risks and ethical issues while promoting technological innovation and development.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1727,
+      "end_char": 1766
     },
     {
-      "quote": "坚持发展和安全并重、促进创新和依法治理相结合的原则",
-      "source_section": null
+      "quote": "《办法》将进一步保护用户隐私权和个人信息，助力构建安全可信的拟人化互动服务空间。",
+      "source_section": "（一）厘清责任边界，夯实安全保障义务",
+      "quote_en": "The Measures will further protect users' privacy rights and personal information, helping to build a safe and trustworthy space for anthropomorphic interactive services.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 2292,
+      "end_char": 2332
+    },
+    {
+      "quote": "这易使用户尤其是在现实存在孤独感、心理脆弱的群体，产生深度情感依赖，强化其负面情绪，影响其现实生活，影响人类社会关系基础。",
+      "source_section": "一、拟人化互动服务赋能作用和安全风险并存",
+      "quote_en": "This easily causes users—especially those experiencing loneliness in reality or psychologically vulnerable groups—to develop deep emotional dependency, reinforcing their negative emotions, affecting their real lives, and undermining the foundation of human social relationships.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 696,
+      "end_char": 757
     }
   ]
 }

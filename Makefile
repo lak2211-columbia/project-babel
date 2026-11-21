@@ -7,7 +7,7 @@ endif
 export PYTHONPATH := services/pipeline/src
 RUN_PIPELINE := $(PIPELINE_PYTHON) -m observatory.cli
 
-.PHONY: bootstrap test taxonomy sources validate-artifacts discover coverage expansion audit enrich promote fetch refresh parse analyze analyze-jurisdictions grounding persist-db migrate sync-db sync-db-dry-run browser-install vercel-pull-preview vercel-pull-prod build-prod migrate-prod sync-prod-db persist-prod deploy-preview deploy-prod
+.PHONY: bootstrap test taxonomy sources validate-artifacts discover coverage expansion audit enrich promote fetch refresh parse analyze analyze-jurisdictions grounding evaluate-gold-set persist-db migrate sync-db sync-db-dry-run browser-install vercel-pull-preview vercel-pull-prod build-prod migrate-prod sync-prod-db persist-prod deploy-preview deploy-prod
 
 bootstrap:
 ifeq ($(OS),Windows_NT)
@@ -75,6 +75,9 @@ analyze-jurisdictions:
 
 grounding:
 	$(RUN_PIPELINE) check-grounding
+
+evaluate-gold-set:
+	$(RUN_PIPELINE) evaluate-gold-set data/eval/gold_set_v1.json --output-json=data/eval/gold_set_results.json
 
 persist-db:
 	$(RUN_PIPELINE) persist-analysis-artifacts

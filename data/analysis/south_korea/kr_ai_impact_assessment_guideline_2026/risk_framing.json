@@ -2,35 +2,84 @@
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
     "economic_competitiveness",
+    "innovation_enablement",
     "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.85,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.45,
-    "labor_transition": 0.05
+    "national_security": 0.05,
+    "economic_competitiveness": 0.86,
+    "fundamental_rights": 0.98,
+    "social_stability": 0.55,
+    "innovation_enablement": 0.82,
+    "consumer_public_safety": 0.72,
+    "labor_transition": 0.1
   },
-  "rationale_summary": "The document's primary stated purpose is to assess AI impacts on 'basic rights' (기본권) of individuals affected by high-impact AI. The law it implements (Article 35) explicitly frames the assessment as evaluating effects on fundamental rights, human dignity, and inviolable rights. Secondary economic competitiveness framing appears in references to global interoperability, market access, and minimizing regulatory barriers for Korean firms overseas.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.2,
+    "fundamental_rights": 0.5,
+    "social_stability": 0.06,
+    "innovation_enablement": 0.16,
+    "consumer_public_safety": 0.08,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The 2026 AI Impact Assessment Guideline is dominantly framed around fundamental_rights: it operationalizes Article 35 of the AI Basic Act as a pre-deployment constitutional rights safeguard grounded in Korean Constitutional Court precedent across personal-data self-determination, privacy, equality/non-discrimination, life, health, expression, assembly, right to know, and occupational/artistic/academic freedoms. Fundamental_rights decisively leads economic_competitiveness because the methodology's entire structure evaluates whether AI operational mechanisms constrain constitutional rights, while economic_competitiveness is a notably strong secondary frame explicitly linking voluntary impact assessments and EU FRIA/ISO interoperability to overcoming extraterritorial regulatory barriers, expanding overseas markets, raising brand value, and enhancing international competitiveness. Innovation_enablement (relieving duplicate assessment burdens through cross-recognition of domestic/international frameworks and offering KISDI consulting for SMEs/startups), consumer_public_safety (preventing fatal clinical/safety failures), and social_stability (fostering societal trust) provide supporting rationales.",
   "evidence_spans": [
     {
-      "quote": "인공지능사업자가 고영향 인공지능을 이용한 제품 또는 서비스를 제공하는 경우, 사전에 해당 제품 또는 서비스가 사람의 기본권에 미치는 영향을 평가하는 절차",
-      "source_section": "제1절 인공지능 영향평가 개요"
+      "quote": "⚫사업자가 영향평가를 통해 인공지능 제품ㆍ서비스가 인간의 존엄성과 기본권에 미치는 잠재적 영향을 사전에 식별·분석하고, 이를 존중ㆍ보호하는 방향으로 스스로 개선방안을 마련ㆍ이행하도록 유도",
+      "source_section": "총론 - 2. 목적 및 필요성",
+      "quote_en": "Induces operators through impact assessments to identify and analyze potential impacts of AI products/services on human dignity and fundamental rights in advance, and voluntarily devise and implement improvements that respect and protect them.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 516,
+      "end_char": 620
     },
     {
-      "quote": "사업자가 영향평가를 통해 인공지능 제품ㆍ서비스가 인간의 존엄성과 기본권에 미치는 잠재적 영향을 사전에 식별·분석하고, 이를 존중ㆍ보호하는 방향으로 스스로 개선방안을 마련ㆍ이행하도록 유도",
-      "source_section": "2. 목적 및 필요성"
+      "quote": "· 영향평가의 기준인 ‘기본권’은 헌법에 열거된 기본권은 물론, 열거되지 않았지만, 인간의 존엄과 가치(헌법\n\n제10조 후문)의 실현을 위해 헌법해석을 통해 도출한 기본권(헌법 제37조제1항)을 포함",
+      "source_section": "본 평가 수행 단계 - 3.2 관련 기본권의 식별",
+      "quote_en": "'Fundamental rights' as the assessment standard include both rights enumerated in the Constitution and unenumerated rights derived via constitutional interpretation to realize human dignity and worth.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 15446,
+      "end_char": 15557
     },
     {
-      "quote": "글로벌 상호운용성 확보·이를 통해 국제사회에서의 신뢰를 강화하고, 역외 규제에 대응하며, 글로벌 인공지능 시장 진출 시 제도적 장벽을 최소화하는 것을 목표로 함",
-      "source_section": "2. 목적 및 필요성"
+      "quote": "· 이를 통해 국제사회에서의 신뢰를 강화하고, 역외 규제에 대응하며, 글로벌 인공지능 시장 진출 시 제도적 장벽을 최소화하는 것을 목표로 함",
+      "source_section": "총론 - 2. 목적 및 필요성",
+      "quote_en": "Through this, it aims to strengthen international trust, respond to extraterritorial regulations, and minimize institutional barriers when entering the global AI market.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 653,
+      "end_char": 731
     },
     {
-      "quote": "기본권인간 존엄성과 가치, 행복을 추구할 권리 등 국가가 확인ㆍ보장할 의무를 지니고 있는, 국민의 불가침한 기본적 권리",
-      "source_section": "2. 용어 정의"
+      "quote": "더 나아가 선제적 리스크 관리와 자율적 책임경영을 뒷받침하며, 국제 경쟁력 제고의 핵심 수단이 될 수 있음",
+      "source_section": "총론 - 2. 목적 및 필요성",
+      "quote_en": "Furthermore, voluntary impact assessments support proactive risk management and responsible self-governance, serving as a key vehicle for boosting international competitiveness.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 1146,
+      "end_char": 1205
+    },
+    {
+      "quote": "※ 이를 통해 중복 평가로 인한 사업자 부담을 완화하고, 국제 기준과의 상호운용성을 확보하여 국내외 사업자의 시장 진출을 지원하고자 함.",
+      "source_section": "총론 - 국내 유사 평가제도와의 관계",
+      "quote_en": "By recognizing results from comparable domestic and international frameworks (EU FRIA, ISO/IEC 42001/42005), it aims to alleviate operator burdens from duplicate assessments and secure international interoperability.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 6691,
+      "end_char": 6767
+    },
+    {
+      "quote": "※ 컨설팅 등을 통해 평가 전문성과 결과의 객관성을 높이고, 사회적 신뢰와 인정을 확보할 수 있도록 지원하며, 특히 스타트업 ㆍ중소기업 등의 원활한 영향평가 수행을 도울 수 있을 것으로 기대",
+      "source_section": "총론 - 6. 평가 수행 및 지원체계",
+      "quote_en": "Through consulting and support, KISDI will strengthen assessment expertise and objectivity, foster social trust, and particularly assist startups and SMEs in smoothly conducting impact assessments.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4562,
+      "end_char": 4668
     }
   ]
 }

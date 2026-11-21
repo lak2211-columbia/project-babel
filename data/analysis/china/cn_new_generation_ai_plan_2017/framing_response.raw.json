@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01TQzLoaTLxWb1E9yt1yL27U",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"economic_competitiveness\",\"secondary_frames\":[\"national_security\",\"social_stability\",\"innovation_enablement\",\"labor_transition\"],\"frame_confidence\":{\"existential_catastrophic\":0.05,\"national_security\":0.7,\"economic_competitiveness\":0.9,\"fundamental_rights\":0.2,\"social_stability\":0.5,\"innovation_enablement\":0.65,\"consumer_public_safety\":0.3,\"labor_transition\":0.4},\"rationale_summary\":\"The document overwhelmingly frames AI governance through the lens of economic competitiveness and national strategic advantage. The core motivation is to seize a first-mover advantage in AI, build internationally competitive industries, and drive economic growth. National security is a strong secondary frame, with explicit references to maintaining strategic initiative in international AI competition and supporting national defense. Social stability, labor transition, and innovation enablement also appear as secondary concerns.\",\"evidence_spans\":[{\"quote\":\"为抢抓人工智能发展的重大战略机遇，构筑我国人工智能发展的先发优势，加快建设创新型国家和世界科技强国\",\"source_section\":\"Introduction\"},{\"quote\":\"人工智能成为国际竞争的新焦点。人工智能是引领未来的战略性技术，世界主要发达国家把发展人工智能作为提升国家竞争力、维护国家安全的重大战略\",\"source_section\":\"Situation Analysis\"},{\"quote\":\"人工智能产业竞争力进入国际第一方阵\",\"source_section\":\"Strategic Goals\"},{\"quote\":\"人工智能核心产业规模超过1万亿元，带动相关产业规模超过10万亿元\",\"source_section\":\"Strategic Goals 2030\"},{\"quote\":\"以人工智能提升国防实力，保障和维护国家安全\",\"source_section\":\"Overall Deployment\"},{\"quote\":\"近期重点关注对就业的影响，远期重点考虑对社会伦理的影响，确保把人工智能发展规制在安全可控范围内\",\"source_section\":\"Security Oversight\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 22858,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 529,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 18310,
+    "candidatesTokenCount": 1392,
+    "totalTokenCount": 23331,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 18310
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1392
+      }
+    ],
+    "thoughtsTokenCount": 3629,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "Vy0Ba8L0Ge_fur8PkMrWaA"
 }

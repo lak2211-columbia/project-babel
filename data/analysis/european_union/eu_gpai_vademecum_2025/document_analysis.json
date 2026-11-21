@@ -4,16 +4,15 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "european_union",
-    "issuing_body": "European AI Office / Signatory Taskforce of the General-Purpose AI Code of Practice",
-    "document_type": "standards_guideline",
+    "issuing_body": "European AI Office and Signatories to the General-Purpose AI Code of Practice",
+    "document_type": "voluntary_commitment",
     "binding_strength": "voluntary_commitment",
     "publication_date": "2026-01",
     "effective_date": null,
     "covered_actors": [
-      "Signatories to the GPAI Code of Practice",
-      "Members of the Signatory Taskforce",
-      "general-purpose AI model providers",
-      "invited experts and stakeholders"
+      "Signatories to the General-Purpose AI Code of Practice (Taskforce Members)",
+      "General-purpose AI model providers participating as Signatories",
+      "Invited experts and third-party stakeholders"
     ],
     "covered_application_domains": [
       "general_purpose_models"
@@ -23,39 +22,25 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "to facilitate cooperation between Signatories where relevant for the purpose of implementing the Code",
-            "source_section": "Point 2"
-          },
-          {
-            "quote": "The Taskforce may adopt outputs relating to its Objectives under Point 2 by consensus based on all Members",
-            "source_section": "Point 5"
-          }
-        ]
-      },
-      {
-        "label": "reporting_obligation",
-        "confidence": 0.6,
-        "evidence": [
-          {
-            "quote": "The AI Office may publish this Vademecum, the list of organisations participating in any meeting, and the high-level minutes of meetings as required by its transparency obligations",
-            "source_section": "Point 7"
-          }
-        ]
-      },
-      {
-        "label": "regulatory_supervision",
         "confidence": 0.75,
         "evidence": [
           {
-            "quote": "The Taskforce is chaired by the AI Office",
-            "source_section": "Point 1"
+            "quote": "Having regard to the General-Purpose AI Code of Practice published on 10 July 2025 (the ‘Code’), assessed as adequate pursuant to Article 56(6) AI Act, this Vademecum sets out the organisation and operation of the Signatory Taskforce (the ‘Taskforce’)",
+            "source_section": "Page 1",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 90,
+            "end_char": 341
           },
           {
-            "quote": "Meetings of the Taskforce shall be convened by the AI Office either on its own initiative or at the request of a simple majority of the Members",
-            "source_section": "Point 4"
+            "quote": "The objectives of the Taskforce are, inter alia:\n(a) to facilitate cooperation between Signatories where relevant for the purpose of implementing the Code;",
+            "source_section": "Page 1, Point 2",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1158,
+            "end_char": 1313
           }
         ]
       }
@@ -65,39 +50,85 @@
     ],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "This Vademecum governs the internal organisation and operation of the Signatory Taskforce under the GPAI Code of Practice, which was assessed as adequate pursuant to Article 56(6) of the AI Act. It is not itself a binding instrument but structures voluntary cooperation among signatories. The AI Office chairs the Taskforce and may publish the Vademecum, participant lists, and high-level meeting minutes under its transparency obligations. Decisions are taken by consensus with a default agreement period of no less than 10 working days.",
+    "implementation_notes": "Operational vademecum setting out the governance, membership, objectives, ad hoc groups, meeting procedures (at least yearly), consensus decision-making (minimum 10 working days for objections), stakeholder invitations, and confidentiality rules of the Signatory Taskforce for the EU General-Purpose AI Code of Practice (published 10 July 2025 and assessed as adequate under Article 56(6) AI Act). Participation is opt-in and Members may join or withdraw at any time; Members must comply with applicable EU law, notably competition rules, during Taskforce activities. Lists 24 participating signatory organisations.",
     "confidence": 0.92
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
-    "secondary_frames": [
-      "consumer_public_safety",
-      "social_stability"
-    ],
+    "secondary_frames": [],
     "frame_confidence": {
-      "existential_catastrophic": 0.05,
-      "national_security": 0.05,
-      "economic_competitiveness": 0.2,
-      "fundamental_rights": 0.1,
-      "social_stability": 0.2,
-      "innovation_enablement": 0.55,
-      "consumer_public_safety": 0.25,
-      "labor_transition": 0.05
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.45,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The document is primarily procedural, establishing the governance structure of a Signatory Taskforce for the GPAI Code of Practice under the EU AI Act. The dominant framing is innovation enablement — the taskforce exists to facilitate cooperative implementation of the Code, exchange views on technological developments, and adapt guidance to market and technological changes. Safety and rights concerns appear implicitly through references to the 'risk landscape' and 'societal developments,' but are secondary to enabling structured industry participation and code compliance.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.0,
+      "innovation_enablement": 1.0,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "This Vademecum is predominantly a procedural and organizational document establishing the rules of operation, membership, meetings, decision-making, and confidentiality for the Signatory Taskforce of the EU General-Purpose AI Code of Practice, and therefore contains very limited explicit risk-framing language. To the extent a governance rationale is articulated in Point 2 (Objectives), it centers on agile, collaborative, and adaptive implementation of the voluntary Code through signatory cooperation, stakeholder exchanges, and updating guidance documents in light of technological, societal, market, and legislative developments—aligning modestly with innovation_enablement. Although the text briefly references 'changes in the risk landscape' and 'societal' and 'market' developments, it makes no explicit substantive appeals to fundamental rights, consumer/public safety harms, catastrophic risks, national security, international economic competitiveness, social stability, or labor transition.",
     "evidence_spans": [
       {
-        "quote": "to provide input on guidance documents produced by the AI Office that are relevant to the Code, in view of technological, societal, market, and legislative developments",
-        "source_section": "Point 2"
+        "quote": "The objectives of the Taskforce are, inter alia:\n(a) to facilitate cooperation between Signatories where relevant for the purpose of implementing the Code;\n(b) to provide input on guidance documents produced by the AI Office that are relevant to the Code, in view of technological, societal, market, and legislative developments",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1158,
+        "end_char": 1486
       },
       {
-        "quote": "to exchange views on technological developments, changes in the risk landscape, or experience with the application of the AI Act rules that could be relevant for potential future reviews or updates of the Code",
-        "source_section": "Point 2"
-      },
-      {
-        "quote": "seeking and discussing research, independent expert input, and up-to-date evidence relevant to the Code's commitments or measures, such as emerging practices",
-        "source_section": "Point 2"
+        "quote": "(c) to exchange views on technological developments, changes in the risk landscape, or experience with the application of the AI Act rules that could be relevant for potential future reviews or updates of the Code, without prejudice to the necessary public consultations by the AI Office on any such possible updates;",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1608,
+        "end_char": 1925
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:40:57.350519Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "d39145374173139979adc93c364bcb1b1d21883f3e15b7821c348bd973f82e9f",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 24134,
+      "output_tokens": 1235,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 7173,
+      "estimated_cost_usd": 0.114248
+    },
+    "grounding_summary": {
+      "total_quotes": 4,
+      "exact_matches": 4,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 2
+    }
   }
 }

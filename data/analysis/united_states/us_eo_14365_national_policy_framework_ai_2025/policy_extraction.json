@@ -1,0 +1,90 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "Executive Office of the President",
+  "document_type": "executive_order",
+  "binding_strength": "executive_action",
+  "publication_date": "2025-12-16",
+  "effective_date": "2025-12-11",
+  "covered_actors": [
+    "State governments and State lawmakers",
+    "Attorney General / Department of Justice (AI Litigation Task Force)",
+    "Secretary of Commerce / Assistant Secretary of Commerce for Communications and Information (NTIA)",
+    "Federal Communications Commission (FCC)",
+    "Federal Trade Commission (FTC)",
+    "Executive departments and agencies administering discretionary grant programs",
+    "AI developers and deployers"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "public_sector_use"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [],
+  "enforcement_mechanisms": [
+    {
+      "label": "procurement_condition",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "quote": "That Policy Notice must provide that States with onerous AI laws identified pursuant to section 4 of this order are ineligible for non-deployment funds, to the maximum extent allowed by Federal law.",
+          "source_section": "Sec. 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5250,
+          "end_char": 5448
+        },
+        {
+          "quote": "determine whether agencies may condition such grants on States either not enacting an AI law that conflicts with the policy of this order, including any AI law identified pursuant to section 4 or challenged pursuant to section 3 of this order, or, for those States that have enacted such laws, on those States entering into a binding agreement with the relevant agency not to enforce any such laws",
+          "source_section": "Sec. 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5877,
+          "end_char": 6274
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "quote": "Within 30 days of the date of this order, the Attorney General shall establish an AI Litigation Task Force (Task Force) whose sole responsibility shall be to challenge State AI laws inconsistent with the policy set forth in section 2 of this order, including on grounds that such laws unconstitutionally regulate interstate commerce, are preempted by existing Federal regulations, or are otherwise unlawful",
+          "source_section": "Sec. 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2758,
+          "end_char": 3164
+        },
+        {
+          "quote": "That policy statement must explain the circumstances under which State laws that require alterations to the truthful outputs of AI models are preempted by the Federal Trade Commission Act's prohibition on engaging in deceptive acts or practices affecting commerce.",
+          "source_section": "Sec. 7",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7169,
+          "end_char": 7433
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "Attorney General / Department of Justice (AI Litigation Task Force)",
+    "Secretary of Commerce / Assistant Secretary of Commerce for Communications and Information (NTIA)",
+    "Federal Communications Commission (FCC)",
+    "Federal Trade Commission (FTC)",
+    "Executive departments and agencies administering discretionary grant programs"
+  ],
+  "compliance_deadlines": [
+    "Within 30 days of 2025-12-11 (2026-01-10): Attorney General to establish the AI Litigation Task Force",
+    "Within 90 days of 2025-12-11 (2026-03-11): Secretary of Commerce to publish an evaluation identifying onerous State AI laws",
+    "Within 90 days of 2025-12-11 (2026-03-11): Secretary of Commerce (through NTIA) to issue a BEAD Program Policy Notice rendering States with onerous AI laws ineligible for non-deployment funds",
+    "Within 90 days of 2025-12-11 (2026-03-11): FTC Chairman to issue a policy statement on 15 U.S.C. 45 preemption of State laws requiring alterations to truthful AI outputs",
+    "Within 90 days of publication of Commerce's Section 4 evaluation: FCC Chairman to initiate a proceeding to determine whether to adopt a preemptive Federal reporting and disclosure standard for AI models"
+  ],
+  "penalties_summary": "States with onerous AI laws identified by Commerce under Section 4 are declared ineligible for remaining BEAD Program non-deployment funds to the maximum extent allowed by Federal law; executive agencies must evaluate conditioning discretionary grants on States not enacting or agreeing not to enforce conflicting AI laws; and the DOJ AI Litigation Task Force is directed to challenge conflicting State AI laws in court.",
+  "implementation_notes": "Signed December 11, 2025 and published December 16, 2025 (90 FR 58499). Rather than establishing technical AI safety requirements on private entities, EO 14365 targets State-level AI regulatory fragmentation via DOJ litigation, Commerce evaluation, BEAD and discretionary grant funding restrictions, FCC preemption inquiry, FTC UDAP preemption policy, and a federal legislative recommendation that expressly preserves lawful State laws on child safety, compute/data center infrastructure, and State government procurement/use of AI.",
+  "confidence": 0.96
+}

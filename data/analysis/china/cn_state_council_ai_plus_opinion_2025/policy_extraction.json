@@ -1,0 +1,96 @@
+{
+  "jurisdiction": "china",
+  "issuing_body": "State Council of the People's Republic of China (国务院)",
+  "document_type": "strategy_paper",
+  "binding_strength": "strategy_statement",
+  "publication_date": "2025-08-21",
+  "effective_date": null,
+  "covered_actors": [
+    "Provincial, autonomous region, and municipal people's governments (各省、自治区、直辖市人民政府)",
+    "Ministries, commissions, and directly affiliated institutions of the State Council (国务院各部委、各直属机构)",
+    "Enterprises, universities, and research institutions (企业、高校、科研机构)",
+    "Software and IT service enterprises and AI application service providers (软件信息服务企业、人工智能应用服务商)",
+    "AI open-source communities (人工智能开源社区)"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "public_sector_use",
+    "employment",
+    "education",
+    "healthcare",
+    "finance",
+    "law_enforcement"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.78,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "防范模型的黑箱、幻觉、算法歧视等带来的风险，加强前瞻评估和监测处置，推动人工智能应用合规、透明、可信赖。",
+          "source_section": "三、强化基础支撑能力（十四）提升安全能力水平",
+          "quote_en": "Prevent risks arising from model black boxes, hallucinations, algorithmic discrimination, and the like; strengthen forward-looking assessment as well as monitoring and handling; and promote compliant, transparent, and trustworthy AI applications.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4696,
+          "end_char": 4748
+        },
+        {
+          "quote": "加强人工智能应用就业风险评估，引导创新资源向创造就业潜力大的方向倾斜，减少对就业的冲击。",
+          "source_section": "二、加快实施重点行动（四）“人工智能+”民生福祉",
+          "quote_en": "Strengthen employment risk assessment of AI applications, guide innovation resources toward areas with greater job-creation potential, and reduce the impact on employment.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2159,
+          "end_char": 2203
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.72,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "优化人工智能相关安全评估和备案管理制度。",
+          "source_section": "三、强化基础支撑能力（十三）强化政策法规保障",
+          "quote_en": "Optimize AI-related security assessment and filing management systems.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4632,
+          "end_char": 4652
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "quote": "建立健全人工智能技术监测、风险预警、应急响应体系，强化政府引导、行业自律，坚持包容审慎、分类分级，加快形成动态敏捷、多元协同的人工智能治理格局。",
+          "source_section": "三、强化基础支撑能力（十四）提升安全能力水平",
+          "quote_en": "Establish and improve AI technical monitoring, risk early warning, and emergency response systems; strengthen government guidance and industry self-regulation; adhere to inclusive, prudent, and tiered classification approaches; and accelerate the formation of a dynamic, agile, and multi-stakeholder collaborative AI governance pattern.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4748,
+          "end_char": 4820
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "State Council (国务院)",
+    "National Development and Reform Commission (国家发展改革委)",
+    "Provincial, autonomous region, and municipal people's governments (各省、自治区、直辖市人民政府)",
+    "State Council ministries, commissions, and directly affiliated institutions (国务院各部委、各直属机构)"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "National strategic action plan (Guofa [2025] No. 11) coordinated by the National Development and Reform Commission (NDRC) for localized implementation by ministries and sub-national governments. Establishes phased national adoption milestones rather than binding legal compliance deadlines: >70% adoption of new-generation smart terminals and AI agents across six priority domains by 2027, >90% adoption by 2030, and full transition to an intelligent economy and society by 2035. Calls for advancing AI legislation, optimizing security assessment and filing management systems, and establishing an inclusive, prudent, tiered/classified (分类分级) governance framework.",
+  "confidence": 0.92
+}

@@ -1,0 +1,88 @@
+{
+  "dominant_frame": "innovation_enablement",
+  "secondary_frames": [
+    "economic_competitiveness",
+    "national_security",
+    "labor_transition",
+    "consumer_public_safety",
+    "fundamental_rights",
+    "existential_catastrophic"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.55,
+    "national_security": 0.9,
+    "economic_competitiveness": 0.93,
+    "fundamental_rights": 0.7,
+    "social_stability": 0.5,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.72,
+    "labor_transition": 0.78
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.03,
+    "national_security": 0.19,
+    "economic_competitiveness": 0.26,
+    "fundamental_rights": 0.05,
+    "social_stability": 0.02,
+    "innovation_enablement": 0.3,
+    "consumer_public_safety": 0.06,
+    "labor_transition": 0.09
+  },
+  "rationale_summary": "Innovation enablement narrowly edges out economic competitiveness as the dominant frame because the plan's overarching governance philosophy—remaining 'the world's most AI-friendly country to develop and use AI', fostering a 'try it first' challenge-and-learning culture, institutionalizing 'responsible agile governance' on an 'eternal beta' PDCA cycle, reviewing legacy regulations, and driving society-wide Japan AX starting with Government AI 'Gennai'—justifies governance primarily as enabling rapid, trustworthy adoption and innovation. Economic competitiveness is a very close runner-up, prominently framing agentic, vertical, and physical AI as Japan's 'winning strategy' to close adoption and investment gaps with the US and China, boost TFP and national power, capture global supply-chain indispensability, and expand exports. National security has risen sharply as a major third frame through explicit commitments to open 'AI Sovereignty' (strategic autonomy and cut-off resilience across government, defense, and critical infrastructure), economic security investment, AI-driven defense transformation, Project YATA-Shield cyber defense against autonomous AI attacks, and AISI evaluations to deter national-security threats. Labor transition (workforce substitution/complementarity analysis, AI reskilling, Advanced Essential Workers), consumer/public safety (cascading outages, youth safety, fraud/complaint desks), fundamental rights (Human Agency, privacy, portrait/voice/IP rights), and existential/catastrophic risk (CBRNE terrorism and autonomous zero-day cyberattacks) serve as meaningful supporting frames.",
+  "evidence_spans": [
+    {
+      "quote": "イノベーション促進とリスク対応の両立のため、変化に即応しつつ絶えず取組を進化させるとの視座（永遠のβ版）に立ち、ＰＤＣＡ（計画・実行・評価・改善）サイクルを循環させ、物事に柔軟かつ迅速に向き合うといったアジャイルな対応を志向する。",
+      "source_section": "第２章 基本的な方針（４原則）",
+      "quote_en": "To balance innovation promotion and risk response, adopt an agile approach from a perspective of continuously evolving initiatives in immediate response to change ('eternal beta'), cycling PDCA (Plan-Do-Check-Act) to respond flexibly and swiftly.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 5011,
+      "end_char": 5126
+    },
+    {
+      "quote": "我が国は、引き続き、「世界で最もＡＩを開発・活用しやすい国」を目指し、安全・安心を確保しながら、先端ＡＩ技術の社会全体での実装を追求する。",
+      "source_section": "第１章 基本構想",
+      "quote_en": "Japan will continue aiming to be 'the world's most AI-friendly country to develop and use AI', pursuing society-wide implementation of advanced AI technologies while ensuring safety and security.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4030,
+      "end_char": 4099
+    },
+    {
+      "quote": "組織の意思決定や業務処理の速度を上げるエージェント型ＡＩをいかに社会に実装していくのか、その在り方は経済力、防衛力、技術力といった国力に直結するものとなっている。",
+      "source_section": "第１章 基本構想",
+      "quote_en": "How agentic AI—which accelerates organizational decision-making and operational processing—is implemented in society is directly linked to national power, including economic strength, defense capability, and technological prowess.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 1632,
+      "end_char": 1713
+    },
+    {
+      "quote": "我が国独自の価値を持ち、国際競争力あるＡＩシステムの創出も視野に入れ、製造業における素材産業、造船業等、暗黙知が豊富な現場へのバーティカルＡＩの開発・実装を推進し、輸出も促進する。",
+      "source_section": "第３章 第２節 (4) ②",
+      "quote_en": "With an eye toward creating internationally competitive AI systems with uniquely Japanese value, promote the development, implementation, and export of vertical AI in fields rich in tacit knowledge such as materials manufacturing and shipbuilding.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 13805,
+      "end_char": 13895
+    },
+    {
+      "quote": "我が国は、Ａ Ｉエコシステム全体の中で、戦略的自律性及び戦略的不可欠性を確保し、開かれた「ＡＩ 主権」（AI Sovereignty）を確立する。同志国等との連携・分業、相互運用性の確保を行いつつ、鉱物からソフトウェアまでエコシステム全体の自律性を確保する。特に行政、防衛、重要インフラ等の戦略領域においては、計算資源、データプラットフォーム、モデル、 アプリ等の自律性を強化し、耐遮断性と運用能力を確保する。",
+      "source_section": "第１章 基本構想",
+      "quote_en": "Japan will ensure strategic autonomy and strategic indispensability across the AI ecosystem and establish an open 'AI Sovereignty'. While partnering with like-minded nations, it will secure autonomy from minerals to software, and especially strengthen autonomy, cut-off resilience, and operational capability across compute, data platforms, models, and apps in strategic domains such as government, defense, and critical infrastructure.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 2867,
+      "end_char": 3072
+    },
+    {
+      "quote": "その際、ＡＩが働き方や雇用に与える影響\nを踏まえて、リ・スキリングの推進を含めた包括的な対策に能動的に取り組まなければな\nらない。",
+      "source_section": "第３章 第４節 ＡＩ社会に向けた継続的変革",
+      "quote_en": "In doing so, taking into account the impact of AI on working styles and employment, we must proactively implement comprehensive measures including promoting reskilling.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 19219,
+      "end_char": 19284
+    }
+  ]
+}

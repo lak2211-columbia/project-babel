@@ -1,33 +1,85 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "consumer_public_safety",
     "innovation_enablement",
-    "economic_competitiveness"
+    "economic_competitiveness",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.0,
+    "existential_catastrophic": 0.05,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.75,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.3,
+    "economic_competitiveness": 0.65,
+    "fundamental_rights": 0.98,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.72,
+    "consumer_public_safety": 0.55,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document frames training data transparency primarily as a mechanism to protect and enable the exercise of fundamental rights under EU law, including intellectual property rights, data subject rights, non-discrimination, cultural diversity, freedom of information, and freedom of science. Governance obligations are justified by enabling rightsholders and affected parties to exercise and enforce their legal rights.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.1,
+    "fundamental_rights": 0.65,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.15,
+    "consumer_public_safety": 0.1,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document's primary justification for the GPAI training-content summary template is overwhelmingly anchored in fundamental_rights, explicitly citing the EU Charter of Fundamental Rights to enable rightsholders and other parties with legitimate interests to exercise intellectual property rights, effective legal remedies, data protection rights, non-discrimination, cultural and linguistic diversity, freedom of information, and freedom of science. It clearly edges out the runner-up frame, innovation_enablement, which appears as a secondary balancing rationale focused on keeping compliance simple, proportional for SMEs, and respectful of trade secrets and confidential business information. Smaller secondary rationales include economic_competitiveness (fostering transparent, competitive markets and avoiding lock-in effects) and consumer_public_safety (protecting consumer interests and mitigating the reproduction of illegal content such as child sexual abuse material and terrorist content).",
   "evidence_spans": [
     {
-      "quote": "transparency of the data used for the model training should help rightsholders obtain relevant information...needed to facilitate the exercise of their fundamental right to intellectual property and the fundamental right to an effective remedy",
-      "source_section": "Page 4"
+      "quote": "This information is needed to facilitate the exercise of their fundamental right to intellectual property8 and the fundamental right to an effective remedy in the enforcement of their rights, as provided for in Union law in the area of intellectual property rights.",
+      "source_section": "2. Objective of the Summary (8)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 6417,
+      "end_char": 6682
     },
     {
-      "quote": "transparency of the general characteristics of the content used for training may also assist providers...to ensure that the fundamental rights to non-discrimination and language and cultural diversity are respected",
-      "source_section": "Page 4"
+      "quote": "This, in turn, will allow them to implement, where appropriate, mitigating measures to ensure that the fundamental rights to non-discrimination10 and language and cultural diversity11 are respected.",
+      "source_section": "2. Objective of the Summary (10)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 7861,
+      "end_char": 8059
     },
     {
-      "quote": "greater transparency of the training data may also facilitate the fundamental right to receive and impart information and allow researchers to exercise their freedom of science",
-      "source_section": "Page 4"
+      "quote": "The Template aims to ensure the reported information is useful and understandable to the public and to the parties concerned, while avoiding unnecessary burden on providers of general-purpose AI models, including SMEs.",
+      "source_section": "5. Simple, uniform and effective reporting (23)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 19899,
+      "end_char": 20117
+    },
+    {
+      "quote": "Finally, transparency of the training data may also contribute to more transparent and competitive markets.",
+      "source_section": "2. Objective of the Summary (12)",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 8506,
+      "end_char": 8613
+    },
+    {
+      "quote": "In the context of the Summary, the interests of consumers and the protection of their consumer rights under Union law may also be relevant.",
+      "source_section": "2. Objective of the Summary (9)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 7515,
+      "end_char": 7654
+    },
+    {
+      "quote": "Such measures are advisable if the training data is likely to include illegal or unlawful content under Union law, in particular child sexual abuse material and terrorist content and the non-authorised use of material protected by intellectual property rights.",
+      "source_section": "Annex, 3.2. Removal of illegal content",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 45074,
+      "end_char": 45334
     }
   ]
 }

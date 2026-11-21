@@ -4,112 +4,214 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "Cabinet Office, Government of Japan",
-    "document_type": "legislation",
-    "binding_strength": "binding_law",
-    "publication_date": "2025-05-28",
+    "issuing_body": "Cabinet Office of Japan",
+    "document_type": "strategy_paper",
+    "binding_strength": "strategy_statement",
+    "publication_date": null,
     "effective_date": "2025-09-01",
-    "covered_application_domains": [
-      "general_purpose_models",
-      "critical_infrastructure",
-      "public_sector_use"
+    "covered_actors": [
+      "national government",
+      "local governments",
+      "R&D institutes",
+      "business operators",
+      "citizens"
     ],
+    "covered_application_domains": [],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "transparency_disclosure",
-        "confidence": 0.8,
+        "confidence": 0.6,
+        "obligation_strength": "aspirational",
         "evidence": [
           {
             "quote": "Ensuring transparency, etc. for appropriate R&D and utilization",
-            "source_section": "Basic Principles"
-          }
-        ]
-      },
-      {
-        "label": "risk_assessment",
-        "confidence": 0.6,
-        "evidence": [
-          {
-            "quote": "Collecting information, investigating cases where human rights and interests are infringed",
-            "source_section": "Basic Measures"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.6,
-        "evidence": [
-          {
-            "quote": "Guidance, advice and announcement to business operators and citizens",
-            "source_section": "Basic Measures"
+            "source_section": "Page 1",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 529,
+            "end_char": 592
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
+        "label": "regulatory_supervision",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "Collecting information, investigating cases where human rights and interests are infringed",
+            "source_section": "Page 1",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1193,
+            "end_char": 1283
+          },
+          {
+            "quote": "Business operators shall cooperate with measures implemented by the government, etc.",
+            "source_section": "Page 1",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1527,
+            "end_char": 1611
+          }
+        ]
+      },
+      {
         "label": "soft_enforcement",
-        "confidence": 0.8,
+        "confidence": 0.9,
         "evidence": [
           {
             "quote": "Guidance, advice and announcement to business operators and citizens",
-            "source_section": "Basic Measures"
-          }
-        ]
-      },
-      {
-        "label": "regulatory_supervision",
-        "confidence": 0.7,
-        "evidence": [
+            "source_section": "Page 1",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1285,
+            "end_char": 1353
+          },
           {
-            "quote": "Requesting the necessary cooperation from the relevant administrative agencies",
-            "source_section": "AI Strategic Headquarters"
+            "quote": "Establishing guidelines in accordance with the international norms",
+            "source_section": "Page 1",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1125,
+            "end_char": 1191
           }
         ]
       }
     ],
-    "implementation_notes": "This is a provisional translation of an overview document. The act is primarily a promotion and framework law rather than a strict regulatory regime. Partial enforcement began 4 June 2025, full enforcement 1 September 2025. Binding obligations on business operators appear limited to cooperation duties. Detailed requirements will likely emerge via guidelines and the AI Basic Plan.",
-    "confidence": 0.75
+    "enforcement_authorities": [
+      "AI Strategic Headquarters",
+      "Government of Japan",
+      "relevant administrative agencies"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This document is a one-page provisional English overview slide summarizing Japan's Act on Promotion of Research and Development, and Utilization of AI-related Technology (AI Act), rather than the operative statutory text itself. The Act was established on 2025-05-28, with partial enforcement on 2025-06-04 and full enforcement on 2025-09-01. It establishes the AI Strategic Headquarters chaired by the Prime Minister, provides for an AI Basic Plan, and outlines non-punitive measures including information collection, investigation of rights infringements, and guidance, advice, and announcements to business operators and citizens.",
+    "confidence": 0.85
   },
   "risk_framing": {
-    "dominant_frame": "economic_competitiveness",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "innovation_enablement",
-      "fundamental_rights",
-      "national_security"
+      "economic_competitiveness",
+      "national_security",
+      "fundamental_rights"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
-      "national_security": 0.0,
-      "economic_competitiveness": 0.75,
-      "fundamental_rights": 0.0,
+      "national_security": 0.65,
+      "economic_competitiveness": 0.85,
+      "fundamental_rights": 0.6,
       "social_stability": 0.0,
-      "innovation_enablement": 0.65,
-      "consumer_public_safety": 0.2,
-      "labor_transition": 0.05
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.25,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The document primarily frames AI governance around economic competitiveness and innovation promotion, emphasizing that Japan is lagging behind in AI development and needs to enhance international competitiveness while aiming to be the friendliest country for AI development. National security and human rights are mentioned but are secondary to the economic and innovation rationale.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.1,
+      "economic_competitiveness": 0.3,
+      "fundamental_rights": 0.1,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.45,
+      "consumer_public_safety": 0.05,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The overview predominantly frames Japan's 2025 AI Act through innovation_enablement, emphasizing proportional governance that promotes R&D and utilization while mitigating risks and explicitly aiming to make Japan 'the friendliest country to develop and utilize AI.' Economic competitiveness is a close runner-up—citing that Japan is 'lagging behind in AI development and use,' 'developing the national economy,' and 'enhancing international competitiveness'—but innovation_enablement edges it out because the act's title, core necessity, basic plan, and concluding model-law vision center on building an enabling R&D and adoption ecosystem rather than pure commercial rivalry. National security and fundamental rights appear as targeted secondary rationales in the basic principles and investigatory measures, while citizen concern and improving people's lives provide a minor public-welfare backdrop.",
     "evidence_spans": [
       {
+        "quote": "Along with existing laws and business acts, a new law is needed to promote innovation while mitigating risks.",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 112,
+        "end_char": 221
+      },
+      {
+        "quote": "In accordance with international norms, promoting innovation while mitigating risks ・Aiming to be the friendliest country to develop and utilize AI",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1748,
+        "end_char": 1895
+      },
+      {
         "quote": "Japan is lagging behind in AI development and use.",
-        "source_section": "Necessity of a new law"
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 23,
+        "end_char": 73
       },
       {
-        "quote": "Keeping R&D capabilities, and enhancing international competitiveness",
-        "source_section": "Basic Principles"
+        "quote": "Improving people‘s lives, and developing the national economy",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 249,
+        "end_char": 310
       },
       {
-        "quote": "Improving people's lives, and developing the national economy",
-        "source_section": "Purpose"
+        "quote": "Importance for economic society and national security Keeping R&D capabilities, and enhancing international competitiveness",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 329,
+        "end_char": 452
       },
       {
-        "quote": "Aiming to be the friendliest country to develop and utilize AI",
-        "source_section": "Establishing a legal system aiming to be a global model"
-      },
-      {
-        "quote": "Importance for economic society and national security",
-        "source_section": "Basic Principles"
+        "quote": "Collecting information, investigating cases where human rights and interests are infringed",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 1193,
+        "end_char": 1283
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:43:34.222884Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "b5c58a7f399480fc87b95c8f2bcda71258577f4860cea28499b6c37120adbc3e",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 21581,
+      "output_tokens": 1542,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 7966,
+      "estimated_cost_usd": 0.122056
+    },
+    "grounding_summary": {
+      "total_quotes": 11,
+      "exact_matches": 11,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

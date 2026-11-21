@@ -4,145 +4,384 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "Ministry of Economy, Trade and Industry (METI) - Expert Group on How AI Principles Should be Implemented, AI Governance Guidelines WG",
+    "issuing_body": "Ministry of Economy, Trade and Industry (METI), Expert Group on How AI Principles Should be Implemented (AI Governance Guidelines Working Group)",
     "document_type": "standards_guideline",
-    "binding_strength": "voluntary_commitment",
+    "binding_strength": "standards_guideline",
     "publication_date": "2021-07-09",
     "effective_date": null,
-    "covered_application_domains": [
-      "general_purpose_models"
+    "covered_actors": [
+      "AI companies",
+      "AI system developers",
+      "AI system operators",
+      "data providers"
     ],
+    "covered_application_domains": [],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.9,
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Understanding positive and negative impacts that AI systems may have",
-            "source_section": "C.1 CONDITIONS AND RISKS ANALYSIS"
+            "quote": "Companies that develop and operate AI systems should, under the leadership of top management, understand not only positive impacts but also negative impacts, including unintended risks, that AI systems may have.",
+            "source_section": "C.1.(1) Action Target 1-1 (Page 10)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24170,
+            "end_char": 24381
           },
           {
-            "quote": "Re-implementing Action Targets 1-1 to 1-3 in a timely manner",
-            "source_section": "C.6 RE-ANALYSIS OF CONDITIONS AND RISKS"
+            "quote": "identify a gap between AI governance goals and current state in the AI systems that they are developing and operating, and if any negative impacts are found upon evaluating the impacts resulting from the gap, determine whether or not the negative impacts would be acceptable, taking into account their severity, scope, and frequency of occurrence.",
+            "source_section": "C.3.(1) Action Target 3-1 (Page 20)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 50179,
+            "end_char": 50526
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.8,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Measures to address such uncertainties include approaches aimed at reducing uncertainties in the AI system development stage, including preparing appropriate data sets, selecting appropriate models, and conducting verification and testing before the AI system is put into operation.",
+            "source_section": "C.3.(4) Action Target 3-4-1 Practical Example 1 (Page 36)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 92643,
+            "end_char": 92925
+          },
+          {
+            "quote": "Did the AI system developer define the index for evaluating accuracy of the AI system, and evaluate the accuracy of the AI system, anticipating situations where the AI system will be operated?",
+            "source_section": "G. Appendix 2, 2-2. Model / System A (Page 72)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 180008,
+            "end_char": 180200
           }
         ]
       },
       {
         "label": "incident_reporting",
         "confidence": 0.75,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Reducing incident-related burdens on users by preventing incidents and through early response",
-            "source_section": "C.3 SYSTEM DESIGN"
-          },
-          {
-            "quote": "Considering in advance actions to take in response to incidents/disputes",
-            "source_section": "C.3 SYSTEM DESIGN"
+            "quote": "Companies that develop and operate AI systems should, under the leadership of top management, consider defining response guidelines and plans so that upon occurrence of an AI incident or dispute, they can promptly give an explanation to AI system users, identify the extent of the impact and damage, clarify legal responsibilities",
+            "source_section": "C.3.(4) Action Target 3-4-2 (Page 38)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 99346,
+            "end_char": 99676
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.85,
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Ensuring readiness for explanation about implementation status of AI management systems",
-            "source_section": "C.4 IMPLEMENTATION"
+            "quote": "In case that a certain degree of gaps may potentially occur with AI systems of AI system operators that provide services to AI system users, they should, under the leadership of top management, provide sufficient information about the gaps and measures to address the gaps, as well as make a contact point easily accessible.",
+            "source_section": "C.3.(1) Action Target 3-1-2 (Page 24)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 64215,
+            "end_char": 64539
           },
           {
-            "quote": "Considering proactively disclosing ranking implementation of AI governance as non-financial information",
-            "source_section": "C.4 IMPLEMENTATION"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "Improving literacy of human resources responsible for AI management systems",
-            "source_section": "C.3 SYSTEM DESIGN"
-          },
-          {
-            "quote": "Verifying an AI management system works appropriately",
-            "source_section": "C.5 EVALUATION"
-          },
-          {
-            "quote": "Considering seeking feedback from outside stakeholders",
-            "source_section": "C.5 EVALUATION"
+            "quote": "Companies that develop and operate AI systems should consider ranking information relevant to AI governance such as one related to AI governance goal setting and establishment and operation of AI management systems as non-financial information in the Corporate Governance Code and proactively disclosing such information.",
+            "source_section": "C.4.(3) Action Target 4-3 (Page 44)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 112867,
+            "end_char": 113188
           }
         ]
       },
       {
         "label": "model_documentation",
-        "confidence": 0.7,
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Ensuring readiness for explanation about operating status of individual AI systems",
-            "source_section": "C.4 IMPLEMENTATION"
+            "quote": "Companies that develop and operate AI systems should, under the leadership of top management, make sure that they are ready for explanation about the implementation status of AI management systems externally by recording the gap analysis process under Action Target 3-1 and by taking other relevant actions.",
+            "source_section": "C.4.(1) Action Target 4-1 (Page 40)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 102989,
+            "end_char": 103296
+          },
+          {
+            "quote": "Companies that develop and operate AI systems should, under the leadership of top management, monitor and record the status of preliminary and full-scale operations so that gap analysis for individual AI systems in preliminary and full-scale operations can be continuously implemented.",
+            "source_section": "C.4.(2) Action Target 4-2 (Page 42)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 107022,
+            "end_char": 107307
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.7,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Companies that develop and operate AI systems should, under the leadership of top management, have individuals independent of the design and operation of the AI management system verify whether an AI management system such as a gap analysis process is appropriately designed and operated in light of the AI governance goals",
+            "source_section": "C.5.(1) Action Target 5-1 (Page 46)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 117984,
+            "end_char": 118307
+          },
+          {
+            "quote": "We have an internal audit department, but we decided to try making use of external audits for our AI management system.",
+            "source_section": "C.5.(1) Action Target 5-1 Practical Example 3 (Page 47)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 120995,
+            "end_char": 121114
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.8,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Did the AI system developer summarize measures against unauthorized access and/or data input as a precaution for the AI system operator?",
+            "source_section": "G. Appendix 2, 1-2. Overall Design G (Page 67)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 168893,
+            "end_char": 169029
+          },
+          {
+            "quote": "Do the data provider and the AI system developer log access to their data to monitor any unauthorized access to the data for training/validating/testing?",
+            "source_section": "G. Appendix 2, 2-1. Data B (Page 69)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 174310,
+            "end_char": 174463
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.85,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Did the AI system developer consider whether it is necessary to give an opportunity for humans to get actively involved in the AI system, for example, regain the control, from the perspectives of mitigating the negative impacts on physical and mental health and property, etc. as well as enhancing the fairness?",
+            "source_section": "G. Appendix 2, 1-2. Overall Design H (Page 67)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 169227,
+            "end_char": 169538
+          },
+          {
+            "quote": "Did the AI system developer adopt a design that can provide options and opportunities for AI system users to decide whether or not to adopt the AI system or to suspend/stop the use the AI system, if necessary?",
+            "source_section": "G. Appendix 2, 1-2. Overall Design H (Page 67)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 169549,
+            "end_char": 169758
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Companies that provide data should provide information on the data sets including data collection sources, collection policies, collection criteria, annotation criteria, and limitation on use to ensure that companies that develop AI systems are able to appropriately conduct gap analysis, and AI system developers should acquire data sets from data providers that provide sufficient information.",
+            "source_section": "C.3.(1) Action Target 3-1-3 (Page 26)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 67677,
+            "end_char": 68072
+          },
+          {
+            "quote": "Do the data provider and the AI system developer record information required for data management, such as data lineage and method for processing data?",
+            "source_section": "G. Appendix 2, 2-1. Data B (Page 69)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 173818,
+            "end_char": 173968
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "none_specified",
-        "confidence": 0.95,
+        "label": "soft_enforcement",
+        "confidence": 0.98,
         "evidence": [
           {
-            "quote": "The Guidelines themselves are not legally binding.",
-            "source_section": "2. Legal Effect of the Guidelines"
+            "quote": "The Guidelines themselves are not legally binding. The Guidelines are comprised of action targets to be implemented, examples of implementation, and examples for gap analysis, etc., which summarize typical targets and practical examples that are shared in society to a certain extent.",
+            "source_section": "A.2 Legal Effect of the Guidelines (Page 4)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8753,
+            "end_char": 9037
           },
           {
-            "quote": "the Guidelines are also expected to support company voluntary efforts",
-            "source_section": "2. Legal Effect of the Guidelines"
-          }
-        ]
-      },
-      {
-        "label": "soft_enforcement",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "widely shared material that is referred to by AI companies who are involved in AI business, typically the development and operation of AI systems, in their business transactions",
-            "source_section": "2. Legal Effect of the Guidelines"
+            "quote": "The report titled “Governance Innovation Ver.2” states that it is important that government and private sector work together to establish standards, guidelines, and other soft laws to bolster businesses’ efforts to implement agile governance (4.3.3).",
+            "source_section": "H. Appendix 3 (Page 82)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 199791,
+            "end_char": 200041
           }
         ]
       }
     ],
-    "implementation_notes": "Document is explicitly non-binding (Ver. 1.0). It is framed as a voluntary guideline supporting METI's Social Principles of Human-centric AI. Action targets are described as general objectives for all AI companies, while implementation examples are discretionary. The document is intended as a living document subject to agile governance revision.",
-    "confidence": 0.88
+    "enforcement_authorities": [],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "Non-binding, voluntary governance guidelines (Ver. 1.0) issued as a living document under METI's Agile Governance framework to operationalize Japan's 2019 Social Principles of Human-centric AI. Applies horizontally to machine-learning-based AI systems (and other decision-making systems with low visibility) across developers, operators, and data providers. Structures voluntary AI management systems around six iterative phases (conditions and risks analysis, goal setting, system design, implementation, evaluation, and re-analysis) supported by Action Targets, practical examples, and an optional gap-analysis tool. Explicitly clarifies that following the Guidelines does not guarantee compliance with applicable laws and carries no legal compulsion or safe harbor.",
+    "confidence": 0.95
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
     "secondary_frames": [
       "consumer_public_safety",
-      "social_stability"
+      "fundamental_rights"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.0,
-      "social_stability": 0.0,
-      "innovation_enablement": 0.55,
-      "consumer_public_safety": 0.25,
+      "economic_competitiveness": 0.35,
+      "fundamental_rights": 0.72,
+      "social_stability": 0.3,
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.8,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document frames AI governance primarily as a mechanism to facilitate AI deployment and support voluntary company efforts, with governance serving to enable rather than restrict AI. The stated aim is 'supporting the implementation of AI principles required for the facilitation of deployment of AI.' Secondary framing includes managing negative impacts on society and users.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.07,
+      "fundamental_rights": 0.16,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.5,
+      "consumer_public_safety": 0.22,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The guidelines are predominantly framed around innovation enablement: their stated aim is to facilitate the deployment and social implementation of AI through non-binding, flexible, and iterative 'agile governance' rather than rigid pre-fixed rules, enabling companies to maximize positive impacts (such as productivity and new high-value-added businesses) while proportionately managing negative impacts. Consumer and public safety is the strongest secondary frame, reflected in repeated attention to preventing operational incidents, mitigating harm to physical and mental health and property, and reducing incident-related burdens on users. Fundamental rights appears as a secondary frame via grounding in Japan's Social Principles of Human-centric AI—specifically privacy protection, non-discrimination/fairness, and avoiding undue hindrance to individual decision-making—though these concerns are framed as voluntary corporate risk-management targets to enable safe AI adoption rather than enforceable statutory rights, which is why innovation enablement clearly edges out both secondary frames. Mild elements of economic competitiveness (corporate growth and productivity) and social stability (social acceptance and collective trust) appear in supporting roles, while existential risk, national security, and labor transition are absent.",
     "evidence_spans": [
       {
-        "quote": "The Governance Guidelines for Implementation of AI Principles present action targets to be implemented by an AI company, with the aim of supporting the implementation of the AI principles that is required for the facilitation of deployment of AI.",
-        "source_section": "1. The Aim of the AI Governance Guidelines"
+        "quote": "The Governance Guidelines for Implementation of AI Principles (hereinafter referred to as the “AI Governance Guidelines”) present action targets to be implemented by an AI company, with the aim of supporting the implementation of the AI principles that is required for the facilitation of deployment of AI.",
+        "source_section": "Page 4",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 8014,
+        "end_char": 8320
       },
       {
-        "quote": "Society will accumulate knowledge to maximize positive impacts brought by AI systems, while managing negative impacts at a level acceptable to stakeholders.",
-        "source_section": "5. Living Document"
+        "quote": "Therefore, the governance model for a CPS-based society must be one where solutions are constantly revised to ensure their optimality based on conditions and goals that constantly change. For this reason, we do not believe it would be appropriate to apply models of governance whose goals and procedures are fixed in advance.",
+        "source_section": "Page 80",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 196602,
+        "end_char": 196927
       },
       {
-        "quote": "the Guidelines are also expected to support company voluntary efforts as widely shared material",
-        "source_section": "2. Legal Effect of the Guidelines"
+        "quote": "In order to improve users’ confidence in AI systems, we believe it is important for us to reduce the burden on users as much as possible by devising ways to prevent problems from occurring, and by responding promptly when problems do occur.",
+        "source_section": "Page 35",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 90318,
+        "end_char": 90558
+      },
+      {
+        "quote": "On the other hand, haphazard provision of AI to businesses can entail risks peculiar to AI, such as unintentionally impairing fairness and causing safety problems.",
+        "source_section": "Page 16",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 40699,
+        "end_char": 40862
+      },
+      {
+        "quote": "The social principles for AI are comprised of seven principles: (1) Human-centric, (2) Education/Literacy, (3) Privacy Protection, (4) Ensuring Security, (5) Fair Competition, (6) Fairness, Accountability, and Transparency, and (7) Innovation.",
+        "source_section": "Page 4",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 7770,
+        "end_char": 8013
+      },
+      {
+        "quote": "Did the AI system developer ensure that opportunities and decision-making of individuals will not be unduly hindered while developing an AI system that can analyze individuals?",
+        "source_section": "Page 66",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 168051,
+        "end_char": 168227
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:46:37.849512Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "7834ebbedecdfc5a5a634cf4ce4d1daa48d013f7afe4e467b3814940781a8c78",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 134327,
+      "output_tokens": 3632,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 11588,
+      "estimated_cost_usd": 0.320109
+    },
+    "grounding_summary": {
+      "total_quotes": 25,
+      "exact_matches": 25,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

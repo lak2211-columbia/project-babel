@@ -1,36 +1,86 @@
 {
-  "dominant_frame": "economic_competitiveness",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
     "fundamental_rights",
-    "innovation_enablement"
+    "economic_competitiveness",
+    "consumer_public_safety",
+    "social_stability"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.05,
-    "economic_competitiveness": 0.65,
-    "fundamental_rights": 0.55,
-    "social_stability": 0.1,
-    "innovation_enablement": 0.5,
-    "consumer_public_safety": 0.2,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.78,
+    "fundamental_rights": 0.93,
+    "social_stability": 0.62,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.65,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document opens by explicitly framing medical AI data utilization in the context of intensifying global R&D competition, positioning Japan's data governance as a matter of competitive capacity. The preface warns that privacy law 'greatly affects data resources that are the source of competitiveness.' Simultaneously, it foregrounds patient rights protection and privacy as a core constraint, making fundamental_rights a strong secondary frame. Innovation enablement is also present as the guideline aims to remove legal barriers to product development.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.12,
+    "fundamental_rights": 0.35,
+    "social_stability": 0.07,
+    "innovation_enablement": 0.38,
+    "consumer_public_safety": 0.08,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Innovation enablement narrowly edges out fundamental rights as the dominant frame because this guideline was specifically commissioned under Japan's Regulatory Reform Implementation Plan and Healthcare AI Development Acceleration Consortium to unlock clinical medical data for commercial diagnostic AI medical-device R&D—overcoming the practical impossibility of obtaining individual re-consent from vast numbers of past patients by clarifying stage-by-stage APPI legal bases and actionable pseudonymized joint-use workflows. Fundamental rights is an extraordinarily close co-equal runner-up, providing the mandatory premise and operational substance across Chapters 2–5: protecting patients' personality and property rights, preventing privacy breaches and malicious re-identification of highly sensitive special-care personal information, prohibiting onward distribution, and enforcing ethical informed-consent opt-outs. Economic competitiveness is a prominent third rationale invoked in the opening sentences of the Preface and Chapter 1 (citing fierce global competition in new-industry creation and medical-AI R&D where data-protection frameworks directly shape competitiveness). Consumer/public safety (PMDA pre-market clinical efficacy/safety evaluation and post-market malfunction/adverse-event monitoring) and social stability (securing collective social trust in secondary medical-data utilization) serve as concrete supporting frames.",
   "evidence_spans": [
     {
-      "quote": "先端的な研究開発やイノベーションによる新産業の創出は、常に厳しいグローバルな競争にさらされており、個人情報保護法制はその競争力の源泉であるデータ資源の取扱いに大きく影響を及ぼす",
-      "source_section": "Page 2"
+      "quote": "本ガイドラインは、これらの読者が医療情報を適切かつ効果的に利活用し、革新的な医療機器の開発を促進するための指針となることを目指している。同時に、患者の権利利益の保護と個人情報の適切な取り扱いにも十分配慮し、 医療情報の利活用に対する社会的な信頼の確保にも貢献することを目的としている。",
+      "source_section": "1.2.1 本ガイドラインの目的と想定する対象者 (Page 6)",
+      "quote_en": "This guideline aims to serve as guidance for readers to utilize medical information appropriately and effectively and promote the development of innovative medical devices, while giving full regard to protecting patients' rights and interests, proper handling of personal information, and securing social trust in medical-data utilization.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4914,
+      "end_char": 5056
     },
     {
-      "quote": "病院に蓄積された膨大な医療情報を貴重なデータ資源として活用し、学術研究機関等や医療機関等のみならず、製品開発の担い手としての民間企業等をも巻き込んだ研究開発競争が世界的に激化している",
-      "source_section": "Page 2"
+      "quote": "仮名化された個人情報について、一定の安全性を確保しつつ、データとしての有用性を加工前の個人情報と同等程度に保つことにより、詳細な分析を比較的簡便な加工方法で実施し得るものとして利活用したいというニーズがあった。こうした背景とイノベーションを促進する観点から、氏名等を削除した仮名加工情報が個人情報保護法において創設された8。",
+      "source_section": "3.1 仮名加工情報とは (Page 22)",
+      "quote_en": "Driven by the need to utilize pseudonymized personal information with relatively simple processing while preserving data utility comparable to pre-processed data and ensuring safety, and from the perspective of promoting innovation, pseudonymized information was established under APPI.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 23572,
+      "end_char": 23734
     },
     {
-      "quote": "患者の権利利益を適切に保護することを前提として、医療情報の特性を考慮した仮名加工情報の適切な運用を整理するために",
-      "source_section": "Page 2"
+      "quote": "近年、様々な事業者による医療情報の利活用が急増するに伴い、万が一の情報漏えい等による患者の権利利益の侵害が発生する危険性も高まっており、医療情報を利活用するに際して、患者の権利利益を侵害することなく、医療情報を適切に保護するための措置を講じることが求められてきた。",
+      "source_section": "1.1.2 患者の権利利益を侵害しないための保護措置の重要性 (Page 5)",
+      "quote_en": "With rapid growth in medical-information utilization by diverse operators, the risk of infringing patients' rights and interests through data breaches has increased, making it necessary to take measures to properly protect medical information without infringing patients' rights and interests.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 3548,
+      "end_char": 3680
     },
     {
-      "quote": "患者の権利利益の保護と社会的な必要性とのバランスを考慮し、医療情報の利活用を調整するべきという考え方が注目されている",
-      "source_section": "Page 5"
+      "quote": "これは、第三者提供によって仮名加工情報を取得した悪意のある者により本人の再識別行為がおこなわれるおそれがあり、特定の個人が識別されることにより、個人の権利利益が侵害されるリスクを高めることとなるためである9。",
+      "source_section": "3.2.1 仮名加工情報における第三者提供の考え方 (Page 23)",
+      "quote_en": "This is because a malicious party obtaining pseudonymized information via third-party transfer could attempt to re-identify individuals, heightening the risk of infringing individuals' rights and interests if specific persons are identified.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 24499,
+      "end_char": 24603
+    },
+    {
+      "quote": "先端的な研究開発やイノベーションによる新産業の創出は、常に厳しいグローバルな競争にさらされており、個人情報保護法制はその競争力の源泉であるデータ資源の取扱いに大きく影響を及ぼす。特に医療分野においては、病院に蓄積された膨大な医療情報を貴重なデータ資源として活用し、学術研究機関等や医療機関等のみならず、製品開発の担い手としての民間企業等をも巻き込んだ研究開発競争が世界的に激化している。",
+      "source_section": "まえがき (Page 2)",
+      "quote_en": "Advanced R&D and creation of new industries through innovation constantly face fierce global competition, and personal-data protection law greatly affects the handling of data resources that are the source of that competitiveness; especially in healthcare, global R&D competition leveraging vast hospital medical records has intensified.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 40,
+      "end_char": 233
+    },
+    {
+      "quote": "限られた被験者や医療施設を対象とする厳密に管理された治験による評価のみでは市販後の多様な臨床環境で実際の患者に使用した際の不具合や有害事象などを完全に明らかにすることが難しいこともまた事実である。このため、近年、市販後のリスク管理、安全性情報の収集等がより重要になってきている",
+      "source_section": "6.5.7 脚注 30 (Page 53)",
+      "quote_en": "It is also true that strictly controlled clinical trials with limited subjects and sites alone cannot fully reveal malfunctions or adverse events when used on real patients in diverse post-market clinical environments; thus post-market risk management and safety-information collection have grown increasingly important.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 57941,
+      "end_char": 58079
     }
   ]
 }

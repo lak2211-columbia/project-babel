@@ -4,106 +4,226 @@
   "language": "ja",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "人工知能技術戦略会議（内閣府・総務省・文部科学省・経済産業省等）",
+    "issuing_body": "Cabinet Office / Artificial Intelligence Technology Strategy Council (人工知能技術戦略会議)",
     "document_type": "strategy_paper",
     "binding_strength": "strategy_statement",
     "publication_date": "2018-08-17",
     "effective_date": null,
     "covered_actors": [
-      "government ministries",
-      "national research institutes (NICT, RIKEN, AIST)",
-      "universities",
-      "private sector / industry",
-      "venture companies"
+      "National ministries and agencies (Cabinet Office/CSTI, IT Strategic Headquarters, MIC, MEXT, METI, MHLW, MAFF, MLIT, MoE, PPC)",
+      "National AI R&D centers (NICT, RIKEN AIP Center, AIST)",
+      "Research funding and technical promotion agencies (JST, NEDO, IPA, AMED, JAXA)",
+      "Universities, research institutions, local governments, and private enterprises (including startups and large corporations)"
     ],
     "covered_application_domains": [
       "healthcare",
       "critical_infrastructure",
-      "public_sector_use",
       "education",
-      "general_purpose_models"
+      "public_sector_use",
+      "employment"
     ],
     "prohibited_practices": [],
-    "safety_requirements": [],
-    "enforcement_mechanisms": [
+    "safety_requirements": [
       {
-        "label": "soft_enforcement",
-        "confidence": 0.6,
+        "label": "training_data_governance",
+        "confidence": 0.78,
+        "obligation_strength": "aspirational",
         "evidence": [
           {
-            "quote": "各取組の目標と達成時期を示した実行計画を暫定的に取りまとめた",
-            "source_section": "Page 1"
+            "quote": "・各国のデータ保護・流通制度等の動向を踏まえ、データ連携基盤の利活用\nガイドライン整備やデータカタログ、ＡＰＩ、データ品質基準の仕様策定など、\n必要なルール整備を推進",
+            "source_section": "Page 11 (産学官が有するデータ及びツール群の環境整備)",
+            "quote_en": "In light of international trends in data protection and distribution regimes, promote necessary rulemaking including developing utilization guidelines for cross-sector data linkage platforms and formulating specifications for data catalogs, APIs, and data quality standards.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16831,
+            "end_char": 16914
           },
           {
-            "quote": "政府が取り組む主要な実証実験について、目標、取組状況、制度的・法的課題等を一体的に把握・整理して、関係府省で共有",
-            "source_section": "Page 4"
+            "quote": "次世代医療基盤法 の施行後、医療情報の取得、匿名加工医\n療情報の作成・提供等を行う事業者を速やかに認定",
+            "source_section": "Page 12 (健康・医療・介護)",
+            "quote_en": "Following enforcement of the Next Generation Medical Infrastructure Act, promptly certify operators who acquire medical information and create and provide anonymized medical information.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19058,
+            "end_char": 19109
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.75,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "欧米等とも整合性をとったサイバー・フィジカル・セキュリティ対\n策基盤も活用し、分野間のデータ連携に必要となるセキュリテ\nィ機能を確保",
+            "source_section": "Page 11 (産学官が有するデータ及びツール群の環境整備)",
+            "quote_en": "Utilizing cyber-physical security countermeasure foundations aligned with Europe and the US, ensure the security functions necessary for cross-sector data linkage.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17073,
+            "end_char": 17139
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.72,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "リスクの高い実世界での応用を念頭におき、開発された\nAIの目的の範囲を明確にし、その範囲内での当該AI の\n品質を評価する手法を開発",
+            "source_section": "Page 5 (基礎・基盤的な研究開発 — 信頼できるAI)",
+            "quote_en": "With high-risk real-world applications in mind, develop methods to clarify the intended scope of developed AI and evaluate the quality of that AI within that scope.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8221,
+            "end_char": 8287
+          },
+          {
+            "quote": "ディープラーニングなどはまだ原理的に未解明な部分はあるが、それによって開発自体が制限されるべきではなく、開発を進めた上で十分な検証を行うことが重要である。",
+            "source_section": "Page 16 (AI技術の開発に係る理解促進)",
+            "quote_en": "Although parts of deep learning and similar technologies remain theoretically unexplained, development itself should not be restricted on that account; rather, it is important to proceed with development and conduct sufficient verification.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23698,
+            "end_char": 23775
           }
         ]
       }
     ],
-    "enforcement_authorities": [
-      "内閣府",
-      "総務省",
-      "文部科学省",
-      "経済産業省",
-      "厚生労働省",
-      "農林水産省",
-      "国土交通省",
-      "防災担当"
+    "enforcement_mechanisms": [
+      {
+        "label": "none_specified",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "このため、人工知能技術戦略を踏まえた政府内の取組をより具体化・強化する観点から、各取組の目標と達成時期を示した実行計画を暫定的に取りまとめたところ、今後、熾烈な国際競争下で世界に伍していくための本格的な計画を策定する。",
+            "source_section": "Page 1",
+            "quote_en": "Accordingly, to concretize and strengthen government initiatives based on the AI Technology Strategy, this provisional execution plan sets out targets and timelines for each measure, ahead of formulating a full-scale plan to compete globally amid fierce international competition.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 697,
+            "end_char": 806
+          }
+        ]
+      }
     ],
-    "compliance_deadlines": [
-      "2018年度中：各府省IT人材育成規模設定",
-      "2018年度中：応用開発内容の明確化",
-      "2018年中：農業データ利活用契約ガイドライン策定",
-      "2019年度中：インフラ・データプラットフォーム構築試行",
-      "2020年中：多言語音声翻訳社会実装",
-      "2020年度中：医師付き画像データ企業提供体制整備",
-      "2022年度まで：各分野AIの社会実装",
-      "2025年まで：先端IT人材年数万人規模育成体制確立",
-      "2032年まで：初等中等教育修了全生徒のITリテラシー獲得"
-    ],
+    "enforcement_authorities": [],
+    "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "This is a government implementation plan (実行計画) translating the 2017 AI Technology Strategy and industrialization roadmap into concrete targets with deadlines and responsible ministries. It is not legally binding. No prohibited practices or enforcement penalties are specified. The document covers R&D, human resource development, data/tool environment, venture support, and public understanding across priority domains: productivity, health/medical/care, mobility, and information security.",
-    "confidence": 0.92
+    "implementation_notes": "Provisional government execution plan (August 2018) operationalizing Japan's March 2017 Artificial Intelligence Technology Strategy and Industrialization Roadmap across five pillars: (1) R&D (priority sectors of productivity, health/medical/nursing care, mobility, information security, smart agriculture, i-Construction, AI Hospital, disaster SIP4D, next-gen trustworthy/explainable AI, and 100x-efficiency AI chips), (2) talent development (top-level researchers, recurrent adult education, vocational IT training for job seekers, university data-science curricula, and universal K-12 IT literacy by 2032), (3) cross-sector and sectoral data-linkage platforms (full operation targeted by FY2022), (4) venture/startup support (NEDO open innovation, startup task force parity with the US and China), and (5) public understanding (commissioning the Social Principles of Human-Centric AI in FY2018). Pure R&D and industrial execution roadmap containing zero regulatory enforcement or sanction hooks; subsequently superseded by AI Strategy 2022.",
+    "confidence": 0.93
   },
   "risk_framing": {
     "dominant_frame": "economic_competitiveness",
     "secondary_frames": [
       "innovation_enablement",
-      "labor_transition"
+      "labor_transition",
+      "consumer_public_safety",
+      "fundamental_rights"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
-      "national_security": 0.0,
-      "economic_competitiveness": 0.82,
-      "fundamental_rights": 0.0,
-      "social_stability": 0.0,
-      "innovation_enablement": 0.65,
-      "consumer_public_safety": 0.0,
-      "labor_transition": 0.35
+      "national_security": 0.05,
+      "economic_competitiveness": 0.97,
+      "fundamental_rights": 0.4,
+      "social_stability": 0.1,
+      "innovation_enablement": 0.9,
+      "consumer_public_safety": 0.45,
+      "labor_transition": 0.74
     },
-    "rationale_summary": "The document frames AI governance primarily as a competitiveness challenge, explicitly noting Japan's lag behind the US and China in research, talent, data, and venture support, and calling for Japan to 'win fierce competition' and 'lead the world.' The industrialization roadmap, sectoral productivity targets, and market acquisition goals further reinforce this frame. Innovation enablement is secondary, as the plan details R&D and social implementation programs. Labor/talent transition appears through extensive workforce development sections.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.5,
+      "fundamental_rights": 0.05,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.28,
+      "consumer_public_safety": 0.05,
+      "labor_transition": 0.12
+    },
+    "rationale_summary": "Economic competitiveness is unequivocally the dominant frame: the plan explicitly opens by citing an intensifying AI hegemony race led by US and Chinese enterprises, warning that Japan lags behind both countries in research output, business adoption, talent, data linkage, and venture creation, and mobilizing ministries around an Industrialization Roadmap aimed at winning global competition, boosting sectoral productivity, capturing new markets, and matching US/Chinese startup ecosystems. Innovation enablement is a strong runner-up, promoting open innovation across industry-academia-government, interoperable cross-sector data platforms, extraction of institutional/legal barriers facing AI startups, and an explicit stance that AI development should not be restricted merely because deep learning remains partly unexplained. Labor transition forms a notable third frame through extensive workforce reskilling, recurrent adult IT education, raised training-benefit subsidies, and vocational IT literacy training for unemployed job seekers, alongside acknowledging concerns over negative impacts on existing employment. Consumer/public safety (disaster mitigation, medical diagnostics, high-risk AI quality assurance, cyber-physical security) and fundamental rights (privacy-preserving R&D, cross-border personal data protection, ELSI analysis) appear as minor secondary themes.",
     "evidence_spans": [
       {
-        "quote": "米国のＩＴ企業や中国の企業等による覇権争いが激しさを増しており",
-        "source_section": "Page 1"
+        "quote": "ここ数年のビッグデータ等を通じたＡＩ技術の利活用に関し、米国のＩＴ企業や中国の企業等による覇権争いが激しさを増しており、様々な分野で従来の延長線上にない破壊的イノベーションが生み出されてきているが、我が国は米国や中国に比べると研究論文数やビジネスへの導入、人材の育成、データ連携、ベンチャー支援等で後れを取っている状況である。",
+        "source_section": "Page 1",
+        "quote_en": "In recent years, competition for hegemony by US IT companies and Chinese companies in utilizing AI technologies through big data has intensified, producing disruptive innovation across fields, yet Japan lags behind the US and China in research papers, business adoption, talent development, data linkage, and venture support.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 275,
+        "end_char": 438
       },
       {
-        "quote": "我が国は米国や中国に比べると研究論文数やビジネスへの導入、人材の育成、データ連携、ベンチャー支援等で後れを取っている",
-        "source_section": "Page 1"
+        "quote": "熾烈な競争に打ち勝ち、我が国が世界をリードしていくためには、人工知能技術戦略で定めた（１）研究開発、（２）人材育成、（３）産学官が有するデータ及びツール群の環境整備、（４）ベンチャー支援、（５）ＡＩ技術の開発に係る理解促進が鍵となっており、産業化ロードマップの実現に向けて、今まさに我が国が一丸となって実行することが真に求められている。",
+        "source_section": "Page 1",
+        "quote_en": "To prevail in fierce competition and lead the world, the five pillars of the AI Technology Strategy—R&D, talent development, data and tool infrastructure, venture support, and promoting understanding—are key, and Japan must truly unite right now to execute the Industrialization Roadmap.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 529,
+        "end_char": 697
       },
       {
-        "quote": "熾烈な競争に打ち勝ち、我が国が世界をリードしていくためには",
-        "source_section": "Page 1"
+        "quote": "ディープラーニングなどはまだ原理的に未解明な部分はあるが、それによって開発自体が制限されるべきではなく、開発を進めた上で十分な検証を行うことが重要である。",
+        "source_section": "Page 16 (AI技術の開発に係る理解促進)",
+        "quote_en": "Although aspects of deep learning remain theoretically unexplained, development itself should not be restricted as a result; rather, it is important to advance development and conduct thorough verification.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 23698,
+        "end_char": 23775
       },
       {
-        "quote": "熾烈な国際競争下で世界に伍していくための本格的な計画を策定する",
-        "source_section": "Page 1"
+        "quote": "ＳＩＰを含む政府が取り組む研究開発・実証実験等についてＡＩ関連ベンチャーの阻害要因となる制度的・法的課題を抽出・整理し、創業ＴＦに提示(P)",
+        "source_section": "Page 15 (ベンチャー支援)",
+        "quote_en": "Identify and organize institutional and legal issues that impede AI-related ventures across government R&D and demonstration experiments including SIP, and submit them to the Startup Task Force.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 23318,
+        "end_char": 23388
       },
       {
-        "quote": "スマート農業技術の国内外への展開による１，０００億円以上の市場獲得",
-        "source_section": "Page 2"
+        "quote": "雇用保険（失業保険）を受給している求職者等を対象として、キャリアアップや\n希望する就職を実現するために、必要な職業スキルや知識を習得することが\nできるよう、基礎的ＩＴリテラシー習得のための職業訓練の開発・実施を検討",
+        "source_section": "Page 9 (人材育成 — 一般IT人材)",
+        "quote_en": "Examine developing and implementing vocational training in basic IT literacy for job seekers receiving employment insurance so they can acquire the occupational skills and knowledge needed for career advancement and desired employment.",
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 13527,
+        "end_char": 13634
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:20:33.424801Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "8231cdb316de2ffee959bc21e106415b96c08d3a7de392402b89bee10d486996",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 24125,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 11,
+      "exact_matches": 11,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

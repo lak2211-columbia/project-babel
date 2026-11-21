@@ -4,85 +4,266 @@
   "language": "ko",
   "policy_extraction": {
     "jurisdiction": "south_korea",
-    "issuing_body": "Personal Information Protection Commission (PIPC), Republic of Korea",
-    "document_type": "standards_guideline",
-    "binding_strength": "standards_guideline",
-    "publication_date": "2024-12",
+    "issuing_body": "Personal Information Protection Commission (개인정보보호위원회)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2024-12-19",
     "effective_date": null,
     "covered_actors": [
-      "AI model developers",
-      "AI system developers",
-      "AI model providers",
-      "AI system providers",
-      "enterprises and institutions adopting AI technology",
-      "startups and small organizations"
+      "AI model and system developers (AI 모델·시스템 개발자, covering pretraining, fine-tuning, domain-adaptive learning, in-context learning, alignment, and RAG)",
+      "AI model and system providers (AI 모델·시스템 제공자)",
+      "General-purpose model developers/providers and downstream user enterprises including AI application providers and startups (범용모델 개발·제공자 및 범용모델 이용사업자)",
+      "Enterprises, public institutions, and designated Privacy Impact Assessment institutions (기업·기관, 공공기관, 영향평가기관)",
+      "Chief Privacy Officers (CPO) and internal AI privacy governance units (개인정보보호책임자 및 AI 프라이버시 담당조직)"
     ],
     "covered_application_domains": [
-      "general_purpose_models"
+      "general_purpose_models",
+      "public_sector_use",
+      "biometrics",
+      "employment",
+      "finance",
+      "healthcare"
     ],
     "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.95,
+        "confidence": 0.98,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "➊ AI의 유형·용례 파악, ➋ 리스크 식별(mapping), ➌ 리스크 측정(measuring), ➍ 경감방안의 검토·도입(mitigation)으로 이어지는 4단계 절차가 권장됨",
-            "source_section": "Page 9"
+            "quote": "➊ ➋ ➌ ➍ AI의 유형·용례 파악 ≫ 용례에 대응하는 리스크의 식별 ≫ 리스크의 측정 ≫ 리스크 경감방안의 검토·도입 AI 모델 및 시스템의 목적, 범위 및 처리되는 데이터 등 구체적 맥락을 파악 파악된 AI 모델 및 시스템의 유형·용례에 따라 발생할 수 있는 리스크를 식별 리스크의 발생확률, 중대성, 수용가능성, 우선순위 등을 판단 리스크 경감을 위한 관리적, 기술적 방안을 검토하고 실행",
+            "source_section": "Ⅱ. AI 프라이버시 리스크 관리의 절차",
+            "quote_en": "Four-step AI privacy risk management process: (1) identify AI type and use case (purpose, scope, data context), (2) map corresponding privacy risks, (3) measure risk likelihood, severity, acceptability, and priority, and (4) review and implement organizational and technical mitigation measures.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9282,
+            "end_char": 9503
           },
           {
-            "quote": "기업·기관은 적절한 지표 및 측정도구를 활용하여 △리스크의 발생확률, △리스크가 실현되었을 때 조직·개인·사회에 미치는 결과의 중대성 등을 정량적·정성적으로 평가",
-            "source_section": "Page 11"
+            "quote": "② AI 개발·운영 과정에서 정보주체의 개인정보 침해가 우려되는 경우 개인 정보 영향평가를 검토·수행하는가?",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Item 2: When personal data infringement of data subjects is a concern during AI development or operation, do you review and conduct a Privacy Impact Assessment?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 45944,
+            "end_char": 46004
           }
         ]
       },
       {
-        "label": "pre_deployment_testing",
-        "confidence": 0.8,
+        "label": "training_data_governance",
+        "confidence": 0.97,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "리스크관리는 리스크의 조기발견 및 완화를 위해 AI 모델·시스템의 기획·개발단계부터 이루어지는 것이 바람직하며",
-            "source_section": "Page 9"
-          }
-        ]
-      },
-      {
-        "label": "red_teaming",
-        "confidence": 0.75,
-        "evidence": [
+            "quote": "1 ￭ 학습데이터 수집 출처별로 개인정보 수집의 적법성을 확보했는지 판단하고 출처·이력을 문서화하는 등 관리하고 있는가? 2 ￭ 개인정보보호위원회와 한국인터넷진흥원의 ‘개인정보 노출 및 불법유통 탐지· 삭제’ 사업*을 통해 식별된 도메인 정보(URL)는 AI 학습데이터 수집 출처에서 배제하였는가?",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Checklist Item 3: Do you assess whether lawful collection of personal information is ensured for each training-data source and document/manage provenance and history? Have you excluded domain URLs identified by PIPC and KISA's personal-data exposure and illegal distribution detection/deletion program from AI training-data sources?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 46525,
+            "end_char": 46691
+          },
           {
-            "quote": "일본 AI안전연구소(Japan AI Safety Institute)는 AI 시스템 개발자 및 제공자가 공격자의 관점에서 AI 안전을 평가하기 위한 레드팀 방법론을 발표",
-            "source_section": "Page 11"
+            "quote": "⑧ AI 개발·운영 종료 등으로 개인정보가 불필요하게 되었을 때에는 지체없이 파기하고 있는가?\n1 ￭ 불필요하게 된 개인정보는 지체없이 복원이 불가능한 방법으로 안전하게 파기하는가?(법§21, 영§16)",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Checklist Item 8: When personal information becomes unnecessary upon completion of AI development or operation, is it destroyed without delay using irreversible methods (PIPA Art. 21, Enforcement Decree Art. 16)?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 49009,
+            "end_char": 49122
           }
         ]
       },
       {
         "label": "access_controls",
-        "confidence": 0.8,
+        "confidence": 0.94,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "이용자의 프롬프트 공격시, 이에 대한 답변 생성 거절 및 미리 정해진 답변을 제공하는 입력 필터링과 모델 출력에서 개인정보가 노출‧생성되지 않도록 감지‧제거하는 출력 필터링",
-            "source_section": "Page 52"
+            "quote": "⑦ AI 개발·운영에 이용되는 개인정보는 접근통제, 접근권한 제한 등의 조치를 통해 안전하게 보관·관리하는가?",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Checklist Item 7: Is personal information used in AI development and operation securely stored and managed through measures such as access controls and access privilege restrictions?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 48590,
+            "end_char": 48651
+          },
+          {
+            "quote": "1 ￭ 개인정보에 대한 접근통제, 접근권한 제한, 접속기록 관리 등의 조치를 취하고 있는가?(법§29, 영§30) 2 ￭ 보안프로그램 설치, 보관시설의 물리적 보안장치 마련 등을 조치하는가? (법§29, 영§30)",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Are measures taken for access control, access privilege restriction, and access-log management (PIPA Art. 29, Enforcement Decree Art. 30), as well as installing security programs and physical security safeguards for storage facilities?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 48889,
+            "end_char": 49008
+          }
+        ]
+      },
+      {
+        "label": "red_teaming",
+        "confidence": 0.96,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "⑬ AI 프라이버시 레드팀을 구성·운영하고 있는가? 1 ￭ (가칭)AI 프라이버시 레드팀을 구성·운영하여 기획·개발 시 예상하지 못한 개인 정보 침해 유형을 시험‧확인하고, AI 모델이 배포된 이후 정보주체에 미칠 수 있는 유해한 영향을 최소화하고 있는가?",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Checklist Item 13: Are you establishing and operating an (tentative) AI Privacy Red Team to test and verify unexpected types of personal data infringement not foreseen during planning and development, and to minimize harmful post-deployment impacts on data subjects?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 50840,
+            "end_char": 50983
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.7,
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "불투명성, 자동화된 결정으로 인한 정보주체 권리 약화",
-            "source_section": "Page 11"
+            "quote": "⑫ 허용되는 이용 방침(Acceptable Use Policy; AUP)을 작성·공개하고 있는가? 1 ￭ 생성AI의 예견 가능한 오용을 열거하고 해당 목적의 사용을 금지하는 이용 방침을 작성하여 공개함으로써 오용을 방지하고 있는가?",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Checklist Item 12: Have you drafted and disclosed an Acceptable Use Policy (AUP) enumerating foreseeable misuses of generative AI and prohibiting use for those purposes?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 50710,
+            "end_char": 50839
+          },
+          {
+            "quote": "3 ￭ 최소 수집, 목적 명확화 등 개인정보 보호법 원칙을 고려하여 학습데이터 수집·전처리·이용 기준을 미리 정하고, 이를 개인정보 처리방침, 기술문서, FAQ 등에 공개하고 있는가?",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Considering PIPA principles such as minimal collection and purpose specification, have you established training-data collection, preprocessing, and use criteria in advance and disclosed them in privacy policies, technical documentation, and FAQs?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 46768,
+            "end_char": 46870
           }
         ]
       },
       {
         "label": "human_oversight",
-        "confidence": 0.65,
+        "confidence": 0.94,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "주기적·반복적 위험관리가 권장됨",
-            "source_section": "Page 9"
+            "quote": "⑮ 자동화된 결정에 대한 개인정보처리자의 법령상 의무를 이행하기 위한 절차를 구축·이행하는가?(법§37의2)",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Checklist Item 15: Have you established and implemented procedures to fulfill personal information controllers' statutory duties regarding automated decisions (PIPA Art. 37-2)?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 51173,
+            "end_char": 51233
+          },
+          {
+            "quote": "2 ￭ 자동화된 결정에 해당하는 경우, 정보주체의 거부권, 설명 요구권, 검토요구권 보장 방안을 마련하여 이행하고 있는가? ※ (거부권) 자동화된 결정 적용 정지 또는 인적 개인에 의한 재처리 후 결과 고지 (설명요구권) 자동화된 결정에 대한 간결하고 의미있는 설명을 제공 (검토요구권) 제출한 의견 반영 여부 검토 등 조치 후 그 결과를 통지",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Where a decision constitutes an automated decision, have you established and implemented measures guaranteeing data subjects' rights to refuse (halting automated decision application or reprocessing with human intervention and notifying results), demand concise and meaningful explanation, and request review of submitted opinions?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 51378,
+            "end_char": 51570
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "출처 데이터 추적 ￭ (정의) 생성된 디지털 콘텐츠의 출처와 이력을 기록 ￭ (효과) 생성 콘텐츠의 진위 여부를 판단하여 진위성, 무결성 및 신뢰성 확립에 기여 ￭ (한계) 조작 가능성 및 내구성 문제(외부 공격으로 인한 제거, 변경 등), 프라이버시 침해 소지(출처 및 사용자 정보 저장) 등 ￭ (종류) 메타데이터 기록, 디지털 워터마킹(가시성/비가시성)",
+            "source_section": "Ⅳ. 리스크의 경감 (기술적 조치)",
+            "quote_en": "Provenance data tracking: recording the source and history of generated digital content via metadata recording and visible or invisible digital watermarking to determine authenticity and establish integrity and trustworthiness.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 39155,
+            "end_char": 39355
+          },
+          {
+            "quote": "합성 콘텐츠 탐지 ￭ (정의) 특정 콘텐츠의 합성 여부 분류에 사용되는 기술, 방법 및 도구 ￭ (효과) 디지털 워터마크와 같은 출처 정보 존재 감지 등을 통해 AI에 의한 콘텐츠 생성 및 조작 여부 판단에 기여",
+            "source_section": "Ⅳ. 리스크의 경감 (기술적 조치)",
+            "quote_en": "Synthetic content detection: technologies, methods, and tools used to classify whether content is synthetic, helping determine AI generation or manipulation by detecting provenance signals such as digital watermarks.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 39356,
+            "end_char": 39474
+          }
+        ]
+      },
+      {
+        "label": "open_weight_obligations",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "① (오픈소스) 모델 배포 플랫폼(Hugging Face 등) 등을 통해 해당 리스크를 공지하고, 기술적·경제적으로 합리적인 기간 내에 모델을 업데이트하여 재배포, 이전 모델 비활성화",
+            "source_section": "Ⅴ. AI 프라이버시 리스크 관리 체계",
+            "quote_en": "(Open-source) Announce post-release discovered risks via model distribution platforms (such as Hugging Face), update and redistribute the model within a technically and economically reasonable timeframe, and deactivate previous models.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 43005,
+            "end_char": 43107
+          },
+          {
+            "quote": "✓ 범용모델 이용사업자의 책임있는 이용환경 조성 ① (오픈소스) 프라이버시를 고려한 이용방법, 조건 등을 명시한 오픈소스 라이선스 약관을 수립·배포",
+            "source_section": "Ⅴ. AI 프라이버시 리스크 관리 체계",
+            "quote_en": "Foster a responsible usage environment for general-purpose model user enterprises: (Open-source) establish and distribute open-source license terms specifying privacy-conscious usage methods and conditions.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 43208,
+            "end_char": 43290
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "3 ￭ AI 프라이버시 리스크를 평가·관리하는 정책을 마련해 문서화하고, 담당조직을 중심으로 이행하는가? ※ 정책에는 리스크 평가·관리의 원칙 및 절차, 지속적 이행 계획, 결과의 문서화, 최고 책임자에 대한 보고 등 구조화된 의사결정 과정, 이해관계자와의 소통 방안 등이 포함될 수 있음",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Have you established and documented an AI privacy risk assessment and management policy (including principles, procedures, ongoing implementation plans, documentation of results, structured reporting to top leadership, and stakeholder communication) and implemented it through the responsible unit?",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 49684,
+            "end_char": 49845
+          },
+          {
+            "quote": "② (클로즈드 소스) 프라이버시 보호를 준수하도록 계약상 의무를 부과하고 상세한 사용 지침, 기술문서 등을 제공할 수 있음",
+            "source_section": "Ⅴ. AI 프라이버시 리스크 관리 체계",
+            "quote_en": "(Closed-source) General-purpose model providers may impose contractual privacy compliance obligations and provide detailed usage guidelines and technical documentation.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 43291,
+            "end_char": 43359
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.95,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "⑰ AI 서비스 운영과정에서 개인정보 유출 시 정보주체 통지, 유출신고, 피해구제 지원 등에 관한 대응절차를 마련하여 이행하는가? 1 ￭ 개인정보 유출 대응 매뉴얼을 작성하고 이행하는가? 구분 신고대상(유출건수) 및 시기 등 개인정보처리자\n· 1천명 이상 유출 시 지체없이(5일 이내) 정보주체에게 통지, 조치결과를 개인정보위·KISA에 신고\n· 관련 규정 : 법§34, §39의4, §48의4",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Checklist Item 17: Have you established and implemented response procedures for data-subject notification, breach reporting, and victim redress upon personal data leakage during AI service operation? Personal information controllers must notify data subjects without delay (within 5 days) and report response actions to PIPC and KISA when data of 1,000 or more individuals is leaked (PIPA Arts. 34, 39-4, 48-4).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 51999,
+            "end_char": 52219
+          },
+          {
+            "quote": "※ 레드팀 테스트 결과 사회적 파급력이 큰 중대한 취약점 발견 시 관련 정부 부서와 공유하는 것이 바람직",
+            "source_section": "Ⅳ. 리스크의 경감 (관리적 조치)",
+            "quote_en": "If major vulnerabilities with significant social impact are discovered during red-team testing, sharing them with relevant government ministries is advisable.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 33343,
+            "end_char": 33401
           }
         ]
       }
@@ -90,72 +271,173 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.9,
+        "confidence": 0.97,
         "evidence": [
           {
-            "quote": "본 모델은 AI 프라이버시 리스크 관리의 방향과 원칙을 제시하기 위해 마련되었으며, AI 모델·시스템 개발자 및 제공자 등은 개별 여건에 맞게 적용할 수 있습니다",
-            "source_section": "Page 2"
+            "quote": "3. 자율평가 항목은 안전성 확보를 위한 최선의 노력을 다하였을 때 AI 모델·시스템 개발자 및 제공자가 법령을 준수했는지 여부에 관한 기준으로 참고될 수 있으나, 법위반 사실을 인정하거나 행정제재를 발령·가중하는 근거로 사용될 수 없음",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "The self-assessment items may be referenced as criteria regarding whether AI model/system developers and providers complied with the law when making best efforts to ensure safety, but cannot be used as grounds to establish a legal violation or to impose or aggravate administrative sanctions.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 44167,
+            "end_char": 44299
           },
           {
-            "quote": "이하 예시에 포함된 AI의 일반 리스크와 프라이버시 리스크는 … 모든 리스크를 포괄하는 것은 아니므로 자율적으로 참고",
-            "source_section": "Page 11"
+            "quote": "※ 의무 대상기관이 아님에도 개인정보보호법 제33조에 따라 영향평가를 수행한 경우 보호법 위반 시 부과되는 과징금에 대해 1차 조정 금액의 최대 30%를 추가로 감경받을 수 있음",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "Even if not a mandatory entity, an organization that voluntarily conducts a Privacy Impact Assessment under PIPA Article 33 may receive an additional reduction of up to 30% of the first-adjusted administrative surcharge imposed for PIPA violations.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 46382,
+            "end_char": 46481
           }
         ]
       },
       {
-        "label": "regulatory_supervision",
-        "confidence": 0.6,
+        "label": "reporting_obligation",
+        "confidence": 0.88,
         "evidence": [
           {
-            "quote": "개인정보보호위원회가 구성·운영 중인 「AI 프라이버시 민·관 정책협의회」 논의를 바탕으로 마련",
-            "source_section": "Page 2"
+            "quote": "· 1천명 이상 유출 시 지체없이(5일 이내) 정보주체에게 통지, 조치결과를 개인정보위·KISA에 신고\n· 관련 규정 : 법§34, §39의4, §48의4",
+            "source_section": "부록1 AI 프라이버시 리스크 자율평가 항목",
+            "quote_en": "When personal information of 1,000 or more individuals is leaked, notify data subjects without delay (within 5 days) and report corrective measures to PIPC and KISA (PIPA Arts. 34, 39-4, 48-4).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 52133,
+            "end_char": 52219
           }
         ]
       }
     ],
     "enforcement_authorities": [
       "Personal Information Protection Commission (개인정보보호위원회)",
-      "AI Privacy Team (인공지능프라이버시팀)"
+      "Korea Internet & Security Agency (한국인터넷진흥원 / KISA)"
     ],
-    "compliance_deadlines": [],
-    "penalties_summary": null,
-    "implementation_notes": "The model is non-binding guidance ('참고') developed through the AI Privacy Public-Private Policy Council. It covers the full AI lifecycle including pre-training, fine-tuning, and deployment. Future sector-specific guidance for small organizations and startups is planned. The document explicitly states entities may apply it according to their individual circumstances, and it will be updated as law, regulation, and technology evolve.",
-    "confidence": 0.92
+    "compliance_deadlines": [
+      "Within 5 days (without delay): Mandatory data-subject notification and breach reporting to PIPC/KISA upon personal data leaks affecting 1,000 or more individuals (PIPA Articles 34, 39-4, 48-4)",
+      "Within 5 business days: Target response timeframe for PIPC's Innovation Support One-Stop Service (regulatory sandbox, prior adequacy review, privacy safe zone, active statutory interpretation)"
+    ],
+    "penalties_summary": "Adherence to the risk management model is voluntary and the self-assessment checklist cannot be used as grounds to establish a legal violation or to impose or aggravate administrative sanctions. Instead, the model serves as a safe-harbor incentive: best-effort adherence may be recognized as PIPA compliance or considered as a mitigating factor during administrative sanctions, and non-mandatory private entities voluntarily conducting a Privacy Impact Assessment under PIPA Article 33 are eligible for up to a 30% additional reduction in first-adjusted PIPA administrative surcharges.",
+    "implementation_notes": "Published 2024-12-19 by PIPC (developed with the Public-Private AI Privacy Policy Council), replacing PIPC's 2021 AI Privacy Self-Checklist and incorporating 2023 PIPA amendments. Establishes a 4-stage lifecycle AI privacy risk management framework (use-case classification, risk mapping, quantitative/qualitative measurement, organizational/technical mitigation) aligned with NIST AI RMF 1.0 and ISO/IEC 42001:2023, paired with CPO-led 3-Lines-of-Defense governance, value-chain role allocation across open-source and closed/API models, a 17-item self-assessment checklist (Appendix 1), and an empirical Korean LLM PET evaluation study (Appendix 2) demonstrating effectiveness and performance trade-offs across deduplication, input/output filtering, differential privacy perturbation, pruning, and machine unlearning.",
+    "confidence": 0.96
   },
   "risk_framing": {
     "dominant_frame": "fundamental_rights",
     "secondary_frames": [
-      "consumer_public_safety",
-      "innovation_enablement"
+      "innovation_enablement",
+      "consumer_public_safety"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.0,
+      "existential_catastrophic": 0.05,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.75,
+      "economic_competitiveness": 0.45,
+      "fundamental_rights": 0.96,
       "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.55,
+      "innovation_enablement": 0.92,
+      "consumer_public_safety": 0.5,
       "labor_transition": 0.05
     },
-    "rationale_summary": "The document is centered on protecting individual privacy rights in the context of AI data processing. It frames AI governance as necessary to manage risks to personal information, citing harms like unlawful data collection, profiling, surveillance, and identity inference. The core justification is protecting data subjects' rights under Korea's Personal Information Protection Act, making fundamental_rights the dominant frame. Consumer/public safety is secondary as the document also addresses practical harms from AI outputs.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.04,
+      "fundamental_rights": 0.56,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.34,
+      "consumer_public_safety": 0.06,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The model is dominantly framed around fundamental_rights, diagnosing AI's distinctive threats to informational self-determination, personality rights, and constitutional rights—including unlawful mass data collection, memorization and leakage of personal data, non-consensual deepfake abuse of biometric features, automated-decision opacity and discrimination, and mass surveillance/profiling. Fundamental_rights edges out innovation_enablement because protecting data-subject rights and PIPA legal principles anchors the risk taxonomy, mitigation catalog, and 17-item compliance checklist throughout the document. Innovation_enablement is a very close secondary frame: PIPC explicitly argues for a context-specific, proportional, risk-based, principle-based approach rather than preemptive uniform mandates so as to maximize AI's benefits, support sustainable AI development, provide safe-harbor regulatory incentives, and accommodate privacy-performance trade-offs empirically confirmed in Korean LLMs. Consumer_public_safety (deepfake sexual crimes, deceptive fraud/impersonation, cybersecurity attacks) and economic_competitiveness (AI as core digital-era competitiveness and synthetic data's economic value) appear as minor supporting rationales.",
     "evidence_spans": [
       {
-        "quote": "AI 기술이 요구하는 데이터 처리방식의 근본적 변화는 개인정보 유·노출 등 전형적인 프라이버시 리스크를 심화시키고",
-        "source_section": "Page 4"
+        "quote": "문헌조사, 기업인터뷰등을통해파악한AI 기술의고유한특성, 기능 및데이터요구사항등으로인해새롭게나타나거나심화되는정보 주체권리침해, 개인정보보호법위반리스크등을중점적으로다룸",
+        "source_section": "Ⅰ. 개요 (적용 범위)",
+        "quote_en": "Focuses on data-subject rights infringement and PIPA violation risks newly emerging or intensified by the distinctive characteristics, functions, and data requirements of AI technologies.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 6612,
+        "end_char": 6703
       },
       {
-        "quote": "악의적 AI 합성콘텐츠로 인한 정보주체 권리 침해 (정보주체 의사에 반하는 생체정보 이용 등)",
-        "source_section": "Page 11"
+        "quote": "의사결정과정의불투명성* 개인에대한낙인·차별등새로운형태의 프라이버시위험, 기본권침해위협도야기",
+        "source_section": "Ⅲ. 리스크의 식별 (서비스 제공 단계)",
+        "quote_en": "Creates new forms of privacy risk and threats of fundamental rights infringement, such as opacity in automated decision-making processes and stigmatization or discrimination against individuals.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 29339,
+        "end_char": 29389
       },
       {
-        "quote": "자동화된 결정으로 인한 정보주체 권리 약화",
-        "source_section": "Page 11"
+        "quote": "□AI 프라이버시리스크에대한체계적이해는AI 기술발전을선험적, 일률적으로규제하기보다는사회적으로필요한AI 개발과혁신활동을 지원하는안전장치역할을수행 ☞불확실성이높은AI영역에서‘리스크기반접근’을통해AI의부정적 영향을관리·완화하면서AI 기술의이점을극대화할필요",
+        "source_section": "Ⅰ. 개요 (논의 배경)",
+        "quote_en": "A systematic understanding of AI privacy risks serves as a safeguard supporting socially needed AI development and innovation rather than regulating AI preemptively and uniformly; a 'risk-based approach' is needed in the high-uncertainty AI domain to manage negative impacts while maximizing AI's benefits.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 3849,
+        "end_char": 3988
       },
       {
-        "quote": "복잡한 프라이버시 리스크의 적정 관리·완화는 지속가능한 AI 발전의 선결요건",
-        "source_section": "Page 4"
+        "quote": "따라서, 특정경감기술의적용을일률적으로의무화하기보다는가이드 라인을통한권고등유연한접근방식을우선고려할필요",
+        "source_section": "부록2 언어모델(LLM) 대상 프라이버시 리스크 경감기술의 유형 및 효과",
+        "quote_en": "Therefore, given meaningful trade-offs between privacy-enhancing technologies and AI model performance, flexible approaches such as recommendations via guidelines should be prioritized over uniformly mandating specific mitigation technologies.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 62907,
+        "end_char": 62962
+      },
+      {
+        "quote": "성적허위영상물을생성하기위해서는피해자의사에반하는얼굴, 신체등생체정보이용이요구되는바, 피해자의성적자기결정권뿐 아니라인격권및개인정보자기결정권도침해 ○(기만적오용) 피편취자·소비자·투자자·유권자등의기만이주요사회적 리스크이나, 프라이버시측면에서는얼굴·목소리·생체정보등을도용당한 정보주체의평판을손상시키고개인정보자기결정권을침해",
+        "source_section": "Ⅲ. 리스크의 식별 (서비스 제공 단계)",
+        "quote_en": "Generating non-consensual sexual deepfake imagery requires using victims' facial and bodily biometric data against their will, violating sexual self-determination, personality rights, and informational self-determination; deceptive misuse against victims, consumers, investors, and voters also damages reputation and rights.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 28941,
+        "end_char": 29116
+      },
+      {
+        "quote": "□본모델은디지털시대의핵심경쟁력인AI가프라이버시친화적으로 활용될수있도록AI 프라이버시리스크요인을체계화하고, 리스크 관리의방향과원칙을제시하기위해마련되었으며,",
+        "source_section": "Ⅰ. 개요 (논의 배경)",
+        "quote_en": "This model was prepared to systematize AI privacy risk factors and present risk management directions and principles so that AI—a core competitiveness driver of the digital era—can be utilized in a privacy-friendly manner.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 3999,
+        "end_char": 4084
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:18:43.939539Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "e962b1e9cd97d73cae877cc9ced2cc16fe1be2a228488c4aa497598c929709b4",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 64316,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 28,
+      "exact_matches": 28,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

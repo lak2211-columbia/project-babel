@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01VC4QJ14mnguoha2Z85k7un",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"consumer_public_safety\",\"secondary_frames\":[\"fundamental_rights\",\"innovation_enablement\"],\"frame_confidence\":{\"consumer_public_safety\":0.45,\"labor_transition\":0.0},\"rationale_summary\":\"The document frames AI governance primarily around ensuring trustworthy, safe AI systems and compliance with the AI Act's safety and transparency requirements. It emphasizes risk categorization, human oversight, and safeguards. Fundamental rights and innovation enablement appear as secondary frames.\",\"evidence_spans\":[{\"quote\":\"The EU's approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights.\"},{\"quote\":\"Promoting AI awareness and literacy among staff, ensuring ethical and responsible AI development\"},{\"quote\":\"human oversight, risk mitigation, and transparency in AI-generated content like deep fakes\"},{\"quote\":\"sharing knowledge and increasing the visibility and credibility of the safeguards put in place to demonstrate trustworthy AI\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 4492,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 221,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 8899,
+    "candidatesTokenCount": 721,
+    "totalTokenCount": 11553,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 8899
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 721
+      }
+    ],
+    "thoughtsTokenCount": 1933,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "uy0Ba-HfFp2-odAP09b26QQ"
 }

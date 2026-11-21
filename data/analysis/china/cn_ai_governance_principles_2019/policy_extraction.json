@@ -1,71 +1,108 @@
 {
   "jurisdiction": "china",
-  "issuing_body": "国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee)",
+  "issuing_body": "国家新一代人工智能治理专业委员会 (National New Generation Artificial Intelligence Governance Expert Committee)",
   "document_type": "strategy_paper",
   "binding_strength": "strategy_statement",
   "publication_date": "2019-06-17",
   "effective_date": null,
-  "covered_application_domains": [
-    "general_purpose_models"
+  "covered_actors": [
+    "人工智能发展相关各方 (all parties related to AI development)",
+    "人工智能研发者 (AI developers/researchers)",
+    "人工智能使用者 (AI users/deployers)",
+    "受用者 (AI beneficiaries/end-users)",
+    "政府部门 (government departments)",
+    "科研机构 (research institutions)",
+    "教育机构 (educational institutions)",
+    "企业 (enterprises)",
+    "社会组织 (social organizations)",
+    "公众 (the public)"
+  ],
+  "covered_application_domains": [],
+  "prohibited_practices": [
+    "滥用、恶用人工智能 (Abuse and malicious use of AI)",
+    "窃取、篡改、泄露和其他非法收集利用个人信息的行为 (Theft, tampering, leakage, and other illegal collection or use of personal information)"
   ],
   "safety_requirements": [
     {
-      "label": "risk_assessment",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "高度关注人工智能系统的安全，提高人工智能鲁棒性及抗干扰性，形成人工智能安全评估和管控能力",
-          "source_section": "五、安全可控"
-        }
-      ]
-    },
-    {
       "label": "transparency_disclosure",
       "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "人工智能系统应不断提升透明性、可解释性、可靠性、可控性，逐步实现可审核、可监督、可追溯、可信赖",
-          "source_section": "五、安全可控"
+          "quote": "人工智能应用过程中应确保人类知情权，告知可能产生的风险和影响。",
+          "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+          "quote_en": "During the application of AI, the human right to know should be ensured, informing of potential risks and impacts.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1161,
+          "end_char": 1192
         },
         {
-          "quote": "人工智能应用过程中应确保人类知情权，告知可能产生的风险和影响",
-          "source_section": "六、共担责任"
+          "quote": "人工智能发展应尊重和保护个人隐私，充分保障个人的知情权和选择权。",
+          "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+          "quote_en": "AI development should respect and protect personal privacy, and fully safeguard individuals' right to know and right to choose.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 864,
+          "end_char": 896
         }
       ]
     },
     {
-      "label": "human_oversight",
-      "confidence": 0.8,
+      "label": "risk_assessment",
+      "confidence": 0.75,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "逐步实现可审核、可监督、可追溯、可信赖",
-          "source_section": "五、安全可控"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.6,
-      "evidence": [
+          "quote": "高度关注人工智能系统的安全，提高人工智能鲁棒性及抗干扰性，形成人工智能安全评估和管控能力。",
+          "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+          "quote_en": "Pay close attention to the safety of AI systems, improve AI robustness and anti-interference capability, and build AI safety assessment and management and control capabilities.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1026,
+          "end_char": 1071
+        },
         {
-          "quote": "建立人工智能问责机制，明确研发者、使用者和受用者等的责任",
-          "source_section": "六、共担责任"
+          "quote": "对未来更高级人工智能的潜在风险持续开展研究和预判，确保人工智能始终朝着有利于人类的方向发展。",
+          "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+          "quote_en": "Continuously conduct research and anticipation of the potential risks of more advanced AI in the future to ensure that AI always develops in a direction beneficial to humanity.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1451,
+          "end_char": 1497
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "none_specified",
+      "label": "soft_enforcement",
       "confidence": 0.9,
       "evidence": [
         {
-          "quote": "人工智能研发者、使用者及其他相关方应具有高度的社会责任感和自律意识，严格遵守法律法规、伦理道德和标准规范",
-          "source_section": "六、共担责任"
+          "quote": "人工智能研发者、使用者及其他相关方应具有高度的社会责任感和自律意识，严格遵守法律法规、伦理道德和标准规范。",
+          "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+          "quote_en": "AI developers, users, and other relevant parties should have a high sense of social responsibility and self-discipline, and strictly abide by laws and regulations, ethics and morality, and standards and norms.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1079,
+          "end_char": 1132
+        },
+        {
+          "quote": "6月17日，国家新一代人工智能治理专业委员会发布《新一代人工智能治理原则——发展负责任的人工智能》（以下简称《治理原则》），提出了人工智能治理的框架和行动指南。",
+          "source_section": "发展负责任的人工智能：新一代人工智能治理原则发布-中华人民共和国科学技术部",
+          "quote_en": "On June 17, the National New Generation AI Governance Expert Committee released the \"Governance Principles for the New Generation Artificial Intelligence — Developing Responsible Artificial Intelligence\" (hereinafter referred to as the \"Governance Principles\"), proposing a framework and action guide for AI governance.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 0,
+          "end_char": 80
         }
       ]
     }
   ],
-  "implementation_notes": "This document is a high-level principles framework (治理原则) issued by an advisory committee, not binding legislation. It outlines eight principles for responsible AI development but does not specify enforcement mechanisms or penalties. It functions as a strategy/guidance statement encouraging voluntary adherence and international cooperation.",
-  "confidence": 0.9
+  "enforcement_authorities": [],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Non-binding national AI governance principles framework issued by the National New Generation AI Governance Expert Committee (established by the New Generation AI Development Plan Promotion Office) and published via MOST. It articulates eight high-level ethical and governance principles—harmony and friendliness, fairness and justice, inclusivity and sharing, respect for privacy, security and controllability, shared responsibility, open collaboration, and agile governance—across the AI lifecycle, with no statutory enforcement authorities, compliance deadlines, or penalties.",
+  "confidence": 0.92
 }

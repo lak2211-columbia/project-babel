@@ -1,0 +1,85 @@
+{
+  "dominant_frame": "social_stability",
+  "secondary_frames": [
+    "innovation_enablement",
+    "fundamental_rights",
+    "consumer_public_safety"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.1,
+    "fundamental_rights": 0.82,
+    "social_stability": 0.92,
+    "innovation_enablement": 0.88,
+    "consumer_public_safety": 0.76,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.2,
+    "social_stability": 0.35,
+    "innovation_enablement": 0.28,
+    "consumer_public_safety": 0.17,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The Code of Practice's primary substantive justification for AI content transparency is safeguarding public trust and the integrity of the information ecosystem against misinformation and manipulation at scale (social_stability), which leads both Section 1 and Section 2 Recitals. Innovation enablement is a close runner-up, shaping how the Code is designed through future-proof technical flexibility, open standards, cost reduction, and proportionate compliance for SMEs and startups, but it serves as a design constraint rather than the core harm motivating Article 50 disclosure duties. Fundamental rights (democratic discourse, individual decision-making, privacy/data protection, media freedom, and accessibility) and consumer/public safety (preventing fraud, impersonation, consumer deception, and harms to vulnerable users) serve as substantial secondary justifications.",
+  "evidence_spans": [
+    {
+      "quote": "Such developments impact the integrity of the information ecosystem as well as the trust people have in it, and raises new risks of misinformation, manipulation at scale, fraud, impersonation, and consumer deception. Signatories recognise that transparency is fundamental to fostering trust in and integrity of the ecosystem, and to ensuring that AI systems remain reliable and trustworthy.",
+      "source_section": "Section 1: Recitals",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 7769,
+      "end_char": 8159
+    },
+    {
+      "quote": "Generation and dissemination of such content pose specific risks of deception and manipulation, undermining trust in the information ecosystem and threatening its integrity.",
+      "source_section": "Section 2: Recitals",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 74387,
+      "end_char": 74560
+    },
+    {
+      "quote": "Signatories recognise that this Section of the Code promotes innovation in various ways and encourages advancing the state of the art in AI transparency techniques and related processes and measures.",
+      "source_section": "Section 1: Recitals",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 10400,
+      "end_char": 10599
+    },
+    {
+      "quote": "To account for differences between providers of generative AI systems regarding their size and capacity, simplified ways of compliance for SMEs and SMCs, including startups, should be possible, in a proportionate manner.",
+      "source_section": "Section 1: Recitals",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 13661,
+      "end_char": 13881
+    },
+    {
+      "quote": "This highlights the need for transparency to protect public trust, safeguard democratic discourse, and inform individual decision-making.",
+      "source_section": "Section 2: Recitals",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 73929,
+      "end_char": 74066
+    },
+    {
+      "quote": "and raises new risks of misinformation, manipulation at scale, fraud, impersonation, and consumer deception.",
+      "source_section": "Section 1: Recitals",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 7877,
+      "end_char": 7985
+    }
+  ]
+}

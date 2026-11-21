@@ -1,41 +1,87 @@
 {
   "dominant_frame": "economic_competitiveness",
   "secondary_frames": [
+    "innovation_enablement",
+    "consumer_public_safety",
+    "labor_transition",
     "national_security",
-    "social_stability",
-    "innovation_enablement"
+    "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.2,
-    "national_security": 0.55,
-    "economic_competitiveness": 0.75,
-    "fundamental_rights": 0.2,
-    "social_stability": 0.5,
-    "innovation_enablement": 0.55,
-    "consumer_public_safety": 0.3,
-    "labor_transition": 0.2
+    "existential_catastrophic": 0.05,
+    "national_security": 0.72,
+    "economic_competitiveness": 0.95,
+    "fundamental_rights": 0.65,
+    "social_stability": 0.4,
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.88,
+    "labor_transition": 0.78
   },
-  "rationale_summary": "The document frames AI governance primarily through economic competitiveness: it explicitly aims to strengthen Japan's industrial competitiveness, achieve top-runner status in real-world industries, improve labor productivity to match the US and Germany, and build international AI networks to expand market reach. National resilience (disaster response, pandemic preparedness) and social stability are strong secondary frames, especially in Strategic Goal 0. Innovation enablement appears throughout as a means to achieve these goals.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.08,
+    "economic_competitiveness": 0.32,
+    "fundamental_rights": 0.04,
+    "social_stability": 0.02,
+    "innovation_enablement": 0.25,
+    "consumer_public_safety": 0.19,
+    "labor_transition": 0.1
+  },
+  "rationale_summary": "Economic competitiveness is the dominant frame of AI Strategy 2022: it casts international competitiveness as a matter of 'Japan's survival' (Strategic Goals 1–4), warns that Japan lost 'Round 1' of cyberspace DX to the US and risks falling permanently behind US and Chinese tech giants, charts a 'winning path' in physical-cyber 'Round 2 of DX' and real-world industries to close Japan's labor-productivity gap, boosts SMEs and startups, and explicitly reframes even Strategic Goal 0's crisis resilience into business-creation and industrial-competitiveness policy. Innovation enablement is a strong runner-up, driving Society 5.0 adoption, removing institutional barriers, building Responsible AI/XAI to dispel black-box hesitation, accelerating Digital Government uptake, and engaging international standards to prevent excessive regulatory constraints. Consumer and public safety is a prominent third frame centered on Part 2's Strategic Goal 0—protecting citizens' lives and property from pandemics, mega-earthquakes, floods, climate threats, and cyber/data-poisoning vulnerabilities. Labor transition (recasting AI as human-collaborative rather than job-replacing and scaling recurrent education to 1 million working adults per year), national security (economic security, geopolitical contingencies, armed-attack civilian protection, tech-outflow rules, cybersecurity hardening), and fundamental rights (Human-Centric AI principles, bias/privacy safeguards, government fairness/transparency) appear as substantive supporting frames.",
   "evidence_spans": [
     {
-      "quote": "我が国自身の社会課題の克服や産業競争力の向上に向けて、ＡＩに関する総合的な政策パッケージを示すことである",
-      "source_section": "第一部 ３．戦略の目的"
+      "quote": "これまでのサイバー空間の開拓プロ\nセスともいうべきＤＸにおいては、米国が大きく成長している反面、日本は世界的競争の\n中で優位を占めることができなかった。今後、現実空間（フィジカル空間）とサイバー空\n間の融合領域に主戦場が移り、ＤＸの二回戦ともいうべき状況に差し掛かってくる。日本\nがフィジカル空間での強みを生かしたＡＩの実装を進め、社会を変革することで、「勝ち\n筋」が見えてくる。",
+      "source_section": "第三部 １．社会実装をめぐる背景 (Page 23)",
+      "quote_en": "In DX—the pioneering of cyberspace thus far—the US grew strongly while Japan failed to gain an advantage in global competition. Going forward, the main battleground shifts to the fusion of physical space and cyberspace ('Round 2 of DX'), where Japan can find its 'winning path' by leveraging its physical-space strengths to implement AI and transform society.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 20742,
+      "end_char": 20932
     },
     {
-      "quote": "我が国が、実世界産業におけるＡＩの応用でトップ・ランナーとなり、産業競争力の強化が実現されること",
-      "source_section": "戦略目標２"
+      "quote": "一方で戦略目\n標１－４は我が国の持続可能な産業・社会の基盤づくりとなるものであり、国際競争力を\n維持し、日本の存亡をかけて、持続的かつ着実な対応が求められるものである。",
+      "source_section": "第一部 ６．戦略目標 (Page 6)",
+      "quote_en": "Meanwhile, Strategic Goals 1–4 form the foundation of Japan's sustainable industry and society, requiring sustained and steady action with Japan's survival at stake to maintain international competitiveness.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 3729,
+      "end_char": 3813
     },
     {
-      "quote": "国際競争力を維持し、日本の存亡をかけて、持続的かつ着実な対応が求められるものである",
-      "source_section": "第一部 ６．戦略目標"
+      "quote": "そのほか、ＡＩの処理の透明性や説\n明性を高めることでＡＩのブラックボックス性を打破するExplainable AI（XAI）に関する取組や、サイバーセキュリティとＡＩの融合領域の技術開発により、ＡＩの信頼性を向上させていくことが必要である。",
+      "source_section": "第三部 ３．(1) ＡＩのブラックボックス性の打破と不安の払しょく (Page 26)",
+      "quote_en": "In addition, it is necessary to improve AI trustworthiness through Explainable AI (XAI) initiatives that break the AI black box by increasing processing transparency and explainability, as well as R&D at the intersection of cybersecurity and AI.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 23209,
+      "end_char": 23329
     },
     {
-      "quote": "大きな危機を、最大のチャンスに転換する戦略を構築し、迅速に実施するというのが、戦略目標０の意図である。同時に、この戦略が我が国の産業競争力の向上を支えるために国が行うべき政策そのものになることを意図している",
-      "source_section": "第二部 １．（３）"
+      "quote": "我が国が、パンデミックや大規模災害などの差し迫った危機に対して、そこに住む\n人々の生命と財産を最大限に守ることができる体制と技術基盤を構築し、それを適正か\nつ持続的に運用するための仕組みが構築されること。",
+      "source_section": "第一部 ６．戦略目標（戦略目標０） (Page 6)",
+      "quote_en": "Establish systems, technical foundations, and mechanisms for proper sustainable operation so that Japan can maximally protect the lives and property of people living here against imminent crises such as pandemics and large-scale disasters.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3847,
+      "end_char": 3949
     },
     {
-      "quote": "ＡＩも含む重要技術については経済安全保障の観点から各種の取組が検討されていることから",
-      "source_section": "第一部 ５．戦略の推進にあたっての基本的考え方"
+      "quote": "つまり、ＡＩを効果的に利活用し、多種多様な仕事を効率的に処理するためには、 「ＡＩは人の仕事を代替する」という思い込みを捨てることが必要である。たいていの場合、ＡＩは人を助け、人を支援する存在である。人は、ＡＩと協調していくことで、 労力を最小化し、利益を最大化することが可能となる。",
+      "source_section": "第三部 ２．社会実装の推進に臨む姿勢 (Page 24)",
+      "quote_en": "In short, to effectively utilize AI and handle diverse tasks efficiently, we must abandon the assumption that 'AI replaces human jobs'. In most cases, AI assists and supports humans; by collaborating with AI, humans can minimize effort and maximize benefits.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 21521,
+      "end_char": 21663
+    },
+    {
+      "quote": "⑤ その他、国際情勢の複雑化、社会経済構造の変化等に鑑み、ＡＩを含む重要技術につ\nいては経済安全保障の観点から各種の取組が検討されていることから、政府全体と\nして効果的な重点化が図られるよう、関係施策の調整を行うことが必要。",
+      "source_section": "第一部 ５．戦略の推進にあたっての基本的考え方 (Page 6)",
+      "quote_en": "Furthermore, given increasingly complex international affairs and socioeconomic structural changes, various initiatives are being considered for critical technologies including AI from the standpoint of economic security, requiring coordination across government for effective prioritization.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 3412,
+      "end_char": 3524
     }
   ]
 }

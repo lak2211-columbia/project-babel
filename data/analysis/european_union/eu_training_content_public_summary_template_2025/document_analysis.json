@@ -4,14 +4,15 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "european_union",
-    "issuing_body": "European Commission / AI Office",
+    "issuing_body": "European Commission",
     "document_type": "regulatory_guidance",
     "binding_strength": "regulatory_guidance",
-    "publication_date": "2025",
+    "publication_date": "2025-12-05",
     "effective_date": "2025-08-02",
     "covered_actors": [
-      "providers of general-purpose AI models",
-      "providers of general-purpose AI models released under free and open-source licenses"
+      "Providers of general-purpose AI models placed on the Union market (including providers of models released under free and open-source licenses)",
+      "Downstream entities modifying existing general-purpose AI models such that they become providers",
+      "Authorised representatives of general-purpose AI model providers established outside the Union"
     ],
     "covered_application_domains": [
       "general_purpose_models"
@@ -19,94 +20,243 @@
     "prohibited_practices": [],
     "safety_requirements": [
       {
-        "label": "transparency_disclosure",
-        "confidence": 0.97,
+        "label": "training_data_governance",
+        "confidence": 0.98,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "Article 53(1)(d) AI Act requires all providers of general-purpose AI models to draw up and make publicly available a sufficiently detailed public summary of the content used for the training of the model",
-            "source_section": "Page 2"
+            "quote": "Article 53(1)(d) AI Act requires all providers of general-purpose AI models to draw up and make publicly available a sufficiently detailed public summary of the content used for the training of the model (the ‘Summary’), according to a template provided by the AI Office (the ‘Template’).",
+            "source_section": "1. Background (2)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 886,
+            "end_char": 1174
           },
           {
-            "quote": "the objective of the Summary is to increase transparency on the content used for the training of general-purpose AI models, including text and data protected by law",
-            "source_section": "Page 3"
+            "quote": "Describe the measures implemented before model training to respect reservations of rights from the TDM exception or limitation before and during data collection, including the opt-out protocols and solutions honoured by the provider or, as applicable, by third parties from which datasets have been obtained:",
+            "source_section": "Annex 3.1. Respect of reservation of rights from text and data mining exception or limitation",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 44146,
+            "end_char": 44454
           }
         ]
       },
       {
-        "label": "model_documentation",
-        "confidence": 0.9,
+        "label": "open_weight_obligations",
+        "confidence": 0.92,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "The Template consists of three main sections: 1. General information... 2. List of data sources... 3. Relevant data processing aspects",
-            "source_section": "Page 5"
+            "quote": "Providers of all general-purpose AI models placed on the Union market must fulfil the above obligation, including providers of general-purpose AI models released under free and open-source licenses4, in so far as the models fall within the scope of the AI Act5.",
+            "source_section": "1. Background (3)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1434,
+            "end_char": 1695
+          },
+          {
+            "quote": "4 The exception for free and open-source general-purpose AI model under Article 53(2) AI Act does not apply to the obligation to make publicly available the Summary.",
+            "source_section": "1. Background, Footnote 4",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2262,
+            "end_char": 2427
+          }
+        ]
+      },
+      {
+        "label": "domestic_representative",
+        "confidence": 0.85,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "Authorised representative name and contact details:\nOnly applicable if the provider is established outside the Union (see Article 54 AI Act).",
+            "source_section": "Annex 1.1. Provider identification",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27456,
+            "end_char": 27597
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "reporting_obligation",
+        "label": "civil_penalty",
         "confidence": 0.95,
         "evidence": [
           {
-            "quote": "Providers of general-purpose AI models shall […] draw up and make publicly available a sufficiently detailed summary about the content used for training of the general-purpose AI model, according to a template provided by the AI Office",
-            "source_section": "Page 3"
+            "quote": "Non-compliance may be sanctioned with fines of up to 3% of the provider’s annual total worldwide turnover in the preceding financial year or EUR 15 000 000, whichever is higher.",
+            "source_section": "5. Simple, uniform and effective reporting (26)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 21122,
+            "end_char": 21299
           }
         ]
       },
       {
         "label": "regulatory_supervision",
-        "confidence": 0.8,
+        "confidence": 0.95,
         "evidence": [
           {
-            "quote": "the AI Office to provide a template for the summary, which should be simple, effective, and allow the provider to provide the required summary in narrative form",
-            "source_section": "Page 3"
+            "quote": "The AI Office may verify whether the Template has been filled in correctly in order to assess if the provider has complied with Article 53(1)(d) AI Act. In this context, the AI Office has all enforcement powers under the AI Act and and may request corrective measures.",
+            "source_section": "5. Simple, uniform and effective reporting (26)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20853,
+            "end_char": 21121
+          },
+          {
+            "quote": "The supervision and enforcement by the AI Office for compliance with the rules for general-purpose AI models will start as of 2 August 2026.",
+            "source_section": "8. Entry into application of the obligation and special rules for models placed on the market before 2 August 2025 (33)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 26361,
+            "end_char": 26501
           }
         ]
       }
     ],
     "enforcement_authorities": [
       "AI Office",
-      "AI Board"
+      "European Commission"
     ],
     "compliance_deadlines": [
-      "2 August 2025 - rules under Section 2 of Chapter V AI Act apply, including Article 53(1)(d) obligation"
+      "2025-08-02: Obligation under Article 53(1)(d) AI Act to make the public summary of training content publicly available enters into application for general-purpose AI models placed on the Union market",
+      "2026-08-02: AI Office supervision and enforcement powers for compliance with general-purpose AI model rules begin",
+      "2027-08-02: Deadline for providers of general-purpose AI models placed on the Union market before 2 August 2025 to make the corresponding Summary publicly available",
+      "Every six months (or sooner if additional training data requires a materially significant update): Required update frequency for the Summary when a marketed model is further trained on additional data"
     ],
-    "penalties_summary": null,
-    "implementation_notes": "This document is a template and explanatory notice issued by the AI Office under Article 53(1)(d) of the EU AI Act, requiring all GPAI model providers to publish a public summary of training content. The template has three sections: general information, list of data sources, and relevant data processing aspects. Providers may voluntarily disclose more than the minimum required. The open-source exception under Article 53(2) does not apply to this obligation. A voluntary 'upon request' mechanism for rightsholders regarding domain names not listed in the summary is recommended but not mandatory.",
-    "confidence": 0.92
+    "penalties_summary": "The AI Office holds all enforcement powers under the AI Act, may request corrective measures, and may sanction non-compliance with fines of up to 3% of the provider's annual total worldwide turnover in the preceding financial year or EUR 15,000,000, whichever is higher.",
+    "implementation_notes": "Commission Communication C(2025) 8311 final setting out an Explanatory Notice and standardized Template implementing the binding obligation in Article 53(1)(d) of Regulation (EU) 2024/1689 (AI Act). The free and open-source exception in Article 53(2) does not apply to this summary obligation. SMEs/start-ups have a proportional cap for scraped domain disclosure (top 5% or 1,000 domains, whichever is lower, versus top 10% for other providers). The AI Office verifies proper completion without conducting work-by-work checks; the Commission intends to publish the Template as an online form and may review it before 2 August 2026.",
+    "confidence": 0.95
   },
   "risk_framing": {
     "dominant_frame": "fundamental_rights",
     "secondary_frames": [
-      "consumer_public_safety",
       "innovation_enablement",
-      "economic_competitiveness"
+      "economic_competitiveness",
+      "consumer_public_safety"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.0,
+      "existential_catastrophic": 0.05,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.75,
-      "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.3,
+      "economic_competitiveness": 0.65,
+      "fundamental_rights": 0.98,
+      "social_stability": 0.1,
+      "innovation_enablement": 0.72,
+      "consumer_public_safety": 0.55,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document frames training data transparency primarily as a mechanism to protect and enable the exercise of fundamental rights under EU law, including intellectual property rights, data subject rights, non-discrimination, cultural diversity, freedom of information, and freedom of science. Governance obligations are justified by enabling rightsholders and affected parties to exercise and enforce their legal rights.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.1,
+      "fundamental_rights": 0.65,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.15,
+      "consumer_public_safety": 0.1,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document's primary justification for the GPAI training-content summary template is overwhelmingly anchored in fundamental_rights, explicitly citing the EU Charter of Fundamental Rights to enable rightsholders and other parties with legitimate interests to exercise intellectual property rights, effective legal remedies, data protection rights, non-discrimination, cultural and linguistic diversity, freedom of information, and freedom of science. It clearly edges out the runner-up frame, innovation_enablement, which appears as a secondary balancing rationale focused on keeping compliance simple, proportional for SMEs, and respectful of trade secrets and confidential business information. Smaller secondary rationales include economic_competitiveness (fostering transparent, competitive markets and avoiding lock-in effects) and consumer_public_safety (protecting consumer interests and mitigating the reproduction of illegal content such as child sexual abuse material and terrorist content).",
     "evidence_spans": [
       {
-        "quote": "transparency of the data used for the model training should help rightsholders obtain relevant information...needed to facilitate the exercise of their fundamental right to intellectual property and the fundamental right to an effective remedy",
-        "source_section": "Page 4"
+        "quote": "This information is needed to facilitate the exercise of their fundamental right to intellectual property8 and the fundamental right to an effective remedy in the enforcement of their rights, as provided for in Union law in the area of intellectual property rights.",
+        "source_section": "2. Objective of the Summary (8)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 6417,
+        "end_char": 6682
       },
       {
-        "quote": "transparency of the general characteristics of the content used for training may also assist providers...to ensure that the fundamental rights to non-discrimination and language and cultural diversity are respected",
-        "source_section": "Page 4"
+        "quote": "This, in turn, will allow them to implement, where appropriate, mitigating measures to ensure that the fundamental rights to non-discrimination10 and language and cultural diversity11 are respected.",
+        "source_section": "2. Objective of the Summary (10)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 7861,
+        "end_char": 8059
       },
       {
-        "quote": "greater transparency of the training data may also facilitate the fundamental right to receive and impart information and allow researchers to exercise their freedom of science",
-        "source_section": "Page 4"
+        "quote": "The Template aims to ensure the reported information is useful and understandable to the public and to the parties concerned, while avoiding unnecessary burden on providers of general-purpose AI models, including SMEs.",
+        "source_section": "5. Simple, uniform and effective reporting (23)",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 19899,
+        "end_char": 20117
+      },
+      {
+        "quote": "Finally, transparency of the training data may also contribute to more transparent and competitive markets.",
+        "source_section": "2. Objective of the Summary (12)",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 8506,
+        "end_char": 8613
+      },
+      {
+        "quote": "In the context of the Summary, the interests of consumers and the protection of their consumer rights under Union law may also be relevant.",
+        "source_section": "2. Objective of the Summary (9)",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 7515,
+        "end_char": 7654
+      },
+      {
+        "quote": "Such measures are advisable if the training data is likely to include illegal or unlawful content under Union law, in particular child sexual abuse material and terrorist content and the non-authorised use of material protected by intellectual property rights.",
+        "source_section": "Annex, 3.2. Removal of illegal content",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 45074,
+        "end_char": 45334
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:42:30.909998Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "8dfcf76d735625b4510f813248e04fb4d29a53225ac56574708de33e0ce90f0c",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 48887,
+      "output_tokens": 2564,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 10195,
+      "estimated_cost_usd": 0.188699
+    },
+    "grounding_summary": {
+      "total_quotes": 14,
+      "exact_matches": 14,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 1
+    }
   }
 }

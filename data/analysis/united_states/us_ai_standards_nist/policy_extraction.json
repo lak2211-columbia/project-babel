@@ -3,32 +3,41 @@
   "issuing_body": "National Institute of Standards and Technology (NIST)",
   "document_type": "standards_guideline",
   "binding_strength": "standards_guideline",
-  "publication_date": "2024-07-26",
+  "publication_date": "2021-08-03",
   "effective_date": null,
   "covered_actors": [
-    "federal agencies",
-    "industry stakeholders",
-    "AI system designers",
-    "developers",
-    "deployers",
-    "users"
+    "Federal agencies",
+    "Industry stakeholders and private-sector standards development organizations",
+    "Organizations designing, developing, deploying, or using AI systems",
+    "International standards bodies (e.g., ISO/IEC)"
   ],
   "covered_application_domains": [
-    "general_purpose_models"
+    "public_sector_use"
   ],
   "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.6,
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "ISO/IEC FDIS23894 Information technology - Artificial intelligence - Guidance on risk management",
-          "source_section": "AI RMF Crosswalks"
+          "quote": "Incorporation of the AI RMF in international standards will further the Framework’s value as a resource to those designing, developing, deploying, or using AI systems to help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems.",
+          "source_section": "Encouraging International Standards Incorporation of the AI Risk Management Framework (AI RMF 1.0)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3323,
+          "end_char": 3600
         },
         {
-          "quote": "help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems",
-          "source_section": "AI RMF section"
+          "quote": "The AI RMF seeks to “Take advantage of and foster greater awareness of existing standards, guidelines, best practices, methodologies, and tools for managing AI risks....”",
+          "source_section": "Encouraging International Standards Incorporation of the AI Risk Management Framework (AI RMF 1.0)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3601,
+          "end_char": 3771
         }
       ]
     }
@@ -36,26 +45,35 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.7,
+      "confidence": 0.92,
       "evidence": [
         {
-          "quote": "NIST leads and participates in the development of technical standards... that promote innovation and public trust",
-          "source_section": "Overview"
+          "quote": "These drafts then will be submitted into the private sector-led standardization process as proposals for further development into voluntary consensus standards.",
+          "source_section": "NIST’s AI Standards “Zero Drafts” Pilot Project",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1323,
+          "end_char": 1483
         },
         {
-          "quote": "preliminary, stakeholder-driven drafts of standards that are as thorough as possible. These drafts then will be submitted into the private sector-led standardization process as proposals for further development into voluntary consensus standards",
-          "source_section": "AI Standards Zero Drafts project"
+          "quote": "The goal is to drive the development and implementation of AI-related consensus standards, cooperation and coordination, and information sharing.",
+          "source_section": "Global Engagement for AI Standards",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1575,
+          "end_char": 1720
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "NIST Information Technology Laboratory (ITL)",
-    "Interagency Committee on Standards Policy (ICSP)",
-    "ICSP AI Standards Coordination Working Group (AISCWG)"
+    "National Institute of Standards and Technology (NIST)",
+    "Interagency Committee on Standards Policy (ICSP) AI Standards Coordination Working Group (AISCWG)"
   ],
   "compliance_deadlines": [],
   "penalties_summary": null,
-  "implementation_notes": "NIST serves as federal AI standards coordinator, facilitating interagency coordination and international standards development. The AI Standards Zero Drafts project pilots broader participation in voluntary consensus standards creation. Standards are voluntary and non-binding. Key reference document is NIST AI 100-5e2025 (Plan for Global Engagement on AI Standards).",
-  "confidence": 0.85
+  "implementation_notes": "Official NIST ITL AI Program standards page (originally published 2021-08-03 and updated through March 6, 2026). Describes NIST's non-regulatory standards strategy: the AI Standards Zero Drafts pilot, A Plan for Global Engagement on AI Standards (NIST AI 100-5e2025, July 26, 2024), federal interagency coordination via ICSP/AISCWG, alignment of AI RMF 1.0 with international ISO/IEC standards and crosswalks, and GCR-26-069 (Jan 15, 2026) on evaluating AI standards development.",
+  "confidence": 0.94
 }

@@ -4,93 +4,161 @@
   "language": "ja",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "こども家庭庁 (Children and Families Agency, Japan)",
+    "issuing_body": "Children and Families Agency (こども家庭庁)",
     "document_type": "regulatory_guidance",
-    "binding_strength": "voluntary_commitment",
+    "binding_strength": "regulatory_guidance",
     "publication_date": "2025-03-31",
     "effective_date": null,
     "covered_actors": [
-      "自治体 (local governments)",
-      "保育施設 (childcare facilities)",
-      "子育て関連事業者 (child-rearing related businesses)",
-      "関係機関等 (related organizations)",
-      "自治体職員 (local government staff)",
-      "保育施設職員 (childcare facility staff)"
+      "Local governments (municipalities)",
+      "Childcare facilities",
+      "Child-rearing related businesses and organizations"
     ],
     "covered_application_domains": [
+      "general_purpose_models",
       "public_sector_use",
-      "education",
-      "healthcare"
+      "education"
     ],
     "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "human_oversight",
         "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "生成 AI の出力を参考にしつつも最終的な判断と責任は人間が持つという姿勢のもと",
-            "source_section": "1.2 ハンドブック作成の趣旨・目的"
+            "quote": "重要な判断を要する相談については、生成AI に全てを任せるのではなく、人の目で回答案の正確性を確認することや、職員が相談者への対応を引き取る等、柔軟に対応することが望ましい。",
+            "source_section": "Page 11",
+            "quote_en": "For consultations requiring important judgment, rather than leaving everything to generative AI, it is desirable to respond flexibly, such as having a human verify the accuracy of draft responses or having staff take over the interaction with the person seeking advice.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8017,
+            "end_char": 8104
           },
           {
-            "quote": "重要な判断を要する相談については、生成 AI に全てを任せるのではなく、人の目で回答案の正確性を確認することや、職員が相談者への対応を引き取る等",
-            "source_section": "3.1.(3)ア"
-          },
-          {
-            "quote": "生成 AI による誤認識を踏まえた運用計画を確認。生成 AI が 100％の精度で被写体を認識できないことを念頭に、人間による確認を入れたうえで運用することが望ましい",
-            "source_section": "3.1.(2)イ②"
-          }
-        ]
-      },
-      {
-        "label": "risk_assessment",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "生成 AI の導入検討にあたっては、適切な利活用方法やリスク管理について事前に検討する必要がある",
-            "source_section": "3.1.(3)"
-          },
-          {
-            "quote": "個別の課題については以下の課題を十分に認識した上で、必要な対策を講じることが重要である",
-            "source_section": "3.1.(4)"
+            "quote": "また、専門的判断が求められる業務は、生成AI が支援する形であっても最終判断は専門知識を持つ人間が担うことが望ましい。",
+            "source_section": "Page 24",
+            "quote_en": "Furthermore, for tasks requiring specialized judgment, even when assisted by generative AI, it is desirable that a human with specialized knowledge makes the final decision.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19198,
+            "end_char": 19257
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.8,
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "AI チャットボットは誤った情報を提供する可能性があるため、利用者に対して事前にその注意点等を明示することが望ましい",
-            "source_section": "3.1.(3)ア"
+            "quote": "AI チャットボットは誤った情報を提供する可能性があるため、利用者に対して事前にその注意点等を明示することが望ましい。",
+            "source_section": "Page 11",
+            "quote_en": "Because AI chatbots may provide inaccurate information, it is desirable to clearly inform users of such precautions in advance.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7943,
+            "end_char": 8002
           },
           {
-            "quote": "利用者の入力した情報を生成AIの学習に使用しない旨を利用規約等に明示しているサービスを選定することが重要である",
-            "source_section": "3.1.(3)ウ"
+            "quote": "例えば生成AI チャットボットによる情報検索等のサービスを住民が直接利用する場合は、誤った情報を生成AI が回答してしまう可能性や個人情報等の機密性の高い情報について入力しないよう注意を促す必要がある。具体的には、利用開始画面への注意事項の掲載や、自治体のWeb サイト上での周知等が考えられる。",
+            "source_section": "Page 29",
+            "quote_en": "For example, when residents directly use services such as information search via a generative AI chatbot, it is necessary to alert them to the possibility that generative AI may provide inaccurate information and not to enter highly confidential information such as personal data. Specifically, posting notices on the start screen or publicizing them on the municipality's website can be considered.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 25459,
+            "end_char": 25607
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "なお、生成AI の導入検討にあたっては、適切な利活用方法やリスク管理について事前に検討する必要がある。",
+            "source_section": "Page 10",
+            "quote_en": "When considering the introduction of generative AI, it is necessary to examine appropriate utilization methods and risk management in advance.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7565,
+            "end_char": 7616
+          },
+          {
+            "quote": "生成 AI の安全な利用には、デジタル部門と連携した網羅的なセキュリティリスクの評価と多層的な対策が重要である。",
+            "source_section": "Page 39",
+            "quote_en": "For the safe use of generative AI, comprehensive security risk assessment in collaboration with the digital department and multi-layered countermeasures are important.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 36170,
+            "end_char": 36226
           }
         ]
       },
       {
         "label": "access_controls",
-        "confidence": 0.7,
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "製品・サービスによっては、事前に利用者が自分のデータを AI の学習に使用されないようにするための設定を行うことができる場合もあるので十分確認されたい",
-            "source_section": "3.1.(4)イ"
+            "quote": "また、導入事業者への依頼事項や役割分担を詳細に定め、実装時の責任範囲を明確にすることや、セキュリティ対策として、システムへのアクセス制御方法やデータ管理の方針を整理することも重要である。",
+            "source_section": "Page 30",
+            "quote_en": "It is also important to specify requests and division of roles with the implementing vendor in detail to clarify the scope of responsibility during implementation, and as security measures, to organize system access control methods and data management policies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 25825,
+            "end_char": 25918
           },
           {
-            "quote": "個人情報や非公開情報等の要機密情報を入力した場合、生成 AI がその情報を学習することによって、外部利用者の質問の回答に使用されるリスクが存在する",
-            "source_section": "3.1.(3)ウ"
+            "quote": "また、要機密情報を扱う場合には、データやログの保存方法についても検討が必要であり、ログを暗号化して保存し事業者内で適切に管理する方法や、利用者側で復号キーを管理する方法等、セキュリティレベルに応じた多様な対策を選択することも重要である。",
+            "source_section": "Page 39",
+            "quote_en": "When handling confidential information, it is also necessary to consider how data and logs are stored, and it is important to select diverse measures suited to the security level, such as encrypting logs for proper management by the vendor or having the user side manage decryption keys.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 35260,
+            "end_char": 35378
           }
         ]
       },
       {
-        "label": "model_documentation",
-        "confidence": 0.65,
+        "label": "training_data_governance",
+        "confidence": 0.82,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "製品・サービスごとに定められた利用規約やプライバシーポリシーの内容を精査した上で利用することが求められる",
-            "source_section": "3.1.(4)イ"
+            "quote": "そのため、利用者の入力した情報を生成AI の学習に使用しない旨を利用規約等に明示しているサービスを選定することが重要である。",
+            "source_section": "Page 13",
+            "quote_en": "Therefore, it is important to select a service that explicitly states in its terms of use or similar documents that information entered by users will not be used for training generative AI.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9114,
+            "end_char": 9176
+          },
+          {
+            "quote": "特に生成AI に入力した情報が今後の生成AI モデルの学習に利用されるかどうかは必ず確認する必要がある。",
+            "source_section": "Page 16",
+            "quote_en": "In particular, it is essential to verify whether information entered into generative AI will be used for training future generative AI models.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 11741,
+            "end_char": 11793
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.78,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "このリハーサルでは、研修で学んだ内容を踏まえ、職員が利用する際に生成AI が期待通りの動作をするかを検証することが主な目的であり、実際の業務を想定した利用環境下で行うことが望ましい。",
+            "source_section": "Page 32",
+            "quote_en": "The main purpose of this rehearsal is to verify, based on what was learned in training, whether the generative AI operates as expected when used by staff, and it is desirable to conduct it in a usage environment simulating actual operations.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28840,
+            "end_char": 28931
           }
         ]
       }
@@ -98,36 +166,34 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.95,
+        "confidence": 0.96,
         "evidence": [
           {
-            "quote": "本ハンドブックは法的助言を提供するものではなく、法的その他いかなる意味においても拘束力・強制力を持つものではない",
-            "source_section": "2.3 ハンドブックの留意事項"
+            "quote": "なお、本ハンドブックは生成AI 導入検討における参考の一つとして位置づけられるものであり、自治体や関係機関等に対して一律の規制や義務づけを実施するものではなく、各機関の実情に応じた柔軟な解釈及び運用を想定しており、生成AI 活用の指針として参照されることを期待している。",
+            "source_section": "Page 5",
+            "quote_en": "This handbook is positioned as a reference for considering the introduction of generative AI; it does not impose uniform regulations or obligations on municipalities or related organizations, assumes flexible interpretation and operation according to each organization's circumstances, and is expected to be referenced as a guideline for utilizing generative AI.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3001,
+            "end_char": 3136
           },
           {
-            "quote": "自治体や関係機関等に対して一律の規制や義務づけを実施するものではなく、各機関の実情に応じた柔軟な解釈及び運用を想定しており",
-            "source_section": "2.1 ハンドブックの位置づけ"
-          }
-        ]
-      },
-      {
-        "label": "reporting_obligation",
-        "confidence": 0.4,
-        "evidence": [
-          {
-            "quote": "生成 AI の利活用に係る相談先や不適切な使用に係る問合せ先を明確にする等、各自治体の規模や状況に応じた柔軟な対応方法を検討することが重要",
-            "source_section": "3.1.(4)"
+            "quote": "なお、本ハンドブックは法的助言を提供するものではなく、法的その他いかなる意味においても拘束力・強制力を持つものではない。",
+            "source_section": "Page 5",
+            "quote_en": "This handbook does not provide legal advice and does not have any binding or compulsory force in any legal or other sense.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3678,
+            "end_char": 3738
           }
         ]
       }
     ],
-    "enforcement_authorities": [
-      "こども家庭庁 (Children and Families Agency)"
-    ],
+    "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "Document explicitly states it has no binding or compulsory force ('法的その他いかなる意味においても拘束力・強制力を持つものではない'). It is a practical handbook for generative AI adoption in the child and family services domain, based on pilot project findings as of March 31, 2025. Recommends human oversight of all AI outputs, compliance with personal information protection laws, and staff literacy training. Encourages referencing related ministry guidelines before adoption.",
-    "confidence": 0.95
+    "implementation_notes": "Issued by Japan's Children and Families Agency (Version 1.0.0, March 31, 2025) based on municipal and childcare demonstration projects. The handbook explicitly states it carries no legal or binding force and is intended as flexible reference guidance rather than uniform regulation. It covers text, image, and audio generative AI (excluding video generation) across a three-phase lifecycle (planning, preparation, and operation/evaluation), advising alignment with existing laws and government policies including the Personal Information Protection Act, Copyright Act, portrait/publicity rights, MIC local government information security guidelines, and the Digital Agency's generative AI usage agreement. Detailed use cases are published in a separate companion volume (事例編).",
+    "confidence": 0.9
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
@@ -136,33 +202,114 @@
       "fundamental_rights"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.02,
-      "national_security": 0.03,
-      "economic_competitiveness": 0.1,
-      "fundamental_rights": 0.15,
-      "social_stability": 0.1,
-      "innovation_enablement": 0.65,
-      "consumer_public_safety": 0.4,
-      "labor_transition": 0.1
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.8,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.85,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The document is primarily framed around enabling the practical adoption of generative AI in childcare and child-rearing public services to improve efficiency and service quality. The stated purpose is to help municipalities and childcare facilities appropriately introduce and utilize generative AI, reducing administrative burdens so staff can spend more time with children and families. Risk governance (personal data, hallucinations, bias, IP rights) is treated as a condition for responsible enablement, not the central rationale. Consumer/public safety concerns about AI outputs affecting children are a significant secondary frame, as are rights-related concerns around personal information and bias.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.2,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.25,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The Children and Families Agency handbook is dominantly framed around innovation_enablement: its stated purpose is to promote practical, flexible adoption of generative AI across municipalities and childcare facilities—explicitly avoiding uniform mandates—to reduce administrative workload, improve convenience for families, and realize a child-centered society. It edges out consumer_public_safety and fundamental_rights because those two frames operate as essential guardrails for safe deployment rather than the primary catalyst for issuing the handbook. Consumer_public_safety is strongly represented through priority emphasis on ensuring children's safety, preventing inappropriate or harmful content, and mitigating hallucinations and impersonation risks. Fundamental_rights is also prominent through explicit commitments to protecting children's rights, safeguarding sensitive personal data of children and parents under privacy law, and preventing discriminatory bias.",
     "evidence_spans": [
       {
-        "quote": "自治体及び関係機関等における生成 AI の適切な活用を通じて、こども・子育て世帯の利便性向上や現場の業務負担軽減を図り、もって「こどもまんなか社会」の実現に資することを目的とする。",
-        "source_section": "1.2. ハンドブック作成の趣旨・目的"
+        "quote": "自治体及び関係機関等における生成AI の適切な活用を通じて、こども・子育て世帯の利便性向上や現場の業務負担軽減を図り、もって「こどもまんなか社会」の実現に資することを目的とする。",
+        "source_section": "Page 4",
+        "quote_en": "Through the appropriate utilization of generative AI by municipalities and related institutions, this handbook aims to improve convenience for children and child-rearing households and reduce operational burdens on the ground, thereby contributing to the realization of a 'child-centered society.'",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 2620,
+        "end_char": 2709
       },
       {
-        "quote": "こども・子育て分野では、AI チャットボットによる相談支援、教育コンテンツの作成、文書の作成、多言語対応、日誌・連絡帳の作成等、業務の効率化や職員等の負担軽減を通じて、こどもや保護者との関わりに十分な時間を確保することに寄与することが期待されている。",
-        "source_section": "3.1. 生成 AI について"
+        "quote": "なお、本ハンドブックは生成AI 導入検討における参考の一つとして位置づけられるものであり、自治体や関係機関等に対して一律の規制や義務づけを実施するものではなく、各機関の実情に応じた柔軟な解釈及び運用を想定しており、生成AI 活用の指針として参照されることを期待している。",
+        "source_section": "Page 5",
+        "quote_en": "Furthermore, this handbook is positioned as one reference for considering the introduction of generative AI; it does not impose uniform regulations or obligations on municipalities or related institutions, but assumes flexible interpretation and operation according to each organization's circumstances, and is expected to be referenced as a guide for generative AI utilization.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 3001,
+        "end_char": 3136
       },
       {
-        "quote": "生成 AI によって出力されたコンテンツの内容には、こどもにとって不適切な内容が含まれる可能性があるため、必ず職員の目で内容を確認した上で採用することが望ましい。",
-        "source_section": "3.1.(3)"
+        "quote": "特にこども・子育て分野では、不適切なコンテンツの防止策や利用状況のモニタリングによるこどもの安全確保や個人情報保護を最優先とした環境構築、こども・子育て現場職員の業務特性やICT リテラシーに配慮した製品サービスの調達や研修実施等が求められる。",
+        "source_section": "Page 29",
+        "quote_en": "In particular, in the child and child-rearing field, it is necessary to build an environment that gives top priority to ensuring children's safety and protecting personal information through measures to prevent inappropriate content and monitoring usage, as well as procuring products/services and conducting training tailored to the operational characteristics and ICT literacy of frontline staff.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 24493,
+        "end_char": 24615
       },
       {
-        "quote": "こどもや保護者の個人情報を取り扱う可能性があり、外部に流出した場合の影響が大きくなることに留意されたい。",
-        "source_section": "3.1.(4) イ"
+        "quote": "生成AI によって出力されたコンテンツの内容には、こどもにとって不適切な内容が含まれる可能性があるため、必ず職員の目で内容を確認した上で採用することが望ましい。",
+        "source_section": "Page 12",
+        "quote_en": "Because content output by generative AI may contain material inappropriate for children, it is desirable that staff always review the content with their own eyes before adopting it.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 8480,
+        "end_char": 8560
+      },
+      {
+        "quote": "特にこども・子育て分野では、こどもの権利を守ることやこどもに関する個人情報の適切な取り扱い、現場の保育士等の専門性を踏まえた導入計画が求められる。",
+        "source_section": "Page 23",
+        "quote_en": "In particular, in the child and child-rearing field, an implementation plan is required that takes into account protecting children's rights, properly handling personal information related to children, and the expertise of frontline childcare workers and others.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 18015,
+        "end_char": 18088
+      },
+      {
+        "quote": "生成AI の出力は学習データに基づき生成されるため、学習データにおける偏り等が出力結果に反映されることで、特定の属性（人種、性別、文化等）に対する偏りが生じるおそれがある。",
+        "source_section": "Page 17",
+        "quote_en": "Because generative AI outputs are generated based on training data, biases in the training data may be reflected in the output results, creating a risk of bias against specific attributes (such as race, gender, or culture).",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 12683,
+        "end_char": 12769
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:50:10.700493Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "e4c150313d13518ac3307c0f139c203823e49199a75f51bf17193b9b115a8f0d",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 76055,
+      "output_tokens": 3410,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 10435,
+      "estimated_cost_usd": 0.233519
+    },
+    "grounding_summary": {
+      "total_quotes": 19,
+      "exact_matches": 19,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

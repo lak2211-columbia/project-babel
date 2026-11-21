@@ -1,42 +1,86 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
     "fundamental_rights",
-    "innovation_enablement",
+    "consumer_public_safety",
     "social_stability",
-    "national_security"
+    "economic_competitiveness"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
+    "existential_catastrophic": 0.0,
     "national_security": 0.35,
-    "economic_competitiveness": 0.3,
-    "fundamental_rights": 0.5,
-    "social_stability": 0.45,
-    "innovation_enablement": 0.5,
-    "consumer_public_safety": 0.65,
-    "labor_transition": 0.1
+    "economic_competitiveness": 0.6,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.65,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.8,
+    "labor_transition": 0.3
   },
-  "rationale_summary": "The document's primary framing centers on ensuring AI is safe and appropriate for all users and stakeholders, emphasizing harm prevention (hallucinations, deepfakes, disinformation, cyberattacks, bias/discrimination) and accountability across the AI lifecycle. It consistently uses safety, transparency, and human-centric principles as the core governance rationale, directed at protecting citizens, consumers, and society from AI harms. Innovation enablement and fundamental rights are strong secondary frames, reflecting Japan's dual goal of promoting beneficial AI while protecting rights and dignity.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.03,
+    "economic_competitiveness": 0.07,
+    "fundamental_rights": 0.22,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.38,
+    "consumer_public_safety": 0.17,
+    "labor_transition": 0.03
+  },
+  "rationale_summary": "Innovation enablement is the dominant frame because the guideline, issued under Japan's AI Promotion Act, explicitly rejects rigid single standards in favor of voluntary, agile, risk-based governance designed to promote social implementation, lower adoption barriers, foster high-quality data ecosystems, and maximize AI benefits through leading public-sector utilization. Fundamental rights is the strongest runner-up—anchoring the guideline's core 'human-centricity' principles in human dignity, fundamental human rights, fairness/non-discrimination, and privacy—but these principles are consistently framed as guardrails that enable trustworthy adoption and innovation rather than as the sole overarching mandate. Consumer and public safety (preventing physical harm, fraud, crime, deepfake abuse, and system failures) and social stability (containing misinformation and disinformation) form substantial secondary rationales, alongside economic competitiveness (growth, fair competition, corporate advantage, and global leadership via the Hiroshima AI Process), while national security and labor transition appear only briefly in risk lists and skills guidance.",
   "evidence_spans": [
     {
-      "quote": "Ensuring that AI utilization does not cause harm to human life, body, or property",
-      "source_section": "Section 1(2) Main Elements"
+      "quote": "AI contributes to economic growth and the advancement of peopleʼs lives and it is important to promote its social implementation and innovation.",
+      "source_section": "Page 3, Section 1(2)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3003,
+      "end_char": 3147
     },
     {
-      "quote": "social risks such as the generation and spread of disinformation or misinformation, aggravation of bias or discrimination, use on crime, excessive dependence, infringement of privacy or property rights",
-      "source_section": "Section 1(2)"
-    },
-    {
-      "quote": "Identifying and evaluating the risks of illegal activities such as various crimes including cyberattacks and fraud perpetrated through the misuse of AI",
-      "source_section": "Section 2(3)"
+      "quote": "Furthermore, to reduce barriers to AI adoption in various contexts, with regard to issues that can be anticipated or that may arise when utilizing AI, the government will organize the issues and ideas regarding the interpretation and application of where responsibility lies, and strive to clarify interpretations as much as possible based on precedents, etc.",
+      "source_section": "Page 11, Section 3(3)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 19238,
+      "end_char": 19597
     },
     {
       "quote": "Respecting human dignity and fundamental human rights, and complying with the laws and regulations",
-      "source_section": "Section 1(2) Main Elements"
+      "source_section": "Page 4, Section 1(2)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5362,
+      "end_char": 5460
     },
     {
-      "quote": "it is important to promote its social implementation and innovation",
-      "source_section": "Section 1(2)"
+      "quote": "Identifying and evaluating the risks of illegal activities such as various crimes including cyberattacks and fraud perpetrated through the misuse of AI, and implementing appropriate measures.",
+      "source_section": "Page 8, Section 2(3)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 13343,
+      "end_char": 13534
+    },
+    {
+      "quote": "In particular, given that the spread of misinformation and disinformation generated by AI poses a serious risk, R&D institutes and utilization business operators will strive to develop technologies that can determine whether something is generated by AI (digital watermarks, provenance management, APIs19, etc.) and will implement them as necessary.",
+      "source_section": "Page 8, Section 2(3)",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 13896,
+      "end_char": 14245
+    },
+    {
+      "quote": "Proactively disclosing and explaining these initiatives is expected to enhance corporate value and secure competitive advantage.",
+      "source_section": "Page 7, Section 2(1) fn. 16",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 12535,
+      "end_char": 12663
     }
   ]
 }

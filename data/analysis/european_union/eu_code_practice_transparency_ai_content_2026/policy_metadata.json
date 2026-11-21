@@ -1,0 +1,37 @@
+{
+  "issuing_body": "European Commission (AI Office)",
+  "document_type": "voluntary_commitment",
+  "binding_strength": "voluntary_commitment",
+  "publication_date": null,
+  "effective_date": null,
+  "covered_actors": [
+    "Providers of generative AI systems (including general-purpose AI systems) generating synthetic audio, image, video, or text content",
+    "Providers of generative AI models placed on the Union market independently from AI systems (voluntary adherence)",
+    "Third-party providers of marking and detection solutions (voluntary adherence)",
+    "Deployers of AI systems generating or manipulating deep fakes or text published to inform the public on matters of public interest",
+    "Online platforms and online search engines (including designated VLOPs and VLOSEs under the DSA, encouraged to preserve markings and enable labelling)",
+    "Media service providers within the meaning of Article 2(2) of Regulation (EU) 2024/1083"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models"
+  ],
+  "prohibited_practices": [
+    "Intentional alteration, removal, or tampering with existing machine-readable metadata markings on AI-generated or manipulated content (subject to legitimate-purpose exceptions such as security audits, research, or necessary downstream processing)",
+    "Placing or making available on the market, promoting, or advertising tools whose purpose is to circumvent machine-readable transparency markings on AI-generated or manipulated content"
+  ],
+  "enforcement_authorities": [
+    "Competent market surveillance authorities",
+    "European Commission",
+    "AI Office",
+    "AI Board"
+  ],
+  "compliance_deadlines": [
+    "Entry into application of Article 50(2) AI Act: Initial-stage interoperability measures (adopt established metadata marking/detection standards and provide public integration information)",
+    "2027-02-02: Implement an interoperability solution for watermarking detection mechanisms (Measure 3.4(c))",
+    "Prior to placing a generative AI system on the market or putting it into service, and regularly thereafter: Test compliance of marking and detection solutions (Commitment 3, Measure 4.2)",
+    "At the latest at the time of first interaction or exposure: Provide clear, distinguishable, and accessible disclosure of deep fakes, published text, and detection results (Article 50(5) AI Act)"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "Voluntary Code of Practice under EU AI Act Article 50 structured into two sections: Section 1 for providers of generative AI systems (Article 50(2) and (5)) covering multi-layered machine-readable marking (digitally signed metadata and imperceptible watermarking, with a 200-token threshold for free-form text), free detection mechanisms, quality criteria (effectiveness, reliability, robustness, interoperability), and compliance testing; and Section 2 for deployers (Article 50(4) and (5)) covering design and placement rules for labelling deep fakes and AI-generated/manipulated public-interest text, publicly available EU icons (Annex 1), artistic/creative work disclosures, and human review/editorial control policies. Within the Code, 'will' denotes mandatory signatory commitments monitored by competent market surveillance authorities, while 'encouraged' and 'may' denote optional measures; adherence aids in demonstrating compliance with Article 50 but does not constitute conclusive legal evidence of compliance. Includes proportionality provisions for SMEs and SMCs and establishes a task force to advance interoperability standards and EU icon development.",
+  "confidence": 0.95
+}

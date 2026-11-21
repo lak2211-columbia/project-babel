@@ -1,27 +1,85 @@
 {
   "dominant_frame": "consumer_public_safety",
   "secondary_frames": [
-    "innovation_enablement"
+    "fundamental_rights",
+    "innovation_enablement",
+    "social_stability"
   ],
   "frame_confidence": {
+    "existential_catastrophic": 0.15,
+    "national_security": 0.35,
+    "economic_competitiveness": 0.48,
+    "fundamental_rights": 0.92,
+    "social_stability": 0.55,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.94,
+    "labor_transition": 0.05
+  },
+  "frame_share": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.5,
+    "national_security": 0.04,
+    "economic_competitiveness": 0.04,
+    "fundamental_rights": 0.28,
+    "social_stability": 0.06,
+    "innovation_enablement": 0.24,
+    "consumer_public_safety": 0.34,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document frames AI governance around trustworthiness and risk management in AI system design and deployment, with voluntary guidance for organizations. The primary concern is ensuring safe, trustworthy AI across the lifecycle, aligning with consumer/public safety framing. Innovation enablement is secondary as the framework is voluntary and industry-collaborative.",
+  "rationale_summary": "The NIST AI RMF Playbook is dominantly framed around consumer_public_safety, operationalizing a 'safety-first mindset' and 'preventing harm by design and default' across 72 tactical subcategories that prioritize physical safety, protecting human life, health, property, and the environment, safeguarding minors, and preventing system failures, drift, and adversarial compromise. Consumer_public_safety edges out fundamental_rights, which is a strong runner-up woven throughout bias/fairness, disability inclusion, informed consent, privacy as human autonomy and dignity, and recourse for impacted communities. Innovation_enablement is a prominent third frame via its voluntary, selective, non-checklist design that balances trustworthiness tradeoffs with business value and trustworthy deployment, complemented by social_stability (public trust), economic prosperity, and minor national_security references.",
   "evidence_spans": [
     {
-      "quote": "suggests ways to navigate and use the AI Risk Management Framework (AI RMF) to incorporate trustworthiness considerations in the design, development, deployment, and use of AI systems",
-      "source_section": null
+      "quote": "Prioritize risks involving physical safety, legal liabilities, regulatory compliance, and negative impacts on individuals, groups, or society.",
+      "source_section": "MANAGE 1.3",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 91277,
+      "end_char": 91419
     },
     {
-      "quote": "The AI RMF and the Playbook are intended for voluntary use. Organizations may utilize this information by borrowing as many – or as few – suggestions as apply to their industry use case or interests.",
-      "source_section": null
+      "quote": "All stakeholders benefit from policies, processes, and procedures which require preventing harm by design and default.",
+      "source_section": "GOVERN 1.2",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 18925,
+      "end_char": 19043
+    },
+    {
+      "quote": "Privacy refers generally to the norms and practices that help to safeguard human autonomy, identity, and dignity.",
+      "source_section": "MEASURE 2.10",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 275066,
+      "end_char": 275179
+    },
+    {
+      "quote": "Fairness in AI includes concerns for equality and equity by addressing issues such as harmful bias and discrimination.",
+      "source_section": "MEASURE 2.11",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 281819,
+      "end_char": 281937
+    },
+    {
+      "quote": "The Playbook is neither a checklist nor set of steps to be followed in its entirety. Playbook suggestions are voluntary. Organizations may utilize this information by borrowing as many – or as few – suggestions as apply to their industry use case or interests.",
+      "source_section": "Foreword - About the Playbook",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 14930,
+      "end_char": 15190
+    },
+    {
+      "quote": "AI systems have enormous potential to improve quality of life, enhance economic prosperity and security costs.",
+      "source_section": "MAP 3.1",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 180420,
+      "end_char": 180530
     }
   ]
 }

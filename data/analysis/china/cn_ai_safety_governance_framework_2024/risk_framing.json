@@ -2,41 +2,86 @@
   "dominant_frame": "national_security",
   "secondary_frames": [
     "social_stability",
+    "innovation_enablement",
     "consumer_public_safety",
-    "existential_catastrophic",
-    "fundamental_rights"
+    "fundamental_rights",
+    "existential_catastrophic"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.55,
-    "national_security": 0.82,
-    "economic_competitiveness": 0.3,
-    "fundamental_rights": 0.45,
-    "social_stability": 0.6,
-    "innovation_enablement": 0.25,
-    "consumer_public_safety": 0.5,
-    "labor_transition": 0.2
+    "existential_catastrophic": 0.75,
+    "national_security": 0.92,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.78,
+    "social_stability": 0.88,
+    "innovation_enablement": 0.82,
+    "consumer_public_safety": 0.8,
+    "labor_transition": 0.15
   },
-  "rationale_summary": "The document repeatedly foregrounds national sovereignty, ideological security, and state security interests as primary justifications for AI governance. Risks are classified partly by domain—including a 'cognitive domain' explicitly referencing 'cognitive warfare' and foreign interference in domestic affairs—and supply chain security concerns are framed around hostile foreign technology controls. The framework explicitly aims to 'safeguard national sovereignty, security and development interests.' While social stability, rights protection, and safety concerns are present, the overarching governance rationale is national security.",
+  "frame_share": {
+    "existential_catastrophic": 0.11,
+    "national_security": 0.25,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.12,
+    "social_stability": 0.22,
+    "innovation_enablement": 0.16,
+    "consumer_public_safety": 0.14,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "China's TC260 AI Safety Governance Framework (v1.0) adopts a comprehensive security posture where national security edges out social stability as the dominant frame because safeguarding national sovereignty, security, and development interests anchors the opening principles and cuts across every risk domain—including foreign export-control supply-chain cutoffs, dual-use CBRN and cyber-weapon threats, cognitive warfare against sovereignty, export controls on models, and critical information infrastructure protection. Social stability is a close runner-up, reflected in concerns over ideological security, disinformation, information cocoons, crime, value alignment, and disruptions to traditional social order. Innovation enablement is a prominent counterweight in the preamble and principles ('inclusive and prudent', prioritizing innovation and agile governance), while consumer and public safety (life, health, property, autonomous driving, healthcare, minors), fundamental rights (anti-discrimination, privacy, user rights to know and choose), and existential/catastrophic risk (CBRN proliferation and autonomous self-replication/loss of human control) are explicitly articulated as distinct risk categories.",
   "evidence_spans": [
     {
-      "quote": "切实维护国家主权、安全和发展利益",
-      "source_section": "1. 人工智能安全治理原则"
+      "quote": "但个别国家利用技术垄断和出口管制等单边强制措施制造发展壁垒，恶意阻断\n全球人工智能供应链，带来突出的芯片、软件、工具断供风险。",
+      "source_section": "Page 7",
+      "quote_en": "However, certain countries use unilateral coercive measures such as technological monopolies and export controls to create development barriers and maliciously disrupt the global AI supply chain, bringing prominent risks of supply cutoffs for chips, software, and tools.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 3008,
+      "end_char": 3071
     },
     {
-      "quote": "威胁公民生命财产安全、国家安全、意识形态安全和伦理安全",
-      "source_section": "3.2.1"
+      "quote": "人工智能发展及应用，可能带来生产工具、 生产关系的大幅改变，加速重构传统行业模式，颠覆传统的就业观、生育观、 教育观，对传统社会秩序的稳定运行带来挑战。",
+      "source_section": "Page 9",
+      "quote_en": "The development and application of AI may bring major changes to production tools and production relations, accelerate the restructuring of traditional industry models, overturn traditional views on employment, childbirth, and education, and pose challenges to the stable operation of traditional social order.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 4393,
+      "end_char": 4469
     },
     {
-      "quote": "用于开展认知战的风险。人工智能可被利用于制作传播虚假新闻、图像、音频、视频等，干涉他国内政、社会制度及社会秩序，危害他国主权",
-      "source_section": "3.2.3"
+      "quote": "鼓励发展创新，对人工智能研发及应用采取\n包容态度。严守安全底线，对危害国家安全、社会公共利益、公众合法权益的\n风险及时采取措施。",
+      "source_section": "Page 3",
+      "quote_en": "Encourage development and innovation, and adopt an inclusive attitude toward AI R&D and application. Strictly hold the safety bottom line, and take timely measures against risks that endanger national security, public social interests, and the lawful rights and interests of the public.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 867,
+      "end_char": 931
     },
     {
-      "quote": "个别国家利用技术垄断和出口管制等单边强制措施制造发展壁垒，恶意阻断全球人工智能供应链，带来突出的芯片、软件、工具断供风险",
-      "source_section": "3.1.3"
+      "quote": "人工智能应用于金融、能源、电信、交通、 民生等传统行业领域，如自动驾驶、智能诊疗等，模型算法存在的幻觉输出、 错误决策，以及因不当使用、外部攻击等原因出现系统性能下降、中断、失控等问题，将对用户人身生命财产安全、经济社会安全稳定等造成安全威胁。",
+      "source_section": "Page 8",
+      "quote_en": "When AI is applied in traditional industries such as finance, energy, telecommunications, transportation, and people's livelihood—like autonomous driving and smart medical diagnosis—hallucinations, erroneous decisions, or system degradation, interruption, and loss of control due to misuse or external attacks will pose safety threats to users' lives and property as well as economic and social security and stability.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3673,
+      "end_char": 3795
     },
     {
-      "quote": "极大降低非专家设计、合成、获取、使用核生化导武器的门槛",
-      "source_section": "3.2.2"
+      "quote": "在训练数据和用户交互数据的收集、存储、使用、加工、传输、提供、公开、删除等各环节，应遵循数据收集使用、个人信息处理的安全规则， 严格落实关于用户控制权、知情权、选择权等法律法规明确的合法权益。",
+      "source_section": "Page 10",
+      "quote_en": "Across all stages of collecting, storing, using, processing, transmitting, providing, disclosing, and deleting training data and user interaction data, security rules for data collection/use and personal information processing should be followed, strictly implementing lawful rights and interests specified by laws and regulations such as users' rights to control, know, and choose.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 4821,
+      "end_char": 4917
+    },
+    {
+      "quote": "随着人工智能技术的快速发展，不排除人工智能自主获取外部资源、自我复制，产生自我意识，寻求外部权力，带来谋求与人类争夺控制权的风险。",
+      "source_section": "Page 9",
+      "quote_en": "With the rapid development of AI technology, it cannot be ruled out that AI may autonomously acquire external resources, self-replicate, develop self-awareness, and seek external power, bringing the risk of vying with humans for control.",
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 4483,
+      "end_char": 4548
     }
   ]
 }

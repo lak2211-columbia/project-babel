@@ -1,36 +1,65 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "consumer_public_safety",
-    "social_stability"
+    "innovation_enablement"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.03,
-    "national_security": 0.04,
-    "economic_competitiveness": 0.04,
-    "fundamental_rights": 0.82,
-    "social_stability": 0.12,
-    "innovation_enablement": 0.06,
-    "consumer_public_safety": 0.18,
-    "labor_transition": 0.02
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.98,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.65,
+    "consumer_public_safety": 0.2,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is explicitly grounded in data protection as a fundamental right. Its stated purpose is ensuring that EUIs comply with Regulation (EU) 2018/1725 to protect individuals' fundamental rights and freedoms when using generative AI. Risks are consistently framed as threats to individual rights—privacy, accuracy, non-discrimination, automated decision-making—rather than as threats to national security or economic competitiveness.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.12,
+    "consumer_public_safety": 0.03,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document is overwhelmingly framed around fundamental_rights, grounding AI governance in EU institutions' legal obligation under Regulation (EU) 2018/1725 (EUDPR) and the EU Charter of Fundamental Rights to protect personal data, privacy, non-discrimination, fairness, and data subject rights throughout the generative AI lifecycle. innovation_enablement serves as a clear secondary frame, as the EDPS emphasizes that there is no obstacle in principle to deploying generative AI in public services and provides practical, flexible guidance to support responsible and beneficial adoption for the public good. Minor references to vulnerabilities in critical public services such as health and harms to vulnerable populations and children provide a small consumer_public_safety signal, but fundamental_rights clearly dominates because every operational safeguard is justified primarily by protecting individuals' fundamental rights and freedoms.",
   "evidence_spans": [
     {
-      "quote": "the right interpretation and application of the data protection principles is essential to achieve a beneficial use of these systems that does not harm individuals' fundamental rights and freedoms",
-      "source_section": "Introduction and scope"
+      "quote": "Even if the Regulation does not explicitly mention the concept of Artificial Intelligence (AI), the right interpretation and application of the data protection principles is essential to achieve a beneficial use of these systems that does not harm individuals’ fundamental rights and freedoms.",
+      "source_section": "Page 4",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 4421,
+      "end_char": 4714
     },
     {
-      "quote": "it also creates challenges with potential impact on fundamental rights and freedoms that risk being unnoticed, overlooked, not properly considered and assessed",
-      "source_section": "1. What is generative AI?"
+      "quote": "Biases in generative AI systems can lead to significant adverse consequences for individuals’ fundamental rights and freedoms, including unfair processing and discrimination",
+      "source_section": "Page 32",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 69510,
+      "end_char": 69683
     },
     {
-      "quote": "Biases in generative AI systems can lead to significant adverse consequences for individuals' fundamental rights and freedoms, including unfair processing and discrimination",
-      "source_section": "13. How can fair processing be ensured and avoid bias"
+      "quote": "As an EUI, there is no obstacle in principle to develop, deploy and use generative AI systems in the provision of public services, providing that the EUI's rules allow it, and that all applicable legal requirements are met",
+      "source_section": "Page 8",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 12470,
+      "end_char": 12692
     },
     {
-      "quote": "The Regulation requires that a DPIA must be carried out before any processing operation that is likely to result in a high risk to fundamental rights and freedoms of individuals",
-      "source_section": "6. When should a DPIA be carried out?"
+      "quote": "As AI technologies advance rapidly, EUIs must consider carefully when and how to use generative AI responsibly and beneficially for public good.",
+      "source_section": "Page 9",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 16265,
+      "end_char": 16409
     }
   ]
 }

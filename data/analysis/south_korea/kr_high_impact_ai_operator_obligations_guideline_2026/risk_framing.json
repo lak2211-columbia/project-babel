@@ -1,32 +1,85 @@
 {
-  "dominant_frame": "fundamental_rights",
+  "dominant_frame": "consumer_public_safety",
   "secondary_frames": [
-    "consumer_public_safety",
-    "innovation_enablement"
+    "fundamental_rights",
+    "innovation_enablement",
+    "economic_competitiveness"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.72,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.65,
-    "labor_transition": 0.2
+    "economic_competitiveness": 0.7,
+    "fundamental_rights": 0.9,
+    "social_stability": 0.35,
+    "innovation_enablement": 0.85,
+    "consumer_public_safety": 0.94,
+    "labor_transition": 0.05
   },
-  "rationale_summary": "The document's stated rationale centers on protecting citizens' safety and fundamental rights (기본권) from high-impact AI systems. The background section explicitly states the law aims to provide 'legal basis for protecting citizens' safety and fundamental rights alongside AI development.' Operator obligations are framed around human oversight, explainability, user protection, and risk management—all justified by the potential for high-impact AI to significantly affect life, physical safety, and fundamental rights.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.08,
+    "fundamental_rights": 0.3,
+    "social_stability": 0.04,
+    "innovation_enablement": 0.22,
+    "consumer_public_safety": 0.36,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The guideline is dominantly framed around consumer_public_safety, centering all five statutory duties on protecting human life, physical safety, and property against accidents, operational malfunctions, medical misdiagnoses, critical-infrastructure failures, and adversarial attacks through risk mitigation, safety modes, emergency stops, and victim compensation. Consumer_public_safety edges out fundamental_rights because safety assurance and accident prevention—explicitly contrasted with data-only privacy laws as protecting users' life, body, and property across nuclear, water, energy, transport, and medical systems—drive the document's operational controls and human-oversight architecture. Fundamental_rights is a very close runner-up, co-anchored in the statutory threshold ('life, physical safety, and fundamental rights') and pervading explainability, anti-discrimination/recruitment fairness, user objection/review rights, and personal-data protection. Innovation_enablement is a major third frame emphasizing voluntary flexibility, avoiding duplicate regulation via developer-to-user compliance inheritance and equivalence statements, trade-secret exclusions, and enabling legal-burden-free experimentation. Economic_competitiveness plays a clear supporting role in preparing domestic AI operators for global regulatory regimes (such as the EU AI Act) and strengthening international competitiveness.",
   "evidence_spans": [
     {
-      "quote": "인공지능 기술의 발전과 함께 국민의 안전과 기본권 보호를 위한 법적 기반을 마련하고자 한다",
-      "source_section": "Page 3"
+      "quote": "이러한 조치는 고영향 인공지능이 사람의 생명 신체의 안전 및 기본권에 중대한 영향을 미칠 수 있다는 점을 고려 , 하여 사업자가 자율적으로 위험을 관리하고 이용자를 보호하며 인공지능의 운영에 대한 책임을 명확히 하기 위한 , , , 것이다.",
+      "source_section": "추진배경",
+      "quote_en": "These measures account for the fact that high-impact AI can significantly impact human life, physical safety, and fundamental rights, enabling operators to autonomously manage risks, protect users, and clarify operational accountability.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 1097,
+      "end_char": 1231
     },
     {
-      "quote": "고영향 인공지능이 사람의 생명 신체의 안전 및 기본권에 중대한 영향을 미칠 수 있다는 점을 고려",
-      "source_section": "Page 3"
+      "quote": "클라우드컴퓨팅법은 이용자 보호의 범위를 이용자의 정보 에 중점을 두는 반면 인공지능 기본법은 이용자의 생명 , · 신체재산 등 더 넓은 범위에 중점을 둔다",
+      "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.3 이용자 보호방안의 수립·운영)",
+      "quote_en": "Whereas the Cloud Computing Act focuses user protection on user information, the AI Basic Act focuses on a broader scope encompassing users' life, physical safety, and property.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 48485,
+      "end_char": 48571
     },
     {
-      "quote": "인공지능 기술의 발전과 함께 국민의 안전과 권리를 보호하는 균형 잡힌 정책이 실현될 것으로 전망된다",
-      "source_section": "Page 3"
+      "quote": "인공지능은 , . 대량의 데이터를 분석하고 의사결정을 자동화하는 과정에서 투명성 부족 설명 불가능성 등의 문제를 초래할 가능성 , 이 있다 이러한 문제들은 사회적 불평등을 심화시키거나 인공지능에 대한 신뢰 저하로 이어질 수 있다",
+      "source_section": "제1장 고영향 인공지능사업자 책무 이행 목적 (1.1 가이드라인 목적)",
+      "quote_en": "In analyzing massive data and automating decision-making, AI can cause lack of transparency and unexplainability, which may deepen social inequality or erode trust in AI.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 2632,
+      "end_char": 2759
+    },
+    {
+      "quote": "이러한 접근 방식은 본 가이드라인이 사업자들에게 규제 준수만을 .\n강요하기보다는자율적인 혁신을 저해하지 않으면서도 책임 의식을 내재화할 수 있도록 독려하는 데 적합하다",
+      "source_section": "제1장 고영향 인공지능사업자 책무 이행 목적 (1.2 가이드라인 적용 방법)",
+      "quote_en": "This flexible, risk-based approach encourages operators to internalize responsibility without impeding autonomous innovation rather than merely imposing rigid regulatory compliance.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 5313,
+      "end_char": 5406
+    },
+    {
+      "quote": "인공지능 기업들이 가이드라인을 자율적으로 준수할 수 있도록혁신적인 인공지능 , 기술이 법적 부담 없이 실험될 수 있는 환경을 제공해야 함.",
+      "source_section": "제1장 고영향 인공지능사업자 책무 이행 목적 (1.2 가이드라인 적용 방법)",
+      "quote_en": "Regulators and policymakers should provide an environment where innovative AI technologies can be experimented with free from excessive legal burden so AI companies can voluntarily adhere to the guideline.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 12090,
+      "end_char": 12167
+    },
+    {
+      "quote": "이를 통해 국내 인공지능 산업이 글로벌 경쟁력을 갖추고 지속 가능한 방식으로 성장할 수 있도록 돕는 동시 . 에인공지능 기술이 사회적 신뢰를 확보하며 널리 확산될 수 있는 환경을 조성할 것이다",
+      "source_section": "제1장 고영향 인공지능사업자 책무 이행 목적 (1.1 가이드라인 목적)",
+      "quote_en": "Through this guideline, Korea aims to help its domestic AI industry achieve global competitiveness and sustainable growth while fostering an environment where AI earns social trust and diffuses widely.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 2993,
+      "end_char": 3100
     }
   ]
 }

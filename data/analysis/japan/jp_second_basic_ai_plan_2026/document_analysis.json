@@ -1,0 +1,419 @@
+{
+  "source_id": "jp_second_basic_ai_plan_2026",
+  "title": "人工知能基本計画 ～日本ＡＸ、より強く、より豊かに～ (Second AI Basic Plan — Cabinet Decision of July 14, 2026)",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "Cabinet Office / AI Strategy Headquarters (Cabinet Decision — 閣議決定・人工知能戦略本部)",
+    "document_type": "strategy_paper",
+    "binding_strength": "strategy_statement",
+    "publication_date": "2026-07-14",
+    "effective_date": "2026-07-14",
+    "covered_actors": [
+      "National ministries and agencies (AI Strategy Headquarters, Cabinet Secretariat, Cabinet Office, Digital Agency, MIC, METI, MEXT, MHLW, MoD, NPA, PPC, CFA, CAA, FSA, MLIT, MAFF, MoFA, MoJ, MoE)",
+      "Local governments (地方自治体)",
+      "Japan AI Safety Institute (AISI)",
+      "Private enterprises, mid-sized enterprises, SMEs, and startups (民間事業者・中堅・中小企業・スタートアップ)",
+      "Critical infrastructure operators and software vendors",
+      "Universities, research institutions, workers, and the general public"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "public_sector_use",
+      "critical_infrastructure",
+      "healthcare",
+      "education",
+      "finance",
+      "law_enforcement",
+      "defense",
+      "employment"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "frontier_safety_evaluation",
+        "confidence": 0.92,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "エージェント型ＡＩを含むＡＩの利活用及び開発時における安全性やセキュリティを担保するためのガイドラインの策定、国家の安全を脅かす事象を抑止する観点からの高性能ＡＩの積極的な評価、国際的なＡＩ脆弱性情報・インシデント情報等の収集・共有、国際的な規格や標準の策定等を一体的に進める。",
+            "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+            "quote_en": "Integrally advance the formulation of guidelines to ensure safety and security in developing and utilizing AI including agentic AI, proactive evaluation of high-performance AI from the perspective of deterring events threatening national security, collection and sharing of international AI vulnerability and incident information, and formulation of international standards.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15525,
+            "end_char": 15664
+          },
+          {
+            "quote": "ＡＩＳＩを中心として、ＡＩモデルの評価、トレーサビリティ、ガードレール等の技術的制御、危機時の情報共有などを可能とする技術的評価能力の確立と強化を図る。",
+            "source_section": "第３章 第３節 (1) ⑦",
+            "quote_en": "Centered on AISI, establish and strengthen technical evaluation capabilities enabling AI model evaluation, traceability, technical controls such as guardrails, and crisis-time information sharing.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17443,
+            "end_char": 17519
+          }
+        ]
+      },
+      {
+        "label": "agentic_autonomy_controls",
+        "confidence": 0.88,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "政府業務における生成ＡＩについて、エージェント型ＡＩの導入や国内で開発されたＡＩモデルの積極活用も含めたガバメントＡＩ 「源内」を推進し、戦略的な利活用を進めるとともに、ＡＩエージェントに対応するルール作りを進め、適切な利活用並びに業務の質の向上及び効率化を推進する。",
+            "source_section": "第３章 第１節 (1) ①",
+            "quote_en": "For generative AI in government operations, promote Government AI 'Gennai' including the introduction of agentic AI and active use of domestically developed AI models, advance rule-making tailored to AI agents, and promote appropriate utilization alongside improved operational quality and efficiency.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7562,
+            "end_char": 7696
+          },
+          {
+            "quote": "行政がＡＩエージェントを導入する際のルール作りを進めるとともに、国民の権利保護や透明性・公正性を確保するため、行政事務におけるＡＩ利活用時の留意点等を整理する",
+            "source_section": "第３章 第３節 (1) ②",
+            "quote_en": "Advance rule-making for the introduction of AI agents by the administration and organize key considerations for AI use in administrative operations to ensure protection of citizens' rights, transparency, and fairness.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16475,
+            "end_char": 16554
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.88,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "統計作成等であると整理できるＡＩ開発等にのみ利用される場合に個人データの\n第三者提供等に係る本人同意を不要とする特例や、当該特例において定める義務等\nに違反した場合の課徴金制度等の創設を含む「個人情報の保護に関する法律等の一\n部を改正する法律」 （令和８年法律第56 号）の円滑な施行に向けて下位法令の整備\n等を進める。",
+            "source_section": "第３章 第１節 (3) ⑤",
+            "quote_en": "Prepare subordinate regulations for the smooth enforcement of the Act Partially Amending the Act on the Protection of Personal Information (Act No. 56 of 2026), which establishes a consent exemption for third-party provision of personal data used solely for AI development classifiable as statistical creation and an administrative surcharge system for violating obligations under that exemption.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9575,
+            "end_char": 9735
+          },
+          {
+            "quote": "適切な知的財産の保護と利活用につながる透明性の確保を図るとともに、コンテンツホルダーへの対価還元等の推進や、生成ＡＩによる知的財産権侵害対策に関する相談体制の整備、生成ＡＩと知的財産権に関する分かりやすい情報提供等の取組を進める。",
+            "source_section": "第３章 第４節 (2) ③",
+            "quote_en": "Ensure transparency conducive to proper intellectual property protection and utilization, promote remuneration/return to content holders, establish consultation frameworks for generative AI IP infringement countermeasures, and provide clear information on generative AI and IP rights.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 21084,
+            "end_char": 21199
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.85,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "人とＡＩの協働による新たな社会を追求するため、人が意思決定に対する責任9 を持ち\nながら、ＡＩの利活用によって様々な課題を解決していけるよう、エージェント型ＡＩを\n前提に、社会における制度 ・枠組みについて抜本的に見直し、判断責任を果たす人的主体\n性10（Human Agency）を中核に「人間力」向上を図る。",
+            "source_section": "第３章 第４節 ＡＩ社会に向けた継続的変革",
+            "quote_en": "To pursue a new society of human-AI collaboration where humans retain responsibility for decision-making while solving challenges with AI, fundamentally review societal systems assuming agentic AI and enhance human capabilities centered on Human Agency exercising judgment responsibility.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19526,
+            "end_char": 19682
+          },
+          {
+            "quote": "Human in the loop：人がＡＩのタスク実行の流れに直接関与する仕組み Human on the loop：タスク実行自体はＡＩに任せつつ、その流れの全体設計や監視は人が担う仕組み Human in the lead：ＡＩをツールとして統制し、人が意思決定や価値創出の主導権を握る仕組み",
+            "source_section": "第３章 第４節 脚注 9",
+            "quote_en": "Human in the loop: a mechanism where humans are directly involved in AI task execution; Human on the loop: leaving task execution to AI while humans design and monitor the overall workflow; Human in the lead: controlling AI as a tool while humans retain initiative over decision-making and value creation.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20623,
+            "end_char": 20772
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.82,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "各府省庁、関係機関、国際的な枠組み、民間等と密に連携し、人工知能戦略本部に 、 ＡＩに関連する技術動向、リスク事案、国際情報、評価知見等を集約する。",
+            "source_section": "第３章 第３節 (1) ③",
+            "quote_en": "In close collaboration with ministries, agencies, international frameworks, and the private sector, aggregate AI-related technology trends, risk incidents, international intelligence, and evaluation findings at the AI Strategy Headquarters.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16699,
+            "end_char": 16773
+          },
+          {
+            "quote": "国民がＡＩに関わる被害を受けた際に、適切なアドバイス等を受けることができるよう、公的な相談窓口を拡充するとともに、事業者が自ら苦情受付体制の整備を適切に行うための施策を講ずる。",
+            "source_section": "第３章 第３節 (1) ⑩",
+            "quote_en": "Expand public consultation desks so citizens can receive appropriate advice when harmed by AI, and implement measures encouraging businesses to establish proper complaint-handling systems.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17866,
+            "end_char": 17954
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.82,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "サイバーセキュリティ対策パッケージ「Project YATA-Shield」に基づき、重要インフラ事業者等への対策強化に係る注意喚起や金融分野等での先行的な取組の実施及び他分野への展開、\n人材育成支援に取り組むとともに、高性能ＡＩを活用した政府全体の重要システム\nの脆弱性点検を進める。",
+            "source_section": "第３章 第３節 (1) ⑤",
+            "quote_en": "Under the cybersecurity package 'Project YATA-Shield', issue alerts to critical infrastructure operators to strengthen safeguards, implement pioneering initiatives in finance and expand to other sectors, support talent training, and conduct vulnerability inspections of critical government systems using high-performance AI.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17011,
+            "end_char": 17154
+          },
+          {
+            "quote": "特にサイバー攻撃のリスクに対しては、経営層のリーダーシップの下、組織を挙げてリスク対策を実施するとともに、高性能ＡＩを積極的に活用し、脆弱性の発見・修正等の高速化に取り組む。",
+            "source_section": "第１章 基本構想",
+            "quote_en": "Especially against cyberattack risks, under executive leadership implement organization-wide risk countermeasures while actively utilizing high-performance AI to accelerate vulnerability discovery and patching.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3907,
+            "end_char": 3994
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.78,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "生成ＡＩを悪用した偽・誤情報等への対応について、日本のＡＩ評価機能向上にも資する、ＡＩ生成コンテンツを判別する技術、ＡＩの制御機能等6の開発を支援する。",
+            "source_section": "第３章 第３節 (1) ⑧",
+            "quote_en": "To counter disinformation and misinformation abusing generative AI, support the development of AI-generated content detection technologies and AI control functions that also enhance Japan's AI evaluation capabilities.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17671,
+            "end_char": 17747
+          },
+          {
+            "quote": "ＡＩ生成コンテンツを判別する技術等として、例えば、ＡＩを利用して生成されたコンテンツに対する電子透かしや事後的な真偽判別支援技術などがある。",
+            "source_section": "第３章 第３節 脚注 6",
+            "quote_en": "Technologies for identifying AI-generated content include, for example, electronic watermarking for AI-generated content and post-hoc authenticity verification support technologies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 18255,
+            "end_char": 18325
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "quote": "ＡＩ法に基づく措置等も有機的に組み合わせて、事業者や国民の自主的かつ能動的な取組を促している。",
+            "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+            "quote_en": "Organically combining measures under the AI Promotion Act and related instruments, the government encourages voluntary and proactive initiatives by businesses and citizens.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14896,
+            "end_char": 14943
+          },
+          {
+            "quote": "広くＡＩ利活用に伴う権利侵害に関する法的整理なども含め各種ガイドライン等を整備し、事業者等によるＡＩの研究及び開発・利活用における適正性の確保に向けた自主的な取組を促すとともに、適切な利活用の推進と関係者への周知徹底を図る。",
+            "source_section": "第３章 第３節 (1) ②",
+            "quote_en": "Develop various guidelines—including legal analyses of rights infringements from AI use—to encourage voluntary initiatives by businesses to ensure appropriateness in AI R&D and utilization while promoting proper use and awareness.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16557,
+            "end_char": 16669
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "ＡＩ法第16 条に基づく調査研究等をより機動的に運用するなど、リスクへの対応等を引き続き適切に行う。",
+            "source_section": "第３章 第３節 (1) ①",
+            "quote_en": "Continue responding appropriately to risks, including by operating government investigations and research under Article 16 of the AI Promotion Act more agilely.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16337,
+            "end_char": 16387
+          },
+          {
+            "quote": "人工知能戦略本部において基本計画の推進状況を把握の上、フォローアップを行う。計\n画で目指す我が国の具体像を実現するために、適切なベンチマークを設定した上で、モニ\nタリングを実施する。",
+            "source_section": "第４章 第１節 基本計画の推進体制及びフォローアップ",
+            "quote_en": "The AI Strategy Headquarters will track implementation progress of the Basic Plan and conduct follow-up, establishing appropriate benchmarks and monitoring to realize the plan's concrete vision.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22800,
+            "end_char": 22891
+          }
+        ]
+      },
+      {
+        "label": "civil_penalty",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "quote": "統計作成等であると整理できるＡＩ開発等にのみ利用される場合に個人データの\n第三者提供等に係る本人同意を不要とする特例や、当該特例において定める義務等\nに違反した場合の課徴金制度等の創設を含む「個人情報の保護に関する法律等の一\n部を改正する法律」 （令和８年法律第56 号）の円滑な施行に向けて下位法令の整備\n等を進める。",
+            "source_section": "第３章 第１節 (3) ⑤",
+            "quote_en": "Prepare subordinate regulations for the smooth enforcement of the 2026 APPI Amendment Act (Act No. 56 of 2026), which creates a consent exemption for personal data used solely for statistical/AI development along with an administrative surcharge system for violating obligations under that exemption.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9575,
+            "end_char": 9735
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "AI Strategy Headquarters (人工知能戦略本部)",
+      "Cabinet Office (内閣府)",
+      "Cabinet Secretariat (内閣官房)",
+      "Digital Agency (デジタル庁)",
+      "Personal Information Protection Commission (個人情報保護委員会)",
+      "Ministry of Internal Affairs and Communications (総務省)",
+      "Ministry of Economy, Trade and Industry (経済産業省)",
+      "Japan AI Safety Institute (AISI)",
+      "National Police Agency (警察庁)",
+      "Consumer Affairs Agency (消費者庁)",
+      "Financial Services Agency (金融庁)",
+      "Ministry of Defense (防衛省)"
+    ],
+    "compliance_deadlines": [
+      "Annual review cycle (当面は毎年変更): Cabinet Office / AI Strategy Headquarters to revise the Basic AI Plan annually for the time being in response to rapid AI developments",
+      "FY2040 horizon (2040年度まで): Cumulative public-private investment horizon cited for vertical AI (23.1 trillion JPY), physical AI/robotics (10.5 trillion JPY), and semiconductors (68.0 trillion JPY)"
+    ],
+    "penalties_summary": "The Second Basic AI Plan is a Cabinet strategy imposing no direct sanctions of its own, relying primarily on voluntary business initiatives, guidelines, and agile government investigations under Article 16 of the AI Promotion Act. However, Chapter 3 Section 1(3)⑤ directs the Personal Information Protection Commission (PPC) to enact subordinate rules implementing the 2026 APPI Amendment Act (Act No. 56 of 2026), which establishes an administrative surcharge system (課徴金制度) for violations of statutory obligations attached to the new personal-data consent exemption for AI development.",
+    "implementation_notes": "Japan's Second Basic AI Plan ('Japan AX: Stronger, More Prosperous'), adopted by Cabinet Decision on July 14, 2026 (Reiwa 8) under Article 18(1) of the AI Promotion Act (Act No. 53 of 2025), superseding the First Basic AI Plan of December 23, 2025. Structured around four principles (balancing innovation and risk response, challenge and learning, agile 'eternal beta' PDCA response, and integrated domestic-international policy) and four pillars: (1) accelerating AI utilization (Japan AX, Government AI 'Gennai' for 180,000 officials with agentic AI and open-sourcing for municipalities, regional AX, vertical/physical AI), (2) strategic strengthening of AI development capacity (open AI Sovereignty across compute/power/semiconductors/models, domestic multimodal/physical AI foundation models, AI for Science, open-source/open-weight trustworthy AI ecosystem), (3) leading AI governance (responsible agile governance, expanded AISI technical evaluation and guardrails, Project YATA-Shield cyber defense, Hiroshima AI Process, hosting an early AI Summit), and (4) continuous societal transformation (employment impact analysis, AI reskilling, Advanced Essential Workers, Human Agency across HITL/HOTL/HITL-lead models, and annual plan revisions). Industrial datacenter/compute investments lack operational FLOP/compute oversight controls and are therefore excluded from compute_governance per codebook rules.",
+    "confidence": 0.95
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "economic_competitiveness",
+      "national_security",
+      "labor_transition",
+      "consumer_public_safety",
+      "fundamental_rights",
+      "existential_catastrophic"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.55,
+      "national_security": 0.9,
+      "economic_competitiveness": 0.93,
+      "fundamental_rights": 0.7,
+      "social_stability": 0.5,
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.72,
+      "labor_transition": 0.78
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.03,
+      "national_security": 0.19,
+      "economic_competitiveness": 0.26,
+      "fundamental_rights": 0.05,
+      "social_stability": 0.02,
+      "innovation_enablement": 0.3,
+      "consumer_public_safety": 0.06,
+      "labor_transition": 0.09
+    },
+    "rationale_summary": "Innovation enablement narrowly edges out economic competitiveness as the dominant frame because the plan's overarching governance philosophy—remaining 'the world's most AI-friendly country to develop and use AI', fostering a 'try it first' challenge-and-learning culture, institutionalizing 'responsible agile governance' on an 'eternal beta' PDCA cycle, reviewing legacy regulations, and driving society-wide Japan AX starting with Government AI 'Gennai'—justifies governance primarily as enabling rapid, trustworthy adoption and innovation. Economic competitiveness is a very close runner-up, prominently framing agentic, vertical, and physical AI as Japan's 'winning strategy' to close adoption and investment gaps with the US and China, boost TFP and national power, capture global supply-chain indispensability, and expand exports. National security has risen sharply as a major third frame through explicit commitments to open 'AI Sovereignty' (strategic autonomy and cut-off resilience across government, defense, and critical infrastructure), economic security investment, AI-driven defense transformation, Project YATA-Shield cyber defense against autonomous AI attacks, and AISI evaluations to deter national-security threats. Labor transition (workforce substitution/complementarity analysis, AI reskilling, Advanced Essential Workers), consumer/public safety (cascading outages, youth safety, fraud/complaint desks), fundamental rights (Human Agency, privacy, portrait/voice/IP rights), and existential/catastrophic risk (CBRNE terrorism and autonomous zero-day cyberattacks) serve as meaningful supporting frames.",
+    "evidence_spans": [
+      {
+        "quote": "イノベーション促進とリスク対応の両立のため、変化に即応しつつ絶えず取組を進化させるとの視座（永遠のβ版）に立ち、ＰＤＣＡ（計画・実行・評価・改善）サイクルを循環させ、物事に柔軟かつ迅速に向き合うといったアジャイルな対応を志向する。",
+        "source_section": "第２章 基本的な方針（４原則）",
+        "quote_en": "To balance innovation promotion and risk response, adopt an agile approach from a perspective of continuously evolving initiatives in immediate response to change ('eternal beta'), cycling PDCA (Plan-Do-Check-Act) to respond flexibly and swiftly.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 5011,
+        "end_char": 5126
+      },
+      {
+        "quote": "我が国は、引き続き、「世界で最もＡＩを開発・活用しやすい国」を目指し、安全・安心を確保しながら、先端ＡＩ技術の社会全体での実装を追求する。",
+        "source_section": "第１章 基本構想",
+        "quote_en": "Japan will continue aiming to be 'the world's most AI-friendly country to develop and use AI', pursuing society-wide implementation of advanced AI technologies while ensuring safety and security.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 4030,
+        "end_char": 4099
+      },
+      {
+        "quote": "組織の意思決定や業務処理の速度を上げるエージェント型ＡＩをいかに社会に実装していくのか、その在り方は経済力、防衛力、技術力といった国力に直結するものとなっている。",
+        "source_section": "第１章 基本構想",
+        "quote_en": "How agentic AI—which accelerates organizational decision-making and operational processing—is implemented in society is directly linked to national power, including economic strength, defense capability, and technological prowess.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 1632,
+        "end_char": 1713
+      },
+      {
+        "quote": "我が国独自の価値を持ち、国際競争力あるＡＩシステムの創出も視野に入れ、製造業における素材産業、造船業等、暗黙知が豊富な現場へのバーティカルＡＩの開発・実装を推進し、輸出も促進する。",
+        "source_section": "第３章 第２節 (4) ②",
+        "quote_en": "With an eye toward creating internationally competitive AI systems with uniquely Japanese value, promote the development, implementation, and export of vertical AI in fields rich in tacit knowledge such as materials manufacturing and shipbuilding.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 13805,
+        "end_char": 13895
+      },
+      {
+        "quote": "我が国は、Ａ Ｉエコシステム全体の中で、戦略的自律性及び戦略的不可欠性を確保し、開かれた「ＡＩ 主権」（AI Sovereignty）を確立する。同志国等との連携・分業、相互運用性の確保を行いつつ、鉱物からソフトウェアまでエコシステム全体の自律性を確保する。特に行政、防衛、重要インフラ等の戦略領域においては、計算資源、データプラットフォーム、モデル、 アプリ等の自律性を強化し、耐遮断性と運用能力を確保する。",
+        "source_section": "第１章 基本構想",
+        "quote_en": "Japan will ensure strategic autonomy and strategic indispensability across the AI ecosystem and establish an open 'AI Sovereignty'. While partnering with like-minded nations, it will secure autonomy from minerals to software, and especially strengthen autonomy, cut-off resilience, and operational capability across compute, data platforms, models, and apps in strategic domains such as government, defense, and critical infrastructure.",
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 2867,
+        "end_char": 3072
+      },
+      {
+        "quote": "その際、ＡＩが働き方や雇用に与える影響\nを踏まえて、リ・スキリングの推進を含めた包括的な対策に能動的に取り組まなければな\nらない。",
+        "source_section": "第３章 第４節 ＡＩ社会に向けた継続的変革",
+        "quote_en": "In doing so, taking into account the impact of AI on working styles and employment, we must proactively implement comprehensive measures including promoting reskilling.",
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 19219,
+        "end_char": 19284
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:20:32.104780Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "d061fc9febc7aeba1103b6d7463d4096a5d316406be8feec62a2f1af20f3209c",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 23359,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 25,
+      "exact_matches": 25,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

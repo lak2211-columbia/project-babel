@@ -1,36 +1,84 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "consumer_public_safety",
-    "innovation_enablement"
+    "innovation_enablement",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.0,
+    "existential_catastrophic": 0.05,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.75,
+    "economic_competitiveness": 0.45,
+    "fundamental_rights": 0.96,
     "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.55,
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.5,
     "labor_transition": 0.05
   },
-  "rationale_summary": "The document is centered on protecting individual privacy rights in the context of AI data processing. It frames AI governance as necessary to manage risks to personal information, citing harms like unlawful data collection, profiling, surveillance, and identity inference. The core justification is protecting data subjects' rights under Korea's Personal Information Protection Act, making fundamental_rights the dominant frame. Consumer/public safety is secondary as the document also addresses practical harms from AI outputs.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.04,
+    "fundamental_rights": 0.56,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.34,
+    "consumer_public_safety": 0.06,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The model is dominantly framed around fundamental_rights, diagnosing AI's distinctive threats to informational self-determination, personality rights, and constitutional rights—including unlawful mass data collection, memorization and leakage of personal data, non-consensual deepfake abuse of biometric features, automated-decision opacity and discrimination, and mass surveillance/profiling. Fundamental_rights edges out innovation_enablement because protecting data-subject rights and PIPA legal principles anchors the risk taxonomy, mitigation catalog, and 17-item compliance checklist throughout the document. Innovation_enablement is a very close secondary frame: PIPC explicitly argues for a context-specific, proportional, risk-based, principle-based approach rather than preemptive uniform mandates so as to maximize AI's benefits, support sustainable AI development, provide safe-harbor regulatory incentives, and accommodate privacy-performance trade-offs empirically confirmed in Korean LLMs. Consumer_public_safety (deepfake sexual crimes, deceptive fraud/impersonation, cybersecurity attacks) and economic_competitiveness (AI as core digital-era competitiveness and synthetic data's economic value) appear as minor supporting rationales.",
   "evidence_spans": [
     {
-      "quote": "AI 기술이 요구하는 데이터 처리방식의 근본적 변화는 개인정보 유·노출 등 전형적인 프라이버시 리스크를 심화시키고",
-      "source_section": "Page 4"
+      "quote": "문헌조사, 기업인터뷰등을통해파악한AI 기술의고유한특성, 기능 및데이터요구사항등으로인해새롭게나타나거나심화되는정보 주체권리침해, 개인정보보호법위반리스크등을중점적으로다룸",
+      "source_section": "Ⅰ. 개요 (적용 범위)",
+      "quote_en": "Focuses on data-subject rights infringement and PIPA violation risks newly emerging or intensified by the distinctive characteristics, functions, and data requirements of AI technologies.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 6612,
+      "end_char": 6703
     },
     {
-      "quote": "악의적 AI 합성콘텐츠로 인한 정보주체 권리 침해 (정보주체 의사에 반하는 생체정보 이용 등)",
-      "source_section": "Page 11"
+      "quote": "의사결정과정의불투명성* 개인에대한낙인·차별등새로운형태의 프라이버시위험, 기본권침해위협도야기",
+      "source_section": "Ⅲ. 리스크의 식별 (서비스 제공 단계)",
+      "quote_en": "Creates new forms of privacy risk and threats of fundamental rights infringement, such as opacity in automated decision-making processes and stigmatization or discrimination against individuals.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 29339,
+      "end_char": 29389
     },
     {
-      "quote": "자동화된 결정으로 인한 정보주체 권리 약화",
-      "source_section": "Page 11"
+      "quote": "□AI 프라이버시리스크에대한체계적이해는AI 기술발전을선험적, 일률적으로규제하기보다는사회적으로필요한AI 개발과혁신활동을 지원하는안전장치역할을수행 ☞불확실성이높은AI영역에서‘리스크기반접근’을통해AI의부정적 영향을관리·완화하면서AI 기술의이점을극대화할필요",
+      "source_section": "Ⅰ. 개요 (논의 배경)",
+      "quote_en": "A systematic understanding of AI privacy risks serves as a safeguard supporting socially needed AI development and innovation rather than regulating AI preemptively and uniformly; a 'risk-based approach' is needed in the high-uncertainty AI domain to manage negative impacts while maximizing AI's benefits.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3849,
+      "end_char": 3988
     },
     {
-      "quote": "복잡한 프라이버시 리스크의 적정 관리·완화는 지속가능한 AI 발전의 선결요건",
-      "source_section": "Page 4"
+      "quote": "따라서, 특정경감기술의적용을일률적으로의무화하기보다는가이드 라인을통한권고등유연한접근방식을우선고려할필요",
+      "source_section": "부록2 언어모델(LLM) 대상 프라이버시 리스크 경감기술의 유형 및 효과",
+      "quote_en": "Therefore, given meaningful trade-offs between privacy-enhancing technologies and AI model performance, flexible approaches such as recommendations via guidelines should be prioritized over uniformly mandating specific mitigation technologies.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 62907,
+      "end_char": 62962
+    },
+    {
+      "quote": "성적허위영상물을생성하기위해서는피해자의사에반하는얼굴, 신체등생체정보이용이요구되는바, 피해자의성적자기결정권뿐 아니라인격권및개인정보자기결정권도침해 ○(기만적오용) 피편취자·소비자·투자자·유권자등의기만이주요사회적 리스크이나, 프라이버시측면에서는얼굴·목소리·생체정보등을도용당한 정보주체의평판을손상시키고개인정보자기결정권을침해",
+      "source_section": "Ⅲ. 리스크의 식별 (서비스 제공 단계)",
+      "quote_en": "Generating non-consensual sexual deepfake imagery requires using victims' facial and bodily biometric data against their will, violating sexual self-determination, personality rights, and informational self-determination; deceptive misuse against victims, consumers, investors, and voters also damages reputation and rights.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 28941,
+      "end_char": 29116
+    },
+    {
+      "quote": "□본모델은디지털시대의핵심경쟁력인AI가프라이버시친화적으로 활용될수있도록AI 프라이버시리스크요인을체계화하고, 리스크 관리의방향과원칙을제시하기위해마련되었으며,",
+      "source_section": "Ⅰ. 개요 (논의 배경)",
+      "quote_en": "This model was prepared to systematize AI privacy risk factors and present risk management directions and principles so that AI—a core competitiveness driver of the digital era—can be utilized in a privacy-friendly manner.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 3999,
+      "end_char": 4084
     }
   ]
 }

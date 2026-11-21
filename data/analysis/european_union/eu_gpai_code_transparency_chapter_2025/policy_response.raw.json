@@ -1,56 +1,59 @@
 {
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
   "metadata_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_01GdSwPWwpgZUr6ifLdwjLgs",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"issuing_body\":\"European Commission / AI Office (Working Group 1, Code of Practice for General-Purpose AI Models)\",\"document_type\":\"standards_guideline\",\"binding_strength\":\"voluntary_commitment\",\"publication_date\":\"2025\",\"effective_date\":null,\"covered_actors\":[\"providers of general-purpose AI models\",\"downstream providers\",\"providers of AI systems integrating general-purpose AI models\",\"Signatories\"],\"covered_application_domains\":[\"general_purpose_models\"],\"prohibited_practices\":[],\"enforcement_authorities\":[\"AI Office\",\"national competent authorities\",\"European Commission\"],\"compliance_deadlines\":[\"Information must be provided to downstream providers within 14 days of receiving a request, save for exceptional circumstances\",\"Model documentation must be retained for 10 years after the model has been placed on the market\"],\"penalties_summary\":null,\"implementation_notes\":\"This is a voluntary Code of Practice under Article 53 AI Act. Adherence does not constitute conclusive evidence of compliance with AI Act obligations. Open-source model providers are exempt from Measures 1.1-1.3 unless the model poses systemic risk. Confidentiality protections apply per Article 78 AI Act. A fillable Model Documentation Form is provided as a compliance tool.\",\"confidence\":0.9}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 4646,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 284,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 8791,
+      "candidatesTokenCount": 499,
+      "totalTokenCount": 11160,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 8791
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 499
+        }
+      ],
+      "thoughtsTokenCount": 1870,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "gC4Ba_q0NZ7nodAPo8iB6Ao"
   },
   "controls_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_01Vdf5186ABu2c6N1BrsfDiY",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"safety_requirements\":[{\"label\":\"model_documentation\",\"confidence\":0.97,\"evidence\":[{\"quote\":\"Signatories commit to drawing up and keeping up-to-date model documentation in accordance with Measure 1.1\",\"source_section\":\"Page 5\"},{\"quote\":\"Signatories, when placing a general-purpose AI model on the market, will have documented at least all the information referred to in the Model Documentation Form\",\"source_section\":\"Page 5\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"Signatories will publicly disclose via their website, or via other appropriate means if they do not have a website, contact information for the AI Office and downstream providers to request access to the relevant information contained in the Model Documentation\",\"source_section\":\"Page 5\"},{\"quote\":\"Signatories are encouraged to consider whether the documented information can be disclosed, in whole or in part, to the public to promote public transparency\",\"source_section\":\"Page 6\"}]}],\"enforcement_mechanisms\":[{\"label\":\"regulatory_supervision\",\"confidence\":0.92,\"evidence\":[{\"quote\":\"Signatories will provide, upon a request from the AI Office pursuant to Articles 91 or 75(3) AI Act for one or more elements of the Model Documentation, or any additional information, that are necessary for the AI Office to fulfil its tasks under the AI Act or for national competent authorities to exercise their supervisory tasks\",\"source_section\":\"Page 5\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.90,\"evidence\":[{\"quote\":\"Signatories will provide the requested information in its most up-to-date form, within the period specified in the AI Office's request in accordance with Article 91(4) AI Act\",\"source_section\":\"Page 5\"},{\"quote\":\"Signatories will provide to downstream providers the information contained in the most up-to-date Model Documentation that is intended for downstream providers\",\"source_section\":\"Page 6\"}]},{\"label\":\"soft_enforcement\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"adherence to the Code does not constitute conclusive evidence of compliance with these obligations under the AI Act\",\"source_section\":\"Page 3\"},{\"quote\":\"Signatories are encouraged to follow the established protocols and technical standards\",\"source_section\":\"Page 6\"}]}]}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 4566,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 519,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 8944,
+      "candidatesTokenCount": 1022,
+      "totalTokenCount": 15067,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 8944
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1022
+        }
+      ],
+      "thoughtsTokenCount": 5101,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "lS4Ba6DiBKm8odAPm53BqQQ"
   }
 }

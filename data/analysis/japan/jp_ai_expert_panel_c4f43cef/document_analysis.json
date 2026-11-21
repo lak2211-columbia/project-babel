@@ -4,39 +4,41 @@
   "language": "ja",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "人工知能戦略本部 (AI Strategy Headquarters)",
+    "issuing_body": "AI Strategy Headquarters (人工知能戦略本部)",
     "document_type": "executive_order",
     "binding_strength": "executive_action",
     "publication_date": "2025-09-12",
-    "effective_date": "2025-09-12",
+    "effective_date": null,
     "covered_actors": [
-      "人工知能戦略専門調査会 (AI Strategy Expert Panel)",
-      "内閣総理大臣 (Prime Minister)",
-      "内閣府科学技術・イノベーション推進事務局 (Cabinet Office Science, Technology and Innovation Promotion Secretariat)"
+      "AI Strategy Expert Panel (人工知能戦略専門調査会)",
+      "Cabinet Office Secretariat of Science, Technology and Innovation Policy (内閣府科学技術・イノベーション推進事務局)",
+      "Relevant ministries and agencies (関係省庁)"
     ],
     "covered_application_domains": [],
     "prohibited_practices": [],
     "safety_requirements": [],
     "enforcement_mechanisms": [
       {
-        "label": "regulatory_supervision",
-        "confidence": 0.6,
+        "label": "none_specified",
+        "confidence": 0.98,
         "evidence": [
           {
-            "quote": "人工知能関連技術の研究開発及び活用の推進に係る専門的な事項の調査のため、専門調査会を設置する",
-            "source_section": "１"
+            "quote": "人工知能関連\n技術の研究開発及び活用の推進に係る専門的な事項の調査のため、専門調査会\nを設置する。",
+            "source_section": "Page 1",
+            "quote_en": "An Expert Panel shall be established to investigate specialized matters related to the promotion of research, development, and utilization of AI-related technologies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 187,
+            "end_char": 236
           }
         ]
       }
     ],
-    "enforcement_authorities": [
-      "人工知能戦略本部 (AI Strategy Headquarters)",
-      "内閣府科学技術・イノベーション推進事務局"
-    ],
+    "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "This document establishes the AI Strategy Expert Panel (人工知能戦略専門調査会) under Cabinet Order No. 281 of Reiwa 7 (2025), pursuant to the Act on Promotion of Research, Development and Utilization of AI-Related Technologies (Act No. 53 of Reiwa 7). The panel is tasked with investigating guidelines (Article 13), research and surveys (Article 16), and basic plans (Article 18). Members are appointed by the Prime Minister from persons with expertise in AI. The panel may invite external experts and establish working groups.",
-    "confidence": 0.92
+    "implementation_notes": "Organizational decision by Japan's AI Strategy Headquarters establishing the AI Strategy Expert Panel pursuant to Article 1 of Cabinet Order No. 281 of 2025 to investigate specialized matters under the Act on the Promotion of Research, Development, and Utilization of AI-Related Technology (Act No. 53 of 2025), including guidelines (Article 13), surveys and research (Article 16), and the Basic Plan (Article 18). Members are appointed by the Prime Minister, working groups may be formed as needed, and secretariat affairs are managed by the Cabinet Office in cooperation with relevant ministries.",
+    "confidence": 0.9
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
@@ -47,20 +49,64 @@
       "economic_competitiveness": 0.0,
       "fundamental_rights": 0.0,
       "social_stability": 0.0,
-      "innovation_enablement": 0.75,
-      "consumer_public_safety": 0.1,
-      "labor_transition": 0.05
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The document establishes an expert panel to promote research, development, and utilization of AI-related technologies. Its primary stated purpose is advancing AI R&D and application, framing governance as an enabler of innovation rather than a risk-mitigation body.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.0,
+      "innovation_enablement": 1.0,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "This document is a brief administrative decision establishing the Expert Panel on AI Strategy and defining its procedural governance. It contains minimal policy justification, but the sole stated purpose for convening the panel and developing guidelines, studies, and a basic plan is to promote the research, development, and utilization of AI-related technologies, which aligns modestly with innovation_enablement. No other risk framing rationales are articulated.",
     "evidence_spans": [
       {
-        "quote": "人工知能関連技術の研究開発及び活用の推進に関する法律",
-        "source_section": "１"
-      },
-      {
-        "quote": "人工知能関連技術の研究開発及び活用の推進に係る専門的な事項の調査のため、専門調査会を設置する",
-        "source_section": "１"
+        "quote": "人工知能関連\n技術の研究開発及び活用の推進に係る専門的な事項の調査のため、専門調査会\nを設置する。",
+        "source_section": "Page 1",
+        "quote_en": "An Expert Panel shall be established to investigate specialized matters concerning the promotion of research, development, and utilization of AI-related technologies.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 187,
+        "end_char": 236
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:45:44.400654Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "ea6d69e065bc7eee91fd56817d94af11c3a1caf0e7b5ecff74ea933cdff73dcf",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 21383,
+      "output_tokens": 896,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 5776,
+      "estimated_cost_usd": 0.093449
+    },
+    "grounding_summary": {
+      "total_quotes": 2,
+      "exact_matches": 2,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 2
+    }
   }
 }

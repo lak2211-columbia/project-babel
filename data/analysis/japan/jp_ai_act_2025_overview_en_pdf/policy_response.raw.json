@@ -1,27 +1,59 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01QYNB9dYwuURZFw7u6pZPWp",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"jurisdiction\":\"japan\",\"issuing_body\":\"Cabinet Office, Government of Japan\",\"document_type\":\"legislation\",\"binding_strength\":\"binding_law\",\"publication_date\":\"2025-05-28\",\"effective_date\":\"2025-09-01\",\"covered_application_domains\":[\"general_purpose_models\",\"critical_infrastructure\",\"public_sector_use\"],\"safety_requirements\":[{\"label\":\"transparency_disclosure\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"Ensuring transparency, etc. for appropriate R&D and utilization\",\"source_section\":\"Basic Principles\"}]},{\"label\":\"risk_assessment\",\"confidence\":0.6,\"evidence\":[{\"quote\":\"Collecting information, investigating cases where human rights and interests are infringed\",\"source_section\":\"Basic Measures\"}]},{\"label\":\"human_oversight\",\"confidence\":0.6,\"evidence\":[{\"quote\":\"Guidance, advice and announcement to business operators and citizens\",\"source_section\":\"Basic Measures\"}]}],\"enforcement_mechanisms\":[{\"label\":\"soft_enforcement\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"Guidance, advice and announcement to business operators and citizens\",\"source_section\":\"Basic Measures\"}]},{\"label\":\"regulatory_supervision\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"Requesting the necessary cooperation from the relevant administrative agencies\",\"source_section\":\"AI Strategic Headquarters\"}]}],\"implementation_notes\":\"This is a provisional translation of an overview document. The act is primarily a promotion and framework law rather than a strict regulatory regime. Partial enforcement began 4 June 2025, full enforcement 1 September 2025. Binding obligations on business operators appear limited to cooperation duties. Detailed requirements will likely emerge via guidelines and the AI Basic Plan.\",\"confidence\":0.75}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 3825,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "metadata_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 7043,
+      "candidatesTokenCount": 342,
+      "totalTokenCount": 10184,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 7043
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 342
+        }
+      ],
+      "thoughtsTokenCount": 2799,
+      "serviceTier": "standard"
     },
-    "output_tokens": 389,
-    "service_tier": "standard",
-    "inference_geo": "global"
+    "modelVersion": "gemini-4-neon",
+    "responseId": "QS8Ba6u4N6SL6tkPioOZ-AQ"
+  },
+  "controls_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 7196,
+      "candidatesTokenCount": 367,
+      "totalTokenCount": 10006,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 7196
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 367
+        }
+      ],
+      "thoughtsTokenCount": 2443,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "Vy8Ba8S2PL-7odAP-JiO8Qs"
   }
 }

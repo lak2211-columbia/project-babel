@@ -1,94 +1,221 @@
 {
   "jurisdiction": "united_states",
   "issuing_body": "Federal Trade Commission",
-  "document_type": "regulatory_guidance",
-  "binding_strength": "regulatory_guidance",
+  "document_type": "strategy_paper",
+  "binding_strength": "strategy_statement",
   "publication_date": "2022-06-16",
   "effective_date": null,
+  "covered_actors": [
+    "Social media platforms and major technology companies developing or deploying AI content moderation and detection tools",
+    "Broader online ecosystem ('tech stack') operators including search engines, gaming platforms, messaging apps, e-commerce marketplaces, app stores, ISPs, CDNs, domain registrars, cloud providers, and web browsers",
+    "Data scientists, AI developers, company executives overseeing AI tools, third-party detection vendors, and human content moderators",
+    "Independent researchers, certified external auditors, whistleblowers, and investigative journalists",
+    "U.S. Congress, the Federal Trade Commission (FTC), and partner federal agencies (DHS, CISA, DOJ, FDA, DARPA, Department of State)"
+  ],
   "covered_application_domains": [
     "general_purpose_models",
-    "critical_infrastructure",
     "public_sector_use",
     "law_enforcement"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "human_oversight",
-      "confidence": 0.95,
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "human intervention is still needed, and perhaps always will be, in connection with monitoring the use and decisions of AI tools intended to address harmful content",
-          "source_section": "Executive Summary"
+          "quote": "First, human intervention is still needed, and perhaps always will be, in connection with monitoring the use and decisions of AI tools intended to address harmful content.",
+          "source_section": "Page 9",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 26006,
+          "end_char": 26177
         },
         {
-          "quote": "Simply placing moderators, trust and safety professionals, and other people in AI oversight roles is insufficient. The work is challenging and demands that moderators have adequate training, time, agency to make decisions, and workplace protections.",
-          "source_section": "IV.B Humans in the loop"
+          "quote": "Simply placing moderators, trust and safety professionals, and other people in AI oversight roles is insufficient. The work is challenging and demands that moderators have adequate training, time, agency to make decisions, and workplace protections.277",
+          "source_section": "Page 52",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 185012,
+          "end_char": 185264
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.95,
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AI use in this area needs to be meaningfully transparent, which includes the need for it to be explainable and contestable, especially when people's rights are involved or when personal data is being collected or used.",
-          "source_section": "Executive Summary"
+          "quote": "Second, AI use in this area needs to be meaningfully transparent, which includes the need for it to be explainable and contestable, especially when people’s rights are involved or when personal data is being collected or used.",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 27128,
+          "end_char": 27354
         },
         {
-          "quote": "companies should ensure that users know when automated tools are making moderation decisions and should have 'a high level understanding' of the decision-making logic",
-          "source_section": "IV.C Transparency and accountability"
-        }
-      ]
-    },
-    {
-      "label": "third_party_audit",
-      "confidence": 0.88,
-      "evidence": [
-        {
-          "quote": "accountability would include meaningful appeal and redress mechanisms for consumers and others...and the use of independent audits and algorithmic impact assessments (AIAs)",
-          "source_section": "Executive Summary"
-        },
-        {
-          "quote": "to ensure that the tools are reliable and effective, companies should pursue and monitor detection methods for accuracy and nondiscrimination, submit to regular assessments, and be 'encouraged to publicly share data about the accuracy of their systems and to open their process and algorithmic systems to periodic external auditing'",
-          "source_section": "IV.C Transparency and accountability"
+          "quote": "Among other things, companies should ensure that users know when automated tools are making moderation decisions and should have “a high level understanding” of the decision-making logic.299",
+          "source_section": "Page 55",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 196393,
+          "end_char": 196583
         }
       ]
     },
     {
       "label": "risk_assessment",
-      "confidence": 0.85,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "Algorithmic Impact Assessments (AIAs) are a means of assessing AI systems in the private or public sector...They allow for the evaluation of an AI system's impact before, during, or after its use.",
-          "source_section": "IV.C Assessments and audits"
+          "quote": "Algorithmic Impact Assessments (AIAs) are a means of assessing AI systems in the private or public sector and are derived from assessments performed in environmental protection, human rights, privacy, and data security domains. They allow for the evaluation of an AI system’s impact before, during, or after its use.",
+          "source_section": "Page 58",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 208297,
+          "end_char": 208613
         },
         {
-          "quote": "data scientists and their employers who build AI tools — as well as the firms procuring and deploying them — are responsible for both inputs and outputs",
-          "source_section": "IV.D Responsible data science"
+          "quote": "Further, to ensure that these assessments are meaningful and comparable, standards must be set for how AIAs or audits should be conducted and what they should include.319",
+          "source_section": "Page 59",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 211886,
+          "end_char": 212056
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "In this context, accountability would include meaningful appeal and redress mechanisms for consumers and others — woefully lacking now and perhaps hard to imagine at scale — and the use of independent audits and algorithmic impact assessments (AIAs).",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 28558,
+          "end_char": 28808
+        },
+        {
+          "quote": "AIAs and algorithmic audits may also not be successful if the auditors doing the work are not certified, independent, and protected in their work.321",
+          "source_section": "Page 59",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 212416,
+          "end_char": 212565
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.92,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "They should all strive to hire and retain diverse teams, which may help reduce inadvertent bias or discrimination, and to avoid using training data and classifications that reflect existing societal and historical inequities.",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 29483,
+          "end_char": 29708
+        },
+        {
+          "quote": "Further, they should always keep privacy and security in mind, such as in their treatment of the training data.",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 30002,
+          "end_char": 30113
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.78,
+      "confidence": 0.91,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "One important and practical consideration is having adequate documentation throughout the AI development process.",
-          "source_section": "IV.D Responsible data science"
+          "quote": "Appropriate documentation of the datasets, models, and work undertaken to create these tools is important in this regard.",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 29709,
+          "end_char": 29830
         },
         {
-          "quote": "Appropriate documentation of the datasets, models, and work undertaken to create these tools is important in this regard.",
-          "source_section": "Executive Summary"
+          "quote": "Similarly, the results of any such assessments need to be documented in some standardized way.320 Recognized standards and documentation would also help to allow for better evaluation of an auditor’s work.",
+          "source_section": "Page 59",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 212057,
+          "end_char": 212262
         }
       ]
     },
     {
       "label": "content_provenance",
-      "confidence": 0.82,
+      "confidence": 0.93,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "A major collaborative effort to advance authentication tools is the Coalition for Content Provenance for Authenticity (C2PA)...The goal of this coalition is to create an 'open technical standard providing publishers, creators, and consumers the ability to trace the origin of different types of media.'",
-          "source_section": "IV.H Content authenticity and provenance"
+          "quote": "While authentication tools do not necessarily help with every harm listed by Congress, they can be widely used to help determine the true source of content and whether text, images, audio, or video are deepfakes (see above) or have been otherwise manipulated.",
+          "source_section": "Page 76",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 278798,
+          "end_char": 279057
+        },
+        {
+          "quote": "A major collaborative effort to advance authentication tools is the Coalition for Content Provenance for Authenticity (C2PA), formed in early 2021 by merging two other coordinated efforts, the Content Authenticity Initiative (led by Adobe) and Project Origin (led by Microsoft and the BBC).",
+          "source_section": "Page 76",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 279591,
+          "end_char": 279881
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.86,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Indeed, access to user data should be granted only when robust privacy safeguards are in place.",
+          "source_section": "Page 11",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 33217,
+          "end_char": 33312
+        },
+        {
+          "quote": "We agree that each of these elements would be valuable components of any relevant legislation, but we would urge Congress to carefully consider the privacy and security risks that accompany enhanced access to data.453",
+          "source_section": "Page 80",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 293040,
+          "end_char": 293257
         }
       ]
     }
@@ -96,39 +223,84 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.9,
+      "confidence": 0.92,
       "evidence": [
         {
-          "quote": "Congress should generally steer clear of laws that require, assume the use of, or pressure companies to deploy AI tools to detect harmful content",
-          "source_section": "IV.I Legislation"
+          "quote": "The key conclusion of this report is thus that governments, platforms, and others must exercise great caution in either mandating the use of, or over-relying on, these tools even for the important purpose of reducing harms.",
+          "source_section": "Page 8",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22403,
+          "end_char": 22626
         },
         {
-          "quote": "we believe any initial legislative focus should prioritize the transparency and accountability of platforms and others that build and use automated systems to address online harms",
-          "source_section": "IV.I Legislation"
+          "quote": "Congress should generally steer clear of laws that require, assume the use of, or pressure companies to deploy AI tools to detect harmful content.443",
+          "source_section": "Page 78",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 285248,
+          "end_char": 285397
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "AIAs could also provide the FTC and other regulators with information for investigations into deceptive and unfair business practices.",
+          "source_section": "Page 58",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 208778,
+          "end_char": 208912
+        },
+        {
+          "quote": "Important remedies in these cases and a related action include required deletions of certain models, algorithms, data, or other work product.",
+          "source_section": "Page 6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14549,
+          "end_char": 14690
         }
       ]
     },
     {
       "label": "reporting_obligation",
-      "confidence": 0.75,
+      "confidence": 0.83,
       "evidence": [
         {
-          "quote": "calls for: (1) public disclosure of information, including policies and data on the use and impact of AI systems; (2) researcher access to additional information",
-          "source_section": "IV.I Legislation"
-        }
-      ]
-    },
-    {
-      "label": "none_specified",
-      "confidence": 0.7,
-      "evidence": [
+          "quote": "As previewed above, we believe any initial legislative focus should prioritize the transparency and accountability of platforms and others that build and use automated systems to address online harms.",
+          "source_section": "Page 79",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 290607,
+          "end_char": 290807
+        },
         {
-          "quote": "it seems clear that only legislation will allow us to crack open the black boxes of content moderation",
-          "source_section": "IV.I Legislation"
+          "quote": "The view that we need laws relating to algorithmic transparency and accountability — particularly for social media platforms and other technology companies — typically includes calls for: (1) public disclosure of information, including policies and data on the use and impact of AI systems; (2) researcher access to additional information;",
+          "source_section": "Page 79",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 291261,
+          "end_char": 291600
         }
       ]
     }
   ],
-  "implementation_notes": "This is a report to Congress mandated by the 2021 Appropriations Act (American COMPETE Act). It is analytical and advisory in nature, not binding regulation. The FTC recommends against mandating AI use for content moderation and instead calls for transparency, accountability, and human oversight frameworks. The report covers a broad range of online harms (deepfakes, CSAM, fraud, TVEC, disinformation, harassment) but explicitly defers on terrorism, election security, and criminal matters to other agencies (DHS, DOJ, State Department). The report recommends legislation focused on platform transparency and algorithmic accountability rather than prescriptive AI deployment mandates. No civil or criminal penalties are specified; enforcement is envisioned through future legislation. Confidence is high for jurisdiction and issuing body, but moderate for safety requirement labels as many are framed as recommendations rather than current requirements.",
-  "confidence": 0.88
+  "enforcement_authorities": [
+    "Federal Trade Commission (FTC)",
+    "U.S. Congress (recipient of legislative recommendations)",
+    "Partner federal agencies noted for domain-specific harms (DHS, CISA, DOJ, FDA, Department of State / Global Engagement Center)"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": "As an advisory Report to Congress under the Consolidated Appropriations Act, 2021 (American COMPETE Act § 1501(j)), this report establishes no new statutory penalties; it references past FTC enforcement remedies—including required deletion of models, algorithms, and data in Everalbum, Facebook ($5 billion penalty), and Cambridge Analytica, plus fake-review settlements and Notice of Penalty Offenses—and cautions Congress against legislating rapid-takedown or AI-detection mandates.",
+  "implementation_notes": "Submitted June 16, 2022 by the FTC Bureau of Consumer Protection pursuant to Pub. L. No. 116-260, Title XV, § 1501(j). Evaluates automated and AI-based tools across seven Congressionally designated online harm categories (scams/fraud, deepfakes/fake reviews/bots, dark patterns, illegal content including opioids/CSAM/revenge porn/hate crimes/harassment/violence, terrorist and violent extremist content, election disinformation, and counterfeits). Concludes that AI detection tools remain rudimentary, brittle, context-blind, prone to bias/discrimination/overblocking, and incentivize commercial surveillance. Recommends against laws mandating AI content-filtering, and instead calls for human oversight with moderator protections, meaningful transparency/explainability/contestability, researcher access with privacy safeguards, certified independent audits and standardized Algorithmic Impact Assessments, whistleblower protections, responsible data science and documentation, content provenance/authentication (e.g., C2PA), user control tools, and transparency/accountability legislation.",
+  "confidence": 0.96
 }

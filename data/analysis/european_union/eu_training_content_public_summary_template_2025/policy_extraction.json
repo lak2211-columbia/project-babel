@@ -1,13 +1,14 @@
 {
   "jurisdiction": "european_union",
-  "issuing_body": "European Commission / AI Office",
+  "issuing_body": "European Commission",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": "2025",
+  "publication_date": "2025-12-05",
   "effective_date": "2025-08-02",
   "covered_actors": [
-    "providers of general-purpose AI models",
-    "providers of general-purpose AI models released under free and open-source licenses"
+    "Providers of general-purpose AI models placed on the Union market (including providers of models released under free and open-source licenses)",
+    "Downstream entities modifying existing general-purpose AI models such that they become providers",
+    "Authorised representatives of general-purpose AI model providers established outside the Union"
   ],
   "covered_application_domains": [
     "general_purpose_models"
@@ -15,60 +16,124 @@
   "prohibited_practices": [],
   "safety_requirements": [
     {
-      "label": "transparency_disclosure",
-      "confidence": 0.97,
+      "label": "training_data_governance",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "Article 53(1)(d) AI Act requires all providers of general-purpose AI models to draw up and make publicly available a sufficiently detailed public summary of the content used for the training of the model",
-          "source_section": "Page 2"
+          "quote": "Article 53(1)(d) AI Act requires all providers of general-purpose AI models to draw up and make publicly available a sufficiently detailed public summary of the content used for the training of the model (the ‘Summary’), according to a template provided by the AI Office (the ‘Template’).",
+          "source_section": "1. Background (2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 886,
+          "end_char": 1174
         },
         {
-          "quote": "the objective of the Summary is to increase transparency on the content used for the training of general-purpose AI models, including text and data protected by law",
-          "source_section": "Page 3"
+          "quote": "Describe the measures implemented before model training to respect reservations of rights from the TDM exception or limitation before and during data collection, including the opt-out protocols and solutions honoured by the provider or, as applicable, by third parties from which datasets have been obtained:",
+          "source_section": "Annex 3.1. Respect of reservation of rights from text and data mining exception or limitation",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 44146,
+          "end_char": 44454
         }
       ]
     },
     {
-      "label": "model_documentation",
-      "confidence": 0.9,
+      "label": "open_weight_obligations",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "The Template consists of three main sections: 1. General information... 2. List of data sources... 3. Relevant data processing aspects",
-          "source_section": "Page 5"
+          "quote": "Providers of all general-purpose AI models placed on the Union market must fulfil the above obligation, including providers of general-purpose AI models released under free and open-source licenses4, in so far as the models fall within the scope of the AI Act5.",
+          "source_section": "1. Background (3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1434,
+          "end_char": 1695
+        },
+        {
+          "quote": "4 The exception for free and open-source general-purpose AI model under Article 53(2) AI Act does not apply to the obligation to make publicly available the Summary.",
+          "source_section": "1. Background, Footnote 4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2262,
+          "end_char": 2427
+        }
+      ]
+    },
+    {
+      "label": "domestic_representative",
+      "confidence": 0.85,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Authorised representative name and contact details:\nOnly applicable if the provider is established outside the Union (see Article 54 AI Act).",
+          "source_section": "Annex 1.1. Provider identification",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 27456,
+          "end_char": 27597
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "reporting_obligation",
+      "label": "civil_penalty",
       "confidence": 0.95,
       "evidence": [
         {
-          "quote": "Providers of general-purpose AI models shall […] draw up and make publicly available a sufficiently detailed summary about the content used for training of the general-purpose AI model, according to a template provided by the AI Office",
-          "source_section": "Page 3"
+          "quote": "Non-compliance may be sanctioned with fines of up to 3% of the provider’s annual total worldwide turnover in the preceding financial year or EUR 15 000 000, whichever is higher.",
+          "source_section": "5. Simple, uniform and effective reporting (26)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 21122,
+          "end_char": 21299
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.8,
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "the AI Office to provide a template for the summary, which should be simple, effective, and allow the provider to provide the required summary in narrative form",
-          "source_section": "Page 3"
+          "quote": "The AI Office may verify whether the Template has been filled in correctly in order to assess if the provider has complied with Article 53(1)(d) AI Act. In this context, the AI Office has all enforcement powers under the AI Act and and may request corrective measures.",
+          "source_section": "5. Simple, uniform and effective reporting (26)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 20853,
+          "end_char": 21121
+        },
+        {
+          "quote": "The supervision and enforcement by the AI Office for compliance with the rules for general-purpose AI models will start as of 2 August 2026.",
+          "source_section": "8. Entry into application of the obligation and special rules for models placed on the market before 2 August 2025 (33)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 26361,
+          "end_char": 26501
         }
       ]
     }
   ],
   "enforcement_authorities": [
     "AI Office",
-    "AI Board"
+    "European Commission"
   ],
   "compliance_deadlines": [
-    "2 August 2025 - rules under Section 2 of Chapter V AI Act apply, including Article 53(1)(d) obligation"
+    "2025-08-02: Obligation under Article 53(1)(d) AI Act to make the public summary of training content publicly available enters into application for general-purpose AI models placed on the Union market",
+    "2026-08-02: AI Office supervision and enforcement powers for compliance with general-purpose AI model rules begin",
+    "2027-08-02: Deadline for providers of general-purpose AI models placed on the Union market before 2 August 2025 to make the corresponding Summary publicly available",
+    "Every six months (or sooner if additional training data requires a materially significant update): Required update frequency for the Summary when a marketed model is further trained on additional data"
   ],
-  "penalties_summary": null,
-  "implementation_notes": "This document is a template and explanatory notice issued by the AI Office under Article 53(1)(d) of the EU AI Act, requiring all GPAI model providers to publish a public summary of training content. The template has three sections: general information, list of data sources, and relevant data processing aspects. Providers may voluntarily disclose more than the minimum required. The open-source exception under Article 53(2) does not apply to this obligation. A voluntary 'upon request' mechanism for rightsholders regarding domain names not listed in the summary is recommended but not mandatory.",
-  "confidence": 0.92
+  "penalties_summary": "The AI Office holds all enforcement powers under the AI Act, may request corrective measures, and may sanction non-compliance with fines of up to 3% of the provider's annual total worldwide turnover in the preceding financial year or EUR 15,000,000, whichever is higher.",
+  "implementation_notes": "Commission Communication C(2025) 8311 final setting out an Explanatory Notice and standardized Template implementing the binding obligation in Article 53(1)(d) of Regulation (EU) 2024/1689 (AI Act). The free and open-source exception in Article 53(2) does not apply to this summary obligation. SMEs/start-ups have a proportional cap for scraped domain disclosure (top 5% or 1,000 domains, whichever is lower, versus top 10% for other providers). The AI Office verifies proper completion without conducting work-by-work checks; the Commission intends to publish the Template as an online form and may review it before 2 August 2026.",
+  "confidence": 0.95
 }

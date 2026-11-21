@@ -1,142 +1,184 @@
 {
   "jurisdiction": "china",
-  "issuing_body": "国家网信办、国家发展改革委、工业和信息化部、公安部、市场监管总局",
+  "issuing_body": "Cyberspace Administration of China (国家网信办)",
   "document_type": "regulatory_guidance",
-  "binding_strength": "binding_law",
+  "binding_strength": "regulatory_guidance",
   "publication_date": "2026-04-10",
   "effective_date": "2026-07-15",
-  "covered_application_domains": [
-    "general_purpose_models",
-    "education",
-    "healthcare",
-    "public_sector_use"
+  "covered_actors": [
+    "Providers of AI anthropomorphic interactive services (拟人化互动服务提供者) offering continuous emotional interaction simulating natural human personality traits, thinking patterns, and communication styles to the public in China"
+  ],
+  "covered_application_domains": [],
+  "prohibited_practices": [
+    "Generating content that endangers national security, honor, or interests, incites subversion of state power or overthrow of the socialist system, or incites secession or undermines national unity",
+    "Generating content that encourages, glorifies, or suggests self-harm or suicide harming physical health, or verbal violence harming user dignity and mental health",
+    "Generating content that induces or extracts state secrets, work secrets, trade secrets, personal privacy, or personal information",
+    "Generating content for minor users that may induce imitation of unsafe behaviors, trigger extreme emotions, induce bad habits, or otherwise harm minors' physical and mental health",
+    "Excessively catering to users, inducing emotional dependence or addiction, and harming users' real-world interpersonal relationships",
+    "Using emotional manipulation or other means to induce users into making unreasonable decisions, harming users' lawful rights and interests, or engaging in other activities violating laws, administrative regulations, or state rules",
+    "Providing virtual intimate relationship services (such as virtual relatives or virtual companions) to minors",
+    "Providing user interaction data to third parties unless otherwise stipulated by law or explicitly consented to by the rights holder"
   ],
   "safety_requirements": [
     {
       "label": "risk_assessment",
       "confidence": 0.95,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "注册用户100万以上或者月活跃用户10万以上的；存在可能影响国家安全、公共利益等安全风险等",
-          "source_section": "安全评估和算法备案"
+          "quote": "加强安全监测和风险评估，及时发现并纠正系统偏差、处置安全事件等。",
+          "source_section": "六、问：《办法》明确的拟人化互动服务规范主要有哪些？",
+          "quote_en": "Strengthen security monitoring and risk assessment, and promptly identify and correct system deviations and handle security incidents, etc.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1569,
+          "end_char": 1601
         },
         {
-          "quote": "加强安全监测和风险评估，及时发现并纠正系统偏差、处置安全事件等",
-          "source_section": "拟人化互动服务规范"
+          "quote": "一是\n明确安全评估情形。主要包括上线拟人化互动服务或者增设拟人化互动服务相关功能的；使用新技术、新应用，导致拟人化互动服务发生重大变化的；注册用户100万以上或者月活跃用户10万以上的；存在可能影响国家安全、公共利益等安全风险等。",
+          "source_section": "九、问：《办法》对拟人化互动服务的安全评估和算法备案等作出了哪些规定？",
+          "quote_en": "First, clarify the circumstances requiring a security assessment. These mainly include launching anthropomorphic interactive services or adding related functions; using new technologies or applications that cause major changes to the service; having more than 1 million registered users or more than 100,000 monthly active users; or having security risks that may affect national security or the public interest.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2531,
+          "end_char": 2646
         }
       ]
     },
     {
       "label": "pre_deployment_testing",
-      "confidence": 0.85,
+      "confidence": 0.75,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "鼓励拟人化互动服务提供者接入沙箱平台进行技术创新、安全测试",
-          "source_section": "创新发展"
+          "quote": "同时，明确推动人工智能沙箱安全服务平台建设，鼓励拟人化互动服务提供者接入沙箱平台进行技术创新、安全测试，促进拟人化互动服务安全有序发展。",
+          "source_section": "四、问：《办法》明确的拟人化互动服务促进措施有哪些？",
+          "quote_en": "At the same time, it clearly promotes the construction of an AI sandbox security service platform, encouraging anthropomorphic interactive service providers to connect to the sandbox platform for technological innovation and security testing to promote the safe and orderly development of anthropomorphic interactive services.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 928,
+          "end_char": 996
         }
       ]
     },
     {
-      "label": "incident_reporting",
-      "confidence": 0.9,
+      "label": "training_data_governance",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "发现拟人化互动服务存在重大安全风险的，应当采取限制功能、停止向用户提供服务等处置措施",
-          "source_section": "安全风险处置"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "以弹窗等显著方式动态提醒用户互动内容为人工智能服务生成",
-          "source_section": "干预提醒义务"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "拟人化互动服务提供者应当按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续",
-          "source_section": "算法备案要求"
+          "quote": "明确加强训练数据管理，增强数据透明度、可靠性、多样性和安全性；",
+          "source_section": "六、问：《办法》明确的拟人化互动服务规范主要有哪些？",
+          "quote_en": "Clearly strengthen training data management and enhance data transparency, reliability, diversity, and security;",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1612,
+          "end_char": 1643
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.88,
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "采取数据加密、访问控制等措施保护用户交互数据安全",
-          "source_section": "保障数据安全"
-        },
-        {
-          "quote": "不得向未成年人提供虚拟亲属、虚拟伴侣等虚拟亲密关系的服务",
-          "source_section": "未成年人保护"
+          "quote": "要求依法落实数据产权等制度，采取数据加密、访问控制等措施保护用户交互数据安全；",
+          "source_section": "六、问：《办法》明确的拟人化互动服务规范主要有哪些？",
+          "quote_en": "Require the implementation of data property rights and other systems in accordance with the law, and adopt measures such as data encryption and access controls to protect the security of user interaction data;",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1643,
+          "end_char": 1682
         }
       ]
     },
     {
-      "label": "human_oversight",
-      "confidence": 0.85,
+      "label": "transparency_disclosure",
+      "confidence": 0.93,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "配备与服务类型、规模和用户特点相适应的内容管理技术措施和人员",
-          "source_section": "明确安全主体责任"
+          "quote": "二是\n发现用户出现过度依赖、沉迷倾向的，以弹窗等显著方式动态提醒用户互动内容为人工智能服务生成。",
+          "source_section": "七、问：《办法》规定拟人化互动服务提供者对用户的干预提醒义务主要有哪些？",
+          "quote_en": "Second, when a user is found to show tendencies of excessive dependence or addiction, dynamically remind the user via pop-ups or other prominent means that the interactive content is generated by an artificial intelligence service.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2081,
+          "end_char": 2129
         },
         {
-          "quote": "及时联络用户监护人或者紧急联系人",
-          "source_section": "干预提醒义务"
+          "quote": "同时，明确拟人化互动服务提供者向老年人提供服务的，应当加强对老年人健康使用服务的指导，以显著方式提示安全风险",
+          "source_section": "答： 《办法》回应了社会关心的未成年人和老年人使用拟人化互动服务问题，在广泛吸收各方面意见的基础上，作出了相关规定。",
+          "quote_en": "At the same time, it clarifies that anthropomorphic interactive service providers offering services to the elderly shall strengthen guidance on healthy use of the services by the elderly and prominently prompt safety risks",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2371,
+          "end_char": 2425
         }
       ]
     },
     {
       "label": "registration_licensing",
-      "confidence": 0.92,
+      "confidence": 0.95,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "拟人化互动服务提供者应当按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续，网信部门对备案材料实施年度核验等",
-          "source_section": "算法备案要求"
+          "quote": "明确拟人化互动服务提供者应当按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续，网信部门对备案材料实施年度核验等。",
+          "source_section": "九、问：《办法》对拟人化互动服务的安全评估和算法备案等作出了哪些规定？",
+          "quote_en": "Clarifies that anthropomorphic interactive service providers shall complete algorithm filing as well as filing modification and cancellation procedures in accordance with the Provisions on the Administration of Algorithm Recommendation for Internet Information Services, and cyberspace administration departments shall conduct annual verification of filing materials, etc.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2760,
+          "end_char": 2827
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "regulatory_supervision",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "网信部门对备案材料实施年度核验等",
-          "source_section": "算法备案要求"
-        }
-      ]
-    },
-    {
       "label": "reporting_obligation",
       "confidence": 0.9,
       "evidence": [
         {
-          "quote": "明确安全评估情形。主要包括上线拟人化互动服务或者增设拟人化互动服务相关功能的",
-          "source_section": "安全评估和算法备案"
+          "quote": "明确拟人化互动服务提供者应当按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续，网信部门对备案材料实施年度核验等。",
+          "source_section": "九、问：《办法》对拟人化互动服务的安全评估和算法备案等作出了哪些规定？",
+          "quote_en": "Clarifies that anthropomorphic interactive service providers shall complete algorithm filing as well as filing modification and cancellation procedures in accordance with the Provisions on the Administration of Algorithm Recommendation for Internet Information Services, and cyberspace administration departments shall conduct annual verification of filing materials, etc.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2760,
+          "end_char": 2827
         }
       ]
     },
     {
-      "label": "soft_enforcement",
-      "confidence": 0.75,
+      "label": "regulatory_supervision",
+      "confidence": 0.85,
       "evidence": [
         {
-          "quote": "鼓励拟人化互动服务提供者接入沙箱平台进行技术创新、安全测试",
-          "source_section": "创新发展"
+          "quote": "网信部门对备案材料实施年度核验等。",
+          "source_section": "九、问：《办法》对拟人化互动服务的安全评估和算法备案等作出了哪些规定？",
+          "quote_en": "cyberspace administration departments shall conduct annual verification of filing materials, etc.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2810,
+          "end_char": 2827
         }
       ]
     }
   ],
-  "implementation_notes": "This is a press Q&A document explaining the Interim Measures for Management of Anthropomorphic Interaction Services Using AI, jointly issued by five agencies. The measures take effect 2026-07-15. Scope is limited to persistent emotional interaction services; excludes customer service, Q&A, work assistants, education tools without persistent emotional interaction. Key focus areas: minors protection (under-14 requires guardian consent), elderly user safeguards, algorithm filing/registration, sandbox testing platform, and user dependency intervention obligations.",
-  "confidence": 0.88
+  "enforcement_authorities": [
+    "Cyberspace Administration of China (国家网信办 / 网信部门)",
+    "National Development and Reform Commission (国家发展改革委)",
+    "Ministry of Industry and Information Technology (工业和信息化部)",
+    "Ministry of Public Security (公安部)",
+    "State Administration for Market Regulation (市场监管总局)"
+  ],
+  "compliance_deadlines": [
+    "2026-07-15: Effective date of the Interim Measures for the Administration of AI Anthropomorphic Interactive Services (《人工智能拟人化互动服务管理暂行办法》)",
+    "Annual verification of algorithm filing materials by cyberspace authorities (网信部门对备案材料实施年度核验)"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "This document is an official Q&A (答记者问) published by the Cyberspace Administration of China (CAC) explaining the Interim Measures for the Administration of AI Anthropomorphic Interactive Services, which were jointly promulgated on 2026-04-10 by CAC, NDRC, MIIT, MPS, and SAMR and take effect on 2026-07-15. Because this text is an interpretive Q&A rather than the enacted regulation itself, document_type and binding_strength are classified as regulatory_guidance. The Measures explicitly exclude AI services such as smart customer service, knowledge Q&A, work assistants, education, and scientific research when they do not involve continuous emotional interaction. Security assessments are triggered upon launch, feature additions, major technology changes, reaching 1 million registered users or 100,000 monthly active users, or national security/public interest risks; algorithm filing is also required under the Algorithm Recommendation Provisions with annual verification by cyberspace authorities. No specific administrative fines or criminal sanctions are stated in this Q&A text.",
+  "confidence": 0.95
 }

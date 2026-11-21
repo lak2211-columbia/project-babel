@@ -5,72 +5,80 @@
   "policy_extraction": {
     "jurisdiction": "china",
     "issuing_body": "China Meteorological Administration (CMA) and Cyberspace Administration of China (CAC)",
-    "document_type": "legislation",
-    "binding_strength": "binding_law",
-    "publication_date": "2025-04-23",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2025-04-29",
     "effective_date": "2025-06-01",
-    "covered_application_domains": [
-      "critical_infrastructure",
-      "general_purpose_models"
+    "covered_actors": [
+      "AI meteorological application services providers",
+      "national meteorological service under the State Council"
     ],
+    "covered_application_domains": [
+      "public_sector_use"
+    ],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "registration_licensing",
-        "confidence": 0.9,
+        "confidence": 0.85,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "algorithm registration and security assessments",
-            "source_section": "stipulations"
+            "quote": "It stipulates systems in terms of areas such as algorithm registration and security assessments, the labeling of AI-generated synthetic content, algorithm safety review, cyber security, data security, information dissemination review, and complaint reporting.",
+            "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2259,
+            "end_char": 2518
           }
         ]
       },
       {
         "label": "risk_assessment",
-        "confidence": 0.9,
+        "confidence": 0.82,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "algorithm registration and security assessments",
-            "source_section": "stipulations"
+            "quote": "It stipulates systems in terms of areas such as algorithm registration and security assessments, the labeling of AI-generated synthetic content, algorithm safety review, cyber security, data security, information dissemination review, and complaint reporting.",
+            "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2259,
+            "end_char": 2518
           }
         ]
       },
       {
         "label": "content_provenance",
-        "confidence": 0.9,
+        "confidence": 0.88,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "the labeling of AI-generated synthetic content",
-            "source_section": "stipulations"
+            "quote": "It stipulates systems in terms of areas such as algorithm registration and security assessments, the labeling of AI-generated synthetic content, algorithm safety review, cyber security, data security, information dissemination review, and complaint reporting.",
+            "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2259,
+            "end_char": 2518
           }
         ]
       },
       {
-        "label": "third_party_audit",
-        "confidence": 0.7,
+        "label": "access_controls",
+        "confidence": 0.72,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "algorithm safety review",
-            "source_section": "stipulations"
-          }
-        ]
-      },
-      {
-        "label": "incident_reporting",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "complaint reporting",
-            "source_section": "stipulations"
-          }
-        ]
-      },
-      {
-        "label": "transparency_disclosure",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "information dissemination review",
-            "source_section": "stipulations"
+            "quote": "It stipulates systems in terms of areas such as algorithm registration and security assessments, the labeling of AI-generated synthetic content, algorithm safety review, cyber security, data security, information dissemination review, and complaint reporting.",
+            "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2259,
+            "end_char": 2518
           }
         ]
       }
@@ -78,62 +86,133 @@
     "enforcement_mechanisms": [
       {
         "label": "regulatory_supervision",
-        "confidence": 0.9,
+        "confidence": 0.84,
         "evidence": [
           {
-            "quote": "classified and grading supervision shall be conducted as to such services",
-            "source_section": "document proposal"
+            "quote": "At the same time, an inclusive and prudent approach shall be taken and classified and grading supervision shall be conducted as to such services.",
+            "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1121,
+            "end_char": 1266
           }
         ]
       },
       {
         "label": "reporting_obligation",
-        "confidence": 0.8,
+        "confidence": 0.76,
         "evidence": [
           {
-            "quote": "complaint reporting",
-            "source_section": "stipulations"
+            "quote": "It stipulates systems in terms of areas such as algorithm registration and security assessments, the labeling of AI-generated synthetic content, algorithm safety review, cyber security, data security, information dissemination review, and complaint reporting.",
+            "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2259,
+            "end_char": 2518
           }
         ]
       }
     ],
-    "implementation_notes": "This is described as the first departmental regulation in China to promote and regulate AI in a segmented area, and the first legal standard on AI meteorological application services among WMO members. It covers algorithm registration, security assessments, content labeling, safety review, cyber security, data security, and complaint reporting. Details on penalties are not provided in the available text.",
-    "confidence": 0.82
+    "enforcement_authorities": [
+      "China Meteorological Administration (CMA)",
+      "Cyberspace Administration of China (CAC)"
+    ],
+    "compliance_deadlines": [
+      "2025-06-01 (effective date of the Measures for Artificial Intelligence Meteorological Application Services)"
+    ],
+    "penalties_summary": null,
+    "implementation_notes": "The provided text is an official news article (China Meteorological News Press, updated 2025-04-29) summarizing the joint departmental regulation 'Measures for Artificial Intelligence (AI) Meteorological Application Services' promulgated by CMA and CAC on 2025-04-23 and effective 2025-06-01. Because this source is a press release overview rather than the enacted statutory text itself, binding_strength and document_type are coded as regulatory_guidance rather than binding_law. The summary states that the Measures adopt classified and graded supervision and establish systems for algorithm registration and security assessments, labeling of AI-generated synthetic content, algorithm safety review, cybersecurity, data security, information dissemination review, and complaint reporting, alongside collaborative governance with enterprises, universities, and research institutions.",
+    "confidence": 0.8
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "consumer_public_safety",
-      "social_stability"
+      "consumer_public_safety"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
+      "economic_competitiveness": 0.15,
       "fundamental_rights": 0.0,
-      "social_stability": 0.0,
-      "innovation_enablement": 0.65,
-      "consumer_public_safety": 0.55,
+      "social_stability": 0.2,
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.65,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document primarily frames AI governance in meteorology as enabling healthy and well-organized development, balancing innovation promotion with governance. The stated aim is to encourage and promote AI application services while managing potential hazards, with explicit policy support for R&D and application scenarios. Safety and security measures are secondary to the innovation promotion goal.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.05,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.7,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document predominantly frames China's AI meteorological governance around innovation enablement, emphasizing an inclusive and prudent approach, classified and graded supervision, data openness, R&D support, and the 'AI +' initiative to accelerate meteorological science, technology, and public services. Consumer and public safety serves as a secondary frame through the stated goal of balancing development and security and tackling potential hazards in AI meteorological services such as early warning and weather forecasting in a science-based manner. Minor traces of social stability (healthy, well-organized development and information dissemination review) and international standard-setting appear, but innovation enablement clearly dominates the stated purpose.",
     "evidence_spans": [
       {
-        "quote": "aiming at encouraging and promoting the healthy and well-organized development of AI meteorological application services",
-        "source_section": "Overview"
+        "quote": "The document proposes that AI meteorological application services development shall balance development and security, adhere to the combination of innovation promotion and governance according to law. At the same time, an inclusive and prudent approach shall be taken and classified and grading supervision shall be conducted as to such services.",
+        "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 920,
+        "end_char": 1266
       },
       {
-        "quote": "adhere to the combination of innovation promotion and governance according to law",
-        "source_section": "Policy principles"
+        "quote": "This concerted endeavor will mobilize resources from all sectors of society to promote AI application and development in meteorology, injecting new vitality into speeding up the development of meteorological science and technology and public services,and promote the high-quality development of meteorology.",
+        "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 2759,
+        "end_char": 3066
       },
       {
-        "quote": "concrete policy support and promoting measures focusing on data openness, algorithm model research and development (R&D), and application scenarios empowerment",
-        "source_section": "Policy measures"
-      },
-      {
-        "quote": "injecting new vitality into speeding up the development of meteorological science and technology and public services",
-        "source_section": "CMA initiative"
+        "quote": "The document aims to tackle the potential hazards in AI meteorological application services in a science-based manner, and guide its development direction.",
+        "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 764,
+        "end_char": 919
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:34:39.705527Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "53c2c174c7544298964a9eaea3170bf7c8e01b5cd42fb05d7a2514363e611ab0",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 22022,
+      "output_tokens": 1866,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 4665,
+      "thoughts_tokens": 7282,
+      "estimated_cost_usd": 0.114634
+    },
+    "grounding_summary": {
+      "total_quotes": 9,
+      "exact_matches": 9,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

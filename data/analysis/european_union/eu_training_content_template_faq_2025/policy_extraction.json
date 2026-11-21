@@ -1,35 +1,59 @@
 {
   "jurisdiction": "european_union",
-  "issuing_body": "European Commission / AI Office",
+  "issuing_body": "European Commission (AI Office)",
   "document_type": "regulatory_guidance",
-  "binding_strength": "binding_law",
-  "publication_date": null,
+  "binding_strength": "regulatory_guidance",
+  "publication_date": "2026-03-26",
   "effective_date": "2025-08-02",
+  "covered_actors": [
+    "Providers of general-purpose AI models placing models on the Union market",
+    "Providers of general-purpose AI models with systemic risks",
+    "Providers of general-purpose AI models released under free and open-source licenses",
+    "Downstream entities modifying or fine-tuning general-purpose AI models that become providers"
+  ],
   "covered_application_domains": [
     "general_purpose_models"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
-      "label": "transparency_disclosure",
+      "label": "training_data_governance",
       "confidence": 0.98,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
           "quote": "All providers of general-purpose AI models are required to publish a summary of the content used to train their models, based on a template provided by the Commission.",
-          "source_section": "Introduction"
+          "source_section": "What is the purpose and scope of the Template?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 0,
+          "end_char": 167
         },
         {
-          "quote": "The Summary must be made publicly available no later than when a model is placed on the Union market.",
-          "source_section": "Publication requirements"
+          "quote": "Under Article 53(1)(d) of the\nAI Act\n, using the Template is mandatory.",
+          "source_section": "How do these guidelines and the template support providers of general-purpose AI models in complying with the AI Act’s obligation?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1421,
+          "end_char": 1492
         }
       ]
     },
     {
-      "label": "model_documentation",
-      "confidence": 0.9,
+      "label": "open_weight_obligations",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "The Template provides a uniform baseline for information to be publicly disclosed in the Summary, consisting of three main sections: General information, List of data sources, Relevant data processing aspects.",
-          "source_section": "Template structure"
+          "quote": "Any provider of general-purpose AI models, including those with systemic risks, that places such models on the Union market is required to publish respective summaries. This requirement also applies to providers of models released under free and open-source licenses.",
+          "source_section": "Who is expected to publish a summary of the training content?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1711,
+          "end_char": 1978
         }
       ]
     }
@@ -37,25 +61,45 @@
   "enforcement_mechanisms": [
     {
       "label": "civil_penalty",
-      "confidence": 0.97,
+      "confidence": 0.98,
       "evidence": [
         {
           "quote": "Non-compliance may result in fines of up to 3% of the provider's annual total worldwide turnover in the preceding financial year, or 15 000 000 Euros, whichever is higher.",
-          "source_section": "Enforcement"
+          "source_section": "What are the consequences if a provider fails to publish a summary?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 8512,
+          "end_char": 8683
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.9,
+      "confidence": 0.85,
       "evidence": [
         {
           "quote": "Failure to provide this summary can lead to enforcement actions by the AI Office as of 2 August 2026.",
-          "source_section": "Enforcement"
+          "source_section": "What are the consequences if a provider fails to publish a summary?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 8410,
+          "end_char": 8511
         }
       ]
     }
   ],
-  "implementation_notes": "Template use is mandatory under Article 53(1)(d) of the AI Act. Obligation applies from 2 August 2025 for new models; existing models have until 2 August 2027. Enforcement actions possible from 2 August 2026. Applies to open-source model providers as well. Code of Practice adherence remains voluntary and addresses separate obligations.",
-  "confidence": 0.95
+  "enforcement_authorities": [
+    "European Commission AI Office"
+  ],
+  "compliance_deadlines": [
+    "2025-08-02: Obligation to publish the public summary of training content becomes applicable for general-purpose AI models placed on the Union market (no later than when the model is placed on the market).",
+    "2026-08-02: Enforcement actions by the AI Office for failure to publish the summary commence.",
+    "2027-08-02: Deadline for providers of general-purpose AI models placed on the market before 2 August 2025 to make the corresponding summaries available.",
+    "Six-month intervals (or sooner if a materially significant update is required): Update cadence for the summary when a model is further trained on additional data."
+  ],
+  "penalties_summary": "Failure to publish the mandatory training content summary may lead to enforcement actions by the AI Office as of 2 August 2026, including fines of up to 3% of the provider's annual total worldwide turnover in the preceding financial year or EUR 15,000,000, whichever is higher.",
+  "implementation_notes": "This document is an official European Commission FAQ explaining the mandatory Template for public summaries of training content under Article 53(1)(d) of the EU AI Act. Although the underlying statutory duty and use of the Template are mandatory, this FAQ itself is interpretive regulatory guidance rather than enacted legislation. The publication_date reflects the webpage's last update date (26 March 2026). The FAQ details three required summary sections, trade-secret balancing, SME thresholds for listing scraped domains (top 5% or 1,000 domains, whichever is lower, versus top 10% for other providers), and rules for justifying information gaps for models placed on the market before 2 August 2025.",
+  "confidence": 0.92
 }

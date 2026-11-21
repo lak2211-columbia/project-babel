@@ -1,8 +1,8 @@
 {
   "jurisdiction": "european_union",
-  "source_count": 18,
+  "source_count": 21,
   "source_window_start": "2024-07-12",
-  "source_window_end": "2026-03-20",
+  "source_window_end": "2026-11-05",
   "documents": [
     {
       "document_id": "eu_ai_act_navigation_qa",
@@ -23,16 +23,16 @@
       "top_requirements": [
         "risk_assessment",
         "pre_deployment_testing",
-        "model_documentation"
+        "incident_reporting"
       ],
       "top_enforcement_mechanisms": [
         "civil_penalty",
         "market_access_restriction",
-        "regulatory_supervision"
+        "licensing_requirement"
       ],
-      "implementation_notes": "This document is a Q&A/FAQ published by the European Commission explaining the EU AI Act (Regulation). The underlying AI Act is binding law; this document itself is regulatory guidance/explanatory material. Application dates are phased: prohibitions from 2 Feb 2025, GPAI rules from 2 Aug 2025, high-risk rules from 2 Aug 2026 (potentially delayed per Digital Omnibus proposal), Annex II products from 2 Aug 2027. The GPAI Code of Practice is voluntary but can serve as a compliance demonstration tool.",
-      "framing_rationale_summary": "The document repeatedly centers fundamental rights as the primary justification for regulation, banning specific AI practices because they 'contravene EU values because they violate fundamental rights,' requiring fundamental rights impact assessments, and structuring the risk classification around the EU Charter of Fundamental Rights. Consumer/public safety is a strong secondary frame, as health and safety risks are co-stated throughout. Innovation enablement and economic competitiveness appear as secondary justifications to show the regulation is balanced. Existential/systemic risk language appears specifically around GPAI models (CBRN attacks, loss of human control) but is not the dominant framing.",
-      "confidence": 0.835
+      "implementation_notes": "This document is an explanatory European Commission Q&A webpage (last updated 28 January 2026) summarizing the EU AI Act rather than the enacted statutory text itself. Pre-release R&D/prototyping activities and AI systems exclusively for military, defence, or national security purposes are exempt from the Act. Delays in CEN/CENELEC harmonised standards beyond August 2025 led the Commission to introduce the Digital Omnibus proposal (19 November 2025) to link high-risk application timelines to the availability of standards, common specifications, or guidelines. Implementation is supported by voluntary tools including the GPAI Code of Practice, an upcoming Code of Practice on transparency of AI-generated content, the AI Pact, the AI Act Service Desk, and the Single Information Platform (SIP).",
+      "framing_rationale_summary": "The document frames the EU AI Act primarily around fundamental rights, anchoring prohibitions, high-risk classifications, anti-bias duties, biometric restrictions, and impact assessments in EU values, the EU Charter of Fundamental Rights, non-discrimination, privacy, democracy, and the rule of law. Fundamental rights edges out consumer and public safety (which is prominent in product-safety, physical-safety, and anti-deception rationales) and innovation enablement (which emphasizes trust, internal-market harmonisation, regulatory sandboxes, and proportionate rules) because rights protection recurs as the foundational legal rationale across nearly every substantive section of the Q&A. Economic competitiveness (global leadership, growth, and EU industrial strength) and existential/catastrophic risk (CBRN attacks, large-scale cyberattacks, and loss of human control from systemic-risk GPAI models) appear as explicit secondary justifications, while misinformation and strategic distortion of beliefs provide only minor social-stability framing. National security is explicitly carved out as an exemption rather than a governance rationale, and employment mentions lack workforce-transition or reskilling framing.",
+      "confidence": 0.965
     },
     {
       "document_id": "eu_ai_act_regulation_2024_1689",
@@ -45,23 +45,25 @@
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "innovation_enablement",
         "consumer_public_safety",
-        "economic_competitiveness"
+        "innovation_enablement",
+        "existential_catastrophic",
+        "economic_competitiveness",
+        "social_stability"
       ],
       "top_requirements": [
         "risk_assessment",
-        "transparency_disclosure",
-        "model_documentation"
+        "pre_deployment_testing",
+        "red_teaming"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
+        "civil_penalty",
         "market_access_restriction",
-        "reporting_obligation"
+        "licensing_requirement"
       ],
-      "implementation_notes": "Regulation entered into force 20 days after publication (1 August 2024) with phased applicability. Complements existing EU law on data protection, product safety, consumer protection, and employment. Does not affect GDPR or Directive 2016/680 obligations. European AI Office established within Commission to oversee GPAI models. Member States must designate national competent authorities.",
-      "framing_rationale_summary": "The EU AI Act consistently frames AI governance as necessary to protect fundamental rights, democracy, rule of law, and human dignity as enshrined in the EU Charter. While economic competitiveness and innovation enablement are prominent secondary themes, the primary justification for regulation is the protection of rights and freedoms. The document repeatedly references the Charter of Fundamental Rights, human-centric AI, and protection of natural persons as the core rationale.",
-      "confidence": 0.9
+      "implementation_notes": "Adopted on 13 June 2024 and published in the Official Journal on 12 July 2024; directly applicable in all Member States with staged application from February 2025 through August 2027 (and transitional periods to 2030). Explicitly excludes AI systems exclusively for military, defence, or national security purposes, pure scientific R&D, pre-market research/testing (other than real-world testing), purely personal non-professional use, and free/open-source AI systems unless high-risk, prohibited, or subject to Article 50 transparency rules (with open-weight GPAI models still subject to copyright policy, training-data summary, and systemic-risk rules where applicable). Establishes a multi-tier governance framework comprising the Commission AI Office, European AI Board, Scientific Panel of Independent Experts, Advisory Forum, national market surveillance and notifying authorities, and the EDPS.",
+      "framing_rationale_summary": "The EU AI Act is anchored primarily in a fundamental_rights frame, repeatedly grounding its purpose, prohibitions, high-risk classifications, and deployer impact assessments in EU Charter rights, human dignity, privacy, non-discrimination, democracy, and the rule of law (Recitals 1, 6, 28, 48, 56–62, 96; Article 1). While consumer_public_safety (product safety, health, physical harm, and critical infrastructure protection under the New Legislative Framework) and innovation_enablement (harmonised internal market rules, legal certainty, regulatory sandboxes, and SME/startup support) are major co-equal pillars of the Act's dual-purpose architecture, fundamental_rights edges them out as the overarching normative justification that defines unacceptable practices and structures standalone high-risk governance. Secondary rationales include economic_competitiveness (global leadership in trustworthy AI and growth in the single market), existential_catastrophic risk (explicitly invoked in Recital 110 for general-purpose AI systemic risks such as CBRN, offensive cyber, and self-replication), and social_stability (integrity of the information ecosystem and disinformation mitigation in Recitals 120 and 133). Worker protections appear mainly as rights preservation rather than a macroeconomic labor_transition agenda, and national_security is expressly excluded from the Regulation's scope (Recital 24; Article 2(3)).",
+      "confidence": 0.98
     },
     {
       "document_id": "eu_ai_act_standardisation_page",
@@ -69,7 +71,7 @@
       "publication_date": "2026-03-20",
       "issuing_body": "European Commission (AI Office)",
       "document_type": "regulatory_guidance",
-      "binding_strength": "standards_guideline",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
@@ -80,17 +82,15 @@
       ],
       "top_requirements": [
         "risk_assessment",
-        "model_documentation",
-        "transparency_disclosure"
+        "training_data_governance",
+        "model_documentation"
       ],
       "top_enforcement_mechanisms": [
-        "market_access_restriction",
-        "regulatory_supervision",
         "soft_enforcement"
       ],
-      "implementation_notes": "This page describes the EU AI Act standardisation process led by CEN/CENELEC JTC 21. Standards are voluntary but create a presumption of conformity. The first harmonised standard (prEN 18286) entered public enquiry on 30 October 2025. Application of high-risk AI rules is linked to availability of support tools, with a latest deadline of 2 December 2027 (Annex III) or 2 August 2028 (Annex I). International alignment with ISO/IEC SC 42 is a stated priority.",
-      "framing_rationale_summary": "The document primarily frames AI standardisation as enabling innovation and global competitiveness through harmonised standards that foster trust, reduce compliance costs, and position the EU as a global benchmark-setter. While safety and fundamental rights are mentioned as underlying concerns of the AI Act, the standardisation page's own reasoning emphasises how standards support innovation, market acceptance, and the EU's leadership role.",
-      "confidence": 0.64
+      "implementation_notes": "Informational policy webpage published by the European Commission explaining AI Act standardisation rather than a binding legal instrument or technical standard itself. Harmonised standards developed by CEN and CENELEC (via JTC 21) across ten requested areas remain voluntary, but once assessed by the Commission and referenced in the Official Journal of the EU they provide a presumption of conformity. Notes that prEN 18286 (Quality Management System for AI Act Article 17) entered public enquiry on 30 October 2025, highlights international alignment with ISO/IEC SC 42, and summarizes the 19 November 2025 Digital Omnibus proposal linking high-risk AI rule applicability to the availability of standards and support tools.",
+      "framing_rationale_summary": "Innovation enablement is the dominant frame because the page justifies AI Act standardisation primarily as a way to provide legal certainty, simplify compliance, lower compliance costs for businesses of all sizes, avoid regulatory fragmentation and redundant compliance efforts, and foster trust and market acceptance through voluntary technical standards and rollout support tools. Economic competitiveness is a close runner-up, reflected in repeated emphasis on European harmonised standards becoming de facto global benchmarks, helping developers compete on a global scale, and positioning the EU to lead globally; innovation enablement edges it out because the operational focus throughout the page is reducing compliance friction and enabling trustworthy adoption rather than zero-sum economic rivalry. Consumer and public safety and fundamental rights appear as secondary background rationales describing the underlying high-risk AI Act objectives (protecting safety, health, and fundamental rights, and meeting high safety standards).",
+      "confidence": 0.885
     },
     {
       "document_id": "eu_ai_pact_page",
@@ -101,10 +101,10 @@
       "binding_strength": "voluntary_commitment",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "fundamental_rights",
-        "innovation_enablement"
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment",
@@ -112,12 +112,11 @@
         "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "The AI Pact is a voluntary initiative preparatory to the binding EU AI Act. Pillar I is a knowledge-sharing community open to all stakeholders. Pillar II involves voluntary pledges by providers and deployers. More than 230 companies have signed pledges. Reporting on progress is invited but not legally mandated.",
-      "framing_rationale_summary": "The document frames AI governance primarily around ensuring trustworthy, safe AI systems and compliance with the AI Act's safety and transparency requirements. It emphasizes risk categorization, human oversight, and safeguards. Fundamental rights and innovation enablement appear as secondary frames.",
-      "confidence": 0.685
+      "implementation_notes": "The EU AI Pact is a non-binding initiative promoted by the European Commission and its AI Office to help stakeholders prepare during the EU AI Act transitional period (following the AI Act's entry into force on 2024-08-01). It comprises two pillars: Pillar I (an open stakeholder network for webinars and best-practice sharing) and Pillar II (voluntary company pledges, or 'declarations of engagement', launched with first signatories on 2024-09-25 and signed by over 230 companies). Core pledges cover adopting an AI governance strategy, identifying and mapping likely high-risk AI systems, and promoting staff AI literacy; additional optional pledges cover human oversight, risk mitigation, and transparency for AI-generated content such as deepfakes. Pledges carry no legal obligations or sanctions.",
+      "framing_rationale_summary": "The document's dominant frame is innovation_enablement because the AI Pact is justified primarily as a voluntary, collaborative mechanism to help organisations prepare smoothly for AI Act compliance, foster organisational AI uptake, share best practices, and build trust in trustworthy AI deployment. It edges out fundamental_rights and consumer_public_safety, which appear mainly as concise background objectives in the Big Picture section ('ensuring safety and fundamental rights') and in references to risk mitigation and deep-fake transparency rather than as the central rationale of the Pact itself. A minor nod to economic_competitiveness appears in the reference to boosting research and industrial capacity.",
+      "confidence": 0.935
     },
     {
       "document_id": "eu_ai_system_definition_guidelines",
@@ -133,15 +132,99 @@
         "innovation_enablement",
         "consumer_public_safety"
       ],
-      "top_requirements": [
-        "human_oversight"
-      ],
+      "top_requirements": [],
       "top_enforcement_mechanisms": [
         "soft_enforcement"
       ],
-      "implementation_notes": "Guidelines are explicitly non-binding (paragraph 7: 'The Guidelines are not binding'). Authoritative interpretation rests solely with the CJEU. Guidelines were adopted in parallel with Commission guidelines on prohibited AI practices. They clarify the seven-element definition of 'AI system' under Article 3(1) of Regulation (EU) 2024/1689 and note that systems based solely on rules defined by natural persons or limited to basic data processing fall outside the AI system definition.",
-      "framing_rationale_summary": "The document frames AI governance as necessary to ensure 'a high level of protection of health, safety, and fundamental rights in the Union, including democracy and the rule of law.' This rights-protective framing is the primary stated rationale, paired with a secondary emphasis on promoting innovation and uptake of AI.",
-      "confidence": 0.785
+      "implementation_notes": "Non-binding interpretive guidelines (C(2025) 5053 final) issued under Article 96(1)(f) of the AI Act to assist stakeholders in applying the seven-element definition of an 'AI system' under Article 3(1) and distinguishing AI systems from excluded software (mathematical optimization, basic data processing, classical heuristics, and simple prediction systems). Authoritative interpretation of the AI Act rests solely with the CJEU. Adopted in parallel with guidelines on prohibited AI practices; analysis of differences between AI systems and general-purpose AI models (Chapter V) is explicitly outside scope.",
+      "framing_rationale_summary": "Although most of the document consists of technical and legal analysis of the seven elements defining an AI system under Article 3(1) of the EU AI Act, its explicit framing language in the Purpose and Concluding Remarks sections centers on fundamental rights alongside proportional innovation enablement. Fundamental rights edges out innovation enablement as the dominant frame because both the opening aim ('protection of health, safety, and fundamental rights in the Union, including democracy and the rule of law') and the closing justification of the Act's risk-based scope anchor regulatory intervention specifically in mitigating 'the most significant risks to fundamental rights and freedoms.' Innovation enablement is a close runner-up, reflected in the goals of promoting AI innovation and uptake, maintaining definitional flexibility for rapid technological developments, and emphasizing that the vast majority of AI systems will face no regulatory obligations. Consumer and public safety appears as a smaller secondary frame through the explicit reference to protecting health and safety.",
+      "confidence": 0.925
+    },
+    {
+      "document_id": "eu_article_50_transparency_guidelines_2026",
+      "title": "Commission Guidelines on the Implementation of Transparency Obligations for Certain AI Systems under Article 50 of the AI Act (C(2026) 7702 final)",
+      "publication_date": "2026-11-05",
+      "issuing_body": "European Commission (AI Office)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "social_stability",
+        "consumer_public_safety",
+        "innovation_enablement"
+      ],
+      "top_requirements": [
+        "transparency_disclosure",
+        "content_provenance",
+        "agentic_autonomy_controls"
+      ],
+      "top_enforcement_mechanisms": [
+        "civil_penalty",
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Non-binding practical guidelines issued pursuant to Article 96(1)(d) AI Act; authoritative interpretation rests with the Court of Justice of the European Union (CJEU). Clarifies the four transparency obligations in Article 50(1)-(4) (interactive AI systems including AI agents, machine-readable marking and detection of synthetic audio/image/video/text, emotion recognition and biometric categorisation notices, and labelling of deep fakes and public-interest AI text) and horizontal clarity, timing, and accessibility duties in Article 50(5). Details exclusions for purely personal non-professional deployer use, sole scientific R&D, open-source components that are not AI systems, standard editing, law enforcement activities, and editorially controlled public-interest text. Compliance with Article 50 does not legalise practices prohibited under Article 5 AI Act or replace high-risk AI, DSA, GDPR, consumer protection, or accessibility rules. Adherence to an adequate Code of Practice under Article 50(7) facilitates compliance demonstration, whereas non-signatories must demonstrate compliance by alternative means and may face heightened supervisory scrutiny. No retroactive marking or labelling is required for outputs generated or manipulated (and, for public-interest text, published) before 2 August 2026.",
+      "framing_rationale_summary": "The Commission Guidelines anchor Article 50 transparency obligations primarily in fundamental rights (dominant_frame), framing disclosure and marking rules as essential to upholding personal autonomy, human dignity, democracy and the rule of law, privacy, equality and non-discrimination, freedom of thought, and freedom of expression across interactive, generative, emotion-recognition, and biometric-categorisation AI systems. Fundamental rights edges out the close runner-up, social_stability, because rights-based protections and safeguards for third-party rights and freedoms serve as the overarching constitutional rationale across all four Article 50 obligations (Sections 1, 2.2, 3, 5, and 6), whereas social_stability—prominently expressed through recurring calls to safeguard societal trust, counter misinformation and disinformation, and preserve the integrity of the information ecosystem—concentrates especially in synthetic content marking and deep fake provisions (Sections 2.2, 4, and 8.4). Consumer_public_safety is a substantial secondary frame focused on preventing deception, fraud, impersonation, overreliance, and manipulation, with particular attention to vulnerable groups such as children, the elderly, and persons with disabilities. Innovation_enablement appears as a modest secondary frame via references to promoting innovation and uptake of trustworthy AI, proportionality, and legal certainty through codes of practice.",
+      "confidence": 0.945
+    },
+    {
+      "document_id": "eu_code_practice_transparency_ai_content_2026",
+      "title": "Code of Practice on Transparency of AI-Generated Content (EU AI Act Article 50)",
+      "publication_date": "2026-07-08",
+      "issuing_body": "European Commission (AI Office)",
+      "document_type": "voluntary_commitment",
+      "binding_strength": "voluntary_commitment",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "social_stability",
+      "secondary_frames": [
+        "innovation_enablement",
+        "fundamental_rights",
+        "consumer_public_safety"
+      ],
+      "top_requirements": [
+        "content_provenance",
+        "transparency_disclosure",
+        "pre_deployment_testing"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Voluntary Code of Practice under EU AI Act Article 50 structured into two sections: Section 1 for providers of generative AI systems (Article 50(2) and (5)) covering multi-layered machine-readable marking (digitally signed metadata and imperceptible watermarking, with a 200-token threshold for free-form text), free detection mechanisms, quality criteria (effectiveness, reliability, robustness, interoperability), and compliance testing; and Section 2 for deployers (Article 50(4) and (5)) covering design and placement rules for labelling deep fakes and AI-generated/manipulated public-interest text, publicly available EU icons (Annex 1), artistic/creative work disclosures, and human review/editorial control policies. Within the Code, 'will' denotes mandatory signatory commitments monitored by competent market surveillance authorities, while 'encouraged' and 'may' denote optional measures; adherence aids in demonstrating compliance with Article 50 but does not constitute conclusive legal evidence of compliance. Includes proportionality provisions for SMEs and SMCs and establishes a task force to advance interoperability standards and EU icon development.",
+      "framing_rationale_summary": "The Code of Practice's primary substantive justification for AI content transparency is safeguarding public trust and the integrity of the information ecosystem against misinformation and manipulation at scale (social_stability), which leads both Section 1 and Section 2 Recitals. Innovation enablement is a close runner-up, shaping how the Code is designed through future-proof technical flexibility, open standards, cost reduction, and proportionate compliance for SMEs and startups, but it serves as a design constraint rather than the core harm motivating Article 50 disclosure duties. Fundamental rights (democratic discourse, individual decision-making, privacy/data protection, media freedom, and accessibility) and consumer/public safety (preventing fraud, impersonation, consumer deception, and harms to vulnerable users) serve as substantial secondary justifications.",
+      "confidence": 0.935
+    },
+    {
+      "document_id": "eu_digital_omnibus_ai_regulation_2026_1744",
+      "title": "Regulation (EU) 2026/1744 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 (Digital Omnibus on AI)",
+      "publication_date": "2026-07-24",
+      "issuing_body": "European Parliament and Council",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "fundamental_rights",
+        "consumer_public_safety",
+        "economic_competitiveness"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "pre_deployment_testing",
+        "incident_reporting"
+      ],
+      "top_enforcement_mechanisms": [
+        "civil_penalty",
+        "market_access_restriction",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Adopted on 8 July 2026 and published on 24 July 2026, this Digital Omnibus on AI amends Regulation (EU) 2024/1689 (EU AI Act), Regulation (EU) 2018/1139 (civil aviation), and Regulation (EU) 2023/1230 (machinery) to simplify implementation and address delays in harmonised standards and national governance. Key changes include postponing high-risk AI obligations to 2 December 2027 (Annex III) and 2 August 2028 (Annex I), extending SME compliance reliefs to SMCs and simplified QMS to all SMEs, refining the 'safety component' definition, revising Article 4 AI literacy to a support duty, broadening Article 4a special-category personal data processing for bias detection and correction, adding Article 5 prohibitions on non-consensual intimate material and CSAM, codifying detailed AI Office supervisory, investigatory, commitment, conformity assessment, and fining powers over GPAI-based systems and VLOP/VLOSE systems (Articles 75-75d), moving the Machinery Regulation from Annex I Section A to Section B, expanding real-world testing to Annex I systems, and adding Annex XIV notified-body designation codes.",
+      "framing_rationale_summary": "Regulation (EU) 2026/1744 (Digital Omnibus on AI) is dominantly framed around innovation_enablement: its overarching purpose is to simplify implementation of the AI Act, reduce heavier-than-expected compliance and administrative burdens, eliminate overlaps with sectoral legislation, introduce proportionality for SMEs and small mid-cap enterprises (SMCs), expand AI regulatory sandboxes and real-world testing, and extend compliance timelines to foster AI innovation and uptake across the private and public sectors. Innovation_enablement edges out fundamental_rights because the vast majority of the recitals and operative amendments focus on regulatory simplification, friction reduction, and proportional compliance pathways rather than introducing new rights-based mandates. Nevertheless, fundamental_rights is a strong runner-up, anchored in the new Article 5 prohibitions on AI-generated non-consensual intimate material and child sexual abuse material (explicitly tied to human dignity, privacy, and the Charter of Fundamental Rights), expanded legal bases for bias detection to prevent discrimination, and strengthened cooperation with fundamental rights authorities. Consumer_public_safety appears as a clear secondary frame through repeated commitments to preserving high levels of health and safety protection for persons, children, and property across product safety regimes (such as machinery and civil aviation). Economic_competitiveness plays a minor supporting role in justifications citing competitiveness and the growth role of SMEs and SMCs.",
+      "confidence": 0.965
     },
     {
       "document_id": "eu_edpb_ai_models_opinion_28_2024",
@@ -154,22 +237,22 @@
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
-        "innovation_enablement"
+        "innovation_enablement",
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment",
-        "pre_deployment_testing",
-        "red_teaming"
+        "red_teaming",
+        "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
         "regulatory_supervision",
         "civil_penalty",
-        "reporting_obligation"
+        "market_access_restriction"
       ],
-      "implementation_notes": "This is an EDPB opinion issued under Article 64(2) GDPR at the request of the Irish SA. It provides interpretive guidance to supervisory authorities on: (1) when AI models trained on personal data can be considered anonymous; (2) how legitimate interest as a legal basis applies to AI model development and deployment; (3) consequences of unlawful processing in development phase on subsequent processing. The opinion is addressed to SAs to inform their case-by-case assessments, but is without prejudice to controller obligations under GDPR. Not a binding regulation but carries significant weight as an EDPB opinion under the consistency mechanism.",
-      "framing_rationale_summary": "The document is a data protection opinion by the EDPB that frames AI governance squarely around the fundamental right to data protection (Article 8 EU Charter) and related rights such as privacy, freedom of expression, non-discrimination, and dignity. Throughout, it evaluates AI model processing through the lens of data subjects' rights and freedoms, the balancing of interests under GDPR, and the obligations of controllers to respect those rights. The justification for governance action is protecting individuals' fundamental rights from risks posed by AI model development and deployment, not economic competitiveness or national security.",
-      "confidence": 0.87
+      "implementation_notes": "Adopted pursuant to Article 64(2) GDPR following a 4 September 2024 request from the Irish supervisory authority, this Opinion is addressed to all EEA supervisory authorities to promote consistent GDPR application across the EEA. It provides a non-exhaustive, case-by-case analytical framework on AI model anonymity, legitimate interest (Article 6(1)(f) GDPR) in development and deployment, and the downstream consequences of unlawful training data processing, without prejudice to controllers' and processors' existing GDPR obligations. It explicitly excludes detailed analysis of special categories of data (Article 9), automated decision-making (Article 22), purpose compatibility (Article 6(4)), DPIAs (Article 35), and data protection by design (Article 25), and notes forthcoming EDPB guidelines on anonymisation, pseudonymisation, and data scraping for generative AI.",
+      "framing_rationale_summary": "The Opinion is overwhelmingly framed around fundamental_rights, as the EDPB interprets GDPR provisions to protect data subjects' EU Charter rights—specifically privacy (Article 7), personal data protection (Article 8), freedom of expression (Article 11), non-discrimination (Article 21), and self-determination—throughout AI model development and deployment. While innovation_enablement appears as a secondary rationale in the preamble and admissibility section (characterizing GDPR as a framework that supports AI opportunities and encourages responsible innovation through consistent supervisory application) and consumer_public_safety appears in the balancing test (citing risks of fraud, phishing, deepfakes, physical/mental harm, and manipulation of vulnerable individuals), both remain subordinate to the document's core legal mandate of safeguarding individual fundamental rights and freedoms.",
+      "confidence": 0.96
     },
     {
       "document_id": "eu_edps_genai_guidance_2025",
@@ -182,8 +265,7 @@
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
-        "social_stability"
+        "innovation_enablement"
       ],
       "top_requirements": [
         "risk_assessment",
@@ -192,12 +274,11 @@
       ],
       "top_enforcement_mechanisms": [
         "regulatory_supervision",
-        "reporting_obligation",
         "soft_enforcement"
       ],
-      "implementation_notes": "This is Version 2 of EDPS guidance issued under Regulation (EU) 2018/1725 (EUDPR), applicable specifically to EU institutions, bodies, offices and agencies (EUIs). The document is explicitly not issued under the AI Act market surveillance authority role. Enforcement is primarily through GDPR-style accountability mechanisms and EDPS supervisory authority rather than direct penalties. The guidance is non-prescriptive on technical measures but establishes baseline data protection compliance expectations for all stages of the generative AI lifecycle. Several referenced documents (e.g., EDPS Guidance for Risk Management for AI systems) are noted as forthcoming.",
-      "framing_rationale_summary": "The document is explicitly grounded in data protection as a fundamental right. Its stated purpose is ensuring that EUIs comply with Regulation (EU) 2018/1725 to protect individuals' fundamental rights and freedoms when using generative AI. Risks are consistently framed as threats to individual rights—privacy, accuracy, non-discrimination, automated decision-making—rather than as threats to national security or economic competitiveness.",
-      "confidence": 0.86
+      "implementation_notes": "Version 2 of the EDPS Orientations (revising and expanding the 2024 first edition) providing practical advice to EUIs on complying with Regulation (EU) 2018/1725 (EUDPR) across the generative AI lifecycle. Issued solely in the EDPS's capacity as a data protection supervisory authority—not as a market surveillance authority under the EU AI Act—and without prejudice to the AI Act. The guidance emphasizes principle-based compliance rather than prescribing specific technical measures, aligns with EDPB Opinion 28/2024, references forthcoming EDPS AI risk management guidance, and notes that it may be further updated as generative AI technologies evolve.",
+      "framing_rationale_summary": "The document is overwhelmingly framed around fundamental_rights, grounding AI governance in EU institutions' legal obligation under Regulation (EU) 2018/1725 (EUDPR) and the EU Charter of Fundamental Rights to protect personal data, privacy, non-discrimination, fairness, and data subject rights throughout the generative AI lifecycle. innovation_enablement serves as a clear secondary frame, as the EDPS emphasizes that there is no obstacle in principle to deploying generative AI in public services and provides practical, flexible guidance to support responsible and beneficial adoption for the public good. Minor references to vulnerabilities in critical public services such as health and harms to vulnerable populations and children provide a small consumer_public_safety signal, but fundamental_rights clearly dominates because every operational safeguard is justified primarily by protecting individuals' fundamental rights and freedoms.",
+      "confidence": 0.965
     },
     {
       "document_id": "eu_gpai_code_copyright_chapter_2025",
@@ -210,22 +291,20 @@
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "innovation_enablement",
-        "consumer_public_safety"
+        "innovation_enablement"
       ],
       "top_requirements": [
+        "training_data_governance",
         "transparency_disclosure",
-        "model_documentation",
-        "risk_assessment"
+        "model_documentation"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation",
-        "soft_enforcement"
+        "soft_enforcement",
+        "regulatory_supervision"
       ],
-      "implementation_notes": "This is the Copyright Chapter of the broader GPAI Code of Practice, intended to help Signatories demonstrate compliance with Article 53(1)(c) of the EU AI Act. Adherence is voluntary and does not constitute compliance with Union copyright law per se. Measures are proportionate to provider size, with SME/startup considerations. A dynamic list of copyright-infringing websites will be maintained on an EU website to assist compliance with Measure 1.2.",
-      "framing_rationale_summary": "The document is primarily framed around protecting fundamental rights—specifically intellectual property rights enshrined in EU law—as the basis for AI governance obligations. The overarching objective explicitly references 'a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law.' The substantive measures are devoted to ensuring AI providers respect copyright and related rights of rightsholders. A secondary innovation-enablement frame is present through references to supporting innovation and accommodating SMEs/startups. Consumer/public safety appears marginally through output safeguard requirements.",
-      "confidence": 0.825
+      "implementation_notes": "Voluntary Code of Practice chapter enabling Signatory providers of general-purpose AI models to demonstrate compliance with Article 53(1)(c) of the EU AI Act (complementary to Article 53(1)(d) training-content summaries). Adherence does not constitute conclusive evidence of AI Act compliance or compliance with EU copyright law (Directives 2001/29/EC, (EU) 2019/790, and 2004/48/EC). Proportionate measures account for provider size, including SMEs and startups. Operational commitments cover maintaining a unified copyright policy, lawful web-crawling (respecting paywalls and excluding piracy-listed sites via a dynamic EU list), honouring robots.txt (IETF RFC 9309) and other machine-readable rights reservations, mitigating copyright-infringing outputs (with tailored documentation rules for free and open-source models), and maintaining a rightsholder point of contact and electronic complaint mechanism.",
+      "framing_rationale_summary": "The document's dominant framing is fundamental_rights because its overarching objective anchors governance in fundamental rights enshrined in the EU Charter and the rule of law, and the entire substantive chapter is justified around protecting the exclusive legal rights of rightsholders under Union copyright law, respecting reservations of rights, and preserving legal remedies and complaint mechanisms. Innovation_enablement is a secondary frame, reflected in the preamble's goal of promoting the uptake of trustworthy AI and supporting innovation, as well as the recital emphasizing proportionate measures tailored to SMEs and startups. Fundamental_rights edges out innovation_enablement because every operative commitment is structured around safeguarding rightsholders' statutory rights rather than reducing compliance friction. Health and safety (consumer_public_safety) and internal market functioning (economic_competitiveness) appear only briefly as inherited Article 1(1) AI Act boilerplate in the preamble.",
+      "confidence": 0.925
     },
     {
       "document_id": "eu_gpai_code_qa_2025",
@@ -236,40 +315,39 @@
       "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "fundamental_rights",
-        "innovation_enablement"
+        "consumer_public_safety"
       ],
       "top_requirements": [
-        "transparency_disclosure",
-        "model_documentation",
-        "risk_assessment"
+        "compute_governance",
+        "registration_licensing"
       ],
       "top_enforcement_mechanisms": [
         "civil_penalty",
-        "regulatory_supervision",
-        "soft_enforcement"
+        "reporting_obligation",
+        "regulatory_supervision"
       ],
-      "implementation_notes": "This document is a Q&A on a voluntary Code of Practice that helps providers demonstrate compliance with the binding AI Act. The Code itself does not impose new obligations but serves as a compliance pathway. Full enforcement with fines begins August 2026; models pre-dating August 2025 have until August 2027. The systemic risk threshold is set at 10^25 FLOPs of training compute.",
-      "framing_rationale_summary": "The document primarily frames AI governance around ensuring that general-purpose AI models placed on the EU market are safe and transparent, with special attention to systemic risk from the most powerful models. The core justification is protecting users and society from unsafe models, framed through compliance with the AI Act's safety and transparency obligations. Secondary frames include fundamental rights (copyright protections) and innovation enablement (streamlined compliance, reduced administrative burden, good-faith enforcement transition).",
-      "confidence": 0.735
+      "implementation_notes": "Official European Commission Q&A explaining the voluntary General-Purpose AI Code of Practice (covering Transparency, Copyright, and Safety and Security chapters), which does not impose new obligations beyond the AI Act. Notes the AI Act's 10^25 FLOPs presumption for systemic risk, upcoming Commission guidelines clarifying scope, adequacy assessment by Member States and the Commission, and AI Office review of the Code at least every two years.",
+      "framing_rationale_summary": "The FAQ predominantly frames the General-Purpose AI Code of Practice around innovation enablement by emphasizing voluntary, agile, and future-proof compliance that lowers friction, avoids additional administrative burdens, increases predictability, and allows models to continue entering the EU market without delays. Consumer and public safety appears as a secondary rationale—ensuring that models placed on the European market are safe and transparent and adapting to changes in the risk landscape—but innovation enablement edges it out because the document's core purpose is justifying a streamlined, collaborative compliance pathway rather than elaborating substantive safety harms. Although systemic risk and high-impact capabilities are mentioned, the text does not explicitly invoke catastrophic or existential harms, fundamental rights, or international economic rivalry.",
+      "confidence": 0.91
     },
     {
       "document_id": "eu_gpai_code_safety_security_chapter_2025",
       "title": "Code of Practice for General-Purpose AI Models: Safety and Security Chapter",
       "publication_date": "2025-07-10",
       "issuing_body": "European Commission (AI Office)",
-      "document_type": "standards_guideline",
+      "document_type": "voluntary_commitment",
       "binding_strength": "voluntary_commitment",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "existential_catastrophic",
       "secondary_frames": [
         "fundamental_rights",
+        "consumer_public_safety",
+        "innovation_enablement",
         "social_stability",
-        "existential_catastrophic",
-        "innovation_enablement"
+        "national_security"
       ],
       "top_requirements": [
         "risk_assessment",
@@ -277,41 +355,41 @@
         "red_teaming"
       ],
       "top_enforcement_mechanisms": [
+        "soft_enforcement",
         "reporting_obligation",
-        "regulatory_supervision",
-        "soft_enforcement"
+        "regulatory_supervision"
       ],
-      "implementation_notes": "This Code of Practice is a voluntary instrument under the EU AI Act. Adherence serves as a means for providers to demonstrate compliance with Articles 53 and 55 AI Act obligations, but does not constitute conclusive evidence of compliance. SMEs and SMCs may benefit from simplified compliance paths including exemptions from some reporting commitments per Article 56(5) AI Act. The document is the Safety and Security Chapter specifically, focused on systemic risk assessment and mitigation across the model lifecycle.",
-      "framing_rationale_summary": "The document primarily frames AI governance around protecting public health, safety, and fundamental rights from systemic risks posed by general-purpose AI models. The overarching objective explicitly references 'high level of protection of health, safety, and fundamental rights' and systemic risks defined as those with 'significant impact...on public health, safety, public security, fundamental rights, or the society as a whole.' Safety and security mitigations, systemic risk assessments, and mandatory reporting all center on preventing harms to users and society. Fundamental rights and social stability appear as strong secondary frames, with innovation enablement also present through the 'Principle of Innovation in AI Safety and Security.'",
-      "confidence": 0.825
+      "implementation_notes": "Voluntary opt-in Code of Practice serving as a guiding document for Signatories (providers of general-purpose AI models with systemic risk) to demonstrate compliance with Articles 53 and 55 of the EU AI Act, though adherence does not constitute conclusive evidence of legal compliance. Establishes 10 Commitments and 4 Appendices covering systemic risk management frameworks, specified systemic risks (CBRN, loss of control, cyber offence, harmful manipulation), state-of-the-art and independent external model evaluations, cybersecurity protections for unreleased model weights, governance and whistleblower protections, serious incident reporting, and public transparency. Provides proportionality and simplified compliance options for SMEs and SMCs, exemptions for 'similarly safe or safer' models, and exemptions from cybersecurity weight-protection commitments once model parameters are publicly available or inferior to publicly available models.",
+      "framing_rationale_summary": "The Safety and Security Chapter is predominantly framed around existential and catastrophic systemic risks arising from frontier general-purpose AI models. While the Preamble recites the AI Act's broad Article 1(1) objectives—encompassing fundamental rights, democracy, public health, safety, and innovation—the substantive architecture of the Chapter (its Precautionary Principle recital, systemic risk tiers, weight-security against self-exfiltration, and Appendix 1's risk taxonomy) centers on severe, compounding, and irreversible systemic harms, specifically naming CBRN proliferation, loss of human control (including self-replication and deception), and large-scale offensive cyberattacks on critical infrastructure. Fundamental rights is the strongest runner-up via the overarching Charter protection mandate and harmful-manipulation concerns, supplemented by public health/safety protections, proportional innovation enablement (including SME carve-outs and precision safety methods), societal-scale manipulation/disinformation concerns, and critical-infrastructure security.",
+      "confidence": 0.955
     },
     {
       "document_id": "eu_gpai_code_transparency_chapter_2025",
       "title": "Code of Practice for General-Purpose AI Models: Transparency Chapter",
       "publication_date": "2025-07-10",
       "issuing_body": "European Commission (AI Office)",
-      "document_type": "standards_guideline",
+      "document_type": "voluntary_commitment",
       "binding_strength": "voluntary_commitment",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "fundamental_rights",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
-        "innovation_enablement",
-        "social_stability"
+        "fundamental_rights",
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "model_documentation",
-        "transparency_disclosure"
+        "open_weight_obligations",
+        "training_data_governance"
       ],
       "top_enforcement_mechanisms": [
         "regulatory_supervision",
         "reporting_obligation",
         "soft_enforcement"
       ],
-      "implementation_notes": "This is a voluntary Code of Practice under Article 53 AI Act. Adherence does not constitute conclusive evidence of compliance with AI Act obligations. Open-source model providers are exempt from Measures 1.1-1.3 unless the model poses systemic risk. Confidentiality protections apply per Article 78 AI Act. A fillable Model Documentation Form is provided as a compliance tool.",
-      "framing_rationale_summary": "The document frames AI governance primarily around protecting fundamental rights, health, safety, democracy, and the rule of law as enshrined in the EU Charter, in alignment with the AI Act's stated objectives. Transparency obligations are justified by the need to enable regulatory oversight, protect rights of downstream users, and ensure trustworthy AI. Secondary framings include consumer/public safety (high-risk AI system compliance) and innovation enablement (supporting AI uptake and market functioning).",
-      "confidence": 0.81
+      "implementation_notes": "This Transparency Chapter of the EU GPAI Code of Practice sets out three voluntary Measures (1.1–1.3) and a Model Documentation Form to help Signatories demonstrate compliance with Article 53(1)(a)–(b) and Annexes XI (Section 1) and XII of the EU AI Act, though adherence does not constitute conclusive evidence of compliance. Free and open-source GPAI models satisfying Article 53(2) AI Act are exempt unless they are GPAI models with systemic risk; systemic-risk documentation under Annex XI Section 2 is addressed separately in Measure 10.1 of the Safety and Security Chapter. Information for the AI Office or national competent authorities is provided only upon formal request, and recipients must uphold confidentiality and cybersecurity safeguards under Articles 53(7) and 78 AI Act.",
+      "framing_rationale_summary": "The Transparency Chapter of the EU GPAI Code of Practice is predominantly framed around innovation_enablement: across its introductory note, objectives, recitals, and commitments, it emphasizes lowering compliance friction via a user-friendly Model Documentation Form, adhering to proportionality for model modifications, adapting to market and technological developments, promoting trustworthy AI uptake and innovation, and enabling downstream providers to integrate GPAI models into their products. While fundamental_rights and consumer_public_safety appear prominently in the overarching objective imported from Article 1(1) of the AI Act (protecting health, safety, fundamental rights, democracy, and the rule of law against harmful effects of AI), innovation_enablement edges them out because the chapter's specific recitals and operational justifications consistently center on proportionate compliance, value-chain integration, and facilitating trustworthy AI adoption rather than rights or physical-harm discourse. Economic_competitiveness is only weakly present through a single reference to improving the functioning of the internal market.",
+      "confidence": 0.925
     },
     {
       "document_id": "eu_gpai_provider_guidelines",
@@ -325,74 +403,70 @@
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
-        "fundamental_rights"
+        "fundamental_rights",
+        "economic_competitiveness"
       ],
       "top_requirements": [
+        "open_weight_obligations",
         "risk_assessment",
-        "incident_reporting",
-        "model_documentation"
+        "registration_licensing"
       ],
       "top_enforcement_mechanisms": [
         "civil_penalty",
         "regulatory_supervision",
         "reporting_obligation"
       ],
-      "implementation_notes": "Guidelines are explicitly stated as 'not legally binding' but reflect the Commission's interpretation and will guide enforcement. Enforcement powers (including fines) enter into application 2 August 2026. Providers of models placed on market before 2 August 2025 have until 2 August 2027 to comply. The GPAI Code of Practice is a complementary voluntary tool.",
-      "framing_rationale_summary": "The document primarily frames AI governance as enabling confident innovation through clarity and pragmatic obligations. Repeated emphasis on helping actors 'innovate with confidence,' exemptions for open-source to 'promote transparency and innovation,' and the stated EU approach of promoting 'excellence and trust' while boosting 'research and industrial capacity' signals an innovation-enablement framing. Safety and fundamental rights appear as secondary justifications.",
-      "confidence": 0.725
+      "implementation_notes": "Official European Commission policy webpage (last updated 2026-03-26) summarizing the non-binding Guidelines for providers of general-purpose AI models under the EU AI Act. Although not legally binding, the guidelines reflect the Commission's interpretation of key terms (such as general-purpose criteria, significant modifications, and open-source exemptions) and guide enforcement alongside the voluntary GPAI Code of Practice. Providers (or their authorised representatives) must use the EU SEND platform to submit notifications, reassessment requests, serious incident reports, and compliance reports to the AI Office.",
+      "framing_rationale_summary": "Innovation enablement is the dominant frame because the document repeatedly justifies the GPAI provider guidelines as a pragmatic, clear compliance tool designed to lower regulatory friction, clarify open-source exemptions, and help ecosystem actors 'innovate with confidence' and 'innovate with clarity and confidence.' Consumer and public safety, fundamental rights, and economic competitiveness appear as secondary frames in the concluding 'Big Picture' statement—which links the EU's AI approach to 'boosting research and industrial capacity while ensuring safety and fundamental rights'—as well as brief procedural references to systemic risks and serious incident reporting, but they receive far less explicit justification emphasis than enabling trustworthy innovation.",
+      "confidence": 0.935
     },
     {
       "document_id": "eu_gpai_scope_obligations_guidelines_2025",
-      "title": "Guidelines on the scope of the obligations for providers of GPAI models",
-      "publication_date": "2025-07-18",
+      "title": "Commission Guidelines on the Scope of the Obligations for Providers of General-Purpose AI Models (C(2025) 7719 final)",
+      "publication_date": "2025-11-19",
       "issuing_body": "European Commission (AI Office)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "fundamental_rights",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
+        "fundamental_rights",
         "consumer_public_safety",
-        "social_stability"
+        "economic_competitiveness"
       ],
       "top_requirements": [
         "model_documentation",
-        "transparency_disclosure",
-        "registration_licensing"
+        "training_data_governance",
+        "compute_governance"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation",
-        "soft_enforcement"
+        "civil_penalty",
+        "market_access_restriction",
+        "regulatory_supervision"
       ],
-      "implementation_notes": "Guidelines issued under Article 96(1) of the AI Act. They clarify key concepts (what constitutes a GPAI model, provider, placing on the market, computational resources for training) and how the AI Office will support providers. Part of a broader package including the GPAI Code of Practice, adequacy assessment, transparency template for training data, and notification template for systemic-risk providers. Guidelines approved in content on 18 July 2025 but formal adoption deferred pending all language versions; only binding/applicable from formal adoption date.",
-      "framing_rationale_summary": "The document explicitly states the AI Act's aim is to promote innovation while 'ensuring a high level of protection of health, safety and fundamental rights, including democracy and the rule of law.' The rights-based framing is primary, though innovation enablement is strongly co-present.",
-      "confidence": 0.785
+      "implementation_notes": "Non-binding interpretive guidelines adopted under Article 96(1) AI Act setting out the European Commission's enforcement interpretation for Chapter V GPAI obligations (subject to authoritative interpretation by the CJEU). Establishes indicative training-compute criteria (>10^23 FLOP with language, text-to-image, or text-to-video generation for GPAI models; >10^25 FLOP cumulative compute for systemic-risk presumption; >1/3 of original training compute for downstream modifiers), defines open-source exemption boundaries (requiring no monetisation and excluding systemic-risk models while maintaining copyright policy and training-data summary obligations), clarifies the compliance role of adequate codes of practice and harmonised standards, and outlines a collaborative, staged enforcement approach by the AI Office without requiring retraining or unlearning of pre-2 August 2025 models where impossible or disproportionate.",
+      "framing_rationale_summary": "The guidelines frame GPAI governance primarily through innovation enablement, edging out fundamental rights and consumer/public safety because the Commission's recurring rationale for its interpretive criteria, thresholds, open-source exemptions, and enforcement posture is to promote AI innovation and uptake, limit compliance burdens on value-chain actors, avoid disincentivising model modification, and ensure timely market placement via proportionate, collaborative supervision. Fundamental rights (including democracy, rule of law, procedural rights, and personal data protection) and consumer/public safety (protecting health and public safety from systemic and operational risks) serve as major secondary justifications anchored in the underlying AI Act objectives, while economic competitiveness appears as a narrower secondary rationale tied to growth opportunities for the Union economy from open-source models.",
+      "confidence": 0.93
     },
     {
       "document_id": "eu_gpai_vademecum_2025",
       "title": "Vademecum of the GPAI Signatory Taskforce",
       "publication_date": "2025-07-10",
       "issuing_body": "European Commission (AI Office)",
-      "document_type": "standards_guideline",
-      "binding_strength": "voluntary_commitment",
+      "document_type": "voluntary_commitment",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
-      "secondary_frames": [
-        "consumer_public_safety",
-        "social_stability"
-      ],
+      "secondary_frames": [],
       "top_requirements": [],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "reporting_obligation",
-        "regulatory_supervision"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This Vademecum governs the internal organisation and operation of the Signatory Taskforce under the GPAI Code of Practice, which was assessed as adequate pursuant to Article 56(6) of the AI Act. It is not itself a binding instrument but structures voluntary cooperation among signatories. The AI Office chairs the Taskforce and may publish the Vademecum, participant lists, and high-level meeting minutes under its transparency obligations. Decisions are taken by consensus with a default agreement period of no less than 10 working days.",
-      "framing_rationale_summary": "The document is primarily procedural, establishing the governance structure of a Signatory Taskforce for the GPAI Code of Practice under the EU AI Act. The dominant framing is innovation enablement — the taskforce exists to facilitate cooperative implementation of the Code, exchange views on technological developments, and adapt guidance to market and technological changes. Safety and rights concerns appear implicitly through references to the 'risk landscape' and 'societal developments,' but are secondary to enabling structured industry participation and code compliance.",
-      "confidence": 0.735
+      "implementation_notes": "Operational vademecum setting out the governance, membership, objectives, ad hoc groups, meeting procedures (at least yearly), consensus decision-making (minimum 10 working days for objections), stakeholder invitations, and confidentiality rules of the Signatory Taskforce for the EU General-Purpose AI Code of Practice (published 10 July 2025 and assessed as adequate under Article 56(6) AI Act). Participation is opt-in and Members may join or withdraw at any time; Members must comply with applicable EU law, notably competition rules, during Taskforce activities. Lists 24 participating signatory organisations.",
+      "framing_rationale_summary": "This Vademecum is predominantly a procedural and organizational document establishing the rules of operation, membership, meetings, decision-making, and confidentiality for the Signatory Taskforce of the EU General-Purpose AI Code of Practice, and therefore contains very limited explicit risk-framing language. To the extent a governance rationale is articulated in Point 2 (Objectives), it centers on agile, collaborative, and adaptive implementation of the voluntary Code through signatory cooperation, stakeholder exchanges, and updating guidance documents in light of technological, societal, market, and legislative developments—aligning modestly with innovation_enablement. Although the text briefly references 'changes in the risk landscape' and 'societal' and 'market' developments, it makes no explicit substantive appeals to fundamental rights, consumer/public safety harms, catastrophic risks, national security, international economic competitiveness, social stability, or labor transition.",
+      "confidence": 0.685
     },
     {
       "document_id": "eu_prohibited_ai_practices_guidelines",
@@ -406,48 +480,40 @@
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "consumer_public_safety",
-        "social_stability",
         "innovation_enablement"
       ],
       "top_requirements": [
         "risk_assessment",
-        "human_oversight",
-        "transparency_disclosure"
+        "transparency_disclosure",
+        "content_provenance"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
+        "civil_penalty",
         "market_access_restriction",
-        "reporting_obligation"
+        "licensing_requirement"
       ],
-      "implementation_notes": "These are Commission guidelines interpreting Article 5 of the EU AI Act on prohibited practices. They are not themselves binding law but provide the Commission's interpretation. Ireland and Denmark have opt-out provisions for certain RBI prohibitions. Prohibitions apply to placing on market, putting into service, and use, including misuse. General-purpose AI systems are covered. Continuous compliance throughout AI lifecycle is required.",
-      "framing_rationale_summary": "The document consistently frames AI governance around protecting fundamental rights, democracy, rule of law, and human dignity. The risk classification system centers on 'unacceptable risks to fundamental rights and Union values.' Harms are analyzed in terms of physical, psychological, and societal impacts on individuals' rights and freedoms. Innovation enablement is a secondary but explicit goal.",
-      "confidence": 0.865
+      "implementation_notes": "Non-binding Commission Guidelines (C(2025) 5052 final) issued under Article 96(1)(b) of Regulation (EU) 2024/1689 (AI Act) to clarify the Commission's interpretation of Article 5 prohibitions; only the CJEU may provide authoritative interpretations. Excludes AI systems exclusively for military, defence, or national security purposes, pre-market R&D and sole scientific research, and deployer duties for purely personal non-professional use; free and open-source AI systems are not exempt from Article 5 prohibitions. Provides provisional FRIA guidance for authorised real-time RBI uses prior to the 2 August 2026 high-risk AI deadline. Notes Protocol No. 21 (Ireland) and Protocol No. 22 (Denmark) opt-outs for Article 16 TFEU-based law enforcement prohibitions. Subject to periodic Commission review and update.",
+      "framing_rationale_summary": "The Commission Guidelines on prohibited AI practices under Article 5 of the EU AI Act are overwhelmingly framed around fundamental_rights. Every prohibited practice—harmful manipulation and exploitation, social scoring, predictive policing based solely on profiling, untargeted facial scraping, workplace/educational emotion recognition, sensitive biometric categorisation, and real-time remote biometric identification—is explicitly justified as protecting human dignity, individual autonomy, privacy, data protection, non-discrimination, equality, presumption of innocence, and democratic freedoms under the EU Charter. Consumer_public_safety is a prominent secondary frame, particularly in the guidelines' emphasis on the AI Act's product safety logic, preventing physical, psychological, and financial harms to consumers, children, the elderly, and other vulnerable groups, and safeguarding life and physical safety. Innovation_enablement appears as a supporting secondary frame through recurring statements that the prohibitions must be interpreted proportionately to provide legal certainty, preserve scientific R&D, and promote trustworthy AI uptake alongside rights protection. Fundamental_rights clearly edges out consumer_public_safety and innovation_enablement because Charter rights and Union values constitute the primary legal and normative basis for declaring all eight practices unacceptable. National_security is referenced only marginally—primarily as a scope exclusion and in narrow law-enforcement counter-terrorism exceptions—while existential_catastrophic, economic_competitiveness, social_stability, and labor_transition are absent or purely incidental.",
+      "confidence": 0.965
     },
     {
       "document_id": "eu_request_for_an_article_64_2_opinion_from_efe0d88a",
       "title": "Request for an article 64(2) opinion from the IE SA on AI models",
       "publication_date": "2024-12-18",
-      "issuing_body": "Irish Data Protection Commission (IE SA)",
+      "issuing_body": "Irish Supervisory Authority (IE SA)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
-      "secondary_frames": [
-        "consumer_public_safety",
-        "social_stability"
-      ],
-      "top_requirements": [
-        "risk_assessment",
-        "transparency_disclosure"
-      ],
+      "secondary_frames": [],
+      "top_requirements": [],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation"
+        "none_specified"
       ],
-      "implementation_notes": "This is a request by the Irish SA to the EDPB for an Article 64(2) GDPR opinion on AI model data processing questions. It is not itself a binding decision or guidance document; it poses questions for EDPB harmonisation. Explicitly limited to GDPR/LED application only, excluding the AI Act, DMA, DGA, DSA interplay.",
-      "framing_rationale_summary": "The document is centrally framed around data subjects' fundamental rights under GDPR. The IE SA's request focuses on ensuring lawful processing of personal data in AI model development, protecting data subjects across the EU/EEA from rights violations, and achieving harmonized enforcement of data protection law. The language consistently foregrounds data subject rights, legal bases for processing, and compliance obligations rather than economic competitiveness, security threats, or societal disruption.",
-      "confidence": 0.885
+      "implementation_notes": "This document is a formal procedural request from the Irish Supervisory Authority (IE SA) to the European Data Protection Board (EDPB) seeking an Article 64(2) GDPR opinion on AI models (including large language models). It does not itself impose new binding obligations or issue final guidance; instead, it frames four interpretive questions under the GDPR and Law Enforcement Directive (LED)—explicitly excluding the EU AI Act, DMA, DGA, and DSA—concerning model anonymity, legitimate interests as a legal basis for training and post-training processing, and the downstream effect of unlawfully processed training data.",
+      "framing_rationale_summary": "The document is exclusively framed around fundamental rights, specifically personal-data privacy and data protection under the GDPR and Law Enforcement Directive. The Irish Supervisory Authority justifies seeking a harmonised EDPB opinion on the need to address wide-ranging data protection concerns affecting data subjects across the EU/EEA, resolve data subject complaints, mitigate personal data exposure vulnerabilities, and ensure that controllers appropriately balance their interests against the interests of data subjects. No other risk frames such as innovation enablement, economic competitiveness, or public safety are invoked as governance rationales.",
+      "confidence": 0.865
     },
     {
       "document_id": "eu_training_content_public_summary_template_2025",
@@ -460,21 +526,22 @@
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
         "innovation_enablement",
-        "economic_competitiveness"
+        "economic_competitiveness",
+        "consumer_public_safety"
       ],
       "top_requirements": [
-        "transparency_disclosure",
-        "model_documentation"
+        "training_data_governance",
+        "open_weight_obligations",
+        "domestic_representative"
       ],
       "top_enforcement_mechanisms": [
-        "reporting_obligation",
+        "civil_penalty",
         "regulatory_supervision"
       ],
-      "implementation_notes": "This document is a template and explanatory notice issued by the AI Office under Article 53(1)(d) of the EU AI Act, requiring all GPAI model providers to publish a public summary of training content. The template has three sections: general information, list of data sources, and relevant data processing aspects. Providers may voluntarily disclose more than the minimum required. The open-source exception under Article 53(2) does not apply to this obligation. A voluntary 'upon request' mechanism for rightsholders regarding domain names not listed in the summary is recommended but not mandatory.",
-      "framing_rationale_summary": "The document frames training data transparency primarily as a mechanism to protect and enable the exercise of fundamental rights under EU law, including intellectual property rights, data subject rights, non-discrimination, cultural diversity, freedom of information, and freedom of science. Governance obligations are justified by enabling rightsholders and affected parties to exercise and enforce their legal rights.",
-      "confidence": 0.835
+      "implementation_notes": "Commission Communication C(2025) 8311 final setting out an Explanatory Notice and standardized Template implementing the binding obligation in Article 53(1)(d) of Regulation (EU) 2024/1689 (AI Act). The free and open-source exception in Article 53(2) does not apply to this summary obligation. SMEs/start-ups have a proportional cap for scraped domain disclosure (top 5% or 1,000 domains, whichever is lower, versus top 10% for other providers). The AI Office verifies proper completion without conducting work-by-work checks; the Commission intends to publish the Template as an online form and may review it before 2 August 2026.",
+      "framing_rationale_summary": "The document's primary justification for the GPAI training-content summary template is overwhelmingly anchored in fundamental_rights, explicitly citing the EU Charter of Fundamental Rights to enable rightsholders and other parties with legitimate interests to exercise intellectual property rights, effective legal remedies, data protection rights, non-discrimination, cultural and linguistic diversity, freedom of information, and freedom of science. It clearly edges out the runner-up frame, innovation_enablement, which appears as a secondary balancing rationale focused on keeping compliance simple, proportional for SMEs, and respectful of trade secrets and confidential business information. Smaller secondary rationales include economic_competitiveness (fostering transparent, competitive markets and avoiding lock-in effects) and consumer_public_safety (protecting consumer interests and mitigating the reproduction of illegal content such as child sexual abuse material and terrorist content).",
+      "confidence": 0.965
     },
     {
       "document_id": "eu_training_content_template_faq_2025",
@@ -482,270 +549,394 @@
       "publication_date": "2025-07-24",
       "issuing_body": "European Commission (AI Office)",
       "document_type": "regulatory_guidance",
-      "binding_strength": "binding_law",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
         "innovation_enablement"
       ],
       "top_requirements": [
-        "transparency_disclosure",
-        "model_documentation"
+        "training_data_governance",
+        "open_weight_obligations"
       ],
       "top_enforcement_mechanisms": [
         "civil_penalty",
         "regulatory_supervision"
       ],
-      "implementation_notes": "Template use is mandatory under Article 53(1)(d) of the AI Act. Obligation applies from 2 August 2025 for new models; existing models have until 2 August 2027. Enforcement actions possible from 2 August 2026. Applies to open-source model providers as well. Code of Practice adherence remains voluntary and addresses separate obligations.",
-      "framing_rationale_summary": "The document frames AI governance primarily around enabling rights-holders to exercise their legal rights—copyright, data protection, non-discrimination, consumer protection—under Union law. The core justification for the transparency obligation is that parties with legitimate interests need information to assert their rights, not safety or competitiveness concerns.",
-      "confidence": 0.85
+      "implementation_notes": "This document is an official European Commission FAQ explaining the mandatory Template for public summaries of training content under Article 53(1)(d) of the EU AI Act. Although the underlying statutory duty and use of the Template are mandatory, this FAQ itself is interpretive regulatory guidance rather than enacted legislation. The publication_date reflects the webpage's last update date (26 March 2026). The FAQ details three required summary sections, trade-secret balancing, SME thresholds for listing scraped domains (top 5% or 1,000 domains, whichever is lower, versus top 10% for other providers), and rules for justifying information gaps for models placed on the market before 2 August 2025.",
+      "framing_rationale_summary": "The document's dominant frame is fundamental_rights because it repeatedly justifies the mandatory GPAI training-content summary template as a mechanism to increase transparency so parties with legitimate interests can exercise rights protected under Union law—explicitly citing fundamental rights protection, copyright and intellectual property rights, data protection, non-discrimination, and freedom of science. Innovation_enablement appears as a secondary frame through recurring emphasis on facilitating simple, consistent compliance, minimising administrative burdens, providing SME proportionality, and balancing transparency against the protection of trade secrets and confidential business information. Fundamental_rights edges out innovation_enablement because compliance facilitation is explicitly subordinated to fulfilling the primary objective of enabling rights exercise, while consumer_public_safety receives only a brief passing mention via consumer protection.",
+      "confidence": 0.935
     }
   ],
   "aggregates": {
     "document_types": [
       {
         "label": "regulatory_guidance",
-        "count": 12,
-        "share": 0.667
-      },
-      {
-        "label": "standards_guideline",
-        "count": 3,
-        "share": 0.167
+        "count": 13,
+        "share": 0.619
       },
       {
         "label": "voluntary_commitment",
-        "count": 2,
-        "share": 0.111
+        "count": 6,
+        "share": 0.286
       },
       {
         "label": "legislation",
-        "count": 1,
-        "share": 0.056
+        "count": 2,
+        "share": 0.095
       }
     ],
     "binding_strengths": [
       {
         "label": "regulatory_guidance",
-        "count": 10,
-        "share": 0.556
+        "count": 14,
+        "share": 0.667
       },
       {
         "label": "voluntary_commitment",
         "count": 5,
-        "share": 0.278
+        "share": 0.238
       },
       {
         "label": "binding_law",
         "count": 2,
-        "share": 0.111
-      },
-      {
-        "label": "standards_guideline",
-        "count": 1,
-        "share": 0.056
+        "share": 0.095
       }
     ],
     "requirements": [
       {
-        "label": "transparency_disclosure",
-        "count": 16,
-        "share": 0.889
+        "label": "model_documentation",
+        "count": 13,
+        "share": 0.619
       },
       {
-        "label": "model_documentation",
-        "count": 14,
-        "share": 0.778
+        "label": "open_weight_obligations",
+        "count": 13,
+        "share": 0.619
+      },
+      {
+        "label": "training_data_governance",
+        "count": 12,
+        "share": 0.571
       },
       {
         "label": "risk_assessment",
-        "count": 12,
-        "share": 0.667
+        "count": 11,
+        "share": 0.524
       },
       {
-        "label": "human_oversight",
-        "count": 10,
-        "share": 0.556
+        "label": "transparency_disclosure",
+        "count": 11,
+        "share": 0.524
+      },
+      {
+        "label": "content_provenance",
+        "count": 9,
+        "share": 0.429
       },
       {
         "label": "access_controls",
-        "count": 6,
+        "count": 8,
+        "share": 0.381
+      },
+      {
+        "label": "human_oversight",
+        "count": 8,
+        "share": 0.381
+      },
+      {
+        "label": "pre_deployment_testing",
+        "count": 7,
         "share": 0.333
       },
       {
         "label": "incident_reporting",
-        "count": 5,
-        "share": 0.278
-      },
-      {
-        "label": "pre_deployment_testing",
-        "count": 5,
-        "share": 0.278
+        "count": 6,
+        "share": 0.286
       },
       {
         "label": "registration_licensing",
+        "count": 6,
+        "share": 0.286
+      },
+      {
+        "label": "red_teaming",
         "count": 5,
-        "share": 0.278
+        "share": 0.238
       },
       {
         "label": "third_party_audit",
         "count": 5,
-        "share": 0.278
-      },
-      {
-        "label": "red_teaming",
-        "count": 4,
-        "share": 0.222
-      },
-      {
-        "label": "content_provenance",
-        "count": 2,
-        "share": 0.111
+        "share": 0.238
       },
       {
         "label": "compute_governance",
-        "count": 1,
-        "share": 0.056
+        "count": 4,
+        "share": 0.19
+      },
+      {
+        "label": "frontier_safety_evaluation",
+        "count": 4,
+        "share": 0.19
+      },
+      {
+        "label": "domestic_representative",
+        "count": 3,
+        "share": 0.143
+      },
+      {
+        "label": "agentic_autonomy_controls",
+        "count": 2,
+        "share": 0.095
       }
     ],
     "enforcement_mechanisms": [
       {
+        "label": "soft_enforcement",
+        "count": 17,
+        "share": 0.81
+      },
+      {
         "label": "regulatory_supervision",
         "count": 16,
-        "share": 0.889
-      },
-      {
-        "label": "reporting_obligation",
-        "count": 14,
-        "share": 0.778
-      },
-      {
-        "label": "soft_enforcement",
-        "count": 11,
-        "share": 0.611
+        "share": 0.762
       },
       {
         "label": "civil_penalty",
-        "count": 5,
-        "share": 0.278
+        "count": 11,
+        "share": 0.524
+      },
+      {
+        "label": "reporting_obligation",
+        "count": 9,
+        "share": 0.429
       },
       {
         "label": "market_access_restriction",
-        "count": 4,
-        "share": 0.222
+        "count": 6,
+        "share": 0.286
+      },
+      {
+        "label": "licensing_requirement",
+        "count": 3,
+        "share": 0.143
+      },
+      {
+        "label": "none_specified",
+        "count": 1,
+        "share": 0.048
       }
     ],
     "institutions": [
       {
         "label": "European Commission (AI Office)",
-        "count": 15,
-        "share": 0.833
+        "count": 18,
+        "share": 0.857
       },
       {
         "label": "European Artificial Intelligence Board (AI Board)",
+        "count": 8,
+        "share": 0.381
+      },
+      {
+        "label": "European Data Protection Supervisor (EDPS)",
+        "count": 5,
+        "share": 0.238
+      },
+      {
+        "label": "National competent authorities",
         "count": 4,
-        "share": 0.222
+        "share": 0.19
+      },
+      {
+        "label": "Court of Justice of the European Union",
+        "count": 2,
+        "share": 0.095
+      },
+      {
+        "label": "Court of Justice of the European Union (CJEU)",
+        "count": 2,
+        "share": 0.095
       },
       {
         "label": "European Data Protection Board (EDPB)",
         "count": 2,
-        "share": 0.111
-      },
-      {
-        "label": "Court of Justice of the European Union",
-        "count": 1,
-        "share": 0.056
-      },
-      {
-        "label": "Court of Justice of the European Union (CJEU)",
-        "count": 1,
-        "share": 0.056
-      },
-      {
-        "label": "European Data Protection Supervisor (EDPS)",
-        "count": 1,
-        "share": 0.056
+        "share": 0.095
       },
       {
         "label": "European Parliament and Council",
-        "count": 1,
-        "share": 0.056
+        "count": 2,
+        "share": 0.095
       },
       {
-        "label": "Irish Data Protection Commission (IE SA)",
+        "label": "Competent market surveillance authorities",
         "count": 1,
-        "share": 0.056
+        "share": 0.048
       },
       {
-        "label": "courts of Member States",
+        "label": "Competent national data protection authorities",
         "count": 1,
-        "share": 0.056
+        "share": 0.048
       },
       {
-        "label": "national competent authorities",
+        "label": "Court of Justice of the European Union (judicial review of Commission fines)",
         "count": 1,
-        "share": 0.056
+        "share": 0.048
       },
       {
-        "label": "national competent authorities designated by Member States",
+        "label": "Courts of EU Member States",
         "count": 1,
-        "share": 0.056
+        "share": 0.048
       },
       {
-        "label": "national market surveillance authorities",
+        "label": "Data protection authorities",
         "count": 1,
-        "share": 0.056
+        "share": 0.048
+      },
+      {
+        "label": "EU/EEA Data Protection Supervisory Authorities",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "European Data Protection Supervisor (for Union institutions, bodies, offices and agencies)",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "Irish Supervisory Authority (IE SA)",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "Market surveillance authorities",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "Market surveillance authorities designated by the Member States",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National Data Protection Authorities",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National Market Surveillance Authorities",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National competent authorities (notifying authorities and market surveillance authorities designated by Member States)",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National competent authorities and national market surveillance authorities (including single points of contact)",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National courts",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National data protection supervisory authorities",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National data protection supervisory authorities (SAs) in the EEA",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National financial supervisory authorities (for regulated financial institutions)",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National judicial authorities (for authorisation of on-site inspections where required under national law)",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National judicial authorities or independent administrative authorities (for prior authorisation of real-time RBI)",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National public authorities or bodies protecting fundamental rights",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "National public authorities or bodies supervising or enforcing Union law protecting fundamental rights",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "Notifying authorities",
+        "count": 1,
+        "share": 0.048
+      },
+      {
+        "label": "Sectoral market surveillance authorities under Annex I Union harmonisation legislation",
+        "count": 1,
+        "share": 0.048
       }
     ],
     "frames": [
       {
         "label": "fundamental_rights",
-        "score": 6.8,
-        "share": 0.378,
-        "document_mentions": 13
-      },
-      {
-        "label": "consumer_public_safety",
-        "score": 6.074,
-        "share": 0.337,
-        "document_mentions": 17
+        "score": 8.39,
+        "share": 0.4,
+        "document_mentions": 19
       },
       {
         "label": "innovation_enablement",
-        "score": 2.818,
-        "share": 0.157,
-        "document_mentions": 8
+        "score": 7.2,
+        "share": 0.343,
+        "document_mentions": 20
+      },
+      {
+        "label": "consumer_public_safety",
+        "score": 2.81,
+        "share": 0.134,
+        "document_mentions": 19
       },
       {
         "label": "economic_competitiveness",
-        "score": 0.76,
-        "share": 0.042,
-        "document_mentions": 4
+        "score": 1.09,
+        "share": 0.052,
+        "document_mentions": 11
       },
       {
         "label": "social_stability",
-        "score": 0.613,
-        "share": 0.034,
+        "score": 0.81,
+        "share": 0.039,
+        "document_mentions": 6
+      },
+      {
+        "label": "existential_catastrophic",
+        "score": 0.59,
+        "share": 0.028,
+        "document_mentions": 3
+      },
+      {
+        "label": "national_security",
+        "score": 0.09,
+        "share": 0.004,
         "document_mentions": 3
       },
       {
         "label": "labor_transition",
-        "score": 0.361,
-        "share": 0.02,
-        "document_mentions": 0
-      },
-      {
-        "label": "national_security",
-        "score": 0.297,
-        "share": 0.016,
-        "document_mentions": 1
-      },
-      {
-        "label": "existential_catastrophic",
-        "score": 0.277,
-        "share": 0.015,
+        "score": 0.02,
+        "share": 0.001,
         "document_mentions": 1
       }
     ]

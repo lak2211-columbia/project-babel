@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_013DNor15XfHbTjVDGBKd5cN",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"fundamental_rights\",\"secondary_frames\":[\"innovation_enablement\",\"consumer_public_safety\"],\"frame_confidence\":{\"existential_catastrophic\":0.02,\"national_security\":0.03,\"economic_competitiveness\":0.15,\"fundamental_rights\":0.65,\"social_stability\":0.05,\"innovation_enablement\":0.55,\"consumer_public_safety\":0.2,\"labor_transition\":0.05},\"rationale_summary\":\"The document's primary stated reason for governance is protecting intellectual property rights and other legal interests (著作権等の権利・利益の保護) of creators and rights holders when using generative AI in content production. Rights protection language appears in the stated purpose, throughout use-case descriptions, and in the positioning section. A secondary frame of innovation enablement is also strong, as the document encourages appropriate and active use of generative AI to enhance creativity and efficiency. Consumer/public safety appears in references to preventing misinformation and controlling inappropriate outputs.\",\"evidence_spans\":[{\"quote\":\"知的財産権等の権利・利益の保護に十分に配慮した、コンテンツ制作における生成AIの適切な利活用の方向性をお示しするもの\",\"source_section\":\"1-1 本ガイドブックの趣旨・目的\"},{\"quote\":\"知的財産権などの権利・利益を侵害する可能性や、誤った情報を流通させる可能性など、様々な懸念点・留意点が指摘されています\",\"source_section\":\"1-2 生成AIの適切な利活用に向けて\"},{\"quote\":\"知的財産権等の権利・利益の保護に十分に配慮しつつ、生成AIを適切に活用していくことが望ましい\",\"source_section\":\"1-2 生成AIの適切な利活用に向けて\"},{\"quote\":\"著作権・肖像権などの権利・利益への配慮の観点から、必要な対応策が実施されている\",\"source_section\":\"2-3 広告産業\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 14849,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 518,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 30254,
+    "candidatesTokenCount": 1091,
+    "totalTokenCount": 35551,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 30254
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1091
+      }
+    ],
+    "thoughtsTokenCount": 4206,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "7zABa73oIv7dodAPnO7IqAE"
 }

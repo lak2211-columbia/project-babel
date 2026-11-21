@@ -1,36 +1,84 @@
 {
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "consumer_public_safety",
-    "social_stability"
+    "fundamental_rights",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.05,
-    "economic_competitiveness": 0.1,
-    "fundamental_rights": 0.05,
-    "social_stability": 0.2,
-    "innovation_enablement": 0.65,
-    "consumer_public_safety": 0.25,
-    "labor_transition": 0.1
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.75,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.7,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around enabling practical adoption of generative AI in government (child and family services), with the stated purpose of advancing 'appropriate use' and sharing best practices via a handbook. Risk governance is subsidiary—security and data handling are addressed as operational concerns within the pilot, not as the central rationale. The driving logic is to demonstrate how AI can improve public service efficiency and quality, making innovation_enablement the dominant frame, with consumer/public safety secondary due to attention to data privacy and child-related sensitive information.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.2,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.6,
+    "consumer_public_safety": 0.2,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The report is predominantly framed around innovation_enablement: its stated purpose is to promote the appropriate adoption and utilization of generative AI across local governments and childcare facilities by organizing empirical demonstration findings, operational issues, and best practices into a practical handbook and procurement guidance to reduce staff workload and improve service quality. Secondary rationales include fundamental_rights (protecting personal data privacy, obtaining informed consent, and preventing copyright and portrait rights infringement) and consumer_public_safety (preventing tangible harm or disadvantage to residents from inaccurate AI chatbot responses, enhancing child safety through accident/near-miss detection, and safeguarding children from illegal filming). Innovation_enablement edges out both secondary frames because risk mitigation and security rules are consistently positioned as enablers for safe, practical public-sector AI adoption rather than standalone rights-enforcement or safety mandates.",
   "evidence_spans": [
     {
-      "quote": "生成AI利用時の論点・課題・効果等を整理し、ハンドブックとして公開することで、自治体や子育て関連事業者等における生成AIの適切な利用等を進めることを目的としている。",
-      "source_section": "1.1. 本事業の目的と実証事業の位置づけ"
+      "quote": "また、調査と実証から生成AI利用時の論点・課題・効果等を整理し、ハンドブックとして公開することで、 自治体や子育て関連事業者等における生成AIの適切な利用等を進めることを目的としている。",
+      "source_section": "Page 4",
+      "quote_en": "Furthermore, by organizing the issues, challenges, and effects of using generative AI from the surveys and demonstrations and publishing them as a handbook, this project aims to promote the appropriate use of generative AI by local governments and childcare-related businesses.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 619,
+      "end_char": 712
     },
     {
-      "quote": "こども・子育て分野における生成AIの適切な利用に向けたハンドブックを作成。",
-      "source_section": "1.1."
+      "quote": "最終報告会は実証事業の最終成果の報告と今後の生成AI活用の促進を目的として実施した。",
+      "source_section": "Page 13",
+      "quote_en": "The final briefing session was held with the aim of reporting the final results of the demonstration project and promoting the future utilization of generative AI.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 8575,
+      "end_char": 8617
     },
     {
-      "quote": "実証を通じた生成AI活用への所感 / 人間と生成AIの協業についての所感",
-      "source_section": "1.4. 最終報告会の概要"
+      "quote": "②意図せず個人情報が適切に取り扱われないリスク\n音声ファイルや議事録をテキスト化し情報をそのまま生成AIに渡す場合など、個人\n情報を用いるシーンにおいて意図せず適切に取り扱われない可能性がある。",
+      "source_section": "Page 25",
+      "quote_en": "2. Risk of unintentional improper handling of personal information: In scenes where personal information is used, such as transcribing audio files or meeting minutes and passing the information directly to generative AI, there is a possibility that it may be unintentionally handled improperly.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 20960,
+      "end_char": 21057
     },
     {
-      "quote": "生成AIシステムに対するフィードバックの月次結果 / セキュリティ及び要機密情報の取扱い",
-      "source_section": "1.4. 実証事業における進捗及びセキュリティの管理方法"
+      "quote": "生成AIが出力した文章や画像に著作権・肖像権を侵害する可能性のある内容が意図せず含まれており、その内容が一般に公開されてしまうことで法的な問題に発展する可能性がある。",
+      "source_section": "Page 26",
+      "quote_en": "Text or images output by generative AI may unintentionally contain content that could infringe copyright or portrait rights, and if such content is made public, it could develop into a legal problem.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 21673,
+      "end_char": 21756
+    },
+    {
+      "quote": "住民向けチャットボット等で生成AIが誤った情報を回答したがゆえに、本来対象の\n支援制度が受けられない・対象ではない支援制度が提示される等、住民が不利\n益を被る可能性がある。",
+      "source_section": "Page 29",
+      "quote_en": "Because generative AI in a resident-facing chatbot or similar service provides incorrect information, residents may suffer disadvantages such as being unable to receive support programs for which they are eligible or being presented with programs for which they are not eligible.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 24702,
+      "end_char": 24788
+    },
+    {
+      "quote": "保育施設でのインシデント・ヒヤリハット検知といった保育現場における安全対策業務において、AIの画像検知が保育士業務を補完することが確認された。",
+      "source_section": "Page 21",
+      "quote_en": "In safety measure operations at childcare sites, such as detecting incidents and near-misses in childcare facilities, it was confirmed that AI image detection complements the work of childcare workers.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 16995,
+      "end_char": 17066
     }
   ]
 }

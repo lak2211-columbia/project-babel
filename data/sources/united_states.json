@@ -586,7 +586,7 @@
       "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/nist-ai-rmf-playbook",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
-      "source_tier": "implementation_resource",
+      "source_tier": "technical_standard",
       "policy_domains": [
         "standards_assurance",
         "frontier_gpai"
@@ -596,19 +596,22 @@
       "languages": [
         "en"
       ],
-      "document_format": "html",
+      "document_format": "pdf",
       "source_portal_ids": [
         "us_nist_ai",
         "us_nist_rmf"
       ],
       "priority": "medium",
-      "relevance_notes": "Operational implementation companion for the NIST AI RMF.",
+      "relevance_notes": "Full 147-page NIST AI RMF Playbook PDF (upgraded from HTML landing page stub) providing actionable GOVERN, MAP, MEASURE, and MANAGE guidance.",
       "tags": [
         "nist",
         "implementation",
         "risk_management"
       ],
-      "corpus_role": "companion_resource"
+      "corpus_role": "primary_instrument",
+      "retrieval_urls": [
+        "https://airc.nist.gov/docs/AI_RMF_Playbook.pdf"
+      ]
     },
     {
       "id": "us_nist_genai_profile",
@@ -1172,6 +1175,231 @@
         "auto_promoted"
       ],
       "corpus_role": "companion_resource"
+    },
+    {
+      "id": "us_eo_14409_advanced_ai_innovation_security_2026",
+      "title": "Executive Order 14409: Promoting Advanced Artificial Intelligence Innovation and Security (91 FR 34565)",
+      "issuing_body": "Executive Office of the President",
+      "canonical_url": "https://www.federalregister.gov/documents/2026/06/05/2026-11415/promoting-advanced-artificial-intelligence-innovation-and-security",
+      "retrieval_urls": [
+        "https://www.federalregister.gov/documents/full_text/html/2026/06/05/2026-11415.html"
+      ],
+      "document_type": "executive_order",
+      "binding_strength": "executive_action",
+      "source_tier": "executive_action",
+      "policy_domains": [
+        "frontier_gpai",
+        "national_security",
+        "standards_assurance",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-06-05",
+      "effective_date": "2026-06-02",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_federal_register_ai",
+        "us_white_house_actions"
+      ],
+      "priority": "high",
+      "relevance_notes": "Signed June 2, 2026 (published 91 FR 34565, June 5, 2026). Establishes federal AI cybersecurity clearinghouse and voluntary 30-day pre-release federal evaluation access for frontier developers while rejecting mandatory federal licensing.",
+      "tags": [
+        "executive_order",
+        "eo_14409",
+        "frontier_ai",
+        "cybersecurity",
+        "evaluation"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_eo_14434_super_intelligence_2026",
+      "title": "Executive Order 14434: Inaugurating the Era of Super Intelligence (91 FR 63129)",
+      "issuing_body": "Executive Office of the President",
+      "canonical_url": "https://www.federalregister.gov/documents/2026/10/02/2026-20321/inaugurating-the-era-of-super-intelligence",
+      "retrieval_urls": [
+        "https://www.federalregister.gov/documents/full_text/html/2026/10/02/2026-20321.html"
+      ],
+      "document_type": "executive_order",
+      "binding_strength": "executive_action",
+      "source_tier": "executive_action",
+      "policy_domains": [
+        "frontier_gpai",
+        "industrial_innovation",
+        "public_sector_governance",
+        "sovereign_compute"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-10-02",
+      "effective_date": "2026-09-29",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_federal_register_ai",
+        "us_white_house_actions"
+      ],
+      "priority": "high",
+      "relevance_notes": "Signed September 29, 2026 (published 91 FR 63129, October 2, 2026). Directs executive agencies to adopt 'Super Intelligence (SI)' nomenclature across official non-statutory documents and portals; major federal strategic framing pivot.",
+      "tags": [
+        "executive_order",
+        "eo_14434",
+        "super_intelligence",
+        "federal_policy"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_eo_14365_national_policy_framework_ai_2025",
+      "title": "Executive Order 14365: Ensuring a National Policy Framework for Artificial Intelligence (90 FR 58499)",
+      "issuing_body": "Executive Office of the President",
+      "canonical_url": "https://www.federalregister.gov/documents/2025/12/16/2025-23092/ensuring-a-national-policy-framework-for-artificial-intelligence",
+      "retrieval_urls": [
+        "https://www.federalregister.gov/documents/full_text/html/2025/12/16/2025-23092.html"
+      ],
+      "document_type": "executive_order",
+      "binding_strength": "executive_action",
+      "source_tier": "executive_action",
+      "policy_domains": [
+        "industrial_innovation",
+        "public_sector_governance",
+        "sovereign_compute"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-12-16",
+      "effective_date": "2025-12-11",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_federal_register_ai",
+        "us_white_house_actions"
+      ],
+      "priority": "high",
+      "relevance_notes": "Signed December 11, 2025 (published 90 FR 58499, December 16, 2025). Establishes DOJ task force addressing state AI regulatory fragmentation and ties broadband/federal funding to uniform national framework principles.",
+      "tags": [
+        "executive_order",
+        "eo_14365",
+        "preemption",
+        "national_framework"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_take_it_down_act_2025",
+      "title": "TAKE IT DOWN Act (Public Law 119-12, 139 Stat. 55)",
+      "issuing_body": "U.S. Congress",
+      "canonical_url": "https://www.govinfo.gov/app/details/PLAW-119publ12",
+      "retrieval_urls": [
+        "https://www.govinfo.gov/content/pkg/PLAW-119publ12/pdf/PLAW-119publ12.pdf"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection",
+        "civil_rights_nondiscrimination"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-05-19",
+      "effective_date": "2026-05-19",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_congress_govinfo",
+        "us_ftc_ai_policy"
+      ],
+      "priority": "high",
+      "relevance_notes": "First binding U.S. federal AI deepfake / nonconsensual intimate imagery criminal and platform notice-and-takedown statute (139 Stat. 55); FTC 48-hour takedown enforcement entered into force May 19, 2026.",
+      "tags": [
+        "legislation",
+        "public_law",
+        "deepfake",
+        "platform_takedown",
+        "ftc"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_nist_caisi_agent_standards_initiative_2026",
+      "title": "NIST CAISI / SI Agent Standards Initiative",
+      "issuing_body": "National Institute of Standards and Technology (NIST / CAISI)",
+      "canonical_url": "https://www.nist.gov/super-intelligence/si-agent-standards-initiative",
+      "retrieval_urls": [],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "agentic_ai",
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-02-17",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_nist_caisi_si",
+        "us_nist_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "2026 NIST Center for AI / SI Standards and Innovation initiative establishing technical standards for autonomous AI agent identity, authentication, interoperability, and security.",
+      "tags": [
+        "nist",
+        "caisi",
+        "agentic_ai",
+        "standards",
+        "identity"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_nist_ir_8596_cyber_ai_profile_2025",
+      "title": "NIST IR 8596 (Initial Preliminary Draft): Cybersecurity Framework Profile for Artificial Intelligence (Cyber AI Profile)",
+      "issuing_body": "National Institute of Standards and Technology (NIST)",
+      "canonical_url": "https://csrc.nist.gov/pubs/ir/8596/iprd",
+      "retrieval_urls": [
+        "https://nvlpubs.nist.gov/nistpubs/ir/2025/NIST.IR.8596.iprd.pdf"
+      ],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "standards_assurance",
+        "critical_infrastructure",
+        "agentic_ai",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "draft",
+      "publication_date": "2025-12-16",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_nist_ai",
+        "us_nist_caisi_si"
+      ],
+      "priority": "high",
+      "relevance_notes": "107-page NIST IR 8596 Initial Preliminary Draft community profile mapping NIST CSF 2.0 controls to securing AI systems, conducting AI-enabled cyber defense, and thwarting AI-enabled cyber threats. Quarantined as draft_consultation until final publication.",
+      "tags": [
+        "nist",
+        "cybersecurity",
+        "csf_profile",
+        "draft",
+        "standards"
+      ],
+      "corpus_role": "draft_consultation"
     }
   ]
 }

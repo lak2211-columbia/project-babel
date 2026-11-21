@@ -1,36 +1,85 @@
 {
   "dominant_frame": "consumer_public_safety",
   "secondary_frames": [
+    "existential_catastrophic",
     "fundamental_rights",
-    "social_stability"
+    "innovation_enablement"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.1,
-    "national_security": 0.1,
-    "economic_competitiveness": 0.05,
-    "fundamental_rights": 0.55,
-    "social_stability": 0.35,
-    "innovation_enablement": 0.1,
-    "consumer_public_safety": 0.75,
+    "existential_catastrophic": 0.88,
+    "national_security": 0.45,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.45,
+    "innovation_enablement": 0.6,
+    "consumer_public_safety": 0.94,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around ensuring safety of AI systems to protect users and affected persons from harm—covering lifecycle risk management, incident monitoring, and safety measures. The repeated focus on protecting 'life, physical safety, and fundamental rights' of users and affected persons places consumer/public safety as the dominant frame, with fundamental rights as a strong secondary concern.",
+  "frame_share": {
+    "existential_catastrophic": 0.28,
+    "national_security": 0.04,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.2,
+    "social_stability": 0.04,
+    "innovation_enablement": 0.08,
+    "consumer_public_safety": 0.36,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The draft guideline is dominantly framed around consumer_public_safety, anchoring its entire five-chapter statutory framework in preventing widespread harm to human life, physical safety, and public safety from operational failures, safety incidents, medical/financial/autonomous-vehicle errors, phishing, and misuse across the AI lifecycle. Consumer_public_safety edges out existential_catastrophic because the continuous statutory core across Chapters 1–5 centers on operational safety-incident management, public safety protection, and victim compensation rather than solely civilizational extinction scenarios. However, existential_catastrophic is a very strong runner-up driving the 10^26 FLOPs SOTA frontier scope and Chapter 3's systemic risk criteria—explicitly targeting irreversible society-wide harms including biological weapons/pandemic pathogen synthesis, CBRN, mass critical-infrastructure cyberattacks, and loss of human control. Fundamental_rights is a prominent third frame, directly paired with physical safety in the statutory formula ('life, physical safety, and fundamental rights') and reflected in algorithmic bias, personal-data exposure, and democratic-election risks. Innovation_enablement (methodology flexibility, excluding speculative hypotheticals, trade-secret protection), national_security (state-sponsored hacking of critical infrastructure and bio-terrorism), and social_stability (large-scale manipulation and mass disinformation) play smaller supporting roles.",
   "evidence_spans": [
     {
-      "quote": "인공지능 수명주기 전반에 걸쳐, 사람의 생명 신체의 안전 또는 기본권이 침해될 위험 가능성과 그 잠재적 피해의 심각성",
-      "source_section": "Page 13"
+      "quote": "인공지능의 장애 등으로 인하여 위험이 현실적으로 발생하거나 공공의 안전에 중대한 위해가 발생한 경우",
+      "source_section": "Page 13 (01 개요 - 3. 주요 용어)",
+      "quote_en": "Defines 'AI-related safety incident' as a case where risk materializes due to AI malfunction or similar failure, or where serious harm to public safety occurs.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 18402,
+      "end_char": 18457
     },
     {
-      "quote": "인공지능 관련 안전사고: 인공지능의 장애 등으로 인하여 사람의 생명 신체의 안전 또는 기본권에 직접적인 피해가 발생하거나 공공의 안전에 중대한 위해가 발생한 경우",
-      "source_section": "Page 13"
+      "quote": "다수의 이용자 또는 사회 전반에 걸쳐 중대한 피해가 발생할 가능성을 의미",
+      "source_section": "Page 21 (02 적용 대상 및 의무 주체 판단)",
+      "quote_en": "Interprets 'widespread and serious impact' under Enforcement Decree Art. 24(1)(3) as the potential for serious harm across numerous users or society as a whole rather than isolated individual situations.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 33615,
+      "end_char": 33655
     },
     {
-      "quote": "딥페이크를 이용한 신원 도용, 자동화된 피싱 공격, 허위정보의 대규모 확산 사례 존재",
-      "source_section": "Page 29"
+      "quote": "반드시 고려해야 할 가지 위험 유형 사이버 공격 위험 화생방 위험 유해한 대규모 조작 통제 , 4 (① ② ③ ④ 상실 위험을 제시하고 있다",
+      "source_section": "Page 34 (03 수명주기 전반에 걸친 위험관리)",
+      "quote_en": "Highlights four mandatory systemic risk categories for advanced frontier models characterized by large-scale impact, rapid deployment, and irreversibility: cyberattacks, CBRN, harmful large-scale manipulation, and loss of control.",
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 61288,
+      "end_char": 61366
     },
     {
-      "quote": "사이버 공격 자동화, 생물학적 무기 설계 지원, 정치적 조작 캠페인 등",
-      "source_section": "Page 29"
+      "quote": "생물학적 위협은 등이 병원체 구조와 실험 프로토콜을 상세히 제공하는 능력에서 시작된다",
+      "source_section": "Page 31 (03 수명주기 전반에 걸친 위험관리)",
+      "quote_en": "Illustrates catastrophic misuse via biological threats arising from advanced models providing pathogen structures and synthesis protocols with pandemic-level impact, alongside automated cyberattacks paralyzing power grids and financial systems.",
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 53746,
+      "end_char": 53793
+    },
+    {
+      "quote": "사람의 생명신체의 안전 및 기본권에 광범위하고 중대한 영향을 미칠",
+      "source_section": "Page 8 (01 개요 - 2. 근거 규정)",
+      "quote_en": "Statutory risk threshold requiring safety assurance where an AI system poses a concern of widespread and serious impact on human life, physical safety, and fundamental rights.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 9759,
+      "end_char": 9795
+    },
+    {
+      "quote": "국가 지원 해커가 인공지능으로 취약점을 자동 스캔하고 공격 코드를 대량 생성함으로써",
+      "source_section": "Page 31 (03 수명주기 전반에 걸친 위험관리)",
+      "quote_en": "Cites national-security cyber threats where state-sponsored hacking groups use AI to automatically scan vulnerabilities and mass-generate exploit code for simultaneous attacks on national critical infrastructure.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 54173,
+      "end_char": 54219
     }
   ]
 }

@@ -5,40 +5,80 @@
     "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.01,
-    "economic_competitiveness": 0.06,
-    "fundamental_rights": 0.12,
-    "social_stability": 0.05,
-    "innovation_enablement": 0.2,
-    "consumer_public_safety": 0.75,
-    "labor_transition": 0.01
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.1,
+    "fundamental_rights": 0.65,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.98,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around ensuring the safety and effectiveness of AI-enabled medical devices for patients and users. The FDA's central rationale is that iterative AI modifications must be controlled to maintain 'a reasonable assurance of device safety and effectiveness.' Secondary framing around innovation enablement is present—the PCCP mechanism is explicitly described as 'least burdensome' and designed to 'promote the development of safe and effective AI-enabled devices'—but this serves the safety rationale rather than replacing it. Rights-based framing appears modestly in attention to bias, equitable representation across race, ethnicity, sex, and age in training/test data.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.12,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.3,
+    "consumer_public_safety": 0.58,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "FDA's AI-DSF Predetermined Change Control Plan guidance is dominantly framed around consumer_public_safety, anchoring premarket authorization, sequestered validation testing, quality-system compliance, user labeling, and post-market adverse-event monitoring in ensuring a reasonable assurance of medical device safety and effectiveness and preventing patient harm across clinical populations. Consumer_public_safety clearly leads innovation_enablement because every modification boundary and verification gate exists to preserve clinical safety and prevent injury. Innovation_enablement is a major secondary frame—adopting a 'least burdensome', forward-thinking regulatory pathway so manufacturers can iteratively improve AI medical devices without filing separate marketing submissions for every update—while fundamental_rights appears substantively through demographic representativeness, intersectional subpopulation testing, bias mitigation against historical healthcare inequalities, and human-subject clinical protections.",
   "evidence_spans": [
     {
-      "quote": "This guidance is intended to provide a forward-thinking approach to promote the development of safe and effective AI-enabled devices.",
-      "source_section": "I. Introduction"
+      "quote": "FDA has a longstanding commitment to develop and apply innovative approaches to the regulation of medical device software and other digital health technologies to ensure their safety and effectiveness.1",
+      "source_section": "Page 5",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 8421,
+      "end_char": 8623
     },
     {
-      "quote": "FDA reviews the PCCP as part of a marketing submission for a device to ensure the continued safety and effectiveness of the device without necessitating additional marketing submissions for implementing each modification described in the PCCP.",
-      "source_section": "I. Introduction"
+      "quote": "Compliance with the QSR is essential in order for a manufacturer to implement modifications consistent with their authorized PCCP and failure to do so could potentially present a serious risk to human health.",
+      "source_section": "Page 16",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 45947,
+      "end_char": 46155
     },
     {
-      "quote": "the modifications can be implemented to the AI-DSF without triggering the need for a new marketing submission",
-      "source_section": "V. Policy for Predetermined Change Control Plans"
+      "quote": "This guidance describes an approach that would often be least burdensome4 for manufacturers to support iterative improvement through modifications to an AI-DSF while continuing to provide a reasonable assurance of device safety and effectiveness.",
+      "source_section": "Page 6",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 10783,
+      "end_char": 11029
     },
     {
-      "quote": "Deviations from the authorized PCCP could significantly affect the safety or effectiveness of the device.",
-      "source_section": "V. Policy for Predetermined Change Control Plans"
+      "quote": "In light of the public health need to facilitate innovation for AI/ML-based devices while providing appropriate oversight for them, on January 12, 2021, the CDRH Digital Health Center of Excellence issued FDA’s Artificial Intelligence/Machine Learning (AI/ML)-Based Software as a Medical Device Action Plan (“the Action Plan”).",
+      "source_section": "Page 8",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 19237,
+      "end_char": 19564
     },
     {
-      "quote": "how the manufacturer plans to obtain and use training, tuning, and test data that are complete and representative of the proposed intended use populations (e.g., with respect to race, ethnicity, disease severity, sex, age, etc.) and intended environments",
-      "source_section": "VII. Modification Protocol"
+      "quote": "2) whether identifiable subpopulations will be adequately represented, including intersectional groups, and separated into training, tuning, and test sets to minimize AI model bias;",
+      "source_section": "Page 29",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 86307,
+      "end_char": 86488
     },
     {
-      "quote": "how the data management practices may reduce the potential to produce discriminatory outcomes",
-      "source_section": "VII. Modification Protocol"
+      "quote": "1.a.7. What are the strategies and measures to understand and mitigate potential biases in the data, such as those due to historical inequalities to medical treatment access by different populations?",
+      "source_section": "Page 36",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 108187,
+      "end_char": 108386
     }
   ]
 }

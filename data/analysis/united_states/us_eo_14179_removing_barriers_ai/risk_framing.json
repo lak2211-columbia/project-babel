@@ -1,32 +1,75 @@
 {
   "dominant_frame": "economic_competitiveness",
   "secondary_frames": [
-    "national_security",
-    "innovation_enablement"
+    "innovation_enablement",
+    "national_security"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.75,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.7,
-    "consumer_public_safety": 0.05,
+    "national_security": 0.78,
+    "economic_competitiveness": 0.96,
+    "fundamental_rights": 0.1,
+    "social_stability": 0.2,
+    "innovation_enablement": 0.88,
+    "consumer_public_safety": 0.0,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around maintaining and enhancing American economic competitiveness and global AI dominance. The core justification for revoking prior AI governance is that existing policies act as 'barriers to American AI innovation.' The policy section explicitly names economic competitiveness alongside national security and human flourishing, but the operative logic throughout is about removing obstacles to U.S. global leadership.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.15,
+    "economic_competitiveness": 0.5,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.05,
+    "innovation_enablement": 0.3,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "EO 14179 is dominantly framed around economic_competitiveness, anchoring federal policy in sustaining and enhancing America's global AI dominance, free-market strength, and global leadership. Economic_competitiveness edges out innovation_enablement because removing regulatory barriers is explicitly subordinated to the overarching zero-sum strategic objective of retaining global AI leadership and dominance. Innovation_enablement is a major secondary frame via the revocation of prior policies deemed obstacles to entrepreneurial AI innovation, while national_security appears explicitly in the Section 2 policy mandate and APNSA co-leadership, alongside a brief anti-ideological-bias rationale.",
   "evidence_spans": [
     {
-      "quote": "To maintain this leadership, we must develop AI systems that are free from ideological bias or engineered social agendas.",
-      "source_section": "Section 1"
+      "quote": "It is the policy of the United States to sustain and enhance America’s global AI dominance in order to promote human flourishing, economic competitiveness, and national security.",
+      "source_section": "Sec. 2. Policy.",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 865,
+      "end_char": 1043
     },
     {
-      "quote": "It is the policy of the United States to sustain and enhance America's global AI dominance in order to promote human flourishing, economic competitiveness, and national security.",
-      "source_section": "Section 2"
+      "quote": "With the right Government policies, we can solidify our position as the global leader in AI and secure a brighter future for all Americans.",
+      "source_section": "Section 1. Purpose",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 485,
+      "end_char": 624
     },
     {
       "quote": "This order revokes certain existing AI policies and directives that act as barriers to American AI innovation, clearing a path for the United States to act decisively to retain global leadership in artificial intelligence.",
-      "source_section": "Section 1"
+      "source_section": "Section 1. Purpose",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 625,
+      "end_char": 847
+    },
+    {
+      "quote": "The United States has long been at the forefront of artificial intelligence (AI) innovation, driven by the strength of our free markets, world-class research institutions, and entrepreneurial spirit.",
+      "source_section": "Section 1. Purpose",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 163,
+      "end_char": 362
+    },
+    {
+      "quote": "To maintain this leadership, we must develop AI systems that are free from ideological bias or engineered social agendas.",
+      "source_section": "Section 1. Purpose",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 363,
+      "end_char": 484
     }
   ]
 }

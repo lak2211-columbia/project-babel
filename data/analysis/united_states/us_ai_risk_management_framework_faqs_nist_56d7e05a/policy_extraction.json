@@ -2,46 +2,41 @@
   "jurisdiction": "united_states",
   "issuing_body": "National Institute of Standards and Technology (NIST)",
   "document_type": "standards_guideline",
-  "binding_strength": "voluntary_commitment",
-  "publication_date": "2023-01-26",
+  "binding_strength": "standards_guideline",
+  "publication_date": "2021-07-13",
   "effective_date": null,
   "covered_actors": [
-    "developers of AI systems",
-    "users of AI systems",
-    "evaluators of AI systems",
-    "AI actors",
-    "organizations of all sizes, public or private, in any sector"
+    "Developers, users, and evaluators of AI systems (AI actors)",
+    "Senior executives and non-AI professionals",
+    "Public and private sector organizations of all sizes in any sector"
   ],
-  "covered_application_domains": [],
+  "covered_application_domains": [
+    "public_sector_use"
+  ],
   "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.85,
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "intended to help developers, users and evaluators of AI systems better manage AI risks which could affect individuals, organizations, society, or the environment",
-          "source_section": "What is the AI RMF?"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.75,
-      "evidence": [
+          "quote": "The Framework is intended to help developers, users and evaluators of AI systems better manage AI risks which could affect individuals, organizations, society, or the environment.",
+          "source_section": "Share",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 140,
+          "end_char": 319
+        },
         {
-          "quote": "foster the development of innovative approaches to address characteristics of trustworthiness including ... accountable and transparent, explainable and interpretable",
-          "source_section": "What is the AI RMF?"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "Framework users and AI actors should consider and encompass trustworthiness characteristics during pre-design, design and development, deployment, use, and test and evaluation",
-          "source_section": "When do these characteristics apply"
+          "quote": "The Framework users and AI actors should consider and encompass trustworthiness characteristics during pre-design, design and development, deployment, use, and test and evaluation of AI technologies and systems.",
+          "source_section": "Share",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 739,
+          "end_char": 950
         }
       ]
     }
@@ -49,15 +44,25 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.95,
+      "confidence": 0.96,
       "evidence": [
         {
-          "quote": "NIST has produced the AI RMF as a voluntary Framework",
-          "source_section": "Will private or public sector organizations be required to use the Framework?"
+          "quote": "Will private or public sector organizations be required to use the Framework?\nNo. NIST has produced the AI RMF as a voluntary Framework.",
+          "source_section": "Why has NIST developed the Framework?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2697,
+          "end_char": 2833
         },
         {
-          "quote": "Organizations seeking specific guidance for how to achieve AI RMF function outcomes may borrow as many – or as few – suggestions as apply to their industry use case or interests",
-          "source_section": "Will NIST provide additional guidance"
+          "quote": "Organizations seeking specific guidance for how to achieve AI RMF function outcomes may borrow as many – or as few – suggestions as apply to their industry use case or interests.",
+          "source_section": "Will NIST provide additional guidance to help with using the AI RMF?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4016,
+          "end_char": 4194
         }
       ]
     }
@@ -65,6 +70,6 @@
   "enforcement_authorities": [],
   "compliance_deadlines": [],
   "penalties_summary": null,
-  "implementation_notes": "The AI RMF is explicitly voluntary; Congress directed NIST to develop it as such. A companion Playbook provides actionable suggestions. No penalties or enforcement mechanisms are specified.",
-  "confidence": 0.97
+  "implementation_notes": "Official NIST AI RMF FAQ companion page (initial publication 2021-07-13, updated through the January 26, 2023 AI RMF 1.0 release). Clarifies the Framework's voluntary non-binding status, broad scalability across public and private sectors, seven trustworthiness characteristics and their tradeoffs, development timeline (2021 RFI through Jan 2023 launch), and relationship to the companion Playbook and other NIST frameworks.",
+  "confidence": 0.95
 }

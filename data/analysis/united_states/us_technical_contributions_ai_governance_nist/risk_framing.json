@@ -1,32 +1,57 @@
 {
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "national_security",
+    "consumer_public_safety",
     "economic_competitiveness"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
+    "national_security": 0.1,
+    "economic_competitiveness": 0.28,
+    "fundamental_rights": 0.05,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.78,
+    "consumer_public_safety": 0.35,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
+    "economic_competitiveness": 0.15,
     "fundamental_rights": 0.0,
     "social_stability": 0.0,
-    "innovation_enablement": 0.55,
+    "innovation_enablement": 0.65,
     "consumer_public_safety": 0.2,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document focuses on NIST's technical contributions to AI governance, emphasizing scientific expertise, standards coordination, and neutral convening of diverse stakeholders. The framing is primarily about enabling effective and reliable AI through grounded technical governance rather than risk mitigation per se. International engagement with OECD, G7, and bilateral initiatives suggests secondary economic competitiveness and national security interests.",
+  "rationale_summary": "This short institutional overview has sparse explicit rationale language, centered primarily on innovation_enablement: grounding domestic and international AI governance in scientific and technical realities through neutral convening, federal standards coordination, and shared research infrastructure (NAIRR) to shape effective AI development. Consumer_public_safety appears modestly via the goal of 'effective and reliable AI,' and economic_competitiveness plays a minor role through partnerships with the International Trade Administration in international governance.",
   "evidence_spans": [
     {
-      "quote": "provides scientific and technical expertise and contributions to national and international discussions on AI governance",
-      "source_section": "ITL AI Program overview"
+      "quote": "The agency’s active participation in national and international discussions helps to shape the development of effective and reliable AI and ground AI governance in technical realities.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 384,
+      "end_char": 568
     },
     {
-      "quote": "The agency's active participation in national and international discussions helps to shape the development of effective and reliable AI and ground AI governance in technical realities",
-      "source_section": "ITL AI Program overview"
+      "quote": "provides scientific and technical expertise and contributions to national and international discussions on AI governance. The Program plays a key role as a neutral convener of organizations and individuals with disparate views about AI matters.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 139,
+      "end_char": 383
     },
     {
-      "quote": "Serving as the federal AI standards coordinator",
-      "source_section": "Federal AI efforts"
+      "quote": "On many of these efforts, the Program partners with other agencies, including the U.S. Department of Commerce’s International Trade Administration and the U.S. Department of State.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 805,
+      "end_char": 985
     }
   ]
 }

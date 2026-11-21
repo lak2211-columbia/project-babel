@@ -1,5 +1,5 @@
 {
-  "parser_version": "0.1.0",
+  "parser_version": "0.3.0",
   "title": "《国家药监局关于“人工智能+药品监管”的实施意见》政策解读_政策解读_中国政府网",
   "language": "zh",
   "document_format": "html",
@@ -37,8 +37,9 @@
     }
   ],
   "warnings": [
-    "linked_artifact_unexpected_content_type:text/html",
-    "linked_artifact_url:http://app.www.gov.cn/download/Chinese.html"
+    "linked_artifact_not_fetched:http://app.www.gov.cn/download/Chinese.html"
   ],
-  "source_artifact_path": "data/raw/china/cn_ai_drug_regulation_implementation_opinion_interpretation_2026/source.html"
+  "source_artifact_path": "data/raw/china/cn_ai_drug_regulation_implementation_opinion_interpretation_2026/source.html",
+  "source_sha256": "e1891e72e64d462e369cb6b7028574d1a38e9c416fe537c1919da6472c649650",
+  "extractor": "beautifulsoup4"
 }

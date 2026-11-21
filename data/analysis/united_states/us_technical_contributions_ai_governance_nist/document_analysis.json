@@ -4,80 +4,133 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "united_states",
-    "issuing_body": "National Institute of Standards and Technology (NIST), Information Technology Laboratory (ITL) AI Program",
-    "document_type": "regulatory_guidance",
-    "binding_strength": "standards_guideline",
-    "publication_date": null,
+    "issuing_body": "National Institute of Standards and Technology (NIST)",
+    "document_type": "strategy_paper",
+    "binding_strength": "strategy_statement",
+    "publication_date": "2021-07-26",
     "effective_date": null,
     "covered_actors": [
-      "federal agencies",
-      "international organizations",
-      "standards bodies",
-      "AI developers and deployers"
+      "NIST Information Technology Laboratory (ITL) AI Program",
+      "Federal offices and interagency AI bodies (NAIAC, NSTC Machine Learning and Artificial Intelligence Subcommittee, NITRD AI Working Group, ICSP AISCWG, National AI Research Resource Task Force)",
+      "U.S. Department of Commerce International Trade Administration and U.S. Department of State",
+      "International governance forums and bilateral partners (OECD, G7 Hiroshima Process, Asia, Middle East, North America)"
     ],
-    "covered_application_domains": [
-      "general_purpose_models"
-    ],
+    "covered_application_domains": [],
     "prohibited_practices": [],
     "safety_requirements": [],
     "enforcement_mechanisms": [
       {
-        "label": "soft_enforcement",
-        "confidence": 0.7,
+        "label": "none_specified",
+        "confidence": 0.96,
         "evidence": [
           {
-            "quote": "provides scientific and technical expertise and contributions to national and international discussions on AI governance. The Program plays a key role as a neutral convener",
-            "source_section": "ITL AI Program overview"
-          },
-          {
-            "quote": "helps to shape the development of effective and reliable AI and ground AI governance in technical realities",
-            "source_section": "ITL AI Program overview"
+            "quote": "The Program plays a key role as a neutral convener of organizations and individuals with disparate views about AI matters.",
+            "source_section": "Share",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 261,
+            "end_char": 383
           }
         ]
       }
     ],
-    "enforcement_authorities": [
-      "National Institute of Standards and Technology (NIST)",
-      "National Artificial Intelligence Advisory Committee (NAIAC)",
-      "National Science and Technology Council Machine Learning and AI Subcommittee",
-      "NITRD AI Working Group",
-      "AI Standards Coordination Working Group (AISCWG)"
-    ],
+    "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "This page describes NIST ITL AI Program's role as a neutral convener and technical contributor to AI governance discussions at national and international levels, including OECD and G7 Hiroshima Process. No binding requirements or prohibitions are stated. The document is informational and describes coordination roles rather than regulatory mandates.",
-    "confidence": 0.82
+    "implementation_notes": "Brief NIST ITL AI Program informational overview (originally published 2021-07-26 and later updated to reference the 2023 G7 Hiroshima Process) summarizing NIST's role as a neutral technical convener, federal AI standards coordinator, and interagency/international AI governance participant. Contains no operative compliance requirements or enforcement hooks.",
+    "confidence": 0.95
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "national_security",
+      "consumer_public_safety",
       "economic_competitiveness"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
+      "national_security": 0.1,
+      "economic_competitiveness": 0.28,
+      "fundamental_rights": 0.05,
+      "social_stability": 0.1,
+      "innovation_enablement": 0.78,
+      "consumer_public_safety": 0.35,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
+      "economic_competitiveness": 0.15,
       "fundamental_rights": 0.0,
       "social_stability": 0.0,
-      "innovation_enablement": 0.55,
+      "innovation_enablement": 0.65,
       "consumer_public_safety": 0.2,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document focuses on NIST's technical contributions to AI governance, emphasizing scientific expertise, standards coordination, and neutral convening of diverse stakeholders. The framing is primarily about enabling effective and reliable AI through grounded technical governance rather than risk mitigation per se. International engagement with OECD, G7, and bilateral initiatives suggests secondary economic competitiveness and national security interests.",
+    "rationale_summary": "This short institutional overview has sparse explicit rationale language, centered primarily on innovation_enablement: grounding domestic and international AI governance in scientific and technical realities through neutral convening, federal standards coordination, and shared research infrastructure (NAIRR) to shape effective AI development. Consumer_public_safety appears modestly via the goal of 'effective and reliable AI,' and economic_competitiveness plays a minor role through partnerships with the International Trade Administration in international governance.",
     "evidence_spans": [
       {
-        "quote": "provides scientific and technical expertise and contributions to national and international discussions on AI governance",
-        "source_section": "ITL AI Program overview"
+        "quote": "The agency’s active participation in national and international discussions helps to shape the development of effective and reliable AI and ground AI governance in technical realities.",
+        "source_section": "Share",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 384,
+        "end_char": 568
       },
       {
-        "quote": "The agency's active participation in national and international discussions helps to shape the development of effective and reliable AI and ground AI governance in technical realities",
-        "source_section": "ITL AI Program overview"
+        "quote": "provides scientific and technical expertise and contributions to national and international discussions on AI governance. The Program plays a key role as a neutral convener of organizations and individuals with disparate views about AI matters.",
+        "source_section": "Share",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 139,
+        "end_char": 383
       },
       {
-        "quote": "Serving as the federal AI standards coordinator",
-        "source_section": "Federal AI efforts"
+        "quote": "On many of these efforts, the Program partners with other agencies, including the U.S. Department of Commerce’s International Trade Administration and the U.S. Department of State.",
+        "source_section": "Share",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 805,
+        "end_char": 985
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:14:53.838668Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "bc03f5997c6432bcbbdddbdedf2a9143aa41a10447deab74f1aa6706825d4c42",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 1707,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 4,
+      "exact_matches": 4,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "taxonomy_version": "2.0.0",
+  "taxonomy_version": "2.1.0",
   "generated_at": "2026-11-20T00:00:00Z",
   "cutoff_date": "2026-11-20",
   "description": "Curated Apr–Nov 2026 (plus missing 2025–early 2026 landmark) official instruments ready for promotion into data/sources/*.json and ingestion via `make fetch && make parse && make analyze`.",
@@ -24,12 +24,25 @@
       "lifecycle_stage": "active",
       "publication_date": "2026-06-02",
       "effective_date": "2026-06-02",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "document_format": "html",
-      "source_portal_ids": ["us_federal_register_ai", "us_white_house_actions"],
-      "policy_domains": ["frontier_gpai", "national_security", "standards_assurance", "industrial_innovation"],
+      "source_portal_ids": [
+        "us_federal_register_ai",
+        "us_white_house_actions"
+      ],
+      "policy_domains": [
+        "frontier_gpai",
+        "national_security",
+        "standards_assurance",
+        "industrial_innovation"
+      ],
       "priority": "high",
-      "relevance_notes": "Establishes federal AI cybersecurity clearinghouse and voluntary 30-day pre-release federal evaluation access for frontier developers while rejecting mandatory federal licensing."
+      "relevance_notes": "Establishes federal AI cybersecurity clearinghouse and voluntary 30-day pre-release federal evaluation access for frontier developers while rejecting mandatory federal licensing.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "us_eo_14409_advanced_ai_innovation_security_2026",
+      "stage_4a_notes": "13,060 B HTML, 8,070 chars via Federal Register full-text HTML"
     },
     {
       "id": "us_eo_14434_super_intelligence_2026",
@@ -45,12 +58,25 @@
       "lifecycle_stage": "active",
       "publication_date": "2026-09-29",
       "effective_date": "2026-09-29",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "document_format": "html",
-      "source_portal_ids": ["us_federal_register_ai", "us_white_house_actions"],
-      "policy_domains": ["frontier_gpai", "industrial_innovation", "public_sector_governance", "sovereign_compute"],
+      "source_portal_ids": [
+        "us_federal_register_ai",
+        "us_white_house_actions"
+      ],
+      "policy_domains": [
+        "frontier_gpai",
+        "industrial_innovation",
+        "public_sector_governance",
+        "sovereign_compute"
+      ],
       "priority": "high",
-      "relevance_notes": "Directs executive agencies to adopt 'Super Intelligence (SI)' nomenclature across official non-statutory documents and portals; major framing and terminology pivot."
+      "relevance_notes": "Directs executive agencies to adopt 'Super Intelligence (SI)' nomenclature across official non-statutory documents and portals; major framing and terminology pivot.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "us_eo_14434_super_intelligence_2026",
+      "stage_4a_notes": "8,533 B HTML, 4,896 chars via Federal Register full-text HTML"
     },
     {
       "id": "us_eo_national_policy_framework_ai_2025",
@@ -68,12 +94,24 @@
       "lifecycle_stage": "active",
       "publication_date": "2025-12-11",
       "effective_date": "2025-12-11",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "document_format": "html",
-      "source_portal_ids": ["us_federal_register_ai", "us_white_house_actions"],
-      "policy_domains": ["industrial_innovation", "public_sector_governance", "sovereign_compute"],
+      "source_portal_ids": [
+        "us_federal_register_ai",
+        "us_white_house_actions"
+      ],
+      "policy_domains": [
+        "industrial_innovation",
+        "public_sector_governance",
+        "sovereign_compute"
+      ],
       "priority": "high",
-      "relevance_notes": "Establishes DOJ task force challenging fragmented state AI laws and ties BEAD funding to federal preemption principles with carve-outs for child safety, compute, and procurement."
+      "relevance_notes": "Establishes DOJ task force challenging fragmented state AI laws and ties BEAD funding to federal preemption principles with carve-outs for child safety, compute, and procurement.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "us_eo_14365_national_policy_framework_ai_2025",
+      "stage_4a_notes": "Promoted with confirmed EO number 14365; 14,447 B HTML, 9,155 chars via Federal Register"
     },
     {
       "id": "us_take_it_down_act_2025",
@@ -89,12 +127,24 @@
       "lifecycle_stage": "active",
       "publication_date": "2025-05-19",
       "effective_date": "2026-05-19",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "document_format": "mixed",
-      "source_portal_ids": ["us_congress_govinfo", "us_ftc_ai_policy"],
-      "policy_domains": ["platform_content_governance", "consumer_protection", "civil_rights_nondiscrimination"],
+      "source_portal_ids": [
+        "us_congress_govinfo",
+        "us_ftc_ai_policy"
+      ],
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection",
+        "civil_rights_nondiscrimination"
+      ],
       "priority": "high",
-      "relevance_notes": "First binding U.S. federal AI deepfake/NCII criminal and platform takedown statute; FTC 48-hour takedown enforcement entered into force May 19, 2026."
+      "relevance_notes": "First binding U.S. federal AI deepfake/NCII criminal and platform takedown statute; FTC 48-hour takedown enforcement entered into force May 19, 2026.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "us_take_it_down_act_2025",
+      "stage_4a_notes": "216,198 B PDF (8p, 20,644 chars) via GovInfo PLAW-119publ12.pdf"
     },
     {
       "id": "us_nist_caisi_agent_standards_initiative_2026",
@@ -112,12 +162,25 @@
       "lifecycle_stage": "active",
       "publication_date": "2026-02-01",
       "effective_date": null,
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "document_format": "mixed",
-      "source_portal_ids": ["us_nist_caisi_si", "us_nist_ai"],
-      "policy_domains": ["agentic_ai", "standards_assurance", "critical_infrastructure", "frontier_gpai"],
+      "source_portal_ids": [
+        "us_nist_caisi_si",
+        "us_nist_ai"
+      ],
+      "policy_domains": [
+        "agentic_ai",
+        "standards_assurance",
+        "critical_infrastructure",
+        "frontier_gpai"
+      ],
       "priority": "high",
-      "relevance_notes": "Core 2026 U.S. technical initiative for autonomous agent identity, IAM, security overlays, and cyber-AI risk management."
+      "relevance_notes": "Core 2026 U.S. technical initiative for autonomous agent identity, IAM, security overlays, and cyber-AI risk management.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "us_nist_caisi_agent_standards_initiative_2026 + us_nist_ir_8596_cyber_ai_profile_2025",
+      "stage_4a_notes": "Split into 2 distinct instruments: Agent Standards Initiative (85,723 B HTML, 5,729 chars) + NIST IR 8596 iprd Cyber AI Profile (2,297,620 B, 107p, 261,473 chars PDF, draft_consultation)"
     },
     {
       "id": "eu_digital_omnibus_ai_regulation_2026_1744",
@@ -135,12 +198,24 @@
       "lifecycle_stage": "active",
       "publication_date": "2026-07-08",
       "effective_date": "2026-07-28",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "document_format": "html",
-      "source_portal_ids": ["eu_eur_lex", "eu_digital_strategy_ai"],
-      "policy_domains": ["frontier_gpai", "industrial_innovation", "standards_assurance"],
+      "source_portal_ids": [
+        "eu_eur_lex",
+        "eu_digital_strategy_ai"
+      ],
+      "policy_domains": [
+        "frontier_gpai",
+        "industrial_innovation",
+        "standards_assurance"
+      ],
       "priority": "high",
-      "relevance_notes": "Major statutory amendment staggering Annex III high-risk AI deadlines to Dec 2, 2027 and Annex I product-safety AI to Aug 2, 2028 while preserving Aug 2, 2026 Art. 50 rules."
+      "relevance_notes": "Major statutory amendment staggering Annex III high-risk AI deadlines to Dec 2, 2027 and Annex I product-safety AI to Aug 2, 2028 while preserving Aug 2, 2026 Art. 50 rules.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "eu_digital_omnibus_ai_regulation_2026_1744",
+      "stage_4a_notes": "353,496 B OJ HTML (147,724 chars) via EUR-Lex CELEX:32026R1744 (pub 2026-07-24, eff 2026-07-27)"
     },
     {
       "id": "eu_article_50_transparency_guidelines_2026",
@@ -156,12 +231,24 @@
       "lifecycle_stage": "active",
       "publication_date": "2026-08-02",
       "effective_date": "2026-08-02",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "document_format": "mixed",
-      "source_portal_ids": ["eu_ai_office_policies", "eu_digital_strategy_ai"],
-      "policy_domains": ["platform_content_governance", "consumer_protection", "frontier_gpai"],
+      "source_portal_ids": [
+        "eu_ai_office_policies",
+        "eu_digital_strategy_ai"
+      ],
+      "policy_domains": [
+        "platform_content_governance",
+        "consumer_protection",
+        "frontier_gpai"
+      ],
       "priority": "high",
-      "relevance_notes": "Operationalizes legally active Aug 2, 2026 Article 50 AI-content marking/disclosure obligations and Dec 2, 2026 legacy watermarking retrofit deadline."
+      "relevance_notes": "Operationalizes legally active Aug 2, 2026 Article 50 AI-content marking/disclosure obligations and Dec 2, 2026 legacy watermarking retrofit deadline.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "eu_article_50_transparency_guidelines_2026",
+      "stage_4a_notes": "552,755 B PDF (51p, 172,931 chars) formally adopted C(2026) 7702 final of 2026-11-05 (newsroom doc 131215)"
     },
     {
       "id": "eu_code_practice_transparency_ai_content_2026",
@@ -177,12 +264,24 @@
       "lifecycle_stage": "active",
       "publication_date": "2026-07-15",
       "effective_date": "2026-08-02",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "document_format": "mixed",
-      "source_portal_ids": ["eu_ai_office_policies", "eu_digital_strategy_ai"],
-      "policy_domains": ["platform_content_governance", "standards_assurance", "frontier_gpai"],
+      "source_portal_ids": [
+        "eu_ai_office_policies",
+        "eu_digital_strategy_ai"
+      ],
+      "policy_domains": [
+        "platform_content_governance",
+        "standards_assurance",
+        "frontier_gpai"
+      ],
       "priority": "high",
-      "relevance_notes": "Voluntary compliance code recognized adequate for Article 50 synthetic-content watermarking and provenance obligations."
+      "relevance_notes": "Voluntary compliance code recognized adequate for Article 50 synthetic-content watermarking and provenance obligations.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "eu_code_practice_transparency_ai_content_2026",
+      "stage_4a_notes": "1,213,943 B PDF (38p, 112,187 chars, newsroom doc 129555; assessed adequate by C(2026) 4839 final of 2026-07-08)"
     },
     {
       "id": "eu_gpai_guidelines_full_annex_2025",
@@ -199,12 +298,24 @@
       "publication_date": "2025-07-18",
       "effective_date": "2025-08-02",
       "supersedes_id": "eu_gpai_scope_obligations_guidelines_2025",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "document_format": "pdf",
-      "source_portal_ids": ["eu_digital_strategy_ai", "eu_ai_office_policies"],
-      "policy_domains": ["frontier_gpai", "standards_assurance", "copyright_ip"],
+      "source_portal_ids": [
+        "eu_digital_strategy_ai",
+        "eu_ai_office_policies"
+      ],
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance",
+        "copyright_ip"
+      ],
       "priority": "high",
-      "relevance_notes": "Replaces current 3,383-char 2-page cover Communication stub (eu_gpai_scope_obligations_guidelines_2025) with the full ~40-page technical Guidelines Annex."
+      "relevance_notes": "Replaces current 3,383-char 2-page cover Communication stub (eu_gpai_scope_obligations_guidelines_2025) with the full ~40-page technical Guidelines Annex.",
+      "stage_4a_status": "upgraded_in_place",
+      "ingested_document_id": "eu_gpai_scope_obligations_guidelines_2025",
+      "stage_4a_notes": "Upgraded existing seed in-place to formally adopted 36p C(2025) 7719 final PDF (544,991 B, 101,485 chars, newsroom doc 118340)"
     },
     {
       "id": "kr_ai_safety_guideline_2026_final",
@@ -223,12 +334,23 @@
       "publication_date": "2026-04-30",
       "effective_date": "2026-04-30",
       "supersedes_id": "kr_ai_safety_guideline_2026_draft",
-      "languages": ["ko"],
+      "languages": [
+        "ko"
+      ],
       "document_format": "pdf",
-      "source_portal_ids": ["kr_ai_act_helpdesk", "kr_msit_main"],
-      "policy_domains": ["frontier_gpai", "standards_assurance"],
+      "source_portal_ids": [
+        "kr_ai_act_helpdesk",
+        "kr_msit_main"
+      ],
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance"
+      ],
       "priority": "high",
-      "relevance_notes": "Finalized MSIT safety assurance guideline replacing the Jan 2026 draft (kr_ai_safety_guideline_2026_draft) under the AI Basic Act."
+      "relevance_notes": "Finalized MSIT safety assurance guideline replacing the Jan 2026 draft (kr_ai_safety_guideline_2026_draft) under the AI Basic Act.",
+      "stage_4a_status": "upgraded_in_place",
+      "ingested_document_id": "kr_ai_safety_guideline_2026_draft (+ new kr_high_impact_ai_determination_guideline_2026)",
+      "stage_4a_notes": "Support Desk CF00007573 (75p, 142,157 chars) is the clean updated UTF-8 draft revision and replaced the corrupt-encoding 71p file in-place; also ingested missing 216p High-Impact AI Determination Guideline (CF00007226, 194,635 chars)"
     },
     {
       "id": "kr_ai_basic_act_data_amendment_2026",
@@ -244,12 +366,24 @@
       "lifecycle_stage": "adopted_not_yet_effective",
       "publication_date": "2026-10-13",
       "effective_date": "2027-04-13",
-      "languages": ["ko"],
+      "languages": [
+        "ko"
+      ],
       "document_format": "mixed",
-      "source_portal_ids": ["kr_law_center", "kr_msit_main"],
-      "policy_domains": ["frontier_gpai", "privacy_data_protection", "industrial_innovation"],
+      "source_portal_ids": [
+        "kr_law_center",
+        "kr_msit_main"
+      ],
+      "policy_domains": [
+        "frontier_gpai",
+        "privacy_data_protection",
+        "industrial_innovation"
+      ],
       "priority": "high",
-      "relevance_notes": "Oct 13, 2026 amendment expanding lawful public/private AI training data sharing to address domestic training data bottlenecks."
+      "relevance_notes": "Oct 13, 2026 amendment expanding lawful public/private AI training data sharing to address domestic training data bottlenecks.",
+      "stage_4a_status": "deferred",
+      "ingested_document_id": null,
+      "stage_4a_notes": "Oct 2026 Cabinet amendment bill text not yet published as consolidated enacted law on law.go.kr during Stage 4A; tracked for next statutory refresh"
     },
     {
       "id": "kr_national_ai_action_plan_2026_2028",
@@ -265,12 +399,25 @@
       "lifecycle_stage": "active",
       "publication_date": "2026-06-01",
       "effective_date": null,
-      "languages": ["ko"],
+      "languages": [
+        "ko"
+      ],
       "document_format": "mixed",
-      "source_portal_ids": ["kr_msit_main", "kr_aisi"],
-      "policy_domains": ["industrial_innovation", "sovereign_compute", "public_sector_governance", "frontier_gpai"],
+      "source_portal_ids": [
+        "kr_msit_main",
+        "kr_aisi"
+      ],
+      "policy_domains": [
+        "industrial_innovation",
+        "sovereign_compute",
+        "public_sector_governance",
+        "frontier_gpai"
+      ],
       "priority": "high",
-      "relevance_notes": "99-task national execution plan targeting AI G3 competitiveness and sovereign compute infrastructure."
+      "relevance_notes": "99-task national execution plan targeting AI G3 competitiveness and sovereign compute infrastructure.",
+      "stage_4a_status": "deferred",
+      "ingested_document_id": null,
+      "stage_4a_notes": "Full 99-task NAISC PDF attachment on aikorea.go.kr/korea.kr not directly downloadable via automated query without false-match press releases; deferred to maintain strict quality gate"
     },
     {
       "id": "jp_second_basic_ai_plan_2026",
@@ -289,12 +436,25 @@
       "publication_date": "2026-07-14",
       "effective_date": "2026-07-14",
       "supersedes_id": "jp_basic_ai_plan_page",
-      "languages": ["ja"],
+      "languages": [
+        "ja"
+      ],
       "document_format": "pdf",
-      "source_portal_ids": ["jp_cao_ai_strategy"],
-      "policy_domains": ["agentic_ai", "embodied_physical_ai", "sovereign_compute", "industrial_innovation", "public_sector_governance"],
+      "source_portal_ids": [
+        "jp_cao_ai_strategy"
+      ],
+      "policy_domains": [
+        "agentic_ai",
+        "embodied_physical_ai",
+        "sovereign_compute",
+        "industrial_innovation",
+        "public_sector_governance"
+      ],
       "priority": "high",
-      "relevance_notes": "Cabinet Decision of July 14, 2026 superseding the Dec 2025 First Plan; pivots to agentic AI, physical/vertical AI, chips/power sovereignty, and 180k-seat government GENAI rollout."
+      "relevance_notes": "Cabinet Decision of July 14, 2026 superseding the Dec 2025 First Plan; pivots to agentic AI, physical/vertical AI, chips/power sovereignty, and 180k-seat government GENAI rollout.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "jp_second_basic_ai_plan_2026",
+      "stage_4a_notes": "581,426 B PDF (22p, 24,553 chars, Cabinet Decision 2026-07-14); superseded jp_basic_ai_plan_page"
     },
     {
       "id": "jp_ai_guidelines_for_business_ver_1_2_2026",
@@ -313,12 +473,25 @@
       "publication_date": "2026-03-31",
       "effective_date": "2026-03-31",
       "supersedes_id": "jp_ai_guidelines_for_business_ver_1_0",
-      "languages": ["ja"],
+      "languages": [
+        "ja"
+      ],
       "document_format": "pdf",
-      "source_portal_ids": ["jp_mic_ai_guidelines", "jp_meti_ai_governance_docs"],
-      "policy_domains": ["agentic_ai", "embodied_physical_ai", "frontier_gpai", "standards_assurance"],
+      "source_portal_ids": [
+        "jp_mic_ai_guidelines",
+        "jp_meti_ai_governance_docs"
+      ],
+      "policy_domains": [
+        "agentic_ai",
+        "embodied_physical_ai",
+        "frontier_gpai",
+        "standards_assurance"
+      ],
       "priority": "high",
-      "relevance_notes": "Supersedes corpus Ver. 1.0 (Apr 2024); explicitly introduces AI agent and physical AI governance obligations across developers, providers, and business users."
+      "relevance_notes": "Supersedes corpus Ver. 1.0 (Apr 2024); explicitly introduces AI agent and physical AI governance obligations across developers, providers, and business users.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "jp_ai_guidelines_for_business_ver_1_2_2026",
+      "stage_4a_notes": "1,986,467 B PDF (42p, 54,707 chars, 2026-03-31 MIC/METI); superseded jp_ai_guidelines_for_business_ver_1_0"
     },
     {
       "id": "jp_ai_promotion_act_statute_2025",
@@ -334,12 +507,25 @@
       "lifecycle_stage": "active",
       "publication_date": "2025-06-04",
       "effective_date": "2025-09-01",
-      "languages": ["ja"],
+      "languages": [
+        "ja"
+      ],
       "document_format": "mixed",
-      "source_portal_ids": ["jp_egov_law", "jp_cao_ai_strategy"],
-      "policy_domains": ["frontier_gpai", "industrial_innovation", "public_sector_governance", "national_security"],
+      "source_portal_ids": [
+        "jp_egov_law",
+        "jp_cao_ai_strategy"
+      ],
+      "policy_domains": [
+        "frontier_gpai",
+        "industrial_innovation",
+        "public_sector_governance",
+        "national_security"
+      ],
       "priority": "high",
-      "relevance_notes": "Full statutory text of Japan's AI Promotion Act (Act No. 53 of 2025); currently only a 1-page English overview slide is in the corpus."
+      "relevance_notes": "Full statutory text of Japan's AI Promotion Act (Act No. 53 of 2025); currently only a 1-page English overview slide is in the corpus.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "jp_ai_promotion_act_statute_2025",
+      "stage_4a_notes": "Full enacted Act No. 53 of 2025 (5,651 chars, 50 articles) retrieved via official e-Gov Law API; jp_ai_promotion_act_2025_overview demoted to companion_resource"
     },
     {
       "id": "jp_aisi_evaluation_and_red_teaming_guides",
@@ -357,12 +543,24 @@
       "lifecycle_stage": "active",
       "publication_date": "2024-09-18",
       "effective_date": null,
-      "languages": ["en", "ja"],
+      "languages": [
+        "en",
+        "ja"
+      ],
       "document_format": "mixed",
-      "source_portal_ids": ["jp_aisi"],
-      "policy_domains": ["frontier_gpai", "standards_assurance", "agentic_ai"],
+      "source_portal_ids": [
+        "jp_aisi"
+      ],
+      "policy_domains": [
+        "frontier_gpai",
+        "standards_assurance",
+        "agentic_ai"
+      ],
       "priority": "high",
-      "relevance_notes": "Authoritative Japan AI Safety Institute technical evaluation and red-teaming standards; also pair with Hiroshima AI Process Code of Conduct (https://www.soumu.go.jp/hiroshimaaiprocess/en/index.html)."
+      "relevance_notes": "Authoritative Japan AI Safety Institute technical evaluation and red-teaming standards; also pair with Hiroshima AI Process Code of Conduct (https://www.soumu.go.jp/hiroshimaaiprocess/en/index.html).",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "jp_aisi_evaluation_perspectives_guide_2026 + jp_aisi_red_teaming_guide_2025 + jp_hiroshima_ai_process_code_of_conduct_2023",
+      "stage_4a_notes": "Split into 3 distinct primary PDFs: J-AISI Evaluation Perspectives v1.20 (2026-07-07, 66p, 55,680 chars), J-AISI Red Teaming v1.10 (2025-03-31, 64p, 61,321 chars), and Hiroshima AI Process Code of Conduct (8p, 18,206 chars)"
     },
     {
       "id": "cn_tc260_ai_safety_governance_framework_3_0_2026",
@@ -381,12 +579,26 @@
       "publication_date": "2026-09-14",
       "effective_date": "2026-09-14",
       "supersedes_id": "cn_ai_safety_governance_framework_2024",
-      "languages": ["zh"],
+      "languages": [
+        "zh"
+      ],
       "document_format": "pdf",
-      "source_portal_ids": ["cn_tc260", "cn_cac"],
-      "policy_domains": ["agentic_ai", "embodied_physical_ai", "frontier_gpai", "standards_assurance", "national_security"],
+      "source_portal_ids": [
+        "cn_tc260",
+        "cn_cac"
+      ],
+      "policy_domains": [
+        "agentic_ai",
+        "embodied_physical_ai",
+        "frontier_gpai",
+        "standards_assurance",
+        "national_security"
+      ],
       "priority": "high",
-      "relevance_notes": "Supersedes v1.0 (2024) and v2.0 (2025); first national technical framework specifying 8-stage agentic AI controls (agent identity, least-privilege permissions, dynamic revocation, default-deny, kill-switches) and embodied AI risk tiers."
+      "relevance_notes": "Supersedes v1.0 (2024) and v2.0 (2025); first national technical framework specifying 8-stage agentic AI controls (agent identity, least-privilege permissions, dynamic revocation, default-deny, kill-switches) and embodied AI risk tiers.",
+      "stage_4a_status": "ingested",
+      "ingested_document_id": "cn_tc260_ai_safety_governance_framework_3_0_2026",
+      "stage_4a_notes": "3,325,115 B PDF (136p, 155,587 chars, Sep 2026) via CAC/TC260; superseded cn_ai_safety_governance_framework_2024"
     },
     {
       "id": "cn_amended_cybersecurity_law_2025_art20",
@@ -404,12 +616,25 @@
       "lifecycle_stage": "active",
       "publication_date": "2025-10-28",
       "effective_date": "2026-01-01",
-      "languages": ["zh"],
+      "languages": [
+        "zh"
+      ],
       "document_format": "html",
-      "source_portal_ids": ["cn_npc_laws", "cn_state_council_policy"],
-      "policy_domains": ["frontier_gpai", "critical_infrastructure", "national_security", "sovereign_compute"],
+      "source_portal_ids": [
+        "cn_npc_laws",
+        "cn_state_council_policy"
+      ],
+      "policy_domains": [
+        "frontier_gpai",
+        "critical_infrastructure",
+        "national_security",
+        "sovereign_compute"
+      ],
       "priority": "high",
-      "relevance_notes": "Adds Article 20 codifying AI R&D, compute/data infrastructure, ethics, and risk monitoring into national primary legislation with penalties up to RMB 50M / 5% turnover."
+      "relevance_notes": "Adds Article 20 codifying AI R&D, compute/data infrastructure, ethics, and risk monitoring into national primary legislation with penalties up to RMB 50M / 5% turnover.",
+      "stage_4a_status": "deferred",
+      "ingested_document_id": null,
+      "stage_4a_notes": "flk.npc.gov.cn API returned 552-byte non-JSON redirect and npc.gov.cn/gov.cn archive pages did not expose a direct stable full-text HTML URL during Stage 4A; deferred without fabricating or scraping unofficial mirrors"
     },
     {
       "id": "cn_state_council_ai_plus_opinion_2025_and_gb45438",
@@ -427,12 +652,26 @@
       "lifecycle_stage": "active",
       "publication_date": "2025-08-26",
       "effective_date": "2025-09-01",
-      "languages": ["zh"],
+      "languages": [
+        "zh"
+      ],
       "document_format": "mixed",
-      "source_portal_ids": ["cn_state_council_policy", "cn_miit_ai", "cn_tc260"],
-      "policy_domains": ["agentic_ai", "industrial_innovation", "platform_content_governance", "standards_assurance"],
+      "source_portal_ids": [
+        "cn_state_council_policy",
+        "cn_miit_ai",
+        "cn_tc260"
+      ],
+      "policy_domains": [
+        "agentic_ai",
+        "industrial_innovation",
+        "platform_content_governance",
+        "standards_assurance"
+      ],
       "priority": "high",
-      "relevance_notes": "State Council AI+ deployment mandate (>70% AI agent/smart terminal adoption by 2027) paired with mandatory national standard GB 45438-2025 operationalizing synthetic content labeling."
+      "relevance_notes": "State Council AI+ deployment mandate (>70% AI agent/smart terminal adoption by 2027) paired with mandatory national standard GB 45438-2025 operationalizing synthetic content labeling.",
+      "stage_4a_status": "partially_ingested",
+      "ingested_document_id": "cn_state_council_ai_plus_opinion_2025 (GB 45438-2025 deferred)",
+      "stage_4a_notes": "Ingested official State Council AI+ Opinion (国发〔2025〕11号, gov.cn content_7037862.htm, 44,964 B, 6,035 chars); mandatory standard GB 45438-2025 full PDF is SAMR viewer-gated and deferred cleanly"
     }
   ],
   "subnational_overlay_candidates": [
@@ -472,5 +711,20 @@
       "effective_date": "2026-01-01",
       "note": "Excluded from federal sovereign index; tracked for opt-in U.S. state overlay."
     }
-  ]
+  ],
+  "updated_at": "2026-11-21T05:20:15Z",
+  "stage_4a_summary": {
+    "ingested_new_instruments": 18,
+    "upgraded_existing_stubs": 6,
+    "recovered_kr_statutes": 3,
+    "deferred_targets": 4,
+    "per_jurisdiction_new": {
+      "united_states": 6,
+      "european_union": 3,
+      "south_korea": 1,
+      "japan": 6,
+      "china": 2
+    },
+    "total_registered_seeds": 121
+  }
 }

@@ -9,6 +9,14 @@
     "binding_strength": "regulatory_guidance",
     "publication_date": "2026-01-28",
     "effective_date": null,
+    "covered_actors": [
+      "Public and private actors inside and outside the EU placing AI systems or general-purpose AI models on the EU market or putting them into service or use in the EU",
+      "Providers of AI systems",
+      "Deployers of AI systems",
+      "Providers of general-purpose AI models (including models with systemic risks)",
+      "Public authorities and private operators providing public services",
+      "EU institutions, agencies, and bodies"
+    ],
     "covered_application_domains": [
       "general_purpose_models",
       "critical_infrastructure",
@@ -18,123 +26,320 @@
       "education",
       "healthcare",
       "finance",
-      "law_enforcement",
-      "defense"
+      "law_enforcement"
+    ],
+    "prohibited_practices": [
+      "Exploitation of vulnerabilities of persons, manipulation, and use of subliminal techniques",
+      "Social scoring for public and private purposes",
+      "Individual predictive policing based solely on profiling people",
+      "Untargeted scraping of internet or CCTV for facial images to build up or expand facial recognition databases",
+      "Emotion recognition in the workplace and education institutions (unless for medical or safety reasons)",
+      "Biometric categorisation of natural persons to deduce or infer race, political opinions, trade union membership, religious or philosophical beliefs, or sexual orientation",
+      "Real-time remote biometric identification in publicly accessible spaces for law enforcement purposes (subject to narrow exceptions)"
     ],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.97,
+        "confidence": 0.96,
+        "obligation_strength": "conditional",
         "evidence": [
           {
             "quote": "Providers of high-risk AI systems need to carry out a risk assessment and design the system in a way that risks to health, safety and fundamental rights are minimised.",
-            "source_section": "High-risk AI systems - provider obligations"
+            "source_section": "What is a fundamental rights impact assessment? Who must conduct this assessment and when?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20457,
+            "end_char": 20624
           },
           {
-            "quote": "Providers of models with systemic risk must assess and mitigate these risks",
-            "source_section": "General-purpose AI models"
+            "quote": "Deployers who are public authorities or who provide public services have to carry out a\nfundamental rights impact assessment\nprior to the first use.",
+            "source_section": "What are obligations of deployers of high-risk AI systems?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13844,
+            "end_char": 13992
           }
         ]
       },
       {
         "label": "pre_deployment_testing",
-        "confidence": 0.95,
+        "confidence": 0.94,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "Before placing a high-risk AI system on the EU market or otherwise putting it into service, providers must subject it to a conformity assessment.",
-            "source_section": "High-risk AI systems - conformity assessment"
-          }
-        ]
-      },
-      {
-        "label": "model_documentation",
-        "confidence": 0.97,
-        "evidence": [
-          {
-            "quote": "The AI Act obliges providers of such models to document technical information about the models, and to disclose certain information to downstream system providers.",
-            "source_section": "General-purpose AI models"
+            "quote": "Before\nplacing a high-risk AI system on the EU market\nor otherwise putting it into service, providers must subject it to a\nconformity assessment\n.",
+            "source_section": "What are the obligations for providers of high-risk AI systems?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 11804,
+            "end_char": 11950
           },
           {
-            "quote": "High-risk systems will also need to be trained and tested with sufficiently representative datasets... They must also be traceable and auditable, ensuring that appropriate documentation is kept",
-            "source_section": "Bias and discrimination"
+            "quote": "High-risk systems will also need to be\ntrained and tested with sufficiently representative datasets\nto\nminimise the risk of unfair biases\nembedded in the model and ensure that these can be addressed through appropriate bias detection, correction and other mitigating measures.",
+            "source_section": "How does this regulation address racial and gender bias in AI?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16654,
+            "end_char": 16930
           }
         ]
       },
       {
         "label": "incident_reporting",
-        "confidence": 0.96,
+        "confidence": 0.95,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "Providers of high-risk AI systems remain responsible for the safety and compliance of the system throughout its lifecycle. Where necessary, they have to report and respond to serious incidents",
-            "source_section": "High-risk AI systems - provider obligations"
+            "quote": "Where necessary, they have to report and respond to\nserious incidents\n, take\ncorrective actions\nin case of identified risks or non-compliance, provide information and\ncooperate with market surveillance authorities\n.",
+            "source_section": "What are the obligations for providers of high-risk AI systems?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12944,
+            "end_char": 13159
           },
           {
-            "quote": "conducting state-of-the-art model evaluations, reporting serious incidents, and ensuring adequate cybersecurity",
-            "source_section": "General-purpose AI models with systemic risk"
+            "quote": "Providers\nof models with systemic risk\nmust assess and mitigate these risks\n, including by\nconducting state-of-the-art model evaluations, reporting serious incidents, and ensuring adequate cybersecurity\nof their models and their physical infrastructure.",
+            "source_section": "How are general-purpose AI models being regulated?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23149,
+            "end_char": 23402
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.97,
+        "confidence": 0.96,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "The AI Act introduces specific transparency requirements for providers and deployers of certain interactive or generative AI systems (including chatbots or deep fakes).",
-            "source_section": "Transparency requirements"
+            "quote": "Providers of AI systems directly interacting with natural persons need designed and developed those systems in such a way that the natural persons concerned are informed that they are interacting with an AI system.",
+            "source_section": "What are the obligations regarding disclosing interaction with AI systems and watermarking and labelling of AI outputs set out in the AI Act?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 25969,
+            "end_char": 26183
           },
           {
-            "quote": "Providers of general-purpose AI models with systemic risks additionally have to assess and mitigate systemic risks",
-            "source_section": "General-purpose AI models"
+            "quote": "If the high-risk AI system is designed to make decisions or assist in making decisions about natural persons, the deployer must\ninform the affected person\n.\nThe AI Act also introduces a\nright to an explanation\nfor natural persons.",
+            "source_section": "In addition, the deployer may have information obligations :",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14600,
+            "end_char": 14830
           }
         ]
       },
       {
-        "label": "human_oversight",
-        "confidence": 0.96,
+        "label": "model_documentation",
+        "confidence": 0.95,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "Deployers need to assign human oversight to a person in their organisation. That person or persons must be sufficiently equipped and enabled to exercise human oversight.",
-            "source_section": "Deployer obligations"
+            "quote": "The AI Act obliges providers of such models to\ndocument technical information about the models\n, and to\ndisclose certain information to downstream system providers\n.",
+            "source_section": "How are general-purpose AI models being regulated?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 21874,
+            "end_char": 22039
+          },
+          {
+            "quote": "They must also be\ntraceable and auditable\n, ensuring that appropriate\ndocumentation is kept\n, including the data used to train the algorithm that would be key in ex-post investigations.",
+            "source_section": "How does this regulation address racial and gender bias in AI?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16931,
+            "end_char": 17116
           }
         ]
       },
       {
         "label": "third_party_audit",
         "confidence": 0.92,
+        "obligation_strength": "conditional",
         "evidence": [
           {
             "quote": "Depending on the type of high-risk AI system, the conformity assessment may have to be conducted by an independent conformity assessment body.",
-            "source_section": "Conformity assessment"
+            "source_section": "What are the obligations for providers of high-risk AI systems?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12298,
+            "end_char": 12440
           }
         ]
       },
       {
-        "label": "registration_licensing",
-        "confidence": 0.95,
+        "label": "access_controls",
+        "confidence": 0.88,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "To enable supervision and ensure public transparency, providers of high-risk AI systems have to register the system in a public EU database.",
-            "source_section": "High-risk AI systems - provider obligations"
+            "quote": "Providers\nof models with systemic risk\nmust assess and mitigate these risks\n, including by\nconducting state-of-the-art model evaluations, reporting serious incidents, and ensuring adequate cybersecurity\nof their models and their physical infrastructure.",
+            "source_section": "How are general-purpose AI models being regulated?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23149,
+            "end_char": 23402
+          }
+        ]
+      },
+      {
+        "label": "compute_governance",
+        "confidence": 0.95,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "Currently, general-purpose AI models trained using\na total amount of computational resources that exceeds 10^25 FLOP\n(floating point operations) are presumed to pose systemic risks.",
+            "source_section": "How are general-purpose AI models being regulated?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22508,
+            "end_char": 22689
           }
         ]
       },
       {
         "label": "content_provenance",
-        "confidence": 0.93,
+        "confidence": 0.97,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "Providers of generative AI systems need to mark the AI outputs in a machine-readable format and ensure they are detectable as artificially generated or manipulated.",
-            "source_section": "Transparency requirements"
+            "quote": "Providers\nof generative AI systems need to\nmark the AI outputs in a machine-readable format\nand ensure they are\ndetectable as artificially generated or manipulate\nd.",
+            "source_section": "What are the obligations regarding disclosing interaction with AI systems and watermarking and labelling of AI outputs set out in the AI Act?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 26184,
+            "end_char": 26349
+          },
+          {
+            "quote": "Deployers of generative AI systems that generate or manipulate image, audio or video content, constituting a\ndeep fake\n, must visibly d\nisclose that the content has been artificially generated or manipulated\n.",
+            "source_section": "What are the obligations regarding disclosing interaction with AI systems and watermarking and labelling of AI outputs set out in the AI Act?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 26818,
+            "end_char": 27027
           }
         ]
       },
       {
-        "label": "red_teaming",
-        "confidence": 0.75,
+        "label": "human_oversight",
+        "confidence": 0.95,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "conducting state-of-the-art model evaluations, reporting serious incidents, and ensuring adequate cybersecurity of their models",
-            "source_section": "General-purpose AI models with systemic risk"
+            "quote": "Deployers need to assign\nhuman oversight\nto a person in their organisation. That person or persons must be sufficiently equipped and enabled to exercise human oversight.",
+            "source_section": "What are obligations of deployers of high-risk AI systems?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13479,
+            "end_char": 13648
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.96,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "To enable supervision and ensure public transparency, providers of high-risk AI systems have to\nregister the system in a public EU database\n.",
+            "source_section": "What are the obligations for providers of high-risk AI systems?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12679,
+            "end_char": 12820
+          },
+          {
+            "quote": "High-risk AI systems that are deployed by public authorities or entities acting on their behalf will have to be\nregistered in a public EU database\n, except for high-risk AI systems for critical infrastructure.",
+            "source_section": "In addition, the deployer may have information obligations :",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13994,
+            "end_char": 14203
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.96,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "Model providers\nneed to have policies in place to ensure\ncompliance with EU law on copyright\nand related rights. In particular, to\nidentify and comply\nwith rights reservations under the\ntext-and data-mining exception\n. Providers also need to publish a\nsummary of the content used to train the model, based on a template\nfrom the AI Office.",
+            "source_section": "How are general-purpose AI models being regulated?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22106,
+            "end_char": 22445
+          },
+          {
+            "quote": "High-risk systems will also need to be\ntrained and tested with sufficiently representative datasets\nto\nminimise the risk of unfair biases\nembedded in the model and ensure that these can be addressed through appropriate bias detection, correction and other mitigating measures.",
+            "source_section": "How does this regulation address racial and gender bias in AI?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16654,
+            "end_char": 16930
+          }
+        ]
+      },
+      {
+        "label": "frontier_safety_evaluation",
+        "confidence": 0.93,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "The most advanced among GPAI models could also\npresent systemic risks\n. For example, powerful models could enable chemical, biological, radiological or nuclear (CBRN) attacks or large-scale sophisticated cyberattacks, escape human control, or enable the strategic distortion of human behaviour or beliefs.",
+            "source_section": "General-purpose AI models",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5207,
+            "end_char": 5512
+          },
+          {
+            "quote": "Providers\nof models with systemic risk\nmust assess and mitigate these risks\n, including by\nconducting state-of-the-art model evaluations, reporting serious incidents, and ensuring adequate cybersecurity\nof their models and their physical infrastructure.",
+            "source_section": "How are general-purpose AI models being regulated?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23149,
+            "end_char": 23402
+          }
+        ]
+      },
+      {
+        "label": "open_weight_obligations",
+        "confidence": 0.89,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "Providers of general-purpose AI models have to\ndocument\ncertain information (unless they qualify for the open-source exemption) and take measures that ensure they\nrespect EU law on copyright\nand related rights.",
+            "source_section": "General-purpose AI models",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4996,
+            "end_char": 5206
           }
         ]
       }
@@ -145,12 +350,22 @@
         "confidence": 0.98,
         "evidence": [
           {
-            "quote": "Up to €35m or 7% of the total worldwide annual turnover of the preceding financial year (whichever is higher) for infringements on prohibited practices or non-compliance related to requirements on data",
-            "source_section": "Penalties"
+            "quote": "Up to €35m or 7%\nof the total worldwide annual turnover of the preceding financial year (whichever is higher) for infringements\non prohibited practices or non-compliance\nrelated to requirements on data",
+            "source_section": "What are the penalties for infringement?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 31062,
+            "end_char": 31263
           },
           {
-            "quote": "Up to €15m or 3% of the total worldwide annual turnover of the preceding financial year for non-compliance with any of the other requirements",
-            "source_section": "Penalties"
+            "quote": "The Commission can also enforce the rules on providers of general-purpose AI models by means of fines, taking into account the threshold:\nUp to €15m or 3%\nof the total worldwide annual turnover of the preceding financial year for\nnon-compliance with any of the obligations\nor measures requested by the Commission under the Regulation.",
+            "source_section": "What are the penalties for infringement?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 31802,
+            "end_char": 32136
           }
         ]
       },
@@ -159,8 +374,37 @@
         "confidence": 0.88,
         "evidence": [
           {
-            "quote": "Before placing a high-risk AI system on the EU market or otherwise putting it into service, providers must subject it to a conformity assessment.",
-            "source_section": "Conformity assessment"
+            "quote": "A very limited set of particularly harmful uses of AI systems that contravene EU values because they violate fundamental rights and will therefore be banned:",
+            "source_section": "Prohibited AI systems",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1986,
+            "end_char": 2143
+          }
+        ]
+      },
+      {
+        "label": "licensing_requirement",
+        "confidence": 0.86,
+        "evidence": [
+          {
+            "quote": "Prior to testing, a plan needs to be drawn up and submitted to a\nmarket surveillance authority\n, which has to approve the plan and specific testing conditions, with default tacit approval if no answer has been given within 30 days.",
+            "source_section": "Is real-world testing of High-Risk AI systems safe? What are the safeguards?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15277,
+            "end_char": 15508
+          },
+          {
+            "quote": "Any exceptional use would need to be necessary and proportionate and be subject to\nprior authorisation by a judicial or independent administrative authority\nwhose decision is binding.",
+            "source_section": "How does the AI Act regulate biometric identification?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 18874,
+            "end_char": 19057
           }
         ]
       },
@@ -169,33 +413,91 @@
         "confidence": 0.96,
         "evidence": [
           {
-            "quote": "national competent authorities are responsible for overseeing and enforcing rules for AI systems, while the AI Office is responsible for governing and enforcing the obligations for providers of general-purpose AI models",
-            "source_section": "Governance"
+            "quote": "The AI Act establishes a two-tiered governance system, where\nnational competent authorities\nare responsible for overseeing and enforcing rules for\nAI systems\n, while the\nAI Office\nis responsible for governing and enforcing the obligations for providers of\ngeneral-purpose AI models and for a subset of certain AI systems\n.",
+            "source_section": "How will the AI Act be enforced?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 29326,
+            "end_char": 29648
+          },
+          {
+            "quote": "Testing may be subject to unannounced inspections by the authority.",
+            "source_section": "Is real-world testing of High-Risk AI systems safe? What are the safeguards?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15509,
+            "end_char": 15576
           }
         ]
       },
       {
         "label": "reporting_obligation",
-        "confidence": 0.95,
+        "confidence": 0.94,
         "evidence": [
           {
-            "quote": "they have to report and respond to serious incidents, take corrective actions in case of identified risks or non-compliance, provide information and cooperate with market surveillance authorities",
-            "source_section": "High-risk AI systems - provider obligations"
+            "quote": "Therefore, deployers that are bodies governed by public law or private operators providing public services, as well as operators providing high-risk AI systems that carry out credit worthiness assessments or price and risk assessments in life and health insurance, shall perform an assessment of the impact on fundamental rights and notify the national authority of the results.",
+            "source_section": "What is a fundamental rights impact assessment? Who must conduct this assessment and when?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20905,
+            "end_char": 21283
+          },
+          {
+            "quote": "The use of real-time remote biometric identification should be\nnotified to the relevant market surveillance authority and the data protection authority\n.",
+            "source_section": "How does the AI Act regulate biometric identification?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19203,
+            "end_char": 19356
           }
         ]
       },
       {
         "label": "soft_enforcement",
-        "confidence": 0.85,
+        "confidence": 0.91,
         "evidence": [
           {
-            "quote": "The GPAI Code of Practice is a voluntary tool, prepared by independent experts in a multi-stakeholder process, designed to help industry comply with the AI Act's obligations",
-            "source_section": "GPAI Code of Practice"
+            "quote": "Following the endorsement, GPAI model providers who voluntarily sign it can show they comply with the AI Act by adhering to the code. This will reduce their administrative burden and give them more legal certainty than if they proved compliance through other methods.",
+            "source_section": "How was the General-Purpose AI Code of Practice written and how does it work?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24696,
+            "end_char": 24963
+          },
+          {
+            "quote": "Providers who develop a high-risk AI system in accordance with the harmonised standards will benefit from a presumption of conformity.",
+            "source_section": "What would be the role of standardisation in the AI Act?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6570,
+            "end_char": 6704
           }
         ]
       }
     ],
-    "implementation_notes": "This document is a Q&A/FAQ published by the European Commission explaining the EU AI Act (Regulation). The underlying AI Act is binding law; this document itself is regulatory guidance/explanatory material. Application dates are phased: prohibitions from 2 Feb 2025, GPAI rules from 2 Aug 2025, high-risk rules from 2 Aug 2026 (potentially delayed per Digital Omnibus proposal), Annex II products from 2 Aug 2027. The GPAI Code of Practice is voluntary but can serve as a compliance demonstration tool.",
+    "enforcement_authorities": [
+      "European Commission",
+      "AI Office",
+      "National competent authorities",
+      "Market surveillance authorities",
+      "European Artificial Intelligence Board (AI Board)",
+      "European Data Protection Supervisor (EDPS)",
+      "Data protection authorities"
+    ],
+    "compliance_deadlines": [
+      "2025-02-02: Prohibitions, definitions, and AI literacy provisions apply",
+      "2025-08-02: Governance rules and obligations for general-purpose AI models apply",
+      "2026-08-02: General application date of the AI Act (2 years after entry into force), including Article 50 transparency obligations and Annex III high-risk AI system rules (subject to proposed adjustment under the Digital Omnibus proposal)",
+      "2027-08-02: Obligations for high-risk AI systems embedded in regulated products listed in Annex II apply (36 months after entry into force)"
+    ],
+    "penalties_summary": "Member States must set effective, proportionate, and dissuasive penalties with thresholds of up to €35m or 7% of total worldwide annual turnover (whichever is higher) for prohibited practices or data requirement non-compliance; up to €15m or 3% of worldwide annual turnover for other AI Act obligations (and for European Commission fines on general-purpose AI model providers); and up to €7.5m or 1.5% of worldwide annual turnover for supplying incorrect, incomplete, or misleading information to notified bodies or national competent authorities. For SMEs, the lower of the two amounts applies. The EDPS is empowered to impose fines on non-compliant EU institutions, agencies, or bodies.",
+    "implementation_notes": "This document is an explanatory European Commission Q&A webpage (last updated 28 January 2026) summarizing the EU AI Act rather than the enacted statutory text itself. Pre-release R&D/prototyping activities and AI systems exclusively for military, defence, or national security purposes are exempt from the Act. Delays in CEN/CENELEC harmonised standards beyond August 2025 led the Commission to introduce the Digital Omnibus proposal (19 November 2025) to link high-risk application timelines to the availability of standards, common specifications, or guidelines. Implementation is supported by voluntary tools including the GPAI Code of Practice, an upcoming Code of Practice on transparency of AI-generated content, the AI Pact, the AI Act Service Desk, and the Single Information Platform (SIP).",
     "confidence": 0.95
   },
   "risk_framing": {
@@ -207,37 +509,114 @@
       "existential_catastrophic"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.0,
-      "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.72,
-      "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.55,
-      "labor_transition": 0.1
+      "existential_catastrophic": 0.72,
+      "national_security": 0.15,
+      "economic_competitiveness": 0.75,
+      "fundamental_rights": 0.98,
+      "social_stability": 0.35,
+      "innovation_enablement": 0.88,
+      "consumer_public_safety": 0.9,
+      "labor_transition": 0.05
     },
-    "rationale_summary": "The document repeatedly centers fundamental rights as the primary justification for regulation, banning specific AI practices because they 'contravene EU values because they violate fundamental rights,' requiring fundamental rights impact assessments, and structuring the risk classification around the EU Charter of Fundamental Rights. Consumer/public safety is a strong secondary frame, as health and safety risks are co-stated throughout. Innovation enablement and economic competitiveness appear as secondary justifications to show the regulation is balanced. Existential/systemic risk language appears specifically around GPAI models (CBRN attacks, loss of human control) but is not the dominant framing.",
+    "frame_share": {
+      "existential_catastrophic": 0.09,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.1,
+      "fundamental_rights": 0.36,
+      "social_stability": 0.04,
+      "innovation_enablement": 0.2,
+      "consumer_public_safety": 0.21,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document frames the EU AI Act primarily around fundamental rights, anchoring prohibitions, high-risk classifications, anti-bias duties, biometric restrictions, and impact assessments in EU values, the EU Charter of Fundamental Rights, non-discrimination, privacy, democracy, and the rule of law. Fundamental rights edges out consumer and public safety (which is prominent in product-safety, physical-safety, and anti-deception rationales) and innovation enablement (which emphasizes trust, internal-market harmonisation, regulatory sandboxes, and proportionate rules) because rights protection recurs as the foundational legal rationale across nearly every substantive section of the Q&A. Economic competitiveness (global leadership, growth, and EU industrial strength) and existential/catastrophic risk (CBRN attacks, large-scale cyberattacks, and loss of human control from systemic-risk GPAI models) appear as explicit secondary justifications, while misinformation and strategic distortion of beliefs provide only minor social-stability framing. National security is explicitly carved out as an exemption rather than a governance rationale, and employment mentions lack workforce-transition or reskilling framing.",
     "evidence_spans": [
       {
-        "quote": "It aims to address risks to health, safety and fundamental rights.",
-        "source_section": "Introduction"
+        "quote": "It aims to address risks to health, safety and fundamental rights. The regulation also aims to protect democracy, the rule of law and the environment.",
+        "source_section": "Why do we need to regulate the use of Artificial Intelligence?",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 58,
+        "end_char": 208
       },
       {
-        "quote": "a very limited set of particularly harmful uses of AI systems that contravene EU values because they violate fundamental rights and will therefore be banned",
-        "source_section": "Prohibited AI practices"
+        "quote": "A very limited set of particularly harmful uses of AI systems that contravene EU values because they violate fundamental rights and will therefore be banned",
+        "source_section": "Prohibited AI systems",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 1986,
+        "end_char": 2142
       },
       {
-        "quote": "The AI Act considers a limited number of AI systems as high-risk, because they potentially create an adverse impact on people's safety or their fundamental rights (as protected by the EU Charter of Fundamental Rights)",
-        "source_section": "High-risk AI systems"
+        "quote": "These transparency requirements aim to address the risks of misinformation and manipulation, fraud, impersonation and consumer deception.",
+        "source_section": "Transparency requirements for certain AI systems",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 4576,
+        "end_char": 4713
       },
       {
-        "quote": "powerful models could enable chemical, biological, radiological or nuclear (CBRN) attacks or large-scale sophisticated cyberattacks, escape human control",
-        "source_section": "General-purpose AI models"
+        "quote": "The AI Act is innovation-friendly. Rules will apply only where strictly needed and in a way that minimises the burden for economic operators, with a light governance structure.",
+        "source_section": "How can the AI Act support innovation?",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 35519,
+        "end_char": 35695
       },
       {
-        "quote": "deployers that are bodies governed by public law...shall perform an assessment of the impact on fundamental rights",
-        "source_section": "Fundamental rights impact assessment"
+        "quote": "The uptake of AI systems and general-purpose AI models has a strong potential to bring societal benefits, economic growth and to enhance EU innovation and global competitiveness.",
+        "source_section": "Why do we need to regulate the use of Artificial Intelligence?",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 209,
+        "end_char": 387
+      },
+      {
+        "quote": "For example, powerful models could enable chemical, biological, radiological or nuclear (CBRN) attacks or large-scale sophisticated cyberattacks, escape human control, or enable the strategic distortion of human behaviour or beliefs.",
+        "source_section": "General-purpose AI models",
+        "quote_en": null,
+        "frame": "existential_catastrophic",
+        "grounding_status": "verbatim",
+        "start_char": 5279,
+        "end_char": 5512
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:36:39.524732Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "7125fa2cf9ae1531efec085f82781c854f44eaf3af29d821542eddd37928728a",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 42821,
+      "output_tokens": 5285,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 12764,
+      "estimated_cost_usd": 0.234016
+    },
+    "grounding_summary": {
+      "total_quotes": 40,
+      "exact_matches": 40,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 26
+    }
   }
 }

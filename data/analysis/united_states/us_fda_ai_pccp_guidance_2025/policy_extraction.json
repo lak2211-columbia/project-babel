@@ -1,179 +1,346 @@
 {
   "jurisdiction": "united_states",
-  "issuing_body": "U.S. Food and Drug Administration (FDA) - Center for Devices and Radiological Health (CDRH), Center for Biologics Evaluation and Research (CBER), Center for Drug Evaluation and Research (CDER)",
+  "issuing_body": "Food and Drug Administration",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2025-08-18",
   "effective_date": null,
+  "covered_actors": [
+    "Medical device manufacturers developing and modifying Artificial Intelligence-Enabled Device Software Functions (AI-DSFs), including SaMD, SiMD, and device constituent parts of device-led combination products",
+    "Food and Drug Administration (FDA) staff (CDRH, CBER, CDER, and Office of Combination Products)",
+    "Healthcare providers, clinicians, hospitals, caregivers, and patients (as intended device users receiving labeling and modification communications)"
+  ],
   "covered_application_domains": [
-    "general_purpose_models",
-    "healthcare",
-    "critical_infrastructure"
+    "healthcare"
+  ],
+  "prohibited_practices": [
+    "Introducing or delivering into interstate commerce an AI-DSF that deviates from its authorized PCCP or implements significant modifications without required FDA marketing authorization (adulterated and misbranded under FD&C Act Sections 501(f)(1), 502(o), and 301(a))",
+    "Publishing false or misleading device labeling stating that an AI-DSF modification has been implemented when it is not present in the available version (misbranded under FD&C Act Section 502(a)(1))",
+    "Implementing PCCP modifications that fail to maintain the device within its intended use or prevent substantial equivalence to the cleared/approved predicate device"
   ],
   "safety_requirements": [
     {
-      "label": "pre_deployment_testing",
-      "confidence": 0.97,
+      "label": "registration_licensing",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "The Modification Protocol should describe the verification and validation activities, including pre-defined acceptance criteria, for those modifications, and a step-by-step delineation of how those modifications will be implemented while assuring the device remains safe and effective.",
-          "source_section": "Section VII"
+          "quote": "Premarket authorization for an AI-DSF with a PCCP must be established through the PMA pathway, 510(k) pathway, or De Novo pathway, as appropriate, as a PCCP must be reviewed and established as part of a marketing authorization48,49 for a device prior to a manufacturer implementing any modifications under that PCCP.",
+          "source_section": "Page 15",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 43576,
+          "end_char": 43892
+        },
+        {
+          "quote": "In both scenarios, the manufacturer must obtain FDA authorization for the device and proposed PCCP before implementing the PCCP.76",
+          "source_section": "Page 21",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 62277,
+          "end_char": 62407
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.97,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Testing is conducted to generate evidence to establish the performance of an AI-DSF before it is deployed or marketed. The testing phase is also expected to provide evidence to demonstrate a reasonable assurance of safety and effectiveness of an AI- DSF before it is deployed or marketed.",
+          "source_section": "Page 13",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 35372,
+          "end_char": 35660
         },
         {
           "quote": "The Modification Protocol should also affirmatively state that if there is an unresolvable failure in performance evaluation for a specific modification (e.g., the predefined acceptance criteria for a specific modification are not met), the failure(s) will be recorded, and the specific modification(s) will not be implemented.",
-          "source_section": "Section VII.B.(3)"
+          "source_section": "Page 31",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 93725,
+          "end_char": 94052
         }
       ]
     },
     {
       "label": "risk_assessment",
-      "confidence": 0.95,
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "An Impact Assessment in a PCCP is the documentation of the assessment of the benefits and risks of implementing a PCCP for an AI-DSF, as well as the mitigations of those risks.",
-          "source_section": "Section VIII"
+          "quote": "An Impact Assessment in a PCCP is the documentation of the assessment of the benefits and risks of implementing a PCCP for an AI-DSF, as well as the mitigations of those risks. The manufacturer’s existing quality system should be used as the framework in which to conduct an Impact Assessment for the modifications set forth in the PCCP.",
+          "source_section": "Page 34",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 100858,
+          "end_char": 101195
         },
         {
-          "quote": "Discuss the benefits and risks, including risks of harm and unintended bias, of each individual modification",
-          "source_section": "Section VIII"
+          "quote": "2) Discuss the benefits and risks, including risks of harm110 and unintended bias, of each individual modification;\n3) Discuss how the verification and validation activities proposed within the Modification Protocol continue to reasonably ensure the safety and effectiveness of the device;",
+          "source_section": "Page 34",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 101458,
+          "end_char": 101747
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "The data management practices in a Modification Protocol should outline how those new data will be collected, annotated, curated, stored, retained,99 controlled, and used by the manufacturer for each modification.",
+          "source_section": "Page 29",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 85250,
+          "end_char": 85463
+        },
+        {
+          "quote": "It should also describe the control methods employed to ensure that the data used to test the AI-DSF is separate and independent from the development process used to train and tune the AI-DSF.",
+          "source_section": "Page 29",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 85667,
+          "end_char": 85859
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.95,
+      "confidence": 0.96,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "a PCCP includes: 1) a detailed description of the specific, planned device modifications, which is referred to as the 'Description of Modifications'; 2) the associated methodology to develop, validate, and implement those modifications in a manner that ensures the continued safety and effectiveness of the device across the intended use populations, which is referred to as the 'Modification Protocol'; and 3) the assessment of the benefits and risks of the planned modifications and risk mitigations, which is referred to as the 'Impact Assessment.'",
-          "source_section": "Section II"
+          "quote": "Documentation of modifications verified and validated per the Modification Protocol must be compliant with the QSR, including that the manufacturer must document the change in accordance with the manufacturer’s quality system.95",
+          "source_section": "Page 27",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 79439,
+          "end_char": 79667
         },
         {
-          "quote": "Documentation of modifications verified and validated per the Modification Protocol must be compliant with the QSR, including that the manufacturer must document the change in accordance with the manufacturer's quality system.",
-          "source_section": "Section VII"
+          "quote": "The QSR requires manufacturers of finished medical devices to review and approve modifications to device design and production (21 CFR 820.30(i) and 820.70(b)) and document changes and approvals in the device master record (21 CFR 820.181).",
+          "source_section": "Page 27",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 79668,
+          "end_char": 79908
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.93,
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "Details of the PCCP should be included in sufficient detail in the public-facing documents to support transparency to users of the assessment of reasonable assurance of safety and effectiveness or the substantial equivalence comparison for the device and the device's specifications",
-          "source_section": "Section V.C"
+          "quote": "For AI-DSFs with an authorized PCCP, the labeling should explain that the device incorporates machine learning and has an authorized PCCP so that users are aware that the device may require the user to perform software updates, and that such software updates may modify the device’s performance, inputs, or use.",
+          "source_section": "Page 18",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 51584,
+          "end_char": 51895
         },
         {
-          "quote": "For AI-DSFs with an authorized PCCP, the labeling should explain that the device incorporates machine learning and has an authorized PCCP so that users are aware that the device may require the user to perform software updates, and that such software updates may modify the device's performance, inputs, or use.",
-          "source_section": "Section V.C"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "AI-DSFs for which modifications to the AI model are implemented manually (i.e., involving steps that require human input, action, review, and/or decision-making, and therefore are not implemented automatically)",
-          "source_section": "Section III"
-        },
-        {
-          "quote": "When and how will an update be implemented (e.g., automatically when the device is not being used, manually by users or hospital technicians, or both manually and automatically)?",
-          "source_section": "Appendix A, Section 4.b"
+          "quote": "The PCCP should be described in publicly available device summaries including, for example, the PMA summary of safety and effectiveness document (SSED) and approval order,63 510(k) summary,64,65 or De Novo decision summary.66",
+          "source_section": "Page 19",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 54467,
+          "end_char": 54692
         }
       ]
     },
     {
       "label": "incident_reporting",
-      "confidence": 0.82,
+      "confidence": 0.92,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "The manufacturer should also describe their post-market surveillance plans and procedures, which may include real-world monitoring and notification requirements if the device does not function as intended pursuant to the authorized PCCP.",
-          "source_section": "Section VII.B.(4)"
+          "quote": "The manufacturer should also describe their post-market surveillance plans and procedures, which may include real-world monitoring and notification requirements if the device does not function as intended pursuant to the authorized PCCP.105",
+          "source_section": "Page 32",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 95267,
+          "end_char": 95507
         },
         {
-          "quote": "How will adverse events be tracked for different updates?",
-          "source_section": "Appendix A, Section 4.d"
+          "quote": "As part of a manufacturer’s responsibility to ensure that devices remain safe and effective, FDA anticipates that manufacturers will monitor their device’s safety (e.g., adverse events) and effectiveness (e.g., performance) over time as modifications are implemented consistent with their authorized PCCP.",
+          "source_section": "Page 32",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 95508,
+          "end_char": 95813
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.75,
+      "confidence": 0.87,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "What controls are in place to prevent and identify unauthorized access or manipulation of the training, tuning, and test data sets? For example, what controls are in place to prevent malicious addition or deletion of data for the purpose of impacting model performance, introducing bias, or overtraining on repeated data, among others?",
-          "source_section": "Appendix A, Section 1.b.8"
+          "quote": "1.b.8. What controls are in place to prevent and identify unauthorized access or manipulation of the training, tuning, and test data sets? For example, what controls are in place to prevent malicious addition or deletion of data for the purpose of impacting model performance, introducing bias, or overtraining on repeated data, among others?",
+          "source_section": "Page 37",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 110438,
+          "end_char": 110780
         },
         {
-          "quote": "What cybersecurity risk management and validation processes are used in accordance with the documentation and processes provided for Section VI.B and Appendix 1.H of the FDA guidance 'Cybersecurity in Medical Devices'?",
-          "source_section": "Appendix A, Section 4.b.5"
-        }
-      ]
-    },
-    {
-      "label": "registration_licensing",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "Premarket authorization for an AI-DSF with a PCCP must be established through the PMA pathway, 510(k) pathway, or De Novo pathway, as appropriate, as a PCCP must be reviewed and established as part of a marketing authorization for a device prior to a manufacturer implementing any modifications under that PCCP.",
-          "source_section": "Section V.B"
+          "quote": "4.b.5. What cybersecurity risk management and validation processes113 are used in accordance with the documentation and processes provided for Section VI.B and Appendix 1.H of the FDA guidance “Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions”?",
+          "source_section": "Page 40",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 119517,
+          "end_char": 119813
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "regulatory_supervision",
-      "confidence": 0.95,
+      "label": "licensing_requirement",
+      "confidence": 0.98,
       "evidence": [
         {
-          "quote": "FDA reviews the PCCP as part of a marketing submission for a device to ensure the continued safety and effectiveness of the device without necessitating additional marketing submissions for implementing each modification described in the PCCP.",
-          "source_section": "Section I"
+          "quote": "Under section 515(d)(2)(C) of the FD&C Act, FDA must deny approval of a PMA if FDA finds that the methods used in, or the facilities or controls used for, the manufacture, processing, packing, or installation of such device do not conform to the QSR requirements.",
+          "source_section": "Page 16",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 46242,
+          "end_char": 46505
         },
         {
-          "quote": "FDA must deny approval of a PCCP submitted in a PMA if FDA finds that the methods used in, or the facilities or controls used for, the manufacture, processing, packing, or installation of the subject device do not conform to the QSR requirements.",
-          "source_section": "Section V.B"
+          "quote": "Thus, consistent with sections 515C(b)(2) and 513(f)(5) of the FD&C Act, FDA may under certain case-by-case circumstances withhold clearance of a PCCP submitted in a 510(k) based on findings in the regulatory history of the manufacturer that demonstrate failure to comply with QSR.",
+          "source_section": "Page 17",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 48279,
+          "end_char": 48560
         }
       ]
     },
     {
       "label": "market_access_restriction",
-      "confidence": 0.92,
+      "confidence": 0.96,
       "evidence": [
         {
-          "quote": "Deviations from the authorized PCCP reviewed in the marketing submission would generally cause the device to be adulterated and misbranded under sections 501(f)(1) and 502(o) of the FD&C Act, respectively. The introduction or delivery for introduction into interstate commerce of any food, drug, device, tobacco product, or cosmetic that is adulterated or misbranded is prohibited under section 301(a) of the FD&C Act",
-          "source_section": "Section V"
+          "quote": "Deviations from the authorized PCCP reviewed in the marketing submission would generally cause the device to be adulterated and misbranded under sections 501(f)(1) and 502(o) of the FD&C Act, respectively.",
+          "source_section": "Page 15",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 41039,
+          "end_char": 41244
         },
         {
-          "quote": "significant modifications made to an AI-DSF that are not specified in, or implemented in accordance with, the authorized PCCP likely require a new marketing submission prior to implementation of the modification.",
-          "source_section": "Section V"
+          "quote": "The introduction or delivery for introduction into interstate commerce of any food, drug, device, tobacco product, or cosmetic that is adulterated or misbranded is prohibited under section 301(a) of the FD&C Act, and where appropriate, FDA may take legal or regulatory action against violations of prohibited acts, including, without limitation, seizure or injunction.",
+          "source_section": "Page 15",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 41245,
+          "end_char": 41613
         }
       ]
     },
     {
-      "label": "civil_penalty",
-      "confidence": 0.7,
+      "label": "regulatory_supervision",
+      "confidence": 0.93,
       "evidence": [
         {
-          "quote": "where appropriate, FDA may take legal or regulatory action against violations of prohibited acts, including, without limitation, seizure or injunction.",
-          "source_section": "Section V"
+          "quote": "FDA should work with the manufacturer to revise the PCCP, and will do so using FDA’s existing processes to request additional information through interactive review or through a deficiency letter.85 If deficiencies with the PCCP remain unresolved, FDA may authorize the device upon withdrawal of the PCCP.",
+          "source_section": "Page 23",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 65532,
+          "end_char": 65837
+        },
+        {
+          "quote": "Manufacturers are required to comply with the QSR (21 CFR Part 820). The device and PCCP must be implemented consistent with 21 CFR Part 820, including, but not limited to design controls (21 CFR 820.30), nonconforming products (21 CFR 820.90), and corrective and preventative action (21 CFR 820.100).",
+          "source_section": "Page 19",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 57710,
+          "end_char": 58011
         }
       ]
     },
     {
       "label": "reporting_obligation",
-      "confidence": 0.85,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "For devices subject to PMA requirements, such modifications need to be reported to FDA in post-approval periodic reports required as a condition to approval of the device.",
-          "source_section": "Section III"
+          "quote": "For devices subject to PMA requirements, such modifications need to be reported to FDA in post-approval periodic reports required as a condition to approval of the device.25",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 25209,
+          "end_char": 25382
         },
         {
-          "quote": "notification requirements if the device does not function as intended pursuant to such plan",
-          "source_section": "Section II, citing FD&C Act Section 515C"
+          "quote": "Significant modifications made to a device that are not specified in, or implemented in accordance with, the authorized PCCP likely require a new marketing submission.70",
+          "source_section": "Page 20",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 60316,
+          "end_char": 60485
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "quote": "This guidance represents the current thinking of the Food and Drug Administration (FDA or Agency) on this topic. It does not establish any rights for any person and is not binding on FDA or the public. You can use an alternative approach if it satisfies the requirements of the applicable statutes and regulations.",
+          "source_section": "Page 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7962,
+          "end_char": 8276
         }
       ]
     }
   ],
-  "implementation_notes": "This is nonbinding regulatory guidance issued under FD&C Act Section 515C (added by FDORA 2022). It provides recommendations for PCCPs in marketing submissions for AI-enabled device software functions (AI-DSFs). The guidance is not legally enforceable on its own but operationalizes statutory requirements for PMA, 510(k), and De Novo pathways. Covered domains are primarily healthcare/medical devices. The guidance emphasizes that 'should' language is recommended but not required. Deviations from an authorized PCCP, however, may trigger statutory adulteration/misbranding consequences. QSR (21 CFR Part 820) compliance is mandatory and integral to PCCP implementation. Early FDA engagement via Q-Submission Program is strongly encouraged, especially for high-risk or combination product devices.",
-  "confidence": 0.93
+  "enforcement_authorities": [
+    "Food and Drug Administration (FDA) — Center for Devices and Radiological Health (CDRH), Center for Biologics Evaluation and Research (CBER), Center for Drug Evaluation and Research (CDER), and Office of Combination Products (OCP)"
+  ],
+  "compliance_deadlines": [
+    "2026-02-02: Effective date of FDA's final rule amending the Quality System Regulation (21 CFR Part 820, 89 FR 7496) to incorporate ISO 13485:2016 by reference",
+    "At least 2 years from date of release for commercial distribution (or equivalent to design and expected life of device): QSR mandatory recordkeeping retention period under 21 CFR 820.180(b)"
+  ],
+  "penalties_summary": "Deviations from an authorized PCCP or implementing significant AI-DSF modifications without a required new marketing submission generally render the device adulterated (FD&C Act § 501(f)(1)) and misbranded (§ 502(o)), and false or misleading update labeling renders the device misbranded (§ 502(a)(1)). Introducing adulterated or misbranded devices into interstate commerce violates § 301(a) and exposes manufacturers to FDA legal and regulatory action including seizure or injunction. FDA must also deny PMA PCCP approval (§ 515(d)(2)(C)) and may withhold 510(k) PCCP clearance (§ 513(f)(5)) for QSR noncompliance.",
+  "implementation_notes": "Final FDA guidance originally issued December 4, 2024 and updated August 18, 2025 implementing FD&C Act Section 515C (enacted by FDORA, Pub. L. 117-328). Applies to manual and automatically implemented ('continuous learning') modifications to AI-enabled Device Software Functions (AI-DSFs) and device constituent parts of device-led combination products across PMA, 510(k), and De Novo pathways. Establishes three PCCP pillars—Description of Modifications, Modification Protocol (data management/sequestration, re-training, performance evaluation, update procedures/post-market surveillance), and Impact Assessment—plus QSR compliance, labeling/UDI updates, public summary transparency, Appendix A detailed protocol questions, and Appendix B six clinical scenarios.",
+  "confidence": 0.97
 }

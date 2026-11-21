@@ -1,32 +1,85 @@
 {
   "dominant_frame": "social_stability",
   "secondary_frames": [
-    "fundamental_rights",
-    "consumer_public_safety"
+    "consumer_public_safety",
+    "innovation_enablement",
+    "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.1,
+    "existential_catastrophic": 0.0,
+    "national_security": 0.15,
     "economic_competitiveness": 0.05,
-    "fundamental_rights": 0.55,
-    "social_stability": 0.7,
-    "innovation_enablement": 0.1,
-    "consumer_public_safety": 0.5,
+    "fundamental_rights": 0.72,
+    "social_stability": 0.92,
+    "innovation_enablement": 0.72,
+    "consumer_public_safety": 0.89,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document frames AI governance primarily around preventing social harms such as confusion, misinformation, deepfake abuse, digital sex crimes, and erosion of public trust. The stated purpose of transparency obligations is to prevent 'confusion and misrepresentation in information use and to enhance social trust.' Risk cases emphasize fake news affecting elections and markets, sexual exploitation, and academic fraud—all social stability concerns. Fundamental rights (especially protection from deepfake sexual abuse) and consumer/public safety are strong secondary frames.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.14,
+    "social_stability": 0.38,
+    "innovation_enablement": 0.16,
+    "consumer_public_safety": 0.32,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The 2026 AI Transparency Guideline is dominantly framed around social_stability: it explicitly states that transparency mechanisms exist to prevent public confusion/misrecognition and enhance collective social trust, and devotes its primary risk-case analysis to AI fake news (e.g., market-moving synthetic Pentagon explosion imagery), electoral manipulation via deepfakes, academic/information-ecosystem degradation, and broad societal side effects. Social_stability edges out consumer_public_safety because the guideline anchors disclosure rules in information-ecosystem integrity and societal trust, though consumer_public_safety is a close runner-up grounded in protecting individual users, minors, and vulnerable groups from deceptive deepfakes, digital sex crimes, child sexual exploitation material, and fraud. Innovation_enablement (balancing technological innovation with ethical responsibility through practical UI, copy-paste, and creative-expression flexibilities) and fundamental_rights (consent, privacy/personality rights, democratic elections, and IP protection) provide supporting rationales.",
   "evidence_spans": [
     {
-      "quote": "정보 이용 과정에서의 혼동과 오인 방지 및 사회적 신뢰를 제고하기 위한 제도적 장치를 마련하는 데 목적이 있음",
-      "source_section": "투명성 확보 의무 개요"
+      "quote": "l 정보 이용 과정에서의 혼동과 오인 방지 및 사회적 신뢰를 제고하기 위한 제도적 장치를 마련하는 데 목적이 있음",
+      "source_section": "1 투명성 확보 의무 개요",
+      "quote_en": "Its purpose is to establish institutional mechanisms to prevent confusion and misrecognition in the process of using information and to elevate social trust.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 407,
+      "end_char": 470
     },
     {
-      "quote": "가짜뉴스는 이미 대중의 생활 곳곳에 침투하고 있어, 이에 대한 대책 마련이 시급",
-      "source_section": "참고자료 - 가짜뉴스 생성"
+      "quote": "- 생성형 인공지능이 사회 전반에 미치는 영향이 증대됨에 따라, 딥페이크를 통한 가짜뉴스 확산, 선거 개입, 지적재산권 침해 등 다양한 사회적 부작용이 우려",
+      "source_section": "5 참고 자료 - 인공지능 생성 콘텐츠 국내외 법안 현황",
+      "quote_en": "As generative AI's impact across society grows, various societal side effects are feared, including the spread of fake news via deepfakes, election interference, and intellectual property infringement.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 13728,
+      "end_char": 13815
     },
     {
-      "quote": "생성형 인공지능을 오남용하여 성적 허위 영상물(성착취물)을 제작 및 유포하는 행위가 발생하고 있으며",
-      "source_section": "참고자료 - 디지털 성범죄"
+      "quote": "※ 인물의 특성 합성, 딥페이크 등 오인･혼동 또는 피해 발생의 위험성이 있는 결과물의 경우, 해당 위험성을 고려한 추가적인 조치 필요",
+      "source_section": "4 표시 방법 - 외부 반출 시 표시 방법 예시",
+      "quote_en": "For outputs carrying risk of misrecognition, confusion, or harm—such as personal attribute synthesis or deepfakes—additional measures accounting for such risks are necessary.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 5539,
+      "end_char": 5614
+    },
+    {
+      "quote": "- 생성형 인공지능을 오남용하여 성적 허위 영상물(성착취물)을 제작 및 유포하는 행위가 발생하고 있으며, 연예인이나 지인의 얼굴을 음란물과 합성해 유포하는 디지털 성범죄가 빈번히 발생",
+      "source_section": "5 참고 자료 - 디지털 성범죄",
+      "quote_en": "Misuse of generative AI to create and distribute synthetic sexual videos (sexual exploitation material) is occurring, and digital sex crimes synthesizing faces of celebrities or acquaintances onto pornography occur frequently.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 11999,
+      "end_char": 12101
+    },
+    {
+      "quote": "- 인공지능 기술의 급속한 발전과 사회 전반에 걸친 활용 확대에 따라, 기술 혁신과 윤리적 책임 간의 균형을 확보하기 위해 「인공지능의 발전과 신뢰 기반 조성 등에 관한 기본법」 제정",
+      "source_section": "5 참고 자료 - 국내 인공지능 생성 콘텐츠 관련 법안 현황",
+      "quote_en": "With rapid AI advancement and society-wide adoption, the AI Basic Act was enacted to secure a balance between technological innovation and ethical responsibility.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 15230,
+      "end_char": 15332
+    },
+    {
+      "quote": "2. 주된 이용자의 연령, 신체적･사회적 조건 등을 고려하여 고지 또는 표시할 것 l 예술적･창의적 표현물에 해당하는 경우 전시･향유를 저해하지 않는 방식으로 고지 또는 표시할 수 있음(법 제 31조 제 3항)",
+      "source_section": "2 투명성 의무별 설명",
+      "quote_en": "Provide notice or labeling considering primary users' age and physical/social conditions; for artistic/creative expressions, marking may be done in a way that does not impede exhibition or enjoyment.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 2924,
+      "end_char": 3041
     }
   ]
 }

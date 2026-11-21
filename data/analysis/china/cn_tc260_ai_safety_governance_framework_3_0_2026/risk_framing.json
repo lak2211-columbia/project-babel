@@ -1,0 +1,88 @@
+{
+  "dominant_frame": "innovation_enablement",
+  "secondary_frames": [
+    "existential_catastrophic",
+    "national_security",
+    "social_stability",
+    "consumer_public_safety",
+    "fundamental_rights",
+    "labor_transition"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.92,
+    "national_security": 0.9,
+    "economic_competitiveness": 0.25,
+    "fundamental_rights": 0.82,
+    "social_stability": 0.88,
+    "innovation_enablement": 0.94,
+    "consumer_public_safety": 0.85,
+    "labor_transition": 0.72
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.2,
+    "national_security": 0.18,
+    "economic_competitiveness": 0.01,
+    "fundamental_rights": 0.1,
+    "social_stability": 0.14,
+    "innovation_enablement": 0.22,
+    "consumer_public_safety": 0.12,
+    "labor_transition": 0.03
+  },
+  "rationale_summary": "The TC260 AI Safety Governance Framework 3.0 adopts a multi-layered 'development and security in equal measure' rationale in which innovation_enablement narrowly edges out existential_catastrophic and national_security as the dominant frame. Section 1 explicitly establishes promoting innovative AI development as the 'first priority' (第一要务) and structures the entire framework around inclusive, prudent, risk-tiered, agile governance, regulatory sandboxes (Section 4.3), and open-source ecosystem cultivation so that timely risk prevention supports healthy adoption and unlocks industry potential. Existential_catastrophic is a very close runner-up, driving the v3.0 update's emphasis on self-accelerating recursive improvement, agentic loss of control, CBRN weapons knowledge, and ultimate human control (Preface, Principle 1.5, Appendix 3). National_security (critical information infrastructure, autonomous cyberattacks, export-control supply chain disruption, cognitive warfare, digital sovereignty) and social_stability (illegal content, ideological security, online ecosystem governance, social cognition) are co-primary security bottom lines alongside citizens' rights in Appendix 1's risk-grading tiers. Consumer_public_safety (embodied AI physical harm, fraud, minor/elderly mental health), fundamental_rights (personal information rights, non-discrimination, user choice/transparency), and labor_transition (occupational displacement and structural unemployment monitoring) appear as explicit secondary justifications.",
+  "evidence_spans": [
+    {
+      "quote": "鼓励发展创新，对人工智能研发及应用采\n取包容态度，积极运用“沙箱”监管等风险可控的制度机制，为新技术新应用\n发展提供容错纠错空间。",
+      "source_section": "Page 7 (Section 1.1)",
+      "quote_en": "We encourage development and innovation, take an inclusive approach to AI research, development, and application, and actively employ risk-controllable institutional mechanisms such as regulatory sandboxes to make room for error and correction in the development of new technologies and new applications.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4065,
+      "end_char": 4130
+    },
+    {
+      "quote": "更深远地看，人工智能已显现出模型算法自主学习优化、\n自我递归提升的自加速态势，技术演进的速度与方向会否超出人类的预判和掌控，\n需要予以关注和警惕。",
+      "source_section": "Page 6 (Preface)",
+      "quote_en": "More profoundly, AI has demonstrated a self-accelerating trend of model and algorithm autonomous learning, optimization, and recursive self-improvement. Whether the speed and direction of technological evolution may exceed human anticipation and control demands attention and vigilance.",
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 3430,
+      "end_char": 3503
+    },
+    {
+      "quote": "个别国家利用技术垄断和出口管制等单边强制措施制造发展壁垒，恶意阻断全球人工智能供应链，带来突出的芯片、软件、工具、服务断供风险。",
+      "source_section": "Page 11 (Section 2.1.4)",
+      "quote_en": "Certain countries use unilateral coercive measures such as technology monopolies and export controls to create development obstacles and maliciously disrupt the global AI supply chain, leading to prominent risks of supply disruptions for chips, software, tools, and services.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 6762,
+      "end_char": 6826
+    },
+    {
+      "quote": "导致生成输出欺诈、暴力、色情、极端主义等违法信息， 威胁社会稳定、公共安全和意识形态安全。",
+      "source_section": "Page 14 (Section 2.2.4)",
+      "quote_en": "Causing the generation and output of illegal information involving fraud, violence, pornography, extremism, and other content, threatening social stability, public security, and ideological security.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 8443,
+      "end_char": 8488
+    },
+    {
+      "quote": "具身智能应用于工业生产、医疗手术、交通出行等物理接触场景，由于基础模型的“幻觉”决策、感知系统的识别偏差，以及控制算法缺陷、硬件故障等问题，可能导致生产紊乱、自损、伤人、物理破坏等问题。",
+      "source_section": "Page 12 (Section 2.2.2)",
+      "quote_en": "When embodied AI is applied in scenarios involving physical interaction such as industrial production, medical surgery, and transportation, issues such as hallucination-based decision-making by foundation models, recognition deviations in perception systems, control algorithm defects, and hardware failures may result in production disruptions, self-harm, injury to people, and physical damage.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 7295,
+      "end_char": 7388
+    },
+    {
+      "quote": "应遵循数据收集使用、个人信息处理的安全规则，严格落实关于用户控制权、知情权、选择权等法律法规明确的合法权益。",
+      "source_section": "Page 20 (Section 3.1.3)",
+      "quote_en": "Security rules on data collection and use and on personal information processing should be observed, strictly implementing users' legitimate rights and interests stipulated by laws and regulations, including their rights to control, to be informed, and to choose.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 12343,
+      "end_char": 12397
+    }
+  ]
+}

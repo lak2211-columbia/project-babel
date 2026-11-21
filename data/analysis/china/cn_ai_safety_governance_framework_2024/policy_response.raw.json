@@ -1,27 +1,59 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01DXMtZDxzxDjZoQSXryLego",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"jurisdiction\":\"china\",\"issuing_body\":\"全国网络安全标准化技术委员会 (TC260)\",\"document_type\":\"standards_guideline\",\"binding_strength\":\"standards_guideline\",\"publication_date\":\"2024-09\",\"effective_date\":null,\"covered_application_domains\":[\"general_purpose_models\",\"critical_infrastructure\",\"public_sector_use\",\"healthcare\",\"finance\",\"law_enforcement\",\"defense\",\"employment\",\"education\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"对算力、推理能力达到一定阈值或应用在特定行业领域的人工智能系统进行登记备案，要求其具备在设计、研发、测试、部署、使用、维护等全生命周期的安全防护能力\",\"source_section\":\"5.1\"},{\"quote\":\"重点领域使用者应审慎评估目标应用场景采用人工智能技术后带来的长期和潜在影响，开展风险评估与定级\",\"source_section\":\"6.3\"}]},{\"label\":\"pre_deployment_testing\",\"confidence\":0.92,\"evidence\":[{\"quote\":\"研发者应定期开展安全评估测试，测试前明确测试目标、范围和安全维度，构建多样化的测试数据集，涵盖各种应用场景\",\"source_section\":\"6.1(g)\"},{\"quote\":\"研发者应制定明确的测试规则和方法，包括人工测试、自动测试、混合测试等，利用沙箱仿真等技术对模型进行充分测试和验证\",\"source_section\":\"6.1(h)\"}]},{\"label\":\"model_documentation\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"研发者应生成详细的测试报告，分析安全问题并提出改进方案\",\"source_section\":\"6.1(j)\"},{\"quote\":\"研发者应评估人工智能模型算法对外界干扰的容忍程度，以适用范围、注意事项或使用禁忌的形式告知服务提供者和使用者\",\"source_section\":\"6.1(i)\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.93,\"evidence\":[{\"quote\":\"服务提供者应公开人工智能产品和服务的能力、局限性、适用人群、场景\",\"source_section\":\"6.2(a)\"},{\"quote\":\"制定出台人工智能生成合成内容标识标准规范，明确显式、隐式等标识要求，全面覆盖制作源头、传播路径、分发渠道等关键环节\",\"source_section\":\"5.2\"}]},{\"label\":\"incident_reporting\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"服务提供者应将人工智能系统运行中发现的安全事故、安全漏洞等及时向主管部门报告\",\"source_section\":\"6.2(h)\"},{\"quote\":\"协调有关研发者、服务提供者建立风险威胁信息通报和共享机制\",\"source_section\":\"5.7\"}]},{\"label\":\"human_oversight\",\"confidence\":0.92,\"evidence\":[{\"quote\":\"重点领域使用者应对人工智能行为和影响进行有效监督，确保人工智能产品和服务的运行基于人的授权、处于人的控制之下\",\"source_section\":\"6.3(h)\"},{\"quote\":\"重点领域使用者应避免完全依赖人工智能的决策，监控及记录未采纳人工智能决策的情况\",\"source_section\":\"6.3(i)\"}]},{\"label\":\"registration_licensing\",\"confidence\":0.88,\"evidence\":[{\"quote\":\"对算力、推理能力达到一定阈值或应用在特定行业领域的人工智能系统进行登记备案\",\"source_section\":\"5.1\"}]},{\"label\":\"access_controls\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"重点领域使用者应合理限制人工智能系统对数据的访问权限\",\"source_section\":\"6.3(f)\"},{\"quote\":\"重点领域使用者应使用高安全级别的密码策略，启用多因素认证机制\",\"source_section\":\"6.3(d)\"}]},{\"label\":\"content_provenance\",\"confidence\":0.88,\"evidence\":[{\"quote\":\"对面向公众服务的人工智能系统，通过数字证书技术对其进行标识管理\",\"source_section\":\"5.2\"}]},{\"label\":\"third_party_audit\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"重点领域使用者应根据人工智能系统的适用场景、安全性、可靠性、可控性等，定期进行系统审计\",\"source_section\":\"6.3(b)\"}]},{\"label\":\"compute_governance\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"对算力、推理能力达到一定阈值或应用在特定行业领域的人工智能系统进行登记备案\",\"source_section\":\"5.1\"}]}],\"enforcement_mechanisms\":[{\"label\":\"regulatory_supervision\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"实施人工智能应用分类分级管理。根据功能、性能、应用场景等，对人工智能系统分类分级，建立风险等级测试评估体系\",\"source_section\":\"5.1\"},{\"quote\":\"服务提供者应将人工智能系统运行中发现的安全事故、安全漏洞等及时向主管部门报告\",\"source_section\":\"6.2(h)\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.88,\"evidence\":[{\"quote\":\"协调有关研发者、服务提供者建立风险威胁信息通报和共享机制\",\"source_section\":\"5.7\"},{\"quote\":\"服务提供者应将人工智能系统运行中发现的安全事故、安全漏洞等及时向主管部门报告\",\"source_section\":\"6.2(h)\"}]},{\"label\":\"soft_enforcement\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"指导支持网络安全、人工智能领域行业协会加强行业自律，制定提出高于监管要求、具有引领示范作用的人工智能安全自律公约\",\"source_section\":\"5.9\"}]}],\"implementation_notes\":\"This is a framework document (V1.0) issued by TC260 in September 2024, implementing the Global AI Governance Initiative. It is structured as a standards/guidance document rather than binding legislation, though it references compliance with existing laws and regulations. Enforcement mechanisms are largely implied through reference to 'competent authorities' rather than explicitly specified. The document covers the full AI lifecycle and addresses both developers, service providers, and users including a separate section for critical sector users. Registration/filing (登记备案) requirements for high-compute or sector-specific AI systems suggest emerging binding elements, but the document itself functions as a governance framework and guidelines document.\",\"confidence\":0.88}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 14771,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "metadata_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 13054,
+      "candidatesTokenCount": 431,
+      "totalTokenCount": 15584,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 13054
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 431
+        }
+      ],
+      "thoughtsTokenCount": 2099,
+      "serviceTier": "standard"
     },
-    "output_tokens": 1842,
-    "service_tier": "standard",
-    "inference_geo": "global"
+    "modelVersion": "gemini-4-neon",
+    "responseId": "giwBa5O5BY6gur8Pktz2mQ0"
+  },
+  "controls_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 13207,
+      "candidatesTokenCount": 3005,
+      "totalTokenCount": 22218,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 13207
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 3005
+        }
+      ],
+      "thoughtsTokenCount": 6006,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "mCwBa5ayOLjnodAPkvuT2AQ"
   }
 }

@@ -1,13 +1,144 @@
 {
-  "safety_requirements": [],
-  "enforcement_mechanisms": [
+  "safety_requirements": [
     {
-      "label": "none_specified",
-      "confidence": 0.85,
+      "label": "training_data_governance",
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AI・データの利用に関する契約ガイドライン 1.1 版",
-          "source_section": "Page 1"
+          "quote": "３ ユーザは、ベンダに対し、ユーザ提供データおよび資料等（以下まとめて 「ユーザ提供データ等」という。）をベンダに提供等することについて、正当な 権限があることおよびかかる提供等が法令に違反するものではないことを保証する。",
+          "source_section": "AI編 第７-６ ソフトウェア開発契約書（モデル契約書）第１２条（ユーザがベンダに提供するデータ・資料等）",
+          "quote_en": "3. The User warrants to the Vendor that it has legitimate authority to provide, etc. the User-Provided Data and Materials, etc. (collectively, 'User-Provided Data, etc.') to the Vendor, and that such provision, etc. does not violate any laws or regulations.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "１ ユーザは、本開発の遂行に際して、個人情報の保護に関する法律（本条に おいて、以下「法」という。）に定める個人情報または匿名加工情報（以下、 総称して「個人情報等」という。）を含んだデータをベンダに提供する場合 には、事前にその旨を明示する。 ２ 本開発の遂行に際してユーザが個人情報等を含んだデータをベンダに提 供する場合には、法に定められている手続を履践していることを保証する ものとする。",
+          "source_section": "AI編 第７-６ ソフトウェア開発契約書（モデル契約書）第１５条（個人情報の取り扱い）",
+          "quote_en": "1. When providing the Vendor with data containing personal information or anonymously processed information (collectively, 'Personal Information, etc.') as defined in the Act on the Protection of Personal Information (hereinafter 'the Act' in this Article) in carrying out this Development, the User shall explicitly indicate that fact in advance. 2. When providing the Vendor with data containing Personal Information, etc. in carrying out this Development, the User warrants that it has completed the procedures prescribed by the Act.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "提供データの不正利用や不正流出を防止する方法として、提供データ の暗号化、アクセス制限、電子透かし技術を用いたデータの出所等を明ら かにする方法、ブロックチェーン技術等がある。",
+          "source_section": "データ編 第３-２-(5) 不正利用等を防止する技術",
+          "quote_en": "Methods to prevent unauthorized use or leakage of provided data include encryption of provided data, access restrictions, methods to clarify the provenance of data using digital watermarking technology, and blockchain technology.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "プラットフォーム事業者は、前記のとおり、多種多様の提供データを 取り扱うため、一定程度のサイバーセキュリティ対策を行うことが要求 され、提供データ、利用データおよび利用サービスの安全管理に関する 義務を負うと解される。",
+          "source_section": "データ編 第６-３-(5)-② 安全性（サイバーセキュリティ）について",
+          "quote_en": "As stated above, because platform operators handle a wide variety of provided data, they are required to implement a certain level of cybersecurity measures and are understood to bear obligations regarding the security management of provided data, usage data, and usage services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.82,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "そのため、生成された学習済みモデルを実際に現場に 投入するに際しては、事前の検証結果から期待される精度が現場環境下 でも実現可能であるかをさらに検証すべく、現場への学習済みモデルの 導入前に現場環境下での性能評価を行うことが必要となる。",
+          "source_section": "AI編 第４-４-(3) 具体例による解説 事例3",
+          "quote_en": "Therefore, when actually deploying a generated trained model into the field, it is necessary to conduct a performance evaluation in the field environment prior to deploying the trained model into the field, in order to further verify whether the accuracy expected from prior verification results can also be achieved under field conditions.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "この場合、PoC 段階では、既存のシステムの一部を学習 済みモデルを用いたモジュールで置換し、その統合（インテグレーショ ン）をした上で、性能を評価する。",
+          "source_section": "AI編 第４-３-(3)-② PoC 段階",
+          "quote_en": "In this case, in the PoC stage, part of the existing system is replaced with a module using the trained model, and performance is evaluated after integration.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.72,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "１ 乙は、提供データの漏えい、喪失、第三者提供、目的外利用等本契約に違 反する提供データの利用（以下、「提供データの漏えい等」という）を発見 した場合、直ちに甲にその旨を通知しなければならない。",
+          "source_section": "データ編 第７-１ データ提供型契約のモデル契約書案 第９条（損害軽減義務）",
+          "quote_en": "1. If Party B discovers any leakage, loss, provision to a third party, unauthorized-purpose use, or other use of Provided Data in violation of this Agreement (hereinafter 'Leakage, etc. of Provided Data'), Party B shall immediately notify Party A to that effect.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "提供データの漏えい等の事実が確認できた場合は、その原因を調査し、再発 防止策について検討しその内容を甲に報告しなければならない。",
+          "source_section": "データ編 第７-１ データ提供型契約のモデル契約書案 第９条（損害軽減義務）",
+          "quote_en": "If the fact of Leakage, etc. of Provided Data is confirmed, Party B shall investigate the cause, consider measures to prevent recurrence, and report the details thereof to Party A.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.7,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "そのため、データ提供者およびデータ受領者と秘密保持義務を締結した中立 な第三者により、データ受領者の提供データの利用状況についての監査を実 施することが適切な場合もありうる。",
+          "source_section": "データ編 第７-１ データ提供型契約のモデル契約書案 第７条（利用状況）解説",
+          "quote_en": "Therefore, there may be cases where it is appropriate to have a neutral third party who has entered into confidentiality obligations with the data provider and data recipient conduct an audit of the data recipient's usage status of the provided data.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "なお、本ガイドライン（AI 編）は、契約についての基本的な考え方を提 示するものにすぎず、何ら法的な拘束力を有するものではなく、また、当事 者の契約の自由を何ら制約するものではないことを念のため付言する。",
+          "source_section": "AI編 第１ 総論 １ 目的",
+          "quote_en": "It should be noted for the avoidance of doubt that these Guidelines (AI Section) merely present basic concepts regarding contracts, have no legally binding force whatsoever, and do not restrict the parties' freedom of contract in any way.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "したがって、本ガイドライン（データ編）は、あくまでも契約で定めておくべき事項 等を示すにとどまり、契約の自由を制約するものではないことは当然であ る。",
+          "source_section": "データ編 第１ 総論 ３ 契約の複雑化・高度化とガイドラインの意義",
+          "quote_en": "Therefore, these Guidelines (Data Section) naturally do no more than indicate matters that should be stipulated in contracts and do not restrict freedom of contract.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }

@@ -29,6 +29,8 @@ PARSER_VERSION = "0.3.0"
 RAW_DATA_DIR = ROOT / "data" / "raw"
 PARSED_DATA_DIR = ROOT / "data" / "parsed"
 CONTENT_ROOT_SELECTORS = (
+    "#BodyLabel",
+    ".main-content",
     ".board_view",
     ".view_head",
     ".view_cont",
@@ -157,7 +159,13 @@ BOILERPLATE_LINE_PATTERNS = (
     re.compile(r"^share sensitive information only on official, secure websites\.?$", re.IGNORECASE),
     re.compile(r"^skip to main content$", re.IGNORECASE),
     re.compile(r"^首\s*页\s+时政要闻\s+网信政务"),
-    re.compile(r"^中央网络安全和信息化委员会办公室\s+中华人民共和国国家互联网信息办公室$"),
+    re.compile(r"^当前位置[:：]?$"),
+    re.compile(r"^中央网络安全和信息化委员会办公室(?:\s+中华人民共和国国家互联网信息办公室)?$"),
+    re.compile(r"^中华人民共和国国家互联网信息办公室\s*©\s*版权所有$"),
+    re.compile(r"^承办[:：]\s*国家互联网应急中心"),
+    re.compile(r"^技术支持[:：]\s*长安通信科技有限责任公司$"),
+    re.compile(r"^京(?:ICP|公网安)备\d+号$"),
+    re.compile(r"^(?:返回顶部|PC版|联系我们)$"),
     re.compile(r"^(无障碍浏览|网站无障碍|关怀版|繁体|ENGLISH|邮箱|微博|微信|客户端)\s*"),
 )
 LOW_QUALITY_TITLE_PATTERNS = (
@@ -413,9 +421,32 @@ def _is_pdf_page_number_line(line: str) -> bool:
     return any(pattern.match(stripped) for pattern in PDF_PAGE_NUMBER_PATTERNS)
 
 
+def _clean_pdf_control_and_bullet_chars(text: str) -> str:
+    """Normalize PDF Wingdings/Symbol PUA bullets and Hancom bell markers while stripping stray control chars."""
+    out: list[str] = []
+    for ch in text:
+        if ch in {"\n", "\t"}:
+            out.append(ch)
+            continue
+        if ch == "\x07":
+            out.append("• ")
+            continue
+        cat = unicodedata.category(ch)
+        if cat == "Co":
+            # Common Wingdings/Symbol PUA glyphs (U+F020..U+F0FF) used as bullets in JP/KR PDFs.
+            if 0xF020 <= ord(ch) <= 0xF0FF:
+                out.append("• ")
+            continue
+        if cat == "Cc":
+            continue
+        out.append(ch)
+    return "".join(out)
+
+
 def _dehyphenate_and_reflow_pdf_page(raw_page_text: str) -> str:
-    # Normalize CRLF and soft hyphens first while preserving blank-line paragraph separators.
+    # Normalize CRLF, PDF PUA/Hancom bullets, and soft hyphens first while preserving blank-line paragraph separators.
     text = raw_page_text.replace("\r\n", "\n").replace("\r", "\n").replace("\xa0", " ")
+    text = _clean_pdf_control_and_bullet_chars(text)
     text = re.sub(r"\u00ad\s*\n\s*", "", text)
 
     # Split into raw paragraphs separated by >=1 blank lines (or whitespace-only lines).
@@ -989,6 +1020,13 @@ def _prune_noise_nodes(root: Tag) -> None:
         ".cac-header",
         ".head_nav",
         ".top_nav",
+        ".top-nav",
+        ".current-path",
+        ".mobile-header",
+        ".mobile-footer",
+        ".right-nav",
+        "body > .header",
+        "body > .footer",
     ):
         for node in root.select(selector):
             node.decompose()
@@ -1004,9 +1042,9 @@ def _content_root_score(element: Tag) -> int:
     score = len(text) + (heading_count * 400) + (block_count * 40) - (link_count * 6)
     element_id = element.get("id") or ""
     element_classes = set(element.get("class") or [])
-    if element_id in {"bodyContent", "contentBody", "conScroll"}:
+    if element_id in {"BodyLabel", "bodyContent", "contentBody", "conScroll"}:
         score += 4000
-    if {"lawcon", "cont_area", "boardViewArea", "tbView"} & element_classes:
+    if {"lawcon", "cont_area", "boardViewArea", "tbView", "main-content"} & element_classes:
         score += 2500
     return score
 
@@ -1424,17 +1462,57 @@ def _plain_text_from_sections(sections: Sequence[ParsedSection]) -> str:
 
 
 def _pdf_extraction_score(sections: Sequence[ParsedSection]) -> int:
+    if not sections:
+        return 0
     plain_text = _plain_text_from_sections(sections)
     non_whitespace = len("".join(plain_text.split()))
     populated_pages = len(sections)
     longest_section = max((len(section.content) for section in sections), default=0)
+    # Penalize genuine replacement/control corruption only (NOT `Co` Private Use Area bullet icons or Hancom \x07 bullets).
     suspicious_codepoints = sum(
         1
         for character in plain_text
-        if (unicodedata.category(character).startswith("C") and character not in {"\n", "\t"})
-        or character == "\ufffd"
+        if character == "\ufffd"
+        or (unicodedata.category(character) == "Cc" and character not in {"\n", "\t", "\x07"})
     )
     return non_whitespace + (populated_pages * 200) + longest_section - (suspicious_codepoints * 1000)
+
+
+def _extract_pdf_sections_with_pymupdf(artifact_path: Path) -> tuple[list[ParsedSection], list[str], str | None]:
+    try:
+        import pymupdf  # type: ignore[import-not-found]
+    except ImportError:
+        try:
+            import fitz as pymupdf  # type: ignore[import-not-found]
+        except ImportError:
+            return [], ["pymupdf_unavailable"], None
+
+    sections: list[ParsedSection] = []
+    warnings: list[str] = []
+    title: str | None = None
+    try:
+        with pymupdf.open(str(artifact_path)) as doc:
+            raw_title = (doc.metadata or {}).get("title") if isinstance(doc.metadata, dict) else None
+            if isinstance(raw_title, str) and raw_title.strip():
+                candidate = _normalize_text(raw_title) or None
+                if candidate and not _is_low_quality_title(candidate):
+                    title = candidate
+            for page_index, page in enumerate(doc, start=1):
+                raw_text = (page.get_text("text") or "").replace("\r\n", "\n").strip()
+                if not raw_text:
+                    warnings.append(f"empty_pymupdf_page:{page_index}")
+                    continue
+                sections.append(
+                    ParsedSection(
+                        heading=f"Page {page_index}",
+                        level=1,
+                        content=raw_text,
+                    )
+                )
+    except Exception as exc:
+        return [], [f"pymupdf_failed:{type(exc).__name__}"], None
+
+    return sections, warnings, title
 
 
 def _extract_pdf_sections_with_pypdf(artifact_path: Path) -> tuple[list[ParsedSection], list[str], str | None]:
@@ -1499,18 +1577,33 @@ def _extract_pdf_sections_with_pdftotext(artifact_path: Path) -> tuple[list[Pars
 
 def parse_pdf_artifact(artifact_path: Path, metadata: dict[str, Any]) -> ParsedDocument:
     source_hash = sha256(artifact_path.read_bytes()).hexdigest() if artifact_path.exists() else None
-    sections, warnings, extracted_title = _extract_pdf_sections_with_pypdf(artifact_path)
+    pymupdf_sections, pymupdf_warnings, pymupdf_title = _extract_pdf_sections_with_pymupdf(artifact_path)
     pdftotext_sections, pdftotext_warnings = _extract_pdf_sections_with_pdftotext(artifact_path)
-    extractor = "pypdf"
 
-    if _pdf_extraction_score(pdftotext_sections) > (_pdf_extraction_score(sections) + 250):
-        sections = pdftotext_sections
-        warnings = [warning for warning in warnings if not warning.startswith("empty_pdf_page:")]
-        warnings.extend(pdftotext_warnings)
-        warnings.append("used_pdftotext_fallback")
-        extractor = "pdftotext"
-    elif pdftotext_sections:
-        warnings.extend(pdftotext_warnings)
+    if pymupdf_sections:
+        sections = pymupdf_sections
+        warnings = list(pymupdf_warnings)
+        extracted_title = pymupdf_title
+        extractor = "pymupdf"
+        if pdftotext_sections and _pdf_extraction_score(pdftotext_sections) > (_pdf_extraction_score(sections) + 500):
+            sections = pdftotext_sections
+            warnings = [w for w in warnings if not w.startswith("empty_pymupdf_page:")]
+            warnings.extend(pdftotext_warnings)
+            warnings.append("used_pdftotext_fallback")
+            extractor = "pdftotext"
+    else:
+        sections, warnings, extracted_title = _extract_pdf_sections_with_pypdf(artifact_path)
+        extractor = "pypdf"
+        if pdftotext_sections and _pdf_extraction_score(pdftotext_sections) > (_pdf_extraction_score(sections) + 250):
+            sections = pdftotext_sections
+            warnings = [warning for warning in warnings if not warning.startswith("empty_pdf_page:")]
+            warnings.extend(pdftotext_warnings)
+            warnings.append("used_pdftotext_fallback")
+            extractor = "pdftotext"
+        elif pdftotext_sections:
+            warnings.extend(pdftotext_warnings)
+        elif pymupdf_warnings:
+            warnings.extend(pymupdf_warnings)
 
     sections = _clean_pdf_page_sections(sections)
     plain_text = _plain_text_from_sections(sections)

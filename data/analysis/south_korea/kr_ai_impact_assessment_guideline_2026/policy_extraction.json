@@ -1,156 +1,250 @@
 {
   "jurisdiction": "south_korea",
-  "issuing_body": "한국지능정보사회진흥원 (National Information Society Agency, NIA) / 과학기술정보통신부 (Ministry of Science and ICT)",
+  "issuing_body": "Ministry of Science and ICT / National Information Society Agency",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": "2026",
+  "publication_date": "2026-01-22",
   "effective_date": null,
   "covered_actors": [
-    "인공지능사업자 (AI business operators)",
-    "국가기관등 (national agencies and public institutions)"
+    "AI business operators (인공지능사업자) providing products or services using high-impact AI (including AI utilizing business operators and B2C direct providers)",
+    "All other AI business operators encouraged to conduct voluntary AI impact assessments outside high-impact AI scope",
+    "Qualified external third parties (제3자) commissioned by operators to perform impact assessments",
+    "State agencies, local governments, and public institutions (국가기관등) prioritizing impact-assessed high-impact AI products/services in procurement",
+    "Korea Information Society Development Institute (정보통신정책연구원, KISDI) as dedicated support institution",
+    "Directly affected persons (영향받는 자), indirectly affected stakeholders, and unintended/unexpected affected groups"
   ],
   "covered_application_domains": [
     "general_purpose_models",
     "critical_infrastructure",
-    "biometrics",
-    "public_sector_use",
-    "employment",
-    "education",
     "healthcare",
+    "biometrics",
+    "law_enforcement",
+    "employment",
     "finance",
-    "law_enforcement"
+    "public_sector_use",
+    "education"
   ],
   "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.95,
+      "confidence": 0.99,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "인공지능사업자가 고영향 인공지능을 이용한 제품 또는 서비스를 제공하는 경우 사전에 사람의 기본권에 미치는 영향을 평가하기 위하여 노력하여야 한다",
-          "source_section": "법 제35조"
+          "quote": "⚫｢인공지능 발전과 신뢰 기반 조성 등에 관한 기본법｣(이하 “법”) 제35조에 따라, 고영향 인공지능 제품 또는 서비스를 제공하는 인공지능사업자는 해당 제품ㆍ서비스에 대한 영향평가 수행에 노력할 것을 권장",
+          "source_section": "총론 - 3. 평가 대상",
+          "quote_en": "Pursuant to Article 35 of the AI Basic Act, AI business operators providing high-impact AI products or services are recommended to endeavor to conduct an impact assessment on those products or services.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1215,
+          "end_char": 1330
         },
         {
-          "quote": "실제 인공지능 기반 서비스 운영 과정에서 발생할 수 있는 다양한 상황을 설정하고, 앞서 파악한 작동원리가 어떤 방식으로 기본권을 위협할 수 있는지 시나리오를 폭넓게 작성",
-          "source_section": "제2절 본 평가 수행 단계"
-        }
-      ]
-    },
-    {
-      "label": "pre_deployment_testing",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "신규 인공지능 제품 또는 서비스 제공 전",
-          "source_section": "4. 평가 시기"
-        },
-        {
-          "quote": "인공지능 제품ㆍ서비스 제공에 앞서 평가 필요성 여부를 판단하고, 평가 대상이 되는 제품ㆍ서비스 세부 정보를 작성",
-          "source_section": "제1절 사전 준비 단계"
+          "quote": "⚫실제 인공지능 기반 서비스 운영 과정에서 발생할 수 있는 다양한 상황을 설정하고, 앞서 파악한 작동원리가 어떤 방식으로 기본권을 위협할 수 있는지 시나리오를 폭넓게 작성",
+          "source_section": "본 평가 수행 단계 - 3.1 시나리오 기반 위협 분석",
+          "quote_en": "Set up diverse operational situations for the AI service and broadly develop threat scenarios showing how identified operational mechanisms could threaten fundamental rights.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14357,
+          "end_char": 14452
         }
       ]
     },
     {
       "label": "third_party_audit",
-      "confidence": 0.75,
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "고영향 인공지능 제품 또는 서비스를 제공하는 인공지능사업자는 영향평가를 직접 수행하거나, 전문성을 보유한 제3자에 의뢰하여 수행할 수 있음",
-          "source_section": "5. 평가 수행 주체"
-        },
-        {
-          "quote": "외부 전문가의 조력을 적극적으로 활용할 수 있음",
-          "source_section": "3.1 시나리오 기반 위협 분석"
+          "quote": "⚫고영향 인공지능 제품 또는 서비스를 제공하는 인공지능사업자는 영향평가를 직접 수행하거나, 전문성을 보유한 제3자에 의뢰하여 수행할 수 있음",
+          "source_section": "총론 - 5. 평가 수행 주체",
+          "quote_en": "An AI business operator providing high-impact AI products or services may conduct the impact assessment directly or commission a third party possessing expertise.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3636,
+          "end_char": 3714
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.8,
+      "confidence": 0.92,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "인공지능 기반 제품 또는 서비스의 기술·운영상 작동원리를 자세하게 조사하고 체계적으로 기록함으로써 이어지는 기본권 영향 식별 및 분석의 기초 자료로 활용",
-          "source_section": "2. 평가대상 작동원리 분석"
+          "quote": "· ① 인공지능 영향평가의 결과와 ② 영향평가 수행 과정에서 수집ㆍ작성한 근거자료는 사업자가 자율적으로 보관ㆍ관리하는 것을 권장함",
+          "source_section": "사후 단계 - 2. 문서의 보관 및 결과의 공개",
+          "quote_en": "Operators are recommended to voluntarily retain and manage both (1) AI impact assessment results and (2) supporting records collected and created during the assessment process.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 24975,
+          "end_char": 25047
         },
         {
-          "quote": "해당 인공지능시스템의 개발 및 학습에 사용된 학습용데이터의 개요",
-          "source_section": "법 시행령안 제25조"
+          "quote": "· 평가주체는 개발 및 운영 관련 문서와 개발자, 운영자 등 관련 부서 인터뷰 등을 통해 인공지능 제품 또는 서비스의 작동원리를 내부적으로 조사",
+          "source_section": "본 평가 수행 단계 - 2. 평가대상 작동원리 분석",
+          "quote_en": "The assessing entity investigates and systematically documents the technical and operational mechanisms of the AI product/service using development/operations documentation and staff interviews.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 13695,
+          "end_char": 13775
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.7,
+      "confidence": 0.92,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "영향평가의 결과, 개선이 필요한 경우 그 이행계획에 관한 사항",
-          "source_section": "시행령안 제28조"
+          "quote": "· 영향평가 결과는 사업자의 판단에 따라 자율적으로 공개 여부를 결정할 수 있음\n· 인공지능 제품ㆍ서비스에 대한 이해 증진 및 사회적 신뢰 확보 차원에서, 영향평가 결과의 공개를 권장",
+          "source_section": "사후 단계 - 2. 문서의 보관 및 결과의 공개",
+          "quote_en": "Operators may voluntarily decide whether to publish impact assessment results, though publication is recommended to enhance understanding of AI products/services and build social trust.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 25300,
+          "end_char": 25402
         },
         {
-          "quote": "문서의 보관 및 결과의 공개",
-          "source_section": "제2장 단계별 고려사항"
+          "quote": "· 부정적 영향이 현실화될 경우 취할 조치를 사전에 마련(내부 거버넌스 절차, 피해 최소화 방안, 이해관계자와 이용자의 이의 제기ㆍ처리 체계를 포함)",
+          "source_section": "사후 단계 - 1. 후속 조치",
+          "quote_en": "Establish in advance measures to take if negative impacts materialize, including internal governance procedures, harm minimization plans, and stakeholder/user objection and redress mechanisms.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 24864,
+          "end_char": 24947
         }
       ]
     },
     {
       "label": "human_oversight",
-      "confidence": 0.65,
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "이용자가 해당 제품ㆍ서비스 이용 과정에서 가지는 선택권이나 통제권의 범위 설명 (인공지능 기능 미사용 선택 / 도출 결과 거부 / 이의제기, 수정요청 가능 / 결과 철회 가능)",
-          "source_section": "2. 평가대상 정의"
+          "quote": "7. 이용자 선택권 이용자가 해당 제품ㆍ서비스 이용 과정에서 가지는 선택권이나 통제권의 범위 설명 (인공지능 기능 미사용 선택 / 도출 결과 거부 / 이의제기, 수정요청 가능 / 결과 철회 가능)",
+          "source_section": "사전 준비 단계 - 2. 평가대상 정의",
+          "quote_en": "7. User Choice: Describe the scope of choice or control users have when using the product/service (opting out of AI functions, rejecting outputs, objecting/requesting modification, or withdrawing results).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 11976,
+          "end_char": 12085
+        },
+        {
+          "quote": "· 모델 편향 검증 및 개선\n· 휴먼 인 더 루프\n· 실시간 모니터링 및 피드백",
+          "source_section": "본 평가 수행 단계 - 3.3 기본권 영향 판단",
+          "quote_en": "Model bias verification and improvement; human-in-the-loop; real-time monitoring and feedback (example management controls for high-severity right-to-life risks).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22580,
+          "end_char": 22624
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.84,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "1. 해당 인공지능제품 또는 인공지능서비스의 개요서\n2. 해당 인공지능시스템의 개발 및 학습에 사용된 학습용데이터의 개요",
+          "source_section": "총론 - 3. 평가 대상 (시행령안 제25조)",
+          "quote_en": "1. Overview dossier of the AI product/service; 2. Overview of training data used for the development and training of the AI system.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2278,
+          "end_char": 2345
+        },
+        {
+          "quote": "** (예시2) 인공지능 기반 채용 서비스의 경우, 평등권이 주로 언급되므로 그 내용을 고려하여 ‘학습데이터의 편향성’, ‘대리변수(Proxy) 기반 차별’ 등 위험을 바탕으로 시나리오 도출",
+          "source_section": "본 평가 수행 단계 - 3.1 시나리오 기반 위협 분석",
+          "quote_en": "For AI recruitment services where equality rights are central, derive scenarios around risks such as training-data bias and proxy-variable discrimination.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 15090,
+          "end_char": 15196
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "soft_enforcement",
-      "confidence": 0.9,
+      "label": "procurement_condition",
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "사전에 해당 제품 또는 서비스가 사람의 기본권에 미치는 영향을 평가하기 위하여 노력하여야 한다",
-          "source_section": "법 제35조"
+          "quote": "②국가기관등이 고영향 인공지능을 이용한 제품 또는 서비스를 이용하려는 경우에는 영향평가를 실시한 제품 또는 서비스를 우선적 으로 고려하여야 한다.",
+          "source_section": "총론 - 1. 개념 (법 제35조)",
+          "quote_en": "Where state agencies or public institutions intend to use products or services utilizing high-impact AI, they shall give priority consideration to products or services that have undergone an impact assessment.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 372,
+          "end_char": 453
         },
         {
-          "quote": "모든 인공지능사업자가 자율적으로 영향평가를 수행·실천하도록 장려",
-          "source_section": "3. 평가 대상"
+          "quote": "이는 법 제35조제2항과 관련하여 국가기관 등이 고영향 인공지능 제품 또는 서비스를 도입하는 과정에서 영향평가 결과 제출을 요청하는 경우, 사업자가 보관해 둔 문서를 활용할 수 있도록 하기 위함임.",
+          "source_section": "사후 단계 - 2. 문서의 보관 및 결과의 공개",
+          "quote_en": "This enables operators to submit retained impact assessment records when state agencies request them during public-sector adoption of high-impact AI products or services under Act Art. 35(2).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 25139,
+          "end_char": 25249
         }
       ]
     },
     {
-      "label": "procurement_condition",
-      "confidence": 0.8,
+      "label": "soft_enforcement",
+      "confidence": 0.96,
       "evidence": [
         {
-          "quote": "국가기관등이 고영향 인공지능을 이용한 제품 또는 서비스를 이용하려는 경우에는 영향평가를 실시한 제품 또는 서비스를 우선적으로 고려하여야 한다",
-          "source_section": "법 제35조"
+          "quote": "이는 법적 의무가 아니며, 자율적 보관을 권장하는 데 목적이 있음",
+          "source_section": "사후 단계 - 2. 문서의 보관 및 결과의 공개",
+          "quote_en": "This is not a legal obligation; its purpose is to recommend voluntary retention.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 25250,
+          "end_char": 25286
+        },
+        {
+          "quote": "⚫법에서는 고영향 인공지능 제품·서비스에 대한 영향평가만을 규정하고 있으나, 인공지능의 책임 있는 활용과 사회적 신뢰 제고를 위해 모든 인공지능사업자가 자율적으로 영향평가를 수행·실천하도록 장려",
+          "source_section": "총론 - 3. 평가 대상",
+          "quote_en": "Although the Act prescribes impact assessments only for high-impact AI, all AI business operators are encouraged to voluntarily conduct and practice impact assessments to promote responsible AI use and social trust.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1538,
+          "end_char": 1646
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.75,
+      "confidence": 0.82,
       "evidence": [
         {
-          "quote": "과학기술정보통신부장관은 제1항에 따른 요청이 있는 경우 고영향 인공지능 해당 여부를 확인하여야 하며, 필요한 경우 전문위원회를 설치하여 관련 자문을 받을 수 있다",
-          "source_section": "법 제33조"
-        },
-        {
-          "quote": "과학기술정보통신부는 영향평가에 관한 법과 시행령 등 제도적 기반을 마련한 이후, 전담기관인 정보통신정책연구원을 통해 가이드라인과 절차 운영에 관한 전문적 지원을 제공",
-          "source_section": "6. 평가 수행 및 지원체계"
+          "quote": "③과학기술정보통신부장관은 제1항에 따른 요청을 받은 경우에는 요청을 받은 날로부터 30일 이내에 회신해야 한다. 다만, 제품 등의 복잡성 및 중요성 등을 고려하여 30일 이내에 회신할 수 없는 경우에는 30일의 범위에서 한 차례 연장할 수 있으며, 이 경우 확인을 요청한 자에게 연장 사유와 연장 기간을 문서로 알려야 한다.",
+          "source_section": "총론 - 3. 평가 대상 (시행령안 제25조)",
+          "quote_en": "MSIT shall respond within 30 days to high-impact AI confirmation requests (extendable once by up to 30 days with written notice of reasons and duration).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2770,
+          "end_char": 2951
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "과학기술정보통신부장관 (Minister of Science and ICT)",
-    "전문위원회 (Expert Committee)"
+    "Ministry of Science and ICT (과학기술정보통신부)",
+    "National Information Society Agency (한국지능정보사회진흥원)",
+    "Korea Information Society Development Institute (정보통신정책연구원, KISDI — dedicated impact assessment support agency)",
+    "Personal Information Protection Commission (개인정보보호위원회 — PIPA PIA coordination)",
+    "Ministry of Food and Drug Safety (식품의약품안전처 — Digital Medical Product Impact Assessment coordination)"
   ],
   "compliance_deadlines": [
-    "고영향 인공지능 확인 요청 시 30일 이내 회신 (연장 시 최대 60일)"
+    "Prior to deployment (신규 인공지능 제품 또는 서비스 제공 전): Recommended timing for conducting AI Impact Assessments, with re-assessment recommended upon material changes to core functions or affected rights/groups; voluntary assessment recommended for legacy systems predating 2026-01-22",
+    "Within 30 days (extendable once by up to 30 days; 10-day appeal window): MSIT high-impact AI confirmation and re-confirmation review timelines referenced under Draft Decree Art. 25"
   ],
   "penalties_summary": null,
-  "implementation_notes": "The guideline implements Article 35 of the AI Basic Act (인공지능 발전과 신뢰 기반 조성 등에 관한 기본법). The impact assessment is framed as a best-effort obligation ('노력하여야 한다') for AI business operators providing high-impact AI products/services, not a strict legal mandate. Public institutions must preferentially consider products/services that have undergone impact assessment. Voluntary self-assessment is encouraged for all AI products. Interoperability with EU FRIA (AI Act Art. 27) and UNESCO Ethical Impact Assessment frameworks is an explicit design goal. Detailed procedures are to be specified by Presidential Decree.",
-  "confidence": 0.82
+  "implementation_notes": "Official MSIT/NIA/KISDI implementation guideline under AI Basic Act Art. 35 and Draft Decree Art. 28 establishing a voluntary three-stage methodology (Pre-preparation, Main Assessment, Post-assessment) for Fundamental Rights Impact Assessments. Draws explicitly on Korean Constitutional Court jurisprudence across 11 fundamental rights (AI-general rights such as data self-determination, privacy, equality, property; product/service rights such as life, health, expression, assembly, right to know, occupational, artistic, and academic freedom) as well as EU AI Act Art. 27 FRIA, EU GPAI Code of Practice, UNESCO Ethical Impact Assessment, and ISO/IEC 42001/42005 to foster cross-border interoperability and prevent duplicative evaluations alongside PIPA PIA and MFDS Digital Medical Product Impact Assessments. Includes a standardized report template, three worked hypothetical cases (AI recruitment, deepfake face-swap, AI student grading), KISDI consulting desk contacts, and FAQ.",
+  "confidence": 0.97
 }

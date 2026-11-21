@@ -1,0 +1,85 @@
+{
+  "dominant_frame": "innovation_enablement",
+  "secondary_frames": [
+    "economic_competitiveness",
+    "fundamental_rights",
+    "national_security"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.72,
+    "economic_competitiveness": 0.85,
+    "fundamental_rights": 0.78,
+    "social_stability": 0.25,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.35,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.12,
+    "economic_competitiveness": 0.25,
+    "fundamental_rights": 0.16,
+    "social_stability": 0.03,
+    "innovation_enablement": 0.4,
+    "consumer_public_safety": 0.04,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Japan's AI Promotion Act (Act No. 53 of 2025) is predominantly framed around innovation enablement: its core purpose (Article 1) and operative provisions (Articles 3, 4, 6, 7, 11–15) focus on comprehensively promoting end-to-end AI R&D, public-sector and private-sector adoption, shared compute and data infrastructure, talent development, and light-touch guidelines aligned with international norms. Innovation enablement edges out economic competitiveness because the statute's overarching structure emphasizes domestic ecosystem building, administrative and business efficiency, and trustworthy utilization rather than purely zero-sum global rivalry, although economic competitiveness is a strong runner-up explicitly anchored in Article 3(2)'s mandate to create new industries and enhance international industrial competitiveness. Fundamental rights and national security serve as clear secondary frames: Article 3(4) and Article 16 address protecting citizens' rights and interests (such as personal information and copyright) against improper AI use, while Article 3(2) explicitly recognizes AI as important from a national security perspective requiring retention of domestic R&D capability. Criminal misuse and the peace of citizens' lives in Article 3(4) introduce minor consumer/public safety and social stability elements, whereas existential risk and labor transition are absent.",
+  "evidence_spans": [
+    {
+      "quote": "人工知能関連技術の研究開発及び活用の推進に関する施策の総合的かつ計画的な推進を図り、もって国民生活の向上及び国民経済の健全な発展に寄与することを目的とする。",
+      "source_section": "第一条",
+      "quote_en": "The purpose of this Act is to promote policies for the research, development, and utilization of AI-related technologies in a comprehensive and planned manner, thereby contributing to the improvement of citizens' lives and the sound development of the national economy.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 242,
+      "end_char": 320
+    },
+    {
+      "quote": "人工知能関連技術が、その適正かつ効果的な活用によって行政事務及び民間の事業活動の著しい効率化及び高度化並びに新産業の創出をもたらすものとして経済社会の発展の基盤となる技術である",
+      "source_section": "第三条",
+      "quote_en": "AI-related technologies are foundational technologies for economic and social development that, through proper and effective utilization, bring about remarkable efficiency and advancement in administrative affairs and private business activities as well as the creation of new industries.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1161,
+      "end_char": 1249
+    },
+    {
+      "quote": "我が国において人工知能関連技術の研究開発を行う能力を保持するとともに、人工知能関連技術に関する産業の国際競争力を向上させることを旨として、行うものとする。",
+      "source_section": "第三条",
+      "quote_en": "It shall be carried out with the aim of maintaining Japan's capacity to conduct research and development of AI-related technologies and improving the international competitiveness of industries related to AI-related technologies.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 1278,
+      "end_char": 1355
+    },
+    {
+      "quote": "経済社会の発展の基盤となる技術であるとともに、安全保障の観点からも重要な技術であることに鑑み、我が国において人工知能関連技術の研究開発を行う能力を保持する",
+      "source_section": "第三条",
+      "quote_en": "In view of the fact that AI-related technologies are foundational to economic and social development as well as important technologies from the perspective of national security, Japan shall maintain its capacity to conduct research and development of AI-related technologies.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 1231,
+      "end_char": 1308
+    },
+    {
+      "quote": "不正な目的又は不適切な方法で行われた場合には、犯罪への利用、個人情報の漏えい、著作権の侵害その他の国民生活の平穏及び国民の権利利益が害される事態を助長するおそれがあることに鑑み、その適正な実施を図るため、人工知能関連技術の研究開発及び活用の過程の透明性の確保その他の必要な施策が講じられなければならない。",
+      "source_section": "第三条",
+      "quote_en": "In view of the risk that, if conducted for improper purposes or by inappropriate methods, the R&D and utilization of AI-related technologies may foster use in crime, leakage of personal information, copyright infringement, and other situations harming the tranquility of citizens' lives and citizens' rights and interests, transparency and other necessary measures shall be taken to ensure proper implementation.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 1850,
+      "end_char": 2002
+    },
+    {
+      "quote": "不正な目的又は不適切な方法による人工知能関連技術の研究開発又は活用に伴って国民の権利利益の侵害が生じた事案の分析及びそれに基づく対策の検討",
+      "source_section": "第十六条",
+      "quote_en": "Analysis of cases in which infringement of citizens' rights and interests has occurred in connection with the R&D or utilization of AI-related technologies for improper purposes or by inappropriate methods, and examination of countermeasures based thereon.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 6291,
+      "end_char": 6360
+    }
+  ]
+}

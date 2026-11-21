@@ -2,81 +2,202 @@
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.75,
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
       "evidence": [
         {
+          "quote": "情報システム一般のリスク・クラウド特有のリスク・生成AI特有のリスクを洗い出し対策を講じた。",
+          "source_section": "Page 30",
+          "quote_en": "General information system risks, cloud-specific risks, and generative AI-specific risks were identified and countermeasures were implemented.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
           "quote": "団体が想定するセキュリティリスクと使用するデータに対して対応策や取扱い方針を講じているかを報告してもらい、本事業全体のセキュリティ方針に照らして適切であることを確認した。",
-          "source_section": "1.4 実証事業の進め方 実証事業における進捗及びセキュリティの管理方法"
+          "source_section": "Page 14",
+          "quote_en": "Organizations were asked to report whether countermeasures and handling policies were in place for anticipated security risks and the data to be used, and appropriateness was confirmed against the overall security policy of the project.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.7,
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "本事業において得られた知見・ノウハウ等は、報告書として公開するため、その権利はこども家庭庁に帰属することを了承する",
-          "source_section": "1.3 公募概要 応募条件と応募方法"
-        }
-      ]
-    },
-    {
-      "label": "incident_reporting",
-      "confidence": 0.65,
-      "evidence": [
-        {
-          "quote": "採択団体の担当職員は会議（オンライン会議含む）で定期的（最低でも1か月に1回以上を想定）に進捗状況等を報告する",
-          "source_section": "1.3 公募概要 応募条件と応募方法"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "生成AIの出力情報の確認に専門的な知見が必要な業務は生成AIの価値が実感されにくい",
-          "source_section": "2.2 自治体職員向けユースケースの総括"
+          "quote": "生成AIのシステム画面上で生成AIを利用しているシステムであること、個人情報を入力しないよう免責注意事項を表示する。",
+          "source_section": "Page 25",
+          "quote_en": "Display a notice on the generative AI system screen stating that the system uses generative AI and a disclaimer warning not to enter personal information.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "人による適切な指示と出力情報の検証が必要であり、かつ検証作業自体に専門性が必要となるため職員の負担になっている",
-          "source_section": "2.2 自治体職員向けユースケースの総括"
+          "quote": "生成AIの回答だけでなく、回答の根拠となる出典元のURLを表示することで回答内容の正確性を担保する対応が考えられる。",
+          "source_section": "Page 29",
+          "quote_en": "A possible countermeasure to ensure accuracy is to display not only the generative AI's response but also the source URL serving as the basis for the response.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "入力されたプロンプト及び出力情報のロギングを行い、システム上に利用者からのフィードバックを得る仕組みを構築しました。",
+          "source_section": "Page 178",
+          "quote_en": "We logged input prompts and output information and built a mechanism on the system to collect feedback from users.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "プロンプト入力や音声等の情報をセットした時には、端末、時間等を記録して保存する。管理職が定期・不定期に記録の確認を行った。",
+          "source_section": "Page 193",
+          "quote_en": "When prompts or audio and other information were entered, the terminal, time, and other details were recorded and stored. Managers checked the records periodically and irregularly.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.7,
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
       "evidence": [
         {
+          "quote": "取扱う情報の自治体機密性レベルに応じて利用可能なデータセンタ及びデプロイ方式を用いた。",
+          "source_section": "Page 30",
+          "quote_en": "Available data centers and deployment methods were used in accordance with the municipal confidentiality level of the information handled.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "不正アクセス対策として、MFAによる不正ログイン対策、アクセス可能IPアドレス制御を行った。",
+          "source_section": "Page 178",
+          "quote_en": "As measures against unauthorized access, unauthorized login prevention using MFA and accessible IP address controls were implemented.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "文章・画像の出力情報をそのまま利用せず、人によって加工や修正を加える対応が考えられる。",
+          "source_section": "Page 26",
+          "quote_en": "A possible countermeasure is to have humans edit and revise output text and images rather than using them as-is.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "生成AIに係る固有のリスクを踏まえ、出力情報はあくまで参考として取扱い、内容の十分な確認や参考情報である旨の明示を行った。",
+          "source_section": "Page 49",
+          "quote_en": "In light of risks inherent to generative AI, output information was treated strictly as reference, its contents were thoroughly verified, and it was clearly indicated as reference information.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.86,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "入力した情報が生成AIの学習に利用されない生成AIサービスを選定する。",
+          "source_section": "Page 25",
+          "quote_en": "Select a generative AI service in which entered information is not used for training the generative AI.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "入力情報が生成AIモデルに学習されないサービスを用いた。",
+          "source_section": "Page 30",
+          "quote_en": "A service was used in which input information is not used to train the generative AI model.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.72,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "約款型ではないサービスを利用した上で、デジタル庁の承認を得た。",
+          "source_section": "Page 30",
+          "quote_en": "After using a non-standard-terms (contract-based) service, approval was obtained from the Digital Agency.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
           "quote": "実証に用いた生成AIサービス詳細及びデジタル庁指定のリスクとその対応策を講じているかを報告してもらい、本事業全体のセキュリティ方針に照らして適切であることを確認した。",
-          "source_section": "1.4 実証事業の進め方 実証事業における進捗及びセキュリティの管理方法"
+          "source_section": "Page 14",
+          "quote_en": "Organizations reported details of the generative AI services used in the demonstration and whether countermeasures were taken for risks designated by the Digital Agency, confirming appropriateness against the project's overall security policy.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "reporting_obligation",
-      "confidence": 0.85,
+      "label": "soft_enforcement",
+      "confidence": 0.92,
       "evidence": [
         {
-          "quote": "採択団体の担当職員は会議（オンライン会議含む）で定期的（最低でも1か月に1回以上を想定）に進捗状況等を報告する",
-          "source_section": "1.3 公募概要 応募条件と応募方法"
+          "quote": "生成AI利用時の論点・課題・効果等を整理し、ハンドブックとして公開することで、自治体や子育て関連事業者等における生成AIの適切な利用等を進める。",
+          "source_section": "Page 5",
+          "quote_en": "By organizing issues, challenges, and effects of using generative AI and publishing them as a handbook, promote appropriate use of generative AI by municipalities and child-rearing related businesses.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "こども家庭庁及びこども家庭庁が指定する者による採択団体への現地調査（実証状況や現場の実態などを正確に把握するために行う調査）を受け入れる",
-          "source_section": "1.3 公募概要 応募条件と応募方法"
-        }
-      ]
-    },
-    {
-      "label": "soft_enforcement",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "生成AIを利用した取組を実証的に実施した。また、調査と実証から生成AI利用時の論点・課題・効果等を整理し、ハンドブックとして公開することで、自治体や子育て関連事業者等における生成AIの適切な利用等を進めることを目的としている",
-          "source_section": "1.1 本事業の目的と実証事業の位置づけ"
+          "quote": "各セキュリティ論点に対し、今回の実証において守るべき方針を定めたうえで、各団体にはその範囲内で実証を実施してもらった。",
+          "source_section": "Page 30",
+          "quote_en": "For each security issue, policies to be observed during this demonstration were established, and each participating organization conducted its demonstration within that scope.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }

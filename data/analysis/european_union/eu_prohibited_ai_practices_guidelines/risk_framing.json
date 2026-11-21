@@ -2,36 +2,83 @@
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
     "consumer_public_safety",
-    "social_stability",
     "innovation_enablement"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
+    "national_security": 0.2,
     "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.85,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.6,
-    "labor_transition": 0.05
+    "fundamental_rights": 0.98,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.75,
+    "consumer_public_safety": 0.85,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document consistently frames AI governance around protecting fundamental rights, democracy, rule of law, and human dignity. The risk classification system centers on 'unacceptable risks to fundamental rights and Union values.' Harms are analyzed in terms of physical, psychological, and societal impacts on individuals' rights and freedoms. Innovation enablement is a secondary but explicit goal.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.03,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.65,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.12,
+    "consumer_public_safety": 0.2,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The Commission Guidelines on prohibited AI practices under Article 5 of the EU AI Act are overwhelmingly framed around fundamental_rights. Every prohibited practice—harmful manipulation and exploitation, social scoring, predictive policing based solely on profiling, untargeted facial scraping, workplace/educational emotion recognition, sensitive biometric categorisation, and real-time remote biometric identification—is explicitly justified as protecting human dignity, individual autonomy, privacy, data protection, non-discrimination, equality, presumption of innocence, and democratic freedoms under the EU Charter. Consumer_public_safety is a prominent secondary frame, particularly in the guidelines' emphasis on the AI Act's product safety logic, preventing physical, psychological, and financial harms to consumers, children, the elderly, and other vulnerable groups, and safeguarding life and physical safety. Innovation_enablement appears as a supporting secondary frame through recurring statements that the prohibitions must be interpreted proportionately to provide legal certainty, preserve scientific R&D, and promote trustworthy AI uptake alongside rights protection. Fundamental_rights clearly edges out consumer_public_safety and innovation_enablement because Charter rights and Union values constitute the primary legal and normative basis for declaring all eight practices unacceptable. National_security is referenced only marginally—primarily as a scope exclusion and in narrow law-enforcement counter-terrorism exceptions—while existential_catastrophic, economic_competitiveness, social_stability, and labor_transition are absent or purely incidental.",
   "evidence_spans": [
     {
-      "quote": "Its aim is to promote innovation in and the uptake of AI, while ensuring a high level of protection of health, safety and fundamental rights in the Union, including democracy and the rule of law.",
-      "source_section": "Page 6"
+      "quote": "Article 5 AI Act prohibits the placing on the EU market, putting into service, or use of\ncertain AI systems for manipulative, exploitative, social control or surveillance practices, which by their inherent nature violate fundamental rights and Union values.",
+      "source_section": "Section 2. Overview of prohibited AI practices (para 8)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 19179,
+      "end_char": 19436
     },
     {
-      "quote": "Unacceptable risk: AI systems posing unacceptable risks to fundamental rights and Union values are prohibited under Article 5 AI Act.",
-      "source_section": "Page 6"
+      "quote": "AI-based biometric categorisation systems for the purpose of assigning natural persons to specific groups or categories, relating to aspects such as sexual or political orientation or race, violate human dignity and pose significant risks to other fundamental rights, such as privacy and non-discrimination.",
+      "source_section": "Section 8.1. Rationale and objectives (para 272)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 294280,
+      "end_char": 294587
     },
     {
-      "quote": "they strive to interpret the prohibitions in a proportionate manner that achieves the objectives of the AI Act to protect fundamental rights and safety",
-      "source_section": "Page 6"
+      "quote": "In line with its product safety logic, the AI Act aims to prohibit AI-enabled manipulation and deception resulting in significant physical harm.",
+      "source_section": "Section 3.2.3. (Reasonably likely to) cause significant harm (para 87)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 102536,
+      "end_char": 102680
     },
     {
-      "quote": "broader societal harms and contradict Union values of respect for human dignity, freedom, equality, democracy and the rule of law and fundamental rights enshrined in the Charter",
-      "source_section": "Page 32"
+      "quote": "Both the AI Act and the UCPD aim to proactively prevent consumer harm from AI-driven business practices that are manipulative, misleading, or aggressive.",
+      "source_section": "Section 3.6. Interplay with other Union law (para 136)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 157229,
+      "end_char": 157382
+    },
+    {
+      "quote": "They strive to interpret the prohibitions in a proportionate manner that achieves the objectives of the AI Act to protect fundamental rights and safety, while promoting innovation and providing legal certainty.",
+      "source_section": "Section 1. Background and objectives (para 4)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 17638,
+      "end_char": 17848
+    },
+    {
+      "quote": "As clarified in recital 25 AI Act, the AI Act aims to support innovation and recognises the importance of scientific research in advancing AI technologies and contributing to scientific progress and innovation.",
+      "source_section": "Section 2.5.3. Research & Development (para 31)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 42269,
+      "end_char": 42479
     }
   ]
 }

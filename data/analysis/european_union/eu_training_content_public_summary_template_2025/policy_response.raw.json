@@ -1,56 +1,59 @@
 {
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
   "metadata_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_01B9ckGU9ihVjj5hVX35jy8j",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"issuing_body\":\"European Commission / AI Office\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2025\",\"effective_date\":\"2025-08-02\",\"covered_actors\":[\"providers of general-purpose AI models\",\"providers of general-purpose AI models released under free and open-source licenses\"],\"covered_application_domains\":[\"general_purpose_models\"],\"prohibited_practices\":[],\"enforcement_authorities\":[\"AI Office\",\"AI Board\"],\"compliance_deadlines\":[\"2 August 2025 - rules under Section 2 of Chapter V AI Act apply, including Article 53(1)(d) obligation\"],\"penalties_summary\":null,\"implementation_notes\":\"This document is a template and explanatory notice issued by the AI Office under Article 53(1)(d) of the EU AI Act, requiring all GPAI model providers to publish a public summary of training content. The template has three sections: general information, list of data sources, and relevant data processing aspects. Providers may voluntarily disclose more than the minimum required. The open-source exception under Article 53(2) does not apply to this obligation. A voluntary 'upon request' mechanism for rightsholders regarding domain names not listed in the summary is recommended but not mandatory.\",\"confidence\":0.92}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 5364,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 291,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 16145,
+      "candidatesTokenCount": 639,
+      "totalTokenCount": 18989,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 16145
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 639
+        }
+      ],
+      "thoughtsTokenCount": 2205,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "5y4Ba5iMHKSS8L0Ph9G6iA0"
   },
   "controls_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_01KXV8TRRp4NU7vSvJX5NUJN",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"safety_requirements\":[{\"label\":\"transparency_disclosure\",\"confidence\":0.97,\"evidence\":[{\"quote\":\"Article 53(1)(d) AI Act requires all providers of general-purpose AI models to draw up and make publicly available a sufficiently detailed public summary of the content used for the training of the model\",\"source_section\":\"Page 2\"},{\"quote\":\"the objective of the Summary is to increase transparency on the content used for the training of general-purpose AI models, including text and data protected by law\",\"source_section\":\"Page 3\"}]},{\"label\":\"model_documentation\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"The Template consists of three main sections: 1. General information... 2. List of data sources... 3. Relevant data processing aspects\",\"source_section\":\"Page 5\"}]}],\"enforcement_mechanisms\":[{\"label\":\"reporting_obligation\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"Providers of general-purpose AI models shall […] draw up and make publicly available a sufficiently detailed summary about the content used for training of the general-purpose AI model, according to a template provided by the AI Office\",\"source_section\":\"Page 3\"}]},{\"label\":\"regulatory_supervision\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"the AI Office to provide a template for the summary, which should be simple, effective, and allow the provider to provide the required summary in narrative form\",\"source_section\":\"Page 3\"}]}]}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 6135,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 324,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 16298,
+      "candidatesTokenCount": 939,
+      "totalTokenCount": 21957,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 16298
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 939
+        }
+      ],
+      "thoughtsTokenCount": 4720,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "_y4Ba-iYKt6-odAPmv6jeA"
   }
 }

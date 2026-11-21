@@ -2,39 +2,76 @@
   "dominant_frame": "economic_competitiveness",
   "secondary_frames": [
     "innovation_enablement",
-    "labor_transition"
+    "labor_transition",
+    "consumer_public_safety",
+    "fundamental_rights"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.82,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.65,
-    "consumer_public_safety": 0.0,
-    "labor_transition": 0.35
+    "national_security": 0.05,
+    "economic_competitiveness": 0.97,
+    "fundamental_rights": 0.4,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.45,
+    "labor_transition": 0.74
   },
-  "rationale_summary": "The document frames AI governance primarily as a competitiveness challenge, explicitly noting Japan's lag behind the US and China in research, talent, data, and venture support, and calling for Japan to 'win fierce competition' and 'lead the world.' The industrialization roadmap, sectoral productivity targets, and market acquisition goals further reinforce this frame. Innovation enablement is secondary, as the plan details R&D and social implementation programs. Labor/talent transition appears through extensive workforce development sections.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.5,
+    "fundamental_rights": 0.05,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.28,
+    "consumer_public_safety": 0.05,
+    "labor_transition": 0.12
+  },
+  "rationale_summary": "Economic competitiveness is unequivocally the dominant frame: the plan explicitly opens by citing an intensifying AI hegemony race led by US and Chinese enterprises, warning that Japan lags behind both countries in research output, business adoption, talent, data linkage, and venture creation, and mobilizing ministries around an Industrialization Roadmap aimed at winning global competition, boosting sectoral productivity, capturing new markets, and matching US/Chinese startup ecosystems. Innovation enablement is a strong runner-up, promoting open innovation across industry-academia-government, interoperable cross-sector data platforms, extraction of institutional/legal barriers facing AI startups, and an explicit stance that AI development should not be restricted merely because deep learning remains partly unexplained. Labor transition forms a notable third frame through extensive workforce reskilling, recurrent adult IT education, raised training-benefit subsidies, and vocational IT literacy training for unemployed job seekers, alongside acknowledging concerns over negative impacts on existing employment. Consumer/public safety (disaster mitigation, medical diagnostics, high-risk AI quality assurance, cyber-physical security) and fundamental rights (privacy-preserving R&D, cross-border personal data protection, ELSI analysis) appear as minor secondary themes.",
   "evidence_spans": [
     {
-      "quote": "米国のＩＴ企業や中国の企業等による覇権争いが激しさを増しており",
-      "source_section": "Page 1"
+      "quote": "ここ数年のビッグデータ等を通じたＡＩ技術の利活用に関し、米国のＩＴ企業や中国の企業等による覇権争いが激しさを増しており、様々な分野で従来の延長線上にない破壊的イノベーションが生み出されてきているが、我が国は米国や中国に比べると研究論文数やビジネスへの導入、人材の育成、データ連携、ベンチャー支援等で後れを取っている状況である。",
+      "source_section": "Page 1",
+      "quote_en": "In recent years, competition for hegemony by US IT companies and Chinese companies in utilizing AI technologies through big data has intensified, producing disruptive innovation across fields, yet Japan lags behind the US and China in research papers, business adoption, talent development, data linkage, and venture support.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 275,
+      "end_char": 438
     },
     {
-      "quote": "我が国は米国や中国に比べると研究論文数やビジネスへの導入、人材の育成、データ連携、ベンチャー支援等で後れを取っている",
-      "source_section": "Page 1"
+      "quote": "熾烈な競争に打ち勝ち、我が国が世界をリードしていくためには、人工知能技術戦略で定めた（１）研究開発、（２）人材育成、（３）産学官が有するデータ及びツール群の環境整備、（４）ベンチャー支援、（５）ＡＩ技術の開発に係る理解促進が鍵となっており、産業化ロードマップの実現に向けて、今まさに我が国が一丸となって実行することが真に求められている。",
+      "source_section": "Page 1",
+      "quote_en": "To prevail in fierce competition and lead the world, the five pillars of the AI Technology Strategy—R&D, talent development, data and tool infrastructure, venture support, and promoting understanding—are key, and Japan must truly unite right now to execute the Industrialization Roadmap.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 529,
+      "end_char": 697
     },
     {
-      "quote": "熾烈な競争に打ち勝ち、我が国が世界をリードしていくためには",
-      "source_section": "Page 1"
+      "quote": "ディープラーニングなどはまだ原理的に未解明な部分はあるが、それによって開発自体が制限されるべきではなく、開発を進めた上で十分な検証を行うことが重要である。",
+      "source_section": "Page 16 (AI技術の開発に係る理解促進)",
+      "quote_en": "Although aspects of deep learning remain theoretically unexplained, development itself should not be restricted as a result; rather, it is important to advance development and conduct thorough verification.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 23698,
+      "end_char": 23775
     },
     {
-      "quote": "熾烈な国際競争下で世界に伍していくための本格的な計画を策定する",
-      "source_section": "Page 1"
+      "quote": "ＳＩＰを含む政府が取り組む研究開発・実証実験等についてＡＩ関連ベンチャーの阻害要因となる制度的・法的課題を抽出・整理し、創業ＴＦに提示(P)",
+      "source_section": "Page 15 (ベンチャー支援)",
+      "quote_en": "Identify and organize institutional and legal issues that impede AI-related ventures across government R&D and demonstration experiments including SIP, and submit them to the Startup Task Force.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 23318,
+      "end_char": 23388
     },
     {
-      "quote": "スマート農業技術の国内外への展開による１，０００億円以上の市場獲得",
-      "source_section": "Page 2"
+      "quote": "雇用保険（失業保険）を受給している求職者等を対象として、キャリアアップや\n希望する就職を実現するために、必要な職業スキルや知識を習得することが\nできるよう、基礎的ＩＴリテラシー習得のための職業訓練の開発・実施を検討",
+      "source_section": "Page 9 (人材育成 — 一般IT人材)",
+      "quote_en": "Examine developing and implementing vocational training in basic IT literacy for job seekers receiving employment insurance so they can acquire the occupational skills and knowledge needed for career advancement and desired employment.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 13527,
+      "end_char": 13634
     }
   ]
 }

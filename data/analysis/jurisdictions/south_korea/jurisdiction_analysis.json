@@ -2,8 +2,8 @@
   "jurisdiction": "south_korea",
   "analysis_method": "deterministic_v2",
   "analysis_version": "0.2.0",
-  "generated_at": "2026-11-21T02:28:21.287851Z",
-  "source_count": 16,
+  "generated_at": "2026-11-21T06:36:37.950979Z",
+  "source_count": 17,
   "source_document_ids": [
     "kr_ai_and_data_administration_act",
     "kr_ai_basic_act",
@@ -15,6 +15,7 @@
     "kr_ai_transparency_guideline_2026",
     "kr_genai_medical_device_guideline_2025",
     "kr_genai_personal_data_guide_2025",
+    "kr_high_impact_ai_determination_guideline_2026",
     "kr_high_impact_ai_operator_obligations_guideline_2026",
     "kr_public_personal_data_ai_guide_2024",
     "kr_public_sector_ai_privacy_pia_items_2025",
@@ -24,21 +25,12 @@
   ],
   "source_window_start": "2024-04-23",
   "source_window_end": "2026-02-27",
-  "summary": "South Korea's current AI governance record is guidance-heavy, with Ministry of Science and ICT (MSIT) and Personal Information Protection Commission (PIPC) appearing most often in the source base. Across the analyzed documents, Fundamental rights and Consumer and public safety both materially shape the jurisdiction's rationale, while transparency and disclosure, human oversight, and risk assessment recur most often in the operative expectations.",
-  "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from Ministry of Science and ICT (MSIT), Personal Information Protection Commission (PIPC), and AI Privacy Team (인공지능프라이버시팀), and the corpus is weighted toward regulatory guidance and legislation.",
-  "framing_landscape": "The framing mix is relatively split: Fundamental rights leads, but Consumer and public safety is close enough that the jurisdiction should not be read through a single rationale alone.",
-  "implementation_and_enforcement": "Operationally, the sources most often point to transparency and disclosure, human oversight, and risk assessment. When the corpus gets concrete about consequences, it most often references regulatory supervision and soft enforcement.",
-  "source_coverage_note": "This readout is based on 16 analyzed documents spanning 2024-04-23 to 2026-02-27. The corpus is weighted toward regulatory guidance and legislation. On the binding side it leans toward regulatory guidance and binding law, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are 인공지능 및 데이터 기반 행정 활성화에 관한 법률 and 인공지능 투명성 확보 가이드라인.",
+  "summary": "South Korea's current AI governance record is guidance-heavy, with Ministry of Science and ICT (MSIT) and Personal Information Protection Commission (PIPC) appearing most often in the source base. Across the analyzed documents, Fundamental rights and Innovation enablement both materially shape the jurisdiction's rationale, while risk assessment, training data governance, and transparency and disclosure recur most often in the operative expectations.",
+  "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from Ministry of Science and ICT (MSIT), Personal Information Protection Commission (PIPC), and AI Safety Institute (AISI), and the corpus is weighted toward regulatory guidance and legislation.",
+  "framing_landscape": "The framing mix is relatively split: Fundamental rights leads, but Innovation enablement is close enough that the jurisdiction should not be read through a single rationale alone.",
+  "implementation_and_enforcement": "Operationally, the sources most often point to risk assessment, training data governance, and transparency and disclosure. Enforcement language is comparatively soft and usually framed through soft enforcement and regulatory supervision rather than hard sanctions.",
+  "source_coverage_note": "This readout is based on 17 analyzed documents spanning 2024-04-23 to 2026-02-27. The corpus is weighted toward regulatory guidance and legislation. On the binding side it leans toward regulatory guidance and binding law, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are 인공지능 및 데이터 기반 행정 활성화에 관한 법률 and 인공지능 투명성 확보 가이드라인.",
   "key_sources": [
-    {
-      "document_id": "kr_ai_basic_act_enforcement_decree",
-      "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 시행령",
-      "publication_date": "2026-01-20",
-      "document_type": "legislation",
-      "binding_strength": "binding_law",
-      "dominant_frame": "consumer_public_safety",
-      "contribution": "Statutory anchor for transparency and disclosure and risk assessment, with civil penalties as the clearest consequence or oversight hook."
-    },
     {
       "document_id": "kr_ai_and_data_administration_act",
       "title": "인공지능 및 데이터 기반 행정 활성화에 관한 법률",
@@ -46,7 +38,16 @@
       "document_type": "legislation",
       "binding_strength": "binding_law",
       "dominant_frame": "innovation_enablement",
-      "contribution": "Statutory anchor for risk assessment and human oversight, with reporting obligations as the clearest consequence or oversight hook."
+      "contribution": "Statutory anchor for risk assessment and registration or licensing, with reporting obligations as the clearest consequence or oversight hook."
+    },
+    {
+      "document_id": "kr_ai_basic_act_enforcement_decree",
+      "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 시행령",
+      "publication_date": "2026-01-20",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "dominant_frame": "innovation_enablement",
+      "contribution": "Statutory anchor for compute governance and frontier safety evaluation, with civil penalties as the clearest consequence or oversight hook."
     },
     {
       "document_id": "kr_ai_basic_act",
@@ -54,8 +55,8 @@
       "publication_date": "2025-01-21",
       "document_type": "legislation",
       "binding_strength": "binding_law",
-      "dominant_frame": "economic_competitiveness",
-      "contribution": "Statutory anchor for risk assessment and human oversight, with civil penalties as the clearest consequence or oversight hook."
+      "dominant_frame": "innovation_enablement",
+      "contribution": "Statutory anchor for risk assessment and incident reporting, with civil penalties as the clearest consequence or oversight hook."
     },
     {
       "document_id": "kr_ai_impact_assessment_guideline_2026",
@@ -64,118 +65,108 @@
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "dominant_frame": "fundamental_rights",
-      "contribution": "Regulatory implementation anchor for risk assessment and pre-deployment testing, with soft enforcement as the clearest consequence or oversight hook."
+      "contribution": "Regulatory implementation anchor for risk assessment and third-party audit, with procurement conditions as the clearest consequence or oversight hook."
     }
   ],
   "top_document_types": [
     {
       "label": "regulatory_guidance",
-      "count": 10,
-      "share": 0.625
+      "count": 14,
+      "share": 0.824
     },
     {
       "label": "legislation",
-      "count": 4,
-      "share": 0.25
-    },
-    {
-      "label": "standards_guideline",
-      "count": 2,
-      "share": 0.125
+      "count": 3,
+      "share": 0.176
     }
   ],
   "top_binding_strengths": [
     {
       "label": "regulatory_guidance",
-      "count": 10,
-      "share": 0.625
+      "count": 14,
+      "share": 0.824
     },
     {
       "label": "binding_law",
-      "count": 5,
-      "share": 0.312
-    },
-    {
-      "label": "standards_guideline",
-      "count": 1,
-      "share": 0.062
+      "count": 3,
+      "share": 0.176
     }
   ],
   "top_requirements": [
     {
+      "label": "risk_assessment",
+      "count": 16,
+      "share": 0.941
+    },
+    {
+      "label": "training_data_governance",
+      "count": 16,
+      "share": 0.941
+    },
+    {
       "label": "transparency_disclosure",
       "count": 16,
-      "share": 1.0
-    },
-    {
-      "label": "human_oversight",
-      "count": 15,
-      "share": 0.938
-    },
-    {
-      "label": "risk_assessment",
-      "count": 15,
-      "share": 0.938
+      "share": 0.941
     },
     {
       "label": "model_documentation",
-      "count": 13,
-      "share": 0.812
+      "count": 14,
+      "share": 0.824
     }
   ],
   "top_enforcement_mechanisms": [
     {
-      "label": "regulatory_supervision",
-      "count": 15,
-      "share": 0.938
+      "label": "soft_enforcement",
+      "count": 17,
+      "share": 1.0
     },
     {
-      "label": "soft_enforcement",
-      "count": 11,
-      "share": 0.688
+      "label": "regulatory_supervision",
+      "count": 12,
+      "share": 0.706
     },
     {
       "label": "reporting_obligation",
-      "count": 9,
-      "share": 0.562
+      "count": 8,
+      "share": 0.471
     },
     {
-      "label": "civil_penalty",
-      "count": 3,
-      "share": 0.188
+      "label": "procurement_condition",
+      "count": 5,
+      "share": 0.294
     }
   ],
   "top_frames": [
     {
       "label": "fundamental_rights",
-      "score": 5.546,
-      "share": 0.347,
-      "document_mentions": 14
-    },
-    {
-      "label": "consumer_public_safety",
-      "score": 4.383,
-      "share": 0.274,
-      "document_mentions": 16
+      "score": 6.22,
+      "share": 0.366,
+      "document_mentions": 17
     },
     {
       "label": "innovation_enablement",
-      "score": 2.384,
-      "share": 0.149,
-      "document_mentions": 8
+      "score": 4.84,
+      "share": 0.285,
+      "document_mentions": 16
+    },
+    {
+      "label": "consumer_public_safety",
+      "score": 3.34,
+      "share": 0.196,
+      "document_mentions": 17
     },
     {
       "label": "economic_competitiveness",
-      "score": 1.173,
-      "share": 0.073,
-      "document_mentions": 4
+      "score": 1.23,
+      "share": 0.072,
+      "document_mentions": 10
     }
   ],
   "key_institutions": [
     "Ministry of Science and ICT (MSIT)",
     "Personal Information Protection Commission (PIPC)",
-    "AI Privacy Team (인공지능프라이버시팀)",
-    "Ministry of Food and Drug Safety (MFDS), Medical Device Review Division"
+    "AI Safety Institute (AISI)",
+    "Ministry of the Interior and Safety (행정안전부)"
   ],
-  "confidence": 0.797
+  "confidence": 0.956
 }

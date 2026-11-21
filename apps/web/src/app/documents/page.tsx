@@ -69,14 +69,14 @@ export default async function DocumentsPage() {
             quotes.
           </p>
 
-          <div className="mx-auto mt-5 flex max-w-[1040px] flex-wrap items-center justify-center gap-x-5 gap-y-1.5 border-t border-white/10 pt-4 font-mono text-[11px] uppercase tracking-[0.1em] text-[#94a3b8]">
+          <div className="mx-auto mt-5 flex max-w-[1040px] flex-wrap items-center justify-center gap-x-4 gap-y-1.5 border-t border-white/10 pt-4 font-mono text-[11px] uppercase tracking-[0.1em] text-[#94a3b8]">
             <span>
               <span className="mr-1 text-[#f1f5f9] tabular-nums">
                 {documents.length}
               </span>
               corpus total
             </span>
-            <span aria-hidden className="text-[#475569]">
+            <span aria-hidden className="hidden text-[#475569] sm:inline">
               ·
             </span>
             <span>
@@ -85,7 +85,7 @@ export default async function DocumentsPage() {
               </span>
               active primary
             </span>
-            <span aria-hidden className="text-[#475569]">
+            <span aria-hidden className="hidden text-[#475569] sm:inline">
               ·
             </span>
             <span>
@@ -96,7 +96,7 @@ export default async function DocumentsPage() {
             </span>
             {stateCounts.parsed > 0 ? (
               <>
-                <span aria-hidden className="text-[#475569]">
+                <span aria-hidden className="hidden text-[#475569] sm:inline">
                   ·
                 </span>
                 <span>
@@ -107,7 +107,7 @@ export default async function DocumentsPage() {
                 </span>
               </>
             ) : null}
-            <span aria-hidden className="text-[#475569]">
+            <span aria-hidden className="hidden text-[#475569] sm:inline">
               ·
             </span>
             <span>

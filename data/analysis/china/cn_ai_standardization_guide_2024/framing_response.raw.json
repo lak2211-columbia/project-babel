@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01FvKdT2Sh5Z75qdH1xBdnde",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"economic_competitiveness\",\"secondary_frames\":[\"innovation_enablement\",\"consumer_public_safety\"],\"frame_confidence\":{\"existential_catastrophic\":0.02,\"national_security\":0.1,\"economic_competitiveness\":0.7,\"fundamental_rights\":0.05,\"social_stability\":0.05,\"innovation_enablement\":0.5,\"consumer_public_safety\":0.2,\"labor_transition\":0.05},\"rationale_summary\":\"The document is primarily framed around building China's AI standardization system to drive high-quality industrial development and global competitiveness. The stated goals emphasize seizing the first-mover advantage in AI industry development, expanding market scale, participating in international standards, and enabling new industrialization. Safety and governance standards appear as one component among seven, subordinate to the overarching economic and industrial development framing.\",\"evidence_spans\":[{\"quote\":\"以抢抓人工智能产业发展先机为目标\",\"source_section\":\"二、总体要求\"},{\"quote\":\"为推动我国人工智能产业高质量发展提供坚实的技术支撑\",\"source_section\":\"二、总体要求\"},{\"quote\":\"参与制定国际标准20项以上，促进人工智能产业全球化发展\",\"source_section\":\"二、总体要求\"},{\"quote\":\"人工智能是引领新一轮科技革命和产业变革的基础性和战略性技术，正成为发展新质生产力的重要引擎\",\"source_section\":\"一、产业发展现状\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 7877,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 385,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 10417,
+    "candidatesTokenCount": 1382,
+    "totalTokenCount": 14863,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 10417
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1382
+      }
+    ],
+    "thoughtsTokenCount": 3064,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "3ywBa5unJMCy8L0Phdj8-As"
 }

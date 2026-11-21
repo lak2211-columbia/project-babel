@@ -1,79 +1,58 @@
 {
   "jurisdiction": "united_states",
-  "issuing_body": "Office of Science and Technology Policy (OSTP), The White House",
-  "document_type": "regulatory_guidance",
-  "binding_strength": "voluntary_commitment",
-  "publication_date": null,
+  "issuing_body": "White House Office of Science and Technology Policy",
+  "document_type": "strategy_paper",
+  "binding_strength": "strategy_statement",
+  "publication_date": "2022-10-04",
   "effective_date": null,
   "covered_actors": [
-    "communities",
-    "industry",
-    "governments",
-    "developers",
-    "designers",
-    "deployers",
-    "policymakers",
-    "anyone impacted by automated systems"
+    "Entities developing, designing, deploying, evaluating, or governing automated systems (industry, governments, and communities)",
+    "Oversight bodies and privacy, civil liberties, or ethics officers",
+    "Regulators, auditors, industry standards groups, researchers, civil society, and the American public"
   ],
   "covered_application_domains": [
-    "general_purpose_models",
-    "public_sector_use",
-    "critical_infrastructure",
-    "employment",
-    "education",
-    "healthcare",
-    "finance",
-    "law_enforcement"
+    "public_sector_use"
   ],
   "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "pre_deployment_testing",
       "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "pre-deployment testing, ongoing monitoring, and governance structures for automated systems",
-          "source_section": "What you can do"
+          "quote": "The expectations laid out often mirror existing practices for technology development, including pre-deployment testing, ongoing monitoring, and governance structures for automated systems, but also go further to address unmet needs for change and offer concrete directions for how those changes can be made.",
+          "source_section": "2. What should be expected of automated systems:",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1686,
+          "end_char": 1993
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.9,
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "These reporting expectations are important for transparency, so the American people can have confidence that their rights, opportunities, and access as well as their expectations about technologies are respected",
-          "source_section": "Reporting expectations"
-        }
-      ]
-    },
-    {
-      "label": "risk_assessment",
-      "confidence": 0.75,
-      "evidence": [
+          "quote": "The resulting reports can be provided to the public, regulators, auditors, industry standards groups, or others engaged in independent review, and should be made public as much as possible consistent with law, regulation, and policy, and noting that intellectual property, law enforcement, or national security considerations may prevent public release.",
+          "source_section": "2. What should be expected of automated systems:",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2093,
+          "end_char": 2446
+        },
         {
-          "quote": "guard the American public against many of the potential and actual harms identified by researchers, technologists, advocates, journalists, policymakers, and communities",
-          "source_section": "Introduction"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "ongoing monitoring, and governance structures for automated systems",
-          "source_section": "What you can do"
-        }
-      ]
-    },
-    {
-      "label": "third_party_audit",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "reports can be provided to the public, regulators, auditors, industry standards groups, or others engaged in independent review",
-          "source_section": "Reporting expectations"
+          "quote": "These reporting expectations are important for transparency, so the American people can have confidence that their rights, opportunities, and access as well as their expectations about technologies are respected.",
+          "source_section": "2. What should be expected of automated systems:",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2643,
+          "end_char": 2855
         }
       ]
     }
@@ -81,25 +60,25 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.9,
+      "confidence": 0.92,
       "evidence": [
         {
-          "quote": "a blueprint for the development of additional technical standards and practices that should be tailored for particular sectors and contexts",
-          "source_section": "Introduction"
+          "quote": "The expectations for automated systems are meant to serve as a blueprint for the development of additional technical standards and practices that should be tailored for particular sectors and contexts.",
+          "source_section": "2. What should be expected of automated systems:",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1357,
+          "end_char": 1558
         },
         {
-          "quote": "The examples provided are not critiques or endorsements, but rather are offered as illustrative cases",
-          "source_section": "How these principles can move into practice"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "the information should be provided to oversight bodies and privacy, civil liberties, or other ethics officers charged with safeguarding individuals' rights",
-          "source_section": "Reporting expectations"
+          "quote": "Effectively implementing these processes require the cooperation of and collaboration among industry, civil society, researchers, policymakers, technologists, and the public.",
+          "source_section": "2. What should be expected of automated systems:",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3340,
+          "end_char": 3514
         }
       ]
     }
@@ -107,6 +86,6 @@
   "enforcement_authorities": [],
   "compliance_deadlines": [],
   "penalties_summary": null,
-  "implementation_notes": "This is a non-binding technical companion to the Blueprint for an AI Bill of Rights. It provides illustrative examples and practical steps but explicitly states expectations are a 'blueprint for the development of additional technical standards' rather than enforceable rules. Reporting expectations are directed at entities developing or using automated systems but are voluntary. The document covers five principles intended to guide design, use, and deployment of automated systems.",
-  "confidence": 0.92
+  "implementation_notes": "Companion HTML overview page (October 2022, subsequently archived/superseded) introducing the 'From Principles to Practice' technical companion to OSTP's Blueprint for an AI Bill of Rights. Explains the companion's three-part structure per principle ('Why this principle is important', 'What should be expected of automated systems', and 'How these principles can move into practice') and outlines voluntary expectations for pre-deployment testing, ongoing monitoring, governance, and public or oversight-body reporting without creating legally binding obligations.",
+  "confidence": 0.94
 }

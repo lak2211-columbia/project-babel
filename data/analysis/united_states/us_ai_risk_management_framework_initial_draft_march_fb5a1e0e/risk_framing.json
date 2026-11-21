@@ -1,41 +1,84 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
-    "fundamental_rights",
-    "social_stability"
+    "consumer_public_safety",
+    "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.1,
-    "economic_competitiveness": 0.15,
-    "fundamental_rights": 0.35,
-    "social_stability": 0.3,
-    "innovation_enablement": 0.45,
-    "consumer_public_safety": 0.65,
-    "labor_transition": 0.05
+    "existential_catastrophic": 0.0,
+    "national_security": 0.25,
+    "economic_competitiveness": 0.35,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.2,
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.88,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance as a matter of ensuring trustworthy, safe, and reliable AI systems that do not harm individuals or society. Core language centers on managing adverse impacts, ensuring accuracy, safety, privacy, and mitigating harmful bias for end users and communities. Innovation enablement is a secondary frame, as the document argues that managing risk builds trust and enables broader AI adoption. Fundamental rights and social stability appear as additional concerns via references to civil liberties, fairness, equity, and societal risk.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.02,
+    "economic_competitiveness": 0.04,
+    "fundamental_rights": 0.24,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.38,
+    "consumer_public_safety": 0.32,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The AI RMF Initial Draft is dominantly framed around innovation_enablement, positioning a voluntary, flexible, non-prescriptive risk management framework as the vehicle to cultivate trust, create opportunities for innovation, and enable widespread acceptance and realization of AI's full potential. Innovation_enablement narrowly edges out consumer_public_safety, which is a strong runner-up emphasizing minimizing operational failures, physical safety hazards (e.g., factories and roads), and adverse impacts on individuals, organizations, and society. Fundamental_rights is a prominent third frame, anchored in civil liberties and rights, human autonomy and dignity in privacy, anti-discrimination, fairness, and actionable redress.",
   "evidence_spans": [
     {
-      "quote": "Ensuring that these inferences are helpful and not harmful in particular use cases – especially when inferences are rapidly scaled and amplified – is fundamental to trustworthy AI.",
-      "source_section": "Page 4"
+      "quote": "Cultivating trust and communication about how to understand and manage the risks of AI 18 systems will help create opportunities for innovation and realize the full potential of this 19 technology.",
+      "source_section": "Part 1: Motivation - 1 Overview",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4869,
+      "end_char": 5066
     },
     {
-      "quote": "key characteristics which support trustworthiness, including accuracy, explainability and interpretability, privacy, reliability, robustness, safety, security (resilience) and mitigation of harmful bias",
-      "source_section": "Page 4"
+      "quote": "Identifying, mitigating, and 10 minimizing risks and potential harms associated with AI technologies are essential steps towards 11 the acceptance and widespread use of AI technologies.",
+      "source_section": "Part 1: Motivation - 4 Framing Risk",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 14876,
+      "end_char": 15061
     },
     {
-      "quote": "Cultivating trust and communication about how to understand and manage the risks of AI systems will help create opportunities for innovation and realize the full potential of this technology.",
-      "source_section": "Page 4"
+      "quote": "Safety as a concept is highly correlated with risk and generally denotes an absence (or 2 minimization) of failures or conditions that render a system dangerous. As AI systems interact 3 with humans more directly in factories and on the roads, for example, the safety of these systems 4 is a serious consideration for AI risk management.",
+      "source_section": "Part 1: Motivation - 5.2.4 Safety",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 32884,
+      "end_char": 33221
     },
     {
-      "quote": "Their actions can designate boundaries for operation (technical or legal) and balance societal values and priorities related to civil liberties and rights, the economy, and security.",
-      "source_section": "Page 8"
+      "quote": "While risk management processes 25 address adverse impacts, this framework intends to offer approaches to minimize anticipated 26 negative impacts of AI systems and identify opportunities to maximize positive impacts.",
+      "source_section": "Part 1: Motivation - 4.1 Understanding Risk and Adverse Impacts",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 16256,
+      "end_char": 16473
     },
     {
-      "quote": "Identifying, mitigating, and minimizing risks and potential harms associated with AI technologies are essential steps towards the acceptance and widespread use of AI technologies.",
-      "source_section": "Page 8"
+      "quote": "Privacy refers generally to the norms and practices that help to safeguard values such as human 33 autonomy and dignity. These norms and practices typically address freedom from intrusion, 34 limiting observation, or individuals’ control of facets of their identities (e.g., body, data, 35 reputation).",
+      "source_section": "Part 1: Motivation - 5.2.3 Privacy",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 32238,
+      "end_char": 32540
+    },
+    {
+      "quote": "Fairness in AI systems includes concerns for equality and equity by addressing socio-technical 36 issues such as bias and discrimination.",
+      "source_section": "Part 1: Motivation - 5.3 Guiding Principles",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 35804,
+      "end_char": 35941
     }
   ]
 }

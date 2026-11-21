@@ -1,36 +1,84 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
     "fundamental_rights",
-    "innovation_enablement"
+    "economic_competitiveness"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.03,
-    "economic_competitiveness": 0.15,
-    "fundamental_rights": 0.2,
-    "social_stability": 0.05,
-    "innovation_enablement": 0.15,
-    "consumer_public_safety": 0.55,
-    "labor_transition": 0.01
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.58,
+    "fundamental_rights": 0.62,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.28,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around protecting business users (consumers/enterprises) from legal and data-handling risks when contracting for AI services. It explicitly cites concerns about legal risks not being properly examined and data being used for unexpected purposes or provided to third parties causing unforeseen harm. While innovation enablement and economic competitiveness are mentioned as context, the checklist's core purpose is risk management and protection of data subjects and contracting parties—a consumer/public safety framing. Fundamental rights (personal data protection under Japan's APPI) appears as a strong secondary frame.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.17,
+    "fundamental_rights": 0.18,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.6,
+    "consumer_public_safety": 0.05,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document's dominant framing is innovation_enablement: METI explicitly positions this contractual checklist as a practical, accessible tool to help Japanese businesses—including those unfamiliar with AI technology or legal practice—allocate benefits and risks appropriately so as to accelerate industrial innovation, solve social challenges, and promote pragmatic AI utilization rather than discouraging adoption when risks arise. It edges out fundamental_rights and economic_competitiveness because, while Section 4.4 devotes substantial attention to personal data privacy and protecting individuals' rights and interests under the Personal Information Protection Act (APPI), and Section 1 notes balancing risk management with competitiveness gains through AI utilization, both considerations are subordinated to the overarching objective of lowering contractual friction and enabling safe, widespread business adoption of AI services. Consumer_public_safety appears only marginally through a reference to avoiding unintended disadvantages to non-business users and managing inaccurate outputs.",
   "evidence_spans": [
     {
-      "quote": "AIの利活用に関する契約に伴う法的なリスクを十分に検討できていない可能性",
-      "source_section": "1 チェックリスト策定の背景・目的及び想定読者"
+      "quote": "AI利活用の機会がさらに拡大することにより、産業におけるイノベーションの促進や社会的な課題の解決にも寄与することが期待されている。",
+      "source_section": "1 チェックリスト策定の背景・目的及び想定読者",
+      "quote_en": "Further expansion of opportunities for AI utilization is expected to contribute to promoting innovation in industry and solving social challenges.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 747,
+      "end_char": 812
     },
     {
-      "quote": "保護されるべきデータや情報が予期せぬ目的に利用され、また第三者に提供される等、想定外の不利益を被る可能性",
-      "source_section": "1 チェックリスト策定の背景・目的及び想定読者"
+      "quote": "チェックリストは、当事者間の適切な利益及びリスクの分配を目指し、ひいてはAIの利活用を促すことを目的として、特に以下の方針により策定された。",
+      "source_section": "1 チェックリスト策定の背景・目的及び想定読者",
+      "quote_en": "The checklist was formulated under the following policies in particular, aiming at an appropriate allocation of benefits and risks between parties and thereby promoting the utilization of AI.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1501,
+      "end_char": 1571
     },
     {
-      "quote": "当事者間の適切な利益及びリスクの分配を目指し、ひいてはAIの利活用を促すことを目的として",
-      "source_section": "1 チェックリスト策定の背景・目的及び想定読者"
+      "quote": "AI利活用による競争力向上とリスク管理\nの両立を図る観点から、契約上の留意点\nを網羅的に検討",
+      "source_section": "1 チェックリスト策定の背景・目的及び想定読者",
+      "quote_en": "Comprehensively examining contractual points to note from the perspective of balancing competitiveness enhancement through AI utilization with risk management.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 2201,
+      "end_char": 2247
     },
     {
-      "quote": "個人データの提供が伴う場合、ベンダによる自己目的利用や突合が認められる場合には委託として整理できず第三者提供に該当し、本人の同意が必要となる可能性",
-      "source_section": "A-3-1 利用目的"
+      "quote": "ベンダの監督については、取扱いを委託する個人データの内容を踏まえ、個人データが漏えい等をした場合に本人が被る権利利益の侵害の大きさを考慮し、委託する事業の規模及び性質、個人データの取扱状況（取扱う個人データの性質及び量を含む。）等に起因するリスクに応じて行うべきものと考えられる",
+      "source_section": "4.4.1 国内の第三者への個人データの提供に該当する場合",
+      "quote_en": "Supervision of the vendor should be conducted in accordance with the risks arising from the scale and nature of the entrusted business and the handling status of personal data, based on the content of the entrusted personal data and considering the magnitude of infringement on the individual's rights and interests if personal data is leaked.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 30019,
+      "end_char": 30158
+    },
+    {
+      "quote": "その外国が個人の権利利益を保護する上で我が国と同等の水準にあると認められる個人情報の保護に関する制度を有している外国として個人情報保護法施行規則で定める外国である場合",
+      "source_section": "4.4.2 外国にある第三者への個人データの提供に該当する場合",
+      "quote_en": "Where the foreign country is designated by the Enforcement Rules of the Personal Information Protection Act as having a personal information protection system recognized as equivalent in level to Japan in protecting the rights and interests of individuals.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 30954,
+      "end_char": 31037
+    },
+    {
+      "quote": "AIの活用において業務外利用者に何らかの影響が考えられる場合は、当該者に対するAIによる意図しない不利益の回避、AI による便益最大化の実現に努める役割を担う",
+      "source_section": "2.1 AI利活用の流れ",
+      "quote_en": "Where the utilization of AI may have some impact on non-business users, bearing the role of striving to avoid unintended disadvantages caused by AI to such persons and to maximize benefits from AI.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3752,
+      "end_char": 3831
     }
   ]
 }

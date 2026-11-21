@@ -1,0 +1,255 @@
+{
+  "safety_requirements": [
+    {
+      "label": "training_data_governance",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "第七条 生成式人工智能服务提供者（以下称提供者）应当依法开展预训练、优化训练等训练数据处理活动，遵守以下规定： （一）使用具有合法来源的数据和基础模型； （二）涉及知识产权的，不得侵害他人依法享有的知识产权； （三）涉及个人信息的，应当取得个人同意或者符合法律、行政法规规定的其他情形； （四）采取有效措施提高训练数据质量，增强训练数据的真实性、准确性、客观性、多样性；",
+          "source_section": "第七条",
+          "quote_en": "Article 7 Providers of generative AI services (hereinafter referred to as providers) shall carry out training data processing activities such as pre-training and optimization training in accordance with the law, and comply with the following provisions: (1) use data and foundation models with lawful sources; (2) where intellectual property rights are involved, not infringe upon intellectual property rights lawfully enjoyed by others; (3) where personal information is involved, obtain individual consent or comply with other circumstances provided by laws and administrative regulations; (4) take effective measures to improve training data quality and enhance the authenticity, accuracy, objectivity, and diversity of training data;",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "第八条 在生成式人工智能技术研发过程中进行数据标注的，提供者应当制定符合本办法要求的清晰、具体、可操作的标注规则；开展数据标注质量评估，抽样核验标注内容的准确性；对标注人员进行必要培训，提升尊法守法意识，监督指导标注人员规范开展标注工作。",
+          "source_section": "第八条",
+          "quote_en": "Article 8 Where data labeling is conducted during the research and development of generative AI technology, providers shall formulate clear, specific, and operable labeling rules that meet the requirements of these Measures; carry out data labeling quality assessments and sample-verify the accuracy of labeled content; provide necessary training to labeling personnel to enhance awareness of respecting and abiding by the law, and supervise and guide labeling personnel to carry out labeling work in a standardized manner.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "第十条 提供者应当明确并公开其服务的适用人群、场合、用途，指导使用者科学理性认识和依法使用生成式人工智能技术，采取有效措施防范未成年人用户过度依赖或者沉迷生成式人工智能服务。",
+          "source_section": "第十条",
+          "quote_en": "Article 10 Providers shall specify and publicly disclose the applicable user groups, scenarios, and purposes of their services, guide users to understand generative AI technology scientifically and rationally and use it in accordance with the law, and take effective measures to prevent minor users from becoming overly reliant on or addicted to generative AI services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "（五）基于服务类型特点，采取有效措施，提升生成式人工智能服务的透明度，提高生成内容的准确性和可靠性。",
+          "source_section": "第四条",
+          "quote_en": "(5) Based on the characteristics of the service type, take effective measures to enhance the transparency of generative AI services and improve the accuracy and reliability of generated content.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "第十二条 提供者应当按照《互联网信息服务深度合成管理规定》对图片、视频等生成内容进行标识。",
+          "source_section": "第十二条",
+          "quote_en": "Article 12 Providers shall label generated content such as images and videos in accordance with the Provisions on the Administration of Deep Synthesis of Internet-based Information Services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.88,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "第十四条 提供者发现违法内容的，应当及时采取停止生成、停止传输、消除等处置措施，采取模型优化训练等措施进行整改，并向有关主管部门报告。 提供者发现使用者利用生成式人工智能服务从事违法活动的，应当依法依约采取警示、限制功能、暂停或者终止向其提供服务等处置措施，保存有关记录，并向有关主管部门报告。",
+          "source_section": "第十四条",
+          "quote_en": "Article 14 Where providers discover illegal content, they shall promptly take disposal measures such as stopping generation, stopping transmission, and eliminating the content, take rectification measures such as model optimization training, and report to the relevant competent authorities. Where providers discover users utilizing generative AI services to engage in illegal activities, they shall take disposal measures in accordance with the law and agreements, such as issuing warnings, restricting functions, or suspending or terminating services, retain relevant records, and report to the relevant competent authorities.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.9,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "第十七条 提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+          "source_section": "第十七条",
+          "quote_en": "Article 17 Those providing generative AI services with public opinion attributes or social mobilization capabilities shall conduct security assessments in accordance with relevant national regulations, and complete algorithm filing, amendment, and cancellation procedures in accordance with the Provisions on the Administration of Algorithm Recommendation for Internet Information Services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "第十七条 提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+          "source_section": "第十七条",
+          "quote_en": "Article 17 Those providing generative AI services with public opinion attributes or social mobilization capabilities shall conduct security assessments in accordance with relevant national regulations, and complete algorithm filing, amendment, and cancellation procedures in accordance with the Provisions on the Administration of Algorithm Recommendation for Internet Information Services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "第二十三条 法律、行政法规规定提供生成式人工智能服务应当取得相关行政许可的，提供者应当依法取得许可。",
+          "source_section": "第二十三条",
+          "quote_en": "Article 23 Where laws or administrative regulations stipulate that the provision of generative AI services requires obtaining relevant administrative licenses, providers shall obtain such licenses in accordance with the law.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "第十九条 有关主管部门依据职责对生成式人工智能服务开展监督检查，提供者应当依法予以配合，按要求对训练数据来源、规模、类型、标注规则、算法机制机理等予以说明，并提供必要的技术、数据等支持和协助。",
+          "source_section": "第十九条",
+          "quote_en": "Article 19 Relevant competent authorities shall conduct supervision and inspection of generative AI services in accordance with their responsibilities, and providers shall cooperate in accordance with the law, explain the source, scale, and type of training data, labeling rules, algorithm mechanisms, etc. as required, and provide necessary technical, data, and other support and assistance.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "法律、行政法规没有规定的，由有关主管部门依据职责予以警告、通报批评，责令限期改正；",
+          "source_section": "第二十一条",
+          "quote_en": "Where laws and administrative regulations do not provide otherwise, the relevant competent authorities shall, in accordance with their duties, issue warnings, circulate notices of criticism, and order rectification within a specified time limit;",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "market_access_restriction",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "拒不改正或者情节严重的，责令暂停提供相关服务。",
+          "source_section": "第二十一条",
+          "quote_en": "Where the provider refuses to rectify or the circumstances are serious, the authorities shall order the suspension of the provision of relevant services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "第二十条 对来源于中华人民共和国境外向境内提供生成式人工智能服务不符合法律、行政法规和本办法规定的，国家网信部门应当通知有关机构采取技术措施和其他必要措施予以处置。",
+          "source_section": "第二十条",
+          "quote_en": "Article 20 Where generative AI services originating from outside the People's Republic of China and provided to the domestic public do not comply with laws, administrative regulations, and these Measures, the national cyberspace administration shall notify relevant agencies to take technical measures and other necessary measures for disposal.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "criminal_penalty",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "构成违反治安管理行为的，依法给予治安管理处罚；构成犯罪的，依法追究刑事责任。",
+          "source_section": "第二十一条",
+          "quote_en": "Where an act constitutes a violation of public security administration, public security administration penalties shall be imposed in accordance with the law; where it constitutes a crime, criminal liability shall be pursued in accordance with the law.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "civil_penalty",
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "quote": "第二十一条 提供者违反本办法规定的，由有关主管部门依照《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《中华人民共和国个人信息保护法》、《中华人民共和国科学技术进步法》等法律、行政法规的规定予以处罚；",
+          "source_section": "第二十一条",
+          "quote_en": "Article 21 Where a provider violates the provisions of these Measures, the relevant competent authorities shall impose penalties in accordance with the Cybersecurity Law, the Data Security Law, the Personal Information Protection Law, the Law on Scientific and Technological Progress, and other laws and administrative regulations;",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "licensing_requirement",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "第二十三条 法律、行政法规规定提供生成式人工智能服务应当取得相关行政许可的，提供者应当依法取得许可。",
+          "source_section": "第二十三条",
+          "quote_en": "Article 23 Where laws or administrative regulations stipulate that the provision of generative AI services requires obtaining relevant administrative licenses, providers shall obtain such licenses in accordance with the law.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+          "source_section": "第十七条",
+          "quote_en": "Those providing generative AI services with public opinion attributes or social mobilization capabilities shall conduct security assessments in accordance with relevant national regulations, and complete algorithm filing, amendment, and cancellation procedures in accordance with the Provisions on the Administration of Algorithm Recommendation for Internet Information Services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "提供者发现违法内容的，应当及时采取停止生成、停止传输、消除等处置措施，采取模型优化训练等措施进行整改，并向有关主管部门报告。",
+          "source_section": "第十四条",
+          "quote_en": "Where providers discover illegal content, they shall promptly take disposal measures such as stopping generation, stopping transmission, and eliminating the content, take rectification measures such as model optimization training, and report to the relevant competent authorities.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "提供者应当依法予以配合，按要求对训练数据来源、规模、类型、标注规则、算法机制机理等予以说明，并提供必要的技术、数据等支持和协助。",
+          "source_section": "第十九条",
+          "quote_en": "Providers shall cooperate in accordance with the law, explain the source, scale, and type of training data, labeling rules, algorithm mechanisms, etc. as required, and provide necessary technical, data, and other support and assistance.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

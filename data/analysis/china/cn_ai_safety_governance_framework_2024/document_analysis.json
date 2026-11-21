@@ -4,245 +4,463 @@
   "language": "zh",
   "policy_extraction": {
     "jurisdiction": "china",
-    "issuing_body": "全国网络安全标准化技术委员会 (TC260)",
+    "issuing_body": "National Information Security Standardization Technical Committee (全国网络安全标准化技术委员会, TC260)",
     "document_type": "standards_guideline",
     "binding_strength": "standards_guideline",
     "publication_date": "2024-09",
     "effective_date": null,
+    "covered_actors": [
+      "AI model and algorithm developers (模型算法研发者)",
+      "AI service providers (人工智能服务提供者)",
+      "Key-sector AI users including government departments, critical information infrastructure operators, and sectors affecting public safety and citizens' life and health (重点领域使用者)",
+      "General public users (社会公众)",
+      "Technology R&D institutions (技术研发机构)",
+      "Industry associations and social organizations (行业协会、社会组织)"
+    ],
     "covered_application_domains": [
       "general_purpose_models",
       "critical_infrastructure",
       "public_sector_use",
       "healthcare",
-      "finance",
-      "law_enforcement",
-      "defense",
-      "employment",
-      "education"
+      "finance"
     ],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "risk_assessment",
         "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "对算力、推理能力达到一定阈值或应用在特定行业领域的人工智能系统进行登记备案，要求其具备在设计、研发、测试、部署、使用、维护等全生命周期的安全防护能力",
-            "source_section": "5.1"
+            "quote": "根据功能、性能、应用场景等，\n对人工智能系统分类分级，建立风险等级测试评估体系。",
+            "source_section": "Page 12 (Section 5.1)",
+            "quote_en": "Classify and grade AI systems based on functions, performance, application scenarios, etc., and establish a risk-level testing and assessment system.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6077,
+            "end_char": 6117
           },
           {
-            "quote": "重点领域使用者应审慎评估目标应用场景采用人工智能技术后带来的长期和潜在影响，开展风险评估与定级",
-            "source_section": "6.3"
+            "quote": "应审慎评估目标应用场景采用人工智能\n技术后带来的长期和潜在影响，开展风险评估与定级，避免技术滥用。",
+            "source_section": "Page 17 (Section 6.3(a))",
+            "quote_en": "Should prudently assess the long-term and potential impacts of adopting AI technology in target application scenarios, conduct risk assessment and grading, and avoid technology misuse.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8916,
+            "end_char": 8965
           }
         ]
       },
       {
         "label": "pre_deployment_testing",
         "confidence": 0.92,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "研发者应定期开展安全评估测试，测试前明确测试目标、范围和安全维度，构建多样化的测试数据集，涵盖各种应用场景",
-            "source_section": "6.1(g)"
+            "quote": "研发者应定期开展安全评估测试，测试前明确测试目标、范围和安\n全维度，构建多样化的测试数据集，涵盖各种应用场景。",
+            "source_section": "Page 15 (Section 6.1(g))",
+            "quote_en": "Developers should regularly conduct security evaluation and testing, clarify testing objectives, scope, and security dimensions before testing, and build diverse test datasets covering various application scenarios.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8074,
+            "end_char": 8129
           },
           {
-            "quote": "研发者应制定明确的测试规则和方法，包括人工测试、自动测试、混合测试等，利用沙箱仿真等技术对模型进行充分测试和验证",
-            "source_section": "6.1(h)"
+            "quote": "研发者应制定明确的测试规则和方法，包括人工测试、自动测试、\n混合测试等，利用沙箱仿真等技术对模型进行充分测试和验证。",
+            "source_section": "Page 15 (Section 6.1(h))",
+            "quote_en": "Developers should formulate clear testing rules and methods, including manual testing, automated testing, and hybrid testing, and use technologies such as sandbox simulation to thoroughly test and verify models.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8133,
+            "end_char": 8191
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.94,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "服务提供者应将人工智能系统运行中发现的安全事故、安全漏洞等\n及时向主管部门报告。",
+            "source_section": "Page 16 (Section 6.2(h))",
+            "quote_en": "Service providers should promptly report security incidents, security vulnerabilities, etc. discovered during the operation of AI systems to competent authorities.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8691,
+            "end_char": 8731
+          },
+          {
+            "quote": "协调有关研发者、服务提供者建立风险威胁信息通报和共享\n机制。",
+            "source_section": "Page 13 (Section 5.7)",
+            "quote_en": "Coordinate relevant developers and service providers to establish a risk and threat information notification and sharing mechanism.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6913,
+            "end_char": 6943
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "服务提供者应公开人工智能产品和服务的能力、局限性、适用人群、 场景。",
+            "source_section": "Page 15 (Section 6.2(a))",
+            "quote_en": "Service providers should disclose the capabilities, limitations, target user groups, and applicable scenarios of AI products and services.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8307,
+            "end_char": 8341
+          },
+          {
+            "quote": "服务提供者应在合同或服务协议中，以使用者易于理解的方式，告\n知人工智能产品和服务的适用范围、注意事项、使用禁忌，支持使用者知情选\n择、审慎使用。",
+            "source_section": "Page 16 (Section 6.2(b))",
+            "quote_en": "Service providers should inform users in contracts or service agreements, in an easily understandable manner, of the applicable scope, precautions, and usage prohibitions of AI products and services, supporting informed choice and prudent use.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8346,
+            "end_char": 8418
           }
         ]
       },
       {
         "label": "model_documentation",
         "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "研发者应生成详细的测试报告，分析安全问题并提出改进方案",
-            "source_section": "6.1(j)"
+            "quote": "研发者应生成详细的测试报告，分析安全问题并提出改进方案。",
+            "source_section": "Page 15 (Section 6.1(j))",
+            "quote_en": "Developers should generate detailed test reports, analyze security issues, and propose improvement plans.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8257,
+            "end_char": 8285
           },
           {
-            "quote": "研发者应评估人工智能模型算法对外界干扰的容忍程度，以适用范围、注意事项或使用禁忌的形式告知服务提供者和使用者",
-            "source_section": "6.1(i)"
-          }
-        ]
-      },
-      {
-        "label": "transparency_disclosure",
-        "confidence": 0.93,
-        "evidence": [
-          {
-            "quote": "服务提供者应公开人工智能产品和服务的能力、局限性、适用人群、场景",
-            "source_section": "6.2(a)"
-          },
-          {
-            "quote": "制定出台人工智能生成合成内容标识标准规范，明确显式、隐式等标识要求，全面覆盖制作源头、传播路径、分发渠道等关键环节",
-            "source_section": "5.2"
-          }
-        ]
-      },
-      {
-        "label": "incident_reporting",
-        "confidence": 0.9,
-        "evidence": [
-          {
-            "quote": "服务提供者应将人工智能系统运行中发现的安全事故、安全漏洞等及时向主管部门报告",
-            "source_section": "6.2(h)"
-          },
-          {
-            "quote": "协调有关研发者、服务提供者建立风险威胁信息通报和共享机制",
-            "source_section": "5.7"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.92,
-        "evidence": [
-          {
-            "quote": "重点领域使用者应对人工智能行为和影响进行有效监督，确保人工智能产品和服务的运行基于人的授权、处于人的控制之下",
-            "source_section": "6.3(h)"
-          },
-          {
-            "quote": "重点领域使用者应避免完全依赖人工智能的决策，监控及记录未采纳人工智能决策的情况",
-            "source_section": "6.3(i)"
-          }
-        ]
-      },
-      {
-        "label": "registration_licensing",
-        "confidence": 0.88,
-        "evidence": [
-          {
-            "quote": "对算力、推理能力达到一定阈值或应用在特定行业领域的人工智能系统进行登记备案",
-            "source_section": "5.1"
+            "quote": "服务提供者应检查研发者提供的责任说明文件，确保责任链条可以\n追溯到递归采用的人工智能模型。",
+            "source_section": "Page 16 (Section 6.2(e))",
+            "quote_en": "Service providers should inspect the accountability documentation provided by developers to ensure the chain of responsibility can be traced back to recursively adopted AI models.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8516,
+            "end_char": 8561
           }
         ]
       },
       {
         "label": "access_controls",
-        "confidence": 0.85,
+        "confidence": 0.93,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "重点领域使用者应合理限制人工智能系统对数据的访问权限",
-            "source_section": "6.3(f)"
+            "quote": "研发者应确保模型算法训练环境的安全性，包括网络安全配置和数\n据加密措施等。",
+            "source_section": "Page 15 (Section 6.1(c))",
+            "quote_en": "Developers should ensure the security of model and algorithm training environments, including network security configurations and data encryption measures.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7874,
+            "end_char": 7911
           },
           {
-            "quote": "重点领域使用者应使用高安全级别的密码策略，启用多因素认证机制",
-            "source_section": "6.3(d)"
-          }
-        ]
-      },
-      {
-        "label": "content_provenance",
-        "confidence": 0.88,
-        "evidence": [
-          {
-            "quote": "对面向公众服务的人工智能系统，通过数字证书技术对其进行标识管理",
-            "source_section": "5.2"
-          }
-        ]
-      },
-      {
-        "label": "third_party_audit",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "重点领域使用者应根据人工智能系统的适用场景、安全性、可靠性、可控性等，定期进行系统审计",
-            "source_section": "6.3(b)"
+            "quote": "重点领域使用者应使用高安全级别的密码策略，启用多因素认证机\n制，增强账户安全性。",
+            "source_section": "Page 17 (Section 6.3(d))",
+            "quote_en": "Users in key sectors should use high-security password policies and enable multi-factor authentication mechanisms to enhance account security.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9078,
+            "end_char": 9118
           }
         ]
       },
       {
         "label": "compute_governance",
-        "confidence": 0.8,
+        "confidence": 0.85,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "对算力、推理能力达到一定阈值或应用在特定行业领域的人工智能系统进行登记备案",
-            "source_section": "5.1"
+            "quote": "对算力、推理能力达到一定阈值或应用在特定行业领域的人工智\n能系统进行登记备案，要求其具备在设计、研发、测试、部署、使用、维护等\n全生命周期的安全防护能力。",
+            "source_section": "Page 12 (Section 5.1)",
+            "quote_en": "Register and file AI systems whose computing power or reasoning capabilities reach a certain threshold or that are applied in specific industry sectors, requiring them to have full-lifecycle security protection capabilities across design, R&D, testing, deployment, use, and maintenance.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6168,
+            "end_char": 6245
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "制定出台人工智能生成合成内容\n标识标准规范，明确显式、隐式等标识要求，全面覆盖制作源头、传播路径、\n分发渠道等关键环节，便于用户识别判断信息来源及真实性。",
+            "source_section": "Page 12 (Section 5.2)",
+            "quote_en": "Formulate and issue standards and specifications for labeling AI-generated and synthetic content, clarifying explicit and implicit labeling requirements covering key stages such as creation sources, transmission paths, and distribution channels to help users identify information sources and authenticity.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6299,
+            "end_char": 6376
+          },
+          {
+            "quote": "对输出内容进行明晰标识，不断提高人工智能系统透明性。",
+            "source_section": "Page 10 (Section 4.1.3(a))",
+            "quote_en": "Clearly label output content and continuously improve the transparency of AI systems.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5197,
+            "end_char": 5223
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "重点领域使用者应对人工智能行为和影响进行有效监督，确保人工\n智能产品和服务的运行基于人的授权、处于人的控制之下。",
+            "source_section": "Page 17 (Section 6.3(h))",
+            "quote_en": "Users in key sectors should exercise effective supervision over AI behaviors and impacts, ensuring that the operation of AI products and services is based on human authorization and remains under human control.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9291,
+            "end_char": 9347
+          },
+          {
+            "quote": "重点领域使用者应避免完全依赖人工智能的决策，监控及记录未采\n纳人工智能决策的情况，并对决策不一致进行分析，在遭遇事故时具备及时切\n换到人工或传统系统等的能力。",
+            "source_section": "Page 17 (Section 6.3(i))",
+            "quote_en": "Users in key sectors should avoid complete reliance on AI decisions, monitor and record instances where AI decisions are not adopted, analyze decision inconsistencies, and maintain the capability to promptly switch to manual or traditional systems in the event of an incident.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9352,
+            "end_char": 9431
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "对算力、推理能力达到一定阈值或应用在特定行业领域的人工智\n能系统进行登记备案，要求其具备在设计、研发、测试、部署、使用、维护等\n全生命周期的安全防护能力。",
+            "source_section": "Page 12 (Section 5.1)",
+            "quote_en": "Register and file AI systems whose computing power or reasoning capabilities reach a certain threshold or that are applied in specific industry sectors, requiring them to have full-lifecycle security protection capabilities across design, R&D, testing, deployment, use, and maintenance.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6168,
+            "end_char": 6245
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "使用真实、准确、客观、多样且来源合法的训练数据，及时过滤失效、错误、偏见数据。",
+            "source_section": "Page 10 (Section 4.1.2(e))",
+            "quote_en": "Use truthful, accurate, objective, diverse, and lawfully sourced training data, and promptly filter out invalid, erroneous, and biased data.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5054,
+            "end_char": 5093
+          },
+          {
+            "quote": "对训练数据进行严格筛选，确保不包含核生化导武器等高危领域敏感数据。",
+            "source_section": "Page 10 (Section 4.1.2(c))",
+            "quote_en": "Strictly screen training data to ensure it does not contain sensitive data in high-risk fields such as nuclear, biological, chemical, or missile weapons.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4960,
+            "end_char": 4993
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "regulatory_supervision",
-        "confidence": 0.85,
+        "label": "soft_enforcement",
+        "confidence": 0.95,
         "evidence": [
           {
-            "quote": "实施人工智能应用分类分级管理。根据功能、性能、应用场景等，对人工智能系统分类分级，建立风险等级测试评估体系",
-            "source_section": "5.1"
+            "quote": "指导支持网络安全、人工智能领域行业协会加强行业自律，制定提出高\n于监管要求、具有引领示范作用的人工智能安全自律公约，引导督促人工智能\n技术研发机构、服务提供者持续提升安全能力水平",
+            "source_section": "Page 14 (Section 5.9)",
+            "quote_en": "Guide and support industry associations in cybersecurity and AI to strengthen industry self-discipline, formulate AI safety self-regulation conventions that exceed regulatory requirements and serve a leading demonstrative role, and guide and urge AI R&D institutions and service providers to continuously improve safety capabilities",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7231,
+            "end_char": 7320
           },
           {
-            "quote": "服务提供者应将人工智能系统运行中发现的安全事故、安全漏洞等及时向主管部门报告",
-            "source_section": "6.2(h)"
+            "quote": "有机发挥政府监管、行业自律、社会监督等治理机制作用。",
+            "source_section": "Page 4 (Section 1.3)",
+            "quote_en": "Organically leverage governance mechanisms including government regulation, industry self-discipline, and social supervision.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1174,
+            "end_char": 1200
           }
         ]
       },
       {
         "label": "reporting_obligation",
-        "confidence": 0.88,
+        "confidence": 0.78,
         "evidence": [
           {
-            "quote": "协调有关研发者、服务提供者建立风险威胁信息通报和共享机制",
-            "source_section": "5.7"
+            "quote": "服务提供者应将人工智能系统运行中发现的安全事故、安全漏洞等\n及时向主管部门报告。",
+            "source_section": "Page 16 (Section 6.2(h))",
+            "quote_en": "Service providers should promptly report security incidents, security vulnerabilities, etc. discovered during the operation of AI systems to competent authorities.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8691,
+            "end_char": 8731
           },
           {
-            "quote": "服务提供者应将人工智能系统运行中发现的安全事故、安全漏洞等及时向主管部门报告",
-            "source_section": "6.2(h)"
-          }
-        ]
-      },
-      {
-        "label": "soft_enforcement",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "指导支持网络安全、人工智能领域行业协会加强行业自律，制定提出高于监管要求、具有引领示范作用的人工智能安全自律公约",
-            "source_section": "5.9"
+            "quote": "对算力、推理能力达到一定阈值或应用在特定行业领域的人工智\n能系统进行登记备案",
+            "source_section": "Page 12 (Section 5.1)",
+            "quote_en": "Register and file AI systems whose computing power or reasoning capabilities reach a certain threshold or that are applied in specific industry sectors",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6168,
+            "end_char": 6206
           }
         ]
       }
     ],
-    "implementation_notes": "This is a framework document (V1.0) issued by TC260 in September 2024, implementing the Global AI Governance Initiative. It is structured as a standards/guidance document rather than binding legislation, though it references compliance with existing laws and regulations. Enforcement mechanisms are largely implied through reference to 'competent authorities' rather than explicitly specified. The document covers the full AI lifecycle and addresses both developers, service providers, and users including a separate section for critical sector users. Registration/filing (登记备案) requirements for high-compute or sector-specific AI systems suggest emerging binding elements, but the document itself functions as a governance framework and guidelines document.",
-    "confidence": 0.88
+    "enforcement_authorities": [
+      "Competent authorities (主管部门)",
+      "Government departments (政府部门)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "Issued as Version 1.0 (V1.0) by TC260 in September 2024 to implement the Global AI Governance Initiative. It is a non-binding, dynamically updated technical and governance framework categorizing inherent and application-level AI safety risks, proposing technical countermeasures and comprehensive governance measures (such as tiered risk classification, filing/registration for models exceeding compute/reasoning thresholds or in key sectors, traceable content labeling, and incident response), and providing role-specific safety guidelines for developers, service providers, key-sector users, and the public.",
+    "confidence": 0.95
   },
   "risk_framing": {
     "dominant_frame": "national_security",
     "secondary_frames": [
       "social_stability",
+      "innovation_enablement",
       "consumer_public_safety",
-      "existential_catastrophic",
-      "fundamental_rights"
+      "fundamental_rights",
+      "existential_catastrophic"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.55,
-      "national_security": 0.82,
-      "economic_competitiveness": 0.3,
-      "fundamental_rights": 0.45,
-      "social_stability": 0.6,
-      "innovation_enablement": 0.25,
-      "consumer_public_safety": 0.5,
-      "labor_transition": 0.2
+      "existential_catastrophic": 0.75,
+      "national_security": 0.92,
+      "economic_competitiveness": 0.15,
+      "fundamental_rights": 0.78,
+      "social_stability": 0.88,
+      "innovation_enablement": 0.82,
+      "consumer_public_safety": 0.8,
+      "labor_transition": 0.15
     },
-    "rationale_summary": "The document repeatedly foregrounds national sovereignty, ideological security, and state security interests as primary justifications for AI governance. Risks are classified partly by domain—including a 'cognitive domain' explicitly referencing 'cognitive warfare' and foreign interference in domestic affairs—and supply chain security concerns are framed around hostile foreign technology controls. The framework explicitly aims to 'safeguard national sovereignty, security and development interests.' While social stability, rights protection, and safety concerns are present, the overarching governance rationale is national security.",
+    "frame_share": {
+      "existential_catastrophic": 0.11,
+      "national_security": 0.25,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.12,
+      "social_stability": 0.22,
+      "innovation_enablement": 0.16,
+      "consumer_public_safety": 0.14,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "China's TC260 AI Safety Governance Framework (v1.0) adopts a comprehensive security posture where national security edges out social stability as the dominant frame because safeguarding national sovereignty, security, and development interests anchors the opening principles and cuts across every risk domain—including foreign export-control supply-chain cutoffs, dual-use CBRN and cyber-weapon threats, cognitive warfare against sovereignty, export controls on models, and critical information infrastructure protection. Social stability is a close runner-up, reflected in concerns over ideological security, disinformation, information cocoons, crime, value alignment, and disruptions to traditional social order. Innovation enablement is a prominent counterweight in the preamble and principles ('inclusive and prudent', prioritizing innovation and agile governance), while consumer and public safety (life, health, property, autonomous driving, healthcare, minors), fundamental rights (anti-discrimination, privacy, user rights to know and choose), and existential/catastrophic risk (CBRN proliferation and autonomous self-replication/loss of human control) are explicitly articulated as distinct risk categories.",
     "evidence_spans": [
       {
-        "quote": "切实维护国家主权、安全和发展利益",
-        "source_section": "1. 人工智能安全治理原则"
+        "quote": "但个别国家利用技术垄断和出口管制等单边强制措施制造发展壁垒，恶意阻断\n全球人工智能供应链，带来突出的芯片、软件、工具断供风险。",
+        "source_section": "Page 7",
+        "quote_en": "However, certain countries use unilateral coercive measures such as technological monopolies and export controls to create development barriers and maliciously disrupt the global AI supply chain, bringing prominent risks of supply cutoffs for chips, software, and tools.",
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 3008,
+        "end_char": 3071
       },
       {
-        "quote": "威胁公民生命财产安全、国家安全、意识形态安全和伦理安全",
-        "source_section": "3.2.1"
+        "quote": "人工智能发展及应用，可能带来生产工具、 生产关系的大幅改变，加速重构传统行业模式，颠覆传统的就业观、生育观、 教育观，对传统社会秩序的稳定运行带来挑战。",
+        "source_section": "Page 9",
+        "quote_en": "The development and application of AI may bring major changes to production tools and production relations, accelerate the restructuring of traditional industry models, overturn traditional views on employment, childbirth, and education, and pose challenges to the stable operation of traditional social order.",
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 4393,
+        "end_char": 4469
       },
       {
-        "quote": "用于开展认知战的风险。人工智能可被利用于制作传播虚假新闻、图像、音频、视频等，干涉他国内政、社会制度及社会秩序，危害他国主权",
-        "source_section": "3.2.3"
+        "quote": "鼓励发展创新，对人工智能研发及应用采取\n包容态度。严守安全底线，对危害国家安全、社会公共利益、公众合法权益的\n风险及时采取措施。",
+        "source_section": "Page 3",
+        "quote_en": "Encourage development and innovation, and adopt an inclusive attitude toward AI R&D and application. Strictly hold the safety bottom line, and take timely measures against risks that endanger national security, public social interests, and the lawful rights and interests of the public.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 867,
+        "end_char": 931
       },
       {
-        "quote": "个别国家利用技术垄断和出口管制等单边强制措施制造发展壁垒，恶意阻断全球人工智能供应链，带来突出的芯片、软件、工具断供风险",
-        "source_section": "3.1.3"
+        "quote": "人工智能应用于金融、能源、电信、交通、 民生等传统行业领域，如自动驾驶、智能诊疗等，模型算法存在的幻觉输出、 错误决策，以及因不当使用、外部攻击等原因出现系统性能下降、中断、失控等问题，将对用户人身生命财产安全、经济社会安全稳定等造成安全威胁。",
+        "source_section": "Page 8",
+        "quote_en": "When AI is applied in traditional industries such as finance, energy, telecommunications, transportation, and people's livelihood—like autonomous driving and smart medical diagnosis—hallucinations, erroneous decisions, or system degradation, interruption, and loss of control due to misuse or external attacks will pose safety threats to users' lives and property as well as economic and social security and stability.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 3673,
+        "end_char": 3795
       },
       {
-        "quote": "极大降低非专家设计、合成、获取、使用核生化导武器的门槛",
-        "source_section": "3.2.2"
+        "quote": "在训练数据和用户交互数据的收集、存储、使用、加工、传输、提供、公开、删除等各环节，应遵循数据收集使用、个人信息处理的安全规则， 严格落实关于用户控制权、知情权、选择权等法律法规明确的合法权益。",
+        "source_section": "Page 10",
+        "quote_en": "Across all stages of collecting, storing, using, processing, transmitting, providing, disclosing, and deleting training data and user interaction data, security rules for data collection/use and personal information processing should be followed, strictly implementing lawful rights and interests specified by laws and regulations such as users' rights to control, know, and choose.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 4821,
+        "end_char": 4917
+      },
+      {
+        "quote": "随着人工智能技术的快速发展，不排除人工智能自主获取外部资源、自我复制，产生自我意识，寻求外部权力，带来谋求与人类争夺控制权的风险。",
+        "source_section": "Page 9",
+        "quote_en": "With the rapid development of AI technology, it cannot be ruled out that AI may autonomously acquire external resources, self-replicate, develop self-awareness, and seek external power, bringing the risk of vying with humans for control.",
+        "frame": "existential_catastrophic",
+        "grounding_status": "verbatim",
+        "start_char": 4483,
+        "end_char": 4548
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:33:05.575937Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "c47bb89b43269bce87e6152510fdb1f091c169ba652100018d507cb9bd06117e",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 39614,
+      "output_tokens": 4850,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 13422,
+      "estimated_cost_usd": 0.232237
+    },
+    "grounding_summary": {
+      "total_quotes": 30,
+      "exact_matches": 30,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 20
+    }
   }
 }

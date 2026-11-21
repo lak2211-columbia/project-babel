@@ -18,7 +18,7 @@ All schemas align with **Taxonomy v2.1.0** (`data/taxonomies/observatory-taxonom
 
 ## Enforcement & synchronization
 
-1. **Automated CI validation:** `.github/workflows/ci.yml` executes `make taxonomy && make sources && make validate-artifacts` (`jsonschema` Draft 2020-12 with `FormatChecker`), validating all **115** committed corpus artifacts (`observatory-taxonomy.json`, `label-definitions.json`, 5 manifests, 103 document analyses, and 5 jurisdiction analyses) with zero errors.
+1. **Automated CI validation:** `.github/workflows/ci.yml` executes `make taxonomy && make sources && make validate-artifacts` (`jsonschema` Draft 2020-12 with `FormatChecker`), validating all **133** committed corpus artifacts (`observatory-taxonomy.json`, `label-definitions.json`, 5 source manifests, 121 document analyses, and 5 jurisdiction analyses) with zero errors.
 2. **Taxonomy updates:** Update `observatory-taxonomy.json`, `label-definitions.json`, the schemas here, `services/pipeline/src/observatory/models.py`, and `apps/web/src/lib/taxonomy-vocab.ts` together (the web test suite asserts verbatim parity with `label-definitions.json`).
 3. **Pydantic schema export:** Diff live Python models against these files at any time:
    ```bash

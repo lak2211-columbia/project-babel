@@ -1,0 +1,291 @@
+{
+  "source_id": "jp_aisi_red_teaming_guide_2025",
+  "title": "AIセーフティに関するレッドチーミング手法ガイド (第1.10版) / J-AISI Guide to Red Teaming Methodology on AI Safety (Ver. 1.10)",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "Japan AI Safety Institute (AI セーフティ・インスティテュート)",
+    "document_type": "standards_guideline",
+    "binding_strength": "standards_guideline",
+    "publication_date": "2025-03-31",
+    "effective_date": null,
+    "covered_actors": [
+      "AI developers (AI 開発者)",
+      "AI providers (AI 提供者)",
+      "AI system development and provision managers (開発・提供管理者)",
+      "Business executives (事業執行責任者)",
+      "Third-party red-teaming evaluators (サードパーティ)",
+      "AI users/deployers (AI 利用者, as optional reference for procurement)"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "red_teaming",
+        "confidence": 0.99,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "「AI セーフティに関するレッドチーミング手法ガイド」（以下、「本ガイド」という。）は、AI システムの開発や提供に携わる者が対象のAI システムに施したリスクへの対策を、攻撃者（AI システムの悪用や破壊を意図する者）の視点から評価するためのレッドチーミング手法に関する基本的な考慮事項や実施ポイントを示している。",
+            "source_section": "Section 1.1 (Page 4)",
+            "quote_en": "The 'Guide to Red Teaming Methodology on AI Safety' (hereinafter referred to as 'this Guide') presents basic considerations and implementation points regarding red teaming methodologies for those involved in the development and provision of AI systems to evaluate the risk countermeasures applied to target AI systems from the perspective of an attacker (a person intending to misuse or destroy the AI system).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6095,
+            "end_char": 6253
+          },
+          {
+            "quote": "レッドチーミングを初回実施する際は、対象とするAI システムのリリース/運用開始前\nまでに実施することを基本とする。",
+            "source_section": "Section 5.1 (Page 26)",
+            "quote_en": "When conducting red teaming for the first time, it is fundamental to conduct it before the release or start of operation of the target AI system.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24999,
+            "end_char": 25057
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "そのため、実際のシステム構成や利用環境でのリスクを評価し、リスクベースのアプローチによりリスクの高い箇所から優先的に対応することが有効となる。",
+            "source_section": "Section 2.2 (Page 10)",
+            "quote_en": "Therefore, it is effective to evaluate risks in the actual system configuration and usage environment, and to prioritize addressing high-risk areas through a risk-based approach.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 11623,
+            "end_char": 11694
+          },
+          {
+            "quote": "なお、レッドチーミングにおけるリスク分析及びリスクシナリオの作成は、評価対象シ\nステムに関して、関連ドメインのエキスパートも交え、ユースケースの精査と特に警戒し\nなければならないリスクについて共通認識を持った上で行う必要がある。",
+            "source_section": "Section 7.1 (Page 41)",
+            "quote_en": "Furthermore, risk analysis and the creation of risk scenarios in red teaming need to be conducted with the involvement of relevant domain experts for the target system, after carefully examining use cases and establishing a shared understanding of the risks that require particular vigilance.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 38327,
+            "end_char": 38441
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.85,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "攻撃シナリオの実施中の記録に関しては、実施されたレッドチーミングの詳細を証跡と\nして保存するため、対象とするLLM システムの特性に合わせて過不足無く取得する。",
+            "source_section": "Section 7.4 (Page 57)",
+            "quote_en": "Regarding records during the execution of attack scenarios, in order to preserve the details of the conducted red teaming as evidence, they are to be acquired neither excessively nor insufficiently in accordance with the characteristics of the target LLM system.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 50823,
+            "end_char": 50903
+          },
+          {
+            "quote": "なお取得した記録については、組織の文書管理規程や機密情報の取扱規程等に従い、適切な保護対策を施し、決められた期間、保存する必要がある。",
+            "source_section": "Section 7.4 (Page 58)",
+            "quote_en": "Furthermore, the acquired records need to be protected with appropriate security measures and stored for a prescribed period in accordance with the organization's document management rules and confidential information handling rules.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 51262,
+            "end_char": 51329
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.82,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "これらの攻撃への対策として、プロンプト自体の堅牢化に加え、LLM の前段に入力\nフィルターを設置することによる禁止用語の除外、攻撃を検知するための検閲用\nLLM の設置、LLM の後段への出力フィルター設置などが挙げられる。",
+            "source_section": "Section 3.1 (Page 16)",
+            "quote_en": "Countermeasures against these attacks include, in addition to hardening the prompt itself, excluding prohibited terms by installing an input filter before the LLM, installing a moderation LLM to detect attacks, and installing an output filter after the LLM.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16947,
+            "end_char": 17059
+          },
+          {
+            "quote": "また、攻撃者がAI モデルの内部パラメータ（重みなど）\nを知ることで、回避攻撃の成功率が高まるため、AI モデル自体を保護することも対\n策となる。",
+            "source_section": "Section 3.2 (Page 21)",
+            "quote_en": "In addition, because the success rate of evasion attacks increases if an attacker learns the internal parameters (such as weights) of the AI model, protecting the AI model itself is also a countermeasure.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20489,
+            "end_char": 20562
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.72,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "メンバーシップ推論攻撃への対策として、訓練に用いるデータセットの作成段階におけるデータ属性の見直しや匿名化、データ分布の調整、訓練データの記憶が生じないようアルゴリズムを工夫すること、AI モデルの出力情報の加工などが挙げられる。",
+            "source_section": "Section 3.2 (Page 22)",
+            "quote_en": "Countermeasures against membership inference attacks include reviewing and anonymizing data attributes during the creation stage of the dataset used for training, adjusting data distribution, devising algorithms so that memorization of training data does not occur, and processing the output information of the AI model.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 21242,
+            "end_char": 21357
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "quote": "本ガイドは、国内外における検討や先行事例を踏まえ、国際整合性を考慮した上で、 現段階でレッドチーミングを実行する際に重要と思われる事項を整理して作成した。",
+            "source_section": "Section 1.1 (Page 4)",
+            "quote_en": "This Guide was created by organizing matters considered important when executing red teaming at the present stage, based on domestic and international discussions and prior examples while taking international consistency into consideration.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6253,
+            "end_char": 6330
+          },
+          {
+            "quote": "開発・提供管理者や事業執行責任者は本書を参照することにより、自らが開発あるいは提供するAI システムに対するレッドチーミング実施の有効性や必要性を理解することができる。",
+            "source_section": "Section 1.3 (Page 8)",
+            "quote_en": "By referring to this document, development/provision managers and executive officers can understand the effectiveness and necessity of conducting red teaming for the AI systems they develop or provide.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 10418,
+            "end_char": 10502
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "Non-binding technical methodology guide (Ver. 1.10, revised March 31, 2025) maintained as a living document by J-AISI to complement its Guide to Evaluation Perspectives on AI Safety. The Ver. 1.10 revision incorporates detailed evaluation items derived from practical red teaming of RAG-based LLM systems and adds multimodal foundation model (e.g., image) attack examples. The guide is organized into a main volume (this document), a detailed explanation annex, and sample deliverables, outlining a 3-stage, 15-step red-teaming lifecycle (planning/preparation, attack planning/execution, and reporting/remediation/follow-up) for both pre-release and ongoing post-deployment testing using automated tools, manual testing, and AI agents.",
+    "confidence": 0.95
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "fundamental_rights",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.7,
+      "social_stability": 0.15,
+      "innovation_enablement": 0.6,
+      "consumer_public_safety": 0.9,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.25,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.15,
+      "consumer_public_safety": 0.55,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The J-AISI Red Teaming Guide is primarily framed around consumer and public safety: its core stated purpose is to counter AI misuse, abuse, inaccurate outputs, and malicious attacks so that AI systems do not cause harm to stakeholders' life, body, property, mental well-being, or the environment, and can be operated safely and securely. Fundamental rights serves as the main secondary frame because the guide defines 'AI Safety' on a human-centric foundation that prohibits infringing constitutional or internationally recognized human rights, while requiring fairness, non-discrimination, and privacy protection. Innovation enablement is a notable secondary frame, as the guide opens by linking AI adoption to promoting innovation and solving social challenges and frames red teaming as a practical means to build trustworthiness and enable safe AI utilization. Consumer and public safety edges out fundamental rights because the bulk of the document's stated rationale centers on identifying technical vulnerabilities, preventing operational damage and harmful outputs, and hardening systems against attackers rather than constitutional rights adjudication. Misinformation/disinformation prevention appears briefly as an evaluation perspective, giving social stability a minor share, while existential risk, national security, economic competitiveness, and labor transition are absent.",
+    "evidence_spans": [
+      {
+        "quote": "一方で、AI システムの開発・提供・利用が急速に広まる中で、AI システムの悪用や誤用、不正確な出力による懸念等も生じており、いわゆるAI セーフティについての関心が国内外で高まりつつある。",
+        "source_section": "Page 4 (1.1 本書の目的)",
+        "quote_en": "On the other hand, as the development, provision, and use of AI systems rapidly expand, concerns regarding the misuse and abuse of AI systems and inaccurate outputs have also arisen, and interest in so-called AI safety is growing both domestically and internationally.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 5833,
+        "end_char": 5928
+      },
+      {
+        "quote": "AI システム・サービスの開発・提供・利用を通じ、ステークホルダーの生命・身体・財産に危害を及ぼすことがないようにすること。加えて、精神及び環境に危害を及ぼすことがないようにすること。",
+        "source_section": "Page 7 (1.2 本書で使用する用語)",
+        "quote_en": "Through the development, provision, and use of AI systems and services, to ensure that no harm is caused to the life, body, or property of stakeholders. In addition, to ensure that no harm is caused to mental well-being or the environment.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 9269,
+        "end_char": 9361
+      },
+      {
+        "quote": "AI システム・サービスの開発・提供・利用において、全ての取り組むべき事項が導出される土台として、少なくとも憲法が保障する又は国際的に認められた人権を侵すことがないようにすること。",
+        "source_section": "Page 7 (1.2 本書で使用する用語)",
+        "quote_en": "In the development, provision, and use of AI systems and services, as the foundation from which all actions to be taken are derived, to ensure at a minimum that human rights guaranteed by the Constitution or internationally recognized are not infringed.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 8961,
+        "end_char": 9051
+      },
+      {
+        "quote": "AI システム・サービスの開発・提供・利用において、その重要性に応じ、プライバシー\nを尊重し保護すること、及び関係法令を遵守すること。",
+        "source_section": "Page 8 (1.2 本書で使用する用語)",
+        "quote_en": "In the development, provision, and use of AI systems and services, to respect and protect privacy according to its importance and to comply with relevant laws and regulations.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 9668,
+        "end_char": 9735
+      },
+      {
+        "quote": "生成AI 技術をはじめとするAI 技術の導入により、イノベーションの促進や社会課題の解決が期待されている。",
+        "source_section": "Page 4 (1.1 本書の目的)",
+        "quote_en": "The introduction of AI technologies, starting with generative AI technology, is expected to promote innovation and solve social issues.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 5780,
+        "end_char": 5833
+      },
+      {
+        "quote": "AI システムの持つ様々な脆弱性に対して、AI セーフティの維持または向上のために、レッドチーミングによってAI システムの脆弱性を明らかにし、改善策を施すことが非常に重要である。これにより、AI システムを安全・安心に利用できるようになることが期待される。",
+        "source_section": "Page 10 (2.2 レッドチーミングの重要性と期待される効果)",
+        "quote_en": "Against the various vulnerabilities possessed by AI systems, in order to maintain or improve AI safety, it is very important to uncover vulnerabilities in AI systems through red teaming and implement remedial measures. Through this, it is expected that AI systems will become usable safely and securely.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 11695,
+        "end_char": 11824
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:49:42.836467Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "cb6b7369bdedb4aab6020b6689534f6fbbfc076f49d613d16c63321aa1dd565b",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 97829,
+      "output_tokens": 3076,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 10161,
+      "estimated_cost_usd": 0.254656
+    },
+    "grounding_summary": {
+      "total_quotes": 17,
+      "exact_matches": 17,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 6
+    }
+  }
+}

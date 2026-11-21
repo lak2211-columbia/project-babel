@@ -1,41 +1,86 @@
 {
-  "dominant_frame": "national_security",
+  "dominant_frame": "economic_competitiveness",
   "secondary_frames": [
-    "economic_competitiveness",
+    "national_security",
     "innovation_enablement",
-    "labor_transition"
+    "labor_transition",
+    "existential_catastrophic"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.2,
-    "national_security": 0.85,
-    "economic_competitiveness": 0.75,
-    "fundamental_rights": 0.15,
-    "social_stability": 0.1,
-    "innovation_enablement": 0.6,
-    "consumer_public_safety": 0.2,
-    "labor_transition": 0.35
+    "existential_catastrophic": 0.72,
+    "national_security": 0.93,
+    "economic_competitiveness": 0.96,
+    "fundamental_rights": 0.45,
+    "social_stability": 0.35,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.35,
+    "labor_transition": 0.85
   },
-  "rationale_summary": "The document is explicitly framed around winning a geopolitical race against adversaries, particularly China, with AI dominance described as a 'national security imperative.' While economic competitiveness and innovation enablement are strongly present, they are consistently subordinated to or integrated with national security reasoning—export controls, military AI adoption, CBRNE risk evaluations, and countering Chinese influence all reflect a security-first logic. The title 'Winning the Race' and the repeated framing of AI leadership as essential to military preeminence and preventing adversary advantage confirm national security as the dominant frame.",
+  "frame_share": {
+    "existential_catastrophic": 0.06,
+    "national_security": 0.25,
+    "economic_competitiveness": 0.3,
+    "fundamental_rights": 0.04,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.22,
+    "consumer_public_safety": 0.02,
+    "labor_transition": 0.11
+  },
+  "rationale_summary": "America's AI Action Plan is dominantly framed around economic_competitiveness, organizing all three pillars around 'winning the race' to achieve global AI dominance, exporting the full U.S. AI technology stack worldwide, reshoring semiconductor manufacturing, and ushering in an industrial revolution. Economic_competitiveness narrowly edges out national_security because global ecosystem leadership, market-standard setting, and industrial buildout frame both domestic deregulation and international alliances. National_security is a close runner-up (military preeminence, China rivalry, chip export controls, critical-infrastructure defense), paired with strong innovation_enablement (deregulation, permitting reform, sandboxes, open-weight support), an explicit labor_transition agenda (AI Workforce Research Hub, DOL rapid retraining for displaced workers, skilled-trades apprenticeships), and existential_catastrophic rationales for CAISI frontier CBRNE/cyber evaluations and nucleic-acid biosecurity screening.",
   "evidence_spans": [
     {
-      "quote": "it is a national security imperative for the United States to achieve and maintain unquestioned and unchallenged global technological dominance",
-      "source_section": "Introduction epigraph"
-    },
-    {
       "quote": "The United States is in a race to achieve global dominance in artificial intelligence (AI). Whoever has the largest AI ecosystem will set global AI standards and reap broad economic and military benefits.",
-      "source_section": "Introduction"
+      "source_section": "Page 4",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 5170,
+      "end_char": 5374
     },
     {
-      "quote": "Denying our foreign adversaries access to this resource, then, is a matter of both geostrategic competition and national security.",
-      "source_section": "Pillar III"
+      "quote": "We need to establish American AI—from our advanced semiconductors to our models to our applications—as the gold standard for AI worldwide and ensure our allies are building on American technology.",
+      "source_section": "Page 4",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 7675,
+      "end_char": 7871
     },
     {
-      "quote": "The most powerful AI systems may pose novel national security risks in the near future in areas such as cyberattacks and the development of chemical, biological, radiological, nuclear, or explosives (CBRNE) weapons",
-      "source_section": "Pillar III"
+      "quote": "As our global competitors race to exploit these technologies, it is a national security imperative for the United States to achieve and maintain unquestioned and unchallenged global technological dominance.",
+      "source_section": "Page 2",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 380,
+      "end_char": 586
     },
     {
-      "quote": "Counter Chinese Influence in International Governance Bodies",
-      "source_section": "Pillar III"
+      "quote": "The United States needs to innovate faster and more comprehensively than our competitors in the development and distribution of new AI technology across every field, and dismantle unnecessary regulatory barriers that hinder the private sector in doing so.",
+      "source_section": "Page 4",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 6788,
+      "end_char": 7043
+    },
+    {
+      "quote": "Led by DOL, leverage available discretionary funding, where appropriate, to fund rapid retraining for individuals impacted by AI-related job displacement.",
+      "source_section": "Page 10",
+      "quote_en": null,
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 22749,
+      "end_char": 22903
+    },
+    {
+      "quote": "The most powerful AI systems may pose novel national security risks in the near future in areas such as cyberattacks and the development of chemical, biological, radiological, nuclear, or explosives (CBRNE) weapons, as well as novel security vulnerabilities.",
+      "source_section": "Page 25",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 64892,
+      "end_char": 65150
     }
   ]
 }

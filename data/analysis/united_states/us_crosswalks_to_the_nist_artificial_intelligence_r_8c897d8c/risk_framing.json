@@ -1,32 +1,66 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
-    "fundamental_rights"
+    "fundamental_rights",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.5,
+    "economic_competitiveness": 0.1,
+    "fundamental_rights": 0.65,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.85,
+    "consumer_public_safety": 0.52,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document frames AI governance primarily around managing AI risks to promote trustworthy and responsible AI systems, which aligns with consumer/public safety framing. Secondary frames include innovation enablement (voluntary, flexible framework) and fundamental rights (rights-preserving language).",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.25,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.55,
+    "consumer_public_safety": 0.2,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "This brief companion page is dominantly framed around innovation_enablement, emphasizing a voluntary, flexible, non-sector-specific, internationally aligned standards resource designed to equip AI actors to increase system trustworthiness without prescriptive mandates. Innovation_enablement edges out fundamental_rights (signaled explicitly by 'rights-preserving') and consumer_public_safety (managing the many risks of AI to promote responsible use), both of which appear as concise supporting rationales.",
   "evidence_spans": [
     {
-      "quote": "the goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems",
-      "source_section": "Introduction"
+      "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic, providing flexibility to organizations of all sizes and in all sectors and throughout society to implement the approaches in the Framework.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 562,
+      "end_char": 807
+    },
+    {
+      "quote": "The Framework is intended for use with, and to encourage the development of other AI resources, including guidance and standards.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 950,
+      "end_char": 1079
     },
     {
       "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic",
-      "source_section": "Introduction"
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 562,
+      "end_char": 666
     },
     {
-      "quote": "approaches that increase the trustworthiness of AI systems",
-      "source_section": "Introduction"
+      "quote": "help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 454,
+      "end_char": 561
     }
   ]
 }

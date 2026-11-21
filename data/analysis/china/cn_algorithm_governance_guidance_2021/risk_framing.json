@@ -2,36 +2,84 @@
   "dominant_frame": "social_stability",
   "secondary_frames": [
     "fundamental_rights",
-    "innovation_enablement",
-    "national_security"
+    "economic_competitiveness",
+    "innovation_enablement"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.75,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.3,
+    "national_security": 0.2,
+    "economic_competitiveness": 0.8,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.98,
+    "innovation_enablement": 0.75,
+    "consumer_public_safety": 0.1,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames algorithm governance as necessary to maintain correct information order, ideological security, market order, and social order. The central concern is preventing algorithms from disrupting social stability, spreading harmful content, or undermining ideological alignment. Secondary concerns include protecting netizens' rights (fundamental_rights), supporting domestic algorithm innovation to build competitive strength (innovation_enablement), and maintaining ideological/national security.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.03,
+    "economic_competitiveness": 0.18,
+    "fundamental_rights": 0.2,
+    "social_stability": 0.45,
+    "innovation_enablement": 0.14,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Social stability and public order is the dominant frame because the guidance consistently anchors algorithm governance in safeguarding ideological security, maintaining dissemination and social order, promoting socialist core values, steering public opinion orientation, and disseminating 'positive energy' to cultivate a clean cyberspace. While fundamental rights (fairness, justice, explainability, and safeguarding netizens' legitimate rights and interests) is a prominent secondary rationale, it is framed alongside and subordinate to overarching ideological and public-order imperatives. Economic competitiveness (enhancing China's core competitiveness in algorithms, protecting IP, and promoting indigenous R&D) and innovation enablement (supporting deep integration of algorithms across economic and social fields for healthy, orderly development) also serve as key secondary justifications, with only minor implicit strategic-sovereignty undertones via 'independent and controllable' capabilities.",
   "evidence_spans": [
     {
-      "quote": "算法不合理应用也影响了正常的传播秩序、市场秩序和社会秩序，给维护意识形态安全、社会公平公正和网民合法权益带来挑战",
-      "source_section": "指导意见前言"
+      "quote": "与此同时，算法不合理应用也影响了正常的传播秩序、市场秩序和社会秩序，给维护意识形态安全、社会公平公正和网民合法权益带来挑战。",
+      "source_section": "关于加强互联网信息服务算法综合治理的指导意见",
+      "quote_en": "At the same time, the unreasonable application of algorithms has also affected normal dissemination order, market order, and social order, bringing challenges to safeguarding ideological security, social fairness and justice, and the legitimate rights and interests of netizens.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 423,
+      "end_char": 485
     },
     {
-      "quote": "防止利用算法干扰社会舆论、打压竞争对手、侵害网民权益等行为，防范算法滥用带来意识形态、经济发展和社会管理等方面的风险隐患",
-      "source_section": "第十五条"
+      "quote": "弘扬社会主义核心价值观，在算法应用中坚持正确政治方向、舆论导向、价值取向。提高正能量传播的精准性和有效性，规范信息分发行为和秩序，推动企业借助算法加强正能量传播，引导算法应用向上向善。",
+      "source_section": "四、促进算法生态规范发展",
+      "quote_en": "Promote socialist core values and uphold the correct political direction, public opinion orientation, and value orientation in algorithm applications. Improve the precision and effectiveness of disseminating positive energy, regulate information distribution behavior and order, encourage enterprises to use algorithms to strengthen the dissemination of positive energy, and guide algorithm applications toward the good.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 2348,
+      "end_char": 2440
     },
     {
-      "quote": "坚持正确导向，强化科技伦理意识、安全意识和底线思维，充分发挥算法服务正能量传播作用，营造风清气正的网络空间",
-      "source_section": "基本原则"
+      "quote": "坚持权益保障，引导算法应用公平公正、透明可释，充分保障网民合法权益",
+      "source_section": "一、总体要求",
+      "quote_en": "Adhere to the protection of rights and interests, guide algorithm applications to be fair, just, transparent, and explainable, and fully safeguard the legitimate rights and interests of netizens",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 901,
+      "end_char": 934
     },
     {
-      "quote": "提升算法创新能力…提高算法自主可控能力…增强算法核心竞争力",
-      "source_section": "第十四条"
+      "quote": "规范企业算法应用行为，保护网民合理权益，秉持公平、公正原则，促进算法公开透明。",
+      "source_section": "四、促进算法生态规范发展",
+      "quote_en": "Regulate corporate algorithm application behavior, protect the reasonable rights and interests of netizens, uphold the principles of fairness and justice, and promote algorithm openness and transparency.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 2454,
+      "end_char": 2493
+    },
+    {
+      "quote": "大力推进我国算法创新研究工作，保护算法知识产权，强化自研算法的部署和推广，提升我国算法的核心竞争力。",
+      "source_section": "一、总体要求",
+      "quote_en": "Vigorously advance China's algorithm innovation research, protect algorithm intellectual property rights, strengthen the deployment and promotion of independently developed algorithms, and enhance the core competitiveness of China's algorithms.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 942,
+      "end_char": 992
+    },
+    {
+      "quote": "提升算法创新能力，积极开展算法研发工作，支持算法与社会、经济各领域深度结合。",
+      "source_section": "四、促进算法生态规范发展",
+      "quote_en": "Enhance algorithm innovation capabilities, actively carry out algorithm research and development, and support the deep integration of algorithms with various social and economic fields.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2574,
+      "end_char": 2612
     }
   ]
 }

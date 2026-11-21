@@ -1,32 +1,65 @@
 {
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "consumer_public_safety",
-    "fundamental_rights"
+    "economic_competitiveness"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
+    "economic_competitiveness": 0.45,
     "fundamental_rights": 0.0,
     "social_stability": 0.0,
-    "innovation_enablement": 0.65,
-    "consumer_public_safety": 0.55,
-    "labor_transition": 0.1
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.05,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is a Q&A guide for AI/data contracts in agriculture, primarily framed around enabling safe data sharing to promote smart agriculture adoption. The core stated reason for governance is to facilitate data utilization while protecting farmers' know-how, allowing them to 'safely provide data.' This is innovation enablement (promoting smart agriculture) with a secondary consumer/public safety frame around preventing data leaks and protecting agricultural trade secrets.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.85,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document's dominant framing is innovation_enablement because it explicitly justifies the AI and Data Contract Guidelines as necessary to build a trustworthy contracting environment that encourages farmers to share data, harmonizes data utilization with know-how protection, avoids transactional disputes, and accelerates the adoption and R&D of smart agriculture. It edges out economic_competitiveness, which appears only as a secondary rationale in references to protecting commercial trade secrets/know-how from external or overseas outflow and supporting regional agricultural development and productivity.",
   "evidence_spans": [
     {
-      "quote": "スマート農業の普及に不可欠なデータの利活用を促進するためには、農業者が安心してデータを提供できるよう、ノウハウの流出を防止する契約とする必要がある",
-      "source_section": "Page 8"
+      "quote": "スマート農業の普及に不可欠なデータの利活用を促進するためには、農業者が安心してデータを提供できるよう、ノウハウの流出を防止する契約とする必要があるため、ガイドラインに基づいた契約を推奨しています。",
+      "source_section": "Page 8",
+      "quote_en": "In order to promote the utilization of data essential for the spread of smart agriculture, it is necessary to have contracts that prevent the leakage of know-how so that farmers can provide data with peace of mind; therefore, contracts based on the guidelines are recommended.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 7634,
+      "end_char": 7732
     },
     {
-      "quote": "データ流出や不正利用に伴って、営業秘密やノウハウが外部に流出するおそれがあります",
-      "source_section": "Page 8"
+      "quote": "ビッグデータ等を活用したスマート農業を進めるため、ガイドラインは、データ利活用の促進とノウハウの保護の調和を図るためのルールを示しており、ガイドラインに沿った契約であれば、農業者は安心してスマート農業事業者等に対し、データを提供できるようになります。",
+      "source_section": "Page 9",
+      "quote_en": "To advance smart agriculture utilizing big data and similar technologies, the guidelines set out rules to harmonize the promotion of data utilization with the protection of know-how, and with contracts aligned with the guidelines, farmers can provide data to smart agriculture service providers with peace of mind.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 8889,
+      "end_char": 9014
     },
     {
-      "quote": "農業者としては、ガイドラインに従うと、農機メーカー等に提供した農業データが守られるため、安心してデータを提供できるようになるというメリットがあります",
-      "source_section": "Page 8"
+      "quote": "例えば、特定の地域（産地）外に流出させたくないノウハウが含まれるデータ等について、利用目的を「○○地域の農業の発展と生産性向上」と設定する場合は、地域外の農業関係者等に共有されることは想定されません",
+      "source_section": "Page 3",
+      "quote_en": "For example, with respect to data containing know-how that one does not want to leak outside a specific region (producing area), if the purpose of use is set as 'development and productivity improvement of agriculture in Region XX,' it is not anticipated to be shared with agricultural stakeholders outside the region.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 4282,
+      "end_char": 4381
+    },
+    {
+      "quote": "データが法的に保護されることは限定的であり、データの保護を契約等により適切に行わなければ、たとえば、データ流出や不正利用に伴って、営業秘密やノウハウが外部に流出するおそれがあります。",
+      "source_section": "Page 8",
+      "quote_en": "Legal protection of data is limited, and if data is not appropriately protected through contracts or other means, there is a risk that trade secrets and know-how may leak externally due to data breaches or unauthorized use.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 7768,
+      "end_char": 7859
     }
   ]
 }

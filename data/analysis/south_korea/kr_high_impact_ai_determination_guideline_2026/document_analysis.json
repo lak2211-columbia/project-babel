@@ -1,0 +1,545 @@
+{
+  "source_id": "kr_high_impact_ai_determination_guideline_2026",
+  "title": "고영향 인공지능 판단 가이드라인 (High-Impact AI Determination Guideline)",
+  "language": "ko",
+  "policy_extraction": {
+    "jurisdiction": "south_korea",
+    "issuing_body": "Ministry of Science and ICT (MSIT / 과학기술정보통신부) / AI Basic Act Support Desk",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2026-01-22",
+    "effective_date": "2026-01-22",
+    "covered_actors": [
+      "AI development business operators (인공지능개발사업자) developing and providing AI systems (including commercial, public-service, and free enterprise open-source releases, as well as integrators making substantial functional modifications)",
+      "AI-using business operators (인공지능이용사업자) providing products or services utilizing AI developed by another operator (exempt from duplicating Art. 34(1)(1)-(3) duties already fulfilled by the developer unless substantial functional modification occurs)",
+      "State agencies, local governments, and public institutions (국가기관등) operating AI systems in public-service decision-making or procuring high-impact AI",
+      "Overseas AI business operators affecting the Korean market or users and meeting Presidential Decree thresholds (KRW 1 trillion total revenue, KRW 10 billion AI service revenue, 1 million average daily Korean users, or prior Art. 43(1)(3) fine) required to designate a domestic representative (국내대리인)",
+      "Exempted actors: individuals developing or optimizing open-source AI purely for hobby or self-development, simple end users ('이용자') such as physicians or employers using AI outputs without providing AI services, and defense/national-security-only AI designated by MND, NIS, or NPA"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "biometrics",
+      "public_sector_use",
+      "employment",
+      "education",
+      "healthcare",
+      "finance",
+      "law_enforcement"
+    ],
+    "prohibited_practices": [
+      "Fully automated administrative dispositions involving agency discretion are disallowed under Framework Act on Administration Article 20 (referenced in Section 2.12.1)",
+      "Unauthorized disclosure or misuse of confidential information obtained in the course of official duties by National AI Committee members is prohibited under AI Basic Act Article 7(9) and punishable under Article 42"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.99,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "인공지능사업자는 인공지능 또는 이를 이용한 제품ㆍ서비스를 제공하는 경우 그 인공지능이 고영향 인공지능에 해당하는지에 대하여 사전에 검토하여야 하며, 필요한 경우 과학기술정보 통신부장관에게 고영향 인공지능에 해당하는지 여부의 확인을 요청할 수 있다.",
+            "source_section": "제33조(고영향 인공지능의 확인)",
+            "quote_en": "AI Basic Act Art. 33(1): Before providing AI or AI-based products/services, an AI business operator shall conduct a prior review of whether the AI constitutes high-impact AI and, where necessary, may request confirmation from the Minister of Science and ICT.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2119,
+            "end_char": 2257
+          },
+          {
+            "quote": "인공지능사업자가 고영향 인공지능을 이용한 제품 또는 서비스를 제공하는\n경우 사전에 사람의 기본권에 미치는 영향을 평가(이하 “영향평가”라 한다)하기 위하여 노력하여야 한다.",
+            "source_section": "제35조(고영향 인공지능 영향평가)",
+            "quote_en": "AI Basic Act Art. 35(1): An AI business operator providing products or services using high-impact AI shall endeavor to conduct a prior assessment of impacts on human fundamental rights (Fundamental Rights Impact Assessment, detailed in Enforcement Decree Art. 28).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 153436,
+            "end_char": 153532
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.97,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "만약 채용 과정에서 정당한 권한을 가진 사람에 의한 실질적인 개입이 없거나, 해당 인적 개입이 형식적인 절차 만으로 운영되어 실질적으로 인공지능이 도출한 결과에 의존한다면 이는 ‘고영향 인공지능’에 해당한다.",
+            "source_section": "2.6.3 ‘고영향’ 확인 기준 (채용)",
+            "quote_en": "If there is no meaningful intervention by an authorized human in recruitment, or human intervention operates only formally while substantively relying on AI outputs, the system qualifies as High-Impact AI (with analogous HITL/human-review tests across energy, water, healthcare, nuclear, biometrics, lending, transport, public services, and K-12 education).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 55740,
+            "end_char": 55856
+          },
+          {
+            "quote": "국가기관 등이 사람의 개입이나 감독 없이 완전히 자동화된 인공지능시스템으로 최종 결정을 수행하는 형태의 공공서비스는 ‘고영향 인공지능’으로 판단된다.",
+            "source_section": "2.12.3 ‘고영향’ 확인 기준 (공공서비스)",
+            "quote_en": "Public services in which state agencies make final decisions through fully automated AI systems without human intervention or oversight (lacking Human-in-the-Loop) are classified as High-Impact AI, triggering Art. 34(1)(4) human oversight obligations.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 99934,
+            "end_char": 100017
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.97,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "인공지능사업자는 고영향 인공지능이나 생성형 인공지능을 이용한 제품\n또는 서비스를 제공하려는 경우 제품 또는 서비스가 해당 인공지능에 기반하여 운용된다는 사실을 이용자에게 사전에 고지하여야 한다.",
+            "source_section": "제31조(인공지능 투명성 확보 의무)",
+            "quote_en": "AI Basic Act Art. 31(1): When intending to provide products or services using high-impact AI or generative AI, an AI business operator shall notify users in advance that the product or service operates based on that AI.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 151607,
+            "end_char": 151715
+          },
+          {
+            "quote": "인공지능사업자는 법 제34조제1항 각 호의 조치 중에서 다\n음 각 호에 해당하는 내용을 인공지능사업자의 사무소ㆍ사업장 또는 인터넷 홈페이지 등에 게시해야 한다.",
+            "source_section": "제27조(고영향 인공지능과 관련한 사업자의 책무)",
+            "quote_en": "Enforcement Decree Art. 27(1): High-impact AI operators must publicly post on their premises or website summaries of risk management policies, explanation measures (outcomes, key criteria, training-data overview), user protection measures, and the human supervisor's name and contact details (excluding trade secrets).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 173399,
+            "end_char": 173488
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.96,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "인공지능사업자는 법 제34조제1항 각 호의 조치를 이행하고 그 근거를 문서로 5년간 보관(전자적 방법을 통한 보관을 포함한다)해야 한다.",
+            "source_section": "제27조(고영향 인공지능과 관련한 사업자의 책무)",
+            "quote_en": "Enforcement Decree Art. 27(2): High-impact AI operators shall implement the Art. 34(1) measures and retain written or electronic documentation verifying compliance for 5 years.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 173724,
+            "end_char": 173800
+          },
+          {
+            "quote": "인공지능사업자가 법 제33조제1항에 따라 고영향 인공지능에 해당\n하는지에 대하여 확인을 요청하려는 경우에는 별지 서식의 고영향 인공지능 확인 요청서에 다음 각 호의 서류 를 첨부하여 과학기술정보통신부장관에게 제출해야 한다.",
+            "source_section": "제25조(고영향 인공지능의 확인 절차 등)",
+            "quote_en": "Enforcement Decree Art. 25(1): Operators requesting High-Impact AI confirmation must submit technical dossiers comprising the AI product/service overview (including base/derived model lineage and specs), training-data overview, and process/output verification materials.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 171604,
+            "end_char": 171728
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.92,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "기술적으로 가능한 범위에서의 인공지능이 도출한 최종결과, 인공지능의 최종결과 도출에 활용된 주요 기 준, 인공지능의 개발ㆍ활용에 사용된 학습용데이터의 개요 등에 대한 설명 방안의 수립ㆍ시행",
+            "source_section": "1.3.3 고영향 인공지능사업자의 책무",
+            "quote_en": "AI Basic Act Art. 34(1)(2): High-impact AI operators must establish and implement explanation measures covering, to the extent technically feasible, final outcomes, key decision criteria, and an overview of training data used in development and utilization.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 152997,
+            "end_char": 153102
+          },
+          {
+            "quote": "\"해당 인공지능시스템의 개발 및 학습에 사용된 학습용데이터의 개요\"는 학습용데이터의 종류, 출처, 규모 등을 작성하며, 개인정보(민감정보 및 신용정보 포함), 영업비밀 등을 학습에 사용하였는지 등이 포함된 서류를 제출합니다.",
+            "source_section": "고영향 인공지능 확인·재확인 요청서 작성방법",
+            "quote_en": "Confirmation Request Form Instructions: The training-data overview must detail dataset types, provenance/sources, scale, collection/preprocessing methods, and whether personal data (including sensitive and credit data) or trade secrets were used in training.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 133881,
+            "end_char": 134006
+          }
+        ]
+      },
+      {
+        "label": "domestic_representative",
+        "confidence": 0.96,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "국내에 주소 또는 영업소가 없는 인공지능사업자로서 이용자 수, 매출액 등이 대통\n령령으로 정하는 기준에 해당하는 자는 다음 각 호의 사항을 대리하는 자(이하 “국내대리인”이라 한다)를 서면 으로 지정하고, 이를 과학기술정보통신부장관에게 신고하여야 한다.",
+            "source_section": "제36조(국내대리인 지정)",
+            "quote_en": "AI Basic Act Art. 36(1): Overseas AI business operators lacking a domestic address or office and meeting Presidential Decree user/revenue thresholds shall designate a domestic representative in writing and report the designation to MSIT to handle Art. 32(2) filings, Art. 33(1) confirmations, and Art. 34(1) duties.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 153684,
+            "end_char": 153825
+          },
+          {
+            "quote": "1. 전년도(법인인 경우에는 전 사업연도를 말한다) 매출액이 1조원 이상인 인공지능사업자\n2. 인공지능서비스 부문 전년도(법인인 경우에는 전 사업연도를 말한다) 매출액이 100억원 이상인 인공지능사업자",
+            "source_section": "제29조(국내대리인 지정 사업자의 기준)",
+            "quote_en": "Enforcement Decree Art. 29(1): Sets domestic-representative thresholds at >= KRW 1 trillion prior-year total revenue, >= KRW 10 billion AI service revenue, >= 1 million average daily Korean users over the prior 3 months, or prior imposition of an Art. 43(1)(3) fine.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 174782,
+            "end_char": 174894
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.92,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "② 인공지능사업자는 생성형 인공지능 또는 이를 이용한 제품 또는 서비스를 제공하는 경우 그 결과물이 생성 형 인공지능에 의하여 생성되었다는 사실을 표시하여야 한다.",
+            "source_section": "제31조(인공지능 투명성 확보 의무)",
+            "quote_en": "AI Basic Act Art. 31(2): Operators providing generative AI or products/services utilizing it shall mark/label outputs (via human-perceptible or machine-readable methods under Decree Art. 23(2)) to indicate they were generated by generative AI.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 151716,
+            "end_char": 151807
+          },
+          {
+            "quote": "③ 인공지능사업자는 인공지능시스템을 이용하여 실제와 구분하기 어려운 가상의 음향, 이미지 또는 영상 등의 결 과물을 제공하는 경우 해당 결과물이 인공지능시스템에 의하여 생성되었다는 사실을 이용자가 명확하게 인식할 수 있는 방식으로 고지 또는 표시하여야 한다.",
+            "source_section": "제31조(인공지능 투명성 확보 의무)",
+            "quote_en": "AI Basic Act Art. 31(3): Where providing virtual audio, images, or video difficult to distinguish from reality, operators must notify or label the synthetic content in a manner clearly recognizable to users (with artistic/creative accommodation).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 151808,
+            "end_char": 151952
+          }
+        ]
+      },
+      {
+        "label": "compute_governance",
+        "confidence": 0.92,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "다만, 학습에 사용된 누적 연산량이 일정 기준 이상인 고성능 인공지능시스템(제32조)에 대해서는 인공지능 사용의 맥락과 관계없이 시스템 자체가 보유한 잠재적 능력으로 인해 발생할 수 있는 위험을 전제로 안전성 관련 규제를 적용하는 구조를 취하고 있다.",
+            "source_section": "1-1-1 (참고) 인공지능기본법의 특징",
+            "quote_en": "For high-performance AI systems exceeding statutory cumulative training-compute thresholds (Art. 32), the AI Basic Act applies safety obligations based on inherent system capabilities regardless of specific use context.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1266,
+            "end_char": 1406
+          },
+          {
+            "quote": "1. 학습에 사용된 누적 연산량이 10의 26승 부동소수점연산 이상일 것\n2. 인공지능기술의 발전 수준을 고려할 때 현재 인공지능시스템에 활용되는 인공지능기술 중 최첨단의 인공지능 기술을 적용하여 구성ㆍ운영되고 있을 것",
+            "source_section": "제24조(인공지능 안전성 확보 의무)",
+            "quote_en": "Enforcement Decree Art. 24(1): Defines the Art. 32 safety obligation trigger as cumulative training compute >= 10^26 FLOPs combined with state-of-the-art AI technology and potential for widespread and serious impact on life, physical safety, and fundamental rights.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 171324,
+            "end_char": 171446
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "③ 인공지능사업자가 고영향 인공지능을 제공하는 경우 사전에 검ㆍ인증등을 받도록 노력하여야 한다.",
+            "source_section": "제30조(인공지능 안전성ㆍ신뢰성 검ㆍ인증등 지원)",
+            "quote_en": "AI Basic Act Art. 30(3): An AI business operator providing high-impact AI shall endeavor to undergo prior verification and certification (with government administrative/financial support for SMEs and Annex 1 recognition of sectoral third-party certifications such as digital medical device QMS and autonomous vehicle performance certifications).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 151451,
+            "end_char": 151504
+          },
+          {
+            "quote": "② 인공지능사업자는 직접 또는 제3자에 의뢰하여 영향평가를 실시할 수 있다.",
+            "source_section": "제28조(고영향 인공지능 영향평가)",
+            "quote_en": "Enforcement Decree Art. 28(2): AI business operators may conduct Fundamental Rights Impact Assessments directly or commission a third party to perform them.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 174571,
+            "end_char": 174613
+          }
+        ]
+      },
+      {
+        "label": "open_weight_obligations",
+        "confidence": 0.9,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "단순히 개인이 자기계발, 취미 등의 목적으로 인공지능을 개발하여 오픈소스로 공개하거나, 공개된 인공지능시스템을 최적화하여 재공개하는 경우 등은 ‘사업’에 해당하지 않는다.",
+            "source_section": "1.2.3 인공지능기본법의 인적 적용 범위",
+            "quote_en": "Individuals who develop AI and release it as open-source—or optimize and re-release publicly available AI systems—purely for self-development or hobby purposes are excluded from 'AI business operator' status.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7159,
+            "end_char": 7254
+          },
+          {
+            "quote": "(2제공) 제공은 유무상 여부를 불문하며, 유료로 제공하는 것 외에도 무상의 제공(예: 공공서비스, 무료 오픈소스)도 포함한다.",
+            "source_section": "1.2.3 인공지능기본법의 인적 적용 범위",
+            "quote_en": "By contrast, 'provision' by an AI development business operator covers both paid and unpaid distribution—including public services and free open-source releases made available to the general public.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7759,
+            "end_char": 7830
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "quote": "고영향 인공지능 가이드라인은 법적 구속력이 있는 것은 아니며, 사업자의 의무 이 행을 지원하기 위한 목적으로 마련됩니다.",
+            "source_section": "FAQ (Ⅳ. 기타)",
+            "quote_en": "The High-Impact AI Determination Guideline is not legally binding; it is prepared to support operators in smoothly fulfilling their statutory obligations through concrete criteria, cases, and examples.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 188762,
+            "end_char": 188829
+          },
+          {
+            "quote": "법은 맥락 및 위험 기반 규제 방식을 기본으로 하며, 자율적 검·인증(제30조제1항), 고영향 인공지능 확인(제33조제3항), 영향평가(제35조제3항) 등 절차적·자율적 규제를 중심으로 구성되어 있다.",
+            "source_section": "1-1-1 (참고) 인공지능기본법의 특징",
+            "quote_en": "The AI Basic Act centers on context- and risk-based procedural and self-regulatory mechanisms including voluntary verification/certification (Art. 30), High-Impact AI confirmation (Art. 33), and impact assessment (Art. 35), alongside MSIT compliance recommendations (Art. 34(2)).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1592,
+            "end_char": 1704
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "③ 과학기술정보통신부장관은 제1항 및 제2항에 따른 조사 결과 인공지능사업자가 이 법을 위반한 사실이 있 다고 인정되면 인공지능사업자에게 해당 위반행위의 중지나 시정을 위하여 필요한 조치를 명할 수 있다.",
+            "source_section": "제40조(사실조사 등)",
+            "quote_en": "AI Basic Act Art. 40(3): Following document demands or on-site inspections of operator offices/premises (Art. 40(1)-(2)), if MSIT finds a violation of the Act, it may order the operator to cease the violation or take corrective measures.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 155902,
+            "end_char": 156016
+          },
+          {
+            "quote": "전문위원회의 제시 의견은 고영향 인공지능 해당 여부 판단 검토 자료로써 종합적으로 활용 되며, 최종 판단 및 결정 권한은 행정청(과학기술정보통신부)에 귀속",
+            "source_section": "고영향 확인 전문위원회 운영 절차",
+            "quote_en": "Advisory opinions of the Expert Committee serve as review inputs, while final administrative determination authority on High-Impact AI classification rests with MSIT (subject to 30-day review and 10-day re-confirmation appeal).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 131428,
+            "end_char": 131514
+          }
+        ]
+      },
+      {
+        "label": "civil_penalty",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "제43조(과태료) ① 다음 각 호의 어느 하나에 해당하는 자에게는 3천만원 이하의 과태료를 부과한다.\n1. 제31조제1항을 위반하여 고지를 이행하지 아니한 자\n2. 제36조제1항을 위반하여 국내대리인을 지정하지 아니한 자\n3. 제40조제3항에 따른 중지명령이나 시정명령을 이행하지 아니한 자",
+            "source_section": "제43조(과태료)",
+            "quote_en": "AI Basic Act Art. 43(1): Authorizes MSIT to impose administrative fines of up to KRW 30 million for failing to provide Art. 31(1) prior notice, failing to designate an Art. 36(1) domestic representative, or failing to comply with an Art. 40(3) cease/corrective order (detailed in Decree Annex 2).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 156311,
+            "end_char": 156473
+          }
+        ]
+      },
+      {
+        "label": "criminal_penalty",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "제42조(벌칙) 제7조제9항을 위반하여 직무상 알게 된 비밀을 타인에게 누설하거나 직무상 목적 외의 용도로 사\n용한 자는 3년 이하의 징역 또는 3천만원 이하의 벌금에 처한다.",
+            "source_section": "제42조(벌칙)",
+            "quote_en": "AI Basic Act Art. 42: Imposes up to 3 years' imprisonment or a criminal fine of up to KRW 30 million on National AI Committee members who divulge or misuse confidential information obtained in official duties (Art. 7(9)).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 156211,
+            "end_char": 156309
+          }
+        ]
+      },
+      {
+        "label": "procurement_condition",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "④ 국가기관등이 고영향 인공지능을 이용하려는 경우에는 검ㆍ인증등을 받은 인공지능에 기반한 제품 또는 서 비스를 우선적으로 고려하여야 한다.",
+            "source_section": "제30조(인공지능 안전성ㆍ신뢰성 검ㆍ인증등 지원)",
+            "quote_en": "AI Basic Act Art. 30(4): When state agencies or public institutions intend to utilize high-impact AI, they shall give priority consideration to products or services based on verified/certified AI.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 151505,
+            "end_char": 151582
+          },
+          {
+            "quote": "② 국가기관등이 고영향 인공지능을 이용한 제품 또는 서비스를 이용하려는 경우에는 영향평가를 실시한 제품 또는 서비스를 우선적으로 고려하여야 한다.",
+            "source_section": "제35조(고영향 인공지능 영향평가)",
+            "quote_en": "AI Basic Act Art. 35(2): When state agencies or public institutions intend to utilize products or services using high-impact AI, they shall give priority consideration to those that have undergone a Fundamental Rights Impact Assessment.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 153533,
+            "end_char": 153614
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "② 인공지능사업자는 제1항 각 호에 따른 사항의 이행 결과를 과학기술정보통신부장관에게 제출하여야 한다.",
+            "source_section": "제32조(인공지능 안전성 확보 의무)",
+            "quote_en": "AI Basic Act Art. 32(2): Operators of covered high-compute AI systems must submit safety assurance implementation results to MSIT (alongside mandatory written notification of domestic representative designation under Art. 36(1)).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 152319,
+            "end_char": 152376
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Ministry of Science and ICT (과학기술정보통신부 / MSIT)",
+      "High-Impact AI Confirmation Expert Committee (고영향 인공지능 확인 전문위원회, 50+ member MSIT advisory committee)",
+      "National AI Committee / National AI Strategy Committee (국가인공지능위원회 / 국가인공지능전략위원회)",
+      "Korea AI Safety Institute (인공지능안전연구소 / Korea AISI)",
+      "National Information Society Agency (한국지능정보사회진흥원 / NIA, designated AI Policy Center)",
+      "Collaborating sectoral ministries and regulators (MFDS, MOHW, FSC, PIPC, Nuclear Safety and Security Commission, MOLIT, MOE, Ministry of Environment, National Police Agency)"
+    ],
+    "compliance_deadlines": [
+      "2026-01-22: Entry into force of the AI Basic Act (Act No. 20676, enacted 2025-01-21) and its Enforcement Decree",
+      "2026-01-24: Entry into force of digital medical device High-Impact AI provisions under AI Basic Act Art. 2(4)(라) and Enforcement Decree Annex 1",
+      "Within 30 days (extendable once by up to 30 days): MSIT statutory reply deadline for High-Impact AI confirmation requests (Decree Art. 25(3))",
+      "Within 10 days of receiving MSIT's confirmation reply: Operator deadline to request re-confirmation, with MSIT replying within 30 days after Expert Committee consultation (up to 90 days total)",
+      "5-year retention period: Mandatory retention (written or electronic) of Art. 34(1) compliance records under Decree Art. 27(2)",
+      "Every 3 years from 2026-01-01 (prior to January 1 of each third year): Scheduled MSIT regulatory validity review of cluster agencies, Art. 32 safety criteria, and Art. 36 domestic-representative thresholds (Decree Art. 33)"
+    ],
+    "penalties_summary": "While the Determination Guideline itself is non-binding (and MSIT's High-Impact AI confirmation is an administrative determination non-binding on civil/criminal courts), the annexed AI Basic Act (Art. 43) and Enforcement Decree Annex 2 authorize MSIT to impose administrative fines (과태료) up to KRW 30 million: KRW 5M/10M/15M (1st/2nd/3rd+ offense) for omitting Art. 31(1) prior notice; KRW 20M for failing to designate an Art. 36(1) domestic representative; and KRW 10M/20M/30M for disobeying Art. 40(3) cease-and-desist or corrective orders (adjustable by +/-50%, including SME/venture/small-business mitigation). Act Art. 42 also establishes criminal penalties of up to 3 years' imprisonment or KRW 30 million fine for unauthorized disclosure/misuse of confidential official information by National AI Committee members.",
+    "implementation_notes": "216-page authoritative MSIT / AI Basic Act Support Desk implementation guideline (effective 2026-01-22) operationalizing High-Impact AI classification under AI Basic Act Article 2(4) and Article 33. Defines actor boundaries (developer vs. user-operator vs. end user, enterprise free open-source coverage vs. individual hobbyist exemption), sets a two-stage test (statutory domain + serious impact/risk to life, physical safety, or fundamental rights), and provides granular sector-by-sector criteria, scoring rubrics (e.g., >=8 pts in law-enforcement biometrics, >=4 pts in lending, Class 3–4 digital medical devices, Nuclear Safety Grades 1–3, Level 4+ autonomous vehicles/ships, aviation Severity >=C & Likelihood >=High, rail fatality/50M KRW damage), HITL safe-harbor distinctions, and positive/negative case studies across all 13 technical sub-domains (energy, drinking water, healthcare/medical devices, nuclear, law-enforcement biometrics, recruitment, lending, road/maritime/aviation/rail transport, public services, K-12 education). Includes Expert Committee operating rules, official MSIT confirmation/re-confirmation request forms, full annexed text of Act No. 20676 and its Draft Enforcement Decree (with Annex 1 cross-statute compliance equivalence table and Annex 2 fine schedule), and a comprehensive FAQ contrasting Korea's neutral 'High-Impact' phased approach with the EU AI Act.",
+    "confidence": 0.97
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "fundamental_rights",
+      "innovation_enablement",
+      "economic_competitiveness"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.1,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.72,
+      "fundamental_rights": 0.93,
+      "social_stability": 0.3,
+      "innovation_enablement": 0.9,
+      "consumer_public_safety": 0.95,
+      "labor_transition": 0.15
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.08,
+      "fundamental_rights": 0.32,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.24,
+      "consumer_public_safety": 0.36,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The guideline is dominantly framed around consumer_public_safety, anchoring its statutory two-stage classification and eight of its thirteen technical domain chapters (energy, drinking water, healthcare/medical devices, nuclear facilities, and road/maritime/aviation/rail transport) in preventing fatalities, physical injury, health hazards, radiation accidents, and critical-infrastructure malfunctions. Consumer_public_safety narrowly edges out fundamental_rights because life and bodily safety lead the statutory risk formula and drive the majority of the quantitative severity/fatality criteria and engineering safe harbors across the 216-page text. Fundamental_rights is an exceptionally close runner-up, governing the remaining five chapters (law-enforcement biometrics, recruitment, lending, public-service eligibility/fees, and K-12 student evaluation) and explicitly invoking human dignity, equality/anti-discrimination, privacy, labor/occupation rights, property rights, social welfare rights, and the right to education. Innovation_enablement is a major third frame: MSIT emphasizes context-based flexible self-regulation, deliberate adoption of the neutral term 'High-Impact' over the EU's 'High-Risk' to encourage beneficial AI use, business predictability via 30-day administrative confirmation, cross-statute equivalence to avoid duplicate burdens, and regulatory sandboxes. Economic_competitiveness serves as a distinct fourth rationale anchored in the AI Basic Act's purpose clause promoting national competitiveness, productivity, AI industry promotion, and SME/startup support.",
+    "evidence_spans": [
+      {
+        "quote": "인공지능기본법에서는 사람의 생명, 신체의 안전 및 기본권에 중대한 영향을 미치거나 위험을 초래할 우려가 있는 분야의 고영향 인공지능사업자에게 일정한 책무를 부여하고 인공지능 이용자를 보호하고자 한다.",
+        "source_section": "1.1.1 고영향 인공지능 가이드라인의 수립 배경",
+        "quote_en": "The AI Basic Act imposes specific duties on high-impact AI operators in domains risking serious impact on human life, physical safety, and fundamental rights, in order to protect AI users.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 281,
+        "end_char": 392
+      },
+      {
+        "quote": "인공지능시스템의 의도하지 않은 작동 등으로 인해, 전력 등 에너지 수급 불균형 상황 발생 시, 병원 및 산업시설 등에 전력 공급이 끊기면서 대규모 생명·안전 피해 발생",
+        "source_section": "1.3.2 2단계 조건의 판단기준",
+        "quote_en": "Unintended AI malfunctions causing energy supply imbalances can cut power to hospitals and industrial facilities, leading to large-scale loss of life and safety harm (exemplifying physical safety risks across energy, water, healthcare, nuclear, and transport domains).",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 13738,
+        "end_char": 13831
+      },
+      {
+        "quote": "인공지능 활용과 관련된 기본권에는 이 외에도 인간의 존엄성, 평등권, 신체의 자유, 사생활의 비밀과 자유, 표현의 자유, 지식재산권, 소비자 권리, 교육받을 권리 등이 포함된다.",
+        "source_section": "1.3.2 2단계 조건의 판단기준",
+        "quote_en": "Beyond life and physical safety, fundamental rights implicated by AI include human dignity, equality, bodily liberty, privacy of private life, freedom of expression, intellectual property, consumer rights, and the right to education.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 12964,
+        "end_char": 13063
+      },
+      {
+        "quote": "'고영향(High-impact)'이라는 용어는 '고위험(High-risk)'보다 중립적 표현으로, 부 정적 영향뿐만 아니라 생명·신체·기본권에 미치는 중대한 영향 전반을 포괄합니다. 이는 AI의 긍정적 활용을 장려하면서도 필요한 안전장치를 마련하려는 입법 취지를 반영한 것입니다.",
+        "source_section": "FAQ (Ⅱ. 고영향 인공지능의 개념)",
+        "quote_en": "The term 'High-Impact' is more neutral than 'High-Risk,' encompassing significant impacts broadly rather than only negative ones, reflecting the legislative intent to encourage beneficial AI utilization while putting necessary safeguards in place.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 185552,
+        "end_char": 185708
+      },
+      {
+        "quote": "본 가이드라인은 인공지능기본법의 입법목적에 따라 사업자가 책무 유무를 스스로 판단할 수 있도록 고영향 인공지능의 기준과 예시 등을 마련하여 사업자의 예측 가능성을 제고하고 산업현장에서의 혼란을 방지하기 위한 목적으로 마련되었다.",
+        "source_section": "1.1.1 고영향 인공지능 가이드라인의 수립 배경",
+        "quote_en": "This guideline establishes criteria and examples so operators can autonomously assess whether obligations apply, enhancing business predictability and preventing confusion across industry.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 484,
+        "end_char": 611
+      },
+      {
+        "quote": "이 법은 인공지능의 건전한 발전과 신뢰 기반 조성에 필요한 기본적인 사항을 규정함 으로써 국민의 권익과 존엄성을 보호하고 국민의 삶의 질 향상과 국가경쟁력을 강화하는 데 이바지함을 목적으로 한다.",
+        "source_section": "1.1.1 고영향 인공지능 가이드라인의 수립 배경",
+        "quote_en": "AI Basic Act Art. 1 (Purpose): Aims to protect citizens' rights, interests, and dignity while contributing to improving quality of life and strengthening national competitiveness through sound AI development and a foundation of trust.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 46,
+        "end_char": 155
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:27:58.740838Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "df48a6442cf6c93747b2b6a474203efdf8cd699dc542a383eb6daa13a95e92fc",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 188893,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 35,
+      "exact_matches": 35,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 13
+    }
+  }
+}

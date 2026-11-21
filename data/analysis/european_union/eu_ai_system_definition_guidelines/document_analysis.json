@@ -7,61 +7,55 @@
     "issuing_body": "European Commission",
     "document_type": "regulatory_guidance",
     "binding_strength": "regulatory_guidance",
-    "publication_date": "2025-02-02",
-    "effective_date": "2025-02-02",
+    "publication_date": "2025-07-29",
+    "effective_date": null,
     "covered_actors": [
       "providers",
-      "market stakeholders",
-      "institutional stakeholders",
-      "relevant persons"
+      "other relevant persons",
+      "market and institutional stakeholders"
     ],
-    "covered_application_domains": [
-      "general_purpose_models",
-      "critical_infrastructure",
-      "biometrics",
-      "public_sector_use",
-      "employment",
-      "education",
-      "healthcare",
-      "finance",
-      "law_enforcement",
-      "defense"
-    ],
+    "covered_application_domains": [],
     "prohibited_practices": [],
-    "safety_requirements": [
-      {
-        "label": "human_oversight",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "Systems that have the capability to operate with limited or no human intervention in specific use contexts...may, under certain conditions, trigger additional potential risks and human oversight considerations.",
-            "source_section": "Page 5"
-          }
-        ]
-      }
-    ],
+    "safety_requirements": [],
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.9,
+        "confidence": 0.85,
         "evidence": [
           {
             "quote": "The Guidelines are not binding. Any authoritative interpretation of the AI Act may ultimately only be given by the Court of Justice of the European Union (CJEU).",
-            "source_section": "Page 2"
+            "source_section": "Page 2",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2595,
+            "end_char": 2756
+          },
+          {
+            "quote": "By issuing these Guidelines, the Commission aims to assist providers and other relevant persons, including market and institutional stakeholders, in determining whether a system constitutes an AI system within the meaning of the AI Act, thereby facilitating the effective application and enforcement of that Act.",
+            "source_section": "Page 2",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1181,
+            "end_char": 1493
           }
         ]
       }
     ],
     "enforcement_authorities": [
-      "Court of Justice of the European Union (CJEU)",
-      "European Artificial Intelligence Board"
+      "European Commission",
+      "European Artificial Intelligence Board",
+      "Court of Justice of the European Union"
     ],
     "compliance_deadlines": [
-      "2 February 2025: AI system definition and Chapter I and II provisions, including Article 5 prohibited AI practices, entered into application"
+      "2024-08-01: Regulation (EU) 2024/1689 (AI Act) entered into force",
+      "2025-02-02: Definition of an AI system (Article 3(1)) and Chapters I and II of the AI Act (including Article 5 prohibited AI practices) entered into application",
+      "2026-08-02: Grandfathering cutoff under Article 111(2) AI Act for systems already placed on the market or put into service before this date"
     ],
     "penalties_summary": null,
-    "implementation_notes": "Guidelines are explicitly non-binding (paragraph 7: 'The Guidelines are not binding'). Authoritative interpretation rests solely with the CJEU. Guidelines were adopted in parallel with Commission guidelines on prohibited AI practices. They clarify the seven-element definition of 'AI system' under Article 3(1) of Regulation (EU) 2024/1689 and note that systems based solely on rules defined by natural persons or limited to basic data processing fall outside the AI system definition.",
-    "confidence": 0.92
+    "implementation_notes": "Non-binding interpretive guidelines (C(2025) 5053 final) issued under Article 96(1)(f) of the AI Act to assist stakeholders in applying the seven-element definition of an 'AI system' under Article 3(1) and distinguishing AI systems from excluded software (mathematical optimization, basic data processing, classical heuristics, and simple prediction systems). Authoritative interpretation of the AI Act rests solely with the CJEU. Adopted in parallel with guidelines on prohibited AI practices; analysis of differences between AI systems and general-purpose AI models (Chapter V) is explicitly outside scope.",
+    "confidence": 0.95
   },
   "risk_framing": {
     "dominant_frame": "fundamental_rights",
@@ -73,22 +67,102 @@
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
       "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.65,
+      "fundamental_rights": 0.9,
       "social_stability": 0.0,
-      "innovation_enablement": 0.55,
-      "consumer_public_safety": 0.45,
-      "labor_transition": 0.05
+      "innovation_enablement": 0.85,
+      "consumer_public_safety": 0.65,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The document frames AI governance as necessary to ensure 'a high level of protection of health, safety, and fundamental rights in the Union, including democracy and the rule of law.' This rights-protective framing is the primary stated rationale, paired with a secondary emphasis on promoting innovation and uptake of AI.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.45,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.4,
+      "consumer_public_safety": 0.15,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "Although most of the document consists of technical and legal analysis of the seven elements defining an AI system under Article 3(1) of the EU AI Act, its explicit framing language in the Purpose and Concluding Remarks sections centers on fundamental rights alongside proportional innovation enablement. Fundamental rights edges out innovation enablement as the dominant frame because both the opening aim ('protection of health, safety, and fundamental rights in the Union, including democracy and the rule of law') and the closing justification of the Act's risk-based scope anchor regulatory intervention specifically in mitigating 'the most significant risks to fundamental rights and freedoms.' Innovation enablement is a close runner-up, reflected in the goals of promoting AI innovation and uptake, maintaining definitional flexibility for rapid technological developments, and emphasizing that the vast majority of AI systems will face no regulatory obligations. Consumer and public safety appears as a smaller secondary frame through the explicit reference to protecting health and safety.",
     "evidence_spans": [
       {
         "quote": "Its aim is to promote innovation in and the uptake of AI, while ensuring a high level of protection of health, safety, and fundamental rights in the Union, including democracy and the rule of law.",
-        "source_section": "Page 2"
+        "source_section": "Page 2, Section I (1)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 550,
+        "end_char": 746
       },
       {
-        "quote": "Systems that have the capability to operate with limited or no human intervention in specific use contexts...may, under certain conditions, trigger additional potential risks and human oversight considerations.",
-        "source_section": "Page 5"
+        "quote": "The AI Act’s risk-based approach means that only those systems giving rise to the most significant risks to fundamental rights and freedoms will be subject to its prohibitions laid down in Article 5 AI Act, its regulatory regime for high-risk AI systems covered by Article 6 AI Act and its transparency requirements for a limited number of pre-defined AI systems laid down in Article 50 AI Act.",
+        "source_section": "Page 13, Section III (63)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 35251,
+        "end_char": 35645
+      },
+      {
+        "quote": "This is in line with recital 12 AI Act, which clarifies that the notion of an ‘AI system’ should be clearly defined while providing ‘the flexibility to accommodate the rapid technological developments in this field’.",
+        "source_section": "Page 2, Section I (6)",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 2238,
+        "end_char": 2454
+      },
+      {
+        "quote": "The vast majority of systems, even if they qualify as AI systems within the meaning of Article 3(1) AI Act, will not be subject to any regulatory requirements under the AI Act.",
+        "source_section": "Page 13, Section III (63)",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 35646,
+        "end_char": 35822
+      },
+      {
+        "quote": "ensuring a high level of protection of health, safety, and fundamental rights in the Union",
+        "source_section": "Page 2, Section I (1)",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 614,
+        "end_char": 704
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:37:12.077224Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "438b84bddd27a28b15eb4ab2810f6607d5b8b270eed765734e61872eaf58925b",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 41315,
+      "output_tokens": 1611,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 7079,
+      "estimated_cost_usd": 0.138544
+    },
+    "grounding_summary": {
+      "total_quotes": 7,
+      "exact_matches": 7,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

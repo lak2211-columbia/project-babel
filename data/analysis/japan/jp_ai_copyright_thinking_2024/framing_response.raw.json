@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01JdnzGKF5XkcYDNy7VGeq1u",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"fundamental_rights\",\"secondary_frames\":[\"innovation_enablement\",\"economic_competitiveness\"],\"frame_confidence\":{\"fundamental_rights\":0.72,\"innovation_enablement\":0.55,\"consumer_public_safety\":0.2,\"labor_transition\":0.1},\"rationale_summary\":\"The document is primarily framed around protecting the intellectual property rights of creators and rights holders while balancing those rights against the need for fair use in AI development. The central concern is rights protection under copyright law, with secondary attention to enabling AI innovation and maintaining Japan's competitiveness in the AI field.\",\"evidence_spans\":[{\"quote\":\"著作者等の権利の保護を図り、もって文化の発展に寄与することを目的としている\",\"source_section\":\"Page 5\"},{\"quote\":\"「著作者等の権利・利益の保護」と「著作物等の公正・円滑な利用」とのバランスを踏まえた制度設計\",\"source_section\":\"Page 5\"},{\"quote\":\"クリエイターや実演家等の権利者の懸念\",\"source_section\":\"Page 2\"},{\"quote\":\"AI 技術の進歩の促進とクリエイターの権利保護等の観点に留意しながら\",\"source_section\":\"Page 3\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 9454,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 319,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 32102,
+    "candidatesTokenCount": 1551,
+    "totalTokenCount": 40782,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 32102
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1551
+      }
+    ],
+    "thoughtsTokenCount": 7129,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "xC8Ba6XiNrDAodAPyY-hkAc"
 }

@@ -1,24 +1,56 @@
 {
-  "dominant_frame": "fundamental_rights",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "consumer_public_safety",
-    "innovation_enablement"
+    "fundamental_rights"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.55,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.68,
     "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.25,
+    "innovation_enablement": 0.8,
+    "consumer_public_safety": 0.15,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document focuses on clarifying legal bases for using medical digital data in AI research, with emphasis on proper handling of personal medical information (pseudonymized data procedures), reflecting a fundamental rights framing around privacy and lawful data use. Secondary concerns include patient safety and enabling innovation.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.38,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.62,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Innovation enablement is the dominant frame of this brief transmittal notice, which justifies issuing the attached guideline as a practical resource to enable medical institutions, academic research institutes, and private companies to conduct joint AI research and product development using clinical medical digital data by clarifying legal bases across R&D stages and pseudonymization workflows. Fundamental rights is the key secondary frame, anchored in the notice's explicit grounding in an MHLW ethical, legal, and social issues (ELSI) research project and its emphasis on proper legal bases and pseudonymized-information safeguards tailored to the sensitive characteristics of medical records.",
   "evidence_spans": [
     {
-      "quote": "医療情報を利活用するための適切な法的根拠を明確化するとともに、医療情報の特性を踏まえた仮名加工情報の作成手順やその運用に関して取りまとめたもの",
-      "source_section": "本文"
+      "quote": "当該ガイドラインは、医療機関、学術研究機関及び民間企業等が共同研究を起点として、医療機関等が保有する医療情報を利活用した製品開発を行う場合を想定し、研究開発のステージに応じて、医療情報を利活用するための適切な法的根拠を明確化するとともに、医療情報の特性を踏まえた仮名加工情報の作成手順やその運用に関して取りまとめたものであり、",
+      "source_section": "Page 1",
+      "quote_en": "Envisioning cases where medical institutions, academic research institutions, and private enterprises conduct product development utilizing medical information held by medical institutions starting from joint research, the guideline clarifies appropriate legal bases for utilizing medical information according to the R&D stage and compiles procedures and operations for creating pseudonymized information reflecting the characteristics of medical information.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 445,
+      "end_char": 608
+    },
+    {
+      "quote": "医療デジタルデータと人工知能（AI）を研究開発等に利活用するに当たって留意すべき内容について記載しております。",
+      "source_section": "Page 1",
+      "quote_en": "It describes matters to keep in mind when utilizing medical digital data and artificial intelligence (AI) for research and development and related purposes.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 608,
+      "end_char": 663
+    },
+    {
+      "quote": "保健医療分野におけるデジタルデータのAI 研究開発等への利活用に係る倫理的・法的・社会的課題の抽出及び対応策の提言のための研究",
+      "source_section": "Page 1",
+      "quote_en": "Research on identifying ethical, legal, and social issues (ELSI) and proposing countermeasures for the utilization of digital data in AI research and development in the health and medical field.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 252,
+      "end_char": 315
     }
   ]
 }

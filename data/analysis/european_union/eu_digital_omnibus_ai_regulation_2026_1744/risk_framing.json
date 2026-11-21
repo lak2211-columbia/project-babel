@@ -1,0 +1,85 @@
+{
+  "dominant_frame": "innovation_enablement",
+  "secondary_frames": [
+    "fundamental_rights",
+    "consumer_public_safety",
+    "economic_competitiveness"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.55,
+    "fundamental_rights": 0.9,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.96,
+    "consumer_public_safety": 0.8,
+    "labor_transition": 0.05
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.06,
+    "fundamental_rights": 0.28,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.52,
+    "consumer_public_safety": 0.14,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Regulation (EU) 2026/1744 (Digital Omnibus on AI) is dominantly framed around innovation_enablement: its overarching purpose is to simplify implementation of the AI Act, reduce heavier-than-expected compliance and administrative burdens, eliminate overlaps with sectoral legislation, introduce proportionality for SMEs and small mid-cap enterprises (SMCs), expand AI regulatory sandboxes and real-world testing, and extend compliance timelines to foster AI innovation and uptake across the private and public sectors. Innovation_enablement edges out fundamental_rights because the vast majority of the recitals and operative amendments focus on regulatory simplification, friction reduction, and proportional compliance pathways rather than introducing new rights-based mandates. Nevertheless, fundamental_rights is a strong runner-up, anchored in the new Article 5 prohibitions on AI-generated non-consensual intimate material and child sexual abuse material (explicitly tied to human dignity, privacy, and the Charter of Fundamental Rights), expanded legal bases for bias detection to prevent discrimination, and strengthened cooperation with fundamental rights authorities. Consumer_public_safety appears as a clear secondary frame through repeated commitments to preserving high levels of health and safety protection for persons, children, and property across product safety regimes (such as machinery and civil aviation). Economic_competitiveness plays a minor supporting role in justifications citing competitiveness and the growth role of SMEs and SMCs.",
+  "evidence_spans": [
+    {
+      "quote": "In order to enable AI innovation in the private and public sectors, it is important that the Commission and Member States’ competent authorities ensure that the supervision, enforcement and monitoring of sectoral and national laws do not create overlaps, inconsistent interpretations or divergent enforcement.",
+      "source_section": "Recital 4",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2619,
+      "end_char": 2928
+    },
+    {
+      "quote": "In order to foster innovation and facilitate the uptake of AI, SMEs, including startups, and SMCs should be provided with priority access to the AI regulatory sandboxes established by the AI Office.",
+      "source_section": "Recital 24",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 33627,
+      "end_char": 33825
+    },
+    {
+      "quote": "AI systems that generate or manipulate such material pose a severe risk to health safety and fundamental rights, including victims’ human dignity, personal autonomy, integrity and private life, with potentially serious lasting psychological and other harms, and enable abuse at scale.",
+      "source_section": "Recital 11",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 12925,
+      "end_char": 13209
+    },
+    {
+      "quote": "Bias detection and correction constitute a substantial public interest because they protect natural persons from the adverse effects of biases, including discrimination.",
+      "source_section": "Recital 9",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 9663,
+      "end_char": 9832
+    },
+    {
+      "quote": "An AI system fulfils a safety function where its intended purpose, as determined by the provider, is to prevent or mitigate risks to the health and safety of persons or property.",
+      "source_section": "Recital 7",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 6917,
+      "end_char": 7095
+    },
+    {
+      "quote": "In order to enhance competitiveness and innovation, it is essential to support economic operators that are required to comply simultaneously with the requirements or obligations set out in Chapter III, Sections 2 and 3 of Regulation (EU) 2024/1689, and with the relevant requirements and obligations laid down in the Union harmonisation legislation listed in Annex I to that Regulation.",
+      "source_section": "Recital 21",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 29397,
+      "end_char": 29783
+    }
+  ]
+}

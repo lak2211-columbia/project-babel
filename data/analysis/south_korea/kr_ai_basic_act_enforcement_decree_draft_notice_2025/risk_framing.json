@@ -3,40 +3,84 @@
   "secondary_frames": [
     "fundamental_rights",
     "consumer_public_safety",
-    "national_security",
-    "economic_competitiveness"
+    "economic_competitiveness",
+    "national_security"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.4,
-    "economic_competitiveness": 0.55,
-    "fundamental_rights": 0.5,
-    "social_stability": 0.2,
-    "innovation_enablement": 0.7,
-    "consumer_public_safety": 0.5,
-    "labor_transition": 0.1
+    "existential_catastrophic": 0.0,
+    "national_security": 0.65,
+    "economic_competitiveness": 0.78,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.25,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.82,
+    "labor_transition": 0.05
   },
-  "rationale_summary": "The document's stated purpose is to support the healthy development of AI and establish a trust foundation for AI society, explicitly linking this to protecting citizens' rights and dignity, improving quality of life, and strengthening national competitiveness. The bulk of the decree establishes infrastructure for AI development: R&D support, data systems, AI industrial clusters, safety research institutes, and international cooperation. While rights protection and safety obligations (high-impact AI, transparency) are significant secondary concerns, the overall framing prioritizes enabling AI innovation and industry growth as the primary governance rationale.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.09,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.22,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.36,
+    "consumer_public_safety": 0.18,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The 2025 Draft Enforcement Decree Notice is dominantly framed around innovation_enablement: it emphasizes supporting sound AI development and a trust ecosystem through proportional exemptions (internal business use, obvious AI use), extensive cross-statutory compliance equivalences in Annex 1 to avoid duplicative burdens, downstream deployer safe harbors, SME certification cost subsidies, and 50% SME fine reductions in Annex 2. Innovation_enablement edges out fundamental_rights because the draft systematically minimizes compliance friction while pairing targeted obligations (10^26 FLOPs, high-impact AI) with R&D, cluster, training-data, and testbed promotion. Fundamental_rights and consumer_public_safety anchor the proposal rationale and high-impact/safety provisions (protecting citizens' rights, dignity, life, bodily safety, and vulnerable users), while economic_competitiveness (national competitiveness, regional clusters, startup/job effects) and national_security (Art. 2 defense, intelligence, counterterrorism, and core-technology exclusions) form distinct supporting frames.",
   "evidence_spans": [
     {
-      "quote": "인공지능의 건전한 발전을 지원하고 인공지능사회의 신뢰 기반 조성에 필요한 기본적인 사항을 규정함으로써 국민의 권익과 존엄성을 보호하고 국민의 삶의 질 향상과 국가경쟁력을 강화하고자",
-      "source_section": "Section 2"
+      "quote": "다. 부과권자는 다음의 어느 하나에 해당하는 경우에는 제2호의 개별기준에 따른 과태료의 2분의 1 범위에서 그 금액을 줄여 부과할 수 있다. 다만, 과태료를 체납하고 있는 위반행위자에 대해서는 그렇지 않다.\n1) 위반행위자가 「중소기업기본법」 제2조제1항에 따른 중소기업, 「벤처기업육성에 관한 특별법」 제2조제1항에 따른 벤처기업 및 「소상공인기본법」 제2조제1항에 따른 소상공인 중 어느 하나에 해당하는 경우",
+      "source_section": "[별표 2] 과태료의 부과기준",
+      "quote_en": "The imposing authority may reduce administrative fines by up to one-half where the violator is an SME, venture enterprise, or small business owner.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 23885,
+      "end_char": 24115
     },
     {
-      "quote": "인공지능산업의 지역적 집적화 및 경쟁력 강화 효과",
-      "source_section": "Section 3"
+      "quote": "④ 법 제31조제1항부터 제3항까지는 다음 각 호에 해당하는 경우에는 적용하지 아니한다. 다만, 제3호의 경우에는 법 제31조제1항부터 제3항까지 중 전부 또는 일부를 적용하지 아니할 수 있다.\n1. 제품ㆍ서비스명, 이용자 화면이나 제품 겉면 및 결과물에 표시된 문구 등을 고려할 때 고영향 인공지능 또는 생성형 인공지능을 활용한 사실이 명백한 경우\n2. 인공지능사업자의 내부 업무 용도로만 사용되는 경우",
+      "source_section": "제22조(인공지능 투명성 확보 의무)",
+      "quote_en": "Act Art. 31(1)-(3) transparency duties do not apply where high-impact or generative AI use is obvious from the product/service name or UI, or where used solely for internal business purposes.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 15552,
+      "end_char": 15778
     },
     {
-      "quote": "인공지능산업 활성화, 창업ㆍ고용 창출 등 예상되는 경제적 파급효과",
-      "source_section": "Section 3"
+      "quote": "인공지능의 건전한 발전을 지원하고 인공지능사회의 신뢰 기반 조성에 필요한 기본적인 사항을 규정함으로써 국민의 권익과 존엄성을 보호하고 국민의 삶의 질 향상과 국가경쟁력을 강화하고자 「인공지능 발전과 신뢰 기반 조성 등에 관한 기본법」이 제정(법률 제20676호, 2025. 1. 21. 공포, 2026. 1. 22. 시행)됨에 따라",
+      "source_section": "2. 제안이유",
+      "quote_en": "Following enactment of the AI Basic Act to protect citizens' rights, interests, and dignity, enhance quality of life, and strengthen national competitiveness by supporting sound AI development and a foundation of trust.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 324,
+      "end_char": 509
     },
     {
-      "quote": "사람의 생명, 신체의 안전 및 기본권에 초래할 수 있는 위험의 영향, 중대성, 빈도 등을 고려하도록 함",
-      "source_section": "Section 2"
+      "quote": "2. 사람의 생명, 신체의 안전 및 기본권에 초래할 수 있는 위험의 영향, 중대성, 빈도 및 활용 영역별 특수성",
+      "source_section": "제24조(고영향 인공지능의 확인 절차 등)",
+      "quote_en": "2. The impact, severity, frequency, and domain-specific characteristics of risks that may be posed to human life, bodily safety, and fundamental rights.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 16388,
+      "end_char": 16450
     },
     {
-      "quote": "국가정보원장이 지정하는 업무",
-      "source_section": "Section 3"
+      "quote": "3. 인공지능산업에서의 데이터 활용도 제고, 인공지능산업 활성화, 창업ㆍ고용 창출 등 예상되는 경제적 파급효과",
+      "source_section": "제12조(학습용데이터 지원대상 사업 등)",
+      "quote_en": "3. Expected economic ripple effects including improved AI data utilization, revitalization of the AI industry, and startup and job creation.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 8956,
+      "end_char": 9017
+    },
+    {
+      "quote": "나. 「국가연구개발혁신법」 제21조제2항에 따라 국가안보를 위하여 보안과제로 분류된 연구개발과제의 보안업무",
+      "source_section": "제2조(적용범위)",
+      "quote_en": "(b) Security duties for R&D projects classified as security projects for national security under the National Research and Development Innovation Act (excluded from the Act).",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 2891,
+      "end_char": 2950
     }
   ]
 }

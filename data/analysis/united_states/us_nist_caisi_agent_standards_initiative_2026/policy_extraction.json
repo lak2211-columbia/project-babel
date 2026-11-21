@@ -1,0 +1,75 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "National Institute of Standards and Technology (NIST / CAISI)",
+  "document_type": "standards_guideline",
+  "binding_strength": "standards_guideline",
+  "publication_date": "2026-02-17",
+  "effective_date": null,
+  "covered_actors": [
+    "Super Intelligence (SI) / AI agent developers and protocol ecosystems",
+    "Industry standards participants and international standards bodies",
+    "Enterprise AI agent adopters (including healthcare, finance, and education sectors)",
+    "Open-source SI agent protocol communities",
+    "Federal technical agencies (NIST, CAISI, NCCoE, NSF)"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "healthcare",
+    "finance",
+    "education"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "agentic_autonomy_controls",
+      "confidence": 0.92,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "NIST conducts fundamental research into agent authentication and identity infrastructure to enable secure human-agent and multi-agent interactions. NIST develops state-of-the-art security evaluations to inform protocol development and consumer comparison.",
+          "source_section": "Strategic Pillars",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1155,
+          "end_char": 1410
+        },
+        {
+          "quote": "Draft Concept Paper, Accelerating the Adoption of Software and SI Agent Identity and Authorization\n: NCCoE project applying identity standards to enterprise agent use cases.",
+          "source_section": "Related Activities and Resources",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1610,
+          "end_char": 1783
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "quote": "NIST hosts technical convenings and conducts gap analyses to produce voluntary guidelines to inform industry-led standardization for SI agents.",
+          "source_section": "Strategic Pillars",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 572,
+          "end_char": 715
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [],
+  "compliance_deadlines": [
+    "2026-03-09: Public comment deadline for CAISI Request for Information (RFI) on SI Agent Security",
+    "2026-03-20: Registration deadline for CAISI sector-specific Listening Sessions on Barriers to SI Adoption (healthcare, finance, and education)",
+    "2026-04-02: Public comment deadline on NCCoE Draft Concept Paper on Accelerating the Adoption of Software and SI Agent Identity and Authorization"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "Launched in February 2026 by NIST / Center for AI Standards and Innovation (CAISI) in collaboration with NCCoE and NSF (under the post-EO 14434 'Super Intelligence (SI)' portal nomenclature). This overview establishes a voluntary, industry-led standardization program for autonomous AI/SI agents centered on interoperable open protocols, agent identity, authentication, authorization, open-source ecosystem security, and security evaluations, with stakeholder consultation milestones in March–April 2026 and no regulatory mandates.",
+  "confidence": 0.94
+}

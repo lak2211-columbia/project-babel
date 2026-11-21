@@ -1,45 +1,43 @@
 {
   "jurisdiction": "china",
-  "issuing_body": "国家互联网信息办公室 (Cyberspace Administration of China)",
+  "issuing_body": "Cyberspace Administration of China (CAC)",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2025-03-15",
   "effective_date": null,
+  "covered_actors": [
+    "AI-generated synthetic content service providers",
+    "Content dissemination platforms",
+    "Deep synthesis service providers",
+    "Generative AI service providers"
+  ],
   "covered_application_domains": [
     "general_purpose_models"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "content_provenance",
       "confidence": 0.95,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "明确了隐式标识的技术实现方式，通过元数据标识为安全追溯提供了可靠保障",
-          "source_section": "标识办法概述"
+          "quote": "一是\n明确了文本、图像、音频、视频等多模态的标识要求，将安全治理深入到内容模态层面；\n二是\n创新性地将传播平台纳入监管范畴，实现从生成到传播的全链条治理；\n三是\n明确了隐式标识的技术实现方式，通过元数据标识为安全追溯提供了可靠保障。",
+          "source_section": "一、衔接技术安全法规，扩展治理覆盖范畴",
+          "quote_en": "First, it clarifies labeling requirements across multiple modalities including text, image, audio, and video, extending security governance down to the content-modality level; second, it innovatively brings dissemination platforms into the scope of regulation to achieve full-chain governance from generation to dissemination; third, it specifies technical implementation methods for implicit labeling, providing reliable guarantees for security traceability through metadata labeling.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 832,
+          "end_char": 948
         },
         {
-          "quote": "明确了元数据隐式标识的字段要素，在尽量不影响元数据处理和传输的前提下，嵌入必要字段，记录生成合成内容的关键信息和关键环节",
-          "source_section": "标识标准"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "通过清晰、透明的内容标识，用户能够清楚识别人工智能生成的内容，一方面提高了信息透明度，增强了用户的知情权和选择权",
-          "source_section": "结语"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "明确了文本、图像、音频、视频等多模态的标识要求，将安全治理深入到内容模态层面",
-          "source_section": "标识办法要点"
+          "quote": "一是\n《标识标准》中明确了每个模态生成合成内容显式标识的位置、样式、区域和大小的要求，同时结合各模态的特点，如针对视频模态，要求“在视频起始画面和视频播放周边的适当位置”，针对音频模态，要求“应采用语音标识或音频节奏标识”",
+          "source_section": "二、适应生成合成特性，提炼务实科学方法",
+          "quote_en": "First, the Labeling Standard clarifies the requirements for the position, style, area, and size of explicit labels for AI-generated and synthetic content in each modality, while accounting for modality-specific characteristics—for example, requiring for video 'at an appropriate location on the starting screen and around the video playback,' and for audio 'voice labeling or audio rhythm labeling shall be adopted.'",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1230,
+          "end_char": 1341
         }
       ]
     }
@@ -47,25 +45,34 @@
   "enforcement_mechanisms": [
     {
       "label": "regulatory_supervision",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "创新性地将传播平台纳入监管范畴，实现从生成到传播的全链条治理",
-          "source_section": "标识办法要点"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
       "confidence": 0.7,
       "evidence": [
         {
-          "quote": "有效督促人工智能生成合成服务提供者及传播平台落实企业责任",
-          "source_section": "标识标准"
+          "quote": "二是\n创新性地将传播平台纳入监管范畴，实现从生成到传播的全链条治理",
+          "source_section": "一、衔接技术安全法规，扩展治理覆盖范畴",
+          "quote_en": "Second, it innovatively brings dissemination platforms into the scope of regulatory supervision, achieving full-chain governance from generation to dissemination",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 875,
+          "end_char": 908
+        },
+        {
+          "quote": "一方面需要管理措施及方法落实得当，有效督促人工智能生成合成服务提供者及传播平台落实企业责任",
+          "source_section": "二、适应生成合成特性，提炼务实科学方法",
+          "quote_en": "On the one hand, administrative measures and methods need to be properly implemented to effectively supervise and urge AI-generated and synthetic service providers and dissemination platforms to fulfill their corporate responsibilities",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1039,
+          "end_char": 1084
         }
       ]
     }
   ],
-  "implementation_notes": "This is an expert interpretation article published by CAC accompanying the '人工智能生成合成内容标识办法' (AI-Generated Content Labeling Measures) and companion national mandatory standard. The document itself is commentary/guidance rather than the primary regulatory instrument. It references mandatory labeling requirements for AI-generated content across modalities (text, image, audio, video) including both explicit (visible) and implicit (metadata) labeling. Binding force derives from the underlying '标识办法' which is described as a mandatory standard.",
-  "confidence": 0.82
+  "enforcement_authorities": [
+    "Cyberspace Administration of China (CAC)"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "This document is a non-binding expert interpretation (专家解读) authored by Zhang Zhen (Senior Engineer, CNCERT/CC) and published on the official CAC website on 2025-03-15. Rather than creating independent legal mandates, it explains the policy rationale and technical implementation of China's Measures for Labeling AI-Generated Synthetic Content (《人工智能生成合成内容标识办法》) and its companion mandatory national standard (《网络安全技术 人工智能生成合成内容标识方法》), detailing how they extend prior CAC algorithm, deep synthesis, and generative AI regulations to cover multimodal explicit labels, metadata-based implicit labels, and content dissemination platforms.",
+  "confidence": 0.85
 }

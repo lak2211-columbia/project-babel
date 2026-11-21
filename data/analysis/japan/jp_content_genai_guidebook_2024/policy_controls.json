@@ -1,72 +1,27 @@
 {
   "safety_requirements": [
     {
-      "label": "risk_assessment",
-      "confidence": 0.6,
+      "label": "training_data_governance",
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "権利侵害の可能性があり、留意が必要な活用シーン",
-          "source_section": "3-2 各産業の活用シーンと留意点の概要"
+          "quote": "学習用データには、自らが著作権を有しているデータ、著作権 者から許諾を得るなど権利処理されたデータ、著作権保護期 間が過ぎたデータを利用する。",
+          "source_section": "Page 31",
+          "quote_en": "For training data, use data for which you own the copyright, data for which rights have been cleared such as by obtaining permission from the copyright holder, or data whose copyright protection period has expired.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "AI生成物（やそれを編集・加工したもの）が他人の著作物などと同一・類似である場合は、著作権侵害などの可能性があるため、留意が必要です",
-          "source_section": "3-1 想定される利用場面と留意点"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "2D画像については生成AIを利用しながらさらに編集・加工しており、人の手によって完成させている",
-          "source_section": "2-1 ゲーム産業"
-        },
-        {
-          "quote": "最終的な制作物は人の手によって完成させている",
-          "source_section": "2-3 広告産業"
-        }
-      ]
-    },
-    {
-      "label": "content_provenance",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "画像検索等により、類似性の確認を実施した",
-          "source_section": "2-1 ゲーム産業"
-        },
-        {
-          "quote": "著作権などの権利・利益への配慮の観点から、画像検索等により、類似性の確認を実施した",
-          "source_section": "2-3 広告産業"
-        },
-        {
-          "quote": "プロンプトの入力においては、既存の著作物に類似したAI生成物が出力されないよう、固有名詞を入力しないようにした",
-          "source_section": "2-3 広告産業"
-        }
-      ]
-    },
-    {
-      "label": "access_controls",
-      "confidence": 0.55,
-      "evidence": [
-        {
-          "quote": "キャラクターが差別用語を発したり誹謗中傷を行ったりしないよう、あらかじめ出力させるべきでない言葉のリストを読み込ませている",
-          "source_section": "2-2 アニメ産業"
-        },
-        {
-          "quote": "不具合のある画像が生成または採用されないように、ネガティブ・プロンプト、ルールベースによって制御、監視している",
-          "source_section": "2-1 ゲーム産業"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.5,
-      "evidence": [
-        {
-          "quote": "「全て生成AI技術で制作した」と分かったときの驚き",
-          "source_section": "2-3 広告産業"
+          "quote": "データ提供者との契約・利用規約において、提供されるデータを生成A Iへ の学習用データとして利用することが制限されている場合があります。 許諾なく学習データとして用いると契約・利用規約違反となる可能性がある ため、契約・利用規約を確認し、データの利用制限の有無や内容をチェック しましょう。",
+          "source_section": "Page 53",
+          "quote_en": "Contracts or terms of use with data providers may restrict the use of provided data as training data for generative AI. Because using it as training data without permission may violate contracts or terms of use, check the contracts and terms of use to verify whether there are restrictions on data use and what they entail.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }
@@ -74,25 +29,25 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.85,
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "本ガイドブックは著作権法を含む知的財産法等の解釈やその参考となる考え方を示すものではなく、適法性や妥当性等を保証するものでもありません",
-          "source_section": "3 生成AIの活用シーンごとの留意点・対応策"
+          "quote": "本ガイドブックは、コンテンツ制作に携わる産業界のみなさまに向けて、ゲーム・アニメ・広告の各産業における生成A I の利活用ケースと、各活用シーンにおける留意点・対応策を紹介し、知的財産権等の権利・利益の保護に十分に配慮した、コンテンツ制作における生成A Iの適切な利活用の方向性をお示しするものです。",
+          "source_section": "Page 5",
+          "quote_en": "This guidebook is intended for industry stakeholders engaged in content creation, introducing use cases of generative AI in the game, anime, and advertising industries as well as points to note and countermeasures for each use scenario, and indicating a direction for the appropriate utilization of generative AI in content creation with sufficient consideration for the protection of intellectual property rights and other rights and interests.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "法的問題やコンテンツ制作における各種問題については、弁護士などの専門家にご相談ください",
-          "source_section": "3 生成AIの活用シーンごとの留意点・対応策"
-        }
-      ]
-    },
-    {
-      "label": "none_specified",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "コンテンツ制作における生成AIの適切な利活用の方向性をお示しするものです",
-          "source_section": "1-1 本ガイドブックの趣旨・目的"
+          "quote": "本ガイドブックは、著作権法を含む知的財産法等の解釈やその参考と なる考え方を示すものではなく、法解釈は最終的には司法判断に委 ねられます。",
+          "source_section": "Page 61",
+          "quote_en": "This guidebook does not present interpretations of intellectual property laws, including the Copyright Act, or reference views thereon; legal interpretation is ultimately left to judicial determination.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }

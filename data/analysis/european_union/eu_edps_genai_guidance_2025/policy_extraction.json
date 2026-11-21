@@ -5,128 +5,207 @@
   "binding_strength": "regulatory_guidance",
   "publication_date": "2025-10-28",
   "effective_date": null,
+  "covered_actors": [
+    "EU institutions, bodies, offices and agencies (EUIs)",
+    "Data controllers and joint controllers",
+    "Data processors and third-party generative AI developers or service providers",
+    "Data Protection Officers (DPOs)"
+  ],
   "covered_application_domains": [
     "general_purpose_models",
     "public_sector_use",
-    "employment",
-    "healthcare"
+    "employment"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
       "confidence": 0.95,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "Conduct a Generative AI Risk Assessment: Perform a comprehensive generative AI risk assessment in accordance with the EDPS' Guidance for Risk Management for Artificial Intelligence system.",
-          "source_section": "Section 2"
+          "quote": "The Regulation requires that a DPIA24 must be carried out before any processing operation that is likely to result in a high risk25 to fundamental rights and freedoms of individuals.",
+          "source_section": "Page 17",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 35331,
+          "end_char": 35513
         },
         {
-          "quote": "regular monitoring and reviews of the risk assessments need to be carried out, since the functioning of the model may exacerbate identified risks or create new ones",
-          "source_section": "Section 6"
+          "quote": "Data protection risks must be identified and addressed throughout the entire life cycle of the generative AI system. This includes regular and systematic monitoring to determine, as the system evolves, whether risks already identified are worsening or whether new risks are appearing.",
+          "source_section": "Page 18",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 37321,
+          "end_char": 37605
         }
       ]
     },
     {
       "label": "pre_deployment_testing",
-      "confidence": 0.9,
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "Developers and deployers may need to carry out their own risk assessments and document any mitigation action taken.",
-          "source_section": "Section 6"
+          "quote": "Developers should use validation sets46 during training and separate testing sets for final evaluation to obtain an estimation on how the system will perform.",
+          "source_section": "Page 27",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 59242,
+          "end_char": 59400
         },
         {
-          "quote": "Developers should use validation sets during training and separate testing sets for final evaluation",
-          "source_section": "Section 10"
+          "quote": "When using Retrieval Augmented Generation58 with generative AI systems, it is necessary to test that the generative AI system is not leaking personal data that might be present in the system’s knowledge base.",
+          "source_section": "Page 37",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 82308,
+          "end_char": 82516
         }
       ]
     },
     {
       "label": "red_teaming",
-      "confidence": 0.85,
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "A possible way to deal with unknown risks is to use 'red teaming' techniques to try to find and expose vulnerabilities.",
-          "source_section": "Section 15"
+          "quote": "A possible way to deal with unknown risks is to use “red teaming57” techniques to try to find and expose vulnerabilities.",
+          "source_section": "Page 37",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 82186,
+          "end_char": 82307
         }
       ]
     },
     {
       "label": "transparency_disclosure",
       "confidence": 0.95,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "EUIs must provide to individuals all the information required in the Regulation when using generative AI systems that process personal data.",
-          "source_section": "Section 11"
+          "quote": "Certain systems (i.e. chatbots) may require specific transparency requirements, including informing individuals that they are interacting with an AI system without human intervention.",
+          "source_section": "Page 29",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 63081,
+          "end_char": 63264
         },
         {
-          "quote": "Certain systems (i.e. chatbots) may require specific transparency requirements, including informing individuals that they are interacting with an AI system without human intervention.",
-          "source_section": "Section 11"
+          "quote": "EUIs must provide to individuals all the information required in the Regulation when using generative AI systems that process personal data. The information provided to individuals must be updated when necessary to keep them properly informed and in control of their own data.",
+          "source_section": "Page 29",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 63855,
+          "end_char": 64131
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.92,
+      "confidence": 0.9,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
           "quote": "Datasets and models must be accompanied by documentation on their structure, maintenance and intended use.",
-          "source_section": "Section 9"
+          "source_section": "Page 25",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 56379,
+          "end_char": 56485
         },
         {
-          "quote": "The technical and user documentation of the system, including model cards, should enable the controller of the system to carry out appropriate checks",
-          "source_section": "Section 10"
-        }
-      ]
-    },
-    {
-      "label": "third_party_audit",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "EU-X will get the services of an external auditor to verify the proper implementation of the system, including on security.",
-          "source_section": "Section 15"
-        },
-        {
-          "quote": "processing activities are traceable and auditable",
-          "source_section": "Section 13"
+          "quote": "The technical and user documentation of the system, including model cards, should enable the controller of the system to carry out appropriate checks and actions regularly to ensure the accuracy principle.",
+          "source_section": "Page 27",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 60199,
+          "end_char": 60404
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.8,
+      "confidence": 0.85,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "Controllers should, in addition to the traditional security controls for IT systems, integrate specific controls tailored to the already known vulnerabilities of these systems - model inversion attacks, prompt injection, jailbreaks",
-          "source_section": "Section 15"
+          "quote": "The Regulation requires EUIs to implement appropriate technical and organisational measures to ensure a level of security53 appropriate to the risk for the rights and freedoms of natural persons.",
+          "source_section": "Page 37",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 81152,
+          "end_char": 81347
+        },
+        {
+          "quote": "Controllers should, in addition to the traditional security controls for IT systems, integrate specific controls tailored to the already known vulnerabilities of these systems - model inversion attacks 54, prompt injection 55, jailbreaks 56 - in a way that facilitates continuous monitoring and assessment of their effectiveness.",
+          "source_section": "Page 37",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 81348,
+          "end_char": 81677
         }
       ]
     },
     {
       "label": "human_oversight",
       "confidence": 0.92,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "EUIs must be very attentive to the weight that the information provided by the system has in the final steps of the decision-making procedure",
-          "source_section": "Section 12"
+          "quote": "Depending on the use of such information in making the final decision by a public service, EUIs may fall within the scope of application of Article 24 of the Regulation, so they need to ensure that individual safeguards are guaranteed, including at least the right to obtain human intervention on the part of the controller, to express his or her point of view and to contest the decision.",
+          "source_section": "Page 30",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 65477,
+          "end_char": 65866
         },
         {
-          "quote": "to ensure more accurate information and controlled behaviour",
-          "source_section": "Section 1"
-        },
-        {
-          "quote": "EUI-X has a manual verification step for each AI generated summary",
-          "source_section": "Section 10"
+          "quote": "In managing AI decision-making tools, EUIs must consider carefully how to ensure that the right to obtain human intervention is properly implemented.",
+          "source_section": "Page 30",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 65867,
+          "end_char": 66016
         }
       ]
     },
     {
-      "label": "incident_reporting",
-      "confidence": 0.6,
+      "label": "training_data_governance",
+      "confidence": 0.95,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "If risks that cannot be mitigated by reasonable means are identified, it is time to consult the EDPS.",
-          "source_section": "Section 6"
+          "quote": "Nonetheless, EUIs have a specific responsibility, as part of their accountability obligations to demonstrate compliance with Article 4(1)(a), and Article 5 of the Regulation, and to verify that the AI model that they are deploying has not been developed by unlawfully processing personal data.30",
+          "source_section": "Page 19",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 40451,
+          "end_char": 40746
+        },
+        {
+          "quote": "EUIs should develop and use models trained with high quality datasets limited to the personal data necessary to fulfil the purpose of the processing. In this way, these datasets should be well labelled and curated, within the framework of appropriate data governance procedures, including periodic and systematic review of the content.",
+          "source_section": "Page 25",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 56043,
+          "end_char": 56378
         }
       ]
     }
@@ -134,43 +213,58 @@
   "enforcement_mechanisms": [
     {
       "label": "regulatory_supervision",
-      "confidence": 0.92,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "The EDPS issues these orientations in its role as a data protection supervisory authority",
-          "source_section": "Introduction"
+          "quote": "These revised orientations offer more detailed guidance taking into account the evolution of Generative AI systems and technologies, their use by EUIs, and the results of the EDPS’ monitoring and oversight activities. The EDPS issues these orientations in its role as a data protection supervisory authority and not in its role as market surveillance authority under the AI Act.",
+          "source_section": "Page 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 882,
+          "end_char": 1260
         },
         {
-          "quote": "If risks that cannot be mitigated by reasonable means are identified, it is time to consult the EDPS.",
-          "source_section": "Section 6"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "Ensure that the processing activities taking place in the context of the generative AI system are thoroughly documented in your records. Such records should include all necessary information required by Article 31 of the Regulation.",
-          "source_section": "Section 2"
-        },
-        {
-          "quote": "controllers should proceed to a prior consultation with the EDPS",
-          "source_section": "Section 6"
+          "quote": "If following the DPIA, controllers are not sure whether risks are appropriately mitigated, they should proceed to a prior consultation with the EDPS.",
+          "source_section": "Page 18",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 38400,
+          "end_char": 38549
         }
       ]
     },
     {
       "label": "soft_enforcement",
-      "confidence": 0.88,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "These EDPS Orientations on generative Artificial Intelligence (generative AI) and personal data protection intend to provide practical advice and instructions",
-          "source_section": "Introduction"
+          "quote": "These orientations have been drafted to cover as many scenarios and applications as possible and do not prescribe specific technical measures. Instead, they put an emphasis on the general principles of data protection that should help EUIs comply with the data protection requirements according to Regulation (EU) 2018/1725.",
+          "source_section": "Page 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 557,
+          "end_char": 881
+        },
+        {
+          "quote": "These orientations are intended to provide practical advice by the European Data Protection Supervisor (EDPS) to Union institutions, bodies, offices and agencies (EUIs) on the processing of personal data in their use of generative AI systems, to ensure that they comply with their data protection obligations in particular as set out in the Regulation (EU) 2018/1725 (‘the Regulation’, or EUDPR).",
+          "source_section": "Page 4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4024,
+          "end_char": 4420
         }
       ]
     }
   ],
-  "implementation_notes": "This is Version 2 of EDPS guidance issued under Regulation (EU) 2018/1725 (EUDPR), applicable specifically to EU institutions, bodies, offices and agencies (EUIs). The document is explicitly not issued under the AI Act market surveillance authority role. Enforcement is primarily through GDPR-style accountability mechanisms and EDPS supervisory authority rather than direct penalties. The guidance is non-prescriptive on technical measures but establishes baseline data protection compliance expectations for all stages of the generative AI lifecycle. Several referenced documents (e.g., EDPS Guidance for Risk Management for AI systems) are noted as forthcoming.",
-  "confidence": 0.9
+  "enforcement_authorities": [
+    "European Data Protection Supervisor (EDPS)"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Version 2 of the EDPS Orientations (revising and expanding the 2024 first edition) providing practical advice to EUIs on complying with Regulation (EU) 2018/1725 (EUDPR) across the generative AI lifecycle. Issued solely in the EDPS's capacity as a data protection supervisory authority—not as a market surveillance authority under the EU AI Act—and without prejudice to the AI Act. The guidance emphasizes principle-based compliance rather than prescribing specific technical measures, aligns with EDPB Opinion 28/2024, references forthcoming EDPS AI risk management guidance, and notes that it may be further updated as generative AI technologies evolve.",
+  "confidence": 0.95
 }

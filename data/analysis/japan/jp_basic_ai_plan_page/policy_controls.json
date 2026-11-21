@@ -2,149 +2,167 @@
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.8,
+      "confidence": 0.78,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "ＡＩの技術進歩とともに変動するリスクを適時適切に把握し、ＡＩの透明性・公平性・安全性を始めとする適正性を確保する",
-          "source_section": "第１章"
+          "quote": "ＡＩセーフティ・インスティテュート （ＡＩＳＩ）を抜本的に強化することで、ＡＩモデルの技術的評価を適切に行い、当該評価も踏まえ、ＡＩがもたらすリスクに係る実態把握を行うとともに必要な措置を講ずる。",
+          "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+          "quote_en": "By fundamentally strengthening the AI Safety Institute (AISI), the government will appropriately conduct technical evaluations of AI models, grasp the actual state of risks posed by AI based on such evaluations, and take necessary measures.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "ＡＩがもたらすリスクに係る実態把握を行うとともに必要な措置を講ずる",
-          "source_section": "第３節"
+          "quote": "技術開発の進展とともに、ディープフェイクなどＡＩを悪用した問題が顕在化している。これらや国民生活への影響について、ＡＩ法第16 条に基づく調査研究等を実施し、リスクへの対応等を適切に行う。",
+          "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+          "quote_en": "With the progress of technological development, problems involving the misuse of AI, such as deepfakes, have become apparent. The government will conduct surveys and research under Article 16 of the AI Act on these issues and their impact on citizens' lives, and respond appropriately to risks.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
-      "label": "transparency_disclosure",
-      "confidence": 0.8,
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.82,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "行政においてＡＩを利用する際、判断の根拠等が不明瞭にならないようにするなど、国民へのアカウンタビリティを果たし、行政の信頼性を確保する",
-          "source_section": "第３節"
+          "quote": "ＡＩセーフティ・インスティテュート （ＡＩＳＩ）を抜本的に強化することで、ＡＩモデルの技術的評価を適切に行い、当該評価も踏まえ、ＡＩがもたらすリスクに係る実態把握を行うとともに必要な措置を講ずる。",
+          "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+          "quote_en": "By fundamentally strengthening the AI Safety Institute (AISI), the government will appropriately conduct technical evaluations of AI models, grasp the actual state of risks posed by AI based on such evaluations, and take necessary measures.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "適切な知的財産の保護と利活用につながる透明性の確保を図る",
-          "source_section": "第４節"
-        }
-      ]
-    },
-    {
-      "label": "pre_deployment_testing",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "ＡＩの性能や信頼性を客観的に評価するための評価基盤やテストベッドを整備する",
-          "source_section": "第２節（１）⑤"
-        },
-        {
-          "quote": "ＡＩモデルの安全性にとどまらず、より広範な適正性に係る評価やセキュリティ面での対策を実行できる体制を構築し",
-          "source_section": "第３節（１）⑤"
-        }
-      ]
-    },
-    {
-      "label": "third_party_audit",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "ＡＩＳＩの機能を、政府を挙げて抜本的に強化する",
-          "source_section": "第３節（１）⑤"
-        },
-        {
-          "quote": "ＡＩモデルの技術的評価を適切に行い",
-          "source_section": "第３節"
-        }
-      ]
-    },
-    {
-      "label": "incident_reporting",
-      "confidence": 0.5,
-      "evidence": [
-        {
-          "quote": "ＡＩ法第 16 条に基づく調査研究等を実施し、リスクへの対応等を適切に行う",
-          "source_section": "第３節（１）①"
+          "quote": "ＡＩモデルの安全性にとどまらず、より広範な適正性に係る評価やセキュリティ面での対策を実行できる体制を構築し、技術的・制度的なガバナンスの強化を図る。 その中核として、ＡＩＳＩの機能を、政府を挙げて抜本的に強化する。",
+          "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+          "quote_en": "Build a system capable of executing not only AI model safety evaluations but also broader evaluations of appropriateness and security measures, thereby strengthening technical and institutional governance. At the core of this effort, fundamentally strengthen the functions of AISI across the entire government.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "content_provenance",
-      "confidence": 0.75,
+      "confidence": 0.78,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "ＡＩ生成コンテンツを判別する技術、ＡＩの制御機能等の開発を支援する",
-          "source_section": "第３節（１）⑥"
+          "quote": "生成ＡＩを悪用した偽・誤情報等への対応について、日本のＡＩ評価機能向上にも資する、ＡＩ生成コンテンツを判別する技術、ＡＩの制御機能等7の開発を支援する。",
+          "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+          "quote_en": "To address disinformation and misinformation exploiting generative AI, support the development of technologies for identifying AI-generated content and AI control functions that also contribute to enhancing Japan's AI evaluation capabilities.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "例えば、ＡＩを利用して生成されたコンテンツに対する電子透かしや事後的な真偽判別支援技術など",
-          "source_section": "第３節（１）⑥ 脚注"
+          "quote": "例えば、ＡＩを利用して生成されたコンテンツに対する電子透かしや事後的な真偽判別支援技術など。",
+          "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+          "quote_en": "For example, digital watermarks for content generated using AI and post-hoc authenticity verification support technologies.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
-      "label": "human_oversight",
-      "confidence": 0.75,
+      "label": "transparency_disclosure",
+      "confidence": 0.72,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "人とＡＩが協働する社会を実現するため、制度や社会の仕組みを先導的に見直し、継続的に変革する",
-          "source_section": "第４節"
-        },
-        {
-          "quote": "人とＡＩの役割分担の在り方を継続的に探究する",
-          "source_section": "第４節（４）①"
+          "quote": "行政においてＡＩを利用する際、判断の根拠等が不明瞭にならないようにするなど、国民 へのアカウンタビリティを果たし、行政の信頼性を確保する。",
+          "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+          "quote_en": "When utilizing AI in public administration, fulfill accountability to the public and ensure trust in public administration by, for example, preventing the basis of decisions from becoming unclear.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
-      "label": "model_documentation",
-      "confidence": 0.6,
+      "label": "training_data_governance",
+      "confidence": 0.7,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "事業者等によるＡＩの研究及び開発・利活用における適正性の確保に向けた自主的な取組を促すとともに…ＡＩ法第13条に基づく指針その他各種ガイドライン等を整備し",
-          "source_section": "第３節（１）②"
+          "quote": "統計作成等であると整理できるＡＩ開発等の円滑化に資する本人同意の在り方や規律遵守の実効性確保等について検討し、 「個人情報の保護に関する法律」 （平成15 年法律第57 号）改正案の早期の国会提出を目指す。",
+          "source_section": "第３章 第１節 ＡＩ利活用の加速的推進",
+          "quote_en": "Consider the nature of individual consent and ensuring the effectiveness of regulatory compliance to facilitate AI development and the like that can be categorized as statistical creation, and aim to submit a bill to amend the Act on the Protection of Personal Information to the Diet at an early stage.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "適切な知的財産の保護と利活用につながる透明性の確保を図るとともに、コンテンツホルダーへの対価還元等の推進や、生成ＡＩによる知的財産権侵害対策に関する相談体制の整備、生成ＡＩと知的財産権に関する分かりやすい情報提供等の取組を進める。",
+          "source_section": "第３章 第４節 ＡＩ社会に向けた継続的変革",
+          "quote_en": "Promote initiatives including ensuring transparency that leads to appropriate protection and utilization of intellectual property, promoting remuneration to content holders, establishing consultation systems for countermeasures against IP infringement by generative AI, and providing easy-to-understand information on generative AI and intellectual property rights.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "regulatory_supervision",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "ＡＩＳＩの機能を、政府を挙げて抜本的に強化する…人員を直ちに現行の２倍程度に拡充する",
-          "source_section": "第３節"
-        },
-        {
-          "quote": "人工知能戦略本部において基本計画の推進状況を把握の上、フォローアップを行う",
-          "source_section": "第４章第１節"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "ＡＩ法第 16 条に基づく調査研究等を実施し、リスクへの対応等を適切に行う",
-          "source_section": "第３節（１）①"
-        },
-        {
-          "quote": "取組の進捗状況を適時適切に情報共有し、必要に応じて調整や連携の強化・促進を図ることが重要",
-          "source_section": "第４章第１節"
-        }
-      ]
-    },
-    {
       "label": "soft_enforcement",
-      "confidence": 0.85,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "国民や事業者等の自主的かつ能動的な取組を促すよう、国としての基本的な考え方を提示する",
-          "source_section": "第３節"
+          "quote": "これを実現するため、国民や事業者等の自主的かつ能動的な取組を促すよう、国としての 基本的な考え方を提示する。",
+          "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+          "quote_en": "To achieve this, the national government will present its basic approach so as to encourage voluntary and proactive initiatives by citizens, businesses, and others.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "事業者等によるＡＩの研究及び開発・利活用における適正性の確保に向けた自主的な取組を促す",
-          "source_section": "第３節（１）②"
+          "quote": "事業者等によるＡＩの研究及び開発・利活用における適正性の確保に向けた自主的な取組を促すとともに行政における円滑かつ適正な利活用に向けた、ＡＩ法第13 条に基づく指針その他各種ガイドライン等を整備し、関係者への周知徹底を図る。",
+          "source_section": "第３章 第３節 ＡＩガバナンスの主導",
+          "quote_en": "Develop guidelines under Article 13 of the AI Act and other various guidelines to encourage voluntary initiatives by businesses and others to ensure appropriateness in AI R&D and utilization as well as smooth and appropriate utilization in public administration, and ensure thorough dissemination to stakeholders.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "procurement_condition",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "取り扱う情報の属性や用途等に応じて、政府による適正な調 達・利活用を先導的に行うことで、日本社会で利活用されるＡＩの信頼性及び透明性の確保 につなげる。",
+          "source_section": "第３章 第１節 ＡＩ利活用の加速的推進",
+          "quote_en": "By taking the lead in appropriate government procurement and utilization according to the attributes and uses of the information handled, the government will contribute to ensuring the trustworthiness and transparency of AI utilized in Japanese society.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "政府自らが率先して、ＡＩを適正に調達し、安全・安心な形での利活用を推進する。",
+          "source_section": "第３章 第１節 ＡＩ利活用の加速的推進",
+          "quote_en": "The government itself will take the initiative to appropriately procure AI and promote its safe and secure utilization.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }

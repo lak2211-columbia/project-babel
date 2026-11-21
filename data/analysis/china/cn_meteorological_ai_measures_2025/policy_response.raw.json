@@ -1,27 +1,66 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01LLzWH9GRRov9SzXAx1T9A2",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"jurisdiction\":\"china\",\"issuing_body\":\"China Meteorological Administration (CMA) and Cyberspace Administration of China (CAC)\",\"document_type\":\"legislation\",\"binding_strength\":\"binding_law\",\"publication_date\":\"2025-04-23\",\"effective_date\":\"2025-06-01\",\"covered_application_domains\":[\"critical_infrastructure\",\"general_purpose_models\"],\"safety_requirements\":[{\"label\":\"registration_licensing\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"algorithm registration and security assessments\",\"source_section\":\"stipulations\"}]},{\"label\":\"risk_assessment\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"algorithm registration and security assessments\",\"source_section\":\"stipulations\"}]},{\"label\":\"content_provenance\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"the labeling of AI-generated synthetic content\",\"source_section\":\"stipulations\"}]},{\"label\":\"third_party_audit\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"algorithm safety review\",\"source_section\":\"stipulations\"}]},{\"label\":\"incident_reporting\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"complaint reporting\",\"source_section\":\"stipulations\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"information dissemination review\",\"source_section\":\"stipulations\"}]}],\"enforcement_mechanisms\":[{\"label\":\"regulatory_supervision\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"classified and grading supervision shall be conducted as to such services\",\"source_section\":\"document proposal\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"complaint reporting\",\"source_section\":\"stipulations\"}]}],\"implementation_notes\":\"This is described as the first departmental regulation in China to promote and regulate AI in a segmented area, and the first legal standard on AI meteorological application services among WMO members. It covers algorithm registration, security assessments, content labeling, safety review, cyber security, data security, and complaint reporting. Details on penalties are not provided in the available text.\",\"confidence\":0.82}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 3924,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "metadata_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 7190,
+      "candidatesTokenCount": 419,
+      "totalTokenCount": 10119,
+      "cachedContentTokenCount": 4665,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 7190
+        }
+      ],
+      "cacheTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 4665
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 419
+        }
+      ],
+      "thoughtsTokenCount": 2510,
+      "serviceTier": "standard"
     },
-    "output_tokens": 468,
-    "service_tier": "standard",
-    "inference_geo": "global"
+    "modelVersion": "gemini-4-neon",
+    "responseId": "Ei0Ba5vOLo6gur8Pktz2mQ0"
+  },
+  "controls_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 7343,
+      "candidatesTokenCount": 752,
+      "totalTokenCount": 10611,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 7343
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 752
+        }
+      ],
+      "thoughtsTokenCount": 2516,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "Ky0Ba_HuFem6odAPlean6AY"
   }
 }

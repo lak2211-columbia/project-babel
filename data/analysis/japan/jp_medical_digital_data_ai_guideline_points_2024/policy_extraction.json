@@ -1,52 +1,45 @@
 {
   "jurisdiction": "japan",
-  "issuing_body": "厚生労働省大臣官房厚生科学課・医政局研究開発政策課",
+  "issuing_body": "Ministry of Health, Labour and Welfare (MHLW) (厚生労働省大臣官房厚生科学課・医政局研究開発政策課)",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2024-12-19",
   "effective_date": null,
+  "covered_actors": [
+    "Medical institutions holding clinical medical information (医療機関等)",
+    "Private enterprises conducting joint AI medical-device R&D with medical institutions (民間企業等)",
+    "National research and development agencies, independent administrative agencies, prefectural and municipal health authorities, and relevant medical organizations"
+  ],
   "covered_application_domains": [
-    "healthcare",
-    "general_purpose_models"
+    "healthcare"
+  ],
+  "prohibited_practices": [
+    "Onward/serial distribution (転々流通) of pseudonymized medical information under the guideline's framework",
+    "Setting an unlimited scope of joint-use recipients for pseudonymized medical information beyond entities reasonably treated as integral to the providing operator under the Act on the Protection of Personal Information (APPI)"
   ],
   "safety_requirements": [
     {
-      "label": "risk_assessment",
-      "confidence": 0.7,
+      "label": "training_data_governance",
+      "confidence": 0.93,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "医療情報は、一般的に、個人情報保護法上の個人データに該当する上、同法上の要配慮個人情報にも該当し、極めて機微な性質を有していることから",
-          "source_section": "本文３"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.65,
-      "evidence": [
+          "quote": "医療情報から仮名加工情報を作成して利活用する際には、３章に示すような仮名加工情報を取り扱う者に生じる義務等を理解し、個人情報保護法等の関係法令を遵守する必要がある。",
+          "source_section": "Page 3 (Q&A A2)",
+          "quote_en": "When creating and utilizing pseudonymized information from medical information, it is necessary to understand the obligations imposed on handlers of pseudonymized information as shown in Chapter 3 and to comply with relevant laws and regulations such as the Act on the Protection of Personal Information.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2093,
+          "end_char": 2175
+        },
         {
-          "quote": "仮名加工情報を作成し、運用するにあたって不可欠である実践的な指針として",
-          "source_section": "本文３"
-        }
-      ]
-    },
-    {
-      "label": "access_controls",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "仮名加工情報の共同利用の範囲を無制限に設定してよいということにはならないことに留意されたい",
-          "source_section": "Q5"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "インフォームド・コンセントに係るオプトアウト手続き等を遵守されたい",
-          "source_section": "Q6"
+          "quote": "医療機関等において診療で得られ、既に保管されている医療情報を「人を対象とする生命科学・医学系研究」として利活用する場合には、「人を対象とする生命科学・医学系研究に関する倫理指針」（令和３年文部科学省・厚生労働省・経済産業省告示第１号）に規定するインフォームド・コンセントに係るオプトアウト手続き等を遵守されたい。",
+          "source_section": "Page 4 (Q&A A6)",
+          "quote_en": "When utilizing medical information already obtained through clinical care and stored at medical institutions as 'life science and medical research involving human subjects', please comply with the informed-consent opt-out procedures and related provisions stipulated in the Ethical Guidelines for Life Science and Medical Research Involving Human Subjects.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3131,
+          "end_char": 3287
         }
       ]
     }
@@ -54,29 +47,32 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.85,
+      "confidence": 0.88,
       "evidence": [
         {
-          "quote": "本ガイドラインは、厚生労働科学研究における成果物として",
-          "source_section": "本文２"
+          "quote": "本ガイドラインは、厚生労働科学研究における成果物として、民間企業等と共同でAI を活用した医療機器の研究開発等を実施するにあたり、個人情報の保護に関する法律（平成15 年法律第57 号。以下「個人情報保護法」という。）の下、医療機関等において診療で得られ、既に保管されている医療情報を利活用する際の法的・技術的な取扱いについて示しているものであり、",
+          "source_section": "Page 2 (記 2)",
+          "quote_en": "As an output of MHLW-funded health and labour sciences research, this guideline presents legal and technical handling practices under the Act on the Protection of Personal Information when utilizing stored clinical medical information held by medical institutions in joint R&D of AI-based medical devices with private enterprises.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 797,
+          "end_char": 971
         },
         {
-          "quote": "御参考として周知をお願いしたところです",
-          "source_section": "本文"
-        }
-      ]
-    },
-    {
-      "label": "regulatory_supervision",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "個人情報保護法等の関係法令を遵守する必要がある",
-          "source_section": "Q2"
+          "quote": "本ガイドラインを参考とする際に留意すべきと考えられる点について、別添のとおり質疑応答集（Ｑ＆Ａ）を取りまとめたので、併せて参照されたいこと。",
+          "source_section": "Page 2 (記 3)",
+          "quote_en": "Points to keep in mind when referring to this guideline have been compiled as an attached Q&A, which should also be consulted.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1257,
+          "end_char": 1327
         }
       ]
     }
   ],
-  "implementation_notes": "This document is a clarification notice (事務連絡) issued alongside a pre-existing guideline on AI use of medical digital data published 2024-09-30. The guideline is explicitly non-binding, positioned as a reference tool for pseudonymized data handling under the Personal Information Protection Act. It covers only medical information stored at healthcare institutions for use in medical device R&D, excluding Next-Generation Medical Infrastructure Act data and registry data. No independent enforcement mechanisms are created by this document.",
-  "confidence": 0.82
+  "enforcement_authorities": [],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Follow-up MHLW administrative notice (事務連絡) and 6-item Q&A issued December 19, 2024 (Reiwa 6), clarifying the legal positioning and strict scope limitations of the September 30, 2024 medical digital data AI guideline. It specifies that the guideline is an MHLW research output applicable solely to already-stored clinical records held by medical institutions used under APPI in joint AI medical-device R&D—explicitly excluding MHLW health/long-term-care databases, private databases, academic society registries, and data obtained under the Next Generation Medical Infrastructure Act (次世代医療基盤法). It reiterates that medical data constitutes highly sensitive 'special-care personal information' (要配慮個人情報), bars onward/serial distribution (転々流通) of pseudonymized information, limits joint-use recipients to entities reasonably treated as integral to the provider under APPI, and requires adherence to APPI statutory obligations and the Ethical Guidelines for Life Science and Medical Research (including informed-consent opt-out procedures) where applicable.",
+  "confidence": 0.94
 }

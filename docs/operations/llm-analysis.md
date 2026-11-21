@@ -2,77 +2,76 @@
 
 The parsing and analysis stack (`parser.py` `0.3.0`, `prompts.py`, `analysis.py`, `models.py`) transforms saved raw government artifacts into schema-validated structured extractions and deterministic jurisdiction syntheses:
 
-1. **`ParsedDocument` (Parser `0.3.0`)** — strictly offline HTML/PDF/HWPX/ODT extraction with legal-heading sectionizing (`Chapter`, `Article N`, `Section N`, `Annex`, `第N条`, `제N조`), PDF repeated header/footer stripping, compound-aware de-hyphenation, paragraph reflow, and explicit `extractor` provenance.
+1. **`ParsedDocument` (Parser `0.3.0` + PyMuPDF)** — strictly offline HTML/PDF/HWPX/ODT extraction using **`pymupdf` (`fitz`) as the primary PDF extractor** (`pdftotext`/`pypdf` fallback), legal-heading sectionizing (`Chapter`, `Article N`, `Section N`, `Annex`, `第N条`, `제N조`), PDF repeated header/footer stripping (preserving top-of-page legal headings), compound-aware de-hyphenation, paragraph reflow, and explicit `extractor` provenance (`77 pymupdf`, `43 beautifulsoup4`, `1 hwpx_xml` across the 121-document corpus).
 2. **`PolicyExtraction`** — issuing body, document type, binding strength, publication/effective dates, covered actors, application domains (10 labels), prohibited practices, concrete safety requirements (Taxonomy v2.1.0: 17 labels, each with optional deontic `obligation_strength`: `mandatory` | `conditional` | `recommended` | `aspirational`), enforcement mechanisms (9 labels), authorities, compliance deadlines, penalties summary, implementation notes, and required verbatim evidence spans (`>= 1` span per label).
-3. **`RiskFramingAnalysis`** — dominant frame, secondary frames, complete eight-frame `frame_confidence` vector, optional explicit `frame_share` allocation summing to `~1.0`, rationale summary, and frame-tagged verbatim evidence spans.
+3. **`RiskFramingAnalysis`** — dominant frame, secondary frames, complete eight-frame `frame_confidence` vector, compositional `frame_share` allocation summing to `~1.0`, rationale summary, and frame-tagged verbatim evidence spans.
 4. **`JurisdictionAnalysis`** — deterministic per-jurisdiction narrative synthesis built strictly from saved document analyses (zero LLM calls) with jurisdiction-scoped institution alias canonicalization (e.g., `\bmost\b` and `State Council` restricted strictly to `china`).
 
-## Model, codebook injection & prompt caching
+## Multi-provider frontier engine & concurrency
 
-Configured via `.env` or environment variables:
+Configured via `.env` or environment variables (or CLI flags `--provider`, `--model`, `--effort`, `--workers`):
 
-- `ANTHROPIC_API_KEY` — required for `analyze-documents`
-- `ANTHROPIC_MODEL` — defaults to `claude-sonnet-4-6`
-- `ANTHROPIC_EFFORT` — defaults to `low` (`low` / `medium` / `high`)
+- **`LLM_PROVIDER`** — `auto` (default: selects `gemini` if `GEMINI_API_KEY` is set, else `anthropic`), `gemini`, or `anthropic`
+- **Primary provider (`GeminiAPIClient`, default):**
+  - `GEMINI_API_KEY` (sent via `x-goog-api-key` header, redacted on errors, never persisted)
+  - `GEMINI_MODEL` — defaults to **`gemini-4-neon`** (1M-token context window; `GEMINI_DIRECT_FULL_TEXT_MAX_TOKENS = 450_000` enables single-pass full-document extraction even on the 581,688-character EU AI Act with zero chunking loss)
+  - `GEMINI_THINKING_LEVEL` — `low` / `medium` (default) / `high`
+  - Handles thinking models cleanly: filters `thought` parts before JSON parsing, enforces `temperature=0.0` + `responseMimeType: "application/json"`, retries `finishReason == "MAX_TOKENS"` by escalating `maxOutputTokens` (`16384→32768→65536`), retries HTTP `408/425/429/500/502/503/504` with `Retry-After` + `600s` timeout, and records `usageMetadata` (`promptTokenCount`, `candidatesTokenCount`, `thoughtsTokenCount`, `cachedContentTokenCount`)
+- **Fallback provider (`ClaudeAPIClient`):**
+  - `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL` (defaults to **`claude-opus-5-5`**), `ANTHROPIC_EFFORT` (`low` / `medium` / `high`)
+  - Uses sequential dual-breakpoint prompt caching (byte-identical `system` + `messages[0].content[0]` across all 3 chunk calls), `8192→16384` controls token escalation, `600s` timeout, and HTTP `429`/`5xx`/`529` retries
+- **Zero-cost verified ingestion (`ingest-document-analysis`):**
+  - Ingests externally produced or harness-evaluated v2.1.0 JSON payloads (`{"policy_extraction": ..., "risk_framing": ...}`) through full taxonomy validation, NFKC verbatim snapping (`snap_to_verbatim=True`), strict `--min-grounding` gating (default `0.90`), and full `AnalysisProvenance` stamping
+- **Bounded concurrency & atomic writes:**
+  - `analyze-documents --workers N` (default `1`, safe up to `8`) uses `ThreadPoolExecutor` with thread-safe logging and atomic temp-file + `os.replace` writes
 
-Execution guardrails in `ClaudeAPIClient` & `prompts.py`:
+## Codebook injection, chunking & provenance guards
 
-- **Single-source codebook injection:** `prompts.py` dynamically injects `definition`, `include_when`, and `exclude_when` from [`data/taxonomies/label-definitions.json`](../../data/taxonomies/label-definitions.json) directly into the extraction and framing prompts (shared verbatim with the web UI). Evidence is capped at 2 spans × 400 chars per label; framing spans carry explicit `frame` tags and an explicit `"No explicit framing language in this chunk."` escape for non-framing operative chunks.
-- **Deterministic inference & extended budgets:** `temperature=0.0`, `600s` HTTP timeout, `POLICY_CONTROLS_MAX_TOKENS = 8192` with automatic 1× retry up to `16384` on `stop_reason == "max_tokens"`, HTTP `429`/`5xx`/`529` retries honoring `Retry-After`, and full exception detail (`Type: message`) recorded on failures.
-- **Genuine dual-breakpoint Anthropic prompt caching:** Shares both `system_prefix` and `cached_document_context` with `cache_control: {"type": "ephemeral"}` across metadata, controls, and framing calls per chunk, recording `cache_read_input_tokens` and estimated USD cost in `analysis_metadata.usage`.
-- **Strict legacy provenance guard:** `_analysis_currency_status()` never treats artifacts lacking `analysis_metadata` as current — it emits `stale_legacy_no_provenance` and queues them for re-analysis. When a document is skipped for low-fidelity parsed text, any stale `document_analysis.json` is deleted and `analysis_skipped.json` is honored by loaders.
+- **Single-source codebook injection:** `prompts.py` dynamically injects `definition`, `include_when`, and `exclude_when` from [`data/taxonomies/label-definitions.json`](../../data/taxonomies/label-definitions.json) directly into extraction and framing prompts (shared verbatim with the web UI). Evidence is capped at 2 spans × 400 chars per label; framing spans carry explicit `frame` tags and a `"No explicit framing language in this chunk."` escape for operative chunks.
+- **Language-aware token budgets:** For documents exceeding a provider's direct window (e.g., Anthropic's `90k` single-pass / `45k` chunk budgets; Gemini runs single-pass up to `450k` tokens), chunking estimates CJK (`~1.2` chars/tok) vs. Latin (`~3.8` chars/tok) tokens, deduplicates subset overlap chunks, weights framing merges by framing-evidence strength, aggregates rationales across all chunks, and requires `>= 1` grounded span per merged requirement.
+- **Strict legacy provenance guard:** `_analysis_currency_status()` rejects artifacts lacking `analysis_metadata` (`stale_legacy_no_provenance`); low-fidelity skips delete stale `document_analysis.json` and honor `analysis_skipped.json`.
 
-## Token-aware full-context & chunk merging
+## Grounding verification & starter gold-set evaluation
 
-- **Language-aware token budgets:** Budgets chunking by estimated tokens rather than raw characters (`~1.2` chars/token for CJK vs. `~3.8` chars/token for Latin; `90k` single-pass / `45k` chunk budgets) so long Chinese, Japanese, and Korean statutes never overflow the context window.
-- **Hardened multi-chunk merging:**
-  - Deduplicates overlap chunks that are strict subsets of the previous chunk.
-  - Weights framing merges by framing-evidence strength (ignoring chunks with no framing language) rather than raw character length so operative clauses do not dilute recitals.
-  - Aggregates rationale summaries and evidence spans across *all* chunks, not only opening chunks.
-  - Computes informativeness-weighted metadata confidence instead of averaging over uninformed later chunks.
-  - Requires `>= 1` grounded evidence span per merged requirement and preserves the strongest `obligation_strength`.
+All canonical quality thresholds load from `data/taxonomies/label-definitions.json` (`grounding_pass_threshold: 0.90`, `low_confidence_policy: 0.70`, `low_confidence_framing: 0.60`, `frame_mention_floor: 0.15`):
 
-## Grounding verification & gold-set evaluation
-
-All canonical quality thresholds are loaded from `data/taxonomies/label-definitions.json`:
-- `grounding_pass_threshold: 0.90`
-- `low_confidence_policy: 0.70`
-- `low_confidence_framing: 0.60`
-- `frame_mention_floor: 0.15`
-
-- **NFKC & offset-persisted grounding (`check-grounding`):** Normalizes Unicode via NFKC, performs whitespace- and hyphen-insensitive + ordered-window matching, returns `None` (never `1.0`) when zero quotes exist, and persists per-span `grounding_status` (`verbatim` | `approximate` | `not_found`) plus `start_char` / `end_char` offsets directly into `EvidenceSpan`.
-- **Gold-set evaluation (`evaluate-gold-set`):** Supports both bundle JSON files (such as the 5-document multilingual starter benchmark [`data/eval/gold_set_v1.json`](../../data/eval/gold_set_v1.json), `benchmark_status: "starter_v0.1_internal"`) and per-document directories. Reports micro/macro and per-label Precision/Recall/F1 (returning `None` on empty sets), Cohen's κ on dominant frame and binding strength, and seeded 95% bootstrap confidence intervals.
-
-## Output artifacts & schema enforcement
-
-Each analyzed document writes under `data/analysis/<jurisdiction>/<document_id>/`:
-
-- `document_analysis.json` — validated by `validate-artifacts` against [`packages/schemas/document-analysis.schema.json`](../../packages/schemas/document-analysis.schema.json), including `analysis_metadata` (`AnalysisProvenance` with `analyzed_at`, model/prompt/taxonomy hashes, `chunked`/`chunk_count`, `usage`, and `grounding_summary`).
-- `policy_extraction.json`, `risk_framing.json`, `policy_response.raw.json`, `framing_response.raw.json`.
+- **NFKC verbatim snapping & offset persistence (`check-grounding`):** Normalizes Unicode via NFKC, performs whitespace/hyphen-insensitive + ordered-window matching, snaps near-verbatim quotes back to exact `plain_text` substrings, returns `None` (never `1.0`) when zero quotes exist, and persists `grounding_status` (`verbatim` | `approximate` | `not_found`) + `start_char`/`end_char` into every `EvidenceSpan`.
+  - **Current verified corpus (121/121 `gemini-4-neon`, Taxonomy v2.1.0, `analysis_version: "0.3.0"`):** **`2,271 / 2,271` (`100.0%`) exact verbatim grounding**, `0` ungrounded, `flagged = 0`, `min_per_doc = 100.0%`.
+- **Starter multilingual gold-set benchmark (`evaluate-gold-set data/eval/gold_set_v1.json`, `n=5`, `starter_v0.1_internal`):**
+  - Persisted in [`data/eval/gold_set_results.json`](../../data/eval/gold_set_results.json) and mirrored byte-identically to [`apps/web/src/lib/gold-set-results.snapshot.json`](../../apps/web/src/lib/gold-set-results.snapshot.json) for `/methodology#validation`:
+  - **Policy requirements:** Micro F1 **`0.833`** (Macro `0.737`)
+  - **Enforcement mechanisms:** Micro F1 **`0.929`** (Macro `0.932`)
+  - **Dominant risk frame:** Accuracy **`0.800`** (`κ = 0.706`)
+  - **Binding strength:** Accuracy **`0.800`** (`κ = 0.706`)
 
 ## Commands
 
 ```bash
-# Re-parse offline under Parser 0.3.0
+# Re-parse offline under Parser 0.3.0 (PyMuPDF primary PDF)
 make parse
 
-# Analyze all stale/legacy/changed documents
-make analyze
-python -m observatory.cli analyze-documents european_union eu_ai_act_regulation_2024_1689 --refresh
+# Run concurrent Gemini 4 Neon analysis (default provider when GEMINI_API_KEY is set)
+PYTHONPATH=services/pipeline/src python -m observatory.cli analyze-documents \
+  --provider gemini --model gemini-4-neon --effort medium --workers 6
+
+# Or run Anthropic fallback on one document
+PYTHONPATH=services/pipeline/src python -m observatory.cli analyze-documents \
+  european_union eu_ai_act_regulation_2024_1689 --provider anthropic --model claude-opus-5-5 --refresh
+
+# Ingest & verbatim-snap an offline/harness JSON analysis
+PYTHONPATH=services/pipeline/src python -m observatory.cli ingest-document-analysis \
+  united_states us_eo_14409_advanced_ai_innovation_security_2026 /path/to/payload.json \
+  --provider=gemini --model=gemini-4-neon --effort=xhigh --min-grounding=0.90
 
 # Deterministically refresh jurisdiction readouts (no LLM API calls)
 make analyze-jurisdictions
 
-# Audit NFKC/offset verbatim quote grounding (canonical 0.90 gate)
+# Audit grounding, gold set, and Draft 2020-12 schemas
 make grounding
-python -m observatory.cli check-grounding south_korea --min-ratio=0.90 --json
-
-# Validate all committed artifacts against packages/schemas/*.schema.json
+PYTHONPATH=services/pipeline/src python -m observatory.cli evaluate-gold-set \
+  data/eval/gold_set_v1.json --output-json data/eval/gold_set_results.json
 make validate-artifacts
 
-# Run starter multilingual gold-set evaluation
-python -m observatory.cli evaluate-gold-set data/eval/gold_set_v1.json
-
-# Persist v2 analyses idempotently to Postgres (refuses legacy artifacts unless --allow-legacy)
+# Replay verified v2.1 analyses idempotently into Postgres
 make persist-db
 ```

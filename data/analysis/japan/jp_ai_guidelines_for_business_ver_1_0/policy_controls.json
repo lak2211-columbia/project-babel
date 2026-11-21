@@ -2,129 +2,283 @@
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.9,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "Take appropriate measures throughout the development of advanced AI systems, including prior to and throughout their deployment and placement on the market, to identify, evaluate, and mitigate risks across the AI lifecycle.",
-          "source_section": "Page 24"
+          "quote": "Conduct appropriate risk analyses to take countermeasures against risks (avoidance, mitigation, transference, or acceptance).",
+          "source_section": "Part 2, C. Common Guiding Principles, 2) Safety",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Each AI business actor first conducts an environment and risk analysis for the AI system or service based on the benefits and risks the AI system or service may bring about during the overall lifecycle, social acceptance relating to the development and operation, changes in the external environment, and the maturity of AI.",
+          "source_section": "Part 2, E. Building AI governance",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "pre_deployment_testing",
-      "confidence": 0.85,
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "establishing a safety framework of AI validation prior to their release to the market",
-          "source_section": "Page 9"
+          "quote": "Take appropriate measures throughout the development of advanced AI systems, including prior to and throughout their deployment and placement on the market, to identify, evaluate, and mitigate risks across the AI lifecycle.",
+          "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, I)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming",
-          "source_section": "Page 24"
+          "quote": "Specifically, employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming25, and implementing appropriate mitigation to address identified risks and vulnerabilities",
+          "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, I)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "red_teaming",
-      "confidence": 0.9,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming",
-          "source_section": "Page 24"
-        },
-        {
-          "quote": "The US announced that it would establish the US AI Safety Institute in the National Institute of Standards and Technology (NIST) to implement an AI risk management framework and evaluate red teaming.",
-          "source_section": "Page 9"
+          "quote": "Specifically, employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming25, and implementing appropriate mitigation to address identified risks and vulnerabilities",
+          "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, I)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "incident_reporting",
-      "confidence": 0.85,
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
       "evidence": [
         {
           "quote": "Work towards responsible information sharing and reporting of incidents among organizations developing advanced AI systems including with industry, governments, civil society, and academia.",
-          "source_section": "Page 24"
+          "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, IV)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "encouraged to maintain appropriate documentation of reported incidents and to mitigate the identified risks and vulnerabilities",
-          "source_section": "Page 24"
+          "quote": "Information on the operational status of the AI systems and services, causes of failures, status of actions against them, incidents, etc. (\"2) Safety\").",
+          "source_section": "Part 4, P-6) ii. Providing relevant stakeholders with information",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.9,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "Publicly report advanced AI systems' capabilities, limitations and domains of appropriate and inappropriate use, to support ensuring sufficient transparency",
-          "source_section": "Page 24"
+          "quote": "It is encouraged to introduce other mechanisms, such as labelling and disclaimer labelling, to help AI business users and non-business users know that they are interacting with the AI system.",
+          "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, VII)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "provide and explain information summarizing the items listed below according to the knowledge and ability of each stakeholder",
-          "source_section": "Page 18"
+          "quote": "If intending to use the AI output result as a reference for an evaluation of a specific individual or group, notify the specific individual or group to be evaluated about the use of AI",
+          "source_section": "Part 5, U-7) i. Explanation to relevant stakeholders",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.9,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "record or store logs of AI training processes, inference processes, rationales of decisions made by AI",
-          "source_section": "Page 18"
+          "quote": "In order to ensure verifiability relating to decisions made by AI, record or store logs of AI training processes, inference processes, rationales of decisions made by AI, and the like (for example, input/output generated when developing and using the AI system or service) to the extent possible based on the data amount or contents.",
+          "source_section": "Part 2, C. Common Guiding Principles, 6) Transparency",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "Documentation of system architectures and the like",
-          "source_section": "Page 23"
-        },
-        {
-          "quote": "Make a reasonable explanation of what decision was made, starting with the source of the data, and document and publish it to ensure traceability.",
-          "source_section": "Page 24"
+          "quote": "In order to improve traceability and transparency, prepare documents on your AI system development processes, data collection and labeling affecting decisionmakings, algorithms you have used, and the like, as far as possible in a form that third parties can use to validate the documents (\"7) Accountability\").",
+          "source_section": "Part 3, D-7) ii. Documentation of development-related information",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "third_party_audit",
-      "confidence": 0.7,
+      "confidence": 0.75,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "employing diverse internal and independent external testing measures",
-          "source_section": "Page 24"
+          "quote": "Specifically, employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming25, and implementing appropriate mitigation to address identified risks and vulnerabilities",
+          "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, I)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "prepare documents on your AI system development processes, data collection and labeling affecting decisionmakings, algorithms you have used, and the like, as far as possible in a form that third parties can use to validate the documents",
+          "source_section": "Part 3, D-7) ii. Documentation of development-related information",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.8,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "Consider operational measures for information security and appropriate cyber/physical access control, etc.",
-          "source_section": "Page 25"
+          "quote": "Invest in and implement robust security management, including physical security, cyber security and security measures against internal threats, throughout the AI lifecycle. (\"5) Ensuring security\") • Consider operational measures for information security and appropriate cyber/physical access control, etc.",
+          "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, VI)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Implement proper protective measures before and across training by, for example, considering the deployment of any data management and restriction function that controls access to data (\"2) Safety,\" \"5) Ensuring security\").",
+          "source_section": "Part 3, D-2) i. Proper data training",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "content_provenance",
-      "confidence": 0.9,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
           "quote": "Develop and deploy reliable content authentication and provenance mechanisms, where technically feasible, such as watermarking or other techniques to enable users to identify AI-generated content.",
-          "source_section": "Page 25"
+          "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, VII)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Make effort to develop tools and APIs that allow AI business users and non-business users to determine whether or not specific content through watermarks has been created using advanced AI systems.",
+          "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, VII)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "human_oversight",
-      "confidence": 0.75,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "Intervention by decisions made by humans",
-          "source_section": "Page 23"
+          "quote": "Ensure controllability that allows humans to control AI as necessary including objective monitoring and handling, in accordance with the characteristics and purposes of the relevant AI, in light of the severity and possibility of rights violations that can result from AI use or unintended AI behaviors.",
+          "source_section": "Part 2, C. Common Guiding Principles, 2) Safety",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "implement reliable, human-centric AI",
-          "source_section": "Page 25"
+          "quote": "To prevent AI from generating unfair results, consider implementing timely human interventions, rather than letting AI make the decisions alone.",
+          "source_section": "Part 2, C. Common Guiding Principles, 3) Fairness",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "In accordance with the characteristics and purposes of AI systems and services, ensure the accuracy, and recency as necessary, of the data (appropriateness of the data) to be used for training.",
+          "source_section": "Part 2, C. Common Guiding Principles, 2) Safety",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Properly collect training data through privacy-by-design, etc., and if it contains third-parties' personal data, data requiring attention to intellectual property rights, etc., ensure that such data is properly handled in compliance with laws and regulations throughout the lifecycle of AI (\"2) Safety,\" \"4) Privacy protection,\" \"5) Ensuring security\").",
+          "source_section": "Part 3, D-2) i. Proper data training",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "open_weight_obligations",
+      "confidence": 0.75,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "If any open technologies are used, conform to the rules specified for them. • When disclose developed AI systems as open source, consider any potential social impacts.",
+          "source_section": "Part 2, C. Common Guiding Principles, 6) Transparency",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }
@@ -132,33 +286,25 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.9,
+      "confidence": 0.98,
       "evidence": [
         {
-          "quote": "it is important that each AI business actor provides stakeholders with information to the reasonable extent necessary",
-          "source_section": "Page 18"
+          "quote": "Thus, it was decided to draw up guidelines on the basis of the goal-based concept that would lead to the achievement of purposes through soft laws without any legally binding force that would encourage interested parties to make voluntary efforts to reduce societal risks in AI and promote innovations and use of AI.",
+          "source_section": "Preface",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "It is encouraged to introduce other mechanisms, such as labelling and disclaimer labelling",
-          "source_section": "Page 25"
-        },
-        {
-          "quote": "It is expected to establish and disclose AI governance policies and practices.",
-          "source_section": "Page 25"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "Work towards responsible information sharing and reporting of incidents among organizations developing advanced AI systems",
-          "source_section": "Page 24"
-        },
-        {
-          "quote": "These include reports on monitoring results and documents related to security and safety risks.",
-          "source_section": "Page 24"
+          "quote": "It is important that the business operators pay close attention that if society considers the efforts to be inappropriate or insufficient, it might lead to opportunity losses in their businesses and it might become difficult to maintain business values.",
+          "source_section": "Preface",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }

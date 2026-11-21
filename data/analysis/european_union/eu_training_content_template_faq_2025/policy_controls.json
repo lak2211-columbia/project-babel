@@ -1,0 +1,77 @@
+{
+  "safety_requirements": [
+    {
+      "label": "training_data_governance",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "All providers of general-purpose AI models are required to publish a summary of the content used to train their models, based on a template provided by the Commission.",
+          "source_section": "What is the purpose and scope of the Template?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Under Article 53(1)(d) of the AI Act , using the Template is mandatory.",
+          "source_section": "How do these guidelines and the template support providers of general-purpose AI models in complying with the AI Act’s obligation?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "open_weight_obligations",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "Any provider of general-purpose AI models, including those with systemic risks, that places such models on the Union market is required to publish respective summaries. This requirement also applies to providers of models released under free and open-source licenses.",
+          "source_section": "Who is expected to publish a summary of the training content?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "civil_penalty",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "Non-compliance may result in fines of up to 3% of the provider's annual total worldwide turnover in the preceding financial year, or 15 000 000 Euros, whichever is higher.",
+          "source_section": "What are the consequences if a provider fails to publish a summary?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "Failure to provide this summary can lead to enforcement actions by the AI Office as of 2 August 2026.",
+          "source_section": "What are the consequences if a provider fails to publish a summary?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

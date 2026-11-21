@@ -3,8 +3,9 @@
   "generated_at": "2026-11-20T00:00:00Z",
   "summary": "Forensic recovery tracker for legacy corpus provenance gaps, browser re-fetch targets, canonical full-text stub replacements, and Mythos Section 0 corpus flags.",
   "legacy_corpus_provenance_status": {
-    "status": "legacy_rerun_required_before_prod_publish",
-    "finding": "All 103 committed document_analysis.json artifacts on disk were produced by the legacy parser (0.1.0) and pre-v2.0 prompts without analysis_metadata, input_sha256, chunk_count, or Taxonomy v2.0/v2.1 labels. Existing parsed/ and analysis/ artifacts are intentionally preserved on disk until the owner executes a full authenticated re-parse (Parser 0.3.0) + re-analysis run (`make parse && make analyze --refresh && make check-grounding`)."
+    "status": "ready_for_stage_4b_reparse_and_reanalysis",
+    "finding": "All 103 committed document_analysis.json artifacts on disk were produced by the legacy parser (0.1.0) and pre-v2.0 prompts without analysis_metadata, input_sha256, chunk_count, or Taxonomy v2.0/v2.1 labels. Existing parsed/ and analysis/ artifacts are intentionally preserved on disk until the owner executes a full authenticated re-parse (Parser 0.3.0) + re-analysis run (`make parse && make analyze --refresh && make check-grounding`).",
+    "stage_4a_note": "Stage 4A live recovery complete (2026-11-21): all 3 KR law.go.kr statutes recovered via Playwright, 6 stub/synthetic/mojibake existing docs upgraded to full official PDFs (0 synthetic manual imports remain), and 18 verified late-2026 / landmark sovereign instruments ingested (121 total seeds). Ready for Stage 4B full PyMuPDF re-parse + Gemini 4 Neon re-analysis."
   },
   "mythos_section_0_investigations": {
     "us_nist_rmf_identical_framing_tokens": {
@@ -18,13 +19,21 @@
     },
     "us_cfpb_chatbots_input_mismatch": {
       "document_id": "united_states/us_cfpb_chatbots_issue_spotlight_2023",
-      "status": "corrupt_binary_pdf_saved_as_html_then_overwritten_by_blurb",
+      "status": "recovered_official_pdf_awaiting_stage_4b_parse",
       "finding": "Retrieval Attempt 1 (2026-04-15T01:10:02Z) fetched the 464,816-byte CFPB PDF (https://files.consumerfinance.gov/f/documents/cfpb_chatbot-issue-spotlight_2023-06.pdf) and saved it as source.html. The legacy parser fed raw binary PDF bytes to Claude (186,033 policy / 184,570 framing input tokens), confirmed verbatim in document_analysis.json implementation_notes ('The document text is primarily binary/encoded PDF content with limited extractable plain text'; policy_conf=0.45, 0/7 grounded quotes). Two minutes later (01:12:00Z), Attempt 2 fetched the 158,638-byte HTML landing page (1,189 chars of 3-paragraph summary blurb) and overwrote source.html without re-analyzing.",
-      "remediation": "Updated data/sources/united_states.json to set document_format='pdf' and add https://files.consumerfinance.gov/f/documents/cfpb_chatbot-issue-spotlight_2023-06.pdf in retrieval_urls. Next `fetch-seed-documents united_states --refresh` + `parse-raw-documents` + `analyze-documents --refresh` will replace the stub cleanly."
+      "remediation": "Updated data/sources/united_states.json to set document_format='pdf' and add https://files.consumerfinance.gov/f/documents/cfpb_chatbot-issue-spotlight_2023-06.pdf in retrieval_urls. Next `fetch-seed-documents united_states --refresh` + `parse-raw-documents` + `analyze-documents --refresh` will replace the stub cleanly.",
+      "recovered_at": "2026-11-21T05:20:15Z",
+      "recovered_artifact": {
+        "artifact_path": "data/raw/united_states/us_cfpb_chatbots_issue_spotlight_2023/source.pdf",
+        "source_url": "https://files.consumerfinance.gov/f/documents/cfpb_chatbot-issue-spotlight_2023-06.pdf",
+        "content_bytes": 464816,
+        "pages": 23,
+        "extracted_chars": 52839
+      }
     }
   },
   "kr_statutory_browser_recovery": {
-    "status": "browser_refetch_required",
+    "status": "recovered_raw_awaiting_stage_4b_parse",
     "git_history_checked": true,
     "manual_imports_checked": true,
     "finding": "All three South Korean binding legal texts were overwritten with unrendered 144 KB law.go.kr SPA HTML shells (~385–431 extracted chars of UI chrome) during a plain-HTTP refresh on 2026-04-15T05:46Z prior to initial commit ca3f88e. No un-overwritten copy exists in git history or data/manual_imports/. Existing document_analysis.json outputs were produced earlier from the 236–307 KB Playwright-rendered texts (21k–29k input tokens) and MUST NOT be overwritten via `make analyze` until raw/ and parsed/ are restored via browser capture.",
@@ -58,6 +67,30 @@
       "PYTHONPATH=services/pipeline/src python -m observatory.cli fetch-seed-documents south_korea --refresh --with-browser",
       "PYTHONPATH=services/pipeline/src python -m observatory.cli parse-raw-documents south_korea --refresh",
       "PYTHONPATH=services/pipeline/src python -m observatory.cli report-source-quality-audit"
+    ],
+    "recovered_at": "2026-11-21T05:20:15Z",
+    "recovered_artifacts": [
+      {
+        "document_id": "kr_ai_basic_act",
+        "content_bytes": 274592,
+        "extracted_chars": 27887,
+        "has_article_1": true,
+        "transport": "browser"
+      },
+      {
+        "document_id": "kr_ai_and_data_administration_act",
+        "content_bytes": 260661,
+        "extracted_chars": 20972,
+        "has_article_1": true,
+        "transport": "browser"
+      },
+      {
+        "document_id": "kr_ai_basic_act_enforcement_decree",
+        "content_bytes": 255408,
+        "extracted_chars": 23764,
+        "has_article_1": true,
+        "transport": "browser"
+      }
     ]
   },
   "stub_and_synthetic_replacement_queue": [
@@ -65,43 +98,65 @@
       "jurisdiction": "european_union",
       "document_id": "eu_gpai_scope_obligations_guidelines_2025",
       "issue": "Current PDF (3,383 chars) is only the 2-page cover Communication C(2025) 5045 final, missing the ~40-page GPAI Guidelines Annex.",
-      "action": "Replace raw PDF with full GPAI Guidelines Annex and re-parse/re-analyze."
+      "action": "Replace raw PDF with full GPAI Guidelines Annex and re-parse/re-analyze.",
+      "stage_4a_status": "recovered",
+      "stage_4a_resolution": "Upgraded to 36p C(2025) 7719 final PDF (544,991 B, 101,485 chars) from https://ec.europa.eu/newsroom/dae/redirection/document/118340"
     },
     {
       "jurisdiction": "united_states",
       "document_id": "us_cfpb_chatbots_issue_spotlight_2023",
       "issue": "Analyzed on 186,033 tokens (raw PDF saved as source.html; implementation_notes confirms binary gibberish) before being overwritten by 1,189-char HTML summary page (0/7 quotes grounded, policy_conf=0.45).",
-      "action": "Manifest updated to document_format='pdf' with canonical CFPB PDF retrieval_url; re-fetch as source.pdf, re-parse cleanly, and re-analyze."
+      "action": "Manifest updated to document_format='pdf' with canonical CFPB PDF retrieval_url; re-fetch as source.pdf, re-parse cleanly, and re-analyze.",
+      "stage_4a_status": "recovered",
+      "stage_4a_resolution": "Upgraded to 23p official CFPB PDF (464,816 B, 52,839 chars) from https://files.consumerfinance.gov/f/documents/cfpb_chatbot-issue-spotlight_2023-06.pdf"
     },
     {
       "jurisdiction": "united_states",
       "document_id": "us_nist_ai_rmf_playbook",
       "issue": "Current artifact (1,950 chars) is the NIST HTML overview page with federal banner chrome rather than the Playbook content.",
-      "action": "Ingest official NIST AI RMF Playbook JSON/PDF export or keep quarantined as companion_resource."
+      "action": "Ingest official NIST AI RMF Playbook JSON/PDF export or keep quarantined as companion_resource.",
+      "stage_4a_status": "recovered",
+      "stage_4a_resolution": "Upgraded to 147p official NIST AI RMF Playbook PDF (2,882,270 B, 339,508 chars) from https://airc.nist.gov/docs/AI_RMF_Playbook.pdf; promoted to primary_instrument"
     },
     {
       "jurisdiction": "japan",
       "document_id": "jp_ai_governance_guidelines_2021",
       "issue": "Backed by 8.6 KB synthetic summary PDF from manual_imports/japan/ and latest retrieval timed out; marked historical_baseline/superseded.",
-      "action": "Replace with official METI 20210709_9.pdf when reachable."
+      "action": "Replace with official METI 20210709_9.pdf when reachable.",
+      "stage_4a_status": "recovered",
+      "stage_4a_resolution": "Upgraded to 82p official METI 20210709_9.pdf (1,312,560 B, 205,826 chars); synthetic manual import deleted"
     },
     {
       "jurisdiction": "japan",
       "document_id": "jp_ai_governance_ver_1_1_report",
       "issue": "Backed by 6.2 KB synthetic summary PDF from manual_imports/japan/; marked historical_baseline/superseded.",
-      "action": "Replace with official METI 20210709_8.pdf when reachable."
+      "action": "Replace with official METI 20210709_8.pdf when reachable.",
+      "stage_4a_status": "recovered",
+      "stage_4a_resolution": "Upgraded to 34p official METI 20210709_8.pdf (1,108,725 B, 106,215 chars); synthetic manual import deleted"
     },
     {
       "jurisdiction": "china",
       "document_id": "cn_ai_ethics_norms_2021",
       "issue": "Current artifact (1,239 chars) is MOST press release rather than the full 2021 Ethics Norms text.",
-      "action": "Fetch canonical full text from MOST/State Council."
+      "action": "Fetch canonical full text from MOST/State Council.",
+      "stage_4a_status": "deferred",
+      "stage_4a_resolution": "MOST/State Council official press release retained as historical_baseline; standalone full-text norm URL not reachable during Stage 4A"
     },
     {
       "jurisdiction": "china",
       "document_id": "cn_ai_governance_principles_2019",
       "issue": "Current artifact (1,525 chars) is MOST press release rather than the full 8-principle text.",
-      "action": "Fetch canonical full text from MOST/State Council."
+      "action": "Fetch canonical full text from MOST/State Council.",
+      "stage_4a_status": "deferred",
+      "stage_4a_resolution": "MOST/State Council official press release retained as historical_baseline; standalone full-text principles URL not reachable during Stage 4A"
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_ai_safety_guideline_2026_draft",
+      "issue": "Committed 71p PDF had broken HWP-CID Korean font mojibake (0 valid Hangul syllables in first 5 pages).",
+      "action": "Replaced in-place with clean 75p UTF-8 MSIT/KOSA Support Desk PDF (CF00007573, 531,748 B, 142,157 chars).",
+      "stage_4a_status": "recovered",
+      "stage_4a_resolution": "Upgraded in-place to clean 75p UTF-8 PDF (531,748 B, 142,157 chars)"
     }
   ],
   "truncated_split_pass_reanalysis_priority": [
@@ -115,5 +170,6 @@
     "european_union/eu_gpai_code_safety_security_chapter_2025 (105,445c — ~5.0k–6.2k tokens)",
     "japan/jp_ai_guidelines_for_business_ver_1_0 (104,180c — ~4.8k–6.0k tokens)",
     "united_states/us_ai_risk_management_framework_second_draft_august_e303aeb7 (86,091c — ~4.8k–6.0k tokens; quarantined draft)"
-  ]
+  ],
+  "updated_at": "2026-11-21T05:20:15Z"
 }

@@ -1,33 +1,75 @@
 {
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "fundamental_rights",
-    "national_security",
-    "economic_competitiveness"
+    "economic_competitiveness",
+    "fundamental_rights"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.15,
-    "economic_competitiveness": 0.25,
-    "fundamental_rights": 0.2,
-    "social_stability": 0.05,
-    "innovation_enablement": 0.55,
-    "consumer_public_safety": 0.05,
+    "economic_competitiveness": 0.85,
+    "fundamental_rights": 0.55,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.25,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around enabling data-driven innovation through clear contractual guidelines. Its stated purpose is to facilitate data transactions and AI utilization, with references to 'data-driven innovation creation' and IoT/AI platform case studies. Secondary framings include fundamental rights (personal data protection, GDPR compliance) and national security (export controls under FEFTA for dual-use technologies).",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.02,
+    "economic_competitiveness": 0.3,
+    "fundamental_rights": 0.1,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.55,
+    "consumer_public_safety": 0.03,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The METI Contract Guidelines on Utilization of AI and Data (v1.1) are predominantly framed around innovation enablement: both the Data and AI sections explicitly state their core purpose is to reduce transaction costs, establish practical contract models and exploratory development practices, preserve freedom of contract, and unlock open innovation and broader AI/data utilization. Economic competitiveness is a strong secondary frame, as the guidelines repeatedly justify lowering contractual friction by citing national and industrial competitiveness and surviving the Fourth Industrial Revolution; however, innovation enablement edges it out because the operative rationale centers on frictionless, voluntary ecosystem facilitation rather than zero-sum international rivalry. Fundamental rights appear as a tertiary consideration focused on preventing privacy infringements and complying with personal data protection laws (APPI and GDPR) during data sharing, while consumer/public safety (industrial plant safety, medical data, consumer contract protections) and national security (Foreign Exchange and Foreign Trade Act export controls) appear only incidentally as sector examples or legal compliance checkpoints.",
   "evidence_spans": [
     {
-      "quote": "データに関する取引の推進を目的とした契約ガイドライン-データ駆動型イノベーションの創出に向けて-",
-      "source_section": "Page 11"
+      "quote": "多様な立場に配慮したデータ契約の考え方や契約条項例等を用意するこ\nとにより、データ利用の促進を図り、オープンイノベーションを促進するこ\nとも、本ガイドライン（データ編）の一つの目的である。",
+      "source_section": "データ編 第１ 総論 ４ イノベーションの促進",
+      "quote_en": "By providing concepts for data contracts and model contract clauses that take diverse positions into account, promoting data utilization and fostering open innovation is also one of the purposes of these Guidelines (Data Section).",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 7201,
+      "end_char": 7295
     },
     {
-      "quote": "武器、核兵器等、軍事転用可能な汎用品およびそれらに関する技術が安全保障上懸念のある国家やテロリストの手に渡ることを防ぐ目的で、輸出管理が行なわれている",
-      "source_section": "Page 48"
+      "quote": "それによって、当事者の双方が納得する合理的な契約を締結するための\n情報を提供し、契約プラクティスを形成する一助となることで、AI 技術を\n利用したソフトウェアの開発・利用を促進することを目的としている。",
+      "source_section": "AI編 第１ 総論 １ 目的",
+      "quote_en": "Thereby, by providing information for concluding rational contracts that both parties can agree to and helping to form contract practices, it aims to promote the development and utilization of software utilizing AI technology.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 211363,
+      "end_char": 211464
     },
     {
-      "quote": "個人情報保護に主眼を置いた越境移転規制が存在する",
-      "source_section": "Page 42"
+      "quote": "当事者がデータ流通と利活用について低コス\nトで合理的な取引関係を構築することができれば、独占禁止法や不正競争\n防止法等の法適用と相まって、契約当事者としてはもちろん、ひいては国と\nしての競争力が高まることも期待される。",
+      "source_section": "データ編 第１ 総論 ３ 契約の複雑化・高度化とガイドラインの意義",
+      "quote_en": "If parties can build low-cost and rational transactional relationships regarding data distribution and utilization, combined with the application of laws such as the Antimonopoly Act and the Unfair Competition Prevention Act, it is expected to enhance the competitiveness not only of the contracting parties but ultimately of the nation as a whole.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 5744,
+      "end_char": 5853
+    },
+    {
+      "quote": "このようなことになれば、AI 技術の開発・利用が阻害され、ひいては我\nが国の産業競争力が失われたり、社会的・構造的課題の解決が困難となると\nいった結果をもたらしかねない。",
+      "source_section": "AI編 第１ 総論 １ 目的",
+      "quote_en": "If this happens, the development and utilization of AI technology will be hindered, which could ultimately lead to a loss of Japan's industrial competitiveness and make it difficult to solve social and structural issues.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 211169,
+      "end_char": 211254
+    },
+    {
+      "quote": "データに個人情報が含まれる場合にはプライバシー権\n等の個人の権利が侵害されることがある",
+      "source_section": "データ編 第１ 総論 ２ データの流出や不正利用に伴う損害発生への懸念",
+      "quote_en": "When data includes personal information, individual rights such as privacy rights may be infringed.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5399,
+      "end_char": 5442
     }
   ]
 }

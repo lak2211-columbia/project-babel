@@ -2,8 +2,8 @@
   "jurisdiction": "united_states",
   "analysis_method": "deterministic_v2",
   "analysis_version": "0.2.0",
-  "generated_at": "2026-11-21T02:28:21.352916Z",
-  "source_count": 23,
+  "generated_at": "2026-11-21T06:36:38.312071Z",
+  "source_count": 29,
   "source_document_ids": [
     "us_ai_action_plan_pdf",
     "us_ai_bill_of_rights_blueprint_2022",
@@ -17,25 +17,31 @@
     "us_cfpb_circular_2022_03_complex_algorithms",
     "us_crosswalks_to_the_nist_artificial_intelligence_r_8c897d8c",
     "us_eo_14179_removing_barriers_ai",
+    "us_eo_14365_national_policy_framework_ai_2025",
+    "us_eo_14409_advanced_ai_innovation_security_2026",
+    "us_eo_14434_super_intelligence_2026",
     "us_fda_ai_pccp_guidance_2025",
     "us_from_principles_to_practice_ostp_the_white_house_8a01bf26",
     "us_ftc_online_harms_ai_report_2022",
     "us_joint_statement_ai_discrimination_2023",
     "us_nist_ai_rmf_1_0",
     "us_nist_ai_rmf_playbook",
+    "us_nist_caisi_agent_standards_initiative_2026",
     "us_nist_genai_profile",
+    "us_nist_ir_8596_cyber_ai_profile_2025",
     "us_omb_m_25_21",
     "us_omb_m_25_22",
     "us_roadmap_for_the_nist_artificial_intelligence_ris_bc6cf1d8",
+    "us_take_it_down_act_2025",
     "us_technical_contributions_ai_governance_nist"
   ],
   "source_window_start": "2021-07-13",
-  "source_window_end": "2025-08-18",
-  "summary": "United States' current AI governance record is mixed across law, guidance, and strategic coordination, with National Institute of Standards and Technology (NIST) and The White House appearing most often in the source base. Across the analyzed documents, Consumer and public safety is the clearest rationale, with Fundamental rights as the next strongest layer, while risk assessment, human oversight, and transparency and disclosure recur most often in the operative expectations.",
-  "governance_posture": "The jurisdiction currently reads as a mixed stack of strategy, guidance, and selective binding measures. The strongest institutional signals come from National Institute of Standards and Technology (NIST), The White House, and Consumer Financial Protection Bureau (CFPB), and the corpus is weighted toward regulatory guidance and standards guidance.",
-  "framing_landscape": "Consumer and public safety is the clearest rationale in the corpus, with Fundamental rights and Innovation enablement still materially shaping how governance is justified.",
-  "implementation_and_enforcement": "Operationally, the sources most often point to risk assessment, human oversight, and transparency and disclosure. Enforcement language is comparatively soft and usually framed through soft enforcement and reporting obligations rather than hard sanctions.",
-  "source_coverage_note": "This readout is based on 23 analyzed documents spanning 2021-07-13 to 2025-08-18. The corpus is weighted toward regulatory guidance and standards guidance. On the binding side it leans toward voluntary commitment and regulatory guidance, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are Marketing Submission Recommendations for a Predetermined Change Control Plan for Artificial Intelligence-Enabled Device Software Functions and Winning the Race: America's AI Action Plan.",
+  "source_window_end": "2026-10-02",
+  "summary": "United States' current AI governance record is guidance-heavy, with National Institute of Standards and Technology (NIST) and The White House appearing most often in the source base. Across the analyzed documents, Innovation enablement and Consumer and public safety both materially shape the jurisdiction's rationale, while risk assessment, pre-deployment testing, and transparency and disclosure recur most often in the operative expectations.",
+  "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from National Institute of Standards and Technology (NIST), The White House, and Federal Trade Commission (FTC), and the corpus is weighted toward standards guidance and strategy paper.",
+  "framing_landscape": "The framing mix is relatively split: Innovation enablement leads, but Consumer and public safety is close enough that the jurisdiction should not be read through a single rationale alone.",
+  "implementation_and_enforcement": "Operationally, the sources most often point to risk assessment, pre-deployment testing, and transparency and disclosure. Enforcement language is comparatively soft and usually framed through soft enforcement and regulatory supervision rather than hard sanctions.",
+  "source_coverage_note": "This readout is based on 29 analyzed documents spanning 2021-07-13 to 2026-10-02. The corpus is weighted toward standards guidance and strategy paper. On the binding side it leans toward standards guidance and executive action, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are Executive Order 14434: Inaugurating the Era of Super Intelligence (91 FR 63129) and Executive Order 14409: Promoting Advanced Artificial Intelligence Innovation and Security (91 FR 34565).",
   "key_sources": [
     {
       "document_id": "us_omb_m_25_21",
@@ -47,12 +53,21 @@
       "contribution": "Executive coordination anchor for risk assessment and pre-deployment testing, with reporting obligations as the clearest consequence or oversight hook."
     },
     {
+      "document_id": "us_take_it_down_act_2025",
+      "title": "TAKE IT DOWN Act (Public Law 119-12, 139 Stat. 55)",
+      "publication_date": "2025-05-19",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "dominant_frame": "consumer_public_safety",
+      "contribution": "Statutory anchor for transparency and disclosure, with criminal penalties as the clearest consequence or oversight hook."
+    },
+    {
       "document_id": "us_omb_m_25_22",
       "title": "M-25-22: Driving Efficient Acquisition of Artificial Intelligence in Government",
       "publication_date": "2025-04-03",
       "document_type": "regulatory_guidance",
       "binding_strength": "executive_action",
-      "dominant_frame": "economic_competitiveness",
+      "dominant_frame": "innovation_enablement",
       "contribution": "Executive coordination anchor for risk assessment and pre-deployment testing, with procurement conditions as the clearest consequence or oversight hook."
     },
     {
@@ -62,127 +77,118 @@
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "dominant_frame": "consumer_public_safety",
-      "contribution": "Regulatory implementation anchor for pre-deployment testing and risk assessment, with regulatory supervision as the clearest consequence or oversight hook."
-    },
-    {
-      "document_id": "us_joint_statement_ai_discrimination_2023",
-      "title": "Joint Statement on Enforcement Efforts Against Discrimination and Bias in Automated Systems",
-      "publication_date": "2023-04-25",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
-      "dominant_frame": "fundamental_rights",
-      "contribution": "Regulatory implementation anchor for risk assessment and transparency and disclosure, with regulatory supervision as the clearest consequence or oversight hook."
+      "contribution": "Regulatory implementation anchor for registration or licensing and pre-deployment testing, with licensing requirements as the clearest consequence or oversight hook."
     }
   ],
   "top_document_types": [
     {
-      "label": "regulatory_guidance",
-      "count": 10,
-      "share": 0.435
-    },
-    {
       "label": "standards_guideline",
-      "count": 10,
-      "share": 0.435
+      "count": 12,
+      "share": 0.414
     },
     {
       "label": "strategy_paper",
-      "count": 2,
-      "share": 0.087
-    }
-  ],
-  "top_binding_strengths": [
-    {
-      "label": "voluntary_commitment",
-      "count": 9,
-      "share": 0.391
+      "count": 7,
+      "share": 0.241
     },
     {
       "label": "regulatory_guidance",
       "count": 5,
-      "share": 0.217
-    },
+      "share": 0.172
+    }
+  ],
+  "top_binding_strengths": [
     {
       "label": "standards_guideline",
-      "count": 4,
-      "share": 0.174
+      "count": 12,
+      "share": 0.414
+    },
+    {
+      "label": "executive_action",
+      "count": 6,
+      "share": 0.207
+    },
+    {
+      "label": "strategy_statement",
+      "count": 6,
+      "share": 0.207
     }
   ],
   "top_requirements": [
     {
       "label": "risk_assessment",
-      "count": 19,
-      "share": 0.826
+      "count": 18,
+      "share": 0.621
     },
     {
-      "label": "human_oversight",
-      "count": 17,
-      "share": 0.739
+      "label": "pre_deployment_testing",
+      "count": 16,
+      "share": 0.552
     },
     {
       "label": "transparency_disclosure",
-      "count": 17,
-      "share": 0.739
+      "count": 16,
+      "share": 0.552
     },
     {
-      "label": "model_documentation",
-      "count": 14,
-      "share": 0.609
+      "label": "access_controls",
+      "count": 15,
+      "share": 0.517
     }
   ],
   "top_enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "count": 19,
-      "share": 0.826
-    },
-    {
-      "label": "reporting_obligation",
-      "count": 10,
-      "share": 0.435
+      "count": 20,
+      "share": 0.69
     },
     {
       "label": "regulatory_supervision",
-      "count": 7,
-      "share": 0.304
+      "count": 10,
+      "share": 0.345
     },
     {
       "label": "none_specified",
       "count": 5,
-      "share": 0.217
+      "share": 0.172
+    },
+    {
+      "label": "market_access_restriction",
+      "count": 4,
+      "share": 0.138
     }
   ],
   "top_frames": [
     {
+      "label": "innovation_enablement",
+      "score": 9.24,
+      "share": 0.319,
+      "document_mentions": 27
+    },
+    {
       "label": "consumer_public_safety",
-      "score": 10.937,
-      "share": 0.476,
-      "document_mentions": 22
+      "score": 7.19,
+      "share": 0.248,
+      "document_mentions": 27
     },
     {
       "label": "fundamental_rights",
-      "score": 3.701,
-      "share": 0.161,
-      "document_mentions": 12
-    },
-    {
-      "label": "innovation_enablement",
-      "score": 3.517,
-      "share": 0.153,
-      "document_mentions": 12
+      "score": 6.3,
+      "share": 0.217,
+      "document_mentions": 24
     },
     {
       "label": "economic_competitiveness",
-      "score": 1.863,
-      "share": 0.081,
-      "document_mentions": 7
+      "score": 3.46,
+      "share": 0.119,
+      "document_mentions": 24
     }
   ],
   "key_institutions": [
     "National Institute of Standards and Technology (NIST)",
     "The White House",
-    "Consumer Financial Protection Bureau (CFPB)",
-    "Federal Trade Commission (FTC)"
+    "Federal Trade Commission (FTC)",
+    "Office of Management and Budget (OMB)"
   ],
-  "confidence": 0.793
+  "confidence": 0.942
 }

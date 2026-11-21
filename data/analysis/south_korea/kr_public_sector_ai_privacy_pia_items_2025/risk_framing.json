@@ -1,32 +1,56 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "consumer_public_safety",
-    "social_stability"
+    "consumer_public_safety"
   ],
   "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.95,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.0,
+    "consumer_public_safety": 0.45,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
     "economic_competitiveness": 0.0,
     "fundamental_rights": 0.85,
     "social_stability": 0.0,
     "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.55,
-    "labor_transition": 0.05
+    "consumer_public_safety": 0.15,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is a privacy impact assessment checklist for AI systems under South Korean data protection law. Its governance rationale centers on protecting individual data subjects' rights—consent, lawful basis, data minimization, deletion, and the right to remove AI-generated outputs of one's face or voice. This is quintessentially a fundamental-rights framing. Secondary consumer/public safety concerns appear in items addressing AI vulnerability attacks and inappropriate AI outputs.",
+  "rationale_summary": "The checklist is overwhelmingly framed around fundamental_rights, grounding every evaluation item in lawful personal-data processing, shielding sensitive data and children's personal information, enforcing retention/deletion limits, ensuring understandable privacy disclosures, and guaranteeing data-subject redress rights over unintended synthetic depictions of faces or voices. Consumer_public_safety appears as a minor secondary frame through operational safeguards against AI vulnerability attacks, inappropriate generative AI outputs, and foreseeable misuse via Acceptable Use Policies.",
   "evidence_spans": [
     {
-      "quote": "정보주체의 의도에 반하여 AI 출력물에 생성된 얼굴·목소리 등의 삭제 요청에 관한 조치 등 정보주체 권리보장 방안을 수립‧시행하도록 계획하고 있습니까?",
-      "source_section": "5.7.10"
+      "quote": "5.7.2 공개된 개인정보를 수집하여 AI 학습에 활용하는 경우, 민감정보, 고유식별정보, 14세 미만 아동의 개인정보, 불법 유통 개인정보 등이 수집되지 않도록 필요한 조치를 계획하고 있습니까?",
+      "source_section": "Page 1",
+      "quote_en": "5.7.2 When collecting publicly available personal information for AI training, are you planning necessary measures to prevent collection of sensitive information, unique identifiers, personal information of children under age 14, and illegally distributed personal information?",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 176,
+      "end_char": 285
     },
     {
-      "quote": "AI 취약점 공격에 의한 개인정보 유ㆍ노출 등 위험을 최소화하기 위한 대책을 계획하고 있습니까?",
-      "source_section": "5.7.6"
+      "quote": "5.7.10 생성형 AI 시스템의 부적절한 답변, 개인정보 유‧노출 등에 대한 신고 기능을 갖추고, 정보주체의 의도에 반하여 AI 출력물에 생성된 얼굴·목소리 등의 삭제 요청에 관한 조치 등 정보주체 권리보장 방안을 수립‧ 시행하도록 계획하고 있습니까?",
+      "source_section": "Page 1",
+      "quote_en": "5.7.10 Are you planning to establish and implement data-subject rights protection measures, including a reporting function for inappropriate generative AI answers and personal data leakage/exposure, and procedures to handle deletion requests for faces or voices generated in AI outputs against a data subject's intent?",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 989,
+      "end_char": 1130
     },
     {
-      "quote": "민감정보, 고유식별정보, 14세 미만 아동의 개인정보, 불법 유통 개인정보 등이 수집되지 않도록 필요한 조치를 계획하고 있습니까?",
-      "source_section": "5.7.2"
+      "quote": "5.7.6 AI 취약점 공격에 의한 개인정보 유ㆍ노출 등 위험을 최소화하기 위한 대책을 계획하고 있습니까?",
+      "source_section": "Page 1",
+      "quote_en": "5.7.6 Are you planning countermeasures to minimize risks such as personal data leakage or exposure caused by AI vulnerability attacks?",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 608,
+      "end_char": 667
     }
   ]
 }

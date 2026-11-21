@@ -4,77 +4,196 @@
   "language": "ko",
   "policy_extraction": {
     "jurisdiction": "south_korea",
-    "issuing_body": "행정안전부 (Ministry of the Interior and Safety)",
+    "issuing_body": "National Assembly of the Republic of Korea",
     "document_type": "legislation",
     "binding_strength": "binding_law",
     "publication_date": "2026-02-27",
     "effective_date": "2026-08-28",
+    "covered_actors": [
+      "Public institutions (공공기관), including central administrative agencies (including presidential and prime ministerial bodies) and their affiliated agencies, local governments, public institutions under Art. 4 of the Act on the Management of Public Institutions, local public corporations and public enterprises, and designated public entities",
+      "Chief AI and Data-Based Administration Officers (인공지능 및 데이터 기반 행정 책임관) appointed by heads of public institutions",
+      "AI and Data Analysis Centers (인공지능데이터분석센터) and the Government Integrated AI and Data Analysis Center (정부통합인공지능데이터분석센터)",
+      "Designated AI and Data-Based Administration Specialized Agencies (인공지능 및 데이터 기반 행정 전문기관)",
+      "Public AI and Data Association (공공 인공지능ㆍ데이터협회)",
+      "Private corporations, organizations, and individuals (민간법인등) supplying private data via contracts or memoranda of understanding"
+    ],
     "covered_application_domains": [
-      "public_sector_use",
-      "general_purpose_models"
+      "public_sector_use"
+    ],
+    "prohibited_practices": [
+      "Use by recipient public institutions of inter-agency provided administrative data for purposes other than those for which it was provided, or disclosure of such data to third parties (Art. 15(1))"
     ],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.95,
+        "confidence": 0.98,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "공공기관의 장은 인공지능을 도입하려는 경우에는 사전에 인공지능이 국민의 기본권에 미치는 영향을 평가(이하 \"공공분야 인공지능 영향평가\"라 한다)하고 그 결과를 공표하여야 한다.",
-            "source_section": "제32조제1항"
+            "quote": "① 공공기관의 장은 인공지능을 도입하려는 경우에는 사전에 인공지능이 국민의 기본권에 미치는 영향을 평가(이하 “공공분야 인공지능 영향평가”라 한다)하고 그 결과를 공표하여야 한다.",
+            "source_section": "제32조(공공분야 인공지능 영향평가 등)",
+            "quote_en": "Where the head of a public institution intends to introduce AI, the head shall conduct a prior Public-Sector AI Impact Assessment evaluating impacts on citizens' fundamental rights and publicly disclose the results.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14967,
+            "end_char": 15067
+          },
+          {
+            "quote": "④ 공공기관의 장은 공공분야 인공지능 영향평가를 받은 인공지능을 활용하는 과정에서 발생할 수 있는 오류 등 각종 위험을 대처할 수 있도록 위험관리방안을 수립ㆍ시행하여야 한다.",
+            "source_section": "제32조(공공분야 인공지능 영향평가 등)",
+            "quote_en": "The head of a public institution shall establish and implement risk management measures to address errors and various risks that may arise while utilizing AI that has undergone a Public-Sector AI Impact Assessment.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15529,
+            "end_char": 15626
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.95,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "① 공공기관의 장은 해당 공공기관이 제공하는 인공지능을 활용한 서비스의 유형ㆍ목적ㆍ데이터 등 현황을 관리하고, 그 현황을 행정안전부장관에게 제출하여야 한다.\n② 행정안전부장관은 제1항에 따라 제출받은 현황을 목록으로 관리하고 그 목록을 매년 공표하여야 한다.",
+            "source_section": "제30조(인공지능 활용 서비스 목록 관리)",
+            "quote_en": "Heads of public institutions shall manage the status (type, purpose, data, etc.) of AI-based services they provide and submit it to the Minister of the Interior and Safety, who shall maintain a registry catalog and publish it annually.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14270,
+            "end_char": 14414
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.96,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "⑦ 공공기관은 인공지능 및 데이터 기반 행정을 수행하는 과정에서 인공지능 및 데이터의 편향성 및 의사결정의 투명성을 고려하여야 한다.",
+            "source_section": "제3조(국가 등의 책무)",
+            "quote_en": "Public institutions shall consider AI and data bias as well as transparency of decision-making when conducting AI- and data-based administration.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1491,
+            "end_char": 1565
+          },
+          {
+            "quote": "① 공공기관의 장은 인공지능을 도입하려는 경우에는 사전에 인공지능이 국민의 기본권에 미치는 영향을 평가(이하 “공공분야 인공지능 영향평가”라 한다)하고 그 결과를 공표하여야 한다.",
+            "source_section": "제32조(공공분야 인공지능 영향평가 등)",
+            "quote_en": "Heads of public institutions intending to introduce AI shall conduct a prior Public-Sector AI Impact Assessment and publicly publish the results.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14967,
+            "end_char": 15067
           }
         ]
       },
       {
         "label": "human_oversight",
         "confidence": 0.9,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "공공기관은 인공지능을 정책 수립 및 의사결정에 활용하는 경우에는 그 결정에 대한 최종적인 권한과 책임이 해당 공공기관에 있음을 명확히 하여야 한다.",
-            "source_section": "제3조제5항"
-          }
-        ]
-      },
-      {
-        "label": "transparency_disclosure",
-        "confidence": 0.88,
-        "evidence": [
-          {
-            "quote": "공공기관은 인공지능 및 데이터 기반 행정을 수행하는 과정에서 인공지능 및 데이터의 편향성 및 의사결정의 투명성을 고려하여야 한다.",
-            "source_section": "제3조제7항"
-          },
-          {
-            "quote": "행정안전부장관은 제1항에 따라 제출받은 현황을 목록으로 관리하고 그 목록을 매년 공표하여야 한다.",
-            "source_section": "제30조제2항"
-          }
-        ]
-      },
-      {
-        "label": "model_documentation",
-        "confidence": 0.82,
-        "evidence": [
-          {
-            "quote": "공공기관의 장은 해당 공공기관이 제공하는 인공지능을 활용한 서비스의 유형ㆍ목적ㆍ데이터 등 현황을 관리하고, 그 현황을 행정안전부장관에게 제출하여야 한다.",
-            "source_section": "제30조제1항"
+            "quote": "⑤ 공공기관은 인공지능을 정책 수립 및 의사결정에 활용하는 경우에는 그 결정에 대한 최종적인 권한과 책임이 해당 공공기관에 있음을 명확히 하여야 한다.",
+            "source_section": "제3조(국가 등의 책무)",
+            "quote_en": "Where a public institution uses AI in policy formulation and decision-making, it shall make clear that final authority and accountability for the decision rest with that public institution.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1293,
+            "end_char": 1377
           }
         ]
       },
       {
         "label": "access_controls",
-        "confidence": 0.78,
+        "confidence": 0.93,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "데이터를 제공받은 공공기관은 제공받은 데이터가 위조ㆍ변조ㆍ훼손 또는 유출되지 아니하도록 내부 관리계획 수립 등 안전성 확보에 필요한 기술적ㆍ관리적 및 물리적 조치를 하여야 한다.",
-            "source_section": "제15조제3항"
+            "quote": "③ 데이터를 제공받은 공공기관은 제공받은 데이터가 위조ㆍ변조ㆍ훼손 또는 유출되지 아니하도록 내부 관리계획 수립 등 안전성 확보에 필요한 기술적ㆍ관리적 및 물리적 조치를 하여야 한다.",
+            "source_section": "제15조(제공받은 데이터에 대한 관리)",
+            "quote_en": "Public institutions receiving data shall take technical, administrative, and physical security measures—including establishing internal management plans—to prevent forgery, alteration, damage, or leakage.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6386,
+            "end_char": 6487
+          },
+          {
+            "quote": "⑦ 공공기관의 장 및 행정안전부장관은 분석센터 및 통합분석센터 내에 수집되거나 저장된 데이터와 데이터 분석결과의 안전성 확보를 위하여 필요한 조치를 마련하여야 한다.",
+            "source_section": "제20조(인공지능데이터분석센터)",
+            "quote_en": "Heads of public institutions and the Minister of the Interior and Safety shall establish necessary measures to ensure the security of data and analysis results collected or stored in analysis centers.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9890,
+            "end_char": 9982
           }
         ]
       },
       {
-        "label": "registration_licensing",
-        "confidence": 0.75,
+        "label": "training_data_governance",
+        "confidence": 0.96,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "인공지능 및 데이터와 관련한 연구 등을 수행하는 자는 공공기관의 인공지능 및 데이터 활용 촉진 등을 위하여 행정안전부장관의 인가를 받아 공공 인공지능ㆍ데이터협회를 설립할 수 있다.",
-            "source_section": "제26조제1항"
+            "quote": "공공기관의 장은 학습용데이터의 기관 간 공유 및 활용 촉진을 위하여 학습용데이터의 적정한 품질수준을 확보할 수 있도록 필요한 조치를 취하여야 한다.",
+            "source_section": "제29조(학습용데이터의 관리)",
+            "quote_en": "Heads of public institutions shall take necessary measures to ensure an appropriate quality level for AI training data to promote inter-agency sharing and utilization.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14142,
+            "end_char": 14224
+          },
+          {
+            "quote": "⑥ 공공기관은 인공지능 및 데이터 기반 행정을 수행하는 과정에서 개인정보 보호를 우선적으로 고려하고 그에 필요한 대책을 마련하여야 한다.",
+            "source_section": "제3조(국가 등의 책무)",
+            "quote_en": "Public institutions shall give priority consideration to personal information protection and establish necessary safeguards when conducting AI- and data-based administration.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1396,
+            "end_char": 1472
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.86,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "① 공공기관의 장은 생성하거나 취득하여 관리하는 데이터에 대한 메타데이터(데이터의 체계적인 관리와 편리한 검색 및 활용을 위하여 데이터의 구조, 속성, 특성, 이력 등을 표현한 자료를 말한다. 이하 같다) 및 데이터관계도(데이터 간의 관계를 나타낸 그림을 말한다. 이하 같다)를 체계적으로 관리하여야 한다.",
+            "source_section": "제16조(데이터관리체계의 구축)",
+            "quote_en": "Heads of public institutions shall systematically manage metadata (structure, attributes, characteristics, history) and data-relationship maps for data they generate, acquire, and manage.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6526,
+            "end_char": 6697
+          },
+          {
+            "quote": "4. 인공지능 활용 및 데이터 분석등을 통한 정책 수립ㆍ의사결정 지원 및 이력 관리",
+            "source_section": "제18조(데이터통합관리 플랫폼)",
+            "quote_en": "4. Support for policy formulation and decision-making via AI utilization and data analysis, along with history/audit logging.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7700,
+            "end_char": 7746
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.82,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "③ 공공기관의 장은 공공분야 인공지능 영향평가를 실시하기 위하여 전문기관 또는 공공분야 인공지능 영향평가에 필요한 전문인력 및 시설 등을 갖춘 기관으로서 대통령령으로 정하는 기관에 그 평가의 실시를 의뢰할 수 있다.",
+            "source_section": "제32조(공공분야 인공지능 영향평가 등)",
+            "quote_en": "Heads of public institutions may commission a specialized agency or an institution equipped with necessary expert personnel and facilities prescribed by Presidential Decree to conduct the Public-Sector AI Impact Assessment.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15408,
+            "end_char": 15528
           }
         ]
       }
@@ -82,41 +201,108 @@
     "enforcement_mechanisms": [
       {
         "label": "reporting_obligation",
-        "confidence": 0.92,
+        "confidence": 0.97,
         "evidence": [
           {
-            "quote": "중앙행정기관의 장 및 지방자치단체의 장은 기본계획에 따라 매년 인공지능 및 데이터 기반 행정 활성화 시행계획을 수립하고, 대통령령으로 정하는 바에 따라 행정안전부장관에게 제출하여야 한다.",
-            "source_section": "제7조제1항"
+            "quote": "① 공공기관의 장은 인공지능 및 데이터 기반 행정 추진 현황, 데이터 연계ㆍ제공 및 공동활용 성과 등 인공지능 및 데이터 기반 행정의 실태를\n대통령령\n으로 정하는 바에 따라 자체적으로 점검하고, 그 결과를 행정안전부장관에게 제출하여야 한다.",
+            "source_section": "제22조(인공지능 및 데이터 기반 행정 실태 점검 및 평가)",
+            "quote_en": "Heads of public institutions shall self-inspect the status of AI- and data-based administration and data-sharing performance and submit the results to the Minister of the Interior and Safety.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 11318,
+            "end_char": 11452
           },
           {
-            "quote": "공공기관의 장은 인공지능 및 데이터 기반 행정 추진 현황, 데이터 연계ㆍ제공 및 공동활용 성과 등 인공지능 및 데이터 기반 행정의 실태를 자체적으로 점검하고, 그 결과를 행정안전부장관에게 제출하여야 한다.",
-            "source_section": "제22조제1항"
+            "quote": "① 공공기관의 장은 해당 공공기관이 제공하는 인공지능을 활용한 서비스의 유형ㆍ목적ㆍ데이터 등 현황을 관리하고, 그 현황을 행정안전부장관에게 제출하여야 한다.",
+            "source_section": "제30조(인공지능 활용 서비스 목록 관리)",
+            "quote_en": "Heads of public institutions shall manage the status of their AI-based services and submit it to the Minister of the Interior and Safety.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14270,
+            "end_char": 14357
           }
         ]
       },
       {
         "label": "regulatory_supervision",
-        "confidence": 0.85,
+        "confidence": 0.94,
         "evidence": [
           {
-            "quote": "행정안전부장관은 전문기관이 다음 각 호의 어느 하나에 해당하는 경우에는 지정을 취소하거나 6개월 이내의 기간을 정하여 그 업무의 전부 또는 일부의 정지를 명할 수 있다.",
-            "source_section": "제21조제3항"
+            "quote": "② 행정안전부장관은 제출된 시행계획을 점검하여 해당 중앙행정기관의 장이나 지방자치단체의 장이 수행하는 인공지능 및 데이터 기반 행정과 관련된 정책이나 사업 추진이 다른 기관의 정책이나 사업 추진에 지장을 줄 우려가 있다고 인정될 때에는 중앙행정기관의 장 및 지방자치단체의 장에게 시행계획의 조정을 요청할 수 있다.",
+            "source_section": "제7조(인공지능 및 데이터 기반 행정 활성화 시행계획)",
+            "quote_en": "The Minister of the Interior and Safety shall review submitted implementation plans and may request adjustments where an agency's AI/data policy or project risks impeding other agencies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2950,
+            "end_char": 3125
+          },
+          {
+            "quote": "③ 행정안전부장관은 전문기관이 다음 각 호의 어느 하나에 해당하는 경우에는 지정을 취소하거나 6개월 이내의 기간을 정하여 그 업무의 전부 또는 일부의 정지를 명할 수 있다. 다만, 제1호의 경우에는 그 지정을 취소하여야 한다.",
+            "source_section": "제21조(인공지능 및 데이터 기반 행정 전문기관)",
+            "quote_en": "The Minister of the Interior and Safety may revoke the designation of a Specialized Agency or order suspension of all or part of its duties for up to 6 months for specified violations.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 10851,
+            "end_char": 10977
           }
         ]
       },
       {
         "label": "criminal_penalty",
-        "confidence": 0.7,
+        "confidence": 0.85,
         "evidence": [
           {
-            "quote": "전문기관 및 협회의 임직원에 대해서는 「형법」 제127조 및 제129조부터 제132조까지를 적용할 때에는 공무원으로 본다.",
-            "source_section": "제33조"
+            "quote": "전문기관 및 협회의 임직원에 대해서는\n「형법」\n\n제127조\n및\n\n제129조\n부터\n\n제132조\n까지를 적용할 때에는 공무원으로 본다.",
+            "source_section": "제33조(벌칙 적용에서 공무원 의제)",
+            "quote_en": "Officers and employees of Specialized Agencies and the Public AI & Data Association are deemed public officials when applying Criminal Act Articles 127 and 129–132 (official secrecy and bribery).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15837,
+            "end_char": 15910
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.88,
+        "evidence": [
+          {
+            "quote": "② 행정안전부장관은 제1항에 따른 점검 결과를 종합하여 전략위원회의 심의를 거친 후 공개하여야 한다.\n<개정 2023. 5. 16.>\n③ 행정안전부장관은 제1항에 따른 점검 결과 그 성과가 우수한 공공기관이나 부서, 공무원ㆍ직원 등을\n대통령령\n으로 정하는 바에 따라 표창하고 포상금을 지급할 수 있다.",
+            "source_section": "제22조(인공지능 및 데이터 기반 행정 실태 점검 및 평가)",
+            "quote_en": "The Minister of the Interior and Safety shall synthesize and publicly disclose inspection results after Public Data Strategy Committee deliberation, and may commend and award monetary prizes to high-performing agencies and staff.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 11471,
+            "end_char": 11639
+          },
+          {
+            "quote": "① 행정안전부장관은 공공기관이 안전하고 효율적으로 인공지능을 도입 및 활용할 수 있도록 공정성ㆍ투명성ㆍ책임성ㆍ안전성 등의 신뢰 기반 조성에 필요한 사항과\n「인공지능 발전과 신뢰 기반 조성 등에 관한 기본법」\n\n제27조\n에 따른 인공지능 윤리원칙을 반영하여 공공기관에 적용되는 윤리기준을 제정하고 이를 공표하여야 한다.",
+            "source_section": "제31조(인공지능 활용 윤리기준)",
+            "quote_en": "The Minister of the Interior and Safety shall establish and promulgate AI ethics standards applicable to public institutions reflecting fairness, transparency, accountability, safety, and AI Basic Act Art. 27 principles.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14563,
+            "end_char": 14740
           }
         ]
       }
     ],
-    "implementation_notes": "This law governs AI and data-based administration in the public sector in South Korea. It was originally enacted in 2020 as the 'Data-Based Administration Promotion Act' and significantly amended in February 2026 to incorporate AI governance provisions. Key additions in 2026 include: mandatory pre-deployment AI impact assessment on fundamental rights (Article 32, effective 2027-02-28), AI ethics guidelines for public institutions (Article 31), AI service registry (Article 30), and requirement for public institutions already using AI to conduct impact assessments within 2 years of the amendment's effective date. The document primarily addresses public sector AI use rather than general AI regulation.",
-    "confidence": 0.88
+    "enforcement_authorities": [
+      "Ministry of the Interior and Safety (행정안전부)",
+      "Public Data Strategy Committee (공공데이터전략위원회)",
+      "Public Data Dispute Mediation Committee (공공데이터분쟁조정위원회)",
+      "Ministry of Science and ICT (과학기술정보통신부 — joint infrastructure, talent, and specialized agency consultation under Arts. 21, 24, 27)"
+    ],
+    "compliance_deadlines": [
+      "2026-08-28: General effective date of Act No. 21392 (6 months after promulgation on 2026-02-27 per Addenda Art. 1)",
+      "2027-02-28: Effective date of Art. 32 mandatory Public-Sector AI Impact Assessment (1 year after promulgation per Addenda Art. 1 proviso)",
+      "2028-08-28: Transitional deadline (within 2 years of effective date) for public institutions already operating AI systems at enactment to complete and publish Art. 32 Public-Sector AI Impact Assessments (Addenda Art. 5)",
+      "Every 3 years: Formulation of the Data-Based Administration Activation Basic Plan by MOIS (Art. 6(1))",
+      "Annually: Submission of agency AI & data-based administration implementation plans to MOIS (Art. 7(1)) and annual public disclosure of the public-sector AI service catalog by MOIS (Art. 30(2))"
+    ],
+    "penalties_summary": "No direct administrative fines (과태료) are imposed on public agencies; oversight relies on mandatory self-inspection reporting and public evaluation disclosure (Art. 22), binding dispute mediation on data sharing (Art. 13), MOIS revocation or up-to-6-month suspension of Specialized Agency designations (Art. 21(3)), revocation of Public AI & Data Association permits (Art. 26(2)), and Criminal Act public-official bribery and official-secrecy liability (Criminal Act Arts. 127, 129–132) extended to Specialized Agency and Association staff (Art. 33).",
+    "implementation_notes": "Act No. 21392 (promulgated 2026-02-27, effective 2026-08-28) comprehensively amends and renames the 2020 Data-Based Administration Activation Act into the AI and Data-Based Administration Activation Act under MOIS. Introduces binding public-sector AI governance pillars aligned with the AI Basic Act: agency final decision accountability (Art. 3(5)), bias and transparency duties (Art. 3(7)), Chief AI & Data Officers (Art. 19), shared government AI Common Foundation (공통기반, Art. 27), mandatory civil-servant AI training (Art. 28), training-data quality assurance (Art. 29), mandatory national public AI service catalog (Art. 30), public-sector AI ethics standards (Art. 31), and mandatory pre-deployment Public-Sector AI Impact Assessments with published results and risk-management plans (Art. 32, effective 2027-02-28, with a 2-year retrospective compliance window for legacy systems and carve-outs for national security/defense/AI Basic Act Art. 35-assessed systems).",
+    "confidence": 0.97
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
@@ -126,28 +312,115 @@
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
+      "national_security": 0.5,
+      "economic_competitiveness": 0.2,
+      "fundamental_rights": 0.9,
+      "social_stability": 0.4,
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.72,
+      "labor_transition": 0.1
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
       "national_security": 0.05,
-      "economic_competitiveness": 0.1,
-      "fundamental_rights": 0.25,
-      "social_stability": 0.1,
-      "innovation_enablement": 0.6,
-      "consumer_public_safety": 0.2,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.32,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.44,
+      "consumer_public_safety": 0.14,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The law is primarily framed around enabling and activating AI and data-based public administration to achieve efficient, objective, and scientific governance. The stated purpose is to promote AI/data utilization in public institutions to improve quality of life and institutional accountability. Safety and rights considerations (bias, transparency, privacy, fundamental rights impact assessment) are secondary guardrails attached to the activation agenda rather than the primary drivers.",
+    "rationale_summary": "The AI and Data-Based Administration Activation Act is dominantly framed around innovation_enablement: its overarching goal is activating efficient, objective, and scientific AI- and data-based government administration through shared common AI infrastructure that prevents duplicate investment, cross-agency data integration, standardization, talent training, and best-practice diffusion. Innovation_enablement edges out fundamental_rights because the statute's center of gravity is modernizing and accelerating public-sector AI adoption, yet fundamental_rights is a strong runner-up anchored in mandatory pre-deployment fundamental-rights impact assessments (Art. 32), priority personal-data protection (Art. 3(6)), bias and transparency safeguards (Art. 3(7)), and public-agency decision accountability (Art. 3(5)). Consumer_public_safety forms a clear secondary frame through provisions on safe AI use, managing operational AI errors and risks (Art. 32(4)), data security, and proactive risk prediction for safety accidents and diseases (Art. 8(1)(3)).",
     "evidence_spans": [
       {
-        "quote": "이 법은 인공지능 및 데이터를 기반으로 한 행정의 활성화와 인공지능의 안전한 활용에 필요한 신뢰 기반 조성에 관한 사항을 정함으로써 효율적ㆍ객관적ㆍ과학적인 행정을 통하여 공공기관의 책임성, 대응성 및 신뢰성을 높이고 국민의 삶의 질을 향상시키는 것을 목적으로 한다",
-        "source_section": "제1조(목적)"
+        "quote": "이 법은 인공지능 및 데이터를 기반으로 한 행정의 활성화와 인공지능의 안전한 활용에 필요한 신뢰 기반 조성에 관한 사항을 정함으로써 효율적ㆍ객관적ㆍ과학적인 행정을 통하여 공공기관의 책임성, 대응성 및 신뢰성을 높이고 국민의 삶의 질을 향상시키는 것을 목적으로 한다.",
+        "source_section": "제1조(목적)",
+        "quote_en": "The purpose of this Act is to raise the accountability, responsiveness, and trustworthiness of public institutions and improve citizens' quality of life through efficient, objective, and scientific administration by providing for the activation of AI- and data-based administration and establishing a trust foundation for safe AI utilization.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 43,
+        "end_char": 191
       },
       {
-        "quote": "공공기관은 인공지능을 정책 수립 및 의사결정에 활용하는 경우에는 그 결정에 대한 최종적인 권한과 책임이 해당 공공기관에 있음을 명확히 하여야 한다",
-        "source_section": "제3조"
+        "quote": "① 행정안전부장관 및 과학기술정보통신부장관은 공공기관이 공동으로 이용할 수 있고, 중복투자 없이 신속하고 안전하게 인공지능을 도입ㆍ활용할 수 있도록 지원하는 기반(이하 “공통기반”이라 한다)을 구축ㆍ운영하여야 한다.",
+        "source_section": "제27조(공통기반의 구축 등)",
+        "quote_en": "The Ministers of the Interior and Safety and of Science and ICT shall build and operate a shared Common Foundation enabling public institutions to jointly, rapidly, and safely adopt and utilize AI without duplicate investment.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 13614,
+        "end_char": 13734
       },
       {
-        "quote": "공공기관의 장은 인공지능을 도입하려는 경우에는 사전에 인공지능이 국민의 기본권에 미치는 영향을 평가하고 그 결과를 공표하여야 한다",
-        "source_section": "제32조"
+        "quote": "① 공공기관의 장은 인공지능을 도입하려는 경우에는 사전에 인공지능이 국민의 기본권에 미치는 영향을 평가(이하 “공공분야 인공지능 영향평가”라 한다)하고 그 결과를 공표하여야 한다.",
+        "source_section": "제32조(공공분야 인공지능 영향평가 등)",
+        "quote_en": "Heads of public institutions intending to introduce AI shall assess in advance the impact of AI on citizens' fundamental rights and publicly disclose the results.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 14967,
+        "end_char": 15067
+      },
+      {
+        "quote": "⑥ 공공기관은 인공지능 및 데이터 기반 행정을 수행하는 과정에서 개인정보 보호를 우선적으로 고려하고 그에 필요한 대책을 마련하여야 한다.\n<개정 2026. 2. 27.>\n⑦ 공공기관은 인공지능 및 데이터 기반 행정을 수행하는 과정에서 인공지능 및 데이터의 편향성 및 의사결정의 투명성을 고려하여야 한다.",
+        "source_section": "제3조(국가 등의 책무)",
+        "quote_en": "Public institutions shall prioritize personal data protection and consider AI/data bias and decision-making transparency in AI- and data-based administration.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 1396,
+        "end_char": 1565
+      },
+      {
+        "quote": "3. 안전사고, 질병 등 사전에 위험 요소와 원인을 예측하고 제거방법을 제시할 필요가 있는 분야",
+        "source_section": "제8조(데이터의 등록 등)",
+        "quote_en": "3. Areas requiring proactive prediction of risk factors and causes—such as safety accidents and diseases—and methods for eliminating them.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 3786,
+        "end_char": 3839
+      },
+      {
+        "quote": "1. 국가안전보장ㆍ국방ㆍ통일ㆍ외교관계 등에 관한 사항으로서 국가의 보안 유지 또는 고도의 기밀 보호가 필요한 경우",
+        "source_section": "제32조(공공분야 인공지능 영향평가 등)",
+        "quote_en": "1. Matters concerning national security, national defense, unification, or diplomatic relations requiring maintenance of state security or strict confidentiality (exempted from impact assessment).",
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 15195,
+        "end_char": 15258
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:17:00.981925Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "a3419f4021e36c82712c3eda6f12b64a08e1cca652a1f87223db1bdb15732833",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 18217,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 26,
+      "exact_matches": 26,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

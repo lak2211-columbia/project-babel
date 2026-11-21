@@ -4,50 +4,62 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "united_states",
-    "issuing_body": "Consumer Financial Protection Bureau (CFPB)",
+    "issuing_body": "Consumer Financial Protection Bureau",
     "document_type": "regulatory_guidance",
     "binding_strength": "regulatory_guidance",
     "publication_date": "2022-05-26",
     "effective_date": null,
+    "covered_actors": [
+      "Creditors making credit decisions using complex algorithms, artificial intelligence, or machine learning",
+      "Federal and state authorities enforcing federal consumer financial law (CFPB, state attorneys general, state regulators, FDIC, OCC, Federal Reserve, NCUA, DOJ, FTC, Farm Credit Administration, DOT, USDA)"
+    ],
     "covered_application_domains": [
       "finance"
+    ],
+    "prohibited_practices": [
+      "Using complex, uninterpretable, or 'black-box' algorithms in credit decisions when doing so prevents the creditor from providing specific and accurate principal reasons for adverse actions under ECOA and Regulation B",
+      "Discriminating against any credit applicant on prohibited bases under ECOA (15 U.S.C. 1691(a)) including race, color, religion, national origin, sex, marital status, age, public assistance income, or good-faith exercise of Consumer Credit Protection Act rights",
+      "Issuing generic adverse action notices citing internal policies or failure to achieve a qualifying credit score, or selecting Regulation B Appendix C sample reasons that were not the factors actually considered or scored"
     ],
     "safety_requirements": [
       {
         "label": "transparency_disclosure",
-        "confidence": 0.95,
+        "confidence": 0.98,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "ECOA and Regulation B require creditors to provide statements of specific reasons to applicants against whom adverse action is taken.",
-            "source_section": "Response"
+            "quote": "Creditors who use complex algorithms, including artificial intelligence or machine learning, in any aspect of their credit decisions must still provide a notice that discloses the specific principal reasons for taking an adverse action.",
+            "source_section": "Page 3",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6738,
+            "end_char": 6974
           },
           {
-            "quote": "the reasons disclosed must relate only to those factors actually scored in the system. Moreover, no factor that was a principal reason for adverse action may be excluded from disclosure.",
-            "source_section": "Analysis"
+            "quote": "Thus, ECOA and Regulation B do not permit creditors to use complex algorithms when doing so means they cannot provide the specific and accurate reasons for adverse actions.",
+            "source_section": "Page 1",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1337,
+            "end_char": 1509
           }
         ]
       },
       {
-        "label": "model_documentation",
-        "confidence": 0.7,
+        "label": "pre_deployment_testing",
+        "confidence": 0.78,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "A creditor's lack of understanding of its own methods is therefore not a cognizable defense against liability for violating ECOA and Regulation B's requirements.",
-            "source_section": "Analysis"
-          },
-          {
-            "quote": "creditors must still be able to validate the accuracy of those approximations, which may not be possible with less interpretable models.",
-            "source_section": "Footnote 1"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.65,
-        "evidence": [
-          {
-            "quote": "ECOA and Regulation B do not permit creditors to use complex algorithms when doing so means they cannot provide the specific and accurate reasons for adverse actions.",
-            "source_section": "Response"
+            "quote": "While some creditors may rely upon various post-hoc explanation methods, such explanations approximate models and creditors must still be able to validate the accuracy of those approximations, which may not be possible with less interpretable models.",
+            "source_section": "Page 1",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1716,
+            "end_char": 1966
           }
         ]
       }
@@ -55,62 +67,170 @@
     "enforcement_mechanisms": [
       {
         "label": "regulatory_supervision",
-        "confidence": 0.9,
+        "confidence": 0.94,
         "evidence": [
           {
-            "quote": "Consumer Financial Protection Circulars are issued to all parties with authority to enforce federal consumer financial law.",
-            "source_section": "About Consumer Financial Protection Circulars"
+            "quote": "A creditor’s lack of understanding of its own methods is therefore not a cognizable defense against liability for violating ECOA and Regulation B’s requirements.",
+            "source_section": "Page 4",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8378,
+            "end_char": 8539
           },
           {
-            "quote": "these laws are also enforced by state attorneys general and state regulators",
-            "source_section": "About Consumer Financial Protection Circulars"
+            "quote": "Consumer Financial Protection Circulars are issued to all parties with authority to enforce federal consumer financial law. The Consumer Financial Protection Bureau\n(CFPB) is the principal federal regulator responsible for administering federal consumer financial law, see 12 U.S.C. 5511",
+            "source_section": "Page 5",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8587,
+            "end_char": 8874
           }
         ]
       },
       {
-        "label": "civil_penalty",
-        "confidence": 0.6,
+        "label": "soft_enforcement",
+        "confidence": 0.85,
         "evidence": [
           {
-            "quote": "A creditor cannot justify noncompliance with ECOA and Regulation B's requirements based on the mere fact that the technology it employs to evaluate applications is too complicated or opaque to understand.",
-            "source_section": "Analysis"
+            "quote": "Consumer Financial Protection Circulars are general statements of policy under the Administrative Procedure Act. 5 U.S.C. 553(b). They provide background information about applicable law, articulate considerations relevant to the Bureau's exercise of its authorities, and, in the interest of maintaining consistency, advise other parties with authority to enforce federal consumer financial law.",
+            "source_section": "Page 5",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 10496,
+            "end_char": 10891
           }
         ]
       }
     ],
-    "implementation_notes": "This circular is explicitly a 'general statement of policy under the Administrative Procedure Act' and does not impose new legal requirements but clarifies that existing ECOA/Regulation B obligations apply to AI/ML-based credit decisions. Enforcement is shared across CFPB, state AGs, prudential regulators, and other federal agencies. Confidence reflects that the underlying legal obligations are binding, though the circular itself is not binding law.",
-    "confidence": 0.88
+    "enforcement_authorities": [
+      "Consumer Financial Protection Bureau (CFPB)",
+      "State attorneys general and state regulators",
+      "Federal Deposit Insurance Corporation (FDIC)",
+      "Office of the Comptroller of the Currency (OCC)",
+      "Board of Governors of the Federal Reserve System",
+      "National Credit Union Administration (NCUA)",
+      "Department of Justice (DOJ)",
+      "Federal Trade Commission (FTC)",
+      "Farm Credit Administration",
+      "Department of Transportation",
+      "Department of Agriculture"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": "Clarifies that a creditor's inability to explain its own complex or 'black-box' algorithm is not a cognizable defense against liability for violating ECOA (15 U.S.C. 1691) and Regulation B (12 CFR 1002.9), enforceable by the CFPB, state attorneys general, prudential regulators, DOJ, FTC, other federal agencies, and private plaintiffs. As an APA general statement of policy, the Circular itself imposes no new standalone legal requirements or penalties.",
+    "implementation_notes": "Issued May 26, 2022 as an APA general statement of policy (5 U.S.C. 553(b)) promoting enforcement consistency across federal and state consumer financial enforcers. Confirms that ECOA and Regulation B written adverse action notice duties apply equally regardless of model complexity, that disclosing FCRA credit-score factors or generic sample checklist reasons does not satisfy ECOA unless they reflect the actual principal factors scored, and that creditors using post-hoc explanation methods must validate the accuracy of those approximations.",
+    "confidence": 0.97
   },
   "risk_framing": {
     "dominant_frame": "fundamental_rights",
     "secondary_frames": [
       "consumer_public_safety",
-      "social_stability"
+      "economic_competitiveness"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.82,
+      "economic_competitiveness": 0.35,
+      "fundamental_rights": 0.93,
       "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.65,
+      "innovation_enablement": 0.05,
+      "consumer_public_safety": 0.89,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document primarily frames AI risk in terms of consumers' legal rights under ECOA to receive specific reasons for adverse credit decisions. The core concern is that opaque algorithms may violate anti-discrimination law and deny individuals their statutory right to explanation and recourse. The framing centers on equal treatment, non-discrimination, and individual rights rather than safety, economic competitiveness, or national security.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.08,
+      "fundamental_rights": 0.52,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.0,
+      "consumer_public_safety": 0.4,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "CFPB Circular 2022-03 is dominantly framed around fundamental_rights, grounding adverse action explainability mandates in the Equal Credit Opportunity Act's anti-discrimination protections across protected classes and procedural fairness enabling applicants to detect and challenge credit errors. Fundamental_rights narrowly edges out consumer_public_safety because preventing discrimination ex ante is highlighted as the core statutory purpose of ECOA's notice rule. Consumer_public_safety is a very strong runner-up, explicitly invoking ECOA's 'twin goals of consumer protection and education' and the CFPB's mandate against unfair, deceptive, and abusive practices, while economic_competitiveness plays a minor supporting role via Congress's view that notice rules have a beneficial competitive effect on the credit marketplace.",
     "evidence_spans": [
       {
-        "quote": "ECOA makes it unlawful for any creditor to discriminate against any applicant, with respect to any aspect of a credit transaction, on the basis of race, color, religion, national origin, sex or marital status",
-        "source_section": "Analysis"
+        "quote": "ECOA makes it unlawful for any creditor to discriminate against any applicant, with respect to any aspect of a credit transaction, on the basis of race, color, religion, national origin, sex or",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 1519,
+        "end_char": 1712
       },
       {
-        "quote": "the notice requirement is intended to prevent discrimination ex ante because 'if creditors know they must explain their decisions . . . they [will] effectively be discouraged' from discriminatory practices",
-        "source_section": "Analysis"
+        "quote": "In terms of consumer protection, “the notice requirement is intended to prevent discrimination ex ante because ‘if creditors know they must explain their decisions . . . they [will] effectively be discouraged’ from discriminatory practices.”",
+        "source_section": "Page 3",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 5962,
+        "end_char": 6203
       },
       {
-        "quote": "A creditor cannot justify noncompliance with ECOA and Regulation B's requirements based on the mere fact that the technology it employs to evaluate applications is too complicated or opaque to understand.",
-        "source_section": "Analysis"
+        "quote": "ECOA’s notice requirements “were designed to fulfill the twin goals of consumer protection and education.”",
+        "source_section": "Page 3",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 5853,
+        "end_char": 5959
+      },
+      {
+        "quote": "As a result of being informed of the specific reasons for the adverse action, consumers can take steps to try to improve their credit status or, in cases “where the creditor may have acted on misinformation or inadequate information[,] . . . to rectify the mistake.”",
+        "source_section": "Page 3",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 6333,
+        "end_char": 6599
+      },
+      {
+        "quote": "In addition, Congress also believed ECOA’s notice requirement would have “a beneficial competitive effect on the credit marketplace.”",
+        "source_section": "Page 3",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 6602,
+        "end_char": 6735
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:17:55.124108Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "b999e72f48597554a99f4a6ab3193f26702b9307e6b1586845db034b6646238e",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 11368,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 11,
+      "exact_matches": 11,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

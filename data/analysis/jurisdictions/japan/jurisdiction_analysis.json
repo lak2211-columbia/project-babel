@@ -2,8 +2,8 @@
   "jurisdiction": "japan",
   "analysis_method": "deterministic_v2",
   "analysis_version": "0.2.0",
-  "generated_at": "2026-11-21T02:28:21.223517Z",
-  "source_count": 28,
+  "generated_at": "2026-11-21T06:36:37.677771Z",
+  "source_count": 34,
   "source_document_ids": [
     "jp_admin_genai_procurement_guideline_2025",
     "jp_agri_ai_data_contract_guideline_2020",
@@ -19,28 +19,34 @@
     "jp_ai_guideline_2025_en_pdf",
     "jp_ai_guideline_2025_page",
     "jp_ai_guidelines_for_business_ver_1_0",
+    "jp_ai_guidelines_for_business_ver_1_2_2026",
+    "jp_ai_promotion_act_statute_2025",
     "jp_ai_q_a_pdf_493kb_1812c77d",
     "jp_ai_senryaku_5eb91d1a",
+    "jp_aisi_evaluation_perspectives_guide_2026",
+    "jp_aisi_red_teaming_guide_2025",
     "jp_basic_ai_plan_page",
     "jp_childcare_genai_handbook_2025",
     "jp_content_genai_guidebook_2024",
     "jp_genai_privacy_alert_2023",
+    "jp_hiroshima_ai_process_code_of_conduct_2023",
     "jp_index_12711198",
     "jp_kaigi_3537a511",
     "jp_medical_digital_data_ai_guideline_2024",
     "jp_medical_digital_data_ai_guideline_notice_2024",
     "jp_medical_digital_data_ai_guideline_points_2024",
     "jp_school_genai_guideline_ver_2_2024",
+    "jp_second_basic_ai_plan_2026",
     "jp_social_principles_human_centric_ai",
     "jp_university_genai_teaching_guidance_2023"
   ],
   "source_window_start": "2018-08-17",
-  "source_window_end": "2026-01-16",
-  "summary": "Japan's current AI governance record is guidance-heavy, with Ministry of Economy, Trade and Industry (METI) and Cabinet Office / Secretariat of Japan appearing most often in the source base. Across the analyzed documents, Innovation enablement is the clearest rationale, with Consumer and public safety as the next strongest layer, while transparency and disclosure, risk assessment, and human oversight recur most often in the operative expectations.",
-  "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from Ministry of Economy, Trade and Industry (METI), Cabinet Office / Secretariat of Japan, and Ministry of Health, Labour and Welfare (MHLW), and the corpus is weighted toward regulatory guidance and strategy paper.",
-  "framing_landscape": "Innovation enablement is the clearest rationale in the corpus, with Consumer and public safety and Fundamental rights still materially shaping how governance is justified.",
-  "implementation_and_enforcement": "Operationally, the sources most often point to transparency and disclosure, risk assessment, and human oversight. Enforcement language is comparatively soft and usually framed through soft enforcement and regulatory supervision rather than hard sanctions.",
-  "source_coverage_note": "This readout is based on 28 analyzed documents spanning 2018-08-17 to 2026-01-16. The corpus is weighted toward regulatory guidance and strategy paper. On the binding side it leans toward regulatory guidance and strategy statement, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are Guidelines for Ensuring the Proper Development and Use of AI-Related Technologies (Provisional Translation) and 人工知能基本計画.",
+  "source_window_end": "2026-07-14",
+  "summary": "Japan's current AI governance record is mixed across law, guidance, and strategic coordination, with Ministry of Economy, Trade and Industry (METI) and Cabinet Office / Secretariat of Japan appearing most often in the source base. Across the analyzed documents, Innovation enablement is the clearest rationale, with Fundamental rights as the next strongest layer, while training data governance, transparency and disclosure, and access controls recur most often in the operative expectations.",
+  "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from Ministry of Economy, Trade and Industry (METI), Cabinet Office / Secretariat of Japan, and AI Safety Institute (AISI), and the corpus is weighted toward regulatory guidance and strategy paper.",
+  "framing_landscape": "Innovation enablement is the clearest rationale in the corpus, with Fundamental rights and Economic competitiveness still materially shaping how governance is justified.",
+  "implementation_and_enforcement": "Operationally, the sources most often point to training data governance, transparency and disclosure, and access controls. Enforcement language is comparatively soft and usually framed through soft enforcement and regulatory supervision rather than hard sanctions.",
+  "source_coverage_note": "This readout is based on 34 analyzed documents spanning 2018-08-17 to 2026-07-14. The corpus is weighted toward regulatory guidance and strategy paper. On the binding side it leans toward regulatory guidance and standards guidance, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are 人工知能基本計画 ～日本ＡＸ、より強く、より豊かに～ (Second AI Basic Plan — Cabinet Decision of July 14, 2026) and AIセーフティに関する評価観点ガイド (第1.20版) / J-AISI Guide to Evaluation Perspectives on AI Safety (Ver. 1.20).",
   "key_sources": [
     {
       "document_id": "jp_admin_genai_procurement_guideline_2025",
@@ -48,146 +54,146 @@
       "publication_date": "2025-05-27",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
-      "dominant_frame": "consumer_public_safety",
-      "contribution": "Regulatory implementation anchor for risk assessment and pre-deployment testing, with regulatory supervision as the clearest consequence or oversight hook."
+      "dominant_frame": "innovation_enablement",
+      "contribution": "Regulatory implementation anchor for risk assessment and pre-deployment testing, with procurement conditions as the clearest consequence or oversight hook."
+    },
+    {
+      "document_id": "jp_ai_promotion_act_statute_2025",
+      "title": "人工知能関連技術の研究開発及び活用の推進に関する法律 (Act No. 53 of 2025 — AI Promotion Act Full Statutory Text)",
+      "publication_date": "2025-06-04",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "dominant_frame": "innovation_enablement",
+      "contribution": "Statutory anchor for transparency and disclosure, with regulatory supervision as the clearest consequence or oversight hook."
     },
     {
       "document_id": "jp_childcare_genai_handbook_2025",
       "title": "生成AIの導入・活用に向けた実践ハンドブック",
       "publication_date": "2025-07-09",
       "document_type": "regulatory_guidance",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "regulatory_guidance",
       "dominant_frame": "innovation_enablement",
-      "contribution": "Regulatory implementation anchor for human oversight and risk assessment, with soft enforcement as the clearest consequence or oversight hook."
+      "contribution": "Regulatory implementation anchor for human oversight and transparency and disclosure, with soft enforcement as the clearest consequence or oversight hook."
     },
     {
       "document_id": "jp_ai_contract_checklist_2025",
       "title": "AIの利用・開発に関する契約チェックリスト",
       "publication_date": "2025-02-18",
-      "document_type": "standards_guideline",
-      "binding_strength": "standards_guideline",
-      "dominant_frame": "consumer_public_safety",
-      "contribution": "Regulatory implementation anchor for access controls and transparency and disclosure, with reporting obligations as the clearest consequence or oversight hook."
-    },
-    {
-      "document_id": "jp_content_genai_guidebook_2024",
-      "title": "コンテンツ制作のための生成AI利活用ガイドブック",
-      "publication_date": "2024-07-05",
       "document_type": "regulatory_guidance",
-      "binding_strength": "voluntary_commitment",
-      "dominant_frame": "fundamental_rights",
-      "contribution": "Regulatory implementation anchor for risk assessment and human oversight, with soft enforcement as the clearest consequence or oversight hook."
+      "binding_strength": "regulatory_guidance",
+      "dominant_frame": "innovation_enablement",
+      "contribution": "Regulatory implementation anchor for risk assessment and incident reporting, with soft enforcement as the clearest consequence or oversight hook."
     }
   ],
   "top_document_types": [
     {
       "label": "regulatory_guidance",
-      "count": 17,
-      "share": 0.607
+      "count": 15,
+      "share": 0.441
     },
     {
       "label": "strategy_paper",
-      "count": 7,
-      "share": 0.25
+      "count": 10,
+      "share": 0.294
     },
     {
       "label": "standards_guideline",
-      "count": 2,
-      "share": 0.071
+      "count": 6,
+      "share": 0.176
     }
   ],
   "top_binding_strengths": [
     {
       "label": "regulatory_guidance",
-      "count": 13,
-      "share": 0.464
+      "count": 12,
+      "share": 0.353
+    },
+    {
+      "label": "standards_guideline",
+      "count": 10,
+      "share": 0.294
     },
     {
       "label": "strategy_statement",
-      "count": 8,
-      "share": 0.286
-    },
-    {
-      "label": "voluntary_commitment",
-      "count": 4,
-      "share": 0.143
+      "count": 10,
+      "share": 0.294
     }
   ],
   "top_requirements": [
     {
+      "label": "training_data_governance",
+      "count": 25,
+      "share": 0.735
+    },
+    {
       "label": "transparency_disclosure",
-      "count": 22,
-      "share": 0.786
+      "count": 21,
+      "share": 0.618
+    },
+    {
+      "label": "access_controls",
+      "count": 19,
+      "share": 0.559
     },
     {
       "label": "risk_assessment",
-      "count": 21,
-      "share": 0.75
-    },
-    {
-      "label": "human_oversight",
-      "count": 20,
-      "share": 0.714
-    },
-    {
-      "label": "model_documentation",
-      "count": 14,
-      "share": 0.5
+      "count": 16,
+      "share": 0.471
     }
   ],
   "top_enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "count": 26,
-      "share": 0.929
+      "count": 30,
+      "share": 0.882
     },
     {
       "label": "regulatory_supervision",
-      "count": 13,
-      "share": 0.464
-    },
-    {
-      "label": "reporting_obligation",
-      "count": 8,
-      "share": 0.286
+      "count": 7,
+      "share": 0.206
     },
     {
       "label": "none_specified",
-      "count": 7,
-      "share": 0.25
+      "count": 4,
+      "share": 0.118
+    },
+    {
+      "label": "procurement_condition",
+      "count": 4,
+      "share": 0.118
     }
   ],
   "top_frames": [
     {
       "label": "innovation_enablement",
-      "score": 9.126,
-      "share": 0.326,
+      "score": 14.87,
+      "share": 0.437,
+      "document_mentions": 34
+    },
+    {
+      "label": "fundamental_rights",
+      "score": 6.95,
+      "share": 0.204,
+      "document_mentions": 32
+    },
+    {
+      "label": "economic_competitiveness",
+      "score": 4.45,
+      "share": 0.131,
       "document_mentions": 25
     },
     {
       "label": "consumer_public_safety",
-      "score": 6.269,
-      "share": 0.224,
-      "document_mentions": 25
-    },
-    {
-      "label": "fundamental_rights",
-      "score": 4.999,
-      "share": 0.179,
-      "document_mentions": 18
-    },
-    {
-      "label": "economic_competitiveness",
-      "score": 3.626,
-      "share": 0.129,
-      "document_mentions": 14
+      "score": 4.43,
+      "share": 0.13,
+      "document_mentions": 31
     }
   ],
   "key_institutions": [
     "Ministry of Economy, Trade and Industry (METI)",
     "Cabinet Office / Secretariat of Japan",
-    "Ministry of Health, Labour and Welfare (MHLW)",
-    "Personal Information Protection Commission (PPC)"
+    "AI Safety Institute (AISI)",
+    "Digital Agency of Japan"
   ],
-  "confidence": 0.762
+  "confidence": 0.926
 }

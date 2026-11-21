@@ -1,36 +1,85 @@
 {
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "consumer_public_safety",
-    "national_security"
+    "economic_competitiveness",
+    "fundamental_rights",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.3,
-    "economic_competitiveness": 0.35,
-    "fundamental_rights": 0.1,
-    "social_stability": 0.1,
-    "innovation_enablement": 0.7,
-    "consumer_public_safety": 0.4,
+    "existential_catastrophic": 0.0,
+    "national_security": 0.62,
+    "economic_competitiveness": 0.8,
+    "fundamental_rights": 0.72,
+    "social_stability": 0.25,
+    "innovation_enablement": 0.98,
+    "consumer_public_safety": 0.68,
     "labor_transition": 0.15
   },
-  "rationale_summary": "The document is primarily framed around enabling public sector adoption of hyperscale AI to improve government service quality, administrative efficiency, and digital platform government goals. The stated purpose is to guide public agencies in introducing AI to streamline work, enhance citizen services, and foster AI innovation ecosystems. Safety and security considerations (data security grades, cloud security certification) appear as prerequisites for adoption rather than the primary justification. Economic competitiveness is secondary, evidenced by references to strengthening Korea's hyperscale AI competitiveness. Consumer/public safety appears as a guardrail concern.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.06,
+    "economic_competitiveness": 0.18,
+    "fundamental_rights": 0.12,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.56,
+    "consumer_public_safety": 0.08,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The 2024 Public-Sector Hyperscale AI Guideline is overwhelmingly framed around innovation_enablement: grounded in the Digital Platform Government initiative, it promotes rapid, agile public-sector adoption of commercial private-cloud hyperscale AI, streamlined Digital Service purchasing, cross-ministry data/resource sharing, and administrative workflow automation to eliminate citizen inconvenience and solve social problems. Innovation_enablement strongly outpaces economic_competitiveness because the text centers on modernizing government service delivery and operational adoption mechanics, while economic_competitiveness is the clearest secondary frame via explicit goals to foster the domestic AI industry ecosystem, give Korean enterprises growth opportunities, and advance Korea's hyperscale AI competitiveness plan. Fundamental_rights (privacy, copyright, AI ethics, non-bias), consumer_public_safety (mitigating hallucination/error and supporting rail/disaster safety), and national_security (preventing external leakage of classified/sensitive government data) serve as key operational guardrails.",
   "evidence_spans": [
     {
-      "quote": "디지털플랫폼정부의 철학과 원칙에 따라 초거대 AI를 도입·활용하는데 필요한 관련 기준과 절차, 고려사항을 안내하는 것을 목적으로 함",
-      "source_section": "1.3 가이드라인 목적 및 구성"
+      "quote": "- 디지털플랫폼정부(Digital Platform Government)는 인공지능, 데이터 중심의 디지털 심화 시대 도래에 따라 디지털 기술과 민간의 혁신 역량을 최대한 수용하여 국민의 불편을 없애고, 국민 중심으로 정부가 한 팀으로 뛰는 정부혁신, 기업에게 성장의 기회를 제공하는 것 등을 목표로 하고 있음",
+      "source_section": "1.2 디지털플랫폼정부 초거대 AI 추진 방향",
+      "quote_en": "The Digital Platform Government aims to embrace digital technology and private-sector innovation capacity to eliminate citizen inconvenience, drive citizen-centered one-team government innovation, and provide growth opportunities for enterprises.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3517,
+      "end_char": 3689
     },
     {
-      "quote": "초거대 AI는 의료, 금융, 교육, 문화예술, IT 등 다양한 분야에서 업무를 자동화하여 생산성 제고, 만족도 향상, 비즈니스 창출 등의 효과를 낼 것으로 기대함",
-      "source_section": "1.1 초거대 AI 시대 도래"
+      "quote": "- 이러한 초거대 AI의 혁신 기술을 활용하여 복지, 재난, 청년 등 사회현안의 해결에 기여 하고, 공공의 본질적 업무나 반드시 사람의 참여･검토 등을 필요로 하는 창의적 업무에 보다 많은 시간을 할애할 수 있도록 함",
+      "source_section": "1.2 디지털플랫폼정부 초거대 AI 추진 방향",
+      "quote_en": "Leverages innovative hyperscale AI technologies to help solve social issues such as welfare, disasters, and youth challenges while freeing time for essential public duties and creative work requiring human participation and review.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4000,
+      "end_char": 4121
     },
     {
-      "quote": "초거대 AI 경쟁력 강화 방안을 통해 다음과 같은 추진전략을 수립함",
-      "source_section": "1.2 디지털플랫폼정부 초거대 AI 추진 방향"
+      "quote": "- (과기정통부) 초거대 AI의 가능성에 대비하고 디지털 모범국가로서의 기틀을 마련하기 위하여 ‘초거대 AI 경쟁력 강화 방안’(’23.4월)을 통해 다음과 같은 추진전략을 수립함",
+      "source_section": "1.2 디지털플랫폼정부 초거대 AI 추진 방향",
+      "quote_en": "MSIT established its 'Hyperscale AI Competitiveness Enhancement Plan' (April 2023) to prepare for hyperscale AI's potential and lay foundations as a model digital nation.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 4144,
+      "end_char": 4244
     },
     {
-      "quote": "공공의 본질적 업무나 반드시 사람의 참여·검토 등을 필요로 하는 창의적 업무에 보다 많은 시간을 할애할 수 있도록 함",
-      "source_section": "1.2 디지털플랫폼정부 초거대 AI 추진 방향"
+      "quote": "원칙4 국가 안보와 국민 권리 보호를 보장\n- 민감, 기밀 데이터의 외부 유출 방지\n- 학습데이터 내 개인정보와 저작권 보호",
+      "source_section": "3.1 도입 원칙 및 고려사항",
+      "quote_en": "Principle 4: Guarantee national security and protection of citizens' rights—prevent external leakage of sensitive/classified data and protect personal information and copyright in training data.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 17245,
+      "end_char": 17314
+    },
+    {
+      "quote": "원칙5 ‘인공지능 윤리기준(과기정통부, ‘20.12월)’을 준수\n- ① 인권 보장, ② 프라이버시 보호, ③ 다양성 존중, ④ 침해 금지, ⑤ 공공성, ⑥ 연대성, ⑦ 데이터 관리, ⑧ 책임성, ⑨ 안전성, ⑩ 투명성",
+      "source_section": "3.1 도입 원칙 및 고려사항",
+      "quote_en": "Principle 5: Comply with MSIT's AI Ethics Principles—human rights, privacy, diversity, non-harm, publicness, solidarity, data governance, accountability, safety, and transparency.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 17315,
+      "end_char": 17436
+    },
+    {
+      "quote": "- 외부적으로도 초거대 AI를 활용하면서 생길 수 있는 편향, 할루시네이션(환각), 악용 등 사회적･윤리적 문제에 대응하기 위해서도 필요함",
+      "source_section": "3.2.6 유지보수 및 운영(Operations)",
+      "quote_en": "Externally, governance organizations are also necessary to respond to social and ethical risks—including bias, hallucination, and misuse—arising from hyperscale AI utilization.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 26109,
+      "end_char": 26186
     }
   ]
 }

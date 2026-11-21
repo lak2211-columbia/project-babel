@@ -1,36 +1,66 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
     "fundamental_rights",
-    "innovation_enablement"
+    "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
+    "economic_competitiveness": 0.3,
+    "fundamental_rights": 0.55,
     "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.45,
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.5,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document frames AI governance primarily around ensuring trustworthy, safe AI systems and compliance with the AI Act's safety and transparency requirements. It emphasizes risk categorization, human oversight, and safeguards. Fundamental rights and innovation enablement appear as secondary frames.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.15,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.65,
+    "consumer_public_safety": 0.15,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document's dominant frame is innovation_enablement because the AI Pact is justified primarily as a voluntary, collaborative mechanism to help organisations prepare smoothly for AI Act compliance, foster organisational AI uptake, share best practices, and build trust in trustworthy AI deployment. It edges out fundamental_rights and consumer_public_safety, which appear mainly as concise background objectives in the Big Picture section ('ensuring safety and fundamental rights') and in references to risk mitigation and deep-fake transparency rather than as the central rationale of the Pact itself. A minor nod to economic_competitiveness appears in the reference to boosting research and industrial capacity.",
   "evidence_spans": [
     {
-      "quote": "The EU's approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights.",
-      "source_section": null
+      "quote": "The Pact is allowing front-runners and ambitious participants to test and share their solutions with the wider community, while fostering the development and deployment of trustworthy AI.",
+      "source_section": "What are the benefits of the voluntary pledges for participants?",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 5544,
+      "end_char": 5731
     },
     {
-      "quote": "Promoting AI awareness and literacy among staff, ensuring ethical and responsible AI development",
-      "source_section": null
+      "quote": "Adopting an AI governance strategy to foster the uptake of AI in the organisation and work towards future compliance with the AI Act",
+      "source_section": "Signature of the pledges",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3704,
+      "end_char": 3836
     },
     {
-      "quote": "human oversight, risk mitigation, and transparency in AI-generated content like deep fakes",
-      "source_section": null
+      "quote": "The EU’s approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights.",
+      "source_section": "Big Picture",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 8743,
+      "end_char": 8909
     },
     {
-      "quote": "sharing knowledge and increasing the visibility and credibility of the safeguards put in place to demonstrate trustworthy AI",
-      "source_section": null
+      "quote": "Over half of these companies have pledged additional AI Pact commitments, such as human oversight, risk mitigation, and transparency in AI-generated content like deep fakes.",
+      "source_section": "Signature of the pledges",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 4024,
+      "end_char": 4197
     }
   ]
 }

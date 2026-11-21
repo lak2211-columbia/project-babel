@@ -1,32 +1,66 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
-    "social_stability"
+    "fundamental_rights",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.45,
+    "economic_competitiveness": 0.2,
+    "fundamental_rights": 0.3,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.74,
+    "consumer_public_safety": 0.25,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document describes NIST's process for developing a voluntary AI Risk Management Framework through broad stakeholder engagement. The governance rationale centers on managing AI risks to users and society broadly, consistent with a consumer/public safety framing. Secondary frames include innovation enablement (voluntary, collaborative framework) and social stability (civil society inclusion, bias workshops).",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.1,
+    "fundamental_rights": 0.15,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.65,
+    "consumer_public_safety": 0.1,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "This procedural engagement page contains modest framing language led by innovation_enablement, emphasizing a voluntary, consensus-driven, collaborative standards-development process that adapts complementary guidance based on real-world practitioner experience. Fundamental_rights (inclusion of civil society and a workshop on Bias in AI), consumer_public_safety (consumer stakeholders), and economic_competitiveness (AI and the Economy conference) appear only as minor contextual signals.",
   "evidence_spans": [
     {
       "quote": "NIST has developed the voluntary AI Risk Management Framework (AI RMF) through a consensus-driven, open, transparent, and collaborative process.",
-      "source_section": null
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 91,
+      "end_char": 235
     },
     {
-      "quote": "those from companies, government agencies, academia, and not-for-profit organizations representing civil society and consumers",
-      "source_section": null
+      "quote": "That engagement will progress as organizations and individuals gain experience with the Framework and provide NIST with feedback so that it can produce and adjust complementary guidance for using the AI RMF.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1302,
+      "end_char": 1509
     },
     {
-      "quote": "Two-part Workshop on AI Risk Management Framework – and on Bias in AI",
-      "source_section": null
+      "quote": "This includes those from companies, government agencies, academia, and not-for-profit organizations representing civil society and consumers.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 722,
+      "end_char": 863
+    },
+    {
+      "quote": "Artificial Intelligence and the Economy Conference - April 27, 2022",
+      "source_section": "Past Workshops and Events",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 2415,
+      "end_char": 2482
     }
   ]
 }

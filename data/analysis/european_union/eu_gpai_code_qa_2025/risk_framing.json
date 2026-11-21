@@ -1,32 +1,65 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "fundamental_rights",
-    "innovation_enablement"
+    "consumer_public_safety"
   ],
   "frame_confidence": {
+    "existential_catastrophic": 0.1,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.65,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
     "economic_competitiveness": 0.0,
     "fundamental_rights": 0.0,
     "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.55,
+    "innovation_enablement": 0.75,
+    "consumer_public_safety": 0.25,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance around ensuring that general-purpose AI models placed on the EU market are safe and transparent, with special attention to systemic risk from the most powerful models. The core justification is protecting users and society from unsafe models, framed through compliance with the AI Act's safety and transparency obligations. Secondary frames include fundamental rights (copyright protections) and innovation enablement (streamlined compliance, reduced administrative burden, good-faith enforcement transition).",
+  "rationale_summary": "The FAQ predominantly frames the General-Purpose AI Code of Practice around innovation enablement by emphasizing voluntary, agile, and future-proof compliance that lowers friction, avoids additional administrative burdens, increases predictability, and allows models to continue entering the EU market without delays. Consumer and public safety appears as a secondary rationale—ensuring that models placed on the European market are safe and transparent and adapting to changes in the risk landscape—but innovation enablement edges it out because the document's core purpose is justifying a streamlined, collaborative compliance pathway rather than elaborating substantive safety harms. Although systemic risk and high-impact capabilities are mentioned, the text does not explicitly invoke catastrophic or existential harms, fundamental rights, or international economic rivalry.",
   "evidence_spans": [
     {
-      "quote": "ensuring that general-purpose AI models placed on the European market are safe and transparent, including the most powerful ones",
-      "source_section": "Introduction"
+      "quote": "Adhering to a Code assessed as adequate by the AI Office and the Board will offer a simple and transparent way to demonstrate compliance with the AI Act. This offers a streamlined compliance process, with enforcement focused on monitoring their adherence to the Code, resulting in greater predictability and reduced administrative burden.",
+      "source_section": "How can general-purpose AI providers adhere to the Code, and what are the benefits?",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1903,
+      "end_char": 2241
     },
     {
-      "quote": "Safety and Security, relevant only to a limited number of providers of the most advanced models, subject to the AI Act's obligations for providers of general-purpose AI models with systemic risk",
-      "source_section": "Code structure"
+      "quote": "In the first year from 2 August 2025 onwards, the AI Office will offer to collaborate closely in particular with providers who adhere to the Code to ensure that models can continue to be placed on the EU market without delays.",
+      "source_section": "What are the next steps after the Code is published?",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3338,
+      "end_char": 3564
     },
     {
-      "quote": "streamlined compliance process, with enforcement focused on monitoring their adherence to the Code, resulting in greater predictability and reduced administrative burden",
-      "source_section": "Compliance"
+      "quote": "The General-Purpose AI Code of Practice is a voluntary tool, prepared by independent experts in a multi-stakeholder process, designed to help industry comply with the AI Act’s obligations for providers of general-purpose AI models, ensuring that general-purpose AI models placed on the European market are safe and transparent, including the most powerful ones.",
+      "source_section": "What is the General-Purpose AI Code of Practice?",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 0,
+      "end_char": 361
+    },
+    {
+      "quote": "The AI Office may facilitate formal updates to the Code in response to technological developments, changes in the risk landscape, or experience with the application of the AI Act rules.",
+      "source_section": "How will the Code be updated?",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 4458,
+      "end_char": 4643
     }
   ]
 }

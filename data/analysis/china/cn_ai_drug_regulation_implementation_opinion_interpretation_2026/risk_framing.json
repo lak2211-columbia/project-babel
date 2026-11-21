@@ -7,30 +7,69 @@
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
+    "economic_competitiveness": 0.45,
     "fundamental_rights": 0.0,
     "social_stability": 0.0,
-    "innovation_enablement": 0.72,
-    "consumer_public_safety": 0.55,
-    "labor_transition": 0.05
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.78,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance in drug regulation as an opportunity to modernize and enhance regulatory capabilities through technology integration. The core reasoning is enabling smarter, more efficient regulation rather than mitigating risks from AI itself. Secondary framing includes consumer/public safety through improved drug lifecycle oversight and economic competitiveness via industry digital transformation.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.12,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.58,
+    "consumer_public_safety": 0.3,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Innovation enablement is the dominant frame because the policy interpretation centers on accelerating public-sector AI adoption ('AI+ Drug Regulation'), modernizing regulatory efficiency across review, inspection, and government services, and fostering collaborative digital-intelligent transformation across the pharmaceutical sector. Consumer and public safety is a prominent secondary frame—providing the core domain purpose of building a smart drug safety governance pattern, strengthening risk monitoring, and improving quality control for high-risk products such as blood products and traditional Chinese medicine injections—but innovation enablement edges it out because the text's primary stated thrust is unlocking and deploying AI capabilities to upgrade regulatory workflows rather than imposing restrictive safety prohibitions. Economic competitiveness plays a smaller secondary role through references to seizing major strategic AI opportunities and promoting high-quality development of the pharmaceutical industry.",
   "evidence_spans": [
     {
-      "quote": "抢抓人工智能发展重大战略机遇，推进人工智能与药品监管深度融合发展",
-      "source_section": "导言"
+      "quote": "《意见》围绕全面深化药品监管改革和“人工智能+”行动实施的中心任务，深入分析当前工作的基础，提出“人工智能+药品监管”建设总体设计，深入推进人工智能在药品全生命周期监管中的创新应用。",
+      "source_section": "二、《意见》的总体考虑和主要内容",
+      "quote_en": "Focusing on the central tasks of comprehensively deepening drug regulatory reform and implementing the 'AI+' Action, the Opinion deeply analyzes the foundation of current work, puts forward the overall design for 'AI+ Drug Regulation' construction, and deeply promotes the innovative application of AI in whole-lifecycle drug regulation.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 550,
+      "end_char": 641
     },
     {
-      "quote": "以药品监管现代化为目标，提出下一阶段监管数智化的七大重点方向",
-      "source_section": "重点方向"
+      "quote": "七是促进监管与产业数智化协同发展。围绕智能化监管要求，鼓励引导产业加快推动数智化转型升级。",
+      "source_section": "三、如何加快推动人工智能在药品监管中发挥实效",
+      "quote_en": "Seventh is promoting the coordinated digital-intelligent development of regulation and industry. Focusing on intelligent regulatory requirements, it encourages and guides the industry to accelerate digital-intelligent transformation and upgrading.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1748,
+      "end_char": 1793
     },
     {
-      "quote": "鼓励引导产业加快推动数智化转型升级",
-      "source_section": "第七方向"
+      "quote": "到2035年，基本形成数智驱动、智能敏捷、自主可控、生态协同的智慧化药品安全治理新格局。",
+      "source_section": "二、《意见》的总体考虑和主要内容",
+      "quote_en": "By 2035, a new pattern of smart drug safety governance that is digitally and intelligently driven, smart and agile, autonomous and controllable, and ecologically coordinated will be basically formed.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 867,
+      "end_char": 911
     },
     {
-      "quote": "到2035年，基本形成数智驱动、智能敏捷、自主可控、生态协同的智慧化药品安全治理新格局",
-      "source_section": "总体要求"
+      "quote": "加快推进血液制品、中药注射剂等高风险品种数智化，研究制定配套监管要求，逐步拓展到其他品种，引导产业按规范提升全过程质量管控能力。",
+      "source_section": "三、如何加快推动人工智能在药品监管中发挥实效",
+      "quote_en": "Accelerate the digital-intelligent transformation of high-risk varieties such as blood products and traditional Chinese medicine injections, research and formulate supporting regulatory requirements, gradually expand to other varieties, and guide the industry to improve whole-process quality control capabilities in accordance with standards.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 1793,
+      "end_char": 1857
+    },
+    {
+      "quote": "为深入贯彻落实《国务院关于深入实施“人工智能+”行动的意见》《国务院办公厅关于全面深化药品医疗器械监管改革促进医药产业高质量发展的意见》，抢抓人工智能发展重大战略机遇，推进人工智能与药品监管深度融合发展",
+      "source_section": "《国家药监局关于“人工智能+药品监管”的实施意见》政策解读",
+      "quote_en": "To thoroughly implement the State Council's Opinion on Deeply Implementing the 'AI+' Action and the General Office of the State Council's Opinion on Comprehensively Deepening Drug and Medical Device Regulatory Reform to Promote High-Quality Development of the Pharmaceutical Industry, seize major strategic opportunities in AI development, and promote the deep integrated development of AI and drug regulation",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 0,
+      "end_char": 101
     }
   ]
 }

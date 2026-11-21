@@ -1,42 +1,85 @@
 {
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "consumer_public_safety",
     "fundamental_rights",
-    "economic_competitiveness",
-    "national_security"
+    "consumer_public_safety",
+    "economic_competitiveness"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.5,
-    "economic_competitiveness": 0.55,
-    "fundamental_rights": 0.5,
+    "existential_catastrophic": 0.05,
+    "national_security": 0.35,
+    "economic_competitiveness": 0.72,
+    "fundamental_rights": 0.9,
     "social_stability": 0.2,
-    "innovation_enablement": 0.8,
-    "consumer_public_safety": 0.55,
+    "innovation_enablement": 0.96,
+    "consumer_public_safety": 0.85,
     "labor_transition": 0.1
   },
-  "rationale_summary": "The document is primarily framed around enabling and accelerating AI adoption across the federal government, with governance framed as a facilitator rather than a constraint. The title itself—'Accelerating Federal Use of AI through Innovation, Governance, and Public Trust'—signals innovation enablement as the core purpose. The memorandum repeatedly directs agencies to remove bureaucratic barriers, scale AI adoption, and redefine governance as 'an enabler of effective and safe innovation.' Consumer/public safety and fundamental rights appear as secondary concerns addressed through minimum risk management practices for high-impact AI. Economic competitiveness and national security are cited as motivations but are not the primary framing mechanism.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.12,
+    "fundamental_rights": 0.26,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.42,
+    "consumer_public_safety": 0.2,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "OMB Memorandum M-25-21 is dominantly framed around innovation_enablement, directing agencies to adopt a forward-leaning pro-innovation posture, cut bureaucratic bottlenecks, delegate risk acceptance, share code/models/data, and apply risk-proportionate governance as an enabler of accelerated public-sector AI adoption. Innovation_enablement edges out fundamental_rights because the overhaul replacing M-24-10 explicitly elevates barrier removal, AI maturity, and agile federal deployment as its lead organizing priority. Fundamental_rights is a strong secondary frame protecting civil rights, civil liberties, privacy, non-discrimination, protected speech, and human appeal rights across high-impact agency decisions; consumer_public_safety is prominent in ensuring safe, secure, resilient AI and fail-safes across safety-critical infrastructure, healthcare, robotics, and hazardous agents; and economic_competitiveness appears via EO 14179 global AI dominance, Buy American procurement, and taxpayer value.",
   "evidence_spans": [
     {
-      "quote": "agencies are empowered to drive AI innovation and seize the opportunity to apply the best of American AI",
-      "source_section": "Overview"
+      "quote": "The United States is at the forefront of AI development, and agencies must adopt a forward-leaning and pro-innovation approach that takes advantage of this technology to help shape the future of government operations.",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1473,
+      "end_char": 1690
     },
     {
-      "quote": "Agencies must remove unnecessary and bureaucratic requirements that inhibit innovation and responsible adoption.",
-      "source_section": "Guidance on Federal Use of AI"
+      "quote": "Agencies must cut down on bureaucratic bottlenecks and redefine AI governance as an enabler of effective and safe innovation.",
+      "source_section": "Page 2",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3755,
+      "end_char": 3880
     },
     {
-      "quote": "redefine AI governance as an enabler of effective and safe innovation",
-      "source_section": "Guidance on Federal Use of AI"
+      "quote": "Through this memorandum, agencies are directed to provide improved services to the public, while maintaining strong safeguards for civil rights, civil liberties, and privacy.",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 697,
+      "end_char": 871
     },
     {
-      "quote": "Executive Order 14179 recognizes the importance of American AI development to promote human flourishing, economic competitiveness, and national security.",
-      "source_section": "Section 2(c)"
+      "quote": "This memorandum provides guidance to agencies on how to innovate and promote the responsible adoption, use, and continued development of AI, while ensuring appropriate safeguards are in place to protect privacy, civil rights, and civil liberties, and to mitigate any unlawful discrimination, consistent with the AI in Government Act.",
+      "source_section": "Page 4",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 6379,
+      "end_char": 6712
     },
     {
-      "quote": "agencies must deploy trustworthy AI, ensuring that rapid AI innovation is not achieved at the expense of the American people or any violations of their trust",
-      "source_section": "Guidance on Federal Use of AI"
+      "quote": "As such, agencies are directed to implement minimum risk management practices for AI that could have significant impacts when deployed (\"high-impact AI\"), as outlined in the Appendix, and to prioritize the use of AI that is safe, secure, and resilient.",
+      "source_section": "Page 3",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 5529,
+      "end_char": 5781
+    },
+    {
+      "quote": "On January 23, 2025, President Trump signed Executive Order (E.O.) 14179, Removing Barriers to American Leadership in Artificial Intelligence, to advance the United States' global AI dominance and to promote responsible AI innovation.",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 334,
+      "end_char": 568
     }
   ]
 }

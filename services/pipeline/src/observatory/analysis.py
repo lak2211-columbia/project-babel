@@ -7,10 +7,13 @@ import random
 import re
 import shutil
 import socket
+import sys
+import threading
 import time
 import unicodedata
 from collections import Counter, defaultdict
 from collections.abc import Sequence
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from copy import deepcopy
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -46,6 +49,7 @@ from observatory.persistence import (
     build_jurisdiction_analysis_persistence_bundle,
 )
 from observatory.prompts import build_shared_codebook_system_prefix, load_prompt
+from observatory.schema_validation import SCHEMAS_DIR, validate_document_analysis_payload
 from observatory.source_registry import ROOT, SeedDocument, load_all_source_manifests
 from observatory.taxonomy import (
     get_canonical_thresholds,
@@ -57,12 +61,18 @@ from observatory.url_safety import repo_rel_posix
 
 ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
 DEFAULT_ANTHROPIC_VERSION = "2023-06-01"
-DEFAULT_MODEL = "claude-sonnet-4-6"
+DEFAULT_MODEL = "claude-opus-5-5"
+DEFAULT_ANTHROPIC_MODEL = DEFAULT_MODEL
 DEFAULT_EFFORT = "low"
+GEMINI_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models"
+DEFAULT_GEMINI_MODEL = "gemini-4-neon"
+DEFAULT_GEMINI_THINKING_LEVEL = "medium"
+VALID_GEMINI_THINKING_LEVELS = {"low", "medium", "high"}
 DEFAULT_TEMPERATURE = 0.0
 DEFAULT_MAX_RETRIES = 3
 DEFAULT_REQUEST_TIMEOUT_SECONDS = 600
 RETRYABLE_HTTP_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504, 529}
+GEMINI_RETRYABLE_HTTP_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
 MAX_RETRY_AFTER_SECONDS = 60.0
 ANALYSIS_DIR = ROOT / "data" / "analysis"
 RAW_DATA_DIR = ROOT / "data" / "raw"
@@ -78,19 +88,30 @@ DIRECT_FULL_TEXT_MAX_TOKENS = 90_000
 CHUNK_MAX_TOKENS = 45_000
 DIRECT_FULL_TEXT_MAX_CHARS = 350_000
 CHUNK_MAX_CHARS = 180_000
+# Gemini 4 Neon 1M-token context window: send entire mega-statutes (e.g., 582k-char EU AI Act) in one pass!
+GEMINI_DIRECT_FULL_TEXT_MAX_TOKENS = 450_000
+GEMINI_DIRECT_FULL_TEXT_MAX_CHARS = 1_500_000
+GEMINI_CHUNK_MAX_TOKENS = 250_000
+GEMINI_CHUNK_MAX_CHARS = 800_000
 CHUNK_OVERLAP_SECTIONS = 1
 POLICY_METADATA_MAX_CHARS = DIRECT_FULL_TEXT_MAX_CHARS
 POLICY_CONTROLS_MAX_CHARS = DIRECT_FULL_TEXT_MAX_CHARS
 RISK_FRAMING_MAX_CHARS = DIRECT_FULL_TEXT_MAX_CHARS
 
-# Output token budgets (D3): controls budget >= 8192 with 1x escalation retry on max_tokens.
+# Output token budgets (D3 + Stage 4A thinking-model headroom).
 POLICY_METADATA_MAX_TOKENS = 4096
 POLICY_CONTROLS_MAX_TOKENS = 8192
 RISK_FRAMING_MAX_TOKENS = 4096
 MAX_TOKENS_RETRY_CAP = 16384
+GEMINI_METADATA_MAX_TOKENS = 16384
+GEMINI_CONTROLS_MAX_TOKENS = 32768
+GEMINI_FRAMING_MAX_TOKENS = 16384
+GEMINI_MAX_TOKENS_RETRY_CAP = 65536
 MAX_EVIDENCE_SPANS_PER_LABEL = 2
 MAX_EVIDENCE_SPANS_FRAMING = 6
 MAX_EVIDENCE_QUOTE_CHARS = 400
+MAX_SNAP_QUOTE_CHARS = 450
+MAX_ANALYSIS_WORKERS = 16
 OBLIGATION_STRENGTH_RANK = {
     "mandatory": 4,
     "conditional": 3,
@@ -100,7 +121,7 @@ OBLIGATION_STRENGTH_RANK = {
 
 
 class MaxTokensTruncatedError(RuntimeError):
-    """Raised when the Anthropic API truncates a structured response at max_tokens."""
+    """Raised when an LLM API truncates a structured response at its output token limit."""
 
 
 class LegacyProvenanceError(ValueError):
@@ -519,37 +540,71 @@ def _retry_delay_seconds(attempt: int, retry_after_header: str | None = None) ->
     return float(min(2 ** (attempt - 1), 8))
 
 
-def _estimate_usage_cost_usd(usage: dict[str, Any]) -> float:
+GEMINI_COST_PER_MILLION = {
+    "input": 1.25,
+    "output": 10.0,
+    "cache_creation": 1.25,
+    "cache_read": 0.3125,
+}
+
+
+def _estimate_usage_cost_usd(usage: dict[str, Any], *, provider: str | None = None) -> float:
+    rates = GEMINI_COST_PER_MILLION if provider == "gemini" else MODEL_COST_PER_MILLION
     input_tokens = int(usage.get("input_tokens") or 0)
-    output_tokens = int(usage.get("output_tokens") or 0)
+    output_tokens = int(usage.get("output_tokens") or 0) + int(usage.get("thoughts_tokens") or 0)
     cache_creation = int(usage.get("cache_creation_input_tokens") or 0)
     cache_read = int(usage.get("cache_read_input_tokens") or 0)
+    # Gemini's promptTokenCount already includes cachedContentTokenCount; avoid double-billing cached tokens.
+    billable_input_tokens = max(0, input_tokens - cache_read) if provider == "gemini" else input_tokens
     cost = (
-        (input_tokens / 1_000_000) * MODEL_COST_PER_MILLION["input"]
-        + (output_tokens / 1_000_000) * MODEL_COST_PER_MILLION["output"]
-        + (cache_creation / 1_000_000) * MODEL_COST_PER_MILLION["cache_creation"]
-        + (cache_read / 1_000_000) * MODEL_COST_PER_MILLION["cache_read"]
+        (billable_input_tokens / 1_000_000) * rates["input"]
+        + (output_tokens / 1_000_000) * rates["output"]
+        + (cache_creation / 1_000_000) * rates["cache_creation"]
+        + (cache_read / 1_000_000) * rates["cache_read"]
     )
     return round(cost, 6)
 
 
-def _accumulate_usage(responses: Sequence[dict[str, Any]]) -> dict[str, Any]:
+def _accumulate_usage(
+    responses: Sequence[dict[str, Any]],
+    *,
+    provider: str | None = None,
+) -> dict[str, Any]:
     totals = {
         "input_tokens": 0,
         "output_tokens": 0,
+        "thoughts_tokens": 0,
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
     }
+    detected_provider = provider
     for response in responses:
-        usage = response.get("usage") if isinstance(response, dict) else None
-        if not isinstance(usage, dict):
+        if not isinstance(response, dict):
             continue
-        for key in totals:
-            totals[key] += int(usage.get(key) or 0)
-    return {
-        **totals,
-        "estimated_cost_usd": _estimate_usage_cost_usd(totals),
+        if detected_provider is None and isinstance(response.get("provider"), str):
+            detected_provider = response["provider"]
+        usage = response.get("usage")
+        if isinstance(usage, dict):
+            for key in totals:
+                totals[key] += int(usage.get(key) or 0)
+            continue
+        gemini_usage = response.get("usageMetadata")
+        if isinstance(gemini_usage, dict):
+            detected_provider = detected_provider or "gemini"
+            totals["input_tokens"] += int(gemini_usage.get("promptTokenCount") or 0)
+            totals["output_tokens"] += int(gemini_usage.get("candidatesTokenCount") or 0)
+            totals["thoughts_tokens"] += int(gemini_usage.get("thoughtsTokenCount") or 0)
+            totals["cache_read_input_tokens"] += int(gemini_usage.get("cachedContentTokenCount") or 0)
+    summary: dict[str, Any] = {
+        "input_tokens": totals["input_tokens"],
+        "output_tokens": totals["output_tokens"],
+        "cache_creation_input_tokens": totals["cache_creation_input_tokens"],
+        "cache_read_input_tokens": totals["cache_read_input_tokens"],
     }
+    if totals["thoughts_tokens"] > 0 or detected_provider == "gemini":
+        summary["thoughts_tokens"] = totals["thoughts_tokens"]
+    summary["estimated_cost_usd"] = _estimate_usage_cost_usd(totals, provider=detected_provider)
+    return summary
 
 
 class ClaudeAPIClient:
@@ -713,6 +768,179 @@ class ClaudeAPIClient:
 
         json_payload = json.loads("".join(text_blocks))
         return json_payload, response_payload
+
+
+def _strip_json_code_fences(raw_text: str) -> str:
+    stripped = raw_text.strip()
+    if stripped.startswith("```"):
+        stripped = re.sub(r"^```(?:json)?\s*", "", stripped, count=1)
+        stripped = re.sub(r"\s*```\s*$", "", stripped, count=1)
+    return stripped.strip()
+
+
+class GeminiAPIClient:
+    """Native stdlib Gemini REST client supporting Gemini 4 Neon thinking models & 1M-token context."""
+
+    provider = "gemini"
+    direct_full_text_max_tokens = GEMINI_DIRECT_FULL_TEXT_MAX_TOKENS
+    direct_full_text_max_chars = GEMINI_DIRECT_FULL_TEXT_MAX_CHARS
+    chunk_max_tokens = GEMINI_CHUNK_MAX_TOKENS
+    chunk_max_chars = GEMINI_CHUNK_MAX_CHARS
+    metadata_max_tokens = GEMINI_METADATA_MAX_TOKENS
+    controls_max_tokens = GEMINI_CONTROLS_MAX_TOKENS
+    framing_max_tokens = GEMINI_FRAMING_MAX_TOKENS
+    max_tokens_retry_cap = GEMINI_MAX_TOKENS_RETRY_CAP
+
+    def __init__(
+        self,
+        *,
+        api_key: str | None = None,
+        model: str | None = None,
+        effort: str | None = None,
+        temperature: float | None = DEFAULT_TEMPERATURE,
+        max_retries: int = DEFAULT_MAX_RETRIES,
+        timeout_seconds: int = DEFAULT_REQUEST_TIMEOUT_SECONDS,
+    ) -> None:
+        self.api_key = api_key or os.getenv("GEMINI_API_KEY")
+        if not self.api_key:
+            raise ValueError("GEMINI_API_KEY is required")
+        self.model = model or os.getenv("GEMINI_MODEL", DEFAULT_GEMINI_MODEL)
+        raw_effort = (effort or os.getenv("GEMINI_THINKING_LEVEL") or DEFAULT_GEMINI_THINKING_LEVEL).strip().lower()
+        if raw_effort not in VALID_GEMINI_THINKING_LEVELS:
+            raise ValueError(
+                f"invalid Gemini thinking level '{raw_effort}' (expected one of {sorted(VALID_GEMINI_THINKING_LEVELS)})"
+            )
+        self.effort = raw_effort
+        self.temperature = temperature
+        self.max_retries = max(max_retries, 1)
+        self.timeout_seconds = max(int(timeout_seconds), 1)
+
+    def create_json_response(
+        self,
+        *,
+        system_prompt: str,
+        user_prompt: str,
+        schema: dict[str, Any],
+        max_tokens: int,
+        system_prefix: str | None = None,
+        cached_document_context: str | None = None,
+    ) -> tuple[dict[str, Any], dict[str, Any]]:
+        full_system = f"{system_prefix}\n\n{system_prompt}" if system_prefix else system_prompt
+        full_user = f"{cached_document_context}\n\n{user_prompt}" if cached_document_context else user_prompt
+
+        generation_config: dict[str, Any] = {
+            "responseMimeType": "application/json",
+            "maxOutputTokens": max_tokens,
+            "thinkingConfig": {"thinkingLevel": self.effort},
+        }
+        if self.temperature is not None:
+            generation_config["temperature"] = self.temperature
+
+        payload: dict[str, Any] = {
+            "systemInstruction": {"parts": [{"text": full_system}]},
+            "contents": [{"role": "user", "parts": [{"text": full_user}]}],
+            "generationConfig": generation_config,
+        }
+
+        endpoint = f"{GEMINI_API_BASE_URL}/{self.model}:generateContent"
+        request = Request(
+            endpoint,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "content-type": "application/json",
+                "x-goog-api-key": self.api_key,
+            },
+            method="POST",
+        )
+        response_payload: dict[str, Any] | None = None
+        for attempt in range(1, self.max_retries + 1):
+            try:
+                with urlopen(request, timeout=self.timeout_seconds) as response:
+                    response_payload = json.load(response)
+                break
+            except HTTPError as exc:
+                message = exc.read().decode("utf-8", errors="ignore").replace(self.api_key, "[REDACTED]")
+                retry_after = exc.headers.get("Retry-After") if exc.headers else None
+                if exc.code in GEMINI_RETRYABLE_HTTP_STATUS_CODES and attempt < self.max_retries:
+                    time.sleep(_retry_delay_seconds(attempt, retry_after))
+                    continue
+                raise RuntimeError(f"Gemini API HTTP {exc.code}: {message}") from exc
+            except (TimeoutError, socket.timeout) as exc:
+                if attempt < self.max_retries:
+                    time.sleep(_retry_delay_seconds(attempt))
+                    continue
+                raise RuntimeError(f"Gemini API request timed out after {self.timeout_seconds}s") from exc
+            except URLError as exc:
+                reason = str(exc.reason).replace(self.api_key, "[REDACTED]")
+                if attempt < self.max_retries:
+                    time.sleep(_retry_delay_seconds(attempt))
+                    continue
+                raise RuntimeError(f"Gemini API network error: {reason}") from exc
+
+        if response_payload is None:
+            raise RuntimeError("Gemini API request failed without a response payload")
+
+        candidates = response_payload.get("candidates")
+        if not isinstance(candidates, list) or not candidates:
+            feedback = response_payload.get("promptFeedback")
+            raise RuntimeError(f"Gemini API returned no candidates (promptFeedback={feedback!r})")
+
+        candidate = candidates[0]
+        finish_reason = candidate.get("finishReason")
+        if finish_reason == "MAX_TOKENS":
+            raise MaxTokensTruncatedError(
+                f"Gemini API response truncated at maxOutputTokens={max_tokens}"
+            )
+
+        content = candidate.get("content") or {}
+        parts = content.get("parts") or []
+        text_parts = [
+            part.get("text", "")
+            for part in parts
+            if isinstance(part, dict) and not part.get("thought") and isinstance(part.get("text"), str)
+        ]
+        if not text_parts:
+            raise RuntimeError(f"Gemini API returned no non-thought text content (finishReason={finish_reason!r})")
+
+        raw_text = _strip_json_code_fences("".join(text_parts))
+        json_payload = json.loads(raw_text)
+
+        # Normalize metadata onto raw response (never storing API keys) for clean usage & replay auditing.
+        sanitized_raw = {
+            "provider": self.provider,
+            "model": self.model,
+            "effort": self.effort,
+            "finishReason": finish_reason,
+            "usageMetadata": response_payload.get("usageMetadata") or {},
+            "modelVersion": response_payload.get("modelVersion"),
+            "responseId": response_payload.get("responseId"),
+        }
+        return json_payload, sanitized_raw
+
+
+def create_llm_client(
+    *,
+    provider: str | None = None,
+    model: str | None = None,
+    effort: str | None = None,
+) -> StructuredOutputClient:
+    """Resolve and instantiate the configured LLM provider client (auto|gemini|anthropic)."""
+    resolved = (provider or os.getenv("LLM_PROVIDER") or "auto").strip().lower()
+    if resolved == "auto":
+        if os.getenv("GEMINI_API_KEY"):
+            resolved = "gemini"
+        elif os.getenv("ANTHROPIC_API_KEY"):
+            resolved = "anthropic"
+        else:
+            raise ValueError(
+                "No LLM API key configured: set GEMINI_API_KEY (default gemini-4-neon) "
+                "or ANTHROPIC_API_KEY (claude-opus-5-5), or pass --provider=gemini|anthropic"
+            )
+    if resolved == "gemini":
+        return GeminiAPIClient(model=model, effort=effort)
+    if resolved == "anthropic":
+        return ClaudeAPIClient(model=model, effort=effort)
+    raise ValueError(f"unsupported LLM provider '{resolved}' (expected auto, gemini, or anthropic)")
 
 
 def _primary_language(record: ParsedDocumentRecord) -> str:
@@ -1870,24 +2098,63 @@ def _match_span_in_text(
     return "not_found", None, None
 
 
+def _trim_verbatim_slice(
+    plain_text: str,
+    start_char: int,
+    end_char: int,
+) -> tuple[str, int, int]:
+    """Return trimmed verbatim substring and adjusted offsets preserving plain_text[s:e] == quote."""
+    s = max(0, start_char)
+    e = min(len(plain_text), end_char)
+    while s < e and plain_text[s].isspace():
+        s += 1
+    while e > s and plain_text[e - 1].isspace():
+        e -= 1
+    return plain_text[s:e], s, e
+
+
 def ground_document_analysis(
     analysis: DocumentAnalysis,
     plain_text: str,
+    *,
+    snap_to_verbatim: bool = False,
 ) -> tuple[DocumentAnalysis, dict[str, Any]]:
-    """Score grounding and persist per-span grounding_status, start_char, and end_char onto EvidenceSpans (D6)."""
+    """Score grounding and persist per-span grounding_status, start_char, and end_char onto EvidenceSpans (D6).
+
+    When `snap_to_verbatim=True`, spans matched via NFKC/whitespace/hyphen-insensitive or bounded
+    ordered-window matching are deterministically snapped to the exact `plain_text[start_char:end_char]`
+    substring when <= MAX_SNAP_QUOTE_CHARS (450 chars) so UI highlighters get exact verbatim matches.
+    """
     prepared = _build_normalized_index(plain_text)
     exact_matches = 0
     fuzzy_matches = 0
+    snapped_count = 0
     total_quotes = 0
     ungrounded_samples: list[str] = []
 
     def _annotate_span(span: EvidenceSpan) -> EvidenceSpan:
-        nonlocal exact_matches, fuzzy_matches, total_quotes
+        nonlocal exact_matches, fuzzy_matches, snapped_count, total_quotes
         quote = span.quote.strip() if span.quote else ""
         if not quote:
             return span
         total_quotes += 1
         status, start_char, end_char = _match_span_in_text(quote, plain_text, prepared_index=prepared)
+        final_quote = span.quote
+        if (
+            snap_to_verbatim
+            and status in {"verbatim", "approximate"}
+            and start_char is not None
+            and end_char is not None
+        ):
+            snapped_text, snapped_start, snapped_end = _trim_verbatim_slice(plain_text, start_char, end_char)
+            if snapped_text and len(snapped_text) <= MAX_SNAP_QUOTE_CHARS:
+                if snapped_text != final_quote or status == "approximate":
+                    snapped_count += 1
+                final_quote = snapped_text
+                start_char = snapped_start
+                end_char = snapped_end
+                status = "verbatim"
+
         if status == "verbatim":
             exact_matches += 1
         elif status == "approximate":
@@ -1896,6 +2163,7 @@ def ground_document_analysis(
             ungrounded_samples.append(quote[:140])
         return span.model_copy(
             update={
+                "quote": final_quote,
                 "grounding_status": status,
                 "start_char": start_char,
                 "end_char": end_char,
@@ -1931,7 +2199,7 @@ def ground_document_analysis(
     exact_ratio = round(exact_matches / total_quotes, 3) if total_quotes else None
     grounding_ratio = round((exact_matches + fuzzy_matches) / total_quotes, 3) if total_quotes else None
 
-    summary = {
+    summary: dict[str, Any] = {
         "total_quotes": total_quotes,
         "exact_matches": exact_matches,
         "fuzzy_matches": fuzzy_matches,
@@ -1940,6 +2208,8 @@ def ground_document_analysis(
         "grounding_ratio": grounding_ratio,
         "ungrounded_samples": ungrounded_samples,
     }
+    if snap_to_verbatim:
+        summary["snapped_quotes"] = snapped_count
     return annotated_analysis, summary
 
 
@@ -3186,6 +3456,22 @@ def _invoke_client_once(
     return client.create_json_response(**call_kwargs)
 
 
+def _write_text_atomic(path: Path, content: str) -> None:
+    """Write UTF-8 LF text atomically via a thread-unique temp file + os.replace."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = path.with_name(f".{path.name}.{os.getpid()}.{threading.get_ident()}.tmp")
+    try:
+        tmp_path.write_text(content, encoding="utf-8", newline="\n")
+        os.replace(tmp_path, path)
+    except Exception:
+        if tmp_path.exists():
+            try:
+                tmp_path.unlink()
+            except OSError:
+                pass
+        raise
+
+
 def _call_structured_client(
     client: StructuredOutputClient,
     *,
@@ -3197,6 +3483,7 @@ def _call_structured_client(
     cached_document_context: str | None = None,
     retry_on_max_tokens: bool = True,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
+    retry_cap = int(getattr(client, "max_tokens_retry_cap", MAX_TOKENS_RETRY_CAP))
     try:
         return _invoke_client_once(
             client,
@@ -3208,9 +3495,9 @@ def _call_structured_client(
             cached_document_context=cached_document_context,
         )
     except MaxTokensTruncatedError:
-        if not retry_on_max_tokens or max_tokens >= MAX_TOKENS_RETRY_CAP:
+        if not retry_on_max_tokens or max_tokens >= retry_cap:
             raise
-        escalated_tokens = min(max(max_tokens * 2, 12288), MAX_TOKENS_RETRY_CAP)
+        escalated_tokens = min(max(max_tokens * 2, 12288), retry_cap)
         return _invoke_client_once(
             client,
             system_prompt=system_prompt,
@@ -3228,14 +3515,21 @@ def analyze_parsed_documents(
     document_id: str | None = None,
     store: AnalysisStore | None = None,
     client: StructuredOutputClient | None = None,
+    provider: str | None = None,
+    model: str | None = None,
+    effort: str | None = None,
+    workers: int = 1,
     refresh_existing: bool = False,
 ) -> list[dict[str, str]]:
     records = _load_parsed_document_records(jurisdiction=jurisdiction, document_id=document_id)
     if not records:
         raise ValueError("no parsed documents matched the requested filters")
 
+    if workers < 1 or workers > MAX_ANALYSIS_WORKERS:
+        raise ValueError(f"workers must be between 1 and {MAX_ANALYSIS_WORKERS} (got {workers})")
+
     if client is None:
-        client = ClaudeAPIClient()
+        client = create_llm_client(provider=provider, model=model, effort=effort)
     managed_store = False
     if store is None and os.getenv("DATABASE_URL"):
         store = PostgresAnalysisStore()
@@ -3264,291 +3558,352 @@ def analyze_parsed_documents(
     client_effort = getattr(client, "effort", None)
     client_temperature = getattr(client, "temperature", None)
 
+    direct_max_tokens = int(getattr(client, "direct_full_text_max_tokens", DIRECT_FULL_TEXT_MAX_TOKENS))
+    direct_max_chars = int(getattr(client, "direct_full_text_max_chars", DIRECT_FULL_TEXT_MAX_CHARS))
+    chunk_max_tokens = int(getattr(client, "chunk_max_tokens", CHUNK_MAX_TOKENS))
+    chunk_max_chars = int(getattr(client, "chunk_max_chars", CHUNK_MAX_CHARS))
+    meta_max_tokens = int(getattr(client, "metadata_max_tokens", POLICY_METADATA_MAX_TOKENS))
+    ctrl_max_tokens = int(getattr(client, "controls_max_tokens", POLICY_CONTROLS_MAX_TOKENS))
+    frame_max_tokens = int(getattr(client, "framing_max_tokens", RISK_FRAMING_MAX_TOKENS))
+
     results: list[dict[str, str]] = []
     touched_jurisdictions: set[str] = set()
+    store_lock = threading.Lock()
+    progress_lock = threading.Lock()
+    total_records = len(records)
+    completed_counter = {"count": 0}
+
+    def _log_progress(record: ParsedDocumentRecord, status_label: str, elapsed_s: float) -> None:
+        if workers <= 1:
+            return
+        with progress_lock:
+            completed_counter["count"] += 1
+            print(
+                f"[{completed_counter['count']}/{total_records}] "
+                f"{record.jurisdiction}/{record.document_id} -> {status_label} ({elapsed_s:.1f}s)",
+                file=sys.stderr,
+                flush=True,
+            )
+
+    def _process_one(
+        record: ParsedDocumentRecord,
+        active_store: AnalysisStore | None,
+    ) -> tuple[dict[str, str], bool]:
+        started = time.monotonic()
+        target_dir = ANALYSIS_DIR / record.jurisdiction / record.document_id
+        input_sha256 = _stable_text_hash(record.parsed_document.plain_text)
+
+        is_current, currency_reason = _analysis_currency_status(
+            analysis_path=target_dir / "document_analysis.json",
+            input_sha256=input_sha256,
+            model=client_model,
+            effort=client_effort,
+            taxonomy_hash=taxonomy_hash,
+            extraction_prompt_hash=extraction_prompt_hash,
+            framing_prompt_hash=framing_prompt_hash,
+        )
+        if not refresh_existing and is_current:
+            _log_progress(record, "skipped_existing", time.monotonic() - started)
+            return (
+                {
+                    "jurisdiction": record.jurisdiction,
+                    "document_id": record.document_id,
+                    "status": "skipped_existing",
+                },
+                False,
+            )
+
+        fidelity_issue = _analysis_fidelity_issue(record)
+        if fidelity_issue is not None:
+            # D10: Always remove stale analysis files when low-fidelity skip triggers.
+            if target_dir.exists():
+                for stale_name in STALE_ANALYSIS_FILENAMES:
+                    stale_file = target_dir / stale_name
+                    if stale_file.exists():
+                        stale_file.unlink()
+            _write_text_atomic(
+                target_dir / "analysis_skipped.json",
+                json.dumps(
+                    {
+                        "source_id": record.document_id,
+                        "reason": "low_fidelity_input",
+                        "detail": fidelity_issue,
+                        "parser_warnings": record.parsed_document.warnings,
+                        "plain_text_non_whitespace_chars": _non_whitespace_length(record.parsed_document.plain_text),
+                    },
+                    indent=2,
+                    ensure_ascii=False,
+                )
+                + "\n",
+            )
+            _log_progress(record, f"skipped_low_fidelity ({fidelity_issue})", time.monotonic() - started)
+            return (
+                {
+                    "jurisdiction": record.jurisdiction,
+                    "document_id": record.document_id,
+                    "status": "skipped_low_fidelity",
+                },
+                False,
+            )
+
+        chunks = _chunk_document_for_analysis(
+            record,
+            direct_max_chars=direct_max_chars,
+            chunk_max_chars=chunk_max_chars,
+            direct_max_tokens=direct_max_tokens,
+            chunk_max_tokens=chunk_max_tokens,
+        )
+        chunk_count = len(chunks)
+        metadata_chunks: list[PolicyMetadataExtraction] = []
+        controls_chunks: list[PolicyControlsExtraction] = []
+        framing_chunks: list[RiskFramingAnalysis] = []
+        raw_metadata_responses: list[dict[str, Any]] = []
+        raw_controls_responses: list[dict[str, Any]] = []
+        raw_framing_responses: list[dict[str, Any]] = []
+
+        try:
+            for idx, chunk_text in enumerate(chunks, start=1):
+                chunk_note = f"{idx}/{chunk_count}" if chunk_count > 1 else None
+                # D8: Shared cacheable document context across all 3 calls for this chunk.
+                cached_doc_ctx = _build_document_context_block(
+                    record,
+                    excerpt=chunk_text,
+                    chunk_note=chunk_note,
+                )
+                metadata_payload, raw_meta_resp = _call_structured_client(
+                    client,
+                    system_prefix=shared_system_prefix,
+                    system_prompt=metadata_system_prompt,
+                    cached_document_context=cached_doc_ctx,
+                    user_prompt=_build_task_trigger_prompt("policy_metadata", chunk_note=chunk_note),
+                    schema=metadata_schema,
+                    max_tokens=meta_max_tokens,
+                )
+                controls_payload, raw_ctrl_resp = _call_structured_client(
+                    client,
+                    system_prefix=shared_system_prefix,
+                    system_prompt=controls_system_prompt,
+                    cached_document_context=cached_doc_ctx,
+                    user_prompt=_build_task_trigger_prompt("policy_controls", chunk_note=chunk_note),
+                    schema=controls_schema,
+                    max_tokens=ctrl_max_tokens,
+                )
+                framing_payload, raw_frame_resp = _call_structured_client(
+                    client,
+                    system_prefix=shared_system_prefix,
+                    system_prompt=framing_system_prompt,
+                    cached_document_context=cached_doc_ctx,
+                    user_prompt=_build_task_trigger_prompt("risk_framing", chunk_note=chunk_note),
+                    schema=framing_schema,
+                    max_tokens=frame_max_tokens,
+                )
+                metadata_chunks.append(PolicyMetadataExtraction.model_validate(metadata_payload))
+                controls_chunks.append(PolicyControlsExtraction.model_validate(controls_payload))
+                framing_chunks.append(RiskFramingAnalysis.model_validate(framing_payload))
+                raw_metadata_responses.append(raw_meta_resp)
+                raw_controls_responses.append(raw_ctrl_resp)
+                raw_framing_responses.append(raw_frame_resp)
+
+            metadata_extraction = _merge_policy_metadata_chunks(metadata_chunks)
+            controls_extraction = _merge_policy_controls_chunks(
+                controls_chunks,
+                plain_text=record.parsed_document.plain_text,
+            )
+            framing = _merge_risk_framing_chunks(framing_chunks, [len(chunk) for chunk in chunks])
+
+            extraction = PolicyExtraction(
+                jurisdiction=record.jurisdiction,
+                issuing_body=metadata_extraction.issuing_body,
+                document_type=metadata_extraction.document_type,
+                binding_strength=metadata_extraction.binding_strength,
+                publication_date=metadata_extraction.publication_date,
+                effective_date=metadata_extraction.effective_date,
+                covered_actors=metadata_extraction.covered_actors,
+                covered_application_domains=metadata_extraction.covered_application_domains,
+                prohibited_practices=metadata_extraction.prohibited_practices,
+                safety_requirements=controls_extraction.safety_requirements,
+                enforcement_mechanisms=controls_extraction.enforcement_mechanisms,
+                enforcement_authorities=metadata_extraction.enforcement_authorities,
+                compliance_deadlines=metadata_extraction.compliance_deadlines,
+                penalties_summary=metadata_extraction.penalties_summary,
+                implementation_notes=metadata_extraction.implementation_notes,
+                confidence=metadata_extraction.confidence,
+            )
+            _validate_taxonomy_alignment(extraction, framing)
+        except (ValidationError, ValueError, RuntimeError, json.JSONDecodeError) as exc:
+            # D3: Record full exception type + message in status.
+            status = f"analysis_error:{type(exc).__name__}: {exc}"
+            _log_progress(record, status, time.monotonic() - started)
+            return (
+                {
+                    "jurisdiction": record.jurisdiction,
+                    "document_id": record.document_id,
+                    "status": status,
+                },
+                False,
+            )
+
+        raw_policy_response: dict[str, Any] = {
+            "provider": client_provider,
+            "model": client_model,
+            "effort": client_effort,
+            "metadata_response": raw_metadata_responses[0] if chunk_count == 1 else raw_metadata_responses,
+            "controls_response": raw_controls_responses[0] if chunk_count == 1 else raw_controls_responses,
+        }
+        raw_framing_response: dict[str, Any] = (
+            raw_framing_responses[0]
+            if chunk_count == 1
+            else {"provider": client_provider, "model": client_model, "effort": client_effort, "chunks": raw_framing_responses}
+        )
+        usage_summary = _accumulate_usage(
+            [*raw_metadata_responses, *raw_controls_responses, *raw_framing_responses],
+            provider=client_provider,
+        )
+
+        preliminary_analysis = DocumentAnalysis(
+            source_id=record.document_id,
+            title=record.raw_metadata.get("title", record.parsed_document.title),
+            language=_primary_language(record),
+            policy_extraction=extraction,
+            risk_framing=framing,
+        )
+        # D6 + Stage 4A: Ground, snap approximate spans to exact verbatim substrings (<=450 chars), and persist offsets.
+        grounded_analysis, grounding_summary = ground_document_analysis(
+            preliminary_analysis,
+            record.parsed_document.plain_text,
+            snap_to_verbatim=True,
+        )
+        analyzed_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+        provenance = AnalysisProvenance(
+            provider=client_provider,
+            model=client_model,
+            effort=client_effort,
+            temperature=client_temperature,
+            analyzed_at=analyzed_at,
+            analysis_version=PIPELINE_ANALYSIS_VERSION,
+            taxonomy_version=taxonomy_version,
+            taxonomy_hash=taxonomy_hash,
+            extraction_prompt_hash=extraction_prompt_hash,
+            framing_prompt_hash=framing_prompt_hash,
+            input_sha256=input_sha256,
+            chunked=chunk_count > 1,
+            chunk_count=chunk_count,
+            usage=usage_summary,
+            grounding_summary=grounding_summary,
+        )
+        analysis = grounded_analysis.model_copy(update={"analysis_metadata": provenance})
+
+        target_dir.mkdir(parents=True, exist_ok=True)
+        skip_marker = target_dir / "analysis_skipped.json"
+        if skip_marker.exists():
+            skip_marker.unlink()
+
+        _write_text_atomic(
+            target_dir / "policy_extraction.json",
+            analysis.policy_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+        )
+        _write_text_atomic(
+            target_dir / "risk_framing.json",
+            analysis.risk_framing.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+        )
+        _write_text_atomic(
+            target_dir / "document_analysis.json",
+            analysis.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+        )
+        _write_text_atomic(
+            target_dir / "policy_metadata.json",
+            metadata_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+        )
+        _write_text_atomic(
+            target_dir / "policy_controls.json",
+            controls_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+        )
+        _write_text_atomic(
+            target_dir / "policy_response.raw.json",
+            json.dumps(raw_policy_response, indent=2, ensure_ascii=False) + "\n",
+        )
+        _write_text_atomic(
+            target_dir / "framing_response.raw.json",
+            json.dumps(raw_framing_response, indent=2, ensure_ascii=False) + "\n",
+        )
+
+        if active_store is not None:
+            try:
+                bundle = build_analysis_persistence_bundle(
+                    document_id=record.document_id,
+                    jurisdiction=record.jurisdiction,
+                    title=record.raw_metadata.get("title", record.parsed_document.title),
+                    canonical_url=_source_url(record),
+                    language=_primary_language(record),
+                    parser_version=record.parsed_document.parser_version,
+                    raw_artifact_path=record.parsed_document.source_artifact_path,
+                    normalized_text_path=repo_rel_posix(record.parsed_path),
+                    normalized_text=record.parsed_document.plain_text,
+                    raw_metadata=record.raw_metadata,
+                    extraction=analysis.policy_extraction,
+                    framing=analysis.risk_framing,
+                    raw_policy_response=raw_policy_response,
+                    raw_framing_response=raw_framing_response,
+                    analysis_metadata=provenance,
+                    binding_strength=record.seed_document.binding_strength if record.seed_document else None,
+                    sections=[section.model_dump(mode="json") for section in record.parsed_document.sections],
+                    parser_warnings=record.parsed_document.warnings,
+                    source_tier=record.seed_document.source_tier if record.seed_document else None,
+                    corpus_role=record.seed_document.corpus_role if record.seed_document else None,
+                    lifecycle_stage=record.seed_document.lifecycle_stage if record.seed_document else None,
+                    grounding_ratio=grounding_summary["grounding_ratio"],
+                )
+                with store_lock:
+                    active_store.persist_analysis_bundle(bundle)
+            except Exception as exc:
+                status = f"persist_error:{type(exc).__name__}: {exc}"
+                _log_progress(record, status, time.monotonic() - started)
+                return (
+                    {
+                        "jurisdiction": record.jurisdiction,
+                        "document_id": record.document_id,
+                        "status": status,
+                    },
+                    False,
+                )
+
+        result_entry = {
+            "jurisdiction": record.jurisdiction,
+            "document_id": record.document_id,
+            "status": "analyzed",
+        }
+        if currency_reason == "stale_legacy_no_provenance":
+            result_entry["previous_status"] = "stale_legacy_no_provenance"
+        ratio = grounding_summary.get("grounding_ratio")
+        ratio_str = f"{ratio:.1%}" if isinstance(ratio, (int, float)) else "n/a"
+        _log_progress(
+            record,
+            f"analyzed (chunks={chunk_count}, grounded={ratio_str})",
+            time.monotonic() - started,
+        )
+        return result_entry, True
 
     def _run_batch(active_store: AnalysisStore | None) -> None:
-        for record in records:
-            target_dir = ANALYSIS_DIR / record.jurisdiction / record.document_id
-            input_sha256 = _stable_text_hash(record.parsed_document.plain_text)
-
-            is_current, currency_reason = _analysis_currency_status(
-                analysis_path=target_dir / "document_analysis.json",
-                input_sha256=input_sha256,
-                model=client_model,
-                effort=client_effort,
-                taxonomy_hash=taxonomy_hash,
-                extraction_prompt_hash=extraction_prompt_hash,
-                framing_prompt_hash=framing_prompt_hash,
-            )
-            if not refresh_existing and is_current:
-                results.append(
-                    {
-                        "jurisdiction": record.jurisdiction,
-                        "document_id": record.document_id,
-                        "status": "skipped_existing",
-                    }
-                )
-                continue
-
-            fidelity_issue = _analysis_fidelity_issue(record)
-            if fidelity_issue is not None:
-                # D10: Always remove stale analysis files when low-fidelity skip triggers.
-                if target_dir.exists():
-                    for stale_name in STALE_ANALYSIS_FILENAMES:
-                        stale_file = target_dir / stale_name
-                        if stale_file.exists():
-                            stale_file.unlink()
-                target_dir.mkdir(parents=True, exist_ok=True)
-                (target_dir / "analysis_skipped.json").write_text(
-                    json.dumps(
-                        {
-                            "source_id": record.document_id,
-                            "reason": "low_fidelity_input",
-                            "detail": fidelity_issue,
-                            "parser_warnings": record.parsed_document.warnings,
-                            "plain_text_non_whitespace_chars": _non_whitespace_length(record.parsed_document.plain_text),
-                        },
-                        indent=2,
-                        ensure_ascii=False,
-                    )
-                    + "\n",
-                    encoding="utf-8",
-                    newline="\n",
-                )
-                results.append(
-                    {
-                        "jurisdiction": record.jurisdiction,
-                        "document_id": record.document_id,
-                        "status": "skipped_low_fidelity",
-                    }
-                )
-                continue
-
-            chunks = _chunk_document_for_analysis(record)
-            chunk_count = len(chunks)
-            metadata_chunks: list[PolicyMetadataExtraction] = []
-            controls_chunks: list[PolicyControlsExtraction] = []
-            framing_chunks: list[RiskFramingAnalysis] = []
-            raw_metadata_responses: list[dict[str, Any]] = []
-            raw_controls_responses: list[dict[str, Any]] = []
-            raw_framing_responses: list[dict[str, Any]] = []
-
-            try:
-                for idx, chunk_text in enumerate(chunks, start=1):
-                    chunk_note = f"{idx}/{chunk_count}" if chunk_count > 1 else None
-                    # D8: Shared cacheable document context across all 3 calls for this chunk.
-                    cached_doc_ctx = _build_document_context_block(
-                        record,
-                        excerpt=chunk_text,
-                        chunk_note=chunk_note,
-                    )
-                    metadata_payload, raw_meta_resp = _call_structured_client(
-                        client,
-                        system_prefix=shared_system_prefix,
-                        system_prompt=metadata_system_prompt,
-                        cached_document_context=cached_doc_ctx,
-                        user_prompt=_build_task_trigger_prompt("policy_metadata", chunk_note=chunk_note),
-                        schema=metadata_schema,
-                        max_tokens=POLICY_METADATA_MAX_TOKENS,
-                    )
-                    controls_payload, raw_ctrl_resp = _call_structured_client(
-                        client,
-                        system_prefix=shared_system_prefix,
-                        system_prompt=controls_system_prompt,
-                        cached_document_context=cached_doc_ctx,
-                        user_prompt=_build_task_trigger_prompt("policy_controls", chunk_note=chunk_note),
-                        schema=controls_schema,
-                        max_tokens=POLICY_CONTROLS_MAX_TOKENS,
-                    )
-                    framing_payload, raw_frame_resp = _call_structured_client(
-                        client,
-                        system_prefix=shared_system_prefix,
-                        system_prompt=framing_system_prompt,
-                        cached_document_context=cached_doc_ctx,
-                        user_prompt=_build_task_trigger_prompt("risk_framing", chunk_note=chunk_note),
-                        schema=framing_schema,
-                        max_tokens=RISK_FRAMING_MAX_TOKENS,
-                    )
-                    metadata_chunks.append(PolicyMetadataExtraction.model_validate(metadata_payload))
-                    controls_chunks.append(PolicyControlsExtraction.model_validate(controls_payload))
-                    framing_chunks.append(RiskFramingAnalysis.model_validate(framing_payload))
-                    raw_metadata_responses.append(raw_meta_resp)
-                    raw_controls_responses.append(raw_ctrl_resp)
-                    raw_framing_responses.append(raw_frame_resp)
-
-                metadata_extraction = _merge_policy_metadata_chunks(metadata_chunks)
-                controls_extraction = _merge_policy_controls_chunks(
-                    controls_chunks,
-                    plain_text=record.parsed_document.plain_text,
-                )
-                framing = _merge_risk_framing_chunks(framing_chunks, [len(chunk) for chunk in chunks])
-
-                extraction = PolicyExtraction(
-                    jurisdiction=record.jurisdiction,
-                    issuing_body=metadata_extraction.issuing_body,
-                    document_type=metadata_extraction.document_type,
-                    binding_strength=metadata_extraction.binding_strength,
-                    publication_date=metadata_extraction.publication_date,
-                    effective_date=metadata_extraction.effective_date,
-                    covered_actors=metadata_extraction.covered_actors,
-                    covered_application_domains=metadata_extraction.covered_application_domains,
-                    prohibited_practices=metadata_extraction.prohibited_practices,
-                    safety_requirements=controls_extraction.safety_requirements,
-                    enforcement_mechanisms=controls_extraction.enforcement_mechanisms,
-                    enforcement_authorities=metadata_extraction.enforcement_authorities,
-                    compliance_deadlines=metadata_extraction.compliance_deadlines,
-                    penalties_summary=metadata_extraction.penalties_summary,
-                    implementation_notes=metadata_extraction.implementation_notes,
-                    confidence=metadata_extraction.confidence,
-                )
-                _validate_taxonomy_alignment(extraction, framing)
-            except (ValidationError, ValueError, RuntimeError, json.JSONDecodeError) as exc:
-                # D3: Record full exception type + message in status.
-                results.append(
-                    {
-                        "jurisdiction": record.jurisdiction,
-                        "document_id": record.document_id,
-                        "status": f"analysis_error:{type(exc).__name__}: {exc}",
-                    }
-                )
-                continue
-
-            raw_policy_response: dict[str, Any] = {
-                "provider": client_provider,
-                "model": client_model,
-                "effort": client_effort,
-                "metadata_response": raw_metadata_responses[0] if chunk_count == 1 else raw_metadata_responses,
-                "controls_response": raw_controls_responses[0] if chunk_count == 1 else raw_controls_responses,
-            }
-            raw_framing_response: dict[str, Any] = (
-                raw_framing_responses[0]
-                if chunk_count == 1
-                else {"provider": client_provider, "model": client_model, "effort": client_effort, "chunks": raw_framing_responses}
-            )
-            usage_summary = _accumulate_usage(
-                [*raw_metadata_responses, *raw_controls_responses, *raw_framing_responses]
-            )
-
-            preliminary_analysis = DocumentAnalysis(
-                source_id=record.document_id,
-                title=record.raw_metadata.get("title", record.parsed_document.title),
-                language=_primary_language(record),
-                policy_extraction=extraction,
-                risk_framing=framing,
-            )
-            # D6: Ground and persist per-span grounding_status, start_char, and end_char.
-            grounded_analysis, grounding_summary = ground_document_analysis(
-                preliminary_analysis,
-                record.parsed_document.plain_text,
-            )
-            analyzed_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-            provenance = AnalysisProvenance(
-                provider=client_provider,
-                model=client_model,
-                effort=client_effort,
-                temperature=client_temperature,
-                analyzed_at=analyzed_at,
-                analysis_version=PIPELINE_ANALYSIS_VERSION,
-                taxonomy_version=taxonomy_version,
-                taxonomy_hash=taxonomy_hash,
-                extraction_prompt_hash=extraction_prompt_hash,
-                framing_prompt_hash=framing_prompt_hash,
-                input_sha256=input_sha256,
-                chunked=chunk_count > 1,
-                chunk_count=chunk_count,
-                usage=usage_summary,
-                grounding_summary=grounding_summary,
-            )
-            analysis = grounded_analysis.model_copy(update={"analysis_metadata": provenance})
-
-            target_dir.mkdir(parents=True, exist_ok=True)
-            skip_marker = target_dir / "analysis_skipped.json"
-            if skip_marker.exists():
-                skip_marker.unlink()
-
-            (target_dir / "policy_extraction.json").write_text(
-                analysis.policy_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-                newline="\n",
-            )
-            (target_dir / "risk_framing.json").write_text(
-                analysis.risk_framing.model_dump_json(indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-                newline="\n",
-            )
-            (target_dir / "document_analysis.json").write_text(
-                analysis.model_dump_json(indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-                newline="\n",
-            )
-            (target_dir / "policy_metadata.json").write_text(
-                metadata_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-                newline="\n",
-            )
-            (target_dir / "policy_controls.json").write_text(
-                controls_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-                newline="\n",
-            )
-            (target_dir / "policy_response.raw.json").write_text(
-                json.dumps(raw_policy_response, indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-                newline="\n",
-            )
-            (target_dir / "framing_response.raw.json").write_text(
-                json.dumps(raw_framing_response, indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-                newline="\n",
-            )
-
-            if active_store is not None:
-                try:
-                    bundle = build_analysis_persistence_bundle(
-                        document_id=record.document_id,
-                        jurisdiction=record.jurisdiction,
-                        title=record.raw_metadata.get("title", record.parsed_document.title),
-                        canonical_url=_source_url(record),
-                        language=_primary_language(record),
-                        parser_version=record.parsed_document.parser_version,
-                        raw_artifact_path=record.parsed_document.source_artifact_path,
-                        normalized_text_path=repo_rel_posix(record.parsed_path),
-                        normalized_text=record.parsed_document.plain_text,
-                        raw_metadata=record.raw_metadata,
-                        extraction=analysis.policy_extraction,
-                        framing=analysis.risk_framing,
-                        raw_policy_response=raw_policy_response,
-                        raw_framing_response=raw_framing_response,
-                        analysis_metadata=provenance,
-                        binding_strength=record.seed_document.binding_strength if record.seed_document else None,
-                        sections=[section.model_dump(mode="json") for section in record.parsed_document.sections],
-                        parser_warnings=record.parsed_document.warnings,
-                        source_tier=record.seed_document.source_tier if record.seed_document else None,
-                        corpus_role=record.seed_document.corpus_role if record.seed_document else None,
-                        lifecycle_stage=record.seed_document.lifecycle_stage if record.seed_document else None,
-                        grounding_ratio=grounding_summary["grounding_ratio"],
-                    )
-                    active_store.persist_analysis_bundle(bundle)
-                except Exception as exc:
-                    results.append(
-                        {
-                            "jurisdiction": record.jurisdiction,
-                            "document_id": record.document_id,
-                            "status": f"persist_error:{type(exc).__name__}: {exc}",
-                        }
-                    )
-                    continue
-
-            result_entry = {
-                "jurisdiction": record.jurisdiction,
-                "document_id": record.document_id,
-                "status": "analyzed",
-            }
-            if currency_reason == "stale_legacy_no_provenance":
-                result_entry["previous_status"] = "stale_legacy_no_provenance"
-            results.append(result_entry)
-            touched_jurisdictions.add(record.jurisdiction)
+        if workers == 1 or len(records) <= 1:
+            for record in records:
+                entry, touched = _process_one(record, active_store)
+                results.append(entry)
+                if touched:
+                    touched_jurisdictions.add(record.jurisdiction)
+        else:
+            ordered_entries: list[dict[str, str] | None] = [None] * len(records)
+            with ThreadPoolExecutor(max_workers=workers) as executor:
+                future_to_idx = {
+                    executor.submit(_process_one, record, active_store): idx
+                    for idx, record in enumerate(records)
+                }
+                for future in as_completed(future_to_idx):
+                    idx = future_to_idx[future]
+                    entry, touched = future.result()
+                    ordered_entries[idx] = entry
+                    if touched:
+                        touched_jurisdictions.add(records[idx].jurisdiction)
+            results.extend(entry for entry in ordered_entries if entry is not None)
 
         for touched_jurisdiction in sorted(touched_jurisdictions):
             results.extend(
@@ -3566,6 +3921,196 @@ def analyze_parsed_documents(
         _run_batch(store)
 
     return results
+
+
+def _collect_ungrounded_quotes(analysis: DocumentAnalysis) -> list[str]:
+    ungrounded: list[str] = []
+    for req in analysis.policy_extraction.safety_requirements:
+        for span in req.evidence:
+            if span.grounding_status not in {"verbatim", "approximate"}:
+                ungrounded.append(f"safety_requirements[{req.label}]: {span.quote!r}")
+    for enf in analysis.policy_extraction.enforcement_mechanisms:
+        for span in enf.evidence:
+            if span.grounding_status not in {"verbatim", "approximate"}:
+                ungrounded.append(f"enforcement_mechanisms[{enf.label}]: {span.quote!r}")
+    for idx, span in enumerate(analysis.risk_framing.evidence_spans):
+        if span.grounding_status not in {"verbatim", "approximate"}:
+            frame_label = span.frame or f"span#{idx}"
+            ungrounded.append(f"risk_framing[{frame_label}]: {span.quote!r}")
+    return ungrounded
+
+
+def ingest_document_analysis(
+    *,
+    jurisdiction: str,
+    document_id: str,
+    input_json_path: Path,
+    provider: str = "gemini",
+    model: str = DEFAULT_GEMINI_MODEL,
+    effort: str | None = "xhigh",
+    min_grounding: float = 0.90,
+    schemas_dir: Path = SCHEMAS_DIR,
+) -> dict[str, Any]:
+    """Validate, ground, stamp authentic v2.1.0 provenance, and atomically persist a single document analysis."""
+    if not (0.0 <= min_grounding <= 1.0):
+        raise ValueError(f"min_grounding must be between 0.0 and 1.0 (got {min_grounding})")
+    if not input_json_path.exists():
+        raise ValueError(f"input JSON file not found: {input_json_path}")
+
+    raw_payload = json.loads(input_json_path.read_text(encoding="utf-8"))
+    if not isinstance(raw_payload, dict):
+        raise ValueError("input JSON must be an object containing 'policy_extraction' and 'risk_framing'")
+    raw_policy = raw_payload.get("policy_extraction")
+    raw_framing = raw_payload.get("risk_framing")
+    if not isinstance(raw_policy, dict) or not isinstance(raw_framing, dict):
+        raise ValueError("input JSON must contain object fields 'policy_extraction' and 'risk_framing'")
+
+    records = _load_parsed_document_records(jurisdiction=jurisdiction, document_id=document_id)
+    if not records:
+        raise ValueError(f"parsed document not found for {jurisdiction}/{document_id}")
+    record = records[0]
+
+    policy_payload = dict(raw_policy)
+    if "jurisdiction" not in policy_payload or policy_payload["jurisdiction"] is None:
+        policy_payload["jurisdiction"] = record.jurisdiction
+    elif policy_payload["jurisdiction"] != record.jurisdiction:
+        raise ValueError(
+            f"policy_extraction.jurisdiction '{policy_payload['jurisdiction']}' does not match '{record.jurisdiction}'"
+        )
+
+    extraction = PolicyExtraction.model_validate(policy_payload)
+    framing = RiskFramingAnalysis.model_validate(raw_framing)
+    _validate_taxonomy_alignment(extraction, framing)
+
+    preliminary_analysis = DocumentAnalysis(
+        source_id=record.document_id,
+        title=record.raw_metadata.get("title", record.parsed_document.title),
+        language=_primary_language(record),
+        policy_extraction=extraction,
+        risk_framing=framing,
+    )
+    grounded_analysis, grounding_summary = ground_document_analysis(
+        preliminary_analysis,
+        record.parsed_document.plain_text,
+        snap_to_verbatim=True,
+    )
+
+    grounding_ratio = grounding_summary.get("grounding_ratio")
+    if grounding_ratio is None or float(grounding_ratio) < min_grounding:
+        ratio_display = f"{float(grounding_ratio):.3f}" if grounding_ratio is not None else "None"
+        ungrounded_list = _collect_ungrounded_quotes(grounded_analysis)
+        lines = [
+            f"grounding gate failed for {record.jurisdiction}/{record.document_id}: "
+            f"grounding_ratio={ratio_display} < min_grounding={min_grounding:.2f} "
+            f"(exact={grounding_summary['exact_matches']}/{grounding_summary['total_quotes']}, "
+            f"ungrounded={grounding_summary['ungrounded_quotes']})"
+        ]
+        for entry in ungrounded_list:
+            lines.append(f"  ungrounded: {entry}")
+        raise ValueError("\n".join(lines))
+
+    (
+        _metadata_schema,
+        _controls_schema,
+        _framing_schema,
+        shared_system_prefix,
+        metadata_system_prompt,
+        controls_system_prompt,
+        framing_system_prompt,
+    ) = _build_analysis_prompts()
+
+    taxonomy_hash = _stable_text_hash(json.dumps(load_taxonomy(), ensure_ascii=False, sort_keys=True))
+    taxonomy_version = get_taxonomy_version()
+    combined_extraction_prompt = (
+        f"{shared_system_prefix}\n\n---\n\n{metadata_system_prompt}\n\n---\n\n{controls_system_prompt}"
+    )
+    combined_framing_prompt = f"{shared_system_prefix}\n\n---\n\n{framing_system_prompt}"
+    extraction_prompt_hash = _stable_text_hash(combined_extraction_prompt)
+    framing_prompt_hash = _stable_text_hash(combined_framing_prompt)
+    input_sha256 = _stable_text_hash(record.parsed_document.plain_text)
+    analyzed_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    total_chars = len(record.parsed_document.plain_text)
+
+    provenance = AnalysisProvenance(
+        provider=provider,
+        model=model,
+        effort=effort,
+        temperature=DEFAULT_TEMPERATURE,
+        analyzed_at=analyzed_at,
+        analysis_version=PIPELINE_ANALYSIS_VERSION,
+        taxonomy_version=taxonomy_version,
+        taxonomy_hash=taxonomy_hash,
+        extraction_prompt_hash=extraction_prompt_hash,
+        framing_prompt_hash=framing_prompt_hash,
+        input_sha256=input_sha256,
+        chunked=False,
+        chunk_count=1,
+        usage={
+            "execution_mode": "subscription_harness",
+            "total_chars": total_chars,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "thoughts_tokens": 0,
+            "estimated_cost_usd": 0.0,
+        },
+        grounding_summary=grounding_summary,
+    )
+    analysis = grounded_analysis.model_copy(update={"analysis_metadata": provenance})
+
+    schema_errors = validate_document_analysis_payload(
+        analysis.model_dump(mode="json"),
+        schemas_dir=schemas_dir,
+    )
+    if schema_errors:
+        formatted = "\n".join(f"  {err['path']}: {err['message']}" for err in schema_errors)
+        raise ValueError(
+            f"document-analysis.schema.json validation failed for {record.jurisdiction}/{record.document_id}:\n{formatted}"
+        )
+
+    target_dir = ANALYSIS_DIR / record.jurisdiction / record.document_id
+    target_dir.mkdir(parents=True, exist_ok=True)
+    _write_text_atomic(
+        target_dir / "policy_extraction.json",
+        analysis.policy_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+    )
+    _write_text_atomic(
+        target_dir / "risk_framing.json",
+        analysis.risk_framing.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+    )
+    _write_text_atomic(
+        target_dir / "document_analysis.json",
+        analysis.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+    )
+
+    for stale_name in (
+        "analysis_skipped.json",
+        "policy_response.raw.json",
+        "framing_response.raw.json",
+        "policy_metadata.json",
+        "policy_controls.json",
+    ):
+        stale_file = target_dir / stale_name
+        if stale_file.exists():
+            stale_file.unlink()
+
+    return {
+        "jurisdiction": record.jurisdiction,
+        "document_id": record.document_id,
+        "status": "ingested",
+        "output_path": repo_rel_posix(target_dir / "document_analysis.json"),
+        "provider": provider,
+        "model": model,
+        "effort": effort,
+        "total_chars": total_chars,
+        "grounding_ratio": grounding_summary["grounding_ratio"],
+        "exact_ratio": grounding_summary["exact_ratio"],
+        "total_quotes": grounding_summary["total_quotes"],
+        "exact_matches": grounding_summary["exact_matches"],
+        "snapped_quotes": grounding_summary["snapped_quotes"],
+        "ungrounded_quotes": grounding_summary["ungrounded_quotes"],
+    }
 
 
 def persist_analysis_artifacts(
@@ -3763,7 +4308,12 @@ def _artifact_runtime_metadata(
         _nested_response_field(raw_framing_response, "provider"),
     )
     if provider is None:
-        provider = "anthropic" if model.startswith("claude") else "artifact-replay"
+        if model.startswith("claude"):
+            provider = "anthropic"
+        elif model.startswith("gemini"):
+            provider = "gemini"
+        else:
+            provider = "artifact-replay"
 
     # Section 0: Never fabricate effort from current env vars for legacy artifacts.
     effort = _first_string(

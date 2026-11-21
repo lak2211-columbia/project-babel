@@ -1,0 +1,181 @@
+{
+  "source_id": "us_nist_caisi_agent_standards_initiative_2026",
+  "title": "NIST CAISI / SI Agent Standards Initiative",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "National Institute of Standards and Technology (NIST / CAISI)",
+    "document_type": "standards_guideline",
+    "binding_strength": "standards_guideline",
+    "publication_date": "2026-02-17",
+    "effective_date": null,
+    "covered_actors": [
+      "Super Intelligence (SI) / AI agent developers and protocol ecosystems",
+      "Industry standards participants and international standards bodies",
+      "Enterprise AI agent adopters (including healthcare, finance, and education sectors)",
+      "Open-source SI agent protocol communities",
+      "Federal technical agencies (NIST, CAISI, NCCoE, NSF)"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "healthcare",
+      "finance",
+      "education"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "agentic_autonomy_controls",
+        "confidence": 0.92,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "NIST conducts fundamental research into agent authentication and identity infrastructure to enable secure human-agent and multi-agent interactions. NIST develops state-of-the-art security evaluations to inform protocol development and consumer comparison.",
+            "source_section": "Strategic Pillars",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1155,
+            "end_char": 1410
+          },
+          {
+            "quote": "Draft Concept Paper, Accelerating the Adoption of Software and SI Agent Identity and Authorization\n: NCCoE project applying identity standards to enterprise agent use cases.",
+            "source_section": "Related Activities and Resources",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1610,
+            "end_char": 1783
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.92,
+        "evidence": [
+          {
+            "quote": "NIST hosts technical convenings and conducts gap analyses to produce voluntary guidelines to inform industry-led standardization for SI agents.",
+            "source_section": "Strategic Pillars",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 572,
+            "end_char": 715
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [],
+    "compliance_deadlines": [
+      "2026-03-09: Public comment deadline for CAISI Request for Information (RFI) on SI Agent Security",
+      "2026-03-20: Registration deadline for CAISI sector-specific Listening Sessions on Barriers to SI Adoption (healthcare, finance, and education)",
+      "2026-04-02: Public comment deadline on NCCoE Draft Concept Paper on Accelerating the Adoption of Software and SI Agent Identity and Authorization"
+    ],
+    "penalties_summary": null,
+    "implementation_notes": "Launched in February 2026 by NIST / Center for AI Standards and Innovation (CAISI) in collaboration with NCCoE and NSF (under the post-EO 14434 'Super Intelligence (SI)' portal nomenclature). This overview establishes a voluntary, industry-led standardization program for autonomous AI/SI agents centered on interoperable open protocols, agent identity, authentication, authorization, open-source ecosystem security, and security evaluations, with stakeholder consultation milestones in March–April 2026 and no regulatory mandates.",
+    "confidence": 0.94
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "economic_competitiveness",
+      "consumer_public_safety"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.15,
+      "economic_competitiveness": 0.78,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.72,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.25,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The NIST CAISI SI Agent Standards Initiative is dominantly framed around innovation_enablement, seeking to catalyze widespread, confident adoption of autonomous agents through voluntary industry-led standards, open interoperable protocols, and sector-specific barrier reduction in healthcare, finance, and education. Innovation_enablement edges out economic_competitiveness because the operational pillars center on reducing ecosystem friction and building interoperable voluntary standards rather than zero-sum trade competition. Economic_competitiveness is a notable secondary frame via explicit goals of cementing U.S. dominance at the technological frontier and maintaining international standards leadership, while consumer_public_safety appears through secure human-agent interactions, agent threat mitigations, and security evaluations for consumer comparison.",
+    "evidence_spans": [
+      {
+        "quote": "The Super Intelligence (SI) Agent Standards Initiative ensures that the next generation of SI—agents capable of autonomous actions—is widely adopted with confidence.",
+        "source_section": "Ensuring a Trusted, Interoperable, and Secure Agentic Frontier",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 71,
+        "end_char": 236
+      },
+      {
+        "quote": "NIST engages with the SI ecosystem to identify and reduce barriers to interoperable agent protocols.",
+        "source_section": "Strategic Pillars",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 879,
+        "end_char": 979
+      },
+      {
+        "quote": "By fostering industry-led technical standards and open protocols, NIST aims to catalyze an ecosystem where agents function securely on behalf of users and interoperate smoothly across the digital landscape while cementing U.S. dominance at the technological frontier.",
+        "source_section": "Ensuring a Trusted, Interoperable, and Secure Agentic Frontier",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 237,
+        "end_char": 504
+      },
+      {
+        "quote": "NIST develops state-of-the-art security evaluations to inform protocol development and consumer comparison.",
+        "source_section": "Strategic Pillars",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 1303,
+        "end_char": 1410
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:15:28.669473Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "075c5cad2dbcd558225ba2cb10a347dc0311120ddfc1e7a4588e3bb06d5e9b96",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 2255,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 7,
+      "exact_matches": 7,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

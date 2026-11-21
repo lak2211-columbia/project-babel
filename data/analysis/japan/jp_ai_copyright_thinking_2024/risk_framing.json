@@ -2,35 +2,84 @@
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
     "innovation_enablement",
-    "economic_competitiveness"
+    "economic_competitiveness",
+    "labor_transition"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.72,
+    "economic_competitiveness": 0.4,
+    "fundamental_rights": 0.85,
     "social_stability": 0.0,
-    "innovation_enablement": 0.55,
-    "consumer_public_safety": 0.2,
-    "labor_transition": 0.1
+    "innovation_enablement": 0.8,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.35
   },
-  "rationale_summary": "The document is primarily framed around protecting the intellectual property rights of creators and rights holders while balancing those rights against the need for fair use in AI development. The central concern is rights protection under copyright law, with secondary attention to enabling AI innovation and maintaining Japan's competitiveness in the AI field.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.1,
+    "fundamental_rights": 0.45,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.4,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.05
+  },
+  "rationale_summary": "This non-binding interpretive guidance from Japan's Cultural Council Copyright Subdivision is dominantly framed around fundamental_rights, anchoring AI governance in the Copyright Act's core mandate to protect authors' and creators' rights and interests alongside freedom of expression, academic freedom, and human-centric principles, while helping parties realize their legal rights amid rapid generative AI adoption. Innovation_enablement is a very close runner-up, as the document repeatedly justifies Japan's flexible rights limitation (Article 30-4) and non-binding guidance approach as necessary to promote AI technological progress, foster new innovation, and resolve legal uncertainty so AI can be properly developed and utilized; fundamental_rights edges it out because the entire analytical framework is structured around defining and safeguarding creators' rights and preventing undue harm to rightsholders. Economic_competitiveness appears as a modest secondary frame through concerns over severe damage to Japan's content industry from piracy and maintaining a virtuous cycle of market compensation, while labor_transition appears briefly in stakeholder concerns that generative AI imitating unprotected styles or voices could displace creators' jobs.",
   "evidence_spans": [
     {
-      "quote": "著作者等の権利の保護を図り、もって文化の発展に寄与することを目的としている",
-      "source_section": "Page 5"
+      "quote": "我が国の著作権法は、著作物並びに実演、レコード、放送及び有線放送（以下「著作物等」\nという。）の公正な利用に留意しつつ、著作者等の権利の保護を図り、もって文化の発展に寄与することを目的としている（著作権法（以下特記ない限り、単に「法」という。）第１条）。",
+      "source_section": "2.(1) Consistency with Traditional Copyright Law Concepts",
+      "quote_en": "Japan's Copyright Act aims to protect the rights of authors and others while paying due regard to the fair exploitation of works, performances, phonograms, broadcasts, and cablecasts, and thereby to contribute to the development of culture (Article 1 of the Copyright Act).",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5884,
+      "end_char": 6011
     },
     {
-      "quote": "「著作者等の権利・利益の保護」と「著作物等の公正・円滑な利用」とのバランスを踏まえた制度設計",
-      "source_section": "Page 5"
+      "quote": "アイデアを著作権法において保護することとした場合、アイデアが共通する表現\n活動が制限されてしまい表現の自由や学問の自由と抵触し得ること、また、アイデア\nは保護せず自由に利用できるものとした方が、社会における具体的な作品や情報の\n豊富化に繋がり、文化の発展という著作権法の目的に資すること等が挙げられる。",
+      "source_section": "2.(1)A Scope of Copyrighted Works Protected under Copyright Law",
+      "quote_en": "If ideas were protected under copyright law, expressive activities sharing common ideas would be restricted, potentially conflicting with freedom of expression and academic freedom; moreover, leaving ideas unprotected and freely usable leads to the enrichment of concrete works and information in society and contributes to the Copyright Act's purpose of cultural development.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 7270,
+      "end_char": 7421
     },
     {
-      "quote": "クリエイターや実演家等の権利者の懸念",
-      "source_section": "Page 2"
+      "quote": "具体的には、ＩｏＴ・ビッグデータ・人工知能（ＡＩ）などの技術革新とともに、情報の集積・加工・発信の容易化・低コスト化が進んだことを受け、大量の情報を集積し、組み合わせ、解析することで付加価値を生み出す新しいイノベーションの創出が期待されている。",
+      "source_section": "2.(2)A Background and History of Enacting Flexible Rights Limitation Provisions",
+      "quote_en": "Specifically, with technological innovations such as IoT, big data, and artificial intelligence (AI) making the accumulation, processing, and dissemination of information easier and less costly, the creation of new innovation that generates added value by accumulating, combining, and analyzing large volumes of information is expected.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 10725,
+      "end_char": 10847
     },
     {
-      "quote": "AI 技術の進歩の促進とクリエイターの権利保護等の観点に留意しながら",
-      "source_section": "Page 3"
+      "quote": "同条を含む「柔軟な権利制限規定」を創設した平成30 年改正の趣旨としては、技術革新により大量の情報を収集し、利用することが可能となる中で、イノベーション創出等の促進に資するものとして、著作物の市場に大きな影響を与えないものについて個々の許諾を不要とすることがあったといえる",
+      "source_section": "5.(1)A(a) Purpose of the 2018 Amendment",
+      "quote_en": "The purpose of the 2018 amendment that created the 'flexible rights limitation provisions' including this article was, as technological innovation enabled the collection and use of large amounts of information, to dispense with individual authorization for uses that do not significantly affect the market for works, in order to contribute to promoting innovation creation.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 19690,
+      "end_char": 19826
+    },
+    {
+      "quote": "他方で、海賊版により我が国のコンテンツ産業が受ける被害は甚大であり、リーチサイト規制を含めた海賊版対策を進めるべきことは論を待たない。",
+      "source_section": "5.(1)D(e) Reproduction of Pirated Copies and Other Infringing Copies for AI Training",
+      "quote_en": "On the other hand, the damage suffered by Japan's content industry due to pirated copies is enormous, and it goes without saying that anti-piracy measures, including leech-site regulations, should be advanced.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 33111,
+      "end_char": 33178
+    },
+    {
+      "quote": "生成AI の普及により、既存のクリエイター等の作風や声といった、著作権法上の権利の対象とならない部分（以下、「作風等」という。）が類似している生成物が大量に生み出され得ること等により、クリエイター等の仕事が生成AI に奪われること",
+      "source_section": "4.(1) Concerns of Rightsholders such as Creators and Performers",
+      "quote_en": "That the spread of generative AI could lead to the mass generation of outputs similar in aspects not covered by copyright law—such as existing creators' style or voice—thereby taking away the jobs of creators and others.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 17790,
+      "end_char": 17905
     }
   ]
 }

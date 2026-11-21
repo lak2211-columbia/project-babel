@@ -1,32 +1,65 @@
 {
   "dominant_frame": "social_stability",
   "secondary_frames": [
-    "fundamental_rights",
     "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
     "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.72,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.55,
+    "fundamental_rights": 0.35,
+    "social_stability": 0.95,
+    "innovation_enablement": 0.2,
+    "consumer_public_safety": 0.85,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document centers on maintaining a 'clean and healthy online ecosystem' (清朗网络生态) and combating AI misuse such as deepfakes harming public rights, missing content labels misleading the public, and AI-generated rumors. The primary justification is social order and online environment governance rather than economic competitiveness or existential risk. Rights protection (侵犯公众权益) and consumer safety are secondary concerns explicitly mentioned.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.1,
+    "social_stability": 0.55,
+    "innovation_enablement": 0.05,
+    "consumer_public_safety": 0.3,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document's dominant rationale is social_stability, as it reports on the Cyberspace Administration of China's 'Qinglang' (Clean and Bright) campaign to curb AI abuse chaos, eliminate illegal and non-compliant online information, combat AI-generated rumors, disinformation, and vulgar content, and maintain a clean online information ecosystem. Consumer_public_safety is a prominent secondary frame, invoked through concerns about AI face-swapping, voice-cloning, and unlabeled synthetic content misleading the public, as well as mitigating risks in sensitive user-facing domains such as healthcare, finance, and minors. Social_stability edges out consumer_public_safety because the overarching campaign objective and next-stage priorities center on public-opinion ecosystem governance and rumor/vulgar-content containment rather than narrow product safety. Minor secondary nods appear toward fundamental_rights (infringing public rights and interests) and innovation_enablement (promoting AI for good and standardized development).",
   "evidence_spans": [
     {
-      "quote": "聚焦AI换脸拟声侵犯公众权益、AI内容标识缺失误导公众等AI技术滥用乱象",
-      "source_section": "intro"
+      "quote": "下一步，中央网信办将聚焦AI造谣、低俗内容等7类突出问题，开展“清朗·整治AI技术滥用”专项行动第二阶段工作，构建技术监测体系，形成处置处罚规范，推动内容标识如期落地，形成长效工作机制，着力维护清朗网络生态，推动人工智能向善向好。",
+      "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+      "quote_en": "In the next step, the Cyberspace Administration of China will focus on seven prominent issues such as AI rumor-mongering and vulgar content, carry out the second phase of the 'Qinglang: Rectification of AI Technology Abuse' special campaign, build a technical monitoring system, form norms for handling and penalties, promote the on-schedule implementation of content labeling, establish a long-term working mechanism, strive to maintain a clean online ecosystem, and promote AI for good.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 891,
+      "end_char": 1006
     },
     {
-      "quote": "着力维护清朗网络生态，推动人工智能向善向好",
-      "source_section": "conclusion"
+      "quote": "抖音建立“红蓝对抗”机制，模拟攻击案例，修复潜在安全漏洞，优化模型对虚假信息的识别能力。",
+      "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+      "quote_en": "Douyin established a 'red-blue confrontation' mechanism to simulate attack cases, fix potential security vulnerabilities, and optimize the model's ability to identify false information.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 738,
+      "end_char": 782
     },
     {
-      "quote": "聚焦AI造谣、低俗内容等7类突出问题",
-      "source_section": "next steps"
+      "quote": "中央网信办聚焦AI换脸拟声侵犯公众权益、AI内容标识缺失误导公众等AI技术滥用乱象，深入推进第一阶段重点整治任务",
+      "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+      "quote_en": "The Cyberspace Administration of China focused on AI technology abuse chaos such as AI face-swapping and voice-cloning infringing public rights and interests and missing AI content labels misleading the public, deeply advancing the key rectification tasks of the first phase.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 30,
+      "end_char": 86
+    },
+    {
+      "quote": "小红书在模型后置训练阶段输入专业领域数据，提升模型对医疗、金融、未成年人等重点领域问题的理解能力。",
+      "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+      "quote_en": "Xiaohongshu input domain-specific professional data during the model post-training stage to improve the model's ability to understand issues in key areas such as healthcare, finance, and minors.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 841,
+      "end_char": 890
     }
   ]
 }

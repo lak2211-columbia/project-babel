@@ -4,80 +4,273 @@
   "language": "ja",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "文化審議会著作権分科会法制度小委員会 (Subcommittee on Legal Systems, Copyright Division, Council for Cultural Affairs, Agency for Cultural Affairs, Japan)",
+    "issuing_body": "Legal Subcommittee of the Copyright Subdivision, Council for Cultural Affairs (Agency for Cultural Affairs, Japan) / 文化審議会著作権分科会法制度小委員会",
     "document_type": "regulatory_guidance",
     "binding_strength": "regulatory_guidance",
     "publication_date": "2024-03-15",
     "effective_date": null,
     "covered_actors": [
-      "AI開発事業者 (AI developers)",
-      "AIサービス提供事業者 (AI service providers)",
-      "AI利用者 (AI users)",
-      "クリエイター・実演家等の権利者 (creators, performers, and other rights holders)"
+      "AI developers (AI開発事業者)",
+      "AI service providers (AIサービス提供事業者)",
+      "AI users, including businesses and individuals (AI利用者)",
+      "Copyright holders, creators, and performers (クリエイターや実演家等の権利者)",
+      "Content posting platform operators (コンテンツ投稿プラットフォーム事業者)"
     ],
     "covered_application_domains": [
       "general_purpose_models"
     ],
     "prohibited_practices": [],
-    "safety_requirements": [],
+    "safety_requirements": [
+      {
+        "label": "training_data_governance",
+        "confidence": 0.9,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "享受目的が併存する、又はただし書に該当する等の理由で法第30 条の４が適用されず、他の権利制限規定も適用されない場合、権利者からの許諾が得られない限り、AI 学習のための複製は著作権侵害となる。",
+            "source_section": "５．（１）オ AI 学習に際して著作権侵害が生じた際に、学習を行った事業者が受け得る措置について",
+            "quote_en": "If Article 30-4 of the Act does not apply due to the coexistence of an enjoyment purpose or the applicability of the proviso, and no other limitation on rights applies, reproduction for AI training constitutes copyright infringement unless permission is obtained from the rights holder.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 35599,
+            "end_char": 35696
+          },
+          {
+            "quote": "AI 開発事業者やAI サービス提供事業者においては、学習データの収集を行うに際して、海賊版を掲載しているウェブサイトから学習データを収集することで、当該ウェブサイトへのアクセスを容易化したり、当該ウェブサイトの運営を行う者に広告収入その他の金銭的利益を生じさせるなど、当該行為が新たな海賊版の増加といった権利侵害を助長するものとならないよう十分配慮した上でこれを行うことが求められる。",
+            "source_section": "５．（１）エ（オ）海賊版等の権利侵害複製物をAI 学習のため複製することについて",
+            "quote_en": "When collecting training data, AI developers and AI service providers are required to exercise sufficient care so that collecting training data from websites hosting pirated copies does not facilitate access to such websites, generate advertising revenue or other financial benefits for their operators, or otherwise encourage copyright infringement such as an increase in new pirated copies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 33531,
+            "end_char": 33724
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.78,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "特に現在用いられ、又は今後新たに開発される生成AI に関する技術については、後掲４で示すような関係者からの懸念の解消に向けて、その仕組みや動作機序について、その開発や提供を行う事業者等から分かりやすい形で社会に対する発信がされることが望ましい。",
+            "source_section": "３．生成AI の技術的な背景について",
+            "quote_en": "In particular, with respect to generative AI technologies currently in use or newly developed in the future, it is desirable that businesses developing or providing them communicate their mechanisms and operating principles to society in an easy-to-understand manner in order to address concerns from stakeholders as outlined in Section 4 below.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13955,
+            "end_char": 14077
+          },
+          {
+            "quote": "個別具体的な生成AI やこれに関する技術の法的な位置づけの説明については、これを提供する事業者等において適切に行われることが望まれる。",
+            "source_section": "１．（２）本考え方の位置づけ・性質",
+            "quote_en": "It is desirable that explanations of the legal positioning of specific generative AI systems and related technologies be appropriately provided by the businesses or other entities offering them.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5301,
+            "end_char": 5368
+          }
+        ]
+      }
+    ],
     "enforcement_mechanisms": [
       {
-        "label": "soft_enforcement",
+        "label": "civil_penalty",
         "confidence": 0.85,
         "evidence": [
           {
-            "quote": "本考え方自体が法的な拘束力を有するものではなく、また現時点で存在する特定の生成AIやこれに関する技術について、確定的な法的評価を行うものではない",
-            "source_section": "Page 1"
+            "quote": "この場合、AI 学習のための複製を行った者が受け得る措置としては、損害賠償請求 （民法第709 条）、差止請求（侵害行為の停止又は予防の請求（法第112 条第１項）、侵害の停止又は予防に必要な措置の請求（同条第２項））、刑事罰（法第119 条）等が規定されている。",
+            "source_section": "５．（１）オ AI 学習に際して著作権侵害が生じた際に、学習を行った事業者が受け得る措置について",
+            "quote_en": "In this case, the measures that a person who carried out reproduction for AI training may face include claims for damages (Article 709 of the Civil Code), claims for injunctions (demand to cease or prevent infringement under Article 112(1) of the Act, and demand for measures necessary to cease or prevent infringement under Article 112(2)), and criminal penalties (Article 119 of the Act).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 35699,
+            "end_char": 35831
           },
           {
-            "quote": "個別具体的な生成AIやこれに関する技術の法的な位置づけの説明については、これを提供する事業者等において適切に行われることが望まれる",
-            "source_section": "Page 4"
+            "quote": "著作権侵害が認められた場合、侵害者が受け得る措置としては、差止請求、損害賠償請求及び著作権侵害に基づく刑事罰が考えられる。",
+            "source_section": "５．（２）エ 侵害に対する措置について",
+            "quote_en": "When copyright infringement is found, the measures that the infringer may face include injunctions, claims for damages, and criminal penalties based on copyright infringement.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42774,
+            "end_char": 42835
+          }
+        ]
+      },
+      {
+        "label": "criminal_penalty",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "なお、損害賠償請求についてはその要件として故意又は過失の存在が、刑事罰については故意の存在が必要となる。",
+            "source_section": "５．（１）オ AI 学習に際して著作権侵害が生じた際に、学習を行った事業者が受け得る措置について",
+            "quote_en": "Note that intent or negligence is required for claims for damages, whereas intent is required for criminal penalties.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 35834,
+            "end_char": 35886
+          },
+          {
+            "quote": "著作権侵害が認められた場合、侵害者が受け得る措置としては、差止請求、損害賠償請求及び著作権侵害に基づく刑事罰が考えられる。",
+            "source_section": "５．（２）エ 侵害に対する措置について",
+            "quote_en": "When copyright infringement is found, the measures that the infringer may face include injunctions, claims for damages, and criminal penalties based on copyright infringement.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42774,
+            "end_char": 42835
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "本考え方は、その公表時点における、本小委員会としての一定の考え方を示すものであり、本考え方自体が法的な拘束力を有するものではなく、また現時点で存在する特定の生成AI やこれに関する技術について、確定的な法的評価を行うものではないことに留意する必要がある。",
+            "source_section": "Preamble",
+            "quote_en": "It should be noted that this General Understanding presents a certain view of this Subcommittee as of its publication, does not itself have legally binding force, and does not provide a definitive legal evaluation of any specific generative AI or related technology currently in existence.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 131,
+            "end_char": 258
+          },
+          {
+            "quote": "生成AI と著作権の関係については、政府における上記のような取組みとともに、民間の当事者間において、生成AI に関する著作物の利用についての適切なルール・ガイドラインの策定や、生成AI 及びこれに関する技術についての共通理解の獲得、AI 学習等のための著作物のライセンス等の実施状況、海賊版を掲載したウェブサイトに関する情報の共有などが図られることが、AI の適正な開発及び利用の環境を実現する観点から重要である。",
+            "source_section": "６．おわりに",
+            "quote_en": "Regarding the relationship between generative AI and copyright, alongside the government initiatives above, it is important from the perspective of realizing an environment for the proper development and use of AI that private parties formulate appropriate rules and guidelines on the use of copyrighted works in relation to generative AI, build a common understanding of generative AI and related technologies, and share information on licensing practices for AI training and on websites hosting pirated copies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 51167,
+            "end_char": 51374
           }
         ]
       }
     ],
     "enforcement_authorities": [
-      "文化庁 (Agency for Cultural Affairs)"
+      "Courts (裁判所)",
+      "Agency for Cultural Affairs (文化庁)"
     ],
     "compliance_deadlines": [],
-    "penalties_summary": null,
-    "implementation_notes": "Document explicitly states it has no legal binding force ('本考え方自体が法的な拘束力を有するものではない'). It is interpretive guidance on how existing Japanese copyright law applies to generative AI, covering training/learning stage and generation/use stage. The document notes it may be revised as case law, technology, and international developments evolve. It references Article 30-4 (non-enjoyment-purpose use) and Article 47-5 of the Copyright Act as relevant rights-limitation provisions. No prohibited practices are formally established; the document clarifies existing law rather than imposing new rules.",
-    "confidence": 0.92
+    "penalties_summary": "When AI training, generation, or utilization constitutes copyright infringement outside statutory exceptions, existing legal remedies under Japan's Copyright Act and Civil Code apply: civil damages (Civil Code Art. 709, requiring intent or negligence), injunctions including cessation/prevention, removal of works from future training datasets, technical preventive measures, or disposal of infringing outputs and—in limited cases—trained models (Copyright Act Art. 112(1)–(2)), criminal penalties for intentional infringement (Copyright Act Art. 119), and unjust enrichment restitution even absent intent or negligence. Falsely licensing non-copyrightable AI outputs as copyrighted works may also incur contractual, civil tort, or criminal fraud liability.",
+    "implementation_notes": "The document explicitly states that it has no legal binding force and does not make definitive legal determinations on specific generative AI systems; copyright law is private law interpreted case-by-case by courts. It provides interpretive guidance on Japan's Copyright Act (notably Arts. 30-4 and 47-5) across the development/training stage (coexisting enjoyment purpose such as intentional overfitting or certain RAG uses, and the proviso against unreasonably prejudicing copyright owners' interests, including paid info-analysis databases, technical access restrictions like robots.txt, and pirate sites), the generation/utilization stage (similarity, reliance, and normative liability of developers/providers), and copyrightability of AI-generated outputs. The Subcommittee and Agency for Cultural Affairs plan ongoing case collection, public outreach, and future updates as jurisprudence and technology evolve.",
+    "confidence": 0.93
   },
   "risk_framing": {
     "dominant_frame": "fundamental_rights",
     "secondary_frames": [
       "innovation_enablement",
-      "economic_competitiveness"
+      "economic_competitiveness",
+      "labor_transition"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.72,
+      "economic_competitiveness": 0.4,
+      "fundamental_rights": 0.85,
       "social_stability": 0.0,
-      "innovation_enablement": 0.55,
-      "consumer_public_safety": 0.2,
-      "labor_transition": 0.1
+      "innovation_enablement": 0.8,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.35
     },
-    "rationale_summary": "The document is primarily framed around protecting the intellectual property rights of creators and rights holders while balancing those rights against the need for fair use in AI development. The central concern is rights protection under copyright law, with secondary attention to enabling AI innovation and maintaining Japan's competitiveness in the AI field.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.1,
+      "fundamental_rights": 0.45,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.4,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.05
+    },
+    "rationale_summary": "This non-binding interpretive guidance from Japan's Cultural Council Copyright Subdivision is dominantly framed around fundamental_rights, anchoring AI governance in the Copyright Act's core mandate to protect authors' and creators' rights and interests alongside freedom of expression, academic freedom, and human-centric principles, while helping parties realize their legal rights amid rapid generative AI adoption. Innovation_enablement is a very close runner-up, as the document repeatedly justifies Japan's flexible rights limitation (Article 30-4) and non-binding guidance approach as necessary to promote AI technological progress, foster new innovation, and resolve legal uncertainty so AI can be properly developed and utilized; fundamental_rights edges it out because the entire analytical framework is structured around defining and safeguarding creators' rights and preventing undue harm to rightsholders. Economic_competitiveness appears as a modest secondary frame through concerns over severe damage to Japan's content industry from piracy and maintaining a virtuous cycle of market compensation, while labor_transition appears briefly in stakeholder concerns that generative AI imitating unprotected styles or voices could displace creators' jobs.",
     "evidence_spans": [
       {
-        "quote": "著作者等の権利の保護を図り、もって文化の発展に寄与することを目的としている",
-        "source_section": "Page 5"
+        "quote": "我が国の著作権法は、著作物並びに実演、レコード、放送及び有線放送（以下「著作物等」\nという。）の公正な利用に留意しつつ、著作者等の権利の保護を図り、もって文化の発展に寄与することを目的としている（著作権法（以下特記ない限り、単に「法」という。）第１条）。",
+        "source_section": "2.(1) Consistency with Traditional Copyright Law Concepts",
+        "quote_en": "Japan's Copyright Act aims to protect the rights of authors and others while paying due regard to the fair exploitation of works, performances, phonograms, broadcasts, and cablecasts, and thereby to contribute to the development of culture (Article 1 of the Copyright Act).",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 5884,
+        "end_char": 6011
       },
       {
-        "quote": "「著作者等の権利・利益の保護」と「著作物等の公正・円滑な利用」とのバランスを踏まえた制度設計",
-        "source_section": "Page 5"
+        "quote": "アイデアを著作権法において保護することとした場合、アイデアが共通する表現\n活動が制限されてしまい表現の自由や学問の自由と抵触し得ること、また、アイデア\nは保護せず自由に利用できるものとした方が、社会における具体的な作品や情報の\n豊富化に繋がり、文化の発展という著作権法の目的に資すること等が挙げられる。",
+        "source_section": "2.(1)A Scope of Copyrighted Works Protected under Copyright Law",
+        "quote_en": "If ideas were protected under copyright law, expressive activities sharing common ideas would be restricted, potentially conflicting with freedom of expression and academic freedom; moreover, leaving ideas unprotected and freely usable leads to the enrichment of concrete works and information in society and contributes to the Copyright Act's purpose of cultural development.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 7270,
+        "end_char": 7421
       },
       {
-        "quote": "クリエイターや実演家等の権利者の懸念",
-        "source_section": "Page 2"
+        "quote": "具体的には、ＩｏＴ・ビッグデータ・人工知能（ＡＩ）などの技術革新とともに、情報の集積・加工・発信の容易化・低コスト化が進んだことを受け、大量の情報を集積し、組み合わせ、解析することで付加価値を生み出す新しいイノベーションの創出が期待されている。",
+        "source_section": "2.(2)A Background and History of Enacting Flexible Rights Limitation Provisions",
+        "quote_en": "Specifically, with technological innovations such as IoT, big data, and artificial intelligence (AI) making the accumulation, processing, and dissemination of information easier and less costly, the creation of new innovation that generates added value by accumulating, combining, and analyzing large volumes of information is expected.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 10725,
+        "end_char": 10847
       },
       {
-        "quote": "AI 技術の進歩の促進とクリエイターの権利保護等の観点に留意しながら",
-        "source_section": "Page 3"
+        "quote": "同条を含む「柔軟な権利制限規定」を創設した平成30 年改正の趣旨としては、技術革新により大量の情報を収集し、利用することが可能となる中で、イノベーション創出等の促進に資するものとして、著作物の市場に大きな影響を与えないものについて個々の許諾を不要とすることがあったといえる",
+        "source_section": "5.(1)A(a) Purpose of the 2018 Amendment",
+        "quote_en": "The purpose of the 2018 amendment that created the 'flexible rights limitation provisions' including this article was, as technological innovation enabled the collection and use of large amounts of information, to dispense with individual authorization for uses that do not significantly affect the market for works, in order to contribute to promoting innovation creation.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 19690,
+        "end_char": 19826
+      },
+      {
+        "quote": "他方で、海賊版により我が国のコンテンツ産業が受ける被害は甚大であり、リーチサイト規制を含めた海賊版対策を進めるべきことは論を待たない。",
+        "source_section": "5.(1)D(e) Reproduction of Pirated Copies and Other Infringing Copies for AI Training",
+        "quote_en": "On the other hand, the damage suffered by Japan's content industry due to pirated copies is enormous, and it goes without saying that anti-piracy measures, including leech-site regulations, should be advanced.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 33111,
+        "end_char": 33178
+      },
+      {
+        "quote": "生成AI の普及により、既存のクリエイター等の作風や声といった、著作権法上の権利の対象とならない部分（以下、「作風等」という。）が類似している生成物が大量に生み出され得ること等により、クリエイター等の仕事が生成AI に奪われること",
+        "source_section": "4.(1) Concerns of Rightsholders such as Creators and Performers",
+        "quote_en": "That the spread of generative AI could lead to the mass generation of outputs similar in aspects not covered by copyright law—such as existing creators' style or voice—thereby taking away the jobs of creators and others.",
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 17790,
+        "end_char": 17905
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:45:45.714132Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "052adecbb9ffe8969fee5a36ead3d73d7022125609c4226ceb3c46ab3d2d40dd",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 95861,
+      "output_tokens": 3836,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 6715,
+      "thoughts_tokens": 14624,
+      "estimated_cost_usd": 0.298131
+    },
+    "grounding_summary": {
+      "total_quotes": 16,
+      "exact_matches": 16,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 2
+    }
   }
 }

@@ -2,28 +2,29 @@
   "jurisdiction": "united_states",
   "issuing_body": "National Institute of Standards and Technology (NIST)",
   "document_type": "standards_guideline",
-  "binding_strength": "voluntary_commitment",
-  "publication_date": null,
+  "binding_strength": "standards_guideline",
+  "publication_date": "2023-01-25",
   "effective_date": null,
   "covered_actors": [
-    "organizations designing AI systems",
-    "organizations developing AI systems",
-    "organizations deploying AI systems",
-    "organizations using AI systems",
-    "AI actors"
+    "Organizations designing, developing, deploying, or using AI systems (AI actors)",
+    "Individuals (AI actors)"
   ],
-  "covered_application_domains": [
-    "general_purpose_models"
-  ],
+  "covered_application_domains": [],
   "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.85,
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "the goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI",
-          "source_section": "Introduction"
+          "quote": "the goal of the AI RMF is to offer a\nvoluntary\nresource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems.",
+          "source_section": "Share",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 320,
+          "end_char": 561
         }
       ]
     }
@@ -31,11 +32,16 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "evidence": [
         {
-          "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic",
-          "source_section": "Introduction"
+          "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic, providing flexibility to organizations of all sizes and in all sectors and throughout society to implement the approaches in the Framework.",
+          "source_section": "Share",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 562,
+          "end_char": 807
         }
       ]
     }
@@ -43,6 +49,6 @@
   "enforcement_authorities": [],
   "compliance_deadlines": [],
   "penalties_summary": null,
-  "implementation_notes": "Crosswalks to the AI RMF 1.0 are voluntary resources. The framework is non-sector specific and use-case agnostic. NIST solicits ongoing public comments at AIframework@nist.gov. Alignment with international standards is cited as a top priority in the NIST Roadmap for the AI RMF.",
+  "implementation_notes": "Companion NIST webpage introducing crosswalks mapping AI RMF 1.0 to external AI standards and governance frameworks. Reaffirms the AI RMF's voluntary, rights-preserving, non-sector-specific, and use-case-agnostic design under P.L. 116-283 and invites public comments on crosswalks.",
   "confidence": 0.95
 }

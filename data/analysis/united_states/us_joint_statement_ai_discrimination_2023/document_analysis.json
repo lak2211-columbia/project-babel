@@ -4,47 +4,94 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "united_states",
-    "issuing_body": "CFPB, DOJ Civil Rights Division, EEOC, FTC (Joint)",
+    "issuing_body": "Department of Justice / Equal Employment Opportunity Commission / Federal Trade Commission / Consumer Financial Protection Bureau",
     "document_type": "regulatory_guidance",
     "binding_strength": "regulatory_guidance",
-    "publication_date": "2023",
+    "publication_date": "2023-04-25",
     "effective_date": null,
+    "covered_actors": [
+      "Private and public entities deploying automated systems and AI in critical decisions",
+      "Creditors and financial marketplace participants (CFPB)",
+      "Employers, unions, and employment agencies (EEOC)",
+      "Housing providers and algorithm-based tenant screening services (DOJ)",
+      "Market participants and automated system developers across U.S. commercial sectors (FTC)"
+    ],
     "covered_application_domains": [
-      "general_purpose_models",
       "employment",
       "finance",
-      "public_sector_use",
+      "education",
       "law_enforcement",
-      "education"
+      "public_sector_use"
+    ],
+    "prohibited_practices": [
+      "Using automated systems or AI in ways that perpetuate unlawful bias or automate unlawful discrimination across employment, credit, housing, education, criminal justice, voting, or consumer markets under existing federal statutes",
+      "Making unsubstantiated claims about AI or deploying automated tools with discriminatory impacts or unfair/deceptive practices in violation of the FTC Act",
+      "Failing to satisfy federal consumer financial adverse action notice requirements on the grounds that credit-decision technology is too complex, opaque, or new"
     ],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.7,
+        "confidence": 0.86,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "deploy AI before taking steps to assess and mitigate risks",
-            "source_section": "FTC enforcement authorities"
+            "quote": "The FTC has also warned market participants that it may violate the FTC Act to use automated tools that have\n\ndiscriminatory impacts, to make claims about AI that are not substantiated, or to deploy AI before taking steps to assess and mitigate risks.",
+            "source_section": "Page 2",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5326,
+            "end_char": 5577
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.75,
+        "confidence": 0.88,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "Many automated systems are 'black boxes' whose internal workings are not clear to most people",
-            "source_section": "Model Opacity and Access"
+            "quote": "The CFPB published a circular confirming that federal consumer financial laws and adverse action requirements apply regardless of the technology being used. The circular also made clear that the fact that the technology used to make a credit decision is too complex, opaque, or new is not a defense for violating these laws.",
+            "source_section": "Page 2",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3212,
+            "end_char": 3536
+          },
+          {
+            "quote": "Many automated systems are “black boxes” whose internal workings are not clear to most people and, in some cases, even the developer of the tool. This lack of transparency often makes it all the more difficult for developers, businesses, and individuals to know whether an automated system is fair.",
+            "source_section": "Page 3",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6564,
+            "end_char": 6862
           }
         ]
       },
       {
-        "label": "model_documentation",
-        "confidence": 0.6,
+        "label": "training_data_governance",
+        "confidence": 0.85,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "the fact that the technology used to make a credit decision is too complex, opaque, or new is not a defense for violating these laws",
-            "source_section": "CFPB enforcement authorities"
+            "quote": "Finally, the FTC has required firms to destroy algorithms or other work product that were trained on data that should not have been collected.",
+            "source_section": "Page 3",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5578,
+            "end_char": 5720
+          },
+          {
+            "quote": "Automated system outcomes can be skewed by unrepresentative or imbalanced datasets, datasets that incorporate historical bias, or datasets that contain other types of errors. Automated systems also can correlate data with protected classes, which can lead to discriminatory outcomes.",
+            "source_section": "Page 3",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6251,
+            "end_char": 6534
           }
         ]
       }
@@ -52,76 +99,178 @@
     "enforcement_mechanisms": [
       {
         "label": "regulatory_supervision",
-        "confidence": 0.9,
+        "confidence": 0.94,
         "evidence": [
           {
-            "quote": "our agencies reiterate our resolve to monitor the development and use of automated systems",
-            "source_section": "Conclusion"
+            "quote": "Existing legal authorities apply to the use of automated systems and innovative new technologies just as they apply to other practices.",
+            "source_section": "Page 1",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2184,
+            "end_char": 2319
           },
           {
-            "quote": "The Consumer Financial Protection Bureau supervises, sets rules for, and enforces numerous federal consumer financial laws",
-            "source_section": "CFPB enforcement authorities"
+            "quote": "We also pledge to vigorously use our collective authorities to protect individuals’ rights regardless of whether legal violations occur through traditional means or advanced technologies.",
+            "source_section": "Page 3",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7310,
+            "end_char": 7497
           }
         ]
       },
       {
-        "label": "civil_penalty",
-        "confidence": 0.7,
+        "label": "market_access_restriction",
+        "confidence": 0.8,
         "evidence": [
           {
-            "quote": "pledge to vigorously use our collective authorities to protect individuals' rights regardless of whether legal violations occur through traditional means or advanced technologies",
-            "source_section": "Conclusion"
+            "quote": "Finally, the FTC has required firms to destroy algorithms or other work product that were trained on data that should not have been collected.",
+            "source_section": "Page 3",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5578,
+            "end_char": 5720
           }
         ]
       },
       {
         "label": "soft_enforcement",
-        "confidence": 0.85,
+        "confidence": 0.82,
         "evidence": [
           {
-            "quote": "This document is for informational purposes only and does not provide technical assistance about how to comply with federal law. It does not constitute final agency action and does not have an immediate and direct legal effect. It does not create any new rights or obligations and it is not enforceable.",
-            "source_section": "Note"
+            "quote": "Note: This document is for informational purposes only and does not provide technical assistance about how to comply with federal law. It does not constitute final agency action and does not have an immediate and direct legal effect. It does not create any new rights or obligations and it is not enforceable.",
+            "source_section": "Page 3",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7499,
+            "end_char": 7808
           }
         ]
       }
     ],
-    "implementation_notes": "Document explicitly states it is not enforceable and creates no new rights or obligations, though it signals enforcement intent of existing laws by four agencies. The document reaffirms existing legal authorities apply to automated systems rather than creating new requirements.",
-    "confidence": 0.85
+    "enforcement_authorities": [
+      "Consumer Financial Protection Bureau (CFPB)",
+      "Department of Justice Civil Rights Division (DOJ)",
+      "Equal Employment Opportunity Commission (EEOC)",
+      "Federal Trade Commission (FTC)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": "Affirms vigorous interagency enforcement under existing federal civil-rights, employment, housing, fair-lending, and consumer-protection statutes, specifically highlighting FTC orders requiring firms to destroy algorithms or work product trained on unlawfully collected data ('algorithmic disgorgement'). The joint statement itself explicitly creates no new rights, obligations, or independent enforceable penalties.",
+    "implementation_notes": "Issued April 25, 2023 jointly by the heads of CFPB, DOJ Civil Rights Division, EEOC, and FTC. Clarifies that established federal laws—including the FTC Act, Fair Housing Act, Americans with Disabilities Act, Title VII and other EEOC statutes, and federal consumer financial/adverse-action laws—apply fully to automated systems and AI across employment, housing, credit, education, criminal justice, voting, and consumer markets. Identifies three core risk vectors: biased/unrepresentative datasets, model opacity ('black boxes'), and flawed design/contextual assumptions. Expressly notes it is informational and not final agency action.",
+    "confidence": 0.96
   },
   "risk_framing": {
     "dominant_frame": "fundamental_rights",
     "secondary_frames": [
       "consumer_public_safety",
-      "social_stability"
+      "innovation_enablement"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.88,
-      "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.6,
+      "economic_competitiveness": 0.2,
+      "fundamental_rights": 0.97,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.85,
       "labor_transition": 0.1
     },
-    "rationale_summary": "The document is primarily framed around civil rights and anti-discrimination law, emphasizing that automated systems must not violate individuals' legal rights to equal treatment in employment, housing, credit, and other domains. The core reasoning is rights-protective: existing civil rights laws apply to AI just as to other practices, and enforcement agencies will protect individuals from unlawful discrimination regardless of the technology used.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.62,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.1,
+      "consumer_public_safety": 0.28,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The Joint Statement is dominantly framed around fundamental_rights, anchoring interagency AI enforcement in core federal commitments to fairness, equality, justice, civil rights, equal opportunity, and preventing unlawful discrimination across protected classes in jobs, housing, credit, education, voting, and criminal justice. Fundamental_rights clearly edges out consumer_public_safety because anti-discrimination and equal rights form the central organizing theme across all four agencies and all three identified failure modes. Consumer_public_safety is a strong secondary frame through FTC and CFPB mandates protecting consumers from unfair, deceptive, or abusive practices, unsubstantiated claims, and invasive commercial surveillance, while innovation_enablement appears briefly to affirm that responsible innovation and adherence to law complement each other.",
     "evidence_spans": [
       {
-        "quote": "America's commitment to the core principles of fairness, equality, and justice is deeply embedded in the federal laws that our agencies enforce to protect civil rights, fair competition, consumer protection, and equal opportunity.",
-        "source_section": null
+        "quote": "America’s commitment to the core principles of fairness, equality, and justice is deeply embedded in the federal laws that our agencies enforce to protect civil rights, fair competition, consumer protection, and equal opportunity.",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 532,
+        "end_char": 762
       },
       {
-        "quote": "these rapidly evolving automated systems are developed and used in a manner consistent with federal laws",
-        "source_section": null
+        "quote": "Private and public entities use these systems to make critical decisions that impact individuals’ rights and opportunities, including fair and equal access to a job, housing, credit opportunities, and other goods and services.",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 1533,
+        "end_char": 1759
       },
       {
-        "quote": "their use also has the potential to perpetuate unlawful bias, automate unlawful discrimination, and produce other harmful outcomes",
-        "source_section": null
+        "quote": "The Consumer Financial Protection Bureau (CFPB) supervises, sets rules for, and enforces numerous federal consumer financial laws and guards consumers in the financial marketplace from unfair, deceptive, or abusive acts or practices and from discrimination.",
+        "source_section": "Page 2",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 2954,
+        "end_char": 3211
       },
       {
-        "quote": "we pledge to vigorously use our collective authorities to protect individuals' rights regardless of whether legal violations occur through traditional means or advanced technologies",
-        "source_section": null
+        "quote": "The report outlines significant concerns that AI tools can be inaccurate, biased, and discriminatory by design and incentivize relying on increasingly invasive forms of commercial surveillance.",
+        "source_section": "Page 2",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 5132,
+        "end_char": 5325
+      },
+      {
+        "quote": "Responsible innovation is not incompatible with these laws. Indeed, innovation and adherence to the law can complement each other and bring tangible benefits to people in a fair and competitive manner, such as increased access to opportunities as well as better products and services at lower costs.",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 883,
+        "end_char": 1182
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:17:53.811546Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "516492f657bc450661f0d17749b6359bfef39b52a47441267c97f92fe5802534",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 7808,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 14,
+      "exact_matches": 14,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

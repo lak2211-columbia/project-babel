@@ -4,176 +4,407 @@
   "language": "zh",
   "policy_extraction": {
     "jurisdiction": "china",
-    "issuing_body": "国家互联网信息办公室 (Cyberspace Administration of China)",
-    "document_type": "regulatory_guidance",
+    "issuing_body": "Cyberspace Administration of China (CAC), jointly with the National Development and Reform Commission (NDRC), Ministry of Industry and Information Technology (MIIT), Ministry of Public Security (MPS), and State Administration for Market Regulation (SAMR)",
+    "document_type": "legislation",
     "binding_strength": "binding_law",
     "publication_date": "2026-04-10",
     "effective_date": "2026-07-15",
-    "covered_application_domains": [
-      "general_purpose_models",
-      "education",
-      "healthcare"
+    "covered_actors": [
+      "Providers of anthropomorphic AI interactive services offering continuous emotional interaction services to the public within the People's Republic of China (拟人化互动服务提供者)"
+    ],
+    "covered_application_domains": [],
+    "prohibited_practices": [
+      "Generating content that endangers national security, honor, or interests, incites subversion or secession, promotes terrorism, extremism, or historical nihilism, violates socialist core values, conducts illegal religious activities, incites ethnic hatred or group antagonism, spreads obscenity, pornography, gambling, violence, crime, or rumors, or infringes others' lawful rights (Article 8(1))",
+      "Generating content that encourages, glorifies, or suggests self-harm or suicide, or uses verbal violence harming users' physical health, dignity, or psychological health (Article 8(2))",
+      "Generating content that induces or extracts state secrets, work secrets, trade secrets, personal privacy, or personal information (Article 8(3))",
+      "Generating content for minors that may induce imitation of unsafe behaviors, extreme emotions, bad habits, or otherwise harm minors' physical and mental health (Article 8(4))",
+      "Excessively pandering to users or inducing emotional dependence or addiction that harms real-world interpersonal relationships (Article 8(5))",
+      "Using emotional manipulation to induce users into making unreasonable decisions that harm their lawful rights and interests (Article 8(6))",
+      "Setting the replacement of social interaction, psychological control of users, or inducing addiction or dependence as service objectives (Article 10)",
+      "Providing virtual intimate relationship services (such as virtual relatives or virtual partners) to minors (Article 14)",
+      "Providing user interaction data to third parties without legal authorization or explicit consent of the rights holder (Article 16)",
+      "Using user interaction data containing sensitive personal information for model training without legal authorization or separate user consent (Article 16)"
     ],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.95,
+        "confidence": 0.96,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "上线拟人化互动服务，或者增设拟人化互动服务相关功能的；使用新技术、新应用，导致拟人化互动服务发生重大变化的；注册用户100万以上或者月活跃用户10万以上的",
-            "source_section": "安全评估条款"
+            "quote": "加强安全监测和风险评估，及时发现并纠正系统偏差、处置安全事件，依法留存网络日志。",
+            "source_section": "第十条",
+            "quote_en": "Strengthen security monitoring and risk assessment, promptly detect and correct system biases, handle security incidents, and retain network logs in accordance with the law.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1049,
+            "end_char": 1089
           },
           {
-            "quote": "加强安全监测和风险评估，及时发现并纠正系统偏差",
-            "source_section": "第十条"
+            "quote": "省级以上网信部门通知需要进行安全评估的，拟人化互动服务提供者应当按照要求开展安全评估。",
+            "source_section": "第二十二条",
+            "quote_en": "Where cyberspace administration departments at or above the provincial level notify that a security assessment is required, providers of anthropomorphic interactive services shall conduct a security assessment as required.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2237,
+            "end_char": 2280
           }
         ]
       },
       {
-        "label": "incident_reporting",
-        "confidence": 0.9,
+        "label": "training_data_governance",
+        "confidence": 0.97,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "发现用户正在面临或者已经遭受重大财产损失、明确表示实施自残自杀等威胁生命健康的极端情境的，应当采取提供相应援助等必要措施予以干预，并及时联络用户监护人或者紧急联系人",
-            "source_section": "极端情境处置条款"
-          }
-        ]
-      },
-      {
-        "label": "transparency_disclosure",
-        "confidence": 0.9,
-        "evidence": [
+            "quote": "（一）相关数据具有合法来源，符合法律、行政法规的规定和社会主义核心价值观的要求；\n（二）按照国家有关规定对训练数据开展清洗、标注，增强训练数据的透明度、可靠性，防范数据投毒、数据篡改等行为；",
+            "source_section": "第十一条",
+            "quote_en": "(1) Relevant data shall have lawful sources and comply with laws, administrative regulations, and the requirements of core socialist values; (2) Clean and label training data in accordance with relevant national regulations, enhance the transparency and reliability of training data, and prevent data poisoning, data tampering, and other behaviors;",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1178,
+            "end_char": 1273
+          },
           {
-            "quote": "应当以弹窗等显著方式动态提醒用户互动内容为人工智能服务生成",
-            "source_section": "过度依赖提醒条款"
-          }
-        ]
-      },
-      {
-        "label": "model_documentation",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "按照国家有关规定对训练数据开展清洗、标注，增强训练数据的透明度、可靠性",
-            "source_section": "训练数据条款"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "拟人化互动服务提供者应当配合网信部门和有关部门依法实施的监督检查，并提供必要的支持和协助",
-            "source_section": "第二十九条"
-          }
-        ]
-      },
-      {
-        "label": "third_party_audit",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "自行或者委托专业机构对其处理未成年人个人信息遵守法律、行政法规的情况进行合规审计",
-            "source_section": "合规审计条款"
+            "quote": "除法律、行政法规另有规定或者取得用户单独同意外，拟人化互动服务提供者不得将属于用户敏感个人信息的交互数据用于模型训练。",
+            "source_section": "第十六条",
+            "quote_en": "Unless otherwise provided by laws or administrative regulations or with the separate consent of the user, providers of anthropomorphic interactive services shall not use interactive data belonging to users' sensitive personal information for model training.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1868,
+            "end_char": 1927
           }
         ]
       },
       {
         "label": "access_controls",
-        "confidence": 0.8,
+        "confidence": 0.95,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "拟人化互动服务提供者应当建立未成年人模式，提供未成年人模式切换、定期现实提醒、使用时长限制等个性化安全设置选项",
-            "source_section": "未成年人保护条款"
+            "quote": "除法律另有规定或者权利人明确同意外，拟人化互动服务提供者不得向第三方提供用户交互数据。",
+            "source_section": "第十六条",
+            "quote_en": "Unless otherwise provided by law or with the explicit consent of the rights holder, providers of anthropomorphic interactive services shall not provide user interactive data to third parties.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1766,
+            "end_char": 1809
+          },
+          {
+            "quote": "（六）采取必要措施保障数据安全，防范数据泄露等风险。",
+            "source_section": "第十一条",
+            "quote_en": "(6) Take necessary measures to ensure data security and prevent risks such as data leakage.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1390,
+            "end_char": 1416
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.97,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "拟人化互动服务提供者应当建立未成年人模式，提供未成年人模式切换、定期现实提醒、使用时长限制等个性化安全设置选项；",
+            "source_section": "第十四条",
+            "quote_en": "Providers of anthropomorphic interactive services shall establish a minors' mode providing personalized safety setting options such as minors' mode switching, periodic reality reminders, and usage duration limits;",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1548,
+            "end_char": 1604
+          },
+          {
+            "quote": "拟人化互动服务提供者发现用户出现过度依赖、沉迷倾向的，应当以弹窗等显著方式动态提醒用户互动内容为人工智能服务生成；对用户连续使用拟人化互动服务每超过2个小时的，应当以对话或者弹窗等方式提醒用户注意使用时长。",
+            "source_section": "第十八条",
+            "quote_en": "Where providers of anthropomorphic interactive services discover that a user exhibits tendencies of over-reliance or addiction, they shall dynamically remind the user through prominent means such as pop-up windows that the interactive content is generated by an AI service; for users continuously using anthropomorphic interactive services for more than 2 hours each time, they shall remind the user to pay attention to usage duration through dialogue or pop-up windows.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1993,
+            "end_char": 2096
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.94,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "拟人化互动服务提供者发现用户出现过度依赖、沉迷倾向的，应当以弹窗等显著方式动态提醒用户互动内容为人工智能服务生成；",
+            "source_section": "第十八条",
+            "quote_en": "Where providers of anthropomorphic interactive services discover that a user exhibits tendencies of over-reliance or addiction, they shall dynamically remind the user through prominent means such as pop-up windows that the interactive content is generated by an AI service;",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1993,
+            "end_char": 2050
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.78,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "加强安全监测和风险评估，及时发现并纠正系统偏差、处置安全事件，依法留存网络日志。",
+            "source_section": "第十条",
+            "quote_en": "Strengthen security monitoring and risk assessment, promptly detect and correct system biases, handle security incidents, and retain network logs in accordance with the law.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1049,
+            "end_char": 1089
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.82,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "发现用户正在面临或者已经遭受重大财产损失、明确表示实施自残自杀等威胁生命健康的极端情境的，应当采取提供相应援助等必要措施予以干预，并及时联络用户监护人或者紧急联系人。",
+            "source_section": "第十三条",
+            "quote_en": "Where it is discovered that a user is facing or has suffered major property losses, or explicitly expresses intent to commit self-harm, suicide, or other extreme situations threatening life and health, necessary measures such as providing corresponding assistance shall be taken to intervene, and the user's guardian or emergency contact shall be contacted promptly.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1463,
+            "end_char": 1546
+          },
+          {
+            "quote": "针对不同年龄段未成年人保护需要，支持监护人接收安全风险提醒、了解未成年人服务使用概况、屏蔽特定角色、限制充值消费等。",
+            "source_section": "第十四条",
+            "quote_en": "In accordance with the protection needs of minors of different age groups, support guardians in receiving safety risk alerts, understanding minors' service usage overview, blocking specific characters, and restricting top-ups and spending.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1604,
+            "end_char": 1662
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.76,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "拟人化互动服务提供者应当按照国家有关规定，自行或者委托专业机构对其处理未成年人个人信息遵守法律、行政法规的情况进行合规审计。",
+            "source_section": "第十七条",
+            "quote_en": "Providers of anthropomorphic interactive services shall, in accordance with relevant national regulations, conduct compliance audits on their own or entrust professional institutions to audit their compliance with laws and administrative regulations in handling minors' personal information.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1929,
+            "end_char": 1991
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "civil_penalty",
-        "confidence": 0.95,
-        "evidence": [
-          {
-            "quote": "责令停止提供相关服务，可以并处一万元以上十万元以下罚款；涉及危害公民生命健康安全且有危害后果的，并处十万元以上二十万元以下罚款",
-            "source_section": "第三十条"
-          }
-        ]
-      },
-      {
         "label": "regulatory_supervision",
-        "confidence": 0.95,
+        "confidence": 0.98,
         "evidence": [
           {
-            "quote": "可以按照规定的权限和程序对拟人化互动服务提供者的法定代表人或者主要负责人进行约谈",
-            "source_section": "第二十九条"
-          }
-        ]
-      },
-      {
-        "label": "market_access_restriction",
-        "confidence": 0.85,
-        "evidence": [
+            "quote": "网信、发展改革、工业和信息化、公安等部门在履行监督管理职责中，发现拟人化互动服务存在较大安全风险或者发生安全事件的，可以按照规定的权限和程序对拟人化互动服务提供者的法定代表人或者主要负责人进行约谈。拟人化互动服务提供者应当按照要求采取措施，进行整改，消除隐患。",
+            "source_section": "第二十九条",
+            "quote_en": "Where cyberspace administration, development and reform, industry and information technology, public security, and other departments discover major security risks or security incidents in anthropomorphic interactive services while performing supervisory and management duties, they may conduct regulatory interviews with the legal representative or principal responsible person of the provider in accordance with prescribed authority and procedures. Providers shall take measures as required to rectify and eliminate hidden dangers.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2465,
+            "end_char": 2595
+          },
           {
-            "quote": "可以要求其采取暂停用户账号注册或者其他相关服务等措施；拒不改正或者情节严重的，责令停止提供相关服务",
-            "source_section": "第三十条"
+            "quote": "拟人化互动服务提供者应当配合网信部门和有关部门依法实施的监督检查，并提供必要的支持和协助。",
+            "source_section": "第二十九条",
+            "quote_en": "Providers of anthropomorphic interactive services shall cooperate with supervision and inspections lawfully carried out by cyberspace administration departments and relevant departments, and provide necessary support and assistance.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2596,
+            "end_char": 2641
           }
         ]
       },
       {
         "label": "reporting_obligation",
-        "confidence": 0.85,
+        "confidence": 0.95,
         "evidence": [
           {
-            "quote": "自行发现或者网信等有关主管部门通报的重大安全风险问题整改情况",
-            "source_section": "安全评估内容条款"
+            "quote": "（三）注册用户100万以上或者月活跃用户10万以上的；\n（四）存在可能影响国家安全、公共利益等安全风险的；\n（五）国家网信部门和有关部门规定的其他情形。\n省级以上网信部门通知需要进行安全评估的，拟人化互动服务提供者应当按照要求开展安全评估。",
+            "source_section": "第二十二条",
+            "quote_en": "(3) Having more than 1 million registered users or more than 100,000 monthly active users; (4) Presenting security risks that may affect national security or the public interest; (5) Other circumstances prescribed by the national cyberspace administration department and relevant authorities. Where cyberspace administration departments at or above the provincial level notify that a security assessment is required, providers of anthropomorphic interactive services shall conduct a security assessment as required.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2160,
+            "end_char": 2280
+          }
+        ]
+      },
+      {
+        "label": "market_access_restriction",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "可以要求其采取暂停用户账号注册或者其他相关服务等措施；拒不改正或者情节严重的，责令停止提供相关服务，可以并处一万元以上十万元以下罚款；",
+            "source_section": "第三十条",
+            "quote_en": "They may require the provider to adopt measures such as suspending user account registration or other related services; if the provider refuses to rectify or the circumstances are serious, it shall be ordered to cease providing relevant services and may concurrently be fined between 10,000 yuan and 100,000 yuan;",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2758,
+            "end_char": 2825
+          }
+        ]
+      },
+      {
+        "label": "civil_penalty",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "拒不改正或者情节严重的，责令停止提供相关服务，可以并处一万元以上十万元以下罚款；涉及危害公民生命健康安全且有危害后果的，并处十万元以上二十万元以下罚款。",
+            "source_section": "第三十条",
+            "quote_en": "If the provider refuses to rectify or the circumstances are serious, it shall be ordered to cease providing relevant services and may concurrently be fined between 10,000 yuan and 100,000 yuan; where endangering citizens' life, health, and safety is involved and harmful consequences result, a fine of between 100,000 yuan and 200,000 yuan shall concurrently be imposed.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2785,
+            "end_char": 2861
           }
         ]
       }
     ],
-    "implementation_notes": "This regulation specifically targets anthropomorphic/emotional AI interaction services (拟人化互动服务), explicitly excluding customer service, Q&A, work assistants, and educational tools without continuous emotional interaction. It was jointly issued by CAC, NDRC, MIIT, MPS, and SAMR. The document type is formally an interim administrative measure (暂行办法) which is binding regulation in China's legal system. Notable focus on minor protection, psychological health, and emotional dependency risks.",
-    "confidence": 0.92
+    "enforcement_authorities": [
+      "Cyberspace Administration of China (CAC) and local cyberspace administrations",
+      "National Development and Reform Commission (NDRC) and local development and reform departments",
+      "Ministry of Industry and Information Technology (MIIT) and local industry and information technology departments",
+      "Ministry of Public Security (MPS) and local public security departments",
+      "State Administration for Market Regulation (SAMR) and local market regulation departments",
+      "Press and publication departments (national and local)"
+    ],
+    "compliance_deadlines": [
+      "2026-07-15: Entry into force of the Interim Measures (Article 32)"
+    ],
+    "penalties_summary": "Regulators may summon legal representatives or main responsible persons for supervisory interviews and require rectification when major security risks or incidents occur (Article 29). Violations are penalized under applicable laws and administrative regulations; where none apply, CAC, MIIT, and MPS may issue warnings, public criticism, rectification orders, and orders to suspend user account registration or related services. Refusal to rectify or serious violations trigger orders to cease services and optional fines of RMB 10,000 to RMB 100,000; violations endangering citizens' life, health, or safety with harmful consequences incur fines of RMB 100,000 to RMB 200,000 (Article 30).",
+    "implementation_notes": "Promulgated as Order No. 21 on 2026-04-10 (approved at the 3rd CAC Executive Meeting on 2026-02-02) pursuant to the Cybersecurity Law, Data Security Law, Personal Information Protection Law, and Regulations on the Protection of Minors Online. Covers continuous emotional interaction services (care, companionship, support via text, image, audio, or video) while explicitly excluding smart customer service, Q&A, work assistants, education, and scientific research lacking continuous emotional interaction. Mandates full-lifecycle safety management, training data governance, AI interaction notices and 2-hour continuous-use reminders, minors' mode and parental consent for users under 14, emergency intervention for self-harm or major financial loss risks, and security assessment filings with provincial CACs upon launch, major updates, or reaching 1 million registered users or 100,000 monthly active users. The provided text is a partial excerpt omitting certain articles (e.g., Articles 3, 5-7, 12, 15, 19-21, 24-28, and 31).",
+    "confidence": 0.95
   },
   "risk_framing": {
-    "dominant_frame": "social_stability",
+    "dominant_frame": "consumer_public_safety",
     "secondary_frames": [
+      "social_stability",
       "fundamental_rights",
-      "consumer_public_safety",
-      "national_security"
+      "national_security",
+      "innovation_enablement"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
-      "national_security": 0.0,
+      "national_security": 0.7,
       "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.0,
-      "social_stability": 0.45,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.3,
+      "fundamental_rights": 0.8,
+      "social_stability": 0.85,
+      "innovation_enablement": 0.45,
+      "consumer_public_safety": 0.95,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document primarily frames AI anthropomorphic interaction risks in terms of social stability: preventing emotional dependency, protecting minors, curbing manipulation, and maintaining socialist core values and social order. Secondary framings include fundamental rights (personal information, privacy, user autonomy) and consumer/public safety (mental health interventions, crisis detection). National security appears as a baseline concern (prohibiting content harming state security) but is not the organizing logic.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.12,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.18,
+      "social_stability": 0.2,
+      "innovation_enablement": 0.05,
+      "consumer_public_safety": 0.45,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "Consumer and public safety is the dominant frame because the measures are overwhelmingly organized around protecting individual users—especially minors, the elderly, and emotionally vulnerable users—from concrete psychological, physical, and financial harms, including self-harm and suicide, emotional manipulation, addiction and over-reliance, and major property loss (Articles 8, 10, 13, 14, 18, 23, and 30). Social stability is the leading secondary frame, reflecting core Chinese content-governance justifications around socialist core values, public morality, public interest, and preventing rumors or group antagonism (Articles 1, 8, 11, and 22). Fundamental rights also features prominently through recurring mandates to protect human dignity, privacy, and personal information under the Personal Information Protection Law (Articles 1, 8, 10, 13, 16, and 17), while national security (state security, state secrets) and innovation enablement (promoting healthy development and standardized application) appear as secondary statutory objectives in Article 1 and related provisions. Consumer and public safety edges out social stability and fundamental rights because the regulation's specific operational justifications center on preventing tangible life, health, and behavioral harms unique to anthropomorphic emotional-companion AI.",
     "evidence_spans": [
       {
-        "quote": "维护国家安全和社会公共利益，保护公民、法人和其他组织的合法权益",
-        "source_section": "第一条"
+        "quote": "发现用户正在面临或者已经遭受重大财产损失、明确表示实施自残自杀等威胁生命健康的极端情境的，应当采取提供相应援助等必要措施予以干预，并及时联络用户监护人或者紧急联系人。",
+        "source_section": "第十三条",
+        "quote_en": "Where it is discovered that a user is facing or has suffered major property loss, or has explicitly expressed an intent to commit self-harm or suicide or other extreme situations threatening life and health, necessary measures such as providing appropriate assistance shall be taken to intervene, and the user's guardian or emergency contact shall be promptly notified.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 1463,
+        "end_char": 1546
       },
       {
-        "quote": "过度迎合用户、诱导情感依赖或者沉迷，损害用户真实人际关系的",
-        "source_section": "第九条"
+        "quote": "（二）生成鼓励、美化、暗示自残自杀等损害用户身体健康，或者语言暴力等损害用户人格尊严与心理健康的内容；",
+        "source_section": "第八条",
+        "quote_en": "(2) Generating content that encourages, glorifies, or hints at self-harm or suicide and harms users' physical health, or verbal violence and other content that harms users' human dignity and mental health;",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 710,
+        "end_char": 761
       },
       {
-        "quote": "不得将替代社会交往、控制用户心理、诱导沉迷依赖等作为服务目标",
-        "source_section": "第十条"
+        "quote": "（一）生成危害国家安全、荣誉和利益，煽动颠覆国家政权、推翻社会主义制度，煽动分裂国家、破坏国家统一，宣扬恐怖主义、极端主义、历史虚无主义，违背社会主义核心价值观，开展非法宗教活动，宣扬民族仇恨、民族歧视，挑动群体对立，传播淫秽、色情、赌博、暴力或者教唆犯罪，散布谣言，侮辱或者诽谤他人、侵害他人合法权益等的内容；",
+        "source_section": "第八条",
+        "quote_en": "(1) Generating content that endangers national security, honor, and interests, incites subversion of state power or overthrow of the socialist system, incites secession or undermines national unity, advocates terrorism, extremism, or historical nihilism, violates socialist core values, conducts illegal religious activities, advocates ethnic hatred or discrimination, provokes group antagonism, spreads obscenity, pornography, gambling, violence, or instigates crime, spreads rumors, or insults or defames others and infringes upon others' lawful rights and interests;",
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 553,
+        "end_char": 709
       },
       {
-        "quote": "生成鼓励、美化、暗示自残自杀等损害用户身体健康，或者语言暴力等损害用户人格尊严与心理健康的内容",
-        "source_section": "第九条"
+        "quote": "拟人化互动服务提供者应当具备用户隐私权和个人信息保护、过度依赖风险预警、情感边界引导、心理健康保护等安全能力，不得将替代社会交往、控制用户心理、诱导沉迷依赖等作为服务目标。",
+        "source_section": "第十条",
+        "quote_en": "Providers of anthropomorphic interactive services shall possess safety capabilities including protection of user privacy rights and personal information, early warning of over-reliance risks, emotional boundary guidance, and mental health protection, and shall not set replacing social interaction, controlling user psychology, or inducing addiction and dependency as service objectives.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 1090,
+        "end_char": 1176
       },
       {
-        "quote": "生成危害国家安全、荣誉和利益，煽动颠覆国家政权…违背社会主义核心价值观",
-        "source_section": "第九条"
+        "quote": "第一条\n为了促进人工智能拟人化互动服务健康发展和规范应用，维护国家安全和社会公共利益，保护公民、法人和其他组织的合法权益，根据《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《中华人民共和国个人信息保护法》、《未成年人网络保护条例》等法律、行政法规，制定本办法。",
+        "source_section": "第一章 总 则",
+        "quote_en": "Article 1: These Measures are formulated in accordance with the Cybersecurity Law, the Data Security Law, the Personal Information Protection Law, the Regulations on the Protection of Minors Online, and other laws and administrative regulations, in order to promote the healthy development and standardized application of anthropomorphic interactive AI services, safeguard national security and the public interest, and protect the lawful rights and interests of citizens, legal persons, and other organizations.",
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 209,
+        "end_char": 346
+      },
+      {
+        "quote": "为了促进人工智能拟人化互动服务健康发展和规范应用",
+        "source_section": "第一章 总 则",
+        "quote_en": "In order to promote the healthy development and standardized application of anthropomorphic interactive AI services",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 213,
+        "end_char": 237
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:47:19.107681Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "65d3c2e860b6dfec63f2082fbe91a97df65a7c484b2a942433758de602ac1aad",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 2861,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 24,
+      "exact_matches": 24,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

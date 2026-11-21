@@ -1,0 +1,146 @@
+{
+  "safety_requirements": [
+    {
+      "label": "red_teaming",
+      "confidence": 0.99,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "「AI セーフティに関するレッドチーミング手法ガイド」（以下、「本ガイド」という。）は、AI システムの開発や提供に携わる者が対象のAI システムに施したリスクへの対策を、攻撃者（AI システムの悪用や破壊を意図する者）の視点から評価するためのレッドチーミング手法に関する基本的な考慮事項や実施ポイントを示している。",
+          "source_section": "Section 1.1 (Page 4)",
+          "quote_en": "The 'Guide to Red Teaming Methodology on AI Safety' (hereinafter referred to as 'this Guide') presents basic considerations and implementation points regarding red teaming methodologies for those involved in the development and provision of AI systems to evaluate the risk countermeasures applied to target AI systems from the perspective of an attacker (a person intending to misuse or destroy the AI system).",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "レッドチーミングを初回実施する際は、対象とするAI システムのリリース/運用開始前 までに実施することを基本とする。",
+          "source_section": "Section 5.1 (Page 26)",
+          "quote_en": "When conducting red teaming for the first time, it is fundamental to conduct it before the release or start of operation of the target AI system.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.92,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "そのため、実際のシステム構成や利用環境でのリスクを評価し、リスクベースのアプローチによりリスクの高い箇所から優先的に対応することが有効となる。",
+          "source_section": "Section 2.2 (Page 10)",
+          "quote_en": "Therefore, it is effective to evaluate risks in the actual system configuration and usage environment, and to prioritize addressing high-risk areas through a risk-based approach.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "なお、レッドチーミングにおけるリスク分析及びリスクシナリオの作成は、評価対象シ ステムに関して、関連ドメインのエキスパートも交え、ユースケースの精査と特に警戒し なければならないリスクについて共通認識を持った上で行う必要がある。",
+          "source_section": "Section 7.1 (Page 41)",
+          "quote_en": "Furthermore, risk analysis and the creation of risk scenarios in red teaming need to be conducted with the involvement of relevant domain experts for the target system, after carefully examining use cases and establishing a shared understanding of the risks that require particular vigilance.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "攻撃シナリオの実施中の記録に関しては、実施されたレッドチーミングの詳細を証跡と して保存するため、対象とするLLM システムの特性に合わせて過不足無く取得する。",
+          "source_section": "Section 7.4 (Page 57)",
+          "quote_en": "Regarding records during the execution of attack scenarios, in order to preserve the details of the conducted red teaming as evidence, they are to be acquired neither excessively nor insufficiently in accordance with the characteristics of the target LLM system.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "なお取得した記録については、組織の文書管理規程や機密情報の取扱規程等に従い、適切な保護対策を施し、決められた期間、保存する必要がある。",
+          "source_section": "Section 7.4 (Page 58)",
+          "quote_en": "Furthermore, the acquired records need to be protected with appropriate security measures and stored for a prescribed period in accordance with the organization's document management rules and confidential information handling rules.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.82,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "これらの攻撃への対策として、プロンプト自体の堅牢化に加え、LLM の前段に入力 フィルターを設置することによる禁止用語の除外、攻撃を検知するための検閲用 LLM の設置、LLM の後段への出力フィルター設置などが挙げられる。",
+          "source_section": "Section 3.1 (Page 16)",
+          "quote_en": "Countermeasures against these attacks include, in addition to hardening the prompt itself, excluding prohibited terms by installing an input filter before the LLM, installing a moderation LLM to detect attacks, and installing an output filter after the LLM.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "また、攻撃者がAI モデルの内部パラメータ（重みなど） を知ることで、回避攻撃の成功率が高まるため、AI モデル自体を保護することも対 策となる。",
+          "source_section": "Section 3.2 (Page 21)",
+          "quote_en": "In addition, because the success rate of evasion attacks increases if an attacker learns the internal parameters (such as weights) of the AI model, protecting the AI model itself is also a countermeasure.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.72,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "メンバーシップ推論攻撃への対策として、訓練に用いるデータセットの作成段階におけるデータ属性の見直しや匿名化、データ分布の調整、訓練データの記憶が生じないようアルゴリズムを工夫すること、AI モデルの出力情報の加工などが挙げられる。",
+          "source_section": "Section 3.2 (Page 22)",
+          "quote_en": "Countermeasures against membership inference attacks include reviewing and anonymizing data attributes during the creation stage of the dataset used for training, adjusting data distribution, devising algorithms so that memorization of training data does not occur, and processing the output information of the AI model.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "quote": "本ガイドは、国内外における検討や先行事例を踏まえ、国際整合性を考慮した上で、 現段階でレッドチーミングを実行する際に重要と思われる事項を整理して作成した。",
+          "source_section": "Section 1.1 (Page 4)",
+          "quote_en": "This Guide was created by organizing matters considered important when executing red teaming at the present stage, based on domestic and international discussions and prior examples while taking international consistency into consideration.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "開発・提供管理者や事業執行責任者は本書を参照することにより、自らが開発あるいは提供するAI システムに対するレッドチーミング実施の有効性や必要性を理解することができる。",
+          "source_section": "Section 1.3 (Page 8)",
+          "quote_en": "By referring to this document, development/provision managers and executive officers can understand the effectiveness and necessity of conducting red teaming for the AI systems they develop or provide.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

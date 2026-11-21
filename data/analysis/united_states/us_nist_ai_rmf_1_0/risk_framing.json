@@ -1,41 +1,84 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "fundamental_rights",
-    "social_stability",
-    "innovation_enablement"
+    "consumer_public_safety",
+    "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.1,
-    "national_security": 0.15,
-    "economic_competitiveness": 0.2,
-    "fundamental_rights": 0.6,
-    "social_stability": 0.55,
-    "innovation_enablement": 0.45,
-    "consumer_public_safety": 0.75,
-    "labor_transition": 0.05
+    "existential_catastrophic": 0.28,
+    "national_security": 0.25,
+    "economic_competitiveness": 0.45,
+    "fundamental_rights": 0.9,
+    "social_stability": 0.4,
+    "innovation_enablement": 0.94,
+    "consumer_public_safety": 0.92,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The AI RMF primarily frames AI governance as a matter of managing harms to individuals, communities, and society—emphasizing trustworthiness, risk management, and protection from negative impacts. The document's core reasoning centers on protecting people from AI system failures, biases, and unintended harms, aligning with consumer/public safety framing. Fundamental rights and social stability are strong secondary frames, as the document explicitly mentions civil liberties, equity, and societal impacts. Innovation enablement appears as a complementary frame since the document also stresses maximizing positive impacts and promoting beneficial AI use.",
+  "frame_share": {
+    "existential_catastrophic": 0.02,
+    "national_security": 0.02,
+    "economic_competitiveness": 0.04,
+    "fundamental_rights": 0.25,
+    "social_stability": 0.02,
+    "innovation_enablement": 0.35,
+    "consumer_public_safety": 0.3,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "NIST AI RMF 1.0 is dominantly framed around innovation_enablement, presenting a voluntary, flexible, non-prescriptive, and pro-innovation framework designed to help organizations unleash AI benefits and foster trustworthy adoption across all sectors. Innovation_enablement narrowly edges out consumer_public_safety, which is a strong runner-up centered on preventing physical injury, death, property, environmental, and operational harms across the AI lifecycle. Fundamental_rights is a major third frame explicitly anchored in a 'rights-preserving' mandate, threats to civil liberties and human rights, human autonomy and dignity in privacy, and mitigation of harmful bias and discrimination, alongside minor nods to inclusive economic growth, public trust, catastrophic risk cessation, and NSCAI recommendations.",
   "evidence_spans": [
     {
+      "quote": "Effectively managing the risk of potential harms could lead to more trustworthy AI systems and unleash potential benefits to people (individuals, communities, and society), organizations, and systems/ecosystems.",
+      "source_section": "Part 1: Foundational Information - 1.1 Understanding and Addressing Risks, Impacts, and Harms",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 14070,
+      "end_char": 14281
+    },
+    {
+      "quote": "1. Be risk-based, resource-efficient, pro-innovation, and voluntary.",
+      "source_section": "Appendix D: Attributes of the AI RMF",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 102157,
+      "end_char": 102225
+    },
+    {
+      "quote": "AI systems should “not under defined conditions, lead to a state in which human life, health, property, or the environment is endangered” (Source: ISO/IEC TS 5723:2022).",
+      "source_section": "Part 1: Foundational Information - 3.2 Safe",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 38299,
+      "end_char": 38468
+    },
+    {
+      "quote": "Safety risks that pose a potential risk of serious injury or death call for the most urgent prioritization and most thorough risk management process.",
+      "source_section": "Part 1: Foundational Information - 3.2 Safe",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 38940,
+      "end_char": 39089
+    },
+    {
       "quote": "AI risk management offers a path to minimize potential negative impacts of AI systems, such as threats to civil liberties and rights, while also providing opportunities to maximize positive impacts.",
-      "source_section": "Page 9"
+      "source_section": "Part 1: Foundational Information - 1 Framing Risk",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 12603,
+      "end_char": 12801
     },
     {
-      "quote": "Without proper controls, AI systems can amplify, perpetuate, or exacerbate inequitable or undesirable outcomes for individuals and communities.",
-      "source_section": "Page 6"
-    },
-    {
-      "quote": "In cases where an AI system presents unacceptable negative risk levels – such as where significant negative impacts are imminent, severe harms are actually occurring, or catastrophic risks are present – development and deployment should cease",
-      "source_section": "Page 13"
-    },
-    {
-      "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector-specific, and use-case agnostic",
-      "source_section": "Page 7"
-    },
-    {
-      "quote": "so society can benefit from AI while also being protected from its potential harms",
-      "source_section": "Page 7"
+      "quote": "The People & Planet dimension at the center of Figure 2 represents human rights and the broader well-being of society and the planet.",
+      "source_section": "Part 1: Foundational Information - 2 Audience",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 28528,
+      "end_char": 28661
     }
   ]
 }

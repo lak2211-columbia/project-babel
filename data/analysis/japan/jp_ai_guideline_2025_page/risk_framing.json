@@ -1,42 +1,86 @@
 {
-  "dominant_frame": "fundamental_rights",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
+    "fundamental_rights",
     "consumer_public_safety",
-    "national_security",
-    "social_stability"
+    "social_stability",
+    "economic_competitiveness"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.45,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.35,
-    "consumer_public_safety": 0.3,
-    "labor_transition": 0.1
+    "national_security": 0.3,
+    "economic_competitiveness": 0.45,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.65,
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.78,
+    "labor_transition": 0.25
   },
-  "rationale_summary": "The document frames AI governance primarily around protecting human dignity, basic human rights, fairness, and non-discrimination, while also balancing innovation promotion. Key elements listed—human-centricity, fairness, privacy, accountability, transparency—are rights-based. Innovation enablement is a strong secondary frame, with the document repeatedly emphasizing that safety and rights protections should not impede AI's social implementation and innovation.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.03,
+    "economic_competitiveness": 0.06,
+    "fundamental_rights": 0.25,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.35,
+    "consumer_public_safety": 0.18,
+    "labor_transition": 0.03
+  },
+  "rationale_summary": "Japan's December 2025 AI Guideline (issued under Article 13 of the AI Promotion Act) is dominantly framed around innovation enablement: it justifies voluntary, risk-based, and agile governance as essential to maximize AI's benefits, advance social implementation, remove adoption barriers, and foster a trustworthy AI ecosystem without imposing rigid one-size-fits-all rules. Innovation enablement edges out the strong runner-up, fundamental rights, because while human dignity, human rights, non-discrimination, and privacy anchor the core normative elements of appropriateness (drawn from the Human-Centric AI Social Principles), the document's overarching purpose and structural design prioritize enabling safe experimentation, public-private utilization, and agile PDCA governance. Consumer and public safety (preventing harm to life, body, and property, as well as fraud, crime, and malfunctions) and social stability (combating the spread of AI-generated disinformation and misinformation) are prominent supporting rationales, alongside modest references to economic competitiveness, national security (cyberattacks), and labor transition (employment anxiety and adult reskilling).",
   "evidence_spans": [
     {
+      "quote": "ＡＩは、経済成長や国民生活の発展に寄与するものであることから、その社会実装を\n進めイノベーションを促進していくことが重要である一方、ＡＩには様々なリスクがあ\nる。",
+      "source_section": "Page 3, 1(2) 本指針における適正性確保の考え方",
+      "quote_en": "Because AI contributes to economic growth and the development of people's lives, it is important to advance its social implementation and promote innovation, while on the other hand AI entails various risks.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2383,
+      "end_char": 2464
+    },
+    {
+      "quote": "ＡＩがもたらすリスクをステークホルダーにとって受容可能な水準で管理しつつ、便益を最大化するため、研究開発から社会実装までが近接するＡＩの各段階を一体的に捉えたＡＩガバナンスを構築する。",
+      "source_section": "Page 5, 1(3) 適正性確保のための基本方針",
+      "quote_en": "In order to maximize benefits while managing the risks posed by AI at a level acceptable to stakeholders, AI governance shall be constructed by viewing each closely linked stage of AI from R&D to social implementation in an integrated manner.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4655,
+      "end_char": 4747
+    },
+    {
       "quote": "人間の尊厳や基本的人権を尊重すること。また、法令を遵守すること。",
-      "source_section": "Page 4"
+      "source_section": "Page 4, 1(2) 本指針における適正性確保の考え方",
+      "quote_en": "To respect human dignity and fundamental human rights. Also, to comply with laws and regulations.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 3270,
+      "end_char": 3302
     },
     {
-      "quote": "ＡＩの活用によって、社会に不当な偏見や差別を生じさせたり、助長したりしないこと",
-      "source_section": "Page 4"
+      "quote": "ＡＩの活用によって、生命、身体、財産等 5に危害を及ぼさないようにすること。",
+      "source_section": "Page 4, 1(2) 本指針における適正性確保の考え方",
+      "quote_en": "To ensure that the utilization of AI does not cause harm to life, body, property, etc.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3459,
+      "end_char": 3497
     },
     {
-      "quote": "経済成長や国民生活の発展に寄与するものであることから、その社会実装を進めイノベーションを促進していくことが重要",
-      "source_section": "Page 3"
+      "quote": "特に、ＡＩで生成された偽・誤情報等の拡散\nが深刻なリスクとなっていることを踏まえ、ＡＩの生成物であることが判断できる技\n術（電子透かし、来歴管理、API19等）の開発に努め、必要に応じて実装する。",
+      "source_section": "Page 7, 2(3) 十分な安全性の確保",
+      "quote_en": "In particular, given that the spread of AI-generated disinformation and misinformation has become a serious risk, efforts shall be made to develop technologies capable of identifying AI-generated outputs (watermarks, provenance management, APIs, etc.) and implement them as necessary.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 6867,
+      "end_char": 6965
     },
     {
-      "quote": "サイバー攻撃等の安全保障上のリスクがあり",
-      "source_section": "Page 3"
-    },
-    {
-      "quote": "誰もがＡＩの恩恵を享受できるよう、多様性、包摂性を尊重し、多様な人々の幸福の追求による包摂的な成長を目指すこと",
-      "source_section": "Page 4"
+      "quote": "これらの取組を積極的に開示・説明することが、企業価値の向上や競争優位性の確保にもつながるものと期待される。",
+      "source_section": "Page 6, Footnote 16",
+      "quote_en": "Proactively disclosing and explaining these initiatives is also expected to lead to enhancing corporate value and securing competitive advantage.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 6391,
+      "end_char": 6444
     }
   ]
 }

@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_014sjWutX5yHjHghVobzqugn",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"consumer_public_safety\",\"secondary_frames\":[\"fundamental_rights\",\"innovation_enablement\"],\"frame_confidence\":{\"consumer_public_safety\":0.55,\"labor_transition\":0.0},\"rationale_summary\":\"The document primarily frames AI governance around ensuring that general-purpose AI models placed on the EU market are safe and transparent, with special attention to systemic risk from the most powerful models. The core justification is protecting users and society from unsafe models, framed through compliance with the AI Act's safety and transparency obligations. Secondary frames include fundamental rights (copyright protections) and innovation enablement (streamlined compliance, reduced administrative burden, good-faith enforcement transition).\",\"evidence_spans\":[{\"quote\":\"ensuring that general-purpose AI models placed on the European market are safe and transparent, including the most powerful ones\",\"source_section\":\"Introduction\"},{\"quote\":\"Safety and Security, relevant only to a limited number of providers of the most advanced models, subject to the AI Act's obligations for providers of general-purpose AI models with systemic risk\",\"source_section\":\"Code structure\"},{\"quote\":\"streamlined compliance process, with enforcement focused on monitoring their adherence to the Code, resulting in greater predictability and reduced administrative burden\",\"source_section\":\"Compliance\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 3049,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 279,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 8203,
+    "candidatesTokenCount": 849,
+    "totalTokenCount": 11659,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 8203
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 849
+      }
+    ],
+    "thoughtsTokenCount": 2607,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "jC4Ba6z3G4TVkPIP89nW0Q8"
 }

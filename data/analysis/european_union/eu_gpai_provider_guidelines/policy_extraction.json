@@ -5,61 +5,104 @@
   "binding_strength": "regulatory_guidance",
   "publication_date": "2026-03-26",
   "effective_date": "2025-08-02",
+  "covered_actors": [
+    "Providers of general-purpose AI models",
+    "Providers of general-purpose AI models with systemic risk",
+    "Providers of open-source AI models",
+    "Entities making significant modifications to AI models",
+    "Authorised representatives of GPAI model providers"
+  ],
   "covered_application_domains": [
     "general_purpose_models"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
+      "label": "open_weight_obligations",
+      "confidence": 0.85,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Exemptions for open-source\n: The guidelines also clarify under what conditions providers of open-source AI models are exempt from certain obligations, to promote transparency and innovation.",
+          "source_section": "Key points of the guidelines",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 942,
+          "end_char": 1132
+        }
+      ]
+    },
+    {
       "label": "risk_assessment",
-      "confidence": 0.9,
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "providers should review their obligations, assess model risks, prepare for compliance",
-          "source_section": "Obligations overview"
-        },
-        {
-          "quote": "providers of the most advanced models, i.e. those that pose systemic risks, are legally obliged to notify the AI Office of these models",
-          "source_section": "Obligations overview"
-        }
-      ]
-    },
-    {
-      "label": "incident_reporting",
-      "confidence": 0.95,
-      "evidence": [
-        {
-          "quote": "Reports of serious incident pursuant to Art 55(1)(c) of the AI Act",
-          "source_section": "EU SEND platform"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "Safety and Security Framework and Model Report pursuant to Measures 1.4 and 7.7 of the Safety and Security Chapter of the GPAI Code of Practice",
-          "source_section": "EU SEND platform"
+          "quote": "Providers should review their obligations, assess model risks, prepare for compliance, and engage with the AI Office.",
+          "source_section": "Application and enforcement timeline",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2480,
+          "end_char": 2597
         }
       ]
     },
     {
       "label": "registration_licensing",
-      "confidence": 0.85,
+      "confidence": 0.8,
+      "obligation_strength": "conditional",
       "evidence": [
         {
+          "quote": "In particular, providers of the most advanced models, i.e. those that pose systemic risks, are legally obliged to notify the AI Office of these models.",
+          "source_section": "Application and enforcement timeline",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1746,
+          "end_char": 1897
+        },
+        {
           "quote": "Notifications of a general-purpose AI model with systemic risk pursuant to Art 51(2) and 52(2) of the AI Act",
-          "source_section": "EU SEND platform"
+          "source_section": "Submitting documents",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3169,
+          "end_char": 3277
         }
       ]
     },
     {
-      "label": "transparency_disclosure",
-      "confidence": 0.8,
+      "label": "incident_reporting",
+      "confidence": 0.85,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "Reports on how providers of general-purpose AI models who have not signed the General-Purpose AI Code of Practice intend to comply with the AI Act",
-          "source_section": "EU SEND platform"
+          "quote": "Reports of serious incident pursuant to Art 55(1)(c) of the AI Act",
+          "source_section": "Submitting documents",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3340,
+          "end_char": 3406
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Safety and Security Framework and Model Report pursuant to Measures 1.4 and 7.7 of the Safety and Security Chapter of the GPAI Code of Practice",
+          "source_section": "Submitting documents",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3407,
+          "end_char": 3550
         }
       ]
     }
@@ -70,32 +113,90 @@
       "confidence": 0.9,
       "evidence": [
         {
-          "quote": "The Commission will enforce compliance with the obligations for providers of GPAI models, including with fines",
-          "source_section": "Enforcement timeline"
+          "quote": "The Commission will enforce compliance with the obligations for providers of GPAI models, including with fines.",
+          "source_section": "Application and enforcement timeline",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2079,
+          "end_char": 2190
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.9,
+      "confidence": 0.88,
       "evidence": [
         {
-          "quote": "The AI Office will support providers in their compliance, especially Code of Practice signatories",
-          "source_section": "Obligations overview"
+          "quote": "From\n2 August 2026\n, the\nCommission’s enforcement powers\nenter\ninto application\n. The Commission will enforce compliance with the obligations for providers of GPAI models, including with fines.",
+          "source_section": "Application and enforcement timeline",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1997,
+          "end_char": 2190
         }
       ]
     },
     {
       "label": "reporting_obligation",
-      "confidence": 0.95,
+      "confidence": 0.92,
       "evidence": [
         {
-          "quote": "Providers of general-purpose AI models must use the EU SEND platform to submit documents related to their obligations to the AI Office",
-          "source_section": "EU SEND platform"
+          "quote": "In particular, providers of the most advanced models, i.e. those that pose systemic risks, are legally obliged to notify the AI Office of these models.",
+          "source_section": "Application and enforcement timeline",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1746,
+          "end_char": 1897
+        },
+        {
+          "quote": "Providers of general-purpose AI models must use the\nEU SEND platform\nto submit documents related to their obligations to the AI Office.",
+          "source_section": "Submitting documents",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2724,
+          "end_char": 2859
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "Thus, the guidelines complement the\nGeneral-Purpose AI Code of Practice\n, a voluntary, practical tool that explains how providers of GPAI models can fulfil their obligations under the AI Act.",
+          "source_section": "Why are these guidelines important?",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1307,
+          "end_char": 1498
+        },
+        {
+          "quote": "Developed through extensive public consultation with diverse stakeholders, these guidelines, though not legally binding, reflect the Commission's interpretation and will guide enforcement.",
+          "source_section": "Application and enforcement timeline",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2291,
+          "end_char": 2479
         }
       ]
     }
   ],
-  "implementation_notes": "Guidelines are explicitly stated as 'not legally binding' but reflect the Commission's interpretation and will guide enforcement. Enforcement powers (including fines) enter into application 2 August 2026. Providers of models placed on market before 2 August 2025 have until 2 August 2027 to comply. The GPAI Code of Practice is a complementary voluntary tool.",
-  "confidence": 0.9
+  "enforcement_authorities": [
+    "European Commission",
+    "AI Office"
+  ],
+  "compliance_deadlines": [
+    "2025-08-02: Obligations for providers of GPAI models enter into application; providers of GPAI models placed on the market after this date must comply and systemic-risk model providers must notify the AI Office.",
+    "2026-08-02: European Commission enforcement powers for GPAI model provider obligations enter into application, including fines.",
+    "2027-08-02: Providers of GPAI models placed on the market before 2 August 2025 must comply."
+  ],
+  "penalties_summary": "From 2 August 2026, the European Commission's enforcement powers enter into application to enforce compliance with GPAI model provider obligations, including with fines.",
+  "implementation_notes": "Official European Commission policy webpage (last updated 2026-03-26) summarizing the non-binding Guidelines for providers of general-purpose AI models under the EU AI Act. Although not legally binding, the guidelines reflect the Commission's interpretation of key terms (such as general-purpose criteria, significant modifications, and open-source exemptions) and guide enforcement alongside the voluntary GPAI Code of Practice. Providers (or their authorised representatives) must use the EU SEND platform to submit notifications, reassessment requests, serious incident reports, and compliance reports to the AI Office.",
+  "confidence": 0.92
 }

@@ -1,32 +1,65 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "consumer_public_safety",
-    "social_stability"
+    "innovation_enablement"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
     "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.82,
+    "fundamental_rights": 0.95,
     "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.55,
+    "innovation_enablement": 0.65,
+    "consumer_public_safety": 0.25,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document centers on protecting personal information rights of data subjects when public institutions deploy AI. The governance justification is framed around preventing privacy violations, ensuring legal bases for data processing, and protecting sensitive groups such as children—core fundamental rights concerns under Korea's Personal Information Protection Act.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.75,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.2,
+    "consumer_public_safety": 0.05,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The release is dominantly framed around fundamental_rights, emphasizing strengthening personal data protection, preventing privacy infringement incidents, shielding sensitive and children's personal information, and guaranteeing data-subject rights when public institutions deploy AI. Innovation_enablement serves as a clear secondary frame because PIPC justifies introducing explicit criteria and practical case-based guidance to eliminate uncertainty for public agencies that previously had to invent ad-hoc assessment criteria and to provide a practical reference supporting preventive privacy frameworks across both public and private AI adoption.",
   "evidence_spans": [
     {
-      "quote": "개인정보 영향평가는 개인정보 처리가 필요한 사업 추진 시 사전에 개인정보에 미치는 영향을 분석하고 개선방안을 수립하여 개인정보 침해사고를 예방하는 제도이다",
-      "source_section": "본문"
+      "quote": "개인정보 영향평가(이하 ‘영향평가’)는 개인정보 처리가 필요한 사업 추진 시 사전에 개인정보에 미치는 영향을 분석하고 개선방안을 수립하여 개인정보 침해사고를 예방하는 제도이다.",
+      "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+      "quote_en": "Privacy Impact Assessment ('PIA') is a system that prevents personal data infringement incidents by proactively analyzing impacts on personal information and establishing improvement measures when pursuing projects requiring personal data processing.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 534,
+      "end_char": 632
     },
     {
-      "quote": "민감정보·14세 미만 아동정보 등이 불필요하게 포함되지 않는지",
-      "source_section": "평가항목"
+      "quote": "③생성형 AI 시스템의 부적절한 답변, 개인정보 유·노출에 대한 신고 기능 마련 등 정보주체 권리보장 방안 수립·시행을 주요 평가기준으로 제시했다.",
+      "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+      "quote_en": "Third, establishing and implementing data-subject rights protection measures—such as reporting functions for inappropriate answers from generative AI systems and personal data leakage or exposure—was presented as a core evaluation criterion.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 1332,
+      "end_char": 1414
     },
     {
-      "quote": "정보주체 권리보장 방안 수립·시행을 주요 평가기준으로 제시했다",
-      "source_section": "운영 및 관리"
+      "quote": "현행 고시에는 인공지능 분야의 별도 기준이 없어, 인공지능을 도입·활용하는 공공기관들은 영향평가 시 개별적으로 평가항목을 개발하여 반영해야 했다.* 이에 기관 입장에서는 평가항목이 적정한지 여부를 알기 어려웠다.",
+      "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+      "quote_en": "Because the existing public notice lacked separate criteria for AI, public institutions adopting or using AI had to individually develop and reflect evaluation items during PIAs, making it difficult for agencies to know whether their items were appropriate.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 761,
+      "end_char": 879
+    },
+    {
+      "quote": "아울러, 이번에 마련된 인공지능 분야 영향평가 기준은 공공기관 뿐 아니라 민간기업에서도 인공지능을 활용한 개인정보 처리시 잠재적인 위험성을 식별하고 경감하는 사전 예방적 개인정보 보호체계를 구축하는 데 유용한 참고자료로 활용될 수 있을 것으로 전망된다.",
+      "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+      "quote_en": "Furthermore, the newly established AI impact assessment criteria are expected to serve as useful reference material not only for public institutions but also for private enterprises in building preventive personal data protection systems that identify and mitigate potential risks when processing personal data with AI.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1783,
+      "end_char": 1924
     }
   ]
 }

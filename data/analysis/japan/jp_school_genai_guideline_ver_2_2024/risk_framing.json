@@ -6,36 +6,80 @@
     "social_stability"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.05,
-    "economic_competitiveness": 0.1,
-    "fundamental_rights": 0.2,
-    "social_stability": 0.15,
-    "innovation_enablement": 0.55,
-    "consumer_public_safety": 0.25,
-    "labor_transition": 0.05
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.86,
+    "social_stability": 0.45,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.9,
+    "labor_transition": 0.28
   },
-  "rationale_summary": "The document primarily frames AI governance in schools as enabling appropriate and effective use of generative AI to support student learning and teacher capabilities, while managing associated risks. The central thrust is how to utilize AI tools beneficially within the existing educational framework, emphasizing AI literacy, human-centered principles, and practical guidance for appropriate adoption rather than restriction. Consumer/public safety and fundamental rights appear as secondary framings through attention to information security, privacy, copyright, and age-appropriate use.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.22,
+    "social_stability": 0.05,
+    "innovation_enablement": 0.4,
+    "consumer_public_safety": 0.3,
+    "labor_transition": 0.03
+  },
+  "rationale_summary": "Innovation enablement is the dominant frame because MEXT structures Ver. 2.0 around empowering students and teachers to harness generative AI as a capability-expanding tool—fostering student talent and deeper learning, streamlining school administration for teacher work-style reform, highlighting pilot-school successes, and explicitly stating that risks should not immediately block adoption or prompt rigid uniform bans. Consumer and public safety is a strong runner-up, centering on concrete developmental, psychological, and operational protections for minors—including preventing children from attributing personhood to AI, guarding against AI over-dependency and cognitive harm, mitigating hallucinations and automation/fluency bias, preventing student data leaks, enforcing age restrictions and parental consent, and safeguarding children already encountering AI outside school. Fundamental rights serves as a substantial third frame anchored in the Human-Centric Principle's constitutional human-rights mandate, non-discrimination against protected backgrounds, APPI privacy protection, copyright compliance, and socioeconomic equity for families. Social stability (disinformation, filter bubbles, and information morals) and labor transition (teacher work-style reform and future AI workforce literacy) play minor supporting roles.",
   "evidence_spans": [
     {
-      "quote": "AI 時代を生きる子供たちが生成 AI をはじめとするテクノロジーをツールとして使いこなし、一人一人が才能を開花できるようになることは重要であり、生成 AI の学校における利活用は、そのための助けになり得るもの",
-      "source_section": "Page 3"
+      "quote": "AI 時代を生きる子供たちが生成AI をはじめとするテクノロジーをツールとして使いこなし、一人一人が才能を開花できるようになることは重要であり、生成AI の学校における利活用は、そのための助けになり得るものである。",
+      "source_section": "Page 3 (はじめに)",
+      "quote_en": "It is important that children living in the AI era master generative AI and other technologies as tools so that each individual can let their talents bloom, and utilizing generative AI in schools can serve as an aid toward that goal.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2109,
+      "end_char": 2216
     },
     {
-      "quote": "学校現場での生成 AI の利活用を一律に禁止したり義務付けたりするものではない",
-      "source_section": "Page 4"
+      "quote": "また、このようなリスクや懸念の存在が直ちに生成AI の利用を妨げるものではなく、スマートフォン等が広く普及し、既に一定数の児童生徒が学校外で生成AI に触れているとの指摘もある中においては、リスクを正しく認識した上で、学校現場において正しく向き合っていくことが重要である。",
+      "source_section": "Page 28 (学校現場において留意すべき代表的なリスクや懸念の例)",
+      "quote_en": "Moreover, the existence of such risks and concerns does not immediately preclude using generative AI; given widespread smartphones and reports that many students already encounter generative AI outside school, it is important for schools to understand the risks accurately and engage with generative AI appropriately.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 27849,
+      "end_char": 27985
     },
     {
-      "quote": "生成 AI は使い方によって人間の能力を補助、拡張し、可能性を広げてくれる有用な道具にもなり得るものと捉えるべきである",
-      "source_section": "Page 7"
+      "quote": "児童生徒が、人間のように振る舞うAI に触れることで、AI に人格があるかのように誤認するリスクがある。",
+      "source_section": "Page 28 (代表的なリスクや懸念の例)",
+      "quote_en": "Through interacting with AI that behaves like a human, there is a risk that students may mistakenly perceive AI as possessing a personality/personhood.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 28107,
+      "end_char": 28159
     },
     {
-      "quote": "AI の利用は、憲法及び国際的な規範の保障する基本的人権を侵すものであってはならない",
-      "source_section": "Page 7"
+      "quote": "学習活動の目的や育成したい資質・能力を十分に意識しないままに、安易に生成 AI を児童生徒の学習活動に導入することで、AI に依存したり、AI の答えを鵜吞みにしたりするなど、目的に即した必要な学習過程が省略されてしまい、 資質・能力の育成に繋がらないリスクがある。",
+      "source_section": "Page 28 (代表的なリスクや懸念の例)",
+      "quote_en": "Carelessly introducing generative AI into student learning without sufficient awareness of educational goals risks AI dependency or uncritical acceptance of answers, bypassing necessary learning processes and failing to cultivate competencies.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 28183,
+      "end_char": 28316
     },
     {
-      "quote": "情報セキュリティの確保が重要である",
-      "source_section": "Page 10"
+      "quote": "AI 利用の基本原則として、「AI の利用は、憲法及び国際的な規範の保障する基本的人権を侵すものであってはならない。AI は、人々の能力を拡張し、多様な人々の多様な幸せの追求を可能とするために開発され、社会に展開され、活用されるべきである。」という「人間中心の原則」9がある。",
+      "source_section": "Page 7 (２．基本的な考え方 — 人間中心の原則)",
+      "quote_en": "As a basic principle of AI use, the 'Human-Centric Principle' states that AI use must not infringe fundamental human rights guaranteed by the Constitution and international norms, and AI should be developed, deployed, and used to expand human capabilities and enable diverse people to pursue diverse well-being.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5309,
+      "end_char": 5447
+    },
+    {
+      "quote": "「生成 AI の普及により偽情報が増加する」「フィルターバブル等に子供がさらされている」といった指摘もある中においては、発達の段階に応じた児童生徒の情報モラルを育成することがますます重要であり、",
+      "source_section": "Page 9 (Box-2 情報モラル教育の一層の充実について)",
+      "quote_en": "Amid concerns that 'disinformation is increasing due to the spread of generative AI' and 'children are exposed to filter bubbles', cultivating students' information morals according to their developmental stage is increasingly important.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 8582,
+      "end_char": 8679
     }
   ]
 }

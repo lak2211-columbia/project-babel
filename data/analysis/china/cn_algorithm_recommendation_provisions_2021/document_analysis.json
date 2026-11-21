@@ -4,187 +4,437 @@
   "language": "zh",
   "policy_extraction": {
     "jurisdiction": "china",
-    "issuing_body": "国家互联网信息办公室 (Cyberspace Administration of China), 工业和信息化部, 公安部, 国家市场监督管理总局",
+    "issuing_body": "Cyberspace Administration of China (CAC), Ministry of Industry and Information Technology (MIIT), Ministry of Public Security (MPS), and State Administration for Market Regulation (SAMR)",
     "document_type": "legislation",
     "binding_strength": "binding_law",
     "publication_date": "2021-12-31",
     "effective_date": "2022-03-01",
+    "covered_actors": [
+      "Algorithm recommendation service providers providing internet information services within the People's Republic of China",
+      "Algorithm recommendation service providers with public opinion attributes or social mobilization capabilities",
+      "Algorithm recommendation service providers offering internet news information services",
+      "Algorithm recommendation service providers serving minors, the elderly, workers (work dispatch services), and consumers",
+      "Relevant industry organizations (encouraged to strengthen self-regulation)",
+      "Institutions and personnel participating in security assessment and supervision/inspection"
+    ],
     "covered_application_domains": [
-      "general_purpose_models",
-      "public_sector_use",
-      "employment",
-      "finance"
+      "employment"
+    ],
+    "prohibited_practices": [
+      "Using algorithm recommendation services to endanger national security or public interest, disrupt economic or social order, or infringe upon the lawful rights and interests of others (Art. 6)",
+      "Using algorithm recommendation services to disseminate information prohibited by laws and administrative regulations (Art. 6)",
+      "Setting algorithm models that violate laws, regulations, or ethics, such as inducing user addiction or excessive consumption (Art. 8)",
+      "Recording keywords of illegal or harmful information into user interest points or user tags to push information (Art. 10)",
+      "Generating or synthesizing fake news information, or disseminating news published by entities outside the state-prescribed scope (Art. 13)",
+      "Using algorithms to falsely register accounts, illegally trade accounts, manipulate user accounts, or fabricate likes, comments, or reposts (Art. 14)",
+      "Using algorithms to block information, over-recommend, manipulate rankings or search results, or control hot searches or featured selections to interfere with information presentation, influence online public opinion, or evade supervision (Art. 14)",
+      "Using algorithms to impose unreasonable restrictions on other internet information service providers or obstruct their normal operations to engage in monopoly or unfair competition (Art. 15)",
+      "Pushing information to minors that may induce imitation of unsafe or socially immoral behaviors, induce bad habits, harm physical or mental health, or induce internet addiction (Art. 18)",
+      "Implementing unreasonable differential treatment in transaction conditions such as pricing based on consumer preferences, transaction habits, or other characteristics (Art. 21)"
     ],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.9,
+        "confidence": 0.96,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "具有舆论属性或者社会动员能力的算法推荐服务提供者应当按照国家有关规定开展安全评估",
-            "source_section": "第二十七条"
+            "quote": "算法推荐服务提供者应当落实算法安全主体责任，建立健全算法机制机理审核、科技伦理审查、用户注册、信息发布审核、数据安全和个人信息保护、反电信网络诈骗、安全评估监测、安全事件应急处置等管理制度和技术措施，制定并公开算法推荐服务相关规则，配备与算法推荐服务规模相适应的专业人员和技术支撑。",
+            "source_section": "第七条",
+            "quote_en": "Algorithmic recommendation service providers shall fulfill primary responsibility for algorithm security, establish and improve management systems and technical measures for algorithm mechanism review, scientific and technological ethics review, user registration, information release review, data security and personal information protection, anti-telecom and network fraud, security assessment and monitoring, and security incident emergency response, formulate and publish rules related to algorithmic recommendation services, and equip professional personnel and technical support commensurate with the scale of algorithmic recommendation services.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 950,
+            "end_char": 1091
           },
           {
-            "quote": "算法推荐服务提供者应当定期审核、评估、验证算法机制机理、模型、数据和应用结果等",
-            "source_section": "第八条"
+            "quote": "算法推荐服务提供者应当定期审核、评估、验证算法机制机理、模型、数据和应用结果等，不得设置诱导用户沉迷、过度消费等违反法律法规或者违背伦理道德的算法模型。",
+            "source_section": "第八条",
+            "quote_en": "Algorithmic recommendation service providers shall regularly review, assess, and verify algorithm mechanisms, models, data, and application outcomes, and shall not establish algorithmic models that violate laws, regulations, or ethics, such as those inducing user addiction or excessive consumption.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1097,
+            "end_char": 1173
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.95,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "发现未作显著标识的算法生成合成信息的，应当作出显著标识后，方可继续传输。",
+            "source_section": "第九条",
+            "quote_en": "Where algorithmically generated or synthesized information without a prominent label is discovered, it shall be prominently labeled before transmission may continue.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1232,
+            "end_char": 1268
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.78,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "发现违法信息的，应当立即停止传输，采取消除等处置措施，防止信息扩散，保存有关记录，并向网信部门和有关部门报告。",
+            "source_section": "第九条",
+            "quote_en": "Where illegal information is discovered, transmission shall be stopped immediately, disposal measures such as deletion shall be taken to prevent its spread, relevant records shall be preserved, and a report shall be made to the cyberspace administration and relevant departments.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1269,
+            "end_char": 1324
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.92,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "算法推荐服务提供者应当加强算法推荐服务版面页面生态管理，建立完善人工干预和用户自主选择机制，在首页首屏、热搜、精选、榜单类、弹窗等重点环节积极呈现符合主流价值导向的信息。",
+            "source_section": "第十一条",
+            "quote_en": "Algorithmic recommendation service providers shall strengthen page ecosystem management for algorithmic recommendation services, establish and improve manual intervention and user autonomous selection mechanisms, and actively present information conforming to mainstream value orientations in key links such as homepages, trending searches, featured sections, rankings, and pop-ups.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1453,
+            "end_char": 1538
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.95,
+        "confidence": 0.98,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "应当以显著方式告知用户其提供算法推荐服务的情况，并以适当方式公示算法推荐服务的基本原理、目的意图和主要运行机制等",
-            "source_section": "第十六条"
+            "quote": "算法推荐服务提供者应当以显著方式告知用户其提供算法推荐服务的情况，并以适当方式公示算法推荐服务的基本原理、目的意图和主要运行机制等。",
+            "source_section": "第十六条",
+            "quote_en": "Algorithmic recommendation service providers shall inform users in a prominent manner of their provision of algorithmic recommendation services, and publicly disclose in an appropriate manner the basic principles, purposes, intentions, and main operating mechanisms of the algorithmic recommendation services.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1945,
+            "end_char": 2011
+          },
+          {
+            "quote": "算法推荐服务提供者应当向用户提供不针对其个人特征的选项，或者向用户提供便捷的关闭算法推荐服务的选项。用户选择关闭算法推荐服务的，算法推荐服务提供者应当立即停止提供相关服务。",
+            "source_section": "第十七条",
+            "quote_en": "Algorithmic recommendation service providers shall provide users with options that do not target their personal characteristics, or provide users with convenient options to turn off algorithmic recommendation services. Where a user chooses to turn off algorithmic recommendation services, the provider shall immediately stop providing the relevant services.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2018,
+            "end_char": 2104
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.97,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "具有舆论属性或者社会动员能力的算法推荐服务提供者应当在提供服务之日起十个工作日内通过互联网信息服务算法备案系统填报服务提供者的名称、服务形式、应用领域、算法类型、算法自评估报告、拟公示内容等信息，履行备案手续。",
+            "source_section": "第二十四条",
+            "quote_en": "Algorithmic recommendation service providers with public opinion attributes or social mobilization capabilities shall, within ten working days from the date of providing services, complete filing procedures through the Internet Information Service Algorithm Filing System by reporting information including the provider's name, service form, application domain, algorithm type, algorithm self-assessment report, and proposed public disclosure content.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2885,
+            "end_char": 2990
+          },
+          {
+            "quote": "算法推荐服务提供者提供互联网新闻信息服务的，应当依法取得互联网新闻信息服务许可，规范开展互联网新闻信息采编发布服务、转载服务和传播平台服务",
+            "source_section": "第十三条",
+            "quote_en": "Algorithmic recommendation service providers providing internet news information services shall obtain an internet news information service license in accordance with law, and carry out internet news information collection, editing, publishing, reposting, and dissemination platform services in a standardized manner.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1632,
+            "end_char": 1701
           }
         ]
       },
       {
         "label": "model_documentation",
         "confidence": 0.85,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "填报服务提供者的名称、服务形式、应用领域、算法类型、算法自评估报告、拟公示内容等信息，履行备案手续",
-            "source_section": "第二十四条"
-          }
-        ]
-      },
-      {
-        "label": "registration_licensing",
-        "confidence": 0.95,
-        "evidence": [
-          {
-            "quote": "具有舆论属性或者社会动员能力的算法推荐服务提供者应当在提供服务之日起十个工作日内通过互联网信息服务算法备案系统填报…履行备案手续",
-            "source_section": "第二十四条"
-          }
-        ]
-      },
-      {
-        "label": "incident_reporting",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "发现违法信息的，应当立即停止传输，采取消除等处置措施…并向网信部门和有关部门报告",
-            "source_section": "第九条"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "建立完善人工干预和用户自主选择机制，在首页首屏、热搜、精选、榜单类、弹窗等重点环节积极呈现符合主流价值导向的信息",
-            "source_section": "第十一条"
-          }
-        ]
-      },
-      {
-        "label": "content_provenance",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "发现未作显著标识的算法生成合成信息的，应当作出显著标识后，方可继续传输",
-            "source_section": "第九条"
+            "quote": "算法推荐服务提供者应当依法留存网络日志，配合网信部门和电信、公安、市场监管等有关部门开展安全评估和监督检查工作，并提供必要的技术、数据等支持和协助。",
+            "source_section": "第二十八条",
+            "quote_en": "Algorithmic recommendation service providers shall retain network logs in accordance with law, cooperate with cyberspace administration, telecommunications, public security, market regulation, and other relevant departments in conducting security assessments and supervisory inspections, and provide necessary technical, data, and other support and assistance.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3372,
+            "end_char": 3446
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "civil_penalty",
-        "confidence": 0.95,
+        "label": "regulatory_supervision",
+        "confidence": 0.98,
         "evidence": [
           {
-            "quote": "责令限期改正；拒不改正或者情节严重的，责令暂停信息更新，并处一万元以上十万元以下罚款",
-            "source_section": "第三十一条"
+            "quote": "网信部门会同电信、公安、市场监管等有关部门对算法推荐服务依法开展安全评估和监督检查工作，对发现的问题及时提出整改意见并限期整改。",
+            "source_section": "第二十八条",
+            "quote_en": "Cyberspace administration departments, jointly with telecommunications, public security, market regulation, and other relevant departments, shall carry out security assessments and supervisory inspections of algorithmic recommendation services in accordance with law, and promptly issue rectification opinions and deadlines for discovered problems.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3307,
+            "end_char": 3371
+          },
+          {
+            "quote": "由网信部门和电信、公安、市场监管等有关部门依据职责给予警告、通报批评，责令限期改正",
+            "source_section": "第三十一条",
+            "quote_en": "Cyberspace administration, telecommunications, public security, market regulation, and other relevant departments shall, in accordance with their duties, issue warnings, circulate notices of criticism, and order rectification within a prescribed time limit.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3695,
+            "end_char": 3736
+          }
+        ]
+      },
+      {
+        "label": "civil_penalty",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "拒不改正或者情节严重的，责令暂停信息更新，并处一万元以上十万元以下罚款。",
+            "source_section": "第三十一条",
+            "quote_en": "Where rectification is refused or circumstances are serious, an order to suspend information updates shall be issued, along with a fine of not less than 10,000 yuan and not more than 100,000 yuan.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3737,
+            "end_char": 3773
           }
         ]
       },
       {
         "label": "criminal_penalty",
-        "confidence": 0.9,
-        "evidence": [
-          {
-            "quote": "构成犯罪的，依法追究刑事责任",
-            "source_section": "第三十一条"
-          }
-        ]
-      },
-      {
-        "label": "regulatory_supervision",
         "confidence": 0.95,
         "evidence": [
           {
-            "quote": "网信部门会同电信、公安、市场监管等有关部门对算法推荐服务依法开展安全评估和监督检查工作，对发现的问题及时提出整改意见并限期整改",
-            "source_section": "第二十八条"
+            "quote": "构成违反治安管理行为的，依法给予治安管理处罚；构成犯罪的，依法追究刑事责任。",
+            "source_section": "第三十一条",
+            "quote_en": "Where an act constitutes a violation of public security administration, public security administrative penalties shall be imposed in accordance with law; where it constitutes a crime, criminal liability shall be pursued in accordance with law.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3773,
+            "end_char": 3811
           }
         ]
       },
       {
         "label": "market_access_restriction",
-        "confidence": 0.85,
+        "confidence": 0.93,
         "evidence": [
           {
-            "quote": "发生严重违法情形受到责令关闭网站、吊销相关业务许可证或者吊销营业执照等行政处罚的，由国家和省、自治区、直辖市网信部门予以注销备案",
-            "source_section": "第三十三条"
+            "quote": "拒不改正或者情节严重的，责令暂停信息更新，并处一万元以上十万元以下罚款。",
+            "source_section": "第三十一条",
+            "quote_en": "Where rectification is refused or circumstances are serious, an order to suspend information updates shall be issued, along with a fine of not less than 10,000 yuan and not more than 100,000 yuan.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3737,
+            "end_char": 3773
+          },
+          {
+            "quote": "或者发生严重违法情形受到责令关闭网站、吊销相关业务许可证或者吊销营业执照等行政处罚的，由国家和省、自治区、直辖市网信部门予以注销备案。",
+            "source_section": "第三十三条",
+            "quote_en": "Or where serious illegal circumstances occur resulting in administrative penalties such as an order to shut down the website, revocation of relevant business permits, or revocation of the business license, the national and provincial, autonomous region, or municipal cyberspace administration departments shall cancel the filing.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4125,
+            "end_char": 4192
+          }
+        ]
+      },
+      {
+        "label": "licensing_requirement",
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "quote": "国家和省、自治区、直辖市网信部门收到备案人提交的备案材料后，材料齐全的，应当在三十个工作日内予以备案，发放备案编号并进行公示；材料不齐全的，不予备案，并应当在三十个工作日内通知备案人并说明理由。",
+            "source_section": "第二十五条",
+            "quote_en": "After receiving filing materials submitted by the filer, national and provincial, autonomous region, or municipal cyberspace administration departments shall, if the materials are complete, grant filing within thirty working days, issue a filing number, and publicly announce it; if materials are incomplete, filing shall not be granted, and the filer shall be notified with reasons within thirty working days.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3090,
+            "end_char": 3187
+          },
+          {
+            "quote": "具有舆论属性或者社会动员能力的算法推荐服务提供者通过隐瞒有关情况、提供虚假材料等不正当手段取得备案的，由国家和省、自治区、直辖市网信部门予以撤销备案，给予警告、通报批评",
+            "source_section": "第三十三条",
+            "quote_en": "Where an algorithmic recommendation service provider with public opinion attributes or social mobilization capabilities obtains filing through improper means such as concealing relevant circumstances or providing false materials, the national and provincial, autonomous region, or municipal cyberspace administration departments shall revoke the filing, issue a warning, and circulate a notice of criticism.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3956,
+            "end_char": 4040
           }
         ]
       },
       {
         "label": "reporting_obligation",
-        "confidence": 0.9,
+        "confidence": 0.92,
         "evidence": [
           {
-            "quote": "任何组织和个人发现违反本规定行为的，可以向网信部门和有关部门投诉、举报",
-            "source_section": "第三十条"
+            "quote": "具有舆论属性或者社会动员能力的算法推荐服务提供者应当在提供服务之日起十个工作日内通过互联网信息服务算法备案系统填报服务提供者的名称、服务形式、应用领域、算法类型、算法自评估报告、拟公示内容等信息，履行备案手续。",
+            "source_section": "第二十四条",
+            "quote_en": "Algorithmic recommendation service providers with public opinion attributes or social mobilization capabilities shall, within ten working days from the date of providing services, complete filing procedures through the Internet Information Service Algorithm Filing System by reporting information including the provider's name, service form, application domain, algorithm type, algorithm self-assessment report, and proposed public disclosure content.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2885,
+            "end_char": 2990
+          },
+          {
+            "quote": "发现违法信息的，应当立即停止传输，采取消除等处置措施，防止信息扩散，保存有关记录，并向网信部门和有关部门报告。",
+            "source_section": "第九条",
+            "quote_en": "Where illegal information is discovered, transmission shall be stopped immediately, disposal measures such as deletion shall be taken to prevent its spread, relevant records shall be preserved, and a report shall be made to the cyberspace administration and relevant departments.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1269,
+            "end_char": 1324
           }
         ]
       }
     ],
-    "implementation_notes": "This regulation governs algorithm recommendation services in China, covering personalized push, ranking, filtering, and decision-scheduling algorithms. It establishes a tiered registration/filing (备案) system for providers with public opinion influence or social mobilization capacity. Requirements include algorithmic transparency to users, user opt-out mechanisms, content labeling for AI-generated content, and periodic safety assessments. Penalties range from warnings and fines (10,000–100,000 RMB) to suspension of service updates and criminal liability for serious violations.",
-    "confidence": 0.95
+    "enforcement_authorities": [
+      "Cyberspace Administration of China (CAC) and local cyberspace administration departments",
+      "Ministry of Industry and Information Technology (MIIT) and local telecommunications departments",
+      "Ministry of Public Security (MPS) and local public security departments",
+      "State Administration for Market Regulation (SAMR) and local market regulation departments"
+    ],
+    "compliance_deadlines": [
+      "2022-03-01: Provisions enter into force (Art. 35)",
+      "Within 10 working days of commencing service: Providers with public opinion attributes or social mobilization capabilities must complete algorithm filing (Art. 24)",
+      "Within 10 working days of any change: Providers must file updates to changed registration information (Art. 24)",
+      "Within 20 working days of terminating service: Providers must complete filing cancellation procedures (Art. 24)",
+      "Within 30 working days of receiving filing materials: National and provincial cyberspace administration departments must complete filing review and issue filing numbers or notify applicants of deficiencies (Art. 25)"
+    ],
+    "penalties_summary": "Violations of Articles 7, 8, 9(1), 10, 14, 16, 17, 22, 24, or 26 are punished under applicable laws and administrative regulations, or where none apply, by warnings, public reprimands, and orders to rectify within a time limit; refusal to rectify or serious circumstances incur orders to suspend information updates and fines of RMB 10,000 to RMB 100,000, alongside public security administration penalties or criminal liability where applicable (Art. 31). Violations of Articles 6, 9(2), 11, 13, 15, 18, 19, 20, 21, 27, or 28(2) are handled under relevant laws, administrative regulations, and departmental rules (Art. 32). Obtaining algorithm filing through concealment or false materials results in revocation of filing, warnings, public reprimands, and in serious cases suspension of information updates and fines of RMB 10,000 to RMB 100,000; failure to deregister or receiving severe administrative penalties such as website closure or license revocation results in cancellation of filing (Art. 33).",
+    "implementation_notes": "Joint departmental regulation (Order No. 9) formulated under the Cybersecurity Law, Data Security Law, Personal Information Protection Law, and Administrative Measures on Internet Information Services. Covers five categories of algorithm recommendation technologies: generative/synthetic, personalized push, ranking/selection, search/filtering, and dispatch/decision-making. Establishes a tiered and classified security management system (Art. 23) and is jointly interpreted by CAC, MIIT, MPS, and SAMR (Art. 34).",
+    "confidence": 0.96
   },
   "risk_framing": {
     "dominant_frame": "social_stability",
     "secondary_frames": [
-      "fundamental_rights",
       "consumer_public_safety",
-      "national_security"
+      "fundamental_rights",
+      "national_security",
+      "labor_transition"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.05,
-      "national_security": 0.55,
-      "economic_competitiveness": 0.1,
-      "fundamental_rights": 0.6,
-      "social_stability": 0.75,
-      "innovation_enablement": 0.1,
-      "consumer_public_safety": 0.55,
-      "labor_transition": 0.2
+      "existential_catastrophic": 0.0,
+      "national_security": 0.75,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.78,
+      "social_stability": 0.98,
+      "innovation_enablement": 0.45,
+      "consumer_public_safety": 0.9,
+      "labor_transition": 0.72
     },
-    "rationale_summary": "The document primarily frames algorithm recommendation governance as necessary to maintain social order and uphold 'socialist core values,' prevent disruption to economic and social order, and suppress harmful information. The recurring emphasis on 'social public interest,' 'social mobilization capability,' 'public opinion attributes,' and preventing content that disturbs social order places social stability as the dominant frame. Secondary frames include fundamental rights (user transparency, opt-out rights, protections for minors, elderly, and workers), consumer/public safety (fraud prevention, minor protection, anti-addiction), and national security (explicit mention of national security protection).",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.08,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.12,
+      "social_stability": 0.45,
+      "innovation_enablement": 0.05,
+      "consumer_public_safety": 0.22,
+      "labor_transition": 0.08
+    },
+    "rationale_summary": "The Provisions on the Management of Algorithmic Recommendations in Internet Information Services are predominantly framed around social stability and public order. While consumer and public safety is a prominent runner-up—covering addiction prevention, minor protection, anti-fraud safeguards for the elderly, and fair consumer pricing—social stability edges it out because ideological alignment, public-opinion ecosystem governance, and social order anchor both the overarching purpose (Article 1's socialist core values and public interest; Article 6's mainstream value orientation and positive energy) and the regulation's primary structural triggers (Articles 9, 11, 13–14, and the filing/assessment regime in Articles 23–27 for services with public-opinion attributes or social mobilization capabilities). Secondary rationales also include protecting individual rights and personal data (fundamental_rights), safeguarding national security (national_security), and protecting platform workers' labor rights in algorithmic dispatch (labor_transition), alongside a minor nod to healthy and orderly industry development (innovation_enablement).",
     "evidence_spans": [
       {
-        "quote": "弘扬社会主义核心价值观，维护国家安全和社会公共利益",
-        "source_section": "第一条"
+        "quote": "为了规范互联网信息服务算法推荐活动，弘扬社会主义核心价值观，维护国家安全和社会公共利益，保护公民、法人和其他组织的合法权益，促进互联网信息服务健康有序发展",
+        "source_section": "第一条",
+        "quote_en": "In order to regulate internet information service algorithmic recommendation activities, promote socialist core values, safeguard national security and the social public interest, protect the legitimate rights and interests of citizens, legal persons, and other organizations, and promote the healthy and orderly development of internet information services",
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 179,
+        "end_char": 256
       },
       {
-        "quote": "不得利用算法推荐服务从事危害国家安全和社会公共利益、扰乱经济秩序和社会秩序",
-        "source_section": "第六条"
+        "quote": "算法推荐服务提供者应当坚持主流价值导向，优化算法推荐服务机制，积极传播正能量，促进算法应用向上向善。\n算法推荐服务提供者不得利用算法推荐服务从事危害国家安全和社会公共利益、扰乱经济秩序和社会秩序、侵犯他人合法权益等法律、行政法规禁止的活动",
+        "source_section": "第六条",
+        "quote_en": "Algorithmic recommendation service providers shall uphold mainstream value orientations, optimize algorithmic recommendation service mechanisms, actively spread positive energy, and promote the upward and benevolent application of algorithms. Algorithmic recommendation service providers must not use algorithmic recommendation services to engage in activities prohibited by laws and administrative regulations, such as endangering national security and the social public interest, disrupting economic and social order, or infringing on the legitimate rights and interests of others",
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 781,
+        "end_char": 900
       },
       {
-        "quote": "具有舆论属性或者社会动员能力的算法推荐服务提供者",
-        "source_section": "第二十四条"
+        "quote": "算法推荐服务提供者不得向未成年人推送可能引发未成年人模仿不安全行为和违反社会公德行为、诱导未成年人不良嗜好等可能影响未成年人身心健康的信息，不得利用算法推荐服务诱导未成年人沉迷网络。",
+        "source_section": "第十八条",
+        "quote_en": "Algorithmic recommendation service providers must not push to minors information that may affect their physical and mental health, such as information that could induce minors to imitate unsafe behaviors or behaviors violating social morality, or induce bad habits in minors, and must not use algorithmic recommendation services to induce minors into internet addiction.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 2292,
+        "end_char": 2383
       },
       {
-        "quote": "实施影响网络舆论或者规避监督管理行为",
-        "source_section": "第十四条"
+        "quote": "算法推荐服务提供者向消费者销售商品或者提供服务的，应当保护消费者公平交易的权利，不得根据消费者的偏好、交易习惯等特征，利用算法在交易价格等交易条件上实施不合理的差别待遇等违法行为。",
+        "source_section": "第二十一条",
+        "quote_en": "Algorithmic recommendation service providers selling goods or providing services to consumers shall protect consumers' right to fair trade, and must not use algorithms to implement illegal acts such as unreasonable differential treatment in transaction prices or other transaction conditions based on consumers' preferences, transaction habits, and other characteristics.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 2597,
+        "end_char": 2687
       },
       {
-        "quote": "向用户提供不针对其个人特征的选项，或者向用户提供便捷的关闭算法推荐服务的选项",
-        "source_section": "第十七条"
+        "quote": "算法推荐服务提供者应当向用户提供不针对其个人特征的选项，或者向用户提供便捷的关闭算法推荐服务的选项。用户选择关闭算法推荐服务的，算法推荐服务提供者应当立即停止提供相关服务。",
+        "source_section": "第十七条",
+        "quote_en": "Algorithmic recommendation service providers shall provide users with options that do not target their personal characteristics, or provide users with convenient options to turn off algorithmic recommendation services. Where a user chooses to turn off algorithmic recommendation services, the provider shall immediately cease providing the relevant services.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 2018,
+        "end_char": 2104
+      },
+      {
+        "quote": "算法推荐服务提供者向劳动者提供工作调度服务的，应当保护劳动者取得劳动报酬、休息休假等合法权益，建立完善平台订单分配、报酬构成及支付、工作时间、奖惩等相关算法。",
+        "source_section": "第二十条",
+        "quote_en": "Algorithmic recommendation service providers providing work dispatch services to workers shall protect workers' legitimate rights and interests such as obtaining labor remuneration and rest and leave, and establish and improve relevant algorithms for platform order allocation, remuneration composition and payment, working hours, and rewards and punishments.",
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 2510,
+        "end_char": 2589
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:33:09.807750Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "3fd1f2761cbf81a20b28fc10652111070ccd73406cb2c49f3ac387485be958d4",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 28523,
+      "output_tokens": 5740,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 10190,
+      "estimated_cost_usd": 0.194954
+    },
+    "grounding_summary": {
+      "total_quotes": 26,
+      "exact_matches": 26,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 1
+    }
   }
 }

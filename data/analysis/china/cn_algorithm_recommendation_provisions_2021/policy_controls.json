@@ -1,0 +1,271 @@
+{
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.96,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "算法推荐服务提供者应当落实算法安全主体责任，建立健全算法机制机理审核、科技伦理审查、用户注册、信息发布审核、数据安全和个人信息保护、反电信网络诈骗、安全评估监测、安全事件应急处置等管理制度和技术措施，制定并公开算法推荐服务相关规则，配备与算法推荐服务规模相适应的专业人员和技术支撑。",
+          "source_section": "第七条",
+          "quote_en": "Algorithmic recommendation service providers shall fulfill primary responsibility for algorithm security, establish and improve management systems and technical measures for algorithm mechanism review, scientific and technological ethics review, user registration, information release review, data security and personal information protection, anti-telecom and network fraud, security assessment and monitoring, and security incident emergency response, formulate and publish rules related to algorithmic recommendation services, and equip professional personnel and technical support commensurate with the scale of algorithmic recommendation services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "算法推荐服务提供者应当定期审核、评估、验证算法机制机理、模型、数据和应用结果等，不得设置诱导用户沉迷、过度消费等违反法律法规或者违背伦理道德的算法模型。",
+          "source_section": "第八条",
+          "quote_en": "Algorithmic recommendation service providers shall regularly review, assess, and verify algorithm mechanisms, models, data, and application outcomes, and shall not establish algorithmic models that violate laws, regulations, or ethics, such as those inducing user addiction or excessive consumption.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.95,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "发现未作显著标识的算法生成合成信息的，应当作出显著标识后，方可继续传输。",
+          "source_section": "第九条",
+          "quote_en": "Where algorithmically generated or synthesized information without a prominent label is discovered, it shall be prominently labeled before transmission may continue.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.78,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "发现违法信息的，应当立即停止传输，采取消除等处置措施，防止信息扩散，保存有关记录，并向网信部门和有关部门报告。",
+          "source_section": "第九条",
+          "quote_en": "Where illegal information is discovered, transmission shall be stopped immediately, disposal measures such as deletion shall be taken to prevent its spread, relevant records shall be preserved, and a report shall be made to the cyberspace administration and relevant departments.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "算法推荐服务提供者应当加强算法推荐服务版面页面生态管理，建立完善人工干预和用户自主选择机制，在首页首屏、热搜、精选、榜单类、弹窗等重点环节积极呈现符合主流价值导向的信息。",
+          "source_section": "第十一条",
+          "quote_en": "Algorithmic recommendation service providers shall strengthen page ecosystem management for algorithmic recommendation services, establish and improve manual intervention and user autonomous selection mechanisms, and actively present information conforming to mainstream value orientations in key links such as homepages, trending searches, featured sections, rankings, and pop-ups.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "算法推荐服务提供者应当以显著方式告知用户其提供算法推荐服务的情况，并以适当方式公示算法推荐服务的基本原理、目的意图和主要运行机制等。",
+          "source_section": "第十六条",
+          "quote_en": "Algorithmic recommendation service providers shall inform users in a prominent manner of their provision of algorithmic recommendation services, and publicly disclose in an appropriate manner the basic principles, purposes, intentions, and main operating mechanisms of the algorithmic recommendation services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "算法推荐服务提供者应当向用户提供不针对其个人特征的选项，或者向用户提供便捷的关闭算法推荐服务的选项。用户选择关闭算法推荐服务的，算法推荐服务提供者应当立即停止提供相关服务。",
+          "source_section": "第十七条",
+          "quote_en": "Algorithmic recommendation service providers shall provide users with options that do not target their personal characteristics, or provide users with convenient options to turn off algorithmic recommendation services. Where a user chooses to turn off algorithmic recommendation services, the provider shall immediately stop providing the relevant services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.97,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "具有舆论属性或者社会动员能力的算法推荐服务提供者应当在提供服务之日起十个工作日内通过互联网信息服务算法备案系统填报服务提供者的名称、服务形式、应用领域、算法类型、算法自评估报告、拟公示内容等信息，履行备案手续。",
+          "source_section": "第二十四条",
+          "quote_en": "Algorithmic recommendation service providers with public opinion attributes or social mobilization capabilities shall, within ten working days from the date of providing services, complete filing procedures through the Internet Information Service Algorithm Filing System by reporting information including the provider's name, service form, application domain, algorithm type, algorithm self-assessment report, and proposed public disclosure content.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "算法推荐服务提供者提供互联网新闻信息服务的，应当依法取得互联网新闻信息服务许可，规范开展互联网新闻信息采编发布服务、转载服务和传播平台服务",
+          "source_section": "第十三条",
+          "quote_en": "Algorithmic recommendation service providers providing internet news information services shall obtain an internet news information service license in accordance with law, and carry out internet news information collection, editing, publishing, reposting, and dissemination platform services in a standardized manner.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.85,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "算法推荐服务提供者应当依法留存网络日志，配合网信部门和电信、公安、市场监管等有关部门开展安全评估和监督检查工作，并提供必要的技术、数据等支持和协助。",
+          "source_section": "第二十八条",
+          "quote_en": "Algorithmic recommendation service providers shall retain network logs in accordance with law, cooperate with cyberspace administration, telecommunications, public security, market regulation, and other relevant departments in conducting security assessments and supervisory inspections, and provide necessary technical, data, and other support and assistance.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "网信部门会同电信、公安、市场监管等有关部门对算法推荐服务依法开展安全评估和监督检查工作，对发现的问题及时提出整改意见并限期整改。",
+          "source_section": "第二十八条",
+          "quote_en": "Cyberspace administration departments, jointly with telecommunications, public security, market regulation, and other relevant departments, shall carry out security assessments and supervisory inspections of algorithmic recommendation services in accordance with law, and promptly issue rectification opinions and deadlines for discovered problems.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "由网信部门和电信、公安、市场监管等有关部门依据职责给予警告、通报批评，责令限期改正",
+          "source_section": "第三十一条",
+          "quote_en": "Cyberspace administration, telecommunications, public security, market regulation, and other relevant departments shall, in accordance with their duties, issue warnings, circulate notices of criticism, and order rectification within a prescribed time limit.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "civil_penalty",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "拒不改正或者情节严重的，责令暂停信息更新，并处一万元以上十万元以下罚款。",
+          "source_section": "第三十一条",
+          "quote_en": "Where rectification is refused or circumstances are serious, an order to suspend information updates shall be issued, along with a fine of not less than 10,000 yuan and not more than 100,000 yuan.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "criminal_penalty",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "构成违反治安管理行为的，依法给予治安管理处罚；构成犯罪的，依法追究刑事责任。",
+          "source_section": "第三十一条",
+          "quote_en": "Where an act constitutes a violation of public security administration, public security administrative penalties shall be imposed in accordance with law; where it constitutes a crime, criminal liability shall be pursued in accordance with law.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "market_access_restriction",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "quote": "拒不改正或者情节严重的，责令暂停信息更新，并处一万元以上十万元以下罚款。",
+          "source_section": "第三十一条",
+          "quote_en": "Where rectification is refused or circumstances are serious, an order to suspend information updates shall be issued, along with a fine of not less than 10,000 yuan and not more than 100,000 yuan.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "或者发生严重违法情形受到责令关闭网站、吊销相关业务许可证或者吊销营业执照等行政处罚的，由国家和省、自治区、直辖市网信部门予以注销备案。",
+          "source_section": "第三十三条",
+          "quote_en": "Or where serious illegal circumstances occur resulting in administrative penalties such as an order to shut down the website, revocation of relevant business permits, or revocation of the business license, the national and provincial, autonomous region, or municipal cyberspace administration departments shall cancel the filing.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "licensing_requirement",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "国家和省、自治区、直辖市网信部门收到备案人提交的备案材料后，材料齐全的，应当在三十个工作日内予以备案，发放备案编号并进行公示；材料不齐全的，不予备案，并应当在三十个工作日内通知备案人并说明理由。",
+          "source_section": "第二十五条",
+          "quote_en": "After receiving filing materials submitted by the filer, national and provincial, autonomous region, or municipal cyberspace administration departments shall, if the materials are complete, grant filing within thirty working days, issue a filing number, and publicly announce it; if materials are incomplete, filing shall not be granted, and the filer shall be notified with reasons within thirty working days.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "具有舆论属性或者社会动员能力的算法推荐服务提供者通过隐瞒有关情况、提供虚假材料等不正当手段取得备案的，由国家和省、自治区、直辖市网信部门予以撤销备案，给予警告、通报批评",
+          "source_section": "第三十三条",
+          "quote_en": "Where an algorithmic recommendation service provider with public opinion attributes or social mobilization capabilities obtains filing through improper means such as concealing relevant circumstances or providing false materials, the national and provincial, autonomous region, or municipal cyberspace administration departments shall revoke the filing, issue a warning, and circulate a notice of criticism.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "quote": "具有舆论属性或者社会动员能力的算法推荐服务提供者应当在提供服务之日起十个工作日内通过互联网信息服务算法备案系统填报服务提供者的名称、服务形式、应用领域、算法类型、算法自评估报告、拟公示内容等信息，履行备案手续。",
+          "source_section": "第二十四条",
+          "quote_en": "Algorithmic recommendation service providers with public opinion attributes or social mobilization capabilities shall, within ten working days from the date of providing services, complete filing procedures through the Internet Information Service Algorithm Filing System by reporting information including the provider's name, service form, application domain, algorithm type, algorithm self-assessment report, and proposed public disclosure content.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "发现违法信息的，应当立即停止传输，采取消除等处置措施，防止信息扩散，保存有关记录，并向网信部门和有关部门报告。",
+          "source_section": "第九条",
+          "quote_en": "Where illegal information is discovered, transmission shall be stopped immediately, disposal measures such as deletion shall be taken to prevent its spread, relevant records shall be preserved, and a report shall be made to the cyberspace administration and relevant departments.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "parser_version": "0.1.0",
+  "parser_version": "0.3.0",
   "title": "国务院关于印发新一代人工智能发展规划的通知_科技_中国政府网",
   "language": "zh",
   "document_format": "html",
@@ -67,8 +67,9 @@
     }
   ],
   "warnings": [
-    "linked_artifact_unexpected_content_type:text/html",
-    "linked_artifact_url:http://app.www.gov.cn/download/Chinese.html"
+    "linked_artifact_not_fetched:http://app.www.gov.cn/download/Chinese.html"
   ],
-  "source_artifact_path": "data/raw/china/cn_new_generation_ai_plan_2017/source.html"
+  "source_artifact_path": "data/raw/china/cn_new_generation_ai_plan_2017/source.html",
+  "source_sha256": "bfa9a3f4213b08ce8c47f5765a0ffae4e0962cbbd2fdb420085fad894730278b",
+  "extractor": "beautifulsoup4"
 }

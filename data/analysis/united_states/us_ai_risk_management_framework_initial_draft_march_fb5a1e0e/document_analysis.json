@@ -10,93 +10,213 @@
     "publication_date": "2022-03-17",
     "effective_date": null,
     "covered_actors": [
-      "AI system stakeholders",
-      "operators and evaluators",
-      "external stakeholders",
-      "general public",
-      "business teams",
-      "design and development teams",
-      "internal risk management teams",
-      "compliance teams",
-      "academic, public, and private sector researchers",
-      "professional evaluators and auditors",
-      "system operators",
-      "trade groups",
-      "standards developing organizations",
-      "advocacy groups",
-      "civil society organizations"
+      "AI system stakeholders (organizations and teams that commission, fund, procure, develop, or deploy AI systems; business, design, development, internal risk management, and compliance teams)",
+      "Operators and evaluators (academic, public, and private sector researchers; professional evaluators and auditors; system operators; expert end users)",
+      "External stakeholders (trade groups, standards developing organizations, advocacy groups, civil society organizations)",
+      "General public (individuals, communities, consumers)",
+      "Small to medium-sized organizations and large organizations across all sectors"
     ],
     "covered_application_domains": [
-      "general_purpose_models",
       "critical_infrastructure",
-      "public_sector_use",
-      "employment",
-      "education",
-      "healthcare",
-      "finance",
-      "law_enforcement"
+      "healthcare"
     ],
     "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.9,
+        "confidence": 0.96,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "This voluntary framework provides a flexible, structured, and measurable process to address AI risks throughout the AI lifecycle",
-            "source_section": "Page 4"
+            "quote": "This voluntary framework provides a flexible, 30 structured, and measurable process to address AI risks throughout the AI lifecycle, offering 31 guidance for the development and use of trustworthy and responsible AI.",
+            "source_section": "Part 1: Motivation - 1 Overview",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5510,
+            "end_char": 5726
           },
           {
-            "quote": "Appropriate methods and metrics are identified and applied... Approaches and metrics for quantitative or qualitative measurement of the enumerated risks... are identified and selected for implementation.",
-            "source_section": "Page 20"
+            "quote": "Potential harms of the AI system are elucidated along technical and socio-technical characteristics and aligned with guiding principles. Likelihood of each harm is understood based on expected use, past uses of AI systems in similar contexts, public incident reports or other data.",
+            "source_section": "Part 2: Core and Profiles - 6.1 Map (Table 1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 44163,
+            "end_char": 44444
           }
         ]
       },
       {
         "label": "pre_deployment_testing",
-        "confidence": 0.75,
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Practical approaches for AI safety often relate to rigorous simulation and in-domain testing, real-time monitoring, and the ability to quickly shut down or modify misbehaving systems.",
-            "source_section": "Page 15"
+            "quote": "Operators and evaluators provide monitoring and formal/informal test, evaluation, validation, 15 and verification (TEVV) of system performance, relative to both technical and socio-technical 16 requirements.",
+            "source_section": "Part 1: Motivation - 3 Audience",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13262,
+            "end_char": 13469
           },
           {
-            "quote": "deploying the system in production environments subject to increased testing or other controls",
-            "source_section": "Page 20"
+            "quote": "Accuracy, reliability, robustness, resilience (or ML security), explainability and interpretability, privacy, safety, bias, and other system performance or assurance criteria are measured, qualitatively or quantitatively.",
+            "source_section": "Part 2: Core and Profiles - 6.2 Measure (Table 2)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 46150,
+            "end_char": 46371
+          }
+        ]
+      },
+      {
+        "label": "red_teaming",
+        "confidence": 0.78,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Data generated from experiments that are 26 designed to evaluate system performance also fall into this category and might include tests of 27 causal hypotheses and assessments of robustness to adversarial attack.",
+            "source_section": "Part 1: Motivation - 5.1 Technical Characteristics",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24224,
+            "end_char": 24437
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.85,
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Transparency reflects the extent to which information is available to a user when interacting with an AI system. Its scope spans from design decisions and training data to model training, the structure of the model, its intended use case",
-            "source_section": "Page 16"
+            "quote": "Transparency reflects the extent to which information is available to a 24 user when interacting with an AI system. Its scope spans from design decisions and training data 25 to model training, the structure of the model, its intended use case, how and when deployment 26 decisions were made and by whom, etc.",
+            "source_section": "Part 1: Motivation - 5.3.3 Transparency",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 38024,
+            "end_char": 38333
+          },
+          {
+            "quote": "Priority actions to maximize benefits and minimize harm are planned, prepared, implemented, and communicated to internal and external stakeholders as appropriate (or required) and to the extent practicable.",
+            "source_section": "Part 2: Core and Profiles - 6.3 Manage (Table 3)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 48713,
+            "end_char": 48919
           }
         ]
       },
       {
         "label": "model_documentation",
-        "confidence": 0.75,
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Explainable systems can be more easily debugged and monitored, and lend themselves to more thorough documentation, audit, and governance.",
-            "source_section": "Page 14"
+            "quote": "The risk management process and its outcomes are documented and traceable through transparent mechanisms, as appropriate and to the extent practicable.",
+            "source_section": "Part 2: Core and Profiles - 6.4 Govern (Table 4)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 51830,
+            "end_char": 51981
+          },
+          {
+            "quote": "Intended purpose, setting in which the AI system will be deployed, the specific set of users along with their expectations, and impacts of system use are understood and documented as appropriate.",
+            "source_section": "Part 2: Core and Profiles - 6.1 Map (Table 1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42278,
+            "end_char": 42473
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.85,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Ideally, this evaluation should be conducted by an independent third party or by experts who did not serve as front-line developers for the system, and who consults experts, stakeholders, and impacted communities.",
+            "source_section": "Part 2: Core and Profiles - 6.1 Map (Table 1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 44530,
+            "end_char": 44743
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.75,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Other common ML security concerns relate to the 16 exfiltration of models, training data, or other intellectual property through AI system endpoints.",
+            "source_section": "Part 1: Motivation - 5.1.4 Resilience or ML Security",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27606,
+            "end_char": 27755
           }
         ]
       },
       {
         "label": "human_oversight",
-        "confidence": 0.8,
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "input from a broad and diverse set of stakeholders is required throughout the AI lifecycle to ensure that risks arising in social contexts are managed appropriately",
-            "source_section": "Page 13"
+            "quote": "Mechanisms are in place and maintained to supersede, disengage, or deactivate existing applications of AI that demonstrate performance or outcomes that are inconsistent with their intended use.",
+            "source_section": "Part 2: Core and Profiles - 6.3 Manage (Table 3)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 49237,
+            "end_char": 49430
           },
           {
-            "quote": "Individual human operators and their organizations should be answerable and held accountable for the outcomes of AI systems",
-            "source_section": "Page 15"
+            "quote": "Plans related to post deployment monitoring of the systems are implemented, including mechanisms for user feedback, appeal and override, decommissioning, incident response, and change management.",
+            "source_section": "Part 2: Core and Profiles - 6.3 Manage (Table 3)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 49516,
+            "end_char": 49711
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.85,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Considerations related to data collection and selection are identified. (e.g., availability, representativeness, suitability).",
+            "source_section": "Part 2: Core and Profiles - 6.1 Map (Table 1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 43210,
+            "end_char": 43336
+          },
+          {
+            "quote": "Policies and procedures include guidelines for ensuring supply chain and partner involvement and expectations regarding the value and trustworthiness of third-party data or AI systems.",
+            "source_section": "Part 2: Core and Profiles - 6.4 Govern (Table 4)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 54549,
+            "end_char": 54733
           }
         ]
       }
@@ -104,25 +224,25 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.95,
+        "confidence": 0.98,
         "evidence": [
           {
-            "quote": "This voluntary framework provides a flexible, structured, and measurable process to address AI risks throughout the AI lifecycle",
-            "source_section": "Page 4"
+            "quote": "The AI RMF is intended for voluntary use in addressing risks in the design, development, use, and evaluation of AI products, services, and systems.",
+            "source_section": "Preamble",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 254,
+            "end_char": 401
           },
           {
             "quote": "It is important to note that the AI RMF is neither a checklist nor should be used in any way to certify an AI system.",
-            "source_section": "Page 4"
-          }
-        ]
-      },
-      {
-        "label": "none_specified",
-        "confidence": 0.9,
-        "evidence": [
-          {
-            "quote": "using the AI RMF does not substitute for due diligence and judgment by organizations and individuals in deciding whether to design, develop, and deploy AI technologies",
-            "source_section": "Page 4"
+            "source_section": "Part 1: Motivation - 1 Overview",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6044,
+            "end_char": 6161
           }
         ]
       }
@@ -130,48 +250,126 @@
     "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "This is the first draft of the NIST AI RMF, published March 17, 2022. Part 3 was not yet developed at time of publication. The framework is explicitly voluntary and not a compliance mechanism; it is intended to be used alongside existing laws, regulations, and mandatory guidance. Developed under the National AI Initiative Act of 2020 (P.L. 116-283). Framework covers all sectors, organization sizes, and AI maturity levels.",
-    "confidence": 0.92
+    "implementation_notes": "Superseded consultation draft of the NIST AI Risk Management Framework published March 17, 2022 (public comment deadline April 29, 2022; later superseded by the August 18, 2022 Second Draft and January 26, 2023 AI RMF 1.0). Organizes trustworthiness into a three-class taxonomy (technical characteristics, socio-technical characteristics, guiding principles) and introduces the four Core functions (Map, Measure, Manage, Govern). Explicitly voluntary, outcome-focused, non-prescriptive, law- and regulation-agnostic, and defers Profiles, Effectiveness, and the companion Practice Guide to subsequent drafts.",
+    "confidence": 0.95
   },
   "risk_framing": {
-    "dominant_frame": "consumer_public_safety",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "innovation_enablement",
-      "fundamental_rights",
-      "social_stability"
+      "consumer_public_safety",
+      "fundamental_rights"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.05,
-      "national_security": 0.1,
-      "economic_competitiveness": 0.15,
-      "fundamental_rights": 0.35,
-      "social_stability": 0.3,
-      "innovation_enablement": 0.45,
-      "consumer_public_safety": 0.65,
-      "labor_transition": 0.05
+      "existential_catastrophic": 0.0,
+      "national_security": 0.25,
+      "economic_competitiveness": 0.35,
+      "fundamental_rights": 0.85,
+      "social_stability": 0.2,
+      "innovation_enablement": 0.92,
+      "consumer_public_safety": 0.88,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The document primarily frames AI governance as a matter of ensuring trustworthy, safe, and reliable AI systems that do not harm individuals or society. Core language centers on managing adverse impacts, ensuring accuracy, safety, privacy, and mitigating harmful bias for end users and communities. Innovation enablement is a secondary frame, as the document argues that managing risk builds trust and enables broader AI adoption. Fundamental rights and social stability appear as additional concerns via references to civil liberties, fairness, equity, and societal risk.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.02,
+      "economic_competitiveness": 0.04,
+      "fundamental_rights": 0.24,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.38,
+      "consumer_public_safety": 0.32,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The AI RMF Initial Draft is dominantly framed around innovation_enablement, positioning a voluntary, flexible, non-prescriptive risk management framework as the vehicle to cultivate trust, create opportunities for innovation, and enable widespread acceptance and realization of AI's full potential. Innovation_enablement narrowly edges out consumer_public_safety, which is a strong runner-up emphasizing minimizing operational failures, physical safety hazards (e.g., factories and roads), and adverse impacts on individuals, organizations, and society. Fundamental_rights is a prominent third frame, anchored in civil liberties and rights, human autonomy and dignity in privacy, anti-discrimination, fairness, and actionable redress.",
     "evidence_spans": [
       {
-        "quote": "Ensuring that these inferences are helpful and not harmful in particular use cases – especially when inferences are rapidly scaled and amplified – is fundamental to trustworthy AI.",
-        "source_section": "Page 4"
+        "quote": "Cultivating trust and communication about how to understand and manage the risks of AI 18 systems will help create opportunities for innovation and realize the full potential of this 19 technology.",
+        "source_section": "Part 1: Motivation - 1 Overview",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 4869,
+        "end_char": 5066
       },
       {
-        "quote": "key characteristics which support trustworthiness, including accuracy, explainability and interpretability, privacy, reliability, robustness, safety, security (resilience) and mitigation of harmful bias",
-        "source_section": "Page 4"
+        "quote": "Identifying, mitigating, and 10 minimizing risks and potential harms associated with AI technologies are essential steps towards 11 the acceptance and widespread use of AI technologies.",
+        "source_section": "Part 1: Motivation - 4 Framing Risk",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 14876,
+        "end_char": 15061
       },
       {
-        "quote": "Cultivating trust and communication about how to understand and manage the risks of AI systems will help create opportunities for innovation and realize the full potential of this technology.",
-        "source_section": "Page 4"
+        "quote": "Safety as a concept is highly correlated with risk and generally denotes an absence (or 2 minimization) of failures or conditions that render a system dangerous. As AI systems interact 3 with humans more directly in factories and on the roads, for example, the safety of these systems 4 is a serious consideration for AI risk management.",
+        "source_section": "Part 1: Motivation - 5.2.4 Safety",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 32884,
+        "end_char": 33221
       },
       {
-        "quote": "Their actions can designate boundaries for operation (technical or legal) and balance societal values and priorities related to civil liberties and rights, the economy, and security.",
-        "source_section": "Page 8"
+        "quote": "While risk management processes 25 address adverse impacts, this framework intends to offer approaches to minimize anticipated 26 negative impacts of AI systems and identify opportunities to maximize positive impacts.",
+        "source_section": "Part 1: Motivation - 4.1 Understanding Risk and Adverse Impacts",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 16256,
+        "end_char": 16473
       },
       {
-        "quote": "Identifying, mitigating, and minimizing risks and potential harms associated with AI technologies are essential steps towards the acceptance and widespread use of AI technologies.",
-        "source_section": "Page 8"
+        "quote": "Privacy refers generally to the norms and practices that help to safeguard values such as human 33 autonomy and dignity. These norms and practices typically address freedom from intrusion, 34 limiting observation, or individuals’ control of facets of their identities (e.g., body, data, 35 reputation).",
+        "source_section": "Part 1: Motivation - 5.2.3 Privacy",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 32238,
+        "end_char": 32540
+      },
+      {
+        "quote": "Fairness in AI systems includes concerns for equality and equity by addressing socio-technical 36 issues such as bias and discrimination.",
+        "source_section": "Part 1: Motivation - 5.3 Guiding Principles",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 35804,
+        "end_char": 35941
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:19:59.570331Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "fc3393bda52049aee93c0168202d1e5f814e0a48425ae45a8e56e51ffda1b718",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 56537,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 23,
+      "exact_matches": 23,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

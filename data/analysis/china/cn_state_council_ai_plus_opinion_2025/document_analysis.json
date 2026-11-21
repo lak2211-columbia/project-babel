@@ -1,0 +1,221 @@
+{
+  "source_id": "cn_state_council_ai_plus_opinion_2025",
+  "title": "国务院关于深入实施“人工智能+”行动的意见 (国发〔2025〕11号 / State Council Opinion on Deepening Implementation of the 'AI+' Action)",
+  "language": "zh",
+  "policy_extraction": {
+    "jurisdiction": "china",
+    "issuing_body": "State Council of the People's Republic of China (国务院)",
+    "document_type": "strategy_paper",
+    "binding_strength": "strategy_statement",
+    "publication_date": "2025-08-21",
+    "effective_date": null,
+    "covered_actors": [
+      "Provincial, autonomous region, and municipal people's governments (各省、自治区、直辖市人民政府)",
+      "Ministries, commissions, and directly affiliated institutions of the State Council (国务院各部委、各直属机构)",
+      "Enterprises, universities, and research institutions (企业、高校、科研机构)",
+      "Software and IT service enterprises and AI application service providers (软件信息服务企业、人工智能应用服务商)",
+      "AI open-source communities (人工智能开源社区)"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "critical_infrastructure",
+      "public_sector_use",
+      "employment",
+      "education",
+      "healthcare",
+      "finance",
+      "law_enforcement"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.78,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "防范模型的黑箱、幻觉、算法歧视等带来的风险，加强前瞻评估和监测处置，推动人工智能应用合规、透明、可信赖。",
+            "source_section": "三、强化基础支撑能力（十四）提升安全能力水平",
+            "quote_en": "Prevent risks arising from model black boxes, hallucinations, algorithmic discrimination, and the like; strengthen forward-looking assessment as well as monitoring and handling; and promote compliant, transparent, and trustworthy AI applications.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4696,
+            "end_char": 4748
+          },
+          {
+            "quote": "加强人工智能应用就业风险评估，引导创新资源向创造就业潜力大的方向倾斜，减少对就业的冲击。",
+            "source_section": "二、加快实施重点行动（四）“人工智能+”民生福祉",
+            "quote_en": "Strengthen employment risk assessment of AI applications, guide innovation resources toward areas with greater job-creation potential, and reduce the impact on employment.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2159,
+            "end_char": 2203
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.72,
+        "obligation_strength": "aspirational",
+        "evidence": [
+          {
+            "quote": "优化人工智能相关安全评估和备案管理制度。",
+            "source_section": "三、强化基础支撑能力（十三）强化政策法规保障",
+            "quote_en": "Optimize AI-related security assessment and filing management systems.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4632,
+            "end_char": 4652
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.82,
+        "evidence": [
+          {
+            "quote": "建立健全人工智能技术监测、风险预警、应急响应体系，强化政府引导、行业自律，坚持包容审慎、分类分级，加快形成动态敏捷、多元协同的人工智能治理格局。",
+            "source_section": "三、强化基础支撑能力（十四）提升安全能力水平",
+            "quote_en": "Establish and improve AI technical monitoring, risk early warning, and emergency response systems; strengthen government guidance and industry self-regulation; adhere to inclusive, prudent, and tiered classification approaches; and accelerate the formation of a dynamic, agile, and multi-stakeholder collaborative AI governance pattern.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4748,
+            "end_char": 4820
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "State Council (国务院)",
+      "National Development and Reform Commission (国家发展改革委)",
+      "Provincial, autonomous region, and municipal people's governments (各省、自治区、直辖市人民政府)",
+      "State Council ministries, commissions, and directly affiliated institutions (国务院各部委、各直属机构)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "National strategic action plan (Guofa [2025] No. 11) coordinated by the National Development and Reform Commission (NDRC) for localized implementation by ministries and sub-national governments. Establishes phased national adoption milestones rather than binding legal compliance deadlines: >70% adoption of new-generation smart terminals and AI agents across six priority domains by 2027, >90% adoption by 2030, and full transition to an intelligent economy and society by 2035. Calls for advancing AI legislation, optimizing security assessment and filing management systems, and establishing an inclusive, prudent, tiered/classified (分类分级) governance framework.",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "economic_competitiveness",
+    "secondary_frames": [
+      "innovation_enablement",
+      "labor_transition",
+      "consumer_public_safety",
+      "social_stability",
+      "national_security"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.6,
+      "economic_competitiveness": 0.95,
+      "fundamental_rights": 0.3,
+      "social_stability": 0.65,
+      "innovation_enablement": 0.92,
+      "consumer_public_safety": 0.72,
+      "labor_transition": 0.85
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.05,
+      "economic_competitiveness": 0.36,
+      "fundamental_rights": 0.02,
+      "social_stability": 0.06,
+      "innovation_enablement": 0.32,
+      "consumer_public_safety": 0.08,
+      "labor_transition": 0.11
+    },
+    "rationale_summary": "The State Council's 'AI+' Action Opinion is dominantly framed around economic competitiveness: its overarching rationale is driving a revolutionary leap in productivity, cultivating 'new quality productive forces,' transforming traditional and emerging industries, and establishing the 'intelligent economy' as a major growth pole for China's high-quality economic development and modernization. Innovation enablement is a very close runner-up, reflected in extensive measures to accelerate scientific R&D, foster open-source ecosystems, establish trial-and-error tolerance policies, and adopt 'inclusive, prudent, classified, and agile' governance to unlock broad public and private adoption; however, economic competitiveness edges it out because macroeconomic growth, industrial upgrading, and national economic modernization serve as the primary stated ends to which innovation and agile governance are instrumental. Secondary rationales include explicit labor-transition protections (AI skills training, re-employment support, and employment risk assessments to mitigate job shocks), consumer and public safety (preventing model black-box, hallucination, and workplace/public safety risks), social stability (public order and cyberspace governance), and national security (applying AI to safeguard and shape national security), with only minimal reference to fundamental rights (algorithmic discrimination) and no existential-risk framing.",
+    "evidence_spans": [
+      {
+        "quote": "加快培育发展新质生产力，使全体人民共享人工智能发展成果，更好服务中国式现代化建设。",
+        "source_section": "一、总体要求",
+        "quote_en": "Accelerate the cultivation and development of new quality productive forces, enable all people to share in the fruits of artificial intelligence development, and better serve the building of Chinese modernization.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 330,
+        "end_char": 371
+      },
+      {
+        "quote": "到2030年，我国人工智能全面赋能高质量发展，新一代智能终端、智能体等应用普及率超90%，智能经济成为我国经济发展的重要增长极，推动技术普惠和成果共享。",
+        "source_section": "一、总体要求",
+        "quote_en": "By 2030, China's artificial intelligence will comprehensively empower high-quality development, the adoption rate of new-generation smart terminals and AI agents will exceed 90%, and the intelligent economy will become an important growth pole of China's economic development, promoting inclusive technology and shared outcomes.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 471,
+        "end_char": 547
+      },
+      {
+        "quote": "健全人工智能应用场景建设指引、开放度评价与激励政策，完善应用试错容错管理制度。",
+        "source_section": "三、强化基础支撑能力",
+        "quote_en": "Improve guidelines for building AI application scenarios, openness evaluation, and incentive policies, and refine trial-and-error tolerance management systems for applications.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 4032,
+        "end_char": 4071
+      },
+      {
+        "quote": "建立健全人工智能技术监测、风险预警、应急响应体系，强化政府引导、行业自律，坚持包容审慎、分类分级，加快形成动态敏捷、多元协同的人工智能治理格局。",
+        "source_section": "三、强化基础支撑能力",
+        "quote_en": "Establish and improve systems for AI technical monitoring, risk early warning, and emergency response; strengthen government guidance and industry self-discipline; adhere to inclusive, prudent, classified, and tiered governance; and accelerate the formation of a dynamic, agile, and multi-stakeholder collaborative AI governance pattern.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 4748,
+        "end_char": 4820
+      },
+      {
+        "quote": "大力支持开展人工智能技能培训，激发人工智能创新创业和再就业活力。加强人工智能应用就业风险评估，引导创新资源向创造就业潜力大的方向倾斜，减少对就业的冲击。",
+        "source_section": "二、加快实施重点行动",
+        "quote_en": "Vigorously support AI skills training and stimulate vitality in AI innovation, entrepreneurship, and re-employment. Strengthen employment risk assessments for AI applications, guide innovation resources toward areas with strong job-creation potential, and reduce the shock to employment.",
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 2127,
+        "end_char": 2203
+      },
+      {
+        "quote": "推动模型算法、数据资源、基础设施、应用系统等安全能力建设，防范模型的黑箱、幻觉、算法歧视等带来的风险，加强前瞻评估和监测处置，推动人工智能应用合规、透明、可信赖。",
+        "source_section": "三、强化基础支撑能力",
+        "quote_en": "Promote security capacity building for model algorithms, data resources, infrastructure, and application systems; prevent risks brought by model black boxes, hallucinations, and algorithmic discrimination; strengthen forward-looking assessment, monitoring, and disposal; and promote compliant, transparent, and trustworthy AI applications.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 4667,
+        "end_char": 4748
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:35:55.921007Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "fd643b7b3bd0e37a60ef52094b02061959291c654719f06c19e39020d1be7c59",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 29363,
+      "output_tokens": 2452,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 9122,
+      "estimated_cost_usd": 0.152444
+    },
+    "grounding_summary": {
+      "total_quotes": 10,
+      "exact_matches": 10,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

@@ -1,41 +1,85 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
     "economic_competitiveness",
-    "fundamental_rights"
+    "fundamental_rights",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.45,
-    "labor_transition": 0.05
+    "existential_catastrophic": 0.1,
+    "national_security": 0.25,
+    "economic_competitiveness": 0.8,
+    "fundamental_rights": 0.78,
+    "social_stability": 0.35,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.72,
+    "labor_transition": 0.15
   },
-  "rationale_summary": "The document frames AI governance primarily around the safe and appropriate use of generative AI in government operations, emphasizing risk management (hallucination, information leakage, harmful outputs, bias) alongside benefit realization. The core logic is that safety guardrails and risk management must accompany active promotion of AI use—'利活用促進とリスク管理を表裏一体で進める'. This is fundamentally a public/consumer safety framing applied to government systems and the citizens they serve. Secondary frames include innovation enablement (accelerating administrative innovation, encouraging active adoption) and economic competitiveness (Japan's international AI competitiveness, startup support in public procurement).",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.02,
+    "economic_competitiveness": 0.17,
+    "fundamental_rights": 0.18,
+    "social_stability": 0.04,
+    "innovation_enablement": 0.45,
+    "consumer_public_safety": 0.13,
+    "labor_transition": 0.01
+  },
+  "rationale_summary": "The guideline is dominantly framed around innovation_enablement: it explicitly positions governance rules as 'guardrails for promoting the utilization of generative AI' to advance adoption and risk management as 'two sides of the same coin,' accelerate a virtuous cycle of innovation, modernize public administration, and ensure proportional risk-balanced controls so that even high-risk innovative projects can proceed safely. Innovation enablement edges out fundamental_rights, economic_competitiveness, and consumer_public_safety because those goals are integrated as supporting objectives or risk-boundary conditions within an overarching mission to drive safe, effective public-sector AI adoption. Secondary frames are nonetheless substantive: fundamental_rights anchors the purpose in Japan's Human-Centric AI Society Principles (dignity, diversity and inclusion) and privacy/non-discrimination protections; economic_competitiveness justifies leading-by-example government adoption and public procurement to boost Japan's international AI competitiveness and foster domestic startups; and consumer_public_safety underpins high-risk classifications targeting harms to human life, body, property, and citizen safety. Social_stability (disinformation, political neutrality) and national_security (foreign server jurisdiction concerns) appear only peripherally, and systems handling national security or public order are explicitly excluded from the guideline's scope.",
   "evidence_spans": [
     {
-      "quote": "生成AIの利活用促進とリスク管理を表裏一体で進めるため",
-      "source_section": "概要"
+      "quote": "生成AI を含むAI の様々なリスクを抑え、安全・安心な環境を確保しつつ、イノベーションを加速する好循環の形成を図っていくこととされ、イノベーション推進のためにも、ガードレールとなるAI 利活用の安全・安心を確保するためのルールが必要とされたところである。",
+      "source_section": "Page 5 (1.1 背景)",
+      "quote_en": "It was decided to form a virtuous cycle that accelerates innovation while curbing various risks of AI, including generative AI, and ensuring a safe and secure environment; to promote innovation as well, rules that serve as guardrails to ensure the safety and security of AI utilization were deemed necessary.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3300,
+      "end_char": 3428
     },
     {
-      "quote": "生成AIの政府での利活用は、情報漏えいや不適切な表現の生成などのリスクを伴う一方、様々な事務作業や事務手続の効率化・高度化を実現し",
-      "source_section": "3.1"
+      "quote": "本ガイドラインは、生成AI の利活用促進のためのガードレールであり、本ガイドラインによって、政府による生成AI の安心・安全な利活用が着実に進展し、 以下のような利益を実現することを目指す。",
+      "source_section": "Page 8 (2.1 本ガイドラインの目的)",
+      "quote_en": "This guideline serves as a guardrail for promoting the utilization of generative AI, and through this guideline, aims to steadily advance the safe and secure utilization of generative AI by the government and realize the following benefits.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 6021,
+      "end_char": 6116
     },
     {
-      "quote": "過失が重大な影響を及ぼす可能性のある業務（国民の基本的権利や安全に大きな影響を及ぼす業務、機微な政策分野に関する業務、人間の生命・身体・財産に影響を及ぼす業務）",
-      "source_section": "3.2"
+      "quote": "加えて、今後、社会全体での安全・安心なAI の活用の推進や日本のAI 分野に\nおける国際競争力の向上を実現するためにも、政府において率先してAI の利活\n用に取り組むことは、極めて重要である。",
+      "source_section": "Page 12 (3.1 政府における生成AI の利活用方針)",
+      "quote_en": "In addition, in order to promote the safe and secure use of AI across society as a whole and improve Japan's international competitiveness in the field of AI, it is extremely important for the government to take the initiative in utilizing AI.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 9401,
+      "end_char": 9497
     },
     {
-      "quote": "我が国のAI分野における国際競争力の向上及び産業の育成",
-      "source_section": "2.1"
+      "quote": "国内の生成AI 事業者等のスタートアップ育成のためには、「公共調達」の活\n用が重要である。",
+      "source_section": "Page 36 (6.3.2 生成AI システムの調達時の対応事項)",
+      "quote_en": "Utilizing 'public procurement' is important for fostering startups such as domestic generative AI businesses.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 26988,
+      "end_char": 27033
     },
     {
-      "quote": "本ガイドラインは、生成AIの利活用促進のためのガードレールであり",
-      "source_section": "2.1"
+      "quote": "本ガイドラインは、政府における生成AI の調達・利活用において、我が国が\n平成31 年３月に策定した「人間中心のAI 社会原則」において掲げられた３つ\nの「基本理念」（「①人間の尊厳が尊重される社会（Dignity）」「②多様な背景\nを持つ人々が多様な幸せを追求できる社会（Diversity and Inclusion）」「③持続可能な社会（Sustainability）」）の実現を目指すものである。",
+      "source_section": "Page 8 (2.1 本ガイドラインの目的)",
+      "quote_en": "In the procurement and utilization of generative AI by the government, this guideline aims to realize the three 'basic philosophies' set forth in the 'Social Principles of Human-Centric AI' formulated by Japan in March 2019: '(1) a society where human dignity is respected (Dignity),' '(2) a society where people with diverse backgrounds can pursue diverse well-being (Diversity and Inclusion),' and '(3) a sustainable society (Sustainability).'",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5818,
+      "end_char": 6020
+    },
+    {
+      "quote": "過失が重大な影響を及ぼす可能性\nのある業務（国民の基本的権利や安\n全に大きな影響を及ぼす業務、機微\nな政策分野に関する業務、人間の生\n命・身体・財産に影響を及ぼす業\n務、資格が求められる業務、高い説\n明可能性が求められる業務等）にお\nいて生成AI を利活用する場合、リ\nスクが高くなると考えられる。",
+      "source_section": "Page 14 (3.2 高リスクな生成AI 利活用の考え方)",
+      "quote_en": "When utilizing generative AI in operations where negligence could have a serious impact (such as operations that significantly affect citizens' fundamental rights and safety, operations related to sensitive policy areas, operations affecting human life, body, or property, operations requiring qualifications, or operations requiring high explainability), the risk is considered to be high.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 11268,
+      "end_char": 11417
     }
   ]
 }

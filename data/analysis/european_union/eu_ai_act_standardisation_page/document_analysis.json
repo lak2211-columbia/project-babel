@@ -4,126 +4,183 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "european_union",
-    "issuing_body": "European Commission / CEN-CENELEC JTC 21",
+    "issuing_body": "European Commission",
     "document_type": "regulatory_guidance",
-    "binding_strength": "standards_guideline",
-    "publication_date": null,
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2026-03-20",
     "effective_date": null,
-    "covered_application_domains": [
-      "general_purpose_models",
-      "critical_infrastructure",
-      "law_enforcement",
-      "healthcare",
-      "employment",
-      "education",
-      "finance",
-      "biometrics",
-      "public_sector_use"
+    "covered_actors": [
+      "Providers of high-risk AI systems",
+      "AI developers",
+      "Businesses and companies",
+      "European Standardisation Organisations (CEN and CENELEC)",
+      "National standardisation bodies"
     ],
+    "covered_application_domains": [
+      "critical_infrastructure",
+      "law_enforcement"
+    ],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.95,
+        "confidence": 0.85,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "risk management",
-            "source_section": "Ten key areas for standards development"
+            "quote": "The\nEuropean Commission has requested that CEN and CENELEC develop standards in ten key areas\n:\nrisk management\ngovernance and quality of datasets\nrecord keeping\ntransparency\nhuman oversight\naccuracy\nrobustness\ncybersecurity\nquality management\nconformity assessment",
+            "source_section": "How are standards developed and what are the current standards?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1753,
+            "end_char": 2018
           },
           {
-            "quote": "standards currently under development focused on setting methodologies for risk management",
-            "source_section": "Market benchmarking"
+            "quote": "For example, standards currently under development focused on setting methodologies for risk management and quality management are strong candidates to become market benchmarks in the future.",
+            "source_section": "European harmonised standards serve several crucial functions:",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 991,
+            "end_char": 1182
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.78,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "The\nEuropean Commission has requested that CEN and CENELEC develop standards in ten key areas\n:\nrisk management\ngovernance and quality of datasets\nrecord keeping\ntransparency\nhuman oversight\naccuracy\nrobustness\ncybersecurity\nquality management\nconformity assessment",
+            "source_section": "How are standards developed and what are the current standards?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1753,
+            "end_char": 2018
           }
         ]
       },
       {
         "label": "model_documentation",
-        "confidence": 0.9,
+        "confidence": 0.75,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "record keeping",
-            "source_section": "Ten key areas for standards development"
-          },
-          {
-            "quote": "governance and quality of datasets",
-            "source_section": "Ten key areas for standards development"
+            "quote": "The\nEuropean Commission has requested that CEN and CENELEC develop standards in ten key areas\n:\nrisk management\ngovernance and quality of datasets\nrecord keeping\ntransparency\nhuman oversight\naccuracy\nrobustness\ncybersecurity\nquality management\nconformity assessment",
+            "source_section": "How are standards developed and what are the current standards?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1753,
+            "end_char": 2018
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.9,
+        "confidence": 0.75,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "transparency",
-            "source_section": "Ten key areas for standards development"
+            "quote": "The\nEuropean Commission has requested that CEN and CENELEC develop standards in ten key areas\n:\nrisk management\ngovernance and quality of datasets\nrecord keeping\ntransparency\nhuman oversight\naccuracy\nrobustness\ncybersecurity\nquality management\nconformity assessment",
+            "source_section": "How are standards developed and what are the current standards?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1753,
+            "end_char": 2018
           }
         ]
       },
       {
         "label": "human_oversight",
-        "confidence": 0.95,
+        "confidence": 0.8,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "human oversight",
-            "source_section": "Ten key areas for standards development"
-          }
-        ]
-      },
-      {
-        "label": "third_party_audit",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "conformity assessment",
-            "source_section": "Ten key areas for standards development"
+            "quote": "The\nEuropean Commission has requested that CEN and CENELEC develop standards in ten key areas\n:\nrisk management\ngovernance and quality of datasets\nrecord keeping\ntransparency\nhuman oversight\naccuracy\nrobustness\ncybersecurity\nquality management\nconformity assessment",
+            "source_section": "How are standards developed and what are the current standards?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1753,
+            "end_char": 2018
           }
         ]
       },
       {
         "label": "pre_deployment_testing",
-        "confidence": 0.8,
+        "confidence": 0.82,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "These requirements need to be fulfilled before placement on the market, ensuring high-risk AI systems are monitored throughout their lifecycle",
-            "source_section": "Introduction"
+            "quote": "These requirements need to be fulfilled before placement on the market, ensuring high-risk AI systems are monitored throughout their lifecycle.",
+            "source_section": "Standardisation of the AI Act | Shaping Europe’s digital future",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 477,
+            "end_char": 620
+          },
+          {
+            "quote": "The\nEuropean Commission has requested that CEN and CENELEC develop standards in ten key areas\n:\nrisk management\ngovernance and quality of datasets\nrecord keeping\ntransparency\nhuman oversight\naccuracy\nrobustness\ncybersecurity\nquality management\nconformity assessment",
+            "source_section": "How are standards developed and what are the current standards?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1753,
+            "end_char": 2018
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.7,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "The\nEuropean Commission has requested that CEN and CENELEC develop standards in ten key areas\n:\nrisk management\ngovernance and quality of datasets\nrecord keeping\ntransparency\nhuman oversight\naccuracy\nrobustness\ncybersecurity\nquality management\nconformity assessment",
+            "source_section": "How are standards developed and what are the current standards?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1753,
+            "end_char": 2018
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "market_access_restriction",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "The latest that the rules would become applicable is 2 December 2027 for high-risk AI systems covered in Annex III AI Act",
-            "source_section": "Support tools and entry into application"
-          }
-        ]
-      },
-      {
-        "label": "regulatory_supervision",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "the Commission assesses whether they meet the intended objectives and legal requirements of the AI Act. After this final step, the standards are referenced in the Official Journal of the EU",
-            "source_section": "Standards development process"
-          }
-        ]
-      },
-      {
         "label": "soft_enforcement",
-        "confidence": 0.9,
+        "confidence": 0.92,
         "evidence": [
           {
-            "quote": "The application of standards remains voluntary. Providers can choose any other framework to demonstrate their compliance with the AI Act. However, harmonised standards referenced in the Official Journal of the EU provide legal certainty.",
-            "source_section": "Voluntary application"
+            "quote": "The application of standards remains voluntary. Providers can choose any other framework to demonstrate their compliance with the AI Act. However, harmonised standards referenced in the Official Journal of the EU provide legal certainty. Companies that apply harmonised standards are presumed to be compliant with the legal requirements.",
+            "source_section": "How are standards developed and what are the current standards?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2270,
+            "end_char": 2607
           }
         ]
       }
     ],
-    "implementation_notes": "This page describes the EU AI Act standardisation process led by CEN/CENELEC JTC 21. Standards are voluntary but create a presumption of conformity. The first harmonised standard (prEN 18286) entered public enquiry on 30 October 2025. Application of high-risk AI rules is linked to availability of support tools, with a latest deadline of 2 December 2027 (Annex III) or 2 August 2028 (Annex I). International alignment with ISO/IEC SC 42 is a stated priority.",
-    "confidence": 0.88
+    "enforcement_authorities": [
+      "European Commission"
+    ],
+    "compliance_deadlines": [
+      "Before placement on the market (high-risk AI system requirements under the AI Act)",
+      "2027-12-02 (latest proposed applicability date under the Digital Omnibus for Annex III high-risk AI systems, subject to earlier application if support tools and standards are available)",
+      "2028-08-02 (latest proposed applicability date under the Digital Omnibus for Annex I EU harmonisation legislation AI systems, subject to earlier application if support tools and standards are available)"
+    ],
+    "penalties_summary": null,
+    "implementation_notes": "Informational policy webpage published by the European Commission explaining AI Act standardisation rather than a binding legal instrument or technical standard itself. Harmonised standards developed by CEN and CENELEC (via JTC 21) across ten requested areas remain voluntary, but once assessed by the Commission and referenced in the Official Journal of the EU they provide a presumption of conformity. Notes that prEN 18286 (Quality Management System for AI Act Article 17) entered public enquiry on 30 October 2025, highlights international alignment with ISO/IEC SC 42, and summarizes the 19 November 2025 Digital Omnibus proposal linking high-risk AI rule applicability to the availability of standards and support tools.",
+    "confidence": 0.85
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
@@ -133,33 +190,114 @@
       "fundamental_rights"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.02,
-      "national_security": 0.05,
-      "economic_competitiveness": 0.25,
-      "fundamental_rights": 0.1,
-      "social_stability": 0.05,
-      "innovation_enablement": 0.4,
-      "consumer_public_safety": 0.12,
-      "labor_transition": 0.01
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.85,
+      "fundamental_rights": 0.5,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.92,
+      "consumer_public_safety": 0.6,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The document primarily frames AI standardisation as enabling innovation and global competitiveness through harmonised standards that foster trust, reduce compliance costs, and position the EU as a global benchmark-setter. While safety and fundamental rights are mentioned as underlying concerns of the AI Act, the standardisation page's own reasoning emphasises how standards support innovation, market acceptance, and the EU's leadership role.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.35,
+      "fundamental_rights": 0.08,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.45,
+      "consumer_public_safety": 0.12,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "Innovation enablement is the dominant frame because the page justifies AI Act standardisation primarily as a way to provide legal certainty, simplify compliance, lower compliance costs for businesses of all sizes, avoid regulatory fragmentation and redundant compliance efforts, and foster trust and market acceptance through voluntary technical standards and rollout support tools. Economic competitiveness is a close runner-up, reflected in repeated emphasis on European harmonised standards becoming de facto global benchmarks, helping developers compete on a global scale, and positioning the EU to lead globally; innovation enablement edges it out because the operational focus throughout the page is reducing compliance friction and enabling trustworthy adoption rather than zero-sum economic rivalry. Consumer and public safety and fundamental rights appear as secondary background rationales describing the underlying high-risk AI Act objectives (protecting safety, health, and fundamental rights, and meeting high safety standards).",
     "evidence_spans": [
       {
+        "quote": "Legal certainty and reduced compliance costs\n: European harmonised standards provide a clear pathway to compliance for businesses of all sizes.",
+        "source_section": "European harmonised standards serve several crucial functions:",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 754,
+        "end_char": 897
+      },
+      {
+        "quote": "This alignment is crucial to avoid regulatory fragmentation and to ensure that AI developers can operate across multiple markets without redundant compliance efforts.",
+        "source_section": "AI standards as the key to global alignment",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 4422,
+        "end_char": 4588
+      },
+      {
         "quote": "Harmonised standards will offer legal certainty under the AI Act, support innovation, and position the EU to set global benchmarks for trustworthy AI.",
-        "source_section": "Introduction"
+        "source_section": "Standardisation of the AI Act | Shaping Europe’s digital future",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 0,
+        "end_char": 150
       },
       {
-        "quote": "Innovation and competitiveness: European harmonised standards foster trust and market acceptance, enabling developers who adopt them to compete on a global scale",
-        "source_section": "Key benefits"
+        "quote": "Innovation and competitiveness\n: European harmonised standards foster trust and market acceptance, enabling developers who adopt them to compete on a global scale while ensuring their solutions meet the highest safety standards.",
+        "source_section": "European harmonised standards serve several crucial functions:",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 1183,
+        "end_char": 1411
       },
       {
-        "quote": "By fostering the development of European harmonised standards, the EU can advance and lead the safe development and adoption of AI systems globally.",
-        "source_section": "International alignment"
+        "quote": "ensuring their solutions meet the highest safety standards.",
+        "source_section": "European harmonised standards serve several crucial functions:",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 1352,
+        "end_char": 1411
       },
       {
-        "quote": "European harmonised standards provide a clear pathway to compliance for businesses of all sizes.",
-        "source_section": "Key benefits"
+        "quote": "The AI Act regulates regulates ‘high-risk’ AI systems that impact safety, health, and fundamental rights, for example, in critical infrastructure and law enforcement, among other areas",
+        "source_section": "Standardisation of the AI Act | Shaping Europe’s digital future",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 246,
+        "end_char": 430
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:36:29.025452Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "8fc5a5d4babd047be28ab8860980d2b04e024836301f54e78d14375d0fc729c1",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 23966,
+      "output_tokens": 2564,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 8003,
+      "estimated_cost_usd": 0.135628
+    },
+    "grounding_summary": {
+      "total_quotes": 16,
+      "exact_matches": 16,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 9
+    }
   }
 }

@@ -4,43 +4,84 @@
     "national_security",
     "social_stability",
     "innovation_enablement",
-    "labor_transition"
+    "labor_transition",
+    "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.7,
-    "economic_competitiveness": 0.9,
-    "fundamental_rights": 0.2,
-    "social_stability": 0.5,
-    "innovation_enablement": 0.65,
-    "consumer_public_safety": 0.3,
-    "labor_transition": 0.4
+    "existential_catastrophic": 0.15,
+    "national_security": 0.92,
+    "economic_competitiveness": 0.98,
+    "fundamental_rights": 0.55,
+    "social_stability": 0.85,
+    "innovation_enablement": 0.78,
+    "consumer_public_safety": 0.5,
+    "labor_transition": 0.75
   },
-  "rationale_summary": "The document overwhelmingly frames AI governance through the lens of economic competitiveness and national strategic advantage. The core motivation is to seize a first-mover advantage in AI, build internationally competitive industries, and drive economic growth. National security is a strong secondary frame, with explicit references to maintaining strategic initiative in international AI competition and supporting national defense. Social stability, labor transition, and innovation enablement also appear as secondary concerns.",
+  "frame_share": {
+    "existential_catastrophic": 0.01,
+    "national_security": 0.22,
+    "economic_competitiveness": 0.38,
+    "fundamental_rights": 0.04,
+    "social_stability": 0.14,
+    "innovation_enablement": 0.1,
+    "consumer_public_safety": 0.04,
+    "labor_transition": 0.07
+  },
+  "rationale_summary": "China's 2017 New Generation Artificial Intelligence Development Plan is dominantly framed around economic competitiveness: its preamble, strategic assessment, and three-step 2020/2025/2030 targets center on seizing first-mover advantage in global technological competition, upgrading domestic industry into the high end of global value chains, injecting new momentum into economic growth, and scaling core and related AI industries to over 1 trillion and 10 trillion RMB respectively. Economic competitiveness edges out the prominent runner-up, national security, because while national defense, strategic rivalry, and civil-military fusion are major co-justifications, the bulk of the document's operational goals, metrics, and industrial-policy architecture are oriented toward macroeconomic transformation and global commercial leadership. Social stability is a strong tertiary frame, portraying AI as indispensable for social governance, public security, and anticipating group psychology, while innovation enablement (coordinating development incentives with proportionate regulation) and labor transition (explicitly addressing near-term employment disruption and reskilling displaced workers) provide distinct supporting rationales alongside narrower mentions of privacy protection and consumer/public safety.",
   "evidence_spans": [
     {
-      "quote": "为抢抓人工智能发展的重大战略机遇，构筑我国人工智能发展的先发优势，加快建设创新型国家和世界科技强国",
-      "source_section": "Introduction"
+      "quote": "为抢抓人工智能发展的重大战略机遇，构筑我国人工智能发展的先发优势，加快建设创新型国家和世界科技强国，按照党中央、国务院部署要求，制定本规划。",
+      "source_section": "新一代人工智能发展规划",
+      "quote_en": "To seize the major strategic opportunity of artificial intelligence development, build our country's first-mover advantage in AI development, and accelerate the construction of an innovative country and a world science and technology power, this Plan is formulated in accordance with the deployments and requirements of the CPC Central Committee and the State Council.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 109,
+      "end_char": 179
     },
     {
-      "quote": "人工智能成为国际竞争的新焦点。人工智能是引领未来的战略性技术，世界主要发达国家把发展人工智能作为提升国家竞争力、维护国家安全的重大战略",
-      "source_section": "Situation Analysis"
+      "quote": "我国经济发展进入新常态，深化供给侧结构性改革任务非常艰巨，必须加快人工智能深度应用，培育壮大人工智能产业，为我国经济发展注入新动能。",
+      "source_section": "一、战略态势",
+      "quote_en": "China's economic development has entered a new normal, and the task of deepening supply-side structural reform is very arduous; we must accelerate the deep application of artificial intelligence, cultivate and expand the AI industry, and inject new momentum into China's economic development.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 866,
+      "end_char": 932
     },
     {
-      "quote": "人工智能产业竞争力进入国际第一方阵",
-      "source_section": "Strategic Goals"
+      "quote": "当前，我国国家安全和国际竞争形势更加复杂，必须放眼全球，把人工智能发展放在国家战略层面系统布局、主动谋划，牢牢把握人工智能发展新阶段国际竞争的战略主动，打造竞争新优势、开拓发展新空间，有效保障国家安全。",
+      "source_section": "一、战略态势",
+      "quote_en": "Currently, China's national security and international competition situation is more complex; we must take a global perspective, systematically lay out and proactively plan AI development at the national strategic level, firmly grasp the strategic initiative in international competition in the new stage of AI development, forge new competitive advantages, open up new development space, and effectively safeguard national security.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 589,
+      "end_char": 690
     },
     {
-      "quote": "人工智能核心产业规模超过1万亿元，带动相关产业规模超过10万亿元",
-      "source_section": "Strategic Goals 2030"
+      "quote": "人工智能技术可准确感知、预测、预警基础设施和社会安全运行的重大态势，及时把握群体认知及心理变化，主动决策反应，将显著提高社会治理的能力和水平，对有效维护社会稳定具有不可替代的作用。",
+      "source_section": "一、战略态势",
+      "quote_en": "Artificial intelligence technology can accurately sense, predict, and provide early warning of major trends in infrastructure and social safety operations, grasp group cognition and psychological changes in a timely manner, and proactively make decisions and respond, which will significantly improve the capacity and level of social governance and play an irreplaceable role in effectively maintaining social stability.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 1049,
+      "end_char": 1139
     },
     {
-      "quote": "以人工智能提升国防实力，保障和维护国家安全",
-      "source_section": "Overall Deployment"
+      "quote": "既要加大人工智能研发和应用力度，最大程度发挥人工智能潜力；又要预判人工智能的挑战，协调产业政策、创新政策与社会政策，实现激励发展与合理规制的协调，最大限度防范风险。",
+      "source_section": "二、总体要求",
+      "quote_en": "We must both step up AI R&D and application to maximize AI's potential, and anticipate AI's challenges, coordinating industrial, innovation, and social policies to harmonize incentivizing development with reasonable regulation and minimize risks.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4039,
+      "end_char": 4121
     },
     {
-      "quote": "近期重点关注对就业的影响，远期重点考虑对社会伦理的影响，确保把人工智能发展规制在安全可控范围内",
-      "source_section": "Security Oversight"
+      "quote": "加强职工再就业培训和指导，确保从事简单重复性工作的劳动力和因人工智能失业的人员顺利转岗。",
+      "source_section": "五、保障措施",
+      "quote_en": "Strengthen re-employment training and guidance for workers to ensure that laborers engaged in simple repetitive work and personnel unemployed due to artificial intelligence smoothly transition to new positions.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 19073,
+      "end_char": 19117
     }
   ]
 }

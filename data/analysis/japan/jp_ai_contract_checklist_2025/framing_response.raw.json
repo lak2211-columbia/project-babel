@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01SDnFbWm5ejJsNCtd7sj34a",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"consumer_public_safety\",\"secondary_frames\":[\"fundamental_rights\",\"innovation_enablement\"],\"frame_confidence\":{\"existential_catastrophic\":0.02,\"national_security\":0.03,\"economic_competitiveness\":0.15,\"fundamental_rights\":0.2,\"social_stability\":0.05,\"innovation_enablement\":0.15,\"consumer_public_safety\":0.55,\"labor_transition\":0.01},\"rationale_summary\":\"The document is primarily framed around protecting business users (consumers/enterprises) from legal and data-handling risks when contracting for AI services. It explicitly cites concerns about legal risks not being properly examined and data being used for unexpected purposes or provided to third parties causing unforeseen harm. While innovation enablement and economic competitiveness are mentioned as context, the checklist's core purpose is risk management and protection of data subjects and contracting parties—a consumer/public safety framing. Fundamental rights (personal data protection under Japan's APPI) appears as a strong secondary frame.\",\"evidence_spans\":[{\"quote\":\"AIの利活用に関する契約に伴う法的なリスクを十分に検討できていない可能性\",\"source_section\":\"1 チェックリスト策定の背景・目的及び想定読者\"},{\"quote\":\"保護されるべきデータや情報が予期せぬ目的に利用され、また第三者に提供される等、想定外の不利益を被る可能性\",\"source_section\":\"1 チェックリスト策定の背景・目的及び想定読者\"},{\"quote\":\"当事者間の適切な利益及びリスクの分配を目指し、ひいてはAIの利活用を促すことを目的として\",\"source_section\":\"1 チェックリスト策定の背景・目的及び想定読者\"},{\"quote\":\"個人データの提供が伴う場合、ベンダによる自己目的利用や突合が認められる場合には委託として整理できず第三者提供に該当し、本人の同意が必要となる可能性\",\"source_section\":\"A-3-1 利用目的\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 14573,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 538,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 27360,
+    "candidatesTokenCount": 1241,
+    "totalTokenCount": 32053,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 27360
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1241
+      }
+    ],
+    "thoughtsTokenCount": 3452,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "ni8Ba4PGIqWeur8P_f66yQo"
 }

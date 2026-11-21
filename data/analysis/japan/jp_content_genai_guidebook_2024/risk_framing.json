@@ -1,36 +1,65 @@
 {
-  "dominant_frame": "fundamental_rights",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
-    "consumer_public_safety"
+    "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.03,
-    "economic_competitiveness": 0.15,
-    "fundamental_rights": 0.65,
-    "social_stability": 0.05,
-    "innovation_enablement": 0.55,
-    "consumer_public_safety": 0.2,
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.25,
+    "fundamental_rights": 0.75,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.15,
     "labor_transition": 0.05
   },
-  "rationale_summary": "The document's primary stated reason for governance is protecting intellectual property rights and other legal interests (著作権等の権利・利益の保護) of creators and rights holders when using generative AI in content production. Rights protection language appears in the stated purpose, throughout use-case descriptions, and in the positioning section. A secondary frame of innovation enablement is also strong, as the document encourages appropriate and active use of generative AI to enhance creativity and efficiency. Consumer/public safety appears in references to preventing misinformation and controlling inappropriate outputs.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.3,
+    "social_stability": 0.05,
+    "innovation_enablement": 0.55,
+    "consumer_public_safety": 0.05,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The guidebook's dominant frame is innovation_enablement because its overarching purpose is to promote safe, appropriate adoption and coexistence with generative AI across Japan's game, anime, and advertising industries by providing practical voluntary guidance, real-world use cases, and legal risk-mitigation measures that unlock workflow efficiency and new creative possibilities. While fundamental_rights is a strong runner-up—since the guidebook's operational cautions focus heavily on protecting creators' and individuals' intellectual property rights, personality/portrait rights, publicity rights, and personal-data privacy—innovation_enablement edges it out because rights compliance is explicitly positioned as the means to dispel stakeholder concerns and enable constructive AI utilization rather than as a standalone rights-enforcement regime. Minor secondary touches of economic_competitiveness (the parent overseas-expansion project and references to industrial development), social_stability (brief mentions of misinformation and hallucinations), and consumer_public_safety (passing references to safety and consumer interests) appear without driving the document's core rationale.",
   "evidence_spans": [
     {
-      "quote": "知的財産権等の権利・利益の保護に十分に配慮した、コンテンツ制作における生成AIの適切な利活用の方向性をお示しするもの",
-      "source_section": "1-1 本ガイドブックの趣旨・目的"
+      "quote": "本ガイドブックは、コンテンツ制作に携わる産業界のみなさまに向けて、ゲーム・アニメ・広告の各産業における生成A I の利活用ケースと、各活用シーンにおける留意点・対応策を紹介し、知的財産権等の権利・利益の保護に十分に配慮した、コンテンツ制作における生成A Iの適切な利活用の方向性をお示しするものです。",
+      "source_section": "Page 5",
+      "quote_en": "Directed at industry stakeholders involved in content creation, this guidebook introduces generative AI utilization cases in the game, anime, and advertising industries along with points of attention and countermeasures for each usage scene, indicating a direction for the appropriate utilization of generative AI in content creation with sufficient consideration for the protection of rights and interests such as intellectual property rights.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2036,
+      "end_char": 2186
     },
     {
-      "quote": "知的財産権などの権利・利益を侵害する可能性や、誤った情報を流通させる可能性など、様々な懸念点・留意点が指摘されています",
-      "source_section": "1-2 生成AIの適切な利活用に向けて"
+      "quote": "生成A Iを活用することにより、業務の効率化などを通じて肝\n心のクリエイティブな創作に集中する時間が生み出された\nり、様々な組み合わせを試行することで新たなクリエイティビ\nティが発見されるなど、生成AIは、コンテンツ制作における多\nくの場面でクリエイティブに貢献できる側面を有しています。",
+      "source_section": "Page 6",
+      "quote_en": "By utilizing generative AI, time to focus on essential creative work is generated through operational efficiency, and new creativity is discovered by trying various combinations; thus, generative AI has aspects that can contribute to creativity in many scenes of content creation.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3213,
+      "end_char": 3357
     },
     {
-      "quote": "知的財産権等の権利・利益の保護に十分に配慮しつつ、生成AIを適切に活用していくことが望ましい",
-      "source_section": "1-2 生成AIの適切な利活用に向けて"
+      "quote": "具体的に\nは、知的財産権などの権利・利益を侵害する可能性や、誤った\n情報を流通させる可能性など、様々な懸念点・留意点が指摘\nされています。",
+      "source_section": "Page 6",
+      "quote_en": "Specifically, various concerns and points of attention have been pointed out, such as the possibility of infringing rights and interests including intellectual property rights, and the possibility of circulating false information.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 2879,
+      "end_char": 2948
     },
     {
-      "quote": "著作権・肖像権などの権利・利益への配慮の観点から、必要な対応策が実施されている",
-      "source_section": "2-3 広告産業"
+      "quote": "みだりに自己の容貌、姿態を撮影されたり、撮影された写真等をみだりに公表されない人格的利益（法廷内撮影事件判決）、人の肖像等をみだりに利用されない権利（ピンク・レディー事件判決）",
+      "source_section": "Page 23",
+      "quote_en": "The personal interest not to have one's appearance or figure photographed arbitrarily or to have such photographs published arbitrarily (Courtroom Photography Case ruling), and the right not to have one's likeness or portrait used arbitrarily (Pink Lady Case ruling).",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 12779,
+      "end_char": 12867
     }
   ]
 }

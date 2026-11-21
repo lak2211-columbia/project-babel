@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_016c4xhi1Bke6qj5SPYweFF9",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"innovation_enablement\",\"secondary_frames\":[\"consumer_public_safety\",\"fundamental_rights\"],\"frame_confidence\":{\"innovation_enablement\":0.65,\"consumer_public_safety\":0.55,\"labor_transition\":0.1},\"rationale_summary\":\"The document is a Q&A guide for AI/data contracts in agriculture, primarily framed around enabling safe data sharing to promote smart agriculture adoption. The core stated reason for governance is to facilitate data utilization while protecting farmers' know-how, allowing them to 'safely provide data.' This is innovation enablement (promoting smart agriculture) with a secondary consumer/public safety frame around preventing data leaks and protecting agricultural trade secrets.\",\"evidence_spans\":[{\"quote\":\"スマート農業の普及に不可欠なデータの利活用を促進するためには、農業者が安心してデータを提供できるよう、ノウハウの流出を防止する契約とする必要がある\",\"source_section\":\"Page 8\"},{\"quote\":\"データ流出や不正利用に伴って、営業秘密やノウハウが外部に流出するおそれがあります\",\"source_section\":\"Page 8\"},{\"quote\":\"農業者としては、ガイドラインに従うと、農機メーカー等に提供した農業データが守られるため、安心してデータを提供できるようになるというメリットがあります\",\"source_section\":\"Page 8\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 7574,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 356,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 10535,
+    "candidatesTokenCount": 952,
+    "totalTokenCount": 14321,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 10535
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 952
+      }
+    ],
+    "thoughtsTokenCount": 2834,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "dTABa-i3OtfIkPIPvZL96Ag"
 }

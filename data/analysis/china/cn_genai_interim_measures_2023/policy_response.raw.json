@@ -1,27 +1,59 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_015qceRn6mP4mXTbZf9UHoAd",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"jurisdiction\":\"china\",\"issuing_body\":\"国家互联网信息办公室 (Cyberspace Administration of China) et al.\",\"document_type\":\"legislation\",\"binding_strength\":\"binding_law\",\"publication_date\":\"2023-07-10\",\"effective_date\":\"2023-08-15\",\"covered_application_domains\":[\"general_purpose_models\",\"public_sector_use\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估\",\"source_section\":\"第十七条\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"采取有效措施，提升生成式人工智能服务的透明度，提高生成内容的准确性和可靠性\",\"source_section\":\"第四条\"},{\"quote\":\"提供者应当明确并公开其服务的适用人群、场合、用途\",\"source_section\":\"第十条\"}]},{\"label\":\"content_provenance\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"提供者应当按照《互联网信息服务深度合成管理规定》对图片、视频等生成内容进行标识\",\"source_section\":\"第十二条\"}]},{\"label\":\"incident_reporting\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"提供者发现违法内容的，应当及时采取停止生成、停止传输、消除等处置措施……并向有关主管部门报告\",\"source_section\":\"第十四条\"}]},{\"label\":\"model_documentation\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"按要求对训练数据来源、规模、类型、标注规则、算法机制机理等予以说明，并提供必要的技术、数据等支持和协助\",\"source_section\":\"第十九条\"}]},{\"label\":\"registration_licensing\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续\",\"source_section\":\"第十七条\"},{\"quote\":\"法律、行政法规规定提供生成式人工智能服务应当取得相关行政许可的，提供者应当依法取得许可\",\"source_section\":\"第二十三条\"}]},{\"label\":\"access_controls\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"采取有效措施防范未成年人用户过度依赖或者沉迷生成式人工智能服务\",\"source_section\":\"第十条\"}]},{\"label\":\"human_oversight\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"提供者应当建立健全投诉、举报机制，设置便捷的投诉、举报入口\",\"source_section\":\"第十五条\"}]}],\"enforcement_mechanisms\":[{\"label\":\"civil_penalty\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"由有关主管部门依照《中华人民共和国网络安全法》……等法律、行政法规的规定予以处罚\",\"source_section\":\"第二十一条\"}]},{\"label\":\"criminal_penalty\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"构成犯罪的，依法追究刑事责任\",\"source_section\":\"第二十一条\"}]},{\"label\":\"market_access_restriction\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"责令暂停提供相关服务\",\"source_section\":\"第二十一条\"},{\"quote\":\"国家网信部门应当通知有关机构采取技术措施和其他必要措施予以处置\",\"source_section\":\"第二十条\"}]},{\"label\":\"regulatory_supervision\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"网信、发展改革、教育、科技、工业和信息化、公安、广播电视、新闻出版等部门，依据各自职责依法加强对生成式人工智能服务的管理\",\"source_section\":\"第十六条\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"提供者发现使用者利用生成式人工智能服务从事违法活动的，应当依法依约采取……处置措施，保存有关记录，并向有关主管部门报告\",\"source_section\":\"第十四条\"}]}],\"implementation_notes\":\"Interim measures applying to generative AI services provided to the public within China. Classified/tiered supervision approach indicated. Research and internal use not covered. Foreign providers offering services into China are also subject to these rules.\",\"confidence\":0.95}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 6874,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "metadata_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 8766,
+      "candidatesTokenCount": 851,
+      "totalTokenCount": 11430,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 8766
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 851
+        }
+      ],
+      "thoughtsTokenCount": 1813,
+      "serviceTier": "standard"
     },
-    "output_tokens": 1212,
-    "service_tier": "standard",
-    "inference_geo": "global"
+    "modelVersion": "gemini-4-neon",
+    "responseId": "ES0Ba5iFKPfCodAPupmZ-Q8"
+  },
+  "controls_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 8919,
+      "candidatesTokenCount": 2980,
+      "totalTokenCount": 17081,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 8919
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 2980
+        }
+      ],
+      "thoughtsTokenCount": 5182,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "Jy0Ba7XlM_LukPIPpISXwAo"
   }
 }

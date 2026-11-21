@@ -1,32 +1,75 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "fundamental_rights",
-    "innovation_enablement"
+    "consumer_public_safety",
+    "fundamental_rights"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.55,
+    "economic_competitiveness": 0.12,
+    "fundamental_rights": 0.62,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.74,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance around managing risks to ensure trustworthy and responsible AI systems, focusing on protecting individuals, groups, and society from harms. Secondary framings include rights-preservation and enabling responsible innovation through voluntary, flexible frameworks.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.2,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.52,
+    "consumer_public_safety": 0.28,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The AI RMF Roadmap is dominantly framed around innovation_enablement, setting out a flexible, voluntary, internationally aligned program of standards crosswalks, TEVV tools, profiles, case studies, and tutorials to close knowledge gaps and equip organizations to deploy trustworthy AI. Innovation_enablement leads consumer_public_safety, which is a strong secondary frame focused on reducing real-world negative impacts and harms to individuals, groups, communities, and society via TEVV, risk tolerances, and human-AI oversight. Fundamental_rights appears as a secondary rationale through the explicit 'rights-preserving' orientation and sectoral profile priorities covering hiring, criminal justice, and lending.",
   "evidence_spans": [
     {
-      "quote": "the goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems",
-      "source_section": "Introduction"
+      "quote": "Work described in the Roadmap is intended to help fill gaps in knowledge, practice, or guidance and be useful to a broader audience in pursuit of trustworthy and responsible AI.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1207,
+      "end_char": 1384
     },
     {
-      "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific",
-      "source_section": "Introduction"
+      "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic, providing flexibility to organizations of all sizes and in all sectors and throughout society to implement the approaches in the Framework.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 553,
+      "end_char": 798
     },
     {
-      "quote": "NIST intends to investigate how human-AI teams should best be configured to reduce likelihood of negative impacts/harms to individuals, groups, communities, and society",
-      "source_section": "Top Priorities"
+      "quote": "NIST intends to investigate how human-AI teams should best be configured to reduce likelihood of negative impacts/harms to individuals, groups, communities, and society.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 4935,
+      "end_char": 5104
+    },
+    {
+      "quote": "NIST will work with the broader community to develop tools, benchmarks, testbeds, and standardized methodologies for evaluating risks in AI and system trustworthiness, including from a socio-technical lens.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 2749,
+      "end_char": 2955
+    },
+    {
+      "quote": "These profiles can be for a given industry sector (such as hiring, criminal justice, lending), cross-sectoral (such as\nlarge language models, cloud-based services or acquisition),",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 3096,
+      "end_char": 3275
     }
   ]
 }

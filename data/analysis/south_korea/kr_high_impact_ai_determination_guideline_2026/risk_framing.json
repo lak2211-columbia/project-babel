@@ -1,0 +1,85 @@
+{
+  "dominant_frame": "consumer_public_safety",
+  "secondary_frames": [
+    "fundamental_rights",
+    "innovation_enablement",
+    "economic_competitiveness"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.1,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.72,
+    "fundamental_rights": 0.93,
+    "social_stability": 0.3,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.95,
+    "labor_transition": 0.15
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.08,
+    "fundamental_rights": 0.32,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.24,
+    "consumer_public_safety": 0.36,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The guideline is dominantly framed around consumer_public_safety, anchoring its statutory two-stage classification and eight of its thirteen technical domain chapters (energy, drinking water, healthcare/medical devices, nuclear facilities, and road/maritime/aviation/rail transport) in preventing fatalities, physical injury, health hazards, radiation accidents, and critical-infrastructure malfunctions. Consumer_public_safety narrowly edges out fundamental_rights because life and bodily safety lead the statutory risk formula and drive the majority of the quantitative severity/fatality criteria and engineering safe harbors across the 216-page text. Fundamental_rights is an exceptionally close runner-up, governing the remaining five chapters (law-enforcement biometrics, recruitment, lending, public-service eligibility/fees, and K-12 student evaluation) and explicitly invoking human dignity, equality/anti-discrimination, privacy, labor/occupation rights, property rights, social welfare rights, and the right to education. Innovation_enablement is a major third frame: MSIT emphasizes context-based flexible self-regulation, deliberate adoption of the neutral term 'High-Impact' over the EU's 'High-Risk' to encourage beneficial AI use, business predictability via 30-day administrative confirmation, cross-statute equivalence to avoid duplicate burdens, and regulatory sandboxes. Economic_competitiveness serves as a distinct fourth rationale anchored in the AI Basic Act's purpose clause promoting national competitiveness, productivity, AI industry promotion, and SME/startup support.",
+  "evidence_spans": [
+    {
+      "quote": "인공지능기본법에서는 사람의 생명, 신체의 안전 및 기본권에 중대한 영향을 미치거나 위험을 초래할 우려가 있는 분야의 고영향 인공지능사업자에게 일정한 책무를 부여하고 인공지능 이용자를 보호하고자 한다.",
+      "source_section": "1.1.1 고영향 인공지능 가이드라인의 수립 배경",
+      "quote_en": "The AI Basic Act imposes specific duties on high-impact AI operators in domains risking serious impact on human life, physical safety, and fundamental rights, in order to protect AI users.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 281,
+      "end_char": 392
+    },
+    {
+      "quote": "인공지능시스템의 의도하지 않은 작동 등으로 인해, 전력 등 에너지 수급 불균형 상황 발생 시, 병원 및 산업시설 등에 전력 공급이 끊기면서 대규모 생명·안전 피해 발생",
+      "source_section": "1.3.2 2단계 조건의 판단기준",
+      "quote_en": "Unintended AI malfunctions causing energy supply imbalances can cut power to hospitals and industrial facilities, leading to large-scale loss of life and safety harm (exemplifying physical safety risks across energy, water, healthcare, nuclear, and transport domains).",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 13738,
+      "end_char": 13831
+    },
+    {
+      "quote": "인공지능 활용과 관련된 기본권에는 이 외에도 인간의 존엄성, 평등권, 신체의 자유, 사생활의 비밀과 자유, 표현의 자유, 지식재산권, 소비자 권리, 교육받을 권리 등이 포함된다.",
+      "source_section": "1.3.2 2단계 조건의 판단기준",
+      "quote_en": "Beyond life and physical safety, fundamental rights implicated by AI include human dignity, equality, bodily liberty, privacy of private life, freedom of expression, intellectual property, consumer rights, and the right to education.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 12964,
+      "end_char": 13063
+    },
+    {
+      "quote": "'고영향(High-impact)'이라는 용어는 '고위험(High-risk)'보다 중립적 표현으로, 부 정적 영향뿐만 아니라 생명·신체·기본권에 미치는 중대한 영향 전반을 포괄합니다. 이는 AI의 긍정적 활용을 장려하면서도 필요한 안전장치를 마련하려는 입법 취지를 반영한 것입니다.",
+      "source_section": "FAQ (Ⅱ. 고영향 인공지능의 개념)",
+      "quote_en": "The term 'High-Impact' is more neutral than 'High-Risk,' encompassing significant impacts broadly rather than only negative ones, reflecting the legislative intent to encourage beneficial AI utilization while putting necessary safeguards in place.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 185552,
+      "end_char": 185708
+    },
+    {
+      "quote": "본 가이드라인은 인공지능기본법의 입법목적에 따라 사업자가 책무 유무를 스스로 판단할 수 있도록 고영향 인공지능의 기준과 예시 등을 마련하여 사업자의 예측 가능성을 제고하고 산업현장에서의 혼란을 방지하기 위한 목적으로 마련되었다.",
+      "source_section": "1.1.1 고영향 인공지능 가이드라인의 수립 배경",
+      "quote_en": "This guideline establishes criteria and examples so operators can autonomously assess whether obligations apply, enhancing business predictability and preventing confusion across industry.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 484,
+      "end_char": 611
+    },
+    {
+      "quote": "이 법은 인공지능의 건전한 발전과 신뢰 기반 조성에 필요한 기본적인 사항을 규정함 으로써 국민의 권익과 존엄성을 보호하고 국민의 삶의 질 향상과 국가경쟁력을 강화하는 데 이바지함을 목적으로 한다.",
+      "source_section": "1.1.1 고영향 인공지능 가이드라인의 수립 배경",
+      "quote_en": "AI Basic Act Art. 1 (Purpose): Aims to protect citizens' rights, interests, and dignity while contributing to improving quality of life and strengthening national competitiveness through sound AI development and a foundation of trust.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 46,
+      "end_char": 155
+    }
+  ]
+}

@@ -1,33 +1,85 @@
 {
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "consumer_public_safety",
     "economic_competitiveness",
-    "social_stability"
+    "consumer_public_safety",
+    "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.05,
-    "economic_competitiveness": 0.55,
-    "fundamental_rights": 0.2,
-    "social_stability": 0.3,
-    "innovation_enablement": 0.7,
-    "consumer_public_safety": 0.4,
-    "labor_transition": 0.05
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.75,
+    "fundamental_rights": 0.6,
+    "social_stability": 0.25,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.65,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance as a challenge of enabling innovation while managing risks at acceptable levels. The explicit goal is to avoid hindering innovation while addressing concerns, and governance is framed as a tool for operationalizing AI principles in ways conducive to Japanese industrial competitiveness and social acceptance. Consumer safety and social stability are secondary concerns embedded in the risk management language.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.2,
+    "fundamental_rights": 0.1,
+    "social_stability": 0.05,
+    "innovation_enablement": 0.5,
+    "consumer_public_safety": 0.15,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The report's dominant framing is innovation_enablement: throughout its introduction, Governance Innovation framework, and recommendations, it argues that conventional prescriptive laws cannot keep pace with rapid technological change and risk stifling innovation, and therefore advocates agile, goal-based, legally non-binding soft-law guidelines to facilitate AI deployment and digital transformation while managing risks proportionately. Innovation_enablement edges out economic_competitiveness because, although the report cites the mandate to enhance the competitiveness of Japanese industry and elicit Japanese corporate governance advantages relative to European and US peers, the core justification for its proposed multi-layered soft-law architecture is reducing compliance friction and enabling trustworthy AI adoption rather than zero-sum international rivalry. Consumer_public_safety and fundamental_rights appear as secondary frames through discussions of consumer insecurity over system errors, product safety and civil remedies, privacy protection, and human-centric AI principles, while social_stability plays only a minor supporting role via references to social acceptance and public trust.",
   "evidence_spans": [
     {
       "quote": "We need to structure this complex and multi-layered governance while avoiding hindering innovation as well as addressing concerns regarding AI systems and services.",
-      "source_section": "1. Introduction"
+      "source_section": "Page 3",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 6545,
+      "end_char": 6709
     },
     {
-      "quote": "conducive to the competitiveness of Japanese industry and increased social acceptance, for the purpose of operationalizing the AI Principles",
-      "source_section": "1. Introduction"
+      "quote": "From the perspective of balancing respect for AI principles and promotion of innovation and at least at this moment, except for some specific areas, AI governance should be designed mainly with soft laws, which is favorable to companies that respect AI principles.",
+      "source_section": "Page 33",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 100621,
+      "end_char": 100885
     },
     {
-      "quote": "managing risks posed by the use of AI at levels acceptable to stakeholders and maximizing their positive impact",
-      "source_section": "1. Introduction"
+      "quote": "discuss ideal approaches to AI governance in Japan, including regulation, standardization, guidelines, and audits, conducive to the competitiveness of Japanese industry and increased social acceptance, for the purpose of operationalizing the AI Principles, taking domestic and international AI trends into account.",
+      "source_section": "Page 3",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 5318,
+      "end_char": 5632
+    },
+    {
+      "quote": "There is research suggesting that Japanese companies that have valued their relationships with employees and society have the upper hand in AI risks compared to European and US companies86. The said guideline is required to provide creative solutions to elicit the advantages of Japanese companies.",
+      "source_section": "Page 28",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 89271,
+      "end_char": 89569
+    },
+    {
+      "quote": "In addition, consumers feel insecure about AI. An item related to concerns: “Concerned about potential damage caused by system errors” was ranked high in the above survey by Fujitsu Research Institute.",
+      "source_section": "Page 25",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 80630,
+      "end_char": 80831
+    },
+    {
+      "quote": "In the case of monitoring the behavior of an unspecified number of people through cameras installed everywhere in urban areas, it may be necessary to consider operational guidelines, etc. to prevent the hindrance of social benefits from using innovative technology while ensuring privacy protection even for legitimate purposes of crime prevention.",
+      "source_section": "Page 30",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 94950,
+      "end_char": 95298
     }
   ]
 }

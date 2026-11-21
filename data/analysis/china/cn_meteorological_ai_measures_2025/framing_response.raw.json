@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01PJtYQRqTwGMYWoNxyGuXZt",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"innovation_enablement\",\"secondary_frames\":[\"consumer_public_safety\",\"social_stability\"],\"frame_confidence\":{\"innovation_enablement\":0.65,\"consumer_public_safety\":0.55,\"labor_transition\":0.0},\"rationale_summary\":\"The document primarily frames AI governance in meteorology as enabling healthy and well-organized development, balancing innovation promotion with governance. The stated aim is to encourage and promote AI application services while managing potential hazards, with explicit policy support for R&D and application scenarios. Safety and security measures are secondary to the innovation promotion goal.\",\"evidence_spans\":[{\"quote\":\"aiming at encouraging and promoting the healthy and well-organized development of AI meteorological application services\",\"source_section\":\"Overview\"},{\"quote\":\"adhere to the combination of innovation promotion and governance according to law\",\"source_section\":\"Policy principles\"},{\"quote\":\"concrete policy support and promoting measures focusing on data openness, algorithm model research and development (R&D), and application scenarios empowerment\",\"source_section\":\"Policy measures\"},{\"quote\":\"injecting new vitality into speeding up the development of meteorological science and technology and public services\",\"source_section\":\"CMA initiative\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 2461,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 264,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 7489,
+    "candidatesTokenCount": 695,
+    "totalTokenCount": 10440,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 7489
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 695
+      }
+    ],
+    "thoughtsTokenCount": 2256,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "Qy0Ba7-_I7SIzLEP3cOcuQI"
 }

@@ -33,6 +33,7 @@ import {
   type DatePrecision,
 } from "@/lib/sources-data";
 import {
+  extractGroundingRatio,
   humanizeBindingStrength,
   humanizeCorpusRole,
   humanizeDocumentType,
@@ -142,6 +143,9 @@ type RawAnalysisMetadata = {
   extraction_prompt_hash?: string | null;
   framing_prompt_hash?: string | null;
   grounding_ratio?: number | null;
+  grounding_summary?: {
+    grounding_ratio?: number | null;
+  } | null;
   analyzed_at?: string | null;
 };
 
@@ -222,6 +226,7 @@ type DocumentIndexRow = {
   extraction_prompt_hash: string | null;
   framing_prompt_hash: string | null;
   frame_shares_json: Record<string, number> | null;
+  obligation_strengths_json?: Record<string, string> | null;
   policy_extraction: RawPolicyExtraction | null;
   risk_framing: RawRiskFraming | null;
 };
@@ -439,20 +444,25 @@ function normalizeEvidence(items: RawEvidenceItem[] | undefined): EvidenceSpan[]
 function normalizeControls(
   items: RawControlItem[] | undefined,
   humanizer: (label?: string | null) => string,
+  obligationOverrides?: Record<string, string> | null,
 ): ExtractedControl[] {
   if (!items || !Array.isArray(items)) return [];
   return items
     .filter((item) => Boolean(item?.label))
-    .map((item) => ({
-      key: item.label,
-      label: humanizer(item.label),
-      confidence: toNumberOrNull(item.confidence),
-      obligationStrength: item.obligation_strength ?? null,
-      obligationStrengthLabel: item.obligation_strength
-        ? humanizeObligationStrength(item.obligation_strength)
-        : null,
-      evidence: normalizeEvidence(item.evidence),
-    }));
+    .map((item) => {
+      const obligationStrength =
+        obligationOverrides?.[item.label] ?? item.obligation_strength ?? null;
+      return {
+        key: item.label,
+        label: humanizer(item.label),
+        confidence: toNumberOrNull(item.confidence),
+        obligationStrength,
+        obligationStrengthLabel: obligationStrength
+          ? humanizeObligationStrength(obligationStrength)
+          : null,
+        evidence: normalizeEvidence(item.evidence),
+      };
+    });
 }
 
 function buildFrameScores(
@@ -574,6 +584,7 @@ async function queryIndexRowsFromDb(): Promise<DocumentIndexRow[]> {
           latest_machine.extraction_prompt_hash,
           latest_machine.framing_prompt_hash,
           latest_machine.frame_shares_json,
+          mpr_obligations.obligation_strengths_json,
           latest_machine.policy_extraction,
           latest_machine.risk_framing
         FROM documents d
@@ -584,6 +595,12 @@ async function queryIndexRowsFromDb(): Promise<DocumentIndexRow[]> {
           ORDER BY m.updated_at DESC, m.id DESC
           LIMIT 1
         ) latest_machine ON TRUE
+        LEFT JOIN LATERAL (
+          SELECT jsonb_object_agg(mpr.label, mpr.obligation_strength)
+            FILTER (WHERE mpr.obligation_strength IS NOT NULL) AS obligation_strengths_json
+          FROM machine_policy_requirements mpr
+          WHERE mpr.machine_analysis_id = latest_machine.id
+        ) mpr_obligations ON TRUE
         ORDER BY
           COALESCE(d.publication_date::text, d.raw_metadata->>'publication_date', d.raw_metadata->>'source_publication_date') DESC NULLS LAST,
           d.id ASC
@@ -627,6 +644,7 @@ async function queryIndexRowsFromDb(): Promise<DocumentIndexRow[]> {
         latest_machine.extraction_prompt_hash,
         latest_machine.framing_prompt_hash,
         NULL::jsonb AS frame_shares_json,
+        NULL::jsonb AS obligation_strengths_json,
         latest_machine.policy_extraction,
         latest_machine.risk_framing
       FROM documents d
@@ -662,6 +680,7 @@ function mapDbRowToComparisonDoc(row: DocumentIndexRow): ComparisonCorpusDocumen
   const safetyRequirements = normalizeControls(
     policy.safety_requirements,
     humanizeRequirement,
+    row.obligation_strengths_json,
   );
   const enforcementMechanisms = normalizeControls(
     policy.enforcement_mechanisms,
@@ -879,6 +898,7 @@ async function loadDocumentDetailUncached(
             latest_machine.extraction_prompt_hash,
             latest_machine.framing_prompt_hash,
             latest_machine.frame_shares_json,
+            mpr_obligations.obligation_strengths_json,
             latest_machine.policy_extraction,
             latest_machine.risk_framing
           FROM documents d
@@ -889,6 +909,12 @@ async function loadDocumentDetailUncached(
             ORDER BY m.updated_at DESC, m.id DESC
             LIMIT 1
           ) latest_machine ON TRUE
+          LEFT JOIN LATERAL (
+            SELECT jsonb_object_agg(mpr.label, mpr.obligation_strength)
+              FILTER (WHERE mpr.obligation_strength IS NOT NULL) AS obligation_strengths_json
+            FROM machine_policy_requirements mpr
+            WHERE mpr.machine_analysis_id = latest_machine.id
+          ) mpr_obligations ON TRUE
           WHERE d.id = ${documentId}
           LIMIT 1
         `,
@@ -931,6 +957,7 @@ async function loadDocumentDetailUncached(
             latest_machine.extraction_prompt_hash,
             latest_machine.framing_prompt_hash,
             NULL::jsonb AS frame_shares_json,
+            NULL::jsonb AS obligation_strengths_json,
             latest_machine.policy_extraction,
             latest_machine.risk_framing
           FROM documents d
@@ -1047,6 +1074,7 @@ async function loadDocumentDetailUncached(
       safetyRequirements: normalizeControls(
         policy.safety_requirements,
         humanizeRequirement,
+        row.obligation_strengths_json,
       ),
       enforcementMechanisms: normalizeControls(
         policy.enforcement_mechanisms,
@@ -1283,7 +1311,7 @@ function buildLocalProvenance(record: FallbackRecord): DocumentProvenance {
     isLegacy: taxInfo.isLegacy,
     extractionPromptHash: meta?.extraction_prompt_hash ?? null,
     framingPromptHash: meta?.framing_prompt_hash ?? null,
-    groundingRatio: toNumberOrNull(meta?.grounding_ratio),
+    groundingRatio: extractGroundingRatio(meta),
     analyzedAt: analyzedIso ? formatLongDate(analyzedIso) : null,
     analyzedAtIso: analyzedIso,
   };

@@ -7,19 +7,30 @@
     "economic_competitiveness": 0.0,
     "fundamental_rights": 0.0,
     "social_stability": 0.0,
-    "innovation_enablement": 0.75,
-    "consumer_public_safety": 0.1,
-    "labor_transition": 0.05
+    "innovation_enablement": 0.55,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document establishes an expert panel to promote research, development, and utilization of AI-related technologies. Its primary stated purpose is advancing AI R&D and application, framing governance as an enabler of innovation rather than a risk-mitigation body.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 1.0,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "This document is a brief administrative decision establishing the Expert Panel on AI Strategy and defining its procedural governance. It contains minimal policy justification, but the sole stated purpose for convening the panel and developing guidelines, studies, and a basic plan is to promote the research, development, and utilization of AI-related technologies, which aligns modestly with innovation_enablement. No other risk framing rationales are articulated.",
   "evidence_spans": [
     {
-      "quote": "人工知能関連技術の研究開発及び活用の推進に関する法律",
-      "source_section": "１"
-    },
-    {
-      "quote": "人工知能関連技術の研究開発及び活用の推進に係る専門的な事項の調査のため、専門調査会を設置する",
-      "source_section": "１"
+      "quote": "人工知能関連\n技術の研究開発及び活用の推進に係る専門的な事項の調査のため、専門調査会\nを設置する。",
+      "source_section": "Page 1",
+      "quote_en": "An Expert Panel shall be established to investigate specialized matters concerning the promotion of research, development, and utilization of AI-related technologies.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 187,
+      "end_char": 236
     }
   ]
 }

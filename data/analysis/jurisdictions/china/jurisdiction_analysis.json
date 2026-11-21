@@ -2,8 +2,8 @@
   "jurisdiction": "china",
   "analysis_method": "deterministic_v2",
   "analysis_version": "0.2.0",
-  "generated_at": "2026-11-21T02:28:21.092552Z",
-  "source_count": 18,
+  "generated_at": "2026-11-21T06:47:22.743541Z",
+  "source_count": 20,
   "source_document_ids": [
     "cn_ai_abuse_cleanup_2025",
     "cn_ai_content_labeling_measures_2025",
@@ -22,42 +22,26 @@
     "cn_deep_synthesis_provisions_2022",
     "cn_genai_interim_measures_2023",
     "cn_meteorological_ai_measures_2025",
-    "cn_new_generation_ai_plan_2017"
+    "cn_new_generation_ai_plan_2017",
+    "cn_state_council_ai_plus_opinion_2025",
+    "cn_tc260_ai_safety_governance_framework_3_0_2026"
   ],
   "source_window_start": "2017-07-20",
-  "source_window_end": "2026-04-10",
-  "summary": "China's current AI governance record is guidance-heavy, with Cyberspace Administration of China (CAC) and Ministry of Industry and Information Technology (MIIT) appearing most often in the source base. Across the analyzed documents, Social stability and public order and Consumer and public safety both materially shape the jurisdiction's rationale, while transparency and disclosure, human oversight, and risk assessment recur most often in the operative expectations.",
-  "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from Cyberspace Administration of China (CAC), Ministry of Industry and Information Technology (MIIT), and 国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee), and the corpus is weighted toward regulatory guidance and legislation.",
-  "framing_landscape": "The framing mix is relatively split: Social stability and public order leads, but Consumer and public safety is close enough that the jurisdiction should not be read through a single rationale alone.",
-  "implementation_and_enforcement": "Operationally, the sources most often point to transparency and disclosure, human oversight, and risk assessment. When the corpus gets concrete about consequences, it most often references regulatory supervision and reporting obligations.",
-  "source_coverage_note": "This readout is based on 18 analyzed documents spanning 2017-07-20 to 2026-04-10. The corpus is weighted toward regulatory guidance and legislation. On the binding side it leans toward regulatory guidance and binding law, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are 《人工智能拟人化互动服务管理暂行办法》答记者问 and 人工智能拟人化互动服务管理暂行办法.",
+  "source_window_end": "2026-09-14",
+  "summary": "China's current AI governance record is mixed across law, guidance, and strategic coordination, with Cyberspace Administration of China (CAC) and Ministry of Industry and Information Technology (MIIT) appearing most often in the source base. Across the analyzed documents, Social stability and public order and Innovation enablement both materially shape the jurisdiction's rationale, while risk assessment, content provenance, and transparency and disclosure recur most often in the operative expectations.",
+  "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from Cyberspace Administration of China (CAC), Ministry of Industry and Information Technology (MIIT), and Ministry of Science and Technology (MOST), and the corpus is weighted toward regulatory guidance and legislation.",
+  "framing_landscape": "The framing mix is relatively split: Social stability and public order leads, but Innovation enablement is close enough that the jurisdiction should not be read through a single rationale alone.",
+  "implementation_and_enforcement": "Operationally, the sources most often point to risk assessment, content provenance, and transparency and disclosure. When the corpus gets concrete about consequences, it most often references regulatory supervision and reporting obligations.",
+  "source_coverage_note": "This readout is based on 20 analyzed documents spanning 2017-07-20 to 2026-09-14. The corpus is weighted toward regulatory guidance and legislation. On the binding side it leans toward regulatory guidance and binding law, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are 人工智能安全治理框架 3.0 (AI Safety Governance Framework 3.0) and 《人工智能拟人化互动服务管理暂行办法》答记者问.",
   "key_sources": [
     {
       "document_id": "cn_anthropomorphic_interaction_measures_2026",
       "title": "人工智能拟人化互动服务管理暂行办法",
       "publication_date": "2026-04-10",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "binding_law",
-      "dominant_frame": "social_stability",
-      "contribution": "Statutory anchor for risk assessment and incident reporting, with civil penalties as the clearest consequence or oversight hook."
-    },
-    {
-      "document_id": "cn_deep_synthesis_provisions_2022",
-      "title": "互联网信息服务深度合成管理规定",
-      "publication_date": "2022-11-25",
       "document_type": "legislation",
       "binding_strength": "binding_law",
-      "dominant_frame": "social_stability",
-      "contribution": "Statutory anchor for transparency and disclosure and risk assessment, with civil penalties as the clearest consequence or oversight hook."
-    },
-    {
-      "document_id": "cn_algorithm_recommendation_provisions_2021",
-      "title": "互联网信息服务算法推荐管理规定",
-      "publication_date": "2021-12-31",
-      "document_type": "legislation",
-      "binding_strength": "binding_law",
-      "dominant_frame": "social_stability",
-      "contribution": "Statutory anchor for risk assessment and transparency and disclosure, with civil penalties as the clearest consequence or oversight hook."
+      "dominant_frame": "consumer_public_safety",
+      "contribution": "Statutory anchor for risk assessment and training data governance, with regulatory supervision as the clearest consequence or oversight hook."
     },
     {
       "document_id": "cn_genai_interim_measures_2023",
@@ -66,118 +50,136 @@
       "document_type": "legislation",
       "binding_strength": "binding_law",
       "dominant_frame": "social_stability",
-      "contribution": "Statutory anchor for risk assessment and transparency and disclosure, with civil penalties as the clearest consequence or oversight hook."
+      "contribution": "Statutory anchor for training data governance and transparency and disclosure, with regulatory supervision as the clearest consequence or oversight hook."
+    },
+    {
+      "document_id": "cn_deep_synthesis_provisions_2022",
+      "title": "互联网信息服务深度合成管理规定",
+      "publication_date": "2022-11-25",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "dominant_frame": "social_stability",
+      "contribution": "Statutory anchor for risk assessment and incident reporting, with regulatory supervision as the clearest consequence or oversight hook."
+    },
+    {
+      "document_id": "cn_algorithm_recommendation_provisions_2021",
+      "title": "互联网信息服务算法推荐管理规定",
+      "publication_date": "2021-12-31",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "dominant_frame": "social_stability",
+      "contribution": "Statutory anchor for risk assessment and content provenance, with regulatory supervision as the clearest consequence or oversight hook."
     }
   ],
   "top_document_types": [
     {
       "label": "regulatory_guidance",
-      "count": 10,
-      "share": 0.556
+      "count": 7,
+      "share": 0.35
     },
     {
       "label": "legislation",
-      "count": 4,
-      "share": 0.222
+      "count": 5,
+      "share": 0.25
     },
     {
       "label": "standards_guideline",
-      "count": 2,
-      "share": 0.111
+      "count": 4,
+      "share": 0.2
     }
   ],
   "top_binding_strengths": [
     {
       "label": "regulatory_guidance",
-      "count": 8,
-      "share": 0.444
+      "count": 7,
+      "share": 0.35
     },
     {
       "label": "binding_law",
-      "count": 6,
-      "share": 0.333
+      "count": 5,
+      "share": 0.25
     },
     {
       "label": "standards_guideline",
-      "count": 2,
-      "share": 0.111
+      "count": 4,
+      "share": 0.2
     }
   ],
   "top_requirements": [
     {
-      "label": "transparency_disclosure",
-      "count": 17,
-      "share": 0.944
-    },
-    {
-      "label": "human_oversight",
-      "count": 14,
-      "share": 0.778
-    },
-    {
       "label": "risk_assessment",
-      "count": 14,
-      "share": 0.778
+      "count": 15,
+      "share": 0.75
     },
     {
-      "label": "model_documentation",
-      "count": 13,
-      "share": 0.722
+      "label": "content_provenance",
+      "count": 12,
+      "share": 0.6
+    },
+    {
+      "label": "transparency_disclosure",
+      "count": 11,
+      "share": 0.55
+    },
+    {
+      "label": "access_controls",
+      "count": 10,
+      "share": 0.5
     }
   ],
   "top_enforcement_mechanisms": [
     {
       "label": "regulatory_supervision",
-      "count": 15,
-      "share": 0.833
+      "count": 11,
+      "share": 0.55
     },
     {
       "label": "reporting_obligation",
-      "count": 10,
-      "share": 0.556
+      "count": 9,
+      "share": 0.45
     },
     {
       "label": "soft_enforcement",
-      "count": 8,
-      "share": 0.444
+      "count": 9,
+      "share": 0.45
     },
     {
-      "label": "civil_penalty",
-      "count": 6,
-      "share": 0.333
+      "label": "market_access_restriction",
+      "count": 5,
+      "share": 0.25
     }
   ],
   "top_frames": [
     {
       "label": "social_stability",
-      "score": 6.173,
-      "share": 0.343,
-      "document_mentions": 15
-    },
-    {
-      "label": "consumer_public_safety",
-      "score": 4.966,
-      "share": 0.276,
-      "document_mentions": 17
+      "score": 4.69,
+      "share": 0.234,
+      "document_mentions": 18
     },
     {
       "label": "innovation_enablement",
-      "score": 2.273,
-      "share": 0.126,
-      "document_mentions": 8
+      "score": 4.61,
+      "share": 0.23,
+      "document_mentions": 19
+    },
+    {
+      "label": "consumer_public_safety",
+      "score": 3.82,
+      "share": 0.191,
+      "document_mentions": 19
     },
     {
       "label": "fundamental_rights",
-      "score": 1.873,
-      "share": 0.104,
-      "document_mentions": 8
+      "score": 2.83,
+      "share": 0.142,
+      "document_mentions": 18
     }
   ],
   "key_institutions": [
     "Cyberspace Administration of China (CAC)",
     "Ministry of Industry and Information Technology (MIIT)",
-    "国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee)",
-    "National Medical Products Administration (NMPA)"
+    "Ministry of Science and Technology (MOST)",
+    "State Council of China"
   ],
-  "confidence": 0.766
+  "confidence": 0.925
 }

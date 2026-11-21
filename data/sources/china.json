@@ -544,7 +544,7 @@
         "frontier_gpai",
         "standards_assurance"
       ],
-      "lifecycle_stage": "active",
+      "lifecycle_stage": "superseded",
       "publication_date": "2024-09-09",
       "languages": [
         "zh"
@@ -560,7 +560,7 @@
         "framework",
         "risk_governance"
       ],
-      "corpus_role": "primary_instrument"
+      "corpus_role": "historical_baseline"
     },
     {
       "id": "cn_ai_labeling_draft_2024",
@@ -842,6 +842,84 @@
         "cac"
       ],
       "corpus_role": "companion_resource"
+    },
+    {
+      "id": "cn_tc260_ai_safety_governance_framework_3_0_2026",
+      "title": "人工智能安全治理框架 3.0 (AI Safety Governance Framework 3.0)",
+      "issuing_body": "National Technical Committee 260 on Cybersecurity (TC260) / Cyberspace Administration of China (CAC)",
+      "canonical_url": "https://www.cac.gov.cn/rootimages/uploadimg/1791137114683961/1791137114683961.pdf",
+      "retrieval_urls": [
+        "https://www.cac.gov.cn/rootimages/uploadimg/1791137114683961/1791137114683961.pdf"
+      ],
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "policy_domains": [
+        "agentic_ai",
+        "embodied_physical_ai",
+        "frontier_gpai",
+        "standards_assurance",
+        "national_security"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-09-14",
+      "effective_date": "2026-09-14",
+      "supersedes_id": "cn_ai_safety_governance_framework_2024",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "cn_tc260",
+        "cn_cac"
+      ],
+      "priority": "high",
+      "relevance_notes": "136-page September 2026 TC260/CAC technical safety framework superseding Framework 1.0 (2024); establishes full-lifecycle safety risk taxonomy, agentic AI security controls, embodied AI risk governance, and technical mitigation measures.",
+      "tags": [
+        "tc260",
+        "safety_framework",
+        "version_3_0",
+        "agentic_ai",
+        "embodied_ai"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "cn_state_council_ai_plus_opinion_2025",
+      "title": "国务院关于深入实施“人工智能+”行动的意见 (国发〔2025〕11号 / State Council Opinion on Deepening Implementation of the 'AI+' Action)",
+      "issuing_body": "State Council of the People's Republic of China",
+      "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202508/content_7037862.htm",
+      "retrieval_urls": [
+        "https://www.gov.cn/zhengce/zhengceku/202508/content_7037862.htm"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "executive_action",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "agentic_ai",
+        "industrial_innovation",
+        "sovereign_compute",
+        "public_sector_governance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-08-26",
+      "effective_date": "2025-08-26",
+      "languages": [
+        "zh"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "cn_state_council_policy"
+      ],
+      "priority": "high",
+      "relevance_notes": "Landmark State Council directive (Guo Fa [2025] No. 11, August 26, 2025) setting national targets for AI agent and smart terminal adoption (>70% by 2027, >90% by 2030), sovereign compute/data supply, and agile AI safety governance.",
+      "tags": [
+        "state_council",
+        "ai_plus",
+        "agentic_ai",
+        "industrial_strategy"
+      ],
+      "corpus_role": "primary_instrument"
     }
   ]
 }

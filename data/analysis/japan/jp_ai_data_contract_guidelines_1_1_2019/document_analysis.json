@@ -4,76 +4,282 @@
   "language": "ja",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "経済産業省 (Ministry of Economy, Trade and Industry, METI)",
-    "document_type": "regulatory_guidance",
-    "binding_strength": "regulatory_guidance",
+    "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
+    "document_type": "standards_guideline",
+    "binding_strength": "standards_guideline",
     "publication_date": "2019-12",
     "effective_date": null,
     "covered_actors": [
-      "data providers",
-      "data users",
-      "platform operators",
-      "businesses engaging in data contracts",
-      "cross-border transaction parties"
+      "Enterprises (large enterprises, SMEs, and startups)",
+      "AI software vendors and system integrators (SIers)",
+      "AI software users and data holders",
+      "Data providers and data recipients",
+      "Data platform operators",
+      "Universities and research institutions"
     ],
     "covered_application_domains": [
-      "general_purpose_models",
       "critical_infrastructure",
-      "healthcare"
+      "biometrics",
+      "healthcare",
+      "finance"
     ],
     "prohibited_practices": [],
-    "safety_requirements": [],
-    "enforcement_mechanisms": [
+    "safety_requirements": [
       {
-        "label": "none_specified",
-        "confidence": 0.85,
+        "label": "training_data_governance",
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "AI・データの利用に関する契約ガイドライン 1.1 版",
-            "source_section": "Page 1"
+            "quote": "３ ユーザは、ベンダに対し、ユーザ提供データおよび資料等（以下まとめて 「ユーザ提供データ等」という。）をベンダに提供等することについて、正当な権限があることおよびかかる提供等が法令に違反するものではないことを保証する。",
+            "source_section": "AI編 第７-６ ソフトウェア開発契約書（モデル契約書）第１２条（ユーザがベンダに提供するデータ・資料等）",
+            "quote_en": "3. The User warrants to the Vendor that it has legitimate authority to provide, etc. the User-Provided Data and Materials, etc. (collectively, 'User-Provided Data, etc.') to the Vendor, and that such provision, etc. does not violate any laws or regulations.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 324516,
+            "end_char": 324626
+          },
+          {
+            "quote": "１ ユーザは、本開発の遂行に際して、個人情報の保護に関する法律（本条に\nおいて、以下「法」という。）に定める個人情報または匿名加工情報（以下、\n総称して「個人情報等」という。）を含んだデータをベンダに提供する場合\nには、事前にその旨を明示する。\n２ 本開発の遂行に際してユーザが個人情報等を含んだデータをベンダに提\n供する場合には、法に定められている手続を履践していることを保証する\nものとする。",
+            "source_section": "AI編 第７-６ ソフトウェア開発契約書（モデル契約書）第１５条（個人情報の取り扱い）",
+            "quote_en": "1. When providing the Vendor with data containing personal information or anonymously processed information (collectively, 'Personal Information, etc.') as defined in the Act on the Protection of Personal Information (hereinafter 'the Act' in this Article) in carrying out this Development, the User shall explicitly indicate that fact in advance. 2. When providing the Vendor with data containing Personal Information, etc. in carrying out this Development, the User warrants that it has completed the procedures prescribed by the Act.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 329889,
+            "end_char": 330087
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "提供データの不正利用や不正流出を防止する方法として、提供データ\nの暗号化、アクセス制限、電子透かし技術を用いたデータの出所等を明ら\nかにする方法、ブロックチェーン技術等がある。",
+            "source_section": "データ編 第３-２-(5) 不正利用等を防止する技術",
+            "quote_en": "Methods to prevent unauthorized use or leakage of provided data include encryption of provided data, access restrictions, methods to clarify the provenance of data using digital watermarking technology, and blockchain technology.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 32541,
+            "end_char": 32629
+          },
+          {
+            "quote": "プラットフォーム事業者は、前記のとおり、多種多様の提供データを\n取り扱うため、一定程度のサイバーセキュリティ対策を行うことが要\n求され、提供データ、利用データおよび利用サービスの安全管理に関す\nる義務を負うと解される。",
+            "source_section": "データ編 第６-３-(5)-② 安全性（サイバーセキュリティ）について",
+            "quote_en": "As stated above, because platform operators handle a wide variety of provided data, they are required to implement a certain level of cybersecurity measures and are understood to bear obligations regarding the security management of provided data, usage data, and usage services.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 118180,
+            "end_char": 118289
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.82,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "そのため、生成された学習済みモデルを実際に現場に\n投入するに際しては、事前の検証結果から期待される精度が現場環境下\nでも実現可能であるかをさらに検証すべく、現場への学習済みモデルの\n導入前に現場環境下での性能評価を行うことが必要となる。",
+            "source_section": "AI編 第４-４-(3) 具体例による解説 事例3",
+            "quote_en": "Therefore, when actually deploying a generated trained model into the field, it is necessary to conduct a performance evaluation in the field environment prior to deploying the trained model into the field, in order to further verify whether the accuracy expected from prior verification results can also be achieved under field conditions.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 272967,
+            "end_char": 273085
+          },
+          {
+            "quote": "この場合、PoC 段階では、既存のシステムの一部を学習\n済みモデルを用いたモジュールで置換し、その統合（インテグレーショ\nン）をした上で、性能を評価する。",
+            "source_section": "AI編 第４-３-(3)-② PoC 段階",
+            "quote_en": "In this case, in the PoC stage, part of the existing system is replaced with a module using the trained model, and performance is evaluated after integration.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 258461,
+            "end_char": 258538
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.72,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "１ 乙は、提供データの漏えい、喪失、第三者提供、目的外利用等本契約に違\n反する提供データの利用（以下、「提供データの漏えい等」という）を発見\nした場合、直ちに甲にその旨を通知しなければならない。",
+            "source_section": "データ編 第７-１ データ提供型契約のモデル契約書案 第９条（損害軽減義務）",
+            "quote_en": "1. If Party B discovers any leakage, loss, provision to a third party, unauthorized-purpose use, or other use of Provided Data in violation of this Agreement (hereinafter 'Leakage, etc. of Provided Data'), Party B shall immediately notify Party A to that effect.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 144579,
+            "end_char": 144676
+          },
+          {
+            "quote": "提供データの漏えい等の事実が確認できた場合は、その原因を調査し、再発\n防止策について検討しその内容を甲に報告しなければならない。",
+            "source_section": "データ編 第７-１ データ提供型契約のモデル契約書案 第９条（損害軽減義務）",
+            "quote_en": "If the fact of Leakage, etc. of Provided Data is confirmed, Party B shall investigate the cause, consider measures to prevent recurrence, and report the details thereof to Party A.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 144759,
+            "end_char": 144823
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.7,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "そのため、データ提供者およびデータ受領者と秘密保持義務を締結した中立\nな第三者により、データ受領者の提供データの利用状況についての監査を実\n施することが適切な場合もありうる。",
+            "source_section": "データ編 第７-１ データ提供型契約のモデル契約書案 第７条（利用状況）解説",
+            "quote_en": "Therefore, there may be cases where it is appropriate to have a neutral third party who has entered into confidentiality obligations with the data provider and data recipient conduct an audit of the data recipient's usage status of the provided data.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 142692,
+            "end_char": 142779
           }
         ]
       }
     ],
-    "enforcement_authorities": [
-      "経済産業省 (METI)"
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "quote": "なお、本ガイドライン（AI 編）は、契約についての基本的な考え方を提\n示するものにすぎず、何ら法的な拘束力を有するものではなく、また、当事\n者の契約の自由を何ら制約するものではないことを念のため付言する。",
+            "source_section": "AI編 第１ 総論 １ 目的",
+            "quote_en": "It should be noted for the avoidance of doubt that these Guidelines (AI Section) merely present basic concepts regarding contracts, have no legally binding force whatsoever, and do not restrict the parties' freedom of contract in any way.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 211465,
+            "end_char": 211567
+          },
+          {
+            "quote": "したがっ\nて、本ガイドライン（データ編）は、あくまでも契約で定めておくべき事項\n等を示すにとどまり、契約の自由を制約するものではないことは当然であ\nる。",
+            "source_section": "データ編 第１ 総論 ３ 契約の複雑化・高度化とガイドラインの意義",
+            "quote_en": "Therefore, these Guidelines (Data Section) naturally do no more than indicate matters that should be stipulated in contracts and do not restrict freedom of contract.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5918,
+            "end_char": 5994
+          }
+        ]
+      }
     ],
+    "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "This is a non-binding guideline (version 1.1, revised December 2019 from June 2018 original) providing model contract clauses and considerations for data contracts covering three types: data provision contracts, data creation contracts, and data sharing platform contracts. It explicitly states it does not restrict freedom of contract. Revision addressed alignment with guidelines on limited-provision data (限定提供データ).",
+    "implementation_notes": "Version 1.1 (December 2019) revises the June 2018 initial edition's Data Section to reflect the 2018 amendment to the Unfair Competition Prevention Act introducing protection for 'shared data with limited access' (effective July 1, 2019), while retaining the June 2018 AI Section. The guidelines are explicitly non-binding reference materials and model contracts intended to reduce transaction costs and foster B2B contracting practices without restricting freedom of contract. The Data Section addresses three contract types (data provision, data creation, and data sharing/platform), and the AI Section proposes an 'exploratory staged' development approach (assessment, PoC, development, and retraining) centered on quasi-mandate contracts and tailored usage conditions rather than strict IP ownership disputes. Although the guidelines impose no legal obligations or sanctions of their own, they highlight compliance considerations under existing Japanese laws (Personal Information Protection Act, Antimonopoly Act, Subcontract Act, Unfair Competition Prevention Act, Copyright Act, Foreign Exchange and Foreign Trade Act) and international regimes such as the EU GDPR.",
     "confidence": 0.92
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "fundamental_rights",
-      "national_security",
-      "economic_competitiveness"
+      "economic_competitiveness",
+      "fundamental_rights"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.15,
-      "economic_competitiveness": 0.25,
-      "fundamental_rights": 0.2,
-      "social_stability": 0.05,
-      "innovation_enablement": 0.55,
-      "consumer_public_safety": 0.05,
+      "economic_competitiveness": 0.85,
+      "fundamental_rights": 0.55,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.25,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document is primarily framed around enabling data-driven innovation through clear contractual guidelines. Its stated purpose is to facilitate data transactions and AI utilization, with references to 'data-driven innovation creation' and IoT/AI platform case studies. Secondary framings include fundamental rights (personal data protection, GDPR compliance) and national security (export controls under FEFTA for dual-use technologies).",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.02,
+      "economic_competitiveness": 0.3,
+      "fundamental_rights": 0.1,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.03,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The METI Contract Guidelines on Utilization of AI and Data (v1.1) are predominantly framed around innovation enablement: both the Data and AI sections explicitly state their core purpose is to reduce transaction costs, establish practical contract models and exploratory development practices, preserve freedom of contract, and unlock open innovation and broader AI/data utilization. Economic competitiveness is a strong secondary frame, as the guidelines repeatedly justify lowering contractual friction by citing national and industrial competitiveness and surviving the Fourth Industrial Revolution; however, innovation enablement edges it out because the operative rationale centers on frictionless, voluntary ecosystem facilitation rather than zero-sum international rivalry. Fundamental rights appear as a tertiary consideration focused on preventing privacy infringements and complying with personal data protection laws (APPI and GDPR) during data sharing, while consumer/public safety (industrial plant safety, medical data, consumer contract protections) and national security (Foreign Exchange and Foreign Trade Act export controls) appear only incidentally as sector examples or legal compliance checkpoints.",
     "evidence_spans": [
       {
-        "quote": "データに関する取引の推進を目的とした契約ガイドライン-データ駆動型イノベーションの創出に向けて-",
-        "source_section": "Page 11"
+        "quote": "多様な立場に配慮したデータ契約の考え方や契約条項例等を用意するこ\nとにより、データ利用の促進を図り、オープンイノベーションを促進するこ\nとも、本ガイドライン（データ編）の一つの目的である。",
+        "source_section": "データ編 第１ 総論 ４ イノベーションの促進",
+        "quote_en": "By providing concepts for data contracts and model contract clauses that take diverse positions into account, promoting data utilization and fostering open innovation is also one of the purposes of these Guidelines (Data Section).",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 7201,
+        "end_char": 7295
       },
       {
-        "quote": "武器、核兵器等、軍事転用可能な汎用品およびそれらに関する技術が安全保障上懸念のある国家やテロリストの手に渡ることを防ぐ目的で、輸出管理が行なわれている",
-        "source_section": "Page 48"
+        "quote": "それによって、当事者の双方が納得する合理的な契約を締結するための\n情報を提供し、契約プラクティスを形成する一助となることで、AI 技術を\n利用したソフトウェアの開発・利用を促進することを目的としている。",
+        "source_section": "AI編 第１ 総論 １ 目的",
+        "quote_en": "Thereby, by providing information for concluding rational contracts that both parties can agree to and helping to form contract practices, it aims to promote the development and utilization of software utilizing AI technology.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 211363,
+        "end_char": 211464
       },
       {
-        "quote": "個人情報保護に主眼を置いた越境移転規制が存在する",
-        "source_section": "Page 42"
+        "quote": "当事者がデータ流通と利活用について低コス\nトで合理的な取引関係を構築することができれば、独占禁止法や不正競争\n防止法等の法適用と相まって、契約当事者としてはもちろん、ひいては国と\nしての競争力が高まることも期待される。",
+        "source_section": "データ編 第１ 総論 ３ 契約の複雑化・高度化とガイドラインの意義",
+        "quote_en": "If parties can build low-cost and rational transactional relationships regarding data distribution and utilization, combined with the application of laws such as the Antimonopoly Act and the Unfair Competition Prevention Act, it is expected to enhance the competitiveness not only of the contracting parties but ultimately of the nation as a whole.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 5744,
+        "end_char": 5853
+      },
+      {
+        "quote": "このようなことになれば、AI 技術の開発・利用が阻害され、ひいては我\nが国の産業競争力が失われたり、社会的・構造的課題の解決が困難となると\nいった結果をもたらしかねない。",
+        "source_section": "AI編 第１ 総論 １ 目的",
+        "quote_en": "If this happens, the development and utilization of AI technology will be hindered, which could ultimately lead to a loss of Japan's industrial competitiveness and make it difficult to solve social and structural issues.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 211169,
+        "end_char": 211254
+      },
+      {
+        "quote": "データに個人情報が含まれる場合にはプライバシー権\n等の個人の権利が侵害されることがある",
+        "source_section": "データ編 第１ 総論 ２ データの流出や不正利用に伴う損害発生への懸念",
+        "quote_en": "When data includes personal information, individual rights such as privacy rights may be infringed.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 5399,
+        "end_char": 5442
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:46:03.418089Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "558b60a8a52705044370287c79ea992739cb8ffd4c58903d9460e5d3d445a33d",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 599060,
+      "output_tokens": 3602,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 13021,
+      "estimated_cost_usd": 0.915055
+    },
+    "grounding_summary": {
+      "total_quotes": 16,
+      "exact_matches": 16,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 16
+    }
   }
 }

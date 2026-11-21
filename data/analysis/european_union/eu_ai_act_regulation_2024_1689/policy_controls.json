@@ -2,95 +2,547 @@
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.95,
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "common rules for high-risk AI systems should be established",
-          "source_section": "Recital 7"
+          "quote": "1. A risk management system shall be established, implemented, documented and maintained in relation to high-risk AI systems.",
+          "source_section": "Article 9",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "rules regulating the placing on the market, the putting into service and the use of certain AI systems should be laid down",
-          "source_section": "Recital 8"
+          "quote": "(b) assess and mitigate possible systemic risks at Union level, including their sources, that may stem from the development, the placing on the market, or the use of general-purpose AI models with systemic risk;",
+          "source_section": "Article 55",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "8. The testing of high-risk AI systems shall be performed, as appropriate, at any time throughout the development process, and, in any event, prior to their being placed on the market or put into service. Testing shall be carried out against prior defined metrics and probabilistic thresholds that are appropriate to the intended purpose of the high-risk AI system.",
+          "source_section": "Article 9",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "6. High-risk AI systems shall be tested for the purpose of identifying the most appropriate and targeted risk management measures. Testing shall ensure that high-risk AI systems perform consistently for their intended purpose and that they are in compliance with the requirements set out in this Section.",
+          "source_section": "Article 9",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(a) perform model evaluation in accordance with standardised protocols and tools reflecting the state of the art, including conducting and documenting adversarial testing of the model with a view to identifying and mitigating systemic risks;",
+          "source_section": "Article 55",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "2. Where applicable, a detailed description of the measures put in place for the purpose of conducting internal and/or external adversarial testing (e.g. red teaming), model adaptations, including alignment and fine-tuning.",
+          "source_section": "ANNEX XI, Section 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "1. Providers of high-risk AI systems placed on the Union market shall report any serious incident to the market surveillance authorities of the Member States where that incident occurred.",
+          "source_section": "Article 73",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "(c) keep track of, document, and report, without undue delay, to the AI Office and, as appropriate, to national competent authorities, relevant information about serious incidents and possible corrective measures to address them;",
+          "source_section": "Article 55",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.9,
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "the obligations placed on various operators involved in the AI value chain under this Regulation should apply without prejudice to national law",
-          "source_section": "Recital 9"
+          "quote": "Providers shall ensure that AI systems intended to interact directly with natural persons are designed and developed in such a way that the natural persons concerned are informed that they are interacting with an AI system",
+          "source_section": "Article 50",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "specific requirements and obligations, including in respect of the transparency, technical documentation and record-keeping of AI systems",
-          "source_section": "Recital 9"
+          "quote": "11. Without prejudice to Article 50 of this Regulation, deployers of high-risk AI systems referred to in Annex III that make decisions or assist in making decisions related to natural persons shall inform the natural persons that they are subject to the use of the high-risk AI system.",
+          "source_section": "Article 26",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.9,
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "specific requirements and obligations, including in respect of the transparency, technical documentation and record-keeping of AI systems",
-          "source_section": "Recital 9"
+          "quote": "1. The technical documentation of a high-risk AI system shall be drawn up before that system is placed on the market or put into service and shall be kept up-to date.",
+          "source_section": "Article 11",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "(a) draw up and keep up-to-date the technical documentation of the model, including its training and testing process and the results of its evaluation, which shall contain, at a minimum, the information set out in Annex XI for the purpose of providing it, upon request, to the AI Office and the national competent authorities;",
+          "source_section": "Article 53",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
-      "label": "human_oversight",
-      "confidence": 0.88,
+      "label": "third_party_audit",
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "AI should be a human-centric technology. It should serve as a tool for people, with the ultimate aim of increasing human well-being",
-          "source_section": "Recital 6"
+          "quote": "(b) the assessment of the quality management system and the assessment of the technical documentation, with the involvement of a notified body, referred to in Annex VII.",
+          "source_section": "Article 43",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "5.3. The notified body shall carry out periodic audits to make sure that the provider maintains and applies the quality management system and shall provide the provider with an audit report.",
+          "source_section": "ANNEX VII",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.75,
+      "confidence": 0.95,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "restrictions of the use of AI systems for remote biometric identification for the purpose of law enforcement",
-          "source_section": "Recital 3"
+          "quote": "5. High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. The technical solutions aiming to ensure the cybersecurity of high-risk AI systems shall be appropriate to the relevant circumstances and the risks.",
+          "source_section": "Article 15",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "(d) ensure an adequate level of cybersecurity protection for the general-purpose AI model with systemic risk and the physical infrastructure of the model.",
+          "source_section": "Article 55",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "compute_governance",
+      "confidence": 0.99,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "2. A general-purpose AI model shall be presumed to have high impact capabilities pursuant to paragraph 1, point (a), when the cumulative amount of computation used for its training measured in floating point operations is greater than 10 25 .",
+          "source_section": "Article 51",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "1. Where a general-purpose AI model meets the condition referred to in Article 51(1), point (a), the relevant provider shall notify the Commission without delay and in any event within two weeks after that requirement is met or it becomes known that it will be met.",
+          "source_section": "Article 52",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "2. Providers of AI systems, including general-purpose AI systems, generating synthetic audio, image, video or text content, shall ensure that the outputs of the AI system are marked in a machine-readable format and detectable as artificially generated or manipulated.",
+          "source_section": "Article 50",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "4. Deployers of an AI system that generates or manipulates image, audio or video content constituting a deep fake, shall disclose that the content has been artificially generated or manipulated.",
+          "source_section": "Article 50",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "1. High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use.",
+          "source_section": "Article 14",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "(e) to intervene in the operation of the high-risk AI system or interrupt the system through a ‘stop’ button or a similar procedure that allows the system to come to a halt in a safe state.",
+          "source_section": "Article 14",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "1. Before placing on the market or putting into service a high-risk AI system listed in Annex III, with the exception of high-risk AI systems referred to in point 2 of Annex III, the provider or, where applicable, the authorised representative shall register themselves and their system in the EU database referred to in Article 71.",
+          "source_section": "Article 49",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "3. Before putting into service or using a high-risk AI system listed in Annex III, with the exception of high-risk AI systems listed in point 2 of Annex III, deployers that are public authorities, Union institutions, bodies, offices or agencies or persons acting on their behalf shall register themselves, select the system and register its use in the EU database referred to in Article 71.",
+          "source_section": "Article 49",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "2. Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system.",
+          "source_section": "Article 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "(c) put in place a policy to comply with Union law on copyright and related rights, and in particular to identify and comply with, including through state-of-the-art technologies, a reservation of rights expressed pursuant to Article 4(3) of Directive (EU) 2019/790;",
+          "source_section": "Article 53",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.97,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(a) perform model evaluation in accordance with standardised protocols and tools reflecting the state of the art, including conducting and documenting adversarial testing of the model with a view to identifying and mitigating systemic risks;",
+          "source_section": "Article 55",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "3. For the purposes of paragraph 1, the Commission may request access to the general-purpose AI model concerned through APIs or further appropriate technical means and tools, including source code.",
+          "source_section": "Article 92",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "open_weight_obligations",
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "12. This Regulation does not apply to AI systems released under free and open-source licences, unless they are placed on the market or put into service as high-risk AI systems or as an AI system that falls under Article 5 or 50.",
+          "source_section": "Article 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "whose parameters, including the weights, the information on the model architecture, and the information on model usage, are made publicly available. This exception shall not apply to general-purpose AI models with systemic risks.",
+          "source_section": "Article 53",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "domestic_representative",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "1. Prior to making their high-risk AI systems available on the Union market, providers established in third countries shall, by written mandate, appoint an authorised representative which is established in the Union.",
+          "source_section": "Article 22",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "1. Prior to placing a general-purpose AI model on the Union market, providers established in third countries shall, by written mandate, appoint an authorised representative which is established in the Union.",
+          "source_section": "Article 54",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "regulatory_supervision",
-      "confidence": 0.9,
+      "label": "civil_penalty",
+      "confidence": 0.99,
       "evidence": [
         {
-          "quote": "tasks and powers of the independent supervisory authorities competent to monitor compliance with those instruments",
-          "source_section": "Recital 10"
+          "quote": "3. Non-compliance with the prohibition of the AI practices referred to in Article 5 shall be subject to administrative fines of up to EUR 35 000 000 or, if the offender is an undertaking, up to 7 % of its total worldwide annual turnover for the preceding financial year, whichever is higher.",
+          "source_section": "Article 99",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "1. The Commission may impose on providers of general-purpose AI models fines not exceeding 3 % of their annual total worldwide turnover in the preceding financial year or EUR 15 000 000, whichever is higher., when the Commission finds that the provider intentionally or negligently:",
+          "source_section": "Article 101",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "market_access_restriction",
-      "confidence": 0.85,
+      "confidence": 0.99,
       "evidence": [
         {
-          "quote": "rules regulating the placing on the market, the putting into service and the use of certain AI systems should be laid down",
-          "source_section": "Recital 8"
+          "quote": "5. Where the operator of an AI system does not take adequate corrective action within the period referred to in paragraph 2, the market surveillance authority shall take all appropriate provisional measures to prohibit or restrict the AI system’s being made available on its national market or put into service, to withdraw the product or the standalone AI system from that market or to recall it.",
+          "source_section": "Article 79",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "preventing Member States from imposing restrictions on the development, marketing and use of AI systems, unless explicitly authorised by this Regulation",
-          "source_section": "Recital 1"
+          "quote": "(c) restrict the making available on the market, withdraw or recall the model.",
+          "source_section": "Article 93",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "licensing_requirement",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "3. Where a notified body finds that an AI system no longer meets the requirements set out in Section 2, it shall, taking account of the principle of proportionality, suspend or withdraw the certificate issued or impose restrictions on it",
+          "source_section": "Article 44",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "each use for the purposes of law enforcement of a ‘real-time’ remote biometric identification system in publicly accessible spaces shall be subject to a prior authorisation granted by a judicial authority or an independent administrative authority whose decision is binding of the Member State in which the use is to take place",
+          "source_section": "Article 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "12. Without prejudice to the powers provided for under Regulation (EU) 2019/1020, and where relevant and limited to what is necessary to fulfil their tasks, the market surveillance authorities shall be granted full access by providers to the documentation as well as the training, validation and testing data sets used for the development of high-risk AI systems",
+          "source_section": "Article 74",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "1. The Commission may request the provider of the general-purpose AI model concerned to provide the documentation drawn up by the provider in accordance with Articles 53 and 55, or any additional information that is necessary for the purpose of assessing compliance of the provider with this Regulation.",
+          "source_section": "Article 91",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "reporting_obligation",
-      "confidence": 0.8,
+      "confidence": 0.99,
       "evidence": [
         {
-          "quote": "specific requirements and obligations, including in respect of the transparency, technical documentation and record-keeping of AI systems",
-          "source_section": "Recital 9"
+          "quote": "3. Once the assessment referred to in paragraph 1 of this Article has been performed, the deployer shall notify the market surveillance authority of its results, submitting the filled-out template referred to in paragraph 5 of this Article as part of the notification.",
+          "source_section": "Article 27",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "1. Providers of high-risk AI systems placed on the Union market shall report any serious incident to the market surveillance authorities of the Member States where that incident occurred.",
+          "source_section": "Article 73",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "1. The AI Office shall encourage and facilitate the drawing up of codes of practice at Union level in order to contribute to the proper application of this Regulation, taking into account international approaches.",
+          "source_section": "Article 56",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "1. The AI Office and the Member States shall encourage and facilitate the drawing up of codes of conduct, including related governance mechanisms, intended to foster the voluntary application to AI systems, other than high-risk AI systems, of some or all of the requirements set out in Chapter III, Section 2",
+          "source_section": "Article 95",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }

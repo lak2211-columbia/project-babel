@@ -1,0 +1,156 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "Executive Office of the President",
+  "document_type": "executive_order",
+  "binding_strength": "executive_action",
+  "publication_date": "2026-06-05",
+  "effective_date": "2026-06-02",
+  "covered_actors": [
+    "Executive departments and agencies (CNSS, Department of War, NSA, DHS/CISA, Treasury, OMB, OPM, Commerce/NIST, DOJ)",
+    "AI developers and researchers (including developers of covered frontier models)",
+    "Operators of critical infrastructure (including rural hospitals, community banks, and local utilities)",
+    "State and local authorities",
+    "Criminal actors utilizing AI or AI agents for unauthorized computer access or fraud"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "public_sector_use",
+    "defense",
+    "healthcare",
+    "finance",
+    "law_enforcement"
+  ],
+  "prohibited_practices": [
+    "Utilizing AI or employing AI agents to illegally access or damage a computer without authorization, breach any public or private IT system, unlawfully access data for criminal or unlawful purposes, or commit related identity theft or wire fraud under 18 U.S.C. 1028, 1030, and 1343"
+  ],
+  "safety_requirements": [
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "develop and maintain a classified benchmarking process to assess the advanced cyber capabilities of AI models and determine the threshold at which an AI model should be designated a “covered frontier model” for the purposes of this order, sharing such assessments with AI developers and researchers as appropriate.",
+          "source_section": "Sec. 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4943,
+          "end_char": 5257
+        },
+        {
+          "quote": "provide the Federal Government with access to covered frontier models, subject to appropriate confidentiality, cybersecurity, insider-risk, and intellectual-property protection, use, and nondisclosure requirements, for a period of up to 30 days before they plan to release such models to other trusted partners;",
+          "source_section": "Sec. 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5699,
+          "end_char": 6010
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.9,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "shall release Binding Operational Directives and other guidance as appropriate to:\n(i) expedite and prioritize the cyber defense of civilian Federal Government information systems in order to protect our Nation's vital functions;",
+          "source_section": "Sec. 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2604,
+          "end_char": 2833
+        },
+        {
+          "quote": "Within 30 days of the date of this order, the Committee on National Security Systems shall prioritize the cyber defense of National Security Systems, as defined in\n44 U.S.C. 3552(b)(6)(A)\n, by taking appropriate and expeditious action consistent with the purpose of this order.",
+          "source_section": "Sec. 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1753,
+          "end_char": 2030
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "criminal_penalty",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "The Attorney General shall prioritize the enforcement of\n18 U.S.C. 1028\n,\n18 U.S.C. 1030\n,\n18 U.S.C. 1343\n, and all other applicable Federal criminal laws against anyone who utilizes AI to illegally access or damage a computer without authorization, or who utilizes AI while engaged in such illegal access to further any other crime.",
+          "source_section": "Sec. 4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6535,
+          "end_char": 6868
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "quote": "the Secretary of Homeland Security, through the Director of the Cybersecurity and Infrastructure Security Agency (CISA), in consultation with the Director of the Office of Management and Budget (OMB), the Assistant to the President for National Security Affairs, and the National Cyber Director, shall release Binding Operational Directives and other guidance as appropriate",
+          "source_section": "Sec. 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2308,
+          "end_char": 2682
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "Nothing in this section shall be construed to authorize the creation of a mandatory governmental licensing, preclearance, or permitting requirement for the development, publication, release, or distribution of new AI models, including frontier models.",
+          "source_section": "Sec. 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6237,
+          "end_char": 6488
+        },
+        {
+          "quote": "shall form an AI cybersecurity clearinghouse, in voluntary collaboration with the AI industry and operators of critical infrastructure, that coordinates and deconflicts scanning for software vulnerabilities, discovers and validates such vulnerabilities, and coordinates and prioritizes remediation and distribution of vulnerability patches.",
+          "source_section": "Sec. 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3510,
+          "end_char": 3850
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "Attorney General / Department of Justice",
+    "Secretary of Homeland Security / Cybersecurity and Infrastructure Security Agency (CISA)",
+    "Secretary of War / National Security Agency (NSA)",
+    "Secretary of the Treasury",
+    "Committee on National Security Systems (CNSS)",
+    "Office of Management and Budget (OMB)",
+    "National Cyber Director",
+    "Secretary of Commerce / National Institute of Standards and Technology (NIST)"
+  ],
+  "compliance_deadlines": [
+    "Within 30 days of 2026-06-02 (2026-07-02): CNSS and Secretary of War to prioritize cyber defense of National Security Systems and Department of War information systems",
+    "Within 30 days of 2026-06-02 (2026-07-02): DHS/CISA to release Binding Operational Directives and guidance for civilian federal cyber defense, AI defensive tools, and critical-infrastructure access",
+    "Within 30 days of 2026-06-02 (2026-07-02): Treasury, NSA, CISA, and National Cyber Director to form voluntary AI cybersecurity clearinghouse for vulnerability scanning and patching",
+    "Within 30 days of 2026-06-02 (2026-07-02): OMB to determine whether Federal grant programs have available funding for advanced AI vulnerability detection",
+    "Within 60 days of 2026-06-02 (2026-08-01): OPM to expand U.S. Tech Force Information Cybersecurity Specialist hiring and placement pathways",
+    "Within 60 days of 2026-06-02 (2026-08-01): Treasury, NSA, CISA, National Cyber Director, APST, and NIST to develop classified frontier cyber benchmarking process and voluntary up-to-30-day pre-release federal access framework"
+  ],
+  "penalties_summary": "Directs the Attorney General to prioritize federal criminal prosecution under 18 U.S.C. 1028 (identity fraud), 18 U.S.C. 1030 (Computer Fraud and Abuse Act), 18 U.S.C. 1343 (wire fraud), and other applicable federal criminal statutes against malicious actors using AI or AI agents for unauthorized computer access or data theft; explicitly prohibits construing Section 3 as authorizing mandatory government licensing, preclearance, or permitting for AI models.",
+  "implementation_notes": "Signed June 2, 2026 and published June 5, 2026 (91 FR 34565). Pairs mandatory federal agency cyber-defense hardening (via CNSS, Department of War, and CISA Binding Operational Directives) and prioritized DOJ criminal enforcement against malicious AI/agent cyber intrusions with voluntary private-sector collaboration—specifically an AI cybersecurity clearinghouse and an NSA-led classified frontier cyber capability benchmark with voluntary up-to-30-day pre-release government access for covered frontier models, while explicitly rejecting mandatory model licensing.",
+  "confidence": 0.96
+}

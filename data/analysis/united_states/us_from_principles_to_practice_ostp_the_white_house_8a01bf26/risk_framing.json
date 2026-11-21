@@ -1,32 +1,65 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "consumer_public_safety",
-    "social_stability"
+    "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
+    "national_security": 0.05,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.96,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.25,
+    "consumer_public_safety": 0.72,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
     "national_security": 0.0,
     "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.88,
+    "fundamental_rights": 0.75,
     "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.55,
-    "labor_transition": 0.05
+    "innovation_enablement": 0.05,
+    "consumer_public_safety": 0.2,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around protecting the rights of the American public, explicitly invoking a 'Bill of Rights' framing and centering on rights, opportunities, and access. Governance is justified by the need to safeguard individuals against harms to their civil liberties and fundamental rights.",
+  "rationale_summary": "OSTP's 'From Principles to Practice' companion overview is dominantly framed around fundamental_rights, explicitly centering on protecting the rights, opportunities, access, privacy, and civil liberties of the American public in the design and deployment of automated systems. Fundamental_rights strongly outweighs consumer_public_safety because every section anchors technical practices and reporting in safeguarding individual rights and civil liberties rather than product reliability alone. Consumer_public_safety serves as a clear secondary frame via the stated goal of guarding the public against potential and actual harms from automated systems, with a minor innovation_enablement note on tailoring standards to specific sectors and contexts.",
   "evidence_spans": [
     {
-      "quote": "a set of five principles and associated practices to help guide the design, use, and deployment of automated systems to protect the rights of the American public",
-      "source_section": "Introduction"
+      "quote": "The Blueprint for an AI Bill of Rights is a set of five principles and associated practices to help guide the design, use, and deployment of automated systems to protect the rights of the American public in the age of artificial intelligence.",
+      "source_section": "From Principles to Practice | OSTP | The White House",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 0,
+      "end_char": 242
     },
     {
-      "quote": "safeguarding individuals' rights",
-      "source_section": "Reporting expectations"
+      "quote": "Where public reports are not possible, the information should be provided to oversight bodies and privacy, civil liberties, or other ethics officers charged with safeguarding individuals’ rights.",
+      "source_section": "2. What should be expected of automated systems:",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 2447,
+      "end_char": 2642
     },
     {
-      "quote": "protecting rights, opportunities, and access",
-      "source_section": "How these principles can move into practice"
+      "quote": "Taken together, the technical protections and practices laid out in the Blueprint for an AI Bill of Rights can help guard the American public against many of the potential and actual harms identified by researchers, technologists, advocates, journalists, policymakers, and communities in the United States and around the world.",
+      "source_section": "From Principles to Practice | OSTP | The White House",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 531,
+      "end_char": 858
+    },
+    {
+      "quote": "The expectations for automated systems are meant to serve as a blueprint for the development of additional technical standards and practices that should be tailored for particular sectors and contexts.",
+      "source_section": "2. What should be expected of automated systems:",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1357,
+      "end_char": 1558
     }
   ]
 }

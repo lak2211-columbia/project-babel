@@ -301,7 +301,7 @@ export const seedData: OverviewData = {
     legacyCount: 0,
     v2Count: 62,
     taxonomyVersions: ["2.1.0"],
-    models: ["claude-sonnet-4-6"],
+    models: ["gemini-4-neon"],
     meanGroundingRatio: 0.94,
     groundingSampleCount: 62,
   },

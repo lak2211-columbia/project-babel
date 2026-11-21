@@ -1,5 +1,5 @@
 {
-  "parser_version": "0.1.0",
+  "parser_version": "0.3.0",
   "title": "关于印发《人工智能生成合成内容标识办法》的通知_国务院部门文件_中国政府网",
   "language": "zh",
   "document_format": "html",
@@ -42,8 +42,9 @@
     }
   ],
   "warnings": [
-    "linked_artifact_unexpected_content_type:text/html",
-    "linked_artifact_url:http://app.www.gov.cn/download/Chinese.html"
+    "linked_artifact_not_fetched:http://app.www.gov.cn/download/Chinese.html"
   ],
-  "source_artifact_path": "data/raw/china/cn_ai_content_labeling_measures_2025/source.html"
+  "source_artifact_path": "data/raw/china/cn_ai_content_labeling_measures_2025/source.html",
+  "source_sha256": "175539671e102210a65812b3da18598f0ca966ba939d245943c45bf2f404cce0",
+  "extractor": "beautifulsoup4"
 }

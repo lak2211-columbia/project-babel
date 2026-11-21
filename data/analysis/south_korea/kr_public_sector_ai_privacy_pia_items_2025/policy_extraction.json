@@ -1,130 +1,142 @@
 {
   "jurisdiction": "south_korea",
-  "issuing_body": "Personal Information Protection Commission (PIPC), South Korea",
-  "document_type": "standards_guideline",
+  "issuing_body": "Personal Information Protection Commission (개인정보보호위원회)",
+  "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": "2025",
+  "publication_date": "2025-09-04",
   "effective_date": null,
   "covered_actors": [
-    "public sector organizations conducting privacy impact assessments",
-    "AI system developers",
-    "AI system operators",
-    "third-party processors",
-    "open source and API-based AI service providers",
-    "generative AI service providers"
+    "Public institutions and participating enterprises/organizations across the AI system development and operation lifecycle (AI 시스템 개발 및 운영 전 주기에 참여하는 관련 기업·기관)",
+    "Generative AI service providers (생성형 AI 서비스 제공자)",
+    "Third parties and overseas recipients receiving AI training data or prompts containing personal information"
   ],
   "covered_application_domains": [
-    "general_purpose_models",
-    "public_sector_use"
+    "public_sector_use",
+    "general_purpose_models"
   ],
-  "prohibited_practices": [
-    "collecting sensitive information, unique identification information, personal information of children under 14, or illegally distributed personal information when using publicly available data for AI training"
-  ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.9,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AI 취약점 공격에 의한 개인정보 유ㆍ노출 등 위험을 최소화하기 위한 대책을 계획하고 있습니까?",
-          "source_section": "5.7.6"
+          "quote": "붙임 개인정보 영향평가 인공지능 분야 평가항목(안) 평가분야 (고시) 세부분야 (고시) 연번 평가항목(안내서) 5.7 인공 지능 (AI) AI 시스템 학습 및 개발",
+          "source_section": "Page 1",
+          "quote_en": "Attachment: Draft Privacy Impact Assessment Evaluation Items for the Artificial Intelligence Field — Evaluation Area (Notice): 5.7 Artificial Intelligence (AI), Sub-area (Notice): AI System Training and Development, Evaluation Items (Guide).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 0,
+          "end_char": 91
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "5.7.2 공개된 개인정보를 수집하여 AI 학습에 활용하는 경우, 민감정보, 고유식별정보, 14세 미만 아동의 개인정보, 불법 유통 개인정보 등이 수집되지 않도록 필요한 조치를 계획하고 있습니까?",
+          "source_section": "Page 1",
+          "quote_en": "5.7.2 When collecting publicly available personal information for AI training, are you planning necessary measures to prevent collection of sensitive information, unique identifiers, personal information of children under age 14, and illegally distributed personal information?",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 176,
+          "end_char": 285
+        },
+        {
+          "quote": "5.7.5 AI 학습데이터의 보유기간을 정하고, 보유기간이 경과 하거나 AI 학습·개발 또는 운영 종료 등으로 학습데이터가 불필요하게 되었을 때에는 지체 없이 파기하도록 계획 하고 있습니까?",
+          "source_section": "Page 1",
+          "quote_en": "5.7.5 Are you planning to set a retention period for AI training data and destroy training data without delay once the retention period expires or when the data becomes unnecessary due to completion of AI training, development, or operation?",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 501,
+          "end_char": 607
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.85,
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AI 취약점 공격에 의한 개인정보 유ㆍ노출 등 위험을 최소화하기 위한 대책을 계획하고 있습니까?",
-          "source_section": "5.7.6"
-        },
-        {
-          "quote": "오픈소스‧API 등 개발‧배포 방식 특성에 따라 AI 시스템 개발 및 운영 전 주기에 참여하는 관련 기업·기관의 권한 및 역할",
-          "source_section": "5.7.7"
+          "quote": "5.7.6 AI 취약점 공격에 의한 개인정보 유ㆍ노출 등 위험을 최소화하기 위한 대책을 계획하고 있습니까?",
+          "source_section": "Page 1",
+          "quote_en": "5.7.6 Are you planning countermeasures to minimize risks such as personal data leakage or exposure caused by AI vulnerability attacks?",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 608,
+          "end_char": 667
         }
       ]
     },
     {
-      "label": "model_documentation",
-      "confidence": 0.85,
+      "label": "open_weight_obligations",
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AI 학습데이터의 보유기간을 정하고, 보유기간이 경과하거나 AI 학습·개발 또는 운영 종료 등으로 학습데이터가 불필요하게 되었을 때에는 지체 없이 파기하도록 계획하고 있습니까?",
-          "source_section": "5.7.5"
-        },
-        {
-          "quote": "AI 시스템 개발 및 운영 전 주기에 참여하는 관련 기업·기관의 권한 및 역할, 정보주체 권리보장 책임, 협력체계 등을 명확히 정의하고 이를 계약서, 라이선스, 사용지침 등에 반영하도록 계획하고 있습니까?",
-          "source_section": "5.7.7"
+          "quote": "5.7.7 오픈소스‧API 등 개발‧배포 방식 특성에 따라 AI 시스템 개발 및 운영 전 주기에 참여하는 관련 기업·기관의 권한 및 역할, 정보주체 권리보장 책임, 협력체계 등을 명확히 정의하고 이를 계약서, 라이선스, 사용지침 등에 반영하도록 계획하고 있습니까?",
+          "source_section": "Page 1",
+          "quote_en": "5.7.7 Depending on the characteristics of the development and deployment model such as open-source or API, are you planning to clearly define the authority, roles, data-subject rights responsibilities, and cooperation framework of participating companies and institutions across the AI lifecycle and reflect them in contracts, licenses, and usage guidelines?",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 683,
+          "end_char": 830
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.9,
+      "confidence": 0.94,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AI 시스템에서 사용하는 개인정보 현황을 정보주체가 쉽게 이해할 수 있도록 개인정보 처리방침 등에 공개하도록 계획하고 있습니까?",
-          "source_section": "5.7.8"
+          "quote": "5.7.8 AI 시스템에서 사용하는 개인정보 현황을 정보주체가 쉽게 이해할 수 있도록 개인정보 처리방침 등에 공개 하도록 계획하고 있습니까?",
+          "source_section": "Page 1",
+          "quote_en": "5.7.8 Are you planning to disclose the status of personal information used in the AI system in a privacy policy or similar document so that data subjects can easily understand it?",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 831,
+          "end_char": 909
         },
         {
-          "quote": "생성형 AI 서비스를 제공하는 경우, 허용되는 이용방침(Acceptable Use Policy)을 공개하도록 계획하고 있습니까?",
-          "source_section": "5.7.9"
-        }
-      ]
-    },
-    {
-      "label": "incident_reporting",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "생성형 AI 시스템의 부적절한 답변, 개인정보 유‧노출 등에 대한 신고 기능을 갖추고",
-          "source_section": "5.7.10"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "정보주체의 의도에 반하여 AI 출력물에 생성된 얼굴·목소리 등의 삭제 요청에 관한 조치 등 정보주체 권리보장 방안을 수립‧시행하도록 계획하고 있습니까?",
-          "source_section": "5.7.10"
+          "quote": "5.7.9 생성형 AI 서비스를 제공하는 경우, 허용되는 이용방침 (Acceptable Use Policy)을 공개하도록 계획하고 있습니까?",
+          "source_section": "Page 1",
+          "quote_en": "5.7.9 When providing generative AI services, are you planning to disclose an Acceptable Use Policy?",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 910,
+          "end_char": 988
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "regulatory_supervision",
-      "confidence": 0.75,
+      "label": "soft_enforcement",
+      "confidence": 0.78,
       "evidence": [
         {
-          "quote": "개인정보 영향평가 인공지능 분야 평가항목(안)",
-          "source_section": "Title"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "AI 학습데이터의 보유기간을 정하고...계획하고 있습니까?",
-          "source_section": "5.7.5"
-        },
-        {
-          "quote": "개인정보 처리방침 등에 공개하도록 계획하고 있습니까?",
-          "source_section": "5.7.8"
+          "quote": "붙임 개인정보 영향평가 인공지능 분야 평가항목(안) 평가분야 (고시) 세부분야 (고시) 연번 평가항목(안내서) 5.7 인공 지능 (AI) AI 시스템 학습 및 개발",
+          "source_section": "Page 1",
+          "quote_en": "Attachment: Draft Privacy Impact Assessment Evaluation Items for the Artificial Intelligence Field — Evaluation Area (Notice): 5.7 Artificial Intelligence (AI), Sub-area (Notice): AI System Training and Development, Evaluation Items (Guide).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 0,
+          "end_char": 91
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "Personal Information Protection Commission (개인정보보호위원회, PIPC)"
+    "Personal Information Protection Commission (개인정보보호위원회)"
   ],
   "compliance_deadlines": [],
   "penalties_summary": null,
-  "implementation_notes": "This document is a draft (안) checklist of AI-specific evaluation items for Privacy Impact Assessments (PIA) under South Korean personal information protection law. Items cover: lawful basis for collecting personal data for AI training; safeguards for publicly collected data; third-party transfer and entrustment requirements; cross-border transfer requirements; retention and destruction of training data; security measures against AI vulnerability attacks; role/responsibility definition across the AI supply chain; transparency via privacy policies; acceptable use policy publication for generative AI; and data subject rights mechanisms including deletion of AI-generated facial/voice outputs.",
-  "confidence": 0.82
+  "implementation_notes": "One-page attachment accompanying PIPC's 2025-09-04 press release, detailing 10 proposed Privacy Impact Assessment guide checklist items (5.7.1–5.7.10) split across 'AI System Training and Development' (lawful collection, exclusion of sensitive/unique-ID/children-under-14/unlawful data from public datasets, third-party and cross-border transfer compliance for training data and prompts, retention/destruction, AI vulnerability attack mitigation) and 'AI System Operation and Management' (role/liability allocation across open-source/API lifecycles, transparent privacy-policy disclosure, generative AI AUP publication, and reporting/deletion redress for inappropriate outputs, personal data exposure, or unintended generated faces/voices). Obligation strength is coded as recommended because the attachment presents draft guide evaluation questions ('안내서', '안') rather than standalone statutory text.",
+  "confidence": 0.93
 }

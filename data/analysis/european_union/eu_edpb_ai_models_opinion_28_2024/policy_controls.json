@@ -1,0 +1,208 @@
+{
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.92,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Data protection impact assessments (“DPIAs”) (Articles 35 GDPR): DPIAs are an important element of accountability, where the processing in the context of AI models is likely to result in a high risk to the rights and freedoms of natural persons",
+          "source_section": "2.1 Scope of the Opinion",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "By default, SAs should consider that AI models are likely to require a thorough evaluation of the likelihood of identification to reach a conclusion on their possible anonymous nature.",
+          "source_section": "3.2.1 General consideration regarding anonymisation in the context at hand",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "At to the date of this Opinion, this could include, among others, structured testing against: (i) attribute and membership inference; (ii) exfiltration; (iii) regurgitation of training data; (iv) model inversion; or (v) reconstruction attacks.",
+          "source_section": "3.2.2.3 AI model testing and resistance to attacks",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.93,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "Considering the complexity of the technologies involved, information on the processing of personal data within AI models should therefore be provided in an accessible, understandable and user-friendly way",
+          "source_section": "3.3.1 General observations",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Release of public and easily accessible communications which go beyond the information required under Article 13 or 14 GDPR, for instance by providing additional details about the collection criteria and all datasets used, taking into account special protection for children and vulnerable persons.",
+          "source_section": "3.3.2.3 Third step - Balancing test",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.94,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "Articles 5, 24, 25, and 30 GDPR, and, in cases of likely high risk to the rights and freedoms of data subjects, Article 35 GDPR, require controllers to adequately document their processing operations. This also applies to any processing that would include the training of an AI model, even if the objective of the processing is anonymisation.",
+          "source_section": "3.2.2.4 Documentation",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "the documentation demonstrating the AI model’s theoretical resistance to re-identification techniques, as well as the controls designed to limit or assess the success and impact of main attacks (regurgitation, membership inference attacks, exfiltration, etc.).",
+          "source_section": "3.2.2.4 Documentation",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.72,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "SAs should evaluate whether controllers have conducted any document-based audits (internal or external) that include an evaluation of the chosen measures and of their impact to limit the likelihood of identification.",
+          "source_section": "3.2.2.2 AI model analysis",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Technical measures may for instance be put in place to prevent the storage, regurgitation or generation of personal data, especially in the context of generative AI models (such as output filters), and/or to mitigate the risk of unlawful reuse by general purpose AI models (e.g. digital watermarking of AI-generated outputs).",
+          "source_section": "3.3.2.3 Third step - Balancing test",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.95,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "In accordance with the data minimisation principle, the development and deployment of AI models requires that personal data should be adequate, relevant and necessary in relation to the purpose.",
+          "source_section": "3.3.1 General observations",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Excluding collection from websites (or sections of websites) which clearly object to web scraping and the reuse of their content for the purpose of building AI training databases (for example, by respecting robots.txt or ai.txt files or any other recognised mechanism to express exclusion from automated crawling or scraping).",
+          "source_section": "3.3.2.3 Third step - Balancing test",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "It is, therefore, within the competence of SAs to investigate specific AI models and, in doing so, to conduct case-by-case assessments.",
+          "source_section": "2.1 Scope of the Opinion",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "When there is the finding of an infringement, SAs may impose corrective measures, such as ordering controllers, taking into account the circumstances of each case, to take actions in order to remediate the unlawfulness of the initial processing.",
+          "source_section": "3.4 On the possible impact of an unlawful processing in the development of an AI model on the lawfulness of the subsequent processing or operation of the AI model",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "civil_penalty",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "These may include, for instance, issuing a fine, imposing a temporary limitation on the processing, erasing part of the dataset that was processed unlawfully or, where this is not possible, depending on the facts at hand, having regard to the proportionality of the measure, ordering the erasure of the whole dataset used to develop the AI model and/or the AI model itself.",
+          "source_section": "3.4 On the possible impact of an unlawful processing in the development of an AI model on the lawfulness of the subsequent processing or operation of the AI model",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "market_access_restriction",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "imposing a temporary limitation on the processing, erasing part of the dataset that was processed unlawfully or, where this is not possible, depending on the facts at hand, having regard to the proportionality of the measure, ordering the erasure of the whole dataset used to develop the AI model and/or the AI model itself.",
+          "source_section": "3.4 On the possible impact of an unlawful processing in the development of an AI model on the lawfulness of the subsequent processing or operation of the AI model",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

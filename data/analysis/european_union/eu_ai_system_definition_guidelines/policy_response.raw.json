@@ -1,56 +1,59 @@
 {
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
   "metadata_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_01C2zupk6rN3m7tW3chXkZnF",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"issuing_body\":\"European Commission\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2025-02-02\",\"effective_date\":\"2025-02-02\",\"covered_actors\":[\"providers\",\"market stakeholders\",\"institutional stakeholders\",\"relevant persons\"],\"covered_application_domains\":[\"general_purpose_models\",\"critical_infrastructure\",\"biometrics\",\"public_sector_use\",\"employment\",\"education\",\"healthcare\",\"finance\",\"law_enforcement\",\"defense\"],\"prohibited_practices\":[],\"enforcement_authorities\":[\"Court of Justice of the European Union (CJEU)\",\"European Artificial Intelligence Board\"],\"compliance_deadlines\":[\"2 February 2025: AI system definition and Chapter I and II provisions, including Article 5 prohibited AI practices, entered into application\"],\"penalties_summary\":null,\"implementation_notes\":\"Guidelines are explicitly non-binding (paragraph 7: 'The Guidelines are not binding'). Authoritative interpretation rests solely with the CJEU. Guidelines were adopted in parallel with Commission guidelines on prohibited AI practices. They clarify the seven-element definition of 'AI system' under Article 3(1) of Regulation (EU) 2024/1689 and note that systems based solely on rules defined by natural persons or limited to basic data processing fall outside the AI system definition.\",\"confidence\":0.92}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 5281,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 303,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 13621,
+      "candidatesTokenCount": 450,
+      "totalTokenCount": 16235,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 13621
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 450
+        }
+      ],
+      "thoughtsTokenCount": 2164,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "vS0Ba_ngDdydur8PsYmLuQY"
   },
   "controls_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_01XEB1c1mJnpUFt9NW4fdVum",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"safety_requirements\":[{\"label\":\"human_oversight\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"Systems that have the capability to operate with limited or no human intervention in specific use contexts...may, under certain conditions, trigger additional potential risks and human oversight considerations.\",\"source_section\":\"Page 5\"}]}],\"enforcement_mechanisms\":[{\"label\":\"soft_enforcement\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"The Guidelines are not binding. Any authoritative interpretation of the AI Act may ultimately only be given by the Court of Justice of the European Union (CJEU).\",\"source_section\":\"Page 2\"}]}]}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 6022,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 142,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 13774,
+      "candidatesTokenCount": 208,
+      "totalTokenCount": 16429,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 13774
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 208
+        }
+      ],
+      "thoughtsTokenCount": 2447,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "1S0Ba7KuMd6YzLEPrYWQ-A8"
   }
 }

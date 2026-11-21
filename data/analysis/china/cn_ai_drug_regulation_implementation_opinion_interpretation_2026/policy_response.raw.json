@@ -1,27 +1,59 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_012dgFXUwZr3ommoYydECai7",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"jurisdiction\":\"china\",\"issuing_body\":\"国家药品监督管理局 (National Medical Products Administration)\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2026-04\",\"effective_date\":null,\"covered_application_domains\":[\"healthcare\",\"public_sector_use\",\"general_purpose_models\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"加强人工智能风险监测评估，制定算法透明度要求和模型验证规范\",\"source_section\":\"筑牢安全防护体系\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"制定算法透明度要求和模型验证规范\",\"source_section\":\"筑牢安全防护体系\"}]},{\"label\":\"model_documentation\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"加强相关人工智能模型和算法备案管理\",\"source_section\":\"完善建设运行管理机制\"}]},{\"label\":\"human_oversight\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"明确人工智能在药品监管领域的辅助型定位\",\"source_section\":\"完善建设运行管理机制\"},{\"quote\":\"建立健全人机协同机制\",\"source_section\":\"构建人机协同智能审评审批体系\"}]},{\"label\":\"registration_licensing\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"加强相关人工智能模型和算法备案管理\",\"source_section\":\"完善建设运行管理机制\"}]},{\"label\":\"access_controls\",\"confidence\":0.65,\"evidence\":[{\"quote\":\"加强模型算法、数据资源、基础设施、应用系统等安全能力建设\",\"source_section\":\"筑牢安全防护体系\"}]},{\"label\":\"compute_governance\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"国家药监局统筹规划多级智能算力资源协同体系，国家、省两级监管部门按需推进智算资源供给\",\"source_section\":\"加强算力基础设施建设\"}]}],\"enforcement_mechanisms\":[{\"label\":\"regulatory_supervision\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"成立专设机制统筹人工智能应用治理，制定\"},{\"quote\":\"制定\"},{\"quote\":\"各级药品监管部门要深刻认识人工智能发展新趋势\",\"source_section\":\"加强统筹协调\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.65,\"evidence\":[{\"quote\":\"加强相关人工智能模型和算法备案管理\",\"source_section\":\"完善建设运行管理机制\"}]}],\"implementation_notes\":\"This is a policy interpretation/reading document accompanying the main implementation opinion on 'AI + Drug Regulation' issued by NMPA. It outlines a 5-10 year roadmap (targets for 2030 and 2035) for integrating AI into drug regulatory processes including review/approval, inspection, risk monitoring, and administrative services. AI is explicitly positioned as auxiliary ('辅助型定位'). Enforcement mechanisms are primarily administrative/supervisory rather than punitive. The document encourages industry digital transformation especially for high-risk categories like blood products and TCM injections.\",\"confidence\":0.82}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 6084,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "metadata_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 8295,
+      "candidatesTokenCount": 537,
+      "totalTokenCount": 11489,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 8295
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 537
+        }
+      ],
+      "thoughtsTokenCount": 2657,
+      "serviceTier": "standard"
     },
-    "output_tokens": 843,
-    "service_tier": "standard",
-    "inference_geo": "global"
+    "modelVersion": "gemini-4-neon",
+    "responseId": "KiwBa4CMNvDvkPIP-Zzv0Aw"
+  },
+  "controls_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 8448,
+      "candidatesTokenCount": 1142,
+      "totalTokenCount": 15430,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 8448
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1142
+        }
+      ],
+      "thoughtsTokenCount": 5840,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "RiwBa9_ABdOF6tkPgZqKuA0"
   }
 }

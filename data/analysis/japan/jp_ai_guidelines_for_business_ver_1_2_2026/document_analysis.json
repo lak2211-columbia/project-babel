@@ -1,0 +1,479 @@
+{
+  "source_id": "jp_ai_guidelines_for_business_ver_1_2_2026",
+  "title": "AI事業者ガイドライン (第1.2版) / AI Guidelines for Business Ver. 1.2",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "Ministry of Internal Affairs and Communications (MIC) and Ministry of Economy, Trade and Industry (METI) (総務省・経済産業省)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2026-03-31",
+    "effective_date": null,
+    "covered_actors": [
+      "AI Developers (AI開発者)",
+      "AI Providers (AI提供者)",
+      "AI Business Users (AI利用者)",
+      "Business operators and public institutions including national and local governments engaging in AI development, provision, or use",
+      "Business executives and management officers (経営者を含む事業執行責任者)"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "public_sector_use"
+    ],
+    "prohibited_practices": [
+      "Developing, providing, or using AI systems or services aimed at unfairly manipulating human decision-making, cognition, or emotions, or premised on manipulation at a subliminal/imperceptible level"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "適切なリスク分析を実施し、リスクへの対策（回避、低減、移転又は容認）を講じる",
+            "source_section": "Page 17",
+            "quote_en": "Conduct appropriate risk analysis and take measures against risks (avoidance, mitigation, transfer, or acceptance).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20040,
+            "end_char": 20078
+          },
+          {
+            "quote": "その上で、リスクアセスメント等をはじめとして、AI マネジメントシステムが有効に機能しているかを継続的にモニタリングし、「評価」及び継続的改善を実施する",
+            "source_section": "Page 29",
+            "quote_en": "On top of that, continuously monitor whether the AI management system is functioning effectively, including through risk assessments, and conduct evaluation and continuous improvement.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 36115,
+            "end_char": 36191
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "このようなテストは、リスクと脆弱性を特定するため、また、偶発的か意図的かを問わず、セキュリティ、安全性、社会的リスク、その他のリスクに対処するための行動を通知するために、安全な環境で実施されるべきであり、また、特に導入前及び市場投入前等の AI ライフサイクル全体におけるいくつかのチェックポイントで実施されるべきである。",
+            "source_section": "Page 33",
+            "quote_en": "Such testing should be conducted in a secure environment to identify risks and vulnerabilities and inform actions to address security, safety, societal, and other risks, whether accidental or intentional, and at several checkpoints across the AI lifecycle, particularly prior to deployment and placing on the market.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 41140,
+            "end_char": 41301
+          }
+        ]
+      },
+      {
+        "label": "red_teaming",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "これには、レッドチーミング等の評価方法を組み合わせて、多様な内部テスト手段や独立した外部テスト手段を採用することや、特定されたリスクや脆弱性に対処するために適切な緩和策を実施することが含まれる。",
+            "source_section": "Page 33",
+            "quote_en": "This includes employing diverse internal and independent external testing measures, combining evaluation methods such as red-teaming, and implementing appropriate mitigation measures to address identified risks and vulnerabilities.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40836,
+            "end_char": 40933
+          },
+          {
+            "quote": "開発段階以降のモデル／システムの適合性を評価するために実施されたレッドチーミングの結果。",
+            "source_section": "Page 34",
+            "quote_en": "Results of red-teaming conducted to evaluate the suitability of the model/system from the development stage onward.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 43024,
+            "end_char": 43068
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "産業界、政府、市民社会、学界を含む、高度な AI システムを開発する組織間での責任ある情報共有とインシデントの報告に向けて取り組む",
+            "source_section": "Page 27",
+            "quote_en": "Work toward responsible information sharing and reporting of incidents among organizations developing advanced AI systems, including industry, government, civil society, and academia.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 33742,
+            "end_char": 33807
+          },
+          {
+            "quote": "組織は、高度な AI システムの安全性、セキュリティ、信頼性を向上させる観点から、AI のライフサイクル全体にわたって他の組織と協力し、関連情報を共有し、社会に報告すべきである。また、組織は、必要に応じて、関連する公的機関とも連携し、前述の情報を共有すべきである。",
+            "source_section": "Page 35",
+            "quote_en": "Organizations should collaborate with other organizations, share relevant information, and report to society throughout the AI lifecycle to improve the safety, security, and trustworthiness of advanced AI systems. Organizations should also cooperate with relevant public authorities as appropriate to share such information.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 43619,
+            "end_char": 43751
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "組織はさらに、可能かつ適切な場合には、利用者が AI システムと相互作用していることを知ることができるよう、ラベリングや免責事項の表示等、その他の仕組みを導入することが奨励される。",
+            "source_section": "Page 36",
+            "quote_en": "Organizations are further encouraged, where possible and appropriate, to implement other mechanisms such as labeling or disclaimers so that users know they are interacting with an AI system.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 45311,
+            "end_char": 45401
+          },
+          {
+            "quote": "当該AI の出力結果を特定の個人又は集団に対する評価の参考にする場合は、AI を利用している旨を評価対象となっている当該特定の個人又は集団に対して通知し、当ガイドラインが推奨する出力結果の正確性、公正さ、透明性等を担保するための諸手続きを遵守し、かつ自動化バイアスも鑑みて人間による合理的な判断のもと、評価の対象となった個人又は集団からの求めに応じて説明責任を果たす",
+            "source_section": "Page 42",
+            "quote_en": "When using AI outputs as a reference for evaluating a specific individual or group, notify the evaluated individual or group that AI is being used, comply with procedures recommended by these guidelines to ensure accuracy, fairness, and transparency, exercise reasonable human judgment accounting for automation bias, and fulfill accountability upon request from the evaluated individual or group.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 51977,
+            "end_char": 52160
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "AI の判断にかかわる検証可能性を確保するため、データ量又はデータ内容に照らし合理的な範囲で、AI システム・サービスの開発過程、利用時の入出力等、AI の学習プロセス、推論過程、判断根拠等のログを記録・保存する",
+            "source_section": "Page 21",
+            "quote_en": "To ensure verifiability regarding AI decisions, record and retain logs of the AI system/service development process, inputs and outputs during use, AI training processes, inference processes, and basis for decisions, within a reasonable scope in light of data volume and content.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 26424,
+            "end_char": 26530
+          },
+          {
+            "quote": "トレーサビリティ及び透明性の向上のため、AI システムの開発過程、意思決定に影響を与えるデータ収集及びラベリング、使用されたアルゴリズム等について、可能な限り第三者が検証できるような形で文書化する",
+            "source_section": "Page 32",
+            "quote_en": "To improve traceability and transparency, document the AI system development process, data collection and labeling affecting decision-making, algorithms used, etc., in a form verifiable by third parties to the extent possible.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40106,
+            "end_char": 40204
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.75,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "これには、レッドチーミング等の評価方法を組み合わせて、多様な内部テスト手段や独立した外部テスト手段を採用することや、特定されたリスクや脆弱性に対処するために適切な緩和策を実施することが含まれる。",
+            "source_section": "Page 33",
+            "quote_en": "This includes employing diverse internal and independent external testing measures, combining evaluation methods such as red-teaming, and implementing appropriate mitigation measures to address identified risks and vulnerabilities.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40836,
+            "end_char": 40933
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "これには、情報セキュリティのための運用上のセキュリティ対策や、適切なサイバー／物理的アクセス制御等を通じて、モデルの重み、アルゴリズム、サーバー、データセットを保護することが含まれる。",
+            "source_section": "Page 35",
+            "quote_en": "This includes protecting model weights, algorithms, servers, and datasets through operational information security measures and appropriate cyber and physical access controls.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 44460,
+            "end_char": 44552
+          },
+          {
+            "quote": "また、組織は、高度 AI システムのモデルの重みの保管と作業を、アクセスが制限された適切で安全な環境で行うことを義務付け、無許可で公開されるリスクと不正アクセスされるリスクの両方を低減するための対策を講じる必要がある。",
+            "source_section": "Page 35",
+            "quote_en": "Organizations should also require that storage and work on model weights of advanced AI systems take place in an appropriate, secure environment with restricted access, and take measures to reduce both the risk of unauthorized release and unauthorized access.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 44677,
+            "end_char": 44786
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "技術的に可能な場合は、電子透かしやその他の技術等、ユーザーが AI が生成したコンテンツを識別できるようにするための、信頼できるコンテンツ認証及び来歴のメカニズムを開発し、導入する",
+            "source_section": "Page 27",
+            "quote_en": "Where technically feasible, develop and deploy reliable content authentication and provenance mechanisms, such as watermarking or other techniques, to enable users to identify AI-generated content.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 33976,
+            "end_char": 34066
+          },
+          {
+            "quote": "組織はまた、透かし等を通じて、特定のコンテンツが高度な AI システムで作成されたかどうかをユーザーが判断できるツールや API の開発に努めるべきである。",
+            "source_section": "Page 36",
+            "quote_en": "Organizations should also strive to develop tools or APIs that allow users to determine whether specific content was created by an advanced AI system, such as through watermarking.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 45188,
+            "end_char": 45266
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "AI の活用又は意図しないAI の動作によって生じうる権利侵害の重大性、侵害発生の可能性等、当該AI の性質・用途等に照らし、必要に応じて定期的かつ客観的なモニタリング及び対処も含めて人間がコントロールできる制御可能性を確保する",
+            "source_section": "Page 17",
+            "quote_en": "In light of the nature and purpose of the AI, such as the severity and likelihood of rights infringements caused by AI use or unintended AI behavior, ensure human controllability, including periodic and objective monitoring and response as necessary.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19923,
+            "end_char": 20037
+          },
+          {
+            "quote": "AI の出力結果が公平性を欠くことがないよう、AI に単独で判断させるだけでなく、適切なタイミングで人間の判断を介在させる利用を検討する。なおその際には、人間の判断が自動化バイアスに左右されないような対策37を講じるべきである",
+            "source_section": "Page 19",
+            "quote_en": "To prevent unfair AI outputs, consider using AI with human judgment intervening at appropriate times rather than letting AI decide alone. In doing so, measures should be taken so that human judgment is not swayed by automation bias.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22989,
+            "end_char": 23102
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "プライバシー・バイ・デザイン等を通じて、学習時のデータについて、適正に収集するとともに、第三者の個人情報、知的財産権に留意が必要なもの等が含まれている場合には、法令に従って適切に扱うことを、AI のライフサイクル全体を通じて確保する",
+            "source_section": "Page 30",
+            "quote_en": "Through privacy by design and similar approaches, ensure throughout the AI lifecycle that training data is appropriately collected and that where third-party personal information or items requiring attention to intellectual property rights are included, they are handled appropriately in accordance with laws and regulations.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 37601,
+            "end_char": 37717
+          },
+          {
+            "quote": "組織は、有害な偏見を軽減するために、訓練データやデータ収集等、データの質を管理するための適切な措置を講じることが奨励される。",
+            "source_section": "Page 37",
+            "quote_en": "Organizations are encouraged to take appropriate measures to manage data quality, including training data and data collection, to mitigate harmful bias.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 46476,
+            "end_char": 46538
+          }
+        ]
+      },
+      {
+        "label": "frontier_safety_evaluation",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "高度な AI システムが、非国家主体も含め、兵器の開発、設計の取得、使用への参入障壁を低くする方法等、化学、生物、放射性、核のリスク。",
+            "source_section": "Page 33",
+            "quote_en": "Chemical, biological, radiological, and nuclear risks, such as ways in which advanced AI systems can lower barriers to entry, including for non-state actors, for the development, acquisition of design, or use of weapons.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 41346,
+            "end_char": 41413
+          },
+          {
+            "quote": "モデルが自分自身のコピーを作ったり、\"自己複製 \"したり、他のモデルを訓練したりすることによるリスク。",
+            "source_section": "Page 33",
+            "quote_en": "Risks from models making copies of themselves, 'self-replicating', or training other models.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 41608,
+            "end_char": 41659
+          }
+        ]
+      },
+      {
+        "label": "open_weight_obligations",
+        "confidence": 0.7,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "開発したAI システムのオープンソース化にあたっても、社会的な影響を検討する",
+            "source_section": "Page 21",
+            "quote_en": "Consider social impacts when open-sourcing a developed AI system as well.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27282,
+            "end_char": 27320
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "これらを踏まえ、AI がもたらす社会的リスクの低減を図るとともに、AI のイノベーション及び活用を促進していくために、関係者による自主的な取組を促し、非拘束的なソフトローによって目的達成に導くゴールベースの考え方で、ガイドラインを作成することとした。",
+            "source_section": "Page 3",
+            "quote_en": "Based on these considerations, in order to reduce societal risks posed by AI while promoting AI innovation and utilization, the guidelines were created with a goal-based approach that encourages voluntary initiatives by stakeholders and achieves objectives through non-binding soft law.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2345,
+            "end_char": 2470
+          },
+          {
+            "quote": "当該取組に対して、社会から不適切又は不十分と評価される場合は、自らの事業活動における機会損失が生じ、事業価値の維持が困難となる事態を招く恐れがあることに留意することが重要となる。",
+            "source_section": "Page 5",
+            "quote_en": "It is important to note that if such initiatives are evaluated by society as inappropriate or insufficient, it may cause opportunity losses in business activities and make it difficult to maintain corporate value.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4773,
+            "end_char": 4862
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "Version 1.2 of Japan's unified AI Guidelines for Business, jointly issued by MIC and METI on March 31, 2026 (Reiwa 8), explicitly designed as a non-binding, goal-based soft-law 'Living Document' maintained through multi-stakeholder agile governance (via MIC's Conference toward AI Network Society and METI's Study Group on AI Guidelines for Business). Originally unified in April 2024 from three prior MIC/METI guidelines, it aligns with the G7 Hiroshima AI Process International Guiding Principles and Code of Conduct (including the OECD-hosted voluntary reporting framework) and references Japan's 2025 AI Promotion Act. It covers business operators (including national and local governments) across three roles—AI Developers, AI Providers, and AI Business Users—while excluding non-business users and data providers from direct scope. Practical implementation examples are provided in a separate Annex (別添).",
+    "confidence": 0.92
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "fundamental_rights",
+      "consumer_public_safety",
+      "social_stability",
+      "economic_competitiveness",
+      "existential_catastrophic",
+      "labor_transition"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.55,
+      "national_security": 0.05,
+      "economic_competitiveness": 0.7,
+      "fundamental_rights": 0.92,
+      "social_stability": 0.72,
+      "innovation_enablement": 0.96,
+      "consumer_public_safety": 0.85,
+      "labor_transition": 0.45
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.05,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.08,
+      "fundamental_rights": 0.26,
+      "social_stability": 0.08,
+      "innovation_enablement": 0.34,
+      "consumer_public_safety": 0.16,
+      "labor_transition": 0.03
+    },
+    "rationale_summary": "Innovation enablement is the dominant frame because the guidelines explicitly justify their overarching architecture—non-binding soft law, goal-based principles, a risk-based approach, and agile governance—as necessary to simultaneously mitigate risks and accelerate safe AI innovation and adoption without stifling benefits through rigid rule-based regulation. Fundamental rights is a strong runner-up, providing the normative foundation in Part 2 through commitments to human dignity, constitutional and international human rights, democracy, the rule of law, non-discrimination, and privacy; however, innovation enablement edges it out as the primary rationale explaining why this specific governance instrument exists and how it is structured. Secondary justifications include consumer and public safety (preventing harm to life, body, property, mental health, and the environment), social stability (mitigating societal destabilization from AI-generated disinformation and social friction), economic competitiveness (strengthening business competitiveness and sustaining economic growth), existential/catastrophic risk (CBRN, offensive cyber, self-replication, and cascading systemic risks within the incorporated Hiroshima Process Code of Conduct), and labor transition (reskilling for changing human-AI division of work).",
+    "evidence_spans": [
+      {
+        "quote": "これらを踏まえ、AI がもたらす社会的リスクの低減を図るとともに、AI のイノベーション及び活用を促進していくために、関係者による自主的な取組を促し、非拘束的なソフトローによって目的達成に導くゴールベースの考え方で、ガイドラインを作成することとした。",
+        "source_section": "Page 3 (はじめに)",
+        "quote_en": "Based on these considerations, in order to reduce the social risks posed by AI while promoting AI innovation and utilization, the guidelines were created with a goal-based approach that encourages voluntary initiatives by stakeholders and guides them toward achieving objectives through non-binding soft law.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 2345,
+        "end_char": 2470
+      },
+      {
+        "quote": "AI の利用は、その分野とその利用形態によっては、社会に対して大きなリスクを生じさせ、そのリスクに伴う社会的な軋轢により、AI の利活用自体が阻害される可能性がある。一方で、過度な対策を講じることは、同様に AI 活用自体又はAI 活用によって得られる便益を阻害してしまう可能性がある。",
+        "source_section": "Page 4 (はじめに)",
+        "quote_en": "Depending on the field and manner of use, the use of AI may pose major risks to society, and the social friction accompanying those risks could hinder the utilization of AI itself. On the other hand, taking excessive measures could likewise hinder AI utilization itself or the benefits obtained from AI utilization.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 3270,
+        "end_char": 3413
+      },
+      {
+        "quote": "取組にあたり、各主体は、以下に述べる「1）人間中心」に照らし、法の支配、人権、民主主義、多様性・包摂性及び公平公正な社会を尊重するようAI システム・サービスを開発・提供・利用すべきである。",
+        "source_section": "Page 15 (第２部 C. 共通の指針)",
+        "quote_en": "In carrying out these initiatives, each actor should develop, provide, and use AI systems and services in a manner that respects the rule of law, human rights, democracy, diversity and inclusion, and a fair and just society, in light of '1) Human-centric' described below.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 16664,
+        "end_char": 16759
+      },
+      {
+        "quote": "各主体は、AI システム・サービスの開発・提供・利用を通じ、ステークホルダーの生命・身体・財産に危害を及ぼすことがないようにすべきである。加えて、精神及び環境に危害を及ぼすことがないようにすることが重要である。",
+        "source_section": "Page 17 (第２部 C. 2) 安全性)",
+        "quote_en": "Each actor should ensure that the development, provision, and use of AI systems and services do not cause harm to the life, body, or property of stakeholders. In addition, it is important to avoid causing harm to mental well-being and the environment.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 19671,
+        "end_char": 19776
+      },
+      {
+        "quote": "生成AI によって、内容が真実・公平であるかのように装った情報を誰でも作ることができるようになり、AI が生成した偽情報・誤情報・偏向情報が社会を不安定化・混乱させるリスクが高まっていることを認識した上で、必要な対策を講じる",
+        "source_section": "Page 16 (第２部 C. 1) 人間中心 ③ 偽情報等への対策)",
+        "quote_en": "Recognizing that generative AI enables anyone to create information disguised as true and fair, increasing the risk that AI-generated disinformation, misinformation, and biased information will destabilize and confuse society, take necessary countermeasures.",
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 18027,
+        "end_char": 18139
+      },
+      {
+        "quote": "このような点に留意することにより、AI による便益の最大化、競争力の強化、事業価値の維持・向上等が可能となる。",
+        "source_section": "Page 5 (はじめに)",
+        "quote_en": "By keeping these points in mind, it becomes possible to maximize the benefits of AI, strengthen competitiveness, and maintain and enhance corporate value.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 4862,
+        "end_char": 4917
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:48:32.160322Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "5c80d448b5a73b354ff76165a8d7920931fc9fe21eed4b9dc00738d9f7ea850d",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 96440,
+      "output_tokens": 5467,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 14529,
+      "estimated_cost_usd": 0.32051
+    },
+    "grounding_summary": {
+      "total_quotes": 31,
+      "exact_matches": 31,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

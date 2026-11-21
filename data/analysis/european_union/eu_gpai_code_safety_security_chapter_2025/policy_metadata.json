@@ -1,29 +1,38 @@
 {
-  "issuing_body": "European Commission / AI Office",
-  "document_type": "standards_guideline",
+  "issuing_body": "European AI Office (Working Groups 2, 3, and 4 Chairs and Vice-Chairs)",
+  "document_type": "voluntary_commitment",
   "binding_strength": "voluntary_commitment",
   "publication_date": null,
   "effective_date": null,
   "covered_actors": [
-    "providers of general-purpose AI models with systemic risk",
-    "signatories",
-    "SMEs and SMCs",
-    "licensees",
-    "downstream modifiers",
-    "downstream providers"
+    "Signatories (providers of general-purpose AI models with systemic risk)",
+    "SMEs and small mid-cap enterprises (SMCs) providing general-purpose AI models with systemic risk"
   ],
   "covered_application_domains": [
     "general_purpose_models"
   ],
-  "prohibited_practices": [],
+  "prohibited_practices": [
+    "Proceeding with the development, making available on the market, or use of a general-purpose AI model with systemic risk when its systemic risks are not determined to be acceptable (Measure 4.2)",
+    "Training models on inputs or outputs from independent external evaluators' test runs without express permission, or taking legal or technical retaliation against independent external evaluators adhering to responsible disclosure rules (Measure 3.5, Appendix 3.5)",
+    "Retaliating in any form against persons providing information to competent authorities about systemic risks stemming from Signatories' models (Measure 8.3)"
+  ],
   "enforcement_authorities": [
-    "European AI Office (AI Office)"
+    "European AI Office",
+    "European Commission",
+    "National competent authorities"
   ],
   "compliance_deadlines": [
-    "Framework must be confirmed no later than four weeks after notifying the Commission pursuant to Article 52(1) AI Act",
-    "Framework must be confirmed no later than two weeks before placing the model on the market"
+    "Safety and Security Framework confirmation: no later than 4 weeks after notifying the European Commission under Article 52(1) AI Act and no later than 2 weeks before placing the model on the market (Measure 1.1)",
+    "Framework and Framework update notifications to the AI Office: within 5 business days of confirmation (Measure 1.4)",
+    "Framework adequacy and adherence assessment: every 12 months from placing the model on the market, or sooner if materially undermined (Measure 1.3)",
+    "Safety and Security Model Report notification to the AI Office: by the time the model is placed on the market (delayable up to 15 business days with an interim report if acting in good faith); updates within 5 business days of confirmation; periodic updates at least every 6 months for most capable models unless exempted (Measures 7.6, 7.7)",
+    "Serious incident initial reports to the AI Office and national competent authorities: within 2 days for critical infrastructure disruption, 5 days for serious cybersecurity breach or model weight exfiltration, 10 days for death of a person, and 15 days for serious harm to health, fundamental rights infringement, or serious harm to property or the environment; intermediate reports at least every 4 weeks while unresolved; final report within 60 days after resolution (Measure 9.3)",
+    "Documentation retention: at least 5 years for serious incident documentation (Measure 9.4) and at least 10 years after placing the model on the market for additional technical documentation (Measure 10.1)",
+    "Responsible vulnerability disclosure embargo limit for independent external evaluators: maximum 30 business days unless exceptionally necessary (Measure 3.5)",
+    "Review of interface-access authorisations to unreleased model parameters: at least every 6 months (Appendix 4.3)",
+    "Remediation if a safe reference model loses its status: within 6 months (Appendix 2.2)"
   ],
   "penalties_summary": null,
-  "implementation_notes": "This Code of Practice is a voluntary instrument under the EU AI Act. Adherence serves as a means for providers to demonstrate compliance with Articles 53 and 55 AI Act obligations, but does not constitute conclusive evidence of compliance. SMEs and SMCs may benefit from simplified compliance paths including exemptions from some reporting commitments per Article 56(5) AI Act. The document is the Safety and Security Chapter specifically, focused on systemic risk assessment and mitigation across the model lifecycle.",
-  "confidence": 0.9
+  "implementation_notes": "Voluntary opt-in Code of Practice serving as a guiding document for Signatories (providers of general-purpose AI models with systemic risk) to demonstrate compliance with Articles 53 and 55 of the EU AI Act, though adherence does not constitute conclusive evidence of legal compliance. Establishes 10 Commitments and 4 Appendices covering systemic risk management frameworks, specified systemic risks (CBRN, loss of control, cyber offence, harmful manipulation), state-of-the-art and independent external model evaluations, cybersecurity protections for unreleased model weights, governance and whistleblower protections, serious incident reporting, and public transparency. Provides proportionality and simplified compliance options for SMEs and SMCs, exemptions for 'similarly safe or safer' models, and exemptions from cybersecurity weight-protection commitments once model parameters are publicly available or inferior to publicly available models.",
+  "confidence": 0.95
 }

@@ -1,0 +1,312 @@
+{
+  "jurisdiction": "japan",
+  "issuing_body": "G7 / Ministry of Internal Affairs and Communications (MIC) of Japan",
+  "document_type": "voluntary_commitment",
+  "binding_strength": "voluntary_commitment",
+  "publication_date": "2023-10-30",
+  "effective_date": null,
+  "covered_actors": [
+    "Organizations developing the most advanced AI systems (including foundation models and generative AI systems)",
+    "Endorsing entities from academia, civil society, the private sector, and the public sector"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "public_sector_use",
+    "healthcare",
+    "education"
+  ],
+  "prohibited_practices": [
+    "Developing or deploying advanced AI systems in ways that undermine democratic values, are particularly harmful to individuals or communities, facilitate terrorism, promote criminal misuse, or pose substantial risks to safety, security, and human rights"
+  ],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "1 Take appropriate measures throughout the development of advanced AI systems, including prior to and throughout their deployment and placement on the market, to identify, evaluate, and mitigate risks across the AI lifecycle.",
+          "source_section": "Page 2 (Action 1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3543,
+          "end_char": 3768
+        },
+        {
+          "quote": "Organizations should put in place appropriate organizational mechanisms to develop, disclose and implement risk management and governance policies, including for example accountability and governance processes to identify, assess, prevent, and address risks, where feasible throughout the AI lifecycle.",
+          "source_section": "Page 5 (Action 5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10794,
+          "end_char": 11096
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "This testing should take place in secure environments and be performed at several checkpoints throughout the AI lifecycle in particular before deployment and placement on the market to identify risks and vulnerabilities, and to inform action to address the identified AI risks to security, safety and societal and other risks, whether accidental or intentional.",
+          "source_section": "Page 2 (Action 1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4468,
+          "end_char": 4829
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "This includes employing diverse internal and independent external testing measures, through a combination of methods for evaluations, such as red-teaming, and implementing appropriate mitigation to address identified risks and vulnerabilities.",
+          "source_section": "Page 2 (Action 1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3770,
+          "end_char": 4013
+        },
+        {
+          "quote": "The results of red-teaming conducted to evaluate the model’s/system’s fitness for moving beyond the development stage.",
+          "source_section": "Page 4 (Action 3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 8769,
+          "end_char": 8887
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "4 Work towards responsible information sharing and reporting of incidents among organizations developing advanced AI systems including with industry, governments, civil society, and academia",
+          "source_section": "Page 4 (Action 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9297,
+          "end_char": 9487
+        },
+        {
+          "quote": "Organizations should collaborate with other organizations across the AI lifecycle to share and report relevant information to the public with a view to advancing safety, security and trustworthiness of advanced AI systems. Organizations should also collaborate and share the aforementioned information with relevant public authorities, as appropriate.",
+          "source_section": "Page 5 (Action 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10210,
+          "end_char": 10561
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "3 Publicly report advanced AI systems’ capabilities, limitations and domains of appropriate and inappropriate use, to support ensuring sufficient transparency, thereby contributing to increase accountability.",
+          "source_section": "Page 4 (Action 3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7791,
+          "end_char": 7999
+        },
+        {
+          "quote": "Organizations are further encouraged to implement other mechanisms such as labeling or disclaimers to enable users, where possible and appropriate, to know when they are interacting with an AI system.",
+          "source_section": "Page 6 (Action 7)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14172,
+          "end_char": 14372
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "In support of such testing, developers should seek to enable traceability, in relation to datasets, processes, and decisions made during system development. These measures should be documented and supported by regularly updated technical documentation.",
+          "source_section": "Page 2 (Action 1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4214,
+          "end_char": 4466
+        },
+        {
+          "quote": "These reports, instruction for use and relevant technical documentation, as appropriate as, should be kept up-to-date and should include, for example;",
+          "source_section": "Page 4 (Action 3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 8144,
+          "end_char": 8294
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "This includes employing diverse internal and independent external testing measures, through a combination of methods for evaluations, such as red-teaming, and implementing appropriate mitigation to address identified risks and vulnerabilities.",
+          "source_section": "Page 2 (Action 1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3770,
+          "end_char": 4013
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "6 Invest in and implement robust security controls, including physical security, cybersecurity and insider threat safeguards across the AI lifecycle.",
+          "source_section": "Page 6 (Action 6)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12007,
+          "end_char": 12156
+        },
+        {
+          "quote": "Organizations should also have in place measures to require storing and working with the model weights of advanced AI systems in an appropriately secure environment with limited access to reduce both the risk of unsanctioned release and the risk of unauthorized access.",
+          "source_section": "Page 6 (Action 6)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12642,
+          "end_char": 12911
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "7 Develop and deploy reliable content authentication and provenance mechanisms, where technically feasible, such as watermarking or other techniques to enable users to identify AI-generated content",
+          "source_section": "Page 6 (Action 7)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 13378,
+          "end_char": 13575
+        },
+        {
+          "quote": "Organizations should also endeavor to develop tools or APIs to allow users to determine if particular content was created with their advanced AI system, such as via watermarks.",
+          "source_section": "Page 6 (Action 7)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 13886,
+          "end_char": 14062
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Organizations are encouraged to take appropriate measures to manage data quality, including training data and data collection, to mitigate against harmful biases.",
+          "source_section": "Page 8 (Action 11)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17244,
+          "end_char": 17406
+        },
+        {
+          "quote": "Appropriate measures could include transparency, privacy-preserving training techniques, and/or testing and fine-tuning to ensure that systems do not divulge confidential or sensitive data.",
+          "source_section": "Page 8 (Action 11)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17408,
+          "end_char": 17597
+        }
+      ]
+    },
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "> Chemical, biological, radiological, and nuclear risks, such as the ways in which advanced AI systems can lower barriers to entry, including for non-state actors, for weapons development, design acquisition, or use.",
+          "source_section": "Page 3 (Action 1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4960,
+          "end_char": 5176
+        },
+        {
+          "quote": "> Risks from models of making copies of themselves or “self-replicating” or training other models.",
+          "source_section": "Page 3 (Action 1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5648,
+          "end_char": 5746
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "will provide voluntary guidance for actions by organizations developing the most advanced AI systems, including the most advanced foundation models and generative AI systems (henceforth \"advanced AI systems\").",
+          "source_section": "Page 1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 383,
+          "end_char": 592
+        },
+        {
+          "quote": "We also commit to develop proposals, in consultation with the OECD, GPAI and other stakeholders, to introduce monitoring tools and mechanisms to help organizations stay accountable for the implementation of these actions.",
+          "source_section": "Page 1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1876,
+          "end_char": 2097
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Japan-led G7 Hiroshima AI Process International Code of Conduct (adopted October 30, 2023), structured as a non-binding, risk-based 'living document' setting 11 voluntary actions for organizations developing advanced AI systems (including frontier foundation models and generative AI) across private, public, academic, and civil-society sectors. Built on the OECD AI Principles, it outlines lifecycle risk evaluation (explicitly covering CBRN, offensive cyber, physical/critical-infrastructure safety, self-replication, bias/privacy, disinformation/democracy, and city-scale systemic chain-reaction risks), red-teaming, post-deployment vulnerability monitoring and bug bounties, public transparency reports, cross-sector incident sharing, model-weight and insider-threat security, watermarking/provenance tools, international technical standards development, and training-data privacy/IP safeguards. Accountability relies on voluntary endorsement, internal self-assessment, and planned monitoring mechanisms to be developed with the OECD and GPAI while jurisdictions craft domestic approaches.",
+  "confidence": 0.96
+}

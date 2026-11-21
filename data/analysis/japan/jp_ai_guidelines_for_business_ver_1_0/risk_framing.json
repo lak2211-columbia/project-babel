@@ -1,41 +1,87 @@
 {
-  "dominant_frame": "fundamental_rights",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
+    "fundamental_rights",
+    "consumer_public_safety",
+    "economic_competitiveness",
     "social_stability",
-    "innovation_enablement",
-    "consumer_public_safety"
+    "labor_transition"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.1,
-    "economic_competitiveness": 0.2,
-    "fundamental_rights": 0.65,
-    "social_stability": 0.45,
-    "innovation_enablement": 0.35,
-    "consumer_public_safety": 0.3,
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.72,
+    "fundamental_rights": 0.88,
+    "social_stability": 0.65,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.78,
+    "labor_transition": 0.55
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.11,
+    "fundamental_rights": 0.25,
+    "social_stability": 0.09,
+    "innovation_enablement": 0.34,
+    "consumer_public_safety": 0.16,
     "labor_transition": 0.05
   },
-  "rationale_summary": "The document consistently grounds AI governance in respect for human dignity, autonomy, human rights, diversity, and inclusion. The three basic philosophies—Dignity, Diversity & Inclusion, and Sustainability—explicitly center on human rights and individual well-being. Common Guiding Principles require that AI not violate constitutionally or internationally guaranteed human rights. Secondary frames include social stability (avoiding divisions within society, ensuring fair outcomes) and innovation enablement (promoting open innovation, sustainable economic growth).",
+  "rationale_summary": "The document's dominant framing is innovation_enablement because its core justification for adopting voluntary, goal-based, risk-based, and agile soft-law guidelines is to avoid stifling AI innovation while mitigating risks that could cause social disagreement and inhibit AI adoption. Fundamental_rights is a close runner-up, anchoring Part 2's normative philosophies in human dignity, constitutional and international human rights, fairness, privacy, and democracy; however, innovation_enablement edges it out as the overarching rationale explaining why MIC and METI chose flexible business guidelines over binding rules to realize Society 5.0. Secondary rationales include consumer_public_safety (preventing harm to lives, bodies, minds, and property), economic_competitiveness (strengthening competitiveness and sustainable economic growth), social_stability (countering society-destabilizing disinformation and avoiding social divisions), and labor_transition (addressing labor shortages and promoting education and reskilling as human-AI task division shifts).",
   "evidence_spans": [
     {
-      "quote": "each AI business actor should develop, provide, or use AI systems and services respecting the rule of law, human rights, democracy, diversity, and fair and just society",
-      "source_section": "Page 14"
+      "quote": "Thus, it was decided to draw up guidelines on the basis of the goal-based concept that would lead to the achievement of purposes through soft laws without any legally binding force that would encourage interested parties to make voluntary efforts to reduce societal risks in AI and promote innovations and use of AI.",
+      "source_section": "Preface",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4047,
+      "end_char": 4363
     },
     {
-      "quote": "act in a way that does not violate the human rights guaranteed by the Constitution of Japan or granted internationally",
-      "source_section": "Page 14"
+      "quote": "When developing, providing, or using an AI system or service, each AI business actor should act in a way that does not violate the human rights guaranteed by the Constitution of Japan or granted internationally, as the foundation for accomplishing all matters to be conducted, including the matters described later.",
+      "source_section": "Part 2, C. Common Guiding Principles, 1) Human-Centric",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 32839,
+      "end_char": 33154
     },
     {
-      "quote": "A society that has respect for human dignity Rather than building a society in which effectiveness and convenience are pursued through AI use to the point that humans become excessively dependent on AI",
-      "source_section": "Page 12"
+      "quote": "Each AI business actor should avoid damage to the lives, bodies, minds, and properties of stakeholders during the development, provision, and use of AI systems and services. In addition, it is important that the environment is not damaged.",
+      "source_section": "Part 2, C. Common Guiding Principles, 2) Safety",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 38733,
+      "end_char": 38972
     },
     {
-      "quote": "A society where people with diverse backgrounds can pursue their own well-being",
-      "source_section": "Page 12"
+      "quote": "Paying close attention to these possibilities enables to maximize the benefits from AI, strengthen competitiveness, and maintain and improve the business values.",
+      "source_section": "Preface",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 9436,
+      "end_char": 9597
     },
     {
-      "quote": "respect human dignity and the autonomy of individuals",
-      "source_section": "Page 14"
+      "quote": "Generative AI has enabled everyone to forge fake information that seems to be true and fair, so recognize the increasing risk of destabilizing and confusing the society through disinformation, misinformation, and biased information generated by AI, and take necessary countermeasures",
+      "source_section": "Part 2, C. Common Guiding Principles, 1) Human-Centric (3)",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 35507,
+      "end_char": 35790
+    },
+    {
+      "quote": "It is assumed that the division of tasks between AI and humans will change due to the expansion of generative AI use, so discuss actively about education and reskilling to promote new ways of working.",
+      "source_section": "Part 2, C. Common Guiding Principles, 8) Education/literacy (2)",
+      "quote_en": null,
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 56318,
+      "end_char": 56518
     }
   ]
 }

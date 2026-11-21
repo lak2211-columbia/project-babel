@@ -5,36 +5,80 @@
     "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.05,
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
     "economic_competitiveness": 0.1,
-    "fundamental_rights": 0.2,
-    "social_stability": 0.1,
-    "innovation_enablement": 0.3,
-    "consumer_public_safety": 0.75,
-    "labor_transition": 0.05
+    "fundamental_rights": 0.68,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.84,
+    "consumer_public_safety": 0.98,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is a South Korean regulatory guideline for approving generative AI medical devices. Its central concern is ensuring patient safety and clinical validity of AI-generated outputs, including risks of hallucination, inconsistency, bias, and data quality failures. The governance rationale is framed primarily around protecting patients from unsafe medical AI outputs, requiring risk management processes, analytical performance validation, and clinical efficacy confirmation. Secondary framing around innovation enablement is present as the guideline aims to provide a workable approval pathway for novel GenAI medical devices. Fundamental rights appear as a minor frame through references to personal data protection.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.14,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.24,
+    "consumer_public_safety": 0.62,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The MFDS Generative AI Medical Device Review Guideline is overwhelmingly framed around consumer_public_safety: its central rationale is guaranteeing patient safety and clinical reliability/effectiveness in medical practice against generative AI hazards including persuasive hallucinations, output inconsistency, drift, data-quality defects, clinician overconfidence, and cybersecurity threats that can cause significant patient harm. Consumer_public_safety decisively leads innovation_enablement because every technical, clinical, and labeling requirement is justified through preventing clinical error and patient injury, while innovation_enablement serves as a clear runner-up by adapting approval pathways to avoid prohibitive clinical-trial time and cost barriers for multi-indication GenAI models and improving regulatory transparency and petitioner convenience. Fundamental_rights plays a focused secondary role through explicit concern over demographic/socioeconomic bias in clinical datasets and patient personal medical-data privacy.",
   "evidence_spans": [
     {
-      "quote": "환자의 안전을 보장하기 위한 방법이 필요하다",
-      "source_section": "Ⅰ 개요 1. 배경 및 목적"
+      "quote": "이에 따라, 거대언어모델과 같은 생성형 인공지능 의료기기를 일종의 새로운 인공지능 모델로 이해하고, 임상현장에서 사용되며 환자의 안전을 보장하기 위한 방법이 필요하다[6].",
+      "source_section": "Ⅰ. 개요 - 1. 배경 및 목적",
+      "quote_en": "Accordingly, it is necessary to understand generative AI medical devices such as LLMs as a new type of AI model and establish methods to guarantee patient safety when used in clinical practice.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 2490,
+      "end_char": 2586
     },
     {
-      "quote": "설득력있는 환각(Hallucination): 인공지능 모델이 부정확하거나 편향되거나 의도하지 않은 출력을 생성하지만, 콘텐츠의 문법과 구조 등이 매우 단호하고 설득력이 있어 정확한 출력으로 오인될 수 있음",
-      "source_section": "Ⅲ 생성형 인공지능 의료기기의 위험관리"
+      "quote": "1. 설득력있는 환각(Hallucination): 인공지능 모델이 부정확하거나 편향되거나 의도하지 않은 출력을 생성하지만, 콘텐츠의 문법과 구조 등이 매우 단호하고 설득력이 있어 정확한 출력으로 오인될 수 있음",
+      "source_section": "Ⅲ. 생성형 인공지능 의료기기의 위험관리 - [표2]",
+      "quote_en": "1. Persuasive hallucination: the AI model generates inaccurate, biased, or unintended outputs whose decisive grammar and structure cause them to be mistaken for accurate outputs.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 5768,
+      "end_char": 5885
     },
     {
-      "quote": "오류나 편향이 있는 데이터가 걸러지지 않고 학습될 가능성이 있어 부정확한 출력결과를 초래할 수 있다",
-      "source_section": "Ⅰ 개요 1. 배경 및 목적"
+      "quote": "기존의 평가방법과 기준을 적용한다면 안전성과 유효성 평가에 막대한 비용과 시간을 필요로 하게 된다[5].",
+      "source_section": "Ⅰ. 개요 - 1. 배경 및 목적",
+      "quote_en": "Applying conventional evaluation methods and criteria to generative AI medical devices would require enormous cost and time to assess safety and effectiveness.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2430,
+      "end_char": 2488
     },
     {
-      "quote": "생성형 인공지능 의료기기의 특성을 반영한 인·허가 규제 적용범위, 제품예시, 위험관리, 분석적 성능 및 임상적 유효성 등의 요구사항을 제시",
-      "source_section": "Ⅰ 개요 1. 배경 및 목적"
+      "quote": "식품의약품안전처는 이러한 문제점을 고려하여, 생성형 인공지능 의료기기의 특성을 반영한 인·허가 규제 적용범위, 제품예시, 위험 관리, 분석적 성능 및 임상적 유효성 등의 요구사항을 제시함으로써 민원편의 및 허가·심사 업무의 투명성을 제고하고자 한다.",
+      "source_section": "Ⅰ. 개요 - 1. 배경 및 목적",
+      "quote_en": "Considering these challenges, MFDS aims to enhance petitioner convenience and review transparency by setting out tailored regulatory scope, product examples, risk management, and analytical/clinical evaluation expectations.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2833,
+      "end_char": 2972
     },
     {
-      "quote": "오류가 있으며 환자에게 상당한 위해를 가할 가능성이 높음(likely to cause significant patient harm)",
-      "source_section": "Ⅳ 허가·심사 방안 3. 임상적 유효성 확인"
+      "quote": "4. 대리 변수(Proxy variables): 원하는 데이터 요소를 수집할 수 없는 경우 대체 방식을 사용함으로써 발생 가능(예. ‘고위험 치료 관리’가 필요한 환자를 식별하는 알고리즘에 대해 ‘의료 적 수요’ 대신 ‘비용’을 데이터 요소로 수집할 경우, 의료비 지출이 상대적으로 낮은 가난한 사람들의 ‘의료적 수요’를 반영할 수 없음 등)",
+      "source_section": "Ⅲ. 생성형 인공지능 의료기기의 위험관리 - [표2]",
+      "quote_en": "Proxy variables: collecting healthcare cost instead of clinical need in an algorithm identifying high-risk care patients fails to reflect the medical needs of lower-income patients with lower medical spending.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 7848,
+      "end_char": 8039
+    },
+    {
+      "quote": "인공지능 모델을 사용할 때 환자 데이터 유출의 위험이 존재한다. 또한, 훈련 데이터 또는 대화 중 입력된 정보를 학습한 인공지능 모델의 답변들을 종합하여 특정 환자의 정보를 유추할 수 있다.",
+      "source_section": "Ⅳ. 허가·심사 방안 - [표4]",
+      "quote_en": "Risks of patient data leakage exist when using AI models, and synthesizing outputs trained on training data or conversational inputs can allow inference of specific patient information.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 14725,
+      "end_char": 14831
     }
   ]
 }

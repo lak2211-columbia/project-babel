@@ -1,36 +1,75 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "consumer_public_safety",
-    "innovation_enablement"
+    "innovation_enablement",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.03,
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
     "economic_competitiveness": 0.1,
-    "fundamental_rights": 0.75,
-    "social_stability": 0.05,
-    "innovation_enablement": 0.15,
-    "consumer_public_safety": 0.2,
-    "labor_transition": 0.01
+    "fundamental_rights": 0.96,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.88,
+    "consumer_public_safety": 0.4,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around protecting the fundamental right of informational self-determination (개인정보자기결정권) of data subjects whose publicly available personal information is used in AI training. The governance rationale centers on ensuring data subjects retain rights to access, correction, deletion, and processing suspension even when their data is publicly scraped. Secondary framings include consumer/public safety (preventing leakage and exposure of personal data through AI outputs) and innovation enablement (providing legal clarity to allow AI development within privacy law).",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.62,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.3,
+    "consumer_public_safety": 0.08,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The guide is dominantly framed around fundamental_rights, grounding every interpretation of PIPA in the constitutional right to informational self-determination, human dignity (Constitution Art. 10), and privacy of private life (Art. 17), while focusing on mitigating 'invisible processing' risks of web scraping, preventing discriminatory bias or unauthorized profiling, and safeguarding data subjects' access, deletion, and suspension rights. Fundamental_rights edges out innovation_enablement because protecting data-subject rights forms the legal threshold test that legitimate interests must demonstrably outweigh. Innovation_enablement is a major secondary frame: PIPC explicitly seeks to resolve legal uncertainty for AI developers needing massive public datasets (including Korean linguistic and cultural representation), encourages an optimal, flexible combination of safeguards balancing AI performance with safety rather than rigid mandates, and highlights open-source AI's role in fostering SME innovation. Consumer_public_safety plays a minor supporting role regarding financial harms from exposed banking/card data, phishing/smishing misuse, and harmful outputs.",
   "evidence_spans": [
     {
       "quote": "공개된 개인정보는 일반적으로 헌법상 개인정보자기결정권의 보호대상으로서, 타인의 수집·이용은 원칙적으로 개인정보자기결정권을 제한할 수 있음",
-      "source_section": "Page 5"
+      "source_section": "Ⅰ. 개 요",
+      "quote_en": "Publicly available personal information is generally protected under the constitutional right to informational self-determination, and collection or use by others may in principle restrict that right.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 505,
+      "end_char": 581
     },
     {
-      "quote": "AI 학습을 위해 웹 스크래핑을 통한 공개된 개인정보 처리가 이루어지고 있는 상황에서 개인정보의 공개와 이용에 관하여 실질적으로 결정하거나 통제할 수 없는 위치에 있는 정보주체의 권리 보장이 더욱 중요해짐",
-      "source_section": "Page 21"
+      "quote": "특히, 침해 또는 제한될 수 있는 ‘정보주체의 권리’는 개인정보자기결정권에 국한되지 않고, 개인정보자기결정권의 침해로 인해 제한되거나 침해될 수 있는 헌법상 기본권으로서 인간의 존엄과 가치 및 행복추구권(헌법 제10조), 사생활의 비밀과 자유(헌법 제17조) 등을 포함한다고 볼 수 있음",
+      "source_section": "Ⅱ. 공개된 개인정보 처리의 법적 근거",
+      "quote_en": "In particular, 'data subjects' rights' that may be infringed or restricted are not limited to informational self-determination, but also include constitutional fundamental rights such as human dignity, worth, and the pursuit of happiness (Constitution Art. 10) and privacy of private life (Constitution Art. 17).",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 11308,
+      "end_char": 11468
     },
     {
-      "quote": "개인정보 보호법은 정보주체 이외로부터 수집한 개인정보에 대해 정보주체 요구 시 출처·목적 등을 알릴 의무(제20조)와 열람 요구권(제35조), 정정·삭제 요구권(제36조), 처리정지 요구권(제37조) 등을 규정하여 정보주체 권리를 보장함",
-      "source_section": "Page 21"
+      "quote": "AI 기업 등은 모델 성능과 개인정보 보호 간 조화를 이룰 수 있는 최적의 안전성 확보 조치를 여건에 맞게 도입·시행함으로써 공개된 개인정보 처리의 적법성을 확보하고 정보주체 권리침해 위험을 예방·경감할 수 있음",
+      "source_section": "Ⅰ. 개 요",
+      "quote_en": "By adopting and implementing an optimal set of safeguards tailored to their conditions that harmonizes model performance with personal data protection, AI enterprises can secure the lawfulness of processing publicly available personal data and prevent or mitigate rights-infringement risks.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 931,
+      "end_char": 1049
     },
     {
-      "quote": "AI 개발자 및 서비스 제공자는 개인정보 보호법상 공개된 개인정보 수집·이용 근거를 명확히 하고자 함",
-      "source_section": "Page 5"
+      "quote": "이에, 개별 조치 이행에 따른 상충관계(trade-off)를 고려하면서 AI 성능-안전성의 조화를 이룰 수 있는 「최적의 안전조치 조합」을 비즈니스 특성에 부합하도록 도입·시행하는 것을 권장함",
+      "source_section": "Ⅲ. 안전성 확보 조치 기준",
+      "quote_en": "Accordingly, taking into account trade-offs from individual measures, it is recommended to introduce and implement an 'optimal combination of safeguards' aligned with business characteristics to harmonize AI performance and safety.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 17838,
+      "end_char": 17945
+    },
+    {
+      "quote": "AI 개발자 및 서비스 제공자는 법에서 처리를 금지 또는 제한하고 있는 주민등록번호와 그 밖의 고유식별정보, 유·노출 시 막대한 경제적 피해를 야기할 수 있는 계좌정보, 신용카드정보 등의 경우 출력 단계에서의 유·노출을 방지하기 위하여 각별한 주의를 기울일 필요가 있음",
+      "source_section": "Ⅲ. 안전성 확보 조치 기준 (1-2 개인정보 유·노출 방지)",
+      "quote_en": "AI developers and service providers must exercise special care to prevent leakage or exposure at the output stage of resident registration numbers and other unique identifiers restricted by law, as well as bank account and credit card information whose exposure could cause severe financial harm.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 19332,
+      "end_char": 19482
     }
   ]
 }

@@ -1,64 +1,163 @@
 {
   "source_id": "us_eo_14179_removing_barriers_ai",
   "title": "Removing Barriers to American Leadership in Artificial Intelligence",
-  "language": "en",
+  "language": "en-US",
   "policy_extraction": {
     "jurisdiction": "united_states",
-    "issuing_body": "Executive Office of the President (White House)",
+    "issuing_body": "Executive Office of the President",
     "document_type": "executive_order",
     "binding_strength": "executive_action",
     "publication_date": "2025-01-23",
     "effective_date": "2025-01-23",
+    "covered_actors": [
+      "Assistant to the President for Science and Technology (APST)",
+      "Special Advisor for AI and Crypto",
+      "Assistant to the President for National Security Affairs (APNSA)",
+      "Assistant to the President for Economic Policy",
+      "Assistant to the President for Domestic Policy",
+      "Director of the Office of Management and Budget (OMB Director)",
+      "Heads of executive departments and agencies"
+    ],
     "covered_application_domains": [
       "general_purpose_models",
-      "defense"
+      "public_sector_use"
     ],
+    "prohibited_practices": [],
     "safety_requirements": [],
     "enforcement_mechanisms": [
       {
         "label": "none_specified",
-        "confidence": 0.9,
+        "confidence": 0.95,
         "evidence": [
           {
-            "quote": "This order is not intended to, and does not, create any right or benefit, substantive or procedural, enforceable at law or in equity by any party against the United States",
-            "source_section": "Sec. 6(c)"
+            "quote": "This order is not intended to, and does not, create any right or benefit, substantive or procedural, enforceable at law or in equity by any party against the United States, its departments, agencies, or entities, its officers, employees, or agents, or any other person.",
+            "source_section": "Sec. 6. General Provisions.",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3843,
+            "end_char": 4112
           }
         ]
       }
     ],
-    "implementation_notes": "This EO primarily revokes EO 14110 and directs development of a new AI Action Plan within 180 days. It does not establish new safety requirements; rather, it removes prior safety-oriented directives. No safety requirements are imposed by this document. Enforcement is internal to executive branch agencies only.",
-    "confidence": 0.95
+    "enforcement_authorities": [],
+    "compliance_deadlines": [
+      "Within 60 days of 2025-01-23 (2025-03-24): OMB Director, in coordination with APST, shall revise OMB Memoranda M-24-10 and M-24-18 to align with Section 2 policy",
+      "Within 180 days of 2025-01-23 (2025-07-22): APST, Special Advisor for AI and Crypto, and APNSA, in coordination with economic/domestic policy assistants, OMB Director, and relevant agency heads, shall develop and submit an AI Action Plan to the President"
+    ],
+    "penalties_summary": null,
+    "implementation_notes": "Signed January 23, 2025, EO 14179 resets federal AI policy by revoking barriers stemming from the revoked EO 14110 of October 30, 2023. It directs an immediate interagency review to suspend, revise, rescind, or grant exemptions from EO 14110-derived agency actions, orders OMB to revise Memoranda M-24-10 and M-24-18 within 60 days, and mandates an AI Action Plan within 180 days. It imposes no private-sector technical safety controls or coercive external enforcement mechanisms.",
+    "confidence": 0.97
   },
   "risk_framing": {
     "dominant_frame": "economic_competitiveness",
     "secondary_frames": [
-      "national_security",
-      "innovation_enablement"
+      "innovation_enablement",
+      "national_security"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
-      "national_security": 0.0,
-      "economic_competitiveness": 0.75,
-      "fundamental_rights": 0.0,
-      "social_stability": 0.0,
-      "innovation_enablement": 0.7,
-      "consumer_public_safety": 0.05,
+      "national_security": 0.78,
+      "economic_competitiveness": 0.96,
+      "fundamental_rights": 0.1,
+      "social_stability": 0.2,
+      "innovation_enablement": 0.88,
+      "consumer_public_safety": 0.0,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document is primarily framed around maintaining and enhancing American economic competitiveness and global AI dominance. The core justification for revoking prior AI governance is that existing policies act as 'barriers to American AI innovation.' The policy section explicitly names economic competitiveness alongside national security and human flourishing, but the operative logic throughout is about removing obstacles to U.S. global leadership.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.15,
+      "economic_competitiveness": 0.5,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.3,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "EO 14179 is dominantly framed around economic_competitiveness, anchoring federal policy in sustaining and enhancing America's global AI dominance, free-market strength, and global leadership. Economic_competitiveness edges out innovation_enablement because removing regulatory barriers is explicitly subordinated to the overarching zero-sum strategic objective of retaining global AI leadership and dominance. Innovation_enablement is a major secondary frame via the revocation of prior policies deemed obstacles to entrepreneurial AI innovation, while national_security appears explicitly in the Section 2 policy mandate and APNSA co-leadership, alongside a brief anti-ideological-bias rationale.",
     "evidence_spans": [
       {
-        "quote": "To maintain this leadership, we must develop AI systems that are free from ideological bias or engineered social agendas.",
-        "source_section": "Section 1"
+        "quote": "It is the policy of the United States to sustain and enhance America’s global AI dominance in order to promote human flourishing, economic competitiveness, and national security.",
+        "source_section": "Sec. 2. Policy.",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 865,
+        "end_char": 1043
       },
       {
-        "quote": "It is the policy of the United States to sustain and enhance America's global AI dominance in order to promote human flourishing, economic competitiveness, and national security.",
-        "source_section": "Section 2"
+        "quote": "With the right Government policies, we can solidify our position as the global leader in AI and secure a brighter future for all Americans.",
+        "source_section": "Section 1. Purpose",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 485,
+        "end_char": 624
       },
       {
         "quote": "This order revokes certain existing AI policies and directives that act as barriers to American AI innovation, clearing a path for the United States to act decisively to retain global leadership in artificial intelligence.",
-        "source_section": "Section 1"
+        "source_section": "Section 1. Purpose",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 625,
+        "end_char": 847
+      },
+      {
+        "quote": "The United States has long been at the forefront of artificial intelligence (AI) innovation, driven by the strength of our free markets, world-class research institutions, and entrepreneurial spirit.",
+        "source_section": "Section 1. Purpose",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 163,
+        "end_char": 362
+      },
+      {
+        "quote": "To maintain this leadership, we must develop AI systems that are free from ideological bias or engineered social agendas.",
+        "source_section": "Section 1. Purpose",
+        "quote_en": null,
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 363,
+        "end_char": 484
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:15:23.622943Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "a6664aa4d1d80b30a6a94531ce42c3ad787f73e572e62f0a9e6d405d86f1d791",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 4147,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 6,
+      "exact_matches": 6,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

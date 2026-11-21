@@ -1,37 +1,300 @@
 {
   "jurisdiction": "united_states",
-  "issuing_body": "NIST Information Technology Laboratory (ITL)",
+  "issuing_body": "National Institute of Standards and Technology (NIST)",
   "document_type": "standards_guideline",
-  "binding_strength": "voluntary_commitment",
-  "publication_date": "2023-03-30",
+  "binding_strength": "standards_guideline",
+  "publication_date": "2022-07-08",
   "effective_date": null,
   "covered_actors": [
-    "organizations",
-    "private sector",
-    "public sector"
+    "Organizations and AI actors implementing NIST AI RMF 1.0 across GOVERN, MAP, MEASURE, and MANAGE",
+    "Boards of directors, senior leadership, C-suite executives, and designated AI risk officers",
+    "AI design, development, deployment, human-AI interaction, TEVV, and impact assessment teams",
+    "Legal, compliance, audit, procurement, and enterprise risk management functions",
+    "Independent third-party evaluators, red teams, domain experts, end users, and affected communities"
   ],
   "covered_application_domains": [
-    "general_purpose_models"
+    "general_purpose_models",
+    "critical_infrastructure",
+    "public_sector_use",
+    "employment",
+    "healthcare",
+    "finance",
+    "law_enforcement"
   ],
   "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.85,
+      "confidence": 0.99,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "suggests ways to navigate and use the AI Risk Management Framework (AI RMF) to incorporate trustworthiness considerations in the design, development, deployment, and use of AI systems",
-          "source_section": "Introduction"
+          "quote": "Establish policies to define mechanisms for measuring or understanding an AI system’s potential impacts, e.g., via regular impact assessments at key stages in the AI lifecycle, connected to system impacts and frequency of system updates.",
+          "source_section": "GOVERN 1.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 24727,
+          "end_char": 24964
+        },
+        {
+          "quote": "Establish policies for assigning an overall risk measurement approach for an AI system, or its important components, e.g., via multiplication or combination of a mapped risk’s impact and likelihood (risk ≈ impact x likelihood).",
+          "source_section": "GOVERN 1.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 25340,
+          "end_char": 25567
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.98,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "AI systems that may endanger human life, health, property or the environment are tested thoroughly prior to deployment, and are regularly evaluated to confirm the system is safe during normal operations, and in settings beyond its proposed use and knowledge limits.",
+          "source_section": "MEASURE 2.6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 252037,
+          "end_char": 252302
+        },
+        {
+          "quote": "Measure AI systems prior to deployment in conditions similar to expected scenarios.",
+          "source_section": "MEASURE 2.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 239494,
+          "end_char": 239577
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Red-teaming is another risk measurement and management approach. This practice consists of adversarial testing of AI systems under stress conditions to seek out failure modes or vulnerabilities in the system. Red-teams are composed of external experts or personnel who are independent from internal AI actors.",
+          "source_section": "GOVERN 4.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 59183,
+          "end_char": 59492
+        },
+        {
+          "quote": "Use red-team exercises to actively test the system under adversarial or stress conditions, measure system response, assess failure modes or determine if system can return to normal function after an unexpected adverse event.",
+          "source_section": "MEASURE 2.7",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 257977,
+          "end_char": 258201
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Establish policies and processes regarding public disclosure of incidents and information sharing.",
+          "source_section": "GOVERN 4.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 68615,
+          "end_char": 68713
+        },
+        {
+          "quote": "Establish procedures to regularly share information about errors, incidents and negative impacts with relevant stakeholders, operators, practitioners and users, and impacted parties.",
+          "source_section": "MANAGE 4.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 131411,
+          "end_char": 131593
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Establish policies and processes regarding public disclosure of the use of AI and risk management material such as impact assessments, audits, model documentation and validation and testing results.",
+          "source_section": "GOVERN 1.4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 29049,
+          "end_char": 29247
+        },
+        {
+          "quote": "Establish procedures for disclosing residual risks to relevant downstream AI actors .",
+          "source_section": "MANAGE 1.4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 94156,
+          "end_char": 94241
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.99,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Leverage existing industry best practices for transparency and documentation of all possible aspects of measurements. Examples include: data sheet for data sets, model cards",
+          "source_section": "MEASURE 2.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 228756,
+          "end_char": 228929
+        },
+        {
+          "quote": "Document AI model details including model type (e.g., convolutional neural network, reinforcement learning, decision tree, random forest, etc.) data features, training algorithms, proposed uses, decision thresholds, training data, evaluation data, and ethical considerations.",
+          "source_section": "MEASURE 2.9",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 269073,
+          "end_char": 269348
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Independent auditors may bring important independent perspectives for reviewing evidence of AI system safety.",
+          "source_section": "MEASURE 2.6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 253018,
+          "end_char": 253127
+        },
+        {
+          "quote": "Verify that third party AI resources and personnel undergo security audits and screenings. Risk indicators may include failure of third parties to provide relevant security information.",
+          "source_section": "MEASURE 2.7",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 259132,
+          "end_char": 259317
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.94,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Use countermeasures (e.g, authentication, throttling, differential privacy, robust ML approaches) to increase the range of security conditions under which the system is able to return to normal function.",
+          "source_section": "MEASURE 2.7",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 258453,
+          "end_char": 258656
+        },
+        {
+          "quote": "Establish and document protocols (authorization, duration, type) and access controls for training sets or production data containing personally sensitive information, in accordance with privacy and data governance policies.",
+          "source_section": "MEASURE 2.10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 276818,
+          "end_char": 277041
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.76,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "How are outputs marked to clearly show that they came from an AI?",
+          "source_section": "MAP 2.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 163202,
+          "end_char": 163267
+        },
+        {
+          "quote": "Utilize watermarking technologies as a deterrent to data and model extraction attacks.",
+          "source_section": "MEASURE 2.7",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 259320,
+          "end_char": 259406
         }
       ]
     },
     {
       "label": "human_oversight",
-      "confidence": 0.6,
+      "confidence": 0.98,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "It includes suggested actions, references, and related guidance to achieve the outcomes for the four functions in the AI RMF: Govern, Map, Measure, and Manage",
-          "source_section": "Introduction"
+          "quote": "Establish policies and procedures regarding AI actor roles, and responsibilities for human oversight of deployed systems.",
+          "source_section": "GOVERN 3.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 55670,
+          "end_char": 55791
+        },
+        {
+          "quote": "Apply protocols, resources and metrics for decisions to supersede, bypass or deactivate AI systems or AI system components.",
+          "source_section": "MANAGE 2.4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 117767,
+          "end_char": 117890
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Identify and document processes to understand and trace test and training data lineage and its metadata resources for mapping risks.",
+          "source_section": "MAP 2.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 174717,
+          "end_char": 174849
+        },
+        {
+          "quote": "Follow intellectual property and privacy rights related to datasets and their use, including for the subjects represented in the data.",
+          "source_section": "MEASURE 2.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 233397,
+          "end_char": 233531
         }
       ]
     }
@@ -39,11 +302,16 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.95,
+      "confidence": 0.99,
       "evidence": [
         {
-          "quote": "The AI RMF and the Playbook are intended for voluntary use. Organizations may utilize this information by borrowing as many – or as few – suggestions as apply to their industry use case or interests",
-          "source_section": "Introduction"
+          "quote": "The Playbook is neither a checklist nor set of steps to be followed in its entirety. Playbook suggestions are voluntary. Organizations may utilize this information by borrowing as many – or as few – suggestions as apply to their industry use case or interests.",
+          "source_section": "Foreword - About the Playbook",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14930,
+          "end_char": 15190
         }
       ]
     }
@@ -51,6 +319,6 @@
   "enforcement_authorities": [],
   "compliance_deadlines": [],
   "penalties_summary": null,
-  "implementation_notes": "The Playbook is a companion to AI RMF 1.0 (released January 26, 2023) and is explicitly intended for voluntary use. Organizations may adopt as many or as few suggestions as apply to their use case. Content evolves based on public comment.",
-  "confidence": 0.97
+  "implementation_notes": "Full 147-page NIST AI RMF Playbook PDF (initial catalog date 2022-07-08; full living document aligned to AI RMF 1.0 and updated through 2024). Provides voluntary, non-checklist operational guidance across all 72 subcategories of GOVERN (1.1–6.2), MANAGE (1.1–4.3), MAP (1.1–5.2), and MEASURE (1.1–4.3), supplying 'About' narratives, actionable 'Suggested Actions', 'Transparency & Documentation' self-assessment questions, 'AI Transparency Resources' (GAO-21-519SP, IC AI Ethics Framework, WEF, ALTAI, Datasheets), software toolkits, and scholarly/standards references.",
+  "confidence": 0.98
 }

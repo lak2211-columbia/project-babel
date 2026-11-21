@@ -1,28 +1,65 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "consumer_public_safety",
     "innovation_enablement"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.95,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.65,
+    "consumer_public_safety": 0.25,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
     "economic_competitiveness": 0.0,
     "fundamental_rights": 0.75,
     "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.35,
+    "innovation_enablement": 0.2,
+    "consumer_public_safety": 0.05,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document frames AI governance primarily around enabling rights-holders to exercise their legal rights—copyright, data protection, non-discrimination, consumer protection—under Union law. The core justification for the transparency obligation is that parties with legitimate interests need information to assert their rights, not safety or competitiveness concerns.",
+  "rationale_summary": "The document's dominant frame is fundamental_rights because it repeatedly justifies the mandatory GPAI training-content summary template as a mechanism to increase transparency so parties with legitimate interests can exercise rights protected under Union law—explicitly citing fundamental rights protection, copyright and intellectual property rights, data protection, non-discrimination, and freedom of science. Innovation_enablement appears as a secondary frame through recurring emphasis on facilitating simple, consistent compliance, minimising administrative burdens, providing SME proportionality, and balancing transparency against the protection of trade secrets and confidential business information. Fundamental_rights edges out innovation_enablement because compliance facilitation is explicitly subordinated to fulfilling the primary objective of enabling rights exercise, while consumer_public_safety receives only a brief passing mention via consumer protection.",
   "evidence_spans": [
     {
-      "quote": "This increased transparency enables parties with legitimate interests to exercise their rights under Union law. These may refer to copyright, related rights, and other intellectual property rights, as well as other rights protected under Union law, such as data protection, consumer protection, non-discrimination, and freedom of science.",
-      "source_section": "General"
+      "quote": "This public summary is designed to increase transparency about the model’s training data and assist parties with legitimate interests, such as copyright holders, in exercising their rights under Union law.",
+      "source_section": "What is the purpose and scope of the Template?",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 168,
+      "end_char": 373
     },
     {
-      "quote": "The transparency of the training data will help rightsholders in obtaining relevant information on the content used in the training of general-purpose AI models.",
-      "source_section": "Copyright section"
+      "quote": "This increased transparency enables parties with legitimate interests to exercise their rights under Union law. These may refer to copyright, related rights, and other intellectual property rights, as well as other rights protected under Union law, such as data protection, consumer protection, non-discrimination, and freedom of science.",
+      "source_section": "What is the added value of the public summary for promoting trust and fundamental rights protection in the EU?",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 2816,
+      "end_char": 3154
+    },
+    {
+      "quote": "It enables providers to meet their transparency requirements in a simple, consistent, and effective manner, while minimising the administrative burden to only what is necessary to fulfil the objective of the Summary.",
+      "source_section": "How do these guidelines and the template support providers of general-purpose AI models in complying with the AI Act’s obligation?",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1493,
+      "end_char": 1709
+    },
+    {
+      "quote": "The Template seeks to strike a balance between serving the interests of parties with legitimate interests and promoting meaningful transparency of the training content while respecting the rights of all parties concerned, particularly taking into account the need to protect trade secrets and confidential business information.",
+      "source_section": "Will providers have to disclose trade secrets?",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3156,
+      "end_char": 3483
     }
   ]
 }

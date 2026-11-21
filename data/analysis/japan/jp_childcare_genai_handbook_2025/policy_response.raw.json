@@ -1,56 +1,59 @@
 {
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
   "metadata_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_01LGpUpN3TQ6XxmbvHXQbN72",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"issuing_body\":\"こども家庭庁 (Children and Families Agency, Japan)\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"voluntary_commitment\",\"publication_date\":\"2025-03-31\",\"effective_date\":null,\"covered_actors\":[\"自治体 (local governments)\",\"保育施設 (childcare facilities)\",\"子育て関連事業者 (child-rearing related businesses)\",\"関係機関等 (related organizations)\",\"自治体職員 (local government staff)\",\"保育施設職員 (childcare facility staff)\"],\"covered_application_domains\":[\"public_sector_use\",\"education\",\"healthcare\"],\"prohibited_practices\":[],\"enforcement_authorities\":[\"こども家庭庁 (Children and Families Agency)\"],\"compliance_deadlines\":[],\"penalties_summary\":null,\"implementation_notes\":\"Document explicitly states it has no binding or compulsory force ('法的その他いかなる意味においても拘束力・強制力を持つものではない'). It is a practical handbook for generative AI adoption in the child and family services domain, based on pilot project findings as of March 31, 2025. Recommends human oversight of all AI outputs, compliance with personal information protection laws, and staff literacy training. Encourages referencing related ministry guidelines before adoption.\",\"confidence\":0.95}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 13394,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 318,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 25201,
+      "candidatesTokenCount": 352,
+      "totalTokenCount": 27990,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 25201
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 352
+        }
+      ],
+      "thoughtsTokenCount": 2437,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "pjABa7nfMq-z8L0P15D8-Ac"
   },
   "controls_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_01Ga7C8pi9kbGvD3AvZQaMZ9",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"safety_requirements\":[{\"label\":\"human_oversight\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"生成 AI の出力を参考にしつつも最終的な判断と責任は人間が持つという姿勢のもと\",\"source_section\":\"1.2 ハンドブック作成の趣旨・目的\"},{\"quote\":\"重要な判断を要する相談については、生成 AI に全てを任せるのではなく、人の目で回答案の正確性を確認することや、職員が相談者への対応を引き取る等\",\"source_section\":\"3.1.(3)ア\"},{\"quote\":\"生成 AI による誤認識を踏まえた運用計画を確認。生成 AI が 100％の精度で被写体を認識できないことを念頭に、人間による確認を入れたうえで運用することが望ましい\",\"source_section\":\"3.1.(2)イ②\"}]},{\"label\":\"risk_assessment\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"生成 AI の導入検討にあたっては、適切な利活用方法やリスク管理について事前に検討する必要がある\",\"source_section\":\"3.1.(3)\"},{\"quote\":\"個別の課題については以下の課題を十分に認識した上で、必要な対策を講じることが重要である\",\"source_section\":\"3.1.(4)\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"AI チャットボットは誤った情報を提供する可能性があるため、利用者に対して事前にその注意点等を明示することが望ましい\",\"source_section\":\"3.1.(3)ア\"},{\"quote\":\"利用者の入力した情報を生成AIの学習に使用しない旨を利用規約等に明示しているサービスを選定することが重要である\",\"source_section\":\"3.1.(3)ウ\"}]},{\"label\":\"access_controls\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"製品・サービスによっては、事前に利用者が自分のデータを AI の学習に使用されないようにするための設定を行うことができる場合もあるので十分確認されたい\",\"source_section\":\"3.1.(4)イ\"},{\"quote\":\"個人情報や非公開情報等の要機密情報を入力した場合、生成 AI がその情報を学習することによって、外部利用者の質問の回答に使用されるリスクが存在する\",\"source_section\":\"3.1.(3)ウ\"}]},{\"label\":\"model_documentation\",\"confidence\":0.65,\"evidence\":[{\"quote\":\"製品・サービスごとに定められた利用規約やプライバシーポリシーの内容を精査した上で利用することが求められる\",\"source_section\":\"3.1.(4)イ\"}]}],\"enforcement_mechanisms\":[{\"label\":\"soft_enforcement\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"本ハンドブックは法的助言を提供するものではなく、法的その他いかなる意味においても拘束力・強制力を持つものではない\",\"source_section\":\"2.3 ハンドブックの留意事項\"},{\"quote\":\"自治体や関係機関等に対して一律の規制や義務づけを実施するものではなく、各機関の実情に応じた柔軟な解釈及び運用を想定しており\",\"source_section\":\"2.1 ハンドブックの位置づけ\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.4,\"evidence\":[{\"quote\":\"生成 AI の利活用に係る相談先や不適切な使用に係る問合せ先を明確にする等、各自治体の規模や状況に応じた柔軟な対応方法を検討することが重要\",\"source_section\":\"3.1.(4)\"}]}]}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 16805,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 1051,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 25354,
+      "candidatesTokenCount": 1764,
+      "totalTokenCount": 31956,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 25354
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1764
+        }
+      ],
+      "thoughtsTokenCount": 4838,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "xDABa4yjAsGtur8P2MKZ-AU"
   }
 }

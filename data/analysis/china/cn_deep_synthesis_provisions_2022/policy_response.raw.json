@@ -1,27 +1,59 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01SDTohULj1iNMzX9axCexCS",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"jurisdiction\":\"china\",\"issuing_body\":\"国家互联网信息办公室 (Cyberspace Administration of China), 工业和信息化部, 公安部\",\"document_type\":\"legislation\",\"binding_strength\":\"binding_law\",\"publication_date\":\"2022-11-25\",\"effective_date\":\"2023-01-10\",\"covered_application_domains\":[\"general_purpose_models\",\"biometrics\",\"public_sector_use\"],\"safety_requirements\":[{\"label\":\"transparency_disclosure\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"应当在生成或者编辑的信息内容的合理位置、区域进行显著标识，向公众提示深度合成情况\",\"source_section\":\"第十七条\"},{\"quote\":\"应当采取技术措施添加不影响用户使用的标识\",\"source_section\":\"第十六条\"}]},{\"label\":\"risk_assessment\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"应当依法自行或者委托专业机构开展安全评估\",\"source_section\":\"第十五条\"},{\"quote\":\"应当按照国家有关规定开展安全评估\",\"source_section\":\"第二十条\"}]},{\"label\":\"model_documentation\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"定期审核、评估、验证生成合成类算法机制机理\",\"source_section\":\"第十五条\"}]},{\"label\":\"access_controls\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"依法对深度合成服务使用者进行真实身份信息认证，不得向未进行真实身份信息认证的深度合成服务使用者提供信息发布服务\",\"source_section\":\"第九条\"}]},{\"label\":\"incident_reporting\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"发现违法和不良信息的，应当依法采取处置措施，保存有关记录，及时向网信部门和有关主管部门报告\",\"source_section\":\"第十条\"}]},{\"label\":\"registration_licensing\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"应当按照《互联网信息服务算法推荐管理规定》履行备案和变更、注销备案手续\",\"source_section\":\"第十九条\"}]},{\"label\":\"human_oversight\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"采取技术或者人工方式对深度合成服务使用者的输入数据和合成结果进行审核\",\"source_section\":\"第十条\"}]},{\"label\":\"content_provenance\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"任何组织和个人不得采用技术手段删除、篡改、隐匿本规定第十六条和第十七条规定的深度合成标识\",\"source_section\":\"第十八条\"}]}],\"enforcement_mechanisms\":[{\"label\":\"civil_penalty\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"违反本规定的，依照有关法律、行政法规的规定处罚；造成严重后果的，依法从重处罚\",\"source_section\":\"第二十二条\"}]},{\"label\":\"criminal_penalty\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"构成犯罪的，依法追究刑事责任\",\"source_section\":\"第二十二条\"}]},{\"label\":\"regulatory_supervision\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"网信部门和电信主管部门、公安部门依据职责对深度合成服务开展监督检查\",\"source_section\":\"第二十一条\"}]},{\"label\":\"market_access_restriction\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"可以按照职责依法要求深度合成服务提供者和技术支持者采取暂停信息更新、用户账号注册或者其他相关服务等措施\",\"source_section\":\"第二十一条\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"及时向网信部门和有关主管部门报告\",\"source_section\":\"第十条\"}]}],\"implementation_notes\":\"Regulations cover 'deep synthesis' (deepfake/generative AI) services including text, image, audio, video, and virtual scene generation. Key obligations include mandatory watermarking/labeling of synthetic content, real-name authentication of users, security assessment for biometric editing tools, and registration for services with public opinion influence. Enforcement references existing cybersecurity and public security laws for specific penalty amounts.\",\"confidence\":0.93}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 6988,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "metadata_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 8866,
+      "candidatesTokenCount": 664,
+      "totalTokenCount": 11375,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 8866
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 664
+        }
+      ],
+      "thoughtsTokenCount": 1845,
+      "serviceTier": "standard"
     },
-    "output_tokens": 1141,
-    "service_tier": "standard",
-    "inference_geo": "global"
+    "modelVersion": "gemini-4-neon",
+    "responseId": "CC0Ba_OnDuiVkPIPzsrd4QQ"
+  },
+  "controls_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 9019,
+      "candidatesTokenCount": 3645,
+      "totalTokenCount": 18517,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 9019
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 3645
+        }
+      ],
+      "thoughtsTokenCount": 5853,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "HS0Ba_GfN_bAodAPu7mKwQU"
   }
 }

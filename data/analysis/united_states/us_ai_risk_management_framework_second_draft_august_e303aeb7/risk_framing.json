@@ -1,37 +1,84 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "fundamental_rights",
-    "innovation_enablement",
-    "social_stability"
+    "consumer_public_safety",
+    "fundamental_rights"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.1,
-    "economic_competitiveness": 0.1,
-    "fundamental_rights": 0.55,
-    "social_stability": 0.4,
-    "innovation_enablement": 0.4,
-    "consumer_public_safety": 0.7,
-    "labor_transition": 0.05
+    "existential_catastrophic": 0.25,
+    "national_security": 0.25,
+    "economic_competitiveness": 0.35,
+    "fundamental_rights": 0.88,
+    "social_stability": 0.2,
+    "innovation_enablement": 0.94,
+    "consumer_public_safety": 0.9,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance as a risk management problem centered on protecting individuals, groups, and communities from harms—safety, bias, privacy, and unintended consequences—making consumer/public safety the dominant frame. Rights and civil liberties appear prominently as secondary concerns, while innovation enablement and social stability are also present but subordinate.",
+  "frame_share": {
+    "existential_catastrophic": 0.02,
+    "national_security": 0.02,
+    "economic_competitiveness": 0.04,
+    "fundamental_rights": 0.26,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.36,
+    "consumer_public_safety": 0.3,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The AI RMF Second Draft is dominantly framed around innovation_enablement, explicitly elevating 'pro-innovation' alongside risk-based, resource-efficient, voluntary, and non-prescriptive attributes to cultivate trust and realize AI's full potential without rigid compliance checklists. Innovation_enablement narrowly leads consumer_public_safety, which is a strong runner-up centered on preventing physical, psychological, property, and operational harms across the lifecycle (including safely ceasing deployment when severe harms occur). Fundamental_rights is a substantial third frame grounded in preserving civil liberties and rights, safeguarding human autonomy and dignity through privacy, and curbing algorithmic bias and discrimination, with minor mentions of catastrophic risks and economic/national security context.",
   "evidence_spans": [
     {
-      "quote": "Cultivating trust by understanding and managing the risks of AI systems will help preserve civil liberties and rights, and enhance safety while creating opportunities for innovation",
-      "source_section": "Page 7"
+      "quote": "Cultivating trust by understanding and managing the risks of AI systems will help preserve civil liberties and rights, and enhance safety while creating opportunities for innovation and realizing the full potential of this technology.",
+      "source_section": "Part 1: Motivation - 1.2 Purpose of the AI RMF",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 11759,
+      "end_char": 11993
     },
     {
-      "quote": "AI risk management is about offering a path to minimize potential negative impacts of AI systems, such as threats to civil liberties and rights",
-      "source_section": "Page 12"
+      "quote": "1. Be risk-based, resource-efficient, pro-innovation, and voluntary.",
+      "source_section": "Part 1: Motivation - Attributes of the AI RMF",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 16634,
+      "end_char": 16702
     },
     {
-      "quote": "Negative impact or harm can be experienced by individuals, groups, communities, organizations, society, the environment, and the planet.",
-      "source_section": "Page 12"
+      "quote": "AI systems “should not, under defined conditions, cause physical or psychological harm or lead to a state in which human life, health, property, or the environment is endangered” (Source: ISO/IEC TS 5723:2022).",
+      "source_section": "Part 1: Motivation - 4.2 Safe",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 38693,
+      "end_char": 38903
     },
     {
-      "quote": "Trustworthy AI is valid and reliable, safe, fair and bias is managed, secure and resilient, accountable and transparent, explainable and interpretable, and privacy-enhanced.",
-      "source_section": "Page 6"
+      "quote": "AI risk management is about offering a path to minimize potential negative impacts of AI systems, such as threats to civil liberties and rights, as well as pointing to opportunities to maximize positive impacts.",
+      "source_section": "Part 1: Motivation - 3 Framing Risk",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 22552,
+      "end_char": 22763
+    },
+    {
+      "quote": "Privacy refers generally to the norms and practices that help to safeguard human autonomy, identity, and dignity.",
+      "source_section": "Part 1: Motivation - 4.7 Privacy-Enhanced",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 45495,
+      "end_char": 45608
+    },
+    {
+      "quote": "In some cases where an AI system presents the highest risk – where negative impacts are imminent, severe harms are actually occurring, or catastrophic risks are present – development\nand deployment should cease in a safe manner until risks can be sufficiently mitigated.",
+      "source_section": "Part 1: Motivation - 3.2.2 Risk Tolerance",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 28873,
+      "end_char": 29143
     }
   ]
 }

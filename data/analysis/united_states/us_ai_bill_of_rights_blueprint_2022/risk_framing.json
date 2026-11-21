@@ -2,39 +2,84 @@
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
     "consumer_public_safety",
-    "social_stability"
+    "labor_transition",
+    "innovation_enablement"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.03,
-    "economic_competitiveness": 0.04,
-    "fundamental_rights": 0.82,
-    "social_stability": 0.25,
-    "innovation_enablement": 0.08,
-    "consumer_public_safety": 0.35,
-    "labor_transition": 0.05
+    "existential_catastrophic": 0.0,
+    "national_security": 0.3,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.99,
+    "social_stability": 0.45,
+    "innovation_enablement": 0.65,
+    "consumer_public_safety": 0.88,
+    "labor_transition": 0.68
   },
-  "rationale_summary": "The document is centrally framed around protecting civil rights, civil liberties, privacy, and equal opportunity for the American public. Its five principles—safe and effective systems, algorithmic discrimination protections, data privacy, notice and explanation, and human alternatives—are all articulated as rights-based protections. The foreword explicitly invokes civil rights, democratic values, privacy as a foundational right, and equity. Secondary consumer/public safety framing appears in the emphasis on harm prevention and safe system design, while social stability concerns emerge around surveillance chilling effects on democratic participation.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.02,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.56,
+    "social_stability": 0.04,
+    "innovation_enablement": 0.08,
+    "consumer_public_safety": 0.22,
+    "labor_transition": 0.08
+  },
+  "rationale_summary": "The Blueprint for an AI Bill of Rights is overwhelmingly framed around fundamental_rights: its stated purpose is to protect civil rights, civil liberties, personal-data privacy, non-discrimination, equity for underserved communities, human dignity, and democratic values against harms from automated systems. Fundamental_rights decisively leads consumer_public_safety, which serves as the main secondary frame via protections against unsafe clinical tools, stalking devices, non-consensual intimate imagery, and defective automated systems. Labor_transition (workplace surveillance chilling union organizing, automated firing without recourse, algorithmic quotas/bonuses) and innovation_enablement ('clear rules of the road that allow new ideas to flourish') appear as distinct supporting frames, alongside minor social_stability (trust and democratic process) and national_security (disclaimer carve-out) mentions.",
   "evidence_spans": [
     {
       "quote": "Among the great challenges posed to democracy today is the use of technology, data, and automated systems in ways that threaten the rights of the American public.",
-      "source_section": "Foreword"
+      "source_section": "Foreword",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5404,
+      "end_char": 5566
     },
     {
-      "quote": "This important progress must not come at the price of civil rights or democratic values, foundational American principles that President Biden has affirmed as a cornerstone of his Administration.",
-      "source_section": "Foreword"
+      "quote": "It is intended to support the development of policies and practices that protect civil rights and promote democratic values in the building, deployment, and governance of automated systems.",
+      "source_section": "Legal Disclaimer",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 1695,
+      "end_char": 1884
     },
     {
-      "quote": "these principles are a blueprint for building and deploying automated systems that are aligned with democratic values and protect civil rights, civil liberties, and privacy",
-      "source_section": "About this Framework"
+      "quote": "In America and around the world, systems supposed to help with patient care have proven unsafe, ineffective, or biased.",
+      "source_section": "Foreword",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 5720,
+      "end_char": 5839
     },
     {
-      "quote": "You should not face discrimination by algorithms and systems should be used and designed in an equitable way.",
-      "source_section": "Algorithmic Discrimination Protections"
+      "quote": "Automated systems should not be designed with an intent or reasonably foreseeable possibility of endangering your safety or the safety of your community.",
+      "source_section": "Safe and Effective Systems",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 38396,
+      "end_char": 38549
     },
     {
-      "quote": "Civil liberties and civil rights must not be limited by the threat of surveillance or harassment facilitated or aided by an automated system.",
-      "source_section": "Data Privacy"
+      "quote": "A large corporation automated performance evaluation and other HR functions, leading to workers being fired by an automated system without the possibility of human review, appeal or other form of recourse.104",
+      "source_section": "Human Alternatives, Consideration, and Fallback - Why This Principle Is Important",
+      "quote_en": null,
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 142150,
+      "end_char": 142358
+    },
+    {
+      "quote": "Innovators deserve clear rules of the road that allow new ideas to flourish, and the American public deserves protections from unsafe outcomes.",
+      "source_section": "Safe and Effective Systems - Why This Principle Is Important",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 40943,
+      "end_char": 41086
     }
   ]
 }

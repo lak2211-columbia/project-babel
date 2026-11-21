@@ -5,13 +5,15 @@
   "publication_date": "2024-07-12",
   "effective_date": "2024-08-01",
   "covered_actors": [
-    "providers",
-    "deployers",
-    "importers",
-    "distributors",
-    "product manufacturers",
-    "authorised representatives",
-    "operators"
+    "Providers of AI systems and general-purpose AI models (established in the EU or in third countries placing them on the EU market, putting them into service, or whose outputs are used in the EU)",
+    "Deployers of AI systems (established or located in the EU, or in third countries where outputs are used in the EU, including public authorities)",
+    "Importers of AI systems",
+    "Distributors of AI systems",
+    "Product manufacturers placing on the market or putting into service an AI system together with their product under their own name or trademark",
+    "Authorised representatives of third-country providers",
+    "Union institutions, bodies, offices and agencies acting as providers or deployers",
+    "Notified bodies and conformity assessment bodies",
+    "Affected persons located in the Union"
   ],
   "covered_application_domains": [
     "general_purpose_models",
@@ -22,32 +24,42 @@
     "education",
     "healthcare",
     "finance",
-    "law_enforcement",
-    "defense"
+    "law_enforcement"
   ],
   "prohibited_practices": [
-    "subliminal manipulation techniques causing harm",
-    "exploitation of vulnerabilities of specific groups",
-    "social scoring by public authorities",
-    "real-time remote biometric identification in public spaces for law enforcement (with limited exceptions)",
-    "AI-based individual criminal risk assessment",
-    "untargeted scraping of facial images for recognition databases",
-    "emotion recognition in workplace and education",
-    "biometric categorisation inferring sensitive attributes"
+    "AI systems deploying subliminal, purposefully manipulative, or deceptive techniques to materially distort behaviour and cause or reasonably be likely to cause significant harm (Article 5(1)(a))",
+    "AI systems exploiting vulnerabilities due to age, disability, or specific social or economic situation to materially distort behaviour causing or reasonably likely to cause significant harm (Article 5(1)(b))",
+    "Social scoring of natural persons or groups over time leading to detrimental or unfavourable treatment in unrelated contexts or unjustified/disproportionate treatment (Article 5(1)(c))",
+    "Individual criminal offence risk assessment or prediction based solely on profiling or assessing personality traits and characteristics (Article 5(1)(d))",
+    "Creating or expanding facial recognition databases through untargeted scraping of facial images from the internet or CCTV footage (Article 5(1)(e))",
+    "Inferring emotions of natural persons in workplace and education institutions, except for medical or safety reasons (Article 5(1)(f))",
+    "Biometric categorisation systems deducing or inferring race, political opinions, trade union membership, religious or philosophical beliefs, sex life, or sexual orientation (Article 5(1)(g))",
+    "Real-time remote biometric identification systems in publicly accessible spaces for law enforcement purposes, except in exhaustively listed strictly necessary situations with prior judicial or binding independent administrative authorisation (Article 5(1)(h))"
   ],
   "enforcement_authorities": [
-    "national market surveillance authorities",
-    "European AI Office",
+    "European Commission (including the European Artificial Intelligence Office / AI Office)",
     "European Artificial Intelligence Board",
-    "national competent authorities designated by Member States"
+    "National competent authorities (notifying authorities and market surveillance authorities designated by Member States)",
+    "European Data Protection Supervisor (for Union institutions, bodies, offices and agencies)",
+    "National data protection supervisory authorities",
+    "National public authorities or bodies protecting fundamental rights",
+    "National financial supervisory authorities (for regulated financial institutions)",
+    "Sectoral market surveillance authorities under Annex I Union harmonisation legislation",
+    "Court of Justice of the European Union (judicial review of Commission fines)"
   ],
   "compliance_deadlines": [
-    "Prohibited practices: 6 months after entry into force (approx. February 2025)",
-    "GPAI model obligations: 12 months after entry into force (approx. August 2025)",
-    "High-risk AI systems (Annex I): 24 months after entry into force (approx. August 2026)",
-    "High-risk AI systems (Annex I, certain sectors): 36 months after entry into force (approx. August 2027)"
+    "2024-08-01: Entry into force (twentieth day following publication in the Official Journal on 12 July 2024, Article 113)",
+    "2024-11-02: Member States to identify and publish list of national fundamental rights authorities or bodies (Article 77(2))",
+    "2025-02-02: Application of Chapters I and II, including AI literacy and prohibited AI practices (Article 113(a))",
+    "2025-05-02: Codes of practice for general-purpose AI models to be ready (Article 56(9))",
+    "2025-08-02: Application of Chapter III Section 4 (notifying authorities and notified bodies), Chapter V (general-purpose AI models), Chapter VII (governance), Chapter XII (penalties except Article 101), and Article 78 (confidentiality); Member States to publish competent authority contacts and report on resources (Articles 70(2), 70(6), 113(b))",
+    "2026-02-02: Commission guidelines on high-risk AI classification (Article 6(5)) and implementing act on post-market monitoring plan template (Article 72(3))",
+    "2026-08-02: General date of application of the Regulation and deadline for Member States to have at least one operational national AI regulatory sandbox (Articles 57(1), 113)",
+    "2027-08-02: Application of Article 6(1) for high-risk AI systems embedded in Annex I products (Article 113(c)) and compliance deadline for general-purpose AI models placed on the market before 2 August 2025 (Article 111(3))",
+    "2030-08-02: Compliance deadline for pre-existing high-risk AI systems intended to be used by public authorities (Article 111(2))",
+    "2030-12-31: Compliance deadline for AI systems that are components of Annex X large-scale IT systems placed on the market or put into service before 2 August 2027 (Article 111(1))"
   ],
-  "penalties_summary": "Up to €35 million or 7% of global annual turnover for violations of prohibited practices; up to €15 million or 3% for other violations; up to €7.5 million or 1.5% for supplying incorrect information. SME/startup penalties scaled proportionately.",
-  "implementation_notes": "Regulation entered into force 20 days after publication (1 August 2024) with phased applicability. Complements existing EU law on data protection, product safety, consumer protection, and employment. Does not affect GDPR or Directive 2016/680 obligations. European AI Office established within Commission to oversee GPAI models. Member States must designate national competent authorities.",
-  "confidence": 0.95
+  "penalties_summary": "Administrative fines up to EUR 35,000,000 or 7% of total worldwide annual turnover (whichever is higher) for prohibited AI practices under Article 5; up to EUR 15,000,000 or 3% of total worldwide annual turnover for infringements of operator, notified body, transparency, or general-purpose AI model obligations (Articles 99(4), 101(1)); and up to EUR 7,500,000 or 1% of total worldwide annual turnover for supplying incorrect, incomplete, or misleading information (Article 99(5)). For SMEs and start-ups, the lower of the fixed amount or percentage cap applies (Article 99(6)). The EDPS may impose fines on Union institutions, bodies, offices, and agencies up to EUR 1,500,000 for Article 5 infringements and up to EUR 750,000 for other infringements (Article 100). Enforcement measures also include warnings, corrective action orders, market access restrictions, withdrawal, and recall.",
+  "implementation_notes": "Adopted on 13 June 2024 and published in the Official Journal on 12 July 2024; directly applicable in all Member States with staged application from February 2025 through August 2027 (and transitional periods to 2030). Explicitly excludes AI systems exclusively for military, defence, or national security purposes, pure scientific R&D, pre-market research/testing (other than real-world testing), purely personal non-professional use, and free/open-source AI systems unless high-risk, prohibited, or subject to Article 50 transparency rules (with open-weight GPAI models still subject to copyright policy, training-data summary, and systemic-risk rules where applicable). Establishes a multi-tier governance framework comprising the Commission AI Office, European AI Board, Scientific Panel of Independent Experts, Advisory Forum, national market surveillance and notifying authorities, and the EDPS.",
+  "confidence": 0.98
 }

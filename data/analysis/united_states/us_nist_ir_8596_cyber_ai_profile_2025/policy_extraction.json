@@ -1,0 +1,305 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "National Institute of Standards and Technology (NIST)",
+  "document_type": "standards_guideline",
+  "binding_strength": "standards_guideline",
+  "publication_date": "2025-12-16",
+  "effective_date": null,
+  "covered_actors": [
+    "Organizations using standalone or integrated AI technologies (builders and acquirers across all sectors)",
+    "Cybersecurity programs, CISOs, cybersecurity practitioners, and AI developers",
+    "Federal agencies (non-national-security federal information systems)",
+    "Third-party AI suppliers, external service providers, and value-chain partners",
+    "Organizational leadership and human-in-the-loop (HITL) security analysts"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "public_sector_use",
+    "finance"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.98,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Integrate AI-specific risks into the organization's formal risk appetite and tolerance statements. Update risk appetite and tolerance on a regular basis as the nature of AI systems evolve.",
+          "source_section": "2.3. Cyber AI Profile: GOVERN (GV.RM-02)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 61777,
+          "end_char": 61965
+        },
+        {
+          "quote": "Establish and communicate specific strategic risk response options (e.g. mitigations, avoidance) tailored for unique AI-related risks, such as prompt injection, model inversion, and data poisoning.",
+          "source_section": "2.3. Cyber AI Profile: GOVERN (GV.RM-04)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 64953,
+          "end_char": 65150
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.94,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Continuously evaluate AI cybersecurity defense capabilities to ensure they are sufficiently mature to use for their intended purpose before deployment.8",
+          "source_section": "2.4. Cyber AI Profile: IDENTIFY (ID.RA-05)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 122340,
+          "end_char": 122492
+        },
+        {
+          "quote": "practices by implementing prompt tests, adversarial tests, and evaluation gates; block deployment if safety or quality drops during performance monitoring.",
+          "source_section": "2.5. Cyber AI Profile: PROTECT (PR.PS-06)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 170507,
+          "end_char": 170662
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Feed adversarial ML research and AI red-team reports into detection pipelines to enhance detection capabilities and support response and recovery efforts.",
+          "source_section": "2.6. Cyber AI Profile: DETECT (DE.AE-07)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 195655,
+          "end_char": 195809
+        },
+        {
+          "quote": "Before adopting a third-party AI solution, conduct AI-specific due diligence and adversarial testing to assess model vulnerabilities, ethical alignment, and performance impact.",
+          "source_section": "2.3. Cyber AI Profile: GOVERN (GV.SC-06)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 94256,
+          "end_char": 94432
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Notification processes are established for AI-related incidents (e.g., adversarial attacks, unexpected model failures) to rapidly inform internal teams and external suppliers of incidents, such as compromised models or data.",
+          "source_section": "2.7. Cyber AI Profile: RESPOND (RS.CO-02)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 210614,
+          "end_char": 210838
+        },
+        {
+          "quote": "Establish protocols for sharing AI-specific threat intelligence and incident metrics (e.g., adversarial inputs)",
+          "source_section": "2.7. Cyber AI Profile: RESPOND (RS.CO-03)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 212696,
+          "end_char": 212807
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Communicating the intended use and known limitations of AI is critical to effective usage. Understanding how it makes decisions, when it makes mistakes, and what to do when it makes mistakes are communicated to users.",
+          "source_section": "2.3. Cyber AI Profile: GOVERN (GV.OC-04)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 56924,
+          "end_char": 57141
+        },
+        {
+          "quote": "Require vendors to disclose both model and data scope, as well as incident support for AI tools.",
+          "source_section": "2.3. Cyber AI Profile: GOVERN (GV.SC-05)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 92760,
+          "end_char": 92856
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "General Considerations: Use of AI Software Bill of Materials (AI SBOM) to enhance transparency and accountability in AI components.",
+          "source_section": "2.3. Cyber AI Profile: GOVERN (GV.SC-02)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 87426,
+          "end_char": 87557
+        },
+        {
+          "quote": "Organizations should use version control processes to record any change to the hardware, software, configuration values, or training data. Review and log changes to the model, training data, and the model configuration settings (e.g., hyperparameters) for cybersecurity defenses that use AI.",
+          "source_section": "2.4. Cyber AI Profile: IDENTIFY (ID.RA-07)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 125209,
+          "end_char": 125500
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.99,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Minimize the use of sensitive data in AI prompts and features and implement the use of runtime redaction and guardrails. Prevent data leakage by implementing output filtering, pattern detection, and access control.",
+          "source_section": "2.5. Cyber AI Profile: PROTECT (PR.DS-10)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 159782,
+          "end_char": 159996
+        },
+        {
+          "quote": "AI systems may need their own identities and credentials (i.e., AI service level accounts) to interact with a broader system. Organizations need traceability between AI systems and their actions.",
+          "source_section": "2.5. Cyber AI Profile: PROTECT (PR.AA-01)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 140126,
+          "end_char": 140321
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "General Considerations: A human is assigned responsibility for the actions of an AI system.",
+          "source_section": "2.3. Cyber AI Profile: GOVERN (GV.RR-02)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 71977,
+          "end_char": 72068
+        },
+        {
+          "quote": "Gate AI-initiated network changes and privilege use by implementing human approval or policy-based checks.",
+          "source_section": "2.5. Cyber AI Profile: PROTECT (PR.IR-01)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 171934,
+          "end_char": 172040
+        }
+      ]
+    },
+    {
+      "label": "agentic_autonomy_controls",
+      "confidence": 0.98,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "General Considerations: LLMs or AI Agents may have access to data sources or tools that a user typically would not have. Bind agent and service identities to their credentials using cryptographic signing and mutual authentication.",
+          "source_section": "2.5. Cyber AI Profile: PROTECT (PR.AA-02)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 142086,
+          "end_char": 142316
+        },
+        {
+          "quote": "Apply the principle of least privilege to AI agents by granting only the permissions necessary to carry out their role.",
+          "source_section": "2.5. Cyber AI Profile: PROTECT (PR.AA-05)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 146401,
+          "end_char": 146520
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "The integrity of training and input data (part of the data supply chain) should be verified to detect and prevent data poisoning and tempering.",
+          "source_section": "2.3. Cyber AI Profile: GOVERN (GV.SC-01)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 85895,
+          "end_char": 86038
+        },
+        {
+          "quote": "Maintain provenance of AI datasets. Modified data could indicate data poisoning has occurred. Training data originates outside the organization can introduce additional uncertainties.",
+          "source_section": "2.4. Cyber AI Profile: IDENTIFY (ID.AM-07)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 110096,
+          "end_char": 110279
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "The National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) 2.0 212 provides voluntary guidance to help organizations manage, reduce, and communicate 213 cybersecurity risks.",
+          "source_section": "1. Introduction",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17278,
+          "end_char": 17480
+        },
+        {
+          "quote": "While the Cyber AI Profile provides insights to help organizations make decisions, it is up to 929 each organization to determine its priorities and how to achieve the outcomes in the CSF Core.",
+          "source_section": "Appendix D. How to Use the Cyber AI Profile",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 244928,
+          "end_char": 245121
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Initial Preliminary Draft of NIST IR 8596 (Cybersecurity Framework Profile for Artificial Intelligence / Cyber AI Profile), published December 16, 2025 for public comment through January 30, 2026 (quarantined as draft_consultation until final publication). Maps all 106 NIST CSF 2.0 Subcategories across GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER into three Focus Areas: Securing AI System Components (Secure), Conducting AI-Enabled Cyber Defense (Defend), and Thwarting AI-Enabled Cyber Attacks (Thwart), with Priority 1–3 ratings and detailed controls for agentic AI identity, least-privilege scoping, code-execution sandboxing, and autonomy kill-switches. Complements the NIST AI RMF and forthcoming SP 800-53 Control Overlays for Securing AI Systems (COSAiS).",
+  "confidence": 0.97
+}

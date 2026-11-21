@@ -1,62 +1,95 @@
 {
   "jurisdiction": "japan",
-  "issuing_body": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries of Japan)",
+  "issuing_body": "Ministry of Agriculture, Forestry and Fisheries (農林水産省)",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2020-03",
   "effective_date": null,
   "covered_actors": [
-    "農業関係者等 (agricultural stakeholders)",
-    "ＡＩ研究開発委託者 (AI R&D commissioners)",
-    "ＡＩ研究開発者 (AI developers/vendors)",
-    "農業普及指導員等 (agricultural extension officers)",
-    "第三者 (third parties)"
+    "Farmers and agricultural organizations (農業関係者)",
+    "Agricultural extension advisors (農業普及指導員)",
+    "Educational institutions (教育機関)",
+    "National and local governments, national R&D agencies, and independent administrative agencies (国、地方公共団体、研究開発法人、独立行政法人)",
+    "AI R&D commissioners and commissioned R&D entities/research institutions (ＡＩ研究開発委託者・ＡＩ研究開発者)",
+    "Agricultural AI product and service providers (製品・サービス提供者)",
+    "Third parties receiving agricultural AI data, models, or intellectual property (第三者)",
+    "Legal practitioners (法律の実務家)"
   ],
-  "covered_application_domains": [
-    "general_purpose_models",
-    "public_sector_use"
-  ],
+  "covered_application_domains": [],
   "prohibited_practices": [],
   "safety_requirements": [
     {
+      "label": "training_data_governance",
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "データ受領者は、データ提供者の書面による事前の承諾のない限り、本目的以外の目的で提供データ等を加工等その他の利用をしてはならず、提供データのほか、 派生データ等、本件成果物を第三者（データ受領者が法人である場合、その子会社、関連会社も第三者に含まれる。）に開示、提供、漏えいしてはならない。",
+          "source_section": "第３条（提供データ等の利用許諾）",
+          "quote_en": "Without the prior written consent of the data provider, the data recipient shall not process or otherwise use the provided data, etc. for any purpose other than the intended purpose, and shall not disclose, provide, or leak the provided data, derived data, etc., or the deliverables to any third party (including subsidiaries and affiliates if the data recipient is a corporation).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 63331,
+          "end_char": 63476
+        },
+        {
+          "quote": "１ 本ＡＩ研究開発委託者は、本研究開発の遂行に際して、個人情報の保護に関する法律および独立行政法人等の保有する個人情報の保護に関する法律（本条において、 以下「法」という。）に定める個人情報または匿名加工情報（以下、総称して「個人情報等」という。）を含んだデータを本ＡＩ研究開発者に提供する場合には、事前にその旨を明示する。",
+          "source_section": "第９条（再委託）",
+          "quote_en": "1. When providing data containing personal information or anonymized information (collectively 'Personal Information, etc.') as defined under the Act on the Protection of Personal Information and the Act on the Protection of Personal Information Held by Incorporated Administrative Agencies, etc. to the AI R&D Developer in carrying out this R&D, the AI R&D Commissioner shall explicitly indicate this in advance.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 86204,
+          "end_char": 86366
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "１ データ受領者は、提供データ等および派生データ、本件成果物を他の情報または\nデータと明確に区別し、我が国において一般にデータ保管のために用いられるシ\nステムで通常利用されるのと同種同等（かつ、別紙により営業秘密として定めて\nいるものについては、営業秘密としての保護のための要件を満たす水準の）セキ\nュリティおよびバックアップ体制を備えるなど、善良な管理者の注意をもって管\n理・保管しなければならない。",
+          "source_section": "第8 条（提供データ等の管理）",
+          "quote_en": "1. The data recipient shall clearly distinguish the provided data, derived data, and deliverables from other information or data, and manage and store them with the duty of care of a good manager, including maintaining security and backup systems equivalent to those normally used in data storage systems in Japan (and at a level meeting trade secret protection requirements for items designated as trade secrets in the attachment).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 65505,
+          "end_char": 65706
+        },
+        {
+          "quote": "１ データ提供者およびデータ受領者は、相手方から受領するデータ、情報（ノウハウ\n含む）（以下「相手方受領データ等」という。）を他の情報またはデータと明確\nに区別し、自己のものを管理するのと同一の注意義務をもって管理・保管しなけ\nればならない。なお相手方受領データ等のうち、別紙により営業秘密として定め\nているものについては、営業秘密としての保護のための要件を満たす水準の管理\nを行う。",
+          "source_section": "第11 条（相手方受領データ等の管理）",
+          "quote_en": "1. The data provider and data recipient shall clearly distinguish data and information (including know-how) received from the other party from other information or data and manage and store them with the same duty of care as their own. For items designated as trade secrets in the attachment, management shall meet the level required for trade secret protection.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 73799,
+          "end_char": 73991
+        }
+      ]
+    },
+    {
       "label": "transparency_disclosure",
-      "confidence": 0.6,
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "農業関係者等への配慮したデータ・ノウハウ等の取扱い",
-          "source_section": "Page 2"
+          "quote": "なお、第三者提供に関しては、農業関係者等の合意をより適切に取得するために\nは、例えば提供時に、\n・第三者提供を行う旨の告知を行う\n・第三者提供時の提供先の報告・通知等\n・オプトアウトの設定をする\n・事後の同意の撤回\nなどの対応が想定される。",
+          "source_section": "第２８条（仲裁）",
+          "quote_en": "Regarding third-party provision, in order to more appropriately obtain the consent of agricultural stakeholders, etc., measures such as notifying at the time of provision that third-party provision will take place, reporting/notifying the recipient upon third-party provision, establishing an opt-out mechanism, and allowing subsequent withdrawal of consent are envisaged.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 115420,
+          "end_char": 115540
         },
         {
-          "quote": "個人情報等の対応",
-          "source_section": "Page 2"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.55,
-      "evidence": [
-        {
-          "quote": "ＡＩの研究開発プロセスとその特徴",
-          "source_section": "Page 2"
-        },
-        {
-          "quote": "教師データの作成のプロセス",
-          "source_section": "Page 3"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.5,
-      "evidence": [
-        {
-          "quote": "人間中心のＡＩ社会原則と本ガイドライン",
-          "source_section": "Page 3"
-        },
-        {
-          "quote": "人間中心のＡＩ社会原則の概要",
-          "source_section": "Page 6"
+          "quote": "２ 本ＡＩ研究開発者は、本件成果物について完成義務を負わず、本件成果物等が本Ａ Ｉ研究開発委託者の業務課題の解決、業績の改善・向上その他の成果や特定の結果等を保証しない。ただし本ＡＩ研究開発委託者における業務課題解決等、本契約の目的が達せられない場合には、本ＡＩ研究開発委託者からの求めに応じて、本ＡＩ研究開発者は、合理的な範囲での説明を行うこととする。",
+          "source_section": "第７条（本ＡＩ研究開発者の義務）",
+          "quote_en": "2. The AI R&D Developer is not obligated to complete the deliverables and does not warrant that the deliverables will solve business issues, improve performance, or achieve specific results. However, if the purpose of this contract such as solving the commissioning party's business issues is not achieved, the AI R&D Developer shall provide an explanation within a reasonable scope upon request.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 83093,
+          "end_char": 83270
         }
       ]
     }
@@ -64,34 +97,56 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.85,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "農業分野におけるＡＩ・データに関する契約ガイドライン",
-          "source_section": "Page 1"
+          "quote": "農業関係者等の保護を適切に行う形の取決めのあり方を示すことで、農業関係者等\nが安心してデータやノウハウを提供することができる環境を整備するため、本ガイド\nライン（ノウハウ活用編）では、\n・農業関係者等が関わる農業分野におけるＡＩを利用した製品・サービスの利用にお\nける取決め\n・農業関係者等が提供したＡＩに関する成果の第三者提供に係る取決め\n・農業分野の特殊性を踏まえたＡＩの研究開発における取決め\nなどにおける留意点、考慮要素、具体的に利活用される契約のためのツールなどを提\n供することを目的とする。",
+          "source_section": "Preamble",
+          "quote_en": "To create an environment where agricultural stakeholders can provide data and know-how with peace of mind by showing contractual arrangements that appropriately protect them, this Guideline (Know-How Utilization Edition) aims to provide points to note, factors for consideration, and practical contracting tools for AI service usage, third-party provision of AI deliverables, and AI R&D reflecting the specificities of agriculture.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 16891,
+          "end_char": 17142
         },
         {
-          "quote": "モデル契約書のポイントの提示方針",
-          "source_section": "Page 2"
+          "quote": "本ガイドライン（ノウハウ活用編）は、このようなＡＩの研究開発や利用を行う当事者における契約を円滑に行える機能も果たすことを想定する。",
+          "source_section": "Preamble",
+          "quote_en": "This Guideline (Know-How Utilization Edition) is also intended to function to facilitate smooth contracting among parties conducting AI R&D and utilization.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 28913,
+          "end_char": 28979
         }
       ]
     },
     {
-      "label": "none_specified",
-      "confidence": 0.8,
+      "label": "procurement_condition",
+      "confidence": 0.7,
       "evidence": [
         {
-          "quote": "契約ガイドライン－ノウハウ活用編－",
-          "source_section": "Page 1"
+          "quote": "国や地方公共団体がＡＩの研究開発委託者となる場合、公的資金を投入してＡＩの\n研究開発を行うことから、資金投入の施策目的に応じた制限が生じうる。",
+          "source_section": "Preamble",
+          "quote_en": "When the national or local government acts as the AI R&D commissioning party, restrictions corresponding to the policy objectives of the funding may be imposed because public funds are invested in the AI R&D.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 44479,
+          "end_char": 44550
+        },
+        {
+          "quote": "国や地方公共団体の資金により研究開発される場合、民間事業者間での契約とは異\nなり、一定の様式に基づいて契約を行うこと等が求められる。",
+          "source_section": "Preamble",
+          "quote_en": "When R&D is conducted using funds from the national or local government, unlike contracts between private businesses, contracting based on prescribed formats and procedures is required.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 45114,
+          "end_char": 45180
         }
       ]
     }
   ],
-  "enforcement_authorities": [
-    "農林水産省 (Ministry of Agriculture, Forestry and Fisheries)"
-  ],
+  "enforcement_authorities": [],
   "compliance_deadlines": [],
   "penalties_summary": null,
-  "implementation_notes": "This is a contractual guideline (契約ガイドライン) for AI and data use in the agricultural sector, focused on know-how protection and data utilization. It provides model contracts and term sheets for data/know-how provision, AI R&D commissioning, and third-party data sharing. It is non-binding guidance referencing METI AI contract guidelines. No penalties or mandatory compliance dates are specified.",
+  "implementation_notes": "Non-binding ministerial contract guideline ('Know-how Utilization Edition') issued by MAFF in March 2020 for the agricultural sector (smart agriculture), building on METI's AI/Data Contract Guidelines (June 2018) and MAFF's Agricultural Data Contract Guidelines (December 2018). It provides model contract clauses, checklists, and term sheet templates covering R&D data/know-how provision, commissioned AI R&D (including publicly funded projects and Japanese Bayh-Dole Act considerations), AI product/service utilization, and third-party data/model transfers. It explicitly excludes statutory AI regulations outside contractual relationships and relies on private contract law, trade secret/limited provided data protections under the Unfair Competition Prevention Act, and personal data protections under Japan's APPI.",
   "confidence": 0.88
 }

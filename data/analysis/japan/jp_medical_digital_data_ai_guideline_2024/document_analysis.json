@@ -4,155 +4,420 @@
   "language": "ja",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "Ministry of Health, Labour and Welfare (厚生労働省) / Guidelines Drafting Group for AI R&D Utilization of Digital Data",
-    "document_type": "regulatory_guidance",
-    "binding_strength": "regulatory_guidance",
+    "issuing_body": "Ministry of Health, Labour and Welfare (MHLW) — Guideline Drafting Group on Utilization of Digital Data for AI R&D (厚生労働省・デジタルデータのAI研究開発等への利活用に係るガイドライン作成班)",
+    "document_type": "standards_guideline",
+    "binding_strength": "standards_guideline",
     "publication_date": "2024-03-31",
     "effective_date": null,
     "covered_actors": [
-      "医療機関等 (medical institutions)",
-      "学術研究機関等 (academic research institutions)",
-      "民間企業等 (private companies)",
-      "医療従事者 (healthcare professionals)",
-      "研究者 (researchers)",
-      "開発担当者 (development staff)"
+      "Medical institutions (hospitals, clinics, midwifery homes, pharmacies, visiting nursing stations—both academic-research and non-academic-research institutions) and healthcare professionals (医療機関等・医療従事者)",
+      "Academic research institutions (universities, research institutes, academic societies) and researchers (学術研究機関等・研究者)",
+      "Private enterprises developing diagnostic medical AI software/devices and their developers (民間企業等・開発担当者)"
     ],
     "covered_application_domains": [
-      "healthcare",
-      "general_purpose_models"
+      "healthcare"
     ],
     "prohibited_practices": [
-      "推奨されない仮名加工情報の取扱い (non-recommended handling of pseudonymized information, as described in section 3.4)"
+      "Acquiring special-care personal information (including clinical medical data) or providing personal data to third parties without prior individual consent unless a statutory exception such as academic research or public health applies (APPI Articles 20(2), 27(1))",
+      "Providing pseudonymized medical information to third parties outside statutory exceptions or valid joint-use/entrustment frameworks, including onward/serial distribution (転々流通) or secondary joint-use schemes that exclude the originating medical institution (APPI Articles 41(6), 42(1); Section 3.4)",
+      "Re-identifying individuals by collating pseudonymized medical information with other data (識別行為の禁止) or contacting patients using contact information contained in pseudonymized data (本人への連絡等の禁止) (APPI Articles 41(7)-(8), 42(3))",
+      "Retaining or using medical information acquired under one legal basis (such as the academic research exception) for commercial product-development stages outside the reasonably related purpose (Section 6.5.8)"
     ],
     "safety_requirements": [
       {
-        "label": "risk_assessment",
-        "confidence": 0.6,
+        "label": "training_data_governance",
+        "confidence": 0.97,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "患者の権利利益を適切に保護することを前提として、医療情報の特性を考慮した仮名加工情報の適切な運用を整理するために",
-            "source_section": "まえがき"
+            "quote": "個人情報取扱事業者は、仮名加工情報（仮名加工情報データベース等を構成するものに限る。）を作成するときは11、他の情報と照合しない限り特定の個人を識別することができないようにするために、個人情報保護法施行規則第31 条各号に定める以下の基準に従って、個人情報を加工しなければならない。",
+            "source_section": "4.1 仮名加工情報の適正な加工基準 (Page 28)",
+            "quote_en": "When creating pseudonymized information constituting a pseudonymized information database, personal information handling business operators must process personal information in accordance with the criteria in Article 31 of the APPI Enforcement Rules so that a specific individual cannot be identified unless collated with other information.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 29842,
+            "end_char": 29983
+          },
+          {
+            "quote": "すなわち、それぞれの種類の医療情報に含まれる識別子に対する加工を行った後、それら複数の種類の医療情報を横断する形で準識別子の組み合わせによる単体識別性を検討した上で、組み合わせによって特定の個人を識別することができる記述等を適切に加工することが求められる。",
+            "source_section": "5.6 マルチモーダルな医療情報に対する加工 (Page 47)",
+            "quote_en": "Specifically, after processing identifiers in each type of medical information, operators must examine standalone identifiability from combinations of quasi-identifiers across multiple medical-data modalities and appropriately process any descriptions that could identify a specific individual in combination.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 49924,
+            "end_char": 50052
           }
         ]
       },
       {
         "label": "access_controls",
-        "confidence": 0.75,
+        "confidence": 0.93,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "削除情報等の安全管理措置義務",
-            "source_section": "目次 3.8"
+            "quote": "そのため、仮名加工情報を作成したときは、削除情報等の漏えいを防止するために、下記の通り必要な安全管理措置を講じなければならない（個人情報保護法第41 条第2 項、個人情報保護法施行規則第32 条）。 ◼ 削除情報等を取扱う者の権限及び責任を明確化する。",
+            "source_section": "3.8 削除情報等の安全管理措置義務 (Page 28)",
+            "quote_en": "Accordingly, upon creating pseudonymized information, necessary security control measures must be taken to prevent leakage of deleted information and processing methods (APPI Article 41(2), Enforcement Rules Article 32), including clarifying the authority and responsibility of persons handling deleted information.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 29316,
+            "end_char": 29442
           },
           {
-            "quote": "安全管理措置（第 23 条）",
-            "source_section": "2.3"
-          }
-        ]
-      },
-      {
-        "label": "model_documentation",
-        "confidence": 0.65,
-        "evidence": [
-          {
-            "quote": "医療情報の特性を踏まえた仮名加工情報の作成手順やその運用に関する実践的なガイダンスとなるように取りまとめた",
-            "source_section": "まえがき"
+            "quote": "削除情報等の取扱い状況を確認する手段を整備し、削除情報等を取扱う権限を有しない者による閲覧の防止等を含む安全管理措置について定め、その内容に従って取扱う。",
+            "source_section": "3.8 削除情報等の安全管理措置義務 (Page 28)",
+            "quote_en": "Establish means to verify the handling status of deleted information, stipulate security control measures including preventing viewing by unauthorized persons, and handle the data accordingly.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 29521,
+            "end_char": 29598
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.6,
+        "confidence": 0.92,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "保有個人データに関する事項の公表等（第 32 条）",
-            "source_section": "2.3"
+            "quote": "医療情報から仮名加工情報を作成して利用目的の変更及び共同利用の設定を行う場合、医療機関等は以下の項目を特定し、ホームページ等で公表すること（第3.2.2 章「仮名加工情報の共同利用」より一部再掲）。 ◼ 変更後の利用目的 ◼ 共同利用をする旨",
+            "source_section": "3.7.1 医療機関等が公表するべき項目 (Page 27)",
+            "quote_en": "When creating pseudonymized information from medical data, changing its purpose of use, and establishing joint use, medical institutions must specify and publicly announce via their website or similar means the modified purpose of use, the fact of joint use, data items, joint-user scope, purposes, and responsible administrator.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28251,
+            "end_char": 28372
           },
           {
-            "quote": "取得に際しての利用目的の通知等（第 21 条）",
-            "source_section": "2.3"
+            "quote": "ただし、利用目的を変更した場合には、原則として変更後の利用目的を「公表」しなければならない（個人情報保護法第21 条第3 項及び第41 条第4 項）。",
+            "source_section": "3.1.3 仮名加工情報における利用目的の変更 (Page 23)",
+            "quote_en": "However, when the purpose of use of pseudonymized information is changed, the modified purpose of use must in principle be publicly announced (APPI Articles 21(3) and 41(4)).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24314,
+            "end_char": 24389
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.92,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "薬機法上、これらの医療機器は、①製造販売にあたり厚生労働大臣による承認を必要とするもの（承認制度）、②製造販売にあたり、あらかじめ厚生労働大臣の登録を受けた民間の登録認証機関（以下、「登録認証機関」）での認証を必要とするもの（認証制度）、③製造販売にあたり厚生労働大臣への届出で足りるもの（届出制度）の3 つに分類されている。",
+            "source_section": "6.3 医療機器の承認制度 (Page 48)",
+            "quote_en": "Under the PMD Act, medical devices are classified into three tiers: (1) those requiring marketing approval by the Minister of Health, Labour and Welfare (approval system), (2) those requiring certification by a registered certification body, and (3) those requiring notification to the Minister.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 50818,
+            "end_char": 50981
+          },
+          {
+            "quote": "医療機器の製造販売承認を取得した後に、医療機器の出荷（製品としての上市）が可能となる。",
+            "source_section": "6.4 医療機器の研究開発サイクルの概要 (Page 50)",
+            "quote_en": "Only after obtaining marketing approval for the medical device does shipment (commercial market launch as a product) become possible.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 52444,
+            "end_char": 52487
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.9,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "性能評価とは、新規の医療機器の性能に関する検証を、その最終的な仕様に基づいて行う段階を指す25。",
+            "source_section": "6.4 医療機器の研究開発サイクルの概要 (Page 49)",
+            "quote_en": "Performance evaluation refers to the stage of empirically validating the performance of a new medical device based on its finalized specifications.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 51556,
+            "end_char": 51604
+          },
+          {
+            "quote": "承認申請においては、PMDA へ承認申請書類を提出する必要がある。その際、性能評価試験の結果を承認申請書類に記載し、提出しなければならない28。",
+            "source_section": "6.5.5 ⑤ 承認申請の段階における適切な医療情報の取扱い (Page 52)",
+            "quote_en": "In a marketing-approval application, application dossiers must be submitted to PMDA, and the results of performance evaluation testing must be recorded in and submitted with those application dossiers.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 55475,
+            "end_char": 55547
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.88,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "承認申請書類作成とは、医療機器の製造販売承認を取得するにあたり、独立行政法人医薬品医療機器総合機構（以下、「PMDA」）による審査を受けるため、承認申請書類の資料作成を行う過程を指す。",
+            "source_section": "6.4 医療機器の研究開発サイクルの概要 (Page 49)",
+            "quote_en": "Approval-application dossier preparation refers to preparing the technical documentation for review by the Pharmaceuticals and Medical Devices Agency (PMDA) in order to obtain marketing approval for a medical device.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 51890,
+            "end_char": 51982
+          },
+          {
+            "quote": "この性能評価試験の結果とは、具体的には、最終的な仕様に基づく診断用医療AI ソフトウェア（学習済みのアルゴリズム）に対し、検証データとなる医用画像データ等を入力した際の出力結果について、正解となる診断結果との一致の有無やその程度がリスト化されたものである。",
+            "source_section": "6.5.5 ⑤ 承認申請の段階における適切な医療情報の取扱い (Page 52)",
+            "quote_en": "Specifically, the performance evaluation test results list the presence and degree of concordance between ground-truth diagnoses and outputs produced when validation medical-imaging data are input to the finalized diagnostic medical AI software (trained algorithm).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 55547,
+            "end_char": 55675
           }
         ]
       },
       {
         "label": "incident_reporting",
-        "confidence": 0.7,
+        "confidence": 0.85,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "漏えい等の報告等（第 26 条）",
-            "source_section": "2.3"
+            "quote": "◼ 共同利用する仮名加工情報である個人データに関する事件・事故が発生した場合の報告・連絡に関する事項",
+            "source_section": "3.7.2 データ提供契約で取り決めるべき項目 (Page 27)",
+            "quote_en": "Matters regarding reporting and notification in the event of an incident or accident involving jointly used personal data that is pseudonymized information.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28977,
+            "end_char": 29027
+          },
+          {
+            "quote": "このため、近年、市販後のリスク管理、安全性情報の収集等がより重要になってきている",
+            "source_section": "6.5.7 脚注 30 (Page 53)",
+            "quote_en": "For this reason, post-market risk management and collection of safety information have become increasingly important in recent years.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 58039,
+            "end_char": 58079
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "regulatory_supervision",
-        "confidence": 0.7,
+        "label": "licensing_requirement",
+        "confidence": 0.92,
         "evidence": [
           {
-            "quote": "個人情報取扱事業者等の義務等に係る規律の全部又は一部の適用を受けるものを指す",
-            "source_section": "2.2"
+            "quote": "医療機器の製造販売承認を取得した後に、医療機器の出荷（製品としての上市）が可能となる。",
+            "source_section": "6.4 医療機器の研究開発サイクルの概要 (Page 50)",
+            "quote_en": "Shipment (market launch) of a medical device becomes possible only after obtaining marketing approval.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 52444,
+            "end_char": 52487
           },
           {
-            "quote": "個人情報保護委員会",
-            "source_section": "1.2.3"
+            "quote": "このうち、本ガイドラインでは、承認制度に基づいた医療機器の研究開発サイクルを対象としている。",
+            "source_section": "6.3 医療機器の承認制度 (Page 48)",
+            "quote_en": "Among these tiers, this guideline covers the R&D lifecycle of medical devices subject to the marketing-approval system.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 50981,
+            "end_char": 51027
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "承認審査とは、提出された承認申請書類に基づいてPMDA が実施する承認審査を指す。承認審査においては、通常、信頼性調査が実施される。",
+            "source_section": "6.4 医療機器の研究開発サイクルの概要 (Page 50)",
+            "quote_en": "Approval review refers to the review conducted by PMDA based on the submitted approval application dossier, during which a reliability investigation/audit is normally conducted.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 52368,
+            "end_char": 52434
+          },
+          {
+            "quote": "薬生機審0929 通知によると、承認審査の段階において、信頼性調査を行うPMDA に対して、原資料（カルテ情報等）を提供する必要がある場合がある。",
+            "source_section": "6.5.6 ⑥ 承認審査の段階における適切な医療情報の取扱い (Page 53)",
+            "quote_en": "Under Notice 0929, during the approval-review stage it may be necessary to provide original source records (such as medical charts) to PMDA when it conducts a reliability investigation.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 56634,
+            "end_char": 56707
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "承認申請においては、PMDA へ承認申請書類を提出する必要がある。その際、性能評価試験の結果を承認申請書類に記載し、提出しなければならない28。",
+            "source_section": "6.5.5 ⑤ 承認申請の段階における適切な医療情報の取扱い (Page 52)",
+            "quote_en": "In a marketing-approval application, application documents must be submitted to PMDA, and performance evaluation test results must be documented and submitted therein.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 55475,
+            "end_char": 55547
           }
         ]
       },
       {
         "label": "soft_enforcement",
-        "confidence": 0.8,
+        "confidence": 0.92,
         "evidence": [
           {
-            "quote": "本ガイドラインは、これらの読者が医療情報を適切かつ効果的に利活用し、革新的な医療機器の開発を促進するための指針となることを目指している",
-            "source_section": "1.2.1"
+            "quote": "医療情報が本来有している機微性への配慮や、安全管理措置の観点から、本ガイドラインでは、共同利用に伴う提供先となる民間企業等に対して、 データ提供契約等により、これらに実質的に相当する義務を取り決めるよう推奨する。",
+            "source_section": "3.6.2 個人情報でない仮名加工情報における不適正利用等の未然防止について (Page 26)",
+            "quote_en": "Out of regard for the inherent sensitivity of medical information and security control considerations, this guideline recommends stipulating substantially equivalent obligations on recipient private enterprises through data-provision contracts.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27874,
+            "end_char": 27980
+          },
+          {
+            "quote": "◼ 共同利用する仮名加工情報である個人データの取扱いに関する取決めが遵守されなかった場合の措置",
+            "source_section": "3.7.2 データ提供契約で取り決めるべき項目 (Page 27)",
+            "quote_en": "Measures to be taken in the event of non-compliance with contractual arrangements governing the handling of jointly used pseudonymized medical data.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28929,
+            "end_char": 28976
           }
         ]
       }
     ],
     "enforcement_authorities": [
-      "個人情報保護委員会 (Personal Information Protection Commission)",
-      "厚生労働省 (Ministry of Health, Labour and Welfare)"
+      "Ministry of Health, Labour and Welfare (MHLW / 厚生労働大臣)",
+      "Pharmaceuticals and Medical Devices Agency (PMDA / 独立行政法人医薬品医療機器総合機構)",
+      "Personal Information Protection Commission (PPC / 個人情報保護委員会)"
     ],
     "compliance_deadlines": [],
-    "penalties_summary": null,
-    "implementation_notes": "Guideline focuses on pseudonymized medical information (仮名加工情報) under Japan's Act on Protection of Personal Information for use in AI R&D and medical device product development. Excludes: clinical trial data, anonymous processing (匿名加工情報), cross-border data transfers, advanced privacy-enhancing technologies, generative AI legal risks, and the Next-Generation Medical Infrastructure Act (次世代医療基盤法). Practical procedures for creating pseudonymized data from diagnostic text, physiological function tests, medical images, genetic test data, and multimodal data are provided.",
-    "confidence": 0.85
+    "penalties_summary": "This guideline itself establishes no new statutory fines, relying on practical processing standards and contractual remedies for breaches of joint-use data-provision agreements (Section 3.7.2). However, it details binding statutory duties and prohibitions under the Act on the Protection of Personal Information (APPI)—highlighting that transferring pseudonymized medical data beyond joint-use scope (including during PMDA consultations) or attempting re-identification violates APPI—alongside mandatory pre-market approval and PMDA reliability investigations under the Pharmaceuticals and Medical Devices (PMD) Act.",
+    "implementation_notes": "Comprehensive 61-page technical-legal guideline finalized March 31, 2024 (Reiwa 6) by the MHLW-funded ELSI research group and officially circulated by MHLW on September 30 / October 1, 2024 (accompanied by jp_medical_digital_data_ai_guideline_notice_2024 and clarified by jp_medical_digital_data_ai_guideline_points_2024). Provides an end-to-end compliance framework under APPI, the PMD Act, and the Ethical Guidelines for Life Science and Medical Research for utilizing already-stored clinical records in joint hospital–academia–industry development of diagnostic medical AI software across a 7-stage lifecycle (exploration, QMS development, performance evaluation, approval-dossier drafting, PMDA approval filing, PMDA review/reliability audit, and post-market monitoring/retraining). Details statutory pseudonymization criteria (APPI Enforcement Rules Art. 31), additional privacy-by-design safeguards (data minimization, deleting linking IDs/medical-record numbers and contact info), modality-specific de-identification instructions (XML clinical text, CSV physiological data, DICOM metadata and pixel masking, genomic Type-1 identifiers, multimodal quasi-identifier cross-checks), joint-use website disclosures, and data-provision contract terms. Explicitly excludes the Next Generation Medical Infrastructure Act, cross-border transfers, generative AI legal risks, and clinical trials.",
+    "confidence": 0.96
   },
   "risk_framing": {
-    "dominant_frame": "economic_competitiveness",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
       "fundamental_rights",
-      "innovation_enablement"
+      "economic_competitiveness",
+      "consumer_public_safety",
+      "social_stability"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
-      "national_security": 0.05,
-      "economic_competitiveness": 0.65,
-      "fundamental_rights": 0.55,
-      "social_stability": 0.1,
-      "innovation_enablement": 0.5,
-      "consumer_public_safety": 0.2,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.78,
+      "fundamental_rights": 0.93,
+      "social_stability": 0.62,
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.65,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document opens by explicitly framing medical AI data utilization in the context of intensifying global R&D competition, positioning Japan's data governance as a matter of competitive capacity. The preface warns that privacy law 'greatly affects data resources that are the source of competitiveness.' Simultaneously, it foregrounds patient rights protection and privacy as a core constraint, making fundamental_rights a strong secondary frame. Innovation enablement is also present as the guideline aims to remove legal barriers to product development.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.12,
+      "fundamental_rights": 0.35,
+      "social_stability": 0.07,
+      "innovation_enablement": 0.38,
+      "consumer_public_safety": 0.08,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "Innovation enablement narrowly edges out fundamental rights as the dominant frame because this guideline was specifically commissioned under Japan's Regulatory Reform Implementation Plan and Healthcare AI Development Acceleration Consortium to unlock clinical medical data for commercial diagnostic AI medical-device R&D—overcoming the practical impossibility of obtaining individual re-consent from vast numbers of past patients by clarifying stage-by-stage APPI legal bases and actionable pseudonymized joint-use workflows. Fundamental rights is an extraordinarily close co-equal runner-up, providing the mandatory premise and operational substance across Chapters 2–5: protecting patients' personality and property rights, preventing privacy breaches and malicious re-identification of highly sensitive special-care personal information, prohibiting onward distribution, and enforcing ethical informed-consent opt-outs. Economic competitiveness is a prominent third rationale invoked in the opening sentences of the Preface and Chapter 1 (citing fierce global competition in new-industry creation and medical-AI R&D where data-protection frameworks directly shape competitiveness). Consumer/public safety (PMDA pre-market clinical efficacy/safety evaluation and post-market malfunction/adverse-event monitoring) and social stability (securing collective social trust in secondary medical-data utilization) serve as concrete supporting frames.",
     "evidence_spans": [
       {
-        "quote": "先端的な研究開発やイノベーションによる新産業の創出は、常に厳しいグローバルな競争にさらされており、個人情報保護法制はその競争力の源泉であるデータ資源の取扱いに大きく影響を及ぼす",
-        "source_section": "Page 2"
+        "quote": "本ガイドラインは、これらの読者が医療情報を適切かつ効果的に利活用し、革新的な医療機器の開発を促進するための指針となることを目指している。同時に、患者の権利利益の保護と個人情報の適切な取り扱いにも十分配慮し、 医療情報の利活用に対する社会的な信頼の確保にも貢献することを目的としている。",
+        "source_section": "1.2.1 本ガイドラインの目的と想定する対象者 (Page 6)",
+        "quote_en": "This guideline aims to serve as guidance for readers to utilize medical information appropriately and effectively and promote the development of innovative medical devices, while giving full regard to protecting patients' rights and interests, proper handling of personal information, and securing social trust in medical-data utilization.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 4914,
+        "end_char": 5056
       },
       {
-        "quote": "病院に蓄積された膨大な医療情報を貴重なデータ資源として活用し、学術研究機関等や医療機関等のみならず、製品開発の担い手としての民間企業等をも巻き込んだ研究開発競争が世界的に激化している",
-        "source_section": "Page 2"
+        "quote": "仮名化された個人情報について、一定の安全性を確保しつつ、データとしての有用性を加工前の個人情報と同等程度に保つことにより、詳細な分析を比較的簡便な加工方法で実施し得るものとして利活用したいというニーズがあった。こうした背景とイノベーションを促進する観点から、氏名等を削除した仮名加工情報が個人情報保護法において創設された8。",
+        "source_section": "3.1 仮名加工情報とは (Page 22)",
+        "quote_en": "Driven by the need to utilize pseudonymized personal information with relatively simple processing while preserving data utility comparable to pre-processed data and ensuring safety, and from the perspective of promoting innovation, pseudonymized information was established under APPI.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 23572,
+        "end_char": 23734
       },
       {
-        "quote": "患者の権利利益を適切に保護することを前提として、医療情報の特性を考慮した仮名加工情報の適切な運用を整理するために",
-        "source_section": "Page 2"
+        "quote": "近年、様々な事業者による医療情報の利活用が急増するに伴い、万が一の情報漏えい等による患者の権利利益の侵害が発生する危険性も高まっており、医療情報を利活用するに際して、患者の権利利益を侵害することなく、医療情報を適切に保護するための措置を講じることが求められてきた。",
+        "source_section": "1.1.2 患者の権利利益を侵害しないための保護措置の重要性 (Page 5)",
+        "quote_en": "With rapid growth in medical-information utilization by diverse operators, the risk of infringing patients' rights and interests through data breaches has increased, making it necessary to take measures to properly protect medical information without infringing patients' rights and interests.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 3548,
+        "end_char": 3680
       },
       {
-        "quote": "患者の権利利益の保護と社会的な必要性とのバランスを考慮し、医療情報の利活用を調整するべきという考え方が注目されている",
-        "source_section": "Page 5"
+        "quote": "これは、第三者提供によって仮名加工情報を取得した悪意のある者により本人の再識別行為がおこなわれるおそれがあり、特定の個人が識別されることにより、個人の権利利益が侵害されるリスクを高めることとなるためである9。",
+        "source_section": "3.2.1 仮名加工情報における第三者提供の考え方 (Page 23)",
+        "quote_en": "This is because a malicious party obtaining pseudonymized information via third-party transfer could attempt to re-identify individuals, heightening the risk of infringing individuals' rights and interests if specific persons are identified.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 24499,
+        "end_char": 24603
+      },
+      {
+        "quote": "先端的な研究開発やイノベーションによる新産業の創出は、常に厳しいグローバルな競争にさらされており、個人情報保護法制はその競争力の源泉であるデータ資源の取扱いに大きく影響を及ぼす。特に医療分野においては、病院に蓄積された膨大な医療情報を貴重なデータ資源として活用し、学術研究機関等や医療機関等のみならず、製品開発の担い手としての民間企業等をも巻き込んだ研究開発競争が世界的に激化している。",
+        "source_section": "まえがき (Page 2)",
+        "quote_en": "Advanced R&D and creation of new industries through innovation constantly face fierce global competition, and personal-data protection law greatly affects the handling of data resources that are the source of that competitiveness; especially in healthcare, global R&D competition leveraging vast hospital medical records has intensified.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 40,
+        "end_char": 233
+      },
+      {
+        "quote": "限られた被験者や医療施設を対象とする厳密に管理された治験による評価のみでは市販後の多様な臨床環境で実際の患者に使用した際の不具合や有害事象などを完全に明らかにすることが難しいこともまた事実である。このため、近年、市販後のリスク管理、安全性情報の収集等がより重要になってきている",
+        "source_section": "6.5.7 脚注 30 (Page 53)",
+        "quote_en": "It is also true that strictly controlled clinical trials with limited subjects and sites alone cannot fully reveal malfunctions or adverse events when used on real patients in diverse post-market clinical environments; thus post-market risk management and safety-information collection have grown increasingly important.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 57941,
+        "end_char": 58079
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:26:12.044071Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "f7304ac1600b49b8d37ee759e9fbeb30f81f083f97b30d8f27d44da6bda5f24c",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 65886,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 27,
+      "exact_matches": 27,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

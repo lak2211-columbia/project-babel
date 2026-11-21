@@ -4,48 +4,100 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "Ministry of Economy, Trade and Industry (METI) Expert Group on How AI Principles Should be Implemented",
+    "issuing_body": "Expert Group on How AI Principles Should be Implemented, Ministry of Economy, Trade and Industry (METI)",
     "document_type": "strategy_paper",
     "binding_strength": "strategy_statement",
     "publication_date": "2021-07-09",
     "effective_date": null,
-    "covered_application_domains": [
-      "general_purpose_models",
-      "public_sector_use",
-      "critical_infrastructure"
+    "covered_actors": [
+      "AI developers",
+      "AI service providers",
+      "AI users",
+      "businesses using AI (BtoB and BtoC companies)",
+      "Japanese government and relevant ministries"
     ],
+    "covered_application_domains": [
+      "biometrics",
+      "employment",
+      "healthcare",
+      "finance",
+      "public_sector_use",
+      "law_enforcement"
+    ],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "risk_assessment",
         "confidence": 0.85,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "managing risks posed by the use of AI at levels acceptable to stakeholders and maximizing their positive impact",
-            "source_section": "Introduction"
+            "quote": "The provision of guidelines that include desirable risk assessment and management is expected to facilitate deployment of AI.",
+            "source_section": "Page 27",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 85846,
+            "end_char": 85971
           },
           {
-            "quote": "Assessment and classification of risks",
-            "source_section": "Table of Contents Section 2C"
+            "quote": "Development/introduction of AI systems: Development of principles, creation of a management framework84, establishment of an escalation process, development of a risk management process85",
+            "source_section": "Page 28",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 88734,
+            "end_char": 88921
           }
         ]
       },
       {
-        "label": "human_oversight",
-        "confidence": 0.6,
+        "label": "transparency_disclosure",
+        "confidence": 0.8,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "design and operation of technological, organizational, and social systems by stakeholders for the purpose of managing risks",
-            "source_section": "Introduction"
+            "quote": "This direction of improving consumer literacy is based on the assumption that companies, etc. using AI provide appropriate information to consumers. Therefore, an intermediate guideline to bridge the gap between AI Principles and corporate-level practice is deemed necessary in the sense of facilitating such information provision.",
+            "source_section": "Page 26",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 83712,
+            "end_char": 84043
+          },
+          {
+            "quote": "support the improvement of AI risk management, etc., function as a benchmark of trustworthiness of AI system in inter-company transactions, include useful good practices for companies that have just started using AI, and facilitate the provision of explanations to consumers, etc.",
+            "source_section": "Page 28",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 88214,
+            "end_char": 88494
           }
         ]
       },
       {
         "label": "third_party_audit",
-        "confidence": 0.55,
+        "confidence": 0.75,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "ideal approaches to AI governance in Japan, including regulation, standardization, guidelines, and audits",
-            "source_section": "Introduction"
+            "quote": "Operation of AI systems: Monitoring, internal audits, use of external evaluation, development of relationships with stakeholders, improvement and progress management",
+            "source_section": "Page 28",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 88924,
+            "end_char": 89089
+          },
+          {
+            "quote": "Further, in order to maintain public trust, utilize various forms of assurance depending on the risk, such as self-check, peer review, internal audit, agreed procedures, third-party review and external audit.",
+            "source_section": "Page 6",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17976,
+            "end_char": 18184
           }
         ]
       }
@@ -53,67 +105,151 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.8,
+        "confidence": 0.95,
         "evidence": [
           {
-            "quote": "Legally non-binding corporate governance guidelines",
-            "source_section": "Section 3C(1)"
+            "quote": "From the perspective of balancing respect for AI principles and promotion of innovation and at least at this moment, except for some specific areas, AI governance should be designed mainly with soft laws, which is favorable to companies that respect AI principles.",
+            "source_section": "Page 33",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 100621,
+            "end_char": 100885
           },
           {
-            "quote": "Legally non-binding guidelines",
-            "source_section": "Table of Contents Section 2D(2)(a)"
-          }
-        ]
-      },
-      {
-        "label": "regulatory_supervision",
-        "confidence": 0.65,
-        "evidence": [
-          {
-            "quote": "Monitoring and enforcement",
-            "source_section": "Table of Contents Section 2D(4)"
-          },
-          {
-            "quote": "Discussion on the design of appropriate monitoring and enforcement mechanisms is also required in order to make the governance effective",
-            "source_section": "Introduction"
+            "quote": "The above suggestions and notes point to non-binding intermediate goal-based guidelines to promote AI innovation and deployment.",
+            "source_section": "Page 21",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 66852,
+            "end_char": 66980
           }
         ]
       }
     ],
-    "implementation_notes": "This is a strategy/analysis report from an expert group, not binding regulation. It maps out a layered AI governance architecture including non-binding guidelines, international standards, and sector-specific regulations, but stops short of mandating any specific requirements. The document identifies future issues including monitoring/enforcement design. Confidence is moderate as the document text provided is primarily the introduction and table of contents.",
-    "confidence": 0.75
+    "enforcement_authorities": [],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "Non-binding expert group report (Ver. 1.1) analyzing domestic and international AI governance trends and proposing an ideal AI governance architecture for Japan. Recommends goal-based, risk-based governance centered on legally non-binding corporate governance guidelines and international standards (e.g., ISO/IEC JTC1 SC42), concludes that legally binding horizontal AI regulation is unnecessary in Japan at this time, favors existing sector-specific frameworks for areas such as automotive and healthcare, and outlines future issues including adoption incentives (e.g., government procurement points), guidance for government AI use, international harmonization, and monitoring and civil liability.",
+    "confidence": 0.94
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "consumer_public_safety",
       "economic_competitiveness",
-      "social_stability"
+      "consumer_public_safety",
+      "fundamental_rights"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.05,
-      "national_security": 0.05,
-      "economic_competitiveness": 0.55,
-      "fundamental_rights": 0.2,
-      "social_stability": 0.3,
-      "innovation_enablement": 0.7,
-      "consumer_public_safety": 0.4,
-      "labor_transition": 0.05
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.75,
+      "fundamental_rights": 0.6,
+      "social_stability": 0.25,
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.65,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The document primarily frames AI governance as a challenge of enabling innovation while managing risks at acceptable levels. The explicit goal is to avoid hindering innovation while addressing concerns, and governance is framed as a tool for operationalizing AI principles in ways conducive to Japanese industrial competitiveness and social acceptance. Consumer safety and social stability are secondary concerns embedded in the risk management language.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.2,
+      "fundamental_rights": 0.1,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.5,
+      "consumer_public_safety": 0.15,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The report's dominant framing is innovation_enablement: throughout its introduction, Governance Innovation framework, and recommendations, it argues that conventional prescriptive laws cannot keep pace with rapid technological change and risk stifling innovation, and therefore advocates agile, goal-based, legally non-binding soft-law guidelines to facilitate AI deployment and digital transformation while managing risks proportionately. Innovation_enablement edges out economic_competitiveness because, although the report cites the mandate to enhance the competitiveness of Japanese industry and elicit Japanese corporate governance advantages relative to European and US peers, the core justification for its proposed multi-layered soft-law architecture is reducing compliance friction and enabling trustworthy AI adoption rather than zero-sum international rivalry. Consumer_public_safety and fundamental_rights appear as secondary frames through discussions of consumer insecurity over system errors, product safety and civil remedies, privacy protection, and human-centric AI principles, while social_stability plays only a minor supporting role via references to social acceptance and public trust.",
     "evidence_spans": [
       {
         "quote": "We need to structure this complex and multi-layered governance while avoiding hindering innovation as well as addressing concerns regarding AI systems and services.",
-        "source_section": "1. Introduction"
+        "source_section": "Page 3",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 6545,
+        "end_char": 6709
       },
       {
-        "quote": "conducive to the competitiveness of Japanese industry and increased social acceptance, for the purpose of operationalizing the AI Principles",
-        "source_section": "1. Introduction"
+        "quote": "From the perspective of balancing respect for AI principles and promotion of innovation and at least at this moment, except for some specific areas, AI governance should be designed mainly with soft laws, which is favorable to companies that respect AI principles.",
+        "source_section": "Page 33",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 100621,
+        "end_char": 100885
       },
       {
-        "quote": "managing risks posed by the use of AI at levels acceptable to stakeholders and maximizing their positive impact",
-        "source_section": "1. Introduction"
+        "quote": "discuss ideal approaches to AI governance in Japan, including regulation, standardization, guidelines, and audits, conducive to the competitiveness of Japanese industry and increased social acceptance, for the purpose of operationalizing the AI Principles, taking domestic and international AI trends into account.",
+        "source_section": "Page 3",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 5318,
+        "end_char": 5632
+      },
+      {
+        "quote": "There is research suggesting that Japanese companies that have valued their relationships with employees and society have the upper hand in AI risks compared to European and US companies86. The said guideline is required to provide creative solutions to elicit the advantages of Japanese companies.",
+        "source_section": "Page 28",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 89271,
+        "end_char": 89569
+      },
+      {
+        "quote": "In addition, consumers feel insecure about AI. An item related to concerns: “Concerned about potential damage caused by system errors” was ranked high in the above survey by Fujitsu Research Institute.",
+        "source_section": "Page 25",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 80630,
+        "end_char": 80831
+      },
+      {
+        "quote": "In the case of monitoring the behavior of an unspecified number of people through cameras installed everywhere in urban areas, it may be necessary to consider operational guidelines, etc. to prevent the hindrance of social benefits from using innovative technology while ensuring privacy protection even for legitimate purposes of crime prevention.",
+        "source_section": "Page 30",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 94950,
+        "end_char": 95298
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:46:40.069993Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "d5ecb52758fba9928f9aed7a83244333d65237fc8641a23a87c981ed75881602",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 82661,
+      "output_tokens": 2170,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 8402,
+      "estimated_cost_usd": 0.209046
+    },
+    "grounding_summary": {
+      "total_quotes": 14,
+      "exact_matches": 14,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

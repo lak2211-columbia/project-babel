@@ -1,36 +1,76 @@
 {
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "consumer_public_safety",
-    "economic_competitiveness"
+    "economic_competitiveness",
+    "social_stability",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.65,
-    "consumer_public_safety": 0.45,
-    "labor_transition": 0.05
+    "national_security": 0.1,
+    "economic_competitiveness": 0.52,
+    "fundamental_rights": 0.15,
+    "social_stability": 0.45,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.42,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance through the lens of enabling innovation while building public trust. NIST's standards work is explicitly described as promoting innovation, accelerating standards creation, and 'unleashing AI innovation,' while trust and risk management are secondary but present concerns. Economic competitiveness appears through references to U.S. leadership and global engagement strategies.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.14,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.12,
+    "innovation_enablement": 0.64,
+    "consumer_public_safety": 0.1,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The page is overwhelmingly framed around innovation_enablement, arguing that stakeholder-driven voluntary consensus standards, zero-draft pilots, and international RMF alignment accelerate standards creation, unleash AI innovation, and foster trustworthy AI adoption ecosystems. Innovation_enablement clearly edges out economic_competitiveness, which appears as a secondary rationale via alignment with the National Standards Strategy for Critical and Emerging Technology and U.S. Leadership in AI plan. Social_stability (public trust) and consumer_public_safety (managing AI risks for trustworthy development and use) play supporting roles.",
   "evidence_spans": [
     {
       "quote": "NIST leads and participates in the development of technical standards, including international standards, that promote innovation and public trust in systems that use AI.",
-      "source_section": "Overview"
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 453,
+      "end_char": 623
     },
     {
-      "quote": "helping standards meet the AI community's needs and unleash AI innovation",
-      "source_section": "AI Standards Zero Drafts"
+      "quote": "will pilot a process to broaden participation in and accelerate the creation of standards, helping standards meet the AI community’s needs and unleash AI innovation.",
+      "source_section": "NIST’s AI Standards “Zero Drafts” Pilot Project",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 949,
+      "end_char": 1114
     },
     {
-      "quote": "Recognizing the lack of formal or shared methods to measure the impact of standards development on the goals of innovation and trust",
-      "source_section": "Evaluating AI Standards Development"
+      "quote": "report summarizing progress that federal agencies have made\nto implement the recommendations of the US Leadership in AI plan.",
+      "source_section": "Ensuring Awareness and Federal Coordination in AI Standards Efforts",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 2560,
+      "end_char": 2685
     },
     {
-      "quote": "The goal is to drive the development and implementation of AI-related consensus standards, cooperation and coordination, and information sharing.",
-      "source_section": "Global Engagement"
+      "quote": "Recognizing the lack of formal or shared methods to measure the impact of standards development on the goals of innovation and trust, the report sketches out a conceptual structure for evaluating whether a given AI standard or set of standards meet these goals.",
+      "source_section": "Facilitating Dialogue on Approaches for Evaluating AI Standards Development",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 5070,
+      "end_char": 5331
+    },
+    {
+      "quote": "Incorporation of the AI RMF in international standards will further the Framework’s value as a resource to those designing, developing, deploying, or using AI systems to help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems.",
+      "source_section": "Encouraging International Standards Incorporation of the AI Risk Management Framework (AI RMF 1.0)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3323,
+      "end_char": 3600
     }
   ]
 }

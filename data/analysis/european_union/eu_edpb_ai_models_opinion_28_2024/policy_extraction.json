@@ -4,104 +4,163 @@
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2024-12-17",
-  "effective_date": "2024-12-17",
+  "effective_date": null,
+  "covered_actors": [
+    "National data protection supervisory authorities (SAs) in the EEA",
+    "Data controllers developing or deploying AI models trained with personal data",
+    "Joint controllers",
+    "Data processors"
+  ],
   "covered_application_domains": [
     "general_purpose_models"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.95,
+      "confidence": 0.92,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "for an AI model to be considered anonymous, both (1) the likelihood of direct (including probabilistic) extraction of personal data regarding individuals whose personal data were used to develop the model and (2) the likelihood of obtaining, intentionally or not, such personal data from queries, should be insignificant",
-          "source_section": "Section 3.2"
+          "quote": "Data protection impact assessments (“DPIAs”) (Articles 35 GDPR): DPIAs are an important element of accountability, where the processing in the context of AI models is likely to result in a high risk to the rights and freedoms of natural persons",
+          "source_section": "2.1 Scope of the Opinion",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 28506,
+          "end_char": 28750
         },
         {
-          "quote": "SAs should consider whether controllers have assessed the risk of identification by the controller and by different types of 'other persons'",
-          "source_section": "Section 3.2.1"
-        }
-      ]
-    },
-    {
-      "label": "pre_deployment_testing",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "SAs should take into consideration the scope, frequency, quantity and quality of tests that the controller has conducted on the model. In particular, SAs should take into account that successful testing which covers widely known, state-of-the-art attacks can only be evidence for the resistance to those attacks",
-          "source_section": "Section 3.2.2.3"
+          "quote": "By default, SAs should consider that AI models are likely to require a thorough evaluation of the likelihood of identification to reach a conclusion on their possible anonymous nature.",
+          "source_section": "3.2.1 General consideration regarding anonymisation in the context at hand",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 51128,
+          "end_char": 51312
         }
       ]
     },
     {
       "label": "red_teaming",
       "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "structured testing against: (i) attribute and membership inference; (ii) exfiltration; (iii) regurgitation of training data; (iv) model inversion; or (v) reconstruction attacks",
-          "source_section": "Section 3.2.2.3"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.95,
-      "evidence": [
-        {
-          "quote": "Articles 5, 24, 25, and 30 GDPR, and, in cases of likely high risk to the rights and freedoms of data subjects, Article 35 GDPR, require controllers to adequately document their processing operations",
-          "source_section": "Section 3.2.2.4"
-        },
-        {
-          "quote": "SAs should verify whether the controller's documentation includes: any information relating to DPIAs... information on the technical and organisational measures taken while designing the AI model to reduce the likelihood of identification",
-          "source_section": "Section 3.2.2.4"
+          "quote": "At to the date of this Opinion, this could include, among others, structured testing against: (i) attribute and membership inference; (ii) exfiltration; (iii) regurgitation of training data; (iv) model inversion; or (v) reconstruction attacks.",
+          "source_section": "3.2.2.3 AI model testing and resistance to attacks",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 57432,
+          "end_char": 57675
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.9,
+      "confidence": 0.93,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "information on the processing of personal data within AI models should therefore be provided in an accessible, understandable and user-friendly way",
-          "source_section": "Section 3.3.1"
+          "quote": "Considering the complexity of the technologies involved, information on the processing of personal data within AI models should therefore be provided in an accessible, understandable and user-friendly way",
+          "source_section": "3.3.1 General observations",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 63826,
+          "end_char": 64030
         },
         {
-          "quote": "Transparency measures: in some cases, mitigating measures could include measures that provide for greater transparency with regard to the development of the AI model",
-          "source_section": "Section 3.3.2.3"
+          "quote": "Release of public and easily accessible communications which go beyond the information required under Article 13 or 14 GDPR, for instance by providing additional details about the collection criteria and all datasets used, taking into account special protection for children and vulnerable persons.",
+          "source_section": "3.3.2.3 Third step - Balancing test",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 101887,
+          "end_char": 102185
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.94,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "Articles 5, 24, 25, and 30 GDPR, and, in cases of likely high risk to the rights and freedoms of data subjects, Article 35 GDPR, require controllers to adequately document their processing operations. This also applies to any processing that would include the training of an AI model, even if the objective of the processing is anonymisation.",
+          "source_section": "3.2.2.4 Documentation",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 57702,
+          "end_char": 58044
+        },
+        {
+          "quote": "the documentation demonstrating the AI model’s theoretical resistance to re-identification techniques, as well as the controls designed to limit or assess the success and impact of main attacks (regurgitation, membership inference attacks, exfiltration, etc.).",
+          "source_section": "3.2.2.4 Documentation",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 59772,
+          "end_char": 60032
         }
       ]
     },
     {
       "label": "third_party_audit",
-      "confidence": 0.75,
+      "confidence": 0.72,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "SAs should evaluate whether controllers have conducted any document-based audits (internal or external) that include an evaluation of the chosen measures and of their impact to limit the likelihood of identification",
-          "source_section": "Section 3.2.2.2"
+          "quote": "SAs should evaluate whether controllers have conducted any document-based audits (internal or external) that include an evaluation of the chosen measures and of their impact to limit the likelihood of identification.",
+          "source_section": "3.2.2.2 AI model analysis",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 56619,
+          "end_char": 56835
         }
       ]
     },
     {
-      "label": "human_oversight",
-      "confidence": 0.8,
+      "label": "content_provenance",
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "SAs enjoy discretionary powers to assess the possible infringement(s) and choose appropriate, necessary, and proportionate measures, among those mentioned under Article 58 GDPR",
-          "source_section": "Section 3.4"
+          "quote": "Technical measures may for instance be put in place to prevent the storage, regurgitation or generation of personal data, especially in the context of generative AI models (such as output filters), and/or to mitigate the risk of unlawful reuse by general purpose AI models (e.g. digital watermarking of AI-generated outputs).",
+          "source_section": "3.3.2.3 Third step - Balancing test",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 105271,
+          "end_char": 105596
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.95,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "In accordance with the data minimisation principle, the development and deployment of AI models requires that personal data should be adequate, relevant and necessary in relation to the purpose.",
+          "source_section": "3.3.1 General observations",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 64833,
+          "end_char": 65027
         },
         {
-          "quote": "The EDPB also reiterates that an element to be considered is whether the controller has involved the DPO, where applicable",
-          "source_section": "Section 3.3.2.3"
-        }
-      ]
-    },
-    {
-      "label": "access_controls",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "the conclusion of a SA's assessment might differ between a publicly available AI model, which is accessible to an unknown number of people with an unknown range of methods to try and extract personal data, and an internal AI model only accessible to employees",
-          "source_section": "Section 3.2.2"
+          "quote": "Excluding collection from websites (or sections of websites) which clearly object to web scraping and the reuse of their content for the purpose of building AI training databases (for example, by respecting robots.txt or ai.txt files or any other recognised mechanism to express exclusion from automated crawling or scraping).",
+          "source_section": "3.3.2.3 Third step - Balancing test",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 104048,
+          "end_char": 104374
         }
       ]
     }
@@ -109,39 +168,65 @@
   "enforcement_mechanisms": [
     {
       "label": "regulatory_supervision",
-      "confidence": 0.95,
+      "confidence": 0.96,
       "evidence": [
         {
-          "quote": "SAs enjoy discretionary powers to assess the possible infringement(s) and choose appropriate, necessary, and proportionate measures, among those mentioned under Article 58 GDPR, taking into account the circumstances of each individual case",
-          "source_section": "Section 3.4"
+          "quote": "It is, therefore, within the competence of SAs to investigate specific AI models and, in doing so, to conduct case-by-case assessments.",
+          "source_section": "2.1 Scope of the Opinion",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 24804,
+          "end_char": 24939
         },
         {
-          "quote": "SAs are responsible for monitoring the application of the GDPR and should contribute to its consistent application throughout the Union",
-          "source_section": "Section 2.1"
+          "quote": "When there is the finding of an infringement, SAs may impose corrective measures, such as ordering controllers, taking into account the circumstances of each case, to take actions in order to remediate the unlawfulness of the initial processing.",
+          "source_section": "3.4 On the possible impact of an unlawful processing in the development of an AI model on the lawfulness of the subsequent processing or operation of the AI model",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 110914,
+          "end_char": 111159
         }
       ]
     },
     {
       "label": "civil_penalty",
-      "confidence": 0.8,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "These may include, for instance, issuing a fine, imposing a temporary limitation on the processing, erasing part of the dataset that was processed unlawfully or, where this is not possible, depending on the facts at hand, having regard to the proportionality of the measure, ordering the erasure of the whole dataset used to develop the AI model and/or the AI model itself",
-          "source_section": "Section 3.4"
+          "quote": "These may include, for instance, issuing a fine, imposing a temporary limitation on the processing, erasing part of the dataset that was processed unlawfully or, where this is not possible, depending on the facts at hand, having regard to the proportionality of the measure, ordering the erasure of the whole dataset used to develop the AI model and/or the AI model itself.",
+          "source_section": "3.4 On the possible impact of an unlawful processing in the development of an AI model on the lawfulness of the subsequent processing or operation of the AI model",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 111160,
+          "end_char": 111533
         }
       ]
     },
     {
-      "label": "reporting_obligation",
-      "confidence": 0.7,
+      "label": "market_access_restriction",
+      "confidence": 0.8,
       "evidence": [
         {
-          "quote": "Article 19 GDPR (notification obligation regarding rectification or erasure of personal data or restriction of processing) may, depending on the circumstances of the case, also be relevant in this context, for instance in relation to the notification that the controller developing the model should conduct towards the controller deploying the model",
-          "source_section": "Section 3.4.2"
+          "quote": "imposing a temporary limitation on the processing, erasing part of the dataset that was processed unlawfully or, where this is not possible, depending on the facts at hand, having regard to the proportionality of the measure, ordering the erasure of the whole dataset used to develop the AI model and/or the AI model itself.",
+          "source_section": "3.4 On the possible impact of an unlawful processing in the development of an AI model on the lawfulness of the subsequent processing or operation of the AI model",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 111209,
+          "end_char": 111533
         }
       ]
     }
   ],
-  "implementation_notes": "This is an EDPB opinion issued under Article 64(2) GDPR at the request of the Irish SA. It provides interpretive guidance to supervisory authorities on: (1) when AI models trained on personal data can be considered anonymous; (2) how legitimate interest as a legal basis applies to AI model development and deployment; (3) consequences of unlawful processing in development phase on subsequent processing. The opinion is addressed to SAs to inform their case-by-case assessments, but is without prejudice to controller obligations under GDPR. Not a binding regulation but carries significant weight as an EDPB opinion under the consistency mechanism.",
-  "confidence": 0.92
+  "enforcement_authorities": [
+    "European Data Protection Board (EDPB)",
+    "National data protection supervisory authorities (SAs) in the EEA"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": "Under Article 58 GDPR, national supervisory authorities enjoy discretionary powers to impose appropriate, necessary, and proportionate corrective measures upon finding an infringement, including issuing administrative fines, imposing temporary limitations on processing, ordering ex officio erasure of unlawfully processed personal data or part of the training dataset, or—where necessary and proportionate—ordering the erasure of the entire training dataset and/or the AI model itself, without prejudice to enforcement under the EU AI Act or civil liability frameworks.",
+  "implementation_notes": "Adopted pursuant to Article 64(2) GDPR following a 4 September 2024 request from the Irish supervisory authority, this Opinion is addressed to all EEA supervisory authorities to promote consistent GDPR application across the EEA. It provides a non-exhaustive, case-by-case analytical framework on AI model anonymity, legitimate interest (Article 6(1)(f) GDPR) in development and deployment, and the downstream consequences of unlawful training data processing, without prejudice to controllers' and processors' existing GDPR obligations. It explicitly excludes detailed analysis of special categories of data (Article 9), automated decision-making (Article 22), purpose compatibility (Article 6(4)), DPIAs (Article 35), and data protection by design (Article 25), and notes forthcoming EDPB guidelines on anonymisation, pseudonymisation, and data scraping for generative AI.",
+  "confidence": 0.94
 }

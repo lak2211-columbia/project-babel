@@ -2,35 +2,75 @@
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
     "consumer_public_safety",
-    "fundamental_rights"
+    "fundamental_rights",
+    "economic_competitiveness"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.0,
+    "existential_catastrophic": 0.1,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
+    "economic_competitiveness": 0.55,
+    "fundamental_rights": 0.65,
     "social_stability": 0.0,
-    "innovation_enablement": 0.55,
-    "consumer_public_safety": 0.25,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.65,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance as enabling confident innovation through clarity and pragmatic obligations. Repeated emphasis on helping actors 'innovate with confidence,' exemptions for open-source to 'promote transparency and innovation,' and the stated EU approach of promoting 'excellence and trust' while boosting 'research and industrial capacity' signals an innovation-enablement framing. Safety and fundamental rights appear as secondary justifications.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.15,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.55,
+    "consumer_public_safety": 0.15,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Innovation enablement is the dominant frame because the document repeatedly justifies the GPAI provider guidelines as a pragmatic, clear compliance tool designed to lower regulatory friction, clarify open-source exemptions, and help ecosystem actors 'innovate with confidence' and 'innovate with clarity and confidence.' Consumer and public safety, fundamental rights, and economic competitiveness appear as secondary frames in the concluding 'Big Picture' statement—which links the EU's AI approach to 'boosting research and industrial capacity while ensuring safety and fundamental rights'—as well as brief procedural references to systemic risks and serious incident reporting, but they receive far less explicit justification emphasis than enabling trustworthy innovation.",
   "evidence_spans": [
     {
-      "quote": "help actors in the AI ecosystem understand whether the obligations apply to them and what is expected of them, ensuring they can innovate with confidence",
-      "source_section": "Introduction"
+      "quote": "The\nguidelines on the scope of obligations for providers of general-purpose AI (GPAI) models\nhelp actors in the AI ecosystem understand whether the obligations apply to them and what is expected of them, ensuring they can innovate with confidence.",
+      "source_section": "Guidelines for providers of general-purpose AI models | Shaping Europe’s digital future",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 197,
+      "end_char": 444
     },
     {
-      "quote": "The guidelines for providers of GPAI model help stakeholders across the AI value chain innovate with clarity and confidence",
-      "source_section": "Conclusion"
+      "quote": "The guidelines also clarify under what conditions providers of open-source AI models are exempt from certain obligations, to promote transparency and innovation.",
+      "source_section": "Key points of the guidelines",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 971,
+      "end_char": 1132
     },
     {
-      "quote": "The EU's approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights",
-      "source_section": "Footer"
+      "quote": "The EU’s approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights.",
+      "source_section": "Big Picture",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3891,
+      "end_char": 4057
     },
     {
-      "quote": "clarify under what conditions providers of open-source AI models are exempt from certain obligations, to promote transparency and innovation",
-      "source_section": "Exemptions for open-source"
+      "quote": "The EU’s approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights.",
+      "source_section": "Big Picture",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 3891,
+      "end_char": 4057
+    },
+    {
+      "quote": "The EU’s approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights.",
+      "source_section": "Big Picture",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 3891,
+      "end_char": 4057
     }
   ]
 }

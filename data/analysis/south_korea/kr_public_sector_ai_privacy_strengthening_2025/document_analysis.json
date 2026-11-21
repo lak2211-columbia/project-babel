@@ -4,136 +4,214 @@
   "language": "ko",
   "policy_extraction": {
     "jurisdiction": "south_korea",
-    "issuing_body": "개인정보보호위원회 (Personal Information Protection Commission)",
+    "issuing_body": "Personal Information Protection Commission (개인정보보호위원회)",
     "document_type": "regulatory_guidance",
-    "binding_strength": "binding_law",
+    "binding_strength": "regulatory_guidance",
     "publication_date": "2025-09-04",
     "effective_date": "2025-09-05",
+    "covered_actors": [
+      "Public institutions (공공기관) establishing, operating, or modifying personal information files above statutory thresholds when introducing or utilizing AI",
+      "AI developers and operating entities (AI 개발 및 운영주체)",
+      "Private enterprises (민간기업) (as voluntary reference users for preventive AI privacy protection frameworks)"
+    ],
     "covered_application_domains": [
       "public_sector_use",
       "general_purpose_models"
     ],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.95,
+        "confidence": 0.96,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "공공기관은 일정 규모 이상 개인정보 파일을 구축‧운영하거나 변경할 경우 영향평가를 의무적으로 실시해야 한다",
-            "source_section": "개인정보 영향평가 의무"
+            "quote": "공공기관은 일정 규모 이상* 개인정보 파일을 구축‧운영하거나 변경할 경우 영향평가를 의무적으로 실시해야 한다.",
+            "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+            "quote_en": "Public institutions are required to mandatorily conduct a Privacy Impact Assessment when establishing, operating, or modifying personal information files exceeding specified scale thresholds.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 633,
+            "end_char": 694
           },
           {
-            "quote": "인공지능 시스템 학습 및 개발, 인공지능 시스템 운영 및 관리 등 2개 세부 평가분야를 신설",
-            "source_section": "고시 개정 내용"
+            "quote": "이에 개인정보위는 고시 및 안내서를 개정하여 ▲인공지능 시스템 학습 및 개발, ▲인공지능 시스템 운영 및 관리 등 2개 세부 평가분야를 신설하였다.",
+            "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+            "quote_en": "Accordingly, PIPC amended the Public Notice and Guide to establish two new detailed evaluation sub-areas: (1) AI system training and development, and (2) AI system operation and management.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 988,
+            "end_char": 1070
           }
         ]
       },
       {
-        "label": "model_documentation",
-        "confidence": 0.85,
+        "label": "training_data_governance",
+        "confidence": 0.94,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "AI 학습용 데이터의 보유 및 파기를 명확히 규정하고 있는지 등을 검토하도록 했다",
-            "source_section": "인공지능 시스템 학습 및 개발"
+            "quote": "먼저, ‘인공지능 시스템 학습 및 개발’ 관련해서는 ①개인정보 처리시 적법한 법적 근거를 확보하고 있는지, ②민감정보·14세 미만 아동정보 등이 불필요하게 포함되지 않는지, ③AI 학습용 데이터의 보유 및 파기를 명확히 규정하고 있는지 등을 검토하도록 했다.",
+            "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+            "quote_en": "First, regarding 'AI system training and development,' the criteria require reviewing (1) whether a lawful legal basis is secured when processing personal information, (2) whether sensitive information or data of children under age 14 are unnecessarily included, and (3) whether retention and destruction of AI training data are clearly stipulated.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1071,
+            "end_char": 1215
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.85,
+        "confidence": 0.86,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "생성형 AI 서비스 제공시 허용되는 이용 방침(Acceptable Use Policy; AUP) 제공",
-            "source_section": "인공지능 시스템 운영 및 관리"
-          }
-        ]
-      },
-      {
-        "label": "incident_reporting",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "생성형 AI 시스템의 부적절한 답변, 개인정보 유·노출에 대한 신고 기능 마련 등 정보주체 권리보장 방안 수립·시행",
-            "source_section": "인공지능 시스템 운영 및 관리"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.75,
-        "evidence": [
-          {
-            "quote": "AI 개발 및 운영주체 간 책임성 명확화",
-            "source_section": "인공지능 시스템 운영 및 관리"
-          }
-        ]
-      },
-      {
-        "label": "access_controls",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "민감정보·14세 미만 아동정보 등이 불필요하게 포함되지 않는지",
-            "source_section": "인공지능 시스템 학습 및 개발"
+            "quote": "다음으로, ‘인공지능 시스템 운영 및 관리’ 관련해서는 ①AI 개발 및 운영주체 간 책임성 명확화, ②생성형 AI 서비스 제공시 허용되는 이용 방침(Acceptable Use Policy; AUP)* 제공, ③생성형 AI 시스템의 부적절한 답변, 개인정보 유·노출에 대한 신고 기능 마련 등 정보주체 권리보장 방안 수립·시행을 주요 평가기준으로 제시했다.",
+            "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+            "quote_en": "Next, regarding 'AI system operation and management,' key evaluation criteria include (1) clarifying accountability between AI developers and operators, (2) providing an Acceptable Use Policy (AUP) when offering generative AI services, and (3) establishing and implementing data-subject rights protection measures such as reporting functions for inappropriate generative AI outputs or personal data leakage/exposure.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1216,
+            "end_char": 1414
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "regulatory_supervision",
-        "confidence": 0.9,
+        "label": "soft_enforcement",
+        "confidence": 0.82,
         "evidence": [
           {
-            "quote": "개인정보보호위원회(위원장 고학수, 이하 '개인정보위')는 9월 3일(수) 제19회 전체회의를 개최하고, 「개인정보 영향평가에 관한 고시」 개정안을 의결하였다",
-            "source_section": "개요"
-          }
-        ]
-      },
-      {
-        "label": "reporting_obligation",
-        "confidence": 0.85,
-        "evidence": [
+            "quote": "상세한 평가항목은 ‘개인정보 영향평가 수행안내서’를 통해 구체적 해설·사례와 함께 공개되며, 개인정보위는 관련 기관·기업의 적용 사례 등 다양한 의견을 수렴하여 평가항목을 지속적으로 개선해 나갈 계획이다.",
+            "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+            "quote_en": "Detailed evaluation items will be released with concrete commentary and cases through the 'Privacy Impact Assessment Implementation Guide,' and PIPC plans to continuously improve the items by gathering diverse feedback including application cases from institutions and enterprises.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1668,
+            "end_char": 1782
+          },
           {
-            "quote": "공공기관은 일정 규모 이상 개인정보 파일을 구축‧운영하거나 변경할 경우 영향평가를 의무적으로 실시해야 한다",
-            "source_section": "영향평가 의무"
+            "quote": "아울러, 이번에 마련된 인공지능 분야 영향평가 기준은 공공기관 뿐 아니라 민간기업에서도 인공지능을 활용한 개인정보 처리시 잠재적인 위험성을 식별하고 경감하는 사전 예방적 개인정보 보호체계를 구축하는 데 유용한 참고자료로 활용될 수 있을 것으로 전망된다.",
+            "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+            "quote_en": "Furthermore, the newly established AI impact assessment criteria are expected to serve as useful reference material not only for public institutions but also for private enterprises in building preventive personal data protection systems that identify and mitigate potential risks when processing personal data with AI.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1783,
+            "end_char": 1924
           }
         ]
       }
     ],
-    "implementation_notes": "This regulatory guidance amends the 'Notification on Personal Information Impact Assessment' to add AI-specific evaluation domains for public sector entities. The assessment criteria are mandatory for public sector organizations above specified thresholds, but the document notes the criteria can also serve as voluntary reference for private sector entities. The two new evaluation domains cover AI system training/development and AI system operation/management. No explicit civil or criminal penalties are mentioned in this press release; enforcement is primarily through mandatory impact assessment obligations.",
-    "confidence": 0.88
+    "enforcement_authorities": [
+      "Personal Information Protection Commission (개인정보보호위원회)"
+    ],
+    "compliance_deadlines": [
+      "2025-09-05: Effective date of the amended Public Notice on Privacy Impact Assessment (개인정보 영향평가에 관한 고시) adding AI system training/development and operation/management evaluation areas"
+    ],
+    "penalties_summary": null,
+    "implementation_notes": "Official PIPC press release (published 2025-09-04) announcing the 2025-09-03 plenary adoption and 2025-09-05 entry into force of the amended Public Notice on Privacy Impact Assessment and accompanying PIA Implementation Guide. While public institutions exceeding statutory personal-data file thresholds (50,000+ sensitive/unique IDs, 500,000+ linked records, or 1,000,000+ personal records) face mandatory PIAs under the Notice, this press release itself is regulatory guidance/companion communication rather than binding law, and explicitly frames the criteria as voluntary reference material for private enterprises.",
+    "confidence": 0.94
   },
   "risk_framing": {
     "dominant_frame": "fundamental_rights",
     "secondary_frames": [
-      "consumer_public_safety",
-      "social_stability"
+      "innovation_enablement"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
       "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.82,
+      "fundamental_rights": 0.95,
       "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.55,
+      "innovation_enablement": 0.65,
+      "consumer_public_safety": 0.25,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document centers on protecting personal information rights of data subjects when public institutions deploy AI. The governance justification is framed around preventing privacy violations, ensuring legal bases for data processing, and protecting sensitive groups such as children—core fundamental rights concerns under Korea's Personal Information Protection Act.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.75,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.2,
+      "consumer_public_safety": 0.05,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The release is dominantly framed around fundamental_rights, emphasizing strengthening personal data protection, preventing privacy infringement incidents, shielding sensitive and children's personal information, and guaranteeing data-subject rights when public institutions deploy AI. Innovation_enablement serves as a clear secondary frame because PIPC justifies introducing explicit criteria and practical case-based guidance to eliminate uncertainty for public agencies that previously had to invent ad-hoc assessment criteria and to provide a practical reference supporting preventive privacy frameworks across both public and private AI adoption.",
     "evidence_spans": [
       {
-        "quote": "개인정보 영향평가는 개인정보 처리가 필요한 사업 추진 시 사전에 개인정보에 미치는 영향을 분석하고 개선방안을 수립하여 개인정보 침해사고를 예방하는 제도이다",
-        "source_section": "본문"
+        "quote": "개인정보 영향평가(이하 ‘영향평가’)는 개인정보 처리가 필요한 사업 추진 시 사전에 개인정보에 미치는 영향을 분석하고 개선방안을 수립하여 개인정보 침해사고를 예방하는 제도이다.",
+        "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+        "quote_en": "Privacy Impact Assessment ('PIA') is a system that prevents personal data infringement incidents by proactively analyzing impacts on personal information and establishing improvement measures when pursuing projects requiring personal data processing.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 534,
+        "end_char": 632
       },
       {
-        "quote": "민감정보·14세 미만 아동정보 등이 불필요하게 포함되지 않는지",
-        "source_section": "평가항목"
+        "quote": "③생성형 AI 시스템의 부적절한 답변, 개인정보 유·노출에 대한 신고 기능 마련 등 정보주체 권리보장 방안 수립·시행을 주요 평가기준으로 제시했다.",
+        "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+        "quote_en": "Third, establishing and implementing data-subject rights protection measures—such as reporting functions for inappropriate answers from generative AI systems and personal data leakage or exposure—was presented as a core evaluation criterion.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 1332,
+        "end_char": 1414
       },
       {
-        "quote": "정보주체 권리보장 방안 수립·시행을 주요 평가기준으로 제시했다",
-        "source_section": "운영 및 관리"
+        "quote": "현행 고시에는 인공지능 분야의 별도 기준이 없어, 인공지능을 도입·활용하는 공공기관들은 영향평가 시 개별적으로 평가항목을 개발하여 반영해야 했다.* 이에 기관 입장에서는 평가항목이 적정한지 여부를 알기 어려웠다.",
+        "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+        "quote_en": "Because the existing public notice lacked separate criteria for AI, public institutions adopting or using AI had to individually develop and reflect evaluation items during PIAs, making it difficult for agencies to know whether their items were appropriate.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 761,
+        "end_char": 879
+      },
+      {
+        "quote": "아울러, 이번에 마련된 인공지능 분야 영향평가 기준은 공공기관 뿐 아니라 민간기업에서도 인공지능을 활용한 개인정보 처리시 잠재적인 위험성을 식별하고 경감하는 사전 예방적 개인정보 보호체계를 구축하는 데 유용한 참고자료로 활용될 수 있을 것으로 전망된다.",
+        "source_section": "- 공공기관 인공지능(AI) 도입·활용 시의 개인정보 영향평가 기준 마련",
+        "quote_en": "Furthermore, the newly established AI impact assessment criteria are expected to serve as useful reference material not only for public institutions but also for private enterprises in building preventive personal data protection systems that identify and mitigate potential risks when processing personal data with AI.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1783,
+        "end_char": 1924
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:12:13.707385Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "84df7e764ff8a520ec8060bd4ddb2650c6e69454aa569932fead8cc9de8587ed",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 1990,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 10,
+      "exact_matches": 10,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_019EDrTFLDsAMC66YLPd4SaR",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"social_stability\",\"secondary_frames\":[\"national_security\",\"fundamental_rights\",\"innovation_enablement\"],\"frame_confidence\":{\"social_stability\":0.45,\"innovation_enablement\":0.25,\"consumer_public_safety\":0.1,\"labor_transition\":0.05},\"rationale_summary\":\"The document's primary governance rationale centers on maintaining social order and ideological stability—prohibiting content that undermines state power, social stability, or socialist values. National security appears as a closely related secondary concern. The document also strongly promotes innovation and self-reliance in AI development, and addresses individual rights such as personal information protection.\",\"evidence_spans\":[{\"quote\":\"维护国家安全和社会公共利益，保护公民、法人和其他组织的合法权益\",\"source_section\":\"第一条\"},{\"quote\":\"不得生成煽动颠覆国家政权、推翻社会主义制度，危害国家安全和利益……破坏国家统一和社会稳定\",\"source_section\":\"第四条\"},{\"quote\":\"坚持发展和安全并重、促进创新和依法治理相结合的原则，采取有效措施鼓励生成式人工智能创新发展\",\"source_section\":\"第三条\"},{\"quote\":\"鼓励生成式人工智能算法、框架、芯片及配套软件平台等基础技术的自主创新，平等互利开展国际交流与合作\",\"source_section\":\"第六条\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 5411,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 379,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 9065,
+    "candidatesTokenCount": 1320,
+    "totalTokenCount": 13826,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 9065
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1320
+      }
+    ],
+    "thoughtsTokenCount": 3441,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "YC0Ba6XTC8eYur8PqZTd6A0"
 }

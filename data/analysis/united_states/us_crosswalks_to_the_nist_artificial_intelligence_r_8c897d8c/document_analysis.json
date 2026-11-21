@@ -6,28 +6,29 @@
     "jurisdiction": "united_states",
     "issuing_body": "National Institute of Standards and Technology (NIST)",
     "document_type": "standards_guideline",
-    "binding_strength": "voluntary_commitment",
-    "publication_date": null,
+    "binding_strength": "standards_guideline",
+    "publication_date": "2023-01-25",
     "effective_date": null,
     "covered_actors": [
-      "organizations designing AI systems",
-      "organizations developing AI systems",
-      "organizations deploying AI systems",
-      "organizations using AI systems",
-      "AI actors"
+      "Organizations designing, developing, deploying, or using AI systems (AI actors)",
+      "Individuals (AI actors)"
     ],
-    "covered_application_domains": [
-      "general_purpose_models"
-    ],
+    "covered_application_domains": [],
     "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.85,
+        "confidence": 0.78,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "the goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI",
-            "source_section": "Introduction"
+            "quote": "the goal of the AI RMF is to offer a\nvoluntary\nresource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems.",
+            "source_section": "Share",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 320,
+            "end_char": 561
           }
         ]
       }
@@ -35,11 +36,16 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.95,
+        "confidence": 0.94,
         "evidence": [
           {
-            "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic",
-            "source_section": "Introduction"
+            "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic, providing flexibility to organizations of all sizes and in all sectors and throughout society to implement the approaches in the Framework.",
+            "source_section": "Share",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 562,
+            "end_char": 807
           }
         ]
       }
@@ -47,39 +53,108 @@
     "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "Crosswalks to the AI RMF 1.0 are voluntary resources. The framework is non-sector specific and use-case agnostic. NIST solicits ongoing public comments at AIframework@nist.gov. Alignment with international standards is cited as a top priority in the NIST Roadmap for the AI RMF.",
+    "implementation_notes": "Companion NIST webpage introducing crosswalks mapping AI RMF 1.0 to external AI standards and governance frameworks. Reaffirms the AI RMF's voluntary, rights-preserving, non-sector-specific, and use-case-agnostic design under P.L. 116-283 and invites public comments on crosswalks.",
     "confidence": 0.95
   },
   "risk_framing": {
-    "dominant_frame": "consumer_public_safety",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "innovation_enablement",
-      "fundamental_rights"
+      "fundamental_rights",
+      "consumer_public_safety"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.0,
-      "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.5,
+      "economic_competitiveness": 0.1,
+      "fundamental_rights": 0.65,
+      "social_stability": 0.15,
+      "innovation_enablement": 0.85,
+      "consumer_public_safety": 0.52,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document frames AI governance primarily around managing AI risks to promote trustworthy and responsible AI systems, which aligns with consumer/public safety framing. Secondary frames include innovation enablement (voluntary, flexible framework) and fundamental rights (rights-preserving language).",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.25,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "This brief companion page is dominantly framed around innovation_enablement, emphasizing a voluntary, flexible, non-sector-specific, internationally aligned standards resource designed to equip AI actors to increase system trustworthiness without prescriptive mandates. Innovation_enablement edges out fundamental_rights (signaled explicitly by 'rights-preserving') and consumer_public_safety (managing the many risks of AI to promote responsible use), both of which appear as concise supporting rationales.",
     "evidence_spans": [
       {
-        "quote": "the goal of the AI RMF is to offer a voluntary resource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems",
-        "source_section": "Introduction"
+        "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic, providing flexibility to organizations of all sizes and in all sectors and throughout society to implement the approaches in the Framework.",
+        "source_section": "Share",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 562,
+        "end_char": 807
+      },
+      {
+        "quote": "The Framework is intended for use with, and to encourage the development of other AI resources, including guidance and standards.",
+        "source_section": "Share",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 950,
+        "end_char": 1079
       },
       {
         "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector specific, and use-case agnostic",
-        "source_section": "Introduction"
+        "source_section": "Share",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 562,
+        "end_char": 666
       },
       {
-        "quote": "approaches that increase the trustworthiness of AI systems",
-        "source_section": "Introduction"
+        "quote": "help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems.",
+        "source_section": "Share",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 454,
+        "end_char": 561
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:14:56.240296Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "624a955f62816603a1b5359f414e7c236a38eece5017ac76af29b03d8794a7f6",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 1402,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 6,
+      "exact_matches": 6,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

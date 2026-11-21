@@ -1,67 +1,89 @@
 {
   "jurisdiction": "japan",
-  "issuing_body": "Cabinet Office, Government of Japan (AI Strategy Expert Meeting for Strength and Promotion of the Innovation / Council for Social Principles of Human-centric AI)",
+  "issuing_body": "Cabinet Secretariat (Council for Social Principles of Human-centric AI)",
   "document_type": "strategy_paper",
   "binding_strength": "strategy_statement",
   "publication_date": "2019-02-15",
   "effective_date": null,
+  "covered_actors": [
+    "National and local governments (legislative and administrative bodies)",
+    "AI developers and business operators",
+    "Universities, research institutions, and educational institutions",
+    "General public and AI users"
+  ],
   "covered_application_domains": [
-    "general_purpose_models",
-    "critical_infrastructure",
+    "healthcare",
+    "finance",
+    "education",
     "public_sector_use",
     "employment",
-    "education",
-    "healthcare",
-    "finance"
+    "critical_infrastructure"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
-      "label": "risk_assessment",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "Society must promote broad, deep research and development related to AI such as the proper assessment of risks in the utilization of AI and research to reduce risks. Society must make firm efforts to conduct risk management including the safeguard of cybersecurity.",
-          "source_section": "4.1 (4) The Principle of Ensuring Security"
-        }
-      ]
-    },
-    {
       "label": "transparency_disclosure",
-      "confidence": 0.85,
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
       "evidence": [
         {
           "quote": "Appropriate explanations should be given on a case-by-case basis depending on the application of AI and each particular situation, including such things as when AI is being used, how the AI data is obtained and used, and what measures have been taken to ensure the appropriateness of results obtained from AI operations.",
-          "source_section": "4.1 (6) The Principle of Fairness, Accountability, and Transparency"
+          "source_section": "Section 4.1 (6) The Principle of Fairness, Accountability, and Transparency",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 26155,
+          "end_char": 26475
+        },
+        {
+          "quote": "In order for people to understand AI's proposals and make judgments on them, there should be appropriate opportunities for an open dialogue, as required, regarding the use, adoption, and operation of AI.",
+          "source_section": "Section 4.1 (6) The Principle of Fairness, Accountability, and Transparency",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 26478,
+          "end_char": 26681
         }
       ]
     },
     {
-      "label": "human_oversight",
-      "confidence": 0.8,
+      "label": "risk_assessment",
+      "confidence": 0.85,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "When using AI, people must judge and decide for themselves how to use it. The appropriate stakeholders involved in the development, delivery and utilization of AI should be responsible for the consequences of AI utilization.",
-          "source_section": "4.1 (1) The Human-Centric Principle"
+          "quote": "Society must promote broad, deep research and development related to AI (from immediate measures to deep essential understanding), such as the proper assessment of risks in the utilization of AI and research to reduce risks. Society must make firm efforts to conduct risk management including the safeguard of cybersecurity.",
+          "source_section": "Section 4.1 (4) The Principle of Ensuring Security",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 24278,
+          "end_char": 24602
         }
       ]
     },
     {
-      "label": "access_controls",
-      "confidence": 0.6,
+      "label": "training_data_governance",
+      "confidence": 0.78,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "it is necessary to establish a platform environment where data from all fields can be effectively utilized across national borders without being monopolized",
-          "source_section": "4.1 (7) The Principle of Innovation"
-        }
-      ]
-    },
-    {
-      "label": "pre_deployment_testing",
-      "confidence": 0.6,
-      "evidence": [
+          "quote": "In particular, AI using personal data should have mechanisms to ensure accuracy and legitimacy, and to allow individuals to be substantially involved in managing the privacy of their personal data.",
+          "source_section": "Section 4.1 (3) The Principle of Privacy Protection",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22789,
+          "end_char": 22986
+        },
         {
-          "quote": "methods for confirming the quality and reliability of AI, and for efficient collection and maintenance of data used by AI must be promoted. In addition to establishing AI engineering such as methods for the development, testing and operation of AI",
-          "source_section": "4.1 (7) The Principle of Innovation"
+          "quote": "Personal data must be protected appropriately according to its degree of importance and sensitivity.",
+          "source_section": "Section 4.1 (3) The Principle of Privacy Protection",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 23139,
+          "end_char": 23239
         }
       ]
     }
@@ -69,29 +91,32 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.9,
+      "confidence": 0.96,
       "evidence": [
         {
-          "quote": "we believe it is important to create an international consensus quickly through open discussions, and share results internationally in a non-regulatory, non-binding framework.",
-          "source_section": "4.2 AI R&D and Utilization Principles"
+          "quote": "Since many countries, organizations, companies, and so on are currently discussing AI development and utilization principles, we believe it is important to create an international consensus quickly through open discussions, and share results internationally in a non-regulatory, non-binding framework.",
+          "source_section": "Section 4.2 AI R&D and Utilization Principles",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 28866,
+          "end_char": 29167
         },
         {
-          "quote": "Japan should share the principles herein with the government, related industries, organizations, and so on, and reflect them in government policies.",
-          "source_section": "5 Conclusion"
-        }
-      ]
-    },
-    {
-      "label": "none_specified",
-      "confidence": 0.95,
-      "evidence": [
-        {
-          "quote": "non-regulatory, non-binding framework",
-          "source_section": "4.2 AI R&D and Utilization Principles"
+          "quote": "When implementing such governance, flexible and effective measures should be taken not only in terms of the law but also by means of industries with appropriate technical means taking the initiative.",
+          "source_section": "Section 3 (5) Governance",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 15675,
+          "end_char": 15874
         }
       ]
     }
   ],
-  "implementation_notes": "This is a high-level strategy/principles document with no binding legal force. The document explicitly states it operates in a 'non-regulatory, non-binding framework.' It covers broad societal principles rather than specific technical mandates. Safety requirements extracted are aspirational statements addressed to society, government, and industry rather than enforceable obligations. The document was established by an advisory council under the Cabinet Office and is intended to inform future AI strategy and policy.",
-  "confidence": 0.9
+  "enforcement_authorities": [],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Foundational 2019 Japanese national AI principles drafted by the Council for Social Principles of Human-centric AI under the Cabinet Secretariat/Cabinet Office (Appendix dated February 15, 2019; formally decided by the Integrated Innovation Strategy Promotion Council on March 29, 2019). Organized around three basic philosophical values (Dignity, Diversity & Inclusion, Sustainability), five societal transformation pillars for an 'AI-Ready Society' (Society 5.0), and seven Social Principles of AI (Human-Centric, Education/Literacy, Privacy Protection, Ensuring Security, Fair Competition, Fairness/Accountability/Transparency, and Innovation). Explicitly conceived as a non-regulatory, non-binding framework to guide future government policies, industry-led R&D/utilization principles, and international consensus. High-level human-centricity and human judgment principles do not establish operational human-in-the-loop override mechanics, so human_oversight is omitted per codebook boundaries.",
+  "confidence": 0.94
 }

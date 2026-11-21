@@ -1,48 +1,109 @@
 {
   "safety_requirements": [
     {
-      "label": "transparency_disclosure",
-      "confidence": 0.97,
+      "label": "training_data_governance",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "Article 53(1)(d) AI Act requires all providers of general-purpose AI models to draw up and make publicly available a sufficiently detailed public summary of the content used for the training of the model",
-          "source_section": "Page 2"
+          "quote": "Article 53(1)(d) AI Act requires all providers of general-purpose AI models to draw up and make publicly available a sufficiently detailed public summary of the content used for the training of the model (the ‘Summary’), according to a template provided by the AI Office (the ‘Template’).",
+          "source_section": "1. Background (2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "the objective of the Summary is to increase transparency on the content used for the training of general-purpose AI models, including text and data protected by law",
-          "source_section": "Page 3"
+          "quote": "Describe the measures implemented before model training to respect reservations of rights from the TDM exception or limitation before and during data collection, including the opt-out protocols and solutions honoured by the provider or, as applicable, by third parties from which datasets have been obtained:",
+          "source_section": "Annex 3.1. Respect of reservation of rights from text and data mining exception or limitation",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
-      "label": "model_documentation",
-      "confidence": 0.9,
+      "label": "open_weight_obligations",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "The Template consists of three main sections: 1. General information... 2. List of data sources... 3. Relevant data processing aspects",
-          "source_section": "Page 5"
+          "quote": "Providers of all general-purpose AI models placed on the Union market must fulfil the above obligation, including providers of general-purpose AI models released under free and open-source licenses4, in so far as the models fall within the scope of the AI Act5.",
+          "source_section": "1. Background (3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "4 The exception for free and open-source general-purpose AI model under Article 53(2) AI Act does not apply to the obligation to make publicly available the Summary.",
+          "source_section": "1. Background, Footnote 4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "domestic_representative",
+      "confidence": 0.85,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Authorised representative name and contact details: Only applicable if the provider is established outside the Union (see Article 54 AI Act).",
+          "source_section": "Annex 1.1. Provider identification",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "reporting_obligation",
+      "label": "civil_penalty",
       "confidence": 0.95,
       "evidence": [
         {
-          "quote": "Providers of general-purpose AI models shall […] draw up and make publicly available a sufficiently detailed summary about the content used for training of the general-purpose AI model, according to a template provided by the AI Office",
-          "source_section": "Page 3"
+          "quote": "Non-compliance may be sanctioned with fines of up to 3% of the provider’s annual total worldwide turnover in the preceding financial year or EUR 15 000 000, whichever is higher.",
+          "source_section": "5. Simple, uniform and effective reporting (26)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.8,
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "the AI Office to provide a template for the summary, which should be simple, effective, and allow the provider to provide the required summary in narrative form",
-          "source_section": "Page 3"
+          "quote": "The AI Office may verify whether the Template has been filled in correctly in order to assess if the provider has complied with Article 53(1)(d) AI Act. In this context, the AI Office has all enforcement powers under the AI Act and and may request corrective measures.",
+          "source_section": "5. Simple, uniform and effective reporting (26)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "The supervision and enforcement by the AI Office for compliance with the rules for general-purpose AI models will start as of 2 August 2026.",
+          "source_section": "8. Entry into application of the obligation and special rules for models placed on the market before 2 August 2025 (33)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }

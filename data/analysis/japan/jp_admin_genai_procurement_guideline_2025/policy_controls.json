@@ -1,0 +1,368 @@
+{
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "各府省庁のAI 統括責任者（CAIO）は、企画者と連携しつつ、利活用ケースに あわせたリスク評価を行い、そのリスクレベル（高リスクの可能性が高いか否 か）を適切に判断する。",
+          "source_section": "Page 13 (3.2 高リスクな生成AI 利活用の考え方)",
+          "quote_en": "Each ministry or agency's Chief AI Officer (CAIO), in coordination with planners, shall conduct a risk assessment tailored to the use case and appropriately determine its risk level (whether there is a high possibility of high risk).",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "② 企画者は、当該ユースケースを想定した環境・リスク分析を行うとともに、 リスクを最小限に抑える方法や運用時を含めた品質確保策等を検討する。",
+          "source_section": "Page 33 (6.3.1 生成AI システムの企画時の対応事項)",
+          "quote_en": "Planners shall conduct an environmental and risk analysis assuming the relevant use case, and consider methods to minimize risks as well as quality assurance measures including during operation.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.96,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "利用目的・機能を踏まえて、入出力の検証のためのテストシナリオを作 成、入出力を検証し、システムが安定して動作すること及び期待品質を 満たしているか確認する（※）。",
+          "source_section": "Page 39 (6.3.3 生成AI システムの構築・リリース前の準備時の対応事項)",
+          "quote_en": "Based on the intended purpose and functions, create test scenarios for verifying inputs and outputs, verify inputs and outputs, and confirm that the system operates stably and meets expected quality.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "LLMのメジャーアップデートやモデルの移行前に、移行候補のLLMで、アウトプットの品質や安全性等について問題ない性能かを検証できている",
+          "source_section": "Page 55 (別紙３ 調達チェックシート 要求事項#12)",
+          "quote_en": "Prior to a major LLM update or model migration, verify with the candidate LLM for migration that its performance regarding output quality, safety, etc., has no issues.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "レッドチーム等の様々な⼿法を組み合わせて多様/独⽴した内外部テスト⼿段を採⽤する",
+          "source_section": "Page 39 (6.3.3 生成AI システムの構築・リリース前の準備時の対応事項)",
+          "quote_en": "Adopt diverse/independent internal and external testing methods combining various techniques such as red-teaming.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "プロンプトインジェクションなどにより生成AIシステムの防御策の回避が可能ではないか、また、生成AIシステムのバックエンドシステムに意図していない操作が行われることがないよう対策を講じている",
+          "source_section": "Page 56 (別紙３ 調達チェックシート 要求事項#23)",
+          "quote_en": "Measures are taken to ensure that defenses of the generative AI system cannot be bypassed via prompt injection or similar attacks, and that unintended operations are not performed on backend systems.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.96,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "このため、AI 統括責任者 （CAIO）は、生成AI システム特有のリスクケースの発生時及び対応後に先進的AI 利活用アドバイザリーボード（事務局）に報告する。",
+          "source_section": "Page 42 (6.7 生成AI システム特有のリスクケースへの対応)",
+          "quote_en": "Therefore, the Chief AI Officer (CAIO) shall report to the Advanced AI Utilization Advisory Board (Secretariat) upon the occurrence of and following the response to a generative AI system-specific risk case.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "情報セキュリティインシデント・生成AIシステム特有のリスクケース（事業者の責任の範囲に属するものに限る。）対応体制・手順を整備していること（開発・運用するサービスにおいて、利用者からインシデント報告を受け付け、対応の協力をすることを含む。）",
+          "source_section": "Page 53 (別紙３ 調達チェックシート 要求事項#4)",
+          "quote_en": "Maintain response structures and procedures for information security incidents and generative AI system-specific risk cases (limited to those within the vendor's scope of responsibility), including accepting incident reports from users and cooperating in responses.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.94,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "生成AI システムに関する重要な情報や生成AI システムの利活用にあた っての留意点を生成AI システムのユーザーが理解し易くかつアクセスが 容易な方法で提供する。",
+          "source_section": "Page 39 (6.3.3 生成AI システムの構築・リリース前の準備時の対応事項)",
+          "quote_en": "Provide important information regarding the generative AI system and points of caution for its use to users of the generative AI system in an easily understandable and readily accessible manner.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "エンドユーザに対し、生成AIシステムの出力を人間から発せられた情報と区別できるようにすること",
+          "source_section": "Page 53 (別紙３ 調達チェックシート 要求事項#17)",
+          "quote_en": "Enable end users to distinguish outputs of the generative AI system from information originating from humans.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.9,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "システムやモデル、データに関する概要やなりたち、動作についての検証可能性を確保するため、システムカード、モデルカード、データカードを作成して管理及び、問題が生じないよう対策を講じている",
+          "source_section": "Page 57 (別紙３ 調達チェックシート 要求事項#29)",
+          "quote_en": "To ensure verifiability of the overview, provenance, and operation of systems, models, and data, create and manage system cards, model cards, and data cards and take measures to prevent issues.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "生成AIシステムの開発過程、意思決定に影響を与えるデータ収集及びラベリング、使用されたアルゴリズム、生成生成AIシステムのシステムアーキテクチャ、データの処理プロセス等について文書化を行っている",
+          "source_section": "Page 57 (別紙３ 調達チェックシート 要求事項#25)",
+          "quote_en": "Document the development process of the generative AI system, data collection and labeling affecting decision-making, algorithms used, system architecture of the generative AI system, and data processing processes.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "RAGを利用した生成AIシステムにおいて、要機密情報が出力されないよう、RAGによる検索先のアクセス権限の設定等に不備がないことの対策を講じている",
+          "source_section": "Page 56 (別紙３ 調達チェックシート 要求事項#23)",
+          "quote_en": "In generative AI systems utilizing RAG, take measures to ensure there are no deficiencies in access privilege settings for RAG search targets so that confidential information is not output.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "プロジェクトの目的に照らし、必要な範囲で学習前・学習全体を通じて、データのアクセスを管理するデータ管理・制限機能の導入検討を行う等、適切な保護措置を実施可能である",
+          "source_section": "Page 54 (別紙３ 調達チェックシート 要求事項#6)",
+          "quote_en": "In light of the project's purpose and to the extent necessary, be able to implement appropriate protective measures throughout pre-training and training, such as considering the introduction of data management and restriction functions to control data access.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "出力にコンテンツ認証がなされる生成AIシステムにおいて、様々なプロンプトを入力した場合でも適切にコンテンツ認証がなされる仕組みを提供する技術を有している",
+          "source_section": "Page 55 (別紙３ 調達チェックシート 要求事項#16)",
+          "quote_en": "In generative AI systems where content authentication is applied to outputs, possess technology providing a mechanism to appropriately perform content authentication even when various prompts are entered.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "また、政府が調達する画像や動画等の生成AI に係る来歴証明27の導入の在り 方については、政府における生成AI の利活用の状況、国際的な議論の動向等を 踏まえ、引き続き検討を行う。",
+          "source_section": "Page 44 (７ 今後の進め方)",
+          "quote_en": "Furthermore, regarding how to introduce provenance verification for image and video generative AI procured by the government, consideration will continue based on the status of government generative AI utilization and international discussion trends.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.93,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "責任を持って生成AI の出力結果の業務への利用判断を行うこと（例：入力 データまたはプロンプト、出力結果に含まれるバイアスに留意して、業務 に活用して問題ないかを利用者が判断する。判断に迷う場合は利活用しな いこととする。）。",
+          "source_section": "Page 49 (別紙２ 生成AI システム利活用ルールひな形)",
+          "quote_en": "Responsibly make decisions on using generative AI outputs in operations (e.g., users judge whether it is acceptable to use outputs in work while paying attention to bias in input data, prompts, or outputs; if unsure, do not use them).",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "生成AI の出力結果は必ずしも正 しいものとは限らない。そのため、 生成AI の出力結果に対して政府職 員が判断せずそのまま利活用するよ うな業務設計をする場合、リスクが 高くなると考えられる。",
+          "source_section": "Page 14 (3.2 高リスクな生成AI 利活用の考え方 表４)",
+          "quote_en": "Outputs of generative AI are not necessarily correct. Therefore, designing operations so that outputs of generative AI are used as-is without judgment by government officials is considered higher risk.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.92,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "事前学習データ、ファインチューニングやInContext Learning等に向けた学習データやテストデータ等生成AIシステムに影響を及ぼすデータに関して、データの分布に人種、性別、国籍、年齢、政治的信念、宗教等による偏りがないよう対策を講じている",
+          "source_section": "Page 57 (別紙３ 調達チェックシート 要求事項#27)",
+          "quote_en": "Regarding data affecting the generative AI system such as pre-training data, training data for fine-tuning or in-context learning, and test data, take measures to ensure there is no skew in data distribution based on race, gender, nationality, age, political beliefs, religion, etc.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "このようなプロンプトの入力を行う場合には、当該生成AI システムを提供する事業者が、 当該保有個人情報を機械学習に利活用しないこと等を十分に確認すること。",
+          "source_section": "Page 48 (別紙２ 生成AI システム利活用ルールひな形)",
+          "quote_en": "When entering such prompts, thoroughly confirm that the vendor providing the generative AI system will not use the retained personal information for machine learning, etc.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.72,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "サイバー攻撃やテロなどの犯罪、CBRN（Chemical, Biological,Radiological,Nuclear）に利用され得る情報を入力あるいは想定出力に含むテストデータを入力した際、生成AIシステムの出力に有害情報が含まれない、もしくは出力を拒否することができるような仕組みを提供する技術を有している",
+          "source_section": "Page 55 (別紙３ 調達チェックシート 要求事項#15)",
+          "quote_en": "Possess technology providing a mechanism whereby, when test data containing information usable for crimes such as cyberattacks or terrorism, or CBRN (Chemical, Biological, Radiological, Nuclear), is entered as input or expected output, the generative AI system's output does not contain harmful information or refuses output.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "procurement_condition",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "政府との契約により政府に生成AI システムを提供等する事業者は本ガイ ドラインの直接の対象ではなく、上記政府職員である企画者や提供者が調達 手続や当該事業者との契約、契約事業者の監督、あるいは生成AI システム 提供事業者との協力を通じて本ガイドラインの順守や本ガイドラインに基づ く取組を確保することとする。",
+          "source_section": "Page 11 (2.2.3 本ガイドラインの対象者)",
+          "quote_en": "Vendors providing generative AI systems to the government under contract are not directly subject to this guideline; rather, government officials serving as planners or providers shall ensure compliance with and initiatives based on this guideline through procurement procedures, contracts with such vendors, supervision of contracted vendors, or cooperation with providers.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "① 企画者は、「【別紙３】調達チェックシート（生成AI システム用）」（以下、 「調達チェックシート」という。）（※）を参照し、事業者及び調達予定の生成AI システム等について、調達の応募者に対し求める事項として、調達仕様書に盛り込む。",
+          "source_section": "Page 34 (6.3.2 生成AI システムの調達時の対応事項)",
+          "quote_en": "Planners shall refer to Annex 3 Procurement Checklist (for Generative AI Systems) and incorporate requirements for vendors and the generative AI systems to be procured into procurement specifications as items required of procurement applicants.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "quote": "デジタル庁は、デジタル庁設置法（令和３年法律第36号）第４条第２項第17 号に基づく国の情報システムの整備・管理に関する事業の統括監理（一元的な プロジェクト監理）の一環として、各府省庁における生成AI システムの導入予 定、生成AI システムのリスク対応の状況等について確認を行うとともに、その 状況を「先進的AI 利活用アドバイザリーボード」に共有する。",
+          "source_section": "Page 19 (4.1.2 デジタル庁の統括監理におけるチェック)",
+          "quote_en": "As part of overall supervision (unified project supervision) of national information system development and management projects under Article 4(2)(17) of the Act on the Establishment of the Digital Agency, the Digital Agency shall check each ministry's plans for introducing generative AI systems and their risk response status, and share that status with the Advanced AI Utilization Advisory Board.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "なお、こうした生成AI システム特有のリスクケース発生時は、必要に応じ、 対応に必要なデータについて事業者等から提出を受けることや、必要な監査 を実施することについても検討する",
+          "source_section": "Page 43 (6.7 生成AI システム特有のリスクケースへの対応)",
+          "quote_en": "Furthermore, when such a generative AI system-specific risk case occurs, consider obtaining necessary data for response from vendors, etc., and conducting necessary audits as needed.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "各府省庁のAI 統括責任者（CAIO）は、随時各府省庁内における生成AI シス テムの運営状況及び行政における生成AI の利活用の状況を一覧的にとりまと め、その状況を定期的に（四半期に一度程度の頻度を目安とする）「先進的AI 利活用アドバイザリーボード」へ報告を行うこととする。",
+          "source_section": "Page 20 (4.2.2 先進的AI 利活用アドバイザリーボードへの報告)",
+          "quote_en": "Each ministry or agency's Chief AI Officer (CAIO) shall compile a comprehensive list of the operational status of generative AI systems and administrative utilization of generative AI within the ministry or agency as needed, and report that status periodically (aiming for roughly once per quarter) to the Advanced AI Utilization Advisory Board.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "③ 企画者は、デジタル庁が実施する統括監理の際に、生成AI システムの導入 予定、リスク分析結果、リスク対応策、行政データの取扱い等について、報 告を行う。",
+          "source_section": "Page 33 (6.3.1 生成AI システムの企画時の対応事項)",
+          "quote_en": "During overall supervision conducted by the Digital Agency, planners shall report on planned introductions of generative AI systems, risk analysis results, risk countermeasures, and handling of administrative data.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "quote": "なお、独立行政法人及び指定法人12においても、生成AI の調達・利活用に当 たって、本ガイドラインに準拠した取組を期待する。さらに、地方公共団体に おいても、必要に応じ、参考とされることを期待する。",
+          "source_section": "Page 9 (2.2.1 本ガイドラインが対象とする情報システム)",
+          "quote_en": "Independent administrative agencies and designated corporations are also expected to take initiatives conforming to this guideline when procuring and utilizing generative AI. Furthermore, local governments are expected to refer to it as needed.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "各府省庁の高リスクに該当する可能性の高い生成AI の調達・利活用に係る 評価及びリスク緩和のための助言",
+          "source_section": "Page 18 (4.1.1 先進的AI 利活用アドバイザリーボードの開催・AI 相談窓口の運用等)",
+          "quote_en": "Evaluation and advice for risk mitigation regarding the procurement and utilization of generative AI that has a high possibility of being high-risk in each ministry or agency.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

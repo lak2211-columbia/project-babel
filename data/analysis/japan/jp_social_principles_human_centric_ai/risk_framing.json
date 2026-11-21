@@ -1,37 +1,87 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "social_stability",
     "innovation_enablement",
-    "economic_competitiveness"
+    "economic_competitiveness",
+    "social_stability",
+    "consumer_public_safety",
+    "labor_transition"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.72,
-    "social_stability": 0.55,
-    "innovation_enablement": 0.5,
-    "consumer_public_safety": 0.35,
-    "labor_transition": 0.2
+    "existential_catastrophic": 0.05,
+    "national_security": 0.25,
+    "economic_competitiveness": 0.72,
+    "fundamental_rights": 0.94,
+    "social_stability": 0.7,
+    "innovation_enablement": 0.91,
+    "consumer_public_safety": 0.68,
+    "labor_transition": 0.58
   },
-  "rationale_summary": "The document centers on human dignity, diversity, and protection of fundamental rights as the primary justification for AI governance. It repeatedly invokes constitutional rights, non-discrimination, privacy protection, and human-centric values. While innovation and competitiveness appear, they are subordinate to the rights-based and human dignity framework.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.02,
+    "economic_competitiveness": 0.11,
+    "fundamental_rights": 0.34,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.3,
+    "consumer_public_safety": 0.08,
+    "labor_transition": 0.05
+  },
+  "rationale_summary": "Fundamental rights edges out innovation enablement as the dominant frame because the document anchors Japan's entire normative architecture for AI governance in human dignity, diversity and inclusion, constitutional and international human rights, strict personal-data privacy protection, protection against behavioral manipulation, and non-discrimination across Section 2 (Basic Philosophy) and Principles 1, 3, and 6. Innovation enablement is a very close runner-up, driving the overarching Society 5.0 and 'AI-Ready Society' vision—calling for regulatory reforms to remove impediments, open cross-border data and compute platforms, industry-led flexible governance, and non-binding international consensus so society can safely maximize AI's benefits. Supporting frames include economic competitiveness (fair competition, anti-monopoly, sustainable economic growth, global leadership), social stability (preventing disparities, digital divides, and social exclusion while sustaining public trust and SDGs), consumer and public safety (security against rare events and deliberate attacks), and labor transition (flexible employment and reeducation of working adults and the elderly).",
   "evidence_spans": [
     {
-      "quote": "The utilization of AI must not infringe upon the fundamental human rights guaranteed by the Constitution and international standards.",
-      "source_section": "4.1 Social Principles of AI"
+      "quote": "The utilization of AI must not infringe upon the fundamental human rights guaranteed by the Constitution and international standards. AI should be developed, utilized, and implemented in society to expand the abilities of people and allow diverse people to pursue their own well-being.",
+      "source_section": "Section 4.1 (1) The Human-Centric Principle",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 17258,
+      "end_char": 17543
     },
     {
-      "quote": "We should not build a society where humans are overly dependent on AI or where AI is used to control human behavior through the excessive pursuit of efficiency and convenience. We need to construct a society where human dignity is respected",
-      "source_section": "2 Basic Philosophy"
+      "quote": "In an \"AI-Ready Society\", it is necessary to ensure fairness and transparency in decision-making, appropriate accountability for the results, and trust in the technology, so that people who use AI are not subject to undue discrimination with regard to personal background, or to unfair treatment in terms of human dignity.",
+      "source_section": "Section 4.1 (6) The Principle of Fairness, Accountability, and Transparency",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 25618,
+      "end_char": 25940
     },
     {
-      "quote": "people who use AI are not subject to undue discrimination with regard to personal background, or to unfair treatment in terms of human dignity",
-      "source_section": "4.1 Social Principles of AI"
+      "quote": "In order to avoid or reduce the negative aspects in advance while making effective use of AI to benefit society, we should promote, together with the continued research and development (R&D) of technologies related to AI, a transformation into an \"AI-Ready Society\" where AI can be used effectively and safely.",
+      "source_section": "Section 1 Introduction",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1463,
+      "end_char": 1773
     },
     {
-      "quote": "all people are treated fairly without unjustified discrimination on the grounds of diverse backgrounds such as race, gender, nationality, age, political beliefs, religion",
-      "source_section": "4.1 Social Principles of AI"
+      "quote": "The government must proceed with regulatory reforms to reduce impeding factors in all related fields in order to establish an efficient and beneficial society with the aid of AI technologies.",
+      "source_section": "Section 4.1 (7) The Principle of Innovation",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 28421,
+      "end_char": 28612
+    },
+    {
+      "quote": "A fair competitive environment must be maintained in order to create new businesses and services, to maintain sustainable economic growth, and to present solutions to social challenges.",
+      "source_section": "Section 4.1 (5) The Principle of Fair Competition",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 24823,
+      "end_char": 25008
+    },
+    {
+      "quote": "In order to prevent generating disparities between people or to create socially vulnerable individuals, opportunities for education in a wide range of literacy skills are to be provided in early childhood education and primary and secondary education. Opportunities are also to be provided for the reeducation of working adults and the elderly.",
+      "source_section": "Section 4.1 (2) The Principle of Education/Literacy",
+      "quote_en": null,
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 19792,
+      "end_char": 20136
     }
   ]
 }

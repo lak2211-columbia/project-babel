@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01CN3pv32CeR8RDgC7jjgWuw",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"innovation_enablement\",\"secondary_frames\":[],\"frame_confidence\":{\"innovation_enablement\":0.75,\"consumer_public_safety\":0.1,\"labor_transition\":0.05},\"rationale_summary\":\"The document establishes an expert panel to promote research, development, and utilization of AI-related technologies. Its primary stated purpose is advancing AI R&D and application, framing governance as an enabler of innovation rather than a risk-mitigation body.\",\"evidence_spans\":[{\"quote\":\"人工知能関連技術の研究開発及び活用の推進に関する法律\",\"source_section\":\"１\"},{\"quote\":\"人工知能関連技術の研究開発及び活用の推進に係る専門的な事項の調査のため、専門調査会を設置する\",\"source_section\":\"１\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 2433,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 206,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 7276,
+    "candidatesTokenCount": 450,
+    "totalTokenCount": 9883,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 7276
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 450
+      }
+    ],
+    "thoughtsTokenCount": 2157,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "6y8Ba9i2EqmOvMcP8aLP-Qc"
 }

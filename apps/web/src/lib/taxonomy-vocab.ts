@@ -352,3 +352,102 @@ export function bindingLevelOf(label?: string | null): number {
   if (!label) return 0;
   return BINDING_LEVEL_NUMERIC[label] ?? 0;
 }
+
+const MODEL_DISPLAY_LABELS: Record<string, string> = {
+  "gemini-4-neon": "Gemini 4 Neon",
+  "gemini-3-pro": "Gemini 3 Pro",
+  "gemini-2.5-pro": "Gemini 2.5 Pro",
+  "gemini-2.5-flash": "Gemini 2.5 Flash",
+  "claude-opus-5-5": "Claude Opus 5.5",
+  "claude-sonnet-4-6": "Claude Sonnet 4.6",
+  "claude-opus-4-6": "Claude Opus 4.6",
+  "claude-sonnet-4-5": "Claude Sonnet 4.5",
+};
+
+/**
+ * Formats a canonical provider model slug (e.g. "gemini-4-neon",
+ * "claude-opus-5-5", "claude-sonnet-4-6") into a clean human-readable label.
+ */
+export function formatModelDisplayName(model?: string | null): string {
+  const trimmed = (model ?? "").trim();
+  if (!trimmed) return "automated LLM extraction";
+  const lower = trimmed.toLowerCase();
+  if (lower in MODEL_DISPLAY_LABELS) {
+    return MODEL_DISPLAY_LABELS[lower];
+  }
+
+  // Collapse trailing numeric minor versions like "claude-haiku-4-5" -> "Claude Haiku 4.5"
+  const rawTokens = trimmed.split(/[-_]+/).filter(Boolean);
+  const formatted: string[] = [];
+  for (let i = 0; i < rawTokens.length; i += 1) {
+    const tok = rawTokens[i];
+    const next = rawTokens[i + 1];
+    if (
+      /^\d+$/.test(tok) &&
+      next &&
+      /^\d+$/.test(next) &&
+      i + 2 === rawTokens.length
+    ) {
+      formatted.push(`${tok}.${next}`);
+      i += 1;
+    } else if (/^\d+(\.\d+)?$/.test(tok)) {
+      formatted.push(tok);
+    } else {
+      formatted.push(tok[0].toUpperCase() + tok.slice(1).toLowerCase());
+    }
+  }
+  return formatted.join(" ");
+}
+
+/**
+ * Formats an array of model IDs into a deduplicated human-readable list,
+ * falling back cleanly to "automated LLM extraction" when empty.
+ */
+export function formatModelList(models?: readonly string[] | null): string {
+  if (!models || models.length === 0) return "automated LLM extraction";
+  const unique: string[] = [];
+  for (const raw of models) {
+    const cleaned = (raw ?? "").trim();
+    if (!cleaned) continue;
+    const display = formatModelDisplayName(cleaned);
+    if (!unique.includes(display)) unique.push(display);
+  }
+  if (unique.length === 0) return "automated LLM extraction";
+  if (unique.length === 1) return unique[0];
+  if (unique.length === 2) return `${unique[0]} and ${unique[1]}`;
+  return `${unique.slice(0, -1).join(", ")}, and ${unique[unique.length - 1]}`;
+}
+
+export type ProvenanceBannerKind = "v2_verified" | "legacy_warning" | "none";
+
+export function getProvenanceBannerKind(prov: {
+  legacyCount: number;
+  v2Count: number;
+}): ProvenanceBannerKind {
+  if (prov.legacyCount > 0) return "legacy_warning";
+  if (prov.v2Count > 0) return "v2_verified";
+  return "none";
+}
+
+/**
+ * Extracts numeric grounding_ratio from v2.1 nested
+ * `analysis_metadata.grounding_summary.grounding_ratio` or flat
+ * `analysis_metadata.grounding_ratio` (Stage 4C fix).
+ */
+export function extractGroundingRatio(
+  meta?: {
+    grounding_ratio?: number | string | null;
+    grounding_summary?: {
+      grounding_ratio?: number | string | null;
+    } | null;
+  } | null,
+): number | null {
+  const raw =
+    meta?.grounding_summary?.grounding_ratio ?? meta?.grounding_ratio ?? null;
+  if (typeof raw === "number" && Number.isFinite(raw)) return raw;
+  if (typeof raw === "string" && raw.trim() !== "") {
+    const parsed = Number(raw);
+    if (Number.isFinite(parsed)) return parsed;
+  }
+  return null;
+}

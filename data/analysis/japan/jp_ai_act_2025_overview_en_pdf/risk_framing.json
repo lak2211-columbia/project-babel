@@ -1,41 +1,85 @@
 {
-  "dominant_frame": "economic_competitiveness",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
-    "fundamental_rights",
-    "national_security"
+    "economic_competitiveness",
+    "national_security",
+    "fundamental_rights"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.75,
-    "fundamental_rights": 0.0,
+    "national_security": 0.65,
+    "economic_competitiveness": 0.85,
+    "fundamental_rights": 0.6,
     "social_stability": 0.0,
-    "innovation_enablement": 0.65,
-    "consumer_public_safety": 0.2,
-    "labor_transition": 0.05
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.25,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance around economic competitiveness and innovation promotion, emphasizing that Japan is lagging behind in AI development and needs to enhance international competitiveness while aiming to be the friendliest country for AI development. National security and human rights are mentioned but are secondary to the economic and innovation rationale.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.1,
+    "economic_competitiveness": 0.3,
+    "fundamental_rights": 0.1,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.45,
+    "consumer_public_safety": 0.05,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The overview predominantly frames Japan's 2025 AI Act through innovation_enablement, emphasizing proportional governance that promotes R&D and utilization while mitigating risks and explicitly aiming to make Japan 'the friendliest country to develop and utilize AI.' Economic competitiveness is a close runner-up—citing that Japan is 'lagging behind in AI development and use,' 'developing the national economy,' and 'enhancing international competitiveness'—but innovation_enablement edges it out because the act's title, core necessity, basic plan, and concluding model-law vision center on building an enabling R&D and adoption ecosystem rather than pure commercial rivalry. National security and fundamental rights appear as targeted secondary rationales in the basic principles and investigatory measures, while citizen concern and improving people's lives provide a minor public-welfare backdrop.",
   "evidence_spans": [
     {
+      "quote": "Along with existing laws and business acts, a new law is needed to promote innovation while mitigating risks.",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 112,
+      "end_char": 221
+    },
+    {
+      "quote": "In accordance with international norms, promoting innovation while mitigating risks ・Aiming to be the friendliest country to develop and utilize AI",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1748,
+      "end_char": 1895
+    },
+    {
       "quote": "Japan is lagging behind in AI development and use.",
-      "source_section": "Necessity of a new law"
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 23,
+      "end_char": 73
     },
     {
-      "quote": "Keeping R&D capabilities, and enhancing international competitiveness",
-      "source_section": "Basic Principles"
+      "quote": "Improving people‘s lives, and developing the national economy",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 249,
+      "end_char": 310
     },
     {
-      "quote": "Improving people's lives, and developing the national economy",
-      "source_section": "Purpose"
+      "quote": "Importance for economic society and national security Keeping R&D capabilities, and enhancing international competitiveness",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 329,
+      "end_char": 452
     },
     {
-      "quote": "Aiming to be the friendliest country to develop and utilize AI",
-      "source_section": "Establishing a legal system aiming to be a global model"
-    },
-    {
-      "quote": "Importance for economic society and national security",
-      "source_section": "Basic Principles"
+      "quote": "Collecting information, investigating cases where human rights and interests are infringed",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 1193,
+      "end_char": 1283
     }
   ]
 }

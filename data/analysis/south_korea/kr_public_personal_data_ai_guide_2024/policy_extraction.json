@@ -3,128 +3,219 @@
   "issuing_body": "Personal Information Protection Commission (개인정보보호위원회)",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": "2024",
+  "publication_date": "2024-07-19",
   "effective_date": null,
   "covered_actors": [
-    "AI developers (AI 개발자)",
-    "AI service providers (AI 서비스 제공자)",
-    "personal information controllers (개인정보처리자)",
-    "overseas AI developers and service providers targeting Korean data subjects"
+    "AI developers and AI service providers holding personal information controller status under PIPA (개인정보 보호법상 개인정보처리자의 지위를 갖는 AI 개발자 및 서비스 제공자)",
+    "Overseas AI developers and service providers targeting Korean data subjects or processing personal information affecting Korean data subjects (해외 AI 개발자 및 서비스 제공자)",
+    "Open-source AI model developers and downstream open-source or API user enterprises (오픈소스 및 API 이용사업자)",
+    "Chief Privacy Officers (CPO) and internal AI privacy management organizations (개인정보보호책임자 및 AI 프라이버시 담당조직)"
   ],
   "covered_application_domains": [
-    "general_purpose_models",
-    "public_sector_use",
-    "healthcare",
-    "employment",
-    "finance"
+    "general_purpose_models"
   ],
   "prohibited_practices": [
-    "Development of AI systems for profiling and surveillance of individuals by combining with facial recognition databases",
-    "Development of AI systems for cyberattacks or identity fraud (phishing, smishing)",
-    "Processing publicly available personal information to explicitly disadvantage identified individuals without clear overriding public interest"
+    "Collecting AI training data from domains where unlawful data such as illegal reproductions or child sexual abuse material are traded or likely traded (e.g., deep web, dark web)",
+    "Developing AI systems using publicly available personal data for personal profiling and surveillance combined with facial recognition databases, or for cyberattacks and impersonation fraud (e.g., phishing/smishing), which cannot qualify as a legitimate interest under PIPA Article 15(1)(6)"
   ],
   "safety_requirements": [
     {
-      "label": "risk_assessment",
-      "confidence": 0.85,
+      "label": "training_data_governance",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "개인정보처리자의 정당한 이익이 정보주체의 권리에 우선하는지 여부를 판단함에 있어 정보주체의 권리 침해 가능성을 심도있게 검토해야 함",
-          "source_section": "Page 9"
+          "quote": "AI 개발자가 직접 웹 스크래핑 도구를 이용하여 공개된 개인정보를 수집하는 경우, 웹사이트 이용약관과 로봇배제표준 등을 준수할 필요가 있음",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (1-1 학습데이터 수집 출처 검증·관리)",
+          "quote_en": "When an AI developer directly collects publicly available personal information using web scraping tools, it is necessary to comply with website terms of use and the Robots Exclusion Standard (robots.txt).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18187,
+          "end_char": 18264
         },
         {
-          "quote": "AI 개발 목적·용도에 맞는 학습데이터 수집 기준을 사전에 정하고, AI 개발과 상당한 관련성이 없는 정보는 학습에서 제외하는 것이 바람직함",
-          "source_section": "Page 9"
+          "quote": "또한, LLM 등 AI 모델의 암기 리스크는 학습데이터 내 동일 문장·단어 등이 중복되는 경우 높아지는 것으로 알려져 있어, 신뢰할 수 있는 기관에서 배포한 중복제거(de-duplication) 데이터셋을 이용하거나 중복제거 도구를 직접 적용하면 암기 리스크를 줄일 수 있는 점도 고려할 수 있음",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (1-2 개인정보 유·노출 방지)",
+          "quote_en": "Furthermore, because memorization risk in AI models such as LLMs is known to increase when identical sentences or words are duplicated in training data, developers may consider using deduplicated datasets distributed by trusted institutions or directly applying deduplication tools to reduce memorization risk.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19933,
+          "end_char": 20098
         }
       ]
     },
     {
-      "label": "pre_deployment_testing",
-      "confidence": 0.8,
+      "label": "risk_assessment",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AI 개발자 및 서비스 제공자는 (가칭)AI 프라이버시 레드팀을 구성·운영하여 기획·개발 시 예상하지 못한 개인정보 침해 유형을 시험·확인하고, AI 모델이 배포된 이후 정보주체에 미칠 수 있는 유해한 영향을 최소화하는 것이 권장됨",
-          "source_section": "Page 18"
+          "quote": "AI 개발자 및 서비스 제공자는 공개된 개인정보 등을 활용하는 경우 개인정보 영향평가 실시를 고려할 수 있음",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (2-2 개인정보 영향평가 수행 고려)",
+          "quote_en": "AI developers and service providers may consider conducting a Privacy Impact Assessment when utilizing publicly available personal information.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 26590,
+          "end_char": 26650
+        },
+        {
+          "quote": "AI 학습데이터에 민감한 정보가 포함되어 있을 개연성이 높거나 정보주체 권리·의무에 중대한 영향을 미칠 수 있는 AI 서비스를 개발·운영하는 경우 특히 영향평가 실시를 고려하는 것이 바람직함",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (2-2 개인정보 영향평가 수행 고려)",
+          "quote_en": "It is particularly advisable to consider conducting a Privacy Impact Assessment when AI training data is likely to contain sensitive information or when developing and operating AI services that may significantly affect data subjects' rights and obligations.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 26718,
+          "end_char": 26824
         }
       ]
     },
     {
       "label": "red_teaming",
-      "confidence": 0.9,
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "(가칭) AI 프라이버시 레드팀 구성·운영",
-          "source_section": "Page 18"
+          "quote": "AI 개발자 및 서비스 제공자는 (가칭)AI 프라이버시 레드팀을 구성·운영하여 기획·개발 시 예상하지 못한 개인정보 침해 유형을 시험·확인하고, AI 모델이 배포된 이후 정보주체에 미칠 수 있는 유해한 영향을 최소화하는 것이 권장됨",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (2-3 ‘(가칭) AI 프라이버시 레드팀’ 구성·운영)",
+          "quote_en": "AI developers and service providers are recommended to form and operate an (tentative) AI Privacy Red Team to test and verify unexpected types of personal data infringement not foreseen during planning and development, and to minimize harmful impacts on data subjects after model deployment.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 27450,
+          "end_char": 27579
         },
         {
-          "quote": "레드팀은 내·외부 전문가로 구성될 수 있으나, 독립성·객관성 확보를 위해 외부 전문가를 포함하거나 외부 레드팀 그룹과 협업할 수 있음",
-          "source_section": "Page 18"
-        },
-        {
-          "quote": "악의적 행위자(malicious adversaries)에 의한 내·외부 공격 테스트 외, 일반적인 AI 이용 과정에서 발생할 수 있는 개인정보 유·노출, 거짓정보 생성 등 프라이버시 침해 위험도 주기적으로 식별하고 조치방안을 마련하는 것이 바람직함",
-          "source_section": "Page 18"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "오픈소스 모델을 개발하는 사업자는 프라이버시 보호를 고려한 이용방법과 조건의 범위를 명시한 라이선스 정책을 수립·배포하고",
-          "source_section": "Page 18"
-        },
-        {
-          "quote": "AI 개발자는 API 이용사업자가 개인정보 보호를 준수하도록 계약상 의무를 부과하고 상세한 사용지침, 기술문서 등을 제공할 수 있음",
-          "source_section": "Page 18"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "AI의 목적·용도를 미리 정의하기 어려운 한계를 고려하여 합리적 범위에서 예측가능한 AI 시스템 유형(type)과 기술적으로 구현할 수 있는 기능(functionality), 성능(capability)등을 대리변수(proxy)로 활용하여 정당한 이익의 내용을 구체화할 수 있음",
-          "source_section": "Page 9"
+          "quote": "악의적 행위자(malicious adversaries)에 의한 내·외부 공격 테스트* 외, 일반적인 AI 이용 과정에서 발생할 수 있는 개인정보 유·노출, 거짓정보 생성 등 프라이버시 침해 위험도 주기적으로 식별하고 조치방안을 마련하는 것이 바람직함",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (2-3 ‘(가칭) AI 프라이버시 레드팀’ 구성·운영)",
+          "quote_en": "In addition to internal and external adversarial attack testing by malicious actors (such as membership inference, model inversion, and prompt injection), it is advisable to periodically identify privacy infringement risks such as personal data leakage/exposure or false information generation during normal AI use and prepare mitigation measures.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 27899,
+          "end_char": 28038
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.75,
+      "confidence": 0.92,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "API 호출 시 인가되지 않은 접근, 해킹 등으로 인한 유출, 위·변조 가능성을 방지하기 위해 암호화된 통신 채널을 마련할 필요",
-          "source_section": "Page 18"
+          "quote": "AI 개발자 및 서비스 제공자는 학습데이터가 유·노출되거나 이용자 DB 등과 결합하여 개인을 식별하거나 민감정보를 추론할 수 있는 리스크를 방지·예방하기 위하여 접근제한 등 안전조치를 고려할 필요",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (1-3 개인정보의 안전한 저장 및 관리)",
+          "quote_en": "AI developers and service providers need to consider safeguards such as access restrictions to prevent risks of training data leakage/exposure or linkage with user databases to identify individuals or infer sensitive information.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 23303,
+          "end_char": 23412
+        },
+        {
+          "quote": "또한, API 호출 시 인가되지 않은 접근, 해킹 등으로 인한 유출, 위·변조 가능성을 방지하기 위해 암호화된 통신 채널을 마련할 필요",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (2-4 오픈소스, API 등 AI 개발·배포 특성에 따른 안전조치)",
+          "quote_en": "Furthermore, when calling APIs, encrypted communication channels need to be established to prevent leakage, forgery, or alteration due to unauthorized access or hacking.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 29014,
+          "end_char": 29089
         }
       ]
     },
     {
-      "label": "human_oversight",
-      "confidence": 0.7,
+      "label": "transparency_disclosure",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "사람 피드백 기반 강화학습(RLHF) - 개인에 관한 콘텐츠 생성을 최소화하는 보상모델을 마련하고, 추가적인 강화학습 수행",
-          "source_section": "Page 16"
+          "quote": "최소 수집, 목적 명확화 등 개인정보 보호법 원칙을 고려하여 학습데이터 수집·이용 기준*을 미리 정하고, 이를 개인정보 처리방침, 기술문서, FAQ 등에 공개하는 것을 권장함",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (2-1 학습데이터 처리기준 정립 및 개인정보 처리방침에 공개)",
+          "quote_en": "Considering PIPA principles such as minimal collection and purpose specification, it is recommended to establish training-data collection and use criteria in advance and disclose them in privacy policies, technical documentation, and FAQs.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 26218,
+          "end_char": 26315
         },
         {
-          "quote": "학습데이터에 포함되는 민감한 개인정보를 사람이 일일이 개입하여 걸러낼 수도 있지만",
-          "source_section": "Page 18"
+          "quote": "이에 AI 개발자 및 서비스 제공자는 공개 데이터셋 수집 사실과 주요 출처, 처리 목적 등을 이용자가 쉽게 확인할 수 있는 개인정보 처리방침, 기술문서, FAQ 등에 공개하여 정보주체의 권리행사를 지원하는 것이 권장됨",
+          "source_section": "Ⅳ. 정보주체 권리 보장 방안",
+          "quote_en": "Accordingly, AI developers and service providers are recommended to support data subjects' exercise of rights by disclosing the fact of public dataset collection, major sources, and processing purposes in easily accessible privacy policies, technical documentation, and FAQs.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 33082,
+          "end_char": 33203
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "공개된 개인정보를 수집·이용하는 AI 개발자 및 서비스 제공자는 제Ⅱ, Ⅲ, Ⅳ장의 안내 사항에 따라 법적근거를 충족하였는지 확인·평가하고 그 근거를 문서화하여 보관하는 것이 바람직함",
+          "source_section": "Ⅴ. 책임있는 AI 개발·활용을 위한 AI 기업 등의 역할",
+          "quote_en": "AI developers and service providers collecting and using publicly available personal information are advised to verify and evaluate whether legal bases are met in accordance with Chapters II, III, and IV, and document and retain the supporting basis.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 35209,
+          "end_char": 35311
+        },
+        {
+          "quote": "이에 AI 개발자는 API 이용사업자가 개인정보 보호를 준수하도록 계약상 의무를 부과하고 상세한 사용지침, 기술문서 등을 제공할 수 있음",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (2-4 오픈소스, API 등 AI 개발·배포 특성에 따른 안전조치)",
+          "quote_en": "Accordingly, AI developers may impose contractual privacy compliance obligations on API user enterprises and provide detailed usage guidelines and technical documentation.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 28933,
+          "end_char": 29009
+        }
+      ]
+    },
+    {
+      "label": "open_weight_obligations",
+      "confidence": 0.94,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "이에 오픈소스 모델을 개발하는 사업자는 프라이버시 보호를 고려한 이용방법과 조건의 범위를 명시한 라이선스 정책을 수립·배포하고, 오픈소스 이용사업자 준수를 확보할 수 있는 방안을 모색하는 것이 바람직함",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (2-4 오픈소스, API 등 AI 개발·배포 특성에 따른 안전조치)",
+          "quote_en": "Accordingly, enterprises developing open-source models are advised to establish and distribute license policies specifying permissible usage methods and conditions that account for privacy protection, and to seek ways to secure compliance by downstream open-source user enterprises.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 28557,
+          "end_char": 28669
+        },
+        {
+          "quote": "또한, 배포된 오픈소스 모델에 개인정보 관련 취약점이 발견되는 경우에는 그러한 사항과 조치방안을 신속하게 강구하고 재배포하는 노력이 필요함",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (2-4 오픈소스, API 등 AI 개발·배포 특성에 따른 안전조치)",
+          "quote_en": "In addition, if personal data vulnerabilities are discovered in a distributed open-source model, efforts are needed to promptly devise countermeasures and redistribute the model.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 28674,
+          "end_char": 28751
         }
       ]
     },
     {
       "label": "incident_reporting",
-      "confidence": 0.65,
+      "confidence": 0.82,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "오픈소스 모델이 악의적인 이용사업자에 의해 오·남용되어 개인정보를 침해하는 경우, 그 사실을 즉시 신고할 수 있는 기능·도구를 마련하는 것이 바람직함",
-          "source_section": "Page 18"
+          "quote": "레드팀 테스트 결과 사회적 파급력이 큰 중대한 취약점 발견 시 관련 정부부서와 공유하는 것이 바람직",
+          "source_section": "Ⅲ. 안전성 확보 조치 기준 (2-3 ‘(가칭) AI 프라이버시 레드팀’ 구성·운영)",
+          "quote_en": "If major vulnerabilities with significant social impact are discovered through red-team testing, sharing them with relevant government ministries is advisable.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 28078,
+          "end_char": 28133
         },
         {
-          "quote": "레드팀 테스트 결과 사회적 파급력이 큰 중대한 취약점 발견 시 관련 정부부서와 공유하는 것이 바람직",
-          "source_section": "Page 18"
+          "quote": "AI 개발·운영 과정에서 개인정보 유·노출 등 침해사고가 발생할 경우 신속히 권리 구제 방안을 마련·안내하고 정보주체 권리행사를 적극적으로 지원해야 함",
+          "source_section": "Ⅴ. 책임있는 AI 개발·활용을 위한 AI 기업 등의 역할",
+          "quote_en": "If an infringement incident such as personal data leakage or exposure occurs during AI development or operation, organizations must promptly prepare and inform users of redress measures and actively support data subjects' exercise of rights.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 35428,
+          "end_char": 35512
         }
       ]
     }
@@ -132,30 +223,53 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.9,
+      "confidence": 0.96,
       "evidence": [
         {
           "quote": "본 안내서는 AI 개발·서비스를 위해 공개된 개인정보를 처리하는 경우 참고할 수 있는 법 해석 기준을 제시한 것으로서 법적 구속력이 없음",
-          "source_section": "Page 3"
+          "source_section": "Preamble",
+          "quote_en": "This guide presents legal interpretation criteria for reference when processing publicly available personal information for AI development and services and has no legal binding force.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 243,
+          "end_char": 319
+        },
+        {
+          "quote": "본 안내서에서 제시하는 개별 조치를 이행하지 않았다고 하여 공개된 개인정보 처리가 위법한 것으로 보는 것은 아닙니다.",
+          "source_section": "부록1. 자주 묻는 질문(FAQ)",
+          "quote_en": "Failure to implement an individual measure suggested in this guide does not automatically render the processing of publicly available personal information unlawful.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 38871,
+          "end_char": 38936
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.75,
+      "confidence": 0.84,
       "evidence": [
         {
           "quote": "개인정보보호위원회는 주기적 사전실태점검, 사전적정성 검토제 등을 통해 기술발전과 시장상황을 모니터링하고, 추가적인 연구와 의견수렴 등을 통해 개인정보 보호법을 AI 시대에 맞게 개정하는 작업도 추진해갈 예정임",
-          "source_section": "Page 5"
+          "source_section": "Ⅰ. 개 요",
+          "quote_en": "The Personal Information Protection Commission plans to monitor technological advances and market conditions through periodic proactive fact-finding inspections and the prior adequacy review system, and pursue amendments to PIPA suited to the AI era.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1238,
+          "end_char": 1354
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "Personal Information Protection Commission (개인정보보호위원회)"
+    "Personal Information Protection Commission (개인정보보호위원회)",
+    "Korea Internet & Security Agency (한국인터넷진흥원, partnering with PIPC on personal-data exposure detection and URL exclusion)"
   ],
-  "compliance_deadlines": [],
-  "penalties_summary": null,
-  "implementation_notes": "The document explicitly states it has no legal binding force ('법적 구속력이 없음') and presents legal interpretation standards as reference guidance. It applies to overseas AI actors targeting Korean data subjects. The guide covers the full AI lifecycle (training and service stages) and is subject to periodic revision as AI law, technology, and market conditions evolve. The PIPC plans to conduct periodic pre-emptive inspections and prior adequacy reviews, and to revise the Personal Information Protection Act to align with the AI era.",
-  "confidence": 0.92
+  "compliance_deadlines": [
+    "Within 10 days (PIPA baseline for data-subject requests for access, correction/deletion, or suspension of processing; if infeasible due to training dataset scale/structure, controllers must explain reasons and respond in good faith)",
+    "2026-03-15 (two-year statutory grace period from 2024-03-15 for existing CPOs of qualifying large controllers under PIPA Enforcement Decree Article 32(4) to meet specialized CPO qualification requirements)"
+  ],
+  "penalties_summary": "The guide itself is non-binding and imposes no new penalties; non-compliance with an individual recommended measure does not per se violate PIPA. However, lawful processing is evaluated holistically under PIPA, and private AI enterprises that voluntarily conduct a Privacy Impact Assessment under PIPA Article 33 are eligible for up to a 30% additional reduction in first-adjusted administrative surcharges under Article 10(2) of PIPC's Criteria for Imposing Surcharges for Violations of PIPA.",
+  "implementation_notes": "Primary PIPC regulatory interpretation guide (July 2024) clarifying how PIPA Article 15(1)(6) ('legitimate interest') applies to processing publicly available personal information (notably web-scraped datasets) for AI training and services, while distinguishing 1:1 user prompt/account data (where consent/contract are generally more appropriate). Sets out a flexible, risk-proportionate 'optimal combination of safeguards' across technical measures (source verification, deduplication/de-identification/PETs, secure storage under PIPA Art. 29, RLHF/SFT fine-tuning, prompt/output filtering, machine unlearning) and organizational measures (public processing criteria, voluntary PIA with 30% fine-reduction safe harbor, AI Privacy Red Team, open-source/API lifecycle controls, CPO-led AI privacy unit, and data-subject redress). Applies extraterritorially to overseas AI developers targeting or affecting Korean data subjects.",
+  "confidence": 0.95
 }

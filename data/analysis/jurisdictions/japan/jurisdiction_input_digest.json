@@ -1,43 +1,14 @@
 {
   "jurisdiction": "japan",
-  "source_count": 28,
+  "source_count": 34,
   "source_window_start": "2018-08-17",
-  "source_window_end": "2026-01-16",
+  "source_window_end": "2026-07-14",
   "documents": [
     {
       "document_id": "jp_admin_genai_procurement_guideline_2025",
       "title": "行政の進化と革新のための生成AIの調達・利活用に係るガイドライン",
       "publication_date": "2025-05-27",
-      "issuing_body": "デジタル社会推進会議幹事会 (Digital Society Promotion Council Executive Committee)",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
-      "corpus_role": "primary_instrument",
-      "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
-      "secondary_frames": [
-        "innovation_enablement",
-        "economic_competitiveness",
-        "fundamental_rights"
-      ],
-      "top_requirements": [
-        "risk_assessment",
-        "pre_deployment_testing",
-        "red_teaming"
-      ],
-      "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation",
-        "procurement_condition"
-      ],
-      "implementation_notes": "This guideline (DS-920) is classified as 'Normative' within the Digital Society Promotion Standard Guidelines framework, making it binding on national government ministries and agencies for government information systems incorporating generative AI (specifically LLM-based text generation AI). Full application begins FY2026 (April 2026), with FY2025 systems expected to comply as much as possible. The guideline establishes a CAIO role at each ministry, an Advisory Board for advanced AI use, and detailed procurement/contract checklists. It explicitly excludes systems handling classified information, national security, or public safety. Local governments and independent administrative agencies are only expected (not required) to follow it.",
-      "framing_rationale_summary": "The document frames AI governance primarily around the safe and appropriate use of generative AI in government operations, emphasizing risk management (hallucination, information leakage, harmful outputs, bias) alongside benefit realization. The core logic is that safety guardrails and risk management must accompany active promotion of AI use—'利活用促進とリスク管理を表裏一体で進める'. This is fundamentally a public/consumer safety framing applied to government systems and the citizens they serve. Secondary frames include innovation enablement (accelerating administrative innovation, encouraging active adoption) and economic competitiveness (Japan's international AI competitiveness, startup support in public procurement).",
-      "confidence": 0.675
-    },
-    {
-      "document_id": "jp_agri_ai_data_contract_guideline_2020",
-      "title": "農業分野におけるAI・データに関する契約ガイドライン～農業分野のノウハウの保護とデータ利活用促進のために～",
-      "publication_date": "2020-03-12",
-      "issuing_body": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries of Japan)",
+      "issuing_body": "Digital Agency of Japan",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
@@ -45,20 +16,49 @@
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "economic_competitiveness",
+        "fundamental_rights",
         "consumer_public_safety"
       ],
       "top_requirements": [
-        "transparency_disclosure",
-        "model_documentation",
-        "human_oversight"
+        "risk_assessment",
+        "pre_deployment_testing",
+        "red_teaming"
+      ],
+      "top_enforcement_mechanisms": [
+        "procurement_condition",
+        "regulatory_supervision",
+        "reporting_obligation"
+      ],
+      "implementation_notes": "Designated as a Normative standard guideline (DS-920) within Japan's Digital Society Promotion Standard Guidelines suite, superseding the 'Agreement on Business Use of Generative AI such as ChatGPT (v2.1)'. Currently scoped to text-generating AI systems built on LLMs (including text functions of multimodal models), with image/video generation and AI agents deferred for future expansion. Explicitly exempts government information systems handling Specially Designated Secrets (特定秘密), Critical Economic Security Information (重要経済安保情報), classified administrative documents, and sensitive national security or public safety/order information. Adopts a risk-proportionate framework across three procurement models (Type A standard-terms SaaS, Type B SaaS with individual contract, Type C custom development) and includes four operational annexes: High-Risk Assessment Sheet (Annex 1), Model Usage Rules (Annex 2), Procurement Checklist (Annex 3), and Contract Checklist (Annex 4).",
+      "framing_rationale_summary": "The guideline is dominantly framed around innovation_enablement: it explicitly positions governance rules as 'guardrails for promoting the utilization of generative AI' to advance adoption and risk management as 'two sides of the same coin,' accelerate a virtuous cycle of innovation, modernize public administration, and ensure proportional risk-balanced controls so that even high-risk innovative projects can proceed safely. Innovation enablement edges out fundamental_rights, economic_competitiveness, and consumer_public_safety because those goals are integrated as supporting objectives or risk-boundary conditions within an overarching mission to drive safe, effective public-sector AI adoption. Secondary frames are nonetheless substantive: fundamental_rights anchors the purpose in Japan's Human-Centric AI Society Principles (dignity, diversity and inclusion) and privacy/non-discrimination protections; economic_competitiveness justifies leading-by-example government adoption and public procurement to boost Japan's international AI competitiveness and foster domestic startups; and consumer_public_safety underpins high-risk classifications targeting harms to human life, body, property, and citizen safety. Social_stability (disinformation, political neutrality) and national_security (foreign server jurisdiction concerns) appear only peripherally, and systems handling national security or public order are explicitly excluded from the guideline's scope.",
+      "confidence": 0.945
+    },
+    {
+      "document_id": "jp_agri_ai_data_contract_guideline_2020",
+      "title": "農業分野におけるAI・データに関する契約ガイドライン～農業分野のノウハウの保護とデータ利活用促進のために～",
+      "publication_date": "2020-03-12",
+      "issuing_body": "Ministry of Agriculture, Forestry and Fisheries (農林水産省)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "economic_competitiveness",
+        "fundamental_rights"
+      ],
+      "top_requirements": [
+        "training_data_governance",
+        "access_controls",
+        "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
         "soft_enforcement",
-        "none_specified"
+        "procurement_condition"
       ],
-      "implementation_notes": "This is a contractual guideline (契約ガイドライン) for AI and data use in the agricultural sector, focused on know-how protection and data utilization. It provides model contracts and term sheets for data/know-how provision, AI R&D commissioning, and third-party data sharing. It is non-binding guidance referencing METI AI contract guidelines. No penalties or mandatory compliance dates are specified.",
-      "framing_rationale_summary": "The document is a contract guideline from Japan's Ministry of Agriculture aimed at promoting data utilization and protecting agricultural know-how in AI development. The primary framing is enabling innovation—facilitating AI adoption in agriculture through clear contract frameworks, IP protection, and data sharing arrangements. Economic competitiveness appears as a secondary frame through references to AI Strategy 2019 goals and commercialization. Consumer/public safety appears modestly through liability and personal data handling provisions.",
-      "confidence": 0.765
+      "implementation_notes": "Non-binding ministerial contract guideline ('Know-how Utilization Edition') issued by MAFF in March 2020 for the agricultural sector (smart agriculture), building on METI's AI/Data Contract Guidelines (June 2018) and MAFF's Agricultural Data Contract Guidelines (December 2018). It provides model contract clauses, checklists, and term sheet templates covering R&D data/know-how provision, commissioned AI R&D (including publicly funded projects and Japanese Bayh-Dole Act considerations), AI product/service utilization, and third-party data/model transfers. It explicitly excludes statutory AI regulations outside contractual relationships and relies on private contract law, trade secret/limited provided data protections under the Unfair Competition Prevention Act, and personal data protections under Japan's APPI.",
+      "framing_rationale_summary": "The guideline's dominant frame is innovation_enablement because its central stated purpose is to reduce contractual uncertainty and farmers' anxieties over unintended know-how leakage so that agricultural stakeholders can safely share data and collaborate to promote AI R&D, smart agriculture adoption, and active data utilization. Economic_competitiveness is a prominent secondary frame, repeatedly invoked to justify geographic and third-party transfer restrictions on publicly funded AI models and agricultural know-how in order to strengthen Japan's international and inter-regional agricultural competitiveness. Innovation_enablement edges out economic_competitiveness because competitive restrictions are treated as context-dependent options for specific public-funding or regional cases, whereas enabling trustworthy data-sharing ecosystems and accelerating agricultural AI deployment underpins the entire document. Fundamental_rights appears as a minor secondary frame through references to personal data protection and alignment with Japan's Social Principles of Human-Centric AI, while consumer_public_safety receives only brief peripheral mention regarding existing product-safety laws and AI malfunction risks.",
+      "confidence": 0.915
     },
     {
       "document_id": "jp_ai_68c2d8ca",
@@ -72,104 +72,93 @@
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "economic_competitiveness",
-        "consumer_public_safety",
-        "national_security"
+        "consumer_public_safety"
       ],
-      "top_requirements": [
-        "human_oversight",
-        "risk_assessment",
-        "transparency_disclosure"
-      ],
+      "top_requirements": [],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "procurement_condition",
-        "regulatory_supervision"
+        "none_specified"
       ],
-      "implementation_notes": "Meeting minutes of the 2nd AI Strategy Promotion Inter-Ministerial Conference. Key items: AI bill legislative progress reported; Digital Agency presented draft AI government procurement/utilization guidelines and requested ministries appoint Chief AI Officers (CAIO); FSA published AI Discussion Paper on financial sector use cases; METI introduced GENIAC-PRIZE program for generative AI social implementation. Chair noted Diet deliberations touched on human-centric AI, local government AI use, and deepfake pornography risks. Goal stated as making Japan 'the world's most AI-friendly country for development and utilization'.",
-      "framing_rationale_summary": "The document is primarily framed around enabling rapid AI adoption and social implementation ('world's most AI-friendly country for development and utilization', promoting generative AI deployment programs, and accelerating nationwide AI implementation), with national economic competitiveness as a closely paired secondary rationale.",
-      "confidence": 0.735
+      "implementation_notes": "Summary of minutes (議事要旨) of the 2nd meeting of Japan's AI Strategy Promotion Inter-Ministerial Conference held on 2025-05-14 (Reiwa 7; meeting date used as publication_date). Non-binding inter-ministerial coordination record covering Diet deliberation updates on the AI Bill, the Digital Agency's draft guidelines on government AI procurement and utilization (including requests for ministries to appoint Chief AI Officers and track AI usage), the Financial Services Agency's AI Discussion Paper (v1.0), METI's GENIAC-PRIZE program for generative AI, MIC's regional AI policy discussions, and plans to incorporate AI measures into the Integrated Innovation Strategy.",
+      "framing_rationale_summary": "The minutes overwhelmingly frame AI governance around innovation_enablement: accelerating nationwide AI implementation to address social and regional challenges, reviewing regulations and customs to remove adoption friction, having the government lead by example through procurement and horizontal deployment across ministries, and incentivizing generative AI adoption (GENIAC-PRIZE). It edges out economic_competitiveness, which appears primarily in the closing ambition to make Japan the most AI-friendly country in the world for development and utilization, and consumer_public_safety, which appears as a supporting condition through verifying safety during deployment, addressing deepfake pornography risks, and managing unexpected operational developments amid rapid technological change. Fundamental rights is only briefly touched upon via a passing reference to a human-centric approach in Diet deliberations.",
+      "confidence": 0.925
     },
     {
       "document_id": "jp_ai_72333136",
       "title": "生成AIの導入・活用に向けた実践ハンドブック 実証結果報告書",
       "publication_date": "2025-08-13",
-      "issuing_body": "こども家庭庁 (Children and Families Agency, Japan)",
-      "document_type": "regulatory_guidance",
+      "issuing_body": "Children and Families Agency (こども家庭庁)",
+      "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
-        "social_stability"
+        "fundamental_rights",
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment",
         "transparency_disclosure",
-        "incident_reporting"
+        "model_documentation"
       ],
       "top_enforcement_mechanisms": [
-        "reporting_obligation",
         "soft_enforcement"
       ],
-      "implementation_notes": "This is a pilot project report (実証結果報告書) accompanying a practical handbook on generative AI adoption in child and family policy domains. Conducted by ABeam Consulting on behalf of the Children and Families Agency. 14 local government entities participated with 45 use cases across document creation, data analysis, chatbot deployment, image recognition, and audio transcription. No binding obligations or penalties are established; findings are intended to inform voluntary adoption guidance.",
-      "framing_rationale_summary": "The document is primarily framed around enabling practical adoption of generative AI in government (child and family services), with the stated purpose of advancing 'appropriate use' and sharing best practices via a handbook. Risk governance is subsidiary—security and data handling are addressed as operational concerns within the pilot, not as the central rationale. The driving logic is to demonstrate how AI can improve public service efficiency and quality, making innovation_enablement the dominant frame, with consumer/public safety secondary due to attention to data privacy and child-related sensitive information.",
-      "confidence": 0.75
+      "implementation_notes": "Demonstration results report annexed to the Children and Families Agency's Practical Handbook for the Introduction and Utilization of Generative AI, compiled by ABeam Consulting. Summarizes 45 proof-of-concept use cases across 14 Japanese local governments (June 2024 to March 2025) in the child-rearing and childcare sector, detailing operational outcomes, risks, and project-level security practices (such as alignment with Government Common Standards, Digital Agency approval, ISMAP-registered services, opt-out from model training, and domestic region processing for sensitive personal data).",
+      "framing_rationale_summary": "The report is predominantly framed around innovation_enablement: its stated purpose is to promote the appropriate adoption and utilization of generative AI across local governments and childcare facilities by organizing empirical demonstration findings, operational issues, and best practices into a practical handbook and procurement guidance to reduce staff workload and improve service quality. Secondary rationales include fundamental_rights (protecting personal data privacy, obtaining informed consent, and preventing copyright and portrait rights infringement) and consumer_public_safety (preventing tangible harm or disadvantage to residents from inaccurate AI chatbot responses, enhancing child safety through accident/near-miss detection, and safeguarding children from illegal filming). Innovation_enablement edges out both secondary frames because risk mitigation and security rules are consistently positioned as enablers for safe, practical public-sector AI adoption rather than standalone rights-enforcement or safety mandates.",
+      "confidence": 0.935
     },
     {
       "document_id": "jp_ai_act_2025_overview_en_pdf",
       "title": "the AI Act (Overview) (Provisional Translation)",
       "publication_date": "2025-09-12",
       "issuing_body": "Cabinet Office / Secretariat of Japan",
-      "document_type": "legislation",
-      "binding_strength": "binding_law",
+      "document_type": "strategy_paper",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "economic_competitiveness",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
-        "fundamental_rights",
-        "national_security"
+        "economic_competitiveness",
+        "national_security",
+        "fundamental_rights"
       ],
       "top_requirements": [
-        "transparency_disclosure",
-        "risk_assessment",
-        "human_oversight"
+        "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "regulatory_supervision"
+        "regulatory_supervision",
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a provisional translation of an overview document. The act is primarily a promotion and framework law rather than a strict regulatory regime. Partial enforcement began 4 June 2025, full enforcement 1 September 2025. Binding obligations on business operators appear limited to cooperation duties. Detailed requirements will likely emerge via guidelines and the AI Basic Plan.",
-      "framing_rationale_summary": "The document primarily frames AI governance around economic competitiveness and innovation promotion, emphasizing that Japan is lagging behind in AI development and needs to enhance international competitiveness while aiming to be the friendliest country for AI development. National security and human rights are mentioned but are secondary to the economic and innovation rationale.",
-      "confidence": 0.75
+      "implementation_notes": "This document is a one-page provisional English overview slide summarizing Japan's Act on Promotion of Research and Development, and Utilization of AI-related Technology (AI Act), rather than the operative statutory text itself. The Act was established on 2025-05-28, with partial enforcement on 2025-06-04 and full enforcement on 2025-09-01. It establishes the AI Strategic Headquarters chaired by the Prime Minister, provides for an AI Basic Plan, and outlines non-punitive measures including information collection, investigation of rights infringements, and guidance, advice, and announcements to business operators and citizens.",
+      "framing_rationale_summary": "The overview predominantly frames Japan's 2025 AI Act through innovation_enablement, emphasizing proportional governance that promotes R&D and utilization while mitigating risks and explicitly aiming to make Japan 'the friendliest country to develop and utilize AI.' Economic competitiveness is a close runner-up—citing that Japan is 'lagging behind in AI development and use,' 'developing the national economy,' and 'enhancing international competitiveness'—but innovation_enablement edges it out because the act's title, core necessity, basic plan, and concluding model-law vision center on building an enabling R&D and adoption ecosystem rather than pure commercial rivalry. National security and fundamental rights appear as targeted secondary rationales in the basic principles and investigatory measures, while citizen concern and improving people's lives provide a minor public-welfare backdrop.",
+      "confidence": 0.9
     },
     {
       "document_id": "jp_ai_contract_checklist_2025",
       "title": "AIの利用・開発に関する契約チェックリスト",
       "publication_date": "2025-02-18",
       "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
-      "document_type": "standards_guideline",
-      "binding_strength": "standards_guideline",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "fundamental_rights",
-        "innovation_enablement"
+        "economic_competitiveness"
       ],
       "top_requirements": [
-        "access_controls",
-        "transparency_disclosure",
-        "human_oversight"
+        "risk_assessment",
+        "incident_reporting",
+        "model_documentation"
       ],
       "top_enforcement_mechanisms": [
-        "reporting_obligation",
         "soft_enforcement"
       ],
-      "implementation_notes": "This document is a practical contract checklist published by METI in February 2025, aimed at businesses engaging in AI utilization and development. It is non-binding guidance to assist businesses—especially those unfamiliar with AI legal practice—in reviewing contract terms related to inputs, outputs, personal data handling under Japan's Act on the Protection of Personal Information (APPI), security, and log retention. It references the 'AI事業者ガイドライン' (AI Business Operator Guidelines v1.01, November 2024) and the prior 2019 'AI・データの利用に関する契約ガイドライン'. No penalties or enforcement authorities are named; the document is purely advisory.",
-      "framing_rationale_summary": "The document is primarily framed around protecting business users (consumers/enterprises) from legal and data-handling risks when contracting for AI services. It explicitly cites concerns about legal risks not being properly examined and data being used for unexpected purposes or provided to third parties causing unforeseen harm. While innovation enablement and economic competitiveness are mentioned as context, the checklist's core purpose is risk management and protection of data subjects and contracting parties—a consumer/public safety framing. Fundamental rights (personal data protection under Japan's APPI) appears as a strong secondary frame.",
-      "confidence": 0.735
+      "implementation_notes": "Non-binding practical contract checklist published by METI in February 2025 to address the rapid adoption of generative AI and foundation models following the 2019 Contract Guidelines on Utilization of AI and Data. It outlines contractual checkpoints for usage-type and development-type contracts across three use cases (general-purpose AI services, customized services, and new development), covering input/output definitions, intellectual property attribution, security practices (architecture review, SBOM, audit clauses, log retention), terms-of-service updates under the Civil Code, and personal data / cross-border transfer compliance under Articles 27 and 28 of Japan's Act on the Protection of Personal Information (APPI).",
+      "framing_rationale_summary": "The document's dominant framing is innovation_enablement: METI explicitly positions this contractual checklist as a practical, accessible tool to help Japanese businesses—including those unfamiliar with AI technology or legal practice—allocate benefits and risks appropriately so as to accelerate industrial innovation, solve social challenges, and promote pragmatic AI utilization rather than discouraging adoption when risks arise. It edges out fundamental_rights and economic_competitiveness because, while Section 4.4 devotes substantial attention to personal data privacy and protecting individuals' rights and interests under the Personal Information Protection Act (APPI), and Section 1 notes balancing risk management with competitiveness gains through AI utilization, both considerations are subordinated to the overarching objective of lowering contractual friction and enabling safe, widespread business adoption of AI services. Consumer_public_safety appears only marginally through a reference to avoiding unintended disadvantages to non-business users and managing inaccurate outputs.",
+      "confidence": 0.92
     },
     {
       "document_id": "jp_ai_copyright_thinking_2024",
@@ -183,57 +172,66 @@
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "innovation_enablement",
-        "economic_competitiveness"
+        "economic_competitiveness",
+        "labor_transition"
       ],
-      "top_requirements": [],
+      "top_requirements": [
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
       "top_enforcement_mechanisms": [
+        "civil_penalty",
+        "criminal_penalty",
         "soft_enforcement"
       ],
-      "implementation_notes": "Document explicitly states it has no legal binding force ('本考え方自体が法的な拘束力を有するものではない'). It is interpretive guidance on how existing Japanese copyright law applies to generative AI, covering training/learning stage and generation/use stage. The document notes it may be revised as case law, technology, and international developments evolve. It references Article 30-4 (non-enjoyment-purpose use) and Article 47-5 of the Copyright Act as relevant rights-limitation provisions. No prohibited practices are formally established; the document clarifies existing law rather than imposing new rules.",
-      "framing_rationale_summary": "The document is primarily framed around protecting the intellectual property rights of creators and rights holders while balancing those rights against the need for fair use in AI development. The central concern is rights protection under copyright law, with secondary attention to enabling AI innovation and maintaining Japan's competitiveness in the AI field.",
-      "confidence": 0.82
+      "implementation_notes": "The document explicitly states that it has no legal binding force and does not make definitive legal determinations on specific generative AI systems; copyright law is private law interpreted case-by-case by courts. It provides interpretive guidance on Japan's Copyright Act (notably Arts. 30-4 and 47-5) across the development/training stage (coexisting enjoyment purpose such as intentional overfitting or certain RAG uses, and the proviso against unreasonably prejudicing copyright owners' interests, including paid info-analysis databases, technical access restrictions like robots.txt, and pirate sites), the generation/utilization stage (similarity, reliance, and normative liability of developers/providers), and copyrightability of AI-generated outputs. The Subcommittee and Agency for Cultural Affairs plan ongoing case collection, public outreach, and future updates as jurisprudence and technology evolve.",
+      "framing_rationale_summary": "This non-binding interpretive guidance from Japan's Cultural Council Copyright Subdivision is dominantly framed around fundamental_rights, anchoring AI governance in the Copyright Act's core mandate to protect authors' and creators' rights and interests alongside freedom of expression, academic freedom, and human-centric principles, while helping parties realize their legal rights amid rapid generative AI adoption. Innovation_enablement is a very close runner-up, as the document repeatedly justifies Japan's flexible rights limitation (Article 30-4) and non-binding guidance approach as necessary to promote AI technological progress, foster new innovation, and resolve legal uncertainty so AI can be properly developed and utilized; fundamental_rights edges it out because the entire analytical framework is structured around defining and safeguarding creators' rights and preventing undue harm to rightsholders. Economic_competitiveness appears as a modest secondary frame through concerns over severe damage to Japan's content industry from piracy and maintaining a virtuous cycle of market compensation, while labor_transition appears briefly in stakeholder concerns that generative AI imitating unprotected styles or voices could displace creators' jobs.",
+      "confidence": 0.89
     },
     {
       "document_id": "jp_ai_data_contract_guidelines_1_1_2019",
       "title": "AI・データの利用に関する契約ガイドライン 1.1版（全体版）",
       "publication_date": "2019-12-01",
       "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "fundamental_rights",
-        "national_security",
-        "economic_competitiveness"
+        "economic_competitiveness",
+        "fundamental_rights"
       ],
-      "top_requirements": [],
+      "top_requirements": [
+        "training_data_governance",
+        "access_controls",
+        "pre_deployment_testing"
+      ],
       "top_enforcement_mechanisms": [
-        "none_specified"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a non-binding guideline (version 1.1, revised December 2019 from June 2018 original) providing model contract clauses and considerations for data contracts covering three types: data provision contracts, data creation contracts, and data sharing platform contracts. It explicitly states it does not restrict freedom of contract. Revision addressed alignment with guidelines on limited-provision data (限定提供データ).",
-      "framing_rationale_summary": "The document is primarily framed around enabling data-driven innovation through clear contractual guidelines. Its stated purpose is to facilitate data transactions and AI utilization, with references to 'data-driven innovation creation' and IoT/AI platform case studies. Secondary framings include fundamental rights (personal data protection, GDPR compliance) and national security (export controls under FEFTA for dual-use technologies).",
-      "confidence": 0.735
+      "implementation_notes": "Version 1.1 (December 2019) revises the June 2018 initial edition's Data Section to reflect the 2018 amendment to the Unfair Competition Prevention Act introducing protection for 'shared data with limited access' (effective July 1, 2019), while retaining the June 2018 AI Section. The guidelines are explicitly non-binding reference materials and model contracts intended to reduce transaction costs and foster B2B contracting practices without restricting freedom of contract. The Data Section addresses three contract types (data provision, data creation, and data sharing/platform), and the AI Section proposes an 'exploratory staged' development approach (assessment, PoC, development, and retraining) centered on quasi-mandate contracts and tailored usage conditions rather than strict IP ownership disputes. Although the guidelines impose no legal obligations or sanctions of their own, they highlight compliance considerations under existing Japanese laws (Personal Information Protection Act, Antimonopoly Act, Subcontract Act, Unfair Competition Prevention Act, Copyright Act, Foreign Exchange and Foreign Trade Act) and international regimes such as the EU GDPR.",
+      "framing_rationale_summary": "The METI Contract Guidelines on Utilization of AI and Data (v1.1) are predominantly framed around innovation enablement: both the Data and AI sections explicitly state their core purpose is to reduce transaction costs, establish practical contract models and exploratory development practices, preserve freedom of contract, and unlock open innovation and broader AI/data utilization. Economic competitiveness is a strong secondary frame, as the guidelines repeatedly justify lowering contractual friction by citing national and industrial competitiveness and surviving the Fourth Industrial Revolution; however, innovation enablement edges it out because the operative rationale centers on frictionless, voluntary ecosystem facilitation rather than zero-sum international rivalry. Fundamental rights appear as a tertiary consideration focused on preventing privacy infringements and complying with personal data protection laws (APPI and GDPR) during data sharing, while consumer/public safety (industrial plant safety, medical data, consumer contract protections) and national security (Foreign Exchange and Foreign Trade Act export controls) appear only incidentally as sector examples or legal compliance checkpoints.",
+      "confidence": 0.935
     },
     {
       "document_id": "jp_ai_expert_panel_c4f43cef",
       "title": "人工知能戦略専門調査会の設置について",
       "publication_date": "2025-09-12",
-      "issuing_body": "人工知能戦略本部 (AI Strategy Headquarters)",
+      "issuing_body": "AI Strategy Headquarters (人工知能戦略本部)",
       "document_type": "executive_order",
-      "binding_strength": "executive_action",
+      "binding_strength": "strategy_statement",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [],
       "top_requirements": [],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision"
+        "none_specified"
       ],
-      "implementation_notes": "This document establishes the AI Strategy Expert Panel (人工知能戦略専門調査会) under Cabinet Order No. 281 of Reiwa 7 (2025), pursuant to the Act on Promotion of Research, Development and Utilization of AI-Related Technologies (Act No. 53 of Reiwa 7). The panel is tasked with investigating guidelines (Article 13), research and surveys (Article 16), and basic plans (Article 18). Members are appointed by the Prime Minister from persons with expertise in AI. The panel may invite external experts and establish working groups.",
-      "framing_rationale_summary": "The document establishes an expert panel to promote research, development, and utilization of AI-related technologies. Its primary stated purpose is advancing AI R&D and application, framing governance as an enabler of innovation rather than a risk-mitigation body.",
-      "confidence": 0.835
+      "implementation_notes": "Organizational decision by Japan's AI Strategy Headquarters establishing the AI Strategy Expert Panel pursuant to Article 1 of Cabinet Order No. 281 of 2025 to investigate specialized matters under the Act on the Promotion of Research, Development, and Utilization of AI-Related Technology (Act No. 53 of 2025), including guidelines (Article 13), surveys and research (Article 16), and the Basic Plan (Article 18). Members are appointed by the Prime Minister, working groups may be formed as needed, and secretariat affairs are managed by the Cabinet Office in cooperation with relevant ministries.",
+      "framing_rationale_summary": "This document is a brief administrative decision establishing the Expert Panel on AI Strategy and defining its procedural governance. It contains minimal policy justification, but the sole stated purpose for convening the panel and developing guidelines, studies, and a basic plan is to promote the research, development, and utilization of AI-related technologies, which aligns modestly with innovation_enablement. No other risk framing rationales are articulated.",
+      "confidence": 0.725
     },
     {
       "document_id": "jp_ai_governance_guidelines_2021",
@@ -241,26 +239,25 @@
       "publication_date": "2021-07-09",
       "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
       "document_type": "standards_guideline",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "standards_guideline",
       "corpus_role": "historical_baseline",
       "lifecycle_stage": "superseded",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
-        "social_stability"
+        "fundamental_rights"
       ],
       "top_requirements": [
         "risk_assessment",
-        "incident_reporting",
-        "transparency_disclosure"
+        "pre_deployment_testing",
+        "incident_reporting"
       ],
       "top_enforcement_mechanisms": [
-        "none_specified",
         "soft_enforcement"
       ],
-      "implementation_notes": "Document is explicitly non-binding (Ver. 1.0). It is framed as a voluntary guideline supporting METI's Social Principles of Human-centric AI. Action targets are described as general objectives for all AI companies, while implementation examples are discretionary. The document is intended as a living document subject to agile governance revision.",
-      "framing_rationale_summary": "The document frames AI governance primarily as a mechanism to facilitate AI deployment and support voluntary company efforts, with governance serving to enable rather than restrict AI. The stated aim is 'supporting the implementation of AI principles required for the facilitation of deployment of AI.' Secondary framing includes managing negative impacts on society and users.",
-      "confidence": 0.715
+      "implementation_notes": "Non-binding, voluntary governance guidelines (Ver. 1.0) issued as a living document under METI's Agile Governance framework to operationalize Japan's 2019 Social Principles of Human-centric AI. Applies horizontally to machine-learning-based AI systems (and other decision-making systems with low visibility) across developers, operators, and data providers. Structures voluntary AI management systems around six iterative phases (conditions and risks analysis, goal setting, system design, implementation, evaluation, and re-analysis) supported by Action Targets, practical examples, and an optional gap-analysis tool. Explicitly clarifies that following the Guidelines does not guarantee compliance with applicable laws and carries no legal compulsion or safe harbor.",
+      "framing_rationale_summary": "The guidelines are predominantly framed around innovation enablement: their stated aim is to facilitate the deployment and social implementation of AI through non-binding, flexible, and iterative 'agile governance' rather than rigid pre-fixed rules, enabling companies to maximize positive impacts (such as productivity and new high-value-added businesses) while proportionately managing negative impacts. Consumer and public safety is the strongest secondary frame, reflected in repeated attention to preventing operational incidents, mitigating harm to physical and mental health and property, and reducing incident-related burdens on users. Fundamental rights appears as a secondary frame via grounding in Japan's Social Principles of Human-centric AI—specifically privacy protection, non-discrimination/fairness, and avoiding undue hindrance to individual decision-making—though these concerns are framed as voluntary corporate risk-management targets to enable safe AI adoption rather than enforceable statutory rights, which is why innovation enablement clearly edges out both secondary frames. Mild elements of economic competitiveness (corporate growth and productivity) and social stability (social acceptance and collective trust) appear in supporting roles, while existential risk, national security, and labor transition are absent.",
+      "confidence": 0.95
     },
     {
       "document_id": "jp_ai_governance_ver_1_1_report",
@@ -273,22 +270,21 @@
       "lifecycle_stage": "superseded",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
         "economic_competitiveness",
-        "social_stability"
+        "consumer_public_safety",
+        "fundamental_rights"
       ],
       "top_requirements": [
         "risk_assessment",
-        "human_oversight",
+        "transparency_disclosure",
         "third_party_audit"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "regulatory_supervision"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a strategy/analysis report from an expert group, not binding regulation. It maps out a layered AI governance architecture including non-binding guidelines, international standards, and sector-specific regulations, but stops short of mandating any specific requirements. The document identifies future issues including monitoring/enforcement design. Confidence is moderate as the document text provided is primarily the introduction and table of contents.",
-      "framing_rationale_summary": "The document primarily frames AI governance as a challenge of enabling innovation while managing risks at acceptable levels. The explicit goal is to avoid hindering innovation while addressing concerns, and governance is framed as a tool for operationalizing AI principles in ways conducive to Japanese industrial competitiveness and social acceptance. Consumer safety and social stability are secondary concerns embedded in the risk management language.",
-      "confidence": 0.725
+      "implementation_notes": "Non-binding expert group report (Ver. 1.1) analyzing domestic and international AI governance trends and proposing an ideal AI governance architecture for Japan. Recommends goal-based, risk-based governance centered on legally non-binding corporate governance guidelines and international standards (e.g., ISO/IEC JTC1 SC42), concludes that legally binding horizontal AI regulation is unnecessary in Japan at this time, favors existing sector-specific frameworks for areas such as automotive and healthcare, and outlines future issues including adoption incentives (e.g., government procurement points), guidance for government AI use, international harmonization, and monitoring and civil liability.",
+      "framing_rationale_summary": "The report's dominant framing is innovation_enablement: throughout its introduction, Governance Innovation framework, and recommendations, it argues that conventional prescriptive laws cannot keep pace with rapid technological change and risk stifling innovation, and therefore advocates agile, goal-based, legally non-binding soft-law guidelines to facilitate AI deployment and digital transformation while managing risks proportionately. Innovation_enablement edges out economic_competitiveness because, although the report cites the mandate to enhance the competitiveness of Japanese industry and elicit Japanese corporate governance advantages relative to European and US peers, the core justification for its proposed multi-layered soft-law architecture is reducing compliance friction and enabling trustworthy AI adoption rather than zero-sum international rivalry. Consumer_public_safety and fundamental_rights appear as secondary frames through discussions of consumer insecurity over system errors, product safety and civil remedies, privacy protection, and human-centric AI principles, while social_stability plays only a minor supporting role via references to social acceptance and public trust.",
+      "confidence": 0.945
     },
     {
       "document_id": "jp_ai_guideline_2025_en_pdf",
@@ -296,45 +292,43 @@
       "publication_date": "2026-01-16",
       "issuing_body": "Artificial Intelligence Strategic Headquarters",
       "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "binding_strength": "standards_guideline",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "fundamental_rights",
-        "innovation_enablement",
+        "consumer_public_safety",
         "social_stability",
-        "national_security"
+        "economic_competitiveness"
       ],
       "top_requirements": [
         "risk_assessment",
         "red_teaming",
-        "transparency_disclosure"
+        "human_oversight"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "regulatory_supervision",
-        "procurement_condition"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This guideline is based on Article 13 of Japan's AI Act (Act No. 53 of 2025) but is explicitly designed to encourage voluntary compliance rather than impose binding mandates. Stakeholders are expected to respond 'at a suitable level, taking into account their scale, position, and the risks posed by AI.' The document is a provisional English translation and defers to the Japanese original for accuracy. No explicit civil or criminal penalties are specified; enforcement is primarily through voluntary self-governance and PDCA cycles.",
-      "framing_rationale_summary": "The document's primary framing centers on ensuring AI is safe and appropriate for all users and stakeholders, emphasizing harm prevention (hallucinations, deepfakes, disinformation, cyberattacks, bias/discrimination) and accountability across the AI lifecycle. It consistently uses safety, transparency, and human-centric principles as the core governance rationale, directed at protecting citizens, consumers, and society from AI harms. Innovation enablement and fundamental rights are strong secondary frames, reflecting Japan's dual goal of promoting beneficial AI while protecting rights and dignity.",
-      "confidence": 0.75
+      "implementation_notes": "Formulated under Article 13 of Japan's AI Act (Act No. 53 of 2025) as a provisional English translation of the December 19, 2025 decision. The guideline encourages voluntary, risk-based, agile lifecycle AI governance aligned with the Hiroshima AI Process and international standards (e.g., ISO/IEC 42001), explicitly encompasses overseas utilization business operators, directs national ministries/agencies to appoint AI governance officers (referencing Chief AI Officers) and local governments to designate responsible officers, and commits the government to continuously review and revise domestic AI guidelines.",
+      "framing_rationale_summary": "Innovation enablement is the dominant frame because the guideline, issued under Japan's AI Promotion Act, explicitly rejects rigid single standards in favor of voluntary, agile, risk-based governance designed to promote social implementation, lower adoption barriers, foster high-quality data ecosystems, and maximize AI benefits through leading public-sector utilization. Fundamental rights is the strongest runner-up—anchoring the guideline's core 'human-centricity' principles in human dignity, fundamental human rights, fairness/non-discrimination, and privacy—but these principles are consistently framed as guardrails that enable trustworthy adoption and innovation rather than as the sole overarching mandate. Consumer and public safety (preventing physical harm, fraud, crime, deepfake abuse, and system failures) and social stability (containing misinformation and disinformation) form substantial secondary rationales, alongside economic competitiveness (growth, fair competition, corporate advantage, and global leadership via the Hiroshima AI Process), while national security and labor transition appear only briefly in risk lists and skills guidance.",
+      "confidence": 0.925
     },
     {
       "document_id": "jp_ai_guideline_2025_page",
       "title": "人工知能関連技術の研究開発及び活用の適正性確保に関する指針",
       "publication_date": "2025-12-19",
-      "issuing_body": "Cabinet Office / Secretariat of Japan",
+      "issuing_body": "人工知能戦略本部 (Artificial Intelligence Strategy Headquarters, Government of Japan)",
       "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "binding_strength": "standards_guideline",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "fundamental_rights",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
+        "fundamental_rights",
         "consumer_public_safety",
-        "national_security",
-        "social_stability"
+        "social_stability",
+        "economic_competitiveness"
       ],
       "top_requirements": [
         "risk_assessment",
@@ -342,13 +336,11 @@
         "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "reporting_obligation",
-        "regulatory_supervision"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This guideline is issued under Article 13 of the AI Promotion Act (Act No. 53 of 2025). It promotes voluntary and proactive compliance rather than mandating specific binding obligations. Actors are expected to apply measures proportionate to their scale, role, and AI risk level. The guideline references the Hiroshima AI Process International Code of Conduct and ISO/IEC 42001 as applicable international norms. The document is intended to be reviewed and updated in an agile manner as AI technology evolves.",
-      "framing_rationale_summary": "The document frames AI governance primarily around protecting human dignity, basic human rights, fairness, and non-discrimination, while also balancing innovation promotion. Key elements listed—human-centricity, fairness, privacy, accountability, transparency—are rights-based. Innovation enablement is a strong secondary frame, with the document repeatedly emphasizing that safety and rights protections should not impede AI's social implementation and innovation.",
-      "confidence": 0.665
+      "implementation_notes": "Issued under Article 13 of Japan's AI Act (Act No. 53 of 2025), this guideline establishes a non-prescriptive, risk-based, and agile (PDCA) framework encouraging voluntary and proactive compliance by all statutory actors (Articles 4-8 of the AI Act), including overseas business operators. It aligns with the Hiroshima AI Process and ISO/IEC 42001, directs national ministries to appoint AI governance leads (referencing the May 2025 generative AI procurement/use guideline's CAIO role), and commits the government to continuously review and update this guideline and related guidance as AI technology evolves.",
+      "framing_rationale_summary": "Japan's December 2025 AI Guideline (issued under Article 13 of the AI Promotion Act) is dominantly framed around innovation enablement: it justifies voluntary, risk-based, and agile governance as essential to maximize AI's benefits, advance social implementation, remove adoption barriers, and foster a trustworthy AI ecosystem without imposing rigid one-size-fits-all rules. Innovation enablement edges out the strong runner-up, fundamental rights, because while human dignity, human rights, non-discrimination, and privacy anchor the core normative elements of appropriateness (drawn from the Human-Centric AI Social Principles), the document's overarching purpose and structural design prioritize enabling safe experimentation, public-private utilization, and agile PDCA governance. Consumer and public safety (preventing harm to life, body, and property, as well as fraud, crime, and malfunctions) and social stability (combating the spread of AI-generated disinformation and misinformation) are prominent supporting rationales, alongside modest references to economic competitiveness, national security (cyberattacks), and labor transition (employment anxiety and adult reskilling).",
+      "confidence": 0.91
     },
     {
       "document_id": "jp_ai_guidelines_for_business_ver_1_0",
@@ -356,14 +348,16 @@
       "publication_date": "2024-04-19",
       "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
       "document_type": "regulatory_guidance",
-      "binding_strength": "voluntary_commitment",
-      "corpus_role": "primary_instrument",
-      "lifecycle_stage": "active",
-      "dominant_frame": "fundamental_rights",
+      "binding_strength": "standards_guideline",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
+        "fundamental_rights",
+        "consumer_public_safety",
+        "economic_competitiveness",
         "social_stability",
-        "innovation_enablement",
-        "consumer_public_safety"
+        "labor_transition"
       ],
       "top_requirements": [
         "risk_assessment",
@@ -371,40 +365,89 @@
         "red_teaming"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "The Guidelines are voluntary and intended as a reference for business operators. They follow an agile governance/living document approach and are to be updated as needed. Generative AI is explicitly included in scope. Non-business users and data providers are excluded from the target audience.",
-      "framing_rationale_summary": "The document consistently grounds AI governance in respect for human dignity, autonomy, human rights, diversity, and inclusion. The three basic philosophies—Dignity, Diversity & Inclusion, and Sustainability—explicitly center on human rights and individual well-being. Common Guiding Principles require that AI not violate constitutionally or internationally guaranteed human rights. Secondary frames include social stability (avoiding divisions within society, ensuring fair outcomes) and innovation enablement (promoting open innovation, sustainable economic growth).",
-      "confidence": 0.765
+      "implementation_notes": "Jointly issued by MIC and METI on April 19, 2024 (provisional English translation), integrating and revising three earlier Japanese guidelines (AI R&D Guidelines, AI Utilization Guidelines, and Governance Guidelines for Implementation of AI Principles ver. 1.1). Explicitly framed as non-binding soft law promoting voluntary, risk-based, and agile governance, maintained as a living document. Incorporates the G7 Hiroshima AI Process International Guiding Principles and Code of Conduct for advanced AI systems (including foundation models and generative AI). Explicitly excludes non-business users and data providers from its direct scope while advising compliance with existing applicable laws (e.g., Act on the Protection of Personal Information and intellectual property laws).",
+      "framing_rationale_summary": "The document's dominant framing is innovation_enablement because its core justification for adopting voluntary, goal-based, risk-based, and agile soft-law guidelines is to avoid stifling AI innovation while mitigating risks that could cause social disagreement and inhibit AI adoption. Fundamental_rights is a close runner-up, anchoring Part 2's normative philosophies in human dignity, constitutional and international human rights, fairness, privacy, and democracy; however, innovation_enablement edges it out as the overarching rationale explaining why MIC and METI chose flexible business guidelines over binding rules to realize Society 5.0. Secondary rationales include consumer_public_safety (preventing harm to lives, bodies, minds, and property), economic_competitiveness (strengthening competitiveness and sustainable economic growth), social_stability (countering society-destabilizing disinformation and avoiding social divisions), and labor_transition (addressing labor shortages and promoting education and reskilling as human-AI task division shifts).",
+      "confidence": 0.925
+    },
+    {
+      "document_id": "jp_ai_guidelines_for_business_ver_1_2_2026",
+      "title": "AI事業者ガイドライン (第1.2版) / AI Guidelines for Business Ver. 1.2",
+      "publication_date": "2026-03-31",
+      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "standards_guideline",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "fundamental_rights",
+        "consumer_public_safety",
+        "social_stability",
+        "economic_competitiveness",
+        "existential_catastrophic",
+        "labor_transition"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "pre_deployment_testing",
+        "red_teaming"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Version 1.2 of Japan's unified AI Guidelines for Business, jointly issued by MIC and METI on March 31, 2026 (Reiwa 8), explicitly designed as a non-binding, goal-based soft-law 'Living Document' maintained through multi-stakeholder agile governance (via MIC's Conference toward AI Network Society and METI's Study Group on AI Guidelines for Business). Originally unified in April 2024 from three prior MIC/METI guidelines, it aligns with the G7 Hiroshima AI Process International Guiding Principles and Code of Conduct (including the OECD-hosted voluntary reporting framework) and references Japan's 2025 AI Promotion Act. It covers business operators (including national and local governments) across three roles—AI Developers, AI Providers, and AI Business Users—while excluding non-business users and data providers from direct scope. Practical implementation examples are provided in a separate Annex (別添).",
+      "framing_rationale_summary": "Innovation enablement is the dominant frame because the guidelines explicitly justify their overarching architecture—non-binding soft law, goal-based principles, a risk-based approach, and agile governance—as necessary to simultaneously mitigate risks and accelerate safe AI innovation and adoption without stifling benefits through rigid rule-based regulation. Fundamental rights is a strong runner-up, providing the normative foundation in Part 2 through commitments to human dignity, constitutional and international human rights, democracy, the rule of law, non-discrimination, and privacy; however, innovation enablement edges it out as the primary rationale explaining why this specific governance instrument exists and how it is structured. Secondary justifications include consumer and public safety (preventing harm to life, body, property, mental health, and the environment), social stability (mitigating societal destabilization from AI-generated disinformation and social friction), economic competitiveness (strengthening business competitiveness and sustaining economic growth), existential/catastrophic risk (CBRN, offensive cyber, self-replication, and cascading systemic risks within the incorporated Hiroshima Process Code of Conduct), and labor transition (reskilling for changing human-AI division of work).",
+      "confidence": 0.94
+    },
+    {
+      "document_id": "jp_ai_promotion_act_statute_2025",
+      "title": "人工知能関連技術の研究開発及び活用の推進に関する法律 (Act No. 53 of 2025 — AI Promotion Act Full Statutory Text)",
+      "publication_date": "2025-06-04",
+      "issuing_body": "National Diet of Japan",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "economic_competitiveness",
+        "fundamental_rights",
+        "national_security"
+      ],
+      "top_requirements": [
+        "transparency_disclosure"
+      ],
+      "top_enforcement_mechanisms": [
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Act No. 53 of 2025 (Reiwa 7) is a horizontal statutory framework promoting AI R&D and utilization alongside proper governance. It establishes the Cabinet-level AI Strategy Headquarters (supported by the Cabinet Office) and mandates an AI Basic Plan (Article 18). While utilizing businesses are legally required to cooperate with government measures (Article 7), the Act relies on soft supervisory tools—such as incident investigation, analysis, guidance, advice, and information provision (Article 16)—and contains no statutory fines or criminal penalties. Supplementary Provisions Article 2 requires the government to review implementation status in light of international trends and socioeconomic changes.",
+      "framing_rationale_summary": "Japan's AI Promotion Act (Act No. 53 of 2025) is predominantly framed around innovation enablement: its core purpose (Article 1) and operative provisions (Articles 3, 4, 6, 7, 11–15) focus on comprehensively promoting end-to-end AI R&D, public-sector and private-sector adoption, shared compute and data infrastructure, talent development, and light-touch guidelines aligned with international norms. Innovation enablement edges out economic competitiveness because the statute's overarching structure emphasizes domestic ecosystem building, administrative and business efficiency, and trustworthy utilization rather than purely zero-sum global rivalry, although economic competitiveness is a strong runner-up explicitly anchored in Article 3(2)'s mandate to create new industries and enhance international industrial competitiveness. Fundamental rights and national security serve as clear secondary frames: Article 3(4) and Article 16 address protecting citizens' rights and interests (such as personal information and copyright) against improper AI use, while Article 3(2) explicitly recognizes AI as important from a national security perspective requiring retention of domestic R&D capability. Criminal misuse and the peace of citizens' lives in Article 3(4) introduce minor consumer/public safety and social stability elements, whereas existential risk and labor transition are absent.",
+      "confidence": 0.95
     },
     {
       "document_id": "jp_ai_q_a_pdf_493kb_1812c77d",
       "title": "「農業分野におけるAI・データに関する契約ガイドライン」に関するQ＆A(PDF : 493KB)",
       "publication_date": "2024-03-29",
-      "issuing_body": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries, Japan)",
+      "issuing_body": "Ministry of Agriculture, Forestry and Fisheries (MAFF)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
-        "fundamental_rights"
+        "economic_competitiveness"
       ],
-      "top_requirements": [
-        "transparency_disclosure",
-        "model_documentation",
-        "access_controls"
-      ],
+      "top_requirements": [],
       "top_enforcement_mechanisms": [
         "procurement_condition",
-        "soft_enforcement",
-        "civil_penalty"
+        "soft_enforcement"
       ],
-      "implementation_notes": "本文書は「農業分野におけるAI・データに関する契約ガイドライン」のQ&A改訂版。農林水産省補助事業等を活用する場合のみ要件化対象。自己資金導入の場合は要件化対象外だが準拠が望ましいとされる。チェックリストおよび契約ひな形が農林水産省HPに公開されている。",
-      "framing_rationale_summary": "The document is a Q&A guide for AI/data contracts in agriculture, primarily framed around enabling safe data sharing to promote smart agriculture adoption. The core stated reason for governance is to facilitate data utilization while protecting farmers' know-how, allowing them to 'safely provide data.' This is innovation enablement (promoting smart agriculture) with a secondary consumer/public safety frame around preventing data leaks and protecting agricultural trade secrets.",
-      "confidence": 0.75
+      "implementation_notes": "This revised March 2024 Q&A clarifies compliance with MAFF's Contract Guidelines on AI and Data in the Agricultural Sector. Guideline compliance is required only as a condition for MAFF subsidy programs when introducing smart agricultural machinery, drones, robots, or IoT devices that transmit and store agricultural data on a service provider's server or cloud; self-funded deployments are outside the mandate, though compliance is recommended. System service providers verify compliance through self-assessment (consulting legal counsel and using MAFF's published checklist and model contracts) and disclose compliant products on websites or catalogs. Free contract consultation is available via INPIT's Intellectual Property Comprehensive Support Desks across all 47 prefectures.",
+      "framing_rationale_summary": "The document's dominant framing is innovation_enablement because it explicitly justifies the AI and Data Contract Guidelines as necessary to build a trustworthy contracting environment that encourages farmers to share data, harmonizes data utilization with know-how protection, avoids transactional disputes, and accelerates the adoption and R&D of smart agriculture. It edges out economic_competitiveness, which appears only as a secondary rationale in references to protecting commercial trade secrets/know-how from external or overseas outflow and supporting regional agricultural development and productivity.",
+      "confidence": 0.91
     },
     {
       "document_id": "jp_ai_senryaku_5eb91d1a",
@@ -415,63 +458,113 @@
       "binding_strength": "strategy_statement",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "economic_competitiveness",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "economic_competitiveness",
+        "fundamental_rights",
+        "social_stability"
+      ],
+      "top_requirements": [],
+      "top_enforcement_mechanisms": [
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Summary of minutes from the 14th AI Strategy Council meeting held on June 2, 2025, following the enactment of Japan's AI Act on May 28, 2025. Discusses the draft AI section of the Integrated Innovation Strategy 2025, upcoming governance milestones (AI Strategy Headquarters, AI Basic Plan, and guidelines), public-sector generative AI adoption, physical AI/robotics, IP and copyright challenges, deepfake/disinformation risks, and alignment with the Hiroshima AI Process.",
+      "framing_rationale_summary": "The dominant frame is innovation_enablement because Prime Minister Ishiba, cabinet ministers, and council members consistently justify Japan's newly enacted AI Act and upcoming Basic Plan around making Japan 'the world's most AI-friendly country' and 'the world's easiest country for AI R&D and implementation.' Speakers explicitly praise the law's flexible, penalty-free framework for avoiding chilling effects on businesses and authorities, lowering compliance burdens, and accelerating public- and private-sector adoption while managing risks. Economic_competitiveness is a strong runner-up—evidenced by calls to strengthen 'Physical AI' (robotics and AI), resolve the digital deficit, and protect Japan's IP/entertainment export industry against foreign competitors—but innovation_enablement edges it out because the primary governance rationale across ministries and the Prime Minister is establishing a proportional, low-friction regulatory environment to unlock domestic R&D and societal utilization. Fundamental_rights and social_stability serve as important secondary frames centered on protecting citizens' rights, human dignity, and democratic processes from deepfakes, bias, and disinformation, with brief references to national_security (domestic anti-disinformation tech), consumer_public_safety, and labor_transition.",
+      "confidence": 0.935
+    },
+    {
+      "document_id": "jp_aisi_evaluation_perspectives_guide_2026",
+      "title": "AIセーフティに関する評価観点ガイド (第1.20版) / J-AISI Guide to Evaluation Perspectives on AI Safety (Ver. 1.20)",
+      "publication_date": "2026-07-07",
+      "issuing_body": "AI Safety Institute (AISI)",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "innovation_enablement",
-        "consumer_public_safety",
-        "fundamental_rights"
+        "fundamental_rights",
+        "social_stability",
+        "existential_catastrophic",
+        "labor_transition"
       ],
       "top_requirements": [
         "risk_assessment",
-        "transparency_disclosure",
-        "human_oversight"
+        "pre_deployment_testing",
+        "red_teaming"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "regulatory_supervision",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "本文書は2025年6月2日開催の第14回AI戦略会議の議事要旨。同年5月28日に成立した「人工知能関連技術の研究開発及び活用の推進に関する法律」（AI法）の概要およびAI戦略本部設置・AI基本計画策定・指針整備の方向性が議論された。統合イノベーション戦略2025のAIパート案も審議。デジタル庁は生成AI調達・利活用ガイドラインを5月27日に策定済み。AIと著作権・IPをめぐる権利ルール整備、学習用データ基盤の整備が課題として提起された。",
-      "framing_rationale_summary": "The document consistently frames AI governance around Japan becoming the world's most AI-friendly nation, maintaining international competitiveness especially in content/IP industries against China, Korea, and the US, and balancing innovation promotion with risk management. Economic competitiveness language dominates, with specific references to export industries, startup creation, and competitive threats from foreign AI tools.",
-      "confidence": 0.775
+      "implementation_notes": "Non-binding technical evaluation guide (Ver. 1.20, revised July 7, 2026) maintained as a Living Document by Japan's AI Safety Institute (J-AISI) in alignment with the METI/MIC AI Guidelines for Business (Ver. 1.2). Primarily scopes LLM systems, multimodal foundation models (added in the March 28, 2025 revision), and LLM-based AI agent systems (newly expanded in Ver. 1.20 with added evaluation perspectives for observation and control of autonomous behavior and external environment interactions). Intended as a voluntary reference for technical and management-level AI safety evaluations rather than a legally binding mandate.",
+      "framing_rationale_summary": "The guide's dominant frame is consumer_public_safety because its core purpose across all sections is preventing tangible harms—including physical injury, psychological harm, property/financial damage, and unsafe autonomous or cyber-compromised system behavior—to end users and stakeholders. While innovation_enablement is a prominent secondary frame explicitly stating that safety evaluation is not meant to restrict development but to promote both innovation and societal adoption, and fundamental_rights underpins key elements such as constitutional/international human rights, non-discrimination, and privacy, consumer_public_safety edges out both because the document's operational evaluation perspectives and risk taxonomies center primarily on mitigating concrete user and physical-world safety harms. Secondary mentions of societal division and political manipulation (social_stability), CBRN misuse and uncontrolled agent self-replication (existential_catastrophic), and job displacement/skill atrophy (labor_transition) appear as targeted risk examples rather than overarching justifications.",
+      "confidence": 0.95
+    },
+    {
+      "document_id": "jp_aisi_red_teaming_guide_2025",
+      "title": "AIセーフティに関するレッドチーミング手法ガイド (第1.10版) / J-AISI Guide to Red Teaming Methodology on AI Safety (Ver. 1.10)",
+      "publication_date": "2025-03-31",
+      "issuing_body": "AI Safety Institute (AISI)",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "fundamental_rights",
+        "innovation_enablement"
+      ],
+      "top_requirements": [
+        "red_teaming",
+        "risk_assessment",
+        "model_documentation"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Non-binding technical methodology guide (Ver. 1.10, revised March 31, 2025) maintained as a living document by J-AISI to complement its Guide to Evaluation Perspectives on AI Safety. The Ver. 1.10 revision incorporates detailed evaluation items derived from practical red teaming of RAG-based LLM systems and adds multimodal foundation model (e.g., image) attack examples. The guide is organized into a main volume (this document), a detailed explanation annex, and sample deliverables, outlining a 3-stage, 15-step red-teaming lifecycle (planning/preparation, attack planning/execution, and reporting/remediation/follow-up) for both pre-release and ongoing post-deployment testing using automated tools, manual testing, and AI agents.",
+      "framing_rationale_summary": "The J-AISI Red Teaming Guide is primarily framed around consumer and public safety: its core stated purpose is to counter AI misuse, abuse, inaccurate outputs, and malicious attacks so that AI systems do not cause harm to stakeholders' life, body, property, mental well-being, or the environment, and can be operated safely and securely. Fundamental rights serves as the main secondary frame because the guide defines 'AI Safety' on a human-centric foundation that prohibits infringing constitutional or internationally recognized human rights, while requiring fairness, non-discrimination, and privacy protection. Innovation enablement is a notable secondary frame, as the guide opens by linking AI adoption to promoting innovation and solving social challenges and frames red teaming as a practical means to build trustworthiness and enable safe AI utilization. Consumer and public safety edges out fundamental rights because the bulk of the document's stated rationale centers on identifying technical vulnerabilities, preventing operational damage and harmful outputs, and hardening systems against attackers rather than constitutional rights adjudication. Misinformation/disinformation prevention appears briefly as an evaluation perspective, giving social stability a minor share, while existential risk, national security, economic competitiveness, and labor transition are absent.",
+      "confidence": 0.925
     },
     {
       "document_id": "jp_basic_ai_plan_page",
       "title": "人工知能基本計画",
       "publication_date": "2025-12-23",
-      "issuing_body": "内閣（閣議決定）/ Cabinet of Japan",
+      "issuing_body": "Cabinet of Japan",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
-      "corpus_role": "primary_instrument",
-      "lifecycle_stage": "active",
-      "dominant_frame": "economic_competitiveness",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
+        "economic_competitiveness",
         "national_security",
         "consumer_public_safety",
-        "social_stability"
+        "labor_transition",
+        "fundamental_rights"
       ],
       "top_requirements": [
         "risk_assessment",
-        "transparency_disclosure",
-        "pre_deployment_testing"
+        "frontier_safety_evaluation",
+        "content_provenance"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation",
-        "soft_enforcement"
+        "soft_enforcement",
+        "procurement_condition"
       ],
-      "implementation_notes": "This is Japan's first AI Basic Plan (人工知能基本計画), adopted by Cabinet decision on 23 December 2025 under Article 18(1) of the AI Act (令和7年法律第53号). It is a government strategy document, not binding legislation. Key pillars: (1) accelerating AI utilization, (2) strengthening AI development capacity, (3) leading AI governance, (4) continuous societal transformation. AISI to be doubled in staffing immediately. No explicit prohibited practices stated; focus is on innovation promotion balanced with risk response. No formal compliance deadlines specified.",
-      "framing_rationale_summary": "The document's central framing is Japan's competitive position in AI development globally. The subtitle '日本再起' (Japan's revival/resurgence) and repeated language about falling behind major nations, the need for 'counter-offensive' (反転攻勢), reducing digital deficit, and becoming 'the world's most AI-friendly country' all foreground economic competitiveness. Innovation enablement is a strong secondary frame. National security and consumer/public safety risks are acknowledged but positioned as conditions to be managed in service of the primary competitiveness goal.",
-      "confidence": 0.885
+      "implementation_notes": "Adopted by Cabinet Decision on December 23, 2025 pursuant to Article 18(1) of the Act on the Promotion of Research, Development, and Utilization of AI-Related Technologies (Act No. 53 of 2025). Implementation and follow-up are led by the AI Strategy Headquarters (chaired by the Prime Minister and comprising all Cabinet ministers) and the AI Strategy Promotion Council, supported by expert consultations through the AI Strategy Expert Panel and benchmark-based monitoring. The plan relies on agile PDCA cycles, voluntary industry initiatives backed by guidelines under Article 13 of the AI Act, risk surveys under Article 16, immediate doubling of AI Safety Institute (AISI) personnel, and alignment with the Science, Technology, and Innovation Basic Plan and the Priority Plan for the Realization of a Digital Society.",
+      "framing_rationale_summary": "Japan's Basic AI Plan is primarily framed around innovation_enablement, explicitly aiming to make Japan 'the world's easiest country to develop and utilize AI' by balancing innovation promotion with agile, PDCA-based risk management, regulatory reviews, sandboxes, and voluntary trustworthy-AI ecosystems that unlock widespread public and private adoption. Economic_competitiveness is a close runner-up, motivating the overall strategy through industrial revival ('Japan's comeback'), overcoming lagging AI investment, curbing the digital trade deficit, and building domestic growth engines; however, innovation_enablement edges it out because the plan's governance mechanisms themselves are consistently justified as enabling a virtuous cycle of AI utilization and R&D rather than purely zero-sum economic rivalry. National_security (sovereignty, autonomy, defense, and cybersecurity), consumer_public_safety (mitigating fraud, deepfakes, accidents, and public anxiety), labor_transition (analyzing employment impacts and reskilling workers), and fundamental_rights (human-centric dignity, privacy, and non-discrimination) appear as meaningful secondary justifications, with minor social_stability references to disinformation and no existential_catastrophic framing.",
+      "confidence": 0.95
     },
     {
       "document_id": "jp_childcare_genai_handbook_2025",
       "title": "生成AIの導入・活用に向けた実践ハンドブック",
       "publication_date": "2025-07-09",
-      "issuing_body": "こども家庭庁 (Children and Families Agency, Japan)",
+      "issuing_body": "Children and Families Agency (こども家庭庁)",
       "document_type": "regulatory_guidance",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
@@ -481,16 +574,15 @@
       ],
       "top_requirements": [
         "human_oversight",
-        "risk_assessment",
-        "transparency_disclosure"
+        "transparency_disclosure",
+        "risk_assessment"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "Document explicitly states it has no binding or compulsory force ('法的その他いかなる意味においても拘束力・強制力を持つものではない'). It is a practical handbook for generative AI adoption in the child and family services domain, based on pilot project findings as of March 31, 2025. Recommends human oversight of all AI outputs, compliance with personal information protection laws, and staff literacy training. Encourages referencing related ministry guidelines before adoption.",
-      "framing_rationale_summary": "The document is primarily framed around enabling the practical adoption of generative AI in childcare and child-rearing public services to improve efficiency and service quality. The stated purpose is to help municipalities and childcare facilities appropriately introduce and utilize generative AI, reducing administrative burdens so staff can spend more time with children and families. Risk governance (personal data, hallucinations, bias, IP rights) is treated as a condition for responsible enablement, not the central rationale. Consumer/public safety concerns about AI outputs affecting children are a significant secondary frame, as are rights-related concerns around personal information and bias.",
-      "confidence": 0.8
+      "implementation_notes": "Issued by Japan's Children and Families Agency (Version 1.0.0, March 31, 2025) based on municipal and childcare demonstration projects. The handbook explicitly states it carries no legal or binding force and is intended as flexible reference guidance rather than uniform regulation. It covers text, image, and audio generative AI (excluding video generation) across a three-phase lifecycle (planning, preparation, and operation/evaluation), advising alignment with existing laws and government policies including the Personal Information Protection Act, Copyright Act, portrait/publicity rights, MIC local government information security guidelines, and the Digital Agency's generative AI usage agreement. Detailed use cases are published in a separate companion volume (事例編).",
+      "framing_rationale_summary": "The Children and Families Agency handbook is dominantly framed around innovation_enablement: its stated purpose is to promote practical, flexible adoption of generative AI across municipalities and childcare facilities—explicitly avoiding uniform mandates—to reduce administrative workload, improve convenience for families, and realize a child-centered society. It edges out consumer_public_safety and fundamental_rights because those two frames operate as essential guardrails for safe deployment rather than the primary catalyst for issuing the handbook. Consumer_public_safety is strongly represented through priority emphasis on ensuring children's safety, preventing inappropriate or harmful content, and mitigating hallucinations and impersonation risks. Fundamental_rights is also prominent through explicit commitments to protecting children's rights, safeguarding sensitive personal data of children and parents under privacy law, and preventing discriminatory bias.",
+      "confidence": 0.925
     },
     {
       "document_id": "jp_content_genai_guidebook_2024",
@@ -498,26 +590,22 @@
       "publication_date": "2024-07-05",
       "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
       "document_type": "regulatory_guidance",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "fundamental_rights",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
-        "consumer_public_safety"
+        "fundamental_rights"
       ],
       "top_requirements": [
-        "risk_assessment",
-        "human_oversight",
-        "content_provenance"
+        "training_data_governance"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "none_specified"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a non-binding guidebook (ガイドブック) intended to provide practical guidance for content production industries (game, anime, advertising) on appropriate use of generative AI. It explicitly states it does not interpret copyright law or guarantee legality. It is positioned below binding government guidelines (AI事業者ガイドライン) and is intended as a practical companion to those instruments. Content reflects information as of June 2024.",
-      "framing_rationale_summary": "The document's primary stated reason for governance is protecting intellectual property rights and other legal interests (著作権等の権利・利益の保護) of creators and rights holders when using generative AI in content production. Rights protection language appears in the stated purpose, throughout use-case descriptions, and in the positioning section. A secondary frame of innovation enablement is also strong, as the document encourages appropriate and active use of generative AI to enhance creativity and efficiency. Consumer/public safety appears in references to preventing misinformation and controlling inappropriate outputs.",
-      "confidence": 0.785
+      "implementation_notes": "Non-binding practical guidebook issued by METI's Creative Industries Division (Commerce and Service Industry Policy Group) for the game, anime, and advertising industries, reflecting government discussions and technology levels as of June 2024. It synthesizes legal considerations and practical countermeasures across development/training and generation/use stages covering copyright, design, trademark, unfair competition (trade secrets, shared data with limited access, product indications/configurations), portrait rights, publicity rights, and personal information protection. It explicitly states that it operates under Japanese law, does not constitute authoritative legal interpretation or guarantee legality (leaving final legal interpretation to the judiciary), and should be consulted alongside updated materials from METI/MIC (AI Guidelines for Business v1.0), the Agency for Cultural Affairs, the Cabinet Office Intellectual Property Strategy Secretariat, and the Personal Information Protection Commission.",
+      "framing_rationale_summary": "The guidebook's dominant frame is innovation_enablement because its overarching purpose is to promote safe, appropriate adoption and coexistence with generative AI across Japan's game, anime, and advertising industries by providing practical voluntary guidance, real-world use cases, and legal risk-mitigation measures that unlock workflow efficiency and new creative possibilities. While fundamental_rights is a strong runner-up—since the guidebook's operational cautions focus heavily on protecting creators' and individuals' intellectual property rights, personality/portrait rights, publicity rights, and personal-data privacy—innovation_enablement edges it out because rights compliance is explicitly positioned as the means to dispel stakeholder concerns and enable constructive AI utilization rather than as a standalone rights-enforcement regime. Minor secondary touches of economic_competitiveness (the parent overseas-expansion project and references to industrial development), social_stability (brief mentions of misinformation and hallucinations), and consumer_public_safety (passing references to safety and consumer interests) appear without driving the document's core rationale.",
+      "confidence": 0.935
     },
     {
       "document_id": "jp_genai_privacy_alert_2023",
@@ -530,27 +618,53 @@
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
+        "innovation_enablement"
+      ],
+      "top_requirements": [
+        "training_data_governance"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Issued by Japan's Personal Information Protection Commission (PPC) on June 2, 2023 (Reiwa 5), referencing the May 20, 2023 G7 Hiroshima Leaders' Communiqué. The alert interprets compliance obligations under the Act on the Protection of Personal Information (APPI, Act No. 57 of 2003) for business operators and administrative organs using generative AI services—specifically advising them to confirm prompt inputs remain within specified utilization purposes and to verify that providers do not use inputted personal data for machine learning without prior consent. It also advises general users on privacy and inaccuracy risks, notes a concurrent alert (Attachment 2) sent to OpenAI regarding special care-required personal information and purpose-of-use notices, and signals ongoing PPC monitoring and potential additional measures.",
+      "framing_rationale_summary": "The Personal Information Protection Commission (PPC) frames this alert primarily around fundamental rights—specifically privacy protection, the proper handling of personal information, and safeguarding the rights and interests of individuals under the Act on the Protection of Personal Information, alongside a reference to shared democratic values in the G7 Hiroshima Leaders' Communiqué. Innovation enablement appears as a clear secondary frame, as the PPC explicitly balances individual rights protection against the public benefits of new technology (promoting innovation, productivity, education, and solving global challenges) to guide appropriate utilization rather than prohibit use. Fundamental rights edges out innovation enablement because the document's core legal mandate, operative precautions, and monitoring commitment are all anchored in preventing privacy and personal-data rights violations, with only minor ancillary attention to economic productivity and general user risk awareness.",
+      "confidence": 0.935
+    },
+    {
+      "document_id": "jp_hiroshima_ai_process_code_of_conduct_2023",
+      "title": "Hiroshima Process International Code of Conduct for Organizations Developing Advanced AI Systems",
+      "publication_date": "2023-10-30",
+      "issuing_body": "Ministry of Internal Affairs and Communications (MIC)",
+      "document_type": "voluntary_commitment",
+      "binding_strength": "voluntary_commitment",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "fundamental_rights",
+        "existential_catastrophic",
+        "social_stability",
         "innovation_enablement",
-        "consumer_public_safety"
+        "national_security"
       ],
       "top_requirements": [
         "risk_assessment",
-        "transparency_disclosure",
-        "human_oversight"
+        "pre_deployment_testing",
+        "red_teaming"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
         "soft_enforcement"
       ],
-      "implementation_notes": "This is a guidance/alert document (注意喚起) from Japan's PPC issued on 2023-06-02, addressing use of generative AI services with personal data. It references the Act on the Protection of Personal Information (個人情報保護法) as the binding legal basis, but the document itself is advisory guidance rather than binding regulation. The PPC separately issued a notice to OpenAI. Guidance covers both private sector entities and public sector bodies.",
-      "framing_rationale_summary": "The document is primarily framed around protecting individual rights and interests (権利利益) through proper handling of personal information under Japan's Personal Information Protection Law. The core justification is safeguarding privacy and personal data rights when using generative AI services. Secondary framing acknowledges innovation benefits and public safety concerns about inaccurate outputs.",
-      "confidence": 0.8
+      "implementation_notes": "Japan-led G7 Hiroshima AI Process International Code of Conduct (adopted October 30, 2023), structured as a non-binding, risk-based 'living document' setting 11 voluntary actions for organizations developing advanced AI systems (including frontier foundation models and generative AI) across private, public, academic, and civil-society sectors. Built on the OECD AI Principles, it outlines lifecycle risk evaluation (explicitly covering CBRN, offensive cyber, physical/critical-infrastructure safety, self-replication, bias/privacy, disinformation/democracy, and city-scale systemic chain-reaction risks), red-teaming, post-deployment vulnerability monitoring and bug bounties, public transparency reports, cross-sector incident sharing, model-weight and insider-threat security, watermarking/provenance tools, international technical standards development, and training-data privacy/IP safeguards. Accountability relies on voluntary endorsement, internal self-assessment, and planned monitoring mechanisms to be developed with the OECD and GPAI while jurisdictions craft domestic approaches.",
+      "framing_rationale_summary": "Consumer and public safety edges out fundamental rights and existential/catastrophic risk as the dominant frame because promoting 'safe, secure, and trustworthy AI', preventing unreasonable risks to health, safety, children, and vulnerable groups, and continuously mitigating operational vulnerabilities and misuse form the overarching thread across the Preamble and Actions 1 through 8. Fundamental rights is a very close runner-up, providing the Code's explicit normative foundation in the Preamble and Actions 1, 3, 5, 8, and 11 via commitments to international human rights law, the rule of law, democracy, due process, non-discrimination, and privacy. Existential/catastrophic risk is also exceptionally prominent and distinctively motivates the frontier-model scope through Action 1's explicit evaluation mandate for CBRN weapons proliferation, offensive cyber capabilities, autonomous model self-replication, and city-scale cascading chain-reaction risks, alongside Actions 4 and 6 on dangerous capabilities and unsanctioned weight release. Social stability (disinformation, terrorism/criminal misuse, content provenance), innovation enablement (voluntary risk-based guidance, seizing benefits, interoperable standards, SDGs), and national security (non-state weapons risks and critical infrastructure) appear as substantial supporting frames.",
+      "confidence": 0.955
     },
     {
       "document_id": "jp_index_12711198",
       "title": "人工知能技術戦略実行計画",
       "publication_date": "2018-08-17",
-      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
+      "issuing_body": "Cabinet Office / Secretariat of Japan",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
       "corpus_role": "historical_baseline",
@@ -558,70 +672,80 @@
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
         "innovation_enablement",
-        "labor_transition"
+        "labor_transition",
+        "consumer_public_safety",
+        "fundamental_rights"
       ],
-      "top_requirements": [],
+      "top_requirements": [
+        "training_data_governance",
+        "access_controls",
+        "pre_deployment_testing"
+      ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement"
+        "none_specified"
       ],
-      "implementation_notes": "This is a government implementation plan (実行計画) translating the 2017 AI Technology Strategy and industrialization roadmap into concrete targets with deadlines and responsible ministries. It is not legally binding. No prohibited practices or enforcement penalties are specified. The document covers R&D, human resource development, data/tool environment, venture support, and public understanding across priority domains: productivity, health/medical/care, mobility, and information security.",
-      "framing_rationale_summary": "The document frames AI governance primarily as a competitiveness challenge, explicitly noting Japan's lag behind the US and China in research, talent, data, and venture support, and calling for Japan to 'win fierce competition' and 'lead the world.' The industrialization roadmap, sectoral productivity targets, and market acquisition goals further reinforce this frame. Innovation enablement is secondary, as the plan details R&D and social implementation programs. Labor/talent transition appears through extensive workforce development sections.",
-      "confidence": 0.87
+      "implementation_notes": "Provisional government execution plan (August 2018) operationalizing Japan's March 2017 Artificial Intelligence Technology Strategy and Industrialization Roadmap across five pillars: (1) R&D (priority sectors of productivity, health/medical/nursing care, mobility, information security, smart agriculture, i-Construction, AI Hospital, disaster SIP4D, next-gen trustworthy/explainable AI, and 100x-efficiency AI chips), (2) talent development (top-level researchers, recurrent adult education, vocational IT training for job seekers, university data-science curricula, and universal K-12 IT literacy by 2032), (3) cross-sector and sectoral data-linkage platforms (full operation targeted by FY2022), (4) venture/startup support (NEDO open innovation, startup task force parity with the US and China), and (5) public understanding (commissioning the Social Principles of Human-Centric AI in FY2018). Pure R&D and industrial execution roadmap containing zero regulatory enforcement or sanction hooks; subsequently superseded by AI Strategy 2022.",
+      "framing_rationale_summary": "Economic competitiveness is unequivocally the dominant frame: the plan explicitly opens by citing an intensifying AI hegemony race led by US and Chinese enterprises, warning that Japan lags behind both countries in research output, business adoption, talent, data linkage, and venture creation, and mobilizing ministries around an Industrialization Roadmap aimed at winning global competition, boosting sectoral productivity, capturing new markets, and matching US/Chinese startup ecosystems. Innovation enablement is a strong runner-up, promoting open innovation across industry-academia-government, interoperable cross-sector data platforms, extraction of institutional/legal barriers facing AI startups, and an explicit stance that AI development should not be restricted merely because deep learning remains partly unexplained. Labor transition forms a notable third frame through extensive workforce reskilling, recurrent adult IT education, raised training-benefit subsidies, and vocational IT literacy training for unemployed job seekers, alongside acknowledging concerns over negative impacts on existing employment. Consumer/public safety (disaster mitigation, medical diagnostics, high-risk AI quality assurance, cyber-physical security) and fundamental rights (privacy-preserving R&D, cross-border personal data protection, ELSI analysis) appear as minor secondary themes.",
+      "confidence": 0.95
     },
     {
       "document_id": "jp_kaigi_3537a511",
       "title": "ＡＩ戦略 2022",
       "publication_date": "2022-04-22",
-      "issuing_body": "統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)",
+      "issuing_body": "Cabinet Office / Secretariat of Japan",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
       "corpus_role": "historical_baseline",
       "lifecycle_stage": "superseded",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
+        "innovation_enablement",
+        "consumer_public_safety",
+        "labor_transition",
         "national_security",
-        "social_stability",
-        "innovation_enablement"
+        "fundamental_rights"
       ],
       "top_requirements": [
-        "risk_assessment",
-        "transparency_disclosure",
-        "human_oversight"
+        "training_data_governance",
+        "access_controls",
+        "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "none_specified"
+        "soft_enforcement"
       ],
-      "implementation_notes": "AI戦略2022 is a non-binding national strategy document building on AI Strategy 2019 and 2021. It sets strategic goals (目標0–4) covering crisis resilience (AI for National Resilience, Planetary Resilience), social implementation of AI, and responsible/trustworthy AI. No specific compliance deadlines, penalties, or enforcement mechanisms are defined. The document references the 'Human-Centered AI Social Principles' (2019) as the foundational ethical framework.",
-      "framing_rationale_summary": "The document frames AI governance primarily through economic competitiveness: it explicitly aims to strengthen Japan's industrial competitiveness, achieve top-runner status in real-world industries, improve labor productivity to match the US and Germany, and build international AI networks to expand market reach. National resilience (disaster response, pandemic preparedness) and social stability are strong secondary frames, especially in Strategic Goal 0. Innovation enablement appears throughout as a means to achieve these goals.",
-      "confidence": 0.835
+      "implementation_notes": "Japan's comprehensive national 'AI Strategy 2022', decided by the Integrated Innovation Strategy Promotion Council on April 22, 2022 (Reiwa 4), expanding AI Strategy 2019 and 2021 in response to COVID-19, mega-disaster risks, climate departure, and geopolitical shifts (subsequently superseded by the December 2025 First AI Basic Plan). Structured in four parts: Part 1 establishes Strategic Goals 0–4 (imminent crisis resilience, AI talent, real-world industrial competitiveness, inclusive sustainable society, and global research/education networks); Part 2 details 'AI for National Resilience' (disaster/armed-attack Digital Twins, global BCP/data-economy networks), 'AI for Planetary Resilience' (Nature-Positive Economy), and 'Resilient and Responsible AI' (XAI, Federated Learning, Security for AI / AI for Security); Part 3 promotes social implementation (human-AI collaboration, breaking black-box fears, physical-cyber 'Round 2 of DX', data-handling rule reviews, government adoption, and focusing on Japanese strengths); Part 4 sets 2025 education targets (1M high school grads, 500k university/KOSEN grads, 250k applied AI talent, 2,000 experts, 1M working adults/yr recurrent education), R&D network restructuring, trust-data infrastructure, Digital Government AI guidelines, SME/startup support, and international ethics/standardization (GPAI presidency) avoiding excessive regulatory constraints.",
+      "framing_rationale_summary": "Economic competitiveness is the dominant frame of AI Strategy 2022: it casts international competitiveness as a matter of 'Japan's survival' (Strategic Goals 1–4), warns that Japan lost 'Round 1' of cyberspace DX to the US and risks falling permanently behind US and Chinese tech giants, charts a 'winning path' in physical-cyber 'Round 2 of DX' and real-world industries to close Japan's labor-productivity gap, boosts SMEs and startups, and explicitly reframes even Strategic Goal 0's crisis resilience into business-creation and industrial-competitiveness policy. Innovation enablement is a strong runner-up, driving Society 5.0 adoption, removing institutional barriers, building Responsible AI/XAI to dispel black-box hesitation, accelerating Digital Government uptake, and engaging international standards to prevent excessive regulatory constraints. Consumer and public safety is a prominent third frame centered on Part 2's Strategic Goal 0—protecting citizens' lives and property from pandemics, mega-earthquakes, floods, climate threats, and cyber/data-poisoning vulnerabilities. Labor transition (recasting AI as human-collaborative rather than job-replacing and scaling recurrent education to 1 million working adults per year), national security (economic security, geopolitical contingencies, armed-attack civilian protection, tech-outflow rules, cybersecurity hardening), and fundamental rights (Human-Centric AI principles, bias/privacy safeguards, government fairness/transparency) appear as substantive supporting frames.",
+      "confidence": 0.945
     },
     {
       "document_id": "jp_medical_digital_data_ai_guideline_2024",
       "title": "医療デジタルデータのAI研究開発等への利活用に係るガイドライン",
       "publication_date": "2024-10-01",
       "issuing_body": "Ministry of Health, Labour and Welfare (MHLW)",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "economic_competitiveness",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "fundamental_rights",
-        "innovation_enablement"
+        "economic_competitiveness",
+        "consumer_public_safety",
+        "social_stability"
       ],
       "top_requirements": [
-        "risk_assessment",
+        "training_data_governance",
         "access_controls",
-        "model_documentation"
+        "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
+        "licensing_requirement",
         "regulatory_supervision",
-        "soft_enforcement"
+        "reporting_obligation"
       ],
-      "implementation_notes": "Guideline focuses on pseudonymized medical information (仮名加工情報) under Japan's Act on Protection of Personal Information for use in AI R&D and medical device product development. Excludes: clinical trial data, anonymous processing (匿名加工情報), cross-border data transfers, advanced privacy-enhancing technologies, generative AI legal risks, and the Next-Generation Medical Infrastructure Act (次世代医療基盤法). Practical procedures for creating pseudonymized data from diagnostic text, physiological function tests, medical images, genetic test data, and multimodal data are provided.",
-      "framing_rationale_summary": "The document opens by explicitly framing medical AI data utilization in the context of intensifying global R&D competition, positioning Japan's data governance as a matter of competitive capacity. The preface warns that privacy law 'greatly affects data resources that are the source of competitiveness.' Simultaneously, it foregrounds patient rights protection and privacy as a core constraint, making fundamental_rights a strong secondary frame. Innovation enablement is also present as the guideline aims to remove legal barriers to product development.",
-      "confidence": 0.75
+      "implementation_notes": "Comprehensive 61-page technical-legal guideline finalized March 31, 2024 (Reiwa 6) by the MHLW-funded ELSI research group and officially circulated by MHLW on September 30 / October 1, 2024 (accompanied by jp_medical_digital_data_ai_guideline_notice_2024 and clarified by jp_medical_digital_data_ai_guideline_points_2024). Provides an end-to-end compliance framework under APPI, the PMD Act, and the Ethical Guidelines for Life Science and Medical Research for utilizing already-stored clinical records in joint hospital–academia–industry development of diagnostic medical AI software across a 7-stage lifecycle (exploration, QMS development, performance evaluation, approval-dossier drafting, PMDA approval filing, PMDA review/reliability audit, and post-market monitoring/retraining). Details statutory pseudonymization criteria (APPI Enforcement Rules Art. 31), additional privacy-by-design safeguards (data minimization, deleting linking IDs/medical-record numbers and contact info), modality-specific de-identification instructions (XML clinical text, CSV physiological data, DICOM metadata and pixel masking, genomic Type-1 identifiers, multimodal quasi-identifier cross-checks), joint-use website disclosures, and data-provision contract terms. Explicitly excludes the Next Generation Medical Infrastructure Act, cross-border transfers, generative AI legal risks, and clinical trials.",
+      "framing_rationale_summary": "Innovation enablement narrowly edges out fundamental rights as the dominant frame because this guideline was specifically commissioned under Japan's Regulatory Reform Implementation Plan and Healthcare AI Development Acceleration Consortium to unlock clinical medical data for commercial diagnostic AI medical-device R&D—overcoming the practical impossibility of obtaining individual re-consent from vast numbers of past patients by clarifying stage-by-stage APPI legal bases and actionable pseudonymized joint-use workflows. Fundamental rights is an extraordinarily close co-equal runner-up, providing the mandatory premise and operational substance across Chapters 2–5: protecting patients' personality and property rights, preventing privacy breaches and malicious re-identification of highly sensitive special-care personal information, prohibiting onward distribution, and enforcing ethical informed-consent opt-outs. Economic competitiveness is a prominent third rationale invoked in the opening sentences of the Preface and Chapter 1 (citing fierce global competition in new-industry creation and medical-AI R&D where data-protection frameworks directly shape competitiveness). Consumer/public safety (PMDA pre-market clinical efficacy/safety evaluation and post-market malfunction/adverse-event monitoring) and social stability (securing collective social trust in secondary medical-data utilization) serve as concrete supporting frames.",
+      "confidence": 0.955
     },
     {
       "document_id": "jp_medical_digital_data_ai_guideline_notice_2024",
@@ -632,22 +756,17 @@
       "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "fundamental_rights",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
-        "innovation_enablement"
+        "fundamental_rights"
       ],
-      "top_requirements": [
-        "risk_assessment",
-        "model_documentation",
-        "transparency_disclosure"
-      ],
+      "top_requirements": [],
       "top_enforcement_mechanisms": [
-        "soft_enforcement"
+        "none_specified"
       ],
-      "implementation_notes": "This is a notice (事務連絡) transmitting a guideline developed under a research grant. The guideline covers use of medical digital data for AI R&D, focusing on legal basis clarification and pseudonymization procedures. It is non-binding guidance circulated to healthcare institutions, research bodies, local governments, and industry associations. Confidence is moderate as the actual guideline content is in an attachment not included in the normalized text.",
-      "framing_rationale_summary": "The document focuses on clarifying legal bases for using medical digital data in AI research, with emphasis on proper handling of personal medical information (pseudonymized data procedures), reflecting a fundamental rights framing around privacy and lawful data use. Secondary concerns include patient safety and enabling innovation.",
-      "confidence": 0.625
+      "implementation_notes": "One-page MHLW administrative transmittal notice (事務連絡) dated September 30, 2024 (Reiwa 6), formally circulating the MHLW-funded ELSI research group's 'Guidelines on the Utilization of Medical Digital Data for AI Research and Development' (jp_medical_digital_data_ai_guideline_2024) to prefectures, municipalities, national research institutions, and relevant medical organizations. The notice summarizes the attached guideline's purpose—clarifying appropriate legal bases across R&D stages and procedures/operations for creating pseudonymized medical information in joint medical-institution, academic, and private-sector product development—without establishing standalone operative obligations or enforcement mechanisms of its own.",
+      "framing_rationale_summary": "Innovation enablement is the dominant frame of this brief transmittal notice, which justifies issuing the attached guideline as a practical resource to enable medical institutions, academic research institutes, and private companies to conduct joint AI research and product development using clinical medical digital data by clarifying legal bases across R&D stages and pseudonymization workflows. Fundamental rights is the key secondary frame, anchored in the notice's explicit grounding in an MHLW ethical, legal, and social issues (ELSI) research project and its emphasis on proper legal bases and pseudonymized-information safeguards tailored to the sensitive characteristics of medical records.",
+      "confidence": 0.865
     },
     {
       "document_id": "jp_medical_digital_data_ai_guideline_points_2024",
@@ -660,29 +779,26 @@
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
-        "innovation_enablement"
+        "innovation_enablement",
+        "social_stability"
       ],
       "top_requirements": [
-        "risk_assessment",
-        "model_documentation",
-        "access_controls"
+        "training_data_governance"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "regulatory_supervision"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This document is a clarification notice (事務連絡) issued alongside a pre-existing guideline on AI use of medical digital data published 2024-09-30. The guideline is explicitly non-binding, positioned as a reference tool for pseudonymized data handling under the Personal Information Protection Act. It covers only medical information stored at healthcare institutions for use in medical device R&D, excluding Next-Generation Medical Infrastructure Act data and registry data. No independent enforcement mechanisms are created by this document.",
-      "framing_rationale_summary": "The document is primarily framed around protecting individual rights—specifically the privacy and data protection rights of patients whose sensitive medical information is used in AI research. It emphasizes that medical information is 'extremely sensitive' personal data subject to strict legal protections, and that the guideline aims to ensure 'social trust' in the use of medical information. Secondary framings include consumer/public safety (ensuring proper handling of medical data in device development) and innovation enablement (facilitating AI-based medical device R&D).",
-      "confidence": 0.77
+      "implementation_notes": "Follow-up MHLW administrative notice (事務連絡) and 6-item Q&A issued December 19, 2024 (Reiwa 6), clarifying the legal positioning and strict scope limitations of the September 30, 2024 medical digital data AI guideline. It specifies that the guideline is an MHLW research output applicable solely to already-stored clinical records held by medical institutions used under APPI in joint AI medical-device R&D—explicitly excluding MHLW health/long-term-care databases, private databases, academic society registries, and data obtained under the Next Generation Medical Infrastructure Act (次世代医療基盤法). It reiterates that medical data constitutes highly sensitive 'special-care personal information' (要配慮個人情報), bars onward/serial distribution (転々流通) of pseudonymized information, limits joint-use recipients to entities reasonably treated as integral to the provider under APPI, and requires adherence to APPI statutory obligations and the Ethical Guidelines for Life Science and Medical Research (including informed-consent opt-out procedures) where applicable.",
+      "framing_rationale_summary": "Fundamental rights is the dominant frame because this follow-up notice and Q&A was specifically issued to reinforce privacy and patient-rights guardrails: it emphasizes that medical information is highly sensitive 'special-care personal information' (要配慮個人情報) whose re-identification poses a direct risk of rights infringement (権利侵害), circumscribes permissible joint-use and onward-transfer boundaries under APPI, and requires informed-consent opt-out procedures. Fundamental rights edges out innovation enablement because the document's primary corrective function is tightening scope boundaries and legal-compliance caution rather than expanding data access. Innovation enablement is a strong secondary frame, characterizing medical data as a precious social resource whose appropriate use advances medical science and AI medical-device R&D for current and future generations. Social stability is a clear supporting rationale through the stated objective of securing collective social trust (社会的な信頼の確保) and public/clinical understanding around secondary medical-data utilization.",
+      "confidence": 0.945
     },
     {
       "document_id": "jp_school_genai_guideline_ver_2_2024",
       "title": "初等中等教育段階における生成AIの利活用に関するガイドライン",
       "publication_date": "2024-12-26",
-      "issuing_body": "文部科学省初等中等教育局",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "issuing_body": "Ministry of Education, Culture, Sports, Science and Technology (MEXT) (文部科学省 初等中等教育局)",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
@@ -692,17 +808,48 @@
         "social_stability"
       ],
       "top_requirements": [
-        "risk_assessment",
-        "transparency_disclosure",
-        "access_controls"
+        "human_oversight",
+        "access_controls",
+        "transparency_disclosure"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Version 2.0 of MEXT's Elementary and Secondary Education Bureau guideline on generative AI utilization in K-12 schools, issued December 26, 2024 (Reiwa 6), revising the July 2023 provisional Ver. 1.0 guideline after seven expert-panel meetings. Structured around five core governance perspectives (safety/terms compliance, information security, privacy/personal data/copyright protection, fairness/bias oversight, and transparency/accountability) tailored separately to (1) teachers in school duties, (2) students in learning activities, and (3) Boards of Education, accompanied by ready-to-use teacher and student checklists (pp. 24–25), pilot-school case studies (pp. 26–27), a risk catalog (p. 28), and training resources. Explicitly non-binding (neither uniformly banning nor mandating AI), while reiterating compliance with existing APPI, Copyright Act (including Article 35 classroom exceptions), and MEXT Education Information Security Policy Guidelines, and deferring developer/provider model-level safety duties to the METI/MIC AI Guidelines for Business and J-AISI evaluation guides.",
+      "framing_rationale_summary": "Innovation enablement is the dominant frame because MEXT structures Ver. 2.0 around empowering students and teachers to harness generative AI as a capability-expanding tool—fostering student talent and deeper learning, streamlining school administration for teacher work-style reform, highlighting pilot-school successes, and explicitly stating that risks should not immediately block adoption or prompt rigid uniform bans. Consumer and public safety is a strong runner-up, centering on concrete developmental, psychological, and operational protections for minors—including preventing children from attributing personhood to AI, guarding against AI over-dependency and cognitive harm, mitigating hallucinations and automation/fluency bias, preventing student data leaks, enforcing age restrictions and parental consent, and safeguarding children already encountering AI outside school. Fundamental rights serves as a substantial third frame anchored in the Human-Centric Principle's constitutional human-rights mandate, non-discrimination against protected backgrounds, APPI privacy protection, copyright compliance, and socioeconomic equity for families. Social stability (disinformation, filter bubbles, and information morals) and labor transition (teacher work-style reform and future AI workforce literacy) play minor supporting roles.",
+      "confidence": 0.95
+    },
+    {
+      "document_id": "jp_second_basic_ai_plan_2026",
+      "title": "人工知能基本計画 ～日本ＡＸ、より強く、より豊かに～ (Second AI Basic Plan — Cabinet Decision of July 14, 2026)",
+      "publication_date": "2026-07-14",
+      "issuing_body": "Cabinet Office / Secretariat of Japan",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "economic_competitiveness",
+        "national_security",
+        "labor_transition",
+        "consumer_public_safety",
+        "fundamental_rights",
+        "existential_catastrophic"
+      ],
+      "top_requirements": [
+        "frontier_safety_evaluation",
+        "agentic_autonomy_controls",
+        "training_data_governance"
       ],
       "top_enforcement_mechanisms": [
         "soft_enforcement",
-        "regulatory_supervision"
+        "regulatory_supervision",
+        "civil_penalty"
       ],
-      "implementation_notes": "This is Ver. 2.0 of the guideline, revising the provisional Ver. 1.0 published July 2023. The document explicitly states it does not uniformly prohibit or mandate use of generative AI in schools ('学校現場での生成AIの利活用を一律に禁止したり義務付けたりするものではない'). It serves as reference material for school staff and education boards. No penalties or enforcement mechanisms are specified. Future revisions are anticipated as technology evolves.",
-      "framing_rationale_summary": "The document primarily frames AI governance in schools as enabling appropriate and effective use of generative AI to support student learning and teacher capabilities, while managing associated risks. The central thrust is how to utilize AI tools beneficially within the existing educational framework, emphasizing AI literacy, human-centered principles, and practical guidance for appropriate adoption rather than restriction. Consumer/public safety and fundamental rights appear as secondary framings through attention to information security, privacy, copyright, and age-appropriate use.",
-      "confidence": 0.735
+      "implementation_notes": "Japan's Second Basic AI Plan ('Japan AX: Stronger, More Prosperous'), adopted by Cabinet Decision on July 14, 2026 (Reiwa 8) under Article 18(1) of the AI Promotion Act (Act No. 53 of 2025), superseding the First Basic AI Plan of December 23, 2025. Structured around four principles (balancing innovation and risk response, challenge and learning, agile 'eternal beta' PDCA response, and integrated domestic-international policy) and four pillars: (1) accelerating AI utilization (Japan AX, Government AI 'Gennai' for 180,000 officials with agentic AI and open-sourcing for municipalities, regional AX, vertical/physical AI), (2) strategic strengthening of AI development capacity (open AI Sovereignty across compute/power/semiconductors/models, domestic multimodal/physical AI foundation models, AI for Science, open-source/open-weight trustworthy AI ecosystem), (3) leading AI governance (responsible agile governance, expanded AISI technical evaluation and guardrails, Project YATA-Shield cyber defense, Hiroshima AI Process, hosting an early AI Summit), and (4) continuous societal transformation (employment impact analysis, AI reskilling, Advanced Essential Workers, Human Agency across HITL/HOTL/HITL-lead models, and annual plan revisions). Industrial datacenter/compute investments lack operational FLOP/compute oversight controls and are therefore excluded from compute_governance per codebook rules.",
+      "framing_rationale_summary": "Innovation enablement narrowly edges out economic competitiveness as the dominant frame because the plan's overarching governance philosophy—remaining 'the world's most AI-friendly country to develop and use AI', fostering a 'try it first' challenge-and-learning culture, institutionalizing 'responsible agile governance' on an 'eternal beta' PDCA cycle, reviewing legacy regulations, and driving society-wide Japan AX starting with Government AI 'Gennai'—justifies governance primarily as enabling rapid, trustworthy adoption and innovation. Economic competitiveness is a very close runner-up, prominently framing agentic, vertical, and physical AI as Japan's 'winning strategy' to close adoption and investment gaps with the US and China, boost TFP and national power, capture global supply-chain indispensability, and expand exports. National security has risen sharply as a major third frame through explicit commitments to open 'AI Sovereignty' (strategic autonomy and cut-off resilience across government, defense, and critical infrastructure), economic security investment, AI-driven defense transformation, Project YATA-Shield cyber defense against autonomous AI attacks, and AISI evaluations to deter national-security threats. Labor transition (workforce substitution/complementarity analysis, AI reskilling, Advanced Essential Workers), consumer/public safety (cascading outages, youth safety, fraud/complaint desks), fundamental rights (Human Agency, privacy, portrait/voice/IP rights), and existential/catastrophic risk (CBRNE terrorism and autonomous zero-day cyberattacks) serve as meaningful supporting frames.",
+      "confidence": 0.95
     },
     {
       "document_id": "jp_social_principles_human_centric_ai",
@@ -715,28 +862,29 @@
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "social_stability",
         "innovation_enablement",
-        "economic_competitiveness"
+        "economic_competitiveness",
+        "social_stability",
+        "consumer_public_safety",
+        "labor_transition"
       ],
       "top_requirements": [
-        "risk_assessment",
         "transparency_disclosure",
-        "human_oversight"
+        "risk_assessment",
+        "training_data_governance"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "none_specified"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a high-level strategy/principles document with no binding legal force. The document explicitly states it operates in a 'non-regulatory, non-binding framework.' It covers broad societal principles rather than specific technical mandates. Safety requirements extracted are aspirational statements addressed to society, government, and industry rather than enforceable obligations. The document was established by an advisory council under the Cabinet Office and is intended to inform future AI strategy and policy.",
-      "framing_rationale_summary": "The document centers on human dignity, diversity, and protection of fundamental rights as the primary justification for AI governance. It repeatedly invokes constitutional rights, non-discrimination, privacy protection, and human-centric values. While innovation and competitiveness appear, they are subordinate to the rights-based and human dignity framework.",
-      "confidence": 0.81
+      "implementation_notes": "Foundational 2019 Japanese national AI principles drafted by the Council for Social Principles of Human-centric AI under the Cabinet Secretariat/Cabinet Office (Appendix dated February 15, 2019; formally decided by the Integrated Innovation Strategy Promotion Council on March 29, 2019). Organized around three basic philosophical values (Dignity, Diversity & Inclusion, Sustainability), five societal transformation pillars for an 'AI-Ready Society' (Society 5.0), and seven Social Principles of AI (Human-Centric, Education/Literacy, Privacy Protection, Ensuring Security, Fair Competition, Fairness/Accountability/Transparency, and Innovation). Explicitly conceived as a non-regulatory, non-binding framework to guide future government policies, industry-led R&D/utilization principles, and international consensus. High-level human-centricity and human judgment principles do not establish operational human-in-the-loop override mechanics, so human_oversight is omitted per codebook boundaries.",
+      "framing_rationale_summary": "Fundamental rights edges out innovation enablement as the dominant frame because the document anchors Japan's entire normative architecture for AI governance in human dignity, diversity and inclusion, constitutional and international human rights, strict personal-data privacy protection, protection against behavioral manipulation, and non-discrimination across Section 2 (Basic Philosophy) and Principles 1, 3, and 6. Innovation enablement is a very close runner-up, driving the overarching Society 5.0 and 'AI-Ready Society' vision—calling for regulatory reforms to remove impediments, open cross-border data and compute platforms, industry-led flexible governance, and non-binding international consensus so society can safely maximize AI's benefits. Supporting frames include economic competitiveness (fair competition, anti-monopoly, sustainable economic growth, global leadership), social stability (preventing disparities, digital divides, and social exclusion while sustaining public trust and SDGs), consumer and public safety (security against rare events and deliberate attacks), and labor transition (flexible employment and reeducation of working adults and the elderly).",
+      "confidence": 0.94
     },
     {
       "document_id": "jp_university_genai_teaching_guidance_2023",
       "title": "大学・高専における生成AIの教学面の取扱いについて（周知）",
       "publication_date": "2023-07-13",
-      "issuing_body": "文部科学省 高等教育局 専門教育課・大学教育・入試課 (Ministry of Education, Culture, Sports, Science and Technology)",
+      "issuing_body": "Ministry of Education, Culture, Sports, Science and Technology (MEXT) (文部科学省 高等教育局 専門教育課・大学教育・入試課)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
@@ -748,372 +896,476 @@
       ],
       "top_requirements": [
         "transparency_disclosure",
-        "risk_assessment",
+        "human_oversight",
         "access_controls"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "none_specified"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a non-binding circular (事務連絡) from MEXT providing guidance to universities and colleges on handling generative AI in teaching. It does not impose legal obligations but strongly encourages institutions to develop their own guidelines. The document is advisory in nature, using language like '望ましい' (desirable) and 'お願いします' (request). No penalties or formal enforcement mechanisms are specified.",
-      "framing_rationale_summary": "The document primarily frames generative AI governance in higher education around enabling appropriate use and building AI literacy, while managing risks such as academic integrity, misinformation, and data privacy. The dominant tone is guidance on how to utilize AI effectively rather than restrict it, with safety concerns treated as secondary considerations.",
-      "confidence": 0.715
+      "implementation_notes": "Official MEXT Higher Education Bureau administrative notice (事務連絡) issued July 13, 2023 (Reiwa 5), providing reference guidance to Japanese universities and colleges of technology (KOSEN) on handling generative AI (particularly text-generating LLMs such as ChatGPT) in teaching, assessment, and university administration. Rather than imposing uniform statutory bans, MEXT asks each institution to formulate and continuously update its own policies, permissible/prohibited use rules, and faculty/staff development (FD/SD) training. Key operational points include discouraging direct submission of unedited AI outputs as student reports, requiring student disclosure of AI usage, verifying outputs for hallucinations/bias, not over-relying on AI-detection tools, avoiding input of confidential/personal data in line with institutional security rules and APPI (noting training opt-out controls where available), respecting Copyright Act limits (including Article 35 classroom exceptions), and participating in MEXT's Mathematics, Data Science, and AI Education accreditation and consortium programs.",
+      "framing_rationale_summary": "Innovation enablement is the dominant frame because MEXT centers the guidance on capturing generative AI's positive educational and socio-economic potential—improving learning outcomes, boosting faculty/administrative efficiency, and teaching students to master AI tools—through flexible, decentralized, and continuously updated institutional guidelines rather than blanket restrictions. Innovation enablement clearly edges out consumer/public safety because the risk precautions are consistently framed as balancing measures needed to pursue appropriate utilization rather than preventive prohibitions. Consumer and public safety is the primary secondary frame, reflecting concerns over model unreliability (hallucinations and bias), misuse/abuse, unintentional confidential data leaks, and harms to genuine student learning. Fundamental rights forms a close second supporting rationale through explicit safeguards for personal information protection (APPI), copyright/intellectual property rights, and fairness/equity disparities between paid and free AI tools.",
+      "confidence": 0.93
     }
   ],
   "aggregates": {
     "document_types": [
       {
         "label": "regulatory_guidance",
-        "count": 17,
-        "share": 0.607
+        "count": 15,
+        "share": 0.441
       },
       {
         "label": "strategy_paper",
-        "count": 7,
-        "share": 0.25
+        "count": 10,
+        "share": 0.294
       },
       {
         "label": "standards_guideline",
-        "count": 2,
-        "share": 0.071
+        "count": 6,
+        "share": 0.176
       },
       {
         "label": "executive_order",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
         "label": "legislation",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
+      },
+      {
+        "label": "voluntary_commitment",
+        "count": 1,
+        "share": 0.029
       }
     ],
     "binding_strengths": [
       {
         "label": "regulatory_guidance",
-        "count": 13,
-        "share": 0.464
+        "count": 12,
+        "share": 0.353
+      },
+      {
+        "label": "standards_guideline",
+        "count": 10,
+        "share": 0.294
       },
       {
         "label": "strategy_statement",
-        "count": 8,
-        "share": 0.286
-      },
-      {
-        "label": "voluntary_commitment",
-        "count": 4,
-        "share": 0.143
+        "count": 10,
+        "share": 0.294
       },
       {
         "label": "binding_law",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "executive_action",
+        "label": "voluntary_commitment",
         "count": 1,
-        "share": 0.036
-      },
-      {
-        "label": "standards_guideline",
-        "count": 1,
-        "share": 0.036
+        "share": 0.029
       }
     ],
     "requirements": [
       {
+        "label": "training_data_governance",
+        "count": 25,
+        "share": 0.735
+      },
+      {
         "label": "transparency_disclosure",
-        "count": 22,
-        "share": 0.786
-      },
-      {
-        "label": "risk_assessment",
         "count": 21,
-        "share": 0.75
-      },
-      {
-        "label": "human_oversight",
-        "count": 20,
-        "share": 0.714
-      },
-      {
-        "label": "model_documentation",
-        "count": 14,
-        "share": 0.5
+        "share": 0.618
       },
       {
         "label": "access_controls",
-        "count": 12,
-        "share": 0.429
+        "count": 19,
+        "share": 0.559
+      },
+      {
+        "label": "risk_assessment",
+        "count": 16,
+        "share": 0.471
+      },
+      {
+        "label": "human_oversight",
+        "count": 13,
+        "share": 0.382
+      },
+      {
+        "label": "model_documentation",
+        "count": 11,
+        "share": 0.324
+      },
+      {
+        "label": "pre_deployment_testing",
+        "count": 10,
+        "share": 0.294
+      },
+      {
+        "label": "content_provenance",
+        "count": 9,
+        "share": 0.265
       },
       {
         "label": "incident_reporting",
         "count": 9,
-        "share": 0.321
-      },
-      {
-        "label": "content_provenance",
-        "count": 6,
-        "share": 0.214
-      },
-      {
-        "label": "third_party_audit",
-        "count": 5,
-        "share": 0.179
-      },
-      {
-        "label": "pre_deployment_testing",
-        "count": 4,
-        "share": 0.143
+        "share": 0.265
       },
       {
         "label": "red_teaming",
-        "count": 4,
-        "share": 0.143
+        "count": 8,
+        "share": 0.235
+      },
+      {
+        "label": "third_party_audit",
+        "count": 8,
+        "share": 0.235
+      },
+      {
+        "label": "frontier_safety_evaluation",
+        "count": 6,
+        "share": 0.176
+      },
+      {
+        "label": "agentic_autonomy_controls",
+        "count": 2,
+        "share": 0.059
+      },
+      {
+        "label": "open_weight_obligations",
+        "count": 2,
+        "share": 0.059
       },
       {
         "label": "registration_licensing",
-        "count": 4,
-        "share": 0.143
+        "count": 2,
+        "share": 0.059
       }
     ],
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "count": 26,
-        "share": 0.929
+        "count": 30,
+        "share": 0.882
       },
       {
         "label": "regulatory_supervision",
-        "count": 13,
-        "share": 0.464
-      },
-      {
-        "label": "reporting_obligation",
-        "count": 8,
-        "share": 0.286
+        "count": 7,
+        "share": 0.206
       },
       {
         "label": "none_specified",
-        "count": 7,
-        "share": 0.25
+        "count": 4,
+        "share": 0.118
       },
       {
         "label": "procurement_condition",
         "count": 4,
-        "share": 0.143
+        "share": 0.118
       },
       {
         "label": "civil_penalty",
+        "count": 2,
+        "share": 0.059
+      },
+      {
+        "label": "reporting_obligation",
+        "count": 2,
+        "share": 0.059
+      },
+      {
+        "label": "criminal_penalty",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
+      },
+      {
+        "label": "licensing_requirement",
+        "count": 1,
+        "share": 0.029
       }
     ],
     "institutions": [
       {
         "label": "Ministry of Economy, Trade and Industry (METI)",
         "count": 10,
-        "share": 0.357
+        "share": 0.294
       },
       {
         "label": "Cabinet Office / Secretariat of Japan",
         "count": 9,
-        "share": 0.321
+        "share": 0.265
       },
       {
-        "label": "Ministry of Health, Labour and Welfare (MHLW)",
-        "count": 5,
-        "share": 0.179
-      },
-      {
-        "label": "Personal Information Protection Commission (PPC)",
-        "count": 5,
-        "share": 0.179
+        "label": "AI Safety Institute (AISI)",
+        "count": 6,
+        "share": 0.176
       },
       {
         "label": "Digital Agency of Japan",
         "count": 4,
-        "share": 0.143
+        "share": 0.118
+      },
+      {
+        "label": "Ministry of Health, Labour and Welfare (MHLW)",
+        "count": 4,
+        "share": 0.118
       },
       {
         "label": "Ministry of Internal Affairs and Communications (MIC)",
         "count": 4,
-        "share": 0.143
+        "share": 0.118
       },
       {
-        "label": "AI Safety Institute (AISI)",
+        "label": "Personal Information Protection Commission (PPC)",
+        "count": 3,
+        "share": 0.088
+      },
+      {
+        "label": "AI Strategy Headquarters (人工知能戦略本部)",
         "count": 2,
-        "share": 0.071
+        "share": 0.059
+      },
+      {
+        "label": "Children and Families Agency (こども家庭庁)",
+        "count": 2,
+        "share": 0.059
+      },
+      {
+        "label": "AI Strategic Headquarters",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "AI Strategy Headquarters",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "AI Strategy Headquarters (Cabinet)",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "AI Strategy Headquarters (to be established)",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "AI Strategy Promotion Council",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "Advanced AI Utilization Advisory Board (先進的AI利活用アドバイザリーボード)",
+        "count": 1,
+        "share": 0.029
       },
       {
         "label": "Agency for Cultural Affairs (Japan)",
-        "count": 2,
-        "share": 0.071
-      },
-      {
-        "label": "こども家庭庁 (Children and Families Agency)",
-        "count": 2,
-        "share": 0.071
-      },
-      {
-        "label": "こども家庭庁 (Children and Families Agency, Japan)",
-        "count": 2,
-        "share": 0.071
-      },
-      {
-        "label": "人工知能戦略本部 (AI Strategy Headquarters)",
-        "count": 2,
-        "share": 0.071
-      },
-      {
-        "label": "文部科学省",
-        "count": 2,
-        "share": 0.071
-      },
-      {
-        "label": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries)",
-        "count": 2,
-        "share": 0.071
-      },
-      {
-        "label": "AI戦略本部",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
         "label": "Artificial Intelligence Strategic Headquarters",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "デジタル社会推進会議幹事会 (Digital Society Promotion Council Executive Committee)",
+        "label": "Cabinet of Japan",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "公正取引委員会",
+        "label": "Chief AI Officers (AI統括責任者 / CAIO) of each ministry and agency",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "内閣（閣議決定）/ Cabinet of Japan",
+        "label": "Consumer Affairs Agency",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "国土交通省",
+        "label": "Consumer Affairs Agency (消費者庁)",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "文部科学省 高等教育局 専門教育課・大学教育・入試課 (Ministry of Education, Culture, Sports, Science and Technology)",
+        "label": "Courts (裁判所)",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "文部科学省初等中等教育局",
+        "label": "Financial Services Agency (金融庁)",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "文部科学省（Ministry of Education, Culture, Sports, Science and Technology）",
+        "label": "Government of Japan",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "知財総合支援窓口 INPIT (Intellectual Property Support Centers)",
+        "label": "Ministry of Agriculture, Forestry and Fisheries",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)",
+        "label": "Ministry of Agriculture, Forestry and Fisheries (MAFF)",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "警察庁（National Police Agency）",
+        "label": "Ministry of Agriculture, Forestry and Fisheries (農林水産省)",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "農林水産省",
+        "label": "Ministry of Defense",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries of Japan)",
+        "label": "Ministry of Defense (防衛省)",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries, Japan)",
+        "label": "Ministry of Education, Culture, Sports, Science and Technology",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "金融庁",
+        "label": "Ministry of Education, Culture, Sports, Science and Technology (MEXT)",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "防災担当",
+        "label": "Ministry of Education, Culture, Sports, Science and Technology (MEXT) (文部科学省 初等中等教育局)",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
       },
       {
-        "label": "防衛省（Ministry of Defense）",
+        "label": "Ministry of Education, Culture, Sports, Science and Technology (MEXT) (文部科学省 高等教育局 専門教育課・大学教育・入試課)",
         "count": 1,
-        "share": 0.036
+        "share": 0.029
+      },
+      {
+        "label": "Ministry of Foreign Affairs",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "Ministry of Justice",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "Ministry of the Environment",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "National Diet of Japan",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "National Government",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "National Police Agency",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "National Police Agency (警察庁)",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "National center of Incident readiness and Strategy for Cybersecurity (NISC / 内閣サイバーセキュリティセンター)",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "Personal Information Protection Commission",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "Pharmaceuticals and Medical Devices Agency (PMDA / 独立行政法人医薬品医療機器総合機構)",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "Prime Minister",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "relevant administrative agencies",
+        "count": 1,
+        "share": 0.029
+      },
+      {
+        "label": "人工知能戦略本部 (Artificial Intelligence Strategy Headquarters, Government of Japan)",
+        "count": 1,
+        "share": 0.029
       }
     ],
     "frames": [
       {
         "label": "innovation_enablement",
-        "score": 9.126,
-        "share": 0.326,
+        "score": 14.87,
+        "share": 0.437,
+        "document_mentions": 34
+      },
+      {
+        "label": "fundamental_rights",
+        "score": 6.95,
+        "share": 0.204,
+        "document_mentions": 32
+      },
+      {
+        "label": "economic_competitiveness",
+        "score": 4.45,
+        "share": 0.131,
         "document_mentions": 25
       },
       {
         "label": "consumer_public_safety",
-        "score": 6.269,
-        "share": 0.224,
-        "document_mentions": 25
-      },
-      {
-        "label": "fundamental_rights",
-        "score": 4.999,
-        "share": 0.179,
-        "document_mentions": 18
-      },
-      {
-        "label": "economic_competitiveness",
-        "score": 3.626,
-        "share": 0.129,
-        "document_mentions": 14
+        "score": 4.43,
+        "share": 0.13,
+        "document_mentions": 31
       },
       {
         "label": "social_stability",
-        "score": 1.565,
-        "share": 0.056,
-        "document_mentions": 8
-      },
-      {
-        "label": "labor_transition",
-        "score": 1.276,
-        "share": 0.046,
-        "document_mentions": 4
+        "score": 1.38,
+        "share": 0.041,
+        "document_mentions": 20
       },
       {
         "label": "national_security",
-        "score": 0.907,
-        "share": 0.032,
-        "document_mentions": 5
+        "score": 0.83,
+        "share": 0.024,
+        "document_mentions": 12
+      },
+      {
+        "label": "labor_transition",
+        "score": 0.74,
+        "share": 0.022,
+        "document_mentions": 15
       },
       {
         "label": "existential_catastrophic",
-        "score": 0.232,
-        "share": 0.008,
-        "document_mentions": 1
+        "score": 0.35,
+        "share": 0.01,
+        "document_mentions": 4
       }
     ]
   }

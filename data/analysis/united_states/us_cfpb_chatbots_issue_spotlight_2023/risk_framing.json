@@ -1,32 +1,74 @@
 {
   "dominant_frame": "consumer_public_safety",
   "secondary_frames": [
-    "fundamental_rights",
-    "social_stability"
+    "fundamental_rights"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
+    "economic_competitiveness": 0.35,
+    "fundamental_rights": 0.78,
+    "social_stability": 0.05,
+    "innovation_enablement": 0.15,
+    "consumer_public_safety": 0.97,
+    "labor_transition": 0.1
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.21,
     "social_stability": 0.0,
     "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.82,
+    "consumer_public_safety": 0.74,
     "labor_transition": 0.0
   },
-  "rationale_summary": "This CFPB document focuses on chatbots in consumer finance, an agency whose mandate is consumer protection. The document's title and issuing body indicate primary concern with risks to financial consumers from chatbot deployment, such as inaccurate information, consumer confusion, and harm to vulnerable populations—all consumer/public safety framings. Secondary framings include fundamental rights (fair treatment, non-discrimination) and social stability (protecting vulnerable groups from financial harm).",
+  "rationale_summary": "CFPB's Issue Spotlight on Chatbots in Consumer Finance is dominantly framed around consumer_public_safety, centering on concrete financial harms to consumers—including junk fees, late fees, default, unresolved transaction disputes, inaccurate financial information, 'doom loops', phishing/impersonation scams, and eroded customer trust when institutions replace live human support with deficient chatbots. Consumer_public_safety strongly outweighs fundamental_rights because the report's primary evidence and risk taxonomy focus on operational service failures and consumer financial injury. Fundamental_rights serves as a substantive secondary frame covering consumer data privacy, PII breaches in chat logs and training datasets, disproportionate barriers for limited-English-proficiency users, algorithmic bias, and invoking federal legal rights, with a minor economic_competitiveness note on weak market competition and lock-in.",
   "evidence_spans": [
     {
-      "quote": "Chatbots in consumer finance",
-      "source_section": "Title"
+      "quote": "There are many kinds of negative outcomes for the customer, including wasted time, feeling stuck and frustrated, receiving inaccurate information, and paying more in junk fees. These issues are particularly pronounced when people are unable to obtain tailored support for their problems.",
+      "source_section": "Page 3",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3283,
+      "end_char": 3570
     },
     {
-      "quote": "Issue Spotlight",
-      "source_section": "Document description"
+      "quote": "Providing inaccurate information regarding a consumer financial product or service, for example, could be catastrophic. It could lead to the assessment of inappropriate fees, which in turn could lead to worse outcomes such as default, resulting in the customer selecting an inferior option or consumer financial product, or other harms.",
+      "source_section": "Page 21",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 47751,
+      "end_char": 48087
     },
     {
-      "quote": "Consumer Financial Protection Bureau",
-      "source_section": "Author"
+      "quote": "Chat logs introduce another venue for privacy attacks, making it more difficult to fully protect the privacy and security of consumers’ personal and financial information.",
+      "source_section": "Page 18",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 40294,
+      "end_char": 40465
+    },
+    {
+      "quote": "This limitation can be particularly problematic for people with limited English proficiency, where the technology trained on a limited number of dialects makes it difficult for consumers with diverse dialect needs to use chatbots to receive help from their financial institution.",
+      "source_section": "Page 11",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 21930,
+      "end_char": 22209
+    },
+    {
+      "quote": "Importantly, in such markets where competition is lacking or weakened, the extent of cost savings being passed onto consumers in the form of better products and services is diminished.",
+      "source_section": "Page 21",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 46691,
+      "end_char": 46875
     }
   ]
 }

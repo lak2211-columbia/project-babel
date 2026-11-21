@@ -1,0 +1,85 @@
+{
+  "dominant_frame": "fundamental_rights",
+  "secondary_frames": [
+    "social_stability",
+    "consumer_public_safety",
+    "innovation_enablement"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.05,
+    "national_security": 0.05,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.92,
+    "social_stability": 0.88,
+    "innovation_enablement": 0.55,
+    "consumer_public_safety": 0.82,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.38,
+    "social_stability": 0.3,
+    "innovation_enablement": 0.1,
+    "consumer_public_safety": 0.22,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The Commission Guidelines anchor Article 50 transparency obligations primarily in fundamental rights (dominant_frame), framing disclosure and marking rules as essential to upholding personal autonomy, human dignity, democracy and the rule of law, privacy, equality and non-discrimination, freedom of thought, and freedom of expression across interactive, generative, emotion-recognition, and biometric-categorisation AI systems. Fundamental rights edges out the close runner-up, social_stability, because rights-based protections and safeguards for third-party rights and freedoms serve as the overarching constitutional rationale across all four Article 50 obligations (Sections 1, 2.2, 3, 5, and 6), whereas social_stability—prominently expressed through recurring calls to safeguard societal trust, counter misinformation and disinformation, and preserve the integrity of the information ecosystem—concentrates especially in synthetic content marking and deep fake provisions (Sections 2.2, 4, and 8.4). Consumer_public_safety is a substantial secondary frame focused on preventing deception, fraud, impersonation, overreliance, and manipulation, with particular attention to vulnerable groups such as children, the elderly, and persons with disabilities. Innovation_enablement appears as a modest secondary frame via references to promoting innovation and uptake of trustworthy AI, proportionality, and legal certainty through codes of practice.",
+  "evidence_spans": [
+    {
+      "quote": "Ensuring transparent and trustworthy use of interactive and generative AI systems will also allow to uphold personal autonomy and European values, human dignity and other fundamental rights (e.g. freedom of thought, privacy, equality and non-discrimination, consumer protection, intellectual property etc.), while also preserving the freedom of expression and credibility of media content.",
+      "source_section": "Section 2.2 Rationale and objectives (9)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 14923,
+      "end_char": 15312
+    },
+    {
+      "quote": "Recital 132 AI Act explains that the purpose of that obligation is to ensure that natural persons (including persons with disabilities) are aware that they are exposed to emotion recognition and biometric categorisation systems that can be intrusive for their privacy.",
+      "source_section": "Section 5 Article 50(3) AI Act (100)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 103112,
+      "end_char": 103380
+    },
+    {
+      "quote": "As explained in Recitals 132-136 AI Act, the purpose of the transparency obligations is to reduce the risks of impersonation, deception, misinformation, manipulation at scale, and fraud and to mitigate potential adverse impacts on democratic processes and societal trust caused by AI-generated or manipulated content or interaction.",
+      "source_section": "Section 2.2 Rationale and objectives (9)",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 14158,
+      "end_char": 14490
+    },
+    {
+      "quote": "The objective is to enable natural persons to distinguish AI-generated or manipulated content from other content (for example, content created by humans) and to verify its origin, thus also contributing to increased integrity and trust in the information ecosystem.",
+      "source_section": "Section 4 Article 50(2) AI Act (54)",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 69133,
+      "end_char": 69398
+    },
+    {
+      "quote": "As explained in Recital 132 AI Act, the purpose of this information obligation is to enable those natural persons to take informed decisions regarding the system’s outputs, to avoid overreliance on such systems, and to allow those natural persons to calibrate their trust in the content and the interactions accordingly.",
+      "source_section": "Section 3 Article 50(1) AI Act (28)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 34671,
+      "end_char": 34991
+    },
+    {
+      "quote": "Its aim is to promote innovation in and the uptake of trustworthy AI, while ensuring a high level of protection of health, safety and fundamental rights in the Union, including democracy and the rule of law.",
+      "source_section": "Section 1 Background and Objectives (1)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 9246,
+      "end_char": 9453
+    }
+  ]
+}

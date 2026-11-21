@@ -1,94 +1,51 @@
 {
-  "safety_requirements": [
-    {
-      "label": "risk_assessment",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "偽情報の拡散など生成ＡＩをめぐるリスクが指摘される中、ＡＩによって国民の権利や利益が侵害される事案が発生した場合には、ＡＩ法に基づき、国が調査し、必要に応じて事業者への指導や助言などを行っていく必要があります",
-          "source_section": "石破内閣総理大臣挨拶"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.55,
-      "evidence": [
-        {
-          "quote": "ＡＩを開発・活用する者が遵守すべき指針の整備を進めてください",
-          "source_section": "石破内閣総理大臣挨拶"
-        },
-        {
-          "quote": "広島ＡＩプロセスの「国際行動規範」に係る「報告枠組み」について、本年２月より運用が開始されています",
-          "source_section": "川崎総務大臣政務官挨拶"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.5,
-      "evidence": [
-        {
-          "quote": "人間中心の考え方",
-          "source_section": "城内科学技術政策担当大臣挨拶"
-        },
-        {
-          "quote": "人間の尊厳や多様性、言論の自由、信頼できる情報環境といった人間中心の価値と民主主義の前提条件を見失わず",
-          "source_section": "構成員発言"
-        }
-      ]
-    },
-    {
-      "label": "content_provenance",
-      "confidence": 0.5,
-      "evidence": [
-        {
-          "quote": "ディープフェイクをはじめとする偽情報が増加しており",
-          "source_section": "構成員発言"
-        },
-        {
-          "quote": "ディープフェイク等の偽情報には、技術と制度、教育を統合した戦略と、国産技術が必要",
-          "source_section": "松尾座長発言"
-        }
-      ]
-    }
-  ],
+  "safety_requirements": [],
   "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "偽情報の拡散など生成ＡＩをめぐるリスクが指摘される中、ＡＩによって国民の権利や 利益が侵害される事案が発生した場合には、ＡＩ法に基づき、国が調査し、必要に応じて 事業者への指導や助言などを行っていく必要があります。",
+          "source_section": "Page 11",
+          "quote_en": "Amid concerns over risks associated with generative AI such as the spread of disinformation, when cases occur in which the rights or interests of citizens are infringed by AI, it is necessary for the state to conduct investigations under the AI Act and, as necessary, provide guidance or advice to business operators.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "こうした国会での御議論も踏まえ、今後、Ａ Ｉ法において規定されている、ＡＩ戦略本部の設置、ＡＩ基本計画の策定、指針の整備、 情報収集・調査といった取組を、関係省庁と緊密に連携しながら、スピード感を持って進 めてまいります。",
+          "source_section": "Page 2",
+          "quote_en": "Based on these discussions in the Diet, going forward we will swiftly advance the initiatives stipulated in the AI Act—establishing the AI Strategy Headquarters, formulating the Basic AI Plan, developing guidelines, and conducting information collection and investigations—in close coordination with relevant ministries and agencies.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
     {
       "label": "soft_enforcement",
       "confidence": 0.85,
       "evidence": [
         {
-          "quote": "今回成立した日本版ＡＩ法には罰則がないなど、法執行面での裏付けが弱い点については様々な意見もあると思いますけれども、逆にそれを強みとして最大限生かした運用を進めていただきたい",
-          "source_section": "構成員発言"
+          "quote": "今回成立した日本版ＡＩ法には罰則がないなど、法執行面での裏付けが弱い点については様々な意見もあると思いますけれども、逆にそれを強みとして最大限生かした運用を進めていただきたいと考えています。",
+          "source_section": "Page 6",
+          "quote_en": "While I believe there are various opinions regarding the weak legal enforcement backing of the newly enacted Japanese AI Act, such as the absence of penalties, I would like to see its operation proceed by making the most of that very point as a strength.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "罰則のない強みを活かした、委縮のない、切り込んだ運用をして欲しい",
-          "source_section": "松尾座長発言"
-        }
-      ]
-    },
-    {
-      "label": "regulatory_supervision",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "ＡＩ法に基づき、国が調査し、必要に応じて事業者への指導や助言などを行っていく必要があります",
-          "source_section": "石破内閣総理大臣挨拶"
-        },
-        {
-          "quote": "ＡＩ戦略本部の設置、ＡＩ基本計画の策定、指針の整備、情報収集・調査といった取組",
-          "source_section": "城内科学技術政策担当大臣挨拶"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.55,
-      "evidence": [
-        {
-          "quote": "広島ＡＩプロセスの「国際行動規範」に係る「報告枠組み」について、本年２月より運用が開始されています。ＡＩ法に基づき国が行う情報収集や調査は、この「報告枠組み」の結果も活用し",
-          "source_section": "川崎総務大臣政務官挨拶"
+          "quote": "本年冬までに、国際協力や、国際的な情報発信に取り組むとともに、『ＡＩを開発・活 用する者が遵守すべき指針』の整備を進めてください。",
+          "source_section": "Page 11",
+          "quote_en": "By this winter, while engaging in international cooperation and international outreach, please proceed with developing the 'Guidelines to be Complied With by Those Who Develop and Utilize AI.'",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }

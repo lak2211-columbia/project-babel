@@ -1,29 +1,24 @@
 {
-  "issuing_body": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries, Japan)",
+  "issuing_body": "Ministry of Agriculture, Forestry and Fisheries (MAFF)",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2024-03",
   "effective_date": null,
   "covered_actors": [
-    "スマート農機等のメーカー・ベンダー (smart agricultural machinery manufacturers and vendors)",
-    "農業者 (farmers)",
-    "システムサービス提供事業者 (system service providers)",
-    "集落営農組織 (community farming organizations)",
-    "農業関係者 (agricultural stakeholders)"
+    "Smart agricultural machinery manufacturers and vendors",
+    "Agricultural system service providers",
+    "Farmers and agricultural stakeholders (including producer groups, councils, extension advisors, and community farming organizations)"
   ],
-  "covered_application_domains": [
-    "critical_infrastructure"
-  ],
+  "covered_application_domains": [],
   "prohibited_practices": [],
   "enforcement_authorities": [
-    "農林水産省 (Ministry of Agriculture, Forestry and Fisheries)",
-    "知財総合支援窓口 INPIT (Intellectual Property Support Centers)"
+    "Ministry of Agriculture, Forestry and Fisheries (MAFF)"
   ],
   "compliance_deadlines": [
-    "令和３年度 (FY2021) から農林水産省補助事業等においてガイドライン準拠が要件化",
-    "次年度当初予算の公募は例年１月以降に開始されるため、それまでに契約ひな形の見直し等を完了する必要あり"
+    "FY2021 (Reiwa 3): Guideline compliance became a requirement for eligible MAFF subsidy programs",
+    "Prior to annual MAFF subsidy application submissions (calls typically open from January onward for the following fiscal year): Vendors must complete contract template revisions and publish compliance notices on websites or catalogs"
   ],
-  "penalties_summary": "ガイドラインに沿った契約であれば、データ流出等の場合は当事者間で取り決めた内容に従い損害賠償等の対応が行われる。ガイドライン自体に罰則規定はない。",
-  "implementation_notes": "本文書は「農業分野におけるAI・データに関する契約ガイドライン」のQ&A改訂版。農林水産省補助事業等を活用する場合のみ要件化対象。自己資金導入の場合は要件化対象外だが準拠が望ましいとされる。チェックリストおよび契約ひな形が農林水産省HPに公開されている。",
-  "confidence": 0.85
+  "penalties_summary": "No statutory penalties are specified; in the event of a data leak after contracting under the guidelines, remedies such as damages are handled in accordance with the contractual terms agreed between the parties.",
+  "implementation_notes": "This revised March 2024 Q&A clarifies compliance with MAFF's Contract Guidelines on AI and Data in the Agricultural Sector. Guideline compliance is required only as a condition for MAFF subsidy programs when introducing smart agricultural machinery, drones, robots, or IoT devices that transmit and store agricultural data on a service provider's server or cloud; self-funded deployments are outside the mandate, though compliance is recommended. System service providers verify compliance through self-assessment (consulting legal counsel and using MAFF's published checklist and model contracts) and disclose compliant products on websites or catalogs. Free contract consultation is available via INPIT's Intellectual Property Comprehensive Support Desks across all 47 prefectures.",
+  "confidence": 0.9
 }

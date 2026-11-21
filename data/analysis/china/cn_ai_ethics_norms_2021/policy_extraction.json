@@ -1,42 +1,35 @@
 {
   "jurisdiction": "china",
-  "issuing_body": "国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee)",
-  "document_type": "regulatory_guidance",
-  "binding_strength": "regulatory_guidance",
+  "issuing_body": "National New Generation Artificial Intelligence Governance Professional Committee (国家新一代人工智能治理专业委员会), Ministry of Science and Technology of the People's Republic of China",
+  "document_type": "standards_guideline",
+  "binding_strength": "standards_guideline",
   "publication_date": "2021-09-25",
   "effective_date": "2021-09-25",
-  "covered_application_domains": [
-    "general_purpose_models",
-    "public_sector_use"
+  "covered_actors": [
+    "Natural persons engaged in AI management, R&D, supply, or use activities",
+    "Legal persons engaged in AI management, R&D, supply, or use activities",
+    "Other relevant organizations engaged in AI management, R&D, supply, or use activities"
+  ],
+  "covered_application_domains": [],
+  "prohibited_practices": [
+    "Harming individuals' legitimate data rights and interests",
+    "Illegally collecting or using personal information through theft, tampering, leakage, or other means",
+    "Infringing upon individuals' right to privacy"
   ],
   "safety_requirements": [
     {
       "label": "human_oversight",
-      "confidence": 0.9,
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "保障人类拥有充分自主决策权，有权选择是否接受人工智能提供的服务，有权随时退出与人工智能的交互，有权随时中止人工智能系统的运行，确保人工智能始终处于人类控制之下",
-          "source_section": "第三条（四）确保可控可信"
-        }
-      ]
-    },
-    {
-      "label": "risk_assessment",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "不低估不夸大伦理风险。主动开展或参与人工智能伦理问题讨论",
-          "source_section": "第三条（六）提升伦理素养"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "充分尊重个人信息知情、同意等权利，依照合法、正当、必要和诚信原则处理个人信息",
-          "source_section": "第三条（三）保护隐私安全"
+          "quote": "（四）确保可控可信。保障人类拥有充分自主决策权，有权选择是否接受人工智能提供的服务，有权随时退出与人工智能的交互，有权随时中止人工智能系统的运行，确保人工智能始终处于人类控制之下。",
+          "source_section": "第三条",
+          "quote_en": "(4) Ensure controllability and trustworthiness. Safeguard humans' full autonomous decision-making rights, including the right to choose whether to accept services provided by AI, the right to exit interaction with AI at any time, and the right to suspend the operation of AI systems at any time, ensuring that AI always remains under human control.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 948,
+          "end_char": 1038
         }
       ]
     }
@@ -44,29 +37,32 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.85,
+      "confidence": 0.88,
       "evidence": [
         {
-          "quote": "旨在将伦理道德融入人工智能全生命周期，为从事人工智能相关活动的自然人、法人和其他相关机构等提供伦理指引",
-          "source_section": "前言"
+          "quote": "旨在将伦理道德融入人工智能全生命周期，为从事人工智能相关活动的自然人、法人和其他相关机构等提供伦理指引。",
+          "source_section": "《新一代人工智能伦理规范》发布-中华人民共和国科学技术部",
+          "quote_en": "aimed at integrating ethics and morality into the entire lifecycle of artificial intelligence, providing ethical guidance for natural persons, legal persons, and other relevant organizations engaged in AI-related activities.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 51,
+          "end_char": 103
         },
         {
-          "quote": "积极引导负责任的人工智能研发与应用活动",
-          "source_section": "前言"
-        }
-      ]
-    },
-    {
-      "label": "none_specified",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "建立人工智能问责机制，不回避责任审查，不逃避应负责任",
-          "source_section": "第三条（五）强化责任担当"
+          "quote": "在人工智能全生命周期各环节自省自律，建立人工智能问责机制，不回避责任审查，不逃避应负责任。",
+          "source_section": "第三条",
+          "quote_en": "practice self-reflection and self-discipline across all stages of the AI lifecycle, establish AI accountability mechanisms, and neither evade responsibility reviews nor shirk due responsibilities.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1080,
+          "end_char": 1125
         }
       ]
     }
   ],
-  "implementation_notes": "This document is an ethics guideline (伦理规范) rather than binding law. It provides normative guidance for all actors in the AI lifecycle (managers, developers, suppliers, users) but does not specify legal penalties or mandatory enforcement mechanisms. Binding force is ambiguous; treated as regulatory guidance given the issuing body's authority, but closer to a soft-law instrument.",
-  "confidence": 0.82
+  "enforcement_authorities": [],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Non-binding ethical guideline issued to integrate ethics across the AI lifecycle and operationalize China's New Generation AI Development Plan and Governance Principles. Effective upon publication (2021-09-25) and subject to timely revision based on socioeconomic needs and AI development. Note that the provided text contains the release notice, Articles 2-3, and Article 25, while the 18 specific ethical requirements for management, R&D, supply, and use referenced in the preamble are omitted from this excerpt.",
+  "confidence": 0.88
 }

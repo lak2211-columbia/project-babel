@@ -7,36 +7,80 @@
     "existential_catastrophic"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.72,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.55,
-    "labor_transition": 0.1
+    "existential_catastrophic": 0.72,
+    "national_security": 0.15,
+    "economic_competitiveness": 0.75,
+    "fundamental_rights": 0.98,
+    "social_stability": 0.35,
+    "innovation_enablement": 0.88,
+    "consumer_public_safety": 0.9,
+    "labor_transition": 0.05
   },
-  "rationale_summary": "The document repeatedly centers fundamental rights as the primary justification for regulation, banning specific AI practices because they 'contravene EU values because they violate fundamental rights,' requiring fundamental rights impact assessments, and structuring the risk classification around the EU Charter of Fundamental Rights. Consumer/public safety is a strong secondary frame, as health and safety risks are co-stated throughout. Innovation enablement and economic competitiveness appear as secondary justifications to show the regulation is balanced. Existential/systemic risk language appears specifically around GPAI models (CBRN attacks, loss of human control) but is not the dominant framing.",
+  "frame_share": {
+    "existential_catastrophic": 0.09,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.1,
+    "fundamental_rights": 0.36,
+    "social_stability": 0.04,
+    "innovation_enablement": 0.2,
+    "consumer_public_safety": 0.21,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document frames the EU AI Act primarily around fundamental rights, anchoring prohibitions, high-risk classifications, anti-bias duties, biometric restrictions, and impact assessments in EU values, the EU Charter of Fundamental Rights, non-discrimination, privacy, democracy, and the rule of law. Fundamental rights edges out consumer and public safety (which is prominent in product-safety, physical-safety, and anti-deception rationales) and innovation enablement (which emphasizes trust, internal-market harmonisation, regulatory sandboxes, and proportionate rules) because rights protection recurs as the foundational legal rationale across nearly every substantive section of the Q&A. Economic competitiveness (global leadership, growth, and EU industrial strength) and existential/catastrophic risk (CBRN attacks, large-scale cyberattacks, and loss of human control from systemic-risk GPAI models) appear as explicit secondary justifications, while misinformation and strategic distortion of beliefs provide only minor social-stability framing. National security is explicitly carved out as an exemption rather than a governance rationale, and employment mentions lack workforce-transition or reskilling framing.",
   "evidence_spans": [
     {
-      "quote": "It aims to address risks to health, safety and fundamental rights.",
-      "source_section": "Introduction"
+      "quote": "It aims to address risks to health, safety and fundamental rights. The regulation also aims to protect democracy, the rule of law and the environment.",
+      "source_section": "Why do we need to regulate the use of Artificial Intelligence?",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 58,
+      "end_char": 208
     },
     {
-      "quote": "a very limited set of particularly harmful uses of AI systems that contravene EU values because they violate fundamental rights and will therefore be banned",
-      "source_section": "Prohibited AI practices"
+      "quote": "A very limited set of particularly harmful uses of AI systems that contravene EU values because they violate fundamental rights and will therefore be banned",
+      "source_section": "Prohibited AI systems",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 1986,
+      "end_char": 2142
     },
     {
-      "quote": "The AI Act considers a limited number of AI systems as high-risk, because they potentially create an adverse impact on people's safety or their fundamental rights (as protected by the EU Charter of Fundamental Rights)",
-      "source_section": "High-risk AI systems"
+      "quote": "These transparency requirements aim to address the risks of misinformation and manipulation, fraud, impersonation and consumer deception.",
+      "source_section": "Transparency requirements for certain AI systems",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 4576,
+      "end_char": 4713
     },
     {
-      "quote": "powerful models could enable chemical, biological, radiological or nuclear (CBRN) attacks or large-scale sophisticated cyberattacks, escape human control",
-      "source_section": "General-purpose AI models"
+      "quote": "The AI Act is innovation-friendly. Rules will apply only where strictly needed and in a way that minimises the burden for economic operators, with a light governance structure.",
+      "source_section": "How can the AI Act support innovation?",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 35519,
+      "end_char": 35695
     },
     {
-      "quote": "deployers that are bodies governed by public law...shall perform an assessment of the impact on fundamental rights",
-      "source_section": "Fundamental rights impact assessment"
+      "quote": "The uptake of AI systems and general-purpose AI models has a strong potential to bring societal benefits, economic growth and to enhance EU innovation and global competitiveness.",
+      "source_section": "Why do we need to regulate the use of Artificial Intelligence?",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 209,
+      "end_char": 387
+    },
+    {
+      "quote": "For example, powerful models could enable chemical, biological, radiological or nuclear (CBRN) attacks or large-scale sophisticated cyberattacks, escape human control, or enable the strategic distortion of human behaviour or beliefs.",
+      "source_section": "General-purpose AI models",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 5279,
+      "end_char": 5512
     }
   ]
 }

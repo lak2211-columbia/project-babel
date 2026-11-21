@@ -1,40 +1,65 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "innovation_enablement",
-    "consumer_public_safety"
+    "innovation_enablement"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.02,
-    "economic_competitiveness": 0.1,
-    "fundamental_rights": 0.75,
-    "social_stability": 0.05,
-    "innovation_enablement": 0.35,
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.9,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.65,
     "consumer_public_safety": 0.2,
-    "labor_transition": 0.01
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around protecting fundamental rights—specifically intellectual property rights enshrined in EU law—as the basis for AI governance obligations. The overarching objective explicitly references 'a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law.' The substantive measures are devoted to ensuring AI providers respect copyright and related rights of rightsholders. A secondary innovation-enablement frame is present through references to supporting innovation and accommodating SMEs/startups. Consumer/public safety appears marginally through output safeguard requirements.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.65,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.25,
+    "consumer_public_safety": 0.05,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document's dominant framing is fundamental_rights because its overarching objective anchors governance in fundamental rights enshrined in the EU Charter and the rule of law, and the entire substantive chapter is justified around protecting the exclusive legal rights of rightsholders under Union copyright law, respecting reservations of rights, and preserving legal remedies and complaint mechanisms. Innovation_enablement is a secondary frame, reflected in the preamble's goal of promoting the uptake of trustworthy AI and supporting innovation, as well as the recital emphasizing proportionate measures tailored to SMEs and startups. Fundamental_rights edges out innovation_enablement because every operative commitment is structured around safeguarding rightsholders' statutory rights rather than reducing compliance friction. Health and safety (consumer_public_safety) and internal market functioning (economic_competitiveness) appear only briefly as inherited Article 1(1) AI Act boilerplate in the preamble.",
   "evidence_spans": [
     {
-      "quote": "promote the uptake of human-centric and trustworthy artificial intelligence, while ensuring a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law",
-      "source_section": "Page 2"
+      "quote": "ensuring a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law, and environmental protection, against harmful effects of AI in the Union, and to support innovation pursuant to Article 1(1) AI Act.",
+      "source_section": "Preamble",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 375,
+      "end_char": 649
     },
     {
-      "quote": "providers of general-purpose AI models on the Union market must put in place a policy to comply with Union law on copyright and related rights, and in particular to identify and comply with, including through state-of-the-art technologies, a reservation of rights expressed by rightsholders",
-      "source_section": "Page 3"
+      "quote": "This Chapter aims to contribute to the proper application of the obligation laid down in Article 53(1), point (c), of the AI Act pursuant to which providers that place general-purpose AI models on the Union market must put in place a policy to comply with Union law on copyright and related rights",
+      "source_section": "Recitals",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 1300,
+      "end_char": 1597
     },
     {
-      "quote": "provides for exclusive rights that are preventive in nature and thus is based on prior consent save where an exception or limitation applies",
-      "source_section": "Page 3"
-    },
-    {
-      "quote": "implement appropriate and proportionate technical safeguards to prevent their models from generating outputs that reproduce training content protected by Union law on copyright and related rights in an infringing manner",
-      "source_section": "Page 6"
+      "quote": "The overarching objective of this Code of Practice (“Code”) is to improve the functioning of the internal market, to promote the uptake of human-centric and trustworthy artificial intelligence (“AI”)",
+      "source_section": "Preamble",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 168,
+      "end_char": 367
     },
     {
       "quote": "The commitments in this Chapter that require proportionate measures should be commensurate and proportionate to the size of providers, taking due account of the interests of SMEs, including startups.",
-      "source_section": "Page 3"
+      "source_section": "Recitals",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3074,
+      "end_char": 3273
     }
   ]
 }

@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01FpaVXZCQQmvfqNFp1mumv1",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"innovation_enablement\",\"secondary_frames\":[\"fundamental_rights\",\"national_security\",\"economic_competitiveness\"],\"frame_confidence\":{\"existential_catastrophic\":0.0,\"national_security\":0.15,\"economic_competitiveness\":0.25,\"fundamental_rights\":0.2,\"social_stability\":0.05,\"innovation_enablement\":0.55,\"consumer_public_safety\":0.05,\"labor_transition\":0.0},\"rationale_summary\":\"The document is primarily framed around enabling data-driven innovation through clear contractual guidelines. Its stated purpose is to facilitate data transactions and AI utilization, with references to 'data-driven innovation creation' and IoT/AI platform case studies. Secondary framings include fundamental rights (personal data protection, GDPR compliance) and national security (export controls under FEFTA for dual-use technologies).\",\"evidence_spans\":[{\"quote\":\"データに関する取引の推進を目的とした契約ガイドライン-データ駆動型イノベーションの創出に向けて-\",\"source_section\":\"Page 11\"},{\"quote\":\"武器、核兵器等、軍事転用可能な汎用品およびそれらに関する技術が安全保障上懸念のある国家やテロリストの手に渡ることを防ぐ目的で、輸出管理が行なわれている\",\"source_section\":\"Page 48\"},{\"quote\":\"個人情報保護に主眼を置いた越境移転規制が存在する\",\"source_section\":\"Page 42\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 8657,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 385,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 199835,
+    "candidatesTokenCount": 1171,
+    "totalTokenCount": 203990,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 199835
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1171
+      }
+    ],
+    "thoughtsTokenCount": 2984,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "-i8Ba_bwGNSQ8L0P_e7M6A4"
 }

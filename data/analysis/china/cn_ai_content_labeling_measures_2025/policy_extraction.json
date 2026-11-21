@@ -1,69 +1,59 @@
 {
   "jurisdiction": "china",
-  "issuing_body": "国家互联网信息办公室、工业和信息化部、公安部、国家广播电视总局",
-  "document_type": "regulatory_guidance",
-  "binding_strength": "regulatory_guidance",
+  "issuing_body": "Cyberspace Administration of China (国家互联网信息办公室), Ministry of Industry and Information Technology (工业和信息化部), Ministry of Public Security (公安部), and National Radio and Television Administration (国家广播电视总局)",
+  "document_type": "legislation",
+  "binding_strength": "binding_law",
   "publication_date": "2025-03-07",
   "effective_date": null,
-  "covered_application_domains": [
-    "general_purpose_models"
+  "covered_actors": [
+    "AI-generated synthetic content service providers (提供生成合成服务的服务提供者)",
+    "Network information content dissemination service providers (提供网络信息内容传播服务的服务提供者)",
+    "Users publishing AI-generated synthetic content via network information content dissemination services (用户)",
+    "Any organizations and individuals (任何组织和个人)"
+  ],
+  "covered_application_domains": [],
+  "prohibited_practices": [
+    "Maliciously deleting, tampering with, forging, or concealing AI-generated synthetic content labels required under the Measures",
+    "Providing tools or services to others to maliciously delete, tamper with, forge, or conceal required AI-generated synthetic content labels",
+    "Harming the legitimate rights and interests of others through improper labeling methods"
   ],
   "safety_requirements": [
     {
       "label": "content_provenance",
-      "confidence": 0.95,
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "人工智能生成合成内容标识包括显式标识和隐式标识",
-          "source_section": "第二条"
+          "quote": "服务提供者提供生成合成内容下载、复制、导出等功能时，应当确保文件中含有满足要求的显式标识。",
+          "source_section": "第四条",
+          "quote_en": "When service providers offer functions such as downloading, copying, or exporting generated or synthesized content, they shall ensure that the files contain explicit labels that meet the requirements.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 812,
+          "end_char": 857
         },
         {
-          "quote": "鼓励服务提供者在生成合成内容中添加数字水印等形式的隐式标识",
-          "source_section": "隐式标识条款"
-        },
-        {
-          "quote": "在文本的起始、末尾或者中间适当位置添加文字提示或者通用符号提示等标识",
-          "source_section": "显式标识要求"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "明确提醒公众该内容属于生成合成内容",
-          "source_section": "传播服务条款"
-        },
-        {
-          "quote": "提供必要的标识功能，并提醒用户主动声明发布内容中是否包含生成合成内容",
-          "source_section": "传播服务条款"
+          "quote": "有前款第一项至第三项情形的，应当在文件元数据中添加生成合成内容属性信息、传播平台名称或者编码、内容编号等传播要素信息。",
+          "source_section": "第六条",
+          "quote_en": "Under any of the circumstances in items (1) to (3) of the preceding paragraph, dissemination element information such as attribute information of the generated or synthesized content, the name or code of the dissemination platform, and the content identifier shall be added to the file metadata.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1255,
+          "end_char": 1314
         }
       ]
     }
   ],
-  "enforcement_mechanisms": [
-    {
-      "label": "regulatory_supervision",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "任何组织和个人不得恶意删除、篡改、伪造、隐匿本办法规定的生成合成内容标识",
-          "source_section": "禁止行为条款"
-        }
-      ]
-    },
-    {
-      "label": "soft_enforcement",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "鼓励服务提供者在生成合成内容中添加数字水印等形式的隐式标识",
-          "source_section": "隐式标识条款"
-        }
-      ]
-    }
+  "enforcement_mechanisms": [],
+  "enforcement_authorities": [
+    "Cyberspace Administration of China (国家互联网信息办公室)",
+    "Ministry of Industry and Information Technology (工业和信息化部)",
+    "Ministry of Public Security (公安部)",
+    "National Radio and Television Administration (国家广播电视总局)",
+    "Provincial, autonomous region, municipal, and Xinjiang Production and Construction Corps cyberspace, communications/industry, public security, and radio/television authorities"
   ],
-  "implementation_notes": "Document mandates explicit and implicit labeling of AI-generated synthetic content. Explicit labels must appear at specific positions in text, audio, image, video, and virtual scenes. Implicit labels (e.g., digital watermarks, file metadata) are encouraged. Distribution platforms must check metadata and apply appropriate labels. Prohibition on malicious removal or falsification of labels. Specific penalties not detailed in the provided text excerpt.",
-  "confidence": 0.85
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Jointly promulgated departmental regulation (国信办通字〔2025〕2号) grounded in the Cybersecurity Law and existing algorithm, deep synthesis, and generative AI rules. The provided text (Notice and Articles 1, 3, 4, 5, 6, 10) mandates explicit user-perceptible labels and implicit file-metadata labels for synthetic content providers, metadata verification and labeling by dissemination platforms, and user self-declaration, while encouraging digital watermarks. Effective date and penalty provisions do not appear in the provided text.",
+  "confidence": 0.94
 }

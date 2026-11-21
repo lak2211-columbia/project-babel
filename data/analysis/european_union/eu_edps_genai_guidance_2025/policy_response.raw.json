@@ -1,27 +1,59 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_019mtEbv4TmNxsNiZFFnJ3Cz",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"jurisdiction\":\"european_union\",\"issuing_body\":\"European Data Protection Supervisor (EDPS)\",\"document_type\":\"regulatory_guidance\",\"binding_strength\":\"regulatory_guidance\",\"publication_date\":\"2025-10-28\",\"effective_date\":null,\"covered_application_domains\":[\"general_purpose_models\",\"public_sector_use\",\"employment\",\"healthcare\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"Conduct a Generative AI Risk Assessment: Perform a comprehensive generative AI risk assessment in accordance with the EDPS' Guidance for Risk Management for Artificial Intelligence system.\",\"source_section\":\"Section 2\"},{\"quote\":\"regular monitoring and reviews of the risk assessments need to be carried out, since the functioning of the model may exacerbate identified risks or create new ones\",\"source_section\":\"Section 6\"}]},{\"label\":\"pre_deployment_testing\",\"confidence\":0.9,\"evidence\":[{\"quote\":\"Developers and deployers may need to carry out their own risk assessments and document any mitigation action taken.\",\"source_section\":\"Section 6\"},{\"quote\":\"Developers should use validation sets during training and separate testing sets for final evaluation\",\"source_section\":\"Section 10\"}]},{\"label\":\"red_teaming\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"A possible way to deal with unknown risks is to use 'red teaming' techniques to try to find and expose vulnerabilities.\",\"source_section\":\"Section 15\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.95,\"evidence\":[{\"quote\":\"EUIs must provide to individuals all the information required in the Regulation when using generative AI systems that process personal data.\",\"source_section\":\"Section 11\"},{\"quote\":\"Certain systems (i.e. chatbots) may require specific transparency requirements, including informing individuals that they are interacting with an AI system without human intervention.\",\"source_section\":\"Section 11\"}]},{\"label\":\"model_documentation\",\"confidence\":0.92,\"evidence\":[{\"quote\":\"Datasets and models must be accompanied by documentation on their structure, maintenance and intended use.\",\"source_section\":\"Section 9\"},{\"quote\":\"The technical and user documentation of the system, including model cards, should enable the controller of the system to carry out appropriate checks\",\"source_section\":\"Section 10\"}]},{\"label\":\"third_party_audit\",\"confidence\":0.75,\"evidence\":[{\"quote\":\"EU-X will get the services of an external auditor to verify the proper implementation of the system, including on security.\",\"source_section\":\"Section 15\"},{\"quote\":\"processing activities are traceable and auditable\",\"source_section\":\"Section 13\"}]},{\"label\":\"access_controls\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"Controllers should, in addition to the traditional security controls for IT systems, integrate specific controls tailored to the already known vulnerabilities of these systems - model inversion attacks, prompt injection, jailbreaks\",\"source_section\":\"Section 15\"}]},{\"label\":\"human_oversight\",\"confidence\":0.92,\"evidence\":[{\"quote\":\"EUIs must be very attentive to the weight that the information provided by the system has in the final steps of the decision-making procedure\",\"source_section\":\"Section 12\"},{\"quote\":\"to ensure more accurate information and controlled behaviour\",\"source_section\":\"Section 1\"},{\"quote\":\"EUI-X has a manual verification step for each AI generated summary\",\"source_section\":\"Section 10\"}]},{\"label\":\"incident_reporting\",\"confidence\":0.6,\"evidence\":[{\"quote\":\"If risks that cannot be mitigated by reasonable means are identified, it is time to consult the EDPS.\",\"source_section\":\"Section 6\"}]}],\"enforcement_mechanisms\":[{\"label\":\"regulatory_supervision\",\"confidence\":0.92,\"evidence\":[{\"quote\":\"The EDPS issues these orientations in its role as a data protection supervisory authority\",\"source_section\":\"Introduction\"},{\"quote\":\"If risks that cannot be mitigated by reasonable means are identified, it is time to consult the EDPS.\",\"source_section\":\"Section 6\"}]},{\"label\":\"reporting_obligation\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"Ensure that the processing activities taking place in the context of the generative AI system are thoroughly documented in your records. Such records should include all necessary information required by Article 31 of the Regulation.\",\"source_section\":\"Section 2\"},{\"quote\":\"controllers should proceed to a prior consultation with the EDPS\",\"source_section\":\"Section 6\"}]},{\"label\":\"soft_enforcement\",\"confidence\":0.88,\"evidence\":[{\"quote\":\"These EDPS Orientations on generative Artificial Intelligence (generative AI) and personal data protection intend to provide practical advice and instructions\",\"source_section\":\"Introduction\"}]}],\"implementation_notes\":\"This is Version 2 of EDPS guidance issued under Regulation (EU) 2018/1725 (EUDPR), applicable specifically to EU institutions, bodies, offices and agencies (EUIs). The document is explicitly not issued under the AI Act market surveillance authority role. Enforcement is primarily through GDPR-style accountability mechanisms and EDPS supervisory authority rather than direct penalties. The guidance is non-prescriptive on technical measures but establishes baseline data protection compliance expectations for all stages of the generative AI lifecycle. Several referenced documents (e.g., EDPS Guidance for Risk Management for AI systems) are noted as forthcoming.\",\"confidence\":0.9}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 22102,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "metadata_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 23548,
+      "candidatesTokenCount": 386,
+      "totalTokenCount": 25796,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 23548
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 386
+        }
+      ],
+      "thoughtsTokenCount": 1862,
+      "serviceTier": "standard"
     },
-    "output_tokens": 1233,
-    "service_tier": "standard",
-    "inference_geo": "global"
+    "modelVersion": "gemini-4-neon",
+    "responseId": "Oi4Ba76EIc7BodAPv5rkqQU"
+  },
+  "controls_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 23701,
+      "candidatesTokenCount": 1952,
+      "totalTokenCount": 31777,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 23701
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1952
+        }
+      ],
+      "thoughtsTokenCount": 6124,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "Ti4Ba5W-F_7dodAPnO7IqAE"
   }
 }

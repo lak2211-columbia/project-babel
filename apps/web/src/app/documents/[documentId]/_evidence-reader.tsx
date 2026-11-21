@@ -30,6 +30,7 @@ import {
   type NullCalibration,
 } from "@/lib/seed-data";
 import {
+  formatModelDisplayName,
   isCjkText,
   OBLIGATION_STRENGTH_COLORS,
 } from "@/lib/taxonomy-vocab";
@@ -483,8 +484,11 @@ export function DocumentEvidenceReader({
                 <dt className="uppercase tracking-[0.06em] text-[#94a3b8]">
                   model
                 </dt>
-                <dd className="text-right text-[#cbd5e1]">
-                  {document.provenance.model}
+                <dd
+                  className="text-right text-[#cbd5e1]"
+                  title={document.provenance.model}
+                >
+                  {formatModelDisplayName(document.provenance.model)}
                 </dd>
               </>
             ) : null}

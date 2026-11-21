@@ -1,33 +1,85 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
+    "consumer_public_safety",
     "economic_competitiveness",
     "fundamental_rights"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.45,
+    "national_security": 0.3,
+    "economic_competitiveness": 0.72,
+    "fundamental_rights": 0.65,
+    "social_stability": 0.25,
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.78,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance as a matter of managing risks to individuals, organizations, society, and the environment through trustworthiness characteristics (safe, reliable, fair, privacy-enhanced, etc.). This aligns most closely with consumer/public safety framing. Secondary frames include innovation enablement (supporting trustworthy AI development) and economic competitiveness (enhancing economic security).",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.04,
+    "economic_competitiveness": 0.16,
+    "fundamental_rights": 0.12,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.44,
+    "consumer_public_safety": 0.24,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The AI RMF FAQs are dominantly framed around innovation_enablement, presenting a voluntary, scalable, non-mandatory standards framework aimed at fostering innovative approaches to trustworthiness, improving measurement science, and building confidence in AI systems. Innovation_enablement leads consumer_public_safety, which is a strong runner-up focused on managing AI risks to individuals, organizations, society, and quality of life through safe, valid, and reliable systems. Economic_competitiveness ('enhance economic security') and fundamental_rights ('privacy-enhanced, and fair with harmful bias managed') serve as clear secondary frames, with a minor national_security nod to NSCAI recommendations.",
   "evidence_spans": [
     {
-      "quote": "intended to help developers, users and evaluators of AI systems better manage AI risks which could affect individuals, organizations, society, or the environment",
-      "source_section": "What is the AI Risk Management Framework (AI RMF)?"
+      "quote": "NIST is developing forward-thinking approaches that support innovation and confidence in AI systems.",
+      "source_section": "Will NIST provide additional guidance to help with using the AI RMF?",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 5655,
+      "end_char": 5755
     },
     {
-      "quote": "aims to cultivate trust in the design, development, use, and evaluation of AI technologies and systems in ways that enhance economic security and improve quality of life",
-      "source_section": "Why has NIST developed the Framework?"
+      "quote": "It aims to foster the development of innovative approaches to address characteristics of trustworthiness including valid and reliable, safe, secure and resilient, accountable and transparent, explainable and interpretable, privacy-enhanced, and fair with harmful bias managed.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 320,
+      "end_char": 596
     },
     {
-      "quote": "foster the development of innovative approaches to address characteristics of trustworthiness including valid and reliable, safe, secure and resilient, accountable and transparent, explainable and interpretable, privacy-enhanced, and fair with harmful bias managed",
-      "source_section": null
+      "quote": "The Framework is intended to help developers, users and evaluators of AI systems better manage AI risks which could affect individuals, organizations, society, or the environment.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 140,
+      "end_char": 319
+    },
+    {
+      "quote": "NIST aims to cultivate trust in the design, development, use, and evaluation of AI technologies and systems in ways that enhance economic security and improve quality of life.",
+      "source_section": "Why has NIST developed the Framework?",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 1538,
+      "end_char": 1713
+    },
+    {
+      "quote": "privacy-enhanced, and fair with harmful bias managed.",
+      "source_section": "Share",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 543,
+      "end_char": 596
+    },
+    {
+      "quote": "The agency’s work on the AI RMF is consistent with recommendations by the National Security Commission on Artificial Intelligence",
+      "source_section": "Why has NIST developed the Framework?",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 1819,
+      "end_char": 1948
     }
   ]
 }

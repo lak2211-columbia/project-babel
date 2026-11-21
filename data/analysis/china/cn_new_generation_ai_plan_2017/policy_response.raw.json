@@ -1,27 +1,59 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01Qotx5aRiTRSf5wtPTr6GsR",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"jurisdiction\":\"china\",\"issuing_body\":\"国务院 (State Council of China)\",\"document_type\":\"strategy_paper\",\"binding_strength\":\"strategy_statement\",\"publication_date\":\"2017-07-08\",\"effective_date\":null,\"covered_application_domains\":[\"general_purpose_models\",\"critical_infrastructure\",\"public_sector_use\",\"employment\",\"education\",\"healthcare\",\"finance\",\"law_enforcement\",\"defense\"],\"safety_requirements\":[{\"label\":\"risk_assessment\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"增强风险意识，重视风险评估和防控，强化前瞻预防和约束引导\",\"source_section\":\"建立人工智能安全监管和评估体系\"},{\"quote\":\"加强对人工智能潜在危害与收益的评估，构建人工智能复杂场景下突发事件的解决方案\",\"source_section\":\"制定促进人工智能发展的法律法规和伦理规范\"}]},{\"label\":\"transparency_disclosure\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"建立健全公开透明的人工智能监管体系，实行设计问责和应用监督并重的双层监管结构，实现对人工智能算法设计、产品开发和成果应用等的全流程监管\",\"source_section\":\"建立人工智能安全监管和评估体系\"}]},{\"label\":\"human_oversight\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"实行设计问责和应用监督并重的双层监管结构\",\"source_section\":\"建立人工智能安全监管和评估体系\"},{\"quote\":\"研究\"},{\"quote\":\"建立追溯和问责制度，明确人工智能法律主体以及相关权利、义务和责任等\",\"source_section\":\"制定促进人工智能发展的法律法规和伦理规范\"}]},{\"label\":\"pre_deployment_testing\",\"confidence\":0.7,\"evidence\":[{\"quote\":\"建设跨领域的人工智能测试平台，推动人工智能安全认证，评估人工智能产品和系统的关键性能\",\"source_section\":\"建立人工智能安全监管和评估体系\"},{\"quote\":\"建立人工智能算法与平台安全性测试模型及评估模型，研发人工智能算法与平台安全性测评工具集\",\"source_section\":\"人工智能基础数据与安全检测平台\"}]},{\"label\":\"model_documentation\",\"confidence\":0.6,\"evidence\":[{\"quote\":\"坚持安全性、可用性、互操作性、可追溯性原则，逐步建立并完善人工智能基础共性、互联互通、行业应用、网络安全、隐私保护等技术标准\",\"source_section\":\"建立人工智能技术标准和知识产权体系\"}]},{\"label\":\"registration_licensing\",\"confidence\":0.5,\"evidence\":[{\"quote\":\"重点围绕自动驾驶、服务机器人等应用基础较好的细分领域，加快研究制定相关安全管理法规\",\"source_section\":\"制定促进人工智能发展的法律法规和伦理规范\"}]}],\"enforcement_mechanisms\":[{\"label\":\"regulatory_supervision\",\"confidence\":0.85,\"evidence\":[{\"quote\":\"建立健全公开透明的人工智能监管体系，实行设计问责和应用监督并重的双层监管结构\",\"source_section\":\"建立人工智能安全监管和评估体系\"}]},{\"label\":\"soft_enforcement\",\"confidence\":0.8,\"evidence\":[{\"quote\":\"促进人工智能行业和企业自律，切实加强管理，加大对数据滥用、侵犯个人隐私、违背道德伦理等行为的惩戒力度\",\"source_section\":\"建立人工智能安全监管和评估体系\"}]},{\"label\":\"civil_penalty\",\"confidence\":0.4,\"evidence\":[{\"quote\":\"加大对数据滥用、侵犯个人隐私、违背道德伦理等行为的惩戒力度\",\"source_section\":\"建立人工智能安全监管和评估体系\"}]}],\"implementation_notes\":\"This is China's 2017 New Generation AI Development Plan (新一代人工智能发展规划), a high-level national strategy document issued by the State Council. It is primarily a strategy/roadmap document with three-phase goals to 2030. While it directs ministries to develop laws, regulations, and standards, it does not itself constitute binding law. Safety and governance provisions are largely aspirational with implementation delegated to future rulemaking. The document explicitly calls for future development of AI laws, ethics frameworks, safety monitoring systems, and standards—meaning most enforcement mechanisms are anticipated rather than operative at time of publication. Confidence scores for enforcement mechanisms are conservative given this forward-looking character.\",\"confidence\":0.88}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 24321,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "metadata_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 18011,
+      "candidatesTokenCount": 742,
+      "totalTokenCount": 21227,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 18011
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 742
+        }
+      ],
+      "thoughtsTokenCount": 2474,
+      "serviceTier": "standard"
     },
-    "output_tokens": 1266,
-    "service_tier": "standard",
-    "inference_geo": "global"
+    "modelVersion": "gemini-4-neon",
+    "responseId": "Fy0Ba-DzAoWXvMcPx_KR4Qw"
+  },
+  "controls_response": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 18164,
+      "candidatesTokenCount": 1177,
+      "totalTokenCount": 23191,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 18164
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1177
+        }
+      ],
+      "thoughtsTokenCount": 3850,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "MS0Ba826Luqdur8Pl7Xi8A0"
   }
 }

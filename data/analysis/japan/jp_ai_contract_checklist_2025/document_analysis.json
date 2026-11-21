@@ -4,119 +4,178 @@
   "language": "ja",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "Ministry of Economy, Trade and Industry (METI), Japan",
-    "document_type": "standards_guideline",
-    "binding_strength": "standards_guideline",
+    "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
     "publication_date": "2025-02",
     "effective_date": null,
     "covered_actors": [
-      "AI利用者 (AI users / businesses using AI services)",
-      "AI提供者 (AI providers)",
-      "AI開発者 (AI developers)",
-      "ベンダ (vendors)",
-      "ユーザ (users)"
+      "AI developers (AI開発者)",
+      "AI providers (AI提供者)",
+      "AI users (AI利用者)",
+      "AI-related service vendors (ベンダ)",
+      "Business users of AI-related services (ユーザ)",
+      "In-house legal departments and outside counsel (社内法務部・顧問弁護士等)",
+      "Business department personnel (ビジネス部門担当者等)"
     ],
     "covered_application_domains": [
-      "general_purpose_models",
-      "public_sector_use"
+      "general_purpose_models"
     ],
     "prohibited_practices": [],
     "safety_requirements": [
       {
-        "label": "access_controls",
-        "confidence": 0.75,
+        "label": "risk_assessment",
+        "confidence": 0.78,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "ベンダがインプットを管理する義務を負うか",
-            "source_section": "A-3-3 管理・セキュリティ"
-          },
-          {
-            "quote": "対象システムのセキュリティ水準",
-            "source_section": "セキュリティに関する留意点"
-          },
-          {
-            "quote": "管理体制・セキュリティ体制が十分な水準にない場合、不必要な情報は提供しない",
-            "source_section": "A-3-3"
-          }
-        ]
-      },
-      {
-        "label": "transparency_disclosure",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "適用法令によっては、ベンダに透明性確保の観点からアウトプット生成に関する一定の情報提供が求められる場合が想定される",
-            "source_section": "B-2-3 保証・情報提供"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.72,
-        "evidence": [
-          {
-            "quote": "利用目的に応じて、アウトプットの正確性や適法性を適切に評価し、人による確認を行うことが必要である",
-            "source_section": "B-2-2"
+            "quote": "したがってユーザは、インプットやアウトプットの取扱いに関する契約条件を十分に精査し、 アウトプットを得ることによるベネフィットや、インプットを提供することによるリスク（特に自社が不合理なリスクを負担することにならないか）を把握した上で、その契約条件を受け入れるか否かの判断が求められる。",
+            "source_section": "4.2 インプット提供に関する留意点",
+            "quote_en": "Therefore, users are expected to thoroughly examine the contractual terms regarding the handling of inputs and outputs, understand the benefits of obtaining outputs and the risks of providing inputs (especially whether the company would bear unreasonable risks), and then decide whether to accept those contractual terms.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22408,
+            "end_char": 22551
           }
         ]
       },
       {
         "label": "incident_reporting",
-        "confidence": 0.6,
+        "confidence": 0.85,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "個人情報の提供を伴う場合、ベンダによる個人情報の漏洩が生じた際はユーザによる監督機関への報告義務等が課せられる場合があるため、特に注意する",
-            "source_section": "A-3-3"
-          }
-        ]
-      },
-      {
-        "label": "third_party_audit",
-        "confidence": 0.6,
-        "evidence": [
-          {
-            "quote": "監査条項等",
-            "source_section": "セキュリティに関する留意点"
-          },
-          {
-            "quote": "ベンダによる管理体制について、ユーザによる監査・情報提供依頼が認められるか",
-            "source_section": "A-3-3"
+            "quote": "個人情報の提供を伴う場合、ベンダに\nよる個人情報の漏洩が生じた際はユーザに\nよる監督機関への報告義務等が課せられる\n場合があるため、特に注意する（下記4.4\n参照）",
+            "source_section": "3.3 AI利活用チェックリスト インプット (A-3-3)",
+            "quote_en": "When the provision of personal information is involved, particular care is required because if a personal information leak by the vendor occurs, the user may be subject to obligations such as reporting to the supervisory authority (see 4.4 below).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12026,
+            "end_char": 12108
           }
         ]
       },
       {
         "label": "model_documentation",
-        "confidence": 0.55,
+        "confidence": 0.84,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "ログの保存",
-            "source_section": "セキュリティに関する留意点"
+            "quote": "サイバー攻撃への対応や内部不正防止の観点から、ユーザによるアプリケーション利用のログだけでなく、AIサービス及びその基盤部分に対する管理者・開発者権限を含む認証ログ、アクセスログ、操作ログ等の各種ログを保存するようベンダに求めることも考えられる。",
+            "source_section": "4.5.3 ログの保存",
+            "quote_en": "From the perspective of responding to cyberattacks and preventing internal fraud, it is also conceivable to ask the vendor to retain not only user application usage logs, but also various logs such as authentication logs, access logs, and operation logs, including administrator and developer privileges for the AI service and its underlying infrastructure.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 37968,
+            "end_char": 38091
+          },
+          {
+            "quote": "対象システムに含まれる全てのソフトウェアコンポーネントや依存関係を一覧化した文書としてはSBOMが有用であり、脆弱性の特定や管理を容易にする効果が期待される",
+            "source_section": "4.5.1 対象システムのセキュリティ水準",
+            "quote_en": "An SBOM is useful as a document listing all software components and dependencies included in the target system, and is expected to facilitate the identification and management of vulnerabilities.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 36674,
+            "end_char": 36752
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.86,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "可能な場合には、監査条項を設けることも有効である。例えば、第三者である委託事業者の内部監査部門による監査等の条項や、国際的なセキュリティの第三者認証（ISO/IEC27001等） の取得を条件とする方法等が考えられる。",
+            "source_section": "4.5.2 監査条項等",
+            "quote_en": "Where possible, establishing an audit clause is also effective. For example, methods such as clauses for audits by the internal audit department of a third-party contractor or conditioning the contract on obtaining international third-party security certification (such as ISO/IEC 27001) can be considered.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 37847,
+            "end_char": 37956
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "AIサービスが商用データセンタあるいはパブリッククラウド等の第三者の環境下で運用される場合、AIサービスの扱うデータに当該第三者自身がアクセスすることが技術的に不可能な状況が確保されているかは、 契約条件だけでなく、実際のセキュリティレベルにも大きく依存するため、契約締結の際にはこのような観点からの情報収集及び検討も重要である。",
+            "source_section": "4.5 セキュリティに関する留意点",
+            "quote_en": "When an AI service is operated in a third-party environment such as a commercial data center or public cloud, whether it is ensured that the third party itself is technically unable to access the data handled by the AI service depends greatly not only on contractual terms but also on the actual security level, so gathering information and examining this perspective when concluding a contract is also important.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 35522,
+            "end_char": 35687
+          },
+          {
+            "quote": "ユーザは必要に応じて、利用しようとするAIサービスがユーザの要求する機密水準に適合したセキュリティ水準を有しているかを確認し、重要なセキュリティ要件が契約内容に反映されているかを検討する必要がある。",
+            "source_section": "4.5.1 対象システムのセキュリティ水準",
+            "quote_en": "As necessary, users need to verify whether the AI service they intend to use has a security level suited to the confidentiality level required by the user, and examine whether important security requirements are reflected in the contract.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 36024,
+            "end_char": 36123
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.87,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "機械学習の特\n性上、アウトプットには、不正確な情報や\n虚偽の情報、あるいは他者の著作権等の権\n利利益を侵害する情報が含まれる可能性が\nある。したがって、利用目的に応じて、ア\nウトプットの正確性や適法性を適切に評価\nし、人による確認を行うことが必要である",
+            "source_section": "3.4 AI利活用チェックリスト アウトプット (B-2-3)",
+            "quote_en": "Due to the nature of machine learning, outputs may contain inaccurate or false information, or information that infringes others' rights and interests such as copyrights. Therefore, depending on the purpose of use, it is necessary to appropriately evaluate the accuracy and legality of outputs and perform human verification.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15937,
+            "end_char": 16063
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.89,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "インプットが汎用的なAI学習目的に利用される場合、すなわち、自社が提供したインプットが学習等、第三者も利用するAIサービス改良のために用いられる場合、以下のリスクが想定される。一方で、一度AIモデル（学習済みモデル）に取り込まれた情報の除去は一般的には困難であり、事後的な是正措置を講じることも難しい。したがって、不必要な情報を可能な限りインプットに含めないことが基本的な対応方針であり、そのための社内体制の整備と周知徹底が重要である。",
+            "source_section": "4.2.1 インプットが汎用的なAI学習目的に利用される場合",
+            "quote_en": "When inputs are used for general-purpose AI training, i.e., when inputs provided by a company are used for training or improving AI services also used by third parties, the following risks are anticipated. On the other hand, once information is incorporated into a trained AI model, removing it is generally difficult and ex-post remediation is also hard. Therefore, the basic approach is to exclude unnecessary information from inputs as much as possible, and establishing internal systems and thorough awareness for this is important.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22905,
+            "end_char": 23123
+          },
+          {
+            "quote": "インプットの提供が個人データの提供であると評価され、かつ、ベンダによる学習が委託（個情法27条5項1号）に当たらないと評価される場合には、法令上の例外事由に該当しない限り、本人の同意なく個人データを第三者10に提供することは個人情報保護法に違反するおそれがある。",
+            "source_section": "4.2.1 インプットが汎用的なAI学習目的に利用される場合",
+            "quote_en": "If the provision of inputs is assessed as the provision of personal data and training by the vendor is not assessed as entrustment (Article 27, Paragraph 5, Item 1 of the APPI), providing personal data to a third party without the individual's consent may violate the Act on the Protection of Personal Information unless a statutory exception applies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23141,
+            "end_char": 23272
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "reporting_obligation",
-        "confidence": 0.65,
-        "evidence": [
-          {
-            "quote": "ユーザによる監督機関への報告義務等が課せられる場合があるため、特に注意する",
-            "source_section": "A-3-3"
-          }
-        ]
-      },
-      {
         "label": "soft_enforcement",
-        "confidence": 0.8,
+        "confidence": 0.96,
         "evidence": [
           {
-            "quote": "チェックリストは、当事者間の適切な利益及びリスクの分配を目指し、ひいてはAIの利活用を促すことを目的として",
-            "source_section": "1 チェックリスト策定の背景・目的"
-          },
-          {
-            "quote": "我が国の事業者が実務上用いやすい形式のチェックリストを取りまとめたものである",
-            "source_section": "1 チェックリスト策定の背景・目的"
+            "quote": "チェックリストは、AIの利活用に関する契約を締結するに際して考慮することが望ましい論点の所在を示すに留まる。チェックリストでリスクの所在が指摘されているからといって、直ちに契約条件の是正に向けた行動を取ることや契約締結を断念することを推奨するものではない。",
+            "source_section": "4.1 チェックリストを踏まえた対応",
+            "quote_en": "The checklist merely indicates the issues that are desirable to consider when concluding a contract regarding the utilization of AI. Just because a risk is pointed out in the checklist does not mean that it recommends immediately taking action to rectify contract terms or abandoning the conclusion of the contract.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19253,
+            "end_char": 19381
           }
         ]
       }
@@ -124,43 +183,124 @@
     "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "This document is a practical contract checklist published by METI in February 2025, aimed at businesses engaging in AI utilization and development. It is non-binding guidance to assist businesses—especially those unfamiliar with AI legal practice—in reviewing contract terms related to inputs, outputs, personal data handling under Japan's Act on the Protection of Personal Information (APPI), security, and log retention. It references the 'AI事業者ガイドライン' (AI Business Operator Guidelines v1.01, November 2024) and the prior 2019 'AI・データの利用に関する契約ガイドライン'. No penalties or enforcement authorities are named; the document is purely advisory.",
+    "implementation_notes": "Non-binding practical contract checklist published by METI in February 2025 to address the rapid adoption of generative AI and foundation models following the 2019 Contract Guidelines on Utilization of AI and Data. It outlines contractual checkpoints for usage-type and development-type contracts across three use cases (general-purpose AI services, customized services, and new development), covering input/output definitions, intellectual property attribution, security practices (architecture review, SBOM, audit clauses, log retention), terms-of-service updates under the Civil Code, and personal data / cross-border transfer compliance under Articles 27 and 28 of Japan's Act on the Protection of Personal Information (APPI).",
     "confidence": 0.92
   },
   "risk_framing": {
-    "dominant_frame": "consumer_public_safety",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
       "fundamental_rights",
-      "innovation_enablement"
+      "economic_competitiveness"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.02,
-      "national_security": 0.03,
-      "economic_competitiveness": 0.15,
-      "fundamental_rights": 0.2,
-      "social_stability": 0.05,
-      "innovation_enablement": 0.15,
-      "consumer_public_safety": 0.55,
-      "labor_transition": 0.01
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.58,
+      "fundamental_rights": 0.62,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.92,
+      "consumer_public_safety": 0.28,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The document is primarily framed around protecting business users (consumers/enterprises) from legal and data-handling risks when contracting for AI services. It explicitly cites concerns about legal risks not being properly examined and data being used for unexpected purposes or provided to third parties causing unforeseen harm. While innovation enablement and economic competitiveness are mentioned as context, the checklist's core purpose is risk management and protection of data subjects and contracting parties—a consumer/public safety framing. Fundamental rights (personal data protection under Japan's APPI) appears as a strong secondary frame.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.17,
+      "fundamental_rights": 0.18,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.6,
+      "consumer_public_safety": 0.05,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document's dominant framing is innovation_enablement: METI explicitly positions this contractual checklist as a practical, accessible tool to help Japanese businesses—including those unfamiliar with AI technology or legal practice—allocate benefits and risks appropriately so as to accelerate industrial innovation, solve social challenges, and promote pragmatic AI utilization rather than discouraging adoption when risks arise. It edges out fundamental_rights and economic_competitiveness because, while Section 4.4 devotes substantial attention to personal data privacy and protecting individuals' rights and interests under the Personal Information Protection Act (APPI), and Section 1 notes balancing risk management with competitiveness gains through AI utilization, both considerations are subordinated to the overarching objective of lowering contractual friction and enabling safe, widespread business adoption of AI services. Consumer_public_safety appears only marginally through a reference to avoiding unintended disadvantages to non-business users and managing inaccurate outputs.",
     "evidence_spans": [
       {
-        "quote": "AIの利活用に関する契約に伴う法的なリスクを十分に検討できていない可能性",
-        "source_section": "1 チェックリスト策定の背景・目的及び想定読者"
+        "quote": "AI利活用の機会がさらに拡大することにより、産業におけるイノベーションの促進や社会的な課題の解決にも寄与することが期待されている。",
+        "source_section": "1 チェックリスト策定の背景・目的及び想定読者",
+        "quote_en": "Further expansion of opportunities for AI utilization is expected to contribute to promoting innovation in industry and solving social challenges.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 747,
+        "end_char": 812
       },
       {
-        "quote": "保護されるべきデータや情報が予期せぬ目的に利用され、また第三者に提供される等、想定外の不利益を被る可能性",
-        "source_section": "1 チェックリスト策定の背景・目的及び想定読者"
+        "quote": "チェックリストは、当事者間の適切な利益及びリスクの分配を目指し、ひいてはAIの利活用を促すことを目的として、特に以下の方針により策定された。",
+        "source_section": "1 チェックリスト策定の背景・目的及び想定読者",
+        "quote_en": "The checklist was formulated under the following policies in particular, aiming at an appropriate allocation of benefits and risks between parties and thereby promoting the utilization of AI.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1501,
+        "end_char": 1571
       },
       {
-        "quote": "当事者間の適切な利益及びリスクの分配を目指し、ひいてはAIの利活用を促すことを目的として",
-        "source_section": "1 チェックリスト策定の背景・目的及び想定読者"
+        "quote": "AI利活用による競争力向上とリスク管理\nの両立を図る観点から、契約上の留意点\nを網羅的に検討",
+        "source_section": "1 チェックリスト策定の背景・目的及び想定読者",
+        "quote_en": "Comprehensively examining contractual points to note from the perspective of balancing competitiveness enhancement through AI utilization with risk management.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 2201,
+        "end_char": 2247
       },
       {
-        "quote": "個人データの提供が伴う場合、ベンダによる自己目的利用や突合が認められる場合には委託として整理できず第三者提供に該当し、本人の同意が必要となる可能性",
-        "source_section": "A-3-1 利用目的"
+        "quote": "ベンダの監督については、取扱いを委託する個人データの内容を踏まえ、個人データが漏えい等をした場合に本人が被る権利利益の侵害の大きさを考慮し、委託する事業の規模及び性質、個人データの取扱状況（取扱う個人データの性質及び量を含む。）等に起因するリスクに応じて行うべきものと考えられる",
+        "source_section": "4.4.1 国内の第三者への個人データの提供に該当する場合",
+        "quote_en": "Supervision of the vendor should be conducted in accordance with the risks arising from the scale and nature of the entrusted business and the handling status of personal data, based on the content of the entrusted personal data and considering the magnitude of infringement on the individual's rights and interests if personal data is leaked.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 30019,
+        "end_char": 30158
+      },
+      {
+        "quote": "その外国が個人の権利利益を保護する上で我が国と同等の水準にあると認められる個人情報の保護に関する制度を有している外国として個人情報保護法施行規則で定める外国である場合",
+        "source_section": "4.4.2 外国にある第三者への個人データの提供に該当する場合",
+        "quote_en": "Where the foreign country is designated by the Enforcement Rules of the Personal Information Protection Act as having a personal information protection system recognized as equivalent in level to Japan in protecting the rights and interests of individuals.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 30954,
+        "end_char": 31037
+      },
+      {
+        "quote": "AIの活用において業務外利用者に何らかの影響が考えられる場合は、当該者に対するAIによる意図しない不利益の回避、AI による便益最大化の実現に努める役割を担う",
+        "source_section": "2.1 AI利活用の流れ",
+        "quote_en": "Where the utilization of AI may have some impact on non-business users, bearing the role of striving to avoid unintended disadvantages caused by AI to such persons and to maximize benefits from AI.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 3752,
+        "end_char": 3831
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:45:16.750703Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "50e6d648b9d04cf82812f20d11cd6226c73a998061ee56c6a4c261b67f170453",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 81635,
+      "output_tokens": 3808,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 11430,
+      "estimated_cost_usd": 0.254424
+    },
+    "grounding_summary": {
+      "total_quotes": 17,
+      "exact_matches": 17,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 3
+    }
   }
 }

@@ -1,41 +1,87 @@
 {
   "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "innovation_enablement",
     "consumer_public_safety",
-    "economic_competitiveness"
+    "innovation_enablement",
+    "existential_catastrophic",
+    "economic_competitiveness",
+    "social_stability"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
+    "existential_catastrophic": 0.75,
     "national_security": 0.1,
-    "economic_competitiveness": 0.55,
-    "fundamental_rights": 0.85,
-    "social_stability": 0.3,
-    "innovation_enablement": 0.6,
-    "consumer_public_safety": 0.5,
-    "labor_transition": 0.1
+    "economic_competitiveness": 0.72,
+    "fundamental_rights": 0.98,
+    "social_stability": 0.55,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.92,
+    "labor_transition": 0.25
   },
-  "rationale_summary": "The EU AI Act consistently frames AI governance as necessary to protect fundamental rights, democracy, rule of law, and human dignity as enshrined in the EU Charter. While economic competitiveness and innovation enablement are prominent secondary themes, the primary justification for regulation is the protection of rights and freedoms. The document repeatedly references the Charter of Fundamental Rights, human-centric AI, and protection of natural persons as the core rationale.",
+  "frame_share": {
+    "existential_catastrophic": 0.06,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.08,
+    "fundamental_rights": 0.36,
+    "social_stability": 0.04,
+    "innovation_enablement": 0.2,
+    "consumer_public_safety": 0.24,
+    "labor_transition": 0.02
+  },
+  "rationale_summary": "The EU AI Act is anchored primarily in a fundamental_rights frame, repeatedly grounding its purpose, prohibitions, high-risk classifications, and deployer impact assessments in EU Charter rights, human dignity, privacy, non-discrimination, democracy, and the rule of law (Recitals 1, 6, 28, 48, 56–62, 96; Article 1). While consumer_public_safety (product safety, health, physical harm, and critical infrastructure protection under the New Legislative Framework) and innovation_enablement (harmonised internal market rules, legal certainty, regulatory sandboxes, and SME/startup support) are major co-equal pillars of the Act's dual-purpose architecture, fundamental_rights edges them out as the overarching normative justification that defines unacceptable practices and structures standalone high-risk governance. Secondary rationales include economic_competitiveness (global leadership in trustworthy AI and growth in the single market), existential_catastrophic risk (explicitly invoked in Recital 110 for general-purpose AI systemic risks such as CBRN, offensive cyber, and self-replication), and social_stability (integrity of the information ecosystem and disinformation mitigation in Recitals 120 and 133). Worker protections appear mainly as rights preservation rather than a macroeconomic labor_transition agenda, and national_security is expressly excluded from the Regulation's scope (Recital 24; Article 2(3)).",
   "evidence_spans": [
     {
-      "quote": "ensuring a high level of protection of health, safety, fundamental rights as enshrined in the Charter of Fundamental Rights of the European Union, including democracy, the rule of law and environmental protection",
-      "source_section": "Recital 1"
+      "quote": "Given the major impact that AI can have on society and the need to build trust, it is vital for AI and its regulatory framework to be developed in accordance with Union values as enshrined in Article 2 of the Treaty on European Union (TEU), the fundamental rights and freedoms enshrined in the Treaties and, pursuant to Article 6 TEU, the Charter.",
+      "source_section": "Recital 6",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5419,
+      "end_char": 5766
     },
     {
-      "quote": "AI may generate risks and cause harm to public interests and fundamental rights that are protected by Union law",
-      "source_section": "Recital 5"
+      "quote": "Such practices are particularly harmful and abusive and should be prohibited because they contradict Union values of respect for human dignity, freedom, equality, democracy and the rule of law and fundamental rights enshrined in the Charter, including the right to non-discrimination, to data protection and to privacy and the rights of the child.",
+      "source_section": "Recital 28",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 38053,
+      "end_char": 38400
     },
     {
-      "quote": "it is vital for AI and its regulatory framework to be developed in accordance with Union values...the fundamental rights and freedoms enshrined in the Treaties",
-      "source_section": "Recital 6"
+      "quote": "AI systems could have an adverse impact on the health and safety of persons, in particular when such systems operate as safety components of products. Consistent with the objectives of Union harmonisation legislation to facilitate the free movement of products in the internal market and to ensure that only safe and otherwise compliant products find their way into the market",
+      "source_section": "Recital 47",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 62234,
+      "end_char": 62610
     },
     {
-      "quote": "AI should be a human-centric technology. It should serve as a tool for people, with the ultimate aim of increasing human well-being",
-      "source_section": "Recital 6"
+      "quote": "The objectives of the AI regulatory sandboxes should be to foster AI innovation by establishing a controlled experimentation and testing environment in the development and pre-marketing phase with a view to ensuring compliance of the innovative AI systems with this Regulation and other relevant Union and national law.",
+      "source_section": "Recital 139",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 179990,
+      "end_char": 180309
     },
     {
-      "quote": "rules regulating the placing on the market...ensuring the smooth functioning of the internal market...supportive of new innovative solutions, enabling a European ecosystem",
-      "source_section": "Recital 8"
+      "quote": "By laying down those rules as well as measures in support of innovation with a particular focus on small and medium enterprises (SMEs), including startups, this Regulation supports the objective of promoting the European human-centric approach to AI and being a global leader in the development of secure, trustworthy and ethical AI",
+      "source_section": "Recital 8",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 7500,
+      "end_char": 7832
+    },
+    {
+      "quote": "chemical, biological, radiological, and nuclear risks, such as the ways in which barriers to entry can be lowered, including for weapons development, design acquisition, or use; offensive cyber capabilities, such as the ways in vulnerability discovery, exploitation, or operational use can be enabled",
+      "source_section": "Recital 110",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 145617,
+      "end_char": 145917
     }
   ]
 }

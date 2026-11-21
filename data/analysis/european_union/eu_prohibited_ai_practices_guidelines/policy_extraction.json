@@ -3,148 +3,361 @@
   "issuing_body": "European Commission",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": null,
+  "publication_date": "2025-07-29",
   "effective_date": null,
   "covered_actors": [
-    "providers",
-    "deployers",
-    "importers",
-    "distributors",
-    "product manufacturers",
-    "public authorities",
-    "agencies",
-    "natural or legal persons"
+    "Providers of AI systems (including third-country providers placing systems on the EU market, putting them into service in the EU, or whose outputs are used in the EU)",
+    "Deployers of AI systems (natural or legal persons, public authorities, agencies, or other bodies using AI systems under their authority in the EU or whose outputs are used in the EU)",
+    "Providers and deployers of general-purpose AI systems and dual-use AI systems",
+    "Law enforcement authorities and private entities entrusted by law or acting on behalf of law enforcement authorities",
+    "EU institutions, bodies, offices, and agencies (including Europol and Frontex)",
+    "Employers and educational institutions",
+    "EU Member States"
   ],
   "covered_application_domains": [
     "general_purpose_models",
     "biometrics",
-    "law_enforcement",
     "public_sector_use",
-    "critical_infrastructure"
+    "employment",
+    "education",
+    "healthcare",
+    "finance",
+    "law_enforcement"
   ],
   "prohibited_practices": [
-    "real-time remote biometric identification in public spaces for law enforcement (with exceptions)",
-    "AI systems used to infer emotions in the workplace (except medical or safety purposes)",
-    "manipulative and deceptive techniques by AI systems likely to cause significant harm",
-    "practices prohibited under Article 5 AI Act"
+    "Placing on the market, putting into service, or use of AI systems deploying subliminal, purposefully manipulative, or deceptive techniques with the objective or effect of materially distorting behaviour in a manner causing or reasonably likely to cause significant harm (Article 5(1)(a) AI Act)",
+    "Placing on the market, putting into service, or use of AI systems exploiting vulnerabilities due to age, disability, or a specific social or economic situation to materially distort behaviour in a manner causing or reasonably likely to cause significant harm (Article 5(1)(b) AI Act)",
+    "Placing on the market, putting into service, or use of AI systems for social scoring of natural persons or groups over time based on social behaviour or personal/personality characteristics, leading to detrimental or unfavourable treatment in unrelated social contexts or treatment unjustified or disproportionate to the gravity of the social behaviour (Article 5(1)(c) AI Act)",
+    "Placing on the market, putting into service for this specific purpose, or use of AI systems for individual risk assessments predicting the likelihood of a natural person committing a criminal offence based solely on profiling or personality traits and characteristics (excluding systems supporting human assessments based on objective, verifiable facts directly linked to criminal activity) (Article 5(1)(d) AI Act)",
+    "Placing on the market, putting into service for this specific purpose, or use of AI systems that create or expand facial recognition databases through untargeted scraping of facial images from the internet or CCTV footage (Article 5(1)(e) AI Act)",
+    "Placing on the market, putting into service for this specific purpose, or use of AI systems to infer emotions of natural persons in the workplace or educational institutions, except for medical or safety reasons (Article 5(1)(f) AI Act)",
+    "Placing on the market, putting into service for this specific purpose, or use of biometric categorisation systems individually categorising natural persons based on biometric data to deduce or infer race, political opinions, trade union membership, religious or philosophical beliefs, sex life, or sexual orientation (excluding lawful labelling or filtering of biometric datasets, including in law enforcement) (Article 5(1)(g) AI Act)",
+    "Use of real-time remote biometric identification (RBI) systems in publicly accessible spaces for law enforcement purposes, unless strictly necessary and authorised under Member State law for targeted searches of specific victims or missing persons, preventing imminent threats to life or terrorist attacks, or locating/identifying suspects of serious Annex II offences (Article 5(1)(h) AI Act)"
   ],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.85,
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "the risk assessment and management done by the provider and the compliance with the other requirements for high-risk AI systems (e.g., data governance, transparency and human oversight)",
-          "source_section": "Page 17"
+          "quote": "The use of the ‘real-time’ remote biometric identification system in publicly accessible spaces shall be authorised only if the law enforcement authority has completed a fundamental rights impact assessment as provided for in Article 27 and has registered the system in the EU database according to Article 49.",
+          "source_section": "Section 10.1 (Article 5(2) AI Act)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 353186,
+          "end_char": 353496
         },
         {
-          "quote": "The manufacturer of those products embedding AI systems should therefore take into account these prohibitions in their risk assessments and safety mitigating measures",
-          "source_section": "Page 52"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.9,
-      "evidence": [
-        {
-          "quote": "compliance with the other requirements for high-risk AI systems (e.g., data governance, transparency and human oversight), as well as the deployer's obligations for appropriate use in accordance with the instructions of use and human oversight (Article 26)",
-          "source_section": "Page 17"
-        },
-        {
-          "quote": "provide appropriate information in the instructions of use for deployers and regarding the necessary human oversight",
-          "source_section": "Page 17"
+          "quote": "A FRIA must be carried out before the deployment of the authorized real-time RBI system.",
+          "source_section": "Section 10.1.1, para (374)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 362976,
+          "end_char": 363064
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.8,
+      "confidence": 0.85,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "providers are also expected to take effective and verifiable measures to build in safeguards and prevent and mitigate such harmful behaviour and misuse",
-          "source_section": "Page 17"
+          "quote": "as well as the provider’s obligation to ensure AI systems interacting with people are designed in a way to inform people that they are interacting with AI and not a human",
+          "source_section": "Section 3.2.1(c), para (71)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 83391,
+          "end_char": 83561
         },
         {
-          "quote": "Deployers are thus expected not to use any AI system in a manner prohibited under Article 5 AI Act, including not to bypass any safety guardrails implemented by the providers of the system",
-          "source_section": "Page 17"
+          "quote": "provide transparency in how the AI system operates, clear disclosures about its capabilities and limitations, and relevant information to ensure informed decisions",
+          "source_section": "Section 3.2.3(c), para (95)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 113051,
+          "end_char": 113214
         }
       ]
     },
     {
-      "label": "access_controls",
-      "confidence": 0.75,
+      "label": "content_provenance",
+      "confidence": 0.85,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "providers are also expected to exclude use of their AI system for prohibited practices and provide appropriate information in the instructions of use for deployers",
-          "source_section": "Page 17"
+          "quote": "the interplay between the prohibition in Article 5(1)(a) AI Act and the deployer’s obligations in Article 50(4) AI Act to label ‘deep fakes’",
+          "source_section": "Section 3.2.1(c), para (71)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 82405,
+          "end_char": 82545
         },
         {
-          "quote": "the placing on the market and the putting into service of such systems, as well as the use of other RBI systems, is not prohibited, but subject to the rules for high-risk AI systems",
-          "source_section": "Page 96"
+          "quote": "Such visible disclosure constitutes a mitigating measure that should also be enabled through design features embedded in the AI system provided by the provider, including technical measures enabling the detection of AI-generated and manipulated content.",
+          "source_section": "Section 3.2.1(c), para (71)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 83586,
+          "end_char": 83839
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.8,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "providers are also expected to exclude use of their AI system for prohibited practices and provide appropriate information in the instructions of use for deployers and regarding the necessary human oversight.",
+          "source_section": "Section 2.7, para (40)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 53494,
+          "end_char": 53702
+        },
+        {
+          "quote": "Automatically generated data logs must be kept for at least 6 months for high-risk AI systems and shall include for the high-risk systems mentioned in point 1(a) of Annex III for each use the start and end data and time.",
+          "source_section": "Section 10.2.2.3, footnote 230",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 391224,
+          "end_char": 391444
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "No decision that produces an adverse legal effect on a person may be taken based solely on the output of the ‘real-time’ remote biometric identification system.",
+          "source_section": "Section 10.2 (Article 5(3) AI Act)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 373873,
+          "end_char": 374033
+        },
+        {
+          "quote": "Pursuant to Article 14(5) AI Act, no action or decision may be taken by the deployer on the basis of the identification resulting from the system, ‘unless that identification has been separately verified and confirmed by at least two natural persons with the necessary competence, training and authority’",
+          "source_section": "Section 10.2.2.5, para (407)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 392564,
+          "end_char": 392868
         }
       ]
     },
     {
       "label": "registration_licensing",
-      "confidence": 0.7,
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "The existence of national legislation that complies with the relevant requirements of the AI Act is therefore a pre-requisite of such use",
-          "source_section": "Page 96"
+          "quote": "Article 5(2) AI Act also obliges the deployer of a real-time RBI system used in publicly accessible spaces for law enforcement purposes to register the system in the EU database provided for in Article 49 AI Act.",
+          "source_section": "Section 10.1.2, para (377)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 370642,
+          "end_char": 370854
         },
         {
-          "quote": "In the absence of national legislation allowing and regulating such use, law enforcement authorities and entities acting on their behalf may not deploy such systems for law enforcement purposes",
-          "source_section": "Page 96"
+          "quote": "each use for the purposes of law enforcement of a ‘real-time’ remote biometric identification system in publicly accessible spaces shall be subject to a prior authorisation granted by a judicial authority or an independent administrative authority whose decision is binding of the Member State in which the use is to take place",
+          "source_section": "Section 10.2 (Article 5(3) AI Act)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 372300,
+          "end_char": 372627
+        }
+      ]
+    },
+    {
+      "label": "open_weight_obligations",
+      "confidence": 0.9,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "According to Article 2(12) AI Act, the AI Act does not apply to AI systems released under free and open-source licences,29 unless they are placed on the market or put into service as high-risk AI systems or as an AI system that falls under Article 5 (prohibited AI practices) or Article 50 AI Act (transparency obligations for certain AI systems).",
+          "source_section": "Section 2.5.5, para (36)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 48331,
+          "end_char": 48678
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "regulatory_supervision",
-      "confidence": 0.85,
+      "label": "civil_penalty",
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "adequate safeguards with respect to the protection of fundamental rights and freedoms of individuals, to be assessed by the market surveillance authorities competent for the supervision of AI systems used in the area of law enforcement and justice",
-          "source_section": "Page 13-14"
+          "quote": "Providers and deployers engaging in prohibited AI practices may be fined up to EUR 35 000 000 or, if the offender is an undertaking, up to 7% of its total worldwide annual turnover for the preceding financial year, whichever is higher.",
+          "source_section": "Section 2.9.2, para (55)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 68119,
+          "end_char": 68354
         },
         {
-          "quote": "the activities of Europol and other Union security agencies, such as Frontex, fall within the scope of the AI Act",
-          "source_section": "Page 13"
+          "quote": "EU institutions, bodies and agencies that violate the prohibitions may be subject to administrative fines of up to EUR 1 500 000.",
+          "source_section": "Section 2.9.2, para (55)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 68567,
+          "end_char": 68696
         }
       ]
     },
     {
       "label": "market_access_restriction",
-      "confidence": 0.8,
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "the prohibitions in Article 5(1)(a) and (b) AI Act cover not only the use, but also the placing on the market of the AI system, thus preventing harm early on by limiting access to such prohibited systems",
-          "source_section": "Page 52"
+          "quote": "Article 5 AI Act prohibits the placing on the EU market, putting into service, or use of\ncertain AI systems for manipulative, exploitative, social control or surveillance practices, which by their inherent nature violate fundamental rights and Union values.",
+          "source_section": "Section 2, para (8)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19179,
+          "end_char": 19436
         },
         {
-          "quote": "providers also have a responsibility not to place on the market or put into service AI systems, including general-purpose AI systems, that are reasonably likely to behave or be directly used in a manner prohibited by Article 5 AI Act",
-          "source_section": "Page 17"
+          "quote": "If such authorisation is rejected, the use shall be stopped with immediate effect and all the data, as well as the results and outputs of that use shall be immediately discarded and deleted.",
+          "source_section": "Section 10.2 (Article 5(3) AI Act)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 372960,
+          "end_char": 373150
+        }
+      ]
+    },
+    {
+      "label": "licensing_requirement",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "each use for the purposes of law enforcement of a ‘real-time’ remote biometric identification system in publicly accessible spaces shall be subject to a prior authorisation granted by a judicial authority or an independent administrative authority whose decision is binding of the Member State in which the use is to take place",
+          "source_section": "Section 10.2 (Article 5(3) AI Act)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 372300,
+          "end_char": 372627
+        },
+        {
+          "quote": "The use of real-time RBI systems which pursue one of the objectives listed in Article 5(1)(h)(i) to (iii) AI Act and which has been provided for in the national law of the Member States concerned must be authorized by a judicial authority or an independent administrative authority prior to its use.",
+          "source_section": "Section 10.2.2, para (382)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 376129,
+          "end_char": 376428
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "Market surveillance authorities designated by the Member States as well as the European Data Protection Supervisor (as the market surveillance authority for the EU institutions, agencies and bodies) are responsible for the enforcement of the rules in the AI Act for AI systems, including the prohibitions.",
+          "source_section": "Section 2.9.1, para (53)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 65043,
+          "end_char": 65348
+        },
+        {
+          "quote": "Those authorities can take enforcement actions in relation to the prohibitions on their own initiative or following a complaint, which every affected person or any other natural or legal person having grounds to consider such violations has the right to lodge.",
+          "source_section": "Section 2.9.1, para (53)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 65689,
+          "end_char": 65949
         }
       ]
     },
     {
       "label": "reporting_obligation",
-      "confidence": 0.65,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "Recital 22 AI Act clarifies that the recipient national authorities and Union institutions, bodies, offices and agencies making use of such AI outputs in the Union remain accountable to ensure their use complies with Union law",
-          "source_section": "Page 14"
+          "quote": "each use of a ‘real-time’ remote biometric identification system in publicly accessible spaces for law enforcement purposes shall be notified to the relevant market surveillance authority and the national data protection authority in accordance with the national rules referred to in paragraph 5.",
+          "source_section": "Section 10.3 (Article 5(4) AI Act)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 394054,
+          "end_char": 394350
+        },
+        {
+          "quote": "National market surveillance authorities and the national data protection authorities of Member States that have been notified of the use of ‘real-time’ remote biometric identification systems in publicly accessible spaces for law enforcement purposes pursuant to paragraph 4 shall submit to the Commission annual reports on such use.",
+          "source_section": "Section 10.5 (Article 5(6) AI Act)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 404068,
+          "end_char": 404402
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "quote": "These Guidelines are non-binding. Any authoritative interpretation of the AI Act may ultimately only be given by the Court of Justice of the European Union (‘CJEU’).",
+          "source_section": "Section 1, para (5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17853,
+          "end_char": 18018
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "European Commission"
+    "National Market Surveillance Authorities",
+    "European Data Protection Supervisor (EDPS)",
+    "National Data Protection Authorities",
+    "National judicial authorities or independent administrative authorities (for prior authorisation of real-time RBI)",
+    "European Commission (including the AI Office)",
+    "European Artificial Intelligence Board (AI Board)",
+    "National courts",
+    "Court of Justice of the European Union (CJEU)"
   ],
-  "compliance_deadlines": [],
-  "penalties_summary": null,
-  "implementation_notes": "These are Commission guidelines interpreting Article 5 of the EU AI Act on prohibited practices. They are not themselves binding law but provide the Commission's interpretation. Ireland and Denmark have opt-out provisions for certain RBI prohibitions. Prohibitions apply to placing on market, putting into service, and use, including misuse. General-purpose AI systems are covered. Continuous compliance throughout AI lifecycle is required.",
-  "confidence": 0.88
+  "compliance_deadlines": [
+    "2025-02-02: Article 5 AI Act prohibitions enter into application for all AI systems regardless of prior market placement",
+    "2025-08-02: Deadline for Member States to designate national market surveillance authorities; AI Act governance and penalty chapters enter into application",
+    "2026-08-02: High-risk AI system obligations (including general Article 27 FRIA rules and Article 26(10) retrospective RBI safeguards) enter into application",
+    "Within 24 hours: Maximum deadline to request ex-post authorisation after commencing urgent real-time RBI use without prior authorisation",
+    "Within 30 days of adoption: Deadline for Member States to notify the European Commission/AI Office of national laws authorising real-time RBI exceptions",
+    "Annual: National market surveillance authorities, national data protection authorities, and the EDPS must report real-time RBI uses to the Commission, which publishes annual aggregated reports"
+  ],
+  "penalties_summary": "Under Article 99 AI Act, non-compliance with Article 5 prohibitions carries administrative fines of up to EUR 35,000,000 or, for an undertaking, up to 7% of total worldwide annual turnover for the preceding financial year, whichever is higher. Under Article 100 AI Act, EU institutions, bodies, and agencies face administrative fines of up to EUR 1,500,000. Member States determine administrative fine applicability to national public authorities and bodies. Penalty provisions apply from 2 August 2025, while direct enforcement and interim injunctions in national courts are available from 2 February 2025.",
+  "implementation_notes": "Non-binding Commission Guidelines (C(2025) 5052 final) issued under Article 96(1)(b) of Regulation (EU) 2024/1689 (AI Act) to clarify the Commission's interpretation of Article 5 prohibitions; only the CJEU may provide authoritative interpretations. Excludes AI systems exclusively for military, defence, or national security purposes, pre-market R&D and sole scientific research, and deployer duties for purely personal non-professional use; free and open-source AI systems are not exempt from Article 5 prohibitions. Provides provisional FRIA guidance for authorised real-time RBI uses prior to the 2 August 2026 high-risk AI deadline. Notes Protocol No. 21 (Ireland) and Protocol No. 22 (Denmark) opt-outs for Article 16 TFEU-based law enforcement prohibitions. Subject to periodic Commission review and update.",
+  "confidence": 0.95
 }

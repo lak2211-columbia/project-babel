@@ -1,116 +1,338 @@
 {
   "jurisdiction": "south_korea",
-  "issuing_body": "대한민국 과학기술정보통신부 / 한국지능정보사회진흥원(NIA)",
+  "issuing_body": "Ministry of Science and ICT (과학기술정보통신부) / National Information Society Agency (NIA)",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": null,
+  "publication_date": "2026-01-22",
   "effective_date": null,
   "covered_actors": [
-    "인공지능사업자",
-    "인공지능개발사업자",
-    "인공지능이용사업자"
+    "AI development business operators (인공지능개발사업자) developing and providing AI systems meeting all three cumulative statutory criteria under AI Basic Act Article 32 and Enforcement Decree Article 24(1)",
+    "AI business operators (인공지능사업자) making substantial modifications (실질적 변경) to existing AI systems causing them to meet Enforcement Decree Article 24(1) criteria or materially altering their risk characteristics",
+    "Overseas AI development business operators and their designated domestic representatives (국외 소재 개발 사업자 및 국내대리인)",
+    "Internal multidisciplinary risk-assessment organizations (위험평가조직) and safety-incident response organizations (안전사고 대응 조직) led by Chief AI Officers (CAIO) or Chief AI Safety Officers (CAISO)",
+    "Non-covered AI business operators voluntarily referencing the guideline to build autonomous risk management systems"
   ],
   "covered_application_domains": [
     "general_purpose_models",
-    "critical_infrastructure"
+    "critical_infrastructure",
+    "healthcare",
+    "finance"
   ],
   "prohibited_practices": [],
   "safety_requirements": [
     {
-      "label": "risk_assessment",
-      "confidence": 0.98,
+      "label": "compute_governance",
+      "confidence": 0.99,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "인공지능사업자는 이용자 및 영향받는 자의 안전성을 확보하기 위하여 위험을 합리적으로 예상가능한 범위 내에서 식별하여야 한다.",
-          "source_section": "제4조(위험의 식별)"
+          "quote": "학습에 사용된 누적 연산량이 의 승 부동소수점연산 이상일 것 1. 10 26",
+          "source_section": "Page 8 (01 개요 - 2. 근거 규정)",
+          "quote_en": "Enforcement Decree Art. 24(1)(1): The cumulative compute used for training must be at least 10^26 floating-point operations (FLOPs).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9543,
+          "end_char": 9585
         },
         {
-          "quote": "인공지능사업자는 제4조에 따라 식별된 위험을 체계적으로 관리하고 적절한 대응 방안을 마련하기 위하여 위험의 중대성 관리가능성, 위험의 실현가능성 및 그 영향의 심각성 빈도 등을 평가하여야 한다.",
-          "source_section": "제5조(위험의 평가 등)"
+          "quote": "누적 연산량은 이론적 계산식하드웨어 사용 로그 등 객관적인 자료에 기반한 실측 또는 이에 준하는",
+          "source_section": "Page 15 (02 적용 대상 및 의무 주체 판단)",
+          "quote_en": "Cumulative training compute is calculated using objective measurements or equivalent methods such as theoretical formulas, empirical/statistical estimates, or hardware (GPU/TPU) utilization logs.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 20596,
+          "end_char": 20649
         }
       ]
     },
     {
-      "label": "model_documentation",
-      "confidence": 0.97,
+      "label": "risk_assessment",
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "인공지능사업자는 제1항에 따른 위험 식별과 관련하여 다음 각 호의 사항을 포함하여 문서화하고 체계적으로 관리하여야 한다.",
-          "source_section": "제4조(위험의 식별)"
+          "quote": "인공지능 수명주기 전반에 걸친 위험의 식별ㆍ평가 및 완화",
+          "source_section": "Page 8 (01 개요 - 2. 근거 규정)",
+          "quote_en": "AI Basic Act Art. 32(1)(1): Identification, assessment, and mitigation of risks across the entire AI lifecycle.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 8815,
+          "end_char": 8846
         },
         {
-          "quote": "인공지능사업자는 제1항에 따른 위험완화조치를 시행한 경우, 다음 각 호의 사항을 포함하여 문서화하고 기록 관리하여야 한다.",
-          "source_section": "제6조(위험의 완화 조치)"
+          "quote": "인공지능사업자는 위험을 평가하기 위하여 위험평가조직을 구성하여야 한다",
+          "source_section": "Page 10 (01 개요 - 2. 근거 규정)",
+          "quote_en": "Draft Notice Art. 5(2): AI business operators shall establish a dedicated risk-assessment organization to evaluate identified risks.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12544,
+          "end_char": 12582
+        }
+      ]
+    },
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "모델 능력 경계 평가 는 인공지능 모델의 능력이 특정 임계값을 초과하는지 평가해 위 (Threshold Evaluation)",
+          "source_section": "Page 34 (03 수명주기 전반에 걸친 위험관리)",
+          "quote_en": "Model capability boundary evaluation (Threshold Evaluation) identifies risks by evaluating whether an AI model's capabilities exceed specified thresholds (referencing the Seoul Summit Frontier AI Safety Commitments).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 61820,
+          "end_char": 61889
+        },
+        {
+          "quote": "반드시 고려해야 할 가지 위험 유형 사이버 공격 위험 화생방 위험 유해한 대규모 조작 통제 , 4 (① ② ③ ④ 상실 위험을 제시하고 있다",
+          "source_section": "Page 34 (03 수명주기 전반에 걸친 위험관리)",
+          "quote_en": "References the four systemic risk categories that must be considered for advanced AI models: (1) cyberattack risks, (2) CBRN risks, (3) harmful large-scale manipulation, and (4) loss-of-control risks.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 61288,
+          "end_char": 61366
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "배포 전 단계에서는 레드팀 테스트나 위협 모델링을 통해 악의적 공격 가능성과 취약점을",
+          "source_section": "Page 33 (03 수명주기 전반에 걸친 위험관리)",
+          "quote_en": "In the pre-deployment stage, operators intensively examine malicious attack possibilities and vulnerabilities through red-team testing and threat modeling.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 59299,
+          "end_char": 59346
+        },
+        {
+          "quote": "레드팀 테스트는 실제 공격자의 관점에서 창의적이고 악의적인 공격을 시도해 취약점을 발견하는 방법으로",
+          "source_section": "Page 35 (03 수명주기 전반에 걸친 위험관리)",
+          "quote_en": "Red-team testing is a method of discovering vulnerabilities by attempting creative, malicious attacks from the perspective of real attackers, performed prior to model release.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 64300,
+          "end_char": 64355
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.92,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "정량 분석벤치마크 결과레드팀 테스트 성공률운영 로그 등 객관적 데이터를 활용하여 통계적",
+          "source_section": "Page 42 (03 수명주기 전반에 걸친 위험관리)",
+          "quote_en": "Quantitative risk evaluation uses objective empirical data such as benchmark test results, red-team test success rates, and operational logs.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 77472,
+          "end_char": 77520
+        },
+        {
+          "quote": "성능 및 안전성 테스트 실시 결과",
+          "source_section": "Page 67 (05 보고 및 제출)",
+          "quote_en": "Performance and safety testing implementation results (required entry in the MSIT safety assurance submission form).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 128561,
+          "end_char": 128579
         }
       ]
     },
     {
       "label": "incident_reporting",
       "confidence": 0.99,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "다음 각 목의 사항을 포함한 사고발생 보고 : 사고발생 인지 시점으로부터 24시간 이내",
-          "source_section": "제8조(결과 제출) 제3항제1호"
+          "quote": "다음 각 목의 사항을 포함한 사고발생 보고 사고발생 인지 시점으로부터 시간 이내 1. : 24",
+          "source_section": "Page 12 (01 개요 - 2. 근거 규정)",
+          "quote_en": "Draft Notice Art. 8(3)(1): Mandatory initial safety-incident report to MSIT within 24 hours of becoming aware of the incident.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 16073,
+          "end_char": 16125
         },
         {
-          "quote": "사고발생 보고일부터 7일 이내 초동조치 보고",
-          "source_section": "제8조(결과 제출) 제3항제2호"
+          "quote": "사고발생 보고일부터 일 이내 초동조치 보고",
+          "source_section": "Page 12 (01 개요 - 2. 근거 규정)",
+          "quote_en": "Draft Notice Art. 8(3)(2): Initial response-action report to MSIT within 7 days of the initial incident report (followed by final handling/root-cause report within 15 days under Art. 8(3)(3)).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 16244,
+          "end_char": 16267
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.97,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "인공지능사업자는 제항에 따른 위험 식별과 관련하여 다음 각 호의 사항을 포함하여 문서화하고 1 ④ 체계적으로 관리하여야 한다",
+          "source_section": "Page 9 (01 개요 - 2. 근거 규정)",
+          "quote_en": "Draft Notice Art. 4(4): AI business operators shall document and systematically manage risk identification details (risk ID/name, timestamp, methodology, and results), alongside risk evaluation and mitigation records under Arts. 5(5) and 6(4).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12070,
+          "end_char": 12139
         },
         {
-          "quote": "사고발생 보고일로부터 15일 이내 사고처리 결과에 관한 보고",
-          "source_section": "제8조(결과 제출) 제3항제3호"
+          "quote": "추정 방식산정 대상근거 수치 및 보정 계수 등은 문서화하여 보존하고필요 시 제자의 검증이",
+          "source_section": "Page 15 (02 적용 대상 및 의무 주체 판단)",
+          "quote_en": "Compute estimation methods, scope, underlying figures, and adjustment factors must be documented and retained to enable third-party verification when needed.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22280,
+          "end_char": 22329
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.93,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "보안 강화접근 통제암호화내부자 위협 대응보안 감사",
+          "source_section": "Page 49 (03 수명주기 전반에 걸친 위험관리)",
+          "quote_en": "Security strengthening measures across the AI lifecycle include access controls, encryption, insider-threat response, and security audits.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 92792,
+          "end_char": 92819
+        },
+        {
+          "quote": "특정 사용자군 또는 사용 맥락에 대한 접근 차단",
+          "source_section": "Page 52 (03 수명주기 전반에 걸친 위험관리)",
+          "quote_en": "Emergency response and mitigation strategies include blocking access for specific user groups or usage contexts, alongside API access controls and user authentication.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 98461,
+          "end_char": 98487
         }
       ]
     },
     {
       "label": "human_oversight",
-      "confidence": 0.85,
+      "confidence": 0.88,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "인공지능사업자는 위험을 평가하기 위하여 위험평가조직을 구성하고, 필요한 경우 외부 기관 또는 전문가를 위험평가 조직에 참여시킬 수 있다.",
-          "source_section": "제5조(위험의 평가 등)"
+          "quote": "즉각적인 완화가 곤란한 경우에는 위험 노출 범위 축소기능 제한인간 검토 강화 등 임시 조치를",
+          "source_section": "Page 48 (03 수명주기 전반에 걸친 위험관리)",
+          "quote_en": "When immediate mitigation is difficult, operators should implement temporary controls such as narrowing risk exposure, restricting functions, and strengthening human review.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 91832,
+          "end_char": 91883
         },
         {
-          "quote": "안전사고 대응 조직 구성 및 구성원의 역할",
-          "source_section": "제7조(위험관리체계의 구축)"
-        }
-      ]
-    },
-    {
-      "label": "third_party_audit",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "과학기술정보통신부장관은 필요한 경우 인공지능사업자가 제출한 누적 연산량 관련 자료의 검증을 인공지능사업자의 동의를 받아 전문기관에 의뢰할 수 있다.",
-          "source_section": "제3조(적용 대상) 제4항"
-        },
-        {
-          "quote": "인공지능사업자는 제1항에 따른 위험평가의 결과를 검증하기 위하여 외부 기관 또는 전문가의 도움을 받을 수 있다.",
-          "source_section": "제5조(위험의 평가 등)"
+          "quote": "안전사고 대응 절차에는 시스템의 전면 중단기능 제한접근 통제배포 중단롤백 등 가능한 조치",
+          "source_section": "Page 59 (04 위험관리 체계의 구축)",
+          "quote_en": "Safety-incident response procedures must pre-specify operational stop and override measures including full system shutdown, feature restriction, access control, deployment suspension, and rollback.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 112467,
+          "end_char": 112516
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.92,
+      "confidence": 0.9,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "인공지능사업자는 인공지능이 영 제24조제1항에 해당된다고 인지한 날로부터 3개월 이내에 제4조부터 제7조까지에 따른 조치 사항을 문서로 작성하여 과학기술정보통신부장관에게 제출하여야 한다.",
-          "source_section": "제8조(결과 제출) 제1항"
+          "quote": "사업자는 안전사고 발생 시 이용자 및 영향받는 자에게 사고 사실예상 영향대응 현황 및 이용상",
+          "source_section": "Page 60 (04 위험관리 체계의 구축)",
+          "quote_en": "Operators must establish procedures to notify users and affected persons upon safety incidents regarding incident facts, expected impacts, response status, and usage precautions, including inquiry and damage-reporting channels.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 115423,
+          "end_char": 115474
+        },
+        {
+          "quote": "인공지능 관련 안전사고 발생 시 이용자영향받는 자에 대한 안내 등 대응 절차",
+          "source_section": "Page 11 (01 개요 - 2. 근거 규정)",
+          "quote_en": "Draft Notice Art. 7(2)(2): The mandatory risk management system must include response procedures such as notifying users and affected persons when an AI safety incident occurs.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14755,
+          "end_char": 14797
         }
       ]
     },
     {
-      "label": "compute_governance",
-      "confidence": 0.93,
+      "label": "third_party_audit",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "학습에 사용된 누적 연산량이 10의 26승 부동소수점연산 이상일 것",
-          "source_section": "시행령 제24조제1항제1호"
+          "quote": "과학기술정보통신부장관은 필요한 경우 인공지능사업자가 제출한 누적 연산량 관련 자료의 검증을",
+          "source_section": "Page 9 (01 개요 - 2. 근거 규정)",
+          "quote_en": "Draft Notice Art. 3(4): The Minister of Science and ICT may, where necessary and with the operator's consent, commission a specialized agency to verify cumulative compute materials submitted by an AI business operator.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 11294,
+          "end_char": 11344
         },
         {
-          "quote": "누적 연산량은 이론적 계산식, 하드웨어 사용 로그 등 객관적인 자료에 기반한 실측 또는 이에 준하는 방식으로 산정",
-          "source_section": "1-1. 시행령 제24조제1항 해당 판단"
+          "quote": "사업자는 필요한 경우 외부 기관 또는 전문가를 위험평가조직에 참여시킬 수 있으며",
+          "source_section": "Page 40 (03 수명주기 전반에 걸친 위험관리)",
+          "quote_en": "Operators may include external institutions or experts (such as independent audit or research bodies) in risk-assessment organizations and obtain external verification of risk evaluation results (Draft Notice Art. 5(2), 5(4)).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 74190,
+          "end_char": 74234
+        }
+      ]
+    },
+    {
+      "label": "domestic_representative",
+      "confidence": 0.88,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "예외개발 사업자가 국외에 소재한 경우 국내대리인을 지정할 수 있으며이때 대리인 선임 사실을 증명하는",
+          "source_section": "Page 66 (05 보고 및 제출)",
+          "quote_en": "Exception for submission entities: Where the developing business operator is located overseas, a domestic representative may be designated with official proof of appointment (such as a mandate agreement or notarized document) attached.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 126527,
+          "end_char": 126582
+        },
+        {
+          "quote": "국내대리인 지정 대상인 경우 국내대리인의 성명주소전화번호전자우편 주소",
+          "source_section": "Page 67 (05 보고 및 제출)",
+          "quote_en": "Submission form required field: Where subject to domestic representative designation, provide the domestic representative's name, address, telephone number, and email address.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 127746,
+          "end_char": 127784
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "학습데이터에 오픈소스 취약점 정보해킹 툴 설명서 등이 포함되지 않도록 사전 정제",
+          "source_section": "Page 54 (03 수명주기 전반에 걸친 위험관리)",
+          "quote_en": "To mitigate cyber misuse risks, operators establish pre-cleaning and filtering criteria so that open-source vulnerability details and hacking tool manuals are excluded from training datasets.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 103206,
+          "end_char": 103250
         }
       ]
     }
@@ -118,48 +340,91 @@
   "enforcement_mechanisms": [
     {
       "label": "reporting_obligation",
-      "confidence": 0.99,
+      "confidence": 0.98,
       "evidence": [
         {
-          "quote": "인공지능사업자는 제1항 각 호에 따른 사항의 이행 결과를 과학기술정보통신부장관에게 제출해야 한다.",
-          "source_section": "법 제32조 제2항"
+          "quote": "인공지능사업자는 제항 각 호에 따른 사항의 이행 결과를 과학기술정보통신부장관에게 제출",
+          "source_section": "Page 8 (01 개요 - 2. 근거 규정)",
+          "quote_en": "AI Basic Act Art. 32(2): Covered AI business operators shall submit the implementation results of lifecycle risk management and safety-incident risk management systems to the Minister of Science and ICT.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 8961,
+          "end_char": 9008
         },
         {
-          "quote": "사고발생 인지 시점으로부터 24시간 이내",
-          "source_section": "제8조(결과 제출) 제3항제1호"
+          "quote": "적용 대상에 해당함을 인지한 날로부터 개월 이내에 안전성 확보 조치 사항을 문서로 작성하여 제출 3",
+          "source_section": "Page 63 (05 보고 및 제출)",
+          "quote_en": "Draft Notice Art. 8(1): Operators must prepare and submit written documentation of safety assurance measures to MSIT within 3 months of recognizing applicability (plus 1-month supplemental filings and 24h/7d/15d incident reports).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 121439,
+          "end_char": 121494
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.9,
+      "confidence": 0.94,
       "evidence": [
         {
-          "quote": "정부의 감독 점검 및 평가 과정에서는 사업자가 안전성 확보 의무를 이행하였는지 여부를 검토함에 있어 본 가이드라인을 참고 자료로 활용할 수 있다.",
-          "source_section": "1-2. 가이드라인의 적용 방법"
+          "quote": "정부의 감독점검 및 평가 과정에서는 사업자가 안전성 확보 의무를 이행하였는지 여부를 검토함에 있어",
+          "source_section": "Page 5 (01 개요 - 1. 목적 및 체계)",
+          "quote_en": "During government supervision, inspection, and evaluation, this guideline may be used as reference material when reviewing whether an AI business operator has fulfilled its safety assurance obligations.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2935,
+          "end_char": 2989
         },
         {
-          "quote": "과학기술정보통신부장관은 필요한 경우 인공지능사업자가 제출한 누적 연산량 관련 자료의 검증을 인공지능사업자의 동의를 받아 전문기관에 의뢰할 수 있다.",
-          "source_section": "제3조(적용 대상) 제4항"
+          "quote": "제출 문서가 미비하거나 불충분한 경우과기정통부 또는 담당기관은 보완을 요청",
+          "source_section": "Page 66 (05 보고 및 제출)",
+          "quote_en": "Where submitted safety assurance documentation is incomplete or insufficient, MSIT or the responsible agency requests supplementation, and the operator must revise and resubmit accordingly.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 127273,
+          "end_char": 127314
         }
       ]
     },
     {
       "label": "soft_enforcement",
-      "confidence": 0.8,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "본 가이드라인은 고시에서 규정한 인공지능 안전성 확보 의무를 실제 이행하는 데 필요한 기준과 절차를 체계적으로 정리한 참고 문서로서, 법령이나 고시를 대체하거나 새로운 의무를 부과하는 것을 목적으로 하지 않는다.",
-          "source_section": "1-1. 가이드라인의 목적"
+          "quote": "참고 문서로서법령이나 고시 제정안을 대체하거나 새로운 의무를 부과하는",
+          "source_section": "Page 5 (01 개요 - 1. 목적 및 체계)",
+          "quote_en": "This draft guideline serves as a reference document systematically organizing compliance criteria and procedures under the Draft Public Notice and does not replace statutes/notices or impose new legal obligations.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2020,
+          "end_char": 2058
+        },
+        {
+          "quote": "자율적인 위험관리체계의 구축과 인공지능의 안전성 및 신뢰성 수준 향상을 위하여 본 가이드라인의",
+          "source_section": "Page 5 (01 개요 - 1. 목적 및 체계)",
+          "quote_en": "Even AI business operators not directly subject to Article 32 safety obligations may reference this guideline voluntarily to build risk management systems and enhance AI safety and trustworthiness.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2535,
+          "end_char": 2587
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "과학기술정보통신부"
+    "Ministry of Science and ICT (과학기술정보통신부 / MSIT)",
+    "Korea AI Safety Institute (인공지능안전연구소 / Korea AISI, referenced for submission consultation and specialized verification)",
+    "Korea Internet & Security Agency (한국인터넷진흥원 / KISA, referenced under Network Act Article 48-3 cyber-incident reporting)"
   ],
-  "compliance_deadlines": [],
+  "compliance_deadlines": [
+    "Within 3 months of recognizing applicability under Enforcement Decree Art. 24(1): Initial written submission of safety assurance measures (Draft Notice Arts. 4–7) to MSIT",
+    "Within 1 month of substantial modification increasing risk or recognizing a new risk: Supplemental safety assurance submission to MSIT (extendable via prior MSIT consultation for unavoidable reasons)",
+    "Within 24 hours of awareness of an AI safety incident: Initial incident report to MSIT",
+    "Within 7 days of initial incident report: Initial response-action report to MSIT",
+    "Within 15 days of initial incident report: Final incident-handling, root-cause, residual-risk, and recurrence-prevention report to MSIT",
+    "Every 3 years from 2026-07-01 (by June 30 of each third year): Scheduled MSIT validity review of the Public Notice (Draft Notice Art. 9)"
+  ],
   "penalties_summary": null,
-  "implementation_notes": "This is a draft guideline (안) issued under Article 32 of the AI Basic Act and Article 24 of its Enforcement Decree, and the associated ministerial notice (고시 제2026-○○호). It is explicitly non-binding and does not replace or create new obligations beyond the underlying law. The document may change before final publication. It covers applicability determination, lifecycle risk management (identification, assessment, mitigation), safety incident monitoring, and reporting obligations. The compute threshold for coverage is referenced as 10^25 FLOPs. Government supervision and inspection may reference this guideline.",
-  "confidence": 0.82
+  "implementation_notes": "75-page consultation draft guideline (인공지능 안전성 확보 가이드라인(안)) operationalizing AI Basic Act Article 32, Enforcement Decree Article 24, and Draft MSIT Public Notice No. 2026-126 (2026.2.) for frontier AI systems meeting three cumulative triggers: (1) cumulative training compute >= 10^26 FLOPs, (2) state-of-the-art (SOTA) AI technology, and (3) potential for widespread and serious impact on human life, physical safety, and fundamental rights. Covers compute estimation/verification, substantial-modification liability (e.g., >=1/3 parameter retraining, systematic fine-tuning, or autonomous execution integration), 6-step lifecycle risk identification, 7-step risk evaluation by an independent multidisciplinary organization, multi-layer mitigation and emergency response plans, CAIO/CAISO-led incident response and staff training, 3-month/1-month compliance filings (with domestic representative option for offshore developers), and 24-hour/7-day/15-day three-stage safety incident reporting. Explicitly marked as a draft subject to change prior to final release.",
+  "confidence": 0.96
 }

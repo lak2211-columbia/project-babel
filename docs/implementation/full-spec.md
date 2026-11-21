@@ -51,15 +51,15 @@ The system delivers reproducible official-source ingestion, offline section-awar
 
 ### 2. Offline parsing (`Parser 0.3.0`)
 
-- Strictly offline HTML/PDF/HWPX/ODT parsing recording explicit `extractor` provenance.
+- Strictly offline HTML/PDF/HWPX/ODT parsing using **PyMuPDF (`pymupdf`)** as the primary PDF extractor (with `pypdf` fallback), alongside `beautifulsoup4` and `hwpx_xml`, recording explicit `extractor` provenance (`77 pymupdf`, `43 beautifulsoup4`, `1 hwpx_xml` across the 121-document corpus; `0` short or wiped documents).
 - Legal-heading sectionizer (`Chapter`, `Article N`, `Section N`, `Annex`, `第N条`, `제N조`), PDF repeated header/footer stripping (preserving legal headings), compound-aware de-hyphenation, paragraph reflow, CJK charset detection, nav-chrome stripping, and ISO/CJK/Japanese era date parsing.
 
 ### 3. Structured extraction, risk framing & grounding
 
-- Dynamic codebook injection from `data/taxonomies/label-definitions.json` (`definition`, `include_when`, `exclude_when`) into Claude Sonnet 4.6 structured outputs (`temperature=0.0`, `600s` timeout, `8192→16384` controls retry, genuine dual-breakpoint prompt caching, HTTP `529`/`Retry-After` backoff).
-- Token-aware CJK/Latin chunking (`90k`/`45k` token budgets) with subset deduplication, evidence-weighted framing merges, multi-chunk grounded-span verification, `obligation_strength`, optional `frame_share`, and required `>= 1` evidence span per v2 label.
-- Strict Section 0 provenance guards: legacy files without `analysis_metadata` are flagged `stale_legacy_no_provenance` and refused by `persist-analysis-artifacts` unless `--allow-legacy` is explicitly passed.
-- NFKC + whitespace/hyphen + ordered-window grounding scorer (`check-grounding`, canonical `0.90` gate, `None` on empty evidence) persisting per-span `grounding_status`, `start_char`, and `end_char`.
+- Dynamic codebook injection from `data/taxonomies/label-definitions.json` (`definition`, `include_when`, `exclude_when`) into a multi-provider frontier structured-output layer (`analysis_version: "0.3.0"`, `temperature=0.0`, `600s` timeout, `8192→16384` controls retry): **Google Gemini** (`GeminiAPIClient`, default `gemini-4-neon`, `thinking_level=medium`/`xhigh`) primary, **Anthropic Claude** (`ClaudeAPIClient`, default `claude-opus-5-5`, `effort=low`/`medium`/`high`, genuine dual-breakpoint prompt caching, HTTP `529`/`Retry-After` backoff) fallback, plus zero-cost `ingest-document-analysis` for schema- and grounding-validated offline ingestion.
+- Token-aware CJK/Latin chunking (`90k`/`45k` token budgets) with subset deduplication, evidence-weighted framing merges, multi-chunk grounded-span verification, `obligation_strength`, `frame_share`, and required `>= 1` evidence span per v2 label.
+- Strict Section 0 provenance guards: legacy files without `analysis_metadata` are flagged `stale_legacy_no_provenance` and refused by `persist-analysis-artifacts` unless `--allow-legacy` is explicitly passed. The committed corpus is 100% homogeneous **Taxonomy v2.1.0** (`121/121` documents analyzed with `gemini-4-neon`, `0` legacy rows).
+- NFKC + whitespace/hyphen + ordered-window grounding scorer (`check-grounding`, canonical `0.90` gate, `None` on empty evidence) persisting per-span `grounding_status`, `start_char`, and `end_char` — achieving **`2,271 / 2,271` (`100.0%`)** exact verbatim grounding (`flagged = 0`) across the 121-document corpus.
 
 ### 4. Statistical comparative engine (`apps/web/src/lib/scoring.ts`)
 
@@ -93,7 +93,7 @@ Authoritative production storage runs on Neon Postgres:
 - `/documents` — Faceted corpus explorer with role/lifecycle badges & filters + quote search
 - `/documents/[documentId]` — Rebuilt evidence reader (sticky rail, NFKC `<mark>`, grounding badges, `#quote-*` permalinks, dual-language `quote` + `[MT] quoteEn`, precision dates)
 - `/jurisdictions/[slug]` — Unified country readout with `<TopNav />` and `?mode=headline|all`
-- `/methodology` — Claude Sonnet 4.6 disclosure, live provenance & grounding stats, starter gold set, CIs, null calibration, 4-spec sensitivity grid, 8-frame codebook, API catalog, versioned BibTeX
+- `/methodology` — Dynamic provider/model provenance disclosure (`formatModelDisplayName()`, verified `v2.1.0` `gemini-4-neon` corpus), live provenance & grounding stats (`2,271 / 2,271 = 100.0%`), live starter gold-set scorecard (`data/eval/gold_set_results.json` mirrored to `apps/web/src/lib/gold-set-results.snapshot.json`), CIs, null calibration, 4-spec sensitivity grid, 8-frame codebook, API catalog, versioned BibTeX
 - `/opengraph-image`, `/robots.txt`, `/sitemap.xml` (including `/matrix` and all 10 compare pairs)
 
 ### Public CORS APIs (`Cache-Control: public, s-maxage=300, stale-while-revalidate=60`, `Access-Control-Allow-Origin: *`)
@@ -109,6 +109,6 @@ Authoritative production storage runs on Neon Postgres:
 
 ## Acceptance criteria
 
-- `make taxonomy && make sources && make validate-artifacts` pass with 0 errors across all 115 committed artifacts.
-- Pipeline `pytest` and web `npm run lint`, `npx tsc --noEmit`, `npm test`, and `npm run build` pass 100% on Node 22+ and Ubuntu/Windows CI.
-- Production deploys under `VERCEL_ENV` refuse fake `seedData`, surface honest provenance (`1.0-legacy` vs `2.1.0`), pass WCAG 2.1 AA with `>= 11px` floor and Geist Sans prose, and serve zero exposed prototype routes.
+- `make taxonomy && make sources && make validate-artifacts` pass with 0 errors across all **133** committed artifacts (`1` taxonomy, `1` label-definitions, `5` manifests, `121` document analyses, `5` jurisdiction analyses).
+- Pipeline `pytest` (`118/118`) and web `npm run lint`, `npx tsc --noEmit`, `npm test` (`15/15`), and `npm run build` pass 100% on Node 22+ and Ubuntu/Windows CI.
+- Production deploys under `VERCEL_ENV` refuse fake `seedData`, surface honest dynamic provenance (`2.1.0` verified `gemini-4-neon` across all 121 documents, `77` active primary headline), pass WCAG 2.1 AA with `>= 11px` floor and Geist Sans prose, and serve zero exposed prototype routes.

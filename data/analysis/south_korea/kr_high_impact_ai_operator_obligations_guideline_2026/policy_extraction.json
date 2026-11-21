@@ -1,16 +1,19 @@
 {
   "jurisdiction": "south_korea",
-  "issuing_body": "과학기술정보통신부 (Ministry of Science and ICT, Republic of Korea) / 한국지능정보사회진흥원 (NIA)",
+  "issuing_body": "Ministry of Science and ICT (과학기술정보통신부) / National Information Society Agency (NIA)",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": null,
-  "effective_date": "2026-01",
+  "publication_date": "2026-01-22",
+  "effective_date": null,
   "covered_actors": [
-    "인공지능개발사업자 (AI developer)",
-    "인공지능이용사업자 (AI-using business operator)",
-    "국내대리인 (domestic agent)"
+    "High-impact AI development business operators (인공지능개발사업자) developing and providing high-impact AI or integrating general-purpose AI models into high-impact AI systems",
+    "High-impact AI-using business operators (인공지능이용사업자) providing products or services utilizing high-impact AI (with partial exemption from Art. 34(1)(1)-(3) where no substantial functional modification occurs)",
+    "Overseas AI business operators without a domestic address/office exceeding Presidential Decree revenue or user thresholds (e.g., KRW 1 trillion revenue) and their designated domestic representatives (국내대리인)",
+    "Business operators adopting or fine-tuning open-source AI models for high-impact AI products or services",
+    "State agencies and public institutions deploying high-impact AI for public-service decision-making"
   ],
   "covered_application_domains": [
+    "general_purpose_models",
     "critical_infrastructure",
     "biometrics",
     "public_sector_use",
@@ -24,146 +27,331 @@
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.97,
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "위험관리방안의 수립 운영1. ·",
-          "source_section": "추진배경 / 제34조 책무"
+          "quote": "개발 및 이용사업자는 고영향 인공지능의 설계개발운영 과정에서 발생 가능한 법적사회적 위험을 · · , 관리하기 위한 계획을 수립해야 함.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.1 위험관리방안의 수립·운영)",
+          "quote_en": "Development and user business operators must establish risk management plans to manage legal and social risks arising across the design, development, and operation of high-impact AI (covering identification, analysis/evaluation, treatment, and continuous policy improvement).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22885,
+          "end_char": 22961
         },
         {
-          "quote": "인공지능 수명주기 전반에 걸쳐 나타날 수 있는 위험요소를 분석하였는가",
-          "source_section": "제3.1장 위험관리방안의 수립 운영"
+          "quote": "사업자는 제항의 위험관리방안을 인공지능 수명주기의 모든 과정에서 준수하여야 한다 1 . ② 사업자는 최신의 위험관리방안을 주기적으로 점검ㆍ갱신하고 그 변경내역을 관리하여야 한다.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.1 위험관리방안의 수립·운영)",
+          "quote_en": "Technical Notice Art. 4(2)-(3): Operators shall comply with risk management measures throughout all stages of the AI lifecycle and periodically inspect, update, and maintain revision histories for the latest risk management measures.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19915,
+          "end_char": 20014
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.96,
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "기술적으로 가능한 범위에서의 인공지능이 도출한 최종결과, 인공지능의 최종결과 도출에 활용된 주요 기준, 인공지능의 개발 활용에 사용된 학습용 데이터의 개요 등에 대한 설명 방안의 수립 시행",
-          "source_section": "제34조 제2호"
+          "quote": "제 조인공지능 투명성 확보 의무 31 ( ) 인공지능사업자는 고영향 인공지능이나 생성형 인공지능을 이용한 제품 또는 ① 서비스를 제공하려는 경우 제품 또는 서비스가 해당 인공지능에 기반하여 운용된다는 사실을 이용자에게 사전에 고 지하여야 한다.",
+          "source_section": "제2장 고영향 인공지능사업자 책무 관련 조항 (2.1 관련 법조항)",
+          "quote_en": "AI Basic Act Art. 31(1): When intending to provide products or services using high-impact AI or generative AI, an AI business operator shall notify users in advance that the product or service operates based on such AI.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17602,
+          "end_char": 17738
         },
         {
-          "quote": "인공지능사업자는 고영향 인공지능이나 생성형 인공지능을 이용한 제품 또는 서비스를 제공하려는 경우 제품 또는 서비스가 해당 인공지능에 기반하여 운용된다는 사실을 이용자에게 사전에 고지하여야 한다",
-          "source_section": "제31조"
+          "quote": "인공지능이용사업자는 제항에 따른 설명방안의 내용 중 담당부서 설명절차 등 이용자에게 제공이 필요하다고 3 , ④ 판단하는 설명방안의 주요 내용을 홈페이지에 게시하거나 서면전자문서를 포함한다 이하 같다을 교부하는 등의 방 ( . ) 법으로 제공하여 이용자가 쉽게 설명을 받을 수 있도록 하여야 한다.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.2 설명 방안의 수립·시행)",
+          "quote_en": "Technical Notice Art. 5(4): AI-using business operators shall publish key explanation procedures (such as responsible department and explanation process) on their website or deliver them in writing/electronic form so users can easily receive explanations of final AI results, key criteria, and training-data overviews.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 34814,
+          "end_char": 34980
         }
       ]
     },
     {
       "label": "human_oversight",
-      "confidence": 0.97,
+      "confidence": 0.99,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "고영향 인공지능에 대한 사람의 관리 감독4. ·",
-          "source_section": "제34조 제4호"
+          "quote": "사업자는 고영향 인공지능 개발 과정에서 사람의 관리ㆍ감독을 위하여 다음 각 호의 사 ① 항을 이행하여야 한다. 사람이 인공지능 동작에 개입할 수 있는 기준 확립 1. 긴급 정지 기능 등 사람이 즉각적으로 인공지능을 정지하거나 작동을 변경할 수 있는 개입 방법 마련 2.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.4 고영향 인공지능에 대한 사람의 관리·감독)",
+          "quote_en": "Technical Notice Art. 7(1): During development of high-impact AI, operators shall establish criteria for human intervention in AI operation and implement intervention methods—such as emergency stop functions—allowing humans to immediately halt or alter AI operation.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 61095,
+          "end_char": 61245
         },
         {
-          "quote": "시스템 이용 중 사람이 통제할 수 있는 방안을 고려하여 인공지능 시스템을 설계 개발",
-          "source_section": "제3.4장 참조문서 EU AI Act 제14조"
+          "quote": "이용사업자는 이용자가 이의를 제기하거나 설명을 요구할 수 있는 절차를 수립해야 한다 이 때 사람 전문가가\n\n.\n해당 결정을 재검토하거나 분석 로그 등을 바탕으로 판단 근거를 안내하는 등의 대응 프로세스가 필요하다",
+          "source_section": "제1장 고영향 인공지능사업자 책무 이행 목적 (1.4 FAQ)",
+          "quote_en": "AI-using business operators must establish procedures allowing users to raise objections or demand explanations, supported by response processes where human experts review the decision or guide users on reasoning based on analysis logs.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 16850,
+          "end_char": 16968
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.96,
+      "confidence": 0.99,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "안전성 신뢰성 확보를 위한 조치의 내용을 확인할 수 있는 문서의 작성과 보관5. ·",
-          "source_section": "제34조 제5호"
+          "quote": "인공지능사업자는 법 제 조제항 각 호의 조치를 이행하고 그 근거를 문서로 년간 보관전자적 방법을 통한 34 1 5 ( ② 보관을 포함한다해야 한다 ) .",
+          "source_section": "제2장 고영향 인공지능사업자 책무 관련 조항 (2.2 관련 시행령)",
+          "quote_en": "Enforcement Decree Art. 27(2): AI business operators shall implement the measures under AI Basic Act Art. 34(1) and retain supporting documentation ('Safety and Trustworthiness Document') in written or electronic form for 5 years.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19237,
+          "end_char": 19322
         },
         {
-          "quote": "인공지능사업자는 법 제34조제1항 각 호의 조치를 이행하고 그 근거를 문서로 작성하여 5년간 보관해야 한다",
-          "source_section": "FAQ"
+          "quote": "사업자는 제항에 따른 문서이하 안전신뢰문서라 한다를 주기적으로 점검하고 최신의 기술 방법 등이 적용될 1 ( “ ” ) , ② 수 있도록 관리하여야 한다.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.5 문서의 작성과 보관)",
+          "quote_en": "Technical Notice Art. 8(2): Operators shall periodically inspect and manage the Safety and Trustworthiness Document covering Articles 4 through 7 so that the latest technologies and methods are reflected.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 67137,
+          "end_char": 67223
         }
       ]
     },
     {
-      "label": "incident_reporting",
-      "confidence": 0.82,
+      "label": "training_data_governance",
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "인공지능 시스템에서 문제가 발생할 경우, 시스템은 이를 운영자에게 전달하는 기능을 수행하는가",
-          "source_section": "제3.3장 참조문서 韓 13-2"
+          "quote": "② 사업자는 학습용데이터에 관한 정보를 체계적으로 관리하기 위해 학습용데이터의 개요를 정의하고 관리하여야 한다.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.2 설명 방안의 수립·시행)",
+          "quote_en": "Technical Notice Art. 5(2): Operators shall define and manage an overview of training data (covering format, size, quantity, collection scope/criteria, preprocessing procedures, quality checks, and synthetic data) to systematically govern training-data information.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 34673,
+          "end_char": 34735
         },
         {
-          "quote": "운영 중 발생가능한 위험 대응을 위해 모니터링 수행 및 이상 발생 시 즉시 보고, 사용 중단",
-          "source_section": "제3.4장 참조문서 EU AI Act 제26조 제5항"
+          "quote": "사업자는 고영향 인공지능 개발 과정에서 이용자 보호 방안을 수립하는 경 ① 우 다음 각 호의 사항을 포함하여야 한다. 안전하고 적법한 데이터 수집 및 관리 1.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.3 이용자 보호방안의 수립·운영)",
+          "quote_en": "Technical Notice Art. 6(1)(1): User protection measures during high-impact AI development shall include safe and lawful data collection and management (including retention/destruction plans, PIPA consent/de-identification, and copyright licensing).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 47902,
+          "end_char": 47991
         }
       ]
     },
     {
       "label": "pre_deployment_testing",
-      "confidence": 0.8,
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "인공지능 시스템의 신뢰성 테스트 계획 수립",
-          "source_section": "제3.3장 참조문서 韓 03"
+          "quote": "개발 및 이용사업자는 인공지능의 기술적 특성배치 환경을 고려하여 알려져 있거나 합리적으로 예측 , 가능한 위험에 대해 시험 및 평가해야 함.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.3 이용자 보호방안의 수립·운영)",
+          "quote_en": "Under Technical Notice Art. 6(1)(3), development and user business operators must perform continuous risk-based testing and evaluation against known and reasonably foreseeable risks, accounting for technical characteristics, deployment environments, edge cases, and fairness.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 53137,
+          "end_char": 53215
         },
         {
-          "quote": "고위험 인공지능이 의도된 목적대로 작동하는지 확인하기 위한 정기 테스트 설계",
-          "source_section": "제3.1장 참조문서 EU AI Act 제9조 제6항"
+          "quote": "모델 원저작자가 발표한 벤치마크 점수는 일반 적인 상황에서의 성능이므로 사업자의 제품서 , · 비스 환경에서는 성능이 급격히 저하될 수 있 음 자체적인 시험평가 결과를 확보하는 것이 . 필요.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.3 이용자 보호방안의 수립·운영)",
+          "quote_en": "Because benchmark scores published by original open-source model authors reflect general conditions and performance may degrade sharply in actual product/service environments, operators need to obtain independent testing and evaluation results.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 49589,
+          "end_char": 49696
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "이용자 보호를 위해 아키텍처 설계 단계부터 레 드팀 을 투입하여 보안 취약점 (Red-teaming) 을 사전에 차단할 수 있음.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.3 이용자 보호방안의 수립·운영)",
+          "quote_en": "To protect users, operators can deploy red-teaming from the architecture design stage to proactively block security vulnerabilities, alongside black-box/gray-box I/O red-teaming for open-source models.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 49347,
+          "end_char": 49419
+        },
+        {
+          "quote": "악의적인 공격비정상 데이터 입력 등의 예측 불가능한 상황에 대응할 수 있도록 적대적 공격에 대한 방어 - , 능력을 강화하기 위해 노력해야 함.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.3 이용자 보호방안의 수립·운영)",
+          "quote_en": "Under Technical Notice Art. 6(1)(2), development operators should strengthen defenses against adversarial attacks (including adversarial training, fuzzing, and defensive distillation) to withstand malicious attacks and abnormal data inputs.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 51632,
+          "end_char": 51712
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.94,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "데이터 유출 오용 손실 방지를 위해 암호화 접근 권한 관리 등 적절한 , , , 기술적관리적물리적 보안 방안을 적용하고 있는가 · · ?",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.3 이용자 보호방안의 수립·운영)",
+          "quote_en": "Self-check item 3-1-1-3: Are appropriate technical, managerial, and physical security safeguards—such as encryption and access privilege management—applied to prevent data leakage, misuse, and loss?",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 50954,
+          "end_char": 51030
+        },
+        {
+          "quote": "문서화된 정보의 접근 및 보안이 체계적으로 관리되어야 함",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.5 문서의 작성과 보관)",
+          "quote_en": "Access to and security of documented Safety and Trustworthiness information must be systematically managed (alongside API access control, SaaS tenant isolation, MFA, and anomaly access blocking).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 68653,
+          "end_char": 68684
+        }
+      ]
+    },
+    {
+      "label": "open_weight_obligations",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "모델의 가중치 파일에 악성 코드가 포함되어 있 거나 특정 입력값에 오작동하도록 설계된 백도 어 공격에 취약할 수 있으므로 신뢰할 수 있는 , 저장소에서 다운로드하고 파일 해시값 검증 및 보안 스캔을 수행하는 것이 필요.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.3 이용자 보호방안의 수립·운영)",
+          "quote_en": "Because open-source model weight files may contain malware or backdoors triggered by specific inputs, operators must download from trusted repositories and perform file hash verification and security scanning.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 49420,
+          "end_char": 49542
+        },
+        {
+          "quote": "오픈소스 모델은 원천 기술에 대한 완벽한 통제 가 어려우므로 활용한 기반 모델의 명칭과 버 , 전을 명확히 기록할 필요가 있음 오픈소스 모 . 델을 그대로 쓰지 않고 조정했다면 해당 수정 , 내역을 문서에 반영하여 최신 상태를 유지하는 것이 바람직함.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.2 설명 방안의 수립·시행)",
+          "quote_en": "Because full control over underlying open-source technology is difficult, operators must record the base model's name and version, keep modification histories up to date in documentation, monitor upstream security patches/licenses, and notify users of open-source model use.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 36303,
+          "end_char": 36443
+        }
+      ]
+    },
+    {
+      "label": "domestic_representative",
+      "confidence": 0.94,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "국내대리인 (domestic agent) 국내에 주소 또는 영업소가 없는 인공지능사업자로서 이용자 수 매출액 등이 대 , 통령령으로 정하는 기준에 해당하는 자로 안전관리의무 이행 결과의 제출인공지 ( 능 기본법 제 조제항 고영향 인공지능 해당 확인 요청인공지능 기본법 제 32 2 ), ( 33 조제항 고영향 인공지능 사업자 책무 이행인공지능 기본법 제 조제항 지원 1 ), ( 34 1 ) 등을 수행하는 자.",
+          "source_section": "제1장 고영향 인공지능사업자 책무 이행 목적 (1.3 주요 용어의 개념)",
+          "quote_en": "Domestic representative (domestic agent): Appointed by an overseas AI business operator lacking a domestic address or office that meets Presidential Decree thresholds (e.g., revenue/users) to support Art. 32(2) safety filings, Art. 33(1) high-impact confirmation requests, and Art. 34(1) operator obligations.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14415,
+          "end_char": 14644
         }
       ]
     },
     {
       "label": "third_party_audit",
-      "confidence": 0.72,
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "일정 규모 이상의 사업자는 독립성 객관성을 갖춘 내부 조직의 평가 또는 외부 독립기관의 검·인증을 통해 객관성을 확보해야 함",
-          "source_section": "가이드라인 적용 방법 1.2 이해관계자별 적용 방식"
+          "quote": "특히 일정 규모 이상의 사업자는 독립성객관성을 갖춘 내부 조직의 평가 또는 외부 · 독립기관의 검인증을 통해 객관성을 확보해야 함 · .",
+          "source_section": "제1장 고영향 인공지능사업자 책무 이행 목적 (1.2 가이드라인 적용 방법)",
+          "quote_en": "In particular, AI business operators above a certain scale should secure objectivity through evaluations by an independent internal organization or external verification and certification by an independent third-party institution.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 11982,
+          "end_char": 12058
+        },
+        {
+          "quote": "객관성 확보를 위한 외부 전문가 또는 기관의 검증 절차 도입을 고려할 수 있음",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.3 이용자 보호방안의 수립·운영)",
+          "quote_en": "During risk-based testing and evaluation, operators may consider introducing verification procedures by external experts or institutions to ensure objectivity.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 53269,
+          "end_char": 53312
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "reporting_obligation",
-      "confidence": 0.9,
+      "label": "soft_enforcement",
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "안전성 신뢰성 확보를 위한 조치의 내용을 확인할 수 있는 문서의 작성과 보관",
-          "source_section": "제34조 제5호"
+          "quote": "즉 가이드라인 자체는 법적 구속력은 없으나 법상 의무 이행을 지원하기 위한 목적으로 제작되었다",
+          "source_section": "제1장 고영향 인공지능사업자 책무 이행 목적 (1.1 가이드라인 목적)",
+          "quote_en": "This guideline itself has no legal binding force, but was created to support fulfillment of statutory obligations under AI Basic Act Article 34.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2266,
+          "end_char": 2318
         },
         {
-          "quote": "인공지능사업자는 법 제34조제1항 각 호의 조치를 이행하고 그 근거를 문서로 작성하여 5년간 보관해야 한다",
-          "source_section": "FAQ"
-        }
-      ]
-    },
-    {
-      "label": "soft_enforcement",
-      "confidence": 0.88,
-      "evidence": [
-        {
-          "quote": "가이드라인 자체는 법적 구속력은 없으나 법상 의무 이행을 지원하기 위한 목적으로 제작되었다",
-          "source_section": "제1.1장 가이드라인 목적"
+          "quote": "과학기술정보통신부장관은 제항 각 호에 따른 조치의 구체적인 사항을 정하여 고시하고 인공지능사업자에게 이 1 , ② 를 준수하도록 권고할 수 있다.",
+          "source_section": "제2장 고영향 인공지능사업자 책무 관련 조항 (2.1 관련 법조항)",
+          "quote_en": "AI Basic Act Art. 34(2): The Minister of Science and ICT may specify detailed implementation measures by public notice and recommend that AI business operators comply with them.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18192,
+          "end_char": 18273
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.78,
+      "confidence": 0.92,
       "evidence": [
         {
-          "quote": "판단이 어려운 경우 과학기술정보통신부 장관에게 확인을 요청할 수 있다",
-          "source_section": "FAQ"
+          "quote": "개발 및 이용사업자는 이용자과학기술정보통신부장관 등이 열람을 요청할 시안전신뢰문서를 열람할 수 , , 있도록 제공해야 함.",
+          "source_section": "제3장 고영향 인공지능사업자 책무 조치사항 (3.5 문서의 작성과 보관)",
+          "quote_en": "Development and user business operators must provide the 5-year-retained Safety and Trustworthiness Document for inspection when requested by users or the Minister of Science and ICT (with trade secrets excluded under applicable law).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 68800,
+          "end_char": 68868
         },
         {
-          "quote": "과학기술정보통신부는 인공지능 기본법의 시행을 위한 하위법령 정비단을 출범시켰으며",
-          "source_section": "추진배경"
+          "quote": "고영향 인공지능의 안전성신뢰성을 보장하기 위한 구체적인 기준과 절차를 제공함으로써 사업자들이 이를 · , 효과적으로 이행할 수 있도록 돕고 정부의 규제 이행을 지원하는 도구로 활용될 수 있도록 한다",
+          "source_section": "제1장 고영향 인공지능사업자 책무 이행 목적 (1.1 가이드라인 목적)",
+          "quote_en": "By providing concrete criteria and procedures to ensure high-impact AI safety and trustworthiness, this guideline helps operators implement statutory duties effectively and serves as a tool supporting government regulatory enforcement.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2463,
+          "end_char": 2573
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "과학기술정보통신부 (Ministry of Science and ICT)"
+    "Ministry of Science and ICT (과학기술정보통신부 / MSIT)",
+    "National AI Committee (위원회, referenced under AI Basic Act Art. 34(1)(6) for deliberating additional high-impact AI safety/trustworthiness measures)",
+    "National Information Society Agency (한국지능정보사회진흥원 / NIA, referenced for High-Impact AI Determination Guideline support)"
   ],
   "compliance_deadlines": [
-    "2026년 1월 인공지능 기본법 시행 (AI Basic Act enters into force January 2026)"
+    "2026-01: Scheduled entry into force of the AI Basic Act (enacted 2024-12-26)",
+    "5-year retention period: Mandatory retention (written or electronic) of Safety and Trustworthiness Documents (안전신뢰문서) and compliance evidence under AI Basic Act Art. 34(1)(5) and Enforcement Decree Art. 27(2)"
   ],
   "penalties_summary": null,
-  "implementation_notes": "The guideline explicitly states it has no legal binding force ('가이드라인 자체는 법적 구속력은 없으나 법상 의무 이행을 지원하기 위한 목적으로 제작') but supports compliance with the legally binding obligations of Article 34 of the AI Basic Act (인공지능 기본법). Obligations under Article 34 include: (1) risk management plan establishment and operation; (2) explainability plan for AI outputs, key criteria, and training data; (3) user protection plan; (4) human oversight of high-impact AI; (5) documentation and retention of safety/reliability measures. High-impact AI domains are enumerated in the AI Basic Act and include energy supply, water treatment, healthcare, medical devices, nuclear facility management, biometric data for criminal investigation, hiring and loan review, transportation, public services decision-making, and student assessment in early/primary/secondary education.",
-  "confidence": 0.92
+  "implementation_notes": "111-page official MSIT/NIA implementation guideline (2026-01-22) operationalizing High-Impact AI operator obligations under AI Basic Act Article 34, Enforcement Decree Article 27, and MSIT's Technical Notice across 10 statutory high-impact domains (energy, drinking water, healthcare/medical devices, nuclear facilities, law-enforcement biometrics, recruitment/loans, transportation, public-service decisions, and K-12 student assessment) plus GPAI models integrated into high-impact systems. Synthesizes TTA Trustworthy AI Development Guide, NIST AI RMF, and EU AI Act across five statutory duties—(1) lifecycle risk management & governance, (2) explainability & training-data overview disclosure, (3) user protection (data governance, adversarial robustness, testing, monitoring, feedback, redress/compensation), (4) human oversight (intervention triggers, emergency stop, inspections, training), and (5) 5-year Safety & Trustworthiness Document retention—with dedicated open-source model guidance in every chapter, trade-secret carve-outs, equivalence-statement flexibility, a blank document template, a 69-item TTA crosswalk, and a complete AI recruitment example.",
+  "confidence": 0.97
 }

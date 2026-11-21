@@ -1,0 +1,358 @@
+{
+  "source_id": "eu_article_50_transparency_guidelines_2026",
+  "title": "Commission Guidelines on the Implementation of Transparency Obligations for Certain AI Systems under Article 50 of the AI Act (C(2026) 7702 final)",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2026-11-05",
+    "effective_date": null,
+    "covered_actors": [
+      "Providers of AI systems (including interactive, generative, agentic, and general-purpose AI systems, established in the EU or in third countries)",
+      "Deployers of AI systems acting in a professional capacity (including public authorities, agencies, EU institutions, and third-country deployers whose outputs are used in the EU)",
+      "Providers of general-purpose AI (GPAI) models (encouraged to implement model-level transparency measures)",
+      "Hosting service providers, online platforms (including VLOPs and VLOSEs), online search engines, broadcasters, and content distributors (encouraged to preserve markings and labels)"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "biometrics",
+      "public_sector_use",
+      "law_enforcement"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.98,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "Providers must develop and design the AI system in such a way that the natural persons concerned are informed they are interacting with an AI system.",
+            "source_section": "2.1. Overview of the transparency obligations in Article 50 AI Act (Art. 50(1))",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 11029,
+            "end_char": 11178
+          },
+          {
+            "quote": "In addition, Article 50(5) AI Act mandates that the information referred to in its paragraphs 1 to 4 shall be provided to the natural persons concerned in a clear and distinguishable manner at the latest at the time of the first interaction or exposure and conform to the applicable accessibility requirements.",
+            "source_section": "2.1. Overview of the transparency obligations in Article 50 AI Act",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13169,
+            "end_char": 13479
+          }
+        ]
+      },
+      {
+        "label": "content_provenance",
+        "confidence": 0.98,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "First, providers must ensure that the outputs of the AI system are marked in a machine-readable format. Second, providers must ensure that the outputs are detectable as artificially generated or manipulated content.",
+            "source_section": "4.2. The marking and detection obligation of Article 50(2) AI Act",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 80045,
+            "end_char": 80260
+          },
+          {
+            "quote": "Article 50(4), first subparagraph, AI Act obliges deployers of AI systems that generate or manipulate image, audio or video content constituting a deep fake to ‘disclose that the deep fake content has been artificially generated or manipulated’.",
+            "source_section": "6.1.2. The disclosure obligation under Article 50(4), first subparagraph, AI Act",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 123468,
+            "end_char": 123713
+          }
+        ]
+      },
+      {
+        "label": "agentic_autonomy_controls",
+        "confidence": 0.85,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "AI agents must be designed and developed in such a way that they disclose both their artificial nature and the person on whose behalf they are acting, considering the need for transparency of the origin and the delegation of authority and accountability for the consequences of their actions.",
+            "source_section": "3.1.1. AI systems intended to interact directly with natural persons",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40692,
+            "end_char": 40984
+          },
+          {
+            "quote": "Furthermore, AI agents should also disclose themselves, to the persons instructing them at key steps (e.g. at the point of authorisation, reporting, validation etc., including when the deployed AI agent receives, processes, or relies upon outputs generated by other AI systems rather than directly by a natural person) and at every new interaction.",
+            "source_section": "3.1.1. AI systems intended to interact directly with natural persons",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 41877,
+            "end_char": 42225
+          }
+        ]
+      },
+      {
+        "label": "open_weight_obligations",
+        "confidence": 0.92,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "According to Article 2(12) AI Act, AI systems released under free and open-source licences are outside the scope of the AI Act provided they do not fall under the prohibitions of Article 5 AI Act or the transparency obligations of Article 50 AI Act, or they are not classified as high-risk (11).",
+            "source_section": "2.4.3. AI released under free and open-source licences",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 30007,
+            "end_char": 30302
+          },
+          {
+            "quote": "By contrast, providers of free and open-source AI components that cover software, data, models, tools, services or processes for customisation and integration into an AI system and that do not constitute in themselves (in part or in whole) an AI system, are not subject to the transparency obligations in Article 50 AI Act.",
+            "source_section": "2.4.3. AI released under free and open-source licences",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 30492,
+            "end_char": 30815
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.8,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "Article 50(4), second subparagraph, AI Act foresees an exception to the transparency obligation laid down in that provision where two cumulative conditions are met: (i) the AI generated or manipulated text must have undergone human review or editorial control and (ii) a legal or natural person must hold editorial responsibility for the publication.",
+            "source_section": "6.2.3. Exception from the transparency obligation for text under human review or editorial control and editorial responsibility",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 144527,
+            "end_char": 144877
+          },
+          {
+            "quote": "Human review refers to the deliberate examination of the substance of the content by one or more natural persons possessing relevant knowledge and professional judgement pertaining to the subject matter under scrutiny (e.g. academic peer review or professional validation chains). Fact-checking the accuracy of the content is a minimum requirement that should be part of that review.",
+            "source_section": "6.2.3. Exception from the transparency obligation for text under human review or editorial control and editorial responsibility",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 145298,
+            "end_char": 145681
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "civil_penalty",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "Provider and deployers that do not comply with the applicable transparency obligations laid down in Article 50 AI Act may be fined up to EUR 15 000 000 or, if the offender is an undertaking, up to 3% of its total worldwide annual turnover for the preceding financial year, whichever is higher.",
+            "source_section": "8.3. Penalties",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 164594,
+            "end_char": 164887
+          },
+          {
+            "quote": "EU institutions, bodies and agencies that violate the transparency obligations may be subject to administrative fines of up to EUR 750 000.",
+            "source_section": "8.3. Penalties",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 164888,
+            "end_char": 165027
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "Market surveillance authorities designated by the Member States, the AI Office (47), and the European Data Protection Supervisor (48) are responsible for supervising and enforcing the rules for AI systems falling within their competence, including the transparency obligations laid down in Article 50 AI Act.",
+            "source_section": "8.2. Market Surveillance Authorities",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 163371,
+            "end_char": 163679
+          },
+          {
+            "quote": "Article 50(7) AI Act (44), the Commission and the competent market surveillance\nauthorities will focus their supervisory activities on assessing whether those signatories have adhered to the code of practice and implemented the measures contained therein.",
+            "source_section": "8.1. Effects of adhering to a code of practice assessed as adequate",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 160267,
+            "end_char": 160522
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "These Guidelines are non-binding. Any authoritative interpretation of the AI Act may ultimately only be given by the Court of Justice of the European Union (‘CJEU’).",
+            "source_section": "1. Background and Objectives",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 10449,
+            "end_char": 10614
+          },
+          {
+            "quote": "Competent authorities may take commitments implemented in line with a code of practice that is deemed adequate into account as a mitigating factor when fixing the amount of fines, depending on the specific circumstances (45).",
+            "source_section": "8.1. Effects of adhering to a code of practice assessed as adequate",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 162405,
+            "end_char": 162630
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Market surveillance authorities designated by the Member States",
+      "AI Office",
+      "European Data Protection Supervisor (EDPS)",
+      "European Commission"
+    ],
+    "compliance_deadlines": [
+      "2026-08-02: Entry into application of Article 50 AI Act transparency obligations for all in-scope AI systems placed on the market or put into service in the Union (Article 113 AI Act).",
+      "2026-12-02: End of transitional period under the AI Omnibus amending the AI Act for providers of generative AI systems placed on the market or put into service before 2 August 2026 to bring systems into conformity with Article 50(2) marking and detection obligations."
+    ],
+    "penalties_summary": "Providers and deployers infringing Article 50 AI Act transparency obligations may be fined up to EUR 15,000,000 or, for an undertaking, up to 3% of total worldwide annual turnover for the preceding financial year, whichever is higher (for SMEs including start-ups, whichever is lower). EU institutions, bodies, and agencies may be subject to administrative fines of up to EUR 750,000. Commitments under an adequate Code of Practice pursuant to Article 50(7) may be taken into account as a mitigating factor.",
+    "implementation_notes": "Non-binding practical guidelines issued pursuant to Article 96(1)(d) AI Act; authoritative interpretation rests with the Court of Justice of the European Union (CJEU). Clarifies the four transparency obligations in Article 50(1)-(4) (interactive AI systems including AI agents, machine-readable marking and detection of synthetic audio/image/video/text, emotion recognition and biometric categorisation notices, and labelling of deep fakes and public-interest AI text) and horizontal clarity, timing, and accessibility duties in Article 50(5). Details exclusions for purely personal non-professional deployer use, sole scientific R&D, open-source components that are not AI systems, standard editing, law enforcement activities, and editorially controlled public-interest text. Compliance with Article 50 does not legalise practices prohibited under Article 5 AI Act or replace high-risk AI, DSA, GDPR, consumer protection, or accessibility rules. Adherence to an adequate Code of Practice under Article 50(7) facilitates compliance demonstration, whereas non-signatories must demonstrate compliance by alternative means and may face heightened supervisory scrutiny. No retroactive marking or labelling is required for outputs generated or manipulated (and, for public-interest text, published) before 2 August 2026.",
+    "confidence": 0.97
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "social_stability",
+      "consumer_public_safety",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.05,
+      "national_security": 0.05,
+      "economic_competitiveness": 0.05,
+      "fundamental_rights": 0.92,
+      "social_stability": 0.88,
+      "innovation_enablement": 0.55,
+      "consumer_public_safety": 0.82,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.38,
+      "social_stability": 0.3,
+      "innovation_enablement": 0.1,
+      "consumer_public_safety": 0.22,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The Commission Guidelines anchor Article 50 transparency obligations primarily in fundamental rights (dominant_frame), framing disclosure and marking rules as essential to upholding personal autonomy, human dignity, democracy and the rule of law, privacy, equality and non-discrimination, freedom of thought, and freedom of expression across interactive, generative, emotion-recognition, and biometric-categorisation AI systems. Fundamental rights edges out the close runner-up, social_stability, because rights-based protections and safeguards for third-party rights and freedoms serve as the overarching constitutional rationale across all four Article 50 obligations (Sections 1, 2.2, 3, 5, and 6), whereas social_stability—prominently expressed through recurring calls to safeguard societal trust, counter misinformation and disinformation, and preserve the integrity of the information ecosystem—concentrates especially in synthetic content marking and deep fake provisions (Sections 2.2, 4, and 8.4). Consumer_public_safety is a substantial secondary frame focused on preventing deception, fraud, impersonation, overreliance, and manipulation, with particular attention to vulnerable groups such as children, the elderly, and persons with disabilities. Innovation_enablement appears as a modest secondary frame via references to promoting innovation and uptake of trustworthy AI, proportionality, and legal certainty through codes of practice.",
+    "evidence_spans": [
+      {
+        "quote": "Ensuring transparent and trustworthy use of interactive and generative AI systems will also allow to uphold personal autonomy and European values, human dignity and other fundamental rights (e.g. freedom of thought, privacy, equality and non-discrimination, consumer protection, intellectual property etc.), while also preserving the freedom of expression and credibility of media content.",
+        "source_section": "Section 2.2 Rationale and objectives (9)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 14923,
+        "end_char": 15312
+      },
+      {
+        "quote": "Recital 132 AI Act explains that the purpose of that obligation is to ensure that natural persons (including persons with disabilities) are aware that they are exposed to emotion recognition and biometric categorisation systems that can be intrusive for their privacy.",
+        "source_section": "Section 5 Article 50(3) AI Act (100)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 103112,
+        "end_char": 103380
+      },
+      {
+        "quote": "As explained in Recitals 132-136 AI Act, the purpose of the transparency obligations is to reduce the risks of impersonation, deception, misinformation, manipulation at scale, and fraud and to mitigate potential adverse impacts on democratic processes and societal trust caused by AI-generated or manipulated content or interaction.",
+        "source_section": "Section 2.2 Rationale and objectives (9)",
+        "quote_en": null,
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 14158,
+        "end_char": 14490
+      },
+      {
+        "quote": "The objective is to enable natural persons to distinguish AI-generated or manipulated content from other content (for example, content created by humans) and to verify its origin, thus also contributing to increased integrity and trust in the information ecosystem.",
+        "source_section": "Section 4 Article 50(2) AI Act (54)",
+        "quote_en": null,
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 69133,
+        "end_char": 69398
+      },
+      {
+        "quote": "As explained in Recital 132 AI Act, the purpose of this information obligation is to enable those natural persons to take informed decisions regarding the system’s outputs, to avoid overreliance on such systems, and to allow those natural persons to calibrate their trust in the content and the interactions accordingly.",
+        "source_section": "Section 3 Article 50(1) AI Act (28)",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 34671,
+        "end_char": 34991
+      },
+      {
+        "quote": "Its aim is to promote innovation in and the uptake of trustworthy AI, while ensuring a high level of protection of health, safety and fundamental rights in the Union, including democracy and the rule of law.",
+        "source_section": "Section 1 Background and Objectives (1)",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 9246,
+        "end_char": 9453
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:38:40.940526Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "dfcacb8c9acaf718aaa66ea77c449bc52ca19cc1ac9b502e78c6569f7930920c",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 124205,
+      "output_tokens": 3983,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 15498,
+      "estimated_cost_usd": 0.350066
+    },
+    "grounding_summary": {
+      "total_quotes": 22,
+      "exact_matches": 22,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 1
+    }
+  }
+}

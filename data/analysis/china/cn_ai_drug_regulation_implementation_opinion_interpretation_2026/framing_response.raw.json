@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01VfkwUyTGuSNYpW56eptoFU",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"innovation_enablement\",\"secondary_frames\":[\"consumer_public_safety\",\"economic_competitiveness\"],\"frame_confidence\":{\"innovation_enablement\":0.72,\"consumer_public_safety\":0.55,\"labor_transition\":0.05},\"rationale_summary\":\"The document primarily frames AI governance in drug regulation as an opportunity to modernize and enhance regulatory capabilities through technology integration. The core reasoning is enabling smarter, more efficient regulation rather than mitigating risks from AI itself. Secondary framing includes consumer/public safety through improved drug lifecycle oversight and economic competitiveness via industry digital transformation.\",\"evidence_spans\":[{\"quote\":\"抢抓人工智能发展重大战略机遇，推进人工智能与药品监管深度融合发展\",\"source_section\":\"导言\"},{\"quote\":\"以药品监管现代化为目标，提出下一阶段监管数智化的七大重点方向\",\"source_section\":\"重点方向\"},{\"quote\":\"鼓励引导产业加快推动数智化转型升级\",\"source_section\":\"第七方向\"},{\"quote\":\"到2035年，基本形成数智驱动、智能敏捷、自主可控、生态协同的智慧化药品安全治理新格局\",\"source_section\":\"总体要求\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 4621,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 323,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 8594,
+    "candidatesTokenCount": 1172,
+    "totalTokenCount": 13271,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 8594
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1172
+      }
+    ],
+    "thoughtsTokenCount": 3505,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "fiwBa6e3IbyXodAP_dHoqA4"
 }

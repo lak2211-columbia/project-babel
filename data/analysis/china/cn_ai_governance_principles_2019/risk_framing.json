@@ -1,37 +1,85 @@
 {
-  "dominant_frame": "fundamental_rights",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
+    "fundamental_rights",
     "social_stability",
-    "consumer_public_safety",
-    "innovation_enablement"
+    "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.0,
+    "existential_catastrophic": 0.35,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.45,
-    "social_stability": 0.25,
-    "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.15,
-    "labor_transition": 0.02
+    "economic_competitiveness": 0.45,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.85,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.78,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document's eight principles foreground rights-based concerns—privacy, fairness, non-discrimination, informed consent, and human dignity—as the primary justification for AI governance. While innovation and social harmony are also present, the explicit articulation of individual rights (知情权、选择权), prohibition of bias and discrimination, and data protection norms make fundamental rights the dominant frame.",
+  "frame_share": {
+    "existential_catastrophic": 0.04,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.06,
+    "fundamental_rights": 0.24,
+    "social_stability": 0.22,
+    "innovation_enablement": 0.28,
+    "consumer_public_safety": 0.16,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The Principles frame AI governance primarily around innovation_enablement: the title, preamble, and Principle 8 ('Agile Governance') justify governance as a means to coordinate development with governance, respect AI development laws, and foster healthy, innovative, orderly, and internationally collaborative AI development. It edges out fundamental_rights (strongly represented in Principle 2 on fairness/non-discrimination and Principle 4 on privacy and informed choice) and social_stability (emphasized in Principle 1 on human-machine harmony, ethical values, social safety, and a shared future for humanity) because those principles are explicitly structured as pillars to enable 'developing responsible AI' rather than purely rights-restrictive or public-order mandates. Consumer_public_safety is a notable secondary frame via system safety, robustness, controllability, and misuse prevention, while economic_competitiveness (industrial upgrading, orderly competition) and existential_catastrophic (anticipating risks of future more advanced AI) receive minor mention.",
   "evidence_spans": [
     {
-      "quote": "尊重和保护个人隐私，充分保障个人的知情权和选择权",
-      "source_section": "四、尊重隐私"
+      "quote": "为促进新一代人工智能健康发展，更好协调发展与治理的关系，确保人工智能安全可靠可控，推动经济、社会及生态可持续发展，共建人类命运共同体",
+      "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+      "quote_en": "To promote the healthy development of the new generation of artificial intelligence, better coordinate the relationship between development and governance, ensure that AI is safe, reliable, and controllable, promote sustainable economic, social, and ecological development, and jointly build a community with a shared future for humanity",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 461,
+      "end_char": 527
     },
     {
-      "quote": "促进公平公正，保障利益相关者的权益，促进机会均等……消除偏见和歧视",
-      "source_section": "二、公平公正"
+      "quote": "尊重人工智能发展规律，在推动人工智能创新发展、有序发展的同时，及时发现和解决可能引发的风险。",
+      "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+      "quote_en": "Respect the laws of artificial intelligence development; while promoting the innovative and orderly development of artificial intelligence, timely discover and resolve potential risks.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1355,
+      "end_char": 1401
     },
     {
-      "quote": "以保障社会安全、尊重人类权益为前提，避免误用，禁止滥用、恶用",
-      "source_section": "一、和谐友好"
+      "quote": "人工智能发展应促进公平公正，保障利益相关者的权益，促进机会均等。通过持续提高技术水平、改善管理方式，在数据获取、算法设计、技术开发、产品研发和应用过程中消除偏见和歧视。",
+      "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+      "quote_en": "The development of AI should promote fairness and justice, protect the rights and interests of stakeholders, and promote equal opportunity. Through continuous improvement of technical standards and management methods, eliminate bias and discrimination in data acquisition, algorithm design, technology development, product R&D, and application.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 645,
+      "end_char": 729
     },
     {
-      "quote": "对未来更高级人工智能的潜在风险持续开展研究和预判，确保人工智能始终朝着有利于人类的方向发展",
-      "source_section": "八、敏捷治理"
+      "quote": "人工智能发展应尊重和保护个人隐私，充分保障个人的知情权和选择权。",
+      "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+      "quote_en": "The development of AI should respect and protect personal privacy, and fully safeguard individuals' right to know and right to choose.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 864,
+      "end_char": 896
+    },
+    {
+      "quote": "人工智能发展应以增进人类共同福祉为目标；应符合人类的价值观和伦理道德，促进人机和谐，服务人类文明进步；应以保障社会安全、尊重人类权益为前提，避免误用，禁止滥用、恶用。",
+      "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+      "quote_en": "The development of AI should aim to enhance the common well-being of humanity; conform to human values and ethics, promote human-machine harmony, and serve the progress of human civilization; take safeguarding social safety and respecting human rights and interests as prerequisites, avoid misuse, and prohibit abuse and malicious use.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 554,
+      "end_char": 637
+    },
+    {
+      "quote": "高度关注人工智能系统的安全，提高人工智能鲁棒性及抗干扰性，形成人工智能安全评估和管控能力。",
+      "source_section": "新一代人工智能治理原则——发展负责任的人工智能",
+      "quote_en": "Pay high attention to the safety and security of AI systems, improve AI robustness and anti-interference capability, and establish AI safety assessment and control capabilities.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 1026,
+      "end_char": 1071
     }
   ]
 }

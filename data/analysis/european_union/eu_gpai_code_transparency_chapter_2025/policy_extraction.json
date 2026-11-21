@@ -1,15 +1,13 @@
 {
   "jurisdiction": "european_union",
-  "issuing_body": "European Commission / AI Office (Working Group 1, Code of Practice for General-Purpose AI Models)",
-  "document_type": "standards_guideline",
+  "issuing_body": "European Commission (AI Office) / General-Purpose AI Code of Practice Working Group 1",
+  "document_type": "voluntary_commitment",
   "binding_strength": "voluntary_commitment",
-  "publication_date": "2025",
+  "publication_date": null,
   "effective_date": null,
   "covered_actors": [
-    "providers of general-purpose AI models",
-    "downstream providers",
-    "providers of AI systems integrating general-purpose AI models",
-    "Signatories"
+    "Signatories (providers of general-purpose AI models)",
+    "Providers of fine-tuned or modified general-purpose AI models"
   ],
   "covered_application_domains": [
     "general_purpose_models"
@@ -18,29 +16,58 @@
   "safety_requirements": [
     {
       "label": "model_documentation",
-      "confidence": 0.97,
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "Signatories commit to drawing up and keeping up-to-date model documentation in accordance with Measure 1.1",
-          "source_section": "Page 5"
+          "quote": "Signatories, when placing a general-purpose AI model on the market, will have documented at least all the information referred to in the Model Documentation Form below (hereafter this information is referred to as the ‘Model Documentation’).",
+          "source_section": "Page 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6829,
+          "end_char": 7070
         },
         {
-          "quote": "Signatories, when placing a general-purpose AI model on the market, will have documented at least all the information referred to in the Model Documentation Form",
-          "source_section": "Page 5"
+          "quote": "Signatories will update the Model Documentation to reflect relevant changes in the information contained in the Model Documentation, including in relation to updated versions of the same model, while keeping previous versions of the Model Documentation for a period ending 10 years after the model has been placed on the market.",
+          "source_section": "Page 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7192,
+          "end_char": 7520
         }
       ]
     },
     {
-      "label": "transparency_disclosure",
-      "confidence": 0.95,
+      "label": "open_weight_obligations",
+      "confidence": 0.92,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "Signatories will publicly disclose via their website, or via other appropriate means if they do not have a website, contact information for the AI Office and downstream providers to request access to the relevant information contained in the Model Documentation",
-          "source_section": "Page 5"
-        },
+          "quote": "In accordance with Article 53(2) AI Act, these Measures do not apply to providers of general-purpose AI models released under a free and open-source license that satisfy the conditions specified in that provision, unless the model is a general-purpose AI model with systemic risk.",
+          "source_section": "Page 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6482,
+          "end_char": 6762
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.78,
+      "obligation_strength": "mandatory",
+      "evidence": [
         {
-          "quote": "Signatories are encouraged to consider whether the documented information can be disclosed, in whole or in part, to the public to promote public transparency",
-          "source_section": "Page 6"
+          "quote": "Some of this information may also be required in a summarised form as part of the training content summary that providers must make publicly available under Article 53(1), point (d), AI Act, according to a template to be provided by the AI Office.",
+          "source_section": "Page 6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9894,
+          "end_char": 10141
         }
       ]
     }
@@ -48,53 +75,79 @@
   "enforcement_mechanisms": [
     {
       "label": "regulatory_supervision",
-      "confidence": 0.92,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "Signatories will provide, upon a request from the AI Office pursuant to Articles 91 or 75(3) AI Act for one or more elements of the Model Documentation, or any additional information, that are necessary for the AI Office to fulfil its tasks under the AI Act or for national competent authorities to exercise their supervisory tasks",
-          "source_section": "Page 5"
+          "quote": "To ensure providers of general-purpose AI models comply with their obligations under the AI Act and to enable the AI Office to assess compliance of providers of general-purpose AI models who choose to rely on the Code to demonstrate compliance with their obligations under the AI Act.",
+          "source_section": "Page 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2955,
+          "end_char": 3239
+        },
+        {
+          "quote": "Information intended for the AI Office or national competent authorities is only to be made available following a request from the AI Office, either ex officio or based on a request to the AI Office from national competent authorities.",
+          "source_section": "Page 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 921,
+          "end_char": 1156
         }
       ]
     },
     {
       "label": "reporting_obligation",
-      "confidence": 0.9,
+      "confidence": 0.85,
       "evidence": [
         {
-          "quote": "Signatories will provide the requested information in its most up-to-date form, within the period specified in the AI Office's request in accordance with Article 91(4) AI Act",
-          "source_section": "Page 5"
-        },
-        {
-          "quote": "Signatories will provide to downstream providers the information contained in the most up-to-date Model Documentation that is intended for downstream providers",
-          "source_section": "Page 6"
+          "quote": "Signatories will provide, upon a request from the AI Office pursuant to Articles 91 or 75(3) AI Act for one or more elements of the Model Documentation, or any additional information, that are necessary for the AI Office to fulfil its tasks under the AI Act or for national competent authorities to exercise their supervisory tasks under the AI Act",
+          "source_section": "Page 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7915,
+          "end_char": 8263
         }
       ]
     },
     {
       "label": "soft_enforcement",
-      "confidence": 0.75,
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "adherence to the Code does not constitute conclusive evidence of compliance with these obligations under the AI Act",
-          "source_section": "Page 3"
+          "quote": "To serve as a guiding document for demonstrating compliance with the obligations provided for in Articles 53 and 55 AI Act, while recognising that adherence to the Code does not constitute conclusive evidence of compliance with these obligations under the AI Act.",
+          "source_section": "Page 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2688,
+          "end_char": 2951
         },
         {
-          "quote": "Signatories are encouraged to follow the established protocols and technical standards",
-          "source_section": "Page 6"
+          "quote": "Signatories are encouraged to consider whether the documented information can be disclosed, in whole or in part, to the public to promote public transparency.",
+          "source_section": "Page 6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9735,
+          "end_char": 9893
         }
       ]
     }
   ],
   "enforcement_authorities": [
     "AI Office",
-    "national competent authorities",
-    "European Commission"
+    "National competent authorities"
   ],
   "compliance_deadlines": [
-    "Information must be provided to downstream providers within 14 days of receiving a request, save for exceptional circumstances",
-    "Model documentation must be retained for 10 years after the model has been placed on the market"
+    "Document Model Documentation and publicly disclose contact information when placing a general-purpose AI model on the market",
+    "Retain previous versions of Model Documentation for 10 years after the model has been placed on the market",
+    "Provide requested information to the AI Office within the period specified in the AI Office's request under Article 91(4) AI Act",
+    "Provide requested additional information to downstream providers within a reasonable timeframe and no later than 14 days of receiving the request, save for exceptional circumstances"
   ],
   "penalties_summary": null,
-  "implementation_notes": "This is a voluntary Code of Practice under Article 53 AI Act. Adherence does not constitute conclusive evidence of compliance with AI Act obligations. Open-source model providers are exempt from Measures 1.1-1.3 unless the model poses systemic risk. Confidentiality protections apply per Article 78 AI Act. A fillable Model Documentation Form is provided as a compliance tool.",
-  "confidence": 0.9
+  "implementation_notes": "This Transparency Chapter of the EU GPAI Code of Practice sets out three voluntary Measures (1.1–1.3) and a Model Documentation Form to help Signatories demonstrate compliance with Article 53(1)(a)–(b) and Annexes XI (Section 1) and XII of the EU AI Act, though adherence does not constitute conclusive evidence of compliance. Free and open-source GPAI models satisfying Article 53(2) AI Act are exempt unless they are GPAI models with systemic risk; systemic-risk documentation under Annex XI Section 2 is addressed separately in Measure 10.1 of the Safety and Security Chapter. Information for the AI Office or national competent authorities is provided only upon formal request, and recipients must uphold confidentiality and cybersecurity safeguards under Articles 53(7) and 78 AI Act.",
+  "confidence": 0.95
 }

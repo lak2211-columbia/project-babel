@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { CopyButton } from "@/app/_components/copy-button";
 import { TopNav } from "@/app/_components/top-nav";
+import { getGoldSetEvaluation } from "@/lib/eval-data";
 import { formatObservatoryBibtex } from "@/lib/export-formatters";
 import {
   frameAbbr,
@@ -25,6 +26,8 @@ import { allFrameLabels, frameLabels } from "@/lib/seed-data";
 import {
   BINDING_LEVEL_LABELS,
   CANONICAL_THRESHOLDS,
+  formatModelDisplayName,
+  formatModelList,
   TAXONOMY_SCHEMA_VERSION,
 } from "@/lib/taxonomy-vocab";
 
@@ -37,10 +40,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/methodology" },
 };
 
+function fmtMetric(val: number | null): string {
+  return val !== null ? val.toFixed(3) : "—";
+}
+
+function fmtCI(ci: [number, number] | null): string {
+  return ci ? `[${ci[0].toFixed(3)}, ${ci[1].toFixed(3)}]` : "—";
+}
+
 export default async function MethodologyPage() {
-  const [headline, all] = await Promise.all([
+  const [headline, all, goldSet] = await Promise.all([
     getOverviewData("headline"),
     getOverviewData("all"),
+    getGoldSetEvaluation(),
   ]);
 
   const bibtex = formatObservatoryBibtex({
@@ -52,6 +64,7 @@ export default async function MethodologyPage() {
 
   const prov = headline.provenanceSummary;
   const nullCal = headline.nullCalibration;
+  const activeModelsDisplay = formatModelList(prov.models);
 
   return (
     <main className="min-h-screen bg-[#0a0f18] font-sans text-[14px] text-[#cdd6e1]">
@@ -99,8 +112,8 @@ export default async function MethodologyPage() {
                 All structured labels and evidence quotes currently displayed in
                 the observatory are{" "}
                 <strong className="font-medium text-[#f8fafc]">
-                  machine-coded using Anthropic Claude Sonnet 4.6 without an
-                  active human review queue
+                  machine-coded using {activeModelsDisplay} without an active
+                  human review queue
                 </strong>
                 . Confidence scores displayed across the site are{" "}
                 <strong className="font-medium text-[#f8fafc]">
@@ -190,7 +203,9 @@ export default async function MethodologyPage() {
                 </dd>
                 <dt className="text-[#94a3b8]">Recorded models</dt>
                 <dd className="font-mono text-[#e2e8f0]">
-                  {prov.models.join(", ") || "claude-sonnet-4-6 (legacy)"}
+                  {prov.models.length > 0
+                    ? prov.models.map((m) => formatModelDisplayName(m)).join(", ")
+                    : "unrecorded (legacy v1)"}
                 </dd>
                 <dt className="text-[#94a3b8]">Persisted grounding ratio</dt>
                 <dd className="font-mono tabular-nums text-[#e2e8f0]">
@@ -201,6 +216,125 @@ export default async function MethodologyPage() {
               </dl>
             </div>
           </div>
+
+          {/* Live Starter Gold-Set Benchmark Scorecard (Stage 4A / D12) */}
+          {goldSet ? (
+            <div className="mt-4 rounded-[2px] border border-white/10 bg-[#0a0f18] p-3.5">
+              <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-white/10 pb-2">
+                <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-[#67e8f9]">
+                  starter gold-set benchmark scorecard · n={goldSet.evaluatedCount}
+                </p>
+                <span className="font-mono text-[11px] text-[#94a3b8]">
+                  status: {goldSet.benchmarkStatus}
+                  {goldSet.model
+                    ? ` · ${formatModelDisplayName(goldSet.model)}`
+                    : ""}
+                  {goldSet.bootstrapIterations > 0
+                    ? ` · ${goldSet.bootstrapIterations} bootstrap draws`
+                    : ""}
+                </span>
+              </div>
+              <div className="mt-2.5 overflow-x-auto">
+                <table className="w-full text-left font-mono text-[12px]">
+                  <thead>
+                    <tr className="border-b border-white/10 text-[11px] uppercase tracking-wider text-[#94a3b8]">
+                      <th className="pb-1.5 pr-3 font-medium">dimension</th>
+                      <th className="pb-1.5 pr-3 text-right font-medium">
+                        micro P / R
+                      </th>
+                      <th className="pb-1.5 pr-3 text-right font-medium">
+                        primary metric
+                      </th>
+                      <th className="pb-1.5 pr-3 text-right font-medium">
+                        95% bootstrap CI
+                      </th>
+                      <th className="pb-1.5 text-right font-medium">
+                        macro F1 / κ
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5">
+                    <tr>
+                      <td className="py-1.5 pr-3 font-sans text-[#f1f5f9]">
+                        Safeguard requirements
+                      </td>
+                      <td className="py-1.5 pr-3 text-right tabular-nums text-[#cbd5e1]">
+                        {fmtMetric(goldSet.requirementMicroPrecision)} /{" "}
+                        {fmtMetric(goldSet.requirementMicroRecall)}
+                      </td>
+                      <td className="py-1.5 pr-3 text-right font-semibold tabular-nums text-[#67e8f9]">
+                        F1 {fmtMetric(goldSet.requirementMicroF1)}
+                      </td>
+                      <td className="py-1.5 pr-3 text-right tabular-nums text-[#94a3b8]">
+                        {fmtCI(goldSet.bootstrap95CI.requirementMicroF1)}
+                      </td>
+                      <td className="py-1.5 text-right tabular-nums text-[#cbd5e1]">
+                        macro {fmtMetric(goldSet.requirementMacroF1)}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="py-1.5 pr-3 font-sans text-[#f1f5f9]">
+                        Enforcement mechanisms
+                      </td>
+                      <td className="py-1.5 pr-3 text-right tabular-nums text-[#cbd5e1]">
+                        {fmtMetric(goldSet.enforcementMicroPrecision)} /{" "}
+                        {fmtMetric(goldSet.enforcementMicroRecall)}
+                      </td>
+                      <td className="py-1.5 pr-3 text-right font-semibold tabular-nums text-[#67e8f9]">
+                        F1 {fmtMetric(goldSet.enforcementMicroF1)}
+                      </td>
+                      <td className="py-1.5 pr-3 text-right tabular-nums text-[#94a3b8]">
+                        {fmtCI(goldSet.bootstrap95CI.enforcementMicroF1)}
+                      </td>
+                      <td className="py-1.5 text-right tabular-nums text-[#cbd5e1]">
+                        macro {fmtMetric(goldSet.enforcementMacroF1)}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="py-1.5 pr-3 font-sans text-[#f1f5f9]">
+                        Dominant risk frame
+                      </td>
+                      <td className="py-1.5 pr-3 text-right text-[#94a3b8]">
+                        —
+                      </td>
+                      <td className="py-1.5 pr-3 text-right font-semibold tabular-nums text-[#38bdf8]">
+                        acc {fmtMetric(goldSet.dominantFrameAccuracy)}
+                      </td>
+                      <td className="py-1.5 pr-3 text-right tabular-nums text-[#94a3b8]">
+                        {fmtCI(goldSet.bootstrap95CI.dominantFrameAccuracy)}
+                      </td>
+                      <td className="py-1.5 text-right tabular-nums text-[#cbd5e1]">
+                        κ {fmtMetric(goldSet.dominantFrameCohensKappa)}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="py-1.5 pr-3 font-sans text-[#f1f5f9]">
+                        Binding strength
+                      </td>
+                      <td className="py-1.5 pr-3 text-right text-[#94a3b8]">
+                        —
+                      </td>
+                      <td className="py-1.5 pr-3 text-right font-semibold tabular-nums text-[#38bdf8]">
+                        acc {fmtMetric(goldSet.bindingStrengthAccuracy)}
+                      </td>
+                      <td className="py-1.5 pr-3 text-right tabular-nums text-[#94a3b8]">
+                        {fmtCI(goldSet.bootstrap95CI.bindingStrengthAccuracy)}
+                      </td>
+                      <td className="py-1.5 text-right tabular-nums text-[#cbd5e1]">
+                        κ {fmtMetric(goldSet.bindingStrengthCohensKappa)}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-2 text-[12px] text-[#94a3b8]">
+                Caveat: Evaluated on the internal {goldSet.evaluatedCount}-document
+                starter set ({goldSet.benchmarkStatus}) across US, EU, KR, JP,
+                and CN — intended for automated pipeline regression testing
+                rather than blind external inter-rater certification.
+              </p>
+            </div>
+          ) : null}
         </section>
 
         {/* 2. Equations & Population Filter + Null Calibration (B2, B3, B4) */}

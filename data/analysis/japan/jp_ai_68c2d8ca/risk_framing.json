@@ -2,36 +2,65 @@
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
     "economic_competitiveness",
-    "consumer_public_safety",
-    "national_security"
+    "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
     "economic_competitiveness": 0.55,
-    "fundamental_rights": 0.0,
+    "fundamental_rights": 0.3,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.55,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.05,
     "social_stability": 0.0,
     "innovation_enablement": 0.65,
-    "consumer_public_safety": 0.3,
-    "labor_transition": 0.1
+    "consumer_public_safety": 0.15,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around enabling rapid AI adoption and social implementation ('world's most AI-friendly country for development and utilization', promoting generative AI deployment programs, and accelerating nationwide AI implementation), with national economic competitiveness as a closely paired secondary rationale.",
+  "rationale_summary": "The minutes overwhelmingly frame AI governance around innovation_enablement: accelerating nationwide AI implementation to address social and regional challenges, reviewing regulations and customs to remove adoption friction, having the government lead by example through procurement and horizontal deployment across ministries, and incentivizing generative AI adoption (GENIAC-PRIZE). It edges out economic_competitiveness, which appears primarily in the closing ambition to make Japan the most AI-friendly country in the world for development and utilization, and consumer_public_safety, which appears as a supporting condition through verifying safety during deployment, addressing deepfake pornography risks, and managing unexpected operational developments amid rapid technological change. Fundamental rights is only briefly touched upon via a passing reference to a human-centric approach in Diet deliberations.",
   "evidence_spans": [
     {
-      "quote": "「世界で最もＡＩを開発・活用しやすい国」を目指して取り組む",
-      "source_section": "6.議事要旨"
+      "quote": "総理からAI法案の速やかな成立、AIを活用した地方創生の推進、\nAI活用を進めるための規制や慣習の見直し、フィジカルAIの取り組みの加速などに\nついて言及があったことなどについて、ご発言があった。",
+      "source_section": "Page 2",
+      "quote_en": "There were remarks noting that the Prime Minister mentioned the prompt passage of the AI Bill, the promotion of regional revitalization utilizing AI, the review of regulations and customs to advance AI utilization, and the acceleration of physical AI initiatives.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1365,
+      "end_char": 1463
     },
     {
-      "quote": "生成AIの社会実装の推進のための懸賞金活用型プログラム",
-      "source_section": "議題"
+      "quote": "今後様々な社会課題に対して、どのようにAIを実装してい\nくかが課題であり、デジタル庁が中心となって安全性を確認しながら、各省庁への\n水平展開を図り、政府が率先してＡＩを実践することにより、日本全体でのＡＩの\n実装の加速に繋げていきたいことなどについて、ご発言があった。",
+      "source_section": "Page 2",
+      "quote_en": "There were remarks stating that the challenge going forward is how to implement AI to address various social issues, and that with the Digital Agency taking the lead in confirming safety while promoting horizontal deployment across ministries, the government aims to lead by example in practicing AI and thereby accelerate AI implementation across Japan as a whole.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1474,
+      "end_char": 1608
     },
     {
-      "quote": "日本全体でのＡＩの実装の加速に繋げていきたい",
-      "source_section": "6.議事要旨"
+      "quote": "さらに、「統\n合イノベーション戦略」において、ＡＩに関する施策をしっかりと盛り込み、「世\n界で最もＡＩを開発・活用しやすい国」を目指して取り組む旨を述べ、閉会した。",
+      "source_section": "Page 3",
+      "quote_en": "Furthermore, he stated that AI-related measures will be firmly incorporated into the 'Integrated Innovation Strategy' and that efforts will be made aiming to become 'the most AI-friendly country in the world for developing and utilizing AI,' and then closed the meeting.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 2338,
+      "end_char": 2420
     },
     {
-      "quote": "ＡＩは技術変化が速く想定外の事態も起こり得るため、既存の法令やガイドラインの運用",
-      "source_section": "6.議事要旨"
+      "quote": "ＡＩ法案について衆議院の審議\nでは、人間中心の考え方や自治体等におけるＡＩの活用策、リスク対応としてのデ\nィープフェイクポルノ等の扱いについて話題となったこと、また、ＡＩは技術変化\nが速く想定外の事態も起こり得るため、既存の法令やガイドラインの運用、実態把\n握等を、引き続き緊密な連携の下で進めるよう関係省庁へ依頼した。",
+      "source_section": "Page 3",
+      "quote_en": "Regarding the AI Bill, he noted that deliberations in the House of Representatives discussed a human-centric approach, measures for AI utilization by local governments, and the handling of deepfake pornography and similar issues as risk responses; furthermore, because AI technology changes rapidly and unexpected situations may occur, he requested relevant ministries to continue operating existing laws and guidelines and monitoring actual conditions in close coordination.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 2178,
+      "end_char": 2338
     }
   ]
 }

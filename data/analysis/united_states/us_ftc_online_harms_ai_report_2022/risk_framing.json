@@ -1,40 +1,85 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "fundamental_rights",
   "secondary_frames": [
-    "fundamental_rights",
-    "social_stability"
+    "consumer_public_safety",
+    "social_stability",
+    "national_security"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.03,
-    "national_security": 0.07,
-    "economic_competitiveness": 0.04,
-    "fundamental_rights": 0.2,
-    "social_stability": 0.15,
-    "innovation_enablement": 0.05,
-    "consumer_public_safety": 0.55,
-    "labor_transition": 0.01
+    "existential_catastrophic": 0.0,
+    "national_security": 0.45,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.95,
+    "social_stability": 0.78,
+    "innovation_enablement": 0.2,
+    "consumer_public_safety": 0.93,
+    "labor_transition": 0.2
   },
-  "rationale_summary": "The document is primarily framed around consumer and public safety: the FTC's congressional mandate centers on whether AI can identify and address specified harms to individuals online—scams, deepfakes, CSAM, harassment, illegal drug sales, etc. The report consistently evaluates AI tools through the lens of consumer protection, harm reduction, and public safety outcomes. Secondary framing includes fundamental rights (bias, discrimination, censorship, First Amendment concerns, appeal rights) and social stability (disinformation, hate crimes, violent extremism, election integrity).",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.04,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.44,
+    "social_stability": 0.14,
+    "innovation_enablement": 0.0,
+    "consumer_public_safety": 0.38,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The FTC Report to Congress is dominantly framed around fundamental_rights, warning that automated content-moderation tools remain rudimentary and can exacerbate algorithmic bias and discrimination against marginalized communities, chill First Amendment protected speech through overblocking, incentivize invasive commercial surveillance eroding user privacy, and deprive affected individuals of due process, explainability, contestability, and redress. Fundamental_rights narrowly edges out consumer_public_safety because while the report surveys severe online consumer harms, the FTC's core governance argument in the Executive Summary and Recommendations centers on rights-based transparency, accountability, non-discrimination, privacy, and free-speech guardrails against over-reliance on AI filtering. Consumer_public_safety is a close runner-up covering online scams, deceptive dark patterns, fake reviews, counterfeits, opioids, CSAM, revenge porn, and harassment, supported by social_stability (election disinformation, violent extremism, public trust, and the 'Liar's Dividend') and a minor national_security thread (foreign influence operations and counterterrorism).",
   "evidence_spans": [
     {
-      "quote": "Congress directed the Federal Trade Commission to study and report on whether and how artificial intelligence (AI) 'may be used to identify, remove, or take any other appropriate action necessary to address' a wide variety of specified 'online harms.'",
-      "source_section": "I. INTRODUCTION"
+      "quote": "Even with good intentions, their use can also lead to exacerbating harms via bias, discrimination, and censorship.",
+      "source_section": "Page 9",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 24175,
+      "end_char": 24289
     },
     {
-      "quote": "The key conclusion of this report is thus that governments, platforms, and others must exercise great caution in either mandating the use of, or over-relying on, these tools even for the important purpose of reducing harms.",
-      "source_section": "II. EXECUTIVE SUMMARY"
+      "quote": "Further, in the United States, such mandates would likely run into First Amendment issues, at least to the extent that the requirements impact legally protected speech.",
+      "source_section": "Page 12",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 34974,
+      "end_char": 35142
     },
     {
-      "quote": "these tools remain largely rudimentary, have substantial limitations, and may never be appropriate in some cases as an alternative to human judgment. Their use — both now and in the future — raises a host of persistent legal and policy concerns.",
-      "source_section": "II. EXECUTIVE SUMMARY"
+      "quote": "Of the harms specified by Congress, deception is the most central to the Commission’s consumer protection mission.",
+      "source_section": "Page 12",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 36049,
+      "end_char": 36163
     },
     {
-      "quote": "The use of AI in the automated detection of online harms is certainly not immune to these issues. For example, large language models used to moderate online content can result in biased and discriminatory results",
-      "source_section": "IV.A Avoiding over-reliance"
+      "quote": "Congress refers specifically to content that is deceptive, fraudulent, manipulated, or illegal, and to particular examples such as scams, deepfakes, fake reviews, opioid sales, child sexual exploitation, revenge pornography, harassment, hate crimes, and the glorification or incitement of violence.",
+      "source_section": "Page 4",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3852,
+      "end_char": 4150
     },
     {
-      "quote": "When the use of an AI detection tool results in false positives, or overblocking, it may serve to reduce freedom of expression. This problem is especially acute when those silenced are members of historically marginalized communities.",
-      "source_section": "IV.A Avoiding over-reliance"
+      "quote": "A separate, oft-cited concern raised by Professors Chesney and Citron involves what they coined the “Liar’s Dividend,” a dilemma arising from how increased public knowledge of deepfakes",
+      "source_section": "Page 17",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 54247,
+      "end_char": 54432
+    },
+    {
+      "quote": "The Technology Engagement Team (TET) of the State Department’s Global Engagement Center\n(GEC) defends against foreign disinformation and propaganda by leading efforts to address the problem via technological innovation.",
+      "source_section": "Page 38",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 132684,
+      "end_char": 132903
     }
   ]
 }

@@ -4,153 +4,258 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "united_states",
-    "issuing_body": "The White House (OSTP / NSC)",
+    "issuing_body": "Executive Office of the President",
     "document_type": "strategy_paper",
     "binding_strength": "strategy_statement",
-    "publication_date": "2025-07",
+    "publication_date": "2025-07-23",
     "effective_date": null,
+    "covered_actors": [
+      "Executive Office of the President (OSTP, OMB, NSC, Special Advisor for AI and Crypto, APST, APNSA, Office of the National Cyber Director)",
+      "Federal departments and agencies (DOC/NIST/CAISI/NTIA/BIS/CHIPS Program Office, DOD/DARPA, DOE, DHS/CISA, DOJ, DOL/BLS, ED, DOS, Treasury, GSA, OPM, NSF, ODNI/IC, FDA, SEC, FCC, FTC, USDA, NIH, DOI)",
+      "U.S. AI developers (including frontier LLM and open-source/open-weight developers), startups, cloud/compute providers, and semiconductor manufacturers",
+      "Critical infrastructure owners, data center developers, and electric-grid operators",
+      "Nucleic acid synthesis providers and federally funded research institutions",
+      "State and local governments, courts, workforce training providers, and international allies and partners"
+    ],
     "covered_application_domains": [
       "general_purpose_models",
       "critical_infrastructure",
-      "defense",
       "public_sector_use",
+      "defense",
       "healthcare",
       "finance",
       "education",
-      "biometrics"
+      "employment",
+      "law_enforcement"
+    ],
+    "prohibited_practices": [
+      "Federal contracting with frontier LLM developers whose systems are not objective and free from top-down ideological bias (recommended federal procurement rule)",
+      "Incorporating foreign adversary ICTS hardware or software into domestic AI computing stacks, energy, and telecommunications infrastructure, or allowing U.S. adversaries to supply allied defense-industrial bases or acquire controlling stakes in defense suppliers",
+      "Diverting export-controlled U.S.-origin advanced AI compute chips and semiconductor manufacturing sub-systems to countries of concern"
     ],
     "safety_requirements": [
       {
-        "label": "risk_assessment",
-        "confidence": 0.85,
+        "label": "frontier_safety_evaluation",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
             "quote": "Evaluate frontier AI systems for national security risks in partnership with frontier AI developers, led by CAISI at DOC in collaboration with other agencies with relevant expertise in CBRNE and cyber risks.",
-            "source_section": "Pillar III - Ensure that the U.S. Government is at the Forefront of Evaluating National Security Risks in Frontier Models"
+            "source_section": "Page 25",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 65475,
+            "end_char": 65682
           },
           {
-            "quote": "The most powerful AI systems may pose novel national security risks in the near future in areas such as cyberattacks and the development of chemical, biological, radiological, nuclear, or explosives (CBRNE) weapons",
-            "source_section": "Pillar III"
-          }
-        ]
-      },
-      {
-        "label": "pre_deployment_testing",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "Build an AI Evaluations Ecosystem... Rigorous evaluations can be a critical tool in defining and measuring AI reliability and performance in regulated industries.",
-            "source_section": "Pillar I - Build an AI Evaluations Ecosystem"
-          },
-          {
-            "quote": "Establish regulatory sandboxes or AI Centers of Excellence around the country where researchers, startups, and established enterprises can rapidly deploy and test AI tools",
-            "source_section": "Pillar I - Enable AI Adoption"
-          }
-        ]
-      },
-      {
-        "label": "red_teaming",
-        "confidence": 0.75,
-        "evidence": [
-          {
-            "quote": "the DOD, DOE, CAISI at DOC, the Department of Homeland Security (DHS), NSF, and academic partners should coordinate an AI hackathon initiative to solicit the best and brightest from U.S. academia to test AI systems for transparency, effectiveness, use control, and security vulnerabilities.",
-            "source_section": "Pillar I - Invest in AI Interpretability, Control, and Robustness Breakthroughs"
-          }
-        ]
-      },
-      {
-        "label": "incident_reporting",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "Modify the Cybersecurity and Infrastructure Security Agency's Cybersecurity Incident & Vulnerability Response Playbooks to incorporate considerations for AI systems",
-            "source_section": "Pillar II - Promote Mature Federal Capacity for AI Incident Response"
-          },
-          {
-            "quote": "Promote Mature Federal Capacity for AI Incident Response... the U.S. government should promote the development and incorporation of AI Incident Response actions into existing incident response doctrine",
-            "source_section": "Pillar II"
-          }
-        ]
-      },
-      {
-        "label": "transparency_disclosure",
-        "confidence": 0.65,
-        "evidence": [
-          {
-            "quote": "Led by NIST at DOC, consider developing NIST's Guardians of Forensic Evidence deepfake evaluation program into a formal guideline and a companion voluntary forensic benchmark.",
-            "source_section": "Pillar I - Combat Synthetic Media in the Legal System"
-          },
-          {
-            "quote": "Publish guidelines and resources through NIST at DOC, including CAISI, for Federal agencies to conduct their own evaluations of AI systems",
-            "source_section": "Pillar I - Build an AI Evaluations Ecosystem"
-          }
-        ]
-      },
-      {
-        "label": "model_documentation",
-        "confidence": 0.6,
-        "evidence": [
-          {
-            "quote": "Require federally funded researchers to disclose non-proprietary, non-sensitive datasets that are used by AI models during the course of research and experimentation.",
-            "source_section": "Pillar I - Invest in AI-Enabled Science"
-          }
-        ]
-      },
-      {
-        "label": "access_controls",
-        "confidence": 0.75,
-        "evidence": [
-          {
-            "quote": "Maintain security guardrails to prohibit adversaries from inserting sensitive inputs to this infrastructure. Ensure that the domestic AI computing stack is built on American products",
-            "source_section": "Pillar II - Create Streamlined Permitting"
-          },
-          {
-            "quote": "Require all institutions receiving Federal funding for scientific research to use nucleic acid synthesis tools and synthesis providers that have robust nucleic acid sequence screening and customer verification procedures.",
-            "source_section": "Pillar III - Invest in Biosecurity"
+            "quote": "Led by CAISI at DOC in collaboration with national security agencies, evaluate and assess potential security vulnerabilities and malign foreign influence arising from the use of adversaries’ AI systems in critical infrastructure and elsewhere in the American economy, including the possibility of backdoors and other malicious behavior.",
+            "source_section": "Page 25",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 65685,
+            "end_char": 66021
           }
         ]
       },
       {
         "label": "compute_governance",
-        "confidence": 0.85,
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
             "quote": "Led by DOC, OSTP, and NSC in collaboration with industry, explore leveraging new and existing location verification features on advanced AI compute to ensure that the chips are not in countries of concern.",
-            "source_section": "Pillar III - Strengthen AI Compute Export Control Enforcement"
+            "source_section": "Page 24",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 61273,
+            "end_char": 61478
           },
           {
-            "quote": "Establish a new effort led by DOC to collaborate with IC officials on global chip export control enforcement.",
-            "source_section": "Pillar III - Strengthen AI Compute Export Control Enforcement"
+            "quote": "Establish a new effort led by DOC to collaborate with IC officials on global chip export control enforcement. This would include monitoring emerging technology developments in AI compute to ensure full coverage of possible countries or regions where chips are being diverted.",
+            "source_section": "Page 24",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 61481,
+            "end_char": 61756
           }
         ]
       },
       {
-        "label": "content_provenance",
-        "confidence": 0.7,
+        "label": "open_weight_obligations",
+        "confidence": 0.82,
+        "obligation_strength": "aspirational",
         "evidence": [
           {
-            "quote": "Led by NIST at DOC, consider developing NIST's Guardians of Forensic Evidence deepfake evaluation program into a formal guideline",
-            "source_section": "Pillar I - Combat Synthetic Media in the Legal System"
+            "quote": "While the decision of whether and how to release an open or closed model is fundamentally up to the developer, the Federal government should create a supportive environment for open models.",
+            "source_section": "Page 7",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15297,
+            "end_char": 15486
+          },
+          {
+            "quote": "Led by DOC through the National Telecommunications and Information Administration (NTIA), convene stakeholders to help drive adoption of open-source and open-weight models by small and medium-sized businesses.",
+            "source_section": "Page 8",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16995,
+            "end_char": 17204
           }
         ]
       },
       {
-        "label": "human_oversight",
-        "confidence": 0.65,
+        "label": "incident_reporting",
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "All use of AI in safety-critical or homeland security applications should entail the use of secure-by-design, robust, and resilient AI systems that are instrumented to detect performance shifts, and alert to potential malicious activities",
-            "source_section": "Pillar II - Bolster Critical Infrastructure Cybersecurity"
+            "quote": "Establish an AI Information Sharing and Analysis Center (AI-ISAC), led by DHS, in collaboration with CAISI at DOC and the Office of the National Cyber Director, to promote the sharing of AI-security threat information and intelligence across U.S. critical infrastructure sectors.",
+            "source_section": "Page 21",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 54781,
+            "end_char": 55060
+          },
+          {
+            "quote": "Modify the Cybersecurity and Infrastructure Security Agency’s Cybersecurity Incident & Vulnerability Response Playbooks to incorporate considerations for AI systems and to include requirements for Chief Information Security Officers to consult with Chief AI Officers, Senior Agency Officials for Privacy, CAISI at DOC, and other agency officials as appropriate.",
+            "source_section": "Page 22",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 57145,
+            "end_char": 57506
           }
         ]
       },
       {
-        "label": "third_party_audit",
-        "confidence": 0.5,
+        "label": "access_controls",
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Convene meetings at least twice per year under the auspices of CAISI at DOC for Federal agencies and the research community to share learnings and best practices on building AI evaluations.",
-            "source_section": "Pillar I - Build an AI Evaluations Ecosystem"
+            "quote": "Create new technical standards for high-security AI data centers, led by DOD, the IC, NSC, and NIST at DOC, including CAISI, in collaboration with industry and, as appropriate, relevant Federally Funded Research and Development Centers.",
+            "source_section": "Page 19",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 49870,
+            "end_char": 50106
+          },
+          {
+            "quote": "All use of AI in safety-critical or homeland security applications should entail the use of secure-by-design, robust, and resilient AI systems that are instrumented to detect performance shifts, and alert to potential malicious activities like data poisoning or adversarial example attacks.",
+            "source_section": "Page 21",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 54461,
+            "end_char": 54751
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Publish guidelines and resources through NIST at DOC, including CAISI, for Federal agencies to conduct their own evaluations of AI systems for their distinct missions and operations and for compliance with existing law.",
+            "source_section": "Page 13",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 32183,
+            "end_char": 32402
+          },
+          {
+            "quote": "Invest, via DOE and NSF, in the development of AI testbeds for piloting AI systems in secure, real-world settings, allowing researchers to prototype new AI systems and translate them to the market.",
+            "source_section": "Page 13",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 32743,
+            "end_char": 32940
+          }
+        ]
+      },
+      {
+        "label": "red_teaming",
+        "confidence": 0.82,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "The DOD, DOE, CAISI at DOC, the Department of Homeland Security (DHS), NSF, and academic partners should coordinate an AI hackathon initiative to solicit the best and brightest from U.S. academia to test AI systems for transparency, effectiveness, use control, and security vulnerabilities.",
+            "source_section": "Page 13",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 31499,
+            "end_char": 31789
+          },
+          {
+            "quote": "Launch a technology development program led by the Defense Advanced Research Projects Agency in collaboration with CAISI at DOC and NSF, to advance AI interpretability, AI control systems, and adversarial robustness.",
+            "source_section": "Page 12",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 31030,
+            "end_char": 31246
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Require federally funded researchers to disclose non-proprietary, non-sensitive datasets that are used by AI models during the course of research and experimentation.",
+            "source_section": "Page 11",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27348,
+            "end_char": 27514
+          },
+          {
+            "quote": "Direct the National Science and Technology Council (NSTC) Machine Learning and AI Subcommittee to make recommendations on minimum data quality standards for the use of biological, materials science, chemical, physical, and other scientific data modalities in AI model training.",
+            "source_section": "Page 11",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28079,
+            "end_char": 28356
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.83,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Led by the Department of Commerce (DOC) through the National Institute of Standards and Technology (NIST), revise the NIST AI Risk Management Framework to eliminate references to misinformation, Diversity, Equity, and Inclusion, and climate change.",
+            "source_section": "Page 7",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13652,
+            "end_char": 13900
+          },
+          {
+            "quote": "Led by ODNI in consultation with DOD and CAISI at DOC, publish an IC Standard on AI Assurance under the auspices of Intelligence Community Directive 505 on Artificial Intelligence.",
+            "source_section": "Page 21",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 56177,
+            "end_char": 56357
           }
         ]
       }
@@ -158,99 +263,213 @@
     "enforcement_mechanisms": [
       {
         "label": "procurement_condition",
-        "confidence": 0.85,
+        "confidence": 0.94,
         "evidence": [
           {
             "quote": "Update Federal procurement guidelines to ensure that the government only contracts with frontier large language model (LLM) developers who ensure that their systems are objective and free from top-down ideological bias.",
-            "source_section": "Pillar I - Ensure that Frontier AI Protects Free Speech and American Values"
+            "source_section": "Page 7",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13905,
+            "end_char": 14124
           },
           {
-            "quote": "work with Federal agencies that have AI-related discretionary funding programs to ensure...that they consider a state's AI regulatory climate when making funding decisions and limit funding if the state's AI regulatory regimes may hinder the effectiveness",
-            "source_section": "Pillar I - Remove Red Tape and Onerous Regulation"
+            "quote": "Require all institutions receiving Federal funding for scientific research to use nucleic acid synthesis tools and synthesis providers that have robust nucleic acid sequence screening and customer verification procedures. Create enforcement mechanisms for this requirement rather than relying on voluntary attestation.",
+            "source_section": "Page 26",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 67252,
+            "end_char": 67570
           }
         ]
       },
       {
         "label": "market_access_restriction",
-        "confidence": 0.8,
+        "confidence": 0.92,
         "evidence": [
           {
-            "quote": "Strengthen AI Compute Export Control Enforcement... Denying our foreign adversaries access to this resource, then, is a matter of both geostrategic competition and national security.",
-            "source_section": "Pillar III - Strengthen AI Compute Export Control Enforcement"
+            "quote": "Led by DOC, develop new export controls on semiconductor manufacturing sub-systems. Currently, the United States and its allies impose export controls on major systems necessary for semiconductor manufacturing, but do not control many of the component sub-systems.",
+            "source_section": "Page 24",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 62739,
+            "end_char": 63003
           },
           {
-            "quote": "develop new export controls on semiconductor manufacturing sub-systems",
-            "source_section": "Pillar III - Plug Loopholes in Existing Semiconductor Manufacturing Export Controls"
-          }
-        ]
-      },
-      {
-        "label": "reporting_obligation",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "Require all institutions receiving Federal funding for scientific research to use nucleic acid synthesis tools and synthesis providers that have robust nucleic acid sequence screening and customer verification procedures. Create enforcement mechanisms for this requirement rather than relying on voluntary attestation.",
-            "source_section": "Pillar III - Invest in Biosecurity"
+            "quote": "We should encourage partners and allies to follow U.S. controls, and not backfill. If they do, America should use tools such as the Foreign Direct Product Rule and secondary tariffs to achieve greater international alignment.",
+            "source_section": "Page 24",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 63109,
+            "end_char": 63334
           }
         ]
       },
       {
         "label": "soft_enforcement",
-        "confidence": 0.75,
+        "confidence": 0.9,
         "evidence": [
           {
-            "quote": "Led by NIST at DOC, consider developing NIST's Guardians of Forensic Evidence deepfake evaluation program into a formal guideline and a companion voluntary forensic benchmark.",
-            "source_section": "Pillar I - Combat Synthetic Media in the Legal System"
+            "quote": "The Action Plan’s objective is to articulate policy recommendations that this Administration can deliver for the American people to achieve the President’s vision of global AI dominance.",
+            "source_section": "Page 5",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9559,
+            "end_char": 9745
           },
           {
-            "quote": "These frameworks would provide voluntary guidance that may inform curriculum design, credential development, and alignment of workforce investments.",
-            "source_section": "Pillar II - Train a Skilled Workforce"
+            "quote": "Establish regulatory sandboxes or AI Centers of Excellence around the country where researchers, startups, and established enterprises can rapidly deploy and test AI tools while committing to open sharing of data and results.",
+            "source_section": "Page 8",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17890,
+            "end_char": 18115
           }
         ]
       }
     ],
-    "implementation_notes": "This is a White House strategy/action plan, not binding law or regulation. Most requirements are framed as 'recommended policy actions' to be led by various federal agencies. The document is strongly pro-innovation and deregulatory in posture, explicitly rejecting the prior administration's EO 14110. Binding force is limited to actions already taken via executive order (e.g., EO 14179, TAKE IT DOWN Act). Enforcement mechanisms are primarily export controls (existing statutory authority) and procurement conditions. Safety requirements largely target national security domains rather than general commercial AI deployment. Confidence reflects that this is a strategy document with aspirational rather than operative legal effect.",
-    "confidence": 0.82
+    "enforcement_authorities": [
+      "Office of Management and Budget (OMB)",
+      "Department of Commerce (DOC) — Bureau of Industry and Security (BIS), NIST, CAISI, NTIA, CHIPS Program Office",
+      "Department of Defense (DOD) and Office of the Director of National Intelligence (ODNI)",
+      "Department of Homeland Security (DHS) / Cybersecurity and Infrastructure Security Agency (CISA)",
+      "Department of State (DOS)",
+      "Department of Justice (DOJ)",
+      "Federal Trade Commission (FTC), Federal Communications Commission (FCC), Food and Drug Administration (FDA), Securities and Exchange Commission (SEC)",
+      "Department of Labor (DOL) and Department of the Treasury"
+    ],
+    "compliance_deadlines": [
+      "At least twice per year: CAISI at DOC to convene Federal agencies and the research community to share AI evaluation learnings and best practices"
+    ],
+    "penalties_summary": "As an executive strategy paper, the Action Plan imposes no standalone statutory fines, but recommends enforceable federal funding and trade levers: limiting AI-related federal discretionary funding to states with burdensome AI regimes, conditioning federal LLM procurement on ideological neutrality, tightening export controls on AI compute and semiconductor sub-systems (backed by the Foreign Direct Product Rule and secondary tariffs against allied backfilling), barring foreign adversary ICTS from domestic AI infrastructure, and creating enforceable nucleic-acid synthesis screening mandates for federally funded research institutions.",
+    "implementation_notes": "Published July 2025 pursuant to EO 14179 by APST Michael J. Kratsios, Special Advisor David O. Sacks, and APNSA Marco A. Rubio. Sets out over 90 recommended federal policy actions across three pillars: (I) Accelerate AI Innovation (deregulation, revising NIST AI RMF, supporting open-weight models, regulatory sandboxes, worker retraining/AI Workforce Research Hub, science/datasets, evaluations, federal/DOD adoption, legal deepfake forensics); (II) Build American AI Infrastructure (NEPA/FAST-41/CWA permitting reform, grid expansion, semiconductor reshoring, high-security military data centers, skilled trades apprenticeships, AI-ISAC, CISA AI incident playbooks); and (III) Lead in International AI Diplomacy and Security (full-stack AI exports, countering China in standards bodies, chip location verification and sub-system export controls, CAISI frontier CBRNE/cyber evaluations, enforceable biosecurity synthesis screening).",
+    "confidence": 0.96
   },
   "risk_framing": {
-    "dominant_frame": "national_security",
+    "dominant_frame": "economic_competitiveness",
     "secondary_frames": [
-      "economic_competitiveness",
+      "national_security",
       "innovation_enablement",
-      "labor_transition"
+      "labor_transition",
+      "existential_catastrophic"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.2,
-      "national_security": 0.85,
-      "economic_competitiveness": 0.75,
-      "fundamental_rights": 0.15,
-      "social_stability": 0.1,
-      "innovation_enablement": 0.6,
-      "consumer_public_safety": 0.2,
-      "labor_transition": 0.35
+      "existential_catastrophic": 0.72,
+      "national_security": 0.93,
+      "economic_competitiveness": 0.96,
+      "fundamental_rights": 0.45,
+      "social_stability": 0.35,
+      "innovation_enablement": 0.9,
+      "consumer_public_safety": 0.35,
+      "labor_transition": 0.85
     },
-    "rationale_summary": "The document is explicitly framed around winning a geopolitical race against adversaries, particularly China, with AI dominance described as a 'national security imperative.' While economic competitiveness and innovation enablement are strongly present, they are consistently subordinated to or integrated with national security reasoning—export controls, military AI adoption, CBRNE risk evaluations, and countering Chinese influence all reflect a security-first logic. The title 'Winning the Race' and the repeated framing of AI leadership as essential to military preeminence and preventing adversary advantage confirm national security as the dominant frame.",
+    "frame_share": {
+      "existential_catastrophic": 0.06,
+      "national_security": 0.25,
+      "economic_competitiveness": 0.3,
+      "fundamental_rights": 0.04,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.22,
+      "consumer_public_safety": 0.02,
+      "labor_transition": 0.11
+    },
+    "rationale_summary": "America's AI Action Plan is dominantly framed around economic_competitiveness, organizing all three pillars around 'winning the race' to achieve global AI dominance, exporting the full U.S. AI technology stack worldwide, reshoring semiconductor manufacturing, and ushering in an industrial revolution. Economic_competitiveness narrowly edges out national_security because global ecosystem leadership, market-standard setting, and industrial buildout frame both domestic deregulation and international alliances. National_security is a close runner-up (military preeminence, China rivalry, chip export controls, critical-infrastructure defense), paired with strong innovation_enablement (deregulation, permitting reform, sandboxes, open-weight support), an explicit labor_transition agenda (AI Workforce Research Hub, DOL rapid retraining for displaced workers, skilled-trades apprenticeships), and existential_catastrophic rationales for CAISI frontier CBRNE/cyber evaluations and nucleic-acid biosecurity screening.",
     "evidence_spans": [
       {
-        "quote": "it is a national security imperative for the United States to achieve and maintain unquestioned and unchallenged global technological dominance",
-        "source_section": "Introduction epigraph"
-      },
-      {
         "quote": "The United States is in a race to achieve global dominance in artificial intelligence (AI). Whoever has the largest AI ecosystem will set global AI standards and reap broad economic and military benefits.",
-        "source_section": "Introduction"
+        "source_section": "Page 4",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 5170,
+        "end_char": 5374
       },
       {
-        "quote": "Denying our foreign adversaries access to this resource, then, is a matter of both geostrategic competition and national security.",
-        "source_section": "Pillar III"
+        "quote": "We need to establish American AI—from our advanced semiconductors to our models to our applications—as the gold standard for AI worldwide and ensure our allies are building on American technology.",
+        "source_section": "Page 4",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 7675,
+        "end_char": 7871
       },
       {
-        "quote": "The most powerful AI systems may pose novel national security risks in the near future in areas such as cyberattacks and the development of chemical, biological, radiological, nuclear, or explosives (CBRNE) weapons",
-        "source_section": "Pillar III"
+        "quote": "As our global competitors race to exploit these technologies, it is a national security imperative for the United States to achieve and maintain unquestioned and unchallenged global technological dominance.",
+        "source_section": "Page 2",
+        "quote_en": null,
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 380,
+        "end_char": 586
       },
       {
-        "quote": "Counter Chinese Influence in International Governance Bodies",
-        "source_section": "Pillar III"
+        "quote": "The United States needs to innovate faster and more comprehensively than our competitors in the development and distribution of new AI technology across every field, and dismantle unnecessary regulatory barriers that hinder the private sector in doing so.",
+        "source_section": "Page 4",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 6788,
+        "end_char": 7043
+      },
+      {
+        "quote": "Led by DOL, leverage available discretionary funding, where appropriate, to fund rapid retraining for individuals impacted by AI-related job displacement.",
+        "source_section": "Page 10",
+        "quote_en": null,
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 22749,
+        "end_char": 22903
+      },
+      {
+        "quote": "The most powerful AI systems may pose novel national security risks in the near future in areas such as cyberattacks and the development of chemical, biological, radiological, nuclear, or explosives (CBRNE) weapons, as well as novel security vulnerabilities.",
+        "source_section": "Page 25",
+        "quote_en": null,
+        "frame": "existential_catastrophic",
+        "grounding_status": "verbatim",
+        "start_char": 64892,
+        "end_char": 65150
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:23:19.453034Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "e73e16c0217f98d891f4bfa34344dbc462a9378205f023ecdc3ce94104777b42",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 68005,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 30,
+      "exact_matches": 30,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

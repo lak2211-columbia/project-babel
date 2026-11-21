@@ -5,109 +5,189 @@
   "binding_strength": "executive_action",
   "publication_date": "2025-04-03",
   "effective_date": "2025-04-03",
+  "covered_actors": [
+    "Executive departments and agencies defined in 44 U.S.C. § 3502(1) (excluding Intelligence Community elements and National Security Systems; selected provisions apply to CFO Act agencies)",
+    "General Services Administration (GSA)",
+    "Chief AI Officer Council and Senior Agency Officials for Privacy (SAOPs)",
+    "Federal AI vendors and contractors supplying AI systems or services to covered agencies"
+  ],
   "covered_application_domains": [
-    "general_purpose_models",
     "public_sector_use",
-    "critical_infrastructure",
+    "general_purpose_models",
     "biometrics",
-    "employment",
+    "critical_infrastructure",
     "education",
-    "healthcare",
-    "finance",
-    "law_enforcement"
+    "employment",
+    "finance"
+  ],
+  "prohibited_practices": [
+    "Vendor use of nonpublic inputted agency data and outputted results to further train publicly or commercially available AI algorithms absent explicit agency consent (must be permanently prohibited in AI contracts)",
+    "Contractual provisions prohibiting acquiring agencies from internally disclosing how a vendor conducts testing or the results of vendor testing"
   ],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.9,
+      "confidence": 0.95,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "agencies must identify reasonably foreseeable use cases arising from the use of an AI system or service, and to the greatest extent practicable, make an initial determination of whether a system is likely to host high-impact AI use cases",
-          "source_section": "Section 4(a)(ii)"
+          "quote": "During this phase, agencies must identify reasonably foreseeable use cases arising from the use of an AI system or service, and to the greatest extent practicable, make an initial determination of whether a system is likely to host high-impact AI use cases, as defined by 0MB Memorandum M-2521.",
+          "source_section": "Page 7",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19954,
+          "end_char": 20248
         },
         {
-          "quote": "the team must identify potential risks to the agency's implementation of the nine principles for use of AI in government",
-          "source_section": "Section 4(a)(i)"
+          "quote": "Contracts must ensure compliance with minimum risk management practices for high-impact use cases as required under M-25-21.",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 29497,
+          "end_char": 29621
         }
       ]
     },
     {
       "label": "pre_deployment_testing",
-      "confidence": 0.9,
+      "confidence": 0.95,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "any AI systems and services operated as an information system by or on behalf of an agency must receive an authorization to operate from an appropriate agency official prior to deployment",
-          "source_section": "Section 4(e)(i)"
+          "quote": "When evaluating proposals agencies must, to the greatest extent practicable, test proposed solutions to understand the capabilities and limitations of any offered AI system or service.",
+          "source_section": "Page 9",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 26301,
+          "end_char": 26485
         },
         {
-          "quote": "agencies must, to the greatest extent practicable, test proposed solutions to understand the capabilities and limitations of any offered AI system or service",
-          "source_section": "Section 4(d)"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "agencies must disclose in solicitations whether a planned use of an AI system meets the threshold of a high-impact use case",
-          "source_section": "Section 4(c)(i)"
-        },
-        {
-          "quote": "agencies should require sufficient descriptive information from vendors to complete the required AI Impact Assessment for high-impact use cases",
-          "source_section": "Section 4(c)(i)"
+          "quote": "Agencies must use data they have defined ( e.g., agency validation and testing datasets) when conducting any independent evaluations to ensure the AI system or service is fit for purpose.",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 29928,
+          "end_char": 30115
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.8,
+      "confidence": 0.92,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "agencies, are encouraged, where appropriate, to prioritize obtaining documentation that facilitates transparency and explainability, and that ensures an adequate means of tracking performance and effectiveness for procured AI",
-          "source_section": "Section 3(d)(v)"
+          "quote": "Additionally, for AI systems with potential or expected high-impact use cases, agencies must inform vendors of reasonable transparency and documentation requirements that will be placed on the vendor to enable agency compliance with the requirements in 0MB Memorandum M-25-21.",
+          "source_section": "Page 9",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 25265,
+          "end_char": 25541
         },
         {
-          "quote": "Contracts must detail the examination, testing, and validation procedures of the vendor",
-          "source_section": "Section 4(d)(iii)(E)(III)"
+          "quote": "Contracts must detail the examination, testing, and validation procedures of the vendor and must not prohibit agencies from internally disclosing how the vendor conducts testing or the results of testing.",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 30655,
+          "end_char": 30859
         }
       ]
     },
     {
-      "label": "human_oversight",
-      "confidence": 0.85,
+      "label": "transparency_disclosure",
+      "confidence": 0.86,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "Agencies must perform effective system oversight consistent with the terms of the contract. This includes monitoring system performance to ensure that any emerging risks to privacy, civil rights, and civil liberties are identified and mitigated as appropriate",
-          "source_section": "Section 4(e)(ii)"
+          "quote": "Agencies must be cognizant of the risks posed by the unsolicited use of AI systems by vendors and determine whether there are circumstances that merit including a provision in a solicitation requiring disclosure of AI use as part of any given contract's performance.",
+          "source_section": "Page 6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17535,
+          "end_char": 17801
         },
         {
-          "quote": "Contractual terms must provide the contracting agency the ability to regularly monitor and evaluate performance, risks, and effectiveness of an AI system or service",
-          "source_section": "Section 4(d)(iii)(E)"
+          "quote": "In this context, explainability refers to an agency's ability to provide evidence or reasons for system output. A significant enabler of explainability is clear documentation that is meaningful or understandable to individual users and reflects the process for model-driven development.",
+          "source_section": "Page 6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18250,
+          "end_char": 18536
         }
       ]
     },
     {
-      "label": "incident_reporting",
-      "confidence": 0.6,
+      "label": "training_data_governance",
+      "confidence": 0.96,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "agencies should consider, where relevant, requiring vendors to provide a notification to relevant agency stakeholders prior to the integration of new AI enhancements, features, or components",
-          "source_section": "Section 4(d)(iii)(G)"
+          "quote": "Use of Government Data. Ensuring contracts permanently prohibit the use of nonpublic inputted agency data and outputted results to further train publicly or commercially available AI algorithms, consistent with applicable law, absent explicit agency consent;",
+          "source_section": "Page 6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 15553,
+          "end_char": 15811
+        },
+        {
+          "quote": "Careful consideration of respective IP licensing rights is even more important when an agency procures an AI system or service, including where agency information is used to train, finetune, and develop the AI system.",
+          "source_section": "Page 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 13290,
+          "end_char": 13507
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.7,
+      "confidence": 0.88,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "The data used when conducting independent evaluations should not be accessible to the vendor",
-          "source_section": "Section 4(d)(iii)(E)(I)"
+          "quote": "Data Handling. Providing clear guidance on handling, access, and use of agency data or information to ensure, among other purposes, that such information must only be collected and retained by a vendor when reasonably necessary to serve the intended purposes of the contract;",
+          "source_section": "Page 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14235,
+          "end_char": 14510
         },
         {
-          "quote": "ensuring contracts permanently prohibit the use of non-public inputted agency data and outputted results to further train publicly or commercially available AI algorithms",
-          "source_section": "Section 3(d)(iv)"
+          "quote": "agencies shall establish policies and processes, including contractual terms and conditions, that ensure compliance with privacy requirements in law and policy whenever agencies acquire an AI system or service, or an agency contractor uses an AI system or service, that will create, collect, use, process, store, maintain, disseminate, disclose, or dispose of Federal information containing personally identifiable information (PII).",
+          "source_section": "Page 5",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12191,
+          "end_char": 12624
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.85,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "Consistent with the requirements of 0MB Circular No. A-130 and other policies established pursuant to the Federal Information Security Modernization Act, any AI systems and services operated as an information system by or on behalf of an agency must receive an authorization to operate from an appropriate agency official prior to deployment.",
+          "source_section": "Page 11",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 31978,
+          "end_char": 32320
         }
       ]
     }
@@ -115,43 +195,67 @@
   "enforcement_mechanisms": [
     {
       "label": "procurement_condition",
-      "confidence": 0.95,
+      "confidence": 0.99,
       "evidence": [
         {
-          "quote": "Contracts must ensure compliance with minimum risk management practices for high-impact use cases as required under M-25-21",
-          "source_section": "Section 4(d)(iii)(D)"
+          "quote": "This memorandum shall apply to any contract awarded pursuant to a solicitation issued on or after the date that is 180 days after issuance of this memorandum, as well as to any option to renew or extend the period of performance exercised on an existing contract after the date that is 180 days after the issuance of this memorandum.",
+          "source_section": "Page 4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9622,
+          "end_char": 9955
         },
         {
-          "quote": "agencies must include appropriate terms related to IP rights and lawful use of government data",
-          "source_section": "Section 4(c)(iii)"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "agencies must inform vendors of reasonable transparency and documentation requirements that will be placed on the vendor to enable agency compliance with the requirements in OMB Memorandum M-25-21",
-          "source_section": "Section 4(c)(i)"
-        },
-        {
-          "quote": "Vendors must provide the access and time necessary for agencies to complete independent evaluation",
-          "source_section": "Section 4(d)(iii)(E)(II)"
+          "quote": "Contracts must ensure compliance with minimum risk management practices for high-impact use cases as required under M-25-21.",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 29497,
+          "end_char": 29621
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.75,
+      "confidence": 0.86,
       "evidence": [
         {
-          "quote": "The Chief AI Officer Council will periodically review agency processes to encourage best practices and interagency harmonization",
-          "source_section": "Section 3(d)"
+          "quote": "Agencies must perform effective system oversight consistent with the terms ofthe contract. This includes monitoring system performance to ensure that any emerging risks to privacy, civil rights, and civil liberties are identified and mitigated as appropriate.",
+          "source_section": "Page 11",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 32350,
+          "end_char": 32609
+        },
+        {
+          "quote": "Contractual terms must provide the contracting agency the ability to regularly monitor and evaluate ( e.g., on a quarterly or biannual basis, based on the needs of the program) performance, risks, and effectiveness of an AI system or service.",
+          "source_section": "Page 10",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 29657,
+          "end_char": 29899
         }
       ]
     }
   ],
-  "implementation_notes": "This memorandum rescinds M-24-18 and applies to contracts awarded pursuant to solicitations issued 180 days after issuance. It covers all federal agencies under 44 U.S.C. § 3502(1) except Intelligence Community elements and National Security Systems. Requirements are tiered by timeline (100, 180, 200, 270 days). Enforcement is primarily through procurement conditions and contract terms rather than civil or criminal penalties. Some requirements apply only to CFO Act agencies. The document references but does not re-state requirements from M-25-21 for high-impact AI use cases.",
-  "confidence": 0.88
+  "enforcement_authorities": [
+    "Office of Management and Budget (OMB)",
+    "Heads of covered executive departments and agencies (44 U.S.C. § 3502(1))",
+    "Senior Agency Officials for Privacy (SAOPs)",
+    "Chief AI Officer Council",
+    "General Services Administration (GSA)"
+  ],
+  "compliance_deadlines": [
+    "Within 100 days of 2025-04-03 (2025-07-12): GSA, in collaboration with OMB and interagency councils, to develop a plan to release publicly available AI acquisition guide(s)",
+    "Within 180 days of 2025-04-03 (2025-09-30): Memorandum applies to contracts awarded under solicitations issued on or after this date and to options exercised to renew or extend existing contracts (Appendix I lists 180 days for full compliance)",
+    "Within 200 days of 2025-04-03 (2025-10-20): GSA and OMB to develop an Executive Branch web-based AI acquisition repository; Appendix I also lists 200 days for agencies to include standardized data-ownership and IP rights processes in policy updates",
+    "Within 270 days of 2025-04-03 (2025-12-29): Agencies must revisit and update existing internal acquisition policies and procedures to comply with M-25-22 and conform acquired AI use to M-25-21"
+  ],
+  "penalties_summary": "Enforced via binding federal procurement conditions and contract administration mechanisms rather than statutory fines: contracts must embed M-25-21 high-impact risk controls, permanent prohibitions on secondary vendor training with nonpublic agency data, privacy terms, anti-vendor-lock-in rights, and independent testing access; agency AI information systems cannot deploy without a prior FISMA Authorization to Operate; and agencies are encouraged to use performance-based incentives, version roll-back requirements, and sunset criteria.",
+  "implementation_notes": "Issued April 3, 2025 by OMB Director Russell T. Vought pursuant to the Advancing American AI Act and EO 14179, rescinding and replacing OMB Memorandum M-24-18. Establishes binding acquisition lifecycle governance for civilian executive agencies (excluding Intelligence Community elements, National Security Systems, and common commercial products with embedded ancillary AI), pairing pro-competition anti-lock-in and Buy American AI policies with mandatory privacy/PII safeguards, data-ownership protections, proposal testing, independent agency evaluation rights, M-25-21 high-impact risk clauses, and FISMA Authorization to Operate compliance.",
+  "confidence": 0.96
 }

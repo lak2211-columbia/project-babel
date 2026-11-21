@@ -1,37 +1,86 @@
 {
   "dominant_frame": "social_stability",
   "secondary_frames": [
-    "national_security",
+    "innovation_enablement",
     "fundamental_rights",
-    "innovation_enablement"
+    "national_security",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.45,
-    "innovation_enablement": 0.25,
-    "consumer_public_safety": 0.1,
-    "labor_transition": 0.05
+    "national_security": 0.82,
+    "economic_competitiveness": 0.45,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.92,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.65,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document's primary governance rationale centers on maintaining social order and ideological stability—prohibiting content that undermines state power, social stability, or socialist values. National security appears as a closely related secondary concern. The document also strongly promotes innovation and self-reliance in AI development, and addresses individual rights such as personal information protection.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.15,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.18,
+    "social_stability": 0.28,
+    "innovation_enablement": 0.26,
+    "consumer_public_safety": 0.08,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The Interim Measures balance dual priorities of content/public-order governance and technological development, with social_stability narrowly edging out innovation_enablement as the dominant governance rationale. While Articles 1, 3, 5, 6, and 16 strongly emphasize promoting healthy development, inclusive and prudent tiered supervision, and AI ecosystem building (innovation_enablement), the core regulatory triggers and primary substantive obligations are anchored in safeguarding social public interest, upholding socialist core values, prohibiting false/harmful content, promoting positive content, and subjecting services with public-opinion attributes or social mobilization capabilities to security assessments (Articles 1, 4(1), 5, 17). Secondary rationales prominently include protecting individual legal rights, privacy, personal information, and non-discrimination (fundamental_rights); safeguarding state security and national unity (national_security); and preventing physical/mental harm and minor addiction (consumer_public_safety), alongside minor mentions of independent foundational tech innovation and fair market competition (economic_competitiveness). Existential/catastrophic risk and labor-market transition are not invoked.",
   "evidence_spans": [
     {
-      "quote": "维护国家安全和社会公共利益，保护公民、法人和其他组织的合法权益",
-      "source_section": "第一条"
+      "quote": "坚持社会主义核心价值观，不得生成煽动颠覆国家政权、推翻社会主义制度，危害国家安全和利益、损害国家形象，煽动分裂国家、破坏国家统一和社会稳定，宣扬恐怖主义、极端主义，宣扬民族仇恨、民族歧视，暴力、淫秽色情，以及虚假有害信息等法律、行政法规禁止的内容；",
+      "source_section": "第四条",
+      "quote_en": "Uphold the Core Socialist Values, and must not generate content prohibited by laws and administrative regulations, such as content that incites subversion of state power or the overthrow of the socialist system, endangers national security and interests or damages the national image, incites secession or undermines national unity and social stability, promotes terrorism or extremism, promotes ethnic hatred or ethnic discrimination, violence, obscenity and pornography, as well as false and harmful information;",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 694,
+      "end_char": 818
     },
     {
-      "quote": "不得生成煽动颠覆国家政权、推翻社会主义制度，危害国家安全和利益……破坏国家统一和社会稳定",
-      "source_section": "第四条"
+      "quote": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+      "source_section": "第十七条",
+      "quote_en": "Those providing generative AI services with public opinion attributes or social mobilization capabilities shall conduct security assessments in accordance with relevant national regulations, and complete algorithm filing, modification, and cancellation procedures in accordance with the Provisions on the Management of Algorithmic Recommendations in Internet Information Services.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 2554,
+      "end_char": 2636
     },
     {
-      "quote": "坚持发展和安全并重、促进创新和依法治理相结合的原则，采取有效措施鼓励生成式人工智能创新发展",
-      "source_section": "第三条"
+      "quote": "国家坚持发展和安全并重、促进创新和依法治理相结合的原则，采取有效措施鼓励生成式人工智能创新发展，对生成式人工智能服务实行包容审慎和分类分级监管。",
+      "source_section": "第三条",
+      "quote_en": "The State adheres to the principles of placing equal emphasis on development and security and combining the promotion of innovation with law-based governance, takes effective measures to encourage the innovative development of generative AI, and implements inclusive, prudent, and classified and tiered supervision over generative AI services.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 566,
+      "end_char": 638
     },
     {
-      "quote": "鼓励生成式人工智能算法、框架、芯片及配套软件平台等基础技术的自主创新，平等互利开展国际交流与合作",
-      "source_section": "第六条"
+      "quote": "为了促进生成式人工智能健康发展和规范应用，维护国家安全和社会公共利益，保护公民、法人和其他组织的合法权益",
+      "source_section": "第一条",
+      "quote_en": "In order to promote the healthy development and standardized application of generative artificial intelligence, safeguard national security and the public interest, and protect the lawful rights and interests of citizens, legal persons, and other organizations",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 236,
+      "end_char": 288
+    },
+    {
+      "quote": "尊重他人合法权益，不得危害他人身心健康，不得侵害他人肖像权、名誉权、荣誉权、隐私权和个人信息权益；",
+      "source_section": "第四条",
+      "quote_en": "Respect the lawful rights and interests of others, must not endanger the physical and mental health of others, and must not infringe upon others' rights of portraiture, reputation, honor, privacy, and personal information rights and interests;",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 945,
+      "end_char": 994
+    },
+    {
+      "quote": "采取有效措施防范未成年人用户过度依赖或者沉迷生成式人工智能服务。",
+      "source_section": "第十条",
+      "quote_en": "Take effective measures to prevent minor users from becoming overly reliant on or addicted to generative AI services.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 1925,
+      "end_char": 1957
     }
   ]
 }

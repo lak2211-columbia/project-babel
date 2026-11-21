@@ -4,150 +4,306 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "japan",
-    "issuing_body": "Ministry of Economy, Trade and Industry (METI), Japan",
+    "issuing_body": "Ministry of Internal Affairs and Communications (MIC) and Ministry of Economy, Trade and Industry (METI)",
     "document_type": "regulatory_guidance",
-    "binding_strength": "voluntary_commitment",
+    "binding_strength": "regulatory_guidance",
     "publication_date": "2024-04-19",
     "effective_date": null,
     "covered_actors": [
       "AI developers",
       "AI providers",
       "AI business users",
-      "public institutions such as governments and municipalities"
+      "AI business actors involved in advanced AI systems",
+      "Public institutions (such as governments and municipalities) acting as AI business actors"
     ],
     "covered_application_domains": [
       "general_purpose_models",
       "public_sector_use"
     ],
     "prohibited_practices": [
-      "Do not develop, provide, or use AI systems and services with purpose of manipulating human decision making, recognition and emotion or on the premise of unconscious control"
+      "Developing, providing, or using AI systems and services with the purpose of manipulating human decision-making, recognition, and emotion or on the premise of unconscious control",
+      "Using AI for profiling in fields where personal rights and benefits can be severely affected for inappropriate purposes"
     ],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.9,
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Take appropriate measures throughout the development of advanced AI systems, including prior to and throughout their deployment and placement on the market, to identify, evaluate, and mitigate risks across the AI lifecycle.",
-            "source_section": "Page 24"
+            "quote": "Conduct appropriate risk analyses to take countermeasures against risks (avoidance, mitigation, transference, or acceptance).",
+            "source_section": "Part 2, C. Common Guiding Principles, 2) Safety",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 39676,
+            "end_char": 39801
+          },
+          {
+            "quote": "Each AI business actor first conducts an environment and risk analysis for the AI system or service based on the benefits and risks the AI system or service may bring about during the overall lifecycle, social acceptance relating to the development and operation, changes in the external environment, and the maturity of AI.",
+            "source_section": "Part 2, E. Building AI governance",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 72116,
+            "end_char": 72440
           }
         ]
       },
       {
         "label": "pre_deployment_testing",
-        "confidence": 0.85,
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "establishing a safety framework of AI validation prior to their release to the market",
-            "source_section": "Page 9"
+            "quote": "Take appropriate measures throughout the development of advanced AI systems, including prior to and throughout their deployment and placement on the market, to identify, evaluate, and mitigate risks across the AI lifecycle.",
+            "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, I)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 64111,
+            "end_char": 64334
           },
           {
-            "quote": "employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming",
-            "source_section": "Page 24"
+            "quote": "Specifically, employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming25, and implementing appropriate mitigation to address identified risks and vulnerabilities",
+            "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, I)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 64370,
+            "end_char": 64597
           }
         ]
       },
       {
         "label": "red_teaming",
-        "confidence": 0.9,
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming",
-            "source_section": "Page 24"
-          },
-          {
-            "quote": "The US announced that it would establish the US AI Safety Institute in the National Institute of Standards and Technology (NIST) to implement an AI risk management framework and evaluate red teaming.",
-            "source_section": "Page 9"
+            "quote": "Specifically, employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming25, and implementing appropriate mitigation to address identified risks and vulnerabilities",
+            "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, I)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 64370,
+            "end_char": 64597
           }
         ]
       },
       {
         "label": "incident_reporting",
-        "confidence": 0.85,
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
             "quote": "Work towards responsible information sharing and reporting of incidents among organizations developing advanced AI systems including with industry, governments, civil society, and academia.",
-            "source_section": "Page 24"
+            "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, IV)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 65911,
+            "end_char": 66100
           },
           {
-            "quote": "encouraged to maintain appropriate documentation of reported incidents and to mitigate the identified risks and vulnerabilities",
-            "source_section": "Page 24"
+            "quote": "Information on the operational status of the AI systems and services, causes of failures, status of actions against them, incidents, etc. (\"2) Safety\").",
+            "source_section": "Part 4, P-6) ii. Providing relevant stakeholders with information",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 96683,
+            "end_char": 96835
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.9,
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Publicly report advanced AI systems' capabilities, limitations and domains of appropriate and inappropriate use, to support ensuring sufficient transparency",
-            "source_section": "Page 24"
+            "quote": "It is encouraged to introduce other mechanisms, such as labelling and disclaimer labelling, to help AI business users and non-business users know that they are interacting with the AI system.",
+            "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, VII)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 68161,
+            "end_char": 68352
           },
           {
-            "quote": "provide and explain information summarizing the items listed below according to the knowledge and ability of each stakeholder",
-            "source_section": "Page 18"
+            "quote": "If intending to use the AI output result as a reference for an evaluation of a specific individual or group, notify the specific individual or group to be evaluated about the use of AI",
+            "source_section": "Part 5, U-7) i. Explanation to relevant stakeholders",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 101501,
+            "end_char": 101685
           }
         ]
       },
       {
         "label": "model_documentation",
-        "confidence": 0.9,
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "record or store logs of AI training processes, inference processes, rationales of decisions made by AI",
-            "source_section": "Page 18"
+            "quote": "In order to ensure verifiability relating to decisions made by AI, record or store logs of AI training processes, inference processes, rationales of decisions made by AI, and the like (for example, input/output generated when developing and using the AI system or service) to the extent possible based on the data amount or contents.",
+            "source_section": "Part 2, C. Common Guiding Principles, 6) Transparency",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 47615,
+            "end_char": 47948
           },
           {
-            "quote": "Documentation of system architectures and the like",
-            "source_section": "Page 23"
-          },
-          {
-            "quote": "Make a reasonable explanation of what decision was made, starting with the source of the data, and document and publish it to ensure traceability.",
-            "source_section": "Page 24"
+            "quote": "In order to improve traceability and transparency, prepare documents on your AI system development processes, data collection and labeling affecting decisionmakings, algorithms you have used, and the like, as far as possible in a form that third parties can use to validate the documents (\"7) Accountability\").",
+            "source_section": "Part 3, D-7) ii. Documentation of development-related information",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 83818,
+            "end_char": 84128
           }
         ]
       },
       {
         "label": "third_party_audit",
-        "confidence": 0.7,
+        "confidence": 0.75,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "employing diverse internal and independent external testing measures",
-            "source_section": "Page 24"
+            "quote": "Specifically, employing diverse internal and independent external testing measures, through a combination of methods such as red-teaming25, and implementing appropriate mitigation to address identified risks and vulnerabilities",
+            "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, I)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 64370,
+            "end_char": 64597
+          },
+          {
+            "quote": "prepare documents on your AI system development processes, data collection and labeling affecting decisionmakings, algorithms you have used, and the like, as far as possible in a form that third parties can use to validate the documents",
+            "source_section": "Part 3, D-7) ii. Documentation of development-related information",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 83869,
+            "end_char": 84105
           }
         ]
       },
       {
         "label": "access_controls",
-        "confidence": 0.8,
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Consider operational measures for information security and appropriate cyber/physical access control, etc.",
-            "source_section": "Page 25"
+            "quote": "Invest in and implement robust security management, including physical security, cyber security and security measures against internal threats, throughout the AI lifecycle. (\"5) Ensuring security\") • Consider operational measures for information security and appropriate cyber/physical access control, etc.",
+            "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, VI)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 67264,
+            "end_char": 67570
+          },
+          {
+            "quote": "Implement proper protective measures before and across training by, for example, considering the deployment of any data management and restriction function that controls access to data (\"2) Safety,\" \"5) Ensuring security\").",
+            "source_section": "Part 3, D-2) i. Proper data training",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 78439,
+            "end_char": 78662
           }
         ]
       },
       {
         "label": "content_provenance",
-        "confidence": 0.9,
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
             "quote": "Develop and deploy reliable content authentication and provenance mechanisms, where technically feasible, such as watermarking or other techniques to enable users to identify AI-generated content.",
-            "source_section": "Page 25"
+            "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, VII)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 67576,
+            "end_char": 67772
+          },
+          {
+            "quote": "Make effort to develop tools and APIs that allow AI business users and non-business users to determine whether or not specific content through watermarks has been created using advanced AI systems.",
+            "source_section": "Part 2, D. Common Guiding Principles for AI Business actors involved in advanced AI systems, VII)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 67961,
+            "end_char": 68158
           }
         ]
       },
       {
         "label": "human_oversight",
-        "confidence": 0.75,
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Intervention by decisions made by humans",
-            "source_section": "Page 23"
+            "quote": "Ensure controllability that allows humans to control AI as necessary including objective monitoring and handling, in accordance with the characteristics and purposes of the relevant AI, in light of the severity and possibility of rights violations that can result from AI use or unintended AI behaviors.",
+            "source_section": "Part 2, C. Common Guiding Principles, 2) Safety",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 39370,
+            "end_char": 39673
           },
           {
-            "quote": "implement reliable, human-centric AI",
-            "source_section": "Page 25"
+            "quote": "To prevent AI from generating unfair results, consider implementing timely human interventions, rather than letting AI make the decisions alone.",
+            "source_section": "Part 2, C. Common Guiding Principles, 3) Fairness",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 43278,
+            "end_char": 43422
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "In accordance with the characteristics and purposes of AI systems and services, ensure the accuracy, and recency as necessary, of the data (appropriateness of the data) to be used for training.",
+            "source_section": "Part 2, C. Common Guiding Principles, 2) Safety",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40484,
+            "end_char": 40677
+          },
+          {
+            "quote": "Properly collect training data through privacy-by-design, etc., and if it contains third-parties' personal data, data requiring attention to intellectual property rights, etc., ensure that such data is properly handled in compliance with laws and regulations throughout the lifecycle of AI (\"2) Safety,\" \"4) Privacy protection,\" \"5) Ensuring security\").",
+            "source_section": "Part 3, D-2) i. Proper data training",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 78083,
+            "end_char": 78436
+          }
+        ]
+      },
+      {
+        "label": "open_weight_obligations",
+        "confidence": 0.75,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "If any open technologies are used, conform to the rules specified for them. • When disclose developed AI systems as open source, consider any potential social impacts.",
+            "source_section": "Part 2, C. Common Guiding Principles, 6) Transparency",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 50539,
+            "end_char": 50706
           }
         ]
       }
@@ -155,84 +311,153 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.9,
+        "confidence": 0.98,
         "evidence": [
           {
-            "quote": "it is important that each AI business actor provides stakeholders with information to the reasonable extent necessary",
-            "source_section": "Page 18"
+            "quote": "Thus, it was decided to draw up guidelines on the basis of the goal-based concept that would lead to the achievement of purposes through soft laws without any legally binding force that would encourage interested parties to make voluntary efforts to reduce societal risks in AI and promote innovations and use of AI.",
+            "source_section": "Preface",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4047,
+            "end_char": 4363
           },
           {
-            "quote": "It is encouraged to introduce other mechanisms, such as labelling and disclaimer labelling",
-            "source_section": "Page 25"
-          },
-          {
-            "quote": "It is expected to establish and disclose AI governance policies and practices.",
-            "source_section": "Page 25"
-          }
-        ]
-      },
-      {
-        "label": "reporting_obligation",
-        "confidence": 0.75,
-        "evidence": [
-          {
-            "quote": "Work towards responsible information sharing and reporting of incidents among organizations developing advanced AI systems",
-            "source_section": "Page 24"
-          },
-          {
-            "quote": "These include reports on monitoring results and documents related to security and safety risks.",
-            "source_section": "Page 24"
+            "quote": "It is important that the business operators pay close attention that if society considers the efforts to be inappropriate or insufficient, it might lead to opportunity losses in their businesses and it might become difficult to maintain business values.",
+            "source_section": "Preface",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9182,
+            "end_char": 9435
           }
         ]
       }
     ],
-    "enforcement_authorities": [
-      "Ministry of Internal Affairs and Communications"
-    ],
+    "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "The Guidelines are voluntary and intended as a reference for business operators. They follow an agile governance/living document approach and are to be updated as needed. Generative AI is explicitly included in scope. Non-business users and data providers are excluded from the target audience.",
-    "confidence": 0.88
+    "implementation_notes": "Jointly issued by MIC and METI on April 19, 2024 (provisional English translation), integrating and revising three earlier Japanese guidelines (AI R&D Guidelines, AI Utilization Guidelines, and Governance Guidelines for Implementation of AI Principles ver. 1.1). Explicitly framed as non-binding soft law promoting voluntary, risk-based, and agile governance, maintained as a living document. Incorporates the G7 Hiroshima AI Process International Guiding Principles and Code of Conduct for advanced AI systems (including foundation models and generative AI). Explicitly excludes non-business users and data providers from its direct scope while advising compliance with existing applicable laws (e.g., Act on the Protection of Personal Information and intellectual property laws).",
+    "confidence": 0.9
   },
   "risk_framing": {
-    "dominant_frame": "fundamental_rights",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
+      "fundamental_rights",
+      "consumer_public_safety",
+      "economic_competitiveness",
       "social_stability",
-      "innovation_enablement",
-      "consumer_public_safety"
+      "labor_transition"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.05,
-      "national_security": 0.1,
-      "economic_competitiveness": 0.2,
-      "fundamental_rights": 0.65,
-      "social_stability": 0.45,
-      "innovation_enablement": 0.35,
-      "consumer_public_safety": 0.3,
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.72,
+      "fundamental_rights": 0.88,
+      "social_stability": 0.65,
+      "innovation_enablement": 0.95,
+      "consumer_public_safety": 0.78,
+      "labor_transition": 0.55
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.11,
+      "fundamental_rights": 0.25,
+      "social_stability": 0.09,
+      "innovation_enablement": 0.34,
+      "consumer_public_safety": 0.16,
       "labor_transition": 0.05
     },
-    "rationale_summary": "The document consistently grounds AI governance in respect for human dignity, autonomy, human rights, diversity, and inclusion. The three basic philosophies—Dignity, Diversity & Inclusion, and Sustainability—explicitly center on human rights and individual well-being. Common Guiding Principles require that AI not violate constitutionally or internationally guaranteed human rights. Secondary frames include social stability (avoiding divisions within society, ensuring fair outcomes) and innovation enablement (promoting open innovation, sustainable economic growth).",
+    "rationale_summary": "The document's dominant framing is innovation_enablement because its core justification for adopting voluntary, goal-based, risk-based, and agile soft-law guidelines is to avoid stifling AI innovation while mitigating risks that could cause social disagreement and inhibit AI adoption. Fundamental_rights is a close runner-up, anchoring Part 2's normative philosophies in human dignity, constitutional and international human rights, fairness, privacy, and democracy; however, innovation_enablement edges it out as the overarching rationale explaining why MIC and METI chose flexible business guidelines over binding rules to realize Society 5.0. Secondary rationales include consumer_public_safety (preventing harm to lives, bodies, minds, and property), economic_competitiveness (strengthening competitiveness and sustainable economic growth), social_stability (countering society-destabilizing disinformation and avoiding social divisions), and labor_transition (addressing labor shortages and promoting education and reskilling as human-AI task division shifts).",
     "evidence_spans": [
       {
-        "quote": "each AI business actor should develop, provide, or use AI systems and services respecting the rule of law, human rights, democracy, diversity, and fair and just society",
-        "source_section": "Page 14"
+        "quote": "Thus, it was decided to draw up guidelines on the basis of the goal-based concept that would lead to the achievement of purposes through soft laws without any legally binding force that would encourage interested parties to make voluntary efforts to reduce societal risks in AI and promote innovations and use of AI.",
+        "source_section": "Preface",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 4047,
+        "end_char": 4363
       },
       {
-        "quote": "act in a way that does not violate the human rights guaranteed by the Constitution of Japan or granted internationally",
-        "source_section": "Page 14"
+        "quote": "When developing, providing, or using an AI system or service, each AI business actor should act in a way that does not violate the human rights guaranteed by the Constitution of Japan or granted internationally, as the foundation for accomplishing all matters to be conducted, including the matters described later.",
+        "source_section": "Part 2, C. Common Guiding Principles, 1) Human-Centric",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 32839,
+        "end_char": 33154
       },
       {
-        "quote": "A society that has respect for human dignity Rather than building a society in which effectiveness and convenience are pursued through AI use to the point that humans become excessively dependent on AI",
-        "source_section": "Page 12"
+        "quote": "Each AI business actor should avoid damage to the lives, bodies, minds, and properties of stakeholders during the development, provision, and use of AI systems and services. In addition, it is important that the environment is not damaged.",
+        "source_section": "Part 2, C. Common Guiding Principles, 2) Safety",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 38733,
+        "end_char": 38972
       },
       {
-        "quote": "A society where people with diverse backgrounds can pursue their own well-being",
-        "source_section": "Page 12"
+        "quote": "Paying close attention to these possibilities enables to maximize the benefits from AI, strengthen competitiveness, and maintain and improve the business values.",
+        "source_section": "Preface",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 9436,
+        "end_char": 9597
       },
       {
-        "quote": "respect human dignity and the autonomy of individuals",
-        "source_section": "Page 14"
+        "quote": "Generative AI has enabled everyone to forge fake information that seems to be true and fair, so recognize the increasing risk of destabilizing and confusing the society through disinformation, misinformation, and biased information generated by AI, and take necessary countermeasures",
+        "source_section": "Part 2, C. Common Guiding Principles, 1) Human-Centric (3)",
+        "quote_en": null,
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 35507,
+        "end_char": 35790
+      },
+      {
+        "quote": "It is assumed that the division of tasks between AI and humans will change due to the expansion of generative AI use, so discuss actively about education and reskilling to promote new ways of working.",
+        "source_section": "Part 2, C. Common Guiding Principles, 8) Education/literacy (2)",
+        "quote_en": null,
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 56318,
+        "end_char": 56518
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:48:12.763559Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "945059625dcf024cb0208d35e9310584731e1aeeff264469898477934ca848b9",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 77873,
+      "output_tokens": 4229,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 12564,
+      "estimated_cost_usd": 0.265271
+    },
+    "grounding_summary": {
+      "total_quotes": 30,
+      "exact_matches": 30,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

@@ -1,17 +1,126 @@
 {
-  "safety_requirements": [],
+  "safety_requirements": [
+    {
+      "label": "training_data_governance",
+      "confidence": 0.9,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "享受目的が併存する、又はただし書に該当する等の理由で法第30 条の４が適用されず、他の権利制限規定も適用されない場合、権利者からの許諾が得られない限り、AI 学習のための複製は著作権侵害となる。",
+          "source_section": "５．（１）オ AI 学習に際して著作権侵害が生じた際に、学習を行った事業者が受け得る措置について",
+          "quote_en": "If Article 30-4 of the Act does not apply due to the coexistence of an enjoyment purpose or the applicability of the proviso, and no other limitation on rights applies, reproduction for AI training constitutes copyright infringement unless permission is obtained from the rights holder.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "AI 開発事業者やAI サービス提供事業者においては、学習データの収集を行うに際して、海賊版を掲載しているウェブサイトから学習データを収集することで、当該ウェブサイトへのアクセスを容易化したり、当該ウェブサイトの運営を行う者に広告収入その他の金銭的利益を生じさせるなど、当該行為が新たな海賊版の増加といった権利侵害を助長するものとならないよう十分配慮した上でこれを行うことが求められる。",
+          "source_section": "５．（１）エ（オ）海賊版等の権利侵害複製物をAI 学習のため複製することについて",
+          "quote_en": "When collecting training data, AI developers and AI service providers are required to exercise sufficient care so that collecting training data from websites hosting pirated copies does not facilitate access to such websites, generate advertising revenue or other financial benefits for their operators, or otherwise encourage copyright infringement such as an increase in new pirated copies.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "特に現在用いられ、又は今後新たに開発される生成AI に関する技術については、後掲４で示すような関係者からの懸念の解消に向けて、その仕組みや動作機序について、その開発や提供を行う事業者等から分かりやすい形で社会に対する発信がされることが望ましい。",
+          "source_section": "３．生成AI の技術的な背景について",
+          "quote_en": "In particular, with respect to generative AI technologies currently in use or newly developed in the future, it is desirable that businesses developing or providing them communicate their mechanisms and operating principles to society in an easy-to-understand manner in order to address concerns from stakeholders as outlined in Section 4 below.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "個別具体的な生成AI やこれに関する技術の法的な位置づけの説明については、これを提供する事業者等において適切に行われることが望まれる。",
+          "source_section": "１．（２）本考え方の位置づけ・性質",
+          "quote_en": "It is desirable that explanations of the legal positioning of specific generative AI systems and related technologies be appropriately provided by the businesses or other entities offering them.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
   "enforcement_mechanisms": [
     {
-      "label": "soft_enforcement",
+      "label": "civil_penalty",
       "confidence": 0.85,
       "evidence": [
         {
-          "quote": "本考え方自体が法的な拘束力を有するものではなく、また現時点で存在する特定の生成AIやこれに関する技術について、確定的な法的評価を行うものではない",
-          "source_section": "Page 1"
+          "quote": "この場合、AI 学習のための複製を行った者が受け得る措置としては、損害賠償請求 （民法第709 条）、差止請求（侵害行為の停止又は予防の請求（法第112 条第１項）、侵害の停止又は予防に必要な措置の請求（同条第２項））、刑事罰（法第119 条）等が規定されている。",
+          "source_section": "５．（１）オ AI 学習に際して著作権侵害が生じた際に、学習を行った事業者が受け得る措置について",
+          "quote_en": "In this case, the measures that a person who carried out reproduction for AI training may face include claims for damages (Article 709 of the Civil Code), claims for injunctions (demand to cease or prevent infringement under Article 112(1) of the Act, and demand for measures necessary to cease or prevent infringement under Article 112(2)), and criminal penalties (Article 119 of the Act).",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         },
         {
-          "quote": "個別具体的な生成AIやこれに関する技術の法的な位置づけの説明については、これを提供する事業者等において適切に行われることが望まれる",
-          "source_section": "Page 4"
+          "quote": "著作権侵害が認められた場合、侵害者が受け得る措置としては、差止請求、損害賠償請求及び著作権侵害に基づく刑事罰が考えられる。",
+          "source_section": "５．（２）エ 侵害に対する措置について",
+          "quote_en": "When copyright infringement is found, the measures that the infringer may face include injunctions, claims for damages, and criminal penalties based on copyright infringement.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "criminal_penalty",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "なお、損害賠償請求についてはその要件として故意又は過失の存在が、刑事罰については故意の存在が必要となる。",
+          "source_section": "５．（１）オ AI 学習に際して著作権侵害が生じた際に、学習を行った事業者が受け得る措置について",
+          "quote_en": "Note that intent or negligence is required for claims for damages, whereas intent is required for criminal penalties.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "著作権侵害が認められた場合、侵害者が受け得る措置としては、差止請求、損害賠償請求及び著作権侵害に基づく刑事罰が考えられる。",
+          "source_section": "５．（２）エ 侵害に対する措置について",
+          "quote_en": "When copyright infringement is found, the measures that the infringer may face include injunctions, claims for damages, and criminal penalties based on copyright infringement.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "quote": "本考え方は、その公表時点における、本小委員会としての一定の考え方を示すものであり、本考え方自体が法的な拘束力を有するものではなく、また現時点で存在する特定の生成AI やこれに関する技術について、確定的な法的評価を行うものではないことに留意する必要がある。",
+          "source_section": "Preamble",
+          "quote_en": "It should be noted that this General Understanding presents a certain view of this Subcommittee as of its publication, does not itself have legally binding force, and does not provide a definitive legal evaluation of any specific generative AI or related technology currently in existence.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "生成AI と著作権の関係については、政府における上記のような取組みとともに、民間の当事者間において、生成AI に関する著作物の利用についての適切なルール・ガイドラインの策定や、生成AI 及びこれに関する技術についての共通理解の獲得、AI 学習等のための著作物のライセンス等の実施状況、海賊版を掲載したウェブサイトに関する情報の共有などが図られることが、AI の適正な開発及び利用の環境を実現する観点から重要である。",
+          "source_section": "６．おわりに",
+          "quote_en": "Regarding the relationship between generative AI and copyright, alongside the government initiatives above, it is important from the perspective of realizing an environment for the proper development and use of AI that private parties formulate appropriate rules and guidelines on the use of copyrighted works in relation to generative AI, build a common understanding of generative AI and related technologies, and share information on licensing practices for AI training and on websites hosting pirated copies.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
         }
       ]
     }

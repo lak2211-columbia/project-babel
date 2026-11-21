@@ -1,69 +1,94 @@
 {
   "jurisdiction": "japan",
-  "issuing_body": "Cabinet Office, Government of Japan",
-  "document_type": "legislation",
-  "binding_strength": "binding_law",
-  "publication_date": "2025-05-28",
+  "issuing_body": "Cabinet Office of Japan",
+  "document_type": "strategy_paper",
+  "binding_strength": "strategy_statement",
+  "publication_date": null,
   "effective_date": "2025-09-01",
-  "covered_application_domains": [
-    "general_purpose_models",
-    "critical_infrastructure",
-    "public_sector_use"
+  "covered_actors": [
+    "national government",
+    "local governments",
+    "R&D institutes",
+    "business operators",
+    "citizens"
   ],
+  "covered_application_domains": [],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "transparency_disclosure",
-      "confidence": 0.8,
+      "confidence": 0.6,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
           "quote": "Ensuring transparency, etc. for appropriate R&D and utilization",
-          "source_section": "Basic Principles"
-        }
-      ]
-    },
-    {
-      "label": "risk_assessment",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "Collecting information, investigating cases where human rights and interests are infringed",
-          "source_section": "Basic Measures"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "Guidance, advice and announcement to business operators and citizens",
-          "source_section": "Basic Measures"
+          "source_section": "Page 1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 529,
+          "end_char": 592
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "soft_enforcement",
-      "confidence": 0.8,
+      "label": "regulatory_supervision",
+      "confidence": 0.85,
       "evidence": [
         {
-          "quote": "Guidance, advice and announcement to business operators and citizens",
-          "source_section": "Basic Measures"
+          "quote": "Collecting information, investigating cases where human rights and interests are infringed",
+          "source_section": "Page 1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1193,
+          "end_char": 1283
+        },
+        {
+          "quote": "Business operators shall cooperate with measures implemented by the government, etc.",
+          "source_section": "Page 1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1527,
+          "end_char": 1611
         }
       ]
     },
     {
-      "label": "regulatory_supervision",
-      "confidence": 0.7,
+      "label": "soft_enforcement",
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "Requesting the necessary cooperation from the relevant administrative agencies",
-          "source_section": "AI Strategic Headquarters"
+          "quote": "Guidance, advice and announcement to business operators and citizens",
+          "source_section": "Page 1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1285,
+          "end_char": 1353
+        },
+        {
+          "quote": "Establishing guidelines in accordance with the international norms",
+          "source_section": "Page 1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1125,
+          "end_char": 1191
         }
       ]
     }
   ],
-  "implementation_notes": "This is a provisional translation of an overview document. The act is primarily a promotion and framework law rather than a strict regulatory regime. Partial enforcement began 4 June 2025, full enforcement 1 September 2025. Binding obligations on business operators appear limited to cooperation duties. Detailed requirements will likely emerge via guidelines and the AI Basic Plan.",
-  "confidence": 0.75
+  "enforcement_authorities": [
+    "AI Strategic Headquarters",
+    "Government of Japan",
+    "relevant administrative agencies"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "This document is a one-page provisional English overview slide summarizing Japan's Act on Promotion of Research and Development, and Utilization of AI-related Technology (AI Act), rather than the operative statutory text itself. The Act was established on 2025-05-28, with partial enforcement on 2025-06-04 and full enforcement on 2025-09-01. It establishes the AI Strategic Headquarters chaired by the Prime Minister, provides for an AI Basic Plan, and outlines non-punitive measures including information collection, investigation of rights infringements, and guidance, advice, and announcements to business operators and citizens.",
+  "confidence": 0.85
 }

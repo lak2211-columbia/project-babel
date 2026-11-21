@@ -1,0 +1,236 @@
+{
+  "safety_requirements": [
+    {
+      "label": "content_provenance",
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Signatories will implement a multi-layered marking approach to ensure that the outputs of their generative AI systems are marked with at least two layers of machine-readable marking, as specified in Sub-measures 1.1.1 and 1.1.2 below.",
+          "source_section": "Section 1, Measure 1.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Signatories commit to implement such disclosure through the available EU icon provided in Annex 1 of the Code or through an equivalent icon or label that complies with the design and placement specifications as described in the following measures.",
+          "source_section": "Section 2, Commitment 1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "In order to fulfil their obligation under Article 50(5) AI Act, Signatories will ensure that the detection results provided by their detection solution are presented in a way that is clear and easily comprehensible to natural persons exposed to the content generated or manipulated by their AI system and who want to verify its origin.",
+          "source_section": "Section 1, Measure 2.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "The disclosure will include, at the beginning of the deep fake itself, a short audible disclaimer in plain and simple natural language, either in the same language as the content or in English, disclosing the artificial origin of the audio deep fake in a perceivable manner.",
+          "source_section": "Section 2, Measure 1.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.94,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Prior to placing their generative AI system on the market or putting it into service, and regularly thereafter, Signatories will test the compliance of their marking and detection solutions with the requirements and the measures specified in this Section of the Code.",
+          "source_section": "Section 1, Measure 4.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Signatories will measure the accuracy of the detection of AI-generated or manipulated content by using relevant metrics for the type of markings, such as the error rate of the detection.",
+          "source_section": "Section 1, Measure 3.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.9,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Second, Signatories will ensure that adversarial robustness of their marking and detection solutions is assessed in terms of resilience to malicious behaviour such as copying, removal, regeneration, and modification attacks on the markings.",
+          "source_section": "Section 1, Measure 3.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Signatories may involve independent experts in the testing of their solutions, especially to evaluate robustness to adversarial attacks through red teaming and/or conduct such testing and evaluation under regulatory supervision in the context of AI regulatory sandboxes, as provided for in Article 57 AI Act.",
+          "source_section": "Section 1, Measure 4.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.9,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Signatories will document, implement, and keep up to date, in line with the state of the art, a compliance process that describes at a high-level how they have implemented the different Measures in this Section of the Code to ensure compliance with Article 50(2) and (5) AI Act.",
+          "source_section": "Section 1, Measure 4.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Proportionate to their size, available organisational resources, and capacities, Signatories will put in place or maintain appropriate internal compliance processes and documentation that specifies how they implement the disclosure obligations using the icon or equivalent label.",
+          "source_section": "Section 2, Measure 2.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.88,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Signatories will adopt means for ensuring the secure usage of the signing certificates and the confidentiality of the associated private keys, except in circumstances where the deployment context does not permit the secure handling or provisioning of the key, for example in a local deployment scenario.",
+          "source_section": "Section 1, Sub-measure 1.1.1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "That best practices in cybersecurity are implemented to protect access to the detection solution in cases where uncontrolled access to the detection solution may compromise the security of the underlying marking techniques and detection mechanisms.",
+          "source_section": "Section 1, Sub-measure 2.1.3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.86,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "All other Signatories, including those without such review or editorial procedures, commit to establish, adapt, or maintain appropriate policies for human review or editorial control prior to publication and that a natural or legal person holds editorial responsibility for the publication.",
+          "source_section": "Section 2, Commitment 4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "open_weight_obligations",
+      "confidence": 0.82,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "For AI systems and models provided under free and open-source licenses, it is sufficient for Signatories to alert users to this best practice in the documentation accompanying the AI system or model, without prejudice to the free and open-source nature of the license.",
+          "source_section": "Section 1, Measure 1.2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "to serve as a guiding document for demonstrating compliance with the obligations provided for in Article 50(2) and (5) AI Act, while recognising that adherence to the Code does not constitute conclusive evidence of compliance with these obligations;",
+          "source_section": "Section 1, Objectives",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "providers of generative AI models that are placed on the Union market independently from AI systems and third-party providers of marking and detection solutions may also, on a voluntary basis, adhere to the Code to demonstrate that their marking and detection solutions comply with the requirements of Article 50(2) and (5) AI Act and this Section of the Code",
+          "source_section": "Section 1, Commitments",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "quote": "At their reasoned request, where necessary for the exercise of the relevant tasks of the market surveillance authorities, Signatories will provide the documentation specified in Measure 4.1 and access to their marking and detection solutions.",
+          "source_section": "Section 1, Measure 4.4",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "‘will’ is used for mandatory measures under the Code that need to be met for the Signatory to be compliant with Article 50(2) and (5) AI Act, and for which compliance will be monitored by competent market surveillance authorities;",
+          "source_section": "Section 1, Commitments",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

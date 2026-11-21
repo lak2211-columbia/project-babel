@@ -1,36 +1,56 @@
 {
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "consumer_public_safety",
-    "social_stability"
+    "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
+    "economic_competitiveness": 0.15,
     "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.65,
-    "consumer_public_safety": 0.55,
+    "social_stability": 0.2,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.65,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance in meteorology as enabling healthy and well-organized development, balancing innovation promotion with governance. The stated aim is to encourage and promote AI application services while managing potential hazards, with explicit policy support for R&D and application scenarios. Safety and security measures are secondary to the innovation promotion goal.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.05,
+    "innovation_enablement": 0.7,
+    "consumer_public_safety": 0.2,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document predominantly frames China's AI meteorological governance around innovation enablement, emphasizing an inclusive and prudent approach, classified and graded supervision, data openness, R&D support, and the 'AI +' initiative to accelerate meteorological science, technology, and public services. Consumer and public safety serves as a secondary frame through the stated goal of balancing development and security and tackling potential hazards in AI meteorological services such as early warning and weather forecasting in a science-based manner. Minor traces of social stability (healthy, well-organized development and information dissemination review) and international standard-setting appear, but innovation enablement clearly dominates the stated purpose.",
   "evidence_spans": [
     {
-      "quote": "aiming at encouraging and promoting the healthy and well-organized development of AI meteorological application services",
-      "source_section": "Overview"
+      "quote": "The document proposes that AI meteorological application services development shall balance development and security, adhere to the combination of innovation promotion and governance according to law. At the same time, an inclusive and prudent approach shall be taken and classified and grading supervision shall be conducted as to such services.",
+      "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 920,
+      "end_char": 1266
     },
     {
-      "quote": "adhere to the combination of innovation promotion and governance according to law",
-      "source_section": "Policy principles"
+      "quote": "This concerted endeavor will mobilize resources from all sectors of society to promote AI application and development in meteorology, injecting new vitality into speeding up the development of meteorological science and technology and public services,and promote the high-quality development of meteorology.",
+      "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2759,
+      "end_char": 3066
     },
     {
-      "quote": "concrete policy support and promoting measures focusing on data openness, algorithm model research and development (R&D), and application scenarios empowerment",
-      "source_section": "Policy measures"
-    },
-    {
-      "quote": "injecting new vitality into speeding up the development of meteorological science and technology and public services",
-      "source_section": "CMA initiative"
+      "quote": "The document aims to tackle the potential hazards in AI meteorological application services in a science-based manner, and guide its development direction.",
+      "source_section": "Measures for AI Meteorological Application Services of China promulgated",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 764,
+      "end_char": 919
     }
   ]
 }

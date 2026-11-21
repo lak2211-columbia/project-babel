@@ -6,40 +6,33 @@
     "jurisdiction": "united_states",
     "issuing_body": "National Institute of Standards and Technology (NIST)",
     "document_type": "standards_guideline",
-    "binding_strength": "voluntary_commitment",
-    "publication_date": "2023-01-26",
+    "binding_strength": "standards_guideline",
+    "publication_date": "2021-07-13",
     "effective_date": null,
     "covered_actors": [
-      "companies",
-      "government agencies",
-      "academia",
-      "not-for-profit organizations",
       "AI practitioners",
-      "civil society organizations",
-      "consumers"
+      "Companies",
+      "Government agencies",
+      "Academia",
+      "Not-for-profit organizations representing civil society and consumers",
+      "Organizations and individuals using the AI RMF"
     ],
     "covered_application_domains": [],
     "prohibited_practices": [],
-    "safety_requirements": [
+    "safety_requirements": [],
+    "enforcement_mechanisms": [
       {
-        "label": "risk_assessment",
-        "confidence": 0.7,
+        "label": "none_specified",
+        "confidence": 0.94,
         "evidence": [
           {
             "quote": "NIST has developed the voluntary AI Risk Management Framework (AI RMF) through a consensus-driven, open, transparent, and collaborative process.",
-            "source_section": "Overview"
-          }
-        ]
-      }
-    ],
-    "enforcement_mechanisms": [
-      {
-        "label": "soft_enforcement",
-        "confidence": 0.9,
-        "evidence": [
-          {
-            "quote": "NIST has developed the voluntary AI Risk Management Framework (AI RMF)",
-            "source_section": "Overview"
+            "source_section": "Share",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 91,
+            "end_char": 235
           }
         ]
       }
@@ -47,39 +40,108 @@
     "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "The AI RMF 1.0 was released on January 26, 2023 following a consensus-driven, open, and collaborative process. A companion AI RMF Playbook, AI RMF Roadmap, and AI RMF Crosswalks are also available. NIST plans to revise the Framework after the community gains several years of experience and additional research is conducted.",
+    "implementation_notes": "Administrative stakeholder-engagement webpage for the NIST AI RMF (originally published 2021-07-13 and updated through the January 26, 2023 launch of AI RMF 1.0). Summarizes NIST's workshops, RFI, draft consultations, and ongoing feedback mechanisms for revising the voluntary Framework, Playbook, Roadmap, and Crosswalks; contains no operative safety requirements or enforcement hooks.",
     "confidence": 0.95
   },
   "risk_framing": {
-    "dominant_frame": "consumer_public_safety",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "innovation_enablement",
-      "social_stability"
+      "fundamental_rights",
+      "consumer_public_safety"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.0,
-      "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.45,
+      "economic_competitiveness": 0.2,
+      "fundamental_rights": 0.3,
+      "social_stability": 0.1,
+      "innovation_enablement": 0.74,
+      "consumer_public_safety": 0.25,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document describes NIST's process for developing a voluntary AI Risk Management Framework through broad stakeholder engagement. The governance rationale centers on managing AI risks to users and society broadly, consistent with a consumer/public safety framing. Secondary frames include innovation enablement (voluntary, collaborative framework) and social stability (civil society inclusion, bias workshops).",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.1,
+      "fundamental_rights": 0.15,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.65,
+      "consumer_public_safety": 0.1,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "This procedural engagement page contains modest framing language led by innovation_enablement, emphasizing a voluntary, consensus-driven, collaborative standards-development process that adapts complementary guidance based on real-world practitioner experience. Fundamental_rights (inclusion of civil society and a workshop on Bias in AI), consumer_public_safety (consumer stakeholders), and economic_competitiveness (AI and the Economy conference) appear only as minor contextual signals.",
     "evidence_spans": [
       {
         "quote": "NIST has developed the voluntary AI Risk Management Framework (AI RMF) through a consensus-driven, open, transparent, and collaborative process.",
-        "source_section": null
+        "source_section": "Share",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 91,
+        "end_char": 235
       },
       {
-        "quote": "those from companies, government agencies, academia, and not-for-profit organizations representing civil society and consumers",
-        "source_section": null
+        "quote": "That engagement will progress as organizations and individuals gain experience with the Framework and provide NIST with feedback so that it can produce and adjust complementary guidance for using the AI RMF.",
+        "source_section": "Share",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1302,
+        "end_char": 1509
       },
       {
-        "quote": "Two-part Workshop on AI Risk Management Framework – and on Bias in AI",
-        "source_section": null
+        "quote": "This includes those from companies, government agencies, academia, and not-for-profit organizations representing civil society and consumers.",
+        "source_section": "Share",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 722,
+        "end_char": 863
+      },
+      {
+        "quote": "Artificial Intelligence and the Economy Conference - April 27, 2022",
+        "source_section": "Past Workshops and Events",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 2415,
+        "end_char": 2482
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:14:58.705559Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "c29e996b3277ca70a769379dafb8171a39558594a6e5cdf7a5424f54609a7994",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 2653,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 5,
+      "exact_matches": 5,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

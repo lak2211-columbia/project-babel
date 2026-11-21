@@ -4,36 +4,60 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "european_union",
-    "issuing_body": "European Commission / AI Office",
+    "issuing_body": "European Commission (AI Office)",
     "document_type": "regulatory_guidance",
-    "binding_strength": "binding_law",
-    "publication_date": null,
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2026-03-26",
     "effective_date": "2025-08-02",
+    "covered_actors": [
+      "Providers of general-purpose AI models placing models on the Union market",
+      "Providers of general-purpose AI models with systemic risks",
+      "Providers of general-purpose AI models released under free and open-source licenses",
+      "Downstream entities modifying or fine-tuning general-purpose AI models that become providers"
+    ],
     "covered_application_domains": [
       "general_purpose_models"
     ],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
-        "label": "transparency_disclosure",
+        "label": "training_data_governance",
         "confidence": 0.98,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
             "quote": "All providers of general-purpose AI models are required to publish a summary of the content used to train their models, based on a template provided by the Commission.",
-            "source_section": "Introduction"
+            "source_section": "What is the purpose and scope of the Template?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 0,
+            "end_char": 167
           },
           {
-            "quote": "The Summary must be made publicly available no later than when a model is placed on the Union market.",
-            "source_section": "Publication requirements"
+            "quote": "Under Article 53(1)(d) of the\nAI Act\n, using the Template is mandatory.",
+            "source_section": "How do these guidelines and the template support providers of general-purpose AI models in complying with the AI Act’s obligation?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1421,
+            "end_char": 1492
           }
         ]
       },
       {
-        "label": "model_documentation",
-        "confidence": 0.9,
+        "label": "open_weight_obligations",
+        "confidence": 0.92,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "The Template provides a uniform baseline for information to be publicly disclosed in the Summary, consisting of three main sections: General information, List of data sources, Relevant data processing aspects.",
-            "source_section": "Template structure"
+            "quote": "Any provider of general-purpose AI models, including those with systemic risks, that places such models on the Union market is required to publish respective summaries. This requirement also applies to providers of models released under free and open-source licenses.",
+            "source_section": "Who is expected to publish a summary of the training content?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1711,
+            "end_char": 1978
           }
         ]
       }
@@ -41,54 +65,144 @@
     "enforcement_mechanisms": [
       {
         "label": "civil_penalty",
-        "confidence": 0.97,
+        "confidence": 0.98,
         "evidence": [
           {
             "quote": "Non-compliance may result in fines of up to 3% of the provider's annual total worldwide turnover in the preceding financial year, or 15 000 000 Euros, whichever is higher.",
-            "source_section": "Enforcement"
+            "source_section": "What are the consequences if a provider fails to publish a summary?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8512,
+            "end_char": 8683
           }
         ]
       },
       {
         "label": "regulatory_supervision",
-        "confidence": 0.9,
+        "confidence": 0.85,
         "evidence": [
           {
             "quote": "Failure to provide this summary can lead to enforcement actions by the AI Office as of 2 August 2026.",
-            "source_section": "Enforcement"
+            "source_section": "What are the consequences if a provider fails to publish a summary?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8410,
+            "end_char": 8511
           }
         ]
       }
     ],
-    "implementation_notes": "Template use is mandatory under Article 53(1)(d) of the AI Act. Obligation applies from 2 August 2025 for new models; existing models have until 2 August 2027. Enforcement actions possible from 2 August 2026. Applies to open-source model providers as well. Code of Practice adherence remains voluntary and addresses separate obligations.",
-    "confidence": 0.95
+    "enforcement_authorities": [
+      "European Commission AI Office"
+    ],
+    "compliance_deadlines": [
+      "2025-08-02: Obligation to publish the public summary of training content becomes applicable for general-purpose AI models placed on the Union market (no later than when the model is placed on the market).",
+      "2026-08-02: Enforcement actions by the AI Office for failure to publish the summary commence.",
+      "2027-08-02: Deadline for providers of general-purpose AI models placed on the market before 2 August 2025 to make the corresponding summaries available.",
+      "Six-month intervals (or sooner if a materially significant update is required): Update cadence for the summary when a model is further trained on additional data."
+    ],
+    "penalties_summary": "Failure to publish the mandatory training content summary may lead to enforcement actions by the AI Office as of 2 August 2026, including fines of up to 3% of the provider's annual total worldwide turnover in the preceding financial year or EUR 15,000,000, whichever is higher.",
+    "implementation_notes": "This document is an official European Commission FAQ explaining the mandatory Template for public summaries of training content under Article 53(1)(d) of the EU AI Act. Although the underlying statutory duty and use of the Template are mandatory, this FAQ itself is interpretive regulatory guidance rather than enacted legislation. The publication_date reflects the webpage's last update date (26 March 2026). The FAQ details three required summary sections, trade-secret balancing, SME thresholds for listing scraped domains (top 5% or 1,000 domains, whichever is lower, versus top 10% for other providers), and rules for justifying information gaps for models placed on the market before 2 August 2025.",
+    "confidence": 0.92
   },
   "risk_framing": {
     "dominant_frame": "fundamental_rights",
     "secondary_frames": [
-      "consumer_public_safety",
       "innovation_enablement"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
+      "economic_competitiveness": 0.05,
+      "fundamental_rights": 0.95,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.65,
+      "consumer_public_safety": 0.25,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
       "economic_competitiveness": 0.0,
       "fundamental_rights": 0.75,
       "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.35,
+      "innovation_enablement": 0.2,
+      "consumer_public_safety": 0.05,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document frames AI governance primarily around enabling rights-holders to exercise their legal rights—copyright, data protection, non-discrimination, consumer protection—under Union law. The core justification for the transparency obligation is that parties with legitimate interests need information to assert their rights, not safety or competitiveness concerns.",
+    "rationale_summary": "The document's dominant frame is fundamental_rights because it repeatedly justifies the mandatory GPAI training-content summary template as a mechanism to increase transparency so parties with legitimate interests can exercise rights protected under Union law—explicitly citing fundamental rights protection, copyright and intellectual property rights, data protection, non-discrimination, and freedom of science. Innovation_enablement appears as a secondary frame through recurring emphasis on facilitating simple, consistent compliance, minimising administrative burdens, providing SME proportionality, and balancing transparency against the protection of trade secrets and confidential business information. Fundamental_rights edges out innovation_enablement because compliance facilitation is explicitly subordinated to fulfilling the primary objective of enabling rights exercise, while consumer_public_safety receives only a brief passing mention via consumer protection.",
     "evidence_spans": [
       {
-        "quote": "This increased transparency enables parties with legitimate interests to exercise their rights under Union law. These may refer to copyright, related rights, and other intellectual property rights, as well as other rights protected under Union law, such as data protection, consumer protection, non-discrimination, and freedom of science.",
-        "source_section": "General"
+        "quote": "This public summary is designed to increase transparency about the model’s training data and assist parties with legitimate interests, such as copyright holders, in exercising their rights under Union law.",
+        "source_section": "What is the purpose and scope of the Template?",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 168,
+        "end_char": 373
       },
       {
-        "quote": "The transparency of the training data will help rightsholders in obtaining relevant information on the content used in the training of general-purpose AI models.",
-        "source_section": "Copyright section"
+        "quote": "This increased transparency enables parties with legitimate interests to exercise their rights under Union law. These may refer to copyright, related rights, and other intellectual property rights, as well as other rights protected under Union law, such as data protection, consumer protection, non-discrimination, and freedom of science.",
+        "source_section": "What is the added value of the public summary for promoting trust and fundamental rights protection in the EU?",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 2816,
+        "end_char": 3154
+      },
+      {
+        "quote": "It enables providers to meet their transparency requirements in a simple, consistent, and effective manner, while minimising the administrative burden to only what is necessary to fulfil the objective of the Summary.",
+        "source_section": "How do these guidelines and the template support providers of general-purpose AI models in complying with the AI Act’s obligation?",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1493,
+        "end_char": 1709
+      },
+      {
+        "quote": "The Template seeks to strike a balance between serving the interests of parties with legitimate interests and promoting meaningful transparency of the training content while respecting the rights of all parties concerned, particularly taking into account the need to protect trade secrets and confidential business information.",
+        "source_section": "Will providers have to disclose trade secrets?",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 3156,
+        "end_char": 3483
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:42:21.621371Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "a0f389da767c4bb0e70213a112dc300e94ad32217e340bc7e8ec2fa1cb696b8f",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 26849,
+      "output_tokens": 2046,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 7445,
+      "estimated_cost_usd": 0.128471
+    },
+    "grounding_summary": {
+      "total_quotes": 9,
+      "exact_matches": 9,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 1
+    }
   }
 }

@@ -9,11 +9,17 @@
     "binding_strength": "executive_action",
     "publication_date": "2025-04-03",
     "effective_date": "2025-04-03",
+    "covered_actors": [
+      "Heads of all Executive Branch departments and agencies defined in 44 U.S.C. § 3502(1), including independent regulatory agencies (44 U.S.C. § 3502(5)) (excluding National Security Systems; Intelligence Community elements exempt from Section 4(a)-(b) and inventory duties; CFO Act agencies subject to additional Strategy and Governance Board mandates)",
+      "Agency Chief AI Officers (CAIOs), Agency AI Governance Boards, and the OMB-chaired interagency Chief AI Officer Council",
+      "Federal AI and AI-enabling workforce, agency risk-accepting officials, and internal independent agency reviewers",
+      "Vendors providing AI products or services to covered Federal agencies"
+    ],
     "covered_application_domains": [
+      "public_sector_use",
       "general_purpose_models",
       "critical_infrastructure",
       "biometrics",
-      "public_sector_use",
       "employment",
       "education",
       "healthcare",
@@ -21,104 +27,234 @@
       "law_enforcement",
       "defense"
     ],
+    "prohibited_practices": [
+      "Continuing to operate high-impact AI functionality that is not compliant with Section 4(b) minimum risk management practices (agencies must safely discontinue or cease use if proper risk mitigation is not possible and no CAIO waiver applies)",
+      "Vendor use of Federal Government data to train or improve commercial AI offerings without express agency permission (recommended contractual restriction)",
+      "Developers or vendors directly relying on validation or test datasets to train AI systems"
+    ],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.95,
+        "confidence": 0.98,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "Agencies must complete an AI impact assessment before deploying any high-impact AI use case.",
-            "source_section": "Section 4(b)(ii)"
+            "quote": "Complete AI Impact Assessment. Agencies must complete an AI impact assessment before deploying any high-impact AI use case. These assessments must be updated periodically and throughout the AI' s lifecycle, as appropriate, using target variables that anticipate real-world outcomes.",
+            "source_section": "Page 16",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 45223,
+            "end_char": 45505
           },
           {
-            "quote": "the potential impacts of using AI, supported by documentation on potential impacts on the privacy, civil rights, and civil liberties of the public",
-            "source_section": "Section 4(b)(ii)(C)"
+            "quote": "results ofindependent review, supported by an independent reviewer within the agency who has not been involved in the development. The independent reviewer of the impact assessment shall identify any potential concerns or gaps.",
+            "source_section": "Page 17",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 47203,
+            "end_char": 47430
           }
         ]
       },
       {
         "label": "pre_deployment_testing",
-        "confidence": 0.95,
+        "confidence": 0.98,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "Agencies must develop pre-deployment testing and prepare risk mitigation plans that reflect expected real-world outcomes",
-            "source_section": "Section 4(b)(i)"
+            "quote": "Conduct Pre-Deployment Testing. Agencies must develop pre-deployment testing and prepare risk mitigation plans that reflect expected real-world outcomes and identify expected benefits to the AI use.",
+            "source_section": "Page 15",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 44720,
+            "end_char": 44918
+          },
+          {
+            "quote": "Agencies must conduct testing and periodic human review of AI use cases, where feasible, to identify any adverse impacts to the performance and security of AI functionality, including those that may violate laws governing privacy, civil rights, or civil liberties.",
+            "source_section": "Page 18",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 48057,
+            "end_char": 48321
           }
         ]
       },
       {
         "label": "human_oversight",
-        "confidence": 0.95,
+        "confidence": 0.98,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "Agencies must ensure human oversight, intervention, and accountability suitable for high-impact use cases.",
-            "source_section": "Section 4(b)(v)"
+            "quote": "Provide Additional Human Oversight, Intervention, and Accountability. Agencies must ensure human oversight, intervention, and accountability suitable for high-impact use cases. When practicable and consistent with existing agency practices, agencies must ensure that the AI functionality has an appropriate fail-safe that minimizes the risk of significant harm.",
+            "source_section": "Page 18",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 49087,
+            "end_char": 49448
           },
           {
-            "quote": "Agencies must conduct testing and periodic human review of AI use cases, where feasible",
-            "source_section": "Section 4(b)(iii)"
-          }
-        ]
-      },
-      {
-        "label": "incident_reporting",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "agencies must document implementation of the minimum practices in Section 4(b) of this memorandum for high-impact uses of AI and be prepared to report them to OMB, as part of periodic accountability reviews",
-            "source_section": "Section 4(a)(i)"
-          },
-          {
-            "quote": "within 30 days of granting or revoking any waiver, report to OMB on the scope, justification, and evidence supporting that action",
-            "source_section": "Section 4(a)(iii)"
+            "quote": "Offer Consistent Remedies or Appeals. Agencies must ensure that individuals affected by AI-enabled decisions have access to a timely human review and a chance to appeal any negative impacts, when appropriate.",
+            "source_section": "Page 18",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 49456,
+            "end_char": 49664
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.9,
+        "confidence": 0.95,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "each agency must publicly release a summary describing each individual determination and waiver, as well its justification",
-            "source_section": "Section 4(a)(iv)"
+            "quote": "To the extent consistent with law and governmentwide policy, each agency must publicly release a summary describing each individual determination and waiver, as well its justification.",
+            "source_section": "Page 15",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 44201,
+            "end_char": 44385
           },
           {
-            "quote": "Agencies must develop public AI strategies that elevate AI adoption and innovation as a priority, while increasing transparency to the American public",
-            "source_section": "Overview"
+            "quote": "when possible, individuals who may interact with the AI have the ability to opt into and out of participating in the pilot, with sufficient notice to make an informed decision;",
+            "source_section": "Page 15",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42656,
+            "end_char": 42832
           }
         ]
       },
       {
         "label": "model_documentation",
-        "confidence": 0.9,
+        "confidence": 0.93,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "documenting known capabilities and limitations of the AI and any guidelines on how the system is intended to be used",
-            "source_section": "Section 2(d)(ii)(A)"
+            "quote": "Agencies must implement appropriate mitigations and ensure proper system and use documentation; and where possible, develop processes enabling traceability and transparency in this evaluation.",
+            "source_section": "Page 18",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 48489,
+            "end_char": 48681
           },
           {
-            "quote": "documenting provenance of the data used to train, fine-tune, or operate the AI",
-            "source_section": "Section 2(d)(ii)(B)"
+            "quote": "A. documenting known capabilities and limitations of the AI and any guidelines on how the system is intended to be used; B. documenting provenance of the data used to train, fine-tune, or operate the AI;",
+            "source_section": "Page 9",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23702,
+            "end_char": 23905
           }
         ]
       },
       {
-        "label": "third_party_audit",
-        "confidence": 0.7,
+        "label": "training_data_governance",
+        "confidence": 0.95,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "results of independent review, supported by an independent reviewer within the agency who has not been involved in the development",
-            "source_section": "Section 4(b)(ii)(F)"
+            "quote": "supported by a summary of the data used in the AI' s design, development, training, testing, and operation and its fitness for the AI' s intended purpose; describe the data collection, and preparation process; and indicate whether the data is to be publicly disclosed as an open government data asset. When applicable, this summary must describe information included in the data about classes protected by Federal nondiscrimination laws;",
+            "source_section": "Page 17",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 45942,
+            "end_char": 46379
+          },
+          {
+            "quote": "Contract terms should protect such data from unauthorized disclosure or use, and from being used to train or improve the functionality of the vendor's commercial offerings without express permission from the agency.",
+            "source_section": "Page 8",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22529,
+            "end_char": 22744
+          }
+        ]
+      },
+      {
+        "label": "open_weight_obligations",
+        "confidence": 0.93,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "Agencies must proactively share across the Federal Government their custom-developed code-including models and model weights-whether agency developed or procured, for AI applications in active use, except in the circumstances described in paragraphs A through D below.",
+            "source_section": "Page 7",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 18064,
+            "end_char": 18332
+          },
+          {
+            "quote": "Agencies, where practicable, must also release and maintain AI code as open source software in a public repository 15 unless the: A. sharing of the code is restricted by law or regulation",
+            "source_section": "Page 7",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 18504,
+            "end_char": 18691
           }
         ]
       },
       {
         "label": "registration_licensing",
-        "confidence": 0.8,
+        "confidence": 0.91,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "each agency (except for the Department of Defense and the Intelligence Community) must inventory its AI use cases at least annually, submit the inventory to OMB, and post a public version on the agency's website",
-            "source_section": "Section 3(b)(v)"
+            "quote": "Each agency (except for the Department of Defense and the Intelligence Community) must inventory its AI use cases at least annually, submit the inventory to 0MB, and post a public version on the agency's website.",
+            "source_section": "Page 12",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 34807,
+            "end_char": 35019
+          },
+          {
+            "quote": "For AI systems, agencies must continue to follow applicable authorization to operate requirements from 0MB Circular No. A-130, Managing Information as a Strategic Resource.",
+            "source_section": "Page 14",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42051,
+            "end_char": 42223
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.88,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "Within 270 days of the issuance of this memorandum, agencies must revisit and update where necessary their internal policies on IT infrastructure ( e.g., software tools, use of open source software, libraries, and code for AI development, software deployment and platform modernization), data",
+            "source_section": "Page 12",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 33578,
+            "end_char": 33870
+          },
+          {
+            "quote": "cybersecurity (e.g., information system authorizations, continuous monitoring, continuous authorizations for Al), and privacy to align with this memorandum, Executive Order 14179, Executive Order 13960, and with applicable law.",
+            "source_section": "Page 12",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 34056,
+            "end_char": 34283
           }
         ]
       }
@@ -126,86 +262,239 @@
     "enforcement_mechanisms": [
       {
         "label": "reporting_obligation",
-        "confidence": 0.95,
+        "confidence": 0.97,
         "evidence": [
           {
-            "quote": "agencies must document implementation of the minimum practices...and be prepared to report them to OMB, as part of periodic accountability reviews, the annual AI use case inventory, or upon request",
-            "source_section": "Section 4(a)(i)"
+            "quote": "within 180 days of the issuance of this memorandum or any update to this memorandum, and every two years thereafter until 2036, each agency must submit to 0MB and post publicly on the agency's website either a plan to achieve consistency with this memorandum, or a written determination that the agency does not use and does not anticipate using covered AL",
+            "source_section": "Page 12",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 32999,
+            "end_char": 33355
           },
           {
-            "quote": "each agency must submit to OMB and post publicly on the agency's website either a plan to achieve consistency with this memorandum",
-            "source_section": "Section 3(b)(ii)"
+            "quote": "CAIOs must centrally track waivers, reassess them if there are significant changes to the conditions or context in which the AI is used, and within 30 days of granting or revoking any waiver, report to 0MB on the scope, justification, and evidence supporting that action.",
+            "source_section": "Page 15",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 43878,
+            "end_char": 44149
+          }
+        ]
+      },
+      {
+        "label": "market_access_restriction",
+        "confidence": 0.91,
+        "evidence": [
+          {
+            "quote": "If a particular high-impact use case is not compliant with the minimum practices then the agency must safely discontinue use of the AI functionality.",
+            "source_section": "Page 15",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42233,
+            "end_char": 42382
+          },
+          {
+            "quote": "When the high-impact AI is not performing at an appropriate level, agencies must have a plan to discontinue its use until actions are taken to achieve compliance with this memorandum. If proper risk mitigation is not possible, agencies must cease the use of the AI.",
+            "source_section": "Page 3",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5782,
+            "end_char": 6047
           }
         ]
       },
       {
         "label": "regulatory_supervision",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "evidence": [
           {
-            "quote": "OMB will convene and chair an interagency council to maximize agency efficiencies by coordinating the development and use of AI",
-            "source_section": "Overview"
+            "quote": "Within 365 days of the issuance of this memorandum, agencies must document implementation of the minimum practices in Section 4(b) of this memorandum for highimpact uses of AI and be prepared to report them to 0MB, as part of periodic accountability reviews, the annual AI use case inventory, or upon request as determined",
+            "source_section": "Page 14",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40995,
+            "end_char": 41317
           },
           {
-            "quote": "CAIOs must centrally track waivers, reassess them if there are significant changes to the conditions or context in which the AI is used",
-            "source_section": "Section 4(a)(iii)"
+            "quote": "CAIOs may revisit any determinations made within their agency to conclude that an AI use case is considered \"high-impact\" and must be subject to the minimum risk management practices at any time.",
+            "source_section": "Page 14",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40091,
+            "end_char": 40286
           }
         ]
       },
       {
-        "label": "soft_enforcement",
-        "confidence": 0.8,
+        "label": "procurement_condition",
+        "confidence": 0.86,
         "evidence": [
           {
-            "quote": "If a particular high-impact use case is not compliant with the minimum practices then the agency must safely discontinue use of the AI functionality.",
-            "source_section": "Section 4(a)(i)"
+            "quote": "This section provides agencies with recommendations for the responsible procurement of AI capabilities to facilitate compliance with the minimum risk management practices for highimpact AI use cases detailed in Section 4.",
+            "source_section": "Page 8",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 21377,
+            "end_char": 21598
+          },
+          {
+            "quote": "Consistent with applicable law, it is the policy of the United States to buy American and to maximize the use of AI products and services that are developed and produced in the United States.",
+            "source_section": "Page 8",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20990,
+            "end_char": 21181
           }
         ]
       }
     ],
-    "implementation_notes": "This memorandum rescinds M-24-10 and implements EO 14179. It applies to all executive branch agencies including independent regulatory agencies but excludes National Security Systems and Intelligence Community elements from high-impact AI requirements. Timelines range from 60 days (CAIO designation) to 365 days (minimum risk management implementation). Enforcement is internal to the executive branch with no civil or criminal penalties specified; discontinuation of non-compliant AI use is the primary sanction. The 'third_party_audit' label is applied conservatively as the independent reviewer must be within the agency.",
-    "confidence": 0.92
+    "enforcement_authorities": [
+      "Office of Management and Budget (OMB)",
+      "Heads of covered Executive Branch departments and agencies (including independent regulatory agencies)",
+      "Agency Chief AI Officers (CAIOs)",
+      "Agency AI Governance Boards",
+      "Chief AI Officer Council (chaired by OMB)"
+    ],
+    "compliance_deadlines": [
+      "Within 60 days of 2025-04-03 (2025-06-02): Each agency must retain or designate a Chief AI Officer (CAIO) and notify OMB within 30 days of any subsequent change or vacancy",
+      "Within 90 days of 2025-04-03 (2025-07-02): Each CFO Act agency must convene an Agency AI Governance Board; OMB must convene the interagency Chief AI Officer Council (sunsetting after 5 years unless extended)",
+      "Within 180 days of 2025-04-03 (2025-09-30): Each CFO Act agency (excluding DoD and IC) must develop and publicly post an Agency AI Strategy",
+      "Within 180 days of 2025-04-03 (2025-09-30) and every two years thereafter until 2036: Each agency must submit to OMB and publicly post an agency compliance plan or written non-use determination",
+      "Within 270 days of 2025-04-03 (2025-12-29): Each agency must update internal IT, data, cybersecurity, and privacy policies and develop a Generative AI acceptable-use policy",
+      "Within 365 days of 2025-04-03 (2026-04-03): Each agency (excluding IC) must implement and document Section 4(b) minimum risk management practices for high-impact AI (or discontinue non-compliant functionality) and publicly report determinations and waivers",
+      "Annually (and within 30 days of waiver grant/revocation or significant modifications): Agencies must submit to OMB and publicly release annual AI Use Case Inventories (excluding DoD and IC), annually recertify CAIO waivers, and report waiver grants/revocations to OMB within 30 days"
+    ],
+    "penalties_summary": "Enforced through executive compliance directives and mandatory discontinuation rather than statutory fines: agencies must safely discontinue or cease operating any high-impact AI functionality that does not comply with Section 4(b) minimum risk management practices unless a non-delegable CAIO written waiver is issued, recertified annually, publicly summarized, and reported to OMB within 30 days; agencies are subject to OMB periodic accountability reviews and public reporting of compliance plans and AI use case inventories.",
+    "implementation_notes": "Issued April 3, 2025 by OMB Director Russell T. Vought pursuant to EO 14179, the AI in Government Act of 2020, and the Advancing American AI Act, rescinding and replacing OMB Memorandum M-24-10. Applies across executive agencies and independent regulatory agencies (excluding National Security Systems, with Intelligence Community carve-outs). Combines pro-innovation mandates (public AI strategies, mandatory government-wide sharing of custom-developed AI models/weights and open-source code release with 4 carve-outs, delegated risk acceptance) with binding governance structures (CAIOs, AI Governance Boards, CAIO Council) and 7 mandatory minimum risk management practices for 'high-impact AI' across 15 presumed high-impact categories (pre-deployment testing, AI Impact Assessments with internal independent review, ongoing monitoring, operator training, human oversight/fail-safes, human appeals/remedies, and public consultation).",
+    "confidence": 0.97
   },
   "risk_framing": {
     "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "consumer_public_safety",
       "fundamental_rights",
-      "economic_competitiveness",
-      "national_security"
+      "consumer_public_safety",
+      "economic_competitiveness"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.02,
-      "national_security": 0.5,
-      "economic_competitiveness": 0.55,
-      "fundamental_rights": 0.5,
+      "existential_catastrophic": 0.05,
+      "national_security": 0.35,
+      "economic_competitiveness": 0.72,
+      "fundamental_rights": 0.9,
       "social_stability": 0.2,
-      "innovation_enablement": 0.8,
-      "consumer_public_safety": 0.55,
+      "innovation_enablement": 0.96,
+      "consumer_public_safety": 0.85,
       "labor_transition": 0.1
     },
-    "rationale_summary": "The document is primarily framed around enabling and accelerating AI adoption across the federal government, with governance framed as a facilitator rather than a constraint. The title itself—'Accelerating Federal Use of AI through Innovation, Governance, and Public Trust'—signals innovation enablement as the core purpose. The memorandum repeatedly directs agencies to remove bureaucratic barriers, scale AI adoption, and redefine governance as 'an enabler of effective and safe innovation.' Consumer/public safety and fundamental rights appear as secondary concerns addressed through minimum risk management practices for high-impact AI. Economic competitiveness and national security are cited as motivations but are not the primary framing mechanism.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.12,
+      "fundamental_rights": 0.26,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.42,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "OMB Memorandum M-25-21 is dominantly framed around innovation_enablement, directing agencies to adopt a forward-leaning pro-innovation posture, cut bureaucratic bottlenecks, delegate risk acceptance, share code/models/data, and apply risk-proportionate governance as an enabler of accelerated public-sector AI adoption. Innovation_enablement edges out fundamental_rights because the overhaul replacing M-24-10 explicitly elevates barrier removal, AI maturity, and agile federal deployment as its lead organizing priority. Fundamental_rights is a strong secondary frame protecting civil rights, civil liberties, privacy, non-discrimination, protected speech, and human appeal rights across high-impact agency decisions; consumer_public_safety is prominent in ensuring safe, secure, resilient AI and fail-safes across safety-critical infrastructure, healthcare, robotics, and hazardous agents; and economic_competitiveness appears via EO 14179 global AI dominance, Buy American procurement, and taxpayer value.",
     "evidence_spans": [
       {
-        "quote": "agencies are empowered to drive AI innovation and seize the opportunity to apply the best of American AI",
-        "source_section": "Overview"
+        "quote": "The United States is at the forefront of AI development, and agencies must adopt a forward-leaning and pro-innovation approach that takes advantage of this technology to help shape the future of government operations.",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1473,
+        "end_char": 1690
       },
       {
-        "quote": "Agencies must remove unnecessary and bureaucratic requirements that inhibit innovation and responsible adoption.",
-        "source_section": "Guidance on Federal Use of AI"
+        "quote": "Agencies must cut down on bureaucratic bottlenecks and redefine AI governance as an enabler of effective and safe innovation.",
+        "source_section": "Page 2",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 3755,
+        "end_char": 3880
       },
       {
-        "quote": "redefine AI governance as an enabler of effective and safe innovation",
-        "source_section": "Guidance on Federal Use of AI"
+        "quote": "Through this memorandum, agencies are directed to provide improved services to the public, while maintaining strong safeguards for civil rights, civil liberties, and privacy.",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 697,
+        "end_char": 871
       },
       {
-        "quote": "Executive Order 14179 recognizes the importance of American AI development to promote human flourishing, economic competitiveness, and national security.",
-        "source_section": "Section 2(c)"
+        "quote": "This memorandum provides guidance to agencies on how to innovate and promote the responsible adoption, use, and continued development of AI, while ensuring appropriate safeguards are in place to protect privacy, civil rights, and civil liberties, and to mitigate any unlawful discrimination, consistent with the AI in Government Act.",
+        "source_section": "Page 4",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 6379,
+        "end_char": 6712
       },
       {
-        "quote": "agencies must deploy trustworthy AI, ensuring that rapid AI innovation is not achieved at the expense of the American people or any violations of their trust",
-        "source_section": "Guidance on Federal Use of AI"
+        "quote": "As such, agencies are directed to implement minimum risk management practices for AI that could have significant impacts when deployed (\"high-impact AI\"), as outlined in the Appendix, and to prioritize the use of AI that is safe, secure, and resilient.",
+        "source_section": "Page 3",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 5529,
+        "end_char": 5781
+      },
+      {
+        "quote": "On January 23, 2025, President Trump signed Executive Order (E.O.) 14179, Removing Barriers to American Leadership in Artificial Intelligence, to advance the United States' global AI dominance and to promote responsible AI innovation.",
+        "source_section": "Page 1",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 334,
+        "end_char": 568
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:23:23.691471Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "5af99ad16f37ed586c6d2cfdb76f6cdee1c53b3d6fddb17cc29931fa60488a72",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 65934,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 32,
+      "exact_matches": 32,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

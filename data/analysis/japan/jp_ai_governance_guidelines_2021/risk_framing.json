@@ -2,31 +2,83 @@
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
     "consumer_public_safety",
-    "social_stability"
+    "fundamental_rights"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.0,
-    "social_stability": 0.0,
-    "innovation_enablement": 0.55,
-    "consumer_public_safety": 0.25,
+    "economic_competitiveness": 0.35,
+    "fundamental_rights": 0.72,
+    "social_stability": 0.3,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.8,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document frames AI governance primarily as a mechanism to facilitate AI deployment and support voluntary company efforts, with governance serving to enable rather than restrict AI. The stated aim is 'supporting the implementation of AI principles required for the facilitation of deployment of AI.' Secondary framing includes managing negative impacts on society and users.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.07,
+    "fundamental_rights": 0.16,
+    "social_stability": 0.05,
+    "innovation_enablement": 0.5,
+    "consumer_public_safety": 0.22,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The guidelines are predominantly framed around innovation enablement: their stated aim is to facilitate the deployment and social implementation of AI through non-binding, flexible, and iterative 'agile governance' rather than rigid pre-fixed rules, enabling companies to maximize positive impacts (such as productivity and new high-value-added businesses) while proportionately managing negative impacts. Consumer and public safety is the strongest secondary frame, reflected in repeated attention to preventing operational incidents, mitigating harm to physical and mental health and property, and reducing incident-related burdens on users. Fundamental rights appears as a secondary frame via grounding in Japan's Social Principles of Human-centric AI—specifically privacy protection, non-discrimination/fairness, and avoiding undue hindrance to individual decision-making—though these concerns are framed as voluntary corporate risk-management targets to enable safe AI adoption rather than enforceable statutory rights, which is why innovation enablement clearly edges out both secondary frames. Mild elements of economic competitiveness (corporate growth and productivity) and social stability (social acceptance and collective trust) appear in supporting roles, while existential risk, national security, and labor transition are absent.",
   "evidence_spans": [
     {
-      "quote": "The Governance Guidelines for Implementation of AI Principles present action targets to be implemented by an AI company, with the aim of supporting the implementation of the AI principles that is required for the facilitation of deployment of AI.",
-      "source_section": "1. The Aim of the AI Governance Guidelines"
+      "quote": "The Governance Guidelines for Implementation of AI Principles (hereinafter referred to as the “AI Governance Guidelines”) present action targets to be implemented by an AI company, with the aim of supporting the implementation of the AI principles that is required for the facilitation of deployment of AI.",
+      "source_section": "Page 4",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 8014,
+      "end_char": 8320
     },
     {
-      "quote": "Society will accumulate knowledge to maximize positive impacts brought by AI systems, while managing negative impacts at a level acceptable to stakeholders.",
-      "source_section": "5. Living Document"
+      "quote": "Therefore, the governance model for a CPS-based society must be one where solutions are constantly revised to ensure their optimality based on conditions and goals that constantly change. For this reason, we do not believe it would be appropriate to apply models of governance whose goals and procedures are fixed in advance.",
+      "source_section": "Page 80",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 196602,
+      "end_char": 196927
     },
     {
-      "quote": "the Guidelines are also expected to support company voluntary efforts as widely shared material",
-      "source_section": "2. Legal Effect of the Guidelines"
+      "quote": "In order to improve users’ confidence in AI systems, we believe it is important for us to reduce the burden on users as much as possible by devising ways to prevent problems from occurring, and by responding promptly when problems do occur.",
+      "source_section": "Page 35",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 90318,
+      "end_char": 90558
+    },
+    {
+      "quote": "On the other hand, haphazard provision of AI to businesses can entail risks peculiar to AI, such as unintentionally impairing fairness and causing safety problems.",
+      "source_section": "Page 16",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 40699,
+      "end_char": 40862
+    },
+    {
+      "quote": "The social principles for AI are comprised of seven principles: (1) Human-centric, (2) Education/Literacy, (3) Privacy Protection, (4) Ensuring Security, (5) Fair Competition, (6) Fairness, Accountability, and Transparency, and (7) Innovation.",
+      "source_section": "Page 4",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 7770,
+      "end_char": 8013
+    },
+    {
+      "quote": "Did the AI system developer ensure that opportunities and decision-making of individuals will not be unduly hindered while developing an AI system that can analyze individuals?",
+      "source_section": "Page 66",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 168051,
+      "end_char": 168227
     }
   ]
 }

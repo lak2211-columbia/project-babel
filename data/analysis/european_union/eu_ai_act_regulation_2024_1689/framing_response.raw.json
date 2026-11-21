@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01Rws5ibcTtF9fvqkCLpqzme",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"fundamental_rights\",\"secondary_frames\":[\"innovation_enablement\",\"consumer_public_safety\",\"economic_competitiveness\"],\"frame_confidence\":{\"existential_catastrophic\":0.05,\"national_security\":0.1,\"economic_competitiveness\":0.55,\"fundamental_rights\":0.85,\"social_stability\":0.3,\"innovation_enablement\":0.6,\"consumer_public_safety\":0.5,\"labor_transition\":0.1},\"rationale_summary\":\"The EU AI Act consistently frames AI governance as necessary to protect fundamental rights, democracy, rule of law, and human dignity as enshrined in the EU Charter. While economic competitiveness and innovation enablement are prominent secondary themes, the primary justification for regulation is the protection of rights and freedoms. The document repeatedly references the Charter of Fundamental Rights, human-centric AI, and protection of natural persons as the core rationale.\",\"evidence_spans\":[{\"quote\":\"ensuring a high level of protection of health, safety, fundamental rights as enshrined in the Charter of Fundamental Rights of the European Union, including democracy, the rule of law and environmental protection\",\"source_section\":\"Recital 1\"},{\"quote\":\"AI may generate risks and cause harm to public interests and fundamental rights that are protected by Union law\",\"source_section\":\"Recital 5\"},{\"quote\":\"it is vital for AI and its regulatory framework to be developed in accordance with Union values...the fundamental rights and freedoms enshrined in the Treaties\",\"source_section\":\"Recital 6\"},{\"quote\":\"AI should be a human-centric technology. It should serve as a tool for people, with the ultimate aim of increasing human well-being\",\"source_section\":\"Recital 6\"},{\"quote\":\"rules regulating the placing on the market...ensuring the smooth functioning of the internal market...supportive of new innovative solutions, enabling a European ecosystem\",\"source_section\":\"Recital 8\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 4804,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 430,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 122832,
+    "candidatesTokenCount": 1270,
+    "totalTokenCount": 128109,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 122832
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1270
+      }
+    ],
+    "thoughtsTokenCount": 4007,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "GC4Ba6PjFrO_odAPmMiB8AE"
 }

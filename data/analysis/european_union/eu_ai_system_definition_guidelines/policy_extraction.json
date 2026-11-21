@@ -3,59 +3,53 @@
   "issuing_body": "European Commission",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": "2025-02-02",
-  "effective_date": "2025-02-02",
+  "publication_date": "2025-07-29",
+  "effective_date": null,
   "covered_actors": [
     "providers",
-    "market stakeholders",
-    "institutional stakeholders",
-    "relevant persons"
+    "other relevant persons",
+    "market and institutional stakeholders"
   ],
-  "covered_application_domains": [
-    "general_purpose_models",
-    "critical_infrastructure",
-    "biometrics",
-    "public_sector_use",
-    "employment",
-    "education",
-    "healthcare",
-    "finance",
-    "law_enforcement",
-    "defense"
-  ],
+  "covered_application_domains": [],
   "prohibited_practices": [],
-  "safety_requirements": [
-    {
-      "label": "human_oversight",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "Systems that have the capability to operate with limited or no human intervention in specific use contexts...may, under certain conditions, trigger additional potential risks and human oversight considerations.",
-          "source_section": "Page 5"
-        }
-      ]
-    }
-  ],
+  "safety_requirements": [],
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.9,
+      "confidence": 0.85,
       "evidence": [
         {
           "quote": "The Guidelines are not binding. Any authoritative interpretation of the AI Act may ultimately only be given by the Court of Justice of the European Union (CJEU).",
-          "source_section": "Page 2"
+          "source_section": "Page 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2595,
+          "end_char": 2756
+        },
+        {
+          "quote": "By issuing these Guidelines, the Commission aims to assist providers and other relevant persons, including market and institutional stakeholders, in determining whether a system constitutes an AI system within the meaning of the AI Act, thereby facilitating the effective application and enforcement of that Act.",
+          "source_section": "Page 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1181,
+          "end_char": 1493
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "Court of Justice of the European Union (CJEU)",
-    "European Artificial Intelligence Board"
+    "European Commission",
+    "European Artificial Intelligence Board",
+    "Court of Justice of the European Union"
   ],
   "compliance_deadlines": [
-    "2 February 2025: AI system definition and Chapter I and II provisions, including Article 5 prohibited AI practices, entered into application"
+    "2024-08-01: Regulation (EU) 2024/1689 (AI Act) entered into force",
+    "2025-02-02: Definition of an AI system (Article 3(1)) and Chapters I and II of the AI Act (including Article 5 prohibited AI practices) entered into application",
+    "2026-08-02: Grandfathering cutoff under Article 111(2) AI Act for systems already placed on the market or put into service before this date"
   ],
   "penalties_summary": null,
-  "implementation_notes": "Guidelines are explicitly non-binding (paragraph 7: 'The Guidelines are not binding'). Authoritative interpretation rests solely with the CJEU. Guidelines were adopted in parallel with Commission guidelines on prohibited AI practices. They clarify the seven-element definition of 'AI system' under Article 3(1) of Regulation (EU) 2024/1689 and note that systems based solely on rules defined by natural persons or limited to basic data processing fall outside the AI system definition.",
-  "confidence": 0.92
+  "implementation_notes": "Non-binding interpretive guidelines (C(2025) 5053 final) issued under Article 96(1)(f) of the AI Act to assist stakeholders in applying the seven-element definition of an 'AI system' under Article 3(1) and distinguishing AI systems from excluded software (mathematical optimization, basic data processing, classical heuristics, and simple prediction systems). Authoritative interpretation of the AI Act rests solely with the CJEU. Adopted in parallel with guidelines on prohibited AI practices; analysis of differences between AI systems and general-purpose AI models (Chapter V) is explicitly outside scope.",
+  "confidence": 0.95
 }

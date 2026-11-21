@@ -1,127 +1,90 @@
 {
   "jurisdiction": "japan",
-  "issuing_body": "内閣府・AI戦略会議（Cabinet Office, AI Strategy Council）",
+  "issuing_body": "AI Strategy Council (Cabinet Office, Japan)",
   "document_type": "strategy_paper",
   "binding_strength": "strategy_statement",
   "publication_date": "2025-06-02",
   "effective_date": null,
   "covered_actors": [
-    "AI事業者",
-    "国の行政機関",
-    "クリエーター",
-    "AIベンチャー",
-    "大手企業"
+    "National government and administrative agencies",
+    "Local governments",
+    "AI developers and deployers (businesses and startups)",
+    "Entertainment and IP industry creators",
+    "Universities and research institutions"
   ],
   "covered_application_domains": [
     "general_purpose_models",
     "public_sector_use",
-    "education"
+    "education",
+    "healthcare"
   ],
   "prohibited_practices": [],
-  "safety_requirements": [
-    {
-      "label": "risk_assessment",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "偽情報の拡散など生成ＡＩをめぐるリスクが指摘される中、ＡＩによって国民の権利や利益が侵害される事案が発生した場合には、ＡＩ法に基づき、国が調査し、必要に応じて事業者への指導や助言などを行っていく必要があります",
-          "source_section": "石破内閣総理大臣挨拶"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.55,
-      "evidence": [
-        {
-          "quote": "ＡＩを開発・活用する者が遵守すべき指針の整備を進めてください",
-          "source_section": "石破内閣総理大臣挨拶"
-        },
-        {
-          "quote": "広島ＡＩプロセスの「国際行動規範」に係る「報告枠組み」について、本年２月より運用が開始されています",
-          "source_section": "川崎総務大臣政務官挨拶"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.5,
-      "evidence": [
-        {
-          "quote": "人間中心の考え方",
-          "source_section": "城内科学技術政策担当大臣挨拶"
-        },
-        {
-          "quote": "人間の尊厳や多様性、言論の自由、信頼できる情報環境といった人間中心の価値と民主主義の前提条件を見失わず",
-          "source_section": "構成員発言"
-        }
-      ]
-    },
-    {
-      "label": "content_provenance",
-      "confidence": 0.5,
-      "evidence": [
-        {
-          "quote": "ディープフェイクをはじめとする偽情報が増加しており",
-          "source_section": "構成員発言"
-        },
-        {
-          "quote": "ディープフェイク等の偽情報には、技術と制度、教育を統合した戦略と、国産技術が必要",
-          "source_section": "松尾座長発言"
-        }
-      ]
-    }
-  ],
+  "safety_requirements": [],
   "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "偽情報の拡散など生成ＡＩをめぐるリスクが指摘される中、ＡＩによって国民の権利や\n利益が侵害される事案が発生した場合には、ＡＩ法に基づき、国が調査し、必要に応じて\n事業者への指導や助言などを行っていく必要があります。",
+          "source_section": "Page 11",
+          "quote_en": "Amid concerns over risks associated with generative AI such as the spread of disinformation, when cases occur in which the rights or interests of citizens are infringed by AI, it is necessary for the state to conduct investigations under the AI Act and, as necessary, provide guidance or advice to business operators.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9912,
+          "end_char": 10019
+        },
+        {
+          "quote": "こうした国会での御議論も踏まえ、今後、Ａ\nＩ法において規定されている、ＡＩ戦略本部の設置、ＡＩ基本計画の策定、指針の整備、\n情報収集・調査といった取組を、関係省庁と緊密に連携しながら、スピード感を持って進\nめてまいります。",
+          "source_section": "Page 2",
+          "quote_en": "Based on these discussions in the Diet, going forward we will swiftly advance the initiatives stipulated in the AI Act—establishing the AI Strategy Headquarters, formulating the Basic AI Plan, developing guidelines, and conducting information collection and investigations—in close coordination with relevant ministries and agencies.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 823,
+          "end_char": 934
+        }
+      ]
+    },
     {
       "label": "soft_enforcement",
       "confidence": 0.85,
       "evidence": [
         {
-          "quote": "今回成立した日本版ＡＩ法には罰則がないなど、法執行面での裏付けが弱い点については様々な意見もあると思いますけれども、逆にそれを強みとして最大限生かした運用を進めていただきたい",
-          "source_section": "構成員発言"
+          "quote": "今回成立した日本版ＡＩ法には罰則がないなど、法執行面での裏付けが弱い点については様々な意見もあると思いますけれども、逆にそれを強みとして最大限生かした運用を進めていただきたいと考えています。",
+          "source_section": "Page 6",
+          "quote_en": "While I believe there are various opinions regarding the weak legal enforcement backing of the newly enacted Japanese AI Act, such as the absence of penalties, I would like to see its operation proceed by making the most of that very point as a strength.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4153,
+          "end_char": 4248
         },
         {
-          "quote": "罰則のない強みを活かした、委縮のない、切り込んだ運用をして欲しい",
-          "source_section": "松尾座長発言"
-        }
-      ]
-    },
-    {
-      "label": "regulatory_supervision",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "ＡＩ法に基づき、国が調査し、必要に応じて事業者への指導や助言などを行っていく必要があります",
-          "source_section": "石破内閣総理大臣挨拶"
-        },
-        {
-          "quote": "ＡＩ戦略本部の設置、ＡＩ基本計画の策定、指針の整備、情報収集・調査といった取組",
-          "source_section": "城内科学技術政策担当大臣挨拶"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.55,
-      "evidence": [
-        {
-          "quote": "広島ＡＩプロセスの「国際行動規範」に係る「報告枠組み」について、本年２月より運用が開始されています。ＡＩ法に基づき国が行う情報収集や調査は、この「報告枠組み」の結果も活用し",
-          "source_section": "川崎総務大臣政務官挨拶"
+          "quote": "本年冬までに、国際協力や、国際的な情報発信に取り組むとともに、『ＡＩを開発・活\n用する者が遵守すべき指針』の整備を進めてください。",
+          "source_section": "Page 11",
+          "quote_en": "By this winter, while engaging in international cooperation and international outreach, please proceed with developing the 'Guidelines to be Complied With by Those Who Develop and Utilize AI.'",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9846,
+          "end_char": 9911
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "AI戦略本部",
-    "デジタル庁",
-    "総務省",
-    "経済産業省",
-    "文部科学省",
+    "AI Strategy Headquarters (to be established)",
+    "Cabinet Office",
+    "Digital Agency",
+    "Ministry of Education, Culture, Sports, Science and Technology (MEXT)",
+    "Ministry of Internal Affairs and Communications (MIC)",
+    "Ministry of Economy, Trade and Industry (METI)",
     "AI Safety Institute (AISI)"
   ],
-  "compliance_deadlines": [],
-  "penalties_summary": "AI法には罰則がない旨が構成員から指摘された（「今回成立した日本版AI法には罰則がないなど、法執行面での裏付けが弱い」）。",
-  "implementation_notes": "本文書は2025年6月2日開催の第14回AI戦略会議の議事要旨。同年5月28日に成立した「人工知能関連技術の研究開発及び活用の推進に関する法律」（AI法）の概要およびAI戦略本部設置・AI基本計画策定・指針整備の方向性が議論された。統合イノベーション戦略2025のAIパート案も審議。デジタル庁は生成AI調達・利活用ガイドラインを5月27日に策定済み。AIと著作権・IPをめぐる権利ルール整備、学習用データ基盤の整備が課題として提起された。",
-  "confidence": 0.85
+  "compliance_deadlines": [
+    "Autumn 2025: Establish the AI Strategy Headquarters and Expert Panel under the AI Act",
+    "Winter 2025: Formulate the national AI Basic Plan",
+    "Winter 2025: Develop guidelines to be observed by AI developers and users"
+  ],
+  "penalties_summary": "The document notes that the enacted Japanese AI Act contains no statutory penalties; instead, where AI infringes citizens' rights or interests, the government will conduct investigations and provide guidance or advice to businesses as necessary.",
+  "implementation_notes": "Summary of minutes from the 14th AI Strategy Council meeting held on June 2, 2025, following the enactment of Japan's AI Act on May 28, 2025. Discusses the draft AI section of the Integrated Innovation Strategy 2025, upcoming governance milestones (AI Strategy Headquarters, AI Basic Plan, and guidelines), public-sector generative AI adoption, physical AI/robotics, IP and copyright challenges, deepfake/disinformation risks, and alignment with the Hiroshima AI Process.",
+  "confidence": 0.92
 }

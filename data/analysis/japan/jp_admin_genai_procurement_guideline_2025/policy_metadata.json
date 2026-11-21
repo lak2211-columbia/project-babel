@@ -1,0 +1,42 @@
+{
+  "issuing_body": "デジタル社会推進会議幹事会 (Executive Committee of the Digital Society Promotion Council; Secretariat: Digital Agency / デジタル庁)",
+  "document_type": "regulatory_guidance",
+  "binding_strength": "regulatory_guidance",
+  "publication_date": "2025-05-27",
+  "effective_date": "2026-04-01",
+  "covered_actors": [
+    "National government ministries and agencies (各府省庁)",
+    "Chief AI Officers (AI統括責任者 / CAIO) of each ministry and agency",
+    "Government generative AI system planners (企画者)",
+    "Government in-house generative AI system developers (開発者)",
+    "Government generative AI system providers/operators (提供者)",
+    "Government generative AI system users (利用者, indirectly via ministry-level rules)",
+    "Contracted generative AI system vendors and service providers (indirectly governed via procurement specifications, contracts, and supervision)",
+    "Incorporated administrative agencies (独立行政法人) and designated corporations (指定法人) (expected to align)",
+    "Local governments (地方公共団体) (expected to reference as needed)"
+  ],
+  "covered_application_domains": [
+    "public_sector_use",
+    "general_purpose_models"
+  ],
+  "prohibited_practices": [
+    "Handling confidential information (要機密情報) in principle when using general-purpose cloud-based generative AI services provided to unspecified users solely under standard terms of service/agreements (except with formal approval under ministry information security policy)",
+    "Using government generative AI systems outside the designated purpose and scope of use defined by the provider or ministry rules"
+  ],
+  "enforcement_authorities": [
+    "Digital Agency (デジタル庁)",
+    "Advanced AI Utilization Advisory Board (先進的AI利活用アドバイザリーボード)",
+    "Japan AI Safety Institute (AISI / AIセーフティ・インスティテュート)",
+    "Chief AI Officers (AI統括責任者 / CAIO) of each ministry and agency",
+    "National center of Incident readiness and Strategy for Cybersecurity (NISC / 内閣サイバーセキュリティセンター)"
+  ],
+  "compliance_deadlines": [
+    "2025-05-27 (FY2025): Immediate replacement of the prior ChatGPT usage agreement; initiate governance framework setup (Section 4) and best-effort compliance for FY2025 generative AI procurements",
+    "2026-04-01 (FY2026, including pre-procurement planning and notices prior to 2026-03-31 for FY2026 projects): Full normative application to covered government generative AI information systems",
+    "Quarterly (approximately once per quarter): CAIOs report ministry-wide generative AI operational status and utilization lists to the Advanced AI Utilization Advisory Board",
+    "FY2025: Review government-wide generative AI optimization (shared systems, inter-ministry data linkage, joint projects) for future guideline revisions"
+  ],
+  "penalties_summary": "The guideline does not establish direct statutory civil or criminal penalties. Compliance is enforced through internal administrative oversight (Digital Agency unified project supervision under the Act on the Establishment of the Digital Agency, CAIO governance, and Advisory Board review) and procurement/contractual mechanisms (including vendor remediation duties, service suspension, and audit rights in Annex 4). Annex 2 notes that unauthorized input of retained personal information used for model training may violate the Act on the Protection of Personal Information (個人情報保護法).",
+  "implementation_notes": "Designated as a Normative standard guideline (DS-920) within Japan's Digital Society Promotion Standard Guidelines suite, superseding the 'Agreement on Business Use of Generative AI such as ChatGPT (v2.1)'. Currently scoped to text-generating AI systems built on LLMs (including text functions of multimodal models), with image/video generation and AI agents deferred for future expansion. Explicitly exempts government information systems handling Specially Designated Secrets (特定秘密), Critical Economic Security Information (重要経済安保情報), classified administrative documents, and sensitive national security or public safety/order information. Adopts a risk-proportionate framework across three procurement models (Type A standard-terms SaaS, Type B SaaS with individual contract, Type C custom development) and includes four operational annexes: High-Risk Assessment Sheet (Annex 1), Model Usage Rules (Annex 2), Procurement Checklist (Annex 3), and Contract Checklist (Annex 4).",
+  "confidence": 0.94
+}

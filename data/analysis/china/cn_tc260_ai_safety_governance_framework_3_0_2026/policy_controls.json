@@ -1,0 +1,410 @@
+{
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "评估目标场景应用人工智能技术的必要性及使用后的长期和潜在影响，结合其应用场景重要性、智能化水平、应用规模等进行风险分级，参考风险等级开展安全评估和定期审计。",
+          "source_section": "5.2.1 (Page 32)",
+          "quote_en": "Evaluate the necessity of applying AI technologies to target scenarios as well as the long-term and potential impacts after use, conduct risk grading based on scenario importance, intelligence level, and application scale, and carry out safety assessments and regular audits with reference to the risk level.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "从应用场景、智能化水平、应用规模等维度入手，对安全风险进行科学评价分级，进而采取针对性、差异化安全防范措施。",
+          "source_section": "4.4.1 (Page 28)",
+          "quote_en": "Starting from dimensions such as application scenarios, level of intelligence, and application scale, scientifically evaluate and grade safety risks, and then adopt targeted and differentiated safety prevention measures.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "建立产品实际应用前的仿真测试、极端条件测试等安全性验证机制",
+          "source_section": "3.2.2 (b) (Page 21)",
+          "quote_en": "Establish safety validation mechanisms such as simulation testing and extreme-condition testing prior to the actual application of products.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "定期开展安全测试评估，制定风险分类分级测评与优化机制，测试前明确测试目标、范围和安全维度，构建多样化的测试数据集，涵盖各种应用场景，对智能体自主行为、工具调用等能力开展专项测评，并制定各类风险的针对性模型优化策略。",
+          "source_section": "5.1.7 (Page 31)",
+          "quote_en": "Conduct safety testing and evaluation regularly, establish a mechanism for risk classification, grading, assessment, and optimization, clarify test goals, scope, and safety dimensions prior to testing, build diverse test datasets covering various application scenarios, conduct specialized evaluations on agentic autonomous behaviors and tool invocation, and formulate targeted model optimization strategies for various risks.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "通过红队测试等模拟攻击手段，及时发现并修复模型漏洞。",
+          "source_section": "3.1.1 (c) (Page 19)",
+          "quote_en": "Use simulated attack techniques such as red-teaming to promptly identify and remediate model vulnerabilities.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "建立常态化红队安全测试机制，系统性挖掘智能体安全漏洞、 逻辑缺陷，持续验证智能体访问控制与安全防护能力，迭代优化安全防护策略。",
+          "source_section": "Appendix 2 II.6 (6) (Page 50)",
+          "quote_en": "Establish a regular red-teaming security testing mechanism to systematically uncover agent security vulnerabilities and logic flaws, continuously validate agent access control and security protection capabilities, and iteratively optimize security protection strategies.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "建立人工智能安全事件发现、报告和处置机制，发生重大安全事件、 造成人身财产损失或影响社会稳定的，依法依规及时向有关主管部门报告，并 向受影响用户告知，做好事件溯源和整改。",
+          "source_section": "5.3.18 (Page 35)",
+          "quote_en": "Establish mechanisms for the detection, reporting, and response to AI safety incidents; in the event of a major safety incident or an incident that causes personal injury or property damage or affects social stability, promptly report to the relevant competent authorities in accordance with laws and regulations, notify affected users, and properly conduct incident tracing and remediation.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "提升应用的透明度、公平性，公开人工智能应用的能力、局限性、 适用人群、场景。",
+          "source_section": "5.3.8 (Page 34)",
+          "quote_en": "Improve the transparency and fairness of applications by disclosing the capabilities, limitations, target users, and scenarios of AI applications.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "在婚恋、家庭、情感等关键场景，强化人工智能身份提示，帮助用户区分虚拟情感体验与现实社会关系，破除“与真人交往”的认知错觉，消解人机关系混淆问题。",
+          "source_section": "3.3.1 (c) (Page 24)",
+          "quote_en": "In key scenarios such as dating and marriage, family life, and emotional interaction, strengthen AI identity prompts to help users distinguish virtual emotional experiences from real-world social relationships, dispel the cognitive illusion of 'interacting with a real person', and resolve confusion in human-machine relationships.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.93,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "用于商业化用途的研发者，应形成详细的测试报告，分析安全问题并提出改进方案。",
+          "source_section": "5.1.8 (Page 31)",
+          "quote_en": "Developers creating products for commercial use should produce detailed test reports, analyze safety issues, and propose improvement plans.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "记录人工智能应用运行日志，包括系统行为、用户行为等，日志留 存时间不少于6个月，并定期对日志记录进行审计。",
+          "source_section": "5.3.6 (Page 34)",
+          "quote_en": "Record operational logs for AI applications, including system behavior and user behavior; retain logs for no less than 6 months and audit log records regularly.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "在访问控制层面，准确安装配置软件、运行环境参数、功能模块调用策略，禁用非必要的网络端口和功能服务，重点检查默认配置、默认口令， 及时修复安全风险。",
+          "source_section": "5.2.4 (Page 32)",
+          "quote_en": "At the access control level, accurately install and configure software, runtime environment parameters, and functional module invocation strategies, disable unnecessary network ports and service functions, focus on checking default configurations and default passwords, and promptly remediate security risks.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "严格管理人工智能应用权限，通过最小权限原则等手段强化内部安全管理，增强账户安全性，在处理敏感数据时使用加密技术等保护措施。",
+          "source_section": "5.3.2 (Page 33)",
+          "quote_en": "Strictly manage AI application permissions, strengthen internal security management through means such as the principle of least privilege, enhance account security, and use encryption and other protective measures when handling sensitive data.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.98,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "对人工智能生成合成内容进行标识，实现可识别、可追溯、可信赖。",
+          "source_section": "3.2.4 (c) (Page 22)",
+          "quote_en": "Label AI-generated synthetic content so that it is identifiable, traceable, and trustworthy.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "按照显式、隐式等标识要求，全面覆盖制作源头、传播路径、分发渠道等关键环节，便于用户识别判断信息来源及真实性。",
+          "source_section": "4.4.2 (Page 28)",
+          "quote_en": "In accordance with explicit and implicit labeling requirements, comprehensively cover key stages including production sources, transmission paths, and distribution channels, making it easy for users to identify and judge information sources and authenticity.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "在引入高度自主操作执行能力时，同步建立“人在回路”“熔断”“一键管控”等措施，实现极端情况下迅速干预止损。",
+          "source_section": "3.2.6 (b) (Page 23)",
+          "quote_en": "When introducing highly autonomous operational and execution capabilities, establish in parallel measures such as 'human-in-the-loop', 'circuit breakers', and 'one-click control' to enable rapid intervention and loss prevention in extreme situations.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "建立完善的人工智能应用安全管理和监督机制，明确责任方，健全人工复核机制，保障在关键场景应用中人工智能应用决策透明、可控，并提供清晰的决策依据，确保人工智能应用在人类授权和控制下运行。",
+          "source_section": "5.3.1 (Page 33)",
+          "quote_en": "Establish a sound AI application safety management and supervision mechanism, clearly define responsible parties, and improve human review mechanisms to ensure that AI application decisions in critical scenarios remain transparent and controllable with clear decision-making rationales, and that AI applications operate under human authorization and control.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.92,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "对在关键信息基础设施应用的人工智能系统进行登记备案，要求其具备与安全需求相匹配的安全防护能力。",
+          "source_section": "4.4.1 (Page 28)",
+          "quote_en": "Conduct registration and filing for AI systems applied in critical information infrastructure, requiring them to possess security protection capabilities commensurate with security requirements.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "agentic_autonomy_controls",
+      "confidence": 0.99,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "为智能体赋予唯一身份标识，并配备对应的身份凭证，支持对智能体的身份鉴别。为智能体实现任务分配所需的最小权限。强化各类凭证的动态管理。",
+          "source_section": "3.2.1 (a) (Page 21)",
+          "quote_en": "Assign each agent a unique identity identifier and corresponding identity credentials to support agent authentication. Grant agents only the minimum permissions required to perform assigned tasks. Strengthen dynamic management of all types of credentials.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "当人工审批系统出现异常或用户无响应、缺乏 对应人工审批规则时，默认拒绝操作执行，避免操作越界。",
+          "source_section": "Appendix 2 II.3 (4) (Page 47)",
+          "quote_en": "When the human approval system malfunctions, the user does not respond, or no corresponding human approval rule exists, deny execution of the operation by default to prevent actions from exceeding authorized boundaries.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "使用真实、准确、客观、多样且来源合法的训练数据，对训练数据、 外挂知识库等进行严格筛选，过滤虚假、偏见、失效、错误数据，确保不包含核生化导武器等高危领域敏感数据。",
+          "source_section": "3.1.3 (b) (Page 20)",
+          "quote_en": "Use truthful, accurate, objective, diverse training data from lawful sources; strictly screen training data and external knowledge bases to filter out false, biased, invalid, and erroneous data, ensuring they do not contain sensitive data in high-risk fields such as nuclear, biological, chemical, and missile weapons.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "构建安全的训练数据集，规范数据来源管理，对训练数据特别是合成数据进行质量和安全性评估，采用数据清洗、安全审核等方法，过滤训练数据中的错误、违法不良内容，确保来源清晰、内容合规。",
+          "source_section": "5.1.3 (Page 30)",
+          "quote_en": "Build secure training datasets, standardize data source management, conduct quality and safety assessments on training data—especially synthetic data—and adopt data cleaning and safety review methods to filter out erroneous, illegal, and harmful content from training data, ensuring clear sources and content compliance.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "开发者定期进行测试，判断模型是否可能带来潜在技术失控风险。",
+          "source_section": "4.5.1 (Page 29)",
+          "quote_en": "Developers should conduct regular testing to determine whether a model may pose potential risks of technological loss of control.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "研究制定并动态更新模型网络安全能力评估基准和流程。",
+          "source_section": "4.2.1 (Page 26)",
+          "quote_en": "Research, formulate, and dynamically update benchmarks and procedures for assessing model cybersecurity capabilities.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "open_weight_obligations",
+      "confidence": 0.94,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "推动开源模型提供方、开源社区共同完善开源规则，强化面向模型下载用户的 安全责任、风险隐患告知责任与义务，明确开源模型下载使用的“禁止性”行为， 防范模型滥用或恶意使用。",
+          "source_section": "4.4.4 (Page 29)",
+          "quote_en": "Promote open-source model providers and open-source communities to jointly refine open-source rules, strengthen safety responsibilities and duties to inform users downloading models of potential risks and hazards, and clearly define 'prohibited' actions for downloading and using open-source models to prevent misuse or malicious use.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "基于开源模型算法进行二次开发的研发者，在尊重研发者智力投入的基础上，遵循相应开源协议规范，从官方渠道或主流开源社区获取模型和组件，并开展来源、完整性校验。",
+          "source_section": "5.1.14 (Page 32)",
+          "quote_en": "Developers conducting secondary development based on open-source models and algorithms should, while respecting original developers' intellectual contributions, comply with corresponding open-source license rules, obtain models and components from official channels or mainstream open-source communities, and conduct source and integrity verification.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "quote": "以期进一步凝聚防范治理人工智能安全风险的实践共识。",
+          "source_section": "Preface (Page 6)",
+          "quote_en": "Aiming to further build practical consensus on preventing and governing AI safety risks.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "对沙箱测试中无主观过错且风险处于可控范围内的行为，探索责任豁免机制。",
+          "source_section": "4.3.3 (Page 27)",
+          "quote_en": "Explore a liability exemption mechanism for conduct during sandbox testing where there is no subjective fault and the risks remain within a controllable range.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "quote": "结合具体项目的风险等级， 采取不同强度的监测和干预措施。",
+          "source_section": "4.3.1 (Page 27)",
+          "quote_en": "Adopt monitoring and intervention measures of varying intensity based on the risk level of specific projects.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "鼓励行业组织加强行业自律，发挥社会监督作用，畅通投诉举报和风险反 馈渠道，及时发现、依法处置人工智能应用中的违法违规行为。",
+          "source_section": "4.1.3 (Page 26)",
+          "quote_en": "Encourage industry organizations to strengthen self-regulation, bring social supervision into play, keep channels for complaints, reports, and risk feedback open, and promptly detect and handle illegal and non-compliant conduct in AI applications in accordance with the law.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "quote": "对在关键信息基础设施应用的人工智能系统进行登记备案，要求其具备与安全需求相匹配的安全防护能力。",
+          "source_section": "4.4.1 (Page 28)",
+          "quote_en": "Conduct registration and filing for AI systems applied in critical information infrastructure, requiring them to possess security protection capabilities commensurate with security requirements.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "发生重大安全事件、 造成人身财产损失或影响社会稳定的，依法依规及时向有关主管部门报告",
+          "source_section": "5.3.18 (Page 35)",
+          "quote_en": "In the event of a major safety incident or an incident causing personal injury or property damage or affecting social stability, promptly report to the relevant competent authorities in accordance with laws and regulations.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

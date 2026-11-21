@@ -1,41 +1,86 @@
 {
   "dominant_frame": "social_stability",
   "secondary_frames": [
-    "fundamental_rights",
     "consumer_public_safety",
-    "national_security"
+    "fundamental_rights",
+    "national_security",
+    "labor_transition"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.55,
-    "economic_competitiveness": 0.1,
-    "fundamental_rights": 0.6,
-    "social_stability": 0.75,
-    "innovation_enablement": 0.1,
-    "consumer_public_safety": 0.55,
-    "labor_transition": 0.2
+    "existential_catastrophic": 0.0,
+    "national_security": 0.75,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.78,
+    "social_stability": 0.98,
+    "innovation_enablement": 0.45,
+    "consumer_public_safety": 0.9,
+    "labor_transition": 0.72
   },
-  "rationale_summary": "The document primarily frames algorithm recommendation governance as necessary to maintain social order and uphold 'socialist core values,' prevent disruption to economic and social order, and suppress harmful information. The recurring emphasis on 'social public interest,' 'social mobilization capability,' 'public opinion attributes,' and preventing content that disturbs social order places social stability as the dominant frame. Secondary frames include fundamental rights (user transparency, opt-out rights, protections for minors, elderly, and workers), consumer/public safety (fraud prevention, minor protection, anti-addiction), and national security (explicit mention of national security protection).",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.08,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.12,
+    "social_stability": 0.45,
+    "innovation_enablement": 0.05,
+    "consumer_public_safety": 0.22,
+    "labor_transition": 0.08
+  },
+  "rationale_summary": "The Provisions on the Management of Algorithmic Recommendations in Internet Information Services are predominantly framed around social stability and public order. While consumer and public safety is a prominent runner-up—covering addiction prevention, minor protection, anti-fraud safeguards for the elderly, and fair consumer pricing—social stability edges it out because ideological alignment, public-opinion ecosystem governance, and social order anchor both the overarching purpose (Article 1's socialist core values and public interest; Article 6's mainstream value orientation and positive energy) and the regulation's primary structural triggers (Articles 9, 11, 13–14, and the filing/assessment regime in Articles 23–27 for services with public-opinion attributes or social mobilization capabilities). Secondary rationales also include protecting individual rights and personal data (fundamental_rights), safeguarding national security (national_security), and protecting platform workers' labor rights in algorithmic dispatch (labor_transition), alongside a minor nod to healthy and orderly industry development (innovation_enablement).",
   "evidence_spans": [
     {
-      "quote": "弘扬社会主义核心价值观，维护国家安全和社会公共利益",
-      "source_section": "第一条"
+      "quote": "为了规范互联网信息服务算法推荐活动，弘扬社会主义核心价值观，维护国家安全和社会公共利益，保护公民、法人和其他组织的合法权益，促进互联网信息服务健康有序发展",
+      "source_section": "第一条",
+      "quote_en": "In order to regulate internet information service algorithmic recommendation activities, promote socialist core values, safeguard national security and the social public interest, protect the legitimate rights and interests of citizens, legal persons, and other organizations, and promote the healthy and orderly development of internet information services",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 179,
+      "end_char": 256
     },
     {
-      "quote": "不得利用算法推荐服务从事危害国家安全和社会公共利益、扰乱经济秩序和社会秩序",
-      "source_section": "第六条"
+      "quote": "算法推荐服务提供者应当坚持主流价值导向，优化算法推荐服务机制，积极传播正能量，促进算法应用向上向善。\n算法推荐服务提供者不得利用算法推荐服务从事危害国家安全和社会公共利益、扰乱经济秩序和社会秩序、侵犯他人合法权益等法律、行政法规禁止的活动",
+      "source_section": "第六条",
+      "quote_en": "Algorithmic recommendation service providers shall uphold mainstream value orientations, optimize algorithmic recommendation service mechanisms, actively spread positive energy, and promote the upward and benevolent application of algorithms. Algorithmic recommendation service providers must not use algorithmic recommendation services to engage in activities prohibited by laws and administrative regulations, such as endangering national security and the social public interest, disrupting economic and social order, or infringing on the legitimate rights and interests of others",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 781,
+      "end_char": 900
     },
     {
-      "quote": "具有舆论属性或者社会动员能力的算法推荐服务提供者",
-      "source_section": "第二十四条"
+      "quote": "算法推荐服务提供者不得向未成年人推送可能引发未成年人模仿不安全行为和违反社会公德行为、诱导未成年人不良嗜好等可能影响未成年人身心健康的信息，不得利用算法推荐服务诱导未成年人沉迷网络。",
+      "source_section": "第十八条",
+      "quote_en": "Algorithmic recommendation service providers must not push to minors information that may affect their physical and mental health, such as information that could induce minors to imitate unsafe behaviors or behaviors violating social morality, or induce bad habits in minors, and must not use algorithmic recommendation services to induce minors into internet addiction.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 2292,
+      "end_char": 2383
     },
     {
-      "quote": "实施影响网络舆论或者规避监督管理行为",
-      "source_section": "第十四条"
+      "quote": "算法推荐服务提供者向消费者销售商品或者提供服务的，应当保护消费者公平交易的权利，不得根据消费者的偏好、交易习惯等特征，利用算法在交易价格等交易条件上实施不合理的差别待遇等违法行为。",
+      "source_section": "第二十一条",
+      "quote_en": "Algorithmic recommendation service providers selling goods or providing services to consumers shall protect consumers' right to fair trade, and must not use algorithms to implement illegal acts such as unreasonable differential treatment in transaction prices or other transaction conditions based on consumers' preferences, transaction habits, and other characteristics.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 2597,
+      "end_char": 2687
     },
     {
-      "quote": "向用户提供不针对其个人特征的选项，或者向用户提供便捷的关闭算法推荐服务的选项",
-      "source_section": "第十七条"
+      "quote": "算法推荐服务提供者应当向用户提供不针对其个人特征的选项，或者向用户提供便捷的关闭算法推荐服务的选项。用户选择关闭算法推荐服务的，算法推荐服务提供者应当立即停止提供相关服务。",
+      "source_section": "第十七条",
+      "quote_en": "Algorithmic recommendation service providers shall provide users with options that do not target their personal characteristics, or provide users with convenient options to turn off algorithmic recommendation services. Where a user chooses to turn off algorithmic recommendation services, the provider shall immediately cease providing the relevant services.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 2018,
+      "end_char": 2104
+    },
+    {
+      "quote": "算法推荐服务提供者向劳动者提供工作调度服务的，应当保护劳动者取得劳动报酬、休息休假等合法权益，建立完善平台订单分配、报酬构成及支付、工作时间、奖惩等相关算法。",
+      "source_section": "第二十条",
+      "quote_en": "Algorithmic recommendation service providers providing work dispatch services to workers shall protect workers' legitimate rights and interests such as obtaining labor remuneration and rest and leave, and establish and improve relevant algorithms for platform order allocation, remuneration composition and payment, working hours, and rewards and punishments.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 2510,
+      "end_char": 2589
     }
   ]
 }

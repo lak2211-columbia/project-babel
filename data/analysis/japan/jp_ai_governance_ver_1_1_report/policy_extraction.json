@@ -1,47 +1,99 @@
 {
   "jurisdiction": "japan",
-  "issuing_body": "Ministry of Economy, Trade and Industry (METI) Expert Group on How AI Principles Should be Implemented",
+  "issuing_body": "Expert Group on How AI Principles Should be Implemented, Ministry of Economy, Trade and Industry (METI)",
   "document_type": "strategy_paper",
   "binding_strength": "strategy_statement",
   "publication_date": "2021-07-09",
   "effective_date": null,
-  "covered_application_domains": [
-    "general_purpose_models",
-    "public_sector_use",
-    "critical_infrastructure"
+  "covered_actors": [
+    "AI developers",
+    "AI service providers",
+    "AI users",
+    "businesses using AI (BtoB and BtoC companies)",
+    "Japanese government and relevant ministries"
   ],
+  "covered_application_domains": [
+    "biometrics",
+    "employment",
+    "healthcare",
+    "finance",
+    "public_sector_use",
+    "law_enforcement"
+  ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
       "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "managing risks posed by the use of AI at levels acceptable to stakeholders and maximizing their positive impact",
-          "source_section": "Introduction"
+          "quote": "The provision of guidelines that include desirable risk assessment and management is expected to facilitate deployment of AI.",
+          "source_section": "Page 27",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 85846,
+          "end_char": 85971
         },
         {
-          "quote": "Assessment and classification of risks",
-          "source_section": "Table of Contents Section 2C"
+          "quote": "Development/introduction of AI systems: Development of principles, creation of a management framework84, establishment of an escalation process, development of a risk management process85",
+          "source_section": "Page 28",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 88734,
+          "end_char": 88921
         }
       ]
     },
     {
-      "label": "human_oversight",
-      "confidence": 0.6,
+      "label": "transparency_disclosure",
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "design and operation of technological, organizational, and social systems by stakeholders for the purpose of managing risks",
-          "source_section": "Introduction"
+          "quote": "This direction of improving consumer literacy is based on the assumption that companies, etc. using AI provide appropriate information to consumers. Therefore, an intermediate guideline to bridge the gap between AI Principles and corporate-level practice is deemed necessary in the sense of facilitating such information provision.",
+          "source_section": "Page 26",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 83712,
+          "end_char": 84043
+        },
+        {
+          "quote": "support the improvement of AI risk management, etc., function as a benchmark of trustworthiness of AI system in inter-company transactions, include useful good practices for companies that have just started using AI, and facilitate the provision of explanations to consumers, etc.",
+          "source_section": "Page 28",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 88214,
+          "end_char": 88494
         }
       ]
     },
     {
       "label": "third_party_audit",
-      "confidence": 0.55,
+      "confidence": 0.75,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "ideal approaches to AI governance in Japan, including regulation, standardization, guidelines, and audits",
-          "source_section": "Introduction"
+          "quote": "Operation of AI systems: Monitoring, internal audits, use of external evaluation, development of relationships with stakeholders, improvement and progress management",
+          "source_section": "Page 28",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 88924,
+          "end_char": 89089
+        },
+        {
+          "quote": "Further, in order to maintain public trust, utilize various forms of assurance depending on the risk, such as self-check, peer review, internal audit, agreed procedures, third-party review and external audit.",
+          "source_section": "Page 6",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17976,
+          "end_char": 18184
         }
       ]
     }
@@ -49,33 +101,32 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.8,
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "Legally non-binding corporate governance guidelines",
-          "source_section": "Section 3C(1)"
+          "quote": "From the perspective of balancing respect for AI principles and promotion of innovation and at least at this moment, except for some specific areas, AI governance should be designed mainly with soft laws, which is favorable to companies that respect AI principles.",
+          "source_section": "Page 33",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 100621,
+          "end_char": 100885
         },
         {
-          "quote": "Legally non-binding guidelines",
-          "source_section": "Table of Contents Section 2D(2)(a)"
-        }
-      ]
-    },
-    {
-      "label": "regulatory_supervision",
-      "confidence": 0.65,
-      "evidence": [
-        {
-          "quote": "Monitoring and enforcement",
-          "source_section": "Table of Contents Section 2D(4)"
-        },
-        {
-          "quote": "Discussion on the design of appropriate monitoring and enforcement mechanisms is also required in order to make the governance effective",
-          "source_section": "Introduction"
+          "quote": "The above suggestions and notes point to non-binding intermediate goal-based guidelines to promote AI innovation and deployment.",
+          "source_section": "Page 21",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 66852,
+          "end_char": 66980
         }
       ]
     }
   ],
-  "implementation_notes": "This is a strategy/analysis report from an expert group, not binding regulation. It maps out a layered AI governance architecture including non-binding guidelines, international standards, and sector-specific regulations, but stops short of mandating any specific requirements. The document identifies future issues including monitoring/enforcement design. Confidence is moderate as the document text provided is primarily the introduction and table of contents.",
-  "confidence": 0.75
+  "enforcement_authorities": [],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Non-binding expert group report (Ver. 1.1) analyzing domestic and international AI governance trends and proposing an ideal AI governance architecture for Japan. Recommends goal-based, risk-based governance centered on legally non-binding corporate governance guidelines and international standards (e.g., ISO/IEC JTC1 SC42), concludes that legally binding horizontal AI regulation is unnecessary in Japan at this time, favors existing sector-specific frameworks for areas such as automotive and healthcare, and outlines future issues including adoption incentives (e.g., government procurement points), guidance for government AI use, international harmonization, and monitoring and civil liability.",
+  "confidence": 0.94
 }

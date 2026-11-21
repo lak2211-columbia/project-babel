@@ -1,29 +1,85 @@
 {
-  "dominant_frame": "fundamental_rights",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
+    "fundamental_rights",
     "consumer_public_safety",
-    "social_stability"
+    "economic_competitiveness"
   ],
   "frame_confidence": {
+    "existential_catastrophic": 0.1,
+    "national_security": 0.05,
+    "economic_competitiveness": 0.45,
+    "fundamental_rights": 0.8,
+    "social_stability": 0.05,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.7,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
-    "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.65,
+    "economic_competitiveness": 0.1,
+    "fundamental_rights": 0.25,
     "social_stability": 0.0,
-    "innovation_enablement": 0.55,
-    "consumer_public_safety": 0.4,
-    "labor_transition": 0.05
+    "innovation_enablement": 0.45,
+    "consumer_public_safety": 0.2,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document explicitly states the AI Act's aim is to promote innovation while 'ensuring a high level of protection of health, safety and fundamental rights, including democracy and the rule of law.' The rights-based framing is primary, though innovation enablement is strongly co-present.",
+  "rationale_summary": "The guidelines frame GPAI governance primarily through innovation enablement, edging out fundamental rights and consumer/public safety because the Commission's recurring rationale for its interpretive criteria, thresholds, open-source exemptions, and enforcement posture is to promote AI innovation and uptake, limit compliance burdens on value-chain actors, avoid disincentivising model modification, and ensure timely market placement via proportionate, collaborative supervision. Fundamental rights (including democracy, rule of law, procedural rights, and personal data protection) and consumer/public safety (protecting health and public safety from systemic and operational risks) serve as major secondary justifications anchored in the underlying AI Act objectives, while economic competitiveness appears as a narrower secondary rationale tied to growth opportunities for the Union economy from open-source models.",
   "evidence_spans": [
     {
-      "quote": "ensuring a high level of protection of health, safety and fundamental rights, including democracy and the rule of law",
-      "source_section": "Introduction"
+      "quote": "Its aim is to promote innovation in and uptake of artificial intelligence (‘AI’) in the Union, while ensuring a high level of protection of health, safety, and fundamental rights, including democracy and the rule of law.",
+      "source_section": "Section 1, para. (1)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4666,
+      "end_char": 4886
     },
     {
-      "quote": "Its aim is to promote innovation in and uptake of artificial intelligence ('AI') in the Union, while ensuring a high level of protection",
-      "source_section": "Introduction"
+      "quote": "The AI Office will take a collaborative, staged, and proportionate approach. The AI Office encourages close informal cooperation with providers during the training of their general-purpose AI models to facilitate compliance and ensure timely market placement, in particular for providers of general-purpose AI models with systemic risk.",
+      "source_section": "Section 5.2, para. (99)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 77155,
+      "end_char": 77491
+    },
+    {
+      "quote": "While fully recognising that the protection of personal data is a fundamental right and that therefore personal data cannot be considered a commodity or monetised, access, use, modification, or redistribution of the model requiring the collection or otherwise processing of personal data should be treated in same manner as monetisation strategies",
+      "source_section": "Section 4.2.2, para. (84)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 68908,
+      "end_char": 69255
+    },
+    {
+      "quote": "The AI Act defines a ‘systemic risk’ as ‘a risk that is specific to the high-impact capabilities of general-purpose AI models, having a significant impact on the Union market due to their reach, or due to actual or reasonably foreseeable negative effects on public health, safety, public security, fundamental rights, or the society as a whole, that can be propagated at scale across the value chain’",
+      "source_section": "Section 2.3, para. (24)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 27156,
+      "end_char": 27556
+    },
+    {
+      "quote": "While the licence must generally permit use for any purpose, licensors may include specific, safety-oriented terms that reasonably restrict usage in applications or domains where such use would pose a significant risk to public safety, security, or fundamental rights.",
+      "source_section": "Section 4.2.1, para. (81)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 67096,
+      "end_char": 67364
+    },
+    {
+      "quote": "The first is that models released under a free and open-source licence ‘can contribute to research and innovation in the market and can provide significant growth opportunities for the Union economy’ (recital 102 AI Act).",
+      "source_section": "Section 4.1, para. (71)",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 61455,
+      "end_char": 61676
     }
   ]
 }

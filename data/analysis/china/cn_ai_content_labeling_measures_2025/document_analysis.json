@@ -4,99 +4,172 @@
   "language": "zh",
   "policy_extraction": {
     "jurisdiction": "china",
-    "issuing_body": "国家互联网信息办公室、工业和信息化部、公安部、国家广播电视总局",
-    "document_type": "regulatory_guidance",
-    "binding_strength": "regulatory_guidance",
+    "issuing_body": "Cyberspace Administration of China (国家互联网信息办公室), Ministry of Industry and Information Technology (工业和信息化部), Ministry of Public Security (公安部), and National Radio and Television Administration (国家广播电视总局)",
+    "document_type": "legislation",
+    "binding_strength": "binding_law",
     "publication_date": "2025-03-07",
     "effective_date": null,
-    "covered_application_domains": [
-      "general_purpose_models"
+    "covered_actors": [
+      "AI-generated synthetic content service providers (提供生成合成服务的服务提供者)",
+      "Network information content dissemination service providers (提供网络信息内容传播服务的服务提供者)",
+      "Users publishing AI-generated synthetic content via network information content dissemination services (用户)",
+      "Any organizations and individuals (任何组织和个人)"
+    ],
+    "covered_application_domains": [],
+    "prohibited_practices": [
+      "Maliciously deleting, tampering with, forging, or concealing AI-generated synthetic content labels required under the Measures",
+      "Providing tools or services to others to maliciously delete, tamper with, forge, or conceal required AI-generated synthetic content labels",
+      "Harming the legitimate rights and interests of others through improper labeling methods"
     ],
     "safety_requirements": [
       {
         "label": "content_provenance",
-        "confidence": 0.95,
+        "confidence": 0.98,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "人工智能生成合成内容标识包括显式标识和隐式标识",
-            "source_section": "第二条"
+            "quote": "服务提供者提供生成合成内容下载、复制、导出等功能时，应当确保文件中含有满足要求的显式标识。",
+            "source_section": "第四条",
+            "quote_en": "When service providers offer functions such as downloading, copying, or exporting generated or synthesized content, they shall ensure that the files contain explicit labels that meet the requirements.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 812,
+            "end_char": 857
           },
           {
-            "quote": "鼓励服务提供者在生成合成内容中添加数字水印等形式的隐式标识",
-            "source_section": "隐式标识条款"
-          },
-          {
-            "quote": "在文本的起始、末尾或者中间适当位置添加文字提示或者通用符号提示等标识",
-            "source_section": "显式标识要求"
-          }
-        ]
-      },
-      {
-        "label": "transparency_disclosure",
-        "confidence": 0.9,
-        "evidence": [
-          {
-            "quote": "明确提醒公众该内容属于生成合成内容",
-            "source_section": "传播服务条款"
-          },
-          {
-            "quote": "提供必要的标识功能，并提醒用户主动声明发布内容中是否包含生成合成内容",
-            "source_section": "传播服务条款"
+            "quote": "有前款第一项至第三项情形的，应当在文件元数据中添加生成合成内容属性信息、传播平台名称或者编码、内容编号等传播要素信息。",
+            "source_section": "第六条",
+            "quote_en": "Under any of the circumstances in items (1) to (3) of the preceding paragraph, dissemination element information such as attribute information of the generated or synthesized content, the name or code of the dissemination platform, and the content identifier shall be added to the file metadata.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1255,
+            "end_char": 1314
           }
         ]
       }
     ],
-    "enforcement_mechanisms": [
-      {
-        "label": "regulatory_supervision",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "任何组织和个人不得恶意删除、篡改、伪造、隐匿本办法规定的生成合成内容标识",
-            "source_section": "禁止行为条款"
-          }
-        ]
-      },
-      {
-        "label": "soft_enforcement",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "鼓励服务提供者在生成合成内容中添加数字水印等形式的隐式标识",
-            "source_section": "隐式标识条款"
-          }
-        ]
-      }
+    "enforcement_mechanisms": [],
+    "enforcement_authorities": [
+      "Cyberspace Administration of China (国家互联网信息办公室)",
+      "Ministry of Industry and Information Technology (工业和信息化部)",
+      "Ministry of Public Security (公安部)",
+      "National Radio and Television Administration (国家广播电视总局)",
+      "Provincial, autonomous region, municipal, and Xinjiang Production and Construction Corps cyberspace, communications/industry, public security, and radio/television authorities"
     ],
-    "implementation_notes": "Document mandates explicit and implicit labeling of AI-generated synthetic content. Explicit labels must appear at specific positions in text, audio, image, video, and virtual scenes. Implicit labels (e.g., digital watermarks, file metadata) are encouraged. Distribution platforms must check metadata and apply appropriate labels. Prohibition on malicious removal or falsification of labels. Specific penalties not detailed in the provided text excerpt.",
-    "confidence": 0.85
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "Jointly promulgated departmental regulation (国信办通字〔2025〕2号) grounded in the Cybersecurity Law and existing algorithm, deep synthesis, and generative AI rules. The provided text (Notice and Articles 1, 3, 4, 5, 6, 10) mandates explicit user-perceptible labels and implicit file-metadata labels for synthetic content providers, metadata verification and labeling by dissemination platforms, and user self-declaration, while encouraging digital watermarks. Effective date and penalty provisions do not appear in the provided text.",
+    "confidence": 0.94
   },
   "risk_framing": {
     "dominant_frame": "social_stability",
     "secondary_frames": [
       "fundamental_rights",
+      "innovation_enablement",
       "consumer_public_safety"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
       "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.0,
-      "social_stability": 0.6,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.55,
+      "fundamental_rights": 0.7,
+      "social_stability": 0.85,
+      "innovation_enablement": 0.65,
+      "consumer_public_safety": 0.6,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document primarily frames AI governance around maintaining social public order and protecting citizens' lawful rights through mandatory labeling of AI-generated content. The stated goals are to 'protect citizens, legal persons and other organizations' lawful rights' and 'maintain social public interests,' indicating a social stability and rights protection framing rather than existential risk or economic competition.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.25,
+      "social_stability": 0.35,
+      "innovation_enablement": 0.2,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "Social stability and public order is the dominant frame because the Measures are anchored in safeguarding social public interests and regulating the online dissemination of AI-generated and synthesized content across network information platforms under China's Cybersecurity Law and deep-synthesis governance regime. It edges out fundamental rights, innovation enablement, and consumer/public safety because the document's core regulatory thrust—jointly issued by the CAC, MIIT, MPS, and NRTA—targets information-ecosystem order and collective public trust, while explicitly pairing this goal with protecting the legitimate rights and interests of citizens and organizations, promoting the healthy development of AI, and alerting the public to prevent deception from unlabeled synthetic media.",
     "evidence_spans": [
       {
-        "quote": "保护公民、法人和其他组织合法权益，维护社会公共利益",
-        "source_section": "第一条"
+        "quote": "第一条\n为了促进人工智能健康发展，规范人工智能生成合成内容标识，保护公民、法人和其他组织合法权益，维护社会公共利益，根据《中华人民共和国网络安全法》、《互联网信息服务算法推荐管理规定》、《互联网信息服务深度合成管理规定》、《生成式人工智能服务管理暂行办法》等法律、行政法规和部门规章，制定本办法。",
+        "source_section": "人工智能生成合成内容标识办法",
+        "quote_en": "Article 1: In order to promote the healthy development of artificial intelligence, regulate the labeling of AI-generated and synthesized content, protect the legitimate rights and interests of citizens, legal persons, and other organizations, and safeguard social public interests, these Measures are formulated in accordance with the Cybersecurity Law of the People's Republic of China, the Provisions on the Administration of Algorithmic Recommendations in Internet Information Services, the Provisions on the Administration of Deep Synthesis in Internet Information Services, the Interim Measures for the Administration of Generative Artificial Intelligence Services, and other laws, administrative regulations, and departmental rules.",
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 243,
+        "end_char": 391
       },
       {
-        "quote": "任何组织和个人不得恶意删除、篡改、伪造、隐匿本办法规定的生成合成内容标识",
-        "source_section": "禁止条款"
+        "quote": "文件元数据中未核验到隐式标识，用户也未声明为生成合成内容，但提供网络信息内容传播服务的服务提供者检测到显式标识或者其他生成合成痕迹的，识别为疑似生成合成内容，采取适当方式在发布内容周边添加显著的提示标识，提醒公众该内容疑似生成合成内容；",
+        "source_section": "第六条",
+        "quote_en": "Where no implicit label is verified in the file metadata and the user has not declared it as generated or synthesized content, but the network information content dissemination service provider detects explicit labels or other traces of generation or synthesis, it shall identify the content as suspected generated or synthesized content and adopt appropriate methods to add prominent prompt labels around the published content to remind the public that the content is suspected to be generated or synthesized content;",
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 1097,
+        "end_char": 1215
+      },
+      {
+        "quote": "任何组织和个人不得恶意删除、篡改、伪造、隐匿本办法规定的生成合成内容标识，不得为他人实施上述恶意行为提供工具或者服务，不得通过不正当标识手段损害他人合法权益。",
+        "source_section": "第十条",
+        "quote_en": "No organization or individual may maliciously delete, tamper with, forge, or conceal the generated and synthesized content labels stipulated in these Measures, nor provide tools or services for others to carry out the aforementioned malicious acts, nor harm the legitimate rights and interests of others through improper labeling means.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 1316,
+        "end_char": 1395
+      },
+      {
+        "quote": "为了促进人工智能健康发展，规范人工智能生成合成内容标识，保护公民、法人和其他组织合法权益，维护社会公共利益",
+        "source_section": "关于印发《人工智能生成合成内容标识办法》的通知 国信办通字〔2025〕2号",
+        "quote_en": "In order to promote the healthy development of artificial intelligence, regulate the labeling of AI-generated and synthesized content, protect the legitimate rights and interests of citizens, legal persons, and other organizations, and safeguard social public interests",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 79,
+        "end_char": 132
+      },
+      {
+        "quote": "核验文件元数据中是否含有隐式标识，文件元数据明确标明为生成合成内容的，采取适当方式在发布内容周边添加显著的提示标识，明确提醒公众该内容属于生成合成内容",
+        "source_section": "第六条",
+        "quote_en": "Verify whether the file metadata contains implicit labels; where the file metadata clearly indicates that it is generated or synthesized content, adopt appropriate methods to add prominent prompt labels around the published content to clearly remind the public that the content is generated or synthesized content",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 944,
+        "end_char": 1019
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:36:31.756296Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "33092c50c54bae8bc598a7984ef5069ae320410790737009a6afef465c804210",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 1395,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 7,
+      "exact_matches": 7,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

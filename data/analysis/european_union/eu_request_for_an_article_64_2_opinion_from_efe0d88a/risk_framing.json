@@ -1,36 +1,45 @@
 {
   "dominant_frame": "fundamental_rights",
-  "secondary_frames": [
-    "consumer_public_safety",
-    "social_stability"
-  ],
+  "secondary_frames": [],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
     "national_security": 0.0,
     "economic_competitiveness": 0.0,
-    "fundamental_rights": 0.85,
+    "fundamental_rights": 0.95,
     "social_stability": 0.0,
     "innovation_enablement": 0.0,
-    "consumer_public_safety": 0.55,
-    "labor_transition": 0.05
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is centrally framed around data subjects' fundamental rights under GDPR. The IE SA's request focuses on ensuring lawful processing of personal data in AI model development, protecting data subjects across the EU/EEA from rights violations, and achieving harmonized enforcement of data protection law. The language consistently foregrounds data subject rights, legal bases for processing, and compliance obligations rather than economic competitiveness, security threats, or societal disruption.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 1.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.0,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document is exclusively framed around fundamental rights, specifically personal-data privacy and data protection under the GDPR and Law Enforcement Directive. The Irish Supervisory Authority justifies seeking a harmonised EDPB opinion on the need to address wide-ranging data protection concerns affecting data subjects across the EU/EEA, resolve data subject complaints, mitigate personal data exposure vulnerabilities, and ensure that controllers appropriately balance their interests against the interests of data subjects. No other risk frames such as innovation enablement, economic competitiveness, or public safety are invoked as governance rationales.",
   "evidence_spans": [
     {
-      "quote": "The training and use of AI Models, including so-called 'large language models', gives rise to a number of wide-ranging data protection concerns. The issues arising impact data subjects across the EU/EEA.",
-      "source_section": "Page 1"
+      "quote": "The training and use of AI Models, including so-called “large language models”, gives rise to a number of wide-ranging data protection concerns. The issues arising impact data subjects across the EU/EEA.",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 455,
+      "end_char": 658
     },
     {
-      "quote": "just because personal data is made public does not mean that it is no longer personal data. Careful consideration of this situation is required in order to demonstrate compliance under data protection legislation",
-      "source_section": "Page 2"
-    },
-    {
-      "quote": "what must be demonstrated by a data controller where personal data processing is claimed not to occur?",
-      "source_section": "Page 2"
-    },
-    {
-      "quote": "If an AI Model has been found to have been created, updated or developed using unlawfully processed personal data, what is the impact of this, if any, on the lawfulness of the continued or subsequent processing",
-      "source_section": "Page 4"
+      "quote": "The IE SA has received a number of complaints both from data subjects in Ireland and from data subjects throughout the EEA, by way of referrals from other SAs, which raise questions concerning the extent to which the processing of personal data associated with the development of AI Models complies with the GDPR.",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 659,
+      "end_char": 972
     }
   ]
 }

@@ -1,0 +1,88 @@
+{
+  "dominant_frame": "innovation_enablement",
+  "secondary_frames": [
+    "fundamental_rights",
+    "consumer_public_safety",
+    "social_stability",
+    "economic_competitiveness",
+    "existential_catastrophic",
+    "labor_transition"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.55,
+    "national_security": 0.05,
+    "economic_competitiveness": 0.7,
+    "fundamental_rights": 0.92,
+    "social_stability": 0.72,
+    "innovation_enablement": 0.96,
+    "consumer_public_safety": 0.85,
+    "labor_transition": 0.45
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.05,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.08,
+    "fundamental_rights": 0.26,
+    "social_stability": 0.08,
+    "innovation_enablement": 0.34,
+    "consumer_public_safety": 0.16,
+    "labor_transition": 0.03
+  },
+  "rationale_summary": "Innovation enablement is the dominant frame because the guidelines explicitly justify their overarching architecture—non-binding soft law, goal-based principles, a risk-based approach, and agile governance—as necessary to simultaneously mitigate risks and accelerate safe AI innovation and adoption without stifling benefits through rigid rule-based regulation. Fundamental rights is a strong runner-up, providing the normative foundation in Part 2 through commitments to human dignity, constitutional and international human rights, democracy, the rule of law, non-discrimination, and privacy; however, innovation enablement edges it out as the primary rationale explaining why this specific governance instrument exists and how it is structured. Secondary justifications include consumer and public safety (preventing harm to life, body, property, mental health, and the environment), social stability (mitigating societal destabilization from AI-generated disinformation and social friction), economic competitiveness (strengthening business competitiveness and sustaining economic growth), existential/catastrophic risk (CBRN, offensive cyber, self-replication, and cascading systemic risks within the incorporated Hiroshima Process Code of Conduct), and labor transition (reskilling for changing human-AI division of work).",
+  "evidence_spans": [
+    {
+      "quote": "これらを踏まえ、AI がもたらす社会的リスクの低減を図るとともに、AI のイノベーション及び活用を促進していくために、関係者による自主的な取組を促し、非拘束的なソフトローによって目的達成に導くゴールベースの考え方で、ガイドラインを作成することとした。",
+      "source_section": "Page 3 (はじめに)",
+      "quote_en": "Based on these considerations, in order to reduce the social risks posed by AI while promoting AI innovation and utilization, the guidelines were created with a goal-based approach that encourages voluntary initiatives by stakeholders and guides them toward achieving objectives through non-binding soft law.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 2345,
+      "end_char": 2470
+    },
+    {
+      "quote": "AI の利用は、その分野とその利用形態によっては、社会に対して大きなリスクを生じさせ、そのリスクに伴う社会的な軋轢により、AI の利活用自体が阻害される可能性がある。一方で、過度な対策を講じることは、同様に AI 活用自体又はAI 活用によって得られる便益を阻害してしまう可能性がある。",
+      "source_section": "Page 4 (はじめに)",
+      "quote_en": "Depending on the field and manner of use, the use of AI may pose major risks to society, and the social friction accompanying those risks could hinder the utilization of AI itself. On the other hand, taking excessive measures could likewise hinder AI utilization itself or the benefits obtained from AI utilization.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3270,
+      "end_char": 3413
+    },
+    {
+      "quote": "取組にあたり、各主体は、以下に述べる「1）人間中心」に照らし、法の支配、人権、民主主義、多様性・包摂性及び公平公正な社会を尊重するようAI システム・サービスを開発・提供・利用すべきである。",
+      "source_section": "Page 15 (第２部 C. 共通の指針)",
+      "quote_en": "In carrying out these initiatives, each actor should develop, provide, and use AI systems and services in a manner that respects the rule of law, human rights, democracy, diversity and inclusion, and a fair and just society, in light of '1) Human-centric' described below.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 16664,
+      "end_char": 16759
+    },
+    {
+      "quote": "各主体は、AI システム・サービスの開発・提供・利用を通じ、ステークホルダーの生命・身体・財産に危害を及ぼすことがないようにすべきである。加えて、精神及び環境に危害を及ぼすことがないようにすることが重要である。",
+      "source_section": "Page 17 (第２部 C. 2) 安全性)",
+      "quote_en": "Each actor should ensure that the development, provision, and use of AI systems and services do not cause harm to the life, body, or property of stakeholders. In addition, it is important to avoid causing harm to mental well-being and the environment.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 19671,
+      "end_char": 19776
+    },
+    {
+      "quote": "生成AI によって、内容が真実・公平であるかのように装った情報を誰でも作ることができるようになり、AI が生成した偽情報・誤情報・偏向情報が社会を不安定化・混乱させるリスクが高まっていることを認識した上で、必要な対策を講じる",
+      "source_section": "Page 16 (第２部 C. 1) 人間中心 ③ 偽情報等への対策)",
+      "quote_en": "Recognizing that generative AI enables anyone to create information disguised as true and fair, increasing the risk that AI-generated disinformation, misinformation, and biased information will destabilize and confuse society, take necessary countermeasures.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 18027,
+      "end_char": 18139
+    },
+    {
+      "quote": "このような点に留意することにより、AI による便益の最大化、競争力の強化、事業価値の維持・向上等が可能となる。",
+      "source_section": "Page 5 (はじめに)",
+      "quote_en": "By keeping these points in mind, it becomes possible to maximize the benefits of AI, strengthen competitiveness, and maintain and enhance corporate value.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 4862,
+      "end_char": 4917
+    }
+  ]
+}

@@ -1,56 +1,59 @@
 {
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
   "metadata_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_019ESPLExPFnsN4Js2wK1kHA",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"issuing_body\":\"European AI Office / Signatory Taskforce of the General-Purpose AI Code of Practice\",\"document_type\":\"standards_guideline\",\"binding_strength\":\"voluntary_commitment\",\"publication_date\":\"2026-01\",\"effective_date\":null,\"covered_actors\":[\"Signatories to the GPAI Code of Practice\",\"Members of the Signatory Taskforce\",\"general-purpose AI model providers\",\"invited experts and stakeholders\"],\"covered_application_domains\":[\"general_purpose_models\"],\"prohibited_practices\":[],\"enforcement_authorities\":[\"European AI Office\"],\"compliance_deadlines\":[],\"penalties_summary\":null,\"implementation_notes\":\"This Vademecum governs the internal organisation and operation of the Signatory Taskforce under the GPAI Code of Practice, which was assessed as adequate pursuant to Article 56(6) of the AI Act. It is not itself a binding instrument but structures voluntary cooperation among signatories. The AI Office chairs the Taskforce and may publish the Vademecum, participant lists, and high-level meeting minutes under its transparency obligations. Decisions are taken by consensus with a default agreement period of no less than 10 working days.\",\"confidence\":0.92}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 3781,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 274,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 7894,
+      "candidatesTokenCount": 351,
+      "totalTokenCount": 9881,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 7894
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 351
+        }
+      ],
+      "thoughtsTokenCount": 1636,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "pC4Ba_eKDffCodAPupmZ-Q8"
   },
   "controls_response": {
-    "model": "claude-sonnet-4-6",
-    "id": "msg_01EMk9SM8PWrCwS5CdRwgbgV",
-    "type": "message",
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "{\"safety_requirements\": [], \"enforcement_mechanisms\": [{\"label\": \"soft_enforcement\", \"confidence\": 0.85, \"evidence\": [{\"quote\": \"to facilitate cooperation between Signatories where relevant for the purpose of implementing the Code\", \"source_section\": \"Point 2\"}, {\"quote\": \"The Taskforce may adopt outputs relating to its Objectives under Point 2 by consensus based on all Members\", \"source_section\": \"Point 5\"}]}, {\"label\": \"reporting_obligation\", \"confidence\": 0.6, \"evidence\": [{\"quote\": \"The AI Office may publish this Vademecum, the list of organisations participating in any meeting, and the high-level minutes of meetings as required by its transparency obligations\", \"source_section\": \"Point 7\"}]}, {\"label\": \"regulatory_supervision\", \"confidence\": 0.75, \"evidence\": [{\"quote\": \"The Taskforce is chaired by the AI Office\", \"source_section\": \"Point 1\"}, {\"quote\": \"Meetings of the Taskforce shall be convened by the AI Office either on its own initiative or at the request of a simple majority of the Members\", \"source_section\": \"Point 4\"}]}]}"
-      }
-    ],
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "stop_details": null,
-    "usage": {
-      "input_tokens": 3701,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "cache_creation": {
-        "ephemeral_5m_input_tokens": 0,
-        "ephemeral_1h_input_tokens": 0
-      },
-      "output_tokens": 275,
-      "service_tier": "standard",
-      "inference_geo": "global"
-    }
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "promptTokenCount": 8047,
+      "candidatesTokenCount": 227,
+      "totalTokenCount": 11167,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 8047
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 227
+        }
+      ],
+      "thoughtsTokenCount": 2893,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-4-neon",
+    "responseId": "tS4Ba8HCBNDN8L0Pp-GnmAs"
   }
 }

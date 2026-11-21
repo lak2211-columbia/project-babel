@@ -1,42 +1,46 @@
 {
-  "generated_at": "2026-11-21T02:27:34.607907+00:00",
+  "generated_at": "2026-11-21T06:30:54.786627+00:00",
   "jurisdictions": [
     {
       "jurisdiction": "china",
       "description": "Official State Council, CAC, and sectoral sources for China's AI governance regime and implementation measures.",
       "coverage_snapshot": {
         "portal_count": 8,
-        "seed_document_count": 18,
+        "seed_document_count": 20,
         "target_range": {
           "minimum": 30,
           "target": 45,
           "maximum": 60
         },
-        "gap_to_minimum": 12,
+        "gap_to_minimum": 10,
         "document_type_counts": {
           "legislation": 5,
           "regulatory_guidance": 7,
-          "standards_guideline": 3,
-          "strategy_paper": 3
+          "standards_guideline": 4,
+          "strategy_paper": 4
         },
         "source_tier_counts": {
           "implementation_resource": 4,
-          "policy_strategy": 3,
+          "policy_strategy": 4,
           "regulatory_guidance": 3,
           "statutory_rule": 5,
-          "technical_standard": 3
+          "technical_standard": 4
         },
         "policy_domain_counts": {
+          "agentic_ai": 2,
           "civil_rights_nondiscrimination": 1,
           "companion_ai": 3,
           "consumer_protection": 10,
           "critical_infrastructure": 1,
-          "frontier_gpai": 4,
+          "embodied_physical_ai": 1,
+          "frontier_gpai": 5,
           "healthcare_medical_devices": 1,
-          "industrial_innovation": 5,
-          "national_security": 1,
+          "industrial_innovation": 6,
+          "national_security": 2,
           "platform_content_governance": 11,
-          "standards_assurance": 3
+          "public_sector_governance": 1,
+          "sovereign_compute": 1,
+          "standards_assurance": 4
         }
       },
       "portal_operations": [
@@ -50,7 +54,7 @@
             "content_governance",
             "algorithmic_regulation"
           ],
-          "existing_seed_count": 12,
+          "existing_seed_count": 13,
           "candidate_count": 4,
           "family_count": 4,
           "high_signal_family_count": 1,
@@ -62,7 +66,8 @@
             "implementation_guidance",
             "sectoral_guidance",
             "statutory_rule",
-            "strategy_architecture"
+            "strategy_architecture",
+            "technical_standard"
           ],
           "missing_coverage_buckets": [
             "enforcement_interpretation"
@@ -71,7 +76,8 @@
             "implementation_guidance": 6,
             "sectoral_guidance": 1,
             "statutory_rule": 5,
-            "strategy_architecture": 1
+            "strategy_architecture": 1,
+            "technical_standard": 1
           },
           "candidate_bucket_counts": {
             "implementation_guidance": 1
@@ -173,7 +179,7 @@
             "policy",
             "ai_governance"
           ],
-          "existing_seed_count": 7,
+          "existing_seed_count": 8,
           "candidate_count": 1,
           "family_count": 1,
           "high_signal_family_count": 0,
@@ -182,6 +188,7 @@
             "strategy_architecture"
           ],
           "covered_coverage_buckets": [
+            "enforcement_interpretation",
             "implementation_guidance",
             "sectoral_guidance",
             "statutory_rule",
@@ -190,10 +197,11 @@
           ],
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
+            "enforcement_interpretation": 1,
             "implementation_guidance": 1,
-            "sectoral_guidance": 1,
+            "sectoral_guidance": 2,
             "statutory_rule": 4,
-            "strategy_architecture": 1,
+            "strategy_architecture": 2,
             "technical_standard": 1
           },
           "candidate_bucket_counts": {},
@@ -271,7 +279,7 @@
             "standards",
             "ai_safety"
           ],
-          "existing_seed_count": 2,
+          "existing_seed_count": 3,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -285,7 +293,7 @@
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
             "statutory_rule": 1,
-            "technical_standard": 1
+            "technical_standard": 2
           },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
@@ -408,33 +416,34 @@
       "description": "Official EU legal text, implementation guidance, and data-protection sources for the AI Act and related governance instruments.",
       "coverage_snapshot": {
         "portal_count": 6,
-        "seed_document_count": 18,
+        "seed_document_count": 21,
         "target_range": {
           "minimum": 40,
           "target": 60,
           "maximum": 80
         },
-        "gap_to_minimum": 22,
+        "gap_to_minimum": 19,
         "document_type_counts": {
-          "legislation": 1,
-          "regulatory_guidance": 13,
-          "voluntary_commitment": 4
+          "legislation": 2,
+          "regulatory_guidance": 14,
+          "voluntary_commitment": 5
         },
         "source_tier_counts": {
           "implementation_resource": 8,
-          "regulatory_guidance": 5,
-          "statutory_rule": 1,
-          "voluntary_framework": 4
+          "regulatory_guidance": 6,
+          "statutory_rule": 2,
+          "voluntary_framework": 5
         },
         "policy_domain_counts": {
           "civil_rights_nondiscrimination": 2,
-          "consumer_protection": 4,
+          "consumer_protection": 5,
           "copyright_ip": 4,
-          "frontier_gpai": 18,
-          "industrial_innovation": 3,
+          "frontier_gpai": 21,
+          "industrial_innovation": 4,
+          "platform_content_governance": 2,
           "privacy_data_protection": 4,
           "public_sector_governance": 1,
-          "standards_assurance": 9
+          "standards_assurance": 11
         }
       },
       "portal_operations": [
@@ -448,10 +457,10 @@
             "implementation",
             "ai_act"
           ],
-          "existing_seed_count": 15,
+          "existing_seed_count": 18,
           "candidate_count": 15,
           "family_count": 15,
-          "high_signal_family_count": 2,
+          "high_signal_family_count": 3,
           "expected_coverage_buckets": [
             "implementation_guidance",
             "strategy_architecture"
@@ -468,17 +477,65 @@
           ],
           "covered_bucket_counts": {
             "enforcement_interpretation": 2,
-            "implementation_guidance": 10,
+            "implementation_guidance": 11,
             "sectoral_guidance": 4,
-            "statutory_rule": 1,
-            "voluntary_framework": 4
+            "statutory_rule": 2,
+            "voluntary_framework": 5
           },
           "candidate_bucket_counts": {
-            "implementation_guidance": 4,
+            "implementation_guidance": 5,
             "strategy_architecture": 3
           },
           "suggested_action": "expand_seed_documents",
           "priority_families": [
+            {
+              "family_id": "title:guidelines on the scope of the obligations for providers of gpai models",
+              "family_label": "guidelines on the scope of the obligations for providers of gpai models",
+              "status": "new_family",
+              "member_count": 1,
+              "new_candidate_count": 1,
+              "source_role_counts": {
+                "wrapper_page": 1
+              },
+              "best_candidate_score": 10,
+              "best_recommendation": "promote_now",
+              "best_source_role": "wrapper_page",
+              "proposed_document_type": "legislation",
+              "proposed_binding_strength": "binding_law",
+              "proposed_source_tier": "statutory_rule",
+              "proposed_policy_domains": [
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "representative_title": "Guidelines on the scope of the obligations for providers of GPAI models",
+              "representative_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+              "members": [
+                {
+                  "title": "Guidelines on the scope of the obligations for providers of GPAI models",
+                  "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                  "status": "new_candidate",
+                  "source_role": "wrapper_page",
+                  "family_id": "title:guidelines on the scope of the obligations for providers of gpai models",
+                  "family_label": "guidelines on the scope of the obligations for providers of gpai models",
+                  "score": 10,
+                  "recommendation": "promote_now",
+                  "proposed_document_type": "legislation",
+                  "proposed_binding_strength": "binding_law",
+                  "proposed_source_tier": "statutory_rule",
+                  "proposed_policy_domains": [
+                    "frontier_gpai"
+                  ],
+                  "coverage_bucket": "implementation_guidance",
+                  "last_modified": null,
+                  "discovered_from": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+                  "score_reasons": [
+                    "AI-relevant title or URL",
+                    "instrument-like title",
+                    "wrapper_page role"
+                  ]
+                }
+              ]
+            },
             {
               "family_id": "title:study on artificial intelligence in healthcare dissects digital health technologies in europe",
               "family_label": "study on artificial intelligence in healthcare dissects digital health technologies in europe",
@@ -696,7 +753,7 @@
             "official_journal",
             "ai_act"
           ],
-          "existing_seed_count": 1,
+          "existing_seed_count": 2,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -708,7 +765,7 @@
           ],
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
-            "statutory_rule": 1
+            "statutory_rule": 2
           },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
@@ -725,7 +782,7 @@
             "apply_ai",
             "high_risk"
           ],
-          "existing_seed_count": 0,
+          "existing_seed_count": 2,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -733,18 +790,74 @@
             "implementation_guidance",
             "strategy_architecture"
           ],
-          "covered_coverage_buckets": [],
-          "missing_coverage_buckets": [
+          "covered_coverage_buckets": [
             "implementation_guidance",
+            "voluntary_framework"
+          ],
+          "missing_coverage_buckets": [
             "strategy_architecture"
           ],
-          "covered_bucket_counts": {},
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "voluntary_framework": 1
+          },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
         }
       ],
       "priority_families": [
+        {
+          "jurisdiction": "european_union",
+          "portal_id": "eu_digital_strategy_ai",
+          "portal_name": "Shaping Europe's Digital Future - AI",
+          "family_id": "title:guidelines on the scope of the obligations for providers of gpai models",
+          "family_label": "guidelines on the scope of the obligations for providers of gpai models",
+          "status": "new_family",
+          "member_count": 1,
+          "new_candidate_count": 1,
+          "source_role_counts": {
+            "wrapper_page": 1
+          },
+          "best_candidate_score": 10,
+          "best_recommendation": "promote_now",
+          "best_source_role": "wrapper_page",
+          "proposed_document_type": "legislation",
+          "proposed_binding_strength": "binding_law",
+          "proposed_source_tier": "statutory_rule",
+          "proposed_policy_domains": [
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "representative_title": "Guidelines on the scope of the obligations for providers of GPAI models",
+          "representative_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+          "members": [
+            {
+              "title": "Guidelines on the scope of the obligations for providers of GPAI models",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+              "status": "new_candidate",
+              "source_role": "wrapper_page",
+              "family_id": "title:guidelines on the scope of the obligations for providers of gpai models",
+              "family_label": "guidelines on the scope of the obligations for providers of gpai models",
+              "score": 10,
+              "recommendation": "promote_now",
+              "proposed_document_type": "legislation",
+              "proposed_binding_strength": "binding_law",
+              "proposed_source_tier": "statutory_rule",
+              "proposed_policy_domains": [
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "last_modified": null,
+              "discovered_from": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+              "score_reasons": [
+                "AI-relevant title or URL",
+                "instrument-like title",
+                "wrapper_page role"
+              ]
+            }
+          ]
+        },
         {
           "jurisdiction": "european_union",
           "portal_id": "eu_digital_strategy_ai",
@@ -856,125 +969,47 @@
       "description": "Official Cabinet Secretariat, Cabinet Office, Digital Agency, METI, MIC, MEXT, PPC, MHLW, MAFF, CFA, and Cultural Affairs materials for Japan's AI governance approach.",
       "coverage_snapshot": {
         "portal_count": 17,
-        "seed_document_count": 28,
+        "seed_document_count": 34,
         "target_range": {
           "minimum": 40,
           "target": 55,
           "maximum": 70
         },
-        "gap_to_minimum": 12,
+        "gap_to_minimum": 6,
         "document_type_counts": {
+          "legislation": 1,
           "regulatory_guidance": 12,
-          "standards_guideline": 7,
-          "strategy_paper": 9
+          "standards_guideline": 10,
+          "strategy_paper": 10,
+          "voluntary_commitment": 1
         },
         "source_tier_counts": {
           "implementation_resource": 9,
-          "policy_strategy": 5,
+          "policy_strategy": 6,
           "regulatory_guidance": 8,
-          "technical_standard": 6
+          "statutory_rule": 1,
+          "technical_standard": 9,
+          "voluntary_framework": 1
         },
         "policy_domain_counts": {
+          "agentic_ai": 3,
           "civil_rights_nondiscrimination": 1,
           "copyright_ip": 2,
           "education": 3,
-          "frontier_gpai": 17,
+          "embodied_physical_ai": 2,
+          "frontier_gpai": 22,
           "healthcare_medical_devices": 3,
-          "industrial_innovation": 13,
-          "platform_content_governance": 1,
+          "industrial_innovation": 15,
+          "national_security": 2,
+          "platform_content_governance": 2,
           "privacy_data_protection": 4,
-          "public_sector_governance": 1,
+          "public_sector_governance": 3,
           "public_sector_procurement": 5,
-          "standards_assurance": 5
+          "sovereign_compute": 1,
+          "standards_assurance": 9
         }
       },
       "portal_operations": [
-        {
-          "portal_id": "jp_cao_ai_strategy",
-          "portal_name": "Cabinet Office AI Strategy",
-          "issuer_type": "executive",
-          "portal_kind": "portal",
-          "tags": [
-            "cabinet_office",
-            "ai_act",
-            "guidelines",
-            "cross_ministry"
-          ],
-          "existing_seed_count": 9,
-          "candidate_count": 22,
-          "family_count": 22,
-          "high_signal_family_count": 1,
-          "expected_coverage_buckets": [
-            "implementation_guidance",
-            "strategy_architecture"
-          ],
-          "covered_coverage_buckets": [
-            "implementation_guidance",
-            "strategy_architecture",
-            "technical_standard"
-          ],
-          "missing_coverage_buckets": [],
-          "covered_bucket_counts": {
-            "implementation_guidance": 5,
-            "strategy_architecture": 3,
-            "technical_standard": 1
-          },
-          "candidate_bucket_counts": {
-            "implementation_guidance": 7,
-            "strategy_architecture": 8
-          },
-          "suggested_action": "inspect_families",
-          "priority_families": [
-            {
-              "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-              "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-              "status": "new_family",
-              "member_count": 1,
-              "new_candidate_count": 1,
-              "source_role_counts": {
-                "primary_text": 1
-              },
-              "best_candidate_score": 12,
-              "best_recommendation": "promote_now",
-              "best_source_role": "primary_text",
-              "proposed_document_type": "legislation",
-              "proposed_binding_strength": "binding_law",
-              "proposed_source_tier": "statutory_rule",
-              "proposed_policy_domains": [
-                "frontier_gpai"
-              ],
-              "coverage_bucket": "implementation_guidance",
-              "representative_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
-              "representative_url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
-              "members": [
-                {
-                  "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
-                  "url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
-                  "status": "new_candidate",
-                  "source_role": "primary_text",
-                  "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-                  "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-                  "score": 12,
-                  "recommendation": "promote_now",
-                  "proposed_document_type": "legislation",
-                  "proposed_binding_strength": "binding_law",
-                  "proposed_source_tier": "statutory_rule",
-                  "proposed_policy_domains": [
-                    "frontier_gpai"
-                  ],
-                  "coverage_bucket": "implementation_guidance",
-                  "last_modified": null,
-                  "discovered_from": "https://www8.cao.go.jp/cstp/ai/index.html",
-                  "score_reasons": [
-                    "AI-relevant title or URL",
-                    "instrument-like title",
-                    "primary_text role"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
         {
           "portal_id": "jp_bunka_copyright_ai",
           "portal_name": "Agency for Cultural Affairs AI Copyright Materials",
@@ -1181,6 +1216,49 @@
             "enforcement_interpretation": 2,
             "implementation_guidance": 40,
             "strategy_architecture": 2
+          },
+          "suggested_action": "retune_discovery_filters",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_cao_ai_strategy",
+          "portal_name": "Cabinet Office AI Strategy",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "cabinet_office",
+            "ai_act",
+            "guidelines",
+            "cross_ministry"
+          ],
+          "existing_seed_count": 12,
+          "candidate_count": 22,
+          "family_count": 22,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "statutory_rule",
+            "strategy_architecture",
+            "technical_standard",
+            "voluntary_framework"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "implementation_guidance": 5,
+            "sectoral_guidance": 2,
+            "statutory_rule": 1,
+            "strategy_architecture": 4,
+            "technical_standard": 1,
+            "voluntary_framework": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 6,
+            "strategy_architecture": 8
           },
           "suggested_action": "retune_discovery_filters",
           "priority_families": []
@@ -1406,7 +1484,7 @@
             "governance_guidelines",
             "expert_group"
           ],
-          "existing_seed_count": 3,
+          "existing_seed_count": 4,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -1423,7 +1501,7 @@
           ],
           "covered_bucket_counts": {
             "strategy_architecture": 1,
-            "technical_standard": 2
+            "technical_standard": 3
           },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
@@ -1536,18 +1614,20 @@
             "evaluation",
             "safety"
           ],
-          "existing_seed_count": 0,
+          "existing_seed_count": 2,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
           "expected_coverage_buckets": [
             "technical_standard"
           ],
-          "covered_coverage_buckets": [],
-          "missing_coverage_buckets": [
+          "covered_coverage_buckets": [
             "technical_standard"
           ],
-          "covered_bucket_counts": {},
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "technical_standard": 2
+          },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
@@ -1563,7 +1643,7 @@
             "hiroshima_process",
             "agentic_ai"
           ],
-          "existing_seed_count": 0,
+          "existing_seed_count": 2,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -1571,12 +1651,18 @@
             "implementation_guidance",
             "strategy_architecture"
           ],
-          "covered_coverage_buckets": [],
+          "covered_coverage_buckets": [
+            "technical_standard",
+            "voluntary_framework"
+          ],
           "missing_coverage_buckets": [
             "implementation_guidance",
             "strategy_architecture"
           ],
-          "covered_bucket_counts": {},
+          "covered_bucket_counts": {
+            "technical_standard": 1,
+            "voluntary_framework": 1
+          },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
@@ -1591,75 +1677,28 @@
             "legal_registry",
             "ai_act"
           ],
-          "existing_seed_count": 0,
+          "existing_seed_count": 1,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
           "expected_coverage_buckets": [
             "statutory_rule"
           ],
-          "covered_coverage_buckets": [],
-          "missing_coverage_buckets": [
+          "covered_coverage_buckets": [
+            "sectoral_guidance",
             "statutory_rule"
           ],
-          "covered_bucket_counts": {},
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "sectoral_guidance": 1,
+            "statutory_rule": 1
+          },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
         }
       ],
       "priority_families": [
-        {
-          "jurisdiction": "japan",
-          "portal_id": "jp_cao_ai_strategy",
-          "portal_name": "Cabinet Office AI Strategy",
-          "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-          "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-          "status": "new_family",
-          "member_count": 1,
-          "new_candidate_count": 1,
-          "source_role_counts": {
-            "primary_text": 1
-          },
-          "best_candidate_score": 12,
-          "best_recommendation": "promote_now",
-          "best_source_role": "primary_text",
-          "proposed_document_type": "legislation",
-          "proposed_binding_strength": "binding_law",
-          "proposed_source_tier": "statutory_rule",
-          "proposed_policy_domains": [
-            "frontier_gpai"
-          ],
-          "coverage_bucket": "implementation_guidance",
-          "representative_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
-          "representative_url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
-          "members": [
-            {
-              "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
-              "url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
-              "status": "new_candidate",
-              "source_role": "primary_text",
-              "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-              "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-              "score": 12,
-              "recommendation": "promote_now",
-              "proposed_document_type": "legislation",
-              "proposed_binding_strength": "binding_law",
-              "proposed_source_tier": "statutory_rule",
-              "proposed_policy_domains": [
-                "frontier_gpai"
-              ],
-              "coverage_bucket": "implementation_guidance",
-              "last_modified": null,
-              "discovered_from": "https://www8.cao.go.jp/cstp/ai/index.html",
-              "score_reasons": [
-                "AI-relevant title or URL",
-                "instrument-like title",
-                "primary_text role"
-              ]
-            }
-          ]
-        },
         {
           "jurisdiction": "japan",
           "portal_id": "jp_cas_human_centric_ai",
@@ -1772,30 +1811,31 @@
       "description": "Official legal, public-sector, privacy, and medical-device sources for South Korea's AI framework and implementation.",
       "coverage_snapshot": {
         "portal_count": 9,
-        "seed_document_count": 16,
+        "seed_document_count": 17,
         "target_range": {
           "minimum": 25,
           "target": 35,
           "maximum": 50
         },
-        "gap_to_minimum": 9,
+        "gap_to_minimum": 8,
         "document_type_counts": {
           "legislation": 3,
-          "regulatory_guidance": 13
+          "regulatory_guidance": 14
         },
         "source_tier_counts": {
           "implementation_resource": 2,
-          "regulatory_guidance": 11,
+          "regulatory_guidance": 12,
           "statutory_rule": 3
         },
         "policy_domain_counts": {
+          "civil_rights_nondiscrimination": 1,
           "consumer_protection": 1,
-          "critical_infrastructure": 1,
-          "frontier_gpai": 13,
+          "critical_infrastructure": 2,
+          "frontier_gpai": 14,
           "healthcare_medical_devices": 1,
           "privacy_data_protection": 7,
           "public_sector_governance": 10,
-          "standards_assurance": 4
+          "standards_assurance": 5
         }
       },
       "portal_operations": [
@@ -1809,7 +1849,7 @@
             "policy",
             "ai_governance"
           ],
-          "existing_seed_count": 3,
+          "existing_seed_count": 4,
           "candidate_count": 4,
           "family_count": 4,
           "high_signal_family_count": 0,
@@ -1826,8 +1866,8 @@
             "strategy_architecture"
           ],
           "covered_bucket_counts": {
-            "implementation_guidance": 1,
-            "sectoral_guidance": 3,
+            "implementation_guidance": 2,
+            "sectoral_guidance": 4,
             "statutory_rule": 2
           },
           "candidate_bucket_counts": {
@@ -2049,7 +2089,7 @@
             "helpdesk",
             "guidelines"
           ],
-          "existing_seed_count": 0,
+          "existing_seed_count": 1,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -2057,12 +2097,17 @@
             "implementation_guidance",
             "strategy_architecture"
           ],
-          "covered_coverage_buckets": [],
-          "missing_coverage_buckets": [
+          "covered_coverage_buckets": [
             "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
             "strategy_architecture"
           ],
-          "covered_bucket_counts": {},
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
@@ -2101,39 +2146,44 @@
       "description": "Official executive, standards, civil-rights, consumer-protection, and health-regulation sources for U.S. AI governance.",
       "coverage_snapshot": {
         "portal_count": 12,
-        "seed_document_count": 23,
+        "seed_document_count": 29,
         "target_range": {
           "minimum": 40,
           "target": 55,
           "maximum": 70
         },
-        "gap_to_minimum": 17,
+        "gap_to_minimum": 11,
         "document_type_counts": {
-          "executive_order": 1,
+          "executive_order": 4,
+          "legislation": 1,
           "regulatory_guidance": 6,
-          "standards_guideline": 10,
+          "standards_guideline": 12,
           "strategy_paper": 6
         },
         "source_tier_counts": {
-          "executive_action": 3,
-          "implementation_resource": 8,
+          "executive_action": 6,
+          "implementation_resource": 7,
           "policy_strategy": 4,
           "regulatory_guidance": 3,
-          "technical_standard": 5
+          "statutory_rule": 1,
+          "technical_standard": 8
         },
         "policy_domain_counts": {
-          "civil_rights_nondiscrimination": 5,
-          "consumer_protection": 5,
+          "agentic_ai": 2,
+          "civil_rights_nondiscrimination": 6,
+          "consumer_protection": 6,
+          "critical_infrastructure": 1,
           "finance": 3,
-          "frontier_gpai": 18,
+          "frontier_gpai": 22,
           "healthcare_medical_devices": 1,
-          "industrial_innovation": 4,
-          "national_security": 3,
+          "industrial_innovation": 7,
+          "national_security": 4,
+          "platform_content_governance": 1,
           "privacy_data_protection": 1,
-          "public_sector_governance": 3,
+          "public_sector_governance": 5,
           "public_sector_procurement": 1,
-          "sovereign_compute": 1,
-          "standards_assurance": 13
+          "sovereign_compute": 3,
+          "standards_assurance": 16
         }
       },
       "portal_operations": [
@@ -2160,8 +2210,8 @@
           ],
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
-            "implementation_guidance": 5,
-            "technical_standard": 4
+            "implementation_guidance": 4,
+            "technical_standard": 5
           },
           "candidate_bucket_counts": {
             "implementation_guidance": 2,
@@ -2281,7 +2331,7 @@
             "nist",
             "technical_guidance"
           ],
-          "existing_seed_count": 6,
+          "existing_seed_count": 8,
           "candidate_count": 13,
           "family_count": 13,
           "high_signal_family_count": 1,
@@ -2289,15 +2339,17 @@
             "technical_standard"
           ],
           "covered_coverage_buckets": [
+            "consultation_draft",
             "implementation_guidance",
             "sectoral_guidance",
             "technical_standard"
           ],
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
-            "implementation_guidance": 3,
-            "sectoral_guidance": 1,
-            "technical_standard": 3
+            "consultation_draft": 1,
+            "implementation_guidance": 2,
+            "sectoral_guidance": 2,
+            "technical_standard": 6
           },
           "candidate_bucket_counts": {
             "implementation_guidance": 8,
@@ -2436,7 +2488,7 @@
             "consumer_protection",
             "ai_harms"
           ],
-          "existing_seed_count": 1,
+          "existing_seed_count": 2,
           "candidate_count": 3,
           "family_count": 3,
           "high_signal_family_count": 0,
@@ -2445,6 +2497,7 @@
             "implementation_guidance"
           ],
           "covered_coverage_buckets": [
+            "statutory_rule",
             "strategy_architecture"
           ],
           "missing_coverage_buckets": [
@@ -2452,6 +2505,7 @@
             "implementation_guidance"
           ],
           "covered_bucket_counts": {
+            "statutory_rule": 1,
             "strategy_architecture": 1
           },
           "candidate_bucket_counts": {
@@ -2470,7 +2524,7 @@
             "federal",
             "ai_governance"
           ],
-          "existing_seed_count": 4,
+          "existing_seed_count": 7,
           "candidate_count": 1,
           "family_count": 1,
           "high_signal_family_count": 0,
@@ -2485,8 +2539,8 @@
           ],
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
-            "implementation_guidance": 1,
-            "sectoral_guidance": 2,
+            "implementation_guidance": 2,
+            "sectoral_guidance": 4,
             "strategy_architecture": 1
           },
           "candidate_bucket_counts": {
@@ -2610,18 +2664,24 @@
             "super_intelligence",
             "rulemaking"
           ],
-          "existing_seed_count": 0,
+          "existing_seed_count": 3,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
           "expected_coverage_buckets": [
             "statutory_rule"
           ],
-          "covered_coverage_buckets": [],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
           "missing_coverage_buckets": [
             "statutory_rule"
           ],
-          "covered_bucket_counts": {},
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 2
+          },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
@@ -2637,18 +2697,24 @@
             "super_intelligence",
             "standards"
           ],
-          "existing_seed_count": 0,
+          "existing_seed_count": 2,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
           "expected_coverage_buckets": [
             "technical_standard"
           ],
-          "covered_coverage_buckets": [],
-          "missing_coverage_buckets": [
+          "covered_coverage_buckets": [
+            "consultation_draft",
+            "sectoral_guidance",
             "technical_standard"
           ],
-          "covered_bucket_counts": {},
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "consultation_draft": 1,
+            "sectoral_guidance": 1,
+            "technical_standard": 2
+          },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
@@ -2663,18 +2729,20 @@
             "public_law",
             "congress"
           ],
-          "existing_seed_count": 0,
+          "existing_seed_count": 1,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
           "expected_coverage_buckets": [
             "statutory_rule"
           ],
-          "covered_coverage_buckets": [],
-          "missing_coverage_buckets": [
+          "covered_coverage_buckets": [
             "statutory_rule"
           ],
-          "covered_bucket_counts": {},
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "statutory_rule": 1
+          },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
@@ -2896,57 +2964,6 @@
       ]
     },
     {
-      "jurisdiction": "japan",
-      "portal_id": "jp_cao_ai_strategy",
-      "portal_name": "Cabinet Office AI Strategy",
-      "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-      "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-      "status": "new_family",
-      "member_count": 1,
-      "new_candidate_count": 1,
-      "source_role_counts": {
-        "primary_text": 1
-      },
-      "best_candidate_score": 12,
-      "best_recommendation": "promote_now",
-      "best_source_role": "primary_text",
-      "proposed_document_type": "legislation",
-      "proposed_binding_strength": "binding_law",
-      "proposed_source_tier": "statutory_rule",
-      "proposed_policy_domains": [
-        "frontier_gpai"
-      ],
-      "coverage_bucket": "implementation_guidance",
-      "representative_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
-      "representative_url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
-      "members": [
-        {
-          "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
-          "url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
-          "status": "new_candidate",
-          "source_role": "primary_text",
-          "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-          "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
-          "score": 12,
-          "recommendation": "promote_now",
-          "proposed_document_type": "legislation",
-          "proposed_binding_strength": "binding_law",
-          "proposed_source_tier": "statutory_rule",
-          "proposed_policy_domains": [
-            "frontier_gpai"
-          ],
-          "coverage_bucket": "implementation_guidance",
-          "last_modified": null,
-          "discovered_from": "https://www8.cao.go.jp/cstp/ai/index.html",
-          "score_reasons": [
-            "AI-relevant title or URL",
-            "instrument-like title",
-            "primary_text role"
-          ]
-        }
-      ]
-    },
-    {
       "jurisdiction": "united_states",
       "portal_id": "us_nist_rmf",
       "portal_name": "NIST AI Risk Management Framework",
@@ -3154,6 +3171,57 @@
             "primary_text role",
             "direct PDF artifact",
             "low-signal event/news language"
+          ]
+        }
+      ]
+    },
+    {
+      "jurisdiction": "european_union",
+      "portal_id": "eu_digital_strategy_ai",
+      "portal_name": "Shaping Europe's Digital Future - AI",
+      "family_id": "title:guidelines on the scope of the obligations for providers of gpai models",
+      "family_label": "guidelines on the scope of the obligations for providers of gpai models",
+      "status": "new_family",
+      "member_count": 1,
+      "new_candidate_count": 1,
+      "source_role_counts": {
+        "wrapper_page": 1
+      },
+      "best_candidate_score": 10,
+      "best_recommendation": "promote_now",
+      "best_source_role": "wrapper_page",
+      "proposed_document_type": "legislation",
+      "proposed_binding_strength": "binding_law",
+      "proposed_source_tier": "statutory_rule",
+      "proposed_policy_domains": [
+        "frontier_gpai"
+      ],
+      "coverage_bucket": "implementation_guidance",
+      "representative_title": "Guidelines on the scope of the obligations for providers of GPAI models",
+      "representative_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+      "members": [
+        {
+          "title": "Guidelines on the scope of the obligations for providers of GPAI models",
+          "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+          "status": "new_candidate",
+          "source_role": "wrapper_page",
+          "family_id": "title:guidelines on the scope of the obligations for providers of gpai models",
+          "family_label": "guidelines on the scope of the obligations for providers of gpai models",
+          "score": 10,
+          "recommendation": "promote_now",
+          "proposed_document_type": "legislation",
+          "proposed_binding_strength": "binding_law",
+          "proposed_source_tier": "statutory_rule",
+          "proposed_policy_domains": [
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "last_modified": null,
+          "discovered_from": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+          "score_reasons": [
+            "AI-relevant title or URL",
+            "instrument-like title",
+            "wrapper_page role"
           ]
         }
       ]

@@ -1,0 +1,86 @@
+{
+  "dominant_frame": "economic_competitiveness",
+  "secondary_frames": [
+    "innovation_enablement",
+    "national_security",
+    "fundamental_rights",
+    "consumer_public_safety"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.78,
+    "economic_competitiveness": 0.94,
+    "fundamental_rights": 0.45,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.35,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.16,
+    "economic_competitiveness": 0.4,
+    "fundamental_rights": 0.06,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.34,
+    "consumer_public_safety": 0.04,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "EO 14365 is dominantly framed around economic_competitiveness, justifying federal preemption of State AI statutes as essential to sustain global AI dominance, attract trillions of dollars in investment, and win the AI race. Economic_competitiveness narrowly edges out innovation_enablement because removing the 50-state compliance patchwork and burdensome regulation is explicitly framed as the means to achieve global supremacy against foreign adversaries. Innovation_enablement is a close secondary frame emphasizing start-up compliance relief and a minimally burdensome national standard, accompanied by national_security (explicit race with adversaries for supremacy), and secondary references to fundamental_rights (First Amendment and anti-censorship) and consumer_public_safety (child safety protections).",
+  "evidence_spans": [
+    {
+      "quote": "It is the policy of the United States to sustain and enhance the United States' global AI dominance through a minimally burdensome national policy framework for AI.",
+      "source_section": "Sec. 2",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 2557,
+      "end_char": 2721
+    },
+    {
+      "quote": "A carefully crafted national framework can ensure that the United States wins the AI race, as we must.",
+      "source_section": "Section 1",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 2229,
+      "end_char": 2331
+    },
+    {
+      "quote": "To win, United States AI companies must be free to innovate without cumbersome regulation. But excessive State regulation thwarts this imperative. First, State-by-State regulation by definition creates a patchwork of 50 different regulatory regimes that makes compliance more challenging, particularly for start-ups.",
+      "source_section": "Section 1",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1109,
+      "end_char": 1425
+    },
+    {
+      "quote": "United States leadership in Artificial Intelligence (AI) will promote United States national and economic security and dominance across many domains.",
+      "source_section": "Section 1",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 197,
+      "end_char": 346
+    },
+    {
+      "quote": "But we remain in the earliest days of this technological revolution and are in a race with adversaries for supremacy within it.",
+      "source_section": "Section 1",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 981,
+      "end_char": 1108
+    },
+    {
+      "quote": "That framework should also ensure that children are protected, censorship is prevented, copyrights are respected, and communities are safeguarded.",
+      "source_section": "Section 1",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 2082,
+      "end_char": 2228
+    }
+  ]
+}

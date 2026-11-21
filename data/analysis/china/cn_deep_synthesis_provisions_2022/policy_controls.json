@@ -1,0 +1,323 @@
+{
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "深度合成服务提供者和技术支持者提供具有以下功能的模型、模板等工具的，应当依法自行或者委托专业机构开展安全评估： （一）生成或者编辑人脸、人声等生物识别信息的； （二）生成或者编辑可能涉及国家安全、国家形象、国家利益和社会公共利益的特殊物体、场景等非生物识别信息的。",
+          "source_section": "第十五条",
+          "quote_en": "Deep synthesis service providers and technical supporters that provide models, templates, or other tools with the following functions shall conduct a security assessment on their own or by entrusting a professional institution in accordance with the law: (1) generating or editing biometric information such as faces and human voices; (2) generating or editing non-biometric information such as special objects and scenes that may involve national security, national image, national interests, and public interests.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "深度合成服务提供者开发上线具有舆论属性或者社会动员能力的新产品、新应用、新功能的，应当按照国家有关规定开展安全评估。",
+          "source_section": "第二十条",
+          "quote_en": "Where deep synthesis service providers develop and launch new products, new applications, or new functions with public opinion attributes or social mobilization capabilities, they shall conduct a security assessment in accordance with relevant national regulations.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "深度合成服务提供者发现违法和不良信息的，应当依法采取处置措施，保存有关记录，及时向网信部门和有关主管部门报告；对相关深度合成服务使用者依法依约采取警示、限制功能、暂停服务、关闭账号等处置措施。",
+          "source_section": "第十条",
+          "quote_en": "Where a deep synthesis service provider discovers illegal or harmful information, it shall take disposal measures in accordance with the law, preserve relevant records, and promptly report to the cyberspace administration and relevant competent departments; and shall take disposal measures such as warnings, restricting functions, suspending services, or closing accounts against the relevant deep synthesis service users in accordance with the law and agreements.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "深度合成服务提供者应当建立健全辟谣机制，发现利用深度合成服务制作、复制、发布、传播虚假信息的，应当及时采取辟谣措施，保存有关记录，并向网信部门和有关主管部门报告。",
+          "source_section": "第十一条",
+          "quote_en": "Deep synthesis service providers shall establish and improve rumor-refuting mechanisms; upon discovering the use of deep synthesis services to produce, reproduce, publish, or disseminate false information, they shall promptly take rumor-refuting measures, preserve relevant records, and report to the cyberspace administration and relevant competent departments.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.85,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "深度合成服务提供者和技术支持者提供人脸、人声等生物识别信息编辑功能的，应当提示深度合成服务使用者依法告知被编辑的个人，并取得其单独同意。",
+          "source_section": "第十四条",
+          "quote_en": "Deep synthesis service providers and technical supporters that provide biometric information editing functions such as faces and human voices shall prompt deep synthesis service users to inform the edited individual in accordance with the law and obtain their separate consent.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "完成备案的深度合成服务提供者和技术支持者应当在其对外提供服务的网站、应用程序等的显著位置标明其备案编号并提供公示信息链接。",
+          "source_section": "第十九条",
+          "quote_en": "Deep synthesis service providers and technical supporters that have completed filing shall indicate their filing number in a prominent position on the websites, applications, etc. through which they provide services to the public and provide a link to the public disclosure information.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.8,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "深度合成服务提供者应当建立健全用于识别违法和不良信息的特征库，完善入库标准、规则和程序，记录并留存相关网络日志。",
+          "source_section": "第十条",
+          "quote_en": "Deep synthesis service providers shall establish and improve feature libraries for identifying illegal and harmful information, improve entry standards, rules, and procedures, and record and retain relevant network logs.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "深度合成服务提供者对使用其服务生成或者编辑的信息内容，应当采取技术措施添加不影响用户使用的标识，并依照法律、行政法规和国家有关规定保存日志信息。",
+          "source_section": "第十六条",
+          "quote_en": "For information content generated or edited using their services, deep synthesis service providers shall adopt technical measures to add labels that do not affect user use, and retain log information in accordance with laws, administrative regulations, and relevant national provisions.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.94,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "深度合成服务提供者应当基于移动电话号码、身份证件号码、统一社会信用代码或者国家网络身份认证公共服务等方式，依法对深度合成服务使用者进行真实身份信息认证，不得向未进行真实身份信息认证的深度合成服务使用者提供信息发布服务。",
+          "source_section": "第九条",
+          "quote_en": "Deep synthesis service providers shall authenticate the real identity information of deep synthesis service users in accordance with the law based on mobile phone numbers, ID numbers, unified social credit codes, or national network identity authentication public services, and shall not provide information publishing services to deep synthesis service users who have not undergone real identity authentication.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "深度合成服务提供者应当落实信息安全主体责任，建立健全用户注册、算法机制机理审核、科技伦理审查、信息发布审核、数据安全、个人信息保护、反电信网络诈骗、应急处置等管理制度，具有安全可控的技术保障措施。",
+          "source_section": "第七条",
+          "quote_en": "Deep synthesis service providers shall fulfill their primary responsibility for information security, establish and improve management systems for user registration, algorithm mechanism review, scientific and technological ethics review, information release review, data security, personal information protection, anti-telecom and online fraud, and emergency response, and possess secure and controllable technical safeguard measures.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "深度合成服务提供者对使用其服务生成或者编辑的信息内容，应当采取技术措施添加不影响用户使用的标识，并依照法律、行政法规和国家有关规定保存日志信息。",
+          "source_section": "第十六条",
+          "quote_en": "For information content generated or edited using their services, deep synthesis service providers shall adopt technical measures to add labels that do not affect user use, and retain log information in accordance with laws, administrative regulations, and relevant national provisions.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "深度合成服务提供者提供以下深度合成服务，可能导致公众混淆或者误认的，应当在生成或者编辑的信息内容的合理位置、区域进行显著标识，向公众提示深度合成情况：",
+          "source_section": "第十七条",
+          "quote_en": "Where deep synthesis service providers provide the following deep synthesis services that may cause public confusion or misidentification, they shall place prominent labels in reasonable positions or areas of the generated or edited information content to alert the public to the deep synthesis situation:",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "具有舆论属性或者社会动员能力的深度合成服务提供者，应当按照《互联网信息服务算法推荐管理规定》履行备案和变更、注销备案手续。 深度合成服务技术支持者应当参照前款规定履行备案和变更、注销备案手续。",
+          "source_section": "第十九条",
+          "quote_en": "Deep synthesis service providers with public opinion attributes or social mobilization capabilities shall fulfill filing, amendment, and cancellation of filing procedures in accordance with the Provisions on the Administration of Algorithm Recommendation for Internet Information Services. Deep synthesis service technical supporters shall fulfill filing, amendment, and cancellation of filing procedures with reference to the preceding paragraph.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "深度合成服务提供者和技术支持者应当加强训练数据管理，采取必要措施保障训练数据安全；训练数据包含个人信息的，应当遵守个人信息保护的有关规定。",
+          "source_section": "第十四条",
+          "quote_en": "Deep synthesis service providers and technical supporters shall strengthen training data management and take necessary measures to ensure the security of training data; where training data contains personal information, they shall comply with relevant provisions on personal information protection.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "网信部门和电信主管部门、公安部门依据职责对深度合成服务开展监督检查。深度合成服务提供者和技术支持者应当依法予以配合，并提供必要的技术、数据等支持和协助。",
+          "source_section": "第二十一条",
+          "quote_en": "Cyberspace administrations, telecommunications authorities, and public security departments shall conduct supervision and inspection of deep synthesis services in accordance with their duties. Deep synthesis service providers and technical supporters shall cooperate in accordance with the law and provide necessary technical, data, and other support and assistance.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "国家网信部门负责统筹协调全国深度合成服务的治理和相关监督管理工作。国务院电信主管部门、公安部门依据各自职责负责深度合成服务的监督管理工作。",
+          "source_section": "第三条",
+          "quote_en": "The national cyberspace administration is responsible for overall coordination of the governance and related supervision and administration of deep synthesis services nationwide. The telecommunications authority and public security department of the State Council are responsible for the supervision and administration of deep synthesis services according to their respective duties.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "market_access_restriction",
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "quote": "互联网应用商店等应用程序分发平台应当落实上架审核、日常管理、应急处置等安全管理责任，核验深度合成类应用程序的安全评估、备案等情况；对违反国家有关规定的，应当及时采取不予上架、警示、暂停服务或者下架等处置措施。",
+          "source_section": "第十三条",
+          "quote_en": "Internet application stores and other application distribution platforms shall fulfill security management responsibilities such as listing review, daily management, and emergency response, and verify the security assessment and filing status of deep synthesis applications; for those violating relevant national provisions, they shall promptly take disposal measures such as refusing to list, issuing warnings, suspending services, or taking down the applications.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "网信部门和有关主管部门发现深度合成服务存在较大信息安全风险的，可以按照职责依法要求深度合成服务提供者和技术支持者采取暂停信息更新、用户账号注册或者其他相关服务等措施。",
+          "source_section": "第二十一条",
+          "quote_en": "Where cyberspace administrations and relevant competent departments discover relatively large information security risks in deep synthesis services, they may, in accordance with their duties and the law, require deep synthesis service providers and technical supporters to take measures such as suspending information updates, user account registration, or other related services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.91,
+      "evidence": [
+        {
+          "quote": "深度合成服务提供者发现违法和不良信息的，应当依法采取处置措施，保存有关记录，及时向网信部门和有关主管部门报告；",
+          "source_section": "第十条",
+          "quote_en": "Where a deep synthesis service provider discovers illegal or harmful information, it shall take disposal measures in accordance with the law, preserve relevant records, and promptly report to the cyberspace administration and relevant competent departments;",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "发现利用深度合成服务制作、复制、发布、传播虚假信息的，应当及时采取辟谣措施，保存有关记录，并向网信部门和有关主管部门报告。",
+          "source_section": "第十一条",
+          "quote_en": "upon discovering the use of deep synthesis services to produce, reproduce, publish, or disseminate false information, they shall promptly take rumor-refuting measures, preserve relevant records, and report to the cyberspace administration and relevant competent departments.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "licensing_requirement",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "具有舆论属性或者社会动员能力的深度合成服务提供者，应当按照《互联网信息服务算法推荐管理规定》履行备案和变更、注销备案手续。",
+          "source_section": "第十九条",
+          "quote_en": "Deep synthesis service providers with public opinion attributes or social mobilization capabilities shall fulfill filing, amendment, and cancellation of filing procedures in accordance with the Provisions on the Administration of Algorithm Recommendation for Internet Information Services.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "互联网应用商店等应用程序分发平台应当落实上架审核、日常管理、应急处置等安全管理责任，核验深度合成类应用程序的安全评估、备案等情况；",
+          "source_section": "第十三条",
+          "quote_en": "Internet application stores and other application distribution platforms shall fulfill security management responsibilities such as listing review, daily management, and emergency response, and verify the security assessment and filing status of deep synthesis applications;",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "civil_penalty",
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "quote": "深度合成服务提供者和技术支持者违反本规定的，依照有关法律、行政法规的规定处罚；造成严重后果的，依法从重处罚。",
+          "source_section": "第二十二条",
+          "quote_en": "Where deep synthesis service providers and technical supporters violate these Provisions, they shall be punished in accordance with the provisions of relevant laws and administrative regulations; where serious consequences are caused, heavier punishment shall be imposed in accordance with the law.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "构成违反治安管理行为的，由公安机关依法给予治安管理处罚；",
+          "source_section": "第二十二条",
+          "quote_en": "where the violation constitutes an act violating public security administration, public security organs shall impose public security administration penalties in accordance with the law;",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "criminal_penalty",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "构成犯罪的，依法追究刑事责任。",
+          "source_section": "第二十二条",
+          "quote_en": "where a crime is constituted, criminal liability shall be pursued in accordance with the law.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

@@ -6,36 +6,80 @@
     "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.05,
-    "national_security": 0.65,
-    "economic_competitiveness": 0.05,
-    "fundamental_rights": 0.5,
-    "social_stability": 0.75,
-    "innovation_enablement": 0.1,
-    "consumer_public_safety": 0.45,
+    "existential_catastrophic": 0.0,
+    "national_security": 0.88,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.96,
+    "innovation_enablement": 0.0,
+    "consumer_public_safety": 0.65,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames deep synthesis governance as necessary to maintain social order, public morality, and correct political/public opinion orientation. It repeatedly emphasizes preventing disinformation, protecting 'social public interests,' and maintaining 'economic and social order.' National security is a strong secondary frame, with explicit prohibitions on content harming national security and requirements for security assessments on content involving national image. Fundamental rights (personal information, biometric data protection) and consumer/public safety (anti-fraud, labeling requirements) are also present.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.22,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.21,
+    "social_stability": 0.45,
+    "innovation_enablement": 0.0,
+    "consumer_public_safety": 0.12,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The Provisions are predominantly framed around social stability and public order, emphasizing core socialist values, correct political and public-opinion orientation, social ethics, rumor refutation, false news prevention, and regulatory triggers tied to public-opinion or social-mobilization attributes (Articles 1, 4, 6, 11, 19–20). National security and fundamental rights serve as prominent secondary frames—invoking state security, national image, and national interests (Articles 1, 6, 15) alongside lawful rights of citizens, personal information protection, and separate consent for biometric editing (Articles 1, 6, 14)—while consumer and public safety plays a smaller supporting role through anti-telecom-fraud duties and labeling to prevent public confusion or deception (Articles 7, 17). Social stability edges out national security and fundamental rights because public-opinion governance, ideological/value alignment, and disinformation containment structure both the overarching mandate and the primary filing and assessment thresholds.",
   "evidence_spans": [
     {
-      "quote": "维护国家安全和社会公共利益，保护公民、法人和其他组织的合法权益",
-      "source_section": "第一条"
+      "quote": "提供深度合成服务，应当遵守法律法规，尊重社会公德和伦理道德，坚持正确政治方向、舆论导向、价值取向，促进深度合成服务向上向善。",
+      "source_section": "第四条",
+      "quote_en": "Providing deep synthesis services shall comply with laws and regulations, respect social morality and ethics, adhere to the correct political direction, public opinion orientation, and value orientation, and promote the upward and benevolent development of deep synthesis services.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 524,
+      "end_char": 586
     },
     {
-      "quote": "不得利用深度合成服务从事危害国家安全和利益、损害国家形象、侵害社会公共利益、扰乱经济和社会秩序",
-      "source_section": "第六条"
+      "quote": "深度合成服务提供者应当建立健全辟谣机制，发现利用深度合成服务制作、复制、发布、传播虚假信息的，应当及时采取辟谣措施，保存有关记录，并向网信部门和有关主管部门报告。",
+      "source_section": "第十一条",
+      "quote_en": "Deep synthesis service providers shall establish and improve rumor-refutation mechanisms; upon discovering the use of deep synthesis services to produce, copy, publish, or disseminate false information, they shall promptly take rumor-refutation measures, preserve relevant records, and report to the cyberspace administration and relevant competent authorities.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 1399,
+      "end_char": 1480
     },
     {
-      "quote": "坚持正确政治方向、舆论导向、价值取向，促进深度合成服务向上向善",
-      "source_section": "第四条"
+      "quote": "不得利用深度合成服务从事危害国家安全和利益、损害国家形象、侵害社会公共利益、扰乱经济和社会秩序、侵犯他人合法权益等法律、行政法规禁止的活动。",
+      "source_section": "第六条",
+      "quote_en": "Deep synthesis services shall not be used to engage in activities prohibited by laws and administrative regulations, such as endangering national security and interests, damaging the national image, infringing upon social public interests, disrupting economic and social order, or infringing upon the lawful rights and interests of others.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 717,
+      "end_char": 787
     },
     {
-      "quote": "生成或者编辑可能涉及国家安全、国家形象、国家利益和社会公共利益的特殊物体、场景",
-      "source_section": "第十五条"
+      "quote": "为了加强互联网信息服务深度合成管理，弘扬社会主义核心价值观，维护国家安全和社会公共利益，保护公民、法人和其他组织的合法权益",
+      "source_section": "第一条",
+      "quote_en": "In order to strengthen the management of deep synthesis in internet information services, promote core socialist values, safeguard national security and social public interests, and protect the lawful rights and interests of citizens, legal persons, and other organizations",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 152,
+      "end_char": 213
     },
     {
-      "quote": "提示深度合成服务使用者依法告知被编辑的个人，并取得其单独同意",
-      "source_section": "第十四条"
+      "quote": "训练数据包含个人信息的，应当遵守个人信息保护的有关规定。\n深度合成服务提供者和技术支持者提供人脸、人声等生物识别信息编辑功能的，应当提示深度合成服务使用者依法告知被编辑的个人，并取得其单独同意。",
+      "source_section": "第十四条",
+      "quote_en": "Where training data contains personal information, relevant provisions on personal information protection shall be complied with. Where deep synthesis service providers and technical supporters provide editing functions for biometric information such as faces and voices, they shall prompt deep synthesis service users to inform the edited individuals in accordance with the law and obtain their separate consent.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 1704,
+      "end_char": 1801
+    },
+    {
+      "quote": "深度合成服务提供者提供以下深度合成服务，可能导致公众混淆或者误认的，应当在生成或者编辑的信息内容的合理位置、区域进行显著标识，向公众提示深度合成情况：",
+      "source_section": "第十七条",
+      "quote_en": "Where deep synthesis service providers provide the following deep synthesis services that may cause public confusion or misidentification, they shall place a conspicuous label in a reasonable position or area of the generated or edited information content to notify the public of the deep synthesis:",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 2073,
+      "end_char": 2148
     }
   ]
 }

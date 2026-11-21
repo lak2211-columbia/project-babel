@@ -1,97 +1,93 @@
 {
   "jurisdiction": "china",
-  "issuing_body": "中央网络安全和信息化委员会办公室 / Cyberspace Administration of China (CAC)",
+  "issuing_body": "Cyberspace Administration of China (中央网信办 / 中央网络安全和信息化委员会办公室)",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2025-06-20",
-  "effective_date": "2025-04-01",
+  "effective_date": "2025-04",
+  "covered_actors": [
+    "Key website and online platforms (重点网站平台, including Tencent, Weibo, Tongyi, Douyin, Alibaba, Kuaishou, MiniMax/稀宇, Xiaohongshu, Baidu)",
+    "Providers and operators of AI products including mini-programs, mobile applications, and AI agents (小程序、应用程序、智能体等AI产品)",
+    "Local AI enterprises and generative AI service operators (属地内重点企业)",
+    "Online accounts and marketing channels promoting non-compliant AI products (违规产品营销引流渠道、账号)"
+  ],
   "covered_application_domains": [
     "general_purpose_models",
+    "biometrics",
     "healthcare",
     "finance"
+  ],
+  "prohibited_practices": [
+    "AI face-swapping and voice cloning that infringe public rights and interests (AI换脸拟声侵犯公众权益)",
+    "Omission of AI-generated/synthetic content labeling that misleads the public (AI内容标识缺失误导公众)",
+    "Marketing and traffic diversion for non-compliant AI products (违规产品营销引流)",
+    "Distribution of tutorials and commercial goods for non-compliant AI products (违规AI产品教程和商品)",
+    "AI-generated rumors and vulgar content (AI造谣、低俗内容)"
   ],
   "safety_requirements": [
     {
       "label": "content_provenance",
-      "confidence": 0.95,
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "推动生成合成内容标识加速落地",
-          "source_section": "第一阶段工作概述"
+          "quote": "上海网信办推动标识要求落地示范，组织开展4场法规宣贯和专题交流，覆盖企业400余家，属地内重点企业已基本完成显式标识规范上线。",
+          "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+          "quote_en": "The Shanghai Cyberspace Administration promoted the demonstration and implementation of labeling requirements, organized 4 regulatory outreach and thematic exchange sessions covering over 400 enterprises, and key enterprises within its jurisdiction have basically completed launching explicit labeling specifications.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 306,
+          "end_char": 369
         },
         {
-          "quote": "阿里、快手、稀宇等重点平台积极推进元数据隐式标识落地落实",
-          "source_section": "落实内容标识要求"
+          "quote": "在落实内容标识要求方面\n，阿里、快手、稀宇等重点平台积极推进元数据隐式标识落地落实。",
+          "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+          "quote_en": "In implementing content labeling requirements, key platforms such as Alibaba, Kuaishou, and MiniMax actively promoted the implementation of implicit metadata labeling.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 783,
+          "end_char": 825
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "在加强训练语料管理方面\n，通义平台围绕数据生命周期建立安全管理体系，在数据采集、训练、使用等阶段加强训练语料管理。",
+          "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+          "quote_en": "In strengthening training corpus management, the Tongyi platform established a security management system around the data lifecycle, strengthening training corpus management across data collection, training, and usage stages.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 667,
+          "end_char": 724
+        },
+        {
+          "quote": "在防范重点领域安全风险方面\n，小红书在模型后置训练阶段输入专业领域数据，提升模型对医疗、金融、未成年人等重点领域问题的理解能力。",
+          "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+          "quote_en": "In preventing security risks in key fields, Xiaohongshu fed domain-specific data during the post-training stage to improve the model's understanding of issues in key areas such as healthcare, finance, and minors.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 826,
+          "end_char": 890
         }
       ]
     },
     {
       "label": "red_teaming",
-      "confidence": 0.85,
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "抖音建立",
-          "source_section": null
-        },
-        {
-          "quote": "红蓝对抗",
-          "source_section": null
-        },
-        {
-          "quote": "机制，模拟攻击案例，修复潜在安全漏洞",
-          "source_section": "强化安全管理措施"
-        }
-      ]
-    },
-    {
-      "label": "pre_deployment_testing",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "腾讯规范应用程序管理，提高准入门槛，优化巡查机制",
-          "source_section": "处置违规AI产品"
-        }
-      ]
-    },
-    {
-      "label": "access_controls",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "切断违规产品营销引流渠道",
-          "source_section": "第一阶段工作概述"
-        },
-        {
-          "quote": "封堵和取消接入域名18个",
-          "source_section": "江苏网信办"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "通义平台围绕数据生命周期建立安全管理体系，在数据采集、训练、使用等阶段加强训练语料管理",
-          "source_section": "加强训练语料管理"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "北京网信办开设AI技术滥用治理举报渠道，形成",
-          "source_section": null
-        },
-        {
-          "quote": "用户标记—平台核查—联合处置",
-          "source_section": null
-        },
-        {
-          "quote": "工作模式",
-          "source_section": "北京网信办"
+          "quote": "在强化安全管理措施方面\n，抖音建立“红蓝对抗”机制，模拟攻击案例，修复潜在安全漏洞，优化模型对虚假信息的识别能力。",
+          "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+          "quote_en": "In strengthening security management measures, Douyin established a 'red-blue adversarial' mechanism to simulate attack cases, fix potential security vulnerabilities, and optimize the model's ability to identify false information.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 725,
+          "end_char": 782
         }
       ]
     }
@@ -99,55 +95,60 @@
   "enforcement_mechanisms": [
     {
       "label": "market_access_restriction",
-      "confidence": 0.9,
+      "confidence": 0.92,
       "evidence": [
         {
-          "quote": "累计处置违规小程序、应用程序、智能体等AI产品3500余款",
-          "source_section": "第一阶段工作概述"
+          "quote": "第一阶段累计处置违规小程序、应用程序、智能体等AI产品3500余款，清理违法违规信息96万余条，处置账号3700余个，各项工作取得积极进展。",
+          "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+          "quote_en": "In the first phase, a cumulative total of over 3,500 non-compliant AI products including mini-programs, apps, and agents were disposed of, over 960,000 pieces of illegal and non-compliant information were cleaned up, and over 3,700 accounts were penalized, achieving positive progress across all tasks.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 155,
+          "end_char": 225
         },
         {
-          "quote": "驳回、处置违规小程序、应用程序等共计570余款",
-          "source_section": "腾讯"
+          "quote": "江苏网信办加强统筹协调，联合省通信管理局等部门排查AI风险域名163个，封堵和取消接入域名18个。",
+          "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+          "quote_en": "The Jiangsu Cyberspace Administration strengthened overall coordination, working jointly with the Provincial Communications Administration and other departments to screen 163 high-risk AI domain names and block or revoke access to 18 domain names.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 421,
+          "end_char": 470
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.95,
+      "confidence": 0.93,
       "evidence": [
         {
-          "quote": "部署各地网信部门加大违规AI产品处置力度",
-          "source_section": "第一阶段工作概述"
+          "quote": "浙江网信办加大对属地AI应用和网站平台的督导力度，各平台共拦截清理各类违法违规信息及提问2550万余条。",
+          "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+          "quote_en": "The Zhejiang Cyberspace Administration increased supervisory guidance over local AI applications and website platforms, with platforms intercepting and clearing over 25.5 million pieces of illegal and non-compliant information and prompts.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 369,
+          "end_char": 421
         },
         {
-          "quote": "督促重点网站平台健全技术安全保障措施",
-          "source_section": "第一阶段工作概述"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "形成处置处罚规范",
-          "source_section": "下一步工作"
-        },
-        {
-          "quote": "天津网信办采用",
-          "source_section": null
-        },
-        {
-          "quote": "人工+技术",
-          "source_section": null
-        },
-        {
-          "quote": "方式，开展大模型安全监测，通报4批次14个风险问题",
-          "source_section": "天津网信办"
+          "quote": "天津网信办采用“人工+技术”方式，开展大模型安全监测，通报4批次14个风险问题。",
+          "source_section": "中央网信办深入开展“清朗·整治AI技术滥用”专项行动第一阶段工作",
+          "quote_en": "The Tianjin Cyberspace Administration adopted a 'manual + technical' approach to conduct large-model security monitoring and issued notices on 14 risk issues across 4 batches.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 470,
+          "end_char": 510
         }
       ]
     }
   ],
-  "implementation_notes": "This is a progress report on Phase 1 of the 'Qinglang: Rectification of AI Technology Abuse' campaign launched April 2025. The document describes enforcement actions already taken and outlines Phase 2 plans focusing on AI-generated misinformation and vulgar content. Penalties are referenced prospectively ('形成处置处罚规范') but not yet fully specified. The document functions as both a regulatory guidance report and an enforcement action summary. Safety requirements are inferred from described platform actions rather than explicit legal mandates in this document.",
-  "confidence": 0.82
+  "enforcement_authorities": [
+    "Cyberspace Administration of China (中央网信办 / 国家互联网信息办公室)",
+    "Local cyberspace administration offices (各地网信部门, including Beijing, Shanghai, Zhejiang, Jiangsu, Tianjin, and Guangdong)",
+    "Provincial Communications Administration (省通信管理局, specifically Jiangsu)"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": "Phase 1 enforcement actions included the disposal/removal of over 3,500 non-compliant AI products (mini-programs, apps, and AI agents), deletion of over 960,000 pieces of illegal/non-compliant information (plus over 25.5 million intercepted/cleared by platforms in Zhejiang), disposal of over 3,700 accounts, cutting off marketing/traffic-diversion channels, and blocking/revoking access to 18 high-risk AI domains. Phase 2 will formulate formal disposal and penalty norms (处置处罚规范).",
+  "implementation_notes": "This document is an official supervisory progress notice published on the CAC website (2025-06-20) summarizing Phase 1 of the 'Qinglang: Rectifying Abuse of AI Technology' special campaign launched in April 2025. While not a standalone enacted statute, it carries regulatory supervision and enforcement signaling weight, detailing joint central-local enforcement, explicit and implicit (metadata) synthetic content labeling rollouts, platform-level red-blue adversarial testing and training corpus governance, and upcoming Phase 2 enforcement targeting seven prominent issues.",
+  "confidence": 0.88
 }

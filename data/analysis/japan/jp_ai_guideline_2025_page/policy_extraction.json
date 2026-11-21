@@ -1,123 +1,169 @@
 {
   "jurisdiction": "japan",
-  "issuing_body": "人工知能戦略本部 (AI Strategy Headquarters, Cabinet Office, Japan)",
+  "issuing_body": "人工知能戦略本部 (Artificial Intelligence Strategy Headquarters, Government of Japan)",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2025-12-19",
   "effective_date": null,
   "covered_actors": [
-    "研究開発機関 (AI research and development institutions)",
-    "活用事業者 (AI utilization businesses, including foreign operators)",
-    "国 (national government)",
-    "地方公共団体 (local public entities)",
-    "国民 (citizens)"
+    "National government and ministries/agencies (国・各府省庁)",
+    "Local governments (地方公共団体)",
+    "Research and development institutions, including universities (研究開発機関・大学)",
+    "AI utilizing business operators, developers, providers, and system operators, including overseas operators (活用事業者・AI開発提供事業者・システム運用者・海外事業者)",
+    "Citizens / general public (国民)"
   ],
   "covered_application_domains": [
     "general_purpose_models",
     "public_sector_use",
-    "critical_infrastructure",
-    "employment",
-    "education",
-    "healthcare",
-    "finance",
-    "law_enforcement"
+    "employment"
   ],
-  "prohibited_practices": [
-    "Use of AI to generate or spread false/misinformation including deepfake videos and sexually manipulated images",
-    "Use of AI to promote unjust bias or discrimination",
-    "Unfair data collection by entities with dominant AI resource positions",
-    "Unauthorized manipulation of AI systems"
-  ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.95,
+      "confidence": 0.94,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AIがもたらすリスクを特定・評価し、AIを利用する分野や目的を踏まえた影響度合いに応じて、適切な対策を講じる",
-          "source_section": "1(3) 基本方針①"
+          "quote": "ＡＩがもたらすリスクを特定・評価し、ＡＩを利用する分野や目的を踏まえた影響度合いに応じて、適切な対策を講じる8。",
+          "source_section": "Page 5",
+          "quote_en": "Identify and evaluate the risks posed by AI, and take appropriate measures according to the degree of impact based on the field and purpose of AI use.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4476,
+          "end_char": 4532
         },
         {
-          "quote": "AIを悪用したサイバー攻撃や詐欺をはじめとする各種犯罪その他の違法行為が行われるリスクを特定・評価し、適切な対策を講じる",
-          "source_section": "2(3)"
+          "quote": "ＡＩの設計・開発・提供・実装等のライフサイクル全体で、リスクの特定・評価・\n対処をするための組織的なプロセス（経営層の関与したモニタリングや評価の仕組み、\n情報の適切な開示、教育・研修の実施等）を含むＡＩガバナンスを構築 15・運用・継\n続改善し 16、ＡＩがもたらす便益を最大化しつつ、そのリスクを受容可能な水準で管\n理する。",
+          "source_section": "Page 6",
+          "quote_en": "Build, operate, and continuously improve AI governance that includes organizational processes for identifying, evaluating, and addressing risks across the entire lifecycle of AI design, development, provision, and implementation (including monitoring and evaluation mechanisms involving management, appropriate information disclosure, and education/training), thereby maximizing benefits while managing risks at an acceptable level.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5330,
+          "end_char": 5494
         }
       ]
     },
     {
       "label": "red_teaming",
-      "confidence": 0.8,
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "レッドチーム等の様々な手法を組み合わせて、多様な内部テスト手段や独立した外部テスト手段を採用することや、特定されたリスクや脆弱性に対処するための適切な措置を実施することが望ましい",
-          "source_section": "脚注8"
+          "quote": "レッドチーム等の様々な手法を組み合わせて、多様な内部テスト手段や独立した外部テスト手段を採用することや、特定されたリスクや脆弱性に対処するための適切な措置を実施することが望ましい。",
+          "source_section": "Page 5",
+          "quote_en": "It is desirable to adopt diverse internal testing means and independent external testing means by combining various methods such as red-teaming, and to implement appropriate measures to address identified risks and vulnerabilities.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4881,
+          "end_char": 4971
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.95,
+      "confidence": 0.92,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AIを提供する際、AIの適正な利用を可能にするための情報（AIの仕組み・限界、禁止事項、学習するデータの収集ポリシー、出力の信頼性に関する注意喚起等）をそのAIの利用者に提供する",
-          "source_section": "2(2)"
+          "quote": "ＡＩに対する信頼性が向上するよう、必要かつ技術的に可能な範囲での情報の開示、事後的な検証可能性の確保等により、透明性を適切に確保すること 6。",
+          "source_section": "Page 4",
+          "quote_en": "Appropriately ensure transparency through disclosure of information to the extent necessary and technically feasible and ensuring ex-post verifiability, so as to improve trust in AI.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3506,
+          "end_char": 3577
         },
         {
-          "quote": "合理的な範囲で説明可能性を確保する",
-          "source_section": "2(2)"
+          "quote": "学習データ等の適切な透明性を確保するため、ＡＩの出力の際に根拠とした情報（ウェブサイト等）を表示する。",
+          "source_section": "Page 6",
+          "quote_en": "To ensure appropriate transparency of training data, etc., display the information (websites, etc.) used as the basis when generating AI outputs.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6448,
+          "end_char": 6499
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "不正な操作によるＡＩの意図しない動作や停止をはじめとするＡＩのセキュリティ上のリスクを低減させるよう、ＡＩのセキュリティを適切に確保すること。",
+          "source_section": "Page 4",
+          "quote_en": "Appropriately ensure AI security so as to reduce AI security risks, including unintended operation or stoppage of AI caused by unauthorized manipulation.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3690,
+          "end_char": 3761
         }
       ]
     },
     {
       "label": "content_provenance",
-      "confidence": 0.9,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AIで生成された偽・誤情報等の拡散が深刻なリスクとなっていることを踏まえ、AIの生成物であることが判断できる技術（電子透かし、来歴管理、API等）の開発に努め、必要に応じて実装する",
-          "source_section": "2(3)"
+          "quote": "特に、ＡＩで生成された偽・誤情報等の拡散\nが深刻なリスクとなっていることを踏まえ、ＡＩの生成物であることが判断できる技\n術（電子透かし、来歴管理、API19等）の開発に努め、必要に応じて実装する。",
+          "source_section": "Page 7",
+          "quote_en": "In particular, given that the spread of AI-generated disinformation and misinformation has become a serious risk, endeavor to develop technologies that enable identification of AI-generated outputs (such as digital watermarking, provenance management, and APIs) and implement them as necessary.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6867,
+          "end_char": 6965
         }
       ]
     },
     {
       "label": "human_oversight",
-      "confidence": 0.9,
+      "confidence": 0.82,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "AIを活用する範囲や条件については、人間自らが最終的な判断を行うこと",
-          "source_section": "1(2) 人間中心"
+          "quote": "ＡＩを活用する範囲や条件については、人間自らが最終的な判断を行うこと。",
+          "source_section": "Page 4",
+          "quote_en": "Humans themselves shall make the final judgment regarding the scope and conditions for utilizing AI.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3365,
+          "end_char": 3400
         },
         {
-          "quote": "人間の判断、責任の下で意思決定を行う",
-          "source_section": "4(2)"
+          "quote": "その上で、ＡＩを利用する際は、得られる情報の出所、正確性等を理解し、人間の\n判断、責任の下で意思決定を行うとともに、不当な偏見・差別、誹謗中傷、偽・誤情\n報の拡散等を目的とした不適切な行為を行わない。",
+          "source_section": "Page 10",
+          "quote_en": "Furthermore, when using AI, understand the source and accuracy of the obtained information, make decisions under human judgment and responsibility, and refrain from inappropriate acts aimed at spreading unfair bias or discrimination, defamation, or disinformation and misinformation.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9365,
+          "end_char": 9465
         }
       ]
     },
     {
-      "label": "third_party_audit",
-      "confidence": 0.65,
+      "label": "training_data_governance",
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "多様な内部テスト手段や独立した外部テスト手段を採用することや、特定されたリスクや脆弱性に対処するための適切な措置を実施することが望ましい",
-          "source_section": "脚注8"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.8,
-      "evidence": [
+          "quote": "学習データの出所と出力される生成物について、知的財産、プライバシー等の保護\nの適切な実施を含め、ステークホルダーとの信頼関係を構築するためにも、合理的な\n範囲で説明可能性を確保する17。",
+          "source_section": "Page 6",
+          "quote_en": "Ensure explainability within a reasonable scope regarding the provenance of training data and generated outputs, including appropriate protection of intellectual property and privacy, in order to build relationships of trust with stakeholders.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5528,
+          "end_char": 5621
+        },
         {
-          "quote": "AIのライフサイクル全体で、リスクの特定・評価・対処をするための組織的なプロセス（経営層の関与したモニタリングや評価の仕組み、情報の適切な開示、教育・研修の実施等）を含むAIガバナンスを構築・運用・継続改善し",
-          "source_section": "2(1)"
-        }
-      ]
-    },
-    {
-      "label": "registration_licensing",
-      "confidence": 0.5,
-      "evidence": [
-        {
-          "quote": "各府省庁において、AIガバナンスの責任者を任命する",
-          "source_section": "3(4)"
+          "quote": "また、学習データ等の開示が求められた際は、可能な限り対応することが望ましい。",
+          "source_section": "Page 6",
+          "quote_en": "In addition, when disclosure of training data, etc. is requested, it is desirable to respond to the extent possible.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6499,
+          "end_char": 6537
         }
       ]
     }
@@ -125,52 +171,32 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.9,
+      "confidence": 0.96,
       "evidence": [
         {
-          "quote": "各主体の規模や立場、AIがもたらすリスクに応じて、その時点で適用し得る技術や知見を踏まえて適切な水準で対応することが求められる",
-          "source_section": "1(1)"
+          "quote": "人工知能関連技術の研究開発及び活用の推進に関する法律（令和７年法律第53 号。以\n下「ＡＩ法」という。）第13 条に基づく本指針は、信頼できるＡＩの実現に向けて、事\n業者、国民等の全ての主体 1におけるＡＩの研究開発・活用の適正な実施に係る自主的\nかつ能動的な取組を促すために、国際的な規範の趣旨に即して策定するものである。",
+          "source_section": "Page 3",
+          "quote_en": "These Guidelines, based on Article 13 of the Act on Promotion of Research, Development, and Utilization of AI-Related Technologies (Act No. 53 of 2025; hereinafter referred to as the 'AI Act'), are formulated in accordance with the spirit of international norms to encourage voluntary and proactive efforts by all entities, including businesses and citizens, toward the appropriate conduct of AI research, development, and utilization for realizing trustworthy AI.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1826,
+          "end_char": 1988
         },
         {
-          "quote": "事業者、国民等の全ての主体におけるAIの研究開発・活用の適正な実施に係る自主的かつ能動的な取組を促すために",
-          "source_section": "1(1)"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "「広島AIプロセス」報告枠組みの活用や国際規格（AIマネジメントシステム（ISO/IEC 42001）等）に基づくマネジメント体制の整備・運用をすることにより",
-          "source_section": "脚注16"
-        },
-        {
-          "quote": "これらの取組を積極的に開示・説明することが、企業価値の向上や競争優位性の確保にもつながるものと期待される",
-          "source_section": "脚注16"
-        }
-      ]
-    },
-    {
-      "label": "regulatory_supervision",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "国内外におけるAIガバナンスを巡る動向を注視し、AIガバナンスの在り方を継続的に検討し、対応する",
-          "source_section": "3(3)"
-        },
-        {
-          "quote": "本指針及び各種ガイドライン等も、AIの技術進歩による社会の変化をとらえ、アジャイルかつ継続的に見直す",
-          "source_section": "3(3)"
+          "quote": "このため、本指針では、適正性確保に当たって、適正性についての一義的な定義や絶\n対的な水準を定めるものではなく、各主体が研究開発、活用するＡＩの特性、⽤途、⽬\n的や、自身の立場、社会的役割等を踏まえて⾃主的に取組を進めるという考え方の下、",
+          "source_section": "Page 4",
+          "quote_en": "Therefore, in ensuring appropriateness, these Guidelines do not establish a uniform definition or absolute standard of appropriateness, but rather adopt the approach that each entity voluntarily advances its own efforts based on the characteristics, use, and purpose of the AI it researches, develops, or utilizes, as well as its own position and social role.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3061,
+          "end_char": 3179
         }
       ]
     }
   ],
-  "enforcement_authorities": [
-    "人工知能戦略本部 (AI Strategy Headquarters)"
-  ],
+  "enforcement_authorities": [],
   "compliance_deadlines": [],
   "penalties_summary": null,
-  "implementation_notes": "This guideline is issued under Article 13 of the AI Promotion Act (Act No. 53 of 2025). It promotes voluntary and proactive compliance rather than mandating specific binding obligations. Actors are expected to apply measures proportionate to their scale, role, and AI risk level. The guideline references the Hiroshima AI Process International Code of Conduct and ISO/IEC 42001 as applicable international norms. The document is intended to be reviewed and updated in an agile manner as AI technology evolves.",
-  "confidence": 0.88
+  "implementation_notes": "Issued under Article 13 of Japan's AI Act (Act No. 53 of 2025), this guideline establishes a non-prescriptive, risk-based, and agile (PDCA) framework encouraging voluntary and proactive compliance by all statutory actors (Articles 4-8 of the AI Act), including overseas business operators. It aligns with the Hiroshima AI Process and ISO/IEC 42001, directs national ministries to appoint AI governance leads (referencing the May 2025 generative AI procurement/use guideline's CAIO role), and commits the government to continuously review and update this guideline and related guidance as AI technology evolves.",
+  "confidence": 0.9
 }

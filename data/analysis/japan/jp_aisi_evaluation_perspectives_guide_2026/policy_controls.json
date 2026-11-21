@@ -1,0 +1,303 @@
+{
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "なお、ハイリスクなAI システムの利用については、一例とし てEU AI Act における内容が参考になるが、LLM システムが対象とする国や地域、対象ドメインなどに応じ、関連する法規制や標準、固有の知見などから総合的にリスクの程度を判断する必要がある。",
+          "source_section": "3.4 ハイリスク利用・目的外利用への対処 (Page 22)",
+          "quote_en": "For high-risk AI system uses, the contents of the EU AI Act serve as one reference, but it is necessary to comprehensively assess the level of risk based on relevant laws, regulations, standards, and domain-specific knowledge according to the target country, region, and domain of the LLM system.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "AI エージェントシステムの介入範囲や自律性の程度を組織として把握・判断できる体制が整っているか、問題発生時のエスカレーション体制や責任の所在※1が整理されているか、活用方針やリスク許容水準が経営判断として設定されているか、といった観点から確認することも有益と考えられる。",
+          "source_section": "5.2 マネジメント的評価 (Page 45)",
+          "quote_en": "It is also considered beneficial to verify whether a system is in place for the organization to grasp and judge the scope of intervention and degree of autonomy of the AI agent system, whether escalation structures and lines of responsibility in the event of problems are organized, and whether usage policies and risk tolerance levels are set as management decisions.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Validation の観点では、実環境に近いテスト環境へのテストデータ入力による動作試験・ログの記録と確認、プロンプトインジェクション等の攻撃を想定したテストデータによる動作試験、リスクが高いタスク実行時や異常検知時における人間の介入・停止機能の確認試験が該当する。",
+          "source_section": "5.1.4 AI エージェントシステムの技術的評価 (Page 44)",
+          "quote_en": "From the perspective of Validation, this includes operational testing and log recording/verification by inputting test data into a test environment close to the real environment, operational testing with test data simulating attacks such as prompt injection, and verification testing of human intervention and stop functions when executing high-risk tasks or detecting anomalies.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "AI システム（LLM システム、AI エージェントシステム）の活用に際しては、開発・提供・利用の3 種類のフェーズが存在する。AI セーフティ評価の実施時期は、各フェーズにおいて、合理的な範囲、適切なタイミングとする。また、AI セーフティ評価は一度のみでなく、繰り返し実施するものとする。",
+          "source_section": "4.2 評価実施時期 (Page 39)",
+          "quote_en": "In utilizing AI systems (LLM systems, AI agent systems), there are three phases: development, provision, and use. The timing of AI safety evaluation shall be within a reasonable scope and at appropriate timings in each phase. Furthermore, AI safety evaluation shall be conducted repeatedly rather than only once.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "特に悪意をもったユーザーからの攻撃耐性に関する確認を詳細に行うためには、ツール の使用に加え、想定されるリスクの発生シナリオを詳細に検討して評価を行うことが重要 である。その際、机上ではなく、実際のシステム環境に対する評価を行うこととなる。こ のような評価の手法はレッドチーミングと呼ばれる。",
+          "source_section": "5.1.2 レッドチーミングによる評価 (Page 43)",
+          "quote_en": "In order to verify resilience against attacks from malicious users in detail, in addition to using tools, it is important to examine anticipated risk occurrence scenarios in detail and conduct evaluations. In doing so, the evaluation is conducted against the actual system environment rather than on paper. This evaluation method is called red-teaming.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "人間がAI エージェントシステムに対して情緒的な依存性を持つことや、AI エー ジェントシステムはAI システムであることをエンドユーザーに示しているか。",
+          "source_section": "3.4 ハイリスク利用・目的外利用への対処 (Page 23)",
+          "quote_en": "Does it indicate to end users that humans may develop emotional dependence on the AI agent system and that the AI agent system is an AI system?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "LLM システムの推奨または指示により、エンドユーザーが不利益となる行動また は選択に誘導されないか。また、URL リンクを含むメッセージ生成等の誘導機能につ いて、エンドユーザーがオプトインまたはオプトアウトできる手段が提供されている か。",
+          "source_section": "3.2 偽誤情報の出力・誘導の防止 (Page 19)",
+          "quote_en": "Are end users not steered into disadvantageous actions or choices by recommendations or instructions of the LLM system? Furthermore, for steering functions such as generating messages containing URL links, are means provided for end users to opt in or opt out?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.92,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "以下のような方法によりシステムやモデル、データに関する概要や、なりたち、 動作についてログや技術仕様等から検証可能な状態となっており、3.1 節～3.9 節の観点が評価できる設計になっているか。 • システムカード、モデルカード、データカードが作成されているか。 • LLM システムに様々なテストデータを入力した際、適切にデータログが記録されているか。",
+          "source_section": "3.10 検証可能性 (Page 34)",
+          "quote_en": "Is the system designed so that overviews, origins, and operations of the system, model, and data are verifiable from logs and technical specifications through methods such as the following, enabling evaluation of the perspectives in Sections 3.1 to 3.9? • Are system cards, model cards, and data cards created? • Are data logs appropriately recorded when various test data are input into the LLM system?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "AI エージェントシステムの構成要素の正当性をSBOM やAI BOM のように使用する構成要素のリストを明確にすることに加え、署名・認証を利用する方法等により確認できるか。",
+          "source_section": "3.6 セキュリティ確保 (Page 27)",
+          "quote_en": "Can the legitimacy of the components of the AI agent system be verified by clarifying the list of components used, such as via SBOM or AI BOM, in addition to methods utilizing signatures and authentication?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "しかし、客観的な評価を行うため、また、システム開発・提供の意思決定に関わる提言内容に独立性を持たせるために、対象システムの開発・提供に直接的には携わらない自組織または他組織の専門家による評価を行うことも有効である。 同様の理由から、サードパーティによる評価も客観性や信頼性を確保する上で補完的な役割を果たすと言える。",
+          "source_section": "4.1 評価実施者 (Page 39)",
+          "quote_en": "However, to conduct objective evaluations and ensure independence in recommendations concerning system development and provision decisions, it is also effective to have evaluations conducted by experts within one's own organization or other organizations not directly involved in developing or providing the target system. For the same reason, third-party evaluation also plays a complementary role in ensuring objectivity and reliability.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.92,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "バックエンドシステムにRAG が含まれる場合、LLM システムにおいて、機密情 報が出力されないよう、RAG による検索先のアクセス権限の設定等に不備がないか。",
+          "source_section": "3.6 セキュリティ確保 (Page 27)",
+          "quote_en": "When the backend system includes RAG, are there no flaws in the access permission settings of the RAG search targets so that confidential information is not output by the LLM system?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "プロンプトインジェクションに対する防護策があるか。また、LLM システムのバ ックエンドシステムに意図していない操作が行われない防護策ができているか。",
+          "source_section": "3.6 セキュリティ確保 (Page 26)",
+          "quote_en": "Are there protective measures against prompt injection? Also, are there protective measures in place to prevent unintended operations on the backend system of the LLM system?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "出力にコンテンツ認証がなされるLLM システムに対して、様々なプロンプトを入力した場合でも適切にコンテンツ認証がなされるか。",
+          "source_section": "3.2 偽誤情報の出力・誘導の防止 (Page 19)",
+          "quote_en": "For LLM systems whose outputs undergo content authentication, is content authentication appropriately applied even when various prompts are input?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "ニュース記事やソーシャルメディアなどにおいて、エンドユーザーがLLM シス テムより生成されたコンテンツであることを識別できるか。",
+          "source_section": "3.2 偽誤情報の出力・誘導の防止 (Page 19)",
+          "quote_en": "Can end users identify that content in news articles, social media, etc., was generated by an LLM system?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "リスクの高いタスクの実行時に異常を検知した場合における人間による介 入・停止。 • リスクの高いタスクの実行時、AI エージェントシステムが設定した当初 の目標とエンドユーザーの意図から乖離したことを検知した際の人間の介 入・停止。",
+          "source_section": "3.11.1 自律的な挙動 (Page 36)",
+          "quote_en": "Human intervention and stopping when an anomaly is detected during the execution of a high-risk task. • Human intervention and stopping when it is detected that the AI agent system has deviated from its initial goal and the end user's intent during the execution of a high-risk task.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "外部ツールの誤用、物理装置の誤操作、他エージェントへの連鎖などの異 常な動作が観測された際に、人間が介入・停止できるか。",
+          "source_section": "3.11.2 外部環境との相互作用 (Page 38)",
+          "quote_en": "Can humans intervene and stop the system when abnormal behaviors such as misuse of external tools, erroneous operation of physical devices, or cascading effects to other agents are observed?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "agentic_autonomy_controls",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "観測はAI エージェントシステム全体を通して継続的に監視することによって、権限 外の業務フロー実行等の問題を検知することを指す。また、制御は問題のある動作が検 知された際にAI エージェントシステムを停止・修正できる仕組みを持つことを指す。",
+          "source_section": "3 評価観点の詳細 (Page 13)",
+          "quote_en": "Observation refers to detecting problems such as execution of unauthorized business workflows by continuously monitoring the entire AI agent system. Control refers to having mechanisms to stop or correct the AI agent system when problematic behavior is detected.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "AI エージェントシステムの利用目的に必要なツールのみに利用権限が付与 されているか。 • 連携する物理装置の安全措置が確保されていて、AI エージェントシステム から安全措置を回避することができないようになっているか。",
+          "source_section": "3.11.2 外部環境との相互作用 (Page 38)",
+          "quote_en": "Are usage permissions granted only to tools necessary for the intended purpose of the AI agent system? • Are safety measures for linked physical devices ensured so that the AI agent system cannot bypass them?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.92,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "LLM システムがアクセスするデータをモデル学習時も含め適切な状態に保ち、データの来歴が適切に管理されている状態を目指す。",
+          "source_section": "3.9 データ品質 (Page 32)",
+          "quote_en": "The aim is to maintain data accessed by the LLM system in an appropriate state, including during model training, and to ensure that data provenance is properly managed.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "データに個人情報、機密情報、著作権等の権利または法律上保護される利 益に関係した問題が生じ得る情報が含まれていないか。 • PETs（Privacy-Enhancing Technologies）などによる措置を行うことで、 学習データとしての使用に問題ない状態となっているか。",
+          "source_section": "3.9 データ品質 (Page 32)",
+          "quote_en": "Does the data not contain information that could cause issues related to personal information, confidential information, copyright, or other legally protected rights or interests? • By taking measures such as PETs (Privacy-Enhancing Technologies), is the data in a state suitable for use as training data?",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "以下のような有害情報を入力あるいは想定出力に含むテストデータを入力した 際、LLM システムの出力に当該情報が含まれない、もしくは出力を拒否できるか。 • サイバー攻撃やテロなどの犯罪、CBRN（Chemical, Biological, Radiological, Nuclear）に利用され得る情報",
+          "source_section": "3.1 有害情報の出力制御 (Page 16)",
+          "quote_en": "When test data containing the following harmful information in the input or expected output is entered, does the LLM system's output not contain such information, or can it refuse to output it? • Information that could be used for crimes such as cyberattacks or terrorism, or CBRN (Chemical, Biological, Radiological, Nuclear).",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "上記を踏まえ、「AI セーフティに関する評価観点ガイド」（以下、「本書」という。）は、 AI システムの開発や提供に携わる者がAI セーフティ評価を実施する際に参照できる基本的な考え方を提示する。",
+          "source_section": "1.1 本書の目的 (Page 4)",
+          "quote_en": "Based on the above, the 'Guide to Evaluation Perspectives on AI Safety' (hereinafter 'this Guide') presents basic concepts that those involved in the development and provision of AI systems can refer to when conducting AI safety evaluations.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "なお、本書は、AI に関する技術開発や活用の広がりの制限を意図するものではない。AI セーフティ評価は、AI システムを安全安心に利用するための評価を行うことで社会全体でのさらなる活用を目指すものである。",
+          "source_section": "2.1 AI セーフティ評価の目的 (Page 10)",
+          "quote_en": "Note that this Guide is not intended to restrict technological development or the expansion of AI utilization. AI safety evaluation aims to promote further utilization across society by conducting evaluations to use AI systems safely and securely.",
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

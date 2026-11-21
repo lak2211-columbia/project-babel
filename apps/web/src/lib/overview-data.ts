@@ -27,6 +27,7 @@ import {
 } from "@/lib/jurisdictions";
 import {
   computeScoringEngine,
+  isHeadlineEligible,
   isKnownFrameLabel,
   round2,
   type ScoringDocumentInput,
@@ -51,6 +52,7 @@ import {
   type SourceEntry,
 } from "@/lib/sources-data";
 import {
+  extractGroundingRatio,
   humanizeBindingStrength,
   humanizeCorpusRole,
   humanizeDocumentType,
@@ -482,9 +484,16 @@ function buildOverviewFromRows(input: {
       ? `${new Date(scored.latestAnalyzedTimestamp).toISOString().slice(0, 10)} (${taxonomyVersion})`
       : `2026-04-15 (${taxonomyVersion})`;
 
+  const headlineEligibleCount = scoringDocs.filter((doc) =>
+    isHeadlineEligible({
+      corpusRole: doc.corpusRole,
+      lifecycleStage: doc.lifecycleStage,
+    }),
+  ).length;
+
   const provenanceSummary: ProvenanceSummary = {
     totalAnalyzed: scoringDocs.length,
-    headlineIncluded: scored.includedDocumentCount,
+    headlineIncluded: headlineEligibleCount,
     legacyCount,
     v2Count,
     taxonomyVersions: taxVersions,
@@ -536,7 +545,7 @@ function buildOverviewFromRows(input: {
     summary: {
       publishedSources: input.documentCount,
       reviewedOutputs: scoringDocs.length,
-      headlineDocuments: scored.includedDocumentCount,
+      headlineDocuments: headlineEligibleCount,
       bindingInstruments,
       lowConfidenceOutputs,
       compositeDivergence: avgComposite,
@@ -600,6 +609,9 @@ type FilesystemDocumentAnalysis = {
     model?: string | null;
     taxonomy_version?: string | null;
     grounding_ratio?: number | null;
+    grounding_summary?: {
+      grounding_ratio?: number | null;
+    } | null;
     analyzed_at?: string | null;
   } | null;
   policy_extraction?: DbOverviewRow["policy_extraction"];
@@ -706,7 +718,7 @@ async function loadOverviewInputFromFilesystem(): Promise<{
           manifest?.lifecycle_stage ?? metadata?.lifecycle_stage ?? null,
         overall_confidence: null,
         dominant_frame_confidence: null,
-        grounding_ratio: analysis.analysis_metadata?.grounding_ratio ?? null,
+        grounding_ratio: extractGroundingRatio(analysis.analysis_metadata),
         taxonomy_version: analysis.analysis_metadata?.taxonomy_version ?? null,
         model,
         frame_shares_json: analysis.risk_framing?.frame_share ?? null,

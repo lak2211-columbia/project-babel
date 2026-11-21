@@ -1,42 +1,87 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "existential_catastrophic",
   "secondary_frames": [
     "fundamental_rights",
+    "consumer_public_safety",
+    "innovation_enablement",
     "social_stability",
-    "existential_catastrophic",
-    "innovation_enablement"
+    "national_security"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.55,
-    "national_security": 0.4,
-    "economic_competitiveness": 0.2,
-    "fundamental_rights": 0.65,
-    "social_stability": 0.5,
-    "innovation_enablement": 0.45,
-    "consumer_public_safety": 0.75,
-    "labor_transition": 0.05
+    "existential_catastrophic": 0.96,
+    "national_security": 0.55,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.6,
+    "innovation_enablement": 0.72,
+    "consumer_public_safety": 0.78,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document primarily frames AI governance around protecting public health, safety, and fundamental rights from systemic risks posed by general-purpose AI models. The overarching objective explicitly references 'high level of protection of health, safety, and fundamental rights' and systemic risks defined as those with 'significant impact...on public health, safety, public security, fundamental rights, or the society as a whole.' Safety and security mitigations, systemic risk assessments, and mandatory reporting all center on preventing harms to users and society. Fundamental rights and social stability appear as strong secondary frames, with innovation enablement also present through the 'Principle of Innovation in AI Safety and Security.'",
+  "frame_share": {
+    "existential_catastrophic": 0.44,
+    "national_security": 0.06,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.18,
+    "social_stability": 0.08,
+    "innovation_enablement": 0.11,
+    "consumer_public_safety": 0.13,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The Safety and Security Chapter is predominantly framed around existential and catastrophic systemic risks arising from frontier general-purpose AI models. While the Preamble recites the AI Act's broad Article 1(1) objectives—encompassing fundamental rights, democracy, public health, safety, and innovation—the substantive architecture of the Chapter (its Precautionary Principle recital, systemic risk tiers, weight-security against self-exfiltration, and Appendix 1's risk taxonomy) centers on severe, compounding, and irreversible systemic harms, specifically naming CBRN proliferation, loss of human control (including self-replication and deception), and large-scale offensive cyberattacks on critical infrastructure. Fundamental rights is the strongest runner-up via the overarching Charter protection mandate and harmful-manipulation concerns, supplemented by public health/safety protections, proportional innovation enablement (including SME carve-outs and precision safety methods), societal-scale manipulation/disinformation concerns, and critical-infrastructure security.",
   "evidence_spans": [
     {
-      "quote": "ensuring a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law, and environmental protection, against harmful effects of AI",
-      "source_section": "Page 2"
+      "quote": "(1) Chemical, biological, radiological and nuclear: Risks from enabling chemical, biological, radiological, and nuclear (CBRN) attacks or accidents. This includes significantly lowering the barriers to entry for malicious actors, or significantly increasing the potential impact achieved, in the design, development, acquisition, release, distribution, and use of related weapons or materials.",
+      "source_section": "Appendix 1.4 Specified systemic risks",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 86550,
+      "end_char": 86943
     },
     {
-      "quote": "systemic risk means a risk that is specific to the high-impact capabilities of general-purpose AI models, having a significant impact on the Union market due to their reach, or due to actual or reasonably foreseeable negative effects on public health, safety, public security, fundamental rights, or the society as a whole",
-      "source_section": "Page 34"
+      "quote": "(2) Loss of control: Risks from humans losing the ability to reliably direct, modify, or shut down a model. Such risks may emerge from misalignment with human intent or values, self-reasoning, self-replication, self-improvement, deception, resistance to goal modification, power-seeking behaviour, or autonomously creating or improving AI models or AI systems.",
+      "source_section": "Appendix 1.4 Specified systemic risks",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 86944,
+      "end_char": 87304
     },
     {
-      "quote": "risks of major accidents; risks to critical sectors or infrastructure, public mental health, freedom of expression and information, non-discrimination, privacy and the protection of personal data",
-      "source_section": "Page 34"
+      "quote": "ensuring a high level of protection of health, safety, and fundamental rights enshrined in the Charter, including democracy, the rule of law, and environmental protection, against harmful effects of AI in the Union, and to support innovation pursuant to Article 1(1) AI Act.",
+      "source_section": "Preamble - Objectives",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 664,
+      "end_char": 938
     },
     {
-      "quote": "Signatories will only proceed with the development, the making available on the market, and/or the use of the model, if the systemic risks stemming from the model are determined to be acceptable",
-      "source_section": "Page 16"
+      "quote": "actual or reasonably foreseeable negative effects on public health, safety, public security, fundamental rights, or the society as a whole, that can be propagated at scale across the value chain",
+      "source_section": "Appendix 1 - Article 3(65) AI Act",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 79352,
+      "end_char": 79546
     },
     {
-      "quote": "this Chapter should encourage providers of general-purpose AI models with systemic risk to advance the state of the art in AI safety and security",
-      "source_section": "Page 4"
+      "quote": "The Signatories recognise that advancing the state of the art also includes developing targeted methods that specifically address risks while maintaining beneficial capabilities (e.g. mitigating biosecurity risks without unduly reducing beneficial biomedical capabilities), acknowledging that such precision demands greater technical effort and innovation than less targeted methods.",
+      "source_section": "Recitals - (f) Principle of Innovation in AI Safety and Security",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 6885,
+      "end_char": 7268
+    },
+    {
+      "quote": "(4) Harmful manipulation: Risks from enabling the strategic distortion of human behaviour or beliefs by targeting large populations or high-stakes decision-makers through persuasion, deception, or personalised targeting.",
+      "source_section": "Appendix 1.4 Specified systemic risks",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 87722,
+      "end_char": 87942
     }
   ]
 }

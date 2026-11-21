@@ -1,0 +1,84 @@
+{
+  "dominant_frame": "consumer_public_safety",
+  "secondary_frames": [
+    "innovation_enablement",
+    "national_security"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.35,
+    "national_security": 0.78,
+    "economic_competitiveness": 0.5,
+    "fundamental_rights": 0.5,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.94,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.03,
+    "national_security": 0.16,
+    "economic_competitiveness": 0.06,
+    "fundamental_rights": 0.05,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.32,
+    "consumer_public_safety": 0.38,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "NIST IR 8596 (Cyber AI Profile) is dominantly framed around consumer_public_safety, centering on operational system resilience and protecting organizations, infrastructure (such as power grids and OT/ICS), and users from AI-related failures, data leakage, poisoning, prompt injection, deepfake phishing, and AI-accelerated cyberattacks. Consumer_public_safety narrowly edges out innovation_enablement, which is a strong runner-up emphasizing adaptable, voluntary, technology-neutral guidance that enables organizations to strategically adopt AI and capitalize on AI-enabled cyber defense efficiencies. National_security serves as a clear third frame through explicit attention to advanced persistent threats (APTs), offensive cyber operations, autonomous attack agents, AI-orchestrated espionage, and critical infrastructure resilience, with minor supporting roles for economic welfare, privacy/civil liberties compliance, and machine-speed autonomous cyber risks.",
+  "evidence_spans": [
+    {
+      "quote": "AI can make 277 mistakes, offer confident yet incorrect answers, leak sensitive data, and be manipulated by 278 attackers. And, just like other types of systems, organizations strive for AI systems that are 279 trustworthy and support organizational objectives for demonstrating responsibility and 280 accountability.",
+      "source_section": "1.1. Purpose",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 22854,
+      "end_char": 23171
+    },
+    {
+      "quote": "The Secure Focus Area supplements existing cybersecurity and risk management best practices 410 to address novel, expanded, and altered attack surfaces associated with the integration of AI 411 systems into an organization, its ecosystems, and its infrastructure.",
+      "source_section": "2.1.1. Securing AI System Components (Secure)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 33903,
+      "end_char": 34166
+    },
+    {
+      "quote": "as well as to provide a resource for organizations to 192 strategically adopt AI while addressing and prioritizing emerging cybersecurity risks stemming 193 from advancements in AI.",
+      "source_section": "Executive Summary",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 15638,
+      "end_char": 15819
+    },
+    {
+      "quote": "Defend focuses 387 on how organizations can capitalize on the opportunities AI offers to improve their 388 cybersecurity defensive capabilities, such as taking advantage of new efficiencies.",
+      "source_section": "2.1. Focus Areas",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 32028,
+      "end_char": 32218
+    },
+    {
+      "quote": "A third example of AI-enabled attacks involves the use of AI agents to autonomously 529 orchestrate different phases of a cyber attack, from reconnaissance and attack surface mapping 530 to vulnerability exploitation to credential harvesting, lateral movement, and data collection.",
+      "source_section": "2.1.3. Thwarting AI-Enabled Cyber Attacks (Thwart)",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 43592,
+      "end_char": 43873
+    },
+    {
+      "quote": "The Information Technology Laboratory (ITL) at the National Institute of Standards and 56 Technology (NIST) promotes the U.S. economy and public welfare by providing technical 57 leadership for the Nation’s measurement and standards infrastructure.",
+      "source_section": "Front Matter - Reports on Computer Systems Technology",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 4950,
+      "end_char": 5198
+    }
+  ]
+}

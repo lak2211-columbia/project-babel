@@ -1,41 +1,86 @@
 {
-  "dominant_frame": "consumer_public_safety",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
     "fundamental_rights",
-    "innovation_enablement",
-    "economic_competitiveness"
+    "consumer_public_safety",
+    "economic_competitiveness",
+    "national_security"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.1,
-    "national_security": 0.15,
-    "economic_competitiveness": 0.55,
-    "fundamental_rights": 0.6,
+    "existential_catastrophic": 0.0,
+    "national_security": 0.68,
+    "economic_competitiveness": 0.74,
+    "fundamental_rights": 0.85,
     "social_stability": 0.2,
-    "innovation_enablement": 0.6,
-    "consumer_public_safety": 0.72,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.82,
     "labor_transition": 0.1
   },
-  "rationale_summary": "The decree primarily frames AI governance around protecting users and the public from harms caused by high-impact AI systems, requiring transparency disclosures, safety obligations, impact assessments focused on life/safety/fundamental rights, and trust-building measures. Fundamental rights protection is a strong secondary frame given explicit references to impacts on 기본권 (basic rights). Innovation enablement and economic competitiveness are also significant secondary frames given extensive provisions for industry promotion, data infrastructure, cluster zones, and international market support.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.1,
+    "economic_competitiveness": 0.14,
+    "fundamental_rights": 0.24,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.34,
+    "consumer_public_safety": 0.18,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Presidential Decree No. 36053 is dominantly framed around innovation_enablement: it operationalizes the AI Basic Act through proportional carve-outs (exempting internal business use and obvious AI notices, granting downstream deployer safe harbors and sectoral-law equivalence, subsidizing SME verification costs, opening public testbeds, and mandating 3-year regulatory reviews) alongside R&D, training-data, and adoption support. Innovation_enablement edges out fundamental_rights because the decree pairs narrow high-threshold obligations (10^26 FLOPs, KRW 1T/10B/1M-user triggers) with extensive compliance-burden relief and ecosystem-building provisions. Fundamental_rights and consumer_public_safety serve as strong secondary frames underpinning frontier compute risk criteria, high-impact classification, accessibility-conscious disclosures, and seven-element fundamental-rights impact assessments, while economic_competitiveness (regional cluster competitiveness, startup/job ripple effects) and national_security (detailed Art. 2 carve-outs for defense, intelligence, counterterrorism, and defense/core technology protection) play clear supporting roles.",
   "evidence_spans": [
     {
-      "quote": "인공지능시스템의 위험도가 사람의 생명, 신체의 안전 및 기본권에 광범위하고 중대한 영향을 미칠 우려가 있을 것",
-      "source_section": "제24조(인공지능 안전성 확보 의무)"
+      "quote": "과학기술정보통신부장관은 다음 각 호의 사항에 대하여 2026년 1월 1일을 기준으로 3년마다(매 3년이 되는 해의 1월 1일 전까지를 말한다) 그 타당성을 검토하여 개선 등의 조치를 해야 한다.",
+      "source_section": "제33조(규제의 재검토)",
+      "quote_en": "Every three years starting from January 1, 2026, the Minister of Science and ICT shall review the validity of the specified regulatory criteria and take improvement measures.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 19292,
+      "end_char": 19400
     },
     {
-      "quote": "사람의 생명, 신체의 안전 및 기본권에 초래할 수 있는 위험의 영향, 중대성, 빈도 및 활용 영역별 특수성",
-      "source_section": "제25조(고영향 인공지능의 확인 절차 등)"
+      "quote": "④ 제1항부터 제3항까지의 규정에도 불구하고 다음 각 호의 어느 하나에 해당하는 경우에는 제1항부터 제3항까지의 규정 중 전부 또는 일부를 적용하지 않을 수 있다.\n1. 제품ㆍ서비스명, 이용자 화면이나 제품 겉면 및 결과물에 표시된 문구 등을 고려할 때 고영향 인공지능 또는 생성형 인공지능을 활용한 사실이 명백한 경우\n2. 인공지능사업자의 내부 업무 용도로만 사용되는 경우",
+      "source_section": "제23조(인공지능 투명성 확보 의무)",
+      "quote_en": "Transparency notice and labeling provisions may be exempted in whole or part where AI use is obvious from the product/service name or UI, or where used solely for internal business purposes.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 14011,
+      "end_char": 14220
     },
     {
-      "quote": "해당 고영향 인공지능을 이용한 제품등에 의하여 사람의 생명, 신체의 안전 및 기본권에 영향을 받을 가능성이 있는 개인이나 집단에 대한 식별",
-      "source_section": "제28조(고영향 인공지능 영향평가)"
+      "quote": "2. 사람의 생명, 신체의 안전 및 기본권에 초래할 수 있는 위험의 영향, 중대성, 빈도 및 활용 영역별 특수성",
+      "source_section": "제25조(고영향 인공지능의 확인 절차 등)",
+      "quote_en": "2. The impact, severity, frequency, and domain-specific characteristics of risks that may be posed to human life, bodily safety, and fundamental rights.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 15115,
+      "end_char": 15177
     },
     {
-      "quote": "인공지능사업자는 고영향 인공지능이나 생성형 인공지능을 이용한 제품 또는 서비스를 제공하는 경우...제품등이 해당 인공지능에 기반하여 운용된다는 사실을 이용자에게 사전에 고지해야 한다",
-      "source_section": "제23조(인공지능 투명성 확보 의무)"
+      "quote": "3. 인공지능시스템의 위험도가 사람의 생명, 신체의 안전 및 기본권에 광범위하고 중대한 영향을 미칠 우려가 있을 것",
+      "source_section": "제24조(인공지능 안전성 확보 의무)",
+      "quote_en": "3. The risk level of the AI system poses a concern of broad and grave impact on human life, bodily safety, and fundamental rights.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 14569,
+      "end_char": 14633
     },
     {
-      "quote": "인공지능산업의 지역적 집적화 및 경쟁력 강화 효과",
-      "source_section": "제17조(인공지능집적단지 지정 등)"
+      "quote": "3. 인공지능산업에서의 데이터 활용도 제고, 인공지능산업 활성화, 창업ㆍ고용 창출 등 예상되는 경제적 파급효과",
+      "source_section": "제12조(인공지능 학습용데이터 지원대상사업 등)",
+      "quote_en": "3. Expected economic ripple effects such as enhancing data utilization in the AI industry, revitalizing the AI industry, and creating startups and jobs.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 7211,
+      "end_char": 7272
+    },
+    {
+      "quote": "나. 「방위사업법」 제3조제3호에 따른 무기체계 및 같은 조 제4호에 따른 전력지원체계의 개발ㆍ운용",
+      "source_section": "제2조(법의 적용 제외 인공지능)",
+      "quote_en": "(b) Development and operation of weapon systems and force support systems under the Defense Acquisition Program Act (excluded from the Act).",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 489,
+      "end_char": 544
     }
   ]
 }

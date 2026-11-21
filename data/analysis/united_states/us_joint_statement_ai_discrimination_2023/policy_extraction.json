@@ -1,46 +1,93 @@
 {
   "jurisdiction": "united_states",
-  "issuing_body": "CFPB, DOJ Civil Rights Division, EEOC, FTC (Joint)",
+  "issuing_body": "Department of Justice / Equal Employment Opportunity Commission / Federal Trade Commission / Consumer Financial Protection Bureau",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": "2023",
+  "publication_date": "2023-04-25",
   "effective_date": null,
+  "covered_actors": [
+    "Private and public entities deploying automated systems and AI in critical decisions",
+    "Creditors and financial marketplace participants (CFPB)",
+    "Employers, unions, and employment agencies (EEOC)",
+    "Housing providers and algorithm-based tenant screening services (DOJ)",
+    "Market participants and automated system developers across U.S. commercial sectors (FTC)"
+  ],
   "covered_application_domains": [
-    "general_purpose_models",
     "employment",
     "finance",
-    "public_sector_use",
+    "education",
     "law_enforcement",
-    "education"
+    "public_sector_use"
+  ],
+  "prohibited_practices": [
+    "Using automated systems or AI in ways that perpetuate unlawful bias or automate unlawful discrimination across employment, credit, housing, education, criminal justice, voting, or consumer markets under existing federal statutes",
+    "Making unsubstantiated claims about AI or deploying automated tools with discriminatory impacts or unfair/deceptive practices in violation of the FTC Act",
+    "Failing to satisfy federal consumer financial adverse action notice requirements on the grounds that credit-decision technology is too complex, opaque, or new"
   ],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.7,
+      "confidence": 0.86,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "deploy AI before taking steps to assess and mitigate risks",
-          "source_section": "FTC enforcement authorities"
+          "quote": "The FTC has also warned market participants that it may violate the FTC Act to use automated tools that have\n\ndiscriminatory impacts, to make claims about AI that are not substantiated, or to deploy AI before taking steps to assess and mitigate risks.",
+          "source_section": "Page 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5326,
+          "end_char": 5577
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.75,
+      "confidence": 0.88,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "Many automated systems are 'black boxes' whose internal workings are not clear to most people",
-          "source_section": "Model Opacity and Access"
+          "quote": "The CFPB published a circular confirming that federal consumer financial laws and adverse action requirements apply regardless of the technology being used. The circular also made clear that the fact that the technology used to make a credit decision is too complex, opaque, or new is not a defense for violating these laws.",
+          "source_section": "Page 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3212,
+          "end_char": 3536
+        },
+        {
+          "quote": "Many automated systems are “black boxes” whose internal workings are not clear to most people and, in some cases, even the developer of the tool. This lack of transparency often makes it all the more difficult for developers, businesses, and individuals to know whether an automated system is fair.",
+          "source_section": "Page 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6564,
+          "end_char": 6862
         }
       ]
     },
     {
-      "label": "model_documentation",
-      "confidence": 0.6,
+      "label": "training_data_governance",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "the fact that the technology used to make a credit decision is too complex, opaque, or new is not a defense for violating these laws",
-          "source_section": "CFPB enforcement authorities"
+          "quote": "Finally, the FTC has required firms to destroy algorithms or other work product that were trained on data that should not have been collected.",
+          "source_section": "Page 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5578,
+          "end_char": 5720
+        },
+        {
+          "quote": "Automated system outcomes can be skewed by unrepresentative or imbalanced datasets, datasets that incorporate historical bias, or datasets that contain other types of errors. Automated systems also can correlate data with protected classes, which can lead to discriminatory outcomes.",
+          "source_section": "Page 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6251,
+          "end_char": 6534
         }
       ]
     }
@@ -48,39 +95,67 @@
   "enforcement_mechanisms": [
     {
       "label": "regulatory_supervision",
-      "confidence": 0.9,
+      "confidence": 0.94,
       "evidence": [
         {
-          "quote": "our agencies reiterate our resolve to monitor the development and use of automated systems",
-          "source_section": "Conclusion"
+          "quote": "Existing legal authorities apply to the use of automated systems and innovative new technologies just as they apply to other practices.",
+          "source_section": "Page 1",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2184,
+          "end_char": 2319
         },
         {
-          "quote": "The Consumer Financial Protection Bureau supervises, sets rules for, and enforces numerous federal consumer financial laws",
-          "source_section": "CFPB enforcement authorities"
+          "quote": "We also pledge to vigorously use our collective authorities to protect individuals’ rights regardless of whether legal violations occur through traditional means or advanced technologies.",
+          "source_section": "Page 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7310,
+          "end_char": 7497
         }
       ]
     },
     {
-      "label": "civil_penalty",
-      "confidence": 0.7,
+      "label": "market_access_restriction",
+      "confidence": 0.8,
       "evidence": [
         {
-          "quote": "pledge to vigorously use our collective authorities to protect individuals' rights regardless of whether legal violations occur through traditional means or advanced technologies",
-          "source_section": "Conclusion"
+          "quote": "Finally, the FTC has required firms to destroy algorithms or other work product that were trained on data that should not have been collected.",
+          "source_section": "Page 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5578,
+          "end_char": 5720
         }
       ]
     },
     {
       "label": "soft_enforcement",
-      "confidence": 0.85,
+      "confidence": 0.82,
       "evidence": [
         {
-          "quote": "This document is for informational purposes only and does not provide technical assistance about how to comply with federal law. It does not constitute final agency action and does not have an immediate and direct legal effect. It does not create any new rights or obligations and it is not enforceable.",
-          "source_section": "Note"
+          "quote": "Note: This document is for informational purposes only and does not provide technical assistance about how to comply with federal law. It does not constitute final agency action and does not have an immediate and direct legal effect. It does not create any new rights or obligations and it is not enforceable.",
+          "source_section": "Page 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7499,
+          "end_char": 7808
         }
       ]
     }
   ],
-  "implementation_notes": "Document explicitly states it is not enforceable and creates no new rights or obligations, though it signals enforcement intent of existing laws by four agencies. The document reaffirms existing legal authorities apply to automated systems rather than creating new requirements.",
-  "confidence": 0.85
+  "enforcement_authorities": [
+    "Consumer Financial Protection Bureau (CFPB)",
+    "Department of Justice Civil Rights Division (DOJ)",
+    "Equal Employment Opportunity Commission (EEOC)",
+    "Federal Trade Commission (FTC)"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": "Affirms vigorous interagency enforcement under existing federal civil-rights, employment, housing, fair-lending, and consumer-protection statutes, specifically highlighting FTC orders requiring firms to destroy algorithms or work product trained on unlawfully collected data ('algorithmic disgorgement'). The joint statement itself explicitly creates no new rights, obligations, or independent enforceable penalties.",
+  "implementation_notes": "Issued April 25, 2023 jointly by the heads of CFPB, DOJ Civil Rights Division, EEOC, and FTC. Clarifies that established federal laws—including the FTC Act, Fair Housing Act, Americans with Disabilities Act, Title VII and other EEOC statutes, and federal consumer financial/adverse-action laws—apply fully to automated systems and AI across employment, housing, credit, education, criminal justice, voting, and consumer markets. Identifies three core risk vectors: biased/unrepresentative datasets, model opacity ('black boxes'), and flawed design/contextual assumptions. Expressly notes it is informational and not final agency action.",
+  "confidence": 0.96
 }

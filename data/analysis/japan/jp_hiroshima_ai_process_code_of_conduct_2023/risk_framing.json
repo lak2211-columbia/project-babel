@@ -1,0 +1,87 @@
+{
+  "dominant_frame": "consumer_public_safety",
+  "secondary_frames": [
+    "fundamental_rights",
+    "existential_catastrophic",
+    "social_stability",
+    "innovation_enablement",
+    "national_security"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.9,
+    "national_security": 0.62,
+    "economic_competitiveness": 0.05,
+    "fundamental_rights": 0.92,
+    "social_stability": 0.82,
+    "innovation_enablement": 0.78,
+    "consumer_public_safety": 0.95,
+    "labor_transition": 0.25
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.22,
+    "national_security": 0.05,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.24,
+    "social_stability": 0.12,
+    "innovation_enablement": 0.1,
+    "consumer_public_safety": 0.26,
+    "labor_transition": 0.01
+  },
+  "rationale_summary": "Consumer and public safety edges out fundamental rights and existential/catastrophic risk as the dominant frame because promoting 'safe, secure, and trustworthy AI', preventing unreasonable risks to health, safety, children, and vulnerable groups, and continuously mitigating operational vulnerabilities and misuse form the overarching thread across the Preamble and Actions 1 through 8. Fundamental rights is a very close runner-up, providing the Code's explicit normative foundation in the Preamble and Actions 1, 3, 5, 8, and 11 via commitments to international human rights law, the rule of law, democracy, due process, non-discrimination, and privacy. Existential/catastrophic risk is also exceptionally prominent and distinctively motivates the frontier-model scope through Action 1's explicit evaluation mandate for CBRN weapons proliferation, offensive cyber capabilities, autonomous model self-replication, and city-scale cascading chain-reaction risks, alongside Actions 4 and 6 on dangerous capabilities and unsanctioned weight release. Social stability (disinformation, terrorism/criminal misuse, content provenance), innovation enablement (voluntary risk-based guidance, seizing benefits, interoperable standards, SDGs), and national security (non-state weapons risks and critical infrastructure) appear as substantial supporting frames.",
+  "evidence_spans": [
+    {
+      "quote": "the Hiroshima Process International Code of Conduct for Organizations Developing Advanced AI Systems aims to promote safe, secure, and trustworthy AI worldwide",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 219,
+      "end_char": 378
+    },
+    {
+      "quote": "> Risks to health and/or Safety, including the effects of system interaction and tool use, including for example the capacity to control physical systems and interfere with critical infrastructure.",
+      "source_section": "Page 3 (Action 1)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 5449,
+      "end_char": 5646
+    },
+    {
+      "quote": "While harnessing the opportunities of innovation, organizations should respect the rule of law, human rights, due process, diversity, fairness and non-discrimination, democracy, and human-centricity, in the design, development and deployment of advanced AI systems.",
+      "source_section": "Page 2",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 2502,
+      "end_char": 2767
+    },
+    {
+      "quote": "> Chemical, biological, radiological, and nuclear risks, such as the ways in which advanced AI systems can lower barriers to entry, including for non-state actors, for weapons development, design acquisition, or use.",
+      "source_section": "Page 3 (Action 1)",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 4960,
+      "end_char": 5176
+    },
+    {
+      "quote": "Organizations should not develop or deploy advanced AI systems in ways that undermine democratic values, are particularly harmful to individuals or communities, facilitate terrorism, promote criminal misuse, or pose substantial risks to safety, security and human rights, and are thus not acceptable.",
+      "source_section": "Page 2",
+      "quote_en": null,
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 2769,
+      "end_char": 3069
+    },
+    {
+      "quote": "This non-exhaustive list of actions is discussed and elaborated as a living document to build on the existing OECD AI Principles in response to the recent developments in advanced AI systems and is meant to help seize the benefits and address the risks and challenges brought by these technologies.",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 838,
+      "end_char": 1136
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "dominant_frame": "national_security",
+  "secondary_frames": [
+    "innovation_enablement",
+    "economic_competitiveness",
+    "consumer_public_safety"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.1,
+    "national_security": 0.96,
+    "economic_competitiveness": 0.8,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.88,
+    "consumer_public_safety": 0.55,
+    "labor_transition": 0.05
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.48,
+    "economic_competitiveness": 0.17,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.25,
+    "consumer_public_safety": 0.1,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "EO 14409 is dominantly framed around national_security, centering on new national-security considerations from advanced AI cyber capabilities, protecting American intellectual property from adversaries, defending National Security Systems and Department of War IT, and running an NSA-led classified frontier cyber benchmark. National_security edges out innovation_enablement because nearly every operative section deploys defense, intelligence, and homeland-security authorities to harden systems and confront external threats. Innovation_enablement is a prominent secondary frame—rejecting burdensome regulation and mandatory licensing in favor of voluntary industry collaboration and early trusted-partner access—supported by economic_competitiveness (global AI dominance and investment) and consumer_public_safety (defending rural hospitals, community banks, local utilities, and prosecuting cybercrime).",
+  "evidence_spans": [
+    {
+      "quote": "Advanced AI capabilities make our Nation stronger, but also introduce new national security considerations that require coordinated action across executive departments and agencies (agencies), and components.",
+      "source_section": "Section 1",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 749,
+      "end_char": 957
+    },
+    {
+      "quote": "We will continue to lead an America First cybersecurity effort that enhances both our national security and our global AI dominance.",
+      "source_section": "Section 1",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 1169,
+      "end_char": 1301
+    },
+    {
+      "quote": "The United States continues to lead the world in Artificial Intelligence (AI) because of the enormous talent and innovation of our AI industry, and because we refuse to stifle this innovation with overly burdensome regulation.",
+      "source_section": "Section 1",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 192,
+      "end_char": 418
+    },
+    {
+      "quote": "My Administration has unleashed tremendous technological growth and economic investment in AI by slashing the bureaucratic constraints that the prior administration placed on America's AI developers and researchers, and by instead encouraging AI innovation and accelerating responsible AI adoption across government and industry.",
+      "source_section": "Section 1",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 419,
+      "end_char": 748
+    },
+    {
+      "quote": "facilitate access to cybersecurity tools and services including, where appropriate, covered frontier models for agencies, State and local authorities, and operators of critical infrastructure such as rural hospitals, community banks, and local utilities.",
+      "source_section": "Sec. 2",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 2954,
+      "end_char": 3208
+    }
+  ]
+}

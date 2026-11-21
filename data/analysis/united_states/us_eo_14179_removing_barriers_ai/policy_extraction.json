@@ -1,27 +1,48 @@
 {
   "jurisdiction": "united_states",
-  "issuing_body": "Executive Office of the President (White House)",
+  "issuing_body": "Executive Office of the President",
   "document_type": "executive_order",
   "binding_strength": "executive_action",
   "publication_date": "2025-01-23",
   "effective_date": "2025-01-23",
+  "covered_actors": [
+    "Assistant to the President for Science and Technology (APST)",
+    "Special Advisor for AI and Crypto",
+    "Assistant to the President for National Security Affairs (APNSA)",
+    "Assistant to the President for Economic Policy",
+    "Assistant to the President for Domestic Policy",
+    "Director of the Office of Management and Budget (OMB Director)",
+    "Heads of executive departments and agencies"
+  ],
   "covered_application_domains": [
     "general_purpose_models",
-    "defense"
+    "public_sector_use"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [],
   "enforcement_mechanisms": [
     {
       "label": "none_specified",
-      "confidence": 0.9,
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "This order is not intended to, and does not, create any right or benefit, substantive or procedural, enforceable at law or in equity by any party against the United States",
-          "source_section": "Sec. 6(c)"
+          "quote": "This order is not intended to, and does not, create any right or benefit, substantive or procedural, enforceable at law or in equity by any party against the United States, its departments, agencies, or entities, its officers, employees, or agents, or any other person.",
+          "source_section": "Sec. 6. General Provisions.",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3843,
+          "end_char": 4112
         }
       ]
     }
   ],
-  "implementation_notes": "This EO primarily revokes EO 14110 and directs development of a new AI Action Plan within 180 days. It does not establish new safety requirements; rather, it removes prior safety-oriented directives. No safety requirements are imposed by this document. Enforcement is internal to executive branch agencies only.",
-  "confidence": 0.95
+  "enforcement_authorities": [],
+  "compliance_deadlines": [
+    "Within 60 days of 2025-01-23 (2025-03-24): OMB Director, in coordination with APST, shall revise OMB Memoranda M-24-10 and M-24-18 to align with Section 2 policy",
+    "Within 180 days of 2025-01-23 (2025-07-22): APST, Special Advisor for AI and Crypto, and APNSA, in coordination with economic/domestic policy assistants, OMB Director, and relevant agency heads, shall develop and submit an AI Action Plan to the President"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "Signed January 23, 2025, EO 14179 resets federal AI policy by revoking barriers stemming from the revoked EO 14110 of October 30, 2023. It directs an immediate interagency review to suspend, revise, rescind, or grant exemptions from EO 14110-derived agency actions, orders OMB to revise Memoranda M-24-10 and M-24-18 within 60 days, and mandates an AI Action Plan within 180 days. It imposes no private-sector technical safety controls or coercive external enforcement mechanisms.",
+  "confidence": 0.97
 }

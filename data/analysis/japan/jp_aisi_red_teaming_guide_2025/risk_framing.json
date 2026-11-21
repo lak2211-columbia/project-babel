@@ -1,0 +1,84 @@
+{
+  "dominant_frame": "consumer_public_safety",
+  "secondary_frames": [
+    "fundamental_rights",
+    "innovation_enablement"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.7,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.6,
+    "consumer_public_safety": 0.9,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.25,
+    "social_stability": 0.05,
+    "innovation_enablement": 0.15,
+    "consumer_public_safety": 0.55,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The J-AISI Red Teaming Guide is primarily framed around consumer and public safety: its core stated purpose is to counter AI misuse, abuse, inaccurate outputs, and malicious attacks so that AI systems do not cause harm to stakeholders' life, body, property, mental well-being, or the environment, and can be operated safely and securely. Fundamental rights serves as the main secondary frame because the guide defines 'AI Safety' on a human-centric foundation that prohibits infringing constitutional or internationally recognized human rights, while requiring fairness, non-discrimination, and privacy protection. Innovation enablement is a notable secondary frame, as the guide opens by linking AI adoption to promoting innovation and solving social challenges and frames red teaming as a practical means to build trustworthiness and enable safe AI utilization. Consumer and public safety edges out fundamental rights because the bulk of the document's stated rationale centers on identifying technical vulnerabilities, preventing operational damage and harmful outputs, and hardening systems against attackers rather than constitutional rights adjudication. Misinformation/disinformation prevention appears briefly as an evaluation perspective, giving social stability a minor share, while existential risk, national security, economic competitiveness, and labor transition are absent.",
+  "evidence_spans": [
+    {
+      "quote": "一方で、AI システムの開発・提供・利用が急速に広まる中で、AI システムの悪用や誤用、不正確な出力による懸念等も生じており、いわゆるAI セーフティについての関心が国内外で高まりつつある。",
+      "source_section": "Page 4 (1.1 本書の目的)",
+      "quote_en": "On the other hand, as the development, provision, and use of AI systems rapidly expand, concerns regarding the misuse and abuse of AI systems and inaccurate outputs have also arisen, and interest in so-called AI safety is growing both domestically and internationally.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 5833,
+      "end_char": 5928
+    },
+    {
+      "quote": "AI システム・サービスの開発・提供・利用を通じ、ステークホルダーの生命・身体・財産に危害を及ぼすことがないようにすること。加えて、精神及び環境に危害を及ぼすことがないようにすること。",
+      "source_section": "Page 7 (1.2 本書で使用する用語)",
+      "quote_en": "Through the development, provision, and use of AI systems and services, to ensure that no harm is caused to the life, body, or property of stakeholders. In addition, to ensure that no harm is caused to mental well-being or the environment.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 9269,
+      "end_char": 9361
+    },
+    {
+      "quote": "AI システム・サービスの開発・提供・利用において、全ての取り組むべき事項が導出される土台として、少なくとも憲法が保障する又は国際的に認められた人権を侵すことがないようにすること。",
+      "source_section": "Page 7 (1.2 本書で使用する用語)",
+      "quote_en": "In the development, provision, and use of AI systems and services, as the foundation from which all actions to be taken are derived, to ensure at a minimum that human rights guaranteed by the Constitution or internationally recognized are not infringed.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 8961,
+      "end_char": 9051
+    },
+    {
+      "quote": "AI システム・サービスの開発・提供・利用において、その重要性に応じ、プライバシー\nを尊重し保護すること、及び関係法令を遵守すること。",
+      "source_section": "Page 8 (1.2 本書で使用する用語)",
+      "quote_en": "In the development, provision, and use of AI systems and services, to respect and protect privacy according to its importance and to comply with relevant laws and regulations.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 9668,
+      "end_char": 9735
+    },
+    {
+      "quote": "生成AI 技術をはじめとするAI 技術の導入により、イノベーションの促進や社会課題の解決が期待されている。",
+      "source_section": "Page 4 (1.1 本書の目的)",
+      "quote_en": "The introduction of AI technologies, starting with generative AI technology, is expected to promote innovation and solve social issues.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 5780,
+      "end_char": 5833
+    },
+    {
+      "quote": "AI システムの持つ様々な脆弱性に対して、AI セーフティの維持または向上のために、レッドチーミングによってAI システムの脆弱性を明らかにし、改善策を施すことが非常に重要である。これにより、AI システムを安全・安心に利用できるようになることが期待される。",
+      "source_section": "Page 10 (2.2 レッドチーミングの重要性と期待される効果)",
+      "quote_en": "Against the various vulnerabilities possessed by AI systems, in order to maintain or improve AI safety, it is very important to uncover vulnerabilities in AI systems through red teaming and implement remedial measures. Through this, it is expected that AI systems will become usable safely and securely.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 11695,
+      "end_char": 11824
+    }
+  ]
+}

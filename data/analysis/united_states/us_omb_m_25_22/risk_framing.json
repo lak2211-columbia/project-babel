@@ -1,37 +1,85 @@
 {
-  "dominant_frame": "economic_competitiveness",
+  "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "innovation_enablement",
-    "consumer_public_safety",
-    "fundamental_rights"
+    "economic_competitiveness",
+    "fundamental_rights",
+    "consumer_public_safety"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.1,
-    "economic_competitiveness": 0.75,
-    "fundamental_rights": 0.35,
-    "social_stability": 0.1,
-    "innovation_enablement": 0.5,
-    "consumer_public_safety": 0.4,
+    "national_security": 0.25,
+    "economic_competitiveness": 0.85,
+    "fundamental_rights": 0.8,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.94,
+    "consumer_public_safety": 0.72,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around ensuring a competitive American AI marketplace, taxpayer value, and government efficiency. Its three grounding themes explicitly foreground competition, cost-effectiveness, and vendor lock-in avoidance. References to American AI leadership, buy-American policy, and marketplace competition dominate the stated rationale for governance. Risk management and rights protections appear as secondary concerns subordinate to efficient, competitive acquisition.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.24,
+    "fundamental_rights": 0.2,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.42,
+    "consumer_public_safety": 0.14,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "OMB Memorandum M-25-22 is dominantly framed around innovation_enablement, seeking to accelerate efficient, cost-effective federal adoption of state-of-the-art AI capabilities through agile cross-functional acquisition, performance-based contracting, interoperability, and streamlined onboarding of novel vendors. Innovation_enablement edges out economic_competitiveness because the operational core focuses on modernizing public-sector acquisition workflows and enabling timely government utilization rather than external trade rivalry. Economic_competitiveness is a strong secondary frame through fostering a competitive American AI marketplace, preventing vendor lock-in, safeguarding taxpayer dollars, and maximizing Buy American AI; fundamental_rights is prominent via explicit obligations to mitigate privacy, civil rights, and civil liberties risks across the acquisition lifecycle, alongside consumer_public_safety in ensuring procured systems are safe, secure, fit for purpose, and protective of public safety.",
   "evidence_spans": [
     {
-      "quote": "Ensuring the Government and the Public Benefit from a Competitive American AI Marketplace. Competition in the marketplace enables the government to acquire the best solutions at lower cost to the taxpayer.",
-      "source_section": "1. OVERVIEW"
+      "quote": "Executive Order 13960, Promoting the Use ofTrustworthy Artificial Intelligence in the Federal Government, 1 charges Federal agencies with using safe and secure artificial intelligence\n(AI) in innovative ways to improve government efficiency and mission effectiveness.",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 336,
+      "end_char": 603
     },
     {
-      "quote": "Executive Order 14179 recognizes the importance of American AI development to promote human flourishing, economic competitiveness, and national security. Consistent with applicable law, it is the policy of the United States to buy American and to maximize the use of AI products and services that are developed and produced in the United States.",
-      "source_section": "3. AGENCY-LEVEL REQUIREMENTS"
+      "quote": "The novel challenges that AI introduces require agile engagement from agency officials with varied expertise to fully address during acquisition.",
+      "source_section": "Page 2",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 3560,
+      "end_char": 3705
     },
     {
-      "quote": "Safeguarding Taxpayer Dollars by Tracking AI Performance and Managing Risk.",
-      "source_section": "1. OVERVIEW"
+      "quote": "Ensuring the Government and the Public Benefit from a Competitive American Al Marketplace. Competition in the marketplace enables the government to acquire the best solutions at lower cost to the taxpayer.",
+      "source_section": "Page 1",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 1351,
+      "end_char": 1556
+    },
+    {
+      "quote": "Consistent with applicable law, it is the policy of the United States to buy American and to maximize the use of AI products and services that are developed and produced in the United States.",
+      "source_section": "Page 4",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 11391,
+      "end_char": 11582
     },
     {
       "quote": "Throughout the AI acquisition lifecycle, agencies shall consider and mitigate, as appropriate, risks to privacy, civil liberties, and civil rights.",
-      "source_section": "4. AI ACQUISITION LIFECYCLE GUIDANCE"
+      "source_section": "Page 6",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 18099,
+      "end_char": 18246
+    },
+    {
+      "quote": "To achieve this promise, agencies must ensure that the AI systems they procure are fit for purpose and deliver consistent results that preserve public trust in the manner outlined in Executive Order 13960.",
+      "source_section": "Page 2",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3042,
+      "end_char": 3247
     }
   ]
 }

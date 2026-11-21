@@ -4,46 +4,44 @@
   "language": "zh",
   "policy_extraction": {
     "jurisdiction": "china",
-    "issuing_body": "国家互联网信息办公室 (Cyberspace Administration of China)",
+    "issuing_body": "Cyberspace Administration of China (CAC)",
     "document_type": "regulatory_guidance",
     "binding_strength": "regulatory_guidance",
     "publication_date": "2025-03-15",
     "effective_date": null,
+    "covered_actors": [
+      "AI-generated synthetic content service providers",
+      "Content dissemination platforms",
+      "Deep synthesis service providers",
+      "Generative AI service providers"
+    ],
     "covered_application_domains": [
       "general_purpose_models"
     ],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "content_provenance",
         "confidence": 0.95,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "明确了隐式标识的技术实现方式，通过元数据标识为安全追溯提供了可靠保障",
-            "source_section": "标识办法概述"
+            "quote": "一是\n明确了文本、图像、音频、视频等多模态的标识要求，将安全治理深入到内容模态层面；\n二是\n创新性地将传播平台纳入监管范畴，实现从生成到传播的全链条治理；\n三是\n明确了隐式标识的技术实现方式，通过元数据标识为安全追溯提供了可靠保障。",
+            "source_section": "一、衔接技术安全法规，扩展治理覆盖范畴",
+            "quote_en": "First, it clarifies labeling requirements across multiple modalities including text, image, audio, and video, extending security governance down to the content-modality level; second, it innovatively brings dissemination platforms into the scope of regulation to achieve full-chain governance from generation to dissemination; third, it specifies technical implementation methods for implicit labeling, providing reliable guarantees for security traceability through metadata labeling.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 832,
+            "end_char": 948
           },
           {
-            "quote": "明确了元数据隐式标识的字段要素，在尽量不影响元数据处理和传输的前提下，嵌入必要字段，记录生成合成内容的关键信息和关键环节",
-            "source_section": "标识标准"
-          }
-        ]
-      },
-      {
-        "label": "transparency_disclosure",
-        "confidence": 0.9,
-        "evidence": [
-          {
-            "quote": "通过清晰、透明的内容标识，用户能够清楚识别人工智能生成的内容，一方面提高了信息透明度，增强了用户的知情权和选择权",
-            "source_section": "结语"
-          }
-        ]
-      },
-      {
-        "label": "model_documentation",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "明确了文本、图像、音频、视频等多模态的标识要求，将安全治理深入到内容模态层面",
-            "source_section": "标识办法要点"
+            "quote": "一是\n《标识标准》中明确了每个模态生成合成内容显式标识的位置、样式、区域和大小的要求，同时结合各模态的特点，如针对视频模态，要求“在视频起始画面和视频播放周边的适当位置”，针对音频模态，要求“应采用语音标识或音频节奏标识”",
+            "source_section": "二、适应生成合成特性，提炼务实科学方法",
+            "quote_en": "First, the Labeling Standard clarifies the requirements for the position, style, area, and size of explicit labels for AI-generated and synthetic content in each modality, while accounting for modality-specific characteristics—for example, requiring for video 'at an appropriate location on the starting screen and around the video playback,' and for audio 'voice labeling or audio rhythm labeling shall be adopted.'",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1230,
+            "end_char": 1341
           }
         ]
       }
@@ -51,58 +49,145 @@
     "enforcement_mechanisms": [
       {
         "label": "regulatory_supervision",
-        "confidence": 0.8,
-        "evidence": [
-          {
-            "quote": "创新性地将传播平台纳入监管范畴，实现从生成到传播的全链条治理",
-            "source_section": "标识办法要点"
-          }
-        ]
-      },
-      {
-        "label": "reporting_obligation",
         "confidence": 0.7,
         "evidence": [
           {
-            "quote": "有效督促人工智能生成合成服务提供者及传播平台落实企业责任",
-            "source_section": "标识标准"
+            "quote": "二是\n创新性地将传播平台纳入监管范畴，实现从生成到传播的全链条治理",
+            "source_section": "一、衔接技术安全法规，扩展治理覆盖范畴",
+            "quote_en": "Second, it innovatively brings dissemination platforms into the scope of regulatory supervision, achieving full-chain governance from generation to dissemination",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 875,
+            "end_char": 908
+          },
+          {
+            "quote": "一方面需要管理措施及方法落实得当，有效督促人工智能生成合成服务提供者及传播平台落实企业责任",
+            "source_section": "二、适应生成合成特性，提炼务实科学方法",
+            "quote_en": "On the one hand, administrative measures and methods need to be properly implemented to effectively supervise and urge AI-generated and synthetic service providers and dissemination platforms to fulfill their corporate responsibilities",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1039,
+            "end_char": 1084
           }
         ]
       }
     ],
-    "implementation_notes": "This is an expert interpretation article published by CAC accompanying the '人工智能生成合成内容标识办法' (AI-Generated Content Labeling Measures) and companion national mandatory standard. The document itself is commentary/guidance rather than the primary regulatory instrument. It references mandatory labeling requirements for AI-generated content across modalities (text, image, audio, video) including both explicit (visible) and implicit (metadata) labeling. Binding force derives from the underlying '标识办法' which is described as a mandatory standard.",
-    "confidence": 0.82
+    "enforcement_authorities": [
+      "Cyberspace Administration of China (CAC)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This document is a non-binding expert interpretation (专家解读) authored by Zhang Zhen (Senior Engineer, CNCERT/CC) and published on the official CAC website on 2025-03-15. Rather than creating independent legal mandates, it explains the policy rationale and technical implementation of China's Measures for Labeling AI-Generated Synthetic Content (《人工智能生成合成内容标识办法》) and its companion mandatory national standard (《网络安全技术 人工智能生成合成内容标识方法》), detailing how they extend prior CAC algorithm, deep synthesis, and generative AI regulations to cover multimodal explicit labels, metadata-based implicit labels, and content dissemination platforms.",
+    "confidence": 0.85
   },
   "risk_framing": {
-    "dominant_frame": "social_stability",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "consumer_public_safety",
-      "innovation_enablement"
+      "social_stability",
+      "consumer_public_safety"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.0,
-      "social_stability": 0.55,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.25,
+      "economic_competitiveness": 0.3,
+      "fundamental_rights": 0.2,
+      "social_stability": 0.85,
+      "innovation_enablement": 0.9,
+      "consumer_public_safety": 0.65,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document frames AI governance around preventing misinformation, technical abuse, and protecting network ecosystem security—core social stability concerns. It emphasizes content labeling to maintain information order, user awareness, and traceable/trustworthy AI. Secondary frames include consumer/public safety (user rights, transparency) and innovation enablement (balancing regulation with industry development).",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.05,
+      "fundamental_rights": 0.03,
+      "social_stability": 0.35,
+      "innovation_enablement": 0.45,
+      "consumer_public_safety": 0.12,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The commentary primarily frames China's AI content-labeling measures and supporting technical standard through an innovation_enablement lens, emphasizing a shift from strict regulation to flexible, science-based guidance that respects technological laws, minimizes operational disruption, fosters a trustworthy ecosystem, and balances innovation vitality with public interests. Social_stability is a close secondary rationale, as the piece opens by citing disinformation, technology misuse, and risks to cyber-ecosystem security and stresses orderly content dissemination and social trust; innovation_enablement edges it out because the core normative sections (Sections 2 and 3) devote greater emphasis to agile, pragmatic standards and healthy industry development. Consumer_public_safety appears as a secondary frame through references to preventing public confusion or over-reliance and safeguarding users' right to know and choose, with minor nods to digital-economy growth (economic_competitiveness) and user rights (fundamental_rights).",
     "evidence_spans": [
       {
-        "quote": "人工智能技术带来的虚假信息、技术滥用风险逐渐显露，给网络生态安全带来了新的风险挑战",
-        "source_section": "Introduction"
+        "quote": "《标识办法》充分彰显了监管理念的与时俱进，从传统的严格监管转向更加灵活的引导与规范，既尊重了技术创新的内在规律，又体现对潜在风险的有效防范。",
+        "source_section": "三、体现柔性管理思路，筑牢安全应用基础",
+        "quote_en": "The Labeling Measures fully demonstrate that regulatory philosophy is keeping pace with the times, shifting from traditional strict regulation to more flexible guidance and standardization, which both respects the inherent laws of technological innovation and reflects effective prevention of potential risks.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1659,
+        "end_char": 1729
       },
       {
-        "quote": "用户能够清楚识别人工智能生成的内容，一方面提高了信息透明度，增强了用户的知情权和选择权",
-        "source_section": "Conclusion"
+        "quote": "从长远来看，标识管理为构建人工智能治理体系提供了重要抓手，指引了未来人工智能安全治理的思路，也为后续更精细化、智能化的管理奠定了基础，有助于在保护创新活力与维护公共利益之间找到平衡点。",
+        "source_section": "三、体现柔性管理思路，筑牢安全应用基础",
+        "quote_en": "In the long run, labeling management provides an important lever for building an AI governance system, guides the approach for future AI safety governance, lays a foundation for more refined and intelligent management going forward, and helps find a balance between protecting innovation vitality and safeguarding the public interest.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1959,
+        "end_char": 2051
       },
       {
-        "quote": "在保护创新活力与维护公共利益之间找到平衡点",
-        "source_section": "Conclusion"
+        "quote": "与此同时，人工智能技术带来的虚假信息、技术滥用风险逐渐显露，给网络生态安全带来了新的风险挑战，各国陆续推出或完善法案加以应对。",
+        "source_section": "专家解读｜深化生成合成内容标识治理，完善人工智能技术安全体系",
+        "quote_en": "At the same time, risks of disinformation and technology misuse brought by AI technology have gradually emerged, posing new risks and challenges to the security of the cyber ecosystem, and countries have successively introduced or improved legislation to respond.",
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 103,
+        "end_char": 166
+      },
+      {
+        "quote": "在《标识标准》的指引下，积极探索切实可行的标识实施路径，逐步构建支撑生成合成内容有序传播与安全治理的技术能力，不断丰富人工智能技术管理体系。",
+        "source_section": "二、适应生成合成特性，提炼务实科学方法",
+        "quote_en": "Under the guidance of the Labeling Standard, actively explore practical and feasible labeling implementation paths, gradually build technical capabilities that support the orderly dissemination and safety governance of generated and synthetic content, and continuously enrich the AI technology management system.",
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 1535,
+        "end_char": 1605
+      },
+      {
+        "quote": "通过清晰、透明的内容标识，用户能够清楚识别人工智能生成的内容，一方面提高了信息透明度，增强了用户的知情权和选择权，另一方面也有助于培养公众对人工智能技术的理性认知，防止因误解或过度依赖人工智能而产生的负面影响。",
+        "source_section": "三、体现柔性管理思路，筑牢安全应用基础",
+        "quote_en": "Through clear and transparent content labeling, users can clearly identify AI-generated content; on the one hand this improves information transparency and strengthens users' right to know and right to choose, and on the other hand it helps cultivate rational public understanding of AI technology and prevent negative impacts caused by misunderstanding or over-reliance on AI.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 1729,
+        "end_char": 1834
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:47:18.431656Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "a957ba1d6c2eb45fd8049db176b4945baefcff870acb3aead656de323bbabcf0",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 2298,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 9,
+      "exact_matches": 9,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

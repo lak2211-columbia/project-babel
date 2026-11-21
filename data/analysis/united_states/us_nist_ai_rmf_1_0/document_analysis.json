@@ -6,134 +6,272 @@
     "jurisdiction": "united_states",
     "issuing_body": "National Institute of Standards and Technology (NIST)",
     "document_type": "standards_guideline",
-    "binding_strength": "voluntary_commitment",
+    "binding_strength": "standards_guideline",
     "publication_date": "2023-01-26",
     "effective_date": null,
     "covered_actors": [
-      "AI developers",
-      "AI deployers",
-      "AI operators",
-      "AI evaluators",
-      "organizations acquiring AI systems",
-      "AI actors"
+      "AI actors across the AI system lifecycle (AI design, development, deployment, operation and monitoring, and TEVV teams)",
+      "Organizational management, senior leadership, and boards of directors",
+      "Procurers and third-party entities (providers, developers, vendors, and evaluators of data, algorithms, models, or systems)",
+      "Human factors professionals, domain experts, and AI impact assessors",
+      "End users, AI operators, affected individuals and communities, and the general public",
+      "External stakeholders (trade associations, standards developing organizations, advocacy groups, researchers, environmental groups, civil society organizations)"
     ],
     "covered_application_domains": [
       "general_purpose_models",
       "critical_infrastructure",
-      "healthcare",
-      "finance",
-      "law_enforcement",
-      "public_sector_use"
+      "employment",
+      "healthcare"
     ],
     "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "risk_assessment",
-        "confidence": 0.95,
+        "confidence": 0.98,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "AI risk management efforts should prioritize the minimization of potential negative impacts",
-            "source_section": "Page 19"
+            "quote": "As directed by the National Artificial Intelligence Initiative Act of 2020 (P.L. 116-283), the goal of the AI RMF is to offer a resource to the organizations designing, developing, deploying, or using AI systems to help manage the many risks of AI and promote trustworthy and responsible development and use of AI systems.",
+            "source_section": "Executive Summary",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8736,
+            "end_char": 9058
           },
           {
-            "quote": "The AI system is evaluated regularly for safety risks – as identified in the MAP function. The AI system to be deployed is demonstrated to be safe, its residual negative risk does not exceed the risk tolerance",
-            "source_section": "Page 35"
+            "quote": "GOVERN 1.3: Processes, procedures, and practices are in place to determine the needed level of risk management activities based on the organization’s risk tolerance.",
+            "source_section": "Part 2: Core and Profiles - 5.1 Govern (Table 1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 57215,
+            "end_char": 57380
           }
         ]
       },
       {
         "label": "pre_deployment_testing",
-        "confidence": 0.95,
+        "confidence": 0.96,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "AI systems should be tested before their deployment and regularly while in operation.",
-            "source_section": "Page 33"
+            "quote": "AI systems should be tested before their deployment and regularly while in operation. AI risk measurements include documenting aspects of systems’ functionality and trustworthiness.",
+            "source_section": "Part 2: Core and Profiles - 5.3 Measure",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 69941,
+            "end_char": 70122
           },
           {
-            "quote": "TEVV tasks for deployment include system validation and integration in production, with testing, and recalibration",
-            "source_section": "Page 41"
+            "quote": "MEASURE 2.6: The AI system is evaluated regularly for safety risks – as identified in the MAP function. The AI system to be deployed is demonstrated to be safe, its residual negative risk does not exceed the risk tolerance, and it can fail safely, particularly if made to operate beyond its knowledge limits.",
+            "source_section": "Part 2: Core and Profiles - 5.3 Measure (Table 3)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 74184,
+            "end_char": 74492
           }
         ]
       },
       {
-        "label": "human_oversight",
-        "confidence": 0.9,
+        "label": "red_teaming",
+        "confidence": 0.82,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "may need to include human intervention in cases where the AI system cannot detect or correct errors",
-            "source_section": "Page 19"
+            "quote": "Common security concerns relate to adversarial examples, data poisoning, and the exfiltration of models, training data, or other intellectual property through AI system endpoints.",
+            "source_section": "Part 1: Foundational Information - 3.3 Secure and Resilient",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40164,
+            "end_char": 40343
           },
           {
-            "quote": "the ability to shut down, modify, or have human intervention into systems that deviate from intended or expected functionality",
-            "source_section": "Page 20"
-          }
-        ]
-      },
-      {
-        "label": "transparency_disclosure",
-        "confidence": 0.9,
-        "evidence": [
-          {
-            "quote": "Transparency reflects the extent to which information about an AI system and its outputs is available to individuals interacting with such a system",
-            "source_section": "Page 20"
-          },
-          {
-            "quote": "Risks associated with transparency and accountability – as identified in the MAP function – are examined and documented",
-            "source_section": "Page 35"
-          }
-        ]
-      },
-      {
-        "label": "model_documentation",
-        "confidence": 0.9,
-        "evidence": [
-          {
-            "quote": "The AI model is explained, validated, and documented, and AI system output is interpreted within its context",
-            "source_section": "Page 35"
-          },
-          {
-            "quote": "Accuracy measurements should always be paired with clearly defined and realistic test sets…and details about test methodology; these should be included in associated documentation",
-            "source_section": "Page 19"
+            "quote": "MEASURE 2.7: AI system security and resilience – as identified in the MAP function – are evaluated and documented.",
+            "source_section": "Part 2: Core and Profiles - 5.3 Measure (Table 3)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 74617,
+            "end_char": 74731
           }
         ]
       },
       {
         "label": "incident_reporting",
-        "confidence": 0.85,
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Incidents and errors are communicated to relevant AI actors, including affected communities. Processes for tracking, responding to, and recovering from incidents and errors are followed and documented.",
-            "source_section": "Page 38"
+            "quote": "MANAGE 4.3: Incidents and errors are communicated to relevant AI actors, including affected communities. Processes for tracking, responding to, and recovering from incidents and errors are followed and documented.",
+            "source_section": "Part 2: Core and Profiles - 5.4 Manage (Table 4)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 81383,
+            "end_char": 81596
+          },
+          {
+            "quote": "GOVERN 4.3: Organizational practices are in place to enable AI testing, identification of incidents, and information sharing.",
+            "source_section": "Part 2: Core and Profiles - 5.1 Govern (Table 1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 60177,
+            "end_char": 60302
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Transparency reflects the extent to which information about an AI system and its outputs is available to individuals interacting with such a system – regardless of whether they are even aware that they are doing so.",
+            "source_section": "Part 1: Foundational Information - 3.4 Accountable and Transparent",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 41201,
+            "end_char": 41416
+          },
+          {
+            "quote": "Documenting residual risks will call for the system provider to fully consider the risks of deploying the AI product and will inform end users about potential negative impacts of interacting with the system.",
+            "source_section": "Part 1: Foundational Information - 1.2.3 Risk Prioritization",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24405,
+            "end_char": 24612
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.97,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "MEASURE 2.1: Test sets, metrics, and details about the tools used during TEVV are documented.",
+            "source_section": "Part 2: Core and Profiles - 5.3 Measure (Table 3)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 73255,
+            "end_char": 73348
+          },
+          {
+            "quote": "MANAGE 1.4: Negative residual risks (defined as the sum of all unmitigated risks) to both downstream acquirers of AI systems and end users are documented.",
+            "source_section": "Part 2: Core and Profiles - 5.4 Manage (Table 4)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 79353,
+            "end_char": 79507
           }
         ]
       },
       {
         "label": "third_party_audit",
-        "confidence": 0.7,
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Processes for independent review can improve the effectiveness of testing and can mitigate internal biases and potential conflicts of interest",
-            "source_section": "Page 33"
-          }
-        ]
-      },
-      {
-        "label": "content_provenance",
-        "confidence": 0.7,
-        "evidence": [
+            "quote": "MEASURE 1.3: Internal experts who did not serve as front-line developers for the system and/or independent assessors are involved in regular assessments and updates.",
+            "source_section": "Part 2: Core and Profiles - 5.3 Measure (Table 3)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 72811,
+            "end_char": 72976
+          },
           {
-            "quote": "Maintaining the provenance of training data and supporting attribution of the AI system's decisions to subsets of training data can assist with both transparency and accountability",
-            "source_section": "Page 21"
+            "quote": "Processes for independent review can improve the effectiveness of testing and can mitigate internal biases and potential conflicts of inter-est.",
+            "source_section": "Part 2: Core and Profiles - 5.3 Measure",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 70517,
+            "end_char": 70661
           }
         ]
       },
       {
         "label": "access_controls",
-        "confidence": 0.7,
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "AI systems that can maintain confidentiality, integrity, and availability through protection mechanisms that prevent unauthorized access and use may be said to be secure",
-            "source_section": "Page 20"
+            "quote": "AI systems that can maintain confidentiality, integrity, and availability through protection mechanisms that prevent unauthorized access and use may be said to be secure.",
+            "source_section": "Part 1: Foundational Information - 3.3 Secure and Resilient",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40344,
+            "end_char": 40514
+          },
+          {
+            "quote": "While resilience is the ability to return to normal function after an unexpected adverse event, security includes re-silience but also encompasses protocols to avoid, protect against, respond to, or recover from attacks.",
+            "source_section": "Part 1: Foundational Information - 3.3 Secure and Resilient",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40701,
+            "end_char": 40921
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.96,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "GOVERN 3.2: Policies and procedures are in place to define and differentiate roles and responsibilities for human-AI configurations and oversight of AI systems.",
+            "source_section": "Part 2: Core and Profiles - 5.1 Govern (Table 1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 59376,
+            "end_char": 59536
+          },
+          {
+            "quote": "MANAGE 2.4: Mechanisms are in place and applied, and responsibilities are assigned and understood, to supersede, disengage, or deactivate AI systems that demonstrate performance or outcomes inconsistent with intended use.",
+            "source_section": "Part 2: Core and Profiles - 5.4 Manage (Table 4)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 80093,
+            "end_char": 80314
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Maintaining the provenance of training data and supporting attribution of the AI system’s decisions to subsets of training data can assist with both transparency and accountability. Training data may also be subject to copyright and should follow applicable intellectual property rights laws.",
+            "source_section": "Part 1: Foundational Information - 3.4 Accountable and Transparent",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 43394,
+            "end_char": 43686
+          },
+          {
+            "quote": "MAP 2.3: Scientific integrity and TEVV considerations are identified and documented, including those related to experimental design, data collection and selection (e.g., availability, representativeness, suitability), system trustworthiness, and construct validation.",
+            "source_section": "Part 2: Core and Profiles - 5.2 Map (Table 2)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 67136,
+            "end_char": 67403
           }
         ]
       }
@@ -141,29 +279,25 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.95,
+        "confidence": 0.99,
         "evidence": [
           {
-            "quote": "AI RMF use-case profiles are implementations of the AI RMF functions, categories, and subcategories for a specific setting or application based on the requirements, risk tolerance, and resources of the Framework user",
-            "source_section": "Page 38"
+            "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector-specific, and use-case agnostic, providing flexibility to organizations of all sizes and in all sectors and throughout society to implement the approaches in the Framework.",
+            "source_section": "Executive Summary",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9059,
+            "end_char": 9304
           },
           {
-            "quote": "It is incumbent on Framework users to continue applying the MEASURE function to AI systems as knowledge, methodologies, risks, and impacts evolve over time",
-            "source_section": "Page 33"
-          }
-        ]
-      },
-      {
-        "label": "reporting_obligation",
-        "confidence": 0.75,
-        "evidence": [
-          {
-            "quote": "Processes for tracking, responding to, and recovering from incidents and errors are followed and documented",
-            "source_section": "Page 38"
-          },
-          {
-            "quote": "Post-deployment AI system monitoring plans are implemented, including mechanisms for capturing and evaluating input from users and other relevant AI actors",
-            "source_section": "Page 38"
+            "quote": "7. Be outcome-focused and non-prescriptive. The Framework should provide a catalog of outcomes and approaches rather than prescribe one-size-fits-all requirements.",
+            "source_section": "Appendix D: Attributes of the AI RMF",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 103478,
+            "end_char": 103641
           }
         ]
       }
@@ -171,48 +305,126 @@
     "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "The AI RMF is explicitly voluntary: 'Like the AI RMF, the Playbook is voluntary and organizations can utilize the suggestions according to their needs and interests.' It does not prescribe risk tolerance and is intended to be flexible and to augment existing risk practices. It provides four core functions: GOVERN, MAP, MEASURE, MANAGE. No penalties or enforcement mechanisms are established.",
-    "confidence": 0.97
+    "implementation_notes": "Final publication of NIST AI 100-1 (AI RMF 1.0, released January 26, 2023; supersedes the August 18, 2022 Second Draft). Directed by the National AI Initiative Act of 2020 (P.L. 116-283), it establishes a voluntary, rights-preserving, non-sector-specific, law- and regulation-agnostic lifecycle risk management standard structured around seven trustworthiness characteristics and four Core functions (GOVERN, MAP, MEASURE, MANAGE) with 19 categories and 72 subcategories, plus Use-Case, Temporal, and Cross-Sectoral Profiles and Appendices A–D. Planned formal community review no later than 2028.",
+    "confidence": 0.98
   },
   "risk_framing": {
-    "dominant_frame": "consumer_public_safety",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "fundamental_rights",
-      "social_stability",
-      "innovation_enablement"
+      "consumer_public_safety",
+      "fundamental_rights"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.1,
-      "national_security": 0.15,
-      "economic_competitiveness": 0.2,
-      "fundamental_rights": 0.6,
-      "social_stability": 0.55,
-      "innovation_enablement": 0.45,
-      "consumer_public_safety": 0.75,
-      "labor_transition": 0.05
+      "existential_catastrophic": 0.28,
+      "national_security": 0.25,
+      "economic_competitiveness": 0.45,
+      "fundamental_rights": 0.9,
+      "social_stability": 0.4,
+      "innovation_enablement": 0.94,
+      "consumer_public_safety": 0.92,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The AI RMF primarily frames AI governance as a matter of managing harms to individuals, communities, and society—emphasizing trustworthiness, risk management, and protection from negative impacts. The document's core reasoning centers on protecting people from AI system failures, biases, and unintended harms, aligning with consumer/public safety framing. Fundamental rights and social stability are strong secondary frames, as the document explicitly mentions civil liberties, equity, and societal impacts. Innovation enablement appears as a complementary frame since the document also stresses maximizing positive impacts and promoting beneficial AI use.",
+    "frame_share": {
+      "existential_catastrophic": 0.02,
+      "national_security": 0.02,
+      "economic_competitiveness": 0.04,
+      "fundamental_rights": 0.25,
+      "social_stability": 0.02,
+      "innovation_enablement": 0.35,
+      "consumer_public_safety": 0.3,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "NIST AI RMF 1.0 is dominantly framed around innovation_enablement, presenting a voluntary, flexible, non-prescriptive, and pro-innovation framework designed to help organizations unleash AI benefits and foster trustworthy adoption across all sectors. Innovation_enablement narrowly edges out consumer_public_safety, which is a strong runner-up centered on preventing physical injury, death, property, environmental, and operational harms across the AI lifecycle. Fundamental_rights is a major third frame explicitly anchored in a 'rights-preserving' mandate, threats to civil liberties and human rights, human autonomy and dignity in privacy, and mitigation of harmful bias and discrimination, alongside minor nods to inclusive economic growth, public trust, catastrophic risk cessation, and NSCAI recommendations.",
     "evidence_spans": [
       {
+        "quote": "Effectively managing the risk of potential harms could lead to more trustworthy AI systems and unleash potential benefits to people (individuals, communities, and society), organizations, and systems/ecosystems.",
+        "source_section": "Part 1: Foundational Information - 1.1 Understanding and Addressing Risks, Impacts, and Harms",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 14070,
+        "end_char": 14281
+      },
+      {
+        "quote": "1. Be risk-based, resource-efficient, pro-innovation, and voluntary.",
+        "source_section": "Appendix D: Attributes of the AI RMF",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 102157,
+        "end_char": 102225
+      },
+      {
+        "quote": "AI systems should “not under defined conditions, lead to a state in which human life, health, property, or the environment is endangered” (Source: ISO/IEC TS 5723:2022).",
+        "source_section": "Part 1: Foundational Information - 3.2 Safe",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 38299,
+        "end_char": 38468
+      },
+      {
+        "quote": "Safety risks that pose a potential risk of serious injury or death call for the most urgent prioritization and most thorough risk management process.",
+        "source_section": "Part 1: Foundational Information - 3.2 Safe",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 38940,
+        "end_char": 39089
+      },
+      {
         "quote": "AI risk management offers a path to minimize potential negative impacts of AI systems, such as threats to civil liberties and rights, while also providing opportunities to maximize positive impacts.",
-        "source_section": "Page 9"
+        "source_section": "Part 1: Foundational Information - 1 Framing Risk",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 12603,
+        "end_char": 12801
       },
       {
-        "quote": "Without proper controls, AI systems can amplify, perpetuate, or exacerbate inequitable or undesirable outcomes for individuals and communities.",
-        "source_section": "Page 6"
-      },
-      {
-        "quote": "In cases where an AI system presents unacceptable negative risk levels – such as where significant negative impacts are imminent, severe harms are actually occurring, or catastrophic risks are present – development and deployment should cease",
-        "source_section": "Page 13"
-      },
-      {
-        "quote": "The Framework is intended to be voluntary, rights-preserving, non-sector-specific, and use-case agnostic",
-        "source_section": "Page 7"
-      },
-      {
-        "quote": "so society can benefit from AI while also being protected from its potential harms",
-        "source_section": "Page 7"
+        "quote": "The People & Planet dimension at the center of Figure 2 represents human rights and the broader well-being of society and the planet.",
+        "source_section": "Part 1: Foundational Information - 2 Audience",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 28528,
+        "end_char": 28661
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:20:02.434593Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "c934f098986b7f5efb48eb814b01bd6ab6954f1a04a084a94b49208863c86804",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 104380,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 28,
+      "exact_matches": 28,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

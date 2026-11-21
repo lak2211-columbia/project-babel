@@ -4,60 +4,105 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "european_union",
-    "issuing_body": "European Commission / AI Office",
+    "issuing_body": "European Commission (AI Office)",
     "document_type": "voluntary_commitment",
     "binding_strength": "voluntary_commitment",
-    "publication_date": "2024-09-25",
+    "publication_date": "2026-02-26",
     "effective_date": null,
-    "covered_application_domains": [
-      "general_purpose_models",
-      "critical_infrastructure",
-      "healthcare",
-      "finance",
-      "employment"
+    "covered_actors": [
+      "AI system providers",
+      "AI system deployers",
+      "large corporations",
+      "small and medium enterprises (SMEs)",
+      "non-profit organisations",
+      "academics",
+      "civil servants"
     ],
+    "covered_application_domains": [
+      "healthcare",
+      "finance"
+    ],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "risk_assessment",
         "confidence": 0.9,
+        "obligation_strength": "recommended",
         "evidence": [
           {
             "quote": "Identifying and mapping AI systems likely to be categorised as high-risk under the AI Act",
-            "source_section": "Pillar II core actions"
+            "source_section": "Signature of the pledges",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3837,
+            "end_char": 3926
+          },
+          {
+            "quote": "Over half of these companies have pledged additional AI Pact commitments, such as human oversight, risk mitigation, and transparency in AI-generated content like deep fakes.",
+            "source_section": "Signature of the pledges",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4024,
+            "end_char": 4197
           }
         ]
       },
       {
         "label": "human_oversight",
-        "confidence": 0.8,
+        "confidence": 0.85,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Over half of these companies have pledged additional AI Pact commitments, such as human oversight, risk mitigation, and transparency in AI-generated content",
-            "source_section": "Pillar II"
+            "quote": "Over half of these companies have pledged additional AI Pact commitments, such as human oversight, risk mitigation, and transparency in AI-generated content like deep fakes.",
+            "source_section": "Signature of the pledges",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4024,
+            "end_char": 4197
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.85,
+        "confidence": 0.8,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "transparency in AI-generated content like deep fakes",
-            "source_section": "Pillar II"
+            "quote": "Specifically, companies providing or deploying AI systems can demonstrate and share their voluntary commitments towards transparency and high-risk requirements and prepare early on for their implementation.",
+            "source_section": "Pillar II: facilitating and communicating company pledges",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1743,
+            "end_char": 1949
           },
           {
-            "quote": "This initiative encourages organisations to proactively disclose the processes and practices they are implementing to anticipate compliance",
-            "source_section": "Pillar II"
+            "quote": "These are linked to obligations introduced by the AI Act concerning transparency and requirements for high-risk AI systems.",
+            "source_section": "Signature of the pledges",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4198,
+            "end_char": 4321
           }
         ]
       },
       {
-        "label": "model_documentation",
-        "confidence": 0.7,
+        "label": "content_provenance",
+        "confidence": 0.75,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Adopting an AI governance strategy to foster the uptake of AI in the organisation and work towards future compliance with the AI Act",
-            "source_section": "Pillar II core actions"
+            "quote": "Over half of these companies have pledged additional AI Pact commitments, such as human oversight, risk mitigation, and transparency in AI-generated content like deep fakes.",
+            "source_section": "Signature of the pledges",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4024,
+            "end_char": 4197
           }
         ]
       }
@@ -65,66 +110,138 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.95,
+        "confidence": 0.98,
         "evidence": [
           {
-            "quote": "These pledges are not legally binding and do not impose any legal obligations on participants",
-            "source_section": "Pillar II"
+            "quote": "These pledges are not legally binding and do not impose any legal obligations on participants.",
+            "source_section": "Signature of the pledges",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4582,
+            "end_char": 4676
           },
           {
-            "quote": "pledges which are 'declarations of engagement'",
-            "source_section": "Pillar II"
-          }
-        ]
-      },
-      {
-        "label": "reporting_obligation",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "Participating companies have been invited to publicly report on their progress at an AI Pact event on 15 December",
-            "source_section": "Pillar II"
+            "quote": "Participating\ncompanies have been invited to publicly report on their progress\nat an\nAI Pact event on 15 December\n, 12 months after the publication of their commitments.",
+            "source_section": "Signature of the pledges",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4759,
+            "end_char": 4928
           }
         ]
       }
     ],
-    "implementation_notes": "The AI Pact is a voluntary initiative preparatory to the binding EU AI Act. Pillar I is a knowledge-sharing community open to all stakeholders. Pillar II involves voluntary pledges by providers and deployers. More than 230 companies have signed pledges. Reporting on progress is invited but not legally mandated.",
-    "confidence": 0.92
+    "enforcement_authorities": [
+      "European Commission",
+      "AI Office"
+    ],
+    "compliance_deadlines": [
+      "15 December (12 months after publication of commitments): invited public progress reporting at an AI Pact event",
+      "Open for company signatures at any time until the EU AI Act fully applies"
+    ],
+    "penalties_summary": null,
+    "implementation_notes": "The EU AI Pact is a non-binding initiative promoted by the European Commission and its AI Office to help stakeholders prepare during the EU AI Act transitional period (following the AI Act's entry into force on 2024-08-01). It comprises two pillars: Pillar I (an open stakeholder network for webinars and best-practice sharing) and Pillar II (voluntary company pledges, or 'declarations of engagement', launched with first signatories on 2024-09-25 and signed by over 230 companies). Core pledges cover adopting an AI governance strategy, identifying and mapping likely high-risk AI systems, and promoting staff AI literacy; additional optional pledges cover human oversight, risk mitigation, and transparency for AI-generated content such as deepfakes. Pledges carry no legal obligations or sanctions.",
+    "confidence": 0.95
   },
   "risk_framing": {
-    "dominant_frame": "consumer_public_safety",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
       "fundamental_rights",
-      "innovation_enablement"
+      "consumer_public_safety"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.0,
+      "economic_competitiveness": 0.3,
+      "fundamental_rights": 0.55,
       "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.45,
+      "innovation_enablement": 0.92,
+      "consumer_public_safety": 0.5,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document frames AI governance primarily around ensuring trustworthy, safe AI systems and compliance with the AI Act's safety and transparency requirements. It emphasizes risk categorization, human oversight, and safeguards. Fundamental rights and innovation enablement appear as secondary frames.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.05,
+      "fundamental_rights": 0.15,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.65,
+      "consumer_public_safety": 0.15,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document's dominant frame is innovation_enablement because the AI Pact is justified primarily as a voluntary, collaborative mechanism to help organisations prepare smoothly for AI Act compliance, foster organisational AI uptake, share best practices, and build trust in trustworthy AI deployment. It edges out fundamental_rights and consumer_public_safety, which appear mainly as concise background objectives in the Big Picture section ('ensuring safety and fundamental rights') and in references to risk mitigation and deep-fake transparency rather than as the central rationale of the Pact itself. A minor nod to economic_competitiveness appears in the reference to boosting research and industrial capacity.",
     "evidence_spans": [
       {
-        "quote": "The EU's approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights.",
-        "source_section": null
+        "quote": "The Pact is allowing front-runners and ambitious participants to test and share their solutions with the wider community, while fostering the development and deployment of trustworthy AI.",
+        "source_section": "What are the benefits of the voluntary pledges for participants?",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 5544,
+        "end_char": 5731
       },
       {
-        "quote": "Promoting AI awareness and literacy among staff, ensuring ethical and responsible AI development",
-        "source_section": null
+        "quote": "Adopting an AI governance strategy to foster the uptake of AI in the organisation and work towards future compliance with the AI Act",
+        "source_section": "Signature of the pledges",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 3704,
+        "end_char": 3836
       },
       {
-        "quote": "human oversight, risk mitigation, and transparency in AI-generated content like deep fakes",
-        "source_section": null
+        "quote": "The EU’s approach to artificial intelligence promotes excellence and trust, by boosting research and industrial capacity while ensuring safety and fundamental rights.",
+        "source_section": "Big Picture",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 8743,
+        "end_char": 8909
       },
       {
-        "quote": "sharing knowledge and increasing the visibility and credibility of the safeguards put in place to demonstrate trustworthy AI",
-        "source_section": null
+        "quote": "Over half of these companies have pledged additional AI Pact commitments, such as human oversight, risk mitigation, and transparency in AI-generated content like deep fakes.",
+        "source_section": "Signature of the pledges",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 4024,
+        "end_char": 4197
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:36:14.845508Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "35de4cd4ea25807d72c5f556b6a304c1aab8d51b026acafa2626fa37f97d8e66",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 26252,
+      "output_tokens": 1900,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 7033,
+      "estimated_cost_usd": 0.122145
+    },
+    "grounding_summary": {
+      "total_quotes": 12,
+      "exact_matches": 12,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 1
+    }
   }
 }

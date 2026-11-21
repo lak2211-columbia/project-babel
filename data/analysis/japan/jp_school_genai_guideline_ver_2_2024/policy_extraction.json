@@ -1,99 +1,175 @@
 {
   "jurisdiction": "japan",
-  "issuing_body": "文部科学省初等中等教育局",
-  "document_type": "regulatory_guidance",
-  "binding_strength": "regulatory_guidance",
+  "issuing_body": "Ministry of Education, Culture, Sports, Science and Technology (MEXT) (文部科学省 初等中等教育局)",
+  "document_type": "standards_guideline",
+  "binding_strength": "standards_guideline",
   "publication_date": "2024-12-26",
   "effective_date": null,
   "covered_actors": [
-    "教職員",
-    "児童生徒",
-    "教育委員会",
-    "学校教育関係者"
+    "Elementary, junior high, and senior high school teachers, principals, and school staff (教職員・校長・教育情報セキュリティ管理者)",
+    "Boards of Education and school operators (教育委員会等)",
+    "Elementary, junior high, and senior high school students (児童生徒)",
+    "Parents and guardians (保護者)",
+    "Generative AI service providers and developers serving schools (生成AI関連事業者)",
+    "Teacher-training universities (教職課程)"
   ],
   "covered_application_domains": [
     "education",
     "general_purpose_models"
   ],
-  "prohibited_practices": [],
+  "prohibited_practices": [
+    "Teachers and school staff using personal accounts or personal devices without permission from the Education Information Security Manager to access generative AI for school duties",
+    "Entering highly sensitive school information such as student grades into generative AI prompts outside individually contracted environments with appropriate security safeguards",
+    "Using generative AI during regular examinations/quizzes or relying solely on generative AI outputs without teacher judgment to evaluate student learning or provide personal educational guidance (designated as inappropriate practices)"
+  ],
   "safety_requirements": [
     {
-      "label": "risk_assessment",
-      "confidence": 0.75,
+      "label": "human_oversight",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "リスクや懸念を踏まえつつ、最後は人間が判断し、生成AIの出力結果を踏まえた成果物に自ら責任を持つという基本姿勢が重要である",
-          "source_section": "２．基本的な考え方"
+          "quote": "生成AI の出力はあくまでも「参考の一つである」「最適解とは限らない」ことを認識するとともに、リスクや懸念を踏まえつつ、最後は人間が判断し、生成AI の出力結果を踏まえた成果物に自ら責任を持つという基本姿勢が重要である。",
+          "source_section": "Page 7 (２．基本的な考え方 — 人間中心の原則)",
+          "quote_en": "Recognizing that generative AI outputs are merely 'one reference' and 'not necessarily the optimal solution', it is important to maintain the basic stance that humans make the final judgment in light of risks and concerns and take personal responsibility for deliverables based on AI outputs.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5572,
+          "end_char": 5682
         },
         {
-          "quote": "学校現場において想定される代表的なリスクや懸念については、参考資料p.28を参照",
-          "source_section": "３．学校現場において押さえておくべきポイント"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "生成AIサービスの利用目的やその態様、リスク等の必要な情報を整理し、関係者に提供することが重要である",
-          "source_section": "⑤透明性の確保、関係者への説明責任"
-        },
-        {
-          "quote": "必要に応じて教職員や児童生徒、保護者等への説明の機会や問合せの窓口を設けることも考えられる",
-          "source_section": "⑤透明性の確保、関係者への説明責任"
+          "quote": "特定の個人ないし集団への人種、性別、国籍、年齢、政治的信念、宗教等の多様な背景を理由とした不当で有害な偏見及び差別が生じることを避けるため、生成AI の学習データや入力するプロンプト、連携する外部サービス等によってバイアスが含まれ得ることに留意し、公平性を欠くことがないよう、人間の判断を介在させる必要がある。",
+          "source_section": "Page 11 (３．学校現場において押さえておくべきポイント ④公平性の確保)",
+          "quote_en": "To avoid unfair and harmful prejudice or discrimination against specific individuals or groups based on race, gender, nationality, age, political beliefs, religion, or other backgrounds, be mindful that bias may enter via training data, prompts, or linked external services, and intervene with human judgment so fairness is not compromised.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10842,
+          "end_char": 10997
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.7,
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "私用アカウントや教育情報セキュリティ管理者の許可を得ていない私用端末を用いてはならない",
-          "source_section": "３－１（３）②情報セキュリティの確保"
+          "quote": "私用アカウントや教育情報セキュリティ管理者 19の許可を得ていない私用端末を用いてはならない。",
+          "source_section": "Page 15 (３－１．教職員が校務で利活用する場面 ①安全性を考慮した適正利用)",
+          "quote_en": "Personal accounts or personal devices without authorization from the Education Information Security Manager must not be used.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14787,
+          "end_char": 14834
         },
         {
-          "quote": "プロンプトに重要性の高い情報である成績情報等を入力してはならない",
-          "source_section": "３－１（３）②情報セキュリティの確保"
+          "quote": "個別契約等に基づき適切なセキュリティ対策が講じられた環境で生成AI を運用しているような場合を除き、プロンプトに重要性の高い情報 21である成績情報等を入力してはならない。",
+          "source_section": "Page 15 (３－１．教職員が校務で利活用する場面 ②情報セキュリティの確保)",
+          "quote_en": "Except when operating generative AI in an environment with appropriate security measures under an individual contract or similar arrangement, highly important information such as student grades must not be entered into prompts.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14974,
+          "end_char": 15060
         }
       ]
     },
     {
-      "label": "human_oversight",
-      "confidence": 0.9,
+      "label": "transparency_disclosure",
+      "confidence": 0.93,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "生成AIの出力はあくまでも参考の一つであることを認識し、教職員自らがチェックし推敲・完成させるなど、最後は自分で判断し、生成AIの出力を踏まえた成果物に自ら責任を持つという基本姿勢が重要である",
-          "source_section": "３－１（１）基本的な考え方"
+          "quote": "生成AI サービスの利用目的やその態様、リスク等の必要な情報を整理し、関係者に提供することが重要である。各地域や学校の実態を踏まえ、必要に応じて教職員や児童生徒、保護者等への説明の機会や問合せの窓口を設けることも考えられる。15",
+          "source_section": "Page 11 (３．学校現場において押さえておくべきポイント ⑤透明性の確保、関係者への説明責任)",
+          "quote_en": "It is important to organize and provide stakeholders with necessary information such as the purpose, manner, and risks of using generative AI services, and to establish briefing opportunities or inquiry desks for teachers, students, and parents as appropriate.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 11018,
+          "end_char": 11132
         },
         {
-          "quote": "ハルシネーションやバイアス等の生成AIの特徴も意識した上で、出力された内容を取り入れるかどうかは教職員が判断しなくてはならない",
-          "source_section": "④公平性の確保"
+          "quote": "また、学習課題の一部として生成AI の出力を引用する場合には、生成AI を用いたことを明記するなど、出典・引用として記載する等の対応が必要と考えられる。例えば、利用した生成AI サービスの名称、入力したプロンプト、生成AI を用いた日付を明示するなど、文献やインターネットから引用する場合と同様の引用ルールを設定することが考えられる。",
+          "source_section": "Page 20 (３－２．児童生徒が学習活動で利活用する場面 ⑤透明性の確保、関係者への説明責任)",
+          "quote_en": "When citing generative AI outputs as part of a learning assignment, it is necessary to explicitly state that generative AI was used as a source citation—for example, establishing citation rules specifying the service name, prompt entered, and date of use.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 20342,
+          "end_char": 20509
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.82,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "１人１台端末を用いて児童生徒が生成AI を利活用する場合、年齢制限をはじめとする利用するサービスの約款などの提供条件から、利活用に当たってのリスクが許容できることを校長及び担当教師が確認し、その約款・条件を遵守させること、",
+          "source_section": "Page 19 (３－２．児童生徒が学習活動で利活用する場面 ①安全性を考慮した適正利用)",
+          "quote_en": "When students use generative AI on one-to-one devices, the principal and teacher in charge must confirm from service terms such as age limits that usage risks are acceptable and ensure compliance with those terms and conditions.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19192,
+          "end_char": 19303
+        },
+        {
+          "quote": "外部サービスの利用に起因するリスクを踏まえ、保護者の経済的な負担等に十分に配慮しつつ、サービス提供者の事業変更リスク等を十分に勘案して、利用するサービスを選択することが重要である。",
+          "source_section": "Page 22 (３－３．教育委員会等が押さえておくべきポイント ⑤透明性の確保、関係者への説明責任)",
+          "quote_en": "Considering risks arising from external services, it is important to select services with due regard for parents' financial burden and careful assessment of service providers' business-change risks.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 23123,
+          "end_char": 23213
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "入力した情報を学習させないという設定（オプトアウト）が可能な生成AI サービスについては、機械学習を許容しない設定を講じた上で生成AI を利活用することや、プロンプトからは学習を行わない生成AI サービスを選択することを推奨することなどが考えられる。",
+          "source_section": "Page 19 (３－２．児童生徒が学習活動で利活用する場面 ②情報セキュリティの確保)",
+          "quote_en": "For generative AI services that allow opting out of training on input data, it is conceivable to recommend using the service with machine learning disabled or choosing services that do not train on prompts.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19561,
+          "end_char": 19686
+        },
+        {
+          "quote": "例えば、生成AI サービスに個人情報を含むプロンプトの入力を行う場合には、生成AI サービスの提供者が当該個人情報を機械学習に利用するか否か等を十分に確認すべきである。",
+          "source_section": "Page 15 (３－１．教職員が校務で利活用する場面 ③個人情報やプライバシー、著作権の保護)",
+          "quote_en": "For example, when entering prompts containing personal information into a generative AI service, teachers should thoroughly confirm whether the provider uses that personal information for machine learning.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 15192,
+          "end_char": 15276
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.6,
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "生成AIサービスの提供者が定める最新の利用規約を確認し、遵守する必要がある",
-          "source_section": "①安全性を考慮した適正利用"
+          "quote": "ブラウザや学習支援ソフトウェア、普段利用する検索エンジン等に組み込まれた生成AI サービスなど、多様なサービス形態が存在することに留意の上、フィルタリングの設定やログの収集等学校の実態に即した適切な対策を講じることが求められる。",
+          "source_section": "Page 21 (３－３．教育委員会等が押さえておくべきポイント ①安全性を考慮した適正利用)",
+          "quote_en": "Bearing in mind diverse service forms including generative AI embedded in browsers, learning software, and everyday search engines, boards of education are expected to take appropriate measures tailored to school conditions such as filtering settings and log collection.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22066,
+          "end_char": 22180
         },
         {
-          "quote": "生成に用いたプロンプトなど、生成物の生成過程を確認可能な状態にしておくこと",
-          "source_section": "Box-3"
-        }
-      ]
-    },
-    {
-      "label": "incident_reporting",
-      "confidence": 0.5,
-      "evidence": [
-        {
-          "quote": "学校現場で利活用する際に必要となる情報を教育委員会に共有するなど、教育委員会と一体となって適切な生成AIの利活用を進めるべきである",
-          "source_section": "⑤透明性の確保、関係者への説明責任"
+          "quote": "キャラクター名等の特定の固有名詞を入力するなど、既存の著作物と類似したものを意図した生成は行わず、また、 生成に用いたプロンプトなど、生成物の生成過程を確認可能な状態にしておくこと。",
+          "source_section": "Page 12 (Box-3 著作権に関する留意点)",
+          "quote_en": "Avoid intentionally generating content similar to existing copyrighted works by entering proper nouns like character names, and keep the generation process—including prompts used—in a verifiable state.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12524,
+          "end_char": 12615
         }
       ]
     }
@@ -101,38 +177,32 @@
   "enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "confidence": 0.9,
+      "confidence": 0.96,
       "evidence": [
         {
-          "quote": "本ガイドラインは…学校現場での生成AIの利活用を一律に禁止したり義務付けたりするものではない",
-          "source_section": "ガイドラインの位置付け及び構成"
+          "quote": "本ガイドラインは、教職員や教育委員会等の学校教育関係者を主たる読み手として、学校現場における生成AI の適切な利活用を実現するための参考資料となるよう、利活用に当たっての基本的な考え方や押さえるべきポイントをまとめたものであり、学校現場での生成AI の利活用を一律に禁止したり義務付けたりするものではない。",
+          "source_section": "Page 4 (ガイドラインの位置付け及び構成)",
+          "quote_en": "Intended primarily for teachers, boards of education, and school stakeholders as a reference resource for appropriate generative AI use in schools, this guideline compiles basic principles and key points and neither uniformly prohibits nor mandates generative AI use in schools.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3069,
+          "end_char": 3222
         },
         {
-          "quote": "本ガイドラインでは…現時点の知見を基に可能な限り具体的に示した",
-          "source_section": "ガイドラインの位置付け及び構成"
-        }
-      ]
-    },
-    {
-      "label": "regulatory_supervision",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "教育委員会は、学校現場の実態に即した教育情報セキュリティポリシー等の策定・必要に応じた見直しを行い、教育委員会・学校現場においてはそれらを遵守する必要がある",
-          "source_section": "②情報セキュリティの確保"
-        },
-        {
-          "quote": "学校の管理職は、生成AIについてどのような運用が行われているかを把握した上で、適切な利活用がなされているかどうかを適時確認する必要がある",
-          "source_section": "⑤透明性の確保、関係者への説明責任"
+          "quote": "域内の各学校の実態を十分に踏まえた柔軟な対応を講じることが必要であり、一律に禁止したり、義務付けたりするような硬直的な運用は望ましくない。",
+          "source_section": "Page 21 (３－３．教育委員会等が押さえておくべきポイント)",
+          "quote_en": "Flexible responses thoroughly grounded in the actual conditions of each school in the jurisdiction are necessary; rigid administration that uniformly prohibits or mandates use is undesirable.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 21614,
+          "end_char": 21683
         }
       ]
     }
   ],
-  "enforcement_authorities": [
-    "文部科学省初等中等教育局"
-  ],
+  "enforcement_authorities": [],
   "compliance_deadlines": [],
   "penalties_summary": null,
-  "implementation_notes": "This is Ver. 2.0 of the guideline, revising the provisional Ver. 1.0 published July 2023. The document explicitly states it does not uniformly prohibit or mandate use of generative AI in schools ('学校現場での生成AIの利活用を一律に禁止したり義務付けたりするものではない'). It serves as reference material for school staff and education boards. No penalties or enforcement mechanisms are specified. Future revisions are anticipated as technology evolves.",
-  "confidence": 0.92
+  "implementation_notes": "Version 2.0 of MEXT's Elementary and Secondary Education Bureau guideline on generative AI utilization in K-12 schools, issued December 26, 2024 (Reiwa 6), revising the July 2023 provisional Ver. 1.0 guideline after seven expert-panel meetings. Structured around five core governance perspectives (safety/terms compliance, information security, privacy/personal data/copyright protection, fairness/bias oversight, and transparency/accountability) tailored separately to (1) teachers in school duties, (2) students in learning activities, and (3) Boards of Education, accompanied by ready-to-use teacher and student checklists (pp. 24–25), pilot-school case studies (pp. 26–27), a risk catalog (p. 28), and training resources. Explicitly non-binding (neither uniformly banning nor mandating AI), while reiterating compliance with existing APPI, Copyright Act (including Article 35 classroom exceptions), and MEXT Education Information Security Policy Guidelines, and deferring developer/provider model-level safety duties to the METI/MIC AI Guidelines for Business and J-AISI evaluation guides.",
+  "confidence": 0.95
 }

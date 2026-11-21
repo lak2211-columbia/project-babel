@@ -1,6 +1,6 @@
 {
   "jurisdiction": "south_korea",
-  "source_count": 16,
+  "source_count": 17,
   "source_window_start": "2024-04-23",
   "source_window_end": "2026-02-27",
   "documents": [
@@ -8,7 +8,7 @@
       "document_id": "kr_ai_and_data_administration_act",
       "title": "인공지능 및 데이터 기반 행정 활성화에 관한 법률",
       "publication_date": "2026-02-27",
-      "issuing_body": "행정안전부 (Ministry of the Interior and Safety)",
+      "issuing_body": "National Assembly of the Republic of Korea",
       "document_type": "legislation",
       "binding_strength": "binding_law",
       "corpus_role": "primary_instrument",
@@ -20,7 +20,7 @@
       ],
       "top_requirements": [
         "risk_assessment",
-        "human_oversight",
+        "registration_licensing",
         "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
@@ -28,28 +28,28 @@
         "regulatory_supervision",
         "criminal_penalty"
       ],
-      "implementation_notes": "This law governs AI and data-based administration in the public sector in South Korea. It was originally enacted in 2020 as the 'Data-Based Administration Promotion Act' and significantly amended in February 2026 to incorporate AI governance provisions. Key additions in 2026 include: mandatory pre-deployment AI impact assessment on fundamental rights (Article 32, effective 2027-02-28), AI ethics guidelines for public institutions (Article 31), AI service registry (Article 30), and requirement for public institutions already using AI to conduct impact assessments within 2 years of the amendment's effective date. The document primarily addresses public sector AI use rather than general AI regulation.",
-      "framing_rationale_summary": "The law is primarily framed around enabling and activating AI and data-based public administration to achieve efficient, objective, and scientific governance. The stated purpose is to promote AI/data utilization in public institutions to improve quality of life and institutional accountability. Safety and rights considerations (bias, transparency, privacy, fundamental rights impact assessment) are secondary guardrails attached to the activation agenda rather than the primary drivers.",
-      "confidence": 0.74
+      "implementation_notes": "Act No. 21392 (promulgated 2026-02-27, effective 2026-08-28) comprehensively amends and renames the 2020 Data-Based Administration Activation Act into the AI and Data-Based Administration Activation Act under MOIS. Introduces binding public-sector AI governance pillars aligned with the AI Basic Act: agency final decision accountability (Art. 3(5)), bias and transparency duties (Art. 3(7)), Chief AI & Data Officers (Art. 19), shared government AI Common Foundation (공통기반, Art. 27), mandatory civil-servant AI training (Art. 28), training-data quality assurance (Art. 29), mandatory national public AI service catalog (Art. 30), public-sector AI ethics standards (Art. 31), and mandatory pre-deployment Public-Sector AI Impact Assessments with published results and risk-management plans (Art. 32, effective 2027-02-28, with a 2-year retrospective compliance window for legacy systems and carve-outs for national security/defense/AI Basic Act Art. 35-assessed systems).",
+      "framing_rationale_summary": "The AI and Data-Based Administration Activation Act is dominantly framed around innovation_enablement: its overarching goal is activating efficient, objective, and scientific AI- and data-based government administration through shared common AI infrastructure that prevents duplicate investment, cross-agency data integration, standardization, talent training, and best-practice diffusion. Innovation_enablement edges out fundamental_rights because the statute's center of gravity is modernizing and accelerating public-sector AI adoption, yet fundamental_rights is a strong runner-up anchored in mandatory pre-deployment fundamental-rights impact assessments (Art. 32), priority personal-data protection (Art. 3(6)), bias and transparency safeguards (Art. 3(7)), and public-agency decision accountability (Art. 3(5)). Consumer_public_safety forms a clear secondary frame through provisions on safe AI use, managing operational AI errors and risks (Art. 32(4)), data security, and proactive risk prediction for safety accidents and diseases (Art. 8(1)(3)).",
+      "confidence": 0.96
     },
     {
       "document_id": "kr_ai_basic_act",
       "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법",
       "publication_date": "2025-01-21",
-      "issuing_body": "Ministry of Science and ICT (MSIT)",
+      "issuing_body": "National Assembly of the Republic of Korea",
       "document_type": "legislation",
       "binding_strength": "binding_law",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "economic_competitiveness",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
         "fundamental_rights",
-        "innovation_enablement"
+        "economic_competitiveness",
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment",
-        "human_oversight",
+        "incident_reporting",
         "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
@@ -57,68 +57,69 @@
         "criminal_penalty",
         "regulatory_supervision"
       ],
-      "implementation_notes": "The Act was published 2025-01-21 and takes effect one year after promulgation (approx. 2026-01-22), with a separate effective date of 2026-01-24 for digital medical device provisions. The National AI Strategy Committee under the President expires after 5 years. High-impact AI and large compute-threshold AI carry the most concrete mandatory obligations; third-party certification for high-impact AI is strongly encouraged but not strictly mandatory for private operators (Article 30(3) uses 'shall endeavor'). Extraterritorial scope applies where domestic market or users are affected. National security AI is excluded.",
-      "framing_rationale_summary": "The law's stated purpose explicitly pairs protection of citizens' rights with strengthening national competitiveness ('국가경쟁력을 강화'). The bulk of the legislation establishes industrial promotion frameworks—R&D support, startup activation, AI cluster zones, workforce development, international market access, and investment—making economic competitiveness the dominant frame. Consumer/public safety and fundamental rights protection are substantive secondary frames, addressed through high-impact AI obligations, transparency requirements, and safety research. Innovation enablement is also a strong secondary frame given the extensive support mechanisms for the AI industry.",
-      "confidence": 0.735
+      "implementation_notes": "Enacted as Act No. 20676 on 2025-01-21 and consolidated with pre-enforcement amendments of 2025-10-01 and 2026-01-20 (renaming the presidential body to the National AI Strategy Committee, adding Art. 22-2 AI research institutes, Art. 10(4) AI Officer Council, and Art. 16(3)-(4) public procurement priority/indemnity). Establishes South Korea's omnibus framework combining broad industrial promotion (Arts. 13-26) with extraterritorial trust and safety rules (Arts. 27-36) covering generative AI disclosure/labeling, cumulative-compute safety assurance, high-impact AI risk/human-oversight/documentation duties, voluntary certification and impact assessments, and foreign domestic representatives. Explicitly excludes AI developed or used solely for national defense or national security (Art. 4(2)) and contains no EU-style prohibited AI deployment practices.",
+      "framing_rationale_summary": "South Korea's AI Basic Act is dominantly framed around innovation_enablement: it treats sound AI development and a light-touch foundation of trust as mutually reinforcing tools to respect operators' creativity, support R&D, SMEs, startups, testbeds, datacenters, and regulatory sandboxes, and accelerate private and public adoption across society. Innovation_enablement edges out fundamental_rights and economic_competitiveness because the bulk of the statute (Articles 13–26 and its voluntary, promotion-first governance architecture) is geared toward enabling safe AI deployment and lowering friction rather than imposing prohibitive rights-based bans, while still anchoring Article 1 and high-impact AI rules explicitly in protecting citizens' rights, human dignity, and fundamental rights (fundamental_rights). Economic_competitiveness is a nearly co-equal secondary rationale through explicit statutory goals to strengthen national competitiveness, industrial ecosystems, global talent attraction, and overseas export expansion, complemented by consumer_public_safety protections for life, bodily safety, and property against AI risks.",
+      "confidence": 0.96
     },
     {
       "document_id": "kr_ai_basic_act_enforcement_decree",
       "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 시행령",
       "publication_date": "2026-01-20",
-      "issuing_body": "Ministry of Science and ICT (MSIT)",
+      "issuing_body": "President of the Republic of Korea",
       "document_type": "legislation",
       "binding_strength": "binding_law",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "fundamental_rights",
-        "innovation_enablement",
-        "economic_competitiveness"
+        "consumer_public_safety",
+        "economic_competitiveness",
+        "national_security"
       ],
       "top_requirements": [
-        "transparency_disclosure",
-        "risk_assessment",
-        "human_oversight"
+        "compute_governance",
+        "frontier_safety_evaluation",
+        "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
         "civil_penalty",
         "regulatory_supervision",
         "reporting_obligation"
       ],
-      "implementation_notes": "This is the Enforcement Decree (시행령) implementing the AI Basic Act (인공지능 발전과 신뢰 기반 조성 등에 관한 기본법). It entered into force 2026-01-22. Key provisions define: (1) compute threshold for frontier AI safety obligations (10^26 FLOPs); (2) high-impact AI (고영향 인공지능) determination procedures; (3) transparency/disclosure obligations for high-impact and generative AI; (4) impact assessment requirements; (5) domestic representative designation thresholds for foreign operators. Defense and national intelligence AI uses are explicitly excluded from coverage (제2조). Civil penalties (과태료) apply per 별표 2, details not reproduced in main text.",
-      "framing_rationale_summary": "The decree primarily frames AI governance around protecting users and the public from harms caused by high-impact AI systems, requiring transparency disclosures, safety obligations, impact assessments focused on life/safety/fundamental rights, and trust-building measures. Fundamental rights protection is a strong secondary frame given explicit references to impacts on 기본권 (basic rights). Innovation enablement and economic competitiveness are also significant secondary frames given extensive provisions for industry promotion, data infrastructure, cluster zones, and international market support.",
-      "confidence": 0.82
+      "implementation_notes": "Promulgated as Presidential Decree No. 36053 on 2026-01-21 and effective 2026-01-22, replacing the former Decree on the National AI Strategy Committee. Operationalizes Korea's AI Basic Act with key quantitative thresholds: >= 10^26 FLOPs cumulative training compute plus state-of-the-art status and grave-risk criteria for Art. 32 safety duties (Art. 24); domestic representative thresholds of >= KRW 1T total revenue, >= KRW 10B AI service revenue, >= 1M average daily domestic users, or prior Art. 43(1)(3) fine (Art. 29); 5-year documentation retention and public posting of supervisor contact/risk/explanation/user-protection summaries (Art. 27); deployer safe harbors and sectoral equivalence (Annex 1); 7-element fundamental-rights impact assessments (Art. 28); and explicit national-defense, intelligence, and counterterrorism exclusions (Art. 2). Note: Annexes 1–2 and Form 1 are referenced by title in the retrieved law.go.kr text without embedded annex tables.",
+      "framing_rationale_summary": "Presidential Decree No. 36053 is dominantly framed around innovation_enablement: it operationalizes the AI Basic Act through proportional carve-outs (exempting internal business use and obvious AI notices, granting downstream deployer safe harbors and sectoral-law equivalence, subsidizing SME verification costs, opening public testbeds, and mandating 3-year regulatory reviews) alongside R&D, training-data, and adoption support. Innovation_enablement edges out fundamental_rights because the decree pairs narrow high-threshold obligations (10^26 FLOPs, KRW 1T/10B/1M-user triggers) with extensive compliance-burden relief and ecosystem-building provisions. Fundamental_rights and consumer_public_safety serve as strong secondary frames underpinning frontier compute risk criteria, high-impact classification, accessibility-conscious disclosures, and seven-element fundamental-rights impact assessments, while economic_competitiveness (regional cluster competitiveness, startup/job ripple effects) and national_security (detailed Art. 2 carve-outs for defense, intelligence, counterterrorism, and defense/core technology protection) play clear supporting roles.",
+      "confidence": 0.935
     },
     {
       "document_id": "kr_ai_basic_act_enforcement_decree_draft_notice_2025",
       "title": "인공지능 기본법 시행령 제정안 입법예고",
       "publication_date": "2025-11-12",
       "issuing_body": "Ministry of Science and ICT (MSIT)",
-      "document_type": "legislation",
-      "binding_strength": "binding_law",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "draft_consultation",
       "lifecycle_stage": "superseded",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "fundamental_rights",
         "consumer_public_safety",
-        "national_security",
-        "economic_competitiveness"
+        "economic_competitiveness",
+        "national_security"
       ],
       "top_requirements": [
-        "transparency_disclosure",
-        "risk_assessment",
-        "pre_deployment_testing"
+        "compute_governance",
+        "frontier_safety_evaluation",
+        "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
-        "reporting_obligation",
+        "civil_penalty",
         "regulatory_supervision",
-        "soft_enforcement"
+        "reporting_obligation"
       ],
-      "implementation_notes": "This is an enforcement decree (시행령) draft for the AI Basic Act (법률 제20676호, enacted 2025-01-21, effective 2026-01-22). Key provisions: (1) AI systems with cumulative training compute ≥10^26 FLOPs are subject to safety assurance obligations; (2) Transparency obligations apply to AI business operators but are exempted for internal business use; (3) High-impact AI operators must document risk management measures and publish key contents publicly; (4) High-impact AI impact assessments must include use behavior analysis and fundamental rights identification; (5) National security and defense AI applications are explicitly excluded from the Act's scope. Legislative notice period: 2025-11-12 to 2025-12-22.",
-      "framing_rationale_summary": "The document's stated purpose is to support the healthy development of AI and establish a trust foundation for AI society, explicitly linking this to protecting citizens' rights and dignity, improving quality of life, and strengthening national competitiveness. The bulk of the decree establishes infrastructure for AI development: R&D support, data systems, AI industrial clusters, safety research institutes, and international cooperation. While rights protection and safety obligations (high-impact AI, transparency) are significant secondary concerns, the overall framing prioritizes enabling AI innovation and industry growth as the primary governance rationale.",
-      "confidence": 0.79
+      "implementation_notes": "Un-enacted MSIT legislative notice draft (입법예고, 2025-11-12 to 2025-12-22, pre-MOLEG review) of the AI Basic Act Enforcement Decree, subsequently superseded by enacted Presidential Decree No. 36053 (2026-01-21). Distinctively includes the full text of Annex 1 (sectoral compliance equivalences under Digital Medical Products Act, Nuclear Safety Act, Autonomous Vehicles/Ships Acts, Credit Information Act, Financial Consumer Protection Act, Intelligent Informatization Act, and PIPA), Annex 2 (graduated fine table with 50% SME mitigation), and Form 1 (High-Impact AI Confirmation Request requiring base/derivative model and training-data personal-info/trade-secret declarations). Notable drafting differences later revised in the enacted decree include Draft Art. 28(1)(4) (safety-incident investigation trigger for domestic representatives), Draft Art. 31 (investigation-declination clause), and 10-staff requirement for cluster dedicated agencies (reduced to 5 in the enacted decree).",
+      "framing_rationale_summary": "The 2025 Draft Enforcement Decree Notice is dominantly framed around innovation_enablement: it emphasizes supporting sound AI development and a trust ecosystem through proportional exemptions (internal business use, obvious AI use), extensive cross-statutory compliance equivalences in Annex 1 to avoid duplicative burdens, downstream deployer safe harbors, SME certification cost subsidies, and 50% SME fine reductions in Annex 2. Innovation_enablement edges out fundamental_rights because the draft systematically minimizes compliance friction while pairing targeted obligations (10^26 FLOPs, high-impact AI) with R&D, cluster, training-data, and testbed promotion. Fundamental_rights and consumer_public_safety anchor the proposal rationale and high-impact/safety provisions (protecting citizens' rights, dignity, life, bodily safety, and vulnerable users), while economic_competitiveness (national competitiveness, regional clusters, startup/job effects) and national_security (Art. 2 defense, intelligence, counterterrorism, and core-technology exclusions) form distinct supporting frames.",
+      "confidence": 0.93
     },
     {
       "document_id": "kr_ai_impact_assessment_guideline_2026",
@@ -132,48 +133,49 @@
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "economic_competitiveness",
+        "innovation_enablement",
         "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment",
-        "pre_deployment_testing",
-        "third_party_audit"
+        "third_party_audit",
+        "model_documentation"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
         "procurement_condition",
+        "soft_enforcement",
         "regulatory_supervision"
       ],
-      "implementation_notes": "The guideline implements Article 35 of the AI Basic Act (인공지능 발전과 신뢰 기반 조성 등에 관한 기본법). The impact assessment is framed as a best-effort obligation ('노력하여야 한다') for AI business operators providing high-impact AI products/services, not a strict legal mandate. Public institutions must preferentially consider products/services that have undergone impact assessment. Voluntary self-assessment is encouraged for all AI products. Interoperability with EU FRIA (AI Act Art. 27) and UNESCO Ethical Impact Assessment frameworks is an explicit design goal. Detailed procedures are to be specified by Presidential Decree.",
-      "framing_rationale_summary": "The document's primary stated purpose is to assess AI impacts on 'basic rights' (기본권) of individuals affected by high-impact AI. The law it implements (Article 35) explicitly frames the assessment as evaluating effects on fundamental rights, human dignity, and inviolable rights. Secondary economic competitiveness framing appears in references to global interoperability, market access, and minimizing regulatory barriers for Korean firms overseas.",
-      "confidence": 0.835
+      "implementation_notes": "Official MSIT/NIA/KISDI implementation guideline under AI Basic Act Art. 35 and Draft Decree Art. 28 establishing a voluntary three-stage methodology (Pre-preparation, Main Assessment, Post-assessment) for Fundamental Rights Impact Assessments. Draws explicitly on Korean Constitutional Court jurisprudence across 11 fundamental rights (AI-general rights such as data self-determination, privacy, equality, property; product/service rights such as life, health, expression, assembly, right to know, occupational, artistic, and academic freedom) as well as EU AI Act Art. 27 FRIA, EU GPAI Code of Practice, UNESCO Ethical Impact Assessment, and ISO/IEC 42001/42005 to foster cross-border interoperability and prevent duplicative evaluations alongside PIPA PIA and MFDS Digital Medical Product Impact Assessments. Includes a standardized report template, three worked hypothetical cases (AI recruitment, deepfake face-swap, AI student grading), KISDI consulting desk contacts, and FAQ.",
+      "framing_rationale_summary": "The 2026 AI Impact Assessment Guideline is dominantly framed around fundamental_rights: it operationalizes Article 35 of the AI Basic Act as a pre-deployment constitutional rights safeguard grounded in Korean Constitutional Court precedent across personal-data self-determination, privacy, equality/non-discrimination, life, health, expression, assembly, right to know, and occupational/artistic/academic freedoms. Fundamental_rights decisively leads economic_competitiveness because the methodology's entire structure evaluates whether AI operational mechanisms constrain constitutional rights, while economic_competitiveness is a notably strong secondary frame explicitly linking voluntary impact assessments and EU FRIA/ISO interoperability to overcoming extraterritorial regulatory barriers, expanding overseas markets, raising brand value, and enhancing international competitiveness. Innovation_enablement (relieving duplicate assessment burdens through cross-recognition of domestic/international frameworks and offering KISDI consulting for SMEs/startups), consumer_public_safety (preventing fatal clinical/safety failures), and social_stability (fostering societal trust) provide supporting rationales.",
+      "confidence": 0.975
     },
     {
       "document_id": "kr_ai_privacy_risk_management_model_2024",
       "title": "인공지능(AI) 프라이버시 리스크 관리 모델",
       "publication_date": "2024-12-19",
       "issuing_body": "Personal Information Protection Commission (PIPC)",
-      "document_type": "standards_guideline",
-      "binding_strength": "standards_guideline",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
-        "innovation_enablement"
+        "innovation_enablement",
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment",
-        "pre_deployment_testing",
-        "red_teaming"
+        "training_data_governance",
+        "access_controls"
       ],
       "top_enforcement_mechanisms": [
         "soft_enforcement",
-        "regulatory_supervision"
+        "reporting_obligation"
       ],
-      "implementation_notes": "The model is non-binding guidance ('참고') developed through the AI Privacy Public-Private Policy Council. It covers the full AI lifecycle including pre-training, fine-tuning, and deployment. Future sector-specific guidance for small organizations and startups is planned. The document explicitly states entities may apply it according to their individual circumstances, and it will be updated as law, regulation, and technology evolve.",
-      "framing_rationale_summary": "The document is centered on protecting individual privacy rights in the context of AI data processing. It frames AI governance as necessary to manage risks to personal information, citing harms like unlawful data collection, profiling, surveillance, and identity inference. The core justification is protecting data subjects' rights under Korea's Personal Information Protection Act, making fundamental_rights the dominant frame. Consumer/public safety is secondary as the document also addresses practical harms from AI outputs.",
-      "confidence": 0.835
+      "implementation_notes": "Published 2024-12-19 by PIPC (developed with the Public-Private AI Privacy Policy Council), replacing PIPC's 2021 AI Privacy Self-Checklist and incorporating 2023 PIPA amendments. Establishes a 4-stage lifecycle AI privacy risk management framework (use-case classification, risk mapping, quantitative/qualitative measurement, organizational/technical mitigation) aligned with NIST AI RMF 1.0 and ISO/IEC 42001:2023, paired with CPO-led 3-Lines-of-Defense governance, value-chain role allocation across open-source and closed/API models, a 17-item self-assessment checklist (Appendix 1), and an empirical Korean LLM PET evaluation study (Appendix 2) demonstrating effectiveness and performance trade-offs across deduplication, input/output filtering, differential privacy perturbation, pruning, and machine unlearning.",
+      "framing_rationale_summary": "The model is dominantly framed around fundamental_rights, diagnosing AI's distinctive threats to informational self-determination, personality rights, and constitutional rights—including unlawful mass data collection, memorization and leakage of personal data, non-consensual deepfake abuse of biometric features, automated-decision opacity and discrimination, and mass surveillance/profiling. Fundamental_rights edges out innovation_enablement because protecting data-subject rights and PIPA legal principles anchors the risk taxonomy, mitigation catalog, and 17-item compliance checklist throughout the document. Innovation_enablement is a very close secondary frame: PIPC explicitly argues for a context-specific, proportional, risk-based, principle-based approach rather than preemptive uniform mandates so as to maximize AI's benefits, support sustainable AI development, provide safe-harbor regulatory incentives, and accommodate privacy-performance trade-offs empirically confirmed in Korean LLMs. Consumer_public_safety (deepfake sexual crimes, deceptive fraud/impersonation, cybersecurity attacks) and economic_competitiveness (AI as core digital-era competitiveness and synthetic data's economic value) appear as minor supporting rationales.",
+      "confidence": 0.96
     },
     {
       "document_id": "kr_ai_safety_guideline_2026_draft",
@@ -186,22 +188,23 @@
       "lifecycle_stage": "draft",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
+        "existential_catastrophic",
         "fundamental_rights",
-        "social_stability"
+        "innovation_enablement"
       ],
       "top_requirements": [
+        "compute_governance",
         "risk_assessment",
-        "model_documentation",
-        "incident_reporting"
+        "frontier_safety_evaluation"
       ],
       "top_enforcement_mechanisms": [
         "reporting_obligation",
         "regulatory_supervision",
         "soft_enforcement"
       ],
-      "implementation_notes": "This is a draft guideline (안) issued under Article 32 of the AI Basic Act and Article 24 of its Enforcement Decree, and the associated ministerial notice (고시 제2026-○○호). It is explicitly non-binding and does not replace or create new obligations beyond the underlying law. The document may change before final publication. It covers applicability determination, lifecycle risk management (identification, assessment, mitigation), safety incident monitoring, and reporting obligations. The compute threshold for coverage is referenced as 10^25 FLOPs. Government supervision and inspection may reference this guideline.",
-      "framing_rationale_summary": "The document is primarily framed around ensuring safety of AI systems to protect users and affected persons from harm—covering lifecycle risk management, incident monitoring, and safety measures. The repeated focus on protecting 'life, physical safety, and fundamental rights' of users and affected persons places consumer/public safety as the dominant frame, with fundamental rights as a strong secondary concern.",
-      "confidence": 0.785
+      "implementation_notes": "75-page consultation draft guideline (인공지능 안전성 확보 가이드라인(안)) operationalizing AI Basic Act Article 32, Enforcement Decree Article 24, and Draft MSIT Public Notice No. 2026-126 (2026.2.) for frontier AI systems meeting three cumulative triggers: (1) cumulative training compute >= 10^26 FLOPs, (2) state-of-the-art (SOTA) AI technology, and (3) potential for widespread and serious impact on human life, physical safety, and fundamental rights. Covers compute estimation/verification, substantial-modification liability (e.g., >=1/3 parameter retraining, systematic fine-tuning, or autonomous execution integration), 6-step lifecycle risk identification, 7-step risk evaluation by an independent multidisciplinary organization, multi-layer mitigation and emergency response plans, CAIO/CAISO-led incident response and staff training, 3-month/1-month compliance filings (with domestic representative option for offshore developers), and 24-hour/7-day/15-day three-stage safety incident reporting. Explicitly marked as a draft subject to change prior to final release.",
+      "framing_rationale_summary": "The draft guideline is dominantly framed around consumer_public_safety, anchoring its entire five-chapter statutory framework in preventing widespread harm to human life, physical safety, and public safety from operational failures, safety incidents, medical/financial/autonomous-vehicle errors, phishing, and misuse across the AI lifecycle. Consumer_public_safety edges out existential_catastrophic because the continuous statutory core across Chapters 1–5 centers on operational safety-incident management, public safety protection, and victim compensation rather than solely civilizational extinction scenarios. However, existential_catastrophic is a very strong runner-up driving the 10^26 FLOPs SOTA frontier scope and Chapter 3's systemic risk criteria—explicitly targeting irreversible society-wide harms including biological weapons/pandemic pathogen synthesis, CBRN, mass critical-infrastructure cyberattacks, and loss of human control. Fundamental_rights is a prominent third frame, directly paired with physical safety in the statutory formula ('life, physical safety, and fundamental rights') and reflected in algorithmic bias, personal-data exposure, and democratic-election risks. Innovation_enablement (methodology flexibility, excluding speculative hypotheticals, trade-secret protection), national_security (state-sponsored hacking of critical infrastructure and bio-terrorism), and social_stability (large-scale manipulation and mass disinformation) play smaller supporting roles.",
+      "confidence": 0.95
     },
     {
       "document_id": "kr_ai_transparency_guideline_2026",
@@ -214,26 +217,27 @@
       "lifecycle_stage": "active",
       "dominant_frame": "social_stability",
       "secondary_frames": [
-        "fundamental_rights",
-        "consumer_public_safety"
+        "consumer_public_safety",
+        "innovation_enablement",
+        "fundamental_rights"
       ],
       "top_requirements": [
         "transparency_disclosure",
-        "content_provenance"
+        "content_provenance",
+        "open_weight_obligations"
       ],
       "top_enforcement_mechanisms": [
-        "reporting_obligation",
         "soft_enforcement"
       ],
-      "implementation_notes": "This guideline operationalizes Article 31 of Korea's AI Basic Act (인공지능 기본법), which imposes three transparency obligations: (1) prior notification that a product/service is operated by high-impact AI or generative AI; (2) labeling that AI-generated outputs were produced by generative AI; (3) labeling of deepfake outputs. The guideline clarifies that transparency obligations fall on the entity directly providing AI products/services to end-users, not upstream model developers unless they directly serve end-users. Foreign operators affecting Korean citizens are also covered. Detailed labeling methods are provided for text, image, video, audio, and other file formats, including both human-perceptible and machine-readable approaches. Artistic/creative works are afforded flexibility in labeling methods.",
-      "framing_rationale_summary": "The document frames AI governance primarily around preventing social harms such as confusion, misinformation, deepfake abuse, digital sex crimes, and erosion of public trust. The stated purpose of transparency obligations is to prevent 'confusion and misrepresentation in information use and to enhance social trust.' Risk cases emphasize fake news affecting elections and markets, sexual exploitation, and academic fraud—all social stability concerns. Fundamental rights (especially protection from deepfake sexual abuse) and consumer/public safety are strong secondary frames.",
-      "confidence": 0.76
+      "implementation_notes": "Official MSIT/NIA implementation guideline operationalizing AI Basic Act Article 31 and Presidential Decree Article 23 transparency and synthetic-content provenance duties. Clarifies value-chain allocation (duties attach to the final user-facing AI business operator, excluding passive content creators/end-users and upstream API suppliers when downstream operators face users, while including offshore operators affecting Korean citizens and free/open-source direct provision). Distinguishes in-service UI disclosure vs. external export marking, and introduces practical rules separating 'general generated outputs' (human-perceptible OR machine-readable watermark/metadata plus at least one text/audio notice on export; copy-paste and pure editing exempt) from 'deepfake outputs' (mandatory intuitive human-perceptible marking across full synthetic video segments, defaulting to deepfake rules where operator cannot prevent realistic outputs, with relaxed non-obstructive marking for artistic/creative works). Section 5 provides non-binding comparative context on fake news, election deepfakes, digital sex crimes, plagiarism, and domestic/foreign legislation.",
+      "framing_rationale_summary": "The 2026 AI Transparency Guideline is dominantly framed around social_stability: it explicitly states that transparency mechanisms exist to prevent public confusion/misrecognition and enhance collective social trust, and devotes its primary risk-case analysis to AI fake news (e.g., market-moving synthetic Pentagon explosion imagery), electoral manipulation via deepfakes, academic/information-ecosystem degradation, and broad societal side effects. Social_stability edges out consumer_public_safety because the guideline anchors disclosure rules in information-ecosystem integrity and societal trust, though consumer_public_safety is a close runner-up grounded in protecting individual users, minors, and vulnerable groups from deceptive deepfakes, digital sex crimes, child sexual exploitation material, and fraud. Innovation_enablement (balancing technological innovation with ethical responsibility through practical UI, copy-paste, and creative-expression flexibilities) and fundamental_rights (consent, privacy/personality rights, democratic elections, and IP protection) provide supporting rationales.",
+      "confidence": 0.94
     },
     {
       "document_id": "kr_genai_medical_device_guideline_2025",
       "title": "생성형 인공지능 의료기기 허가·심사 가이드라인",
       "publication_date": "2025-01-24",
-      "issuing_body": "Ministry of Food and Drug Safety (MFDS), Medical Device Review Division",
+      "issuing_body": "Ministry of Food and Drug Safety",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
@@ -246,16 +250,16 @@
       "top_requirements": [
         "risk_assessment",
         "pre_deployment_testing",
-        "transparency_disclosure"
+        "model_documentation"
       ],
       "top_enforcement_mechanisms": [
         "licensing_requirement",
         "regulatory_supervision",
         "soft_enforcement"
       ],
-      "implementation_notes": "This guideline is explicitly non-binding ('not legally effective externally') and serves as guidance for applicants seeking approval for generative AI medical devices under the Digital Medical Products Act. It covers foundation models used within medical applications, excluding general-purpose foundation models not embedded in specific medical applications. Key focus areas include hallucination risk, inconsistency, data quality, and bias management. Post-market real-world evidence collection is recommended but not mandated.",
-      "framing_rationale_summary": "The document is a South Korean regulatory guideline for approving generative AI medical devices. Its central concern is ensuring patient safety and clinical validity of AI-generated outputs, including risks of hallucination, inconsistency, bias, and data quality failures. The governance rationale is framed primarily around protecting patients from unsafe medical AI outputs, requiring risk management processes, analytical performance validation, and clinical efficacy confirmation. Secondary framing around innovation enablement is present as the guideline aims to provide a workable approval pathway for novel GenAI medical devices. Fundamental rights appear as a minor frame through references to personal data protection.",
-      "confidence": 0.835
+      "implementation_notes": "Issued 2025-01-24 as MFDS civil-petitioner guidance (안내서-1416-01) under the Digital Medical Products Act, explicitly non-binding on its face while detailing MFDS's review expectations for pre-market manufacturing/import approval, certification, and clinical trial plan approval of generative AI medical devices. Scopes regulatory oversight to medical applications utilizing foundation models and embedded medical foundation models (excluding simple EMR summarization/dictation tools). Sets out an ISO 14971:2019 hazard taxonomy tailored to GenAI (hallucination, inconsistency, irrelevancy, lack of uncertainty/explainability, 8 data-quality hazards, 7 bias types, automation bias, continuous learning), cybersecurity threat documentation (data leakage, plugin/extension/API key flaws), mandatory clinician systematic-review precautions, analytical NLP/radiology benchmarks (BLEU, ROUGE, METEOR, BERTScore, GREEN), multi-clinician 5-point A–E and ACR RADPEER clinical validation methods, and recommended post-market RWD/RWE periodic verification.",
+      "framing_rationale_summary": "The MFDS Generative AI Medical Device Review Guideline is overwhelmingly framed around consumer_public_safety: its central rationale is guaranteeing patient safety and clinical reliability/effectiveness in medical practice against generative AI hazards including persuasive hallucinations, output inconsistency, drift, data-quality defects, clinician overconfidence, and cybersecurity threats that can cause significant patient harm. Consumer_public_safety decisively leads innovation_enablement because every technical, clinical, and labeling requirement is justified through preventing clinical error and patient injury, while innovation_enablement serves as a clear runner-up by adapting approval pathways to avoid prohibitive clinical-trial time and cost barriers for multi-indication GenAI models and improving regulatory transparency and petitioner convenience. Fundamental_rights plays a focused secondary role through explicit concern over demographic/socioeconomic bias in clinical datasets and patient personal medical-data privacy.",
+      "confidence": 0.975
     },
     {
       "document_id": "kr_genai_personal_data_guide_2025",
@@ -268,22 +272,51 @@
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
-        "innovation_enablement"
+        "innovation_enablement",
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment",
-        "pre_deployment_testing",
-        "red_teaming"
+        "training_data_governance",
+        "pre_deployment_testing"
       ],
       "top_enforcement_mechanisms": [
-        "civil_penalty",
+        "soft_enforcement",
         "regulatory_supervision",
-        "soft_enforcement"
+        "reporting_obligation"
       ],
-      "implementation_notes": "This guidance was issued by the Korean Personal Information Protection Commission (PIPC) in August 2025 specifically for generative AI lifecycle personal data processing. It is regulatory guidance rather than binding law, but references mandatory provisions of the Personal Information Protection Act (PIPA). Public sector entities face mandatory PIA requirements; private sector compliance is strongly recommended but voluntary for some measures. The document covers the full AI lifecycle (purpose setting, strategy, training/development, deployment/management, governance) and distinguishes obligations between model developers and model users. It references sandbox and pre-review mechanisms that can substitute for certain consent requirements under enhanced safety conditions. Enforcement actions cited include corrective orders, fines, and supervisory investigations by PIPC. Review cycle is every 3 years from August 2025.",
-      "framing_rationale_summary": "The document is issued by South Korea's Personal Information Protection Commission and is explicitly grounded in personal data protection law, framing the governance of generative AI primarily as a matter of protecting individual rights (자유와 권리 보호, 존엄과 가치 구현). The stated purpose is to ensure lawful personal data processing, protect data subjects' rights (access, correction, deletion, objection to automated decisions), and reduce legal uncertainty—all anchored in fundamental rights principles. Secondary framings include consumer/public safety (technical safeguards, red-teaming, AUP) and innovation enablement (regulatory sandbox, pre-compliance reviews to support AI development).",
-      "confidence": 0.82
+      "implementation_notes": "Comprehensive August 2025 PIPC lifecycle privacy guide for generative AI (supported by KISA), synthesizing PIPC's 2024–2025 guidance suite, proactive inspections (major LLMs, AI applications, DeepSeek, AI Digital Textbooks), regulatory sandboxes, and prior adequacy review decisions. Structures compliance across four lifecycle stages—Purpose Setting (lawful bases for public vs. user data including PIPA Art. 15(3) opt-out criteria), Strategy Formulation (PbD, PIA, and distinct governance for LLM-as-a-Service Enterprise API/DPA/cross-border transfers, Off-the-Shelf open-weight LLMs, and Self-Developed LLMs/SLMs), AI Training & Development (data/model/system layers covering scraping opt-outs, PETs, SFT/RLHF/DPO/GRPO, API access controls, RAG, and multi-agent/memory-agent risks), and System Deployment & Management (pre-deployment testing, AUPs, reporting channels, Art. 37-2 automated-decision rights, transparent opt-outs)—anchored by CPO/CAIO/CISO cross-functional governance and periodic OWASP-aligned red-teaming.",
+      "framing_rationale_summary": "The guide is dominantly framed around fundamental_rights, anchoring generative AI lifecycle governance in PIPA's core mission of protecting individual freedom, rights, human dignity, and worth (PIPA Art. 1), preventing unauthorized scraping, student surveillance, opaque profiling by memory/multi-agent systems, and model memorization leaks, while enforcing meaningful opt-out, deletion, and automated-decision refusal/explanation rights. Fundamental_rights edges out innovation_enablement because lawful personal-data protection and data-subject rights form the binding normative floor across all four lifecycle stages. Innovation_enablement is a very strong secondary frame: PIPC explicitly publishes the guide to resolve on-the-ground legal uncertainty, support safe personal-data use for emerging AI technologies and services through sandboxes and sanction-exempting prior adequacy reviews, increase predictability and voluntary compliance capacity, and balance generative AI's innovation potential with privacy safeguards. Consumer_public_safety appears as a minor supporting rationale concerning citizen harms from financial/identity-theft misuse of leaked IDs or account numbers, voice-phishing prevention, and adversarial/cybersecurity attacks.",
+      "confidence": 0.96
+    },
+    {
+      "document_id": "kr_high_impact_ai_determination_guideline_2026",
+      "title": "고영향 인공지능 판단 가이드라인 (High-Impact AI Determination Guideline)",
+      "publication_date": "2026-01-22",
+      "issuing_body": "Ministry of Science and ICT (MSIT)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "fundamental_rights",
+        "innovation_enablement",
+        "economic_competitiveness"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "human_oversight",
+        "transparency_disclosure"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement",
+        "regulatory_supervision",
+        "civil_penalty"
+      ],
+      "implementation_notes": "216-page authoritative MSIT / AI Basic Act Support Desk implementation guideline (effective 2026-01-22) operationalizing High-Impact AI classification under AI Basic Act Article 2(4) and Article 33. Defines actor boundaries (developer vs. user-operator vs. end user, enterprise free open-source coverage vs. individual hobbyist exemption), sets a two-stage test (statutory domain + serious impact/risk to life, physical safety, or fundamental rights), and provides granular sector-by-sector criteria, scoring rubrics (e.g., >=8 pts in law-enforcement biometrics, >=4 pts in lending, Class 3–4 digital medical devices, Nuclear Safety Grades 1–3, Level 4+ autonomous vehicles/ships, aviation Severity >=C & Likelihood >=High, rail fatality/50M KRW damage), HITL safe-harbor distinctions, and positive/negative case studies across all 13 technical sub-domains (energy, drinking water, healthcare/medical devices, nuclear, law-enforcement biometrics, recruitment, lending, road/maritime/aviation/rail transport, public services, K-12 education). Includes Expert Committee operating rules, official MSIT confirmation/re-confirmation request forms, full annexed text of Act No. 20676 and its Draft Enforcement Decree (with Annex 1 cross-statute compliance equivalence table and Annex 2 fine schedule), and a comprehensive FAQ contrasting Korea's neutral 'High-Impact' phased approach with the EU AI Act.",
+      "framing_rationale_summary": "The guideline is dominantly framed around consumer_public_safety, anchoring its statutory two-stage classification and eight of its thirteen technical domain chapters (energy, drinking water, healthcare/medical devices, nuclear facilities, and road/maritime/aviation/rail transport) in preventing fatalities, physical injury, health hazards, radiation accidents, and critical-infrastructure malfunctions. Consumer_public_safety narrowly edges out fundamental_rights because life and bodily safety lead the statutory risk formula and drive the majority of the quantitative severity/fatality criteria and engineering safe harbors across the 216-page text. Fundamental_rights is an exceptionally close runner-up, governing the remaining five chapters (law-enforcement biometrics, recruitment, lending, public-service eligibility/fees, and K-12 student evaluation) and explicitly invoking human dignity, equality/anti-discrimination, privacy, labor/occupation rights, property rights, social welfare rights, and the right to education. Innovation_enablement is a major third frame: MSIT emphasizes context-based flexible self-regulation, deliberate adoption of the neutral term 'High-Impact' over the EU's 'High-Risk' to encourage beneficial AI use, business predictability via 30-day administrative confirmation, cross-statute equivalence to avoid duplicate burdens, and regulatory sandboxes. Economic_competitiveness serves as a distinct fourth rationale anchored in the AI Basic Act's purpose clause promoting national competitiveness, productivity, AI industry promotion, and SME/startup support.",
+      "confidence": 0.96
     },
     {
       "document_id": "kr_high_impact_ai_operator_obligations_guideline_2026",
@@ -294,10 +327,11 @@
       "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "fundamental_rights",
+      "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
-        "consumer_public_safety",
-        "innovation_enablement"
+        "fundamental_rights",
+        "innovation_enablement",
+        "economic_competitiveness"
       ],
       "top_requirements": [
         "risk_assessment",
@@ -305,13 +339,12 @@
         "human_oversight"
       ],
       "top_enforcement_mechanisms": [
-        "reporting_obligation",
         "soft_enforcement",
         "regulatory_supervision"
       ],
-      "implementation_notes": "The guideline explicitly states it has no legal binding force ('가이드라인 자체는 법적 구속력은 없으나 법상 의무 이행을 지원하기 위한 목적으로 제작') but supports compliance with the legally binding obligations of Article 34 of the AI Basic Act (인공지능 기본법). Obligations under Article 34 include: (1) risk management plan establishment and operation; (2) explainability plan for AI outputs, key criteria, and training data; (3) user protection plan; (4) human oversight of high-impact AI; (5) documentation and retention of safety/reliability measures. High-impact AI domains are enumerated in the AI Basic Act and include energy supply, water treatment, healthcare, medical devices, nuclear facility management, biometric data for criminal investigation, hiring and loan review, transportation, public services decision-making, and student assessment in early/primary/secondary education.",
-      "framing_rationale_summary": "The document's stated rationale centers on protecting citizens' safety and fundamental rights (기본권) from high-impact AI systems. The background section explicitly states the law aims to provide 'legal basis for protecting citizens' safety and fundamental rights alongside AI development.' Operator obligations are framed around human oversight, explainability, user protection, and risk management—all justified by the potential for high-impact AI to significantly affect life, physical safety, and fundamental rights.",
-      "confidence": 0.82
+      "implementation_notes": "111-page official MSIT/NIA implementation guideline (2026-01-22) operationalizing High-Impact AI operator obligations under AI Basic Act Article 34, Enforcement Decree Article 27, and MSIT's Technical Notice across 10 statutory high-impact domains (energy, drinking water, healthcare/medical devices, nuclear facilities, law-enforcement biometrics, recruitment/loans, transportation, public-service decisions, and K-12 student assessment) plus GPAI models integrated into high-impact systems. Synthesizes TTA Trustworthy AI Development Guide, NIST AI RMF, and EU AI Act across five statutory duties—(1) lifecycle risk management & governance, (2) explainability & training-data overview disclosure, (3) user protection (data governance, adversarial robustness, testing, monitoring, feedback, redress/compensation), (4) human oversight (intervention triggers, emergency stop, inspections, training), and (5) 5-year Safety & Trustworthiness Document retention—with dedicated open-source model guidance in every chapter, trade-secret carve-outs, equivalence-statement flexibility, a blank document template, a 69-item TTA crosswalk, and a complete AI recruitment example.",
+      "framing_rationale_summary": "The guideline is dominantly framed around consumer_public_safety, centering all five statutory duties on protecting human life, physical safety, and property against accidents, operational malfunctions, medical misdiagnoses, critical-infrastructure failures, and adversarial attacks through risk mitigation, safety modes, emergency stops, and victim compensation. Consumer_public_safety edges out fundamental_rights because safety assurance and accident prevention—explicitly contrasted with data-only privacy laws as protecting users' life, body, and property across nuclear, water, energy, transport, and medical systems—drive the document's operational controls and human-oversight architecture. Fundamental_rights is a very close runner-up, co-anchored in the statutory threshold ('life, physical safety, and fundamental rights') and pervading explainability, anti-discrimination/recruitment fairness, user objection/review rights, and personal-data protection. Innovation_enablement is a major third frame emphasizing voluntary flexibility, avoiding duplicate regulation via developer-to-user compliance inheritance and equivalence statements, trade-secret exclusions, and enabling legal-burden-free experimentation. Economic_competitiveness plays a clear supporting role in preparing domestic AI operators for global regulatory regimes (such as the EU AI Act) and strengthening international competitiveness.",
+      "confidence": 0.955
     },
     {
       "document_id": "kr_public_personal_data_ai_guide_2024",
@@ -324,48 +357,46 @@
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
-        "innovation_enablement"
+        "innovation_enablement",
+        "consumer_public_safety"
       ],
       "top_requirements": [
+        "training_data_governance",
         "risk_assessment",
-        "pre_deployment_testing",
         "red_teaming"
       ],
       "top_enforcement_mechanisms": [
         "soft_enforcement",
         "regulatory_supervision"
       ],
-      "implementation_notes": "The document explicitly states it has no legal binding force ('법적 구속력이 없음') and presents legal interpretation standards as reference guidance. It applies to overseas AI actors targeting Korean data subjects. The guide covers the full AI lifecycle (training and service stages) and is subject to periodic revision as AI law, technology, and market conditions evolve. The PIPC plans to conduct periodic pre-emptive inspections and prior adequacy reviews, and to revise the Personal Information Protection Act to align with the AI era.",
-      "framing_rationale_summary": "The document is primarily framed around protecting the fundamental right of informational self-determination (개인정보자기결정권) of data subjects whose publicly available personal information is used in AI training. The governance rationale centers on ensuring data subjects retain rights to access, correction, deletion, and processing suspension even when their data is publicly scraped. Secondary framings include consumer/public safety (preventing leakage and exposure of personal data through AI outputs) and innovation enablement (providing legal clarity to allow AI development within privacy law).",
-      "confidence": 0.835
+      "implementation_notes": "Primary PIPC regulatory interpretation guide (July 2024) clarifying how PIPA Article 15(1)(6) ('legitimate interest') applies to processing publicly available personal information (notably web-scraped datasets) for AI training and services, while distinguishing 1:1 user prompt/account data (where consent/contract are generally more appropriate). Sets out a flexible, risk-proportionate 'optimal combination of safeguards' across technical measures (source verification, deduplication/de-identification/PETs, secure storage under PIPA Art. 29, RLHF/SFT fine-tuning, prompt/output filtering, machine unlearning) and organizational measures (public processing criteria, voluntary PIA with 30% fine-reduction safe harbor, AI Privacy Red Team, open-source/API lifecycle controls, CPO-led AI privacy unit, and data-subject redress). Applies extraterritorially to overseas AI developers targeting or affecting Korean data subjects.",
+      "framing_rationale_summary": "The guide is dominantly framed around fundamental_rights, grounding every interpretation of PIPA in the constitutional right to informational self-determination, human dignity (Constitution Art. 10), and privacy of private life (Art. 17), while focusing on mitigating 'invisible processing' risks of web scraping, preventing discriminatory bias or unauthorized profiling, and safeguarding data subjects' access, deletion, and suspension rights. Fundamental_rights edges out innovation_enablement because protecting data-subject rights forms the legal threshold test that legitimate interests must demonstrably outweigh. Innovation_enablement is a major secondary frame: PIPC explicitly seeks to resolve legal uncertainty for AI developers needing massive public datasets (including Korean linguistic and cultural representation), encourages an optimal, flexible combination of safeguards balancing AI performance with safety rather than rigid mandates, and highlights open-source AI's role in fostering SME innovation. Consumer_public_safety plays a minor supporting role regarding financial harms from exposed banking/card data, phishing/smishing misuse, and harmful outputs.",
+      "confidence": 0.955
     },
     {
       "document_id": "kr_public_sector_ai_privacy_pia_items_2025",
       "title": "개인정보 영향평가 인공지능 분야 평가항목(안)",
       "publication_date": "2025-09-04",
       "issuing_body": "Personal Information Protection Commission (PIPC)",
-      "document_type": "standards_guideline",
+      "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
-        "social_stability"
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment",
-        "access_controls",
-        "model_documentation"
+        "training_data_governance",
+        "access_controls"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This document is a draft (안) checklist of AI-specific evaluation items for Privacy Impact Assessments (PIA) under South Korean personal information protection law. Items cover: lawful basis for collecting personal data for AI training; safeguards for publicly collected data; third-party transfer and entrustment requirements; cross-border transfer requirements; retention and destruction of training data; security measures against AI vulnerability attacks; role/responsibility definition across the AI supply chain; transparency via privacy policies; acceptable use policy publication for generative AI; and data subject rights mechanisms including deletion of AI-generated facial/voice outputs.",
-      "framing_rationale_summary": "The document is a privacy impact assessment checklist for AI systems under South Korean data protection law. Its governance rationale centers on protecting individual data subjects' rights—consent, lawful basis, data minimization, deletion, and the right to remove AI-generated outputs of one's face or voice. This is quintessentially a fundamental-rights framing. Secondary consumer/public safety concerns appear in items addressing AI vulnerability attacks and inappropriate AI outputs.",
-      "confidence": 0.835
+      "implementation_notes": "One-page attachment accompanying PIPC's 2025-09-04 press release, detailing 10 proposed Privacy Impact Assessment guide checklist items (5.7.1–5.7.10) split across 'AI System Training and Development' (lawful collection, exclusion of sensitive/unique-ID/children-under-14/unlawful data from public datasets, third-party and cross-border transfer compliance for training data and prompts, retention/destruction, AI vulnerability attack mitigation) and 'AI System Operation and Management' (role/liability allocation across open-source/API lifecycles, transparent privacy-policy disclosure, generative AI AUP publication, and reporting/deletion redress for inappropriate outputs, personal data exposure, or unintended generated faces/voices). Obligation strength is coded as recommended because the attachment presents draft guide evaluation questions ('안내서', '안') rather than standalone statutory text.",
+      "framing_rationale_summary": "The checklist is overwhelmingly framed around fundamental_rights, grounding every evaluation item in lawful personal-data processing, shielding sensitive data and children's personal information, enforcing retention/deletion limits, ensuring understandable privacy disclosures, and guaranteeing data-subject redress rights over unintended synthetic depictions of faces or voices. Consumer_public_safety appears as a minor secondary frame through operational safeguards against AI vulnerability attacks, inappropriate generative AI outputs, and foreseeable misuse via Acceptable Use Policies.",
+      "confidence": 0.94
     },
     {
       "document_id": "kr_public_sector_ai_privacy_strengthening_2025",
@@ -373,343 +404,477 @@
       "publication_date": "2025-09-04",
       "issuing_body": "Personal Information Protection Commission (PIPC)",
       "document_type": "regulatory_guidance",
-      "binding_strength": "binding_law",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
-        "social_stability"
+        "innovation_enablement"
       ],
       "top_requirements": [
         "risk_assessment",
-        "model_documentation",
+        "training_data_governance",
         "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This regulatory guidance amends the 'Notification on Personal Information Impact Assessment' to add AI-specific evaluation domains for public sector entities. The assessment criteria are mandatory for public sector organizations above specified thresholds, but the document notes the criteria can also serve as voluntary reference for private sector entities. The two new evaluation domains cover AI system training/development and AI system operation/management. No explicit civil or criminal penalties are mentioned in this press release; enforcement is primarily through mandatory impact assessment obligations.",
-      "framing_rationale_summary": "The document centers on protecting personal information rights of data subjects when public institutions deploy AI. The governance justification is framed around preventing privacy violations, ensuring legal bases for data processing, and protecting sensitive groups such as children—core fundamental rights concerns under Korea's Personal Information Protection Act.",
-      "confidence": 0.85
+      "implementation_notes": "Official PIPC press release (published 2025-09-04) announcing the 2025-09-03 plenary adoption and 2025-09-05 entry into force of the amended Public Notice on Privacy Impact Assessment and accompanying PIA Implementation Guide. While public institutions exceeding statutory personal-data file thresholds (50,000+ sensitive/unique IDs, 500,000+ linked records, or 1,000,000+ personal records) face mandatory PIAs under the Notice, this press release itself is regulatory guidance/companion communication rather than binding law, and explicitly frames the criteria as voluntary reference material for private enterprises.",
+      "framing_rationale_summary": "The release is dominantly framed around fundamental_rights, emphasizing strengthening personal data protection, preventing privacy infringement incidents, shielding sensitive and children's personal information, and guaranteeing data-subject rights when public institutions deploy AI. Innovation_enablement serves as a clear secondary frame because PIPC justifies introducing explicit criteria and practical case-based guidance to eliminate uncertainty for public agencies that previously had to invent ad-hoc assessment criteria and to provide a practical reference supporting preventive privacy frameworks across both public and private AI adoption.",
+      "confidence": 0.945
     },
     {
       "document_id": "kr_public_sector_hyperscale_ai_guideline_2024",
       "title": "공공부문 초거대 AI 도입‧활용 가이드라인",
       "publication_date": "2024-04-23",
-      "issuing_body": "National Information Society Agency (NIA), Republic of Korea",
+      "issuing_body": "Presidential Committee on the Digital Platform Government / National Information Society Agency",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "corpus_role": "historical_baseline",
       "lifecycle_stage": "superseded",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
-        "national_security"
+        "economic_competitiveness",
+        "fundamental_rights",
+        "consumer_public_safety"
       ],
       "top_requirements": [
-        "risk_assessment",
         "access_controls",
-        "human_oversight"
+        "training_data_governance",
+        "risk_assessment"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
+        "procurement_condition",
         "soft_enforcement"
       ],
-      "implementation_notes": "This is a non-binding guideline for public sector adoption of hyperscale AI (초거대 AI / LLM). It provides procedural guidance on data security classification, cloud service configuration, learning methods, service introduction approaches, SLO, and maintenance. It references CSAP certification requirements under the Cloud Computing Act. No explicit prohibited practices or penalties are stated. Publication date is estimated as March 2024 based on internal references to market data as of March 2024.",
-      "framing_rationale_summary": "The document is primarily framed around enabling public sector adoption of hyperscale AI to improve government service quality, administrative efficiency, and digital platform government goals. The stated purpose is to guide public agencies in introducing AI to streamline work, enhance citizen services, and foster AI innovation ecosystems. Safety and security considerations (data security grades, cloud security certification) appear as prerequisites for adoption rather than the primary justification. Economic competitiveness is secondary, evidenced by references to strengthening Korea's hyperscale AI competitiveness. Consumer/public safety appears as a guardrail concern.",
-      "confidence": 0.76
+      "implementation_notes": "First edition (April 2024) of South Korea's public-sector hyperscale AI adoption guideline issued jointly by the Presidential Committee on the Digital Platform Government and NIA, subsequently superseded by Version 2.0 (April 2025). Covers domestic LLM landscape (Kakao, KT, LG, Naver, SKT), six public-service use-case categories, five Digital Platform Government adoption principles (private cloud first, agile workflow redesign, cross-ministry integration, national security & citizens' rights, MSIT 2020 AI Ethics Principles), step-by-step cloud/model/training-method selection (foundation, fine-tuning, post-training, RAG), Digital Service Specialized Contract procurement vs. competitive tenders, a 17-item vendor Service Level Objective (SLO) catalog, a four-unit internal governance model (planning, AI tech, AI ethics, infosec), a 6-part adoption checklist, and 10 2023 public-sector PoC pilots. Notably leaves Section 3.2.1 (Data Security Classification) as a placeholder pending inter-agency government network security policy finalization (later filled in Version 2.0 with C/S/O tiers).",
+      "framing_rationale_summary": "The 2024 Public-Sector Hyperscale AI Guideline is overwhelmingly framed around innovation_enablement: grounded in the Digital Platform Government initiative, it promotes rapid, agile public-sector adoption of commercial private-cloud hyperscale AI, streamlined Digital Service purchasing, cross-ministry data/resource sharing, and administrative workflow automation to eliminate citizen inconvenience and solve social problems. Innovation_enablement strongly outpaces economic_competitiveness because the text centers on modernizing government service delivery and operational adoption mechanics, while economic_competitiveness is the clearest secondary frame via explicit goals to foster the domestic AI industry ecosystem, give Korean enterprises growth opportunities, and advance Korea's hyperscale AI competitiveness plan. Fundamental_rights (privacy, copyright, AI ethics, non-bias), consumer_public_safety (mitigating hallucination/error and supporting rail/disaster safety), and national_security (preventing external leakage of classified/sensitive government data) serve as key operational guardrails.",
+      "confidence": 0.97
     },
     {
       "document_id": "kr_public_sector_hyperscale_ai_guideline_2_0",
       "title": "공공부문 초거대 AI 도입·활용 가이드라인 2.0",
       "publication_date": "2025-04-16",
-      "issuing_body": "디지털플랫폼정부위원회 (Digital Platform Government Committee) / 한국지능정보사회진흥원 (NIA)",
+      "issuing_body": "Presidential Committee on the Digital Platform Government / National Information Society Agency",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
+        "national_security",
+        "economic_competitiveness",
         "fundamental_rights",
-        "national_security"
+        "consumer_public_safety"
       ],
       "top_requirements": [
-        "risk_assessment",
         "access_controls",
-        "transparency_disclosure"
+        "training_data_governance",
+        "risk_assessment"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
+        "procurement_condition",
         "regulatory_supervision",
-        "procurement_condition"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a non-binding regulatory guidance document (version 2.0, revised April 2025) issued jointly by the Digital Platform Government Committee and NIA for the South Korean public sector. It covers hyperscale/generative AI (초거대 AI/LLM) adoption across central ministries, local governments, and public institutions. Key obligations are framed as principles and checklists rather than legally enforceable mandates. Data security classification (C/S/O) and CSAP cloud certification requirements reference existing binding law (클라우드컴퓨팅법, 정보공개법, N2SF). AI ethics compliance references the MSIT AI Ethics Guidelines (2020). The document does not specify civil or criminal penalties; enforcement relies on existing procurement and cloud security regulatory frameworks. Performance management framework (Part 4) provides KPI pools for AI project lifecycle evaluation.",
-      "framing_rationale_summary": "The document is primarily framed around enabling public sector adoption of hyperscale AI to modernize government services, improve administrative efficiency, and solve social problems. The dominant rationale throughout is operational enablement: providing procedures, frameworks, and guidelines to help public agencies successfully introduce and use AI technology. Safety and rights protections (data security, AI ethics, personal information) appear as secondary compliance requirements within an overarching innovation-enablement narrative, not as the primary driver. National security concerns appear narrowly in data classification and network security contexts.",
-      "confidence": 0.7
+      "implementation_notes": "Major Version 2.0 revision (April 2025) superseding the April 2024 guideline, issued by the Presidential Committee on the Digital Platform Government and NIA. Substantially expands operational governance over Version 1.0 by: (1) adding the Pan-Government Hyperscale AI Common Foundation priority policy and Public AI 3 Strategic Goals (targeting 95% public AI adoption by 2030); (2) completing Section 3.2.1 with the NIS National Network Security Framework (N2SF) Classified/Sensitive/Open (C/S/O) tiering, terminal authorization, account segregation, MFA, outbound content/URL filtering, and NIS security review; (3) adding RAG as a 4th architectural pathway with vector-DB governance; (4) incorporating the May 2024 OECD AI Principles alongside MSIT's 2020 AI Ethics Principles; (5) introducing Part 4's lifecycle AI Performance Management Framework and 344-metric KPI pool (covering ethics compliance, security vulnerability remediation, test coverage, explainability, human intervention, and appeal rates); and (6) cataloging 110 domestic public AI pilots and 1,802 international public AI cases while noting DeepSeek/open-source, multimodal, and agentic AI trends (without imposing dedicated open-weight or agentic autonomy mandates).",
+      "framing_rationale_summary": "Version 2.0 of the Public-Sector Hyperscale AI Guideline remains dominantly framed around innovation_enablement: it operationalizes Korea's push toward 95% public-sector AI adoption by 2030 via three strategic goals (citizen service innovation, social problem-solving, administrative efficiency), a shared Pan-Government Hyperscale AI Common Foundation to eliminate silos and duplicate investments, RAG/multi-cloud adoption pathways, fast-track Digital Service procurement, and a 344-indicator lifecycle performance framework. Innovation_enablement decisively leads secondary frames, yet Version 2.0 markedly elevates national_security compared to Version 1.0 by integrating NIS's National Network Security Framework (N2SF) C/S/O classification for defense/diplomatic/intelligence secrets, cyber-exfiltration threat controls, and NIS security reviews. Economic_competitiveness (global AI supremacy competition post-DeepSeek, international benchmarking, domestic AI ecosystem/GovTech growth), fundamental_rights (citizens' rights, privacy, copyright, 2024 OECD AI Principles on human rights/explainability/recourse, accessibility), and consumer_public_safety (24-hour citizen safety, disaster/crowd/emergency protection, mitigating hallucinations and malicious outputs) form balanced supporting rationales.",
+      "confidence": 0.975
     }
   ],
   "aggregates": {
     "document_types": [
       {
         "label": "regulatory_guidance",
-        "count": 10,
-        "share": 0.625
+        "count": 14,
+        "share": 0.824
       },
       {
         "label": "legislation",
-        "count": 4,
-        "share": 0.25
-      },
-      {
-        "label": "standards_guideline",
-        "count": 2,
-        "share": 0.125
+        "count": 3,
+        "share": 0.176
       }
     ],
     "binding_strengths": [
       {
         "label": "regulatory_guidance",
-        "count": 10,
-        "share": 0.625
+        "count": 14,
+        "share": 0.824
       },
       {
         "label": "binding_law",
-        "count": 5,
-        "share": 0.312
-      },
-      {
-        "label": "standards_guideline",
-        "count": 1,
-        "share": 0.062
+        "count": 3,
+        "share": 0.176
       }
     ],
     "requirements": [
       {
+        "label": "risk_assessment",
+        "count": 16,
+        "share": 0.941
+      },
+      {
+        "label": "training_data_governance",
+        "count": 16,
+        "share": 0.941
+      },
+      {
         "label": "transparency_disclosure",
         "count": 16,
-        "share": 1.0
-      },
-      {
-        "label": "human_oversight",
-        "count": 15,
-        "share": 0.938
-      },
-      {
-        "label": "risk_assessment",
-        "count": 15,
-        "share": 0.938
+        "share": 0.941
       },
       {
         "label": "model_documentation",
+        "count": 14,
+        "share": 0.824
+      },
+      {
+        "label": "human_oversight",
         "count": 13,
-        "share": 0.812
+        "share": 0.765
       },
       {
         "label": "access_controls",
-        "count": 9,
-        "share": 0.562
-      },
-      {
-        "label": "incident_reporting",
-        "count": 9,
-        "share": 0.562
-      },
-      {
-        "label": "pre_deployment_testing",
-        "count": 9,
-        "share": 0.562
+        "count": 10,
+        "share": 0.588
       },
       {
         "label": "third_party_audit",
-        "count": 6,
-        "share": 0.375
+        "count": 10,
+        "share": 0.588
       },
       {
-        "label": "registration_licensing",
-        "count": 5,
-        "share": 0.312
+        "label": "open_weight_obligations",
+        "count": 7,
+        "share": 0.412
       },
       {
         "label": "content_provenance",
-        "count": 4,
-        "share": 0.25
+        "count": 6,
+        "share": 0.353
       },
       {
-        "label": "red_teaming",
-        "count": 3,
-        "share": 0.188
+        "label": "domestic_representative",
+        "count": 6,
+        "share": 0.353
+      },
+      {
+        "label": "pre_deployment_testing",
+        "count": 6,
+        "share": 0.353
       },
       {
         "label": "compute_governance",
-        "count": 2,
-        "share": 0.125
+        "count": 5,
+        "share": 0.294
+      },
+      {
+        "label": "incident_reporting",
+        "count": 5,
+        "share": 0.294
+      },
+      {
+        "label": "red_teaming",
+        "count": 5,
+        "share": 0.294
+      },
+      {
+        "label": "frontier_safety_evaluation",
+        "count": 4,
+        "share": 0.235
+      },
+      {
+        "label": "registration_licensing",
+        "count": 4,
+        "share": 0.235
+      },
+      {
+        "label": "agentic_autonomy_controls",
+        "count": 1,
+        "share": 0.059
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "regulatory_supervision",
-        "count": 15,
-        "share": 0.938
+        "label": "soft_enforcement",
+        "count": 17,
+        "share": 1.0
       },
       {
-        "label": "soft_enforcement",
-        "count": 11,
-        "share": 0.688
+        "label": "regulatory_supervision",
+        "count": 12,
+        "share": 0.706
       },
       {
         "label": "reporting_obligation",
-        "count": 9,
-        "share": 0.562
-      },
-      {
-        "label": "civil_penalty",
-        "count": 3,
-        "share": 0.188
+        "count": 8,
+        "share": 0.471
       },
       {
         "label": "procurement_condition",
-        "count": 3,
-        "share": 0.188
+        "count": 5,
+        "share": 0.294
+      },
+      {
+        "label": "civil_penalty",
+        "count": 4,
+        "share": 0.235
       },
       {
         "label": "criminal_penalty",
-        "count": 2,
-        "share": 0.125
+        "count": 3,
+        "share": 0.176
       },
       {
         "label": "licensing_requirement",
         "count": 1,
-        "share": 0.062
+        "share": 0.059
       }
     ],
     "institutions": [
       {
         "label": "Ministry of Science and ICT (MSIT)",
-        "count": 8,
-        "share": 0.5
+        "count": 11,
+        "share": 0.647
       },
       {
         "label": "Personal Information Protection Commission (PIPC)",
+        "count": 7,
+        "share": 0.412
+      },
+      {
+        "label": "AI Safety Institute (AISI)",
         "count": 5,
-        "share": 0.312
+        "share": 0.294
       },
       {
-        "label": "AI Privacy Team (인공지능프라이버시팀)",
-        "count": 1,
-        "share": 0.062
+        "label": "Ministry of the Interior and Safety (행정안전부)",
+        "count": 3,
+        "share": 0.176
       },
       {
-        "label": "Ministry of Food and Drug Safety (MFDS), Medical Device Review Division",
-        "count": 1,
-        "share": 0.062
+        "label": "AI Officer Council (인공지능책임관협의회)",
+        "count": 2,
+        "share": 0.118
       },
       {
-        "label": "National Information Society Agency (NIA), Republic of Korea",
-        "count": 1,
-        "share": 0.062
+        "label": "Korea Internet & Security Agency (한국인터넷진흥원, KISA — CSAP cloud security certification)",
+        "count": 2,
+        "share": 0.118
       },
       {
-        "label": "국가인공지능위원회 (National AI Committee)",
-        "count": 1,
-        "share": 0.062
+        "label": "National Assembly of the Republic of Korea",
+        "count": 2,
+        "share": 0.118
       },
       {
-        "label": "국가정보원",
-        "count": 1,
-        "share": 0.062
+        "label": "National Information Society Agency (한국지능정보사회진흥원)",
+        "count": 2,
+        "share": 0.118
       },
       {
-        "label": "규제개혁위원회 (Regulatory Reform Committee)",
-        "count": 1,
-        "share": 0.062
+        "label": "National Information Society Agency (한국지능정보사회진흥원, NIA)",
+        "count": 2,
+        "share": 0.118
       },
       {
-        "label": "디지털플랫폼정부위원회",
-        "count": 1,
-        "share": 0.062
+        "label": "Presidential Committee on the Digital Platform Government (디지털플랫폼정부위원회)",
+        "count": 2,
+        "share": 0.118
       },
       {
-        "label": "디지털플랫폼정부위원회 (Digital Platform Government Committee) / 한국지능정보사회진흥원 (NIA)",
-        "count": 1,
-        "share": 0.062
+        "label": "Presidential Committee on the Digital Platform Government / National Information Society Agency",
+        "count": 2,
+        "share": 0.118
       },
       {
-        "label": "인공지능안전연구소 (AI Safety Research Institute)",
+        "label": "AI Policy Center (인공지능정책센터 — including NIA / 한국지능정보사회진흥원)",
         "count": 1,
-        "share": 0.062
+        "share": 0.059
       },
       {
-        "label": "전문위원회 (Expert Committee)",
+        "label": "AI Policy Center (인공지능정책센터 — including National Information Society Agency / 한국지능정보사회진흥원)",
         "count": 1,
-        "share": 0.062
+        "share": 0.059
       },
       {
-        "label": "한국인터넷진흥원",
+        "label": "AI Policy Center (인공지능정책센터)",
         "count": 1,
-        "share": 0.062
+        "share": 0.059
       },
       {
-        "label": "행정안전부",
+        "label": "High-Impact AI Expert Committee (고영향 인공지능 전문위원회)",
         "count": 1,
-        "share": 0.062
+        "share": 0.059
       },
       {
-        "label": "행정안전부 (Ministry of the Interior and Safety)",
+        "label": "High-Impact AI Expert Committee (전문위원회)",
         "count": 1,
-        "share": 0.062
+        "share": 0.059
+      },
+      {
+        "label": "Korea Information Society Development Institute (정보통신정책연구원, KISDI — dedicated impact assessment support agency)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Korea Internet & Security Agency (한국인터넷진흥원 / KISA)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Korea Internet & Security Agency (한국인터넷진흥원 / KISA, referenced under Network Act Article 48-3 cyber-incident reporting)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Korea Internet & Security Agency (한국인터넷진흥원 / KISA, supporting agency and personal-data exposure URL detection partner)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Ministry of Food and Drug Safety",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Ministry of Food and Drug Safety (식품의약품안전처 — Digital Medical Product Impact Assessment coordination)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Ministry of Food and Drug Safety (식품의약품안전처)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Ministry of National Defense (국방부), National Intelligence Service (국가정보원), and National Police Agency (경찰청) — for Art. 2 national-security scope exclusions",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Ministry of National Defense (국방부), National Intelligence Service (국가정보원), and National Police Agency (경찰청) — for Draft Art. 2 national-security exclusions",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Ministry of the Interior and Safety (행정안전부 — public data consultation under Art. 6(3))",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "National AI Committee (국가인공지능위원회 — referenced for 2030 public AI policy targets)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "National AI Committee (국가인공지능위원회) and 13 listed central ministries/commissions (Draft Art. 4(1))",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "National AI Committee (위원회, referenced under AI Basic Act Art. 34(1)(6) for deliberating additional high-impact AI safety/trustworthiness measures)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "National AI Committee / National AI Strategy Committee (국가인공지능위원회 / 국가인공지능전략위원회)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "National AI Strategy Committee (국가인공지능전략위원회)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "National Information Society Agency (한국지능정보사회진흥원 / NIA, designated AI Policy Center)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "National Information Society Agency (한국지능정보사회진흥원 / NIA, referenced for High-Impact AI Determination Guideline support)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "National Institute of Food and Drug Safety Evaluation — Medical Device Review Department / Digital Health Regulatory Support Division (식품의약품안전평가원 의료기기심사부 디지털헬스규제지원과)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "National Intelligence Service (국가정보원 — N2SF security guidelines and agency security reviews)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "National Intelligence Service (국가정보원 — referenced for GenAI security guidance and network security policy)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "President of the Republic of Korea",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Public Data Dispute Mediation Committee (공공데이터분쟁조정위원회)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Public Data Strategy Committee (공공데이터전략위원회)",
+        "count": 1,
+        "share": 0.059
+      },
+      {
+        "label": "Relevant central administrative agencies and local governments (관계 중앙행정기관 및 지방자치단체)",
+        "count": 1,
+        "share": 0.059
       }
     ],
     "frames": [
       {
         "label": "fundamental_rights",
-        "score": 5.546,
-        "share": 0.347,
-        "document_mentions": 14
-      },
-      {
-        "label": "consumer_public_safety",
-        "score": 4.383,
-        "share": 0.274,
-        "document_mentions": 16
+        "score": 6.22,
+        "share": 0.366,
+        "document_mentions": 17
       },
       {
         "label": "innovation_enablement",
-        "score": 2.384,
-        "share": 0.149,
-        "document_mentions": 8
+        "score": 4.84,
+        "share": 0.285,
+        "document_mentions": 16
+      },
+      {
+        "label": "consumer_public_safety",
+        "score": 3.34,
+        "share": 0.196,
+        "document_mentions": 17
       },
       {
         "label": "economic_competitiveness",
-        "score": 1.173,
-        "share": 0.073,
-        "document_mentions": 4
+        "score": 1.23,
+        "share": 0.072,
+        "document_mentions": 10
       },
       {
         "label": "social_stability",
-        "score": 1.068,
-        "share": 0.067,
-        "document_mentions": 5
+        "score": 0.61,
+        "share": 0.036,
+        "document_mentions": 12
       },
       {
         "label": "national_security",
-        "score": 0.694,
-        "share": 0.043,
-        "document_mentions": 3
-      },
-      {
-        "label": "labor_transition",
-        "score": 0.496,
-        "share": 0.031,
-        "document_mentions": 2
+        "score": 0.48,
+        "share": 0.028,
+        "document_mentions": 7
       },
       {
         "label": "existential_catastrophic",
-        "score": 0.257,
+        "score": 0.28,
         "share": 0.016,
-        "document_mentions": 0
+        "document_mentions": 1
       }
     ]
   }

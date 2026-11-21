@@ -1,0 +1,246 @@
+{
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Companies that develop and operate AI systems should, under the leadership of top management, understand not only positive impacts but also negative impacts, including unintended risks, that AI systems may have.",
+          "source_section": "C.1.(1) Action Target 1-1 (Page 10)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "identify a gap between AI governance goals and current state in the AI systems that they are developing and operating, and if any negative impacts are found upon evaluating the impacts resulting from the gap, determine whether or not the negative impacts would be acceptable, taking into account their severity, scope, and frequency of occurrence.",
+          "source_section": "C.3.(1) Action Target 3-1 (Page 20)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Measures to address such uncertainties include approaches aimed at reducing uncertainties in the AI system development stage, including preparing appropriate data sets, selecting appropriate models, and conducting verification and testing before the AI system is put into operation.",
+          "source_section": "C.3.(4) Action Target 3-4-1 Practical Example 1 (Page 36)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Did the AI system developer define the index for evaluating accuracy of the AI system, and evaluate the accuracy of the AI system, anticipating situations where the AI system will be operated?",
+          "source_section": "G. Appendix 2, 2-2. Model / System A (Page 72)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.75,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Companies that develop and operate AI systems should, under the leadership of top management, consider defining response guidelines and plans so that upon occurrence of an AI incident or dispute, they can promptly give an explanation to AI system users, identify the extent of the impact and damage, clarify legal responsibilities",
+          "source_section": "C.3.(4) Action Target 3-4-2 (Page 38)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "In case that a certain degree of gaps may potentially occur with AI systems of AI system operators that provide services to AI system users, they should, under the leadership of top management, provide sufficient information about the gaps and measures to address the gaps, as well as make a contact point easily accessible.",
+          "source_section": "C.3.(1) Action Target 3-1-2 (Page 24)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Companies that develop and operate AI systems should consider ranking information relevant to AI governance such as one related to AI governance goal setting and establishment and operation of AI management systems as non-financial information in the Corporate Governance Code and proactively disclosing such information.",
+          "source_section": "C.4.(3) Action Target 4-3 (Page 44)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Companies that develop and operate AI systems should, under the leadership of top management, make sure that they are ready for explanation about the implementation status of AI management systems externally by recording the gap analysis process under Action Target 3-1 and by taking other relevant actions.",
+          "source_section": "C.4.(1) Action Target 4-1 (Page 40)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Companies that develop and operate AI systems should, under the leadership of top management, monitor and record the status of preliminary and full-scale operations so that gap analysis for individual AI systems in preliminary and full-scale operations can be continuously implemented.",
+          "source_section": "C.4.(2) Action Target 4-2 (Page 42)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.7,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Companies that develop and operate AI systems should, under the leadership of top management, have individuals independent of the design and operation of the AI management system verify whether an AI management system such as a gap analysis process is appropriately designed and operated in light of the AI governance goals",
+          "source_section": "C.5.(1) Action Target 5-1 (Page 46)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "We have an internal audit department, but we decided to try making use of external audits for our AI management system.",
+          "source_section": "C.5.(1) Action Target 5-1 Practical Example 3 (Page 47)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Did the AI system developer summarize measures against unauthorized access and/or data input as a precaution for the AI system operator?",
+          "source_section": "G. Appendix 2, 1-2. Overall Design G (Page 67)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Do the data provider and the AI system developer log access to their data to monitor any unauthorized access to the data for training/validating/testing?",
+          "source_section": "G. Appendix 2, 2-1. Data B (Page 69)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Did the AI system developer consider whether it is necessary to give an opportunity for humans to get actively involved in the AI system, for example, regain the control, from the perspectives of mitigating the negative impacts on physical and mental health and property, etc. as well as enhancing the fairness?",
+          "source_section": "G. Appendix 2, 1-2. Overall Design H (Page 67)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Did the AI system developer adopt a design that can provide options and opportunities for AI system users to decide whether or not to adopt the AI system or to suspend/stop the use the AI system, if necessary?",
+          "source_section": "G. Appendix 2, 1-2. Overall Design H (Page 67)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Companies that provide data should provide information on the data sets including data collection sources, collection policies, collection criteria, annotation criteria, and limitation on use to ensure that companies that develop AI systems are able to appropriately conduct gap analysis, and AI system developers should acquire data sets from data providers that provide sufficient information.",
+          "source_section": "C.3.(1) Action Target 3-1-3 (Page 26)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "Do the data provider and the AI system developer record information required for data management, such as data lineage and method for processing data?",
+          "source_section": "G. Appendix 2, 2-1. Data B (Page 69)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "The Guidelines themselves are not legally binding. The Guidelines are comprised of action targets to be implemented, examples of implementation, and examples for gap analysis, etc., which summarize typical targets and practical examples that are shared in society to a certain extent.",
+          "source_section": "A.2 Legal Effect of the Guidelines (Page 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        },
+        {
+          "quote": "The report titled “Governance Innovation Ver.2” states that it is important that government and private sector work together to establish standards, guidelines, and other soft laws to bolster businesses’ efforts to implement agile governance (4.3.3).",
+          "source_section": "H. Appendix 3 (Page 82)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": null,
+          "start_char": null,
+          "end_char": null
+        }
+      ]
+    }
+  ]
+}

@@ -4,52 +4,49 @@
   "language": "en",
   "policy_extraction": {
     "jurisdiction": "european_union",
-    "issuing_body": "European Commission / AI Office",
+    "issuing_body": "European Commission",
     "document_type": "regulatory_guidance",
     "binding_strength": "regulatory_guidance",
     "publication_date": "2025-07-11",
-    "effective_date": "2025-08-02",
+    "effective_date": null,
+    "covered_actors": [
+      "providers of general-purpose AI models",
+      "providers of general-purpose AI models with systemic risk"
+    ],
     "covered_application_domains": [
       "general_purpose_models"
     ],
+    "prohibited_practices": [],
     "safety_requirements": [
       {
-        "label": "transparency_disclosure",
-        "confidence": 0.95,
-        "evidence": [
-          {
-            "quote": "Transparency and Copyright, both addressing all providers of general-purpose AI models",
-            "source_section": "Code chapters overview"
-          }
-        ]
-      },
-      {
-        "label": "model_documentation",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "ensuring that general-purpose AI models placed on the European market are safe and transparent",
-            "source_section": "Introduction"
-          }
-        ]
-      },
-      {
-        "label": "risk_assessment",
+        "label": "compute_governance",
         "confidence": 0.9,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "Safety and Security, relevant only to a limited number of providers of the most advanced models, subject to the AI Act's obligations for providers of general-purpose AI models with systemic risk",
-            "source_section": "Code chapters overview"
+            "quote": "The AI Act currently presumes that models trained with a cumulative amount of compute greater than\n10^25\nfloating-point operations possess high-impact capabilities.",
+            "source_section": "What is the General-Purpose AI Code of Practice?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1089,
+            "end_char": 1253
           }
         ]
       },
       {
         "label": "registration_licensing",
         "confidence": 0.85,
+        "obligation_strength": "conditional",
         "evidence": [
           {
-            "quote": "Providers must notify the AI Office of general-purpose AI models with systemic risk to be placed on the EU market without delay",
-            "source_section": "Compliance timeline"
+            "quote": "Providers must notify the AI Office of general-purpose AI models with systemic risk to be placed on the EU market without delay.",
+            "source_section": "What are the next steps after the Code is published?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3209,
+            "end_char": 3337
           }
         ]
       }
@@ -57,68 +54,184 @@
     "enforcement_mechanisms": [
       {
         "label": "civil_penalty",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "However, from 2 August 2026 onwards, the Commission will enforce full compliance with all obligations for providers of general-purpose AI models with fines.",
+            "source_section": "What are the next steps after the Code is published?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3963,
+            "end_char": 4119
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
         "confidence": 0.9,
         "evidence": [
           {
-            "quote": "from 2 August 2026 onwards, the Commission will enforce full compliance with all obligations for providers of general-purpose AI models with fines",
-            "source_section": "Compliance timeline"
+            "quote": "Providers must notify the AI Office of general-purpose AI models with systemic risk to be placed on the EU market without delay.",
+            "source_section": "What are the next steps after the Code is published?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3209,
+            "end_char": 3337
           }
         ]
       },
       {
         "label": "regulatory_supervision",
-        "confidence": 0.9,
+        "confidence": 0.8,
         "evidence": [
           {
-            "quote": "the AI Office will offer to collaborate closely in particular with providers who adhere to the Code to ensure that models can continue to be placed on the EU market without delays",
-            "source_section": "Compliance timeline"
+            "quote": "This offers a streamlined compliance process, with enforcement focused on monitoring their adherence to the Code, resulting in greater predictability and reduced administrative burden.",
+            "source_section": "How can general-purpose AI providers adhere to the Code, and what are the benefits?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2057,
+            "end_char": 2241
           }
         ]
       },
       {
         "label": "soft_enforcement",
-        "confidence": 0.85,
+        "confidence": 0.95,
         "evidence": [
           {
-            "quote": "the AI Office will not consider them to have broken their commitments under the Code and will not reproach them for violating the AI Act. Instead, in such cases, the AI Office will consider them to act in good faith",
-            "source_section": "Compliance timeline"
+            "quote": "It serves as a voluntary tool that helps providers demonstrate compliance with the AI Act's binding provisions, without exceeding its scope or imposing additional burdens.",
+            "source_section": "Does the Code impose additional obligations beyond the AI Act?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2454,
+            "end_char": 2625
+          },
+          {
+            "quote": "Adhering to a Code assessed as adequate by the AI Office and the Board will offer a simple and transparent way to demonstrate compliance with the AI Act.",
+            "source_section": "How can general-purpose AI providers adhere to the Code, and what are the benefits?",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1903,
+            "end_char": 2056
           }
         ]
       }
     ],
-    "implementation_notes": "This document is a Q&A on a voluntary Code of Practice that helps providers demonstrate compliance with the binding AI Act. The Code itself does not impose new obligations but serves as a compliance pathway. Full enforcement with fines begins August 2026; models pre-dating August 2025 have until August 2027. The systemic risk threshold is set at 10^25 FLOPs of training compute.",
+    "enforcement_authorities": [
+      "European Commission",
+      "AI Office",
+      "AI Board"
+    ],
+    "compliance_deadlines": [
+      "2025-08-02: Providers placing general-purpose AI models on the EU market must comply with applicable AI Act obligations and notify the AI Office of general-purpose AI models with systemic risk without delay.",
+      "2026-08-02: The European Commission will begin enforcing full compliance with all AI Act obligations for providers of general-purpose AI models with fines.",
+      "2027-08-02: General-purpose AI models placed on the market before 2 August 2025 must comply with AI Act obligations."
+    ],
+    "penalties_summary": "From 2 August 2026 onwards, the European Commission will enforce full compliance with all AI Act obligations for providers of general-purpose AI models through fines. During the first year from 2 August 2025, the AI Office will treat signatories who have not yet fully implemented all Code commitments as acting in good faith and collaborate with them rather than reproaching them for AI Act violations.",
+    "implementation_notes": "Official European Commission Q&A explaining the voluntary General-Purpose AI Code of Practice (covering Transparency, Copyright, and Safety and Security chapters), which does not impose new obligations beyond the AI Act. Notes the AI Act's 10^25 FLOPs presumption for systemic risk, upcoming Commission guidelines clarifying scope, adequacy assessment by Member States and the Commission, and AI Office review of the Code at least every two years.",
     "confidence": 0.92
   },
   "risk_framing": {
-    "dominant_frame": "consumer_public_safety",
+    "dominant_frame": "innovation_enablement",
     "secondary_frames": [
-      "fundamental_rights",
-      "innovation_enablement"
+      "consumer_public_safety"
     ],
     "frame_confidence": {
+      "existential_catastrophic": 0.1,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.9,
+      "consumer_public_safety": 0.65,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
       "economic_competitiveness": 0.0,
       "fundamental_rights": 0.0,
       "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.55,
+      "innovation_enablement": 0.75,
+      "consumer_public_safety": 0.25,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document primarily frames AI governance around ensuring that general-purpose AI models placed on the EU market are safe and transparent, with special attention to systemic risk from the most powerful models. The core justification is protecting users and society from unsafe models, framed through compliance with the AI Act's safety and transparency obligations. Secondary frames include fundamental rights (copyright protections) and innovation enablement (streamlined compliance, reduced administrative burden, good-faith enforcement transition).",
+    "rationale_summary": "The FAQ predominantly frames the General-Purpose AI Code of Practice around innovation enablement by emphasizing voluntary, agile, and future-proof compliance that lowers friction, avoids additional administrative burdens, increases predictability, and allows models to continue entering the EU market without delays. Consumer and public safety appears as a secondary rationale—ensuring that models placed on the European market are safe and transparent and adapting to changes in the risk landscape—but innovation enablement edges it out because the document's core purpose is justifying a streamlined, collaborative compliance pathway rather than elaborating substantive safety harms. Although systemic risk and high-impact capabilities are mentioned, the text does not explicitly invoke catastrophic or existential harms, fundamental rights, or international economic rivalry.",
     "evidence_spans": [
       {
-        "quote": "ensuring that general-purpose AI models placed on the European market are safe and transparent, including the most powerful ones",
-        "source_section": "Introduction"
+        "quote": "Adhering to a Code assessed as adequate by the AI Office and the Board will offer a simple and transparent way to demonstrate compliance with the AI Act. This offers a streamlined compliance process, with enforcement focused on monitoring their adherence to the Code, resulting in greater predictability and reduced administrative burden.",
+        "source_section": "How can general-purpose AI providers adhere to the Code, and what are the benefits?",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1903,
+        "end_char": 2241
       },
       {
-        "quote": "Safety and Security, relevant only to a limited number of providers of the most advanced models, subject to the AI Act's obligations for providers of general-purpose AI models with systemic risk",
-        "source_section": "Code structure"
+        "quote": "In the first year from 2 August 2025 onwards, the AI Office will offer to collaborate closely in particular with providers who adhere to the Code to ensure that models can continue to be placed on the EU market without delays.",
+        "source_section": "What are the next steps after the Code is published?",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 3338,
+        "end_char": 3564
       },
       {
-        "quote": "streamlined compliance process, with enforcement focused on monitoring their adherence to the Code, resulting in greater predictability and reduced administrative burden",
-        "source_section": "Compliance"
+        "quote": "The General-Purpose AI Code of Practice is a voluntary tool, prepared by independent experts in a multi-stakeholder process, designed to help industry comply with the AI Act’s obligations for providers of general-purpose AI models, ensuring that general-purpose AI models placed on the European market are safe and transparent, including the most powerful ones.",
+        "source_section": "What is the General-Purpose AI Code of Practice?",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 0,
+        "end_char": 361
+      },
+      {
+        "quote": "The AI Office may facilitate formal updates to the Code in response to technological developments, changes in the risk landscape, or experience with the application of the AI Act rules.",
+        "source_section": "How will the Code be updated?",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 4458,
+        "end_char": 4643
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T05:39:51.412858Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "c91fb8deb283e8b85bda63e3c968dde5e7487ce2b08591de1b9140273fc1c4a6",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "input_tokens": 24164,
+      "output_tokens": 2104,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 7401,
+      "estimated_cost_usd": 0.125255
+    },
+    "grounding_summary": {
+      "total_quotes": 11,
+      "exact_matches": 11,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 1
+    }
   }
 }

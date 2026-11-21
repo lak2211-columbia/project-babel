@@ -58,6 +58,31 @@ def _validate_file(
     return errors
 
 
+def validate_document_analysis_payload(
+    payload: dict[str, Any],
+    *,
+    schemas_dir: Path = SCHEMAS_DIR,
+) -> list[dict[str, str]]:
+    """Validate an in-memory DocumentAnalysis JSON dict against document-analysis.schema.json."""
+    schema_name = "document-analysis.schema.json"
+    schema_path = schemas_dir / schema_name
+    validator = _load_validator(schema_path)
+    errors: list[dict[str, str]] = []
+    for err in sorted(validator.iter_errors(payload), key=lambda e: list(e.absolute_path)):
+        json_path = "$" + "".join(
+            f"[{part}]" if isinstance(part, int) else f".{part}"
+            for part in err.absolute_path
+        )
+        errors.append(
+            {
+                "schema": schema_name,
+                "path": json_path,
+                "message": err.message,
+            }
+        )
+    return errors
+
+
 def validate_repository_artifacts(
     *,
     schemas_dir: Path = SCHEMAS_DIR,

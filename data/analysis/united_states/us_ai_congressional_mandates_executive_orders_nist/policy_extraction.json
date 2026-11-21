@@ -1,153 +1,155 @@
 {
   "jurisdiction": "united_states",
-  "issuing_body": "U.S. National Institute of Standards and Technology (NIST)",
-  "document_type": "regulatory_guidance",
+  "issuing_body": "National Institute of Standards and Technology (NIST)",
+  "document_type": "strategy_paper",
   "binding_strength": "strategy_statement",
-  "publication_date": null,
+  "publication_date": "2025-01-21",
   "effective_date": null,
   "covered_actors": [
-    "NIST",
-    "federal agencies",
-    "U.S. industry",
-    "global research community"
+    "National Institute of Standards and Technology (NIST)",
+    "Federal agencies",
+    "U.S. industry and the global AI research community",
+    "Military and intelligence community",
+    "National Artificial Intelligence Advisory Committee (NAIAC) and NAIRR Task Force"
   ],
   "covered_application_domains": [
     "general_purpose_models",
     "critical_infrastructure",
-    "defense",
-    "public_sector_use"
+    "public_sector_use",
+    "defense"
   ],
   "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
       "confidence": 0.85,
+      "obligation_strength": "recommended",
       "evidence": [
         {
           "quote": "create a framework for managing risks associated with AI systems",
-          "source_section": "CHIPS and Science Act / National AI Initiative Act"
+          "source_section": "The “Chips and Science Act” of 2022 (P.L. 117-167) (8/9/2022)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1151,
+          "end_char": 1215
         },
         {
-          "quote": "develop a risk-mitigation framework for deploying AI systems",
-          "source_section": "National Artificial Intelligence Initiative Act of 2020"
+          "quote": "develop a risk-mitigation framework for deploying AI systems;",
+          "source_section": "National Artificial Intelligence Initiative Act of 2020 (P.L. 116-283), (1/1/2021)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1430,
+          "end_char": 1491
         }
       ]
     },
     {
       "label": "pre_deployment_testing",
-      "confidence": 0.75,
+      "confidence": 0.82,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "establish testbeds to support the development of robust and trustworthy AI and machine learning systems",
-          "source_section": "Congressional Mandates"
+          "quote": "establish testbeds to support the development of robust and trustworthy AI and machine learning systems.",
+          "source_section": "The “Chips and Science Act” of 2022 (P.L. 117-167) (8/9/2022)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 639,
+          "end_char": 743
         },
         {
-          "quote": "ensure the availability of testing environments",
-          "source_section": "Executive Order on Safe, Secure, and Trustworthy AI (10/30/2023)"
+          "quote": "invest in AI interpretability, control, and robustness breakthroughs; build an AI evaluations ecosystem;",
+          "source_section": "Winning the Race: America’s AI Action Plan (7/23/2025)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2482,
+          "end_char": 2586
         }
       ]
     },
     {
-      "label": "transparency_disclosure",
-      "confidence": 0.7,
+      "label": "training_data_governance",
+      "confidence": 0.8,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "develop guidelines and reports on Generative AI, secure software development, synthetic content, and global engagement in standards",
-          "source_section": "Executive Order on Safe, Secure, and Trustworthy AI (10/30/2023)"
+          "quote": "support development of technical standards and guidelines to test for bias in AI training data and applications;",
+          "source_section": "National Artificial Intelligence Initiative Act of 2020 (P.L. 116-283), (1/1/2021)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1587,
+          "end_char": 1699
         }
       ]
     },
     {
-      "label": "model_documentation",
-      "confidence": 0.65,
+      "label": "access_controls",
+      "confidence": 0.82,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "support development of technical standards and guidelines that promote trustworthy AI systems",
-          "source_section": "National Artificial Intelligence Initiative Act of 2020"
+          "quote": "develop and publish cybersecurity tools, encryption methods, and best practices for AI and data science.",
+          "source_section": "The “Chips and Science Act” of 2022 (P.L. 117-167) (8/9/2022)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1221,
+          "end_char": 1325
+        },
+        {
+          "quote": "build high-security data centers for military and intelligence community usage; bolster critical infrastructure cybersecurity; promote secure-by-design AI technologies and applications;",
+          "source_section": "Winning the Race: America’s AI Action Plan (7/23/2025)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2681,
+          "end_char": 2866
         }
       ]
     },
     {
-      "label": "content_provenance",
-      "confidence": 0.7,
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.85,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "combat synthetic media in the legal system",
-          "source_section": "Winning the Race: America's AI Action Plan (7/23/2025)"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.65,
-      "evidence": [
-        {
-          "quote": "promote mature federal capacity for AI incident response",
-          "source_section": "Winning the Race: America's AI Action Plan (7/23/2025)"
-        }
-      ]
-    },
-    {
-      "label": "incident_reporting",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "promote mature federal capacity for AI incident response",
-          "source_section": "Winning the Race: America's AI Action Plan (7/23/2025)"
+          "quote": "invest in biosecurity; and ensure that the U.S. government is at the forefront of evaluating national security risks in frontier models.",
+          "source_section": "Winning the Race: America’s AI Action Plan (7/23/2025)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2925,
+          "end_char": 3061
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "soft_enforcement",
-      "confidence": 0.85,
+      "label": "none_specified",
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "NIST is named in a large number of recommended policy actions",
-          "source_section": "Winning the Race: America's AI Action Plan (7/23/2025)"
-        },
-        {
-          "quote": "Directs NIST to create a plan for federal engagement in the development of technical standards",
-          "source_section": "Executive Order on Maintaining American Leadership in AI (2/14/2019)"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "develop guidelines and reports on Generative AI, secure software development, synthetic content, and global engagement in standards",
-          "source_section": "Executive Order on Safe, Secure, and Trustworthy AI (10/30/2023)"
-        }
-      ]
-    },
-    {
-      "label": "regulatory_supervision",
-      "confidence": 0.6,
-      "evidence": [
-        {
-          "quote": "Establishes AI principles for federal agencies. NIST subsequently reflected those principles in the NIST AI Risk Management Framework",
-          "source_section": "Executive Order on Promoting the Use of Trustworthy AI in the Federal Government (12/3/2020)"
+          "quote": "NIST’s AI efforts are driven by\ncongressional mandates,\nPresidential Executive Orders, policies, and actions,\nthe needs expressed by U.S. industry, the global research community, other federal agencies, and the broader AI community – as well as NIST’s experience and its own capabilities.",
+          "source_section": "Share",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 101,
+          "end_char": 389
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "NIST",
-    "National Artificial Intelligence Advisory Committee (NAIAC)",
-    "White House National AI Initiative Office"
+    "National Institute of Standards and Technology (NIST)"
   ],
-  "compliance_deadlines": [
-    "Chips and Science Act enacted 8/9/2022",
-    "National Artificial Intelligence Initiative Act effective 1/1/2021",
-    "America's AI Action Plan issued 7/23/2025",
-    "EO Removing Barriers to American Leadership in AI issued 1/23/2025",
-    "EO on Safe, Secure, and Trustworthy AI issued 10/30/2023, rescinded 1/20/2025",
-    "EO on Promoting Trustworthy AI in Federal Government issued 12/3/2020"
-  ],
+  "compliance_deadlines": [],
   "penalties_summary": null,
-  "implementation_notes": "This is a NIST summary/landing page aggregating congressional mandates and executive orders directing NIST's AI activities. The document itself is not a binding instrument; it describes obligations placed on NIST by external legislation and executive orders. EO 14110 (Safe, Secure, and Trustworthy AI) was rescinded on 1/20/2025. The America's AI Action Plan (7/23/2025) replaces the prior administration's approach.",
-  "confidence": 0.82
+  "implementation_notes": "Official NIST reference page (initial publication 2025-01-21, subsequently updated through at least 2025-07-23) cataloging the congressional statutes (CHIPS and Science Act of 2022, National AI Initiative Act of 2020), America's AI Action Plan (July 2025), and Executive Orders (Jan 2025 EO 14179, rescinded Oct 2023 EO 14110, Dec 2020 EO 13960, Feb 2019 EO 13859) driving NIST's non-regulatory AI standards, testbed, cybersecurity, and evaluation activities. As a summary webpage, it imposes no direct legal obligations or enforcement mechanisms.",
+  "confidence": 0.93
 }

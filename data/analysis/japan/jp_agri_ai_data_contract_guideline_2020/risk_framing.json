@@ -2,39 +2,74 @@
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
     "economic_competitiveness",
-    "consumer_public_safety"
+    "fundamental_rights"
   ],
   "frame_confidence": {
     "existential_catastrophic": 0.0,
-    "national_security": 0.05,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.78,
+    "fundamental_rights": 0.42,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.95,
+    "consumer_public_safety": 0.18,
+    "labor_transition": 0.05
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
     "economic_competitiveness": 0.25,
-    "fundamental_rights": 0.1,
-    "social_stability": 0.05,
-    "innovation_enablement": 0.65,
-    "consumer_public_safety": 0.15,
+    "fundamental_rights": 0.09,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.62,
+    "consumer_public_safety": 0.04,
     "labor_transition": 0.0
   },
-  "rationale_summary": "The document is a contract guideline from Japan's Ministry of Agriculture aimed at promoting data utilization and protecting agricultural know-how in AI development. The primary framing is enabling innovation—facilitating AI adoption in agriculture through clear contract frameworks, IP protection, and data sharing arrangements. Economic competitiveness appears as a secondary frame through references to AI Strategy 2019 goals and commercialization. Consumer/public safety appears modestly through liability and personal data handling provisions.",
+  "rationale_summary": "The guideline's dominant frame is innovation_enablement because its central stated purpose is to reduce contractual uncertainty and farmers' anxieties over unintended know-how leakage so that agricultural stakeholders can safely share data and collaborate to promote AI R&D, smart agriculture adoption, and active data utilization. Economic_competitiveness is a prominent secondary frame, repeatedly invoked to justify geographic and third-party transfer restrictions on publicly funded AI models and agricultural know-how in order to strengthen Japan's international and inter-regional agricultural competitiveness. Innovation_enablement edges out economic_competitiveness because competitive restrictions are treated as context-dependent options for specific public-funding or regional cases, whereas enabling trustworthy data-sharing ecosystems and accelerating agricultural AI deployment underpins the entire document. Fundamental_rights appears as a minor secondary frame through references to personal data protection and alignment with Japan's Social Principles of Human-Centric AI, while consumer_public_safety receives only brief peripheral mention regarding existing product-safety laws and AI malfunction risks.",
   "evidence_spans": [
     {
-      "quote": "農業分野におけるＡＩ利用の意義",
-      "source_section": "Page 2"
+      "quote": "本ガイドライン（ノウハウ活用編）では、このような農業関係者等の不安を解消し、データの利活用の活性化を図るために、データやノウハウの提供者と受領者が、納得できる合意に必要な契約上の要素や留意点について示す。",
+      "source_section": "第4. 3. 【ポイント 22】サービス利用に際してのデータ提供契約とサービス利用契約約款",
+      "quote_en": "In order to resolve such anxieties of agricultural stakeholders and revitalize the utilization of data, this guideline (Know-how Utilization Edition) presents the contractual elements and points to note necessary for data and know-how providers and recipients to reach a mutually satisfactory agreement.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 118841,
+      "end_char": 118943
     },
     {
-      "quote": "ノウハウ活用編",
-      "source_section": "Page 1"
+      "quote": "本ガイドライン（ノウハウ活用編）では、データ等の提供に際して生じるノウハウ流出に関するリスクの考え方を示すことで、熟練農業者や農業普及指導員等がリスクを理解し、安心してデータ提供等を行えるようにすることも目的の一つとしている。",
+      "source_section": "第1. 3. 「ＡＩ・データの利用に関する契約ガイドライン（ＡＩ編）」との関係",
+      "quote_en": "By presenting a way of thinking about the risks of know-how leakage that arise when providing data, etc., this guideline (Know-how Utilization Edition) also aims to enable skilled farmers, agricultural extension officers, and others to understand the risks and provide data, etc. with peace of mind.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 21811,
+      "end_char": 21924
     },
     {
-      "quote": "農業関係者等におけるデータ・ノウハウの重要性",
-      "source_section": "Page 3"
+      "quote": "例えば国や地方公共団体が資金を投入する目的として、競争力強化を掲げてＡＩ研究開発を行うことが挙げられている場合には、提供先の範囲についても、特定地域外への提供を制限することなどを、研究開発契約の段階で明示することが必要となる。",
+      "source_section": "第2. 3. 【ポイント 10】第三者提供の制限",
+      "quote_en": "For example, when the national or local government provides funding for AI R&D with the stated purpose of strengthening competitiveness, it is necessary to clearly specify at the R&D contract stage restrictions on the scope of recipients, such as restricting provision outside a specific region.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 35481,
+      "end_char": 35594
     },
     {
-      "quote": "ＡＩ戦略 2019 に示される農業分野の具体目標",
-      "source_section": "Page 6"
+      "quote": "具体的には例えば、国の事業による研究開発によるものである場合には、利用目的については、例えば競争力強化の観点から、国内の農業関係者等の生産支援等を行うための利用に限定される、など公的資金を投入した政策目的に応じた制限がなされることがある。",
+      "source_section": "第4. 2. 本件成果物等の利用条件（研究開発モデル契約書案第18 条関係）",
+      "quote_en": "Specifically, for example, in the case of R&D under a national government project, restrictions in accordance with the policy objectives of public funding may be imposed, such as limiting the purpose of use to supporting production by domestic agricultural stakeholders from the perspective of strengthening competitiveness.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 93005,
+      "end_char": 93124
     },
     {
-      "quote": "地域で保有するノウハウのＡＩの利用による継承",
-      "source_section": "Page 4"
+      "quote": "3 つの理念を実現する社会を構築することを目指し、ＡＩと人間のかかわり方について各種原則を示した。ＡＩの利用は、基本的人権を侵すものであってはならないとする人間中心の原則を掲げた。",
+      "source_section": "第5. 1. 表 17 人間中心のＡＩ社会原則の概要",
+      "quote_en": "Aiming to build a society that realizes three core philosophies, it set out various principles regarding the relationship between AI and humans. It put forward a human-centric principle that the use of AI must not infringe upon fundamental human rights.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 124817,
+      "end_char": 124907
     }
   ]
 }

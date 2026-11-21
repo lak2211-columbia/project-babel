@@ -4,6 +4,9 @@ import path from "node:path";
 import test from "node:test";
 
 import {
+  parseGoldSetEvaluation,
+} from "../eval-parser.ts";
+import {
   formatDocumentsAsBibtex,
   formatDocumentsAsCsv,
   formatObservatoryBibtex,
@@ -49,6 +52,10 @@ import {
 } from "../sources-data.ts";
 import {
   CANONICAL_THRESHOLDS,
+  extractGroundingRatio,
+  formatModelDisplayName,
+  formatModelList,
+  getProvenanceBannerKind,
   humanizeCorpusRole,
   humanizeLifecycleStage,
   isCjkText,
@@ -809,4 +816,135 @@ test("safeExternalUrl allows only http(s) URLs and rejects XSS/dangerous protoco
   assert.equal(safeExternalUrl("//evil.com/path"), null);
   assert.equal(safeExternalUrl(""), null);
   assert.equal(safeExternalUrl(null), null);
+});
+
+test("model display formatting, v2.1 provenance banner states, and frame_shares_json preference (Stage 4A)", () => {
+  assert.equal(formatModelDisplayName("gemini-4-neon"), "Gemini 4 Neon");
+  assert.equal(formatModelDisplayName("claude-opus-5-5"), "Claude Opus 5.5");
+  assert.equal(
+    formatModelDisplayName("claude-sonnet-4-6"),
+    "Claude Sonnet 4.6",
+  );
+  assert.equal(formatModelDisplayName("claude-haiku-4-5"), "Claude Haiku 4.5");
+  assert.equal(formatModelDisplayName(""), "automated LLM extraction");
+  assert.equal(formatModelDisplayName(null), "automated LLM extraction");
+
+  assert.equal(formatModelList([]), "automated LLM extraction");
+  assert.equal(formatModelList(["gemini-4-neon"]), "Gemini 4 Neon");
+  assert.equal(
+    formatModelList(["gemini-4-neon", "gemini-4-neon", "claude-opus-5-5"]),
+    "Gemini 4 Neon and Claude Opus 5.5",
+  );
+
+  // Provenance banner state transitions
+  assert.equal(
+    getProvenanceBannerKind({ legacyCount: 0, v2Count: 103 }),
+    "v2_verified",
+  );
+  assert.equal(
+    getProvenanceBannerKind({ legacyCount: 103, v2Count: 0 }),
+    "legacy_warning",
+  );
+  assert.equal(
+    getProvenanceBannerKind({ legacyCount: 3, v2Count: 100 }),
+    "legacy_warning",
+  );
+  assert.equal(getProvenanceBannerKind({ legacyCount: 0, v2Count: 0 }), "none");
+
+  // Nested v2.1 grounding_summary.grounding_ratio extraction (Stage 4C)
+  assert.equal(
+    extractGroundingRatio({
+      grounding_summary: { grounding_ratio: 1.0 },
+    }),
+    1.0,
+  );
+  assert.equal(
+    extractGroundingRatio({
+      grounding_ratio: 0.75,
+      grounding_summary: { grounding_ratio: 0.96 },
+    }),
+    0.96,
+  );
+  assert.equal(extractGroundingRatio({ grounding_ratio: 0.88 }), 0.88);
+  assert.equal(extractGroundingRatio({ grounding_ratio: "0.91" }), 0.91);
+  assert.equal(extractGroundingRatio(null), null);
+  assert.equal(extractGroundingRatio({}), null);
+
+  // computeScoringEngine prefers explicit frameShare (frame_shares_json) over frameConfidence
+  const docsWithFrameShare: ScoringDocumentInput[] = [
+    {
+      documentId: "us-v2",
+      jurisdiction: "united_states",
+      publicationDate: "2026-06-01",
+      machineCreatedAt: "2026-11-20T00:00:00Z",
+      bindingStrength: "executive_action",
+      corpusRole: "primary_instrument",
+      lifecycleStage: "active",
+      safetyRequirements: [{ label: "risk_assessment" }],
+      enforcementMechanisms: [{ label: "procurement_condition" }],
+      dominantFrame: "national_security",
+      frameConfidence: { innovation_enablement: 0.9, national_security: 0.8 },
+      frameShare: { national_security: 0.8, consumer_public_safety: 0.2 },
+    },
+    {
+      documentId: "eu-v2",
+      jurisdiction: "european_union",
+      publicationDate: "2026-06-01",
+      machineCreatedAt: "2026-11-20T00:00:00Z",
+      bindingStrength: "binding_law",
+      corpusRole: "primary_instrument",
+      lifecycleStage: "active",
+      safetyRequirements: [{ label: "risk_assessment" }],
+      enforcementMechanisms: [{ label: "civil_penalty" }],
+      dominantFrame: "fundamental_rights",
+      frameConfidence: { fundamental_rights: 0.9 },
+      frameShare: { fundamental_rights: 1.0 },
+    },
+  ];
+  const scored = computeScoringEngine(docsWithFrameShare, "headline");
+  const usMix = new Map(
+    scored.byJurisdiction.get("united_states")!.frameMix.map((f) => [f.label, f.value]),
+  );
+  assert.equal(usMix.get("national_security"), 80);
+  assert.equal(usMix.get("consumer_public_safety"), 20);
+  assert.equal(usMix.get("innovation_enablement"), 0);
+});
+
+test("parseGoldSetEvaluation parses evaluate-gold-set JSON and rejects empty/invalid inputs", () => {
+  assert.equal(parseGoldSetEvaluation(null), null);
+  assert.equal(parseGoldSetEvaluation({ evaluated_count: 0 }), null);
+
+  const parsed = parseGoldSetEvaluation({
+    benchmark_status: "starter_v0.1_internal",
+    version: "1.0",
+    evaluated_count: 5,
+    bootstrap_iterations: 1000,
+    model: "gemini-4-neon",
+    requirement_micro_precision: 0.82,
+    requirement_micro_recall: 0.78,
+    requirement_micro_f1: 0.8,
+    requirement_macro_f1: 0.76,
+    enforcement_micro_precision: 0.85,
+    enforcement_micro_recall: 0.8,
+    enforcement_micro_f1: 0.824,
+    enforcement_macro_f1: 0.79,
+    dominant_frame_accuracy: 0.8,
+    dominant_frame_cohens_kappa: 0.75,
+    binding_strength_accuracy: 1.0,
+    binding_strength_cohens_kappa: 1.0,
+    bootstrap_95_ci: {
+      requirement_micro_f1: [0.7, 0.9],
+      enforcement_micro_f1: [0.65, 0.95],
+      dominant_frame_accuracy: [0.4, 1.0],
+      binding_strength_accuracy: [1.0, 1.0],
+      dominant_frame_cohens_kappa: [0.3, 1.0],
+    },
+  });
+  assert.ok(parsed);
+  assert.equal(parsed.benchmarkStatus, "starter_v0.1_internal");
+  assert.equal(parsed.evaluatedCount, 5);
+  assert.equal(parsed.model, "gemini-4-neon");
+  assert.equal(parsed.requirementMicroF1, 0.8);
+  assert.deepEqual(parsed.bootstrap95CI.requirementMicroF1, [0.7, 0.9]);
+  assert.equal(parsed.dominantFrameCohensKappa, 0.75);
 });

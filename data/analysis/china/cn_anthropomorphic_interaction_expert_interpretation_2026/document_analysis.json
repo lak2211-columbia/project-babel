@@ -4,147 +4,254 @@
   "language": "zh",
   "policy_extraction": {
     "jurisdiction": "china",
-    "issuing_body": "国家互联网信息办公室 (Cyberspace Administration of China)",
+    "issuing_body": "Cyberspace Administration of China (国家互联网信息办公室) / Chinese Academy of Cyberspace Studies (中国网络空间研究院)",
     "document_type": "regulatory_guidance",
     "binding_strength": "regulatory_guidance",
     "publication_date": "2026-04-10",
     "effective_date": null,
+    "covered_actors": [
+      "Anthropomorphic interactive AI service providers (拟人化互动服务提供者)"
+    ],
     "covered_application_domains": [
       "general_purpose_models",
-      "education",
-      "healthcare",
-      "public_sector_use"
+      "public_sector_use",
+      "education"
+    ],
+    "prohibited_practices": [
+      "Setting substituting real-world social interaction, controlling user psychology, or inducing addiction/dependence as service objectives",
+      "Generating content that endangers national security, honor, or interests, harms users' physical health, or may affect the physical and mental health of minors",
+      "Providing user interaction data to third parties without legal authorization or explicit consent of the rights holder",
+      "Using user interaction data constituting sensitive personal information for model training without legal/administrative regulation authorization or separate user consent",
+      "Providing virtual intimate relationship services (such as virtual relatives or virtual partners) to minors",
+      "Generating content for minor users that may trigger imitation of unsafe behaviors or induce bad habits"
     ],
     "safety_requirements": [
       {
         "label": "risk_assessment",
         "confidence": 0.85,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "要求服务提供者建立健全算法机制机理审核、科技伦理审查、信息内容管理、网络和数据安全、风险预案和应急处置等管理制度",
-            "source_section": "安全主体责任"
+            "quote": "《办法》要求服务提供者建立健全算法机制机理审核、科技伦理审查、信息内容管理、网络和数据安全、风险预案和应急处置等管理制度，将安全责任贯穿拟人化互动服务部署、运行、升级、终止服务等全流程",
+            "source_section": "（一）厘清责任边界，夯实安全保障义务",
+            "quote_en": "The Measures require service providers to establish and improve management systems for algorithm mechanism and logic review, science and technology ethics review, information content management, network and data security, risk contingency plans, and emergency response, running safety responsibilities throughout the entire lifecycle of anthropomorphic interactive services including deployment, operation, upgrading, and service termination.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1872,
+            "end_char": 1964
+          },
+          {
+            "quote": "要求及时识别用户面临的安全风险，并采取相应的应急处置措施。",
+            "source_section": "（二）重点防范高风险，规制非理性依赖",
+            "quote_en": "Requires timely identification of safety risks faced by users and adoption of corresponding emergency response measures.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2365,
+            "end_char": 2394
           }
         ]
       },
       {
-        "label": "incident_reporting",
-        "confidence": 0.8,
+        "label": "access_controls",
+        "confidence": 0.9,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "在用户明确表现出自残自杀等威胁生命健康的极端情境时，应当采取提供相应援助等必要措施予以干预，并及时联络用户的监护人或者紧急联系人",
-            "source_section": "安全风险防范"
+            "quote": "《办法》规定拟人化互动服务提供者需采取数据加密、访问控制等技术措施保障交互数据安全",
+            "source_section": "（一）厘清责任边界，夯实安全保障义务",
+            "quote_en": "The Measures stipulate that providers of anthropomorphic interactive services must adopt technical measures such as data encryption and access controls to safeguard the security of interaction data.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2143,
+            "end_char": 2184
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.9,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "还明确除法律、行政法规另有规定或者取得用户单独同意外，拟人化互动服务提供者不得将属于用户敏感个人信息的交互数据用于模型训练。",
+            "source_section": "（一）厘清责任边界，夯实安全保障义务",
+            "quote_en": "It also makes clear that unless otherwise provided by laws or administrative regulations or with separate consent obtained from the user, providers of anthropomorphic interactive services shall not use interaction data belonging to users' sensitive personal information for model training.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2230,
+            "end_char": 2292
           }
         ]
       },
       {
         "label": "transparency_disclosure",
         "confidence": 0.95,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "拟人化互动服务提供者应采取有效措施，以提示用户正在与AI而非自然人进行互动",
-            "source_section": "人机边界认知防线"
-          }
-        ]
-      },
-      {
-        "label": "access_controls",
-        "confidence": 0.85,
-        "evidence": [
-          {
-            "quote": "需采取数据加密、访问控制等技术措施保障交互数据安全",
-            "source_section": "隐私权和个人信息保护"
+            "quote": "《办法》规定拟人化互动服务提供者应采取有效措施，以提示用户正在与AI而非自然人进行互动。",
+            "source_section": "（二）重点防范高风险，规制非理性依赖",
+            "quote_en": "The Measures stipulate that providers of anthropomorphic interactive services shall take effective measures to notify users that they are interacting with AI rather than a natural person.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2587,
+            "end_char": 2631
           },
           {
-            "quote": "向不满14周岁的未成年人提供其他拟人化互动服务的，应当取得未成年人父母或者其他监护人的同意",
-            "source_section": "未成年人保护"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.75,
-        "evidence": [
-          {
-            "quote": "用户连续使用超过2小时的，明确应通过对话或弹窗等方式提示用户注意使用时长",
-            "source_section": "防沉迷"
-          }
-        ]
-      },
-      {
-        "label": "model_documentation",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "将安全责任贯穿拟人化互动服务部署、运行、升级、终止服务等全流程",
-            "source_section": "安全主体责任"
+            "quote": "发现用户出现过度依赖、沉迷倾向时，应当以弹窗等显著方式提醒用户交互内容为AI服务生成，提示每一条安慰信息背后是算法逻辑而非人类情感，避免用户产生情感依恋、认知混淆甚至行为成瘾。",
+            "source_section": "（二）重点防范高风险，规制非理性依赖",
+            "quote_en": "When users are found to exhibit tendencies of excessive dependence or addiction, providers shall remind users in a prominent manner such as pop-up windows that the interactive content is generated by AI services, notifying them that behind every comforting message is algorithmic logic rather than human emotion, to prevent emotional attachment, cognitive confusion, or behavioral addiction.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2631,
+            "end_char": 2719
           }
         ]
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "regulatory_supervision",
-        "confidence": 0.8,
+        "label": "none_specified",
+        "confidence": 0.85,
         "evidence": [
           {
-            "quote": "国家网信办与有关部门联合公布《人工智能拟人化互动服务管理暂行办法》",
-            "source_section": "前言"
-          }
-        ]
-      },
-      {
-        "label": "soft_enforcement",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "《办法》明确坚持发展和安全并重、促进创新和依法治理相结合的原则",
-            "source_section": "制度原则"
+            "quote": "国家网信办与有关部门联合公布《人工智能拟人化互动服务管理暂行办法》（以下简称《办法》），通过前瞻性制度设计，在鼓励技术创新的同时，为人工智能拟人化互动服务（以下简称拟人化互动服务）划定了发展边界、明确了行为规范。",
+            "source_section": "专家解读｜人工智能拟人化互动服务的制度指引",
+            "quote_en": "The Cyberspace Administration of China and relevant departments jointly promulgated the Interim Measures for the Management of Anthropomorphic AI Interactive Services (hereinafter referred to as the Measures), which through forward-looking institutional design, while encouraging technological innovation, delineate development boundaries and clarify behavioral norms for anthropomorphic AI interactive services.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 122,
+            "end_char": 228
           }
         ]
       }
     ],
-    "implementation_notes": "This document is an expert interpretation (专家解读) of the 'Interim Measures for the Administration of Anthropomorphic Interactive Services of Artificial Intelligence' published by CAC. It is not the regulation itself but an authoritative commentary explaining the regulation's intent and requirements. The underlying 办法 (Measures) would be binding; this interpretive piece reflects that binding content. The document focuses on AI companion/emotional interaction services, covering minors protection, addiction prevention, crisis intervention, and data privacy.",
-    "confidence": 0.82
+    "enforcement_authorities": [
+      "Cyberspace Administration of China (国家互联网信息办公室)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": null,
+    "implementation_notes": "This document is an official expert interpretation (专家解读) authored by Wang Jiang (President and Party Secretary of the Chinese Academy of Cyberspace Studies) and published on the CAC website, explaining the Interim Measures for the Management of Anthropomorphic Interactive Artificial Intelligence Services (《人工智能拟人化互动服务管理暂行办法》). As an interpretive commentary rather than the enacted regulation itself, it is classified as regulatory guidance rather than binding law. It outlines the Measures' lifecycle safety governance, content and personal data safeguards, human-AI boundary disclosures, anti-addiction reminders (including after 2 hours of continuous use), crisis intervention for extreme emotions and self-harm/suicide, minor mode protections (including guardian consent for minors under 14), and guidance/assistance for elderly users.",
+    "confidence": 0.88
   },
   "risk_framing": {
-    "dominant_frame": "social_stability",
+    "dominant_frame": "consumer_public_safety",
     "secondary_frames": [
-      "consumer_public_safety",
+      "innovation_enablement",
       "fundamental_rights",
-      "innovation_enablement"
+      "social_stability"
     ],
     "frame_confidence": {
-      "existential_catastrophic": 0.05,
-      "national_security": 0.1,
-      "economic_competitiveness": 0.1,
-      "fundamental_rights": 0.2,
-      "social_stability": 0.55,
-      "innovation_enablement": 0.2,
-      "consumer_public_safety": 0.35,
+      "existential_catastrophic": 0.0,
+      "national_security": 0.35,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.7,
+      "social_stability": 0.65,
+      "innovation_enablement": 0.85,
+      "consumer_public_safety": 0.95,
       "labor_transition": 0.0
     },
-    "rationale_summary": "The document primarily frames AI anthropomorphic interaction risks in terms of social stability—specifically the erosion of real human relationships, emotional dependency, social isolation, and harm to vulnerable groups (minors, elderly, psychologically fragile individuals). The governance rationale centers on preserving the social fabric and healthy human relationships, with secondary attention to consumer/public safety (crisis intervention, self-harm prevention) and fundamental rights (privacy, personal data protection), while also affirming innovation enablement as a co-equal policy goal.",
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.03,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.1,
+      "social_stability": 0.1,
+      "innovation_enablement": 0.22,
+      "consumer_public_safety": 0.55,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The document's dominant framing is consumer_public_safety, centering on preventing tangible psychological and physical harms to users—especially minors, the elderly, and emotionally vulnerable individuals—such as deep emotional dependency, behavioral addiction, and extreme life-threatening risks like self-harm or suicide. While innovation_enablement is a prominent runner-up—repeatedly invoking the principle of balancing development and security, encouraging technological innovation, and enabling beneficial applications in eldercare, education, and culture—consumer_public_safety edges it out because the concrete regulatory justifications across nearly every section are driven by safeguarding users' physical and mental health. Secondary rationales include fundamental_rights (protecting user privacy, personal information, and psychological autonomy) and social_stability (preventing erosion of human social relations and infiltration of illegal or harmful content), alongside a brief mention of national_security in content red lines.",
     "evidence_spans": [
       {
-        "quote": "持续给予用户情感认可和支持，为用户构建了一个稳定持续、无需承担现实责任的虚拟",
-        "source_section": null
+        "quote": "拟人化互动服务在应对人口老龄化挑战、缓解社会个体的孤独感、提供心理疏导等方面展现出积极价值，也带来了深度沉迷、威胁公民生命健康等有关安全风险。",
+        "source_section": "一、拟人化互动服务赋能作用和安全风险并存",
+        "quote_en": "Anthropomorphic interactive services have demonstrated positive value in addressing population aging challenges, alleviating individual loneliness, and providing psychological counseling, while also bringing related safety risks such as deep addiction and threats to citizens' lives and health.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 230,
+        "end_char": 301
       },
       {
-        "quote": "影响人类社会关系基础",
-        "source_section": null
+        "quote": "《办法》旨在构建保护未成年人的坚实防线，严防未成年人因心智尚未成熟而沉溺于虚拟情感依赖，防范违法和不良信息渗透与侵蚀。",
+        "source_section": "（三）强化幼老群体保护，保障心理安全底线",
+        "quote_en": "The Measures aim to build a solid line of defense to protect minors, strictly preventing minors from becoming addicted to virtual emotional dependency due to their immature minds, and preventing the infiltration and erosion of illegal and harmful information.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 3030,
+        "end_char": 3089
       },
       {
-        "quote": "长期使用可能导致部分用户出现沉迷依赖、主动缩减现实社交频次，影响用户共情能力、处理分歧能力等现实社交技能",
-        "source_section": null
+        "quote": "《办法》明确坚持发展和安全并重、促进创新和依法治理相结合的原则，将为拟人化互动服务健康发展提供制度保障，也为全球人工智能治理提供中国方案。",
+        "source_section": "二、国内外拟人化互动服务治理制度探索不断推进",
+        "quote_en": "The Measures clearly adhere to the principles of giving equal weight to development and security and combining the promotion of innovation with law-based governance, which will provide institutional safeguards for the healthy development of anthropomorphic interactive services and offer a Chinese solution for global AI governance.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1656,
+        "end_char": 1725
       },
       {
-        "quote": "明确禁止将替代社会交往、控制用户心理、诱导沉迷依赖等作为服务目标",
-        "source_section": null
+        "quote": "对拟人化互动服务的治理，关键在促进技术创新发展的同时，有效防范风险与伦理问题。",
+        "source_section": "三、《办法》从多维度规范拟人化互动服务",
+        "quote_en": "The key to governing anthropomorphic interactive services lies in effectively preventing risks and ethical issues while promoting technological innovation and development.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1727,
+        "end_char": 1766
       },
       {
-        "quote": "坚持发展和安全并重、促进创新和依法治理相结合的原则",
-        "source_section": null
+        "quote": "《办法》将进一步保护用户隐私权和个人信息，助力构建安全可信的拟人化互动服务空间。",
+        "source_section": "（一）厘清责任边界，夯实安全保障义务",
+        "quote_en": "The Measures will further protect users' privacy rights and personal information, helping to build a safe and trustworthy space for anthropomorphic interactive services.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 2292,
+        "end_char": 2332
+      },
+      {
+        "quote": "这易使用户尤其是在现实存在孤独感、心理脆弱的群体，产生深度情感依赖，强化其负面情绪，影响其现实生活，影响人类社会关系基础。",
+        "source_section": "一、拟人化互动服务赋能作用和安全风险并存",
+        "quote_en": "This easily causes users—especially those experiencing loneliness in reality or psychologically vulnerable groups—to develop deep emotional dependency, reinforcing their negative emotions, affecting their real lives, and undermining the foundation of human social relationships.",
+        "frame": "social_stability",
+        "grounding_status": "verbatim",
+        "start_char": 696,
+        "end_char": 757
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "medium",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:47:18.884284Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "0cb82e19d8cf0c31f560db173144d38e76e571f42758bf2df8f2029da719bdbf",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 3279,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 13,
+      "exact_matches": 13,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

@@ -1,13 +1,22 @@
 {
   "jurisdiction": "china",
-  "issuing_body": "国务院 (State Council of China)",
+  "issuing_body": "State Council of the People's Republic of China (国务院)",
   "document_type": "strategy_paper",
   "binding_strength": "strategy_statement",
   "publication_date": "2017-07-08",
   "effective_date": null,
+  "covered_actors": [
+    "Provincial, autonomous region, and municipal people's governments (各省、自治区、直辖市人民政府)",
+    "Ministries, commissions, and directly affiliated institutions of the State Council (国务院各部委、各直属机构)",
+    "AI enterprises, leading backbone enterprises, SMEs, and startups",
+    "Universities and scientific research institutes",
+    "Military-industrial units",
+    "Industry associations, alliances, and AI think tanks",
+    "AI product R&D and design personnel"
+  ],
   "covered_application_domains": [
-    "general_purpose_models",
     "critical_infrastructure",
+    "biometrics",
     "public_sector_use",
     "employment",
     "education",
@@ -16,80 +25,71 @@
     "law_enforcement",
     "defense"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
       "confidence": 0.85,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "增强风险意识，重视风险评估和防控，强化前瞻预防和约束引导",
-          "source_section": "建立人工智能安全监管和评估体系"
+          "quote": "增强风险意识，重视风险评估和防控，强化前瞻预防和约束引导，近期重点关注对就业的影响，远期重点考虑对社会伦理的影响，确保把人工智能发展规制在安全可控范围内。",
+          "source_section": "五、保障措施",
+          "quote_en": "Enhance risk awareness, attach importance to risk assessment and prevention and control, strengthen forward-looking prevention and constraint guidance, focus on the impact on employment in the near term and on social ethics in the long term, and ensure that AI development is regulated within a safe and controllable scope.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18543,
+          "end_char": 18620
         },
         {
-          "quote": "加强对人工智能潜在危害与收益的评估，构建人工智能复杂场景下突发事件的解决方案",
-          "source_section": "制定促进人工智能发展的法律法规和伦理规范"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "建立健全公开透明的人工智能监管体系，实行设计问责和应用监督并重的双层监管结构，实现对人工智能算法设计、产品开发和成果应用等的全流程监管",
-          "source_section": "建立人工智能安全监管和评估体系"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.8,
-      "evidence": [
-        {
-          "quote": "实行设计问责和应用监督并重的双层监管结构",
-          "source_section": "建立人工智能安全监管和评估体系"
-        },
-        {
-          "quote": "研究",
-          "source_section": null
-        },
-        {
-          "quote": "建立追溯和问责制度，明确人工智能法律主体以及相关权利、义务和责任等",
-          "source_section": "制定促进人工智能发展的法律法规和伦理规范"
+          "quote": "加强人工智能对国家安全和保密领域影响的研究与评估，完善人、技、物、管配套的安全防护体系，构建人工智能安全监测预警机制。",
+          "source_section": "五、保障措施",
+          "quote_en": "Strengthen research and assessment of the impact of AI on national security and confidentiality fields, improve supporting security protection systems covering personnel, technology, physical assets, and management, and build an AI security monitoring and early warning mechanism.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18440,
+          "end_char": 18499
         }
       ]
     },
     {
       "label": "pre_deployment_testing",
-      "confidence": 0.7,
+      "confidence": 0.8,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "建设跨领域的人工智能测试平台，推动人工智能安全认证，评估人工智能产品和系统的关键性能",
-          "source_section": "建立人工智能安全监管和评估体系"
+          "quote": "构建动态的人工智能研发应用评估评价机制，围绕人工智能设计、产品和系统的复杂性、风险性、不确定性、可解释性、潜在经济影响等问题，开发系统性的测试方法和指标体系，建设跨领域的人工智能测试平台，推动人工智能安全认证，评估人工智能产品和系统的关键性能。",
+          "source_section": "五、保障措施",
+          "quote_en": "Build a dynamic evaluation and assessment mechanism for AI R&D and application; develop systematic testing methods and indicator systems addressing the complexity, risk, uncertainty, explainability, and potential economic impact of AI designs, products, and systems; construct cross-domain AI testing platforms; promote AI safety certification; and evaluate the key performance of AI products and systems.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18772,
+          "end_char": 18894
         },
         {
-          "quote": "建立人工智能算法与平台安全性测试模型及评估模型，研发人工智能算法与平台安全性测评工具集",
-          "source_section": "人工智能基础数据与安全检测平台"
+          "quote": "人工智能基础数据与安全检测平台。建设面向人工智能的公共数据资源库、标准测试数据集、云服务平台，建立人工智能算法与平台安全性测试模型及评估模型，研发人工智能算法与平台安全性测评工具集。",
+          "source_section": "专栏 3 基础支撑平台",
+          "quote_en": "AI foundational data and security testing platform. Build public data resource repositories, standard test datasets, and cloud service platforms for AI; establish security testing models and evaluation models for AI algorithms and platforms; and develop security testing and evaluation toolkits for AI algorithms and platforms.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 8986,
+          "end_char": 9077
         }
       ]
     },
     {
-      "label": "model_documentation",
-      "confidence": 0.6,
+      "label": "access_controls",
+      "confidence": 0.72,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "坚持安全性、可用性、互操作性、可追溯性原则，逐步建立并完善人工智能基础共性、互联互通、行业应用、网络安全、隐私保护等技术标准",
-          "source_section": "建立人工智能技术标准和知识产权体系"
-        }
-      ]
-    },
-    {
-      "label": "registration_licensing",
-      "confidence": 0.5,
-      "evidence": [
-        {
-          "quote": "重点围绕自动驾驶、服务机器人等应用基础较好的细分领域，加快研究制定相关安全管理法规",
-          "source_section": "制定促进人工智能发展的法律法规和伦理规范"
+          "quote": "加强人工智能网络安全技术研发，强化人工智能产品和系统网络安全防护。",
+          "source_section": "五、保障措施",
+          "quote_en": "Strengthen R&D on AI cybersecurity technologies and enhance cybersecurity protection for AI products and systems.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18739,
+          "end_char": 18772
         }
       ]
     }
@@ -97,11 +97,16 @@
   "enforcement_mechanisms": [
     {
       "label": "regulatory_supervision",
-      "confidence": 0.85,
+      "confidence": 0.82,
       "evidence": [
         {
-          "quote": "建立健全公开透明的人工智能监管体系，实行设计问责和应用监督并重的双层监管结构",
-          "source_section": "建立人工智能安全监管和评估体系"
+          "quote": "建立健全公开透明的人工智能监管体系，实行设计问责和应用监督并重的双层监管结构，实现对人工智能算法设计、产品开发和成果应用等的全流程监管。",
+          "source_section": "五、保障措施",
+          "quote_en": "Establish and improve an open and transparent AI regulatory system, implement a two-tier regulatory structure emphasizing both design accountability and application supervision, and achieve full-process supervision over AI algorithm design, product development, and application of results.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18620,
+          "end_char": 18688
         }
       ]
     },
@@ -110,22 +115,39 @@
       "confidence": 0.8,
       "evidence": [
         {
-          "quote": "促进人工智能行业和企业自律，切实加强管理，加大对数据滥用、侵犯个人隐私、违背道德伦理等行为的惩戒力度",
-          "source_section": "建立人工智能安全监管和评估体系"
-        }
-      ]
-    },
-    {
-      "label": "civil_penalty",
-      "confidence": 0.4,
-      "evidence": [
+          "quote": "促进人工智能行业和企业自律，切实加强管理，加大对数据滥用、侵犯个人隐私、违背道德伦理等行为的惩戒力度。",
+          "source_section": "五、保障措施",
+          "quote_en": "Promote self-regulation in the AI industry and enterprises, earnestly strengthen management, and increase penalties for behaviors such as data abuse, infringement of personal privacy, and violation of moral ethics.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18688,
+          "end_char": 18739
+        },
         {
-          "quote": "加大对数据滥用、侵犯个人隐私、违背道德伦理等行为的惩戒力度",
-          "source_section": "建立人工智能安全监管和评估体系"
+          "quote": "制定人工智能产品研发设计人员的道德规范和行为守则，加强对人工智能潜在危害与收益的评估，构建人工智能复杂场景下突发事件的解决方案。",
+          "source_section": "五、保障措施",
+          "quote_en": "Formulate ethical norms and codes of conduct for AI product R&D and design personnel, strengthen the assessment of potential harms and benefits of AI, and build solutions for emergencies in complex AI scenarios.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17815,
+          "end_char": 17879
         }
       ]
     }
   ],
-  "implementation_notes": "This is China's 2017 New Generation AI Development Plan (新一代人工智能发展规划), a high-level national strategy document issued by the State Council. It is primarily a strategy/roadmap document with three-phase goals to 2030. While it directs ministries to develop laws, regulations, and standards, it does not itself constitute binding law. Safety and governance provisions are largely aspirational with implementation delegated to future rulemaking. The document explicitly calls for future development of AI laws, ethics frameworks, safety monitoring systems, and standards—meaning most enforcement mechanisms are anticipated rather than operative at time of publication. Confidence scores for enforcement mechanisms are conservative given this forward-looking character.",
-  "confidence": 0.88
+  "enforcement_authorities": [
+    "State Council of the People's Republic of China (国务院)",
+    "National Leading Group for Science and Technology System Reform and Innovation System Construction (国家科技体制改革和创新体系建设领导小组)",
+    "Ministry of Science and Technology (科技部)",
+    "AI Plan Promotion Office (人工智能规划推进办公室)",
+    "Inter-Ministerial Joint Conference on National Science and Technology Plan Management (国家科技计划管理部际联席会议)"
+  ],
+  "compliance_deadlines": [
+    "2020: Strategic milestone to align overall AI technology and applications with world-advanced levels and preliminarily establish AI ethical norms and policies/regulations in selected fields",
+    "2025: Strategic milestone to preliminarily establish an AI legal, regulatory, ethical, and policy system and form AI safety assessment and control capabilities",
+    "2030: Strategic milestone to reach world-leading levels in AI overall and build a more comprehensive AI legal, regulatory, ethical, and policy system"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "Issued as State Council Notice Guo Fa [2017] No. 35 (dated 2017-07-08; published online 2017-07-20), this is China's overarching national AI strategy paper setting three-step targets for 2020, 2025, and 2030 rather than an enforceable statute. It directs ministries and local governments to implement R&D, industrial, military-civil fusion, infrastructure, and workforce tasks, coordinated by the National Leading Group for S&T System Reform and MOST (hosting the AI Plan Promotion Office) alongside an AI Strategic Advisory Committee. While it imposes no direct legal sanctions, Section 5 calls for future legislation on civil and criminal AI liability, sector-specific safety rules (e.g., autonomous driving, service robots), a dual-layer design-accountability and application-supervision regime, safety certification, and stronger penalties for data abuse, privacy infringement, and ethical violations.",
+  "confidence": 0.95
 }

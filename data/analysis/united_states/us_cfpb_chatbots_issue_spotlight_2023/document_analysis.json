@@ -5,31 +5,85 @@
   "policy_extraction": {
     "jurisdiction": "united_states",
     "issuing_body": "Consumer Financial Protection Bureau",
-    "document_type": "regulatory_guidance",
-    "binding_strength": "regulatory_guidance",
+    "document_type": "strategy_paper",
+    "binding_strength": "strategy_statement",
     "publication_date": "2023-06-06",
     "effective_date": null,
+    "covered_actors": [
+      "Financial institutions deploying customer-service chatbots (commercial banks, mortgage servicers, debt collectors, credit reporting companies, and other financial companies)",
+      "Third-party chatbot vendors and cloud/LLM technology providers serving financial institutions"
+    ],
     "covered_application_domains": [
-      "finance"
+      "finance",
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [
+      "Deploying chatbots that violate existing federal consumer financial laws by providing inaccurate legally required information, failing to recognize or resolve consumer disputes, obstructing consumers from invoking federal rights, or failing to protect consumer privacy and PII security"
     ],
     "safety_requirements": [
       {
-        "label": "transparency_disclosure",
-        "confidence": 0.75,
+        "label": "human_oversight",
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "Chatbots in consumer finance",
-            "source_section": "Title"
+            "quote": "Automated responses by a chatbot may fail to resolve a customer’s issue and instead lead them in continuous loops of repetitive, unhelpful jargon or legalese without an offramp to a human customer service representative.",
+            "source_section": "Page 13",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27167,
+            "end_char": 27387
+          },
+          {
+            "quote": "Deficient chatbots that prevent access to live, human support can lead to law violations, diminished service, and other harms.",
+            "source_section": "Page 22",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 48969,
+            "end_char": 49095
           }
         ]
       },
       {
-        "label": "human_oversight",
-        "confidence": 0.7,
+        "label": "access_controls",
+        "confidence": 0.89,
+        "obligation_strength": "mandatory",
         "evidence": [
           {
-            "quote": "Chatbots in consumer finance",
-            "source_section": "Title"
+            "quote": "Financial institutions have an obligation to keep personally identifiable information safe, regardless of the technology used.",
+            "source_section": "Page 18",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 39439,
+            "end_char": 39565
+          },
+          {
+            "quote": "Therefore, when customers are entering personal information into chat logs, those logs should be considered sensitive consumer information and kept secure from a breach or intrusion.",
+            "source_section": "Page 18",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40111,
+            "end_char": 40293
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.86,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "The scope of security testing needed for AI systems like chatbots is extensive and requires both rigorous testing and thorough auditing of any third-party service providers involved in operations. There are simply too many vulnerabilities for these systems to be entrusted with sensitive customer data without appropriate guardrails.",
+            "source_section": "Page 19",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42333,
+            "end_char": 42666
           }
         ]
       }
@@ -37,58 +91,168 @@
     "enforcement_mechanisms": [
       {
         "label": "regulatory_supervision",
-        "confidence": 0.7,
+        "confidence": 0.9,
         "evidence": [
           {
-            "quote": "Consumer Financial Protection Bureau",
-            "source_section": "Metadata"
+            "quote": "The CFPB will continue to actively monitor the use of chatbots in the markets it regulates and will hold entities that fail to meet their obligations to account.",
+            "source_section": "Page 4",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5147,
+            "end_char": 5308
+          },
+          {
+            "quote": "The CFPB is actively monitoring the market, and expects institutions using chatbots to do so in a manner consistent with the customer and legal obligations.",
+            "source_section": "Page 22",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 49261,
+            "end_char": 49417
           }
         ]
       },
       {
         "label": "soft_enforcement",
-        "confidence": 0.65,
+        "confidence": 0.92,
         "evidence": [
           {
-            "quote": "Issue Spotlight",
-            "source_section": "Description"
+            "quote": "This issue spotlight is not intended to impose any obligations or define any rights and is not intended as a CFPB interpretation of any regulation or statute.",
+            "source_section": "Page 4",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4701,
+            "end_char": 4859
+          },
+          {
+            "quote": "The CFPB also encourages people who are experiencing issues getting answers to their questions due to a lack of human interaction, to submit a consumer complaint with the CFPB.",
+            "source_section": "Page 22",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 49418,
+            "end_char": 49594
           }
         ]
       }
     ],
-    "implementation_notes": "The document text is primarily binary/encoded PDF content with limited extractable plain text. Based on metadata: this is a CFPB Issue Spotlight on chatbots in consumer finance published June 6, 2023. Issue Spotlights are regulatory guidance/informational documents, not binding rules. The document likely examines risks and consumer protection concerns related to AI chatbots in financial services. Specific safety requirements and enforcement mechanisms cannot be confirmed from the encoded content alone; classifications are inferred from document type and issuing body context.",
-    "confidence": 0.45
+    "enforcement_authorities": [
+      "Consumer Financial Protection Bureau (CFPB)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": "Warns that financial institutions deploying deficient chatbots may be held liable under existing federal consumer financial laws when chatbots provide inaccurate legally required information, fail to recognize or resolve disputes, block access to live human support, or fail to protect sensitive PII; the Issue Spotlight itself explicitly imposes no new obligations or standalone penalties.",
+    "implementation_notes": "Published June 2023 as a CFPB research Issue Spotlight examining rule-based and LLM/generative AI chatbots across U.S. consumer finance (including all top 10 commercial banks). Analyzes consumer complaints documenting 'doom loops', unrecognized disputes, factual hallucinations, blocked human offramps, system downtime, impersonation/phishing scams, chat-log data security risks, and training-data privacy leakage, while encouraging consumer complaints and industry whistleblower tips alongside active CFPB market monitoring.",
+    "confidence": 0.96
   },
   "risk_framing": {
     "dominant_frame": "consumer_public_safety",
     "secondary_frames": [
-      "fundamental_rights",
-      "social_stability"
+      "fundamental_rights"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
       "national_security": 0.0,
-      "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.0,
+      "economic_competitiveness": 0.35,
+      "fundamental_rights": 0.78,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.15,
+      "consumer_public_safety": 0.97,
+      "labor_transition": 0.1
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.05,
+      "fundamental_rights": 0.21,
       "social_stability": 0.0,
       "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.82,
+      "consumer_public_safety": 0.74,
       "labor_transition": 0.0
     },
-    "rationale_summary": "This CFPB document focuses on chatbots in consumer finance, an agency whose mandate is consumer protection. The document's title and issuing body indicate primary concern with risks to financial consumers from chatbot deployment, such as inaccurate information, consumer confusion, and harm to vulnerable populations—all consumer/public safety framings. Secondary framings include fundamental rights (fair treatment, non-discrimination) and social stability (protecting vulnerable groups from financial harm).",
+    "rationale_summary": "CFPB's Issue Spotlight on Chatbots in Consumer Finance is dominantly framed around consumer_public_safety, centering on concrete financial harms to consumers—including junk fees, late fees, default, unresolved transaction disputes, inaccurate financial information, 'doom loops', phishing/impersonation scams, and eroded customer trust when institutions replace live human support with deficient chatbots. Consumer_public_safety strongly outweighs fundamental_rights because the report's primary evidence and risk taxonomy focus on operational service failures and consumer financial injury. Fundamental_rights serves as a substantive secondary frame covering consumer data privacy, PII breaches in chat logs and training datasets, disproportionate barriers for limited-English-proficiency users, algorithmic bias, and invoking federal legal rights, with a minor economic_competitiveness note on weak market competition and lock-in.",
     "evidence_spans": [
       {
-        "quote": "Chatbots in consumer finance",
-        "source_section": "Title"
+        "quote": "There are many kinds of negative outcomes for the customer, including wasted time, feeling stuck and frustrated, receiving inaccurate information, and paying more in junk fees. These issues are particularly pronounced when people are unable to obtain tailored support for their problems.",
+        "source_section": "Page 3",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 3283,
+        "end_char": 3570
       },
       {
-        "quote": "Issue Spotlight",
-        "source_section": "Document description"
+        "quote": "Providing inaccurate information regarding a consumer financial product or service, for example, could be catastrophic. It could lead to the assessment of inappropriate fees, which in turn could lead to worse outcomes such as default, resulting in the customer selecting an inferior option or consumer financial product, or other harms.",
+        "source_section": "Page 21",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 47751,
+        "end_char": 48087
       },
       {
-        "quote": "Consumer Financial Protection Bureau",
-        "source_section": "Author"
+        "quote": "Chat logs introduce another venue for privacy attacks, making it more difficult to fully protect the privacy and security of consumers’ personal and financial information.",
+        "source_section": "Page 18",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 40294,
+        "end_char": 40465
+      },
+      {
+        "quote": "This limitation can be particularly problematic for people with limited English proficiency, where the technology trained on a limited number of dialects makes it difficult for consumers with diverse dialect needs to use chatbots to receive help from their financial institution.",
+        "source_section": "Page 11",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 21930,
+        "end_char": 22209
+      },
+      {
+        "quote": "Importantly, in such markets where competition is lacking or weakened, the extent of cost savings being passed onto consumers in the form of better products and services is diminished.",
+        "source_section": "Page 21",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 46691,
+        "end_char": 46875
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:20:03.227818Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "27834092808e3946f4b57730e903495e08c54b44ee3073802e7f7673ff08d3de",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 50407,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 14,
+      "exact_matches": 14,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

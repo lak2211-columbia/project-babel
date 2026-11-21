@@ -24,6 +24,10 @@ import {
   type ScoringMode,
 } from "@/lib/seed-data";
 import type { SourceEntry } from "@/lib/sources-data";
+import {
+  formatModelList,
+  getProvenanceBannerKind,
+} from "@/lib/taxonomy-vocab";
 import { replaceUrlQuery, useUrlSearch } from "@/lib/use-url-search";
 
 import { DecouplingMap } from "./decoupling-map";
@@ -144,7 +148,7 @@ export function OverviewDashboard({
               </span>
               active primary
             </span>
-            <span aria-hidden className="text-[#475569]">
+            <span aria-hidden className="hidden text-[#475569] sm:inline">
               ·
             </span>
             <span>
@@ -153,7 +157,7 @@ export function OverviewDashboard({
               </span>
               corpus total
             </span>
-            <span aria-hidden className="text-[#475569]">
+            <span aria-hidden className="hidden text-[#475569] sm:inline">
               ·
             </span>
             <span>
@@ -162,14 +166,14 @@ export function OverviewDashboard({
               </span>
               binding laws
             </span>
-            <span aria-hidden className="text-[#475569]">
+            <span aria-hidden className="hidden text-[#475569] sm:inline">
               ·
             </span>
             <span>
-              latest pub ·{" "}
+              latest pub{" "}
               <span className="text-[#f1f5f9]">{data.snapshotDate}</span>
             </span>
-            <span aria-hidden className="text-[#475569]">
+            <span aria-hidden className="hidden text-[#475569] sm:inline">
               ·
             </span>
             <span>
@@ -179,29 +183,65 @@ export function OverviewDashboard({
           </div>
         </header>
 
-        {/* Honest provenance disclosure banner (A8, B1) */}
-        {prov.legacyCount > 0 ? (
-          <div
-            role="note"
-            className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-sm border border-[#38bdf8]/25 bg-[#0f1623] px-3.5 py-2 text-[12px] text-[#cbd5e1]"
-          >
-            <p className="leading-snug">
-              <span className="mr-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-[#38bdf8]">
-                provenance note
-              </span>
-              {prov.legacyCount} of {prov.totalAnalyzed} analyzed documents
-              currently use legacy v1 machine extractions (Claude Sonnet 4.6, no
-              human review queue); schema v2.1 full re-analysis and verification
-              are pending.
-            </p>
-            <Link
-              href="/methodology#validation"
-              className="shrink-0 font-mono text-[11px] uppercase tracking-wider text-[#67e8f9] underline decoration-[#67e8f9]/40 underline-offset-2 hover:text-white"
-            >
-              validation &amp; limits →
-            </Link>
-          </div>
-        ) : null}
+        {/* Honest dynamic provenance strip (A8, B1, Stage 4A) */}
+        {(() => {
+          const bannerKind = getProvenanceBannerKind(prov);
+          const modelDisplay = formatModelList(prov.models);
+          if (bannerKind === "legacy_warning") {
+            return (
+              <div
+                role="note"
+                className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-sm border border-[#e6ae49]/35 bg-[#0f1623] px-3.5 py-2 text-[12px] text-[#cbd5e1]"
+              >
+                <p className="leading-snug">
+                  <span className="mr-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-[#e6ae49]">
+                    provenance note
+                  </span>
+                  {prov.legacyCount} of {prov.totalAnalyzed} analyzed documents
+                  currently use legacy v1 machine extractions ({modelDisplay},
+                  no human review queue); schema v2.1 full re-analysis and
+                  verification are pending.
+                </p>
+                <Link
+                  href="/methodology#validation"
+                  className="shrink-0 font-mono text-[11px] uppercase tracking-wider text-[#67e8f9] underline decoration-[#67e8f9]/40 underline-offset-2 hover:text-white"
+                >
+                  validation &amp; limits →
+                </Link>
+              </div>
+            );
+          }
+          if (bannerKind === "v2_verified") {
+            return (
+              <div
+                role="note"
+                className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-sm border border-[#38bdf8]/30 bg-[#0f1623] px-3.5 py-2 text-[12px] text-[#cbd5e1]"
+              >
+                <p className="leading-snug">
+                  <span className="mr-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-[#67e8f9]">
+                    v2.1 verified provenance
+                  </span>
+                  Coded via{" "}
+                  <strong className="font-medium text-[#f1f5f9]">
+                    {modelDisplay}
+                  </strong>{" "}
+                  (automated extraction, no human review queue) · Taxonomy v
+                  {data.taxonomyVersion}
+                  {prov.meanGroundingRatio !== null
+                    ? ` · ${Math.round(prov.meanGroundingRatio * 100)}% verified quote grounding (n=${prov.groundingSampleCount})`
+                    : ""}
+                </p>
+                <Link
+                  href="/methodology#validation"
+                  className="shrink-0 font-mono text-[11px] uppercase tracking-wider text-[#67e8f9] underline decoration-[#67e8f9]/40 underline-offset-2 hover:text-white"
+                >
+                  validation &amp; gold set →
+                </Link>
+              </div>
+            );
+          }
+          return null;
+        })()}
 
         {/* Lead With Findings (C5) */}
         {data.findings.length > 0 ? (

@@ -1,149 +1,316 @@
 {
   "jurisdiction": "south_korea",
-  "issuing_body": "디지털플랫폼정부위원회 (Digital Platform Government Committee) / 한국지능정보사회진흥원 (NIA)",
+  "issuing_body": "Presidential Committee on the Digital Platform Government / National Information Society Agency",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": "2025-04",
+  "publication_date": "2025-04-16",
   "effective_date": null,
-  "covered_application_domains": [
-    "general_purpose_models",
-    "public_sector_use",
-    "critical_infrastructure",
-    "healthcare",
-    "law_enforcement",
-    "education",
-    "employment"
+  "covered_actors": [
+    "Central ministries, local governments, public institutions, National Assembly, and courts (전 공공부문), public-sector IT system managers, and contracting agencies (발주기관)",
+    "Private cloud computing service providers (CSAP-certified IaaS, PaaS, and SaaS providers)",
+    "Private hyperscale AI, LLM, sLLM, RAG, and AI service vendors and project contractors (수행기관) supplying AI systems via the Pan-Government Hyperscale AI Common Foundation, Digital Service Support System, or public procurement tenders"
   ],
+  "covered_application_domains": [
+    "public_sector_use",
+    "general_purpose_models"
+  ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
-      "label": "risk_assessment",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "생성형 인공지능이 가져올 위험을 이해하고 방지 / 조직 내외의 민감정보, 개인정보 보호 대책 강구 / 인공지능의 윤리성 확보를 위한 기술적, 제도적 조치 강구",
-          "source_section": "3.1 도입 원칙 및 고려사항"
-        },
-        {
-          "quote": "대상 업무와 성과 목표를 명확히 정의 / 학습데이터의 품질에 따라 편견, 오류의 발생 가능성을 확인하고 이를 보완할 수 있는 기술적, 관리적 조치 마련",
-          "source_section": "3.1 초거대 AI 도입시 사전 고려사항"
-        }
-      ]
-    },
-    {
       "label": "access_controls",
-      "confidence": 0.9,
+      "confidence": 0.98,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "업무 중요도에 따라 기밀(Classified), 민감(Sensitive), 공개(Open) 등 3개 등급으로 분류하여 보안정책 적용",
-          "source_section": "3.2.1 데이터 보안 등급"
+          "quote": "- 단말은 기관 전산망 내 존재하는 인증·통제 서버를 통해 AI 서비스 활용을 사전에 승인 받은 후 보안 조치를 마쳐야 함\n- AI 서비스 계정 정보는 업무 시스템 정보와 분리해 관리하고 계정별 접근 권한과 사용 이력도 별도로 추적·기록",
+          "source_section": "3.2.1 데이터 보안 등급",
+          "quote_en": "Work terminals must obtain prior approval for AI service use through authentication/control servers inside the agency network and complete security measures; AI account credentials must be segregated from work systems, with per-account access rights and usage logs tracked separately.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 41428,
+          "end_char": 41560
         },
         {
-          "quote": "단말은 기관 전산망 내 존재하는 인증·통제 서버를 통해 AI 서비스 활용을 사전에 승인받은 후 보안 조치를 마쳐야 함 / AI 서비스 계정 정보는 업무 시스템 정보와 분리해 관리하고 계정별 접근 권한과 사용이력도 별도로 추적·기록",
-          "source_section": "3.2.1 고려사항"
+          "quote": "- 업무 단말에서 생성형 AI에 정보 입력 시 발생할 수 있는 정보 유출을 차단하기 위해 콘텐츠 필터링과 AI가 생성한 텍스트 또는 문서에 잘못된 결과물(악성 URL 등)로 인해 유해사이트로 접근하는 것을 차단하기 위한 보안 통제 항목 필요",
+          "source_section": "3.2.1 데이터 보안 등급",
+          "quote_en": "Content filtering to block information leakage when entering data into generative AI from work terminals and security controls blocking access to harmful sites via malicious URLs in AI outputs are required.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 41965,
+          "end_char": 42099
         }
       ]
     },
     {
-      "label": "transparency_disclosure",
-      "confidence": 0.8,
+      "label": "training_data_governance",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "'인공지능 윤리기준(과기정통부, '20.12월)'을 준수 - ① 인권 보장 ... ⑩ 투명성",
-          "source_section": "3.1 도입 원칙"
+          "quote": "원칙4 국가 안보와 국민 권리 보호를 보장\n- 민감, 기밀 데이터의 외부 유출 방지\n- 학습데이터 내 개인정보와 저작권 보호",
+          "source_section": "3.1 도입 원칙 및 고려사항",
+          "quote_en": "Principle 4: Guarantee national security and citizens' rights—prevent external leakage of sensitive and classified data, and protect personal information and copyright in training data.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 36302,
+          "end_char": 36371
         },
         {
-          "quote": "AI 시스템이 전체 수명주기 동안 견고하고 안전하며, 보안이 유지되어야 함 / AI 사용 여부 공개, AI 시스템의 개발·훈련·운영·배포 방식에 대한 이해 촉진",
-          "source_section": "OECD AI 원칙 참고"
+          "quote": "●RAG 기반 모델은 모델 자체를 재학습하지 않으므로, 최신 정보 반영이 가능하나 활용 데이터의 신뢰성을 보장해야 하므로 백터DB 등 관리가 중요",
+          "source_section": "3.2.3 데이터 학습 방식",
+          "quote_en": "Because RAG-based models reflect up-to-date information without retraining the base model, governing vector databases and guaranteeing the trustworthiness of retrieved data are critical.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 45440,
+          "end_char": 45521
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "●데이터 보안 등급 분류에 따른 위협 식별 및 보안대책 대상을 선정하고, 각각의 보안통제 항목의 선택, 구현계획 수립 등의 보안대책을 마련하여야 함",
+          "source_section": "3.2.1 데이터 보안 등급",
+          "quote_en": "Identify threats and security targets according to data security tier classification (Classified/Sensitive/Open), select corresponding security controls, and establish implementation plans.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 41050,
+          "end_char": 41132
+        },
+        {
+          "quote": "윤리강령 준수 (Ethics Compliance) ●편향 및 위험의 검증 절차 ●제한 준수 규정",
+          "source_section": "3.2.5 유지보수 및 운영(Operations) - LLM 서비스 레벨 목표(SLO) 예시",
+          "quote_en": "Ethics Compliance (SLO): Procedures for verifying bias and risks, and compliance rules for usage restrictions.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 50135,
+          "end_char": 50188
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.94,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "●추가학습된 모델은 목표한 성능을 갖추었는지 검증과 최신성이 중요한 도메인의 경우 주기적인 모델 업데이트가 필요함",
+          "source_section": "3.2.3 데이터 학습 방식",
+          "quote_en": "Models that have undergone additional training require verification that they achieve target performance, as well as periodic updates in domains where currency is critical.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 45376,
+          "end_char": 45439
+        },
+        {
+          "quote": "●단기에 성과를 도출할 수 있는 업무를 대상으로 시범 적용 및 검증·보완하고, 혁신적 가치가 높은 분야로 단계적 확산",
+          "source_section": "3.1 도입 원칙 및 고려사항",
+          "quote_en": "Conduct pilot deployment, verification, and remediation on tasks capable of delivering short-term outcomes before phased scaling to high-value areas.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 37174,
+          "end_char": 37239
         }
       ]
     },
     {
       "label": "human_oversight",
-      "confidence": 0.85,
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "자동화 대상과 인간 의사결정 대상을 명확히 구분하고 이에 따른 업무 프로세스를 재정의",
-          "source_section": "3.1 초거대 AI 도입시 사전 고려사항"
+          "quote": "●자동화 대상과 인간 의사결정 대상을 명확히 구분하고 이에 따른 업무 프로세스를 재정의",
+          "source_section": "3.1 도입 원칙 및 고려사항",
+          "quote_en": "Clearly distinguish between tasks subject to automation and tasks requiring human decision-making, and redesign work processes accordingly.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 36899,
+          "end_char": 36947
         },
         {
-          "quote": "민원인 대상 상담은 사람이 수행하면서 자료의 검색·대조·요약에만 부분적으로 초거대 AI를 활용하는 형태도 가능함",
-          "source_section": "2.2.2 유형5 상담 지원"
+          "quote": "- 의사결정 설명 가능성 점수\n- 인적 개입 필요 비율\n- 다중 기준 충족도\n- 이의제기 비율",
+          "source_section": "4.3 AI 성과지표 Pool (5. 판정·의사결정)",
+          "quote_en": "Decision explainability score; rate of required human intervention; multi-criteria compliance; objection/appeal rate (operational performance indicators for automated decision-support AI).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 62699,
+          "end_char": 62751
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.88,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "투명성 및 설명 가능성 Transparency and explainability\n- 이해관계자들이 AI 시스템의 작동방식을 이해하고 그 결과에 이의를 제기할 수 있어야 하며, AI 시스템의 능력과 한계에 대한 이해 촉진을 목표로 함 ※ AI 사용 여부 공개, AI 시스템의 개발·훈련·운영·배포 방식에 대한 이해 촉진, 의미 있는 정보 제공 및 명확성 확보, AI 시스템 결과에 대한 설명가능성 제고 등",
+          "source_section": "3.1 도입 원칙 및 고려사항 - [참고] OECD AI 원칙",
+          "quote_en": "Transparency and explainability: Stakeholders should be able to understand how AI systems work and challenge outcomes, including disclosing AI use, clarifying capabilities/limits, and raising explainability.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 37884,
+          "end_char": 38109
+        },
+        {
+          "quote": "- 판정 일관성 지수\n- 의사결정 설명 가능성 점수",
+          "source_section": "4.1 성과 관리 필요성 - 그림 12 AI 프로젝트 성과지표 Pool",
+          "quote_en": "Judgment consistency index and decision-making explainability score (recommended output metrics for public-sector automated workflow AI services).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 54840,
+          "end_char": 54868
         }
       ]
     },
     {
       "label": "model_documentation",
-      "confidence": 0.75,
+      "confidence": 0.9,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "서비스 레벨 목표(SLO) 항목 검토(요구사항 및 목표 품질 등) / 사용 데이터 보고(Usage Data Report): 사용량 및 성과 추이 데이터에 대한 정기 보고",
-          "source_section": "3.2.5 유지보수 및 운영"
+          "quote": "- 서비스 버전 관리 및 배포\n- 서비스 모니터링(사용 인원, 사용횟수, 트래픽, 효과성 등)",
+          "source_section": "3.2.5 유지보수 및 운영(Operations)",
+          "quote_en": "Service version management and deployment, and continuous service monitoring (user count, usage frequency, traffic, effectiveness).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 49625,
+          "end_char": 49677
         },
         {
-          "quote": "법적 준수 사항(Legal Compliance): LLM 서비스의 법률 및 규제 준수에 대한 보장",
-          "source_section": "3.2.5 LLM 서비스 레벨 목표(SLO) 예시"
+          "quote": "사용 데이터 보고 (Usage Data Report) ●사용량 및 성과 추이 데이터에 대한 정기 보고",
+          "source_section": "3.2.5 유지보수 및 운영(Operations) - LLM 서비스 레벨 목표(SLO) 예시",
+          "quote_en": "Usage Data Report (SLO): Periodic reporting on usage volume and performance trend data.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 50427,
+          "end_char": 50483
         }
       ]
     },
     {
-      "label": "incident_reporting",
-      "confidence": 0.6,
+      "label": "third_party_audit",
+      "confidence": 0.86,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "편향, 할루시네이션(환각), 악용 등 사회적·윤리적 문제에 대응하기 위해서도 필요함",
-          "source_section": "3.2.5 유지보수 및 운영"
+          "quote": "4) CSAP 인증 등에 기반한 보안성, 비용 효율성, 안정성, 향후 확장성 등을 고려하여 클라우드 컴퓨팅 서비스를 선정함",
+          "source_section": "3.2.2 클라우드 서비스 구성 방안",
+          "quote_en": "4) Select cloud computing services based on security verified via CSAP (KISA Cloud Security Assurance Program) certification, cost efficiency, stability, and scalability.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 43412,
+          "end_char": 43480
         },
         {
-          "quote": "보안 취약점 개선율 / 정보보호 및 취약점 분석 등 보안성 검토",
-          "source_section": "체크리스트 5"
+          "quote": "- C/S/O 등급분류, 위협식별 등 적절성 평가·조정 □\n- 국가정보원 보안성 검토 □",
+          "source_section": "3.3 초거대 AI 도입 체크리스트",
+          "quote_en": "Evaluate and adjust adequacy of C/S/O classification and threat identification, and complete National Intelligence Service (NIS) security review.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 51176,
+          "end_char": 51225
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.82,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "●디지털서비스를 제공하는 기업은 아래와 같은 심사신청 및 선정 절차를 거쳐 서비스를 등록하고, 수요자는 시스템의 검색을 통해 서비스를 구매할 수 있음",
+          "source_section": "3.2.4 서비스 도입 방식",
+          "quote_en": "Enterprises offering digital services register their services after passing application review and selection procedures, enabling public-sector buyers to search and procure them.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 48262,
+          "end_char": 48345
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "soft_enforcement",
-      "confidence": 0.9,
+      "label": "procurement_condition",
+      "confidence": 0.95,
       "evidence": [
         {
-          "quote": "본 가이드라인은 ... 필요한 관련 기준과 절차, 고려 사항을 안내하는 것을 목적으로 함",
-          "source_section": "0. 가이드라인 목적"
+          "quote": "●(범정부 초거대 AI 공통기반 활용) 정부의 공공AI 정책 방향과 보안 걱정없이 내부데이터 학습 및 경제성 확보 등을 위해 각 기관에서는 우선적으로 범정부 공통기반을 활용하여야 함",
+          "source_section": "3.2 도입 절차",
+          "quote_en": "To align with public AI policy, enable secure internal-data training, and ensure cost efficiency, agencies should prioritize using the Pan-Government Hyperscale AI Common Foundation.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 38850,
+          "end_char": 38951
         },
         {
-          "quote": "아래 예시의 도입 체크리스트를 참고하여 각 기관의 상황에 맞도록 활용하도록 제시함",
-          "source_section": "3.3 초거대 AI 도입 체크리스트"
+          "quote": "●AI 과제 발주기관과 수행기관 간 합의를 통해 각 단계별로 중점 관리되어야 하는 성과지표를 선정함으로써 사업 목표 달성에 기여 가능함",
+          "source_section": "4.3 AI 성과지표 Pool",
+          "quote_en": "Contracting agencies and vendor contractors jointly agree on key lifecycle performance indicators at each project stage to govern delivery and goal attainment.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 58307,
+          "end_char": 58382
         }
       ]
     },
     {
       "label": "regulatory_supervision",
-      "confidence": 0.65,
+      "confidence": 0.84,
       "evidence": [
         {
-          "quote": "국가정보원 보안성 검토",
-          "source_section": "3.3 체크리스트 1"
-        },
-        {
-          "quote": "클라우드컴퓨팅서비스 보안인증제도(CSAP) 기준에 부합하는 민간 클라우드 서비스 ... CSAP 인증 등에 기반한 보안성 검토",
-          "source_section": "3.2.2 클라우드 서비스 구성 방안"
+          "quote": "- C/S/O 등급분류, 위협식별 등 적절성 평가·조정 □\n- 국가정보원 보안성 검토 □",
+          "source_section": "3.3 초거대 AI 도입 체크리스트",
+          "quote_en": "Public agencies must evaluate C/S/O tiering and threat identification and undergo National Intelligence Service (NIS) security review.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 51176,
+          "end_char": 51225
         }
       ]
     },
     {
-      "label": "procurement_condition",
-      "confidence": 0.75,
+      "label": "soft_enforcement",
+      "confidence": 0.94,
       "evidence": [
         {
-          "quote": "각 기관에서는 우선적으로 범정부 공통기반을 활용하여야 함",
-          "source_section": "3.2 도입 절차"
+          "quote": "- 또한 공공부문의 정보시스템 담당자에게는 초거대 AI 도입과 활용에 필요한 실무적 지침과 공공의 다양한 AI 서비스 사례들을 제공하고자 함",
+          "source_section": "0 가이드라인 목적 및 구성",
+          "quote_en": "Provides practical operational guidance and diverse public-sector AI service examples for public-sector IT system managers.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1921,
+          "end_char": 1999
         },
         {
-          "quote": "디지털서비스 이용지원시스템(www.digitalmarket.kr) 또는 디지털서비스몰(digitalmall.g2b.go.kr)을 통해 이용 가능함",
-          "source_section": "3.2.4 서비스 도입 방식"
+          "quote": "●행정·공공기관에서 초거대 AI를 공공부문에 도입할 경우 아래 예시의 도입 체크리스트를 참고하여 각 기관의 상황에 맞도록 활용하도록 제시함",
+          "source_section": "3.3 초거대 AI 도입 체크리스트",
+          "quote_en": "Presents an illustrative adoption checklist for administrative and public agencies to adapt to their organizational contexts when adopting hyperscale AI.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 50619,
+          "end_char": 50696
         }
       ]
     }
   ],
-  "implementation_notes": "This is a non-binding regulatory guidance document (version 2.0, revised April 2025) issued jointly by the Digital Platform Government Committee and NIA for the South Korean public sector. It covers hyperscale/generative AI (초거대 AI/LLM) adoption across central ministries, local governments, and public institutions. Key obligations are framed as principles and checklists rather than legally enforceable mandates. Data security classification (C/S/O) and CSAP cloud certification requirements reference existing binding law (클라우드컴퓨팅법, 정보공개법, N2SF). AI ethics compliance references the MSIT AI Ethics Guidelines (2020). The document does not specify civil or criminal penalties; enforcement relies on existing procurement and cloud security regulatory frameworks. Performance management framework (Part 4) provides KPI pools for AI project lifecycle evaluation.",
-  "confidence": 0.88
+  "enforcement_authorities": [
+    "Presidential Committee on the Digital Platform Government (디지털플랫폼정부위원회)",
+    "National Information Society Agency (한국지능정보사회진흥원, NIA)",
+    "National AI Committee (국가인공지능위원회 — referenced for 2030 public AI policy targets)",
+    "National Intelligence Service (국가정보원 — N2SF security guidelines and agency security reviews)",
+    "Ministry of Science and ICT (과학기술정보통신부)",
+    "Ministry of the Interior and Safety (행정안전부)",
+    "Korea Internet & Security Agency (한국인터넷진흥원, KISA — CSAP cloud security certification)"
+  ],
+  "compliance_deadlines": [
+    "2030: Policy target cited from the National AI Committee's National AI Strategy Policy Direction (Sept 2024) to achieve a 95% public-sector AI adoption rate"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "Major Version 2.0 revision (April 2025) superseding the April 2024 guideline, issued by the Presidential Committee on the Digital Platform Government and NIA. Substantially expands operational governance over Version 1.0 by: (1) adding the Pan-Government Hyperscale AI Common Foundation priority policy and Public AI 3 Strategic Goals (targeting 95% public AI adoption by 2030); (2) completing Section 3.2.1 with the NIS National Network Security Framework (N2SF) Classified/Sensitive/Open (C/S/O) tiering, terminal authorization, account segregation, MFA, outbound content/URL filtering, and NIS security review; (3) adding RAG as a 4th architectural pathway with vector-DB governance; (4) incorporating the May 2024 OECD AI Principles alongside MSIT's 2020 AI Ethics Principles; (5) introducing Part 4's lifecycle AI Performance Management Framework and 344-metric KPI pool (covering ethics compliance, security vulnerability remediation, test coverage, explainability, human intervention, and appeal rates); and (6) cataloging 110 domestic public AI pilots and 1,802 international public AI cases while noting DeepSeek/open-source, multimodal, and agentic AI trends (without imposing dedicated open-weight or agentic autonomy mandates).",
+  "confidence": 0.97
 }

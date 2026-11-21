@@ -3,11 +3,15 @@
   "issuing_body": "European Commission",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
-  "publication_date": "2025-07-18",
-  "effective_date": "2025-08-02",
+  "publication_date": "2025-11-19",
+  "effective_date": null,
   "covered_actors": [
-    "providers of general-purpose AI models",
-    "providers of general-purpose AI models with systemic risk"
+    "Providers of general-purpose AI models (within the Union and in third countries placing models on the Union market)",
+    "Providers of general-purpose AI models with systemic risk",
+    "Downstream modifiers of general-purpose AI models exceeding modification compute thresholds",
+    "Downstream providers integrating general-purpose AI models into AI systems",
+    "Authorised representatives established in the Union for third-country providers",
+    "Providers of general-purpose AI models released under free and open-source licences"
   ],
   "covered_application_domains": [
     "general_purpose_models"
@@ -16,86 +20,347 @@
   "safety_requirements": [
     {
       "label": "model_documentation",
-      "confidence": 0.85,
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "Template for transparency on training data",
-          "source_section": "Introduction"
+          "quote": "For this reason, the AI Act lays down proportionate transparency measures, including an obligation to draw up and keep up to date documentation to be made available to downstream providers and, upon request, to the AI Office and the national competent authorities (Article 53(1), points (a) and (b), AI Act).",
+          "source_section": "Section 1 (3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5503,
+          "end_char": 5811
+        },
+        {
+          "quote": "Article 53(1), point (a), AI Act: the obligation to ‘draw up and keep up-todate the technical documentation of the model, including its training and testing process and the results of its evaluation, which shall contain, at a\nminimum, the information set out in Annex XI for the purpose of providing it, upon request, to the AI Office and the national competent authorities’;",
+          "source_section": "Section 4.1 (70)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 60625,
+          "end_char": 61000
         }
       ]
     },
     {
-      "label": "transparency_disclosure",
-      "confidence": 0.85,
+      "label": "training_data_governance",
+      "confidence": 0.97,
+      "obligation_strength": "mandatory",
       "evidence": [
         {
-          "quote": "Template for transparency on training data, and further elements like a template for notifications that providers of general-purpose AI models with systemic risk to submit to the AI Office",
-          "source_section": "Introduction"
-        }
-      ]
-    },
-    {
-      "label": "registration_licensing",
-      "confidence": 0.7,
-      "evidence": [
+          "quote": "the AI Act also requires providers of general-purpose AI models to put in place a policy to comply with Union copyright law (Article 53(1), point (c), AI Act), and to make publicly available a summary of the content used for the training (Article 53(1), point (d), AI Act).",
+          "source_section": "Section 1 (4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6239,
+          "end_char": 6512
+        },
         {
-          "quote": "template for notifications that providers of general-purpose AI models with systemic risk to submit to the AI Office",
-          "source_section": "Introduction"
+          "quote": "providers of general-purpose AI models that meet the conditions referred to in Section 4.2 are not exempted from the obligation laid down in Article 53(1), point (c), AI Act to put in place a policy to comply with Union copyright law.",
+          "source_section": "Section 4.1 (72)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 62621,
+          "end_char": 62855
         }
       ]
     },
     {
       "label": "compute_governance",
-      "confidence": 0.75,
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
       "evidence": [
         {
-          "quote": "how to estimate the computational resources used for training a general-purpose AI model",
-          "source_section": "Introduction"
+          "quote": "Under the AI Act, general-purpose AI models trained with a cumulative amount of computational resources greater than 1025 floating-point operations (‘FLOP’, see Article 3(67) AI Act) are presumed to be general-purpose AI models with systemic risk (Article 51(2) AI Act).",
+          "source_section": "Section 1 (5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6736,
+          "end_char": 7006
+        },
+        {
+          "quote": "When a general-purpose AI model has met or it becomes known that it will meet a requirement leading to the presumption that the model has high-impact capabilities,7 the provider must notify the Commission in line with Article 52(1) AI Act (see also recital 112 AI Act).",
+          "source_section": "Section 2.3.2 (29)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 29911,
+          "end_char": 30180
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Providers of general-purpose AI models with systemic risk are subject, in addition to the obligations for providers of general-purpose AI models, to obligations aimed at assessing and mitigating those risks.",
+          "source_section": "Section 1 (5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7159,
+          "end_char": 7366
+        },
+        {
+          "quote": "The systemic risk assessment and mitigation required under Article 55(1) AI Act must be carried out continuously for each model throughout its entire lifecycle.",
+          "source_section": "Section 2.2 (23)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 26083,
+          "end_char": 26243
+        }
+      ]
+    },
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.92,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Providers of general-purpose AI models with systemic risk are subject, in addition to the obligations for providers of general-purpose AI models, to obligations aimed at assessing and mitigating those risks. These include conducting model evaluations, reporting serious incidents, and ensuring an adequate level of cybersecurity protection.",
+          "source_section": "Section 1 (5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7159,
+          "end_char": 7499
+        },
+        {
+          "quote": "Whether a given general-purpose AI model has high-impact capabilities should be ‘evaluated on the basis of appropriate technical tools and methodologies, including indicators and benchmarks’, under Article 51(1), point (a), AI Act.",
+          "source_section": "Section 2.3.1 (27)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 28400,
+          "end_char": 28631
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Such proactive reporting is without prejudice to the obligation to keep track of, document, and report relevant information about ‘serious incidents’ under Article 55(1), point (c), AI Act.",
+          "source_section": "Section 5.2 (100)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 77986,
+          "end_char": 78175
+        },
+        {
+          "quote": "The AI Office considers that this obligation covers serious cybersecurity breaches related to the model or its physical infrastructure, including the (self-)exfiltration of model parameters and cyberattacks, due to their possible implications for the obligations provided for in Article 55(1), points (b) and (d), AI\nAct.",
+          "source_section": "Section 5.2 (100)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 78176,
+          "end_char": 78497
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.9,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "They must also ‘ensure an adequate level of cybersecurity protection for the model and its physical infrastructure, if appropriate, along the entire model lifecycle’ (recital 115 AI Act).",
+          "source_section": "Section 2.2 (21)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 23378,
+          "end_char": 23565
+        },
+        {
+          "quote": "The AI Office considers that this obligation covers serious cybersecurity breaches related to the model or its physical infrastructure, including the (self-)exfiltration of model parameters and cyberattacks, due to their possible implications for the obligations provided for in Article 55(1), points (b) and (d), AI\nAct.",
+          "source_section": "Section 5.2 (100)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 78176,
+          "end_char": 78497
+        }
+      ]
+    },
+    {
+      "label": "open_weight_obligations",
+      "confidence": 0.97,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Nevertheless, if the model is a general-purpose AI model with systemic risk, the fact that the model is released under a free and open-source licence is not sufficient for these obligations not to apply to its provider.",
+          "source_section": "Section 4.1 (71)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 62141,
+          "end_char": 62360
+        },
+        {
+          "quote": "For the exceptions referred to in Section 4.1 to apply, the model’s ‘parameters, including the weights, the information on the model architecture, and the information on model usage’ must be ‘made publicly available’ (Articles 53(2) and 54(6) AI Act).",
+          "source_section": "Section 4.2.3 (87)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 70560,
+          "end_char": 70811
+        }
+      ]
+    },
+    {
+      "label": "domestic_representative",
+      "confidence": 0.96,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "To facilitate compliance, providers established or located within a third country must appoint an authorised representative established in the Union before placing a general-purpose AI model on the Union market (Article 54 AI Act).",
+          "source_section": "Section 3.1 (48)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 45827,
+          "end_char": 46058
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "regulatory_supervision",
-      "confidence": 0.9,
+      "label": "civil_penalty",
+      "confidence": 0.97,
       "evidence": [
         {
-          "quote": "how the AI Office will support and work with providers who must comply with the general-purpose AI rules",
-          "source_section": "Introduction"
+          "quote": "(iv) impose fines of up to 3% of global annual turnover or EUR 15 million, whichever is higher (Article 101 AI Act); starting on 2 August 2026.",
+          "source_section": "Section 5.2 (103)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 80090,
+          "end_char": 80233
+        },
+        {
+          "quote": "From 2 August 2026 onwards, the Commission will enforce with fines compliance with all obligations by providers of general-purpose AI models who are not fully compliant on that date, taking into account all relevant aspects mentioned in Article 101 AI Act.",
+          "source_section": "Section 5.3 (112)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 85497,
+          "end_char": 85753
+        }
+      ]
+    },
+    {
+      "label": "market_access_restriction",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "quote": "(iii) request measures from providers, including implementing mitigation measures and recalling the model from the market (Article 93 AI Act);",
+          "source_section": "Section 5.2 (103)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 79943,
+          "end_char": 80085
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "The AI Office is tasked with supervising, investigating, enforcing, and monitoring the obligations for providers of general-purpose AI models laid down in Chapter V of the AI Act (Articles 88 and 89 AI Act)",
+          "source_section": "Section 5.2 (98)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 76568,
+          "end_char": 76774
+        },
+        {
+          "quote": "These are the powers to: (i) request information (Article 91 AI Act); (ii) conduct evaluations of general-purpose AI models (Article 92 AI Act); (iii) request measures from providers, including implementing mitigation measures and recalling the model from the market (Article 93 AI Act);",
+          "source_section": "Section 5.2 (103)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 79798,
+          "end_char": 80085
         }
       ]
     },
     {
       "label": "reporting_obligation",
-      "confidence": 0.85,
+      "confidence": 0.94,
       "evidence": [
         {
-          "quote": "template for notifications that providers of general-purpose AI models with systemic risk to submit to the AI Office",
-          "source_section": "Introduction"
+          "quote": "The notification must happen ‘without delay and in any event within two weeks after that requirement is met or it becomes known that it will be met’ (Article 52(1) AI Act).",
+          "source_section": "Section 2.3.2 (29)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 30181,
+          "end_char": 30353
+        },
+        {
+          "quote": "Providers of general-purpose AI models that do not adhere to a code of practice that is assessed as adequate are expected to demonstrate how they comply with their obligations under Chapter V of the AI Act via other adequate means, and will have to report the measures they have implemented to the AI Office.",
+          "source_section": "Section 5.1 (92)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 73595,
+          "end_char": 73903
         }
       ]
     },
     {
       "label": "soft_enforcement",
-      "confidence": 0.8,
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "The General-Purpose AI Code of Practice and the adequacy assessment by the Commission and the AI Board",
-          "source_section": "Introduction"
+          "quote": "Providers of general-purpose AI models can demonstrate compliance with the obligations in Articles 53(1) and 55(1) AI Act by adhering to a code of practice that is assessed as adequate by the AI Office and the Board (Article 56(6) AI Act).",
+          "source_section": "Section 5.1 (91)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 72462,
+          "end_char": 72701
+        },
+        {
+          "quote": "The Commission may take into account commitments implemented in line with a code of practice that is assessed as adequate as a mitigating factor when fixing the amount of fines, depending on the specific circumstances (Article 101(1) AI Act).",
+          "source_section": "Section 5.1 (93)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 74669,
+          "end_char": 74911
         }
       ]
     }
   ],
   "enforcement_authorities": [
-    "AI Office",
-    "AI Board"
+    "European Commission",
+    "European Artificial Intelligence Office (AI Office)",
+    "National competent authorities",
+    "European Artificial Intelligence Board (Board)"
   ],
   "compliance_deadlines": [
-    "2 August 2025: obligations for providers of general-purpose AI models become directly applicable",
-    "Guidelines formally adopted at a later date when all language versions are available"
+    "2025-08-02: Entry into application of Chapter V AI Act obligations for providers of general-purpose AI models (Article 113(b) AI Act) and Commission Article 52 designation/contest decisions.",
+    "Within two weeks after meeting or foreseeing the systemic-risk threshold (or within two weeks after 2025-08-02 for models trained or planned for placement after that date): Mandatory notification to the Commission under Article 52(1) AI Act.",
+    "2026-08-02: Entry into application of Commission enforcement powers and fines under Article 101 AI Act.",
+    "2027-08-02: Compliance deadline for general-purpose AI models placed on the market before 2025-08-02 (Article 111(3) AI Act)."
   ],
-  "penalties_summary": null,
-  "implementation_notes": "Guidelines issued under Article 96(1) of the AI Act. They clarify key concepts (what constitutes a GPAI model, provider, placing on the market, computational resources for training) and how the AI Office will support providers. Part of a broader package including the GPAI Code of Practice, adequacy assessment, transparency template for training data, and notification template for systemic-risk providers. Guidelines approved in content on 18 July 2025 but formal adoption deferred pending all language versions; only binding/applicable from formal adoption date.",
-  "confidence": 0.92
+  "penalties_summary": "Starting on 2 August 2026, the European Commission may impose fines of up to 3% of global annual turnover or EUR 15 million, whichever is higher (Article 101 AI Act), including for failure to notify systemic-risk classification. The Commission may also request information (Article 91), conduct model evaluations (Article 92), and order mitigation measures or recall models from the market (Article 93). Adherence to a code of practice assessed as adequate may serve as a mitigating factor when fixing fines.",
+  "implementation_notes": "Non-binding interpretive guidelines adopted under Article 96(1) AI Act setting out the European Commission's enforcement interpretation for Chapter V GPAI obligations (subject to authoritative interpretation by the CJEU). Establishes indicative training-compute criteria (>10^23 FLOP with language, text-to-image, or text-to-video generation for GPAI models; >10^25 FLOP cumulative compute for systemic-risk presumption; >1/3 of original training compute for downstream modifiers), defines open-source exemption boundaries (requiring no monetisation and excluding systemic-risk models while maintaining copyright policy and training-data summary obligations), clarifies the compliance role of adequate codes of practice and harmonised standards, and outlines a collaborative, staged enforcement approach by the AI Office without requiring retraining or unlearning of pre-2 August 2025 models where impossible or disproportionate.",
+  "confidence": 0.96
 }

@@ -1,0 +1,87 @@
+{
+  "dominant_frame": "consumer_public_safety",
+  "secondary_frames": [
+    "innovation_enablement",
+    "fundamental_rights",
+    "social_stability",
+    "existential_catastrophic",
+    "labor_transition"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.4,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.1,
+    "fundamental_rights": 0.85,
+    "social_stability": 0.45,
+    "innovation_enablement": 0.85,
+    "consumer_public_safety": 0.95,
+    "labor_transition": 0.35
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.05,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.2,
+    "social_stability": 0.06,
+    "innovation_enablement": 0.22,
+    "consumer_public_safety": 0.42,
+    "labor_transition": 0.05
+  },
+  "rationale_summary": "The guide's dominant frame is consumer_public_safety because its core purpose across all sections is preventing tangible harms—including physical injury, psychological harm, property/financial damage, and unsafe autonomous or cyber-compromised system behavior—to end users and stakeholders. While innovation_enablement is a prominent secondary frame explicitly stating that safety evaluation is not meant to restrict development but to promote both innovation and societal adoption, and fundamental_rights underpins key elements such as constitutional/international human rights, non-discrimination, and privacy, consumer_public_safety edges out both because the document's operational evaluation perspectives and risk taxonomies center primarily on mitigating concrete user and physical-world safety harms. Secondary mentions of societal division and political manipulation (social_stability), CBRN misuse and uncontrolled agent self-replication (existential_catastrophic), and job displacement/skill atrophy (labor_transition) appear as targeted risk examples rather than overarching justifications.",
+  "evidence_spans": [
+    {
+      "quote": "総合マネジメントが不十分であったり、実装に不備があったりした場合にはAI セーフティが適切に維持または向上しないおそれがあり、AI システムのエンドユーザーがシステムの不適切な挙動による被害等の各種のリスクの影響を受けることにつながることとなる。これを防止するために、AI システムの開発や提供を行う事業者はAI セーフティの維持または向上のための対策を予防的に実施し、対策の実効性の確認のための評価を実施する必要がある。",
+      "source_section": "Page 10, Section 2.1",
+      "quote_en": "If comprehensive management is insufficient or implementation is flawed, AI safety may not be properly maintained or improved, leading to end users of AI systems being affected by various risks such as harm from inappropriate system behavior. To prevent this, business operators who develop or provide AI systems need to proactively implement measures to maintain or improve AI safety and conduct evaluations to confirm the effectiveness of those measures.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 10338,
+      "end_char": 10549
+    },
+    {
+      "quote": "AI システム・サービスの開発・提供・利用を通じ、ステークホルダーの生命・身体・財産に危害を及ぼすことがないようにすること。加えて、精神及び環境に危害を及ぼすことがないようにすること。",
+      "source_section": "Page 7, Section 1.2",
+      "quote_en": "Ensuring that no harm is caused to the life, body, or property of stakeholders through the development, provision, and use of AI systems and services. In addition, ensuring that no harm is caused to the mind or the environment.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 7850,
+      "end_char": 7942
+    },
+    {
+      "quote": "なお、本書は、AI に関する技術開発や活用の広がりの制限を意図するものではない。AI セーフティ評価は、AI システムを安全安心に利用するための評価を行うことで社会全体でのさらなる活用を目指すものである。つまり、イノベーションのさらなる促進と安全安心の実現の双方に貢献するものである。",
+      "source_section": "Page 10, Section 2.1",
+      "quote_en": "Furthermore, this guide is not intended to restrict technological development or the expansion of AI utilization. AI safety evaluation aims for further utilization across society as a whole by conducting evaluations for the safe and secure use of AI systems. In other words, it contributes to both the further promotion of innovation and the realization of safety and security.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 10798,
+      "end_char": 10940
+    },
+    {
+      "quote": "AI システム・サービスの開発・提供・利用において、全ての取り組むべき事項が導出される土台として、少なくとも憲法が保障するまたは国際的に認められた人権を侵すことがないようにすること。",
+      "source_section": "Page 7, Section 1.2",
+      "quote_en": "In the development, provision, and use of AI systems and services, as the foundation from which all matters to be addressed are derived, ensuring at a minimum that human rights guaranteed by the Constitution or internationally recognized are not infringed.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 7553,
+      "end_char": 7644
+    },
+    {
+      "quote": "AI エージェントシステムの出力が政治的な誘導や公平性の欠如した意思決定などを行い、社会システムの安全を脅かす可能性がある。",
+      "source_section": "Page 62, Appendix A.3",
+      "quote_en": "Outputs from AI agent systems may perform political manipulation or make unfair decisions, potentially threatening the safety of social systems.",
+      "frame": "social_stability",
+      "grounding_status": "verbatim",
+      "start_char": 47904,
+      "end_char": 47966
+    },
+    {
+      "quote": "AI エージェントシステムが自律的に複製・生成され、制御不能な数に増加するリスクがある。これにより、リソースの枯渇や予期せぬ連鎖的挙動が発生する可能性がある。",
+      "source_section": "Page 61, Appendix A.3",
+      "quote_en": "There is a risk that AI agent systems autonomously replicate and generate themselves, increasing to an uncontrollable number. This could cause resource depletion or unexpected cascading behaviors.",
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 46386,
+      "end_char": 46465
+    }
+  ]
+}

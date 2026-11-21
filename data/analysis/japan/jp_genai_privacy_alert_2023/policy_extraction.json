@@ -1,72 +1,103 @@
 {
   "jurisdiction": "japan",
-  "issuing_body": "個人情報保護委員会 (Personal Information Protection Commission)",
+  "issuing_body": "Personal Information Protection Commission, Japan (個人情報保護委員会)",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2023-06-02",
   "effective_date": null,
+  "covered_actors": [
+    "Personal information handling business operators (個人情報取扱事業者)",
+    "Administrative organs, local government bodies, and incorporated administrative agencies (行政機関等)",
+    "General users of generative AI services (一般の利用者)",
+    "OpenAI, L.L.C. and OpenAI OpCo, LLC (addressed via accompanying Attachment 2 alert)"
+  ],
   "covered_application_domains": [
     "general_purpose_models",
     "public_sector_use"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
-      "label": "risk_assessment",
-      "confidence": 0.8,
+      "label": "training_data_governance",
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "入力された個人情報が、生成 AI の機械学習に利用されることがあり、他の情報と統計的に結びついた上で、また、正確又は不正確な内容で、生成AIサービスから出力されるリスクがある",
-          "source_section": "(3) 一般の利用者における留意点"
-        }
-      ]
-    },
-    {
-      "label": "transparency_disclosure",
-      "confidence": 0.75,
-      "evidence": [
+          "quote": "個人情報取扱事業者が、あらかじめ本人の同意を得ることなく生成AI サービスに個人データを含むプロンプトを入力し、当該個人データが当該プロンプトに対する応答結果の出力以外の目的で取り扱われる場合、当該個人情報取扱事業者は個人情報保護法の規定に違反することとなる可能性がある。そのため、このようなプロンプトの入力を行う場合には、当該生成AI サービスを提供する事業者が、当該個人データを機械学習に利用しないこと等を十分に確認すること。",
+          "source_section": "Page 2, (1)②",
+          "quote_en": "If a personal information handling business operator inputs a prompt containing personal data into a generative AI service without obtaining the individual's prior consent, and such personal data is handled for purposes other than outputting responses to the prompt, the operator may violate the provisions of the Act on the Protection of Personal Information. Therefore, when inputting such prompts, thoroughly verify that the business operator providing the generative AI service does not use such personal data for machine learning, etc.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1501,
+          "end_char": 1716
+        },
         {
-          "quote": "生成 AI サービスを提供する事業者の利用規約やプライバシーポリシー等を十分に確認し",
-          "source_section": "(3) 一般の利用者における留意点"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "生成 AI サービスを利用して個人情報を取り扱う際には、このようなリスクを踏まえた上で適切に判断すること",
-          "source_section": "(3) 一般の利用者における留意点"
+          "quote": "行政機関等が、生成AI サービスに保有個人情報を含むプロンプトを入力し、 当該保有個人情報が当該プロンプトに対する応答結果の出力以外の目的で取り扱われる場合、当該行政機関等は個人情報保護法の規定に違反することとなる可能性がある。そのため、このようなプロンプトの入力を行う場合には、 当該生成AI サービスを提供する事業者が、当該保有個人情報を機械学習に利用しないこと等を十分に確認すること。",
+          "source_section": "Page 2, (2)②",
+          "quote_en": "If an administrative organ, etc. inputs a prompt containing retained personal information into a generative AI service, and such retained personal information is handled for purposes other than outputting responses to the prompt, the administrative organ, etc. may violate the provisions of the Act on the Protection of Personal Information. Therefore, when inputting such prompts, thoroughly verify that the business operator providing the generative AI service does not use such retained personal information for machine learning, etc.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1826,
+          "end_char": 2021
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "regulatory_supervision",
-      "confidence": 0.8,
+      "label": "soft_enforcement",
+      "confidence": 0.9,
       "evidence": [
         {
-          "quote": "当委員会は、個人情報の適正な取扱いが確保され、個人の権利利益が保護されるよう、生成 AI サービスの開発・利用状況を引き続き注視していく予定",
-          "source_section": "本文"
+          "quote": "下記（１）及び（２）において、個人情報取扱事業者及び行政機関等1における生成AI サービスの利用に際しての個人情報の取扱いに関する注意点を取りまとめたので、個人情報取扱事業者及び行政機関等において、生成AI サービスを利用する際には、これらも参考に、個人情報の保護に関する法律（平成15 年法律第57 号。以下 「個人情報保護法」という。）の規律に従って、個人情報を適正に取り扱っていただきたい。",
+          "source_section": "Page 1",
+          "quote_en": "In (1) and (2) below, we have compiled points of attention regarding the handling of personal information when personal information handling business operators and administrative organs, etc. use generative AI services; therefore, when using generative AI services, please refer to these as well and handle personal information appropriately in accordance with the rules of the Act on the Protection of Personal Information (Act No. 57 of 2003; hereinafter referred to as the 'APPI').",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 634,
+          "end_char": 832
+        },
+        {
+          "quote": "当委員会は、個人情報の適正な取扱いが確保され、個人の権利利益が保護される\nよう、生成AI サービスの開発・利用状況を引き続き注視していく予定であり、今後、\n追加の注意喚起等を実施する可能性もある点に留意されたい。",
+          "source_section": "Page 2",
+          "quote_en": "The Commission plans to continue closely monitoring the development and use of generative AI services so that appropriate handling of personal information is ensured and the rights and interests of individuals are protected, and please note that it may issue additional alerts, etc. in the future.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1279,
+          "end_char": 1385
         }
       ]
     },
     {
-      "label": "soft_enforcement",
-      "confidence": 0.85,
+      "label": "regulatory_supervision",
+      "confidence": 0.72,
       "evidence": [
         {
-          "quote": "生成AIサービスの利用に関する注意喚起等を行うこととした",
-          "source_section": "本文"
+          "quote": "要配慮個人情報の取得及び利用目的の通知等についての注意喚起を行ったことに加え、今後、新たな懸念事項を認識した場合には、必要に応じ追加的な対応を行うとしたところである。",
+          "source_section": "Page 2",
+          "quote_en": "In addition to issuing an alert regarding the acquisition of special care-required personal information and notification of the purpose of use, etc., the Commission stated that if new concerns are recognized in the future, it will take additional measures as necessary.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1194,
+          "end_char": 1277
         },
         {
-          "quote": "OpenAI に対しては、別添２のとおり、要配慮個人情報の取得及び利用目的の通知等についての注意喚起を行った",
-          "source_section": "本文"
+          "quote": "当委員会は、個人情報の適正な取扱いが確保され、個人の権利利益が保護される\nよう、生成AI サービスの開発・利用状況を引き続き注視していく予定であり、今後、\n追加の注意喚起等を実施する可能性もある点に留意されたい。",
+          "source_section": "Page 2",
+          "quote_en": "The Commission plans to continue closely monitoring the development and use of generative AI services so that appropriate handling of personal information is ensured and the rights and interests of individuals are protected, and please note that it may issue additional alerts, etc. in the future.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1279,
+          "end_char": 1385
         }
       ]
     }
   ],
-  "implementation_notes": "This is a guidance/alert document (注意喚起) from Japan's PPC issued on 2023-06-02, addressing use of generative AI services with personal data. It references the Act on the Protection of Personal Information (個人情報保護法) as the binding legal basis, but the document itself is advisory guidance rather than binding regulation. The PPC separately issued a notice to OpenAI. Guidance covers both private sector entities and public sector bodies.",
-  "confidence": 0.85
+  "enforcement_authorities": [
+    "Personal Information Protection Commission, Japan (個人情報保護委員会)"
+  ],
+  "compliance_deadlines": [],
+  "penalties_summary": null,
+  "implementation_notes": "Issued by Japan's Personal Information Protection Commission (PPC) on June 2, 2023 (Reiwa 5), referencing the May 20, 2023 G7 Hiroshima Leaders' Communiqué. The alert interprets compliance obligations under the Act on the Protection of Personal Information (APPI, Act No. 57 of 2003) for business operators and administrative organs using generative AI services—specifically advising them to confirm prompt inputs remain within specified utilization purposes and to verify that providers do not use inputted personal data for machine learning without prior consent. It also advises general users on privacy and inaccuracy risks, notes a concurrent alert (Attachment 2) sent to OpenAI regarding special care-required personal information and purpose-of-use notices, and signals ongoing PPC monitoring and potential additional measures.",
+  "confidence": 0.92
 }

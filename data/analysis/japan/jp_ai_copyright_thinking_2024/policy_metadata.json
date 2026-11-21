@@ -1,24 +1,26 @@
 {
-  "issuing_body": "文化審議会著作権分科会法制度小委員会 (Subcommittee on Legal Systems, Copyright Division, Council for Cultural Affairs, Agency for Cultural Affairs, Japan)",
+  "issuing_body": "Legal Subcommittee of the Copyright Subdivision, Council for Cultural Affairs (Agency for Cultural Affairs, Japan) / 文化審議会著作権分科会法制度小委員会",
   "document_type": "regulatory_guidance",
   "binding_strength": "regulatory_guidance",
   "publication_date": "2024-03-15",
   "effective_date": null,
   "covered_actors": [
-    "AI開発事業者 (AI developers)",
-    "AIサービス提供事業者 (AI service providers)",
-    "AI利用者 (AI users)",
-    "クリエイター・実演家等の権利者 (creators, performers, and other rights holders)"
+    "AI developers (AI開発事業者)",
+    "AI service providers (AIサービス提供事業者)",
+    "AI users, including businesses and individuals (AI利用者)",
+    "Copyright holders, creators, and performers (クリエイターや実演家等の権利者)",
+    "Content posting platform operators (コンテンツ投稿プラットフォーム事業者)"
   ],
   "covered_application_domains": [
     "general_purpose_models"
   ],
   "prohibited_practices": [],
   "enforcement_authorities": [
-    "文化庁 (Agency for Cultural Affairs)"
+    "Courts (裁判所)",
+    "Agency for Cultural Affairs (文化庁)"
   ],
   "compliance_deadlines": [],
-  "penalties_summary": null,
-  "implementation_notes": "Document explicitly states it has no legal binding force ('本考え方自体が法的な拘束力を有するものではない'). It is interpretive guidance on how existing Japanese copyright law applies to generative AI, covering training/learning stage and generation/use stage. The document notes it may be revised as case law, technology, and international developments evolve. It references Article 30-4 (non-enjoyment-purpose use) and Article 47-5 of the Copyright Act as relevant rights-limitation provisions. No prohibited practices are formally established; the document clarifies existing law rather than imposing new rules.",
-  "confidence": 0.92
+  "penalties_summary": "When AI training, generation, or utilization constitutes copyright infringement outside statutory exceptions, existing legal remedies under Japan's Copyright Act and Civil Code apply: civil damages (Civil Code Art. 709, requiring intent or negligence), injunctions including cessation/prevention, removal of works from future training datasets, technical preventive measures, or disposal of infringing outputs and—in limited cases—trained models (Copyright Act Art. 112(1)–(2)), criminal penalties for intentional infringement (Copyright Act Art. 119), and unjust enrichment restitution even absent intent or negligence. Falsely licensing non-copyrightable AI outputs as copyrighted works may also incur contractual, civil tort, or criminal fraud liability.",
+  "implementation_notes": "The document explicitly states that it has no legal binding force and does not make definitive legal determinations on specific generative AI systems; copyright law is private law interpreted case-by-case by courts. It provides interpretive guidance on Japan's Copyright Act (notably Arts. 30-4 and 47-5) across the development/training stage (coexisting enjoyment purpose such as intentional overfitting or certain RAG uses, and the proviso against unreasonably prejudicing copyright owners' interests, including paid info-analysis databases, technical access restrictions like robots.txt, and pirate sites), the generation/utilization stage (similarity, reliance, and normative liability of developers/providers), and copyrightability of AI-generated outputs. The Subcommittee and Agency for Cultural Affairs plan ongoing case collection, public outreach, and future updates as jurisprudence and technology evolve.",
+  "confidence": 0.93
 }

@@ -1,83 +1,62 @@
 {
   "source_id": "us_from_principles_to_practice_ostp_the_white_house_8a01bf26",
   "title": "From Principles to Practice | OSTP | The White House",
-  "language": "en",
+  "language": "en-US",
   "policy_extraction": {
     "jurisdiction": "united_states",
-    "issuing_body": "Office of Science and Technology Policy (OSTP), The White House",
-    "document_type": "regulatory_guidance",
-    "binding_strength": "voluntary_commitment",
-    "publication_date": null,
+    "issuing_body": "White House Office of Science and Technology Policy",
+    "document_type": "strategy_paper",
+    "binding_strength": "strategy_statement",
+    "publication_date": "2022-10-04",
     "effective_date": null,
     "covered_actors": [
-      "communities",
-      "industry",
-      "governments",
-      "developers",
-      "designers",
-      "deployers",
-      "policymakers",
-      "anyone impacted by automated systems"
+      "Entities developing, designing, deploying, evaluating, or governing automated systems (industry, governments, and communities)",
+      "Oversight bodies and privacy, civil liberties, or ethics officers",
+      "Regulators, auditors, industry standards groups, researchers, civil society, and the American public"
     ],
     "covered_application_domains": [
-      "general_purpose_models",
-      "public_sector_use",
-      "critical_infrastructure",
-      "employment",
-      "education",
-      "healthcare",
-      "finance",
-      "law_enforcement"
+      "public_sector_use"
     ],
     "prohibited_practices": [],
     "safety_requirements": [
       {
         "label": "pre_deployment_testing",
         "confidence": 0.85,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "pre-deployment testing, ongoing monitoring, and governance structures for automated systems",
-            "source_section": "What you can do"
+            "quote": "The expectations laid out often mirror existing practices for technology development, including pre-deployment testing, ongoing monitoring, and governance structures for automated systems, but also go further to address unmet needs for change and offer concrete directions for how those changes can be made.",
+            "source_section": "2. What should be expected of automated systems:",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1686,
+            "end_char": 1993
           }
         ]
       },
       {
         "label": "transparency_disclosure",
-        "confidence": 0.9,
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
         "evidence": [
           {
-            "quote": "These reporting expectations are important for transparency, so the American people can have confidence that their rights, opportunities, and access as well as their expectations about technologies are respected",
-            "source_section": "Reporting expectations"
-          }
-        ]
-      },
-      {
-        "label": "risk_assessment",
-        "confidence": 0.75,
-        "evidence": [
+            "quote": "The resulting reports can be provided to the public, regulators, auditors, industry standards groups, or others engaged in independent review, and should be made public as much as possible consistent with law, regulation, and policy, and noting that intellectual property, law enforcement, or national security considerations may prevent public release.",
+            "source_section": "2. What should be expected of automated systems:",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2093,
+            "end_char": 2446
+          },
           {
-            "quote": "guard the American public against many of the potential and actual harms identified by researchers, technologists, advocates, journalists, policymakers, and communities",
-            "source_section": "Introduction"
-          }
-        ]
-      },
-      {
-        "label": "human_oversight",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "ongoing monitoring, and governance structures for automated systems",
-            "source_section": "What you can do"
-          }
-        ]
-      },
-      {
-        "label": "third_party_audit",
-        "confidence": 0.7,
-        "evidence": [
-          {
-            "quote": "reports can be provided to the public, regulators, auditors, industry standards groups, or others engaged in independent review",
-            "source_section": "Reporting expectations"
+            "quote": "These reporting expectations are important for transparency, so the American people can have confidence that their rights, opportunities, and access as well as their expectations about technologies are respected.",
+            "source_section": "2. What should be expected of automated systems:",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 2643,
+            "end_char": 2855
           }
         ]
       }
@@ -85,25 +64,25 @@
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "confidence": 0.9,
+        "confidence": 0.92,
         "evidence": [
           {
-            "quote": "a blueprint for the development of additional technical standards and practices that should be tailored for particular sectors and contexts",
-            "source_section": "Introduction"
+            "quote": "The expectations for automated systems are meant to serve as a blueprint for the development of additional technical standards and practices that should be tailored for particular sectors and contexts.",
+            "source_section": "2. What should be expected of automated systems:",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1357,
+            "end_char": 1558
           },
           {
-            "quote": "The examples provided are not critiques or endorsements, but rather are offered as illustrative cases",
-            "source_section": "How these principles can move into practice"
-          }
-        ]
-      },
-      {
-        "label": "reporting_obligation",
-        "confidence": 0.75,
-        "evidence": [
-          {
-            "quote": "the information should be provided to oversight bodies and privacy, civil liberties, or other ethics officers charged with safeguarding individuals' rights",
-            "source_section": "Reporting expectations"
+            "quote": "Effectively implementing these processes require the cooperation of and collaboration among industry, civil society, researchers, policymakers, technologists, and the public.",
+            "source_section": "2. What should be expected of automated systems:",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3340,
+            "end_char": 3514
           }
         ]
       }
@@ -111,39 +90,107 @@
     "enforcement_authorities": [],
     "compliance_deadlines": [],
     "penalties_summary": null,
-    "implementation_notes": "This is a non-binding technical companion to the Blueprint for an AI Bill of Rights. It provides illustrative examples and practical steps but explicitly states expectations are a 'blueprint for the development of additional technical standards' rather than enforceable rules. Reporting expectations are directed at entities developing or using automated systems but are voluntary. The document covers five principles intended to guide design, use, and deployment of automated systems.",
-    "confidence": 0.92
+    "implementation_notes": "Companion HTML overview page (October 2022, subsequently archived/superseded) introducing the 'From Principles to Practice' technical companion to OSTP's Blueprint for an AI Bill of Rights. Explains the companion's three-part structure per principle ('Why this principle is important', 'What should be expected of automated systems', and 'How these principles can move into practice') and outlines voluntary expectations for pre-deployment testing, ongoing monitoring, governance, and public or oversight-body reporting without creating legally binding obligations.",
+    "confidence": 0.94
   },
   "risk_framing": {
     "dominant_frame": "fundamental_rights",
     "secondary_frames": [
-      "consumer_public_safety",
-      "social_stability"
+      "consumer_public_safety"
     ],
     "frame_confidence": {
       "existential_catastrophic": 0.0,
+      "national_security": 0.05,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.96,
+      "social_stability": 0.15,
+      "innovation_enablement": 0.25,
+      "consumer_public_safety": 0.72,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
       "national_security": 0.0,
       "economic_competitiveness": 0.0,
-      "fundamental_rights": 0.88,
+      "fundamental_rights": 0.75,
       "social_stability": 0.0,
-      "innovation_enablement": 0.0,
-      "consumer_public_safety": 0.55,
-      "labor_transition": 0.05
+      "innovation_enablement": 0.05,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.0
     },
-    "rationale_summary": "The document is primarily framed around protecting the rights of the American public, explicitly invoking a 'Bill of Rights' framing and centering on rights, opportunities, and access. Governance is justified by the need to safeguard individuals against harms to their civil liberties and fundamental rights.",
+    "rationale_summary": "OSTP's 'From Principles to Practice' companion overview is dominantly framed around fundamental_rights, explicitly centering on protecting the rights, opportunities, access, privacy, and civil liberties of the American public in the design and deployment of automated systems. Fundamental_rights strongly outweighs consumer_public_safety because every section anchors technical practices and reporting in safeguarding individual rights and civil liberties rather than product reliability alone. Consumer_public_safety serves as a clear secondary frame via the stated goal of guarding the public against potential and actual harms from automated systems, with a minor innovation_enablement note on tailoring standards to specific sectors and contexts.",
     "evidence_spans": [
       {
-        "quote": "a set of five principles and associated practices to help guide the design, use, and deployment of automated systems to protect the rights of the American public",
-        "source_section": "Introduction"
+        "quote": "The Blueprint for an AI Bill of Rights is a set of five principles and associated practices to help guide the design, use, and deployment of automated systems to protect the rights of the American public in the age of artificial intelligence.",
+        "source_section": "From Principles to Practice | OSTP | The White House",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 0,
+        "end_char": 242
       },
       {
-        "quote": "safeguarding individuals' rights",
-        "source_section": "Reporting expectations"
+        "quote": "Where public reports are not possible, the information should be provided to oversight bodies and privacy, civil liberties, or other ethics officers charged with safeguarding individuals’ rights.",
+        "source_section": "2. What should be expected of automated systems:",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 2447,
+        "end_char": 2642
       },
       {
-        "quote": "protecting rights, opportunities, and access",
-        "source_section": "How these principles can move into practice"
+        "quote": "Taken together, the technical protections and practices laid out in the Blueprint for an AI Bill of Rights can help guard the American public against many of the potential and actual harms identified by researchers, technologists, advocates, journalists, policymakers, and communities in the United States and around the world.",
+        "source_section": "From Principles to Practice | OSTP | The White House",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 531,
+        "end_char": 858
+      },
+      {
+        "quote": "The expectations for automated systems are meant to serve as a blueprint for the development of additional technical standards and practices that should be tailored for particular sectors and contexts.",
+        "source_section": "2. What should be expected of automated systems:",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1357,
+        "end_char": 1558
       }
     ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T06:17:56.259382Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "2a9cbb799ed7c3eabae8bf22e6ed6d3f760ca57dd6e59db6b1271ee8f067ec43",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 3514,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 9,
+      "exact_matches": 9,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
   }
 }

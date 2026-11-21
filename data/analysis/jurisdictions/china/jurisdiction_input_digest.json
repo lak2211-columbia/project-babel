@@ -1,8 +1,8 @@
 {
   "jurisdiction": "china",
-  "source_count": 18,
+  "source_count": 20,
   "source_window_start": "2017-07-20",
-  "source_window_end": "2026-04-10",
+  "source_window_end": "2026-09-14",
   "documents": [
     {
       "document_id": "cn_ai_abuse_cleanup_2025",
@@ -15,55 +15,50 @@
       "lifecycle_stage": "active",
       "dominant_frame": "social_stability",
       "secondary_frames": [
-        "fundamental_rights",
         "consumer_public_safety"
       ],
       "top_requirements": [
         "content_provenance",
-        "red_teaming",
-        "pre_deployment_testing"
+        "training_data_governance",
+        "red_teaming"
       ],
       "top_enforcement_mechanisms": [
         "market_access_restriction",
-        "regulatory_supervision",
-        "reporting_obligation"
+        "regulatory_supervision"
       ],
-      "implementation_notes": "This is a progress report on Phase 1 of the 'Qinglang: Rectification of AI Technology Abuse' campaign launched April 2025. The document describes enforcement actions already taken and outlines Phase 2 plans focusing on AI-generated misinformation and vulgar content. Penalties are referenced prospectively ('形成处置处罚规范') but not yet fully specified. The document functions as both a regulatory guidance report and an enforcement action summary. Safety requirements are inferred from described platform actions rather than explicit legal mandates in this document.",
-      "framing_rationale_summary": "The document centers on maintaining a 'clean and healthy online ecosystem' (清朗网络生态) and combating AI misuse such as deepfakes harming public rights, missing content labels misleading the public, and AI-generated rumors. The primary justification is social order and online environment governance rather than economic competitiveness or existential risk. Rights protection (侵犯公众权益) and consumer safety are secondary concerns explicitly mentioned.",
-      "confidence": 0.77
+      "implementation_notes": "This document is an official supervisory progress notice published on the CAC website (2025-06-20) summarizing Phase 1 of the 'Qinglang: Rectifying Abuse of AI Technology' special campaign launched in April 2025. While not a standalone enacted statute, it carries regulatory supervision and enforcement signaling weight, detailing joint central-local enforcement, explicit and implicit (metadata) synthetic content labeling rollouts, platform-level red-blue adversarial testing and training corpus governance, and upcoming Phase 2 enforcement targeting seven prominent issues.",
+      "framing_rationale_summary": "The document's dominant rationale is social_stability, as it reports on the Cyberspace Administration of China's 'Qinglang' (Clean and Bright) campaign to curb AI abuse chaos, eliminate illegal and non-compliant online information, combat AI-generated rumors, disinformation, and vulgar content, and maintain a clean online information ecosystem. Consumer_public_safety is a prominent secondary frame, invoked through concerns about AI face-swapping, voice-cloning, and unlabeled synthetic content misleading the public, as well as mitigating risks in sensitive user-facing domains such as healthcare, finance, and minors. Social_stability edges out consumer_public_safety because the overarching campaign objective and next-stage priorities center on public-opinion ecosystem governance and rumor/vulgar-content containment rather than narrow product safety. Minor secondary nods appear toward fundamental_rights (infringing public rights and interests) and innovation_enablement (promoting AI for good and standardized development).",
+      "confidence": 0.915
     },
     {
       "document_id": "cn_ai_content_labeling_measures_2025",
       "title": "人工智能生成合成内容标识办法",
       "publication_date": "2025-03-14",
       "issuing_body": "Cyberspace Administration of China (CAC)",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "social_stability",
       "secondary_frames": [
         "fundamental_rights",
+        "innovation_enablement",
         "consumer_public_safety"
       ],
       "top_requirements": [
-        "content_provenance",
-        "transparency_disclosure"
+        "content_provenance"
       ],
-      "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "soft_enforcement"
-      ],
-      "implementation_notes": "Document mandates explicit and implicit labeling of AI-generated synthetic content. Explicit labels must appear at specific positions in text, audio, image, video, and virtual scenes. Implicit labels (e.g., digital watermarks, file metadata) are encouraged. Distribution platforms must check metadata and apply appropriate labels. Prohibition on malicious removal or falsification of labels. Specific penalties not detailed in the provided text excerpt.",
-      "framing_rationale_summary": "The document primarily frames AI governance around maintaining social public order and protecting citizens' lawful rights through mandatory labeling of AI-generated content. The stated goals are to 'protect citizens, legal persons and other organizations' lawful rights' and 'maintain social public interests,' indicating a social stability and rights protection framing rather than existential risk or economic competition.",
-      "confidence": 0.725
+      "top_enforcement_mechanisms": [],
+      "implementation_notes": "Jointly promulgated departmental regulation (国信办通字〔2025〕2号) grounded in the Cybersecurity Law and existing algorithm, deep synthesis, and generative AI rules. The provided text (Notice and Articles 1, 3, 4, 5, 6, 10) mandates explicit user-perceptible labels and implicit file-metadata labels for synthetic content providers, metadata verification and labeling by dissemination platforms, and user self-declaration, while encouraging digital watermarks. Effective date and penalty provisions do not appear in the provided text.",
+      "framing_rationale_summary": "Social stability and public order is the dominant frame because the Measures are anchored in safeguarding social public interests and regulating the online dissemination of AI-generated and synthesized content across network information platforms under China's Cybersecurity Law and deep-synthesis governance regime. It edges out fundamental rights, innovation enablement, and consumer/public safety because the document's core regulatory thrust—jointly issued by the CAC, MIIT, MPS, and NRTA—targets information-ecosystem order and collective public trust, while explicitly pairing this goal with protecting the legitimate rights and interests of citizens and organizations, promoting the healthy development of AI, and alerting the public to prevent deception from unlabeled synthetic media.",
+      "confidence": 0.895
     },
     {
       "document_id": "cn_ai_drug_regulation_implementation_opinion_interpretation_2026",
       "title": "《国家药监局关于“人工智能+药品监管”的实施意见》政策解读",
       "publication_date": "2026-04-03",
       "issuing_body": "National Medical Products Administration (NMPA)",
-      "document_type": "regulatory_guidance",
+      "document_type": "strategy_paper",
       "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
@@ -75,69 +70,65 @@
       "top_requirements": [
         "risk_assessment",
         "transparency_disclosure",
-        "model_documentation"
+        "pre_deployment_testing"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a policy interpretation/reading document accompanying the main implementation opinion on 'AI + Drug Regulation' issued by NMPA. It outlines a 5-10 year roadmap (targets for 2030 and 2035) for integrating AI into drug regulatory processes including review/approval, inspection, risk monitoring, and administrative services. AI is explicitly positioned as auxiliary ('辅助型定位'). Enforcement mechanisms are primarily administrative/supervisory rather than punitive. The document encourages industry digital transformation especially for high-risk categories like blood products and TCM injections.",
-      "framing_rationale_summary": "The document primarily frames AI governance in drug regulation as an opportunity to modernize and enhance regulatory capabilities through technology integration. The core reasoning is enabling smarter, more efficient regulation rather than mitigating risks from AI itself. Secondary framing includes consumer/public safety through improved drug lifecycle oversight and economic competitiveness via industry digital transformation.",
-      "confidence": 0.77
+      "implementation_notes": "Official policy interpretation (政策解读) of the NMPA Implementation Opinion on 'AI + Drug Regulation' (《国家药监局关于“人工智能+药品监管”的实施意见》). It outlines a 5-to-10-year strategic blueprint with 2030 and 2035 milestones covering seven smart regulatory application directions and five foundational support pillars (high-quality datasets, model/algorithm platforms, computing power infrastructure, security/risk assessment and transparency/validation norms, and governance/algorithm filing mechanisms). It explicitly defines AI as having an auxiliary role (辅助型定位) in drug regulation and does not impose direct statutory obligations or penalties on private entities.",
+      "framing_rationale_summary": "Innovation enablement is the dominant frame because the policy interpretation centers on accelerating public-sector AI adoption ('AI+ Drug Regulation'), modernizing regulatory efficiency across review, inspection, and government services, and fostering collaborative digital-intelligent transformation across the pharmaceutical sector. Consumer and public safety is a prominent secondary frame—providing the core domain purpose of building a smart drug safety governance pattern, strengthening risk monitoring, and improving quality control for high-risk products such as blood products and traditional Chinese medicine injections—but innovation enablement edges it out because the text's primary stated thrust is unlocking and deploying AI capabilities to upgrade regulatory workflows rather than imposing restrictive safety prohibitions. Economic competitiveness plays a smaller secondary role through references to seizing major strategic AI opportunities and promoting high-quality development of the pharmaceutical industry.",
+      "confidence": 0.9
     },
     {
       "document_id": "cn_ai_ethics_norms_2021",
       "title": "新一代人工智能伦理规范",
       "publication_date": "2021-09-26",
-      "issuing_body": "国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee)",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "issuing_body": "Ministry of Science and Technology (MOST)",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
+        "innovation_enablement",
         "social_stability",
         "consumer_public_safety"
       ],
       "top_requirements": [
-        "human_oversight",
-        "risk_assessment",
-        "transparency_disclosure"
+        "human_oversight"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "none_specified"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This document is an ethics guideline (伦理规范) rather than binding law. It provides normative guidance for all actors in the AI lifecycle (managers, developers, suppliers, users) but does not specify legal penalties or mandatory enforcement mechanisms. Binding force is ambiguous; treated as regulatory guidance given the issuing body's authority, but closer to a soft-law instrument.",
-      "framing_rationale_summary": "The document primarily frames AI governance around protecting individual rights and human dignity—privacy, autonomy, informed consent, anti-discrimination, and fairness. The six core ethical requirements center on human welfare, equity, privacy protection, and human control, reflecting a fundamental rights framing. Secondary frames include social stability (harmonious human-machine relations, sustainable development, social justice) and consumer/public safety (controllability, accountability mechanisms).",
-      "confidence": 0.785
+      "implementation_notes": "Non-binding ethical guideline issued to integrate ethics across the AI lifecycle and operationalize China's New Generation AI Development Plan and Governance Principles. Effective upon publication (2021-09-25) and subject to timely revision based on socioeconomic needs and AI development. Note that the provided text contains the release notice, Articles 2-3, and Article 25, while the 18 specific ethical requirements for management, R&D, supply, and use referenced in the preamble are omitted from this excerpt.",
+      "framing_rationale_summary": "The document's dominant rationale is fundamental_rights, as both its introductory framing and core principles explicitly anchor ethical AI governance in protecting personal privacy, data rights, informed consent, human rights, fairness, non-discrimination, equal opportunity, and human autonomous decision-making. Innovation_enablement and social_stability serve as prominent secondary frames: the purpose clause justifies the norms as guiding responsible AI R&D and application to promote healthy AI development, while Article 3(1) invokes public interest, national/regional ethical norms, human-machine harmony, and social livelihoods. Fundamental_rights edges out these secondary frames because the majority of the substantive ethical principles (fairness, privacy/data rights, human rights, and user autonomy) center directly on individual rights and anti-discrimination. Consumer_public_safety plays a smaller supporting role through user-facing controllability, system-termination safeguards, and protection of vulnerable groups.",
+      "confidence": 0.915
     },
     {
       "document_id": "cn_ai_governance_principles_2019",
       "title": "新一代人工智能治理原则——发展负责任的人工智能",
       "publication_date": "2019-06-17",
-      "issuing_body": "国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee)",
+      "issuing_body": "国家新一代人工智能治理专业委员会 (National New Generation Artificial Intelligence Governance Expert Committee)",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "fundamental_rights",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
+        "fundamental_rights",
         "social_stability",
-        "consumer_public_safety",
-        "innovation_enablement"
+        "consumer_public_safety"
       ],
       "top_requirements": [
-        "risk_assessment",
         "transparency_disclosure",
-        "human_oversight"
+        "risk_assessment"
       ],
       "top_enforcement_mechanisms": [
-        "none_specified"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This document is a high-level principles framework (治理原则) issued by an advisory committee, not binding legislation. It outlines eight principles for responsible AI development but does not specify enforcement mechanisms or penalties. It functions as a strategy/guidance statement encouraging voluntary adherence and international cooperation.",
-      "framing_rationale_summary": "The document's eight principles foreground rights-based concerns—privacy, fairness, non-discrimination, informed consent, and human dignity—as the primary justification for AI governance. While innovation and social harmony are also present, the explicit articulation of individual rights (知情权、选择权), prohibition of bias and discrimination, and data protection norms make fundamental rights the dominant frame.",
-      "confidence": 0.675
+      "implementation_notes": "Non-binding national AI governance principles framework issued by the National New Generation AI Governance Expert Committee (established by the New Generation AI Development Plan Promotion Office) and published via MOST. It articulates eight high-level ethical and governance principles—harmony and friendliness, fairness and justice, inclusivity and sharing, respect for privacy, security and controllability, shared responsibility, open collaboration, and agile governance—across the AI lifecycle, with no statutory enforcement authorities, compliance deadlines, or penalties.",
+      "framing_rationale_summary": "The Principles frame AI governance primarily around innovation_enablement: the title, preamble, and Principle 8 ('Agile Governance') justify governance as a means to coordinate development with governance, respect AI development laws, and foster healthy, innovative, orderly, and internationally collaborative AI development. It edges out fundamental_rights (strongly represented in Principle 2 on fairness/non-discrimination and Principle 4 on privacy and informed choice) and social_stability (emphasized in Principle 1 on human-machine harmony, ethical values, social safety, and a shared future for humanity) because those principles are explicitly structured as pillars to enable 'developing responsible AI' rather than purely rights-restrictive or public-order mandates. Consumer_public_safety is a notable secondary frame via system safety, robustness, controllability, and misuse prevention, while economic_competitiveness (industrial upgrading, orderly competition) and existential_catastrophic (anticipating risks of future more advanced AI) receive minor mention.",
+      "confidence": 0.91
     },
     {
       "document_id": "cn_ai_labeling_draft_2024",
@@ -151,19 +142,19 @@
       "dominant_frame": "social_stability",
       "secondary_frames": [
         "fundamental_rights",
+        "innovation_enablement",
+        "national_security",
         "consumer_public_safety"
       ],
       "top_requirements": [
-        "content_provenance",
-        "transparency_disclosure"
+        "content_provenance"
       ],
       "top_enforcement_mechanisms": [
-        "none_specified",
-        "regulatory_supervision"
+        "none_specified"
       ],
-      "implementation_notes": "This is a draft regulation (征求意见稿) open for public comment until 2024-10-14. It is not yet in force. Enforcement penalties are not specified in this excerpt but would likely be governed by referenced parent regulations. The document mandates explicit AI-generated content labeling and encourages implicit watermarking. Applies to service providers offering services to domestic users in China.",
-      "framing_rationale_summary": "The document's stated rationale centers on regulating AI-generated synthetic content labeling to 'maintain national security and social public interest' and protect citizens' legal rights. The emphasis on preventing deception through mandatory disclosure of AI-generated content reflects a social stability framing, with secondary concerns about consumer protection and individual rights.",
-      "confidence": 0.775
+      "implementation_notes": "This document is a public consultation notice and un-enacted draft departmental regulation (征求意见稿) issued by the Cyberspace Administration of China (CAC) on 2024-09-14, so it is coded as regulatory_guidance rather than binding_law. It exempts industry organizations, enterprises, educational/research institutions, public cultural institutions, and professional institutions that develop or apply AI-generated/synthetic content technologies without providing services to the domestic public. The provided text contains Articles 1–6, 10, and 14 (omitting Articles 7–9 and 11–13), and Article 14 leaves the exact 2024 effective date blank.",
+      "framing_rationale_summary": "The draft measures are primarily framed around social stability and online information-ecosystem governance: both the public consultation notice and Article 1 invoke safeguarding 'social public interest' (维护社会公共利益), and the operative structure centers on regulating the labeling and dissemination of AI-generated synthetic content across online platforms to prevent malicious forgery, tampering, or concealment. Social stability edges out fundamental rights because, although the text repeatedly cites protecting the 'legitimate rights and interests of citizens, legal persons, and other organizations' (保护公民、法人和其他组织合法权益), its core governance mechanism is collective information-ecosystem order rather than individual constitutional or privacy rights. Innovation enablement appears explicitly in Article 1's goal of promoting the 'healthy development of AI' alongside an R&D carve-out for non-public services; national security is explicitly invoked in the consultation notice; and consumer/public safety is reflected in mandatory prominent notices reminding users when content is synthetic to prevent deception.",
+      "confidence": 0.875
     },
     {
       "document_id": "cn_ai_labeling_expert_interpretation_2025",
@@ -174,23 +165,20 @@
       "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "social_stability",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
-        "innovation_enablement"
+        "social_stability",
+        "consumer_public_safety"
       ],
       "top_requirements": [
-        "content_provenance",
-        "transparency_disclosure",
-        "model_documentation"
+        "content_provenance"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation"
+        "regulatory_supervision"
       ],
-      "implementation_notes": "This is an expert interpretation article published by CAC accompanying the '人工智能生成合成内容标识办法' (AI-Generated Content Labeling Measures) and companion national mandatory standard. The document itself is commentary/guidance rather than the primary regulatory instrument. It references mandatory labeling requirements for AI-generated content across modalities (text, image, audio, video) including both explicit (visible) and implicit (metadata) labeling. Binding force derives from the underlying '标识办法' which is described as a mandatory standard.",
-      "framing_rationale_summary": "The document frames AI governance around preventing misinformation, technical abuse, and protecting network ecosystem security—core social stability concerns. It emphasizes content labeling to maintain information order, user awareness, and traceable/trustworthy AI. Secondary frames include consumer/public safety (user rights, transparency) and innovation enablement (balancing regulation with industry development).",
-      "confidence": 0.685
+      "implementation_notes": "This document is a non-binding expert interpretation (专家解读) authored by Zhang Zhen (Senior Engineer, CNCERT/CC) and published on the official CAC website on 2025-03-15. Rather than creating independent legal mandates, it explains the policy rationale and technical implementation of China's Measures for Labeling AI-Generated Synthetic Content (《人工智能生成合成内容标识办法》) and its companion mandatory national standard (《网络安全技术 人工智能生成合成内容标识方法》), detailing how they extend prior CAC algorithm, deep synthesis, and generative AI regulations to cover multimodal explicit labels, metadata-based implicit labels, and content dissemination platforms.",
+      "framing_rationale_summary": "The commentary primarily frames China's AI content-labeling measures and supporting technical standard through an innovation_enablement lens, emphasizing a shift from strict regulation to flexible, science-based guidance that respects technological laws, minimizes operational disruption, fosters a trustworthy ecosystem, and balances innovation vitality with public interests. Social_stability is a close secondary rationale, as the piece opens by citing disinformation, technology misuse, and risks to cyber-ecosystem security and stresses orderly content dissemination and social trust; innovation_enablement edges it out because the core normative sections (Sections 2 and 3) devote greater emphasis to agile, pragmatic standards and healthy industry development. Consumer_public_safety appears as a secondary frame through references to preventing public confusion or over-reliance and safeguarding users' right to know and choose, with minor nods to digital-economy growth (economic_competitiveness) and user rights (fundamental_rights).",
+      "confidence": 0.875
     },
     {
       "document_id": "cn_ai_safety_governance_framework_2024",
@@ -199,34 +187,34 @@
       "issuing_body": "TC260 (National Cybersecurity Standardization Technical Committee)",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
-      "corpus_role": "primary_instrument",
-      "lifecycle_stage": "active",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
       "dominant_frame": "national_security",
       "secondary_frames": [
         "social_stability",
+        "innovation_enablement",
         "consumer_public_safety",
-        "existential_catastrophic",
-        "fundamental_rights"
+        "fundamental_rights",
+        "existential_catastrophic"
       ],
       "top_requirements": [
         "risk_assessment",
         "pre_deployment_testing",
-        "model_documentation"
+        "incident_reporting"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation",
-        "soft_enforcement"
+        "soft_enforcement",
+        "reporting_obligation"
       ],
-      "implementation_notes": "This is a framework document (V1.0) issued by TC260 in September 2024, implementing the Global AI Governance Initiative. It is structured as a standards/guidance document rather than binding legislation, though it references compliance with existing laws and regulations. Enforcement mechanisms are largely implied through reference to 'competent authorities' rather than explicitly specified. The document covers the full AI lifecycle and addresses both developers, service providers, and users including a separate section for critical sector users. Registration/filing (登记备案) requirements for high-compute or sector-specific AI systems suggest emerging binding elements, but the document itself functions as a governance framework and guidelines document.",
-      "framing_rationale_summary": "The document repeatedly foregrounds national sovereignty, ideological security, and state security interests as primary justifications for AI governance. Risks are classified partly by domain—including a 'cognitive domain' explicitly referencing 'cognitive warfare' and foreign interference in domestic affairs—and supply chain security concerns are framed around hostile foreign technology controls. The framework explicitly aims to 'safeguard national sovereignty, security and development interests.' While social stability, rights protection, and safety concerns are present, the overarching governance rationale is national security.",
-      "confidence": 0.85
+      "implementation_notes": "Issued as Version 1.0 (V1.0) by TC260 in September 2024 to implement the Global AI Governance Initiative. It is a non-binding, dynamically updated technical and governance framework categorizing inherent and application-level AI safety risks, proposing technical countermeasures and comprehensive governance measures (such as tiered risk classification, filing/registration for models exceeding compute/reasoning thresholds or in key sectors, traceable content labeling, and incident response), and providing role-specific safety guidelines for developers, service providers, key-sector users, and the public.",
+      "framing_rationale_summary": "China's TC260 AI Safety Governance Framework (v1.0) adopts a comprehensive security posture where national security edges out social stability as the dominant frame because safeguarding national sovereignty, security, and development interests anchors the opening principles and cuts across every risk domain—including foreign export-control supply-chain cutoffs, dual-use CBRN and cyber-weapon threats, cognitive warfare against sovereignty, export controls on models, and critical information infrastructure protection. Social stability is a close runner-up, reflected in concerns over ideological security, disinformation, information cocoons, crime, value alignment, and disruptions to traditional social order. Innovation enablement is a prominent counterweight in the preamble and principles ('inclusive and prudent', prioritizing innovation and agile governance), while consumer and public safety (life, health, property, autonomous driving, healthcare, minors), fundamental rights (anti-discrimination, privacy, user rights to know and choose), and existential/catastrophic risk (CBRN proliferation and autonomous self-replication/loss of human control) are explicitly articulated as distinct risk categories.",
+      "confidence": 0.935
     },
     {
       "document_id": "cn_ai_standardization_guide_2024",
       "title": "国家人工智能产业综合标准化体系建设指南",
       "publication_date": "2024-07-02",
-      "issuing_body": "Ministry of Industry and Information Technology (MIIT)",
+      "issuing_body": "Government of the People's Republic of China (specific issuing ministries not named in document text)",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
       "corpus_role": "primary_instrument",
@@ -238,16 +226,15 @@
       ],
       "top_requirements": [
         "risk_assessment",
-        "model_documentation",
-        "transparency_disclosure"
+        "pre_deployment_testing",
+        "access_controls"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "none_specified"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a standardization framework/guideline document (指南) for China's AI industry standards system (2024 edition). It sets targets to develop 50+ national/industry standards and 20+ international standards by 2026. It covers the full AI industry chain from infrastructure to applications, with safety/governance standards as one of seven pillars. No explicit penalties or binding enforcement mechanisms are specified; compliance is encouraged through guidance and promotion activities. The document appears issued by China's Ministry of Industry and Information Technology (MIIT) consistent with similar documents.",
-      "framing_rationale_summary": "The document is primarily framed around building China's AI standardization system to drive high-quality industrial development and global competitiveness. The stated goals emphasize seizing the first-mover advantage in AI industry development, expanding market scale, participating in international standards, and enabling new industrialization. Safety and governance standards appear as one component among seven, subordinate to the overarching economic and industrial development framing.",
-      "confidence": 0.76
+      "implementation_notes": "The 2024 edition of the National AI Industry Comprehensive Standardization System Construction Guide serves as a non-binding national standardization roadmap and technical taxonomy rather than a directly enforceable regulation. It organizes China's AI standard system into seven pillars—foundational common standards, foundational support (data, chips, compute), key technologies (including large models, agents, embodied AI, and biometrics), smart products and services, enabling new industrialization, industry applications, and safety/governance (including security testing, content labeling, ethical risk assessment, and ethics review). Implementation relies on standardization technical organizations, industry associations, talent development, and voluntary enterprise benchmarking, with no mandatory legal duties or sanctions specified. Specific issuing ministries are not printed inside the attachment text.",
+      "framing_rationale_summary": "The document's dominant rationale is economic competitiveness: its preamble, industry status analysis, and overarching goals frame AI standardization primarily as a strategic lever to cultivate 'new quality productive forces,' upgrade manufacturing, build China into a manufacturing and digital powerhouse, seize first-mover advantage in the AI industry, and expand global industrial influence. Innovation enablement is a strong secondary frame, as the guide emphasizes innovation-driven linkages between R&D and standards, enterprise adoption, and scenario-based deployment across sectors; however, economic competitiveness edges it out because technological innovation and standard adoption are explicitly subordinated to national industrial upgrading and global market positioning. Consumer and public safety appears as a modest secondary frame through full-lifecycle product, system, and operational safety standards intended to underpin secure industrial development, while fairness and explainability appear only briefly under ethical governance standards.",
+      "confidence": 0.915
     },
     {
       "document_id": "cn_algorithm_governance_guidance_2021",
@@ -255,14 +242,14 @@
       "publication_date": "2021-09-29",
       "issuing_body": "Cyberspace Administration of China (CAC)",
       "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "binding_strength": "strategy_statement",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "social_stability",
       "secondary_frames": [
         "fundamental_rights",
-        "innovation_enablement",
-        "national_security"
+        "economic_competitiveness",
+        "innovation_enablement"
       ],
       "top_requirements": [
         "risk_assessment",
@@ -271,12 +258,12 @@
       ],
       "top_enforcement_mechanisms": [
         "regulatory_supervision",
-        "soft_enforcement",
-        "civil_penalty"
+        "reporting_obligation",
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a guidance document (指导意见) jointly issued by 9 ministries. It sets a 3-year goal to establish algorithm governance mechanisms. The document calls for creating regulations and standards as follow-up measures, indicating that binding legal rules are anticipated but not yet fully in place. Civil penalties are implied by references to punishing violations but specific penalty amounts are not stated in this document.",
-      "framing_rationale_summary": "The document primarily frames algorithm governance as necessary to maintain correct information order, ideological security, market order, and social order. The central concern is preventing algorithms from disrupting social stability, spreading harmful content, or undermining ideological alignment. Secondary concerns include protecting netizens' rights (fundamental_rights), supporting domestic algorithm innovation to build competitive strength (innovation_enablement), and maintaining ideological/national security.",
-      "confidence": 0.785
+      "implementation_notes": "Joint ministerial Guiding Opinions (Guoxinban Fawen [2021] No. 7, dated 2021-09-17 and published online 2021-09-29) establishing a multi-dimensional algorithm regulatory framework—covering risk monitoring, security assessment, science and technology ethics review, graded and classified algorithm filing, and enforcement—while directing the drafting of binding algorithm management regulations and supporting standards and guidelines.",
+      "framing_rationale_summary": "Social stability and public order is the dominant frame because the guidance consistently anchors algorithm governance in safeguarding ideological security, maintaining dissemination and social order, promoting socialist core values, steering public opinion orientation, and disseminating 'positive energy' to cultivate a clean cyberspace. While fundamental rights (fairness, justice, explainability, and safeguarding netizens' legitimate rights and interests) is a prominent secondary rationale, it is framed alongside and subordinate to overarching ideological and public-order imperatives. Economic competitiveness (enhancing China's core competitiveness in algorithms, protecting IP, and promoting indigenous R&D) and innovation enablement (supporting deep integration of algorithms across economic and social fields for healthy, orderly development) also serve as key secondary justifications, with only minor implicit strategic-sovereignty undertones via 'independent and controllable' capabilities.",
+      "confidence": 0.955
     },
     {
       "document_id": "cn_algorithm_recommendation_provisions_2021",
@@ -289,23 +276,24 @@
       "lifecycle_stage": "active",
       "dominant_frame": "social_stability",
       "secondary_frames": [
-        "fundamental_rights",
         "consumer_public_safety",
-        "national_security"
+        "fundamental_rights",
+        "national_security",
+        "labor_transition"
       ],
       "top_requirements": [
         "risk_assessment",
-        "transparency_disclosure",
-        "model_documentation"
+        "content_provenance",
+        "incident_reporting"
       ],
       "top_enforcement_mechanisms": [
+        "regulatory_supervision",
         "civil_penalty",
-        "criminal_penalty",
-        "regulatory_supervision"
+        "criminal_penalty"
       ],
-      "implementation_notes": "This regulation governs algorithm recommendation services in China, covering personalized push, ranking, filtering, and decision-scheduling algorithms. It establishes a tiered registration/filing (备案) system for providers with public opinion influence or social mobilization capacity. Requirements include algorithmic transparency to users, user opt-out mechanisms, content labeling for AI-generated content, and periodic safety assessments. Penalties range from warnings and fines (10,000–100,000 RMB) to suspension of service updates and criminal liability for serious violations.",
-      "framing_rationale_summary": "The document primarily frames algorithm recommendation governance as necessary to maintain social order and uphold 'socialist core values,' prevent disruption to economic and social order, and suppress harmful information. The recurring emphasis on 'social public interest,' 'social mobilization capability,' 'public opinion attributes,' and preventing content that disturbs social order places social stability as the dominant frame. Secondary frames include fundamental rights (user transparency, opt-out rights, protections for minors, elderly, and workers), consumer/public safety (fraud prevention, minor protection, anti-addiction), and national security (explicit mention of national security protection).",
-      "confidence": 0.85
+      "implementation_notes": "Joint departmental regulation (Order No. 9) formulated under the Cybersecurity Law, Data Security Law, Personal Information Protection Law, and Administrative Measures on Internet Information Services. Covers five categories of algorithm recommendation technologies: generative/synthetic, personalized push, ranking/selection, search/filtering, and dispatch/decision-making. Establishes a tiered and classified security management system (Art. 23) and is jointly interpreted by CAC, MIIT, MPS, and SAMR (Art. 34).",
+      "framing_rationale_summary": "The Provisions on the Management of Algorithmic Recommendations in Internet Information Services are predominantly framed around social stability and public order. While consumer and public safety is a prominent runner-up—covering addiction prevention, minor protection, anti-fraud safeguards for the elderly, and fair consumer pricing—social stability edges it out because ideological alignment, public-opinion ecosystem governance, and social order anchor both the overarching purpose (Article 1's socialist core values and public interest; Article 6's mainstream value orientation and positive energy) and the regulation's primary structural triggers (Articles 9, 11, 13–14, and the filing/assessment regime in Articles 23–27 for services with public-opinion attributes or social mobilization capabilities). Secondary rationales also include protecting individual rights and personal data (fundamental_rights), safeguarding national security (national_security), and protecting platform workers' labor rights in algorithmic dispatch (labor_transition), alongside a minor nod to healthy and orderly industry development (innovation_enablement).",
+      "confidence": 0.97
     },
     {
       "document_id": "cn_anthropomorphic_interaction_expert_interpretation_2026",
@@ -316,82 +304,82 @@
       "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "social_stability",
+      "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
-        "consumer_public_safety",
+        "innovation_enablement",
         "fundamental_rights",
-        "innovation_enablement"
+        "social_stability"
       ],
       "top_requirements": [
         "risk_assessment",
-        "incident_reporting",
-        "transparency_disclosure"
+        "access_controls",
+        "training_data_governance"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "soft_enforcement"
+        "none_specified"
       ],
-      "implementation_notes": "This document is an expert interpretation (专家解读) of the 'Interim Measures for the Administration of Anthropomorphic Interactive Services of Artificial Intelligence' published by CAC. It is not the regulation itself but an authoritative commentary explaining the regulation's intent and requirements. The underlying 办法 (Measures) would be binding; this interpretive piece reflects that binding content. The document focuses on AI companion/emotional interaction services, covering minors protection, addiction prevention, crisis intervention, and data privacy.",
-      "framing_rationale_summary": "The document primarily frames AI anthropomorphic interaction risks in terms of social stability—specifically the erosion of real human relationships, emotional dependency, social isolation, and harm to vulnerable groups (minors, elderly, psychologically fragile individuals). The governance rationale centers on preserving the social fabric and healthy human relationships, with secondary attention to consumer/public safety (crisis intervention, self-harm prevention) and fundamental rights (privacy, personal data protection), while also affirming innovation enablement as a co-equal policy goal.",
-      "confidence": 0.685
+      "implementation_notes": "This document is an official expert interpretation (专家解读) authored by Wang Jiang (President and Party Secretary of the Chinese Academy of Cyberspace Studies) and published on the CAC website, explaining the Interim Measures for the Management of Anthropomorphic Interactive Artificial Intelligence Services (《人工智能拟人化互动服务管理暂行办法》). As an interpretive commentary rather than the enacted regulation itself, it is classified as regulatory guidance rather than binding law. It outlines the Measures' lifecycle safety governance, content and personal data safeguards, human-AI boundary disclosures, anti-addiction reminders (including after 2 hours of continuous use), crisis intervention for extreme emotions and self-harm/suicide, minor mode protections (including guardian consent for minors under 14), and guidance/assistance for elderly users.",
+      "framing_rationale_summary": "The document's dominant framing is consumer_public_safety, centering on preventing tangible psychological and physical harms to users—especially minors, the elderly, and emotionally vulnerable individuals—such as deep emotional dependency, behavioral addiction, and extreme life-threatening risks like self-harm or suicide. While innovation_enablement is a prominent runner-up—repeatedly invoking the principle of balancing development and security, encouraging technological innovation, and enabling beneficial applications in eldercare, education, and culture—consumer_public_safety edges it out because the concrete regulatory justifications across nearly every section are driven by safeguarding users' physical and mental health. Secondary rationales include fundamental_rights (protecting user privacy, personal information, and psychological autonomy) and social_stability (preventing erosion of human social relations and infiltration of illegal or harmful content), alongside a brief mention of national_security in content red lines.",
+      "confidence": 0.915
     },
     {
       "document_id": "cn_anthropomorphic_interaction_measures_2026",
       "title": "人工智能拟人化互动服务管理暂行办法",
       "publication_date": "2026-04-10",
       "issuing_body": "Cyberspace Administration of China (CAC)",
-      "document_type": "regulatory_guidance",
+      "document_type": "legislation",
       "binding_strength": "binding_law",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "social_stability",
+      "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
+        "social_stability",
         "fundamental_rights",
-        "consumer_public_safety",
-        "national_security"
+        "national_security",
+        "innovation_enablement"
       ],
       "top_requirements": [
         "risk_assessment",
-        "incident_reporting",
-        "transparency_disclosure"
+        "training_data_governance",
+        "access_controls"
       ],
       "top_enforcement_mechanisms": [
-        "civil_penalty",
         "regulatory_supervision",
+        "reporting_obligation",
         "market_access_restriction"
       ],
-      "implementation_notes": "This regulation specifically targets anthropomorphic/emotional AI interaction services (拟人化互动服务), explicitly excluding customer service, Q&A, work assistants, and educational tools without continuous emotional interaction. It was jointly issued by CAC, NDRC, MIIT, MPS, and SAMR. The document type is formally an interim administrative measure (暂行办法) which is binding regulation in China's legal system. Notable focus on minor protection, psychological health, and emotional dependency risks.",
-      "framing_rationale_summary": "The document primarily frames AI anthropomorphic interaction risks in terms of social stability: preventing emotional dependency, protecting minors, curbing manipulation, and maintaining socialist core values and social order. Secondary framings include fundamental rights (personal information, privacy, user autonomy) and consumer/public safety (mental health interventions, crisis detection). National security appears as a baseline concern (prohibiting content harming state security) but is not the organizing logic.",
-      "confidence": 0.685
+      "implementation_notes": "Promulgated as Order No. 21 on 2026-04-10 (approved at the 3rd CAC Executive Meeting on 2026-02-02) pursuant to the Cybersecurity Law, Data Security Law, Personal Information Protection Law, and Regulations on the Protection of Minors Online. Covers continuous emotional interaction services (care, companionship, support via text, image, audio, or video) while explicitly excluding smart customer service, Q&A, work assistants, education, and scientific research lacking continuous emotional interaction. Mandates full-lifecycle safety management, training data governance, AI interaction notices and 2-hour continuous-use reminders, minors' mode and parental consent for users under 14, emergency intervention for self-harm or major financial loss risks, and security assessment filings with provincial CACs upon launch, major updates, or reaching 1 million registered users or 100,000 monthly active users. The provided text is a partial excerpt omitting certain articles (e.g., Articles 3, 5-7, 12, 15, 19-21, 24-28, and 31).",
+      "framing_rationale_summary": "Consumer and public safety is the dominant frame because the measures are overwhelmingly organized around protecting individual users—especially minors, the elderly, and emotionally vulnerable users—from concrete psychological, physical, and financial harms, including self-harm and suicide, emotional manipulation, addiction and over-reliance, and major property loss (Articles 8, 10, 13, 14, 18, 23, and 30). Social stability is the leading secondary frame, reflecting core Chinese content-governance justifications around socialist core values, public morality, public interest, and preventing rumors or group antagonism (Articles 1, 8, 11, and 22). Fundamental rights also features prominently through recurring mandates to protect human dignity, privacy, and personal information under the Personal Information Protection Law (Articles 1, 8, 10, 13, 16, and 17), while national security (state security, state secrets) and innovation enablement (promoting healthy development and standardized application) appear as secondary statutory objectives in Article 1 and related provisions. Consumer and public safety edges out social stability and fundamental rights because the regulation's specific operational justifications center on preventing tangible life, health, and behavioral harms unique to anthropomorphic emotional-companion AI.",
+      "confidence": 0.95
     },
     {
       "document_id": "cn_anthropomorphic_interaction_measures_qa_2026",
       "title": "《人工智能拟人化互动服务管理暂行办法》答记者问",
       "publication_date": "2026-04-10",
-      "issuing_body": "Ministry of Industry and Information Technology (MIIT)",
+      "issuing_body": "Cyberspace Administration of China (CAC)",
       "document_type": "regulatory_guidance",
-      "binding_strength": "binding_law",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
+        "innovation_enablement",
         "fundamental_rights",
-        "social_stability",
-        "innovation_enablement"
+        "national_security",
+        "social_stability"
       ],
       "top_requirements": [
         "risk_assessment",
         "pre_deployment_testing",
-        "incident_reporting"
+        "training_data_governance"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
         "reporting_obligation",
-        "soft_enforcement"
+        "regulatory_supervision"
       ],
-      "implementation_notes": "This is a press Q&A document explaining the Interim Measures for Management of Anthropomorphic Interaction Services Using AI, jointly issued by five agencies. The measures take effect 2026-07-15. Scope is limited to persistent emotional interaction services; excludes customer service, Q&A, work assistants, education tools without persistent emotional interaction. Key focus areas: minors protection (under-14 requires guardian consent), elderly user safeguards, algorithm filing/registration, sandbox testing platform, and user dependency intervention obligations.",
-      "framing_rationale_summary": "The document primarily frames AI governance around protecting users—especially minors and the elderly—from harms such as emotional manipulation, addiction, self-harm, and privacy violations. The detailed provisions on intervention obligations, dependency warnings, and crisis response reinforce a consumer/public safety dominant frame. Secondary frames include fundamental rights (data rights, privacy, personal dignity), social stability (prohibitions on content threatening state security and social order), and innovation enablement (sandbox platforms, encouraging R&D).",
-      "confidence": 0.815
+      "implementation_notes": "This document is an official Q&A (答记者问) published by the Cyberspace Administration of China (CAC) explaining the Interim Measures for the Administration of AI Anthropomorphic Interactive Services, which were jointly promulgated on 2026-04-10 by CAC, NDRC, MIIT, MPS, and SAMR and take effect on 2026-07-15. Because this text is an interpretive Q&A rather than the enacted regulation itself, document_type and binding_strength are classified as regulatory_guidance. The Measures explicitly exclude AI services such as smart customer service, knowledge Q&A, work assistants, education, and scientific research when they do not involve continuous emotional interaction. Security assessments are triggered upon launch, feature additions, major technology changes, reaching 1 million registered users or 100,000 monthly active users, or national security/public interest risks; algorithm filing is also required under the Algorithm Recommendation Provisions with annual verification by cyberspace authorities. No specific administrative fines or criminal sanctions are stated in this Q&A text.",
+      "framing_rationale_summary": "The Q&A predominantly frames governance of anthropomorphic interactive AI services around consumer and public safety, centering on tangible psychological, physical, and financial harms to users—especially minors and the elderly—such as self-harm/suicide encouragement, emotional manipulation, addiction, major property loss, and threats to citizens' life and health. Innovation enablement is a prominent secondary frame because the document explicitly encourages R&D, application expansion in eldercare and childcare, and regulatory sandboxes for safe, orderly development, yet consumer_public_safety edges it out as the primary driver of the rules' core prohibitions, intervention duties, and vulnerable-group protections. Fundamental rights (personal information, privacy, and human dignity), national security (state secrets, state security, and regime threats), and social stability (social morality, ethical norms, and healthy interpersonal relationships) appear as supporting rationales.",
+      "confidence": 0.95
     },
     {
       "document_id": "cn_deep_synthesis_provisions_2022",
@@ -409,18 +397,18 @@
         "consumer_public_safety"
       ],
       "top_requirements": [
-        "transparency_disclosure",
         "risk_assessment",
-        "model_documentation"
+        "incident_reporting",
+        "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
-        "civil_penalty",
-        "criminal_penalty",
-        "regulatory_supervision"
+        "regulatory_supervision",
+        "market_access_restriction",
+        "reporting_obligation"
       ],
-      "implementation_notes": "Regulations cover 'deep synthesis' (deepfake/generative AI) services including text, image, audio, video, and virtual scene generation. Key obligations include mandatory watermarking/labeling of synthetic content, real-name authentication of users, security assessment for biometric editing tools, and registration for services with public opinion influence. Enforcement references existing cybersecurity and public security laws for specific penalty amounts.",
-      "framing_rationale_summary": "The document primarily frames deep synthesis governance as necessary to maintain social order, public morality, and correct political/public opinion orientation. It repeatedly emphasizes preventing disinformation, protecting 'social public interests,' and maintaining 'economic and social order.' National security is a strong secondary frame, with explicit prohibitions on content harming national security and requirements for security assessments on content involving national image. Fundamental rights (personal information, biometric data protection) and consumer/public safety (anti-fraud, labeling requirements) are also present.",
-      "confidence": 0.84
+      "implementation_notes": "Promulgated as Joint Order No. 12 under the Cybersecurity Law, Data Security Law, Personal Information Protection Law, and Administrative Measures for Internet Information Services. Applies to deep synthesis services provided within PRC territory. Links algorithm filing obligations for services with public opinion attributes or social mobilization capabilities to the Provisions on the Administration of Algorithm-Generated Recommendations for Internet Information Services (Article 19) and requires concurrent compliance with press/publication, culture/tourism, and radio/television rules where applicable (Article 24).",
+      "framing_rationale_summary": "The Provisions are predominantly framed around social stability and public order, emphasizing core socialist values, correct political and public-opinion orientation, social ethics, rumor refutation, false news prevention, and regulatory triggers tied to public-opinion or social-mobilization attributes (Articles 1, 4, 6, 11, 19–20). National security and fundamental rights serve as prominent secondary frames—invoking state security, national image, and national interests (Articles 1, 6, 15) alongside lawful rights of citizens, personal information protection, and separate consent for biometric editing (Articles 1, 6, 14)—while consumer and public safety plays a smaller supporting role through anti-telecom-fraud duties and labeling to prevent public confusion or deception (Articles 7, 17). Social stability edges out national security and fundamental rights because public-opinion governance, ideological/value alignment, and disinformation containment structure both the overarching mandate and the primary filing and assessment thresholds.",
+      "confidence": 0.96
     },
     {
       "document_id": "cn_genai_interim_measures_2023",
@@ -433,37 +421,37 @@
       "lifecycle_stage": "active",
       "dominant_frame": "social_stability",
       "secondary_frames": [
-        "national_security",
+        "innovation_enablement",
         "fundamental_rights",
-        "innovation_enablement"
+        "national_security",
+        "consumer_public_safety"
       ],
       "top_requirements": [
-        "risk_assessment",
+        "training_data_governance",
         "transparency_disclosure",
         "content_provenance"
       ],
       "top_enforcement_mechanisms": [
-        "civil_penalty",
-        "criminal_penalty",
-        "market_access_restriction"
+        "regulatory_supervision",
+        "market_access_restriction",
+        "criminal_penalty"
       ],
-      "implementation_notes": "Interim measures applying to generative AI services provided to the public within China. Classified/tiered supervision approach indicated. Research and internal use not covered. Foreign providers offering services into China are also subject to these rules.",
-      "framing_rationale_summary": "The document's primary governance rationale centers on maintaining social order and ideological stability—prohibiting content that undermines state power, social stability, or socialist values. National security appears as a closely related secondary concern. The document also strongly promotes innovation and self-reliance in AI development, and addresses individual rights such as personal information protection.",
-      "confidence": 0.7
+      "implementation_notes": "Applies to generative AI services (generating text, images, audio, video, etc.) provided to the public in China, while exempting organizations, enterprises, educational/research institutions, and public cultural or professional institutions that develop and apply generative AI without serving the domestic public (Art. 2). Establishes an inclusive, prudent, and classified/graded regulatory approach (Art. 3, Art. 16). Links compliance to existing regimes: content labeling under the Deep Synthesis Provisions (Art. 12), security assessment and algorithm filing for services with public opinion attributes or social mobilization capabilities under the Algorithm Recommendation Provisions (Art. 17), and applicable administrative licensing and foreign investment laws (Art. 23).",
+      "framing_rationale_summary": "The Interim Measures balance dual priorities of content/public-order governance and technological development, with social_stability narrowly edging out innovation_enablement as the dominant governance rationale. While Articles 1, 3, 5, 6, and 16 strongly emphasize promoting healthy development, inclusive and prudent tiered supervision, and AI ecosystem building (innovation_enablement), the core regulatory triggers and primary substantive obligations are anchored in safeguarding social public interest, upholding socialist core values, prohibiting false/harmful content, promoting positive content, and subjecting services with public-opinion attributes or social mobilization capabilities to security assessments (Articles 1, 4(1), 5, 17). Secondary rationales prominently include protecting individual legal rights, privacy, personal information, and non-discrimination (fundamental_rights); safeguarding state security and national unity (national_security); and preventing physical/mental harm and minor addiction (consumer_public_safety), alongside minor mentions of independent foundational tech innovation and fair market competition (economic_competitiveness). Existential/catastrophic risk and labor-market transition are not invoked.",
+      "confidence": 0.94
     },
     {
       "document_id": "cn_meteorological_ai_measures_2025",
       "title": "Measures for Artificial Intelligence Meteorological Application Services",
       "publication_date": "2025-04-29",
       "issuing_body": "Cyberspace Administration of China (CAC)",
-      "document_type": "legislation",
-      "binding_strength": "binding_law",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
-        "social_stability"
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "registration_licensing",
@@ -474,9 +462,9 @@
         "regulatory_supervision",
         "reporting_obligation"
       ],
-      "implementation_notes": "This is described as the first departmental regulation in China to promote and regulate AI in a segmented area, and the first legal standard on AI meteorological application services among WMO members. It covers algorithm registration, security assessments, content labeling, safety review, cyber security, data security, and complaint reporting. Details on penalties are not provided in the available text.",
-      "framing_rationale_summary": "The document primarily frames AI governance in meteorology as enabling healthy and well-organized development, balancing innovation promotion with governance. The stated aim is to encourage and promote AI application services while managing potential hazards, with explicit policy support for R&D and application scenarios. Safety and security measures are secondary to the innovation promotion goal.",
-      "confidence": 0.735
+      "implementation_notes": "The provided text is an official news article (China Meteorological News Press, updated 2025-04-29) summarizing the joint departmental regulation 'Measures for Artificial Intelligence (AI) Meteorological Application Services' promulgated by CMA and CAC on 2025-04-23 and effective 2025-06-01. Because this source is a press release overview rather than the enacted statutory text itself, binding_strength and document_type are coded as regulatory_guidance rather than binding_law. The summary states that the Measures adopt classified and graded supervision and establish systems for algorithm registration and security assessments, labeling of AI-generated synthetic content, algorithm safety review, cybersecurity, data security, information dissemination review, and complaint reporting, alongside collaborative governance with enterprises, universities, and research institutions.",
+      "framing_rationale_summary": "The document predominantly frames China's AI meteorological governance around innovation enablement, emphasizing an inclusive and prudent approach, classified and graded supervision, data openness, R&D support, and the 'AI +' initiative to accelerate meteorological science, technology, and public services. Consumer and public safety serves as a secondary frame through the stated goal of balancing development and security and tackling potential hazards in AI meteorological services such as early warning and weather forecasting in a science-based manner. Minor traces of social stability (healthy, well-organized development and information dissemination review) and international standard-setting appear, but innovation enablement clearly dominates the stated purpose.",
+      "confidence": 0.875
     },
     {
       "document_id": "cn_new_generation_ai_plan_2017",
@@ -492,247 +480,522 @@
         "national_security",
         "social_stability",
         "innovation_enablement",
+        "labor_transition",
+        "fundamental_rights"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "pre_deployment_testing",
+        "access_controls"
+      ],
+      "top_enforcement_mechanisms": [
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Issued as State Council Notice Guo Fa [2017] No. 35 (dated 2017-07-08; published online 2017-07-20), this is China's overarching national AI strategy paper setting three-step targets for 2020, 2025, and 2030 rather than an enforceable statute. It directs ministries and local governments to implement R&D, industrial, military-civil fusion, infrastructure, and workforce tasks, coordinated by the National Leading Group for S&T System Reform and MOST (hosting the AI Plan Promotion Office) alongside an AI Strategic Advisory Committee. While it imposes no direct legal sanctions, Section 5 calls for future legislation on civil and criminal AI liability, sector-specific safety rules (e.g., autonomous driving, service robots), a dual-layer design-accountability and application-supervision regime, safety certification, and stronger penalties for data abuse, privacy infringement, and ethical violations.",
+      "framing_rationale_summary": "China's 2017 New Generation Artificial Intelligence Development Plan is dominantly framed around economic competitiveness: its preamble, strategic assessment, and three-step 2020/2025/2030 targets center on seizing first-mover advantage in global technological competition, upgrading domestic industry into the high end of global value chains, injecting new momentum into economic growth, and scaling core and related AI industries to over 1 trillion and 10 trillion RMB respectively. Economic competitiveness edges out the prominent runner-up, national security, because while national defense, strategic rivalry, and civil-military fusion are major co-justifications, the bulk of the document's operational goals, metrics, and industrial-policy architecture are oriented toward macroeconomic transformation and global commercial leadership. Social stability is a strong tertiary frame, portraying AI as indispensable for social governance, public security, and anticipating group psychology, while innovation enablement (coordinating development incentives with proportionate regulation) and labor transition (explicitly addressing near-term employment disruption and reskilling displaced workers) provide distinct supporting rationales alongside narrower mentions of privacy protection and consumer/public safety.",
+      "confidence": 0.965
+    },
+    {
+      "document_id": "cn_state_council_ai_plus_opinion_2025",
+      "title": "国务院关于深入实施“人工智能+”行动的意见 (国发〔2025〕11号 / State Council Opinion on Deepening Implementation of the 'AI+' Action)",
+      "publication_date": "2025-08-26",
+      "issuing_body": "State Council of China",
+      "document_type": "strategy_paper",
+      "binding_strength": "executive_action",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "economic_competitiveness",
+      "secondary_frames": [
+        "innovation_enablement",
+        "labor_transition",
+        "consumer_public_safety",
+        "social_stability",
+        "national_security"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "registration_licensing"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "National strategic action plan (Guofa [2025] No. 11) coordinated by the National Development and Reform Commission (NDRC) for localized implementation by ministries and sub-national governments. Establishes phased national adoption milestones rather than binding legal compliance deadlines: >70% adoption of new-generation smart terminals and AI agents across six priority domains by 2027, >90% adoption by 2030, and full transition to an intelligent economy and society by 2035. Calls for advancing AI legislation, optimizing security assessment and filing management systems, and establishing an inclusive, prudent, tiered/classified (分类分级) governance framework.",
+      "framing_rationale_summary": "The State Council's 'AI+' Action Opinion is dominantly framed around economic competitiveness: its overarching rationale is driving a revolutionary leap in productivity, cultivating 'new quality productive forces,' transforming traditional and emerging industries, and establishing the 'intelligent economy' as a major growth pole for China's high-quality economic development and modernization. Innovation enablement is a very close runner-up, reflected in extensive measures to accelerate scientific R&D, foster open-source ecosystems, establish trial-and-error tolerance policies, and adopt 'inclusive, prudent, classified, and agile' governance to unlock broad public and private adoption; however, economic competitiveness edges it out because macroeconomic growth, industrial upgrading, and national economic modernization serve as the primary stated ends to which innovation and agile governance are instrumental. Secondary rationales include explicit labor-transition protections (AI skills training, re-employment support, and employment risk assessments to mitigate job shocks), consumer and public safety (preventing model black-box, hallucination, and workplace/public safety risks), social stability (public order and cyberspace governance), and national security (applying AI to safeguard and shape national security), with only minimal reference to fundamental rights (algorithmic discrimination) and no existential-risk framing.",
+      "confidence": 0.935
+    },
+    {
+      "document_id": "cn_tc260_ai_safety_governance_framework_3_0_2026",
+      "title": "人工智能安全治理框架 3.0 (AI Safety Governance Framework 3.0)",
+      "publication_date": "2026-09-14",
+      "issuing_body": "TC260 (National Cybersecurity Standardization Technical Committee)",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "existential_catastrophic",
+        "national_security",
+        "social_stability",
+        "consumer_public_safety",
+        "fundamental_rights",
         "labor_transition"
       ],
       "top_requirements": [
         "risk_assessment",
-        "transparency_disclosure",
-        "human_oversight"
+        "pre_deployment_testing",
+        "red_teaming"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
         "soft_enforcement",
-        "civil_penalty"
+        "regulatory_supervision",
+        "reporting_obligation"
       ],
-      "implementation_notes": "This is China's 2017 New Generation AI Development Plan (新一代人工智能发展规划), a high-level national strategy document issued by the State Council. It is primarily a strategy/roadmap document with three-phase goals to 2030. While it directs ministries to develop laws, regulations, and standards, it does not itself constitute binding law. Safety and governance provisions are largely aspirational with implementation delegated to future rulemaking. The document explicitly calls for future development of AI laws, ethics frameworks, safety monitoring systems, and standards—meaning most enforcement mechanisms are anticipated rather than operative at time of publication. Confidence scores for enforcement mechanisms are conservative given this forward-looking character.",
-      "framing_rationale_summary": "The document overwhelmingly frames AI governance through the lens of economic competitiveness and national strategic advantage. The core motivation is to seize a first-mover advantage in AI, build internationally competitive industries, and drive economic growth. National security is a strong secondary frame, with explicit references to maintaining strategic initiative in international AI competition and supporting national defense. Social stability, labor transition, and innovation enablement also appear as secondary concerns.",
-      "confidence": 0.89
+      "implementation_notes": "Bilingual (Chinese and English) Version 3.0 technical governance framework issued by TC260 under the guidance of the Cyberspace Administration of China (CAC), updating Versions 1.0 (2024) and 2.0 (2025). As a non-binding standards framework, it establishes no direct statutory penalties, though Section 4.3.3 notes that illegal acts endangering national security, infringing personal rights, causing major harm, or committed intentionally are not exempted from legal liability under proposed regulatory sandboxes. It provides risk classifications (inherent, application, and secondary/derivative risks), technological countermeasures, comprehensive governance measures (including registration/filing for AI systems in critical information infrastructure and at least 6-month operational log retention in Section 5.3.6), role-based safety guidelines, and three appendices: 5-tier AI safety risk grading principles (Appendix 1), a full-lifecycle Agentic AI Risk Management Framework (Appendix 2), and Fundamental Principles for Trustworthy AI (Appendix 3).",
+      "framing_rationale_summary": "The TC260 AI Safety Governance Framework 3.0 adopts a multi-layered 'development and security in equal measure' rationale in which innovation_enablement narrowly edges out existential_catastrophic and national_security as the dominant frame. Section 1 explicitly establishes promoting innovative AI development as the 'first priority' (第一要务) and structures the entire framework around inclusive, prudent, risk-tiered, agile governance, regulatory sandboxes (Section 4.3), and open-source ecosystem cultivation so that timely risk prevention supports healthy adoption and unlocks industry potential. Existential_catastrophic is a very close runner-up, driving the v3.0 update's emphasis on self-accelerating recursive improvement, agentic loss of control, CBRN weapons knowledge, and ultimate human control (Preface, Principle 1.5, Appendix 3). National_security (critical information infrastructure, autonomous cyberattacks, export-control supply chain disruption, cognitive warfare, digital sovereignty) and social_stability (illegal content, ideological security, online ecosystem governance, social cognition) are co-primary security bottom lines alongside citizens' rights in Appendix 1's risk-grading tiers. Consumer_public_safety (embodied AI physical harm, fraud, minor/elderly mental health), fundamental_rights (personal information rights, non-discrimination, user choice/transparency), and labor_transition (occupational displacement and structural unemployment monitoring) appear as explicit secondary justifications.",
+      "confidence": 0.945
     }
   ],
   "aggregates": {
     "document_types": [
       {
         "label": "regulatory_guidance",
-        "count": 10,
-        "share": 0.556
+        "count": 7,
+        "share": 0.35
       },
       {
         "label": "legislation",
-        "count": 4,
-        "share": 0.222
+        "count": 5,
+        "share": 0.25
       },
       {
         "label": "standards_guideline",
-        "count": 2,
-        "share": 0.111
+        "count": 4,
+        "share": 0.2
       },
       {
         "label": "strategy_paper",
-        "count": 2,
-        "share": 0.111
+        "count": 4,
+        "share": 0.2
       }
     ],
     "binding_strengths": [
       {
         "label": "regulatory_guidance",
-        "count": 8,
-        "share": 0.444
+        "count": 7,
+        "share": 0.35
       },
       {
         "label": "binding_law",
-        "count": 6,
-        "share": 0.333
+        "count": 5,
+        "share": 0.25
       },
       {
         "label": "standards_guideline",
-        "count": 2,
-        "share": 0.111
+        "count": 4,
+        "share": 0.2
       },
       {
         "label": "strategy_statement",
-        "count": 2,
-        "share": 0.111
+        "count": 3,
+        "share": 0.15
+      },
+      {
+        "label": "executive_action",
+        "count": 1,
+        "share": 0.05
       }
     ],
     "requirements": [
       {
-        "label": "transparency_disclosure",
-        "count": 17,
-        "share": 0.944
-      },
-      {
-        "label": "human_oversight",
-        "count": 14,
-        "share": 0.778
-      },
-      {
         "label": "risk_assessment",
-        "count": 14,
-        "share": 0.778
-      },
-      {
-        "label": "model_documentation",
-        "count": 13,
-        "share": 0.722
+        "count": 15,
+        "share": 0.75
       },
       {
         "label": "content_provenance",
-        "count": 10,
-        "share": 0.556
+        "count": 12,
+        "share": 0.6
       },
       {
-        "label": "incident_reporting",
-        "count": 9,
+        "label": "transparency_disclosure",
+        "count": 11,
+        "share": 0.55
+      },
+      {
+        "label": "access_controls",
+        "count": 10,
         "share": 0.5
       },
       {
         "label": "registration_licensing",
-        "count": 9,
+        "count": 10,
         "share": 0.5
       },
       {
-        "label": "access_controls",
-        "count": 8,
-        "share": 0.444
+        "label": "training_data_governance",
+        "count": 9,
+        "share": 0.45
+      },
+      {
+        "label": "human_oversight",
+        "count": 6,
+        "share": 0.3
       },
       {
         "label": "pre_deployment_testing",
+        "count": 6,
+        "share": 0.3
+      },
+      {
+        "label": "incident_reporting",
         "count": 5,
-        "share": 0.278
+        "share": 0.25
       },
       {
-        "label": "third_party_audit",
-        "count": 4,
-        "share": 0.222
-      },
-      {
-        "label": "compute_governance",
-        "count": 2,
-        "share": 0.111
+        "label": "model_documentation",
+        "count": 5,
+        "share": 0.25
       },
       {
         "label": "red_teaming",
+        "count": 2,
+        "share": 0.1
+      },
+      {
+        "label": "agentic_autonomy_controls",
         "count": 1,
-        "share": 0.056
+        "share": 0.05
+      },
+      {
+        "label": "compute_governance",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "frontier_safety_evaluation",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "open_weight_obligations",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "third_party_audit",
+        "count": 1,
+        "share": 0.05
       }
     ],
     "enforcement_mechanisms": [
       {
         "label": "regulatory_supervision",
-        "count": 15,
-        "share": 0.833
+        "count": 11,
+        "share": 0.55
       },
       {
         "label": "reporting_obligation",
-        "count": 10,
-        "share": 0.556
+        "count": 9,
+        "share": 0.45
       },
       {
         "label": "soft_enforcement",
-        "count": 8,
-        "share": 0.444
-      },
-      {
-        "label": "civil_penalty",
-        "count": 6,
-        "share": 0.333
+        "count": 9,
+        "share": 0.45
       },
       {
         "label": "market_access_restriction",
         "count": 5,
-        "share": 0.278
+        "share": 0.25
       },
       {
-        "label": "none_specified",
+        "label": "civil_penalty",
         "count": 4,
-        "share": 0.222
+        "share": 0.2
       },
       {
         "label": "criminal_penalty",
         "count": 3,
-        "share": 0.167
+        "share": 0.15
+      },
+      {
+        "label": "licensing_requirement",
+        "count": 3,
+        "share": 0.15
+      },
+      {
+        "label": "none_specified",
+        "count": 2,
+        "share": 0.1
       }
     ],
     "institutions": [
       {
         "label": "Cyberspace Administration of China (CAC)",
-        "count": 11,
-        "share": 0.611
+        "count": 13,
+        "share": 0.65
       },
       {
         "label": "Ministry of Industry and Information Technology (MIIT)",
-        "count": 2,
-        "share": 0.111
+        "count": 6,
+        "share": 0.3
       },
       {
-        "label": "国家新一代人工智能治理专业委员会 (National New Generation AI Governance Professional Committee)",
+        "label": "Ministry of Science and Technology (MOST)",
+        "count": 4,
+        "share": 0.2
+      },
+      {
+        "label": "State Council of China",
+        "count": 3,
+        "share": 0.15
+      },
+      {
+        "label": "Ministry of Public Security (MPS) and local public security departments",
         "count": 2,
-        "share": 0.111
+        "share": 0.1
+      },
+      {
+        "label": "Ministry of Public Security (公安部)",
+        "count": 2,
+        "share": 0.1
+      },
+      {
+        "label": "National Development and Reform Commission (国家发展改革委)",
+        "count": 2,
+        "share": 0.1
+      },
+      {
+        "label": "State Administration for Market Regulation (SAMR) and local market regulation departments",
+        "count": 2,
+        "share": 0.1
+      },
+      {
+        "label": "TC260 (National Cybersecurity Standardization Technical Committee)",
+        "count": 2,
+        "share": 0.1
+      },
+      {
+        "label": "AI Plan Promotion Office (人工智能规划推进办公室)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "China Meteorological Administration (CMA)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Competent authorities (主管部门)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Drug regulatory departments at all levels (各级药品监管部门)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Government departments (政府部门)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Government of the People's Republic of China (specific issuing ministries not named in document text)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Inter-Ministerial Joint Conference on National Science and Technology Plan Management (国家科技计划管理部际联席会议)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Local counterpart departments at the provincial, autonomous region, municipal, and Xinjiang Production and Construction Corps levels",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Local cyberspace administration offices (各地网信部门, including Beijing, Shanghai, Zhejiang, Jiangsu, Tianjin, and Guangdong)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Ministry of Culture and Tourism",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Ministry of Education",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Ministry of Education (MOE)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Ministry of Public Security",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Ministry of Public Security (MPS)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Ministry of Public Security and local public security organs",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "National Development and Reform Commission (NDRC)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "National Development and Reform Commission (NDRC) and local development and reform departments",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "National Leading Group for Science and Technology System Reform and Innovation System Construction (国家科技体制改革和创新体系建设领导小组)",
+        "count": 1,
+        "share": 0.05
       },
       {
         "label": "National Medical Products Administration (NMPA)",
         "count": 1,
-        "share": 0.056
+        "share": 0.05
       },
       {
-        "label": "State Council of China",
+        "label": "National Press and Publication Administration (NPPA)",
         "count": 1,
-        "share": 0.056
+        "share": 0.05
       },
       {
-        "label": "TC260 (National Cybersecurity Standardization Technical Committee)",
+        "label": "National Radio and Television Administration",
         "count": 1,
-        "share": 0.056
+        "share": 0.05
+      },
+      {
+        "label": "National Radio and Television Administration (NRTA)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "National Radio and Television Administration (国家广播电视总局)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Press and publication departments (national and local)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Press and publication, culture and tourism, and radio and television authorities (for sectoral online publishing, cultural, and audiovisual services)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Provincial Communications Administration (省通信管理局, specifically Jiangsu)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Provincial, autonomous region, and municipal people's governments (各省、自治区、直辖市人民政府)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Provincial, autonomous region, municipal, and Xinjiang Production and Construction Corps cyberspace, communications/industry, public security, and radio/television authorities",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Provincial-level drug regulatory bureaus (各省级局)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Publicity Department of the CPC Central Committee",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Sectoral competent and regulatory authorities",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "State Administration for Market Regulation",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "State Administration for Market Regulation (市场监管总局)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "国家新一代人工智能治理专业委员会 (National New Generation Artificial Intelligence Governance Expert Committee)",
+        "count": 1,
+        "share": 0.05
       }
     ],
     "frames": [
       {
         "label": "social_stability",
-        "score": 6.173,
-        "share": 0.343,
-        "document_mentions": 15
-      },
-      {
-        "label": "consumer_public_safety",
-        "score": 4.966,
-        "share": 0.276,
-        "document_mentions": 17
+        "score": 4.69,
+        "share": 0.234,
+        "document_mentions": 18
       },
       {
         "label": "innovation_enablement",
-        "score": 2.273,
-        "share": 0.126,
-        "document_mentions": 8
+        "score": 4.61,
+        "share": 0.23,
+        "document_mentions": 19
+      },
+      {
+        "label": "consumer_public_safety",
+        "score": 3.82,
+        "share": 0.191,
+        "document_mentions": 19
       },
       {
         "label": "fundamental_rights",
-        "score": 1.873,
-        "share": 0.104,
-        "document_mentions": 8
-      },
-      {
-        "label": "national_security",
-        "score": 1.091,
-        "share": 0.061,
-        "document_mentions": 5
+        "score": 2.83,
+        "share": 0.142,
+        "document_mentions": 18
       },
       {
         "label": "economic_competitiveness",
-        "score": 0.935,
-        "share": 0.052,
+        "score": 1.76,
+        "share": 0.088,
+        "document_mentions": 11
+      },
+      {
+        "label": "national_security",
+        "score": 1.64,
+        "share": 0.082,
+        "document_mentions": 13
+      },
+      {
+        "label": "existential_catastrophic",
+        "score": 0.36,
+        "share": 0.018,
         "document_mentions": 4
       },
       {
         "label": "labor_transition",
-        "score": 0.427,
-        "share": 0.024,
-        "document_mentions": 3
-      },
-      {
-        "label": "existential_catastrophic",
-        "score": 0.263,
+        "score": 0.29,
         "share": 0.015,
-        "document_mentions": 1
+        "document_mentions": 5
       }
     ]
   }

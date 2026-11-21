@@ -1,41 +1,86 @@
 {
   "dominant_frame": "innovation_enablement",
   "secondary_frames": [
-    "consumer_public_safety",
+    "national_security",
+    "economic_competitiveness",
     "fundamental_rights",
-    "national_security"
+    "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.12,
-    "economic_competitiveness": 0.1,
-    "fundamental_rights": 0.1,
-    "social_stability": 0.08,
-    "innovation_enablement": 0.52,
-    "consumer_public_safety": 0.15,
-    "labor_transition": 0.04
+    "existential_catastrophic": 0.0,
+    "national_security": 0.85,
+    "economic_competitiveness": 0.8,
+    "fundamental_rights": 0.78,
+    "social_stability": 0.3,
+    "innovation_enablement": 0.98,
+    "consumer_public_safety": 0.76,
+    "labor_transition": 0.15
   },
-  "rationale_summary": "The document is primarily framed around enabling public sector adoption of hyperscale AI to modernize government services, improve administrative efficiency, and solve social problems. The dominant rationale throughout is operational enablement: providing procedures, frameworks, and guidelines to help public agencies successfully introduce and use AI technology. Safety and rights protections (data security, AI ethics, personal information) appear as secondary compliance requirements within an overarching innovation-enablement narrative, not as the primary driver. National security concerns appear narrowly in data classification and network security contexts.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.14,
+    "economic_competitiveness": 0.14,
+    "fundamental_rights": 0.12,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.5,
+    "consumer_public_safety": 0.1,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Version 2.0 of the Public-Sector Hyperscale AI Guideline remains dominantly framed around innovation_enablement: it operationalizes Korea's push toward 95% public-sector AI adoption by 2030 via three strategic goals (citizen service innovation, social problem-solving, administrative efficiency), a shared Pan-Government Hyperscale AI Common Foundation to eliminate silos and duplicate investments, RAG/multi-cloud adoption pathways, fast-track Digital Service procurement, and a 344-indicator lifecycle performance framework. Innovation_enablement decisively leads secondary frames, yet Version 2.0 markedly elevates national_security compared to Version 1.0 by integrating NIS's National Network Security Framework (N2SF) C/S/O classification for defense/diplomatic/intelligence secrets, cyber-exfiltration threat controls, and NIS security reviews. Economic_competitiveness (global AI supremacy competition post-DeepSeek, international benchmarking, domestic AI ecosystem/GovTech growth), fundamental_rights (citizens' rights, privacy, copyright, 2024 OECD AI Principles on human rights/explainability/recourse, accessibility), and consumer_public_safety (24-hour citizen safety, disaster/crowd/emergency protection, mitigating hallucinations and malicious outputs) form balanced supporting rationales.",
   "evidence_spans": [
     {
-      "quote": "본 가이드라인은 중앙부처·지자체·공공기관·국회·법원 등 전 공공부문에서 디지털플랫폼정부의 철학과 원칙에 따라 초거대 AI를 도입·활용하는데 필요한 관련 기준과 절차, 고려 사항을 안내하는 것을 목적으로 함",
-      "source_section": "Part 0"
+      "quote": "①(대국민 서비스 혁신) AI로 실현하는 초개인화·無장애 대국민 서비스 제공 확대 ②(사회문제 해결) AI를 활용한 데이터 분석과 실시간 대응역량 강화로 복잡하고 다양한 사회문제 해결 ③(일하는 방식 효율화) AI와 협업을 통해 일상적 업무를 효율화하고 정책지능 향상으로 최적의 의사결정 지원",
+      "source_section": "2.1.1 공공AI 3대 전략 목표",
+      "quote_en": "Three Public AI Strategic Goals: (1) Citizen Service Innovation via hyper-personalized barrier-free services; (2) Social Problem-Solving via AI data analysis and real-time response; (3) Work Efficiency via AI collaboration and enhanced policy intelligence.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 11434,
+      "end_char": 11597
     },
     {
-      "quote": "공공부문 AI 도입·활용은 공공의 일하는 방식을 과학적이고 효율적으로 전환하여 대국민 서비스 혁신이 가능하게 하고, 점차 복잡해지고 다양해져 기존 방식으로 해결이 어려웠던 사회문제 해결에 직접적으로 기여 가능",
-      "source_section": "Part 2"
+      "quote": "- AI 자산의 공유·재활용을 통한 중복개발 및 AI 사일로(silo) 현상 등을 방지하고, 신속한 서비스 개발 환경 기반 마련",
+      "source_section": "2.1.2 범정부 초거대 AI 공통기반 구현",
+      "quote_en": "Prevents duplicate development and AI silos through sharing and reuse of AI assets and establishes a foundation for rapid service development.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 13111,
+      "end_char": 13182
     },
     {
-      "quote": "① (대국민 서비스 혁신) AI로 실현하는 초개인화·無장애 대국민 서비스 제공 확대 ② (사회문제 해결) AI를 활용한 데이터 분석과 실시간 대응역량 강화로 복잡하고 다양한 사회문제 해결 ③ (일하는 방식 효율화) AI와 협업을 통해 일상적 업무를 효율화하고 정책지능 향상으로 최적의 의사결정 지원",
-      "source_section": "Part 2, Section 2.1.1"
+      "quote": "- 기밀정보(C)는 비밀, 안보·국방·외교·수사 등의 기밀정보와 국민 생활·생명·안전과 직결된 정보로써 정보공개법 제9조(비공개 대상 정보)의 제1호부터 제4호까지를 포함",
+      "source_section": "3.2.1 데이터 보안 등급",
+      "quote_en": "Classified information (Tier C) comprises state secrets and classified security, defense, diplomacy, and investigation data as well as information directly linked to citizens' lives and safety.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 40620,
+      "end_char": 40715
     },
     {
-      "quote": "민간의 우수한 클라우드 방식 도입을 우선 검토 / 민관 협력으로 인공지능 산업 생태계를 조성",
-      "source_section": "Part 3, Section 3.1"
+      "quote": "- 중국의 AI 기업 DeepSeek가 중국 최초의 오픈소스 초거대 AI 모델을 공개하면서 서구 중심의 AI 주도권에 도전하며 AI 패권 경쟁 가속화.",
+      "source_section": "1.2 초거대 AI 발전 경과 및 최근 기술 동향",
+      "quote_en": "China's AI firm DeepSeek released China's first open-source hyperscale AI model, challenging Western AI leadership and accelerating global AI hegemony competition.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 6904,
+      "end_char": 6988
     },
     {
-      "quote": "국가 안보와 국민 권리 보호를 보장 - 민감, 기밀 데이터의 외부 유출 방지 / 학습데이터 내 개인정보와 저작권 보호",
-      "source_section": "Part 3, Section 3.1"
+      "quote": "- AI 시스템이 법치주의·인권·민주적가치·다양성을 존중할 수 있도록 설계되어야 하며 공정하고 정의로운 사회를 보장하기 위한 적절한 안전장치 고려 필요",
+      "source_section": "3.1 도입 원칙 및 고려사항 - [참고] OECD AI 원칙",
+      "quote_en": "AI systems should be designed to respect the rule of law, human rights, democratic values, and diversity, with appropriate safeguards to ensure a fair and just society.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 37711,
+      "end_char": 37795
+    },
+    {
+      "quote": "∙(모니터링·알람) 공공부문 실시간 데이터를 분석하여 사회 안전·재난·위험 등의 이상 징후를 감지하고 선제적으로 이를 알람으로 제공하는 서비스",
+      "source_section": "4.2 AI 성과지표 프레임워크",
+      "quote_en": "Monitoring & Alarm: Services analyzing real-time public-sector data to detect anomalies in public safety, disasters, and hazards and issue proactive alerts.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 56990,
+      "end_char": 57069
     }
   ]
 }

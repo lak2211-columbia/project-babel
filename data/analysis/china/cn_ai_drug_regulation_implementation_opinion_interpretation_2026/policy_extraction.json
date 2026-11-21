@@ -1,121 +1,174 @@
 {
   "jurisdiction": "china",
-  "issuing_body": "国家药品监督管理局 (National Medical Products Administration)",
-  "document_type": "regulatory_guidance",
-  "binding_strength": "regulatory_guidance",
+  "issuing_body": "National Medical Products Administration (NMPA) (国家药监局)",
+  "document_type": "strategy_paper",
+  "binding_strength": "strategy_statement",
   "publication_date": "2026-04",
   "effective_date": null,
+  "covered_actors": [
+    "National Medical Products Administration (NMPA) and its affiliated units (国家药监局及相关单位)",
+    "Provincial-level drug regulatory bureaus (各省级局)",
+    "Drug regulatory departments at all levels (各级药品监管部门)",
+    "Pharmaceutical and medical device industry (医药产业, including producers of high-risk products such as blood products and traditional Chinese medicine injections)"
+  ],
   "covered_application_domains": [
     "healthcare",
     "public_sector_use",
-    "general_purpose_models"
+    "law_enforcement"
   ],
+  "prohibited_practices": [],
   "safety_requirements": [
     {
       "label": "risk_assessment",
-      "confidence": 0.8,
+      "confidence": 0.78,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "加强人工智能风险监测评估，制定算法透明度要求和模型验证规范",
-          "source_section": "筑牢安全防护体系"
+          "quote": "加强人工智能风险监测评估",
+          "source_section": "四、如何支撑“人工智能+药品监管”高效安全运行",
+          "quote_en": "Strengthen AI risk monitoring and assessment",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2223,
+          "end_char": 2235
         }
       ]
     },
     {
       "label": "transparency_disclosure",
-      "confidence": 0.8,
+      "confidence": 0.72,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "制定算法透明度要求",
+          "source_section": "四、如何支撑“人工智能+药品监管”高效安全运行",
+          "quote_en": "Formulate algorithm transparency requirements",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2236,
+          "end_char": 2245
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.74,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
           "quote": "制定算法透明度要求和模型验证规范",
-          "source_section": "筑牢安全防护体系"
-        }
-      ]
-    },
-    {
-      "label": "model_documentation",
-      "confidence": 0.75,
-      "evidence": [
-        {
-          "quote": "加强相关人工智能模型和算法备案管理",
-          "source_section": "完善建设运行管理机制"
-        }
-      ]
-    },
-    {
-      "label": "human_oversight",
-      "confidence": 0.85,
-      "evidence": [
-        {
-          "quote": "明确人工智能在药品监管领域的辅助型定位",
-          "source_section": "完善建设运行管理机制"
-        },
-        {
-          "quote": "建立健全人机协同机制",
-          "source_section": "构建人机协同智能审评审批体系"
-        }
-      ]
-    },
-    {
-      "label": "registration_licensing",
-      "confidence": 0.7,
-      "evidence": [
-        {
-          "quote": "加强相关人工智能模型和算法备案管理",
-          "source_section": "完善建设运行管理机制"
+          "source_section": "四、如何支撑“人工智能+药品监管”高效安全运行",
+          "quote_en": "Formulate algorithm transparency requirements and model validation specifications",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2236,
+          "end_char": 2252
         }
       ]
     },
     {
       "label": "access_controls",
-      "confidence": 0.65,
+      "confidence": 0.76,
+      "obligation_strength": "aspirational",
       "evidence": [
         {
-          "quote": "加强模型算法、数据资源、基础设施、应用系统等安全能力建设",
-          "source_section": "筑牢安全防护体系"
+          "quote": "加强人工智能在安全防护体系中的应用，推动构建智能化、协同化防护体系，提升网络安全与数据安全防护能力。",
+          "source_section": "四、如何支撑“人工智能+药品监管”高效安全运行",
+          "quote_en": "Strengthen the application of AI in security protection systems, promote the construction of intelligent and collaborative protection systems, and enhance cybersecurity and data security protection capabilities.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2168,
+          "end_char": 2218
+        },
+        {
+          "quote": "加强模型算法、数据资源、基础设施、应用系统等安全能力建设。",
+          "source_section": "四、如何支撑“人工智能+药品监管”高效安全运行",
+          "quote_en": "Strengthen security capability building for model algorithms, data resources, infrastructure, application systems, and other areas.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2253,
+          "end_char": 2282
         }
       ]
     },
     {
-      "label": "compute_governance",
-      "confidence": 0.7,
+      "label": "human_oversight",
+      "confidence": 0.78,
+      "obligation_strength": "recommended",
       "evidence": [
         {
-          "quote": "国家药监局统筹规划多级智能算力资源协同体系，国家、省两级监管部门按需推进智算资源供给",
-          "source_section": "加强算力基础设施建设"
+          "quote": "明确人工智能在药品监管领域的辅助型定位和统筹协同建设的基本原则",
+          "source_section": "四、如何支撑“人工智能+药品监管”高效安全运行",
+          "quote_en": "Clarify the auxiliary positioning of AI in the field of drug regulation and the basic principles of coordinated and collaborative construction",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2296,
+          "end_char": 2327
+        },
+        {
+          "quote": "国家药监局相关单位和各省级局加快探索人工智能在审评审批各环节的应用场景，在此基础上建立健全人机协同机制。",
+          "source_section": "三、如何加快推动人工智能在药品监管中发挥实效",
+          "quote_en": "Relevant units of the NMPA and provincial drug administrations will accelerate the exploration of AI application scenarios across all stages of review and approval, and on this basis establish and improve human-machine collaboration mechanisms.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1185,
+          "end_char": 1237
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.85,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "制定“人工智能+药品监管”相关管理制度，加强相关人工智能模型和算法备案管理。",
+          "source_section": "四、如何支撑“人工智能+药品监管”高效安全运行",
+          "quote_en": "Formulate relevant management systems for 'AI + Drug Regulation' and strengthen filing management for relevant AI models and algorithms.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2345,
+          "end_char": 2383
         }
       ]
     }
   ],
   "enforcement_mechanisms": [
     {
-      "label": "regulatory_supervision",
-      "confidence": 0.8,
+      "label": "soft_enforcement",
+      "confidence": 0.82,
       "evidence": [
         {
-          "quote": "成立专设机制统筹人工智能应用治理，制定",
-          "source_section": null
+          "quote": "围绕智能化监管要求，鼓励引导产业加快推动数智化转型升级。",
+          "source_section": "三、如何加快推动人工智能在药品监管中发挥实效",
+          "quote_en": "Around the requirements of intelligent regulation, encourage and guide the industry to accelerate digital and intelligent transformation and upgrading.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1765,
+          "end_char": 1793
         },
         {
-          "quote": "制定",
-          "source_section": null
-        },
-        {
-          "quote": "各级药品监管部门要深刻认识人工智能发展新趋势",
-          "source_section": "加强统筹协调"
-        }
-      ]
-    },
-    {
-      "label": "reporting_obligation",
-      "confidence": 0.65,
-      "evidence": [
-        {
-          "quote": "加强相关人工智能模型和算法备案管理",
-          "source_section": "完善建设运行管理机制"
+          "quote": "二要强化示范引领。聚焦监管业务的难点、堵点，深化智慧监管创新应用，有效赋能业务创新。",
+          "source_section": "五、推动《意见》组织实施的相关要求",
+          "quote_en": "Second, strengthen demonstration and leadership. Focus on difficulties and bottlenecks in regulatory operations, deepen innovative applications of smart regulation, and effectively empower operational innovation.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2511,
+          "end_char": 2553
         }
       ]
     }
   ],
-  "implementation_notes": "This is a policy interpretation/reading document accompanying the main implementation opinion on 'AI + Drug Regulation' issued by NMPA. It outlines a 5-10 year roadmap (targets for 2030 and 2035) for integrating AI into drug regulatory processes including review/approval, inspection, risk monitoring, and administrative services. AI is explicitly positioned as auxiliary ('辅助型定位'). Enforcement mechanisms are primarily administrative/supervisory rather than punitive. The document encourages industry digital transformation especially for high-risk categories like blood products and TCM injections.",
-  "confidence": 0.82
+  "enforcement_authorities": [
+    "National Medical Products Administration (NMPA) (国家药监局)",
+    "Provincial-level drug regulatory bureaus (各省级局)",
+    "Drug regulatory departments at all levels (各级药品监管部门)"
+  ],
+  "compliance_deadlines": [
+    "2030: Preliminarily establish an integrated AI and drug regulation innovation system, operation and management mechanisms, high-quality datasets, vertical large models, and AI agents across review/approval, inspection, testing/monitoring, and government services",
+    "2035: Basically form a smart drug safety governance pattern that is digitally driven, intelligent, agile, autonomous and controllable, and ecosystem-collaborative"
+  ],
+  "penalties_summary": null,
+  "implementation_notes": "Official policy interpretation (政策解读) of the NMPA Implementation Opinion on 'AI + Drug Regulation' (《国家药监局关于“人工智能+药品监管”的实施意见》). It outlines a 5-to-10-year strategic blueprint with 2030 and 2035 milestones covering seven smart regulatory application directions and five foundational support pillars (high-quality datasets, model/algorithm platforms, computing power infrastructure, security/risk assessment and transparency/validation norms, and governance/algorithm filing mechanisms). It explicitly defines AI as having an auxiliary role (辅助型定位) in drug regulation and does not impose direct statutory obligations or penalties on private entities.",
+  "confidence": 0.88
 }

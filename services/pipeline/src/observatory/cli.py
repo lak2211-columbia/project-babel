@@ -5,11 +5,13 @@ import sys
 from pathlib import Path
 
 from observatory.analysis import (
+    DEFAULT_GEMINI_MODEL,
     analyze_jurisdictions,
     analyze_parsed_documents,
     check_corpus_grounding,
     evaluate_gold_set,
     export_json_schemas,
+    ingest_document_analysis,
     persist_analysis_artifacts,
 )
 from observatory.audit import write_source_quality_audit
@@ -36,7 +38,7 @@ USAGE = (
     "report-source-coverage|report-source-expansion-plan|report-source-quality-audit|"
     "sync-source-metadata|discover-source-candidates|enrich-source-candidates|"
     "promote-source-families|fetch-seed-documents|refresh-sources|import-local-document|"
-    "parse-raw-documents|analyze-documents|analyze-jurisdictions|persist-analysis-artifacts|"
+    "parse-raw-documents|analyze-documents|ingest-document-analysis|analyze-jurisdictions|persist-analysis-artifacts|"
     "check-grounding|export-schemas|evaluate-gold-set|migrate-db|sync-db-to-source-manifests>"
 )
 
@@ -483,23 +485,85 @@ def app(argv: list[str] | None = None) -> None:
         jurisdiction = None
         document_id = None
         refresh_existing = False
-        for argument in rest:
+        provider: str | None = None
+        model: str | None = None
+        effort: str | None = None
+        workers = 1
+        index = 0
+        while index < len(rest):
+            argument = rest[index]
             if argument in {"--refresh", "--refresh-existing"}:
                 refresh_existing = True
+                index += 1
+                continue
+            if argument.startswith("--provider="):
+                provider = argument.split("=", 1)[1]
+                index += 1
+                continue
+            if argument == "--provider":
+                if index + 1 >= len(rest):
+                    raise SystemExit("analyze-documents --provider requires a value")
+                provider = rest[index + 1]
+                index += 2
+                continue
+            if argument.startswith("--model="):
+                model = argument.split("=", 1)[1]
+                index += 1
+                continue
+            if argument == "--model":
+                if index + 1 >= len(rest):
+                    raise SystemExit("analyze-documents --model requires a value")
+                model = rest[index + 1]
+                index += 2
+                continue
+            if argument.startswith("--effort="):
+                effort = argument.split("=", 1)[1]
+                index += 1
+                continue
+            if argument == "--effort":
+                if index + 1 >= len(rest):
+                    raise SystemExit("analyze-documents --effort requires a value")
+                effort = rest[index + 1]
+                index += 2
+                continue
+            if argument.startswith("--workers="):
+                try:
+                    workers = int(argument.split("=", 1)[1])
+                except ValueError as exc:
+                    raise SystemExit("analyze-documents --workers must be an integer") from exc
+                index += 1
+                continue
+            if argument == "--workers":
+                if index + 1 >= len(rest):
+                    raise SystemExit("analyze-documents --workers requires an integer value")
+                try:
+                    workers = int(rest[index + 1])
+                except ValueError as exc:
+                    raise SystemExit("analyze-documents --workers must be an integer") from exc
+                index += 2
                 continue
             if argument.startswith("--"):
                 raise SystemExit(f"unknown analyze-documents option: {argument}")
             if jurisdiction is None:
                 jurisdiction = argument
+                index += 1
                 continue
             if document_id is None:
                 document_id = argument
+                index += 1
                 continue
-            raise SystemExit("usage: observatory analyze-documents [jurisdiction] [document_id] [--refresh]")
+            raise SystemExit(
+                "usage: observatory analyze-documents [jurisdiction] [document_id] "
+                "[--refresh] [--provider=auto|gemini|anthropic] [--model=MODEL] [--effort=LEVEL] [--workers=N]"
+            )
         try:
             results = analyze_parsed_documents(
                 jurisdiction=jurisdiction,
                 document_id=document_id,
+                provider=provider,
+                model=model,
+                effort=effort,
+                workers=workers,
                 refresh_existing=refresh_existing,
             )
         except ValueError as exc:
@@ -509,6 +573,93 @@ def app(argv: list[str] | None = None) -> None:
                 print(f"{result['jurisdiction']}: {result['document_id']} -> {result['status']}")
             else:
                 print(f"{result['jurisdiction']}: {result['status']}")
+        return
+    if command == "ingest-document-analysis":
+        positionals: list[str] = []
+        provider = "gemini"
+        model = DEFAULT_GEMINI_MODEL
+        effort: str | None = "xhigh"
+        min_grounding = 0.90
+        index = 0
+        while index < len(rest):
+            argument = rest[index]
+            if argument.startswith("--provider="):
+                provider = argument.split("=", 1)[1]
+                index += 1
+                continue
+            if argument == "--provider":
+                if index + 1 >= len(rest):
+                    raise SystemExit("ingest-document-analysis --provider requires a value")
+                provider = rest[index + 1]
+                index += 2
+                continue
+            if argument.startswith("--model="):
+                model = argument.split("=", 1)[1]
+                index += 1
+                continue
+            if argument == "--model":
+                if index + 1 >= len(rest):
+                    raise SystemExit("ingest-document-analysis --model requires a value")
+                model = rest[index + 1]
+                index += 2
+                continue
+            if argument.startswith("--effort="):
+                effort = argument.split("=", 1)[1] or None
+                index += 1
+                continue
+            if argument == "--effort":
+                if index + 1 >= len(rest):
+                    raise SystemExit("ingest-document-analysis --effort requires a value")
+                effort = rest[index + 1] or None
+                index += 2
+                continue
+            if argument.startswith("--min-grounding="):
+                try:
+                    min_grounding = float(argument.split("=", 1)[1])
+                except ValueError as exc:
+                    raise SystemExit("ingest-document-analysis --min-grounding must be a float") from exc
+                index += 1
+                continue
+            if argument == "--min-grounding":
+                if index + 1 >= len(rest):
+                    raise SystemExit("ingest-document-analysis --min-grounding requires a float value")
+                try:
+                    min_grounding = float(rest[index + 1])
+                except ValueError as exc:
+                    raise SystemExit("ingest-document-analysis --min-grounding must be a float") from exc
+                index += 2
+                continue
+            if argument.startswith("--"):
+                raise SystemExit(f"unknown ingest-document-analysis option: {argument}")
+            positionals.append(argument)
+            index += 1
+        if len(positionals) != 3:
+            raise SystemExit(
+                "usage: observatory ingest-document-analysis <jurisdiction> <document_id> <input_json_path> "
+                "[--provider=gemini] [--model=gemini-4-neon] [--effort=xhigh] [--min-grounding=0.90]"
+            )
+        target_jurisdiction, target_doc_id, raw_input_path = positionals
+        try:
+            result = ingest_document_analysis(
+                jurisdiction=target_jurisdiction,
+                document_id=target_doc_id,
+                input_json_path=Path(raw_input_path),
+                provider=provider,
+                model=model,
+                effort=effort,
+                min_grounding=min_grounding,
+            )
+        except Exception as exc:
+            print(str(exc), file=sys.stderr)
+            raise SystemExit(1) from exc
+        exact_pct = f"{result['exact_ratio']:.1%}" if result["exact_ratio"] is not None else "n/a"
+        grounded_pct = f"{result['grounding_ratio']:.1%}" if result["grounding_ratio"] is not None else "n/a"
+        print(
+            f"{result['jurisdiction']}: {result['document_id']} -> {result['status']} "
+            f"(exact={result['exact_matches']}/{result['total_quotes']} {exact_pct}, "
+            f"grounded={grounded_pct}, snapped={result['snapped_quotes']}, "
+            f"model={result['model']}/{result['effort']})"
+        )
         return
     if command == "persist-analysis-artifacts":
         jurisdiction = None
@@ -603,13 +754,39 @@ def app(argv: list[str] | None = None) -> None:
             print(f"wrote {path_str}")
         return
     if command == "evaluate-gold-set":
-        if len(rest) != 1 or rest[0].startswith("--"):
-            raise SystemExit("usage: observatory evaluate-gold-set <gold_path>")
+        gold_path_arg: str | None = None
+        output_json_path: Path | None = None
+        index = 0
+        while index < len(rest):
+            argument = rest[index]
+            if argument.startswith("--output-json="):
+                output_json_path = Path(argument.split("=", 1)[1])
+                index += 1
+                continue
+            if argument == "--output-json":
+                if index + 1 >= len(rest):
+                    raise SystemExit("evaluate-gold-set --output-json requires a file path")
+                output_json_path = Path(rest[index + 1])
+                index += 2
+                continue
+            if argument.startswith("--"):
+                raise SystemExit(f"unknown evaluate-gold-set option: {argument}")
+            if gold_path_arg is None:
+                gold_path_arg = argument
+                index += 1
+                continue
+            raise SystemExit("usage: observatory evaluate-gold-set <gold_path> [--output-json=PATH]")
+        if gold_path_arg is None:
+            raise SystemExit("usage: observatory evaluate-gold-set <gold_path> [--output-json=PATH]")
         try:
-            report = evaluate_gold_set(Path(rest[0]))
+            report = evaluate_gold_set(Path(gold_path_arg))
         except ValueError as exc:
             raise SystemExit(str(exc)) from exc
-        print(json.dumps(report, indent=2, ensure_ascii=False))
+        rendered = json.dumps(report, indent=2, ensure_ascii=False)
+        if output_json_path is not None:
+            output_json_path.parent.mkdir(parents=True, exist_ok=True)
+            output_json_path.write_text(rendered + "\n", encoding="utf-8", newline="\n")
+        print(rendered)
         return
     if command == "migrate-db":
         try:

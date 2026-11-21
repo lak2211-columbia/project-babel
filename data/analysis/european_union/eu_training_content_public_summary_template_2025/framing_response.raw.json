@@ -1,27 +1,27 @@
 {
-  "model": "claude-sonnet-4-6",
-  "id": "msg_01WjzWdD3ZyKwyJYzr3qrfSm",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"dominant_frame\":\"fundamental_rights\",\"secondary_frames\":[\"consumer_public_safety\",\"innovation_enablement\",\"economic_competitiveness\"],\"frame_confidence\":{\"fundamental_rights\":0.75,\"consumer_public_safety\":0.3,\"labor_transition\":0.0},\"rationale_summary\":\"The document frames training data transparency primarily as a mechanism to protect and enable the exercise of fundamental rights under EU law, including intellectual property rights, data subject rights, non-discrimination, cultural diversity, freedom of information, and freedom of science. Governance obligations are justified by enabling rightsholders and affected parties to exercise and enforce their legal rights.\",\"evidence_spans\":[{\"quote\":\"transparency of the data used for the model training should help rightsholders obtain relevant information...needed to facilitate the exercise of their fundamental right to intellectual property and the fundamental right to an effective remedy\",\"source_section\":\"Page 4\"},{\"quote\":\"transparency of the general characteristics of the content used for training may also assist providers...to ensure that the fundamental rights to non-discrimination and language and cultural diversity are respected\",\"source_section\":\"Page 4\"},{\"quote\":\"greater transparency of the training data may also facilitate the fundamental right to receive and impart information and allow researchers to exercise their freedom of science\",\"source_section\":\"Page 4\"}]}"
-    }
-  ],
-  "stop_reason": "end_turn",
-  "stop_sequence": null,
-  "stop_details": null,
-  "usage": {
-    "input_tokens": 4949,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_creation": {
-      "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 0
-    },
-    "output_tokens": 284,
-    "service_tier": "standard",
-    "inference_geo": "global"
-  }
+  "provider": "gemini",
+  "model": "gemini-4-neon",
+  "effort": "medium",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 16444,
+    "candidatesTokenCount": 986,
+    "totalTokenCount": 20700,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 16444
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 986
+      }
+    ],
+    "thoughtsTokenCount": 3270,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-4-neon",
+  "responseId": "KC8Ba8iwAeuwvMcPr8qWmA8"
 }

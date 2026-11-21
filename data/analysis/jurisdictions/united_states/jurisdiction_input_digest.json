@@ -1,8 +1,8 @@
 {
   "jurisdiction": "united_states",
-  "source_count": 23,
+  "source_count": 29,
   "source_window_start": "2021-07-13",
-  "source_window_end": "2025-08-18",
+  "source_window_end": "2026-10-02",
   "documents": [
     {
       "document_id": "us_ai_action_plan_pdf",
@@ -13,25 +13,26 @@
       "binding_strength": "strategy_statement",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "national_security",
+      "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
-        "economic_competitiveness",
+        "national_security",
         "innovation_enablement",
-        "labor_transition"
+        "labor_transition",
+        "existential_catastrophic"
       ],
       "top_requirements": [
-        "risk_assessment",
-        "pre_deployment_testing",
-        "red_teaming"
+        "frontier_safety_evaluation",
+        "compute_governance",
+        "open_weight_obligations"
       ],
       "top_enforcement_mechanisms": [
         "procurement_condition",
         "market_access_restriction",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a White House strategy/action plan, not binding law or regulation. Most requirements are framed as 'recommended policy actions' to be led by various federal agencies. The document is strongly pro-innovation and deregulatory in posture, explicitly rejecting the prior administration's EO 14110. Binding force is limited to actions already taken via executive order (e.g., EO 14179, TAKE IT DOWN Act). Enforcement mechanisms are primarily export controls (existing statutory authority) and procurement conditions. Safety requirements largely target national security domains rather than general commercial AI deployment. Confidence reflects that this is a strategy document with aspirational rather than operative legal effect.",
-      "framing_rationale_summary": "The document is explicitly framed around winning a geopolitical race against adversaries, particularly China, with AI dominance described as a 'national security imperative.' While economic competitiveness and innovation enablement are strongly present, they are consistently subordinated to or integrated with national security reasoning—export controls, military AI adoption, CBRNE risk evaluations, and countering Chinese influence all reflect a security-first logic. The title 'Winning the Race' and the repeated framing of AI leadership as essential to military preeminence and preventing adversary advantage confirm national security as the dominant frame.",
-      "confidence": 0.835
+      "implementation_notes": "Published July 2025 pursuant to EO 14179 by APST Michael J. Kratsios, Special Advisor David O. Sacks, and APNSA Marco A. Rubio. Sets out over 90 recommended federal policy actions across three pillars: (I) Accelerate AI Innovation (deregulation, revising NIST AI RMF, supporting open-weight models, regulatory sandboxes, worker retraining/AI Workforce Research Hub, science/datasets, evaluations, federal/DOD adoption, legal deepfake forensics); (II) Build American AI Infrastructure (NEPA/FAST-41/CWA permitting reform, grid expansion, semiconductor reshoring, high-security military data centers, skilled trades apprenticeships, AI-ISAC, CISA AI incident playbooks); and (III) Lead in International AI Diplomacy and Security (full-stack AI exports, countering China in standards bodies, chip location verification and sub-system export controls, CAISI frontier CBRNE/cyber evaluations, enforceable biosecurity synthesis screening).",
+      "framing_rationale_summary": "America's AI Action Plan is dominantly framed around economic_competitiveness, organizing all three pillars around 'winning the race' to achieve global AI dominance, exporting the full U.S. AI technology stack worldwide, reshoring semiconductor manufacturing, and ushering in an industrial revolution. Economic_competitiveness narrowly edges out national_security because global ecosystem leadership, market-standard setting, and industrial buildout frame both domestic deregulation and international alliances. National_security is a close runner-up (military preeminence, China rivalry, chip export controls, critical-infrastructure defense), paired with strong innovation_enablement (deregulation, permitting reform, sandboxes, open-weight support), an explicit labor_transition agenda (AI Workforce Research Hub, DOL rapid retraining for displaced workers, skilled-trades apprenticeships), and existential_catastrophic rationales for CAISI frontier CBRNE/cyber evaluations and nucleic-acid biosecurity screening.",
+      "confidence": 0.96
     },
     {
       "document_id": "us_ai_bill_of_rights_blueprint_2022",
@@ -39,55 +40,54 @@
       "publication_date": "2022-10-04",
       "issuing_body": "The White House",
       "document_type": "strategy_paper",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "strategy_statement",
       "corpus_role": "historical_baseline",
       "lifecycle_stage": "superseded",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "consumer_public_safety",
-        "social_stability"
+        "labor_transition",
+        "innovation_enablement"
       ],
       "top_requirements": [
-        "pre_deployment_testing",
         "risk_assessment",
-        "third_party_audit"
+        "pre_deployment_testing",
+        "incident_reporting"
       ],
       "top_enforcement_mechanisms": [
-        "none_specified",
         "soft_enforcement"
       ],
-      "implementation_notes": "Document is explicitly non-binding per its legal disclaimer. It articulates five principles (safe and effective systems, algorithmic discrimination protections, data privacy, notice and explanation, human alternatives/fallback) with detailed technical guidance. Intended to inform future sector-specific regulation and voluntary adoption. Covers broad set of automated systems, not limited to AI specifically. No penalties or compliance requirements established.",
-      "framing_rationale_summary": "The document is centrally framed around protecting civil rights, civil liberties, privacy, and equal opportunity for the American public. Its five principles—safe and effective systems, algorithmic discrimination protections, data privacy, notice and explanation, and human alternatives—are all articulated as rights-based protections. The foreword explicitly invokes civil rights, democratic values, privacy as a foundational right, and equity. Secondary consumer/public safety framing appears in the emphasis on harm prevention and safe system design, while social stability concerns emerge around surveillance chilling effects on democratic participation.",
-      "confidence": 0.895
+      "implementation_notes": "Non-binding White House OSTP white paper and Technical Companion ('From Principles to Practice') published October 4, 2022 (retained as a historical baseline in U.S. AI governance). Articulates five rights-protective principles—Safe and Effective Systems; Algorithmic Discrimination Protections; Data Privacy; Notice and Explanation; and Human Alternatives, Consideration, and Fallback—scoped to automated systems meaningfully impacting rights, opportunities, or access to critical resources/services, with heightened protections for sensitive domains (health, employment, education, criminal justice, personal finance, youth) and carve-outs for national security, defense, and law enforcement equities. Imposes no binding compliance obligations or legal remedies.",
+      "framing_rationale_summary": "The Blueprint for an AI Bill of Rights is overwhelmingly framed around fundamental_rights: its stated purpose is to protect civil rights, civil liberties, personal-data privacy, non-discrimination, equity for underserved communities, human dignity, and democratic values against harms from automated systems. Fundamental_rights decisively leads consumer_public_safety, which serves as the main secondary frame via protections against unsafe clinical tools, stalking devices, non-consensual intimate imagery, and defective automated systems. Labor_transition (workplace surveillance chilling union organizing, automated firing without recourse, algorithmic quotas/bonuses) and innovation_enablement ('clear rules of the road that allow new ideas to flourish') appear as distinct supporting frames, alongside minor social_stability (trust and democratic process) and national_security (disclaimer carve-out) mentions.",
+      "confidence": 0.985
     },
     {
       "document_id": "us_ai_congressional_mandates_executive_orders_nist",
       "title": "AI Congressional Mandates, Executive Orders and Actions | NIST",
       "publication_date": "2025-01-21",
       "issuing_body": "National Institute of Standards and Technology (NIST)",
-      "document_type": "regulatory_guidance",
+      "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "economic_competitiveness",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "national_security",
-        "innovation_enablement",
+        "economic_competitiveness",
+        "fundamental_rights",
         "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment",
         "pre_deployment_testing",
-        "transparency_disclosure"
+        "training_data_governance"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "reporting_obligation",
-        "regulatory_supervision"
+        "none_specified"
       ],
-      "implementation_notes": "This is a NIST summary/landing page aggregating congressional mandates and executive orders directing NIST's AI activities. The document itself is not a binding instrument; it describes obligations placed on NIST by external legislation and executive orders. EO 14110 (Safe, Secure, and Trustworthy AI) was rescinded on 1/20/2025. The America's AI Action Plan (7/23/2025) replaces the prior administration's approach.",
-      "framing_rationale_summary": "The document consistently frames AI governance through the lens of U.S. economic competitiveness and global leadership, with national security as a strong secondary concern. Key executive orders explicitly call for sustaining 'America's global AI dominance' and promoting 'economic competitiveness,' while safety and trustworthiness measures are framed as enablers of that leadership rather than as ends in themselves.",
-      "confidence": 0.81
+      "implementation_notes": "Official NIST reference page (initial publication 2025-01-21, subsequently updated through at least 2025-07-23) cataloging the congressional statutes (CHIPS and Science Act of 2022, National AI Initiative Act of 2020), America's AI Action Plan (July 2025), and Executive Orders (Jan 2025 EO 14179, rescinded Oct 2023 EO 14110, Dec 2020 EO 13960, Feb 2019 EO 13859) driving NIST's non-regulatory AI standards, testbed, cybersecurity, and evaluation activities. As a summary webpage, it imposes no direct legal obligations or enforcement mechanisms.",
+      "framing_rationale_summary": "This mandates catalog reflects a close three-way balance led by innovation_enablement, which runs across every cited statute and executive action via technical standards, testbeds, research infrastructure (NAIRR), open-source/open-weight encouragement, AI adoption, and reviewing regulatory obstacles from rescinded EO 14110. Innovation_enablement narrowly edges out national_security and economic_competitiveness, which are strongly articulated in the 2025 executive actions through military/intelligence data centers, critical infrastructure cybersecurity, biosecurity, frontier national security risk evaluations, and sustaining America's global AI dominance. Fundamental_rights (free speech, testing for bias in training data) and consumer_public_safety (safe and trustworthy AI) appear as smaller supporting rationales.",
+      "confidence": 0.915
     },
     {
       "document_id": "us_ai_risk_management_framework_engage_nist_0abb57bc",
@@ -95,23 +95,21 @@
       "publication_date": "2021-07-13",
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "standards_guideline",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
-        "social_stability"
+        "fundamental_rights",
+        "consumer_public_safety"
       ],
-      "top_requirements": [
-        "risk_assessment"
-      ],
+      "top_requirements": [],
       "top_enforcement_mechanisms": [
-        "soft_enforcement"
+        "none_specified"
       ],
-      "implementation_notes": "The AI RMF 1.0 was released on January 26, 2023 following a consensus-driven, open, and collaborative process. A companion AI RMF Playbook, AI RMF Roadmap, and AI RMF Crosswalks are also available. NIST plans to revise the Framework after the community gains several years of experience and additional research is conducted.",
-      "framing_rationale_summary": "The document describes NIST's process for developing a voluntary AI Risk Management Framework through broad stakeholder engagement. The governance rationale centers on managing AI risks to users and society broadly, consistent with a consumer/public safety framing. Secondary frames include innovation enablement (voluntary, collaborative framework) and social stability (civil society inclusion, bias workshops).",
-      "confidence": 0.7
+      "implementation_notes": "Administrative stakeholder-engagement webpage for the NIST AI RMF (originally published 2021-07-13 and updated through the January 26, 2023 launch of AI RMF 1.0). Summarizes NIST's workshops, RFI, draft consultations, and ongoing feedback mechanisms for revising the voluntary Framework, Playbook, Roadmap, and Crosswalks; contains no operative safety requirements or enforcement hooks.",
+      "framing_rationale_summary": "This procedural engagement page contains modest framing language led by innovation_enablement, emphasizing a voluntary, consensus-driven, collaborative standards-development process that adapts complementary guidance based on real-world practitioner experience. Fundamental_rights (inclusion of civil society and a workshop on Bias in AI), consumer_public_safety (consumer stakeholders), and economic_competitiveness (AI and the Economy conference) appear only as minor contextual signals.",
+      "confidence": 0.845
     },
     {
       "document_id": "us_ai_risk_management_framework_faqs_nist_56d7e05a",
@@ -119,26 +117,24 @@
       "publication_date": "2021-07-13",
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "standards_guideline",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
+        "consumer_public_safety",
         "economic_competitiveness",
         "fundamental_rights"
       ],
       "top_requirements": [
-        "risk_assessment",
-        "transparency_disclosure",
-        "human_oversight"
+        "risk_assessment"
       ],
       "top_enforcement_mechanisms": [
         "soft_enforcement"
       ],
-      "implementation_notes": "The AI RMF is explicitly voluntary; Congress directed NIST to develop it as such. A companion Playbook provides actionable suggestions. No penalties or enforcement mechanisms are specified.",
-      "framing_rationale_summary": "The document primarily frames AI governance as a matter of managing risks to individuals, organizations, society, and the environment through trustworthiness characteristics (safe, reliable, fair, privacy-enhanced, etc.). This aligns most closely with consumer/public safety framing. Secondary frames include innovation enablement (supporting trustworthy AI development) and economic competitiveness (enhancing economic security).",
-      "confidence": 0.71
+      "implementation_notes": "Official NIST AI RMF FAQ companion page (initial publication 2021-07-13, updated through the January 26, 2023 AI RMF 1.0 release). Clarifies the Framework's voluntary non-binding status, broad scalability across public and private sectors, seven trustworthiness characteristics and their tradeoffs, development timeline (2021 RFI through Jan 2023 launch), and relationship to the companion Playbook and other NIST frameworks.",
+      "framing_rationale_summary": "The AI RMF FAQs are dominantly framed around innovation_enablement, presenting a voluntary, scalable, non-mandatory standards framework aimed at fostering innovative approaches to trustworthiness, improving measurement science, and building confidence in AI systems. Innovation_enablement leads consumer_public_safety, which is a strong runner-up focused on managing AI risks to individuals, organizations, society, and quality of life through safe, valid, and reliable systems. Economic_competitiveness ('enhance economic security') and fundamental_rights ('privacy-enhanced, and fair with harmful bias managed') serve as clear secondary frames, with a minor national_security nod to NSCAI recommendations.",
+      "confidence": 0.935
     },
     {
       "document_id": "us_ai_risk_management_framework_initial_draft_march_fb5a1e0e",
@@ -149,24 +145,22 @@
       "binding_strength": "standards_guideline",
       "corpus_role": "draft_consultation",
       "lifecycle_stage": "superseded",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
-        "fundamental_rights",
-        "social_stability"
+        "consumer_public_safety",
+        "fundamental_rights"
       ],
       "top_requirements": [
         "risk_assessment",
         "pre_deployment_testing",
-        "transparency_disclosure"
+        "red_teaming"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "none_specified"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is the first draft of the NIST AI RMF, published March 17, 2022. Part 3 was not yet developed at time of publication. The framework is explicitly voluntary and not a compliance mechanism; it is intended to be used alongside existing laws, regulations, and mandatory guidance. Developed under the National AI Initiative Act of 2020 (P.L. 116-283). Framework covers all sectors, organization sizes, and AI maturity levels.",
-      "framing_rationale_summary": "The document primarily frames AI governance as a matter of ensuring trustworthy, safe, and reliable AI systems that do not harm individuals or society. Core language centers on managing adverse impacts, ensuring accuracy, safety, privacy, and mitigating harmful bias for end users and communities. Innovation enablement is a secondary frame, as the document argues that managing risk builds trust and enables broader AI adoption. Fundamental rights and social stability appear as additional concerns via references to civil liberties, fairness, equity, and societal risk.",
-      "confidence": 0.785
+      "implementation_notes": "Superseded consultation draft of the NIST AI Risk Management Framework published March 17, 2022 (public comment deadline April 29, 2022; later superseded by the August 18, 2022 Second Draft and January 26, 2023 AI RMF 1.0). Organizes trustworthiness into a three-class taxonomy (technical characteristics, socio-technical characteristics, guiding principles) and introduces the four Core functions (Map, Measure, Manage, Govern). Explicitly voluntary, outcome-focused, non-prescriptive, law- and regulation-agnostic, and defers Profiles, Effectiveness, and the companion Practice Guide to subsequent drafts.",
+      "framing_rationale_summary": "The AI RMF Initial Draft is dominantly framed around innovation_enablement, positioning a voluntary, flexible, non-prescriptive risk management framework as the vehicle to cultivate trust, create opportunities for innovation, and enable widespread acceptance and realization of AI's full potential. Innovation_enablement narrowly edges out consumer_public_safety, which is a strong runner-up emphasizing minimizing operational failures, physical safety hazards (e.g., factories and roads), and adverse impacts on individuals, organizations, and society. Fundamental_rights is a prominent third frame, anchored in civil liberties and rights, human autonomy and dignity in privacy, anti-discrimination, fairness, and actionable redress.",
+      "confidence": 0.935
     },
     {
       "document_id": "us_ai_risk_management_framework_second_draft_august_e303aeb7",
@@ -174,27 +168,25 @@
       "publication_date": "2022-08-18",
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "standards_guideline",
       "corpus_role": "draft_consultation",
       "lifecycle_stage": "superseded",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "fundamental_rights",
-        "innovation_enablement",
-        "social_stability"
+        "consumer_public_safety",
+        "fundamental_rights"
       ],
       "top_requirements": [
         "risk_assessment",
         "pre_deployment_testing",
-        "model_documentation"
+        "red_teaming"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "The AI RMF is explicitly voluntary and law- and regulation-agnostic. It is not a compliance mechanism and not intended to supersede existing regulations or laws. An accompanying NIST AI RMF Playbook provides suggested tactical actions. The framework is structured around four core functions: Govern, Map, Measure, and Manage.",
-      "framing_rationale_summary": "The document primarily frames AI governance as a risk management problem centered on protecting individuals, groups, and communities from harms—safety, bias, privacy, and unintended consequences—making consumer/public safety the dominant frame. Rights and civil liberties appear prominently as secondary concerns, while innovation enablement and social stability are also present but subordinate.",
-      "confidence": 0.825
+      "implementation_notes": "Second public consultation draft of the NIST AI RMF released August 18, 2022 (public comment deadline September 29, 2022; supersedes the March 17, 2022 Initial Draft and later superseded by AI RMF 1.0 on January 26, 2023). Consolidates trustworthiness into seven characteristics, adds a dedicated Human Factors discussion, expands the Core into full coded GOVERN 1–6, MAP 1–5, MEASURE 1–4, and MANAGE 1–4 subcategories, introduces Use-Case and Temporal Profiles, and adds Appendix A (AI Actor Tasks) and Appendix B (How AI Risks Differ from Traditional Software Risks).",
+      "framing_rationale_summary": "The AI RMF Second Draft is dominantly framed around innovation_enablement, explicitly elevating 'pro-innovation' alongside risk-based, resource-efficient, voluntary, and non-prescriptive attributes to cultivate trust and realize AI's full potential without rigid compliance checklists. Innovation_enablement narrowly leads consumer_public_safety, which is a strong runner-up centered on preventing physical, psychological, property, and operational harms across the lifecycle (including safely ceasing deployment when severe harms occur). Fundamental_rights is a substantial third frame grounded in preserving civil liberties and rights, safeguarding human autonomy and dignity through privacy, and curbing algorithmic bias and discrimination, with minor mentions of catastrophic risks and economic/national security context.",
+      "confidence": 0.95
     },
     {
       "document_id": "us_ai_standards_nist",
@@ -207,8 +199,9 @@
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
-        "economic_competitiveness"
+        "economic_competitiveness",
+        "social_stability",
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment"
@@ -216,35 +209,35 @@
       "top_enforcement_mechanisms": [
         "soft_enforcement"
       ],
-      "implementation_notes": "NIST serves as federal AI standards coordinator, facilitating interagency coordination and international standards development. The AI Standards Zero Drafts project pilots broader participation in voluntary consensus standards creation. Standards are voluntary and non-binding. Key reference document is NIST AI 100-5e2025 (Plan for Global Engagement on AI Standards).",
-      "framing_rationale_summary": "The document primarily frames AI governance through the lens of enabling innovation while building public trust. NIST's standards work is explicitly described as promoting innovation, accelerating standards creation, and 'unleashing AI innovation,' while trust and risk management are secondary but present concerns. Economic competitiveness appears through references to U.S. leadership and global engagement strategies.",
-      "confidence": 0.75
+      "implementation_notes": "Official NIST ITL AI Program standards page (originally published 2021-08-03 and updated through March 6, 2026). Describes NIST's non-regulatory standards strategy: the AI Standards Zero Drafts pilot, A Plan for Global Engagement on AI Standards (NIST AI 100-5e2025, July 26, 2024), federal interagency coordination via ICSP/AISCWG, alignment of AI RMF 1.0 with international ISO/IEC standards and crosswalks, and GCR-26-069 (Jan 15, 2026) on evaluating AI standards development.",
+      "framing_rationale_summary": "The page is overwhelmingly framed around innovation_enablement, arguing that stakeholder-driven voluntary consensus standards, zero-draft pilots, and international RMF alignment accelerate standards creation, unleash AI innovation, and foster trustworthy AI adoption ecosystems. Innovation_enablement clearly edges out economic_competitiveness, which appears as a secondary rationale via alignment with the National Standards Strategy for Critical and Emerging Technology and U.S. Leadership in AI plan. Social_stability (public trust) and consumer_public_safety (managing AI risks for trustworthy development and use) play supporting roles.",
+      "confidence": 0.945
     },
     {
       "document_id": "us_cfpb_chatbots_issue_spotlight_2023",
       "title": "Chatbots in consumer finance",
       "publication_date": "2023-06-06",
       "issuing_body": "Consumer Financial Protection Bureau (CFPB)",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
-        "fundamental_rights",
-        "social_stability"
+        "fundamental_rights"
       ],
       "top_requirements": [
-        "transparency_disclosure",
-        "human_oversight"
+        "human_oversight",
+        "access_controls",
+        "pre_deployment_testing"
       ],
       "top_enforcement_mechanisms": [
         "regulatory_supervision",
         "soft_enforcement"
       ],
-      "implementation_notes": "The document text is primarily binary/encoded PDF content with limited extractable plain text. Based on metadata: this is a CFPB Issue Spotlight on chatbots in consumer finance published June 6, 2023. Issue Spotlights are regulatory guidance/informational documents, not binding rules. The document likely examines risks and consumer protection concerns related to AI chatbots in financial services. Specific safety requirements and enforcement mechanisms cannot be confirmed from the encoded content alone; classifications are inferred from document type and issuing body context.",
-      "framing_rationale_summary": "This CFPB document focuses on chatbots in consumer finance, an agency whose mandate is consumer protection. The document's title and issuing body indicate primary concern with risks to financial consumers from chatbot deployment, such as inaccurate information, consumer confusion, and harm to vulnerable populations—all consumer/public safety framings. Secondary framings include fundamental rights (fair treatment, non-discrimination) and social stability (protecting vulnerable groups from financial harm).",
-      "confidence": 0.635
+      "implementation_notes": "Published June 2023 as a CFPB research Issue Spotlight examining rule-based and LLM/generative AI chatbots across U.S. consumer finance (including all top 10 commercial banks). Analyzes consumer complaints documenting 'doom loops', unrecognized disputes, factual hallucinations, blocked human offramps, system downtime, impersonation/phishing scams, chat-log data security risks, and training-data privacy leakage, while encouraging consumer complaints and industry whistleblower tips alongside active CFPB market monitoring.",
+      "framing_rationale_summary": "CFPB's Issue Spotlight on Chatbots in Consumer Finance is dominantly framed around consumer_public_safety, centering on concrete financial harms to consumers—including junk fees, late fees, default, unresolved transaction disputes, inaccurate financial information, 'doom loops', phishing/impersonation scams, and eroded customer trust when institutions replace live human support with deficient chatbots. Consumer_public_safety strongly outweighs fundamental_rights because the report's primary evidence and risk taxonomy focus on operational service failures and consumer financial injury. Fundamental_rights serves as a substantive secondary frame covering consumer data privacy, PII breaches in chat logs and training datasets, disproportionate barriers for limited-English-proficiency users, algorithmic bias, and invoking federal legal rights, with a minor economic_competitiveness note on weak market competition and lock-in.",
+      "confidence": 0.965
     },
     {
       "document_id": "us_cfpb_circular_2022_03_complex_algorithms",
@@ -258,20 +251,19 @@
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "consumer_public_safety",
-        "social_stability"
+        "economic_competitiveness"
       ],
       "top_requirements": [
         "transparency_disclosure",
-        "model_documentation",
-        "human_oversight"
+        "pre_deployment_testing"
       ],
       "top_enforcement_mechanisms": [
         "regulatory_supervision",
-        "civil_penalty"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This circular is explicitly a 'general statement of policy under the Administrative Procedure Act' and does not impose new legal requirements but clarifies that existing ECOA/Regulation B obligations apply to AI/ML-based credit decisions. Enforcement is shared across CFPB, state AGs, prudential regulators, and other federal agencies. Confidence reflects that the underlying legal obligations are binding, though the circular itself is not binding law.",
-      "framing_rationale_summary": "The document primarily frames AI risk in terms of consumers' legal rights under ECOA to receive specific reasons for adverse credit decisions. The core concern is that opaque algorithms may violate anti-discrimination law and deny individuals their statutory right to explanation and recourse. The framing centers on equal treatment, non-discrimination, and individual rights rather than safety, economic competitiveness, or national security.",
-      "confidence": 0.85
+      "implementation_notes": "Issued May 26, 2022 as an APA general statement of policy (5 U.S.C. 553(b)) promoting enforcement consistency across federal and state consumer financial enforcers. Confirms that ECOA and Regulation B written adverse action notice duties apply equally regardless of model complexity, that disclosing FCRA credit-score factors or generic sample checklist reasons does not satisfy ECOA unless they reflect the actual principal factors scored, and that creditors using post-hoc explanation methods must validate the accuracy of those approximations.",
+      "framing_rationale_summary": "CFPB Circular 2022-03 is dominantly framed around fundamental_rights, grounding adverse action explainability mandates in the Equal Credit Opportunity Act's anti-discrimination protections across protected classes and procedural fairness enabling applicants to detect and challenge credit errors. Fundamental_rights narrowly edges out consumer_public_safety because preventing discrimination ex ante is highlighted as the core statutory purpose of ECOA's notice rule. Consumer_public_safety is a very strong runner-up, explicitly invoking ECOA's 'twin goals of consumer protection and education' and the CFPB's mandate against unfair, deceptive, and abusive practices, while economic_competitiveness plays a minor supporting role via Congress's view that notice rules have a beneficial competitive effect on the credit marketplace.",
+      "confidence": 0.95
     },
     {
       "document_id": "us_crosswalks_to_the_nist_artificial_intelligence_r_8c897d8c",
@@ -279,13 +271,13 @@
       "publication_date": "2023-01-25",
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "standards_guideline",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
-        "fundamental_rights"
+        "fundamental_rights",
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment"
@@ -293,9 +285,9 @@
       "top_enforcement_mechanisms": [
         "soft_enforcement"
       ],
-      "implementation_notes": "Crosswalks to the AI RMF 1.0 are voluntary resources. The framework is non-sector specific and use-case agnostic. NIST solicits ongoing public comments at AIframework@nist.gov. Alignment with international standards is cited as a top priority in the NIST Roadmap for the AI RMF.",
-      "framing_rationale_summary": "The document frames AI governance primarily around managing AI risks to promote trustworthy and responsible AI systems, which aligns with consumer/public safety framing. Secondary frames include innovation enablement (voluntary, flexible framework) and fundamental rights (rights-preserving language).",
-      "confidence": 0.725
+      "implementation_notes": "Companion NIST webpage introducing crosswalks mapping AI RMF 1.0 to external AI standards and governance frameworks. Reaffirms the AI RMF's voluntary, rights-preserving, non-sector-specific, and use-case-agnostic design under P.L. 116-283 and invites public comments on crosswalks.",
+      "framing_rationale_summary": "This brief companion page is dominantly framed around innovation_enablement, emphasizing a voluntary, flexible, non-sector-specific, internationally aligned standards resource designed to equip AI actors to increase system trustworthiness without prescriptive mandates. Innovation_enablement edges out fundamental_rights (signaled explicitly by 'rights-preserving') and consumer_public_safety (managing the many risks of AI to promote responsible use), both of which appear as concise supporting rationales.",
+      "confidence": 0.9
     },
     {
       "document_id": "us_eo_14179_removing_barriers_ai",
@@ -308,16 +300,90 @@
       "lifecycle_stage": "active",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
-        "national_security",
-        "innovation_enablement"
+        "innovation_enablement",
+        "national_security"
       ],
       "top_requirements": [],
       "top_enforcement_mechanisms": [
         "none_specified"
       ],
-      "implementation_notes": "This EO primarily revokes EO 14110 and directs development of a new AI Action Plan within 180 days. It does not establish new safety requirements; rather, it removes prior safety-oriented directives. No safety requirements are imposed by this document. Enforcement is internal to executive branch agencies only.",
-      "framing_rationale_summary": "The document is primarily framed around maintaining and enhancing American economic competitiveness and global AI dominance. The core justification for revoking prior AI governance is that existing policies act as 'barriers to American AI innovation.' The policy section explicitly names economic competitiveness alongside national security and human flourishing, but the operative logic throughout is about removing obstacles to U.S. global leadership.",
-      "confidence": 0.85
+      "implementation_notes": "Signed January 23, 2025, EO 14179 resets federal AI policy by revoking barriers stemming from the revoked EO 14110 of October 30, 2023. It directs an immediate interagency review to suspend, revise, rescind, or grant exemptions from EO 14110-derived agency actions, orders OMB to revise Memoranda M-24-10 and M-24-18 within 60 days, and mandates an AI Action Plan within 180 days. It imposes no private-sector technical safety controls or coercive external enforcement mechanisms.",
+      "framing_rationale_summary": "EO 14179 is dominantly framed around economic_competitiveness, anchoring federal policy in sustaining and enhancing America's global AI dominance, free-market strength, and global leadership. Economic_competitiveness edges out innovation_enablement because removing regulatory barriers is explicitly subordinated to the overarching zero-sum strategic objective of retaining global AI leadership and dominance. Innovation_enablement is a major secondary frame via the revocation of prior policies deemed obstacles to entrepreneurial AI innovation, while national_security appears explicitly in the Section 2 policy mandate and APNSA co-leadership, alongside a brief anti-ideological-bias rationale.",
+      "confidence": 0.965
+    },
+    {
+      "document_id": "us_eo_14365_national_policy_framework_ai_2025",
+      "title": "Executive Order 14365: Ensuring a National Policy Framework for Artificial Intelligence (90 FR 58499)",
+      "publication_date": "2025-12-16",
+      "issuing_body": "The White House",
+      "document_type": "executive_order",
+      "binding_strength": "executive_action",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "economic_competitiveness",
+      "secondary_frames": [
+        "innovation_enablement",
+        "national_security",
+        "fundamental_rights",
+        "consumer_public_safety"
+      ],
+      "top_requirements": [],
+      "top_enforcement_mechanisms": [
+        "procurement_condition",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Signed December 11, 2025 and published December 16, 2025 (90 FR 58499). Rather than establishing technical AI safety requirements on private entities, EO 14365 targets State-level AI regulatory fragmentation via DOJ litigation, Commerce evaluation, BEAD and discretionary grant funding restrictions, FCC preemption inquiry, FTC UDAP preemption policy, and a federal legislative recommendation that expressly preserves lawful State laws on child safety, compute/data center infrastructure, and State government procurement/use of AI.",
+      "framing_rationale_summary": "EO 14365 is dominantly framed around economic_competitiveness, justifying federal preemption of State AI statutes as essential to sustain global AI dominance, attract trillions of dollars in investment, and win the AI race. Economic_competitiveness narrowly edges out innovation_enablement because removing the 50-state compliance patchwork and burdensome regulation is explicitly framed as the means to achieve global supremacy against foreign adversaries. Innovation_enablement is a close secondary frame emphasizing start-up compliance relief and a minimally burdensome national standard, accompanied by national_security (explicit race with adversaries for supremacy), and secondary references to fundamental_rights (First Amendment and anti-censorship) and consumer_public_safety (child safety protections).",
+      "confidence": 0.95
+    },
+    {
+      "document_id": "us_eo_14409_advanced_ai_innovation_security_2026",
+      "title": "Executive Order 14409: Promoting Advanced Artificial Intelligence Innovation and Security (91 FR 34565)",
+      "publication_date": "2026-06-05",
+      "issuing_body": "The White House",
+      "document_type": "executive_order",
+      "binding_strength": "executive_action",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "national_security",
+      "secondary_frames": [
+        "innovation_enablement",
+        "economic_competitiveness",
+        "consumer_public_safety"
+      ],
+      "top_requirements": [
+        "frontier_safety_evaluation",
+        "access_controls"
+      ],
+      "top_enforcement_mechanisms": [
+        "criminal_penalty",
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Signed June 2, 2026 and published June 5, 2026 (91 FR 34565). Pairs mandatory federal agency cyber-defense hardening (via CNSS, Department of War, and CISA Binding Operational Directives) and prioritized DOJ criminal enforcement against malicious AI/agent cyber intrusions with voluntary private-sector collaboration—specifically an AI cybersecurity clearinghouse and an NSA-led classified frontier cyber capability benchmark with voluntary up-to-30-day pre-release government access for covered frontier models, while explicitly rejecting mandatory model licensing.",
+      "framing_rationale_summary": "EO 14409 is dominantly framed around national_security, centering on new national-security considerations from advanced AI cyber capabilities, protecting American intellectual property from adversaries, defending National Security Systems and Department of War IT, and running an NSA-led classified frontier cyber benchmark. National_security edges out innovation_enablement because nearly every operative section deploys defense, intelligence, and homeland-security authorities to harden systems and confront external threats. Innovation_enablement is a prominent secondary frame—rejecting burdensome regulation and mandatory licensing in favor of voluntary industry collaboration and early trusted-partner access—supported by economic_competitiveness (global AI dominance and investment) and consumer_public_safety (defending rural hospitals, community banks, local utilities, and prosecuting cybercrime).",
+      "confidence": 0.96
+    },
+    {
+      "document_id": "us_eo_14434_super_intelligence_2026",
+      "title": "Executive Order 14434: Inaugurating the Era of Super Intelligence (91 FR 63129)",
+      "publication_date": "2026-10-02",
+      "issuing_body": "The White House",
+      "document_type": "executive_order",
+      "binding_strength": "executive_action",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "economic_competitiveness"
+      ],
+      "top_requirements": [],
+      "top_enforcement_mechanisms": [
+        "none_specified"
+      ],
+      "implementation_notes": "Signed September 29, 2026 (filed in the Federal Register on October 1, 2026, and published at 91 FR 63129 on October 2, 2026). Directs executive departments and agencies, to the maximum extent permitted by law, to use 'Super Intelligence' and 'SI' instead of 'Artificial Intelligence' and 'AI' in official correspondence, public communications, websites, reports, policy documents, and other non-statutory documents, and not to acknowledge the usage of 'Artificial Intelligence' and 'AI' in applicable settings. Does not require altering previously issued regulations, Presidential actions, contracts, grants, or other historical documents. Adopts the existing statutory definition of 'artificial intelligence' in 15 U.S.C. 9401(3) on an interim basis unless superseded by subsequent Presidential action or Act of Congress. Subject to applicable law and availability of appropriations, and creates no legally enforceable rights or benefits.",
+      "framing_rationale_summary": "Executive Order 14434 justifies replacing 'Artificial Intelligence' with 'Super Intelligence' primarily through an innovation_enablement frame, emphasizing the transformative capabilities, human ingenuity, creativity, scientific and medical breakthroughs, and limitless opportunities created by frontier technologies. Economic_competitiveness is a prominent secondary frame, reflected in references to America standing at the forefront of a technological revolution, world-leading companies, and entrepreneurial spirit; however, innovation_enablement edges it out because the order focuses on celebrating technological promise and scientific advancement rather than framing policy around GDP growth, trade advantage, or zero-sum international economic rivalry. No national security, fundamental rights, consumer safety, social stability, labor transition, or catastrophic risk rationales are invoked.",
+      "confidence": 0.875
     },
     {
       "document_id": "us_fda_ai_pccp_guidance_2025",
@@ -334,73 +400,71 @@
         "fundamental_rights"
       ],
       "top_requirements": [
+        "registration_licensing",
         "pre_deployment_testing",
-        "risk_assessment",
-        "model_documentation"
+        "risk_assessment"
       ],
       "top_enforcement_mechanisms": [
-        "regulatory_supervision",
+        "licensing_requirement",
         "market_access_restriction",
-        "civil_penalty"
+        "regulatory_supervision"
       ],
-      "implementation_notes": "This is nonbinding regulatory guidance issued under FD&C Act Section 515C (added by FDORA 2022). It provides recommendations for PCCPs in marketing submissions for AI-enabled device software functions (AI-DSFs). The guidance is not legally enforceable on its own but operationalizes statutory requirements for PMA, 510(k), and De Novo pathways. Covered domains are primarily healthcare/medical devices. The guidance emphasizes that 'should' language is recommended but not required. Deviations from an authorized PCCP, however, may trigger statutory adulteration/misbranding consequences. QSR (21 CFR Part 820) compliance is mandatory and integral to PCCP implementation. Early FDA engagement via Q-Submission Program is strongly encouraged, especially for high-risk or combination product devices.",
-      "framing_rationale_summary": "The document is primarily framed around ensuring the safety and effectiveness of AI-enabled medical devices for patients and users. The FDA's central rationale is that iterative AI modifications must be controlled to maintain 'a reasonable assurance of device safety and effectiveness.' Secondary framing around innovation enablement is present—the PCCP mechanism is explicitly described as 'least burdensome' and designed to 'promote the development of safe and effective AI-enabled devices'—but this serves the safety rationale rather than replacing it. Rights-based framing appears modestly in attention to bias, equitable representation across race, ethnicity, sex, and age in training/test data.",
-      "confidence": 0.84
+      "implementation_notes": "Final FDA guidance originally issued December 4, 2024 and updated August 18, 2025 implementing FD&C Act Section 515C (enacted by FDORA, Pub. L. 117-328). Applies to manual and automatically implemented ('continuous learning') modifications to AI-enabled Device Software Functions (AI-DSFs) and device constituent parts of device-led combination products across PMA, 510(k), and De Novo pathways. Establishes three PCCP pillars—Description of Modifications, Modification Protocol (data management/sequestration, re-training, performance evaluation, update procedures/post-market surveillance), and Impact Assessment—plus QSR compliance, labeling/UDI updates, public summary transparency, Appendix A detailed protocol questions, and Appendix B six clinical scenarios.",
+      "framing_rationale_summary": "FDA's AI-DSF Predetermined Change Control Plan guidance is dominantly framed around consumer_public_safety, anchoring premarket authorization, sequestered validation testing, quality-system compliance, user labeling, and post-market adverse-event monitoring in ensuring a reasonable assurance of medical device safety and effectiveness and preventing patient harm across clinical populations. Consumer_public_safety clearly leads innovation_enablement because every modification boundary and verification gate exists to preserve clinical safety and prevent injury. Innovation_enablement is a major secondary frame—adopting a 'least burdensome', forward-thinking regulatory pathway so manufacturers can iteratively improve AI medical devices without filing separate marketing submissions for every update—while fundamental_rights appears substantively through demographic representativeness, intersectional subpopulation testing, bias mitigation against historical healthcare inequalities, and human-subject clinical protections.",
+      "confidence": 0.975
     },
     {
       "document_id": "us_from_principles_to_practice_ostp_the_white_house_8a01bf26",
       "title": "From Principles to Practice | OSTP | The White House",
       "publication_date": "2022-10-04",
       "issuing_body": "The White House",
-      "document_type": "regulatory_guidance",
+      "document_type": "strategy_paper",
       "binding_strength": "voluntary_commitment",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "superseded",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "consumer_public_safety",
-        "social_stability"
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "pre_deployment_testing",
-        "transparency_disclosure",
-        "risk_assessment"
+        "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "This is a non-binding technical companion to the Blueprint for an AI Bill of Rights. It provides illustrative examples and practical steps but explicitly states expectations are a 'blueprint for the development of additional technical standards' rather than enforceable rules. Reporting expectations are directed at entities developing or using automated systems but are voluntary. The document covers five principles intended to guide design, use, and deployment of automated systems.",
-      "framing_rationale_summary": "The document is primarily framed around protecting the rights of the American public, explicitly invoking a 'Bill of Rights' framing and centering on rights, opportunities, and access. Governance is justified by the need to safeguard individuals against harms to their civil liberties and fundamental rights.",
-      "confidence": 0.9
+      "implementation_notes": "Companion HTML overview page (October 2022, subsequently archived/superseded) introducing the 'From Principles to Practice' technical companion to OSTP's Blueprint for an AI Bill of Rights. Explains the companion's three-part structure per principle ('Why this principle is important', 'What should be expected of automated systems', and 'How these principles can move into practice') and outlines voluntary expectations for pre-deployment testing, ongoing monitoring, governance, and public or oversight-body reporting without creating legally binding obligations.",
+      "framing_rationale_summary": "OSTP's 'From Principles to Practice' companion overview is dominantly framed around fundamental_rights, explicitly centering on protecting the rights, opportunities, access, privacy, and civil liberties of the American public in the design and deployment of automated systems. Fundamental_rights strongly outweighs consumer_public_safety because every section anchors technical practices and reporting in safeguarding individual rights and civil liberties rather than product reliability alone. Consumer_public_safety serves as a clear secondary frame via the stated goal of guarding the public against potential and actual harms from automated systems, with a minor innovation_enablement note on tailoring standards to specific sectors and contexts.",
+      "confidence": 0.95
     },
     {
       "document_id": "us_ftc_online_harms_ai_report_2022",
       "title": "Combatting Online Harms Through Innovation: A Report to Congress",
       "publication_date": "2022-06-16",
       "issuing_body": "Federal Trade Commission (FTC)",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "fundamental_rights",
       "secondary_frames": [
-        "fundamental_rights",
-        "social_stability"
+        "consumer_public_safety",
+        "social_stability",
+        "national_security"
       ],
       "top_requirements": [
         "human_oversight",
         "transparency_disclosure",
-        "third_party_audit"
+        "risk_assessment"
       ],
       "top_enforcement_mechanisms": [
         "soft_enforcement",
-        "reporting_obligation",
-        "none_specified"
+        "regulatory_supervision",
+        "reporting_obligation"
       ],
-      "implementation_notes": "This is a report to Congress mandated by the 2021 Appropriations Act (American COMPETE Act). It is analytical and advisory in nature, not binding regulation. The FTC recommends against mandating AI use for content moderation and instead calls for transparency, accountability, and human oversight frameworks. The report covers a broad range of online harms (deepfakes, CSAM, fraud, TVEC, disinformation, harassment) but explicitly defers on terrorism, election security, and criminal matters to other agencies (DHS, DOJ, State Department). The report recommends legislation focused on platform transparency and algorithmic accountability rather than prescriptive AI deployment mandates. No civil or criminal penalties are specified; enforcement is envisioned through future legislation. Confidence is high for jurisdiction and issuing body, but moderate for safety requirement labels as many are framed as recommendations rather than current requirements.",
-      "framing_rationale_summary": "The document is primarily framed around consumer and public safety: the FTC's congressional mandate centers on whether AI can identify and address specified harms to individuals online—scams, deepfakes, CSAM, harassment, illegal drug sales, etc. The report consistently evaluates AI tools through the lens of consumer protection, harm reduction, and public safety outcomes. Secondary framing includes fundamental rights (bias, discrimination, censorship, First Amendment concerns, appeal rights) and social stability (disinformation, hate crimes, violent extremism, election integrity).",
-      "confidence": 0.715
+      "implementation_notes": "Submitted June 16, 2022 by the FTC Bureau of Consumer Protection pursuant to Pub. L. No. 116-260, Title XV, § 1501(j). Evaluates automated and AI-based tools across seven Congressionally designated online harm categories (scams/fraud, deepfakes/fake reviews/bots, dark patterns, illegal content including opioids/CSAM/revenge porn/hate crimes/harassment/violence, terrorist and violent extremist content, election disinformation, and counterfeits). Concludes that AI detection tools remain rudimentary, brittle, context-blind, prone to bias/discrimination/overblocking, and incentivize commercial surveillance. Recommends against laws mandating AI content-filtering, and instead calls for human oversight with moderator protections, meaningful transparency/explainability/contestability, researcher access with privacy safeguards, certified independent audits and standardized Algorithmic Impact Assessments, whistleblower protections, responsible data science and documentation, content provenance/authentication (e.g., C2PA), user control tools, and transparency/accountability legislation.",
+      "framing_rationale_summary": "The FTC Report to Congress is dominantly framed around fundamental_rights, warning that automated content-moderation tools remain rudimentary and can exacerbate algorithmic bias and discrimination against marginalized communities, chill First Amendment protected speech through overblocking, incentivize invasive commercial surveillance eroding user privacy, and deprive affected individuals of due process, explainability, contestability, and redress. Fundamental_rights narrowly edges out consumer_public_safety because while the report surveys severe online consumer harms, the FTC's core governance argument in the Executive Summary and Recommendations centers on rights-based transparency, accountability, non-discrimination, privacy, and free-speech guardrails against over-reliance on AI filtering. Consumer_public_safety is a close runner-up covering online scams, deceptive dark patterns, fake reviews, counterfeits, opioids, CSAM, revenge porn, and harassment, supported by social_stability (election disinformation, violent extremism, public trust, and the 'Liar's Dividend') and a minor national_security thread (foreign influence operations and counterterrorism).",
+      "confidence": 0.955
     },
     {
       "document_id": "us_joint_statement_ai_discrimination_2023",
@@ -414,21 +478,21 @@
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "consumer_public_safety",
-        "social_stability"
+        "innovation_enablement"
       ],
       "top_requirements": [
         "risk_assessment",
         "transparency_disclosure",
-        "model_documentation"
+        "training_data_governance"
       ],
       "top_enforcement_mechanisms": [
         "regulatory_supervision",
-        "civil_penalty",
+        "market_access_restriction",
         "soft_enforcement"
       ],
-      "implementation_notes": "Document explicitly states it is not enforceable and creates no new rights or obligations, though it signals enforcement intent of existing laws by four agencies. The document reaffirms existing legal authorities apply to automated systems rather than creating new requirements.",
-      "framing_rationale_summary": "The document is primarily framed around civil rights and anti-discrimination law, emphasizing that automated systems must not violate individuals' legal rights to equal treatment in employment, housing, credit, and other domains. The core reasoning is rights-protective: existing civil rights laws apply to AI just as to other practices, and enforcement agencies will protect individuals from unlawful discrimination regardless of the technology used.",
-      "confidence": 0.865
+      "implementation_notes": "Issued April 25, 2023 jointly by the heads of CFPB, DOJ Civil Rights Division, EEOC, and FTC. Clarifies that established federal laws—including the FTC Act, Fair Housing Act, Americans with Disabilities Act, Title VII and other EEOC statutes, and federal consumer financial/adverse-action laws—apply fully to automated systems and AI across employment, housing, credit, education, criminal justice, voting, and consumer markets. Identifies three core risk vectors: biased/unrepresentative datasets, model opacity ('black boxes'), and flawed design/contextual assumptions. Expressly notes it is informational and not final agency action.",
+      "framing_rationale_summary": "The Joint Statement is dominantly framed around fundamental_rights, anchoring interagency AI enforcement in core federal commitments to fairness, equality, justice, civil rights, equal opportunity, and preventing unlawful discrimination across protected classes in jobs, housing, credit, education, voting, and criminal justice. Fundamental_rights clearly edges out consumer_public_safety because anti-discrimination and equal rights form the central organizing theme across all four agencies and all three identified failure modes. Consumer_public_safety is a strong secondary frame through FTC and CFPB mandates protecting consumers from unfair, deceptive, or abusive practices, unsubstantiated claims, and invasive commercial surveillance, while innovation_enablement appears briefly to affirm that responsible innovation and adherence to law complement each other.",
+      "confidence": 0.965
     },
     {
       "document_id": "us_nist_ai_rmf_1_0",
@@ -436,27 +500,25 @@
       "publication_date": "2023-01-26",
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "standards_guideline",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "fundamental_rights",
-        "social_stability",
-        "innovation_enablement"
+        "consumer_public_safety",
+        "fundamental_rights"
       ],
       "top_requirements": [
         "risk_assessment",
         "pre_deployment_testing",
-        "human_oversight"
+        "red_teaming"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "The AI RMF is explicitly voluntary: 'Like the AI RMF, the Playbook is voluntary and organizations can utilize the suggestions according to their needs and interests.' It does not prescribe risk tolerance and is intended to be flexible and to augment existing risk practices. It provides four core functions: GOVERN, MAP, MEASURE, MANAGE. No penalties or enforcement mechanisms are established.",
-      "framing_rationale_summary": "The AI RMF primarily frames AI governance as a matter of managing harms to individuals, communities, and society—emphasizing trustworthiness, risk management, and protection from negative impacts. The document's core reasoning centers on protecting people from AI system failures, biases, and unintended harms, aligning with consumer/public safety framing. Fundamental rights and social stability are strong secondary frames, as the document explicitly mentions civil liberties, equity, and societal impacts. Innovation enablement appears as a complementary frame since the document also stresses maximizing positive impacts and promoting beneficial AI use.",
-      "confidence": 0.86
+      "implementation_notes": "Final publication of NIST AI 100-1 (AI RMF 1.0, released January 26, 2023; supersedes the August 18, 2022 Second Draft). Directed by the National AI Initiative Act of 2020 (P.L. 116-283), it establishes a voluntary, rights-preserving, non-sector-specific, law- and regulation-agnostic lifecycle risk management standard structured around seven trustworthiness characteristics and four Core functions (GOVERN, MAP, MEASURE, MANAGE) with 19 categories and 72 subcategories, plus Use-Case, Temporal, and Cross-Sectoral Profiles and Appendices A–D. Planned formal community review no later than 2028.",
+      "framing_rationale_summary": "NIST AI RMF 1.0 is dominantly framed around innovation_enablement, presenting a voluntary, flexible, non-prescriptive, and pro-innovation framework designed to help organizations unleash AI benefits and foster trustworthy adoption across all sectors. Innovation_enablement narrowly edges out consumer_public_safety, which is a strong runner-up centered on preventing physical injury, death, property, environmental, and operational harms across the AI lifecycle. Fundamental_rights is a major third frame explicitly anchored in a 'rights-preserving' mandate, threats to civil liberties and human rights, human autonomy and dignity in privacy, and mitigation of harmful bias and discrimination, alongside minor nods to inclusive economic growth, public trust, catastrophic risk cessation, and NSCAI recommendations.",
+      "confidence": 0.96
     },
     {
       "document_id": "us_nist_ai_rmf_playbook",
@@ -464,23 +526,50 @@
       "publication_date": "2022-07-08",
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
-      "binding_strength": "voluntary_commitment",
-      "corpus_role": "companion_resource",
+      "binding_strength": "standards_guideline",
+      "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
-        "innovation_enablement"
+        "fundamental_rights",
+        "innovation_enablement",
+        "social_stability"
       ],
       "top_requirements": [
         "risk_assessment",
-        "human_oversight"
+        "pre_deployment_testing",
+        "red_teaming"
       ],
       "top_enforcement_mechanisms": [
         "soft_enforcement"
       ],
-      "implementation_notes": "The Playbook is a companion to AI RMF 1.0 (released January 26, 2023) and is explicitly intended for voluntary use. Organizations may adopt as many or as few suggestions as apply to their use case. Content evolves based on public comment.",
-      "framing_rationale_summary": "The document frames AI governance around trustworthiness and risk management in AI system design and deployment, with voluntary guidance for organizations. The primary concern is ensuring safe, trustworthy AI across the lifecycle, aligning with consumer/public safety framing. Innovation enablement is secondary as the framework is voluntary and industry-collaborative.",
-      "confidence": 0.735
+      "implementation_notes": "Full 147-page NIST AI RMF Playbook PDF (initial catalog date 2022-07-08; full living document aligned to AI RMF 1.0 and updated through 2024). Provides voluntary, non-checklist operational guidance across all 72 subcategories of GOVERN (1.1–6.2), MANAGE (1.1–4.3), MAP (1.1–5.2), and MEASURE (1.1–4.3), supplying 'About' narratives, actionable 'Suggested Actions', 'Transparency & Documentation' self-assessment questions, 'AI Transparency Resources' (GAO-21-519SP, IC AI Ethics Framework, WEF, ALTAI, Datasheets), software toolkits, and scholarly/standards references.",
+      "framing_rationale_summary": "The NIST AI RMF Playbook is dominantly framed around consumer_public_safety, operationalizing a 'safety-first mindset' and 'preventing harm by design and default' across 72 tactical subcategories that prioritize physical safety, protecting human life, health, property, and the environment, safeguarding minors, and preventing system failures, drift, and adversarial compromise. Consumer_public_safety edges out fundamental_rights, which is a strong runner-up woven throughout bias/fairness, disability inclusion, informed consent, privacy as human autonomy and dignity, and recourse for impacted communities. Innovation_enablement is a prominent third frame via its voluntary, selective, non-checklist design that balances trustworthiness tradeoffs with business value and trustworthy deployment, complemented by social_stability (public trust), economic prosperity, and minor national_security references.",
+      "confidence": 0.96
+    },
+    {
+      "document_id": "us_nist_caisi_agent_standards_initiative_2026",
+      "title": "NIST CAISI / SI Agent Standards Initiative",
+      "publication_date": "2026-02-17",
+      "issuing_body": "National Institute of Standards and Technology (NIST)",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "economic_competitiveness",
+        "consumer_public_safety"
+      ],
+      "top_requirements": [
+        "agentic_autonomy_controls"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Launched in February 2026 by NIST / Center for AI Standards and Innovation (CAISI) in collaboration with NCCoE and NSF (under the post-EO 14434 'Super Intelligence (SI)' portal nomenclature). This overview establishes a voluntary, industry-led standardization program for autonomous AI/SI agents centered on interoperable open protocols, agent identity, authentication, authorization, open-source ecosystem security, and security evaluations, with stakeholder consultation milestones in March–April 2026 and no regulatory mandates.",
+      "framing_rationale_summary": "The NIST CAISI SI Agent Standards Initiative is dominantly framed around innovation_enablement, seeking to catalyze widespread, confident adoption of autonomous agents through voluntary industry-led standards, open interoperable protocols, and sector-specific barrier reduction in healthcare, finance, and education. Innovation_enablement edges out economic_competitiveness because the operational pillars center on reducing ecosystem friction and building interoperable voluntary standards rather than zero-sum trade competition. Economic_competitiveness is a notable secondary frame via explicit goals of cementing U.S. dominance at the technological frontier and maintaining international standards leadership, while consumer_public_safety appears through secure human-agent interactions, agent threat mitigations, and security evaluations for consumer comparison.",
+      "confidence": 0.945
     },
     {
       "document_id": "us_nist_genai_profile",
@@ -495,6 +584,33 @@
       "secondary_frames": [
         "fundamental_rights",
         "social_stability",
+        "existential_catastrophic",
+        "innovation_enablement"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "pre_deployment_testing",
+        "red_teaming"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "NIST AI 600-1 (approved July 25, 2024; published July 26, 2024), a voluntary cross-sectoral AI RMF 1.0 profile for Generative AI developed pursuant to Section 4.1(a)(i)(A) of EO 14110 and the NIST Generative AI Public Working Group (GAI PWG). Defines 12 risks unique to or exacerbated by GAI (CBRN, Confabulation, Dangerous/Violent/Hateful Content, Data Privacy, Environmental Impacts, Harmful Bias/Homogenization, Human-AI Configuration, Information Integrity, Information Security, Intellectual Property, Obscene/Degrading/Abusive Content including CSAM/NCII, and Value Chain/Component Integration) and maps ~190 suggested actions across GOVERN, MAP, MEASURE, and MANAGE organized around Governance, Pre-Deployment Testing, Content Provenance, and Incident Disclosure (including recommended internal bans/filters against CSAM/NCII and coverage of both proprietary and open-source GAI tools).",
+      "framing_rationale_summary": "NIST AI 600-1 is dominantly framed around consumer_public_safety: its 12-risk taxonomy and action tables center on preventing tangible, empirically evidenced harms to users, patients, children, and the public—including confabulated medical or legal guidance, CSAM and NCII abuse, self-harm and violent instructions, offensive cyber vulnerabilities, and psychological harms from anthropomorphization and emotional entanglement. Consumer_public_safety leads fundamental_rights, which is a strong runner-up anchored in data privacy/PII leakage, systemic bias and discrimination against protected groups, intellectual property, and civil rights violations. Social_stability (information integrity, large-scale disinformation eroding public trust and democratic institutions), existential_catastrophic (CBRN weapons/BDTs, offensive cyber, halting unacceptable large-scale risks), and innovation_enablement (voluntary flexible standards to realize commercial and societal benefits) form substantial secondary frames.",
+      "confidence": 0.96
+    },
+    {
+      "document_id": "us_nist_ir_8596_cyber_ai_profile_2025",
+      "title": "NIST IR 8596 (Initial Preliminary Draft): Cybersecurity Framework Profile for Artificial Intelligence (Cyber AI Profile)",
+      "publication_date": "2025-12-16",
+      "issuing_body": "National Institute of Standards and Technology (NIST)",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "corpus_role": "draft_consultation",
+      "lifecycle_stage": "draft",
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "innovation_enablement",
         "national_security"
       ],
       "top_requirements": [
@@ -503,12 +619,11 @@
         "red_teaming"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "reporting_obligation"
+        "soft_enforcement"
       ],
-      "implementation_notes": "NIST AI 600-1 is explicitly voluntary guidance serving as a companion to AI RMF 1.0, developed per EO 14110 Section 4.1(a)(i)(A). It provides suggested (not required) actions organized by AI RMF functions (Govern, Map, Measure, Manage). Four primary GAI considerations are addressed: Governance, Pre-Deployment Testing, Content Provenance, and Incident Disclosure. The document covers general-purpose/foundation models broadly across sectors. No binding enforcement mechanisms are created by this document itself; references to mandatory reporting (e.g., HIPAA) point to pre-existing external legal obligations rather than new requirements from this profile.",
-      "framing_rationale_summary": "The document is primarily framed around protecting consumers and the public from concrete, tangible harms arising from GAI use. It enumerates specific risks—confabulation, harmful bias, obscene content, data privacy violations, dangerous content—and provides operational risk management actions focused on organizational safety governance, pre-deployment testing, and incident disclosure. The framing is grounded in trustworthiness, reliability, and harm reduction for individuals and communities who interact with GAI systems. Fundamental rights concerns (bias, privacy, CSAM, NCII) and social stability concerns (disinformation, information integrity, erosion of public trust) are strong secondary frames. National security appears as a secondary consideration specifically in CBRN and offensive cyber risk discussions.",
-      "confidence": 0.85
+      "implementation_notes": "Initial Preliminary Draft of NIST IR 8596 (Cybersecurity Framework Profile for Artificial Intelligence / Cyber AI Profile), published December 16, 2025 for public comment through January 30, 2026 (quarantined as draft_consultation until final publication). Maps all 106 NIST CSF 2.0 Subcategories across GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER into three Focus Areas: Securing AI System Components (Secure), Conducting AI-Enabled Cyber Defense (Defend), and Thwarting AI-Enabled Cyber Attacks (Thwart), with Priority 1–3 ratings and detailed controls for agentic AI identity, least-privilege scoping, code-execution sandboxing, and autonomy kill-switches. Complements the NIST AI RMF and forthcoming SP 800-53 Control Overlays for Securing AI Systems (COSAiS).",
+      "framing_rationale_summary": "NIST IR 8596 (Cyber AI Profile) is dominantly framed around consumer_public_safety, centering on operational system resilience and protecting organizations, infrastructure (such as power grids and OT/ICS), and users from AI-related failures, data leakage, poisoning, prompt injection, deepfake phishing, and AI-accelerated cyberattacks. Consumer_public_safety narrowly edges out innovation_enablement, which is a strong runner-up emphasizing adaptable, voluntary, technology-neutral guidance that enables organizations to strategically adopt AI and capitalize on AI-enabled cyber defense efficiencies. National_security serves as a clear third frame through explicit attention to advanced persistent threats (APTs), offensive cyber operations, autonomous attack agents, AI-orchestrated espionage, and critical infrastructure resilience, with minor supporting roles for economic welfare, privacy/civil liberties compliance, and machine-speed autonomous cyber risks.",
+      "confidence": 0.955
     },
     {
       "document_id": "us_omb_m_25_21",
@@ -521,10 +636,9 @@
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "consumer_public_safety",
         "fundamental_rights",
-        "economic_competitiveness",
-        "national_security"
+        "consumer_public_safety",
+        "economic_competitiveness"
       ],
       "top_requirements": [
         "risk_assessment",
@@ -533,12 +647,12 @@
       ],
       "top_enforcement_mechanisms": [
         "reporting_obligation",
-        "regulatory_supervision",
-        "soft_enforcement"
+        "market_access_restriction",
+        "regulatory_supervision"
       ],
-      "implementation_notes": "This memorandum rescinds M-24-10 and implements EO 14179. It applies to all executive branch agencies including independent regulatory agencies but excludes National Security Systems and Intelligence Community elements from high-impact AI requirements. Timelines range from 60 days (CAIO designation) to 365 days (minimum risk management implementation). Enforcement is internal to the executive branch with no civil or criminal penalties specified; discontinuation of non-compliant AI use is the primary sanction. The 'third_party_audit' label is applied conservatively as the independent reviewer must be within the agency.",
-      "framing_rationale_summary": "The document is primarily framed around enabling and accelerating AI adoption across the federal government, with governance framed as a facilitator rather than a constraint. The title itself—'Accelerating Federal Use of AI through Innovation, Governance, and Public Trust'—signals innovation enablement as the core purpose. The memorandum repeatedly directs agencies to remove bureaucratic barriers, scale AI adoption, and redefine governance as 'an enabler of effective and safe innovation.' Consumer/public safety and fundamental rights appear as secondary concerns addressed through minimum risk management practices for high-impact AI. Economic competitiveness and national security are cited as motivations but are not the primary framing mechanism.",
-      "confidence": 0.86
+      "implementation_notes": "Issued April 3, 2025 by OMB Director Russell T. Vought pursuant to EO 14179, the AI in Government Act of 2020, and the Advancing American AI Act, rescinding and replacing OMB Memorandum M-24-10. Applies across executive agencies and independent regulatory agencies (excluding National Security Systems, with Intelligence Community carve-outs). Combines pro-innovation mandates (public AI strategies, mandatory government-wide sharing of custom-developed AI models/weights and open-source code release with 4 carve-outs, delegated risk acceptance) with binding governance structures (CAIOs, AI Governance Boards, CAIO Council) and 7 mandatory minimum risk management practices for 'high-impact AI' across 15 presumed high-impact categories (pre-deployment testing, AI Impact Assessments with internal independent review, ongoing monitoring, operator training, human oversight/fail-safes, human appeals/remedies, and public consultation).",
+      "framing_rationale_summary": "OMB Memorandum M-25-21 is dominantly framed around innovation_enablement, directing agencies to adopt a forward-leaning pro-innovation posture, cut bureaucratic bottlenecks, delegate risk acceptance, share code/models/data, and apply risk-proportionate governance as an enabler of accelerated public-sector AI adoption. Innovation_enablement edges out fundamental_rights because the overhaul replacing M-24-10 explicitly elevates barrier removal, AI maturity, and agile federal deployment as its lead organizing priority. Fundamental_rights is a strong secondary frame protecting civil rights, civil liberties, privacy, non-discrimination, protected speech, and human appeal rights across high-impact agency decisions; consumer_public_safety is prominent in ensuring safe, secure, resilient AI and fail-safes across safety-critical infrastructure, healthcare, robotics, and hazardous agents; and economic_competitiveness appears via EO 14179 global AI dominance, Buy American procurement, and taxpayer value.",
+      "confidence": 0.965
     },
     {
       "document_id": "us_omb_m_25_22",
@@ -549,25 +663,24 @@
       "binding_strength": "executive_action",
       "corpus_role": "primary_instrument",
       "lifecycle_stage": "active",
-      "dominant_frame": "economic_competitiveness",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
-        "consumer_public_safety",
-        "fundamental_rights"
+        "economic_competitiveness",
+        "fundamental_rights",
+        "consumer_public_safety"
       ],
       "top_requirements": [
         "risk_assessment",
         "pre_deployment_testing",
-        "transparency_disclosure"
+        "model_documentation"
       ],
       "top_enforcement_mechanisms": [
         "procurement_condition",
-        "reporting_obligation",
         "regulatory_supervision"
       ],
-      "implementation_notes": "This memorandum rescinds M-24-18 and applies to contracts awarded pursuant to solicitations issued 180 days after issuance. It covers all federal agencies under 44 U.S.C. § 3502(1) except Intelligence Community elements and National Security Systems. Requirements are tiered by timeline (100, 180, 200, 270 days). Enforcement is primarily through procurement conditions and contract terms rather than civil or criminal penalties. Some requirements apply only to CFO Act agencies. The document references but does not re-state requirements from M-25-21 for high-impact AI use cases.",
-      "framing_rationale_summary": "The document is primarily framed around ensuring a competitive American AI marketplace, taxpayer value, and government efficiency. Its three grounding themes explicitly foreground competition, cost-effectiveness, and vendor lock-in avoidance. References to American AI leadership, buy-American policy, and marketplace competition dominate the stated rationale for governance. Risk management and rights protections appear as secondary concerns subordinate to efficient, competitive acquisition.",
-      "confidence": 0.815
+      "implementation_notes": "Issued April 3, 2025 by OMB Director Russell T. Vought pursuant to the Advancing American AI Act and EO 14179, rescinding and replacing OMB Memorandum M-24-18. Establishes binding acquisition lifecycle governance for civilian executive agencies (excluding Intelligence Community elements, National Security Systems, and common commercial products with embedded ancillary AI), pairing pro-competition anti-lock-in and Buy American AI policies with mandatory privacy/PII safeguards, data-ownership protections, proposal testing, independent agency evaluation rights, M-25-21 high-impact risk clauses, and FISMA Authorization to Operate compliance.",
+      "framing_rationale_summary": "OMB Memorandum M-25-22 is dominantly framed around innovation_enablement, seeking to accelerate efficient, cost-effective federal adoption of state-of-the-art AI capabilities through agile cross-functional acquisition, performance-based contracting, interoperability, and streamlined onboarding of novel vendors. Innovation_enablement edges out economic_competitiveness because the operational core focuses on modernizing public-sector acquisition workflows and enabling timely government utilization rather than external trade rivalry. Economic_competitiveness is a strong secondary frame through fostering a competitive American AI marketplace, preventing vendor lock-in, safeguarding taxpayer dollars, and maximizing Buy American AI; fundamental_rights is prominent via explicit obligations to mitigate privacy, civil rights, and civil liberties risks across the acquisition lifecycle, alongside consumer_public_safety in ensuring procured systems are safe, secure, fit for purpose, and protective of public safety.",
+      "confidence": 0.95
     },
     {
       "document_id": "us_roadmap_for_the_nist_artificial_intelligence_ris_bc6cf1d8",
@@ -575,309 +688,533 @@
       "publication_date": "2023-01-24",
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
-      "binding_strength": "voluntary_commitment",
+      "binding_strength": "standards_guideline",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
-      "dominant_frame": "consumer_public_safety",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "fundamental_rights",
-        "innovation_enablement"
+        "consumer_public_safety",
+        "fundamental_rights"
       ],
       "top_requirements": [
         "risk_assessment",
-        "human_oversight",
+        "pre_deployment_testing",
+        "human_oversight"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Companion NIST Roadmap outlining ten priority collaborative workstreams to advance AI RMF 1.0: international standards alignment/crosswalks (ISO/IEC 5338, 38507, 22989, 24028, DIS 42001, NP 42005), expanded socio-technical TEVV benchmarks/testbeds, sectoral and cross-sectoral Profiles (including hiring, criminal justice, lending, and LLMs), trustworthiness tradeoff guidance, RMF effectiveness evaluation, case studies, human-AI teaming/oversight guidance, explainability/interpretability guidance, risk-tolerance methods, and multidisciplinary tutorials. All workstreams are voluntary and contingent on available resources.",
+      "framing_rationale_summary": "The AI RMF Roadmap is dominantly framed around innovation_enablement, setting out a flexible, voluntary, internationally aligned program of standards crosswalks, TEVV tools, profiles, case studies, and tutorials to close knowledge gaps and equip organizations to deploy trustworthy AI. Innovation_enablement leads consumer_public_safety, which is a strong secondary frame focused on reducing real-world negative impacts and harms to individuals, groups, communities, and society via TEVV, risk tolerances, and human-AI oversight. Fundamental_rights appears as a secondary rationale through the explicit 'rights-preserving' orientation and sectoral profile priorities covering hiring, criminal justice, and lending.",
+      "confidence": 0.92
+    },
+    {
+      "document_id": "us_take_it_down_act_2025",
+      "title": "TAKE IT DOWN Act (Public Law 119-12, 139 Stat. 55)",
+      "publication_date": "2025-05-19",
+      "issuing_body": "U.S. Congress",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "fundamental_rights"
+      ],
+      "top_requirements": [
         "transparency_disclosure"
       ],
       "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "none_specified"
+        "criminal_penalty",
+        "civil_penalty",
+        "regulatory_supervision"
       ],
-      "implementation_notes": "This Roadmap is a companion to AI RMF 1.0, voluntary and non-sector specific. Key priorities include international standards alignment, expanded TEVV efforts, AI RMF profiles, guidance on trustworthiness tradeoffs, measuring framework effectiveness, case studies, human factors guidance, explainability guidance, risk tolerance methods, and multi-disciplinary tutorials. NIST's involvement depends on available resources.",
-      "framing_rationale_summary": "The document primarily frames AI governance around managing risks to ensure trustworthy and responsible AI systems, focusing on protecting individuals, groups, and society from harms. Secondary framings include rights-preservation and enabling responsible innovation through voluntary, flexible frameworks.",
-      "confidence": 0.735
+      "implementation_notes": "Public Law 119-12 (139 Stat. 55), approved May 19, 2025. First binding U.S. federal statute targeting AI-generated nonconsensual intimate visual depictions ('digital forgeries') alongside authentic NCII. Section 2 amends Section 223 of the Communications Act of 1934 to create federal criminal offenses; Section 3 mandates a covered-platform notice-and-takedown regime within 1 year (by May 19, 2026) requiring 48-hour removal and reasonable efforts to remove known identical copies, backed by good-faith takedown liability immunity and FTC UDAP rule-violation enforcement. Excludes broadband ISPs, email, and primarily non-UGC preselected-content services.",
+      "framing_rationale_summary": "The TAKE IT DOWN Act is dominantly framed around consumer_public_safety, targeting exploitation, abuse, harassment, extortion, and concrete psychological, financial, and reputational harm to individuals—with heightened protection for minors—through federal criminalization and FTC unfair-and-deceptive-practices platform takedown enforcement. Consumer_public_safety edges out fundamental_rights because the statute anchors liability in tangible victim harm, child protection, anti-extortion, and consumer-protection UDAP enforcement rather than constitutional-rights declarations. Fundamental_rights is a strong secondary frame grounded in affirmative voluntary consent, reasonable expectations of personal privacy, and free-expression carve-outs for matters of public concern.",
+      "confidence": 0.96
     },
     {
       "document_id": "us_technical_contributions_ai_governance_nist",
       "title": "Technical Contributions to AI Governance | NIST",
       "publication_date": "2021-07-26",
       "issuing_body": "National Institute of Standards and Technology (NIST)",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "standards_guideline",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
       "corpus_role": "companion_resource",
       "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "national_security",
+        "consumer_public_safety",
         "economic_competitiveness"
       ],
       "top_requirements": [],
       "top_enforcement_mechanisms": [
-        "soft_enforcement"
+        "none_specified"
       ],
-      "implementation_notes": "This page describes NIST ITL AI Program's role as a neutral convener and technical contributor to AI governance discussions at national and international levels, including OECD and G7 Hiroshima Process. No binding requirements or prohibitions are stated. The document is informational and describes coordination roles rather than regulatory mandates.",
-      "framing_rationale_summary": "The document focuses on NIST's technical contributions to AI governance, emphasizing scientific expertise, standards coordination, and neutral convening of diverse stakeholders. The framing is primarily about enabling effective and reliable AI through grounded technical governance rather than risk mitigation per se. International engagement with OECD, G7, and bilateral initiatives suggests secondary economic competitiveness and national security interests.",
-      "confidence": 0.685
+      "implementation_notes": "Brief NIST ITL AI Program informational overview (originally published 2021-07-26 and later updated to reference the 2023 G7 Hiroshima Process) summarizing NIST's role as a neutral technical convener, federal AI standards coordinator, and interagency/international AI governance participant. Contains no operative compliance requirements or enforcement hooks.",
+      "framing_rationale_summary": "This short institutional overview has sparse explicit rationale language, centered primarily on innovation_enablement: grounding domestic and international AI governance in scientific and technical realities through neutral convening, federal standards coordination, and shared research infrastructure (NAIRR) to shape effective AI development. Consumer_public_safety appears modestly via the goal of 'effective and reliable AI,' and economic_competitiveness plays a minor role through partnerships with the International Trade Administration in international governance.",
+      "confidence": 0.865
     }
   ],
   "aggregates": {
     "document_types": [
       {
-        "label": "regulatory_guidance",
-        "count": 10,
-        "share": 0.435
-      },
-      {
         "label": "standards_guideline",
-        "count": 10,
-        "share": 0.435
+        "count": 12,
+        "share": 0.414
       },
       {
         "label": "strategy_paper",
-        "count": 2,
-        "share": 0.087
-      },
-      {
-        "label": "executive_order",
-        "count": 1,
-        "share": 0.043
-      }
-    ],
-    "binding_strengths": [
-      {
-        "label": "voluntary_commitment",
-        "count": 9,
-        "share": 0.391
+        "count": 7,
+        "share": 0.241
       },
       {
         "label": "regulatory_guidance",
         "count": 5,
-        "share": 0.217
+        "share": 0.172
       },
       {
-        "label": "standards_guideline",
+        "label": "executive_order",
         "count": 4,
-        "share": 0.174
+        "share": 0.138
+      },
+      {
+        "label": "legislation",
+        "count": 1,
+        "share": 0.034
+      }
+    ],
+    "binding_strengths": [
+      {
+        "label": "standards_guideline",
+        "count": 12,
+        "share": 0.414
       },
       {
         "label": "executive_action",
-        "count": 3,
-        "share": 0.13
+        "count": 6,
+        "share": 0.207
       },
       {
         "label": "strategy_statement",
-        "count": 2,
-        "share": 0.087
+        "count": 6,
+        "share": 0.207
+      },
+      {
+        "label": "regulatory_guidance",
+        "count": 3,
+        "share": 0.103
+      },
+      {
+        "label": "binding_law",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "voluntary_commitment",
+        "count": 1,
+        "share": 0.034
       }
     ],
     "requirements": [
       {
         "label": "risk_assessment",
-        "count": 19,
-        "share": 0.826
-      },
-      {
-        "label": "human_oversight",
-        "count": 17,
-        "share": 0.739
-      },
-      {
-        "label": "transparency_disclosure",
-        "count": 17,
-        "share": 0.739
-      },
-      {
-        "label": "model_documentation",
-        "count": 14,
-        "share": 0.609
+        "count": 18,
+        "share": 0.621
       },
       {
         "label": "pre_deployment_testing",
+        "count": 16,
+        "share": 0.552
+      },
+      {
+        "label": "transparency_disclosure",
+        "count": 16,
+        "share": 0.552
+      },
+      {
+        "label": "access_controls",
+        "count": 15,
+        "share": 0.517
+      },
+      {
+        "label": "training_data_governance",
+        "count": 14,
+        "share": 0.483
+      },
+      {
+        "label": "human_oversight",
         "count": 11,
-        "share": 0.478
+        "share": 0.379
+      },
+      {
+        "label": "model_documentation",
+        "count": 11,
+        "share": 0.379
       },
       {
         "label": "incident_reporting",
         "count": 8,
-        "share": 0.348
-      },
-      {
-        "label": "third_party_audit",
-        "count": 8,
-        "share": 0.348
-      },
-      {
-        "label": "access_controls",
-        "count": 6,
-        "share": 0.261
-      },
-      {
-        "label": "content_provenance",
-        "count": 5,
-        "share": 0.217
+        "share": 0.276
       },
       {
         "label": "red_teaming",
-        "count": 2,
-        "share": 0.087
+        "count": 7,
+        "share": 0.241
+      },
+      {
+        "label": "third_party_audit",
+        "count": 7,
+        "share": 0.241
+      },
+      {
+        "label": "frontier_safety_evaluation",
+        "count": 4,
+        "share": 0.138
+      },
+      {
+        "label": "content_provenance",
+        "count": 3,
+        "share": 0.103
       },
       {
         "label": "registration_licensing",
+        "count": 3,
+        "share": 0.103
+      },
+      {
+        "label": "agentic_autonomy_controls",
         "count": 2,
-        "share": 0.087
+        "share": 0.069
+      },
+      {
+        "label": "open_weight_obligations",
+        "count": 2,
+        "share": 0.069
       },
       {
         "label": "compute_governance",
         "count": 1,
-        "share": 0.043
+        "share": 0.034
       }
     ],
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "count": 19,
-        "share": 0.826
-      },
-      {
-        "label": "reporting_obligation",
-        "count": 10,
-        "share": 0.435
+        "count": 20,
+        "share": 0.69
       },
       {
         "label": "regulatory_supervision",
-        "count": 7,
-        "share": 0.304
+        "count": 10,
+        "share": 0.345
       },
       {
         "label": "none_specified",
         "count": 5,
-        "share": 0.217
-      },
-      {
-        "label": "civil_penalty",
-        "count": 3,
-        "share": 0.13
+        "share": 0.172
       },
       {
         "label": "market_access_restriction",
-        "count": 2,
-        "share": 0.087
+        "count": 4,
+        "share": 0.138
       },
       {
         "label": "procurement_condition",
+        "count": 4,
+        "share": 0.138
+      },
+      {
+        "label": "reporting_obligation",
+        "count": 3,
+        "share": 0.103
+      },
+      {
+        "label": "criminal_penalty",
         "count": 2,
-        "share": 0.087
+        "share": 0.069
+      },
+      {
+        "label": "civil_penalty",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "licensing_requirement",
+        "count": 1,
+        "share": 0.034
       }
     ],
     "institutions": [
       {
         "label": "National Institute of Standards and Technology (NIST)",
-        "count": 12,
-        "share": 0.522
+        "count": 16,
+        "share": 0.552
       },
       {
         "label": "The White House",
-        "count": 5,
-        "share": 0.217
-      },
-      {
-        "label": "Consumer Financial Protection Bureau (CFPB)",
-        "count": 2,
-        "share": 0.087
+        "count": 7,
+        "share": 0.241
       },
       {
         "label": "Federal Trade Commission (FTC)",
-        "count": 2,
-        "share": 0.087
-      },
-      {
-        "label": "National Artificial Intelligence Advisory Committee (NAIAC)",
-        "count": 2,
-        "share": 0.087
+        "count": 6,
+        "share": 0.207
       },
       {
         "label": "Office of Management and Budget (OMB)",
-        "count": 2,
-        "share": 0.087
+        "count": 4,
+        "share": 0.138
       },
       {
-        "label": "AI Standards Coordination Working Group (AISCWG)",
-        "count": 1,
-        "share": 0.043
+        "label": "Consumer Financial Protection Bureau (CFPB)",
+        "count": 3,
+        "share": 0.103
+      },
+      {
+        "label": "Department of Justice (DOJ)",
+        "count": 2,
+        "share": 0.069
       },
       {
         "label": "Food and Drug Administration (FDA)",
-        "count": 1,
-        "share": 0.043
+        "count": 2,
+        "share": 0.069
       },
       {
-        "label": "ICSP AI Standards Coordination Working Group (AISCWG)",
+        "label": "Agency AI Governance Boards",
         "count": 1,
-        "share": 0.043
+        "share": 0.034
       },
       {
-        "label": "Interagency Committee on Standards Policy (ICSP)",
+        "label": "Agency Chief AI Officers (CAIOs)",
         "count": 1,
-        "share": 0.043
+        "share": 0.034
       },
       {
-        "label": "NITRD AI Working Group",
+        "label": "Assistant to the President for Science and Technology (APST)",
         "count": 1,
-        "share": 0.043
+        "share": 0.034
       },
       {
-        "label": "National Science and Technology Council Machine Learning and AI Subcommittee",
+        "label": "Attorney General / Department of Justice",
         "count": 1,
-        "share": 0.043
+        "share": 0.034
+      },
+      {
+        "label": "Attorney General / Department of Justice (AI Litigation Task Force)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Board of Governors of the Federal Reserve System",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Chief AI Officer Council",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Committee on National Security Systems (CNSS)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Department of Agriculture",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Department of Defense (DOD) and Office of the Director of National Intelligence (ODNI)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Department of Homeland Security (DHS) / Cybersecurity and Infrastructure Security Agency (CISA)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Department of Justice Civil Rights Division (DOJ)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Department of Labor (DOL) and Department of the Treasury",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Department of State (DOS)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Department of Transportation",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Equal Employment Opportunity Commission (EEOC)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Executive departments and agencies administering discretionary grant programs",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Farm Credit Administration",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Federal Communications Commission (FCC)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Federal Deposit Insurance Corporation (FDIC)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "General Services Administration (GSA)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Heads of covered Executive Branch departments and agencies (including independent regulatory agencies)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Heads of covered executive departments and agencies (44 U.S.C. § 3502(1))",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Interagency Committee on Standards Policy (ICSP) AI Standards Coordination Working Group (AISCWG)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "National Credit Union Administration (NCUA)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "National Cyber Director",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "National Telecommunications and Information Administration (NTIA)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Office of Science and Technology Policy (OSTP)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Office of the Comptroller of the Currency (OCC)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Secretary of Homeland Security / Cybersecurity and Infrastructure Security Agency (CISA)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Secretary of War / National Security Agency (NSA)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Secretary of the Treasury",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "Senior Agency Officials for Privacy (SAOPs)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "State attorneys general and state regulators",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "U.S. Congress",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "U.S. Congress (recipient of legislative recommendations)",
+        "count": 1,
+        "share": 0.034
+      },
+      {
+        "label": "U.S. Department of Justice / federal prosecutors and federal courts (criminal offenses, forfeiture, and restitution under 47 U.S.C. 223(h) and Title 18)",
+        "count": 1,
+        "share": 0.034
       }
     ],
     "frames": [
       {
+        "label": "innovation_enablement",
+        "score": 9.24,
+        "share": 0.319,
+        "document_mentions": 27
+      },
+      {
         "label": "consumer_public_safety",
-        "score": 10.937,
-        "share": 0.476,
-        "document_mentions": 22
+        "score": 7.19,
+        "share": 0.248,
+        "document_mentions": 27
       },
       {
         "label": "fundamental_rights",
-        "score": 3.701,
-        "share": 0.161,
-        "document_mentions": 12
-      },
-      {
-        "label": "innovation_enablement",
-        "score": 3.517,
-        "share": 0.153,
-        "document_mentions": 12
+        "score": 6.3,
+        "share": 0.217,
+        "document_mentions": 24
       },
       {
         "label": "economic_competitiveness",
-        "score": 1.863,
-        "share": 0.081,
-        "document_mentions": 7
-      },
-      {
-        "label": "social_stability",
-        "score": 1.196,
-        "share": 0.052,
-        "document_mentions": 7
+        "score": 3.46,
+        "share": 0.119,
+        "document_mentions": 24
       },
       {
         "label": "national_security",
-        "score": 1.098,
-        "share": 0.048,
-        "document_mentions": 5
+        "score": 1.71,
+        "share": 0.059,
+        "document_mentions": 17
       },
       {
-        "label": "labor_transition",
-        "score": 0.446,
-        "share": 0.019,
-        "document_mentions": 1
+        "label": "social_stability",
+        "score": 0.59,
+        "share": 0.02,
+        "document_mentions": 17
       },
       {
         "label": "existential_catastrophic",
-        "score": 0.241,
+        "score": 0.3,
         "share": 0.01,
-        "document_mentions": 1
+        "document_mentions": 7
+      },
+      {
+        "label": "labor_transition",
+        "score": 0.21,
+        "share": 0.007,
+        "document_mentions": 4
       }
     ]
   }

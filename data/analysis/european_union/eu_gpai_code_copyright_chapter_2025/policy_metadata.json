@@ -1,32 +1,28 @@
 {
-  "issuing_body": "European Commission / AI Office – Working Group 1 (GPAI Code of Practice)",
+  "issuing_body": "European Commission (AI Office) / General-Purpose AI Code of Practice Working Group 1",
   "document_type": "voluntary_commitment",
   "binding_strength": "voluntary_commitment",
   "publication_date": null,
   "effective_date": null,
   "covered_actors": [
-    "providers of general-purpose AI models",
-    "Signatories",
-    "downstream AI system integrators",
-    "rightsholders",
-    "collective management organisations"
+    "Providers of general-purpose AI models (Signatories)",
+    "Signatories providing or controlling online search engines"
   ],
   "covered_application_domains": [
     "general_purpose_models"
   ],
   "prohibited_practices": [
-    "circumventing effective technological measures (paywalls, subscription models) when web-crawling",
-    "scraping content from websites persistently and repeatedly infringing copyright on a commercial scale",
-    "generating outputs that reproduce copyright-protected training content in an infringing manner",
-    "copyright-infringing uses of a model as prohibited in acceptable use policies"
+    "Circumventing effective technological measures (such as subscription models or paywalls) designed to prevent or restrict unauthorised access when web-crawling for text and data mining and GPAI model training",
+    "Web-crawling websites recognised by EU/EEA courts or public authorities as persistently and repeatedly infringing copyright and related rights on a commercial scale",
+    "Copyright-infringing uses of general-purpose AI models (to be prohibited in Signatories' acceptable use policies, terms and conditions, or open-source model documentation)"
   ],
   "enforcement_authorities": [
     "AI Office",
-    "courts of Member States",
+    "Courts of EU Member States",
     "Court of Justice of the European Union"
   ],
   "compliance_deadlines": [],
-  "penalties_summary": "The Code itself does not impose penalties; non-compliance may give rise to liability under Union law on copyright and related rights. Underlying AI Act obligations (Articles 53 and 55) carry their own enforcement regime. Adherence to the Code does not constitute conclusive evidence of compliance with the AI Act.",
-  "implementation_notes": "This is the Copyright Chapter of the broader GPAI Code of Practice, intended to help Signatories demonstrate compliance with Article 53(1)(c) of the EU AI Act. Adherence is voluntary and does not constitute compliance with Union copyright law per se. Measures are proportionate to provider size, with SME/startup considerations. A dynamic list of copyright-infringing websites will be maintained on an EU website to assist compliance with Measure 1.2.",
-  "confidence": 0.9
+  "penalties_summary": "The Code does not set standalone monetary fines, but states that failure to verify compliance with Member States' implementation of EU copyright law before carrying out copyright-relevant acts may give rise to liability under EU copyright and related rights law, without affecting existing measures, remedies, and sanctions under Union and national law.",
+  "implementation_notes": "Voluntary Code of Practice chapter enabling Signatory providers of general-purpose AI models to demonstrate compliance with Article 53(1)(c) of the EU AI Act (complementary to Article 53(1)(d) training-content summaries). Adherence does not constitute conclusive evidence of AI Act compliance or compliance with EU copyright law (Directives 2001/29/EC, (EU) 2019/790, and 2004/48/EC). Proportionate measures account for provider size, including SMEs and startups. Operational commitments cover maintaining a unified copyright policy, lawful web-crawling (respecting paywalls and excluding piracy-listed sites via a dynamic EU list), honouring robots.txt (IETF RFC 9309) and other machine-readable rights reservations, mitigating copyright-infringing outputs (with tailored documentation rules for free and open-source models), and maintaining a rightsholder point of contact and electronic complaint mechanism.",
+  "confidence": 0.95
 }

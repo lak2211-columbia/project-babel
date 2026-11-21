@@ -5,32 +5,80 @@
     "consumer_public_safety"
   ],
   "frame_confidence": {
-    "existential_catastrophic": 0.02,
-    "national_security": 0.1,
-    "economic_competitiveness": 0.7,
-    "fundamental_rights": 0.05,
-    "social_stability": 0.05,
-    "innovation_enablement": 0.5,
-    "consumer_public_safety": 0.2,
-    "labor_transition": 0.05
+    "existential_catastrophic": 0.0,
+    "national_security": 0.15,
+    "economic_competitiveness": 0.95,
+    "fundamental_rights": 0.25,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.85,
+    "consumer_public_safety": 0.45,
+    "labor_transition": 0.0
   },
-  "rationale_summary": "The document is primarily framed around building China's AI standardization system to drive high-quality industrial development and global competitiveness. The stated goals emphasize seizing the first-mover advantage in AI industry development, expanding market scale, participating in international standards, and enabling new industrialization. Safety and governance standards appear as one component among seven, subordinate to the overarching economic and industrial development framing.",
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.03,
+    "economic_competitiveness": 0.5,
+    "fundamental_rights": 0.05,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.3,
+    "consumer_public_safety": 0.12,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The document's dominant rationale is economic competitiveness: its preamble, industry status analysis, and overarching goals frame AI standardization primarily as a strategic lever to cultivate 'new quality productive forces,' upgrade manufacturing, build China into a manufacturing and digital powerhouse, seize first-mover advantage in the AI industry, and expand global industrial influence. Innovation enablement is a strong secondary frame, as the guide emphasizes innovation-driven linkages between R&D and standards, enterprise adoption, and scenario-based deployment across sectors; however, economic competitiveness edges it out because technological innovation and standard adoption are explicitly subordinated to national industrial upgrading and global market positioning. Consumer and public safety appears as a modest secondary frame through full-lifecycle product, system, and operational safety standards intended to underpin secure industrial development, while fairness and explainability appear only briefly under ethical governance standards.",
   "evidence_spans": [
     {
-      "quote": "以抢抓人工智能产业发展先机为目标",
-      "source_section": "二、总体要求"
+      "quote": "人工智能是引领新一轮科技革命和产业变革的基础性\n和战略性技术，正成为发展新质生产力的重要引擎，加速和\n实体经济深度融合，全面赋能新型工业化，深刻改变工业生\n产模式和经济发展形态，将对加快建设制造强国、网络强国\n和数字中国发挥重要的支撑作用。",
+      "source_section": "Page 1",
+      "quote_en": "Artificial intelligence is a foundational and strategic technology leading a new round of scientific and technological revolution and industrial transformation; it is becoming an important engine for developing new quality productive forces, accelerating deep integration with the real economy, comprehensively empowering new industrialization, profoundly changing industrial production modes and economic development forms, and playing an important supporting role in accelerating the building of a manufacturing powerhouse, cyber powerhouse, and Digital China.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 220,
+      "end_char": 340
     },
     {
-      "quote": "为推动我国人工智能产业高质量发展提供坚实的技术支撑",
-      "source_section": "二、总体要求"
+      "quote": "统筹高质量发展和高水平安全，加快\n赋能新型工业化，以抢抓人工智能产业发展先机为目标，完\n善人工智能标准工作顶层设计，强化全产业链标准工作协\n同，统筹推进标准的研究、制定、实施和国际化，为推动我\n国人工智能产业高质量发展提供坚实的技术支撑。",
+      "source_section": "Page 2",
+      "quote_en": "Coordinate high-quality development and high-level security, accelerate the empowerment of new industrialization, take seizing the first-mover advantage in AI industry development as the goal, improve the top-level design of AI standardization work, strengthen standardization synergy across the entire industrial chain, and coordinate the research, formulation, implementation, and internationalization of standards to provide solid technical support for promoting the high-quality development of China's AI industry.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 679,
+      "end_char": 798
     },
     {
-      "quote": "参与制定国际标准20项以上，促进人工智能产业全球化发展",
-      "source_section": "二、总体要求"
+      "quote": "坚持创新驱动。优化产业科技创新与标准化联动机制，\n加快人工智能领域关键共性技术研究，推动先进适用的科技\n创新成果高效转化成标准。",
+      "source_section": "Page 2",
+      "quote_en": "Adhere to innovation-driven development. Optimize the linkage mechanism between industrial scientific and technological innovation and standardization, accelerate research on key generic technologies in the field of AI, and promote the efficient transformation of advanced and applicable scientific and technological innovation achievements into standards.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 944,
+      "end_char": 1008
     },
     {
-      "quote": "人工智能是引领新一轮科技革命和产业变革的基础性和战略性技术，正成为发展新质生产力的重要引擎",
-      "source_section": "一、产业发展现状"
+      "quote": "开展标准宣贯和实施推广\n的企业超过1000 家，标准服务企业创新发展的成效更加凸\n显。",
+      "source_section": "Page 2",
+      "quote_en": "More than 1,000 enterprises will carry out standard publicity, implementation, and promotion, and the effectiveness of standards in serving the innovative development of enterprises will become more prominent.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 870,
+      "end_char": 913
+    },
+    {
+      "quote": "规范人工智能技术、产品、系统、应用、服\n务等全生命周期的安全要求，包括基础安全，数据、算法和模型\n安全，网络、技术和系统安全，安全管理和服务，安全测试评估，\n安全标注，内容标识，产品和应用安全等标准。",
+      "source_section": "Page 12",
+      "quote_en": "Standardize full-lifecycle safety and security requirements for AI technologies, products, systems, applications, and services, including standards for foundational security, data, algorithm and model security, network, technology and system security, security management and services, safety testing and evaluation, security labeling, content marking, and product and application safety.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 5234,
+      "end_char": 5334
+    },
+    {
+      "quote": "规范\n人工智能全生命周期的伦理治理要求，包括人工智能伦理风险评\n估，人工智能的公平性、可解释性等伦理治理技术要求与评测方\n法，人工智能伦理审查等标准。",
+      "source_section": "Page 12",
+      "quote_en": "Standardize ethical governance requirements across the full lifecycle of AI, including standards for AI ethical risk assessment, technical requirements and evaluation methods for ethical governance such as AI fairness and explainability, and AI ethical review.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5418,
+      "end_char": 5493
     }
   ]
 }

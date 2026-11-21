@@ -491,17 +491,17 @@ const PROSE_TAXONOMY_REGEX = new RegExp(
   `\\b(${Object.keys(PROSE_TAXONOMY_KEYS)
     .sort((a, b) => b.length - a.length)
     .join("|")})\\b`,
-  "g",
+  "gi",
 );
 
 /**
  * Replaces raw snake_case taxonomy identifiers (e.g. `innovation_enablement`,
- * `fundamental_rights`, `consumer_public_safety`) appearing inside rationale or
- * summary prose with clean human-readable labels (Phase 5A QA polish).
+ * `Innovation_enablement`, `fundamental_rights`, `consumer_public_safety`)
+ * appearing inside rationale or summary prose with clean human-readable labels.
  */
 export function humanizeProseTaxonomyKeys(text?: string | null): string {
   if (!text) return "";
   return text.replace(PROSE_TAXONOMY_REGEX, (match) => {
-    return PROSE_TAXONOMY_KEYS[match] ?? match;
+    return PROSE_TAXONOMY_KEYS[match.toLowerCase()] ?? match;
   });
 }

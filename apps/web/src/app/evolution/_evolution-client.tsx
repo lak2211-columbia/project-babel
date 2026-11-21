@@ -133,10 +133,14 @@ export function EvolutionClient({
     metaInfo.fixedMax ?? Math.max(5, Math.ceil((observedMax * 1.15) / 5) * 5);
 
   const sx = (idx: number) =>
-    years.length <= 1
-      ? padL + plotW / 2
-      : padL + (idx / (years.length - 1)) * plotW;
-  const sy = (val: number) => padT + plotH - (Math.min(val, yMax) / yMax) * plotH;
+    Number(
+      (years.length <= 1
+        ? padL + plotW / 2
+        : padL + (idx / (years.length - 1)) * plotW
+      ).toFixed(1),
+    );
+  const sy = (val: number) =>
+    Number((padT + plotH - (Math.min(val, yMax) / yMax) * plotH).toFixed(1));
 
   const yTicks = [0, Math.round(yMax / 2), yMax];
 
@@ -453,8 +457,7 @@ export function EvolutionClient({
                             strokeWidth={1.25}
                           >
                             <title>
-                              {jurisdictionMeta[jKey].name} ({pt.year}):{" "}
-                              {metricValue(pt, metric)} {metaInfo.unit}
+                              {`${jurisdictionMeta[jKey].name} (${pt.year}): ${metricValue(pt, metric)} ${metaInfo.unit}`}
                             </title>
                           </circle>
                         ))}

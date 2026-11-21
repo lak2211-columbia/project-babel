@@ -1,5 +1,5 @@
 {
-  "manifest_version": "2026-04-15",
+  "manifest_version": "2.0",
   "jurisdiction": "south_korea",
   "description": "Official legal, public-sector, privacy, and medical-device sources for South Korea's AI framework and implementation.",
   "source_portals": [
@@ -252,6 +252,79 @@
         }
       ],
       "issuer_type": "regulator"
+    },
+    {
+      "id": "kr_ai_act_helpdesk",
+      "name": "Korea AI Basic Act Support Desk (MSIT / KOSA)",
+      "issuing_body": "Ministry of Science and ICT (MSIT) / Korea Software Industry Association",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.sw.or.kr/AI_act_helpdesk/main.jsp",
+      "portal_kind": "helpdesk",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "ko"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official implementation helpdesk distributing finalized 2026 MSIT AI Basic Act guidelines (Safety Assurance, High-Impact Determination, Transparency, Impact Assessment).",
+      "tags": [
+        "ai_basic_act",
+        "helpdesk",
+        "guidelines"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.sw.or.kr/AI_act_helpdesk/main.jsp",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "인공지능",
+            "가이드라인",
+            "고영향",
+            "안전",
+            "투명성",
+            "영향평가"
+          ],
+          "same_host_only": true,
+          "max_candidates": 25
+        }
+      ]
+    },
+    {
+      "id": "kr_aisi",
+      "name": "Korea AI Safety Institute (AISI)",
+      "issuing_body": "Korea AI Safety Institute",
+      "issuer_type": "standards_body",
+      "canonical_url": "https://www.aisi.re.kr/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "ko",
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Statutory AI safety research and evaluation body designated under Presidential Decree No. 36053 of the AI Basic Act.",
+      "tags": [
+        "aisi",
+        "frontier_safety",
+        "evaluation"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.aisi.re.kr/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "AI",
+            "인공지능",
+            "안전",
+            "평가",
+            "가이드라인",
+            "보고서"
+          ],
+          "same_host_only": true,
+          "max_candidates": 20
+        }
+      ]
     }
   ],
   "seed_documents": [
@@ -291,7 +364,8 @@
         "critical_infrastructure",
         "public_sector_governance"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "kr_ai_basic_act_enforcement_decree",
@@ -307,8 +381,8 @@
       ],
       "browser_wait_for_selector": "#bodyContent",
       "browser_min_text_length": 300,
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
       "publication_date": "2026-01-20",
       "effective_date": "2026-01-22",
       "languages": [
@@ -326,12 +400,14 @@
         "implementation",
         "high_impact_ai"
       ],
-      "source_tier": "regulatory_guidance",
+      "source_tier": "statutory_rule",
       "policy_domains": [
         "frontier_gpai",
         "public_sector_governance"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument",
+      "supersedes_id": "kr_ai_basic_act_enforcement_decree_draft_notice_2025"
     },
     {
       "id": "kr_ai_basic_act_enforcement_decree_draft_notice_2025",
@@ -363,7 +439,8 @@
         "frontier_gpai",
         "public_sector_governance"
       ],
-      "lifecycle_stage": "draft"
+      "lifecycle_stage": "superseded",
+      "corpus_role": "draft_consultation"
     },
     {
       "id": "kr_ai_and_data_administration_act",
@@ -400,7 +477,8 @@
         "public_sector_governance",
         "privacy_data_protection"
       ],
-      "lifecycle_stage": "adopted_not_yet_effective"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "kr_public_sector_hyperscale_ai_guideline_2024",
@@ -433,7 +511,8 @@
         "public_sector_governance",
         "frontier_gpai"
       ],
-      "lifecycle_stage": "superseded"
+      "lifecycle_stage": "superseded",
+      "corpus_role": "historical_baseline"
     },
     {
       "id": "kr_public_sector_hyperscale_ai_guideline_2_0",
@@ -465,7 +544,9 @@
         "public_sector_governance",
         "frontier_gpai"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument",
+      "supersedes_id": "kr_public_sector_hyperscale_ai_guideline_2024"
     },
     {
       "id": "kr_ai_transparency_guideline_2026",
@@ -499,7 +580,8 @@
         "consumer_protection",
         "standards_assurance"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "kr_ai_safety_guideline_2026_draft",
@@ -532,7 +614,8 @@
         "frontier_gpai",
         "standards_assurance"
       ],
-      "lifecycle_stage": "draft"
+      "lifecycle_stage": "draft",
+      "corpus_role": "draft_consultation"
     },
     {
       "id": "kr_high_impact_ai_operator_obligations_guideline_2026",
@@ -566,7 +649,8 @@
         "public_sector_governance",
         "standards_assurance"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "kr_ai_impact_assessment_guideline_2026",
@@ -599,7 +683,8 @@
         "public_sector_governance",
         "privacy_data_protection"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "kr_public_personal_data_ai_guide_2024",
@@ -631,7 +716,8 @@
         "privacy_data_protection",
         "frontier_gpai"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "kr_ai_privacy_risk_management_model_2024",
@@ -665,7 +751,8 @@
         "frontier_gpai",
         "standards_assurance"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "kr_genai_personal_data_guide_2025",
@@ -698,7 +785,8 @@
         "privacy_data_protection",
         "frontier_gpai"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "kr_public_sector_ai_privacy_strengthening_2025",
@@ -724,12 +812,13 @@
         "privacy",
         "generative_ai"
       ],
-      "source_tier": "regulatory_guidance",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "public_sector_governance",
         "privacy_data_protection"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "companion_resource"
     },
     {
       "id": "kr_public_sector_ai_privacy_pia_items_2025",
@@ -757,12 +846,13 @@
         "impact_assessment",
         "generative_ai"
       ],
-      "source_tier": "regulatory_guidance",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "public_sector_governance",
         "privacy_data_protection"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "companion_resource"
     },
     {
       "id": "kr_genai_medical_device_guideline_2025",
@@ -794,7 +884,8 @@
         "healthcare_medical_devices",
         "frontier_gpai"
       ],
-      "lifecycle_stage": "active"
+      "lifecycle_stage": "active",
+      "corpus_role": "primary_instrument"
     }
   ]
 }

@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-babel.com/schemas/jurisdiction-analysis.schema.json",
+  "title": "Project Babel Jurisdiction Analysis",
+  "description": "Deterministic jurisdiction-level synthesis derived from saved document analyses under data/analysis/jurisdictions/<jurisdiction>/jurisdiction_analysis.json and persisted in machine_jurisdiction_analyses.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "jurisdiction",
+    "analysis_method",
+    "analysis_version",
+    "generated_at",
+    "source_count",
+    "source_document_ids",
+    "summary",
+    "governance_posture",
+    "framing_landscape",
+    "implementation_and_enforcement",
+    "source_coverage_note",
+    "key_sources",
+    "top_document_types",
+    "top_binding_strengths",
+    "top_requirements",
+    "top_enforcement_mechanisms",
+    "top_frames",
+    "key_institutions",
+    "confidence"
+  ],
+  "properties": {
+    "jurisdiction": {
+      "type": "string",
+      "enum": [
+        "united_states",
+        "european_union",
+        "south_korea",
+        "japan",
+        "china"
+      ]
+    },
+    "analysis_method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "analysis_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source_document_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]+$"
+      }
+    },
+    "source_window_start": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$"
+    },
+    "source_window_end": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$"
+    },
+    "summary": { "type": "string", "minLength": 1 },
+    "governance_posture": { "type": "string", "minLength": 1 },
+    "framing_landscape": { "type": "string", "minLength": 1 },
+    "implementation_and_enforcement": { "type": "string", "minLength": 1 },
+    "source_coverage_note": { "type": "string", "minLength": 1 },
+    "key_sources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sourceReference" }
+    },
+    "top_document_types": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/labelStat" }
+    },
+    "top_binding_strengths": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/labelStat" }
+    },
+    "top_requirements": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/labelStat" }
+    },
+    "top_enforcement_mechanisms": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/labelStat" }
+    },
+    "top_frames": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/frameStat" }
+    },
+    "key_institutions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    }
+  },
+  "$defs": {
+    "labelStat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "count", "share"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "count": { "type": "integer", "minimum": 0 },
+        "share": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      }
+    },
+    "frameStat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "score", "share", "document_mentions"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "enum": [
+            "existential_catastrophic",
+            "national_security",
+            "economic_competitiveness",
+            "fundamental_rights",
+            "social_stability",
+            "innovation_enablement",
+            "consumer_public_safety",
+            "labor_transition"
+          ]
+        },
+        "score": { "type": "number", "minimum": 0.0 },
+        "share": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "document_mentions": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "sourceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_id", "title", "contribution"],
+      "properties": {
+        "document_id": { "type": "string", "pattern": "^[a-z0-9_-]+$" },
+        "title": { "type": "string", "minLength": 1 },
+        "publication_date": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$"
+        },
+        "document_type": { "type": ["string", "null"] },
+        "binding_strength": { "type": ["string", "null"] },
+        "dominant_frame": { "type": ["string", "null"] },
+        "contribution": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

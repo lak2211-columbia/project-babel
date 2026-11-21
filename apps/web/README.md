@@ -1,254 +1,210 @@
 # `apps/web` — Project Babel dashboard
 
-Next.js 16 (App Router) + React 19 + Tailwind CSS 4 + Geist Mono. Dark, terminal-style analytical dashboard for Project Babel. Server components by default; client islands only where local interactivity pays for itself.
+Next.js 16 (App Router) + React 19 + Tailwind CSS 4 + **Geist Sans** (prose) & **Geist Mono** (numbers, codes, tables). Requires **Node.js ≥ 22.18.0**. Dark, research-grade analytical dashboard for Project Babel. Server Components by default; client islands only where interactive filtering, evidence highlighting, or portal popovers pay for themselves.
 
-For the project overview and the research thesis, see the [root README](../../README.md).
+For the project overview and research thesis, see the [root README](../../README.md).
 
 ---
 
 ## Table of contents
 
-- [Routes](#routes)
-- [Data flow](#data-flow)
-- [Client islands](#client-islands)
-- [Styling and design system](#styling-and-design-system)
-- [The scoring model](#the-scoring-model)
-- [Animations + hover affordances](#animations--hover-affordances)
+- [Routes & Public CORS APIs](#routes--public-cors-apis)
+- [Data flow, DB ordering & ISR caching](#data-flow-db-ordering--isr-caching)
+- [The statistical scoring engine](#the-statistical-scoring-engine)
+- [Client islands, typography & accessibility](#client-islands-typography--accessibility)
+- [Design system (null-calibrated sequential scale)](#design-system-null-calibrated-sequential-scale)
 - [Source file map](#source-file-map)
-- [Local development](#local-development)
+- [Local development & testing](#local-development--testing)
 - [Deployment (Vercel)](#deployment-vercel)
 - [Environment variables](#environment-variables)
 - [Conventions](#conventions)
 
 ---
 
-## Routes
+## Routes & Public CORS APIs
 
-| Path | File | Data source | Purpose |
-|---|---|---|---|
-| `/` | `src/app/page.tsx` | `getOverviewData()` + `getLatestSources(30)` | Masthead, tracking strip, scoring key, framing vocabulary, five country cards, pairwise small-multiples, latest sources (filterable) |
-| `/documents` | `src/app/documents/page.tsx` | `getDocumentListItems()` | Full corpus list with multi-dimension client-side filter (jurisdiction, state, framing, text search) |
-| `/documents/[documentId]` | `src/app/documents/[documentId]/page.tsx` | `getDocumentDetail(id)` + `getOverviewData()` | Single-document view: metadata card, classification, extracted requirements + enforcement, parser notes, jurisdiction context, normalized text |
-| `/jurisdictions/[slug]` | `src/app/jurisdictions/[slug]/page.tsx` | `getOverviewData()` + `getJurisdictionAnalysis(key)` + `getLatestSources(60)` | Country detail page: narrative readout, frame histogram, framing landscape, operational profile (requirements + enforcement + binding strengths + document types), distance-to-peers rail, latest documents filtered to the jurisdiction |
+### Pages
 
-Every page uses `export const dynamic = "force-dynamic"` because data is refreshed on demand via `make persist-db` + `make sync-prod-db` and the pipeline doesn't currently drive an ISR revalidation loop.
-
-## Data flow
-
-```
-                                     ┌──────────────────────────┐
-                                     │  Next.js RSC (server)    │
-Postgres (Neon)  ──── getOverviewData ──→                        │
-                                     │  getLatestSources        │
-                                     │  getDocumentListItems    │
-filesystem       ──── fallback   ──→ │  getDocumentDetail       │
-(data/parsed,                        │  getJurisdictionAnalysis │
- data/analysis)                      └──────────────┬───────────┘
-                                                    │
-seed snapshot    ──── last resort ──→               │
-(lib/seed-data)                                     ▼
-                                     ┌──────────────────────────┐
-                                     │  Server-rendered HTML    │
-                                     │  + small client islands  │
-                                     └──────────────────────────┘
-                                                    │
-                                                    ▼
-                                         • LatestSourcesPanel (client filter)
-                                         • HoverTip (React portal popover)
-                                         • FrameTip / MetricTip
-                                         • DocumentsList (faceted filter)
-```
-
-Three layered fallbacks, chosen in this order:
-
-1. **Database (Neon Postgres).** When `DATABASE_URL` is set and the query succeeds. Canonical source in production.
-2. **Filesystem corpus.** When the DB is missing or unreachable and `OBSERVATORY_STRICT_DATABASE` is not `1`, the app reads the committed parsed and analyzed JSON under `data/parsed/` and `data/analysis/` directly. This is what the repo ships to make local development frictionless.
-3. **Seed snapshot.** When neither the DB nor the filesystem corpus has any documents, the app falls back to a hand-crafted `OverviewData` constant in `src/lib/seed-data.ts` so the UI still renders meaningfully.
-
-Each fetcher in `src/lib/` implements that chain explicitly. The key fetchers:
-
-- **`getOverviewData()`** — `src/lib/overview-data.ts` — composes country snapshots, the pairwise distance matrix, the summary counts, the dataset label, and the queue. Runs `buildOverviewFromRows` over either the DB rows or the filesystem walk.
-- **`getLatestSources(limit)`** — same file — returns the N most recent analyzed documents as `SourceEntry[]`. Has its own degradation chain: DB query → `getDocumentListItems()` fallback (which itself reads the filesystem corpus) → synthetic seed list.
-- **`getDocumentListItems()`** — `src/lib/document-data.ts` — full corpus list for `/documents`.
-- **`getDocumentDetail(id)`** — `src/lib/document-data.ts` — single document (metadata + classification + extraction + sections + parser warnings).
-- **`getJurisdictionAnalysis(key)`** — `src/lib/jurisdiction-analysis.ts` — the precomputed per-country narrative (summary, governance posture, implementation, framing landscape, top-N requirements/enforcement/binding/document-type). Sourced from the `jurisdiction_analyses` table written by the Python aggregator.
-
-The database client wrapper is in `src/lib/db.ts`. It exposes `getDatabaseClient()` (returns a Neon `sql` instance or `null`), `allowLocalFallback()` (false in production or with `OBSERVATORY_STRICT_DATABASE=1`), and `currentDatasetLabel()` (used for the "dataset" chip on the masthead).
-
-## Client islands
-
-Server components are the default. Client islands live in private `_` folders so they don't get routed, and each has a single, well-bounded job:
-
-- **`src/app/_home/hover-tip.tsx`** — the bulletproof hover popover. On mouseenter/focus, reads the trigger element's `getBoundingClientRect()` and mounts the popover content **into `document.body` via a React Portal**, positioned `position: fixed` with an enormous z-index. This deliberately escapes every ancestor stacking context — nothing on the page (transforms, `overflow: hidden`, animations, filters) can clip a hover popover regardless of what the trigger's ancestors do. Includes a 100 ms close delay so the user can move from trigger onto the popover without it vanishing, and closes on scroll/resize to avoid ghost popovers.
-- **`src/app/_home/frame-tip.tsx`** — `FrameTip` and `MetricTip` thin wrappers around `HoverTip` that render the frame-definition or metric-description payloads (header + short + long + `Example` block) with the correct accent color.
-- **`src/app/_home/sources-panel.tsx`** — `LatestSourcesPanel`, the client filter for the home page's `latest_sources` panel. Filter state lives in local React state. URL is synced via `window.history.replaceState` rather than the Next router so chip clicks are instant and don't trigger a server round-trip or scroll reset. Bookmarks to `/?j=japan` etc. still work because the server page reads `searchParams.j` for initial state and passes it to the client component as `initialFilter`.
-- **`src/app/documents/_documents-list.tsx`** — `DocumentsList`, the multi-dimension faceted filter on `/documents`. Four axes: jurisdiction, analysis state, risk framing, free-text title search. Facet counts are recomputed contextually — applying one filter updates the others' counts to show what's still reachable. Same URL-sync pattern via `history.replaceState`.
-
-## Styling and design system
-
-Everything is monospaced and dark. The palette is spare and rule-driven:
-
-| Role | Hex |
-|---|---|
-| Page background | `#0a0f18` |
-| Panel background | `#0f1623` |
-| Popover background | `#05090f` |
-| Default border | `white/10` |
-| Hover border | `white/20` |
-| Hairline rule | `white/5` |
-| Text — strongest | `#e6edf5` |
-| Text — primary | `#cdd6e1` |
-| Text — muted | `#7a8697` |
-| Text — secondary | `#5d6675` |
-| Text — weakest | `#3f4857` |
-
-**Divergence band colors** (used anywhere a divergence score is rendered — country cards, pairwise bars, distance-to-peers, matrix cells, masthead scale bar):
-
-| Band | Score | Color | Label |
-|---|---|---|---|
-| aligned | 0–44 | `#29d391` (green) | *looks like peers* |
-| divergent | 45–64 | `#f5a623` (amber) | *noticeably different* |
-| outlier | 65–100 | `#ff6b6b` (rose) | *outlier in this group* |
-
-`scoreHexDark(score)` / `scoreHexLight(score)` / `scoreBand(score)` in `src/lib/frame-vocab.ts` map any numeric score to the correct color and band label.
-
-**Framing palette.** Each of the eight risk-framing labels has a hand-picked hue used consistently across histograms, chips, popover accent bars, and cell tints. Source of truth is the `frameHue` map in `src/lib/frame-vocab.ts`:
-
-| Code | Label | Hue |
+| Path | File | Purpose |
 |---|---|---|
-| `XRS` | Existential / catastrophic | `#d64b7d` |
-| `SEC` | National security | `#c75146` |
-| `RGT` | Fundamental rights | `#2f6eba` |
-| `ECO` | Economic competitiveness | `#c98a2b` |
-| `INV` | Innovation enablement | `#2f8872` |
-| `SOC` | Social stability | `#7a4ea8` |
-| `SAF` | Consumer / public safety | `#2a8aa5` |
-| `LAB` | Labor transition | `#7f8f2a` |
+| `/` | `src/app/page.tsx` | Comparative overview leading with dynamic empirical decoupling findings, honest provenance banner, `POL` vs. `FRM` country cards (90% bootstrap CIs, `COV L1`, distinctive peer gaps, `cards / table` toggle), interactive 2D **Decoupling Map** (`scatter / table`), ONE clean **5×5 Pairwise Matrix**, longitudinal timeline (`chart / table`), and balanced five-jurisdiction latest sources |
+| `/matrix` | `src/app/matrix/page.tsx` | Interactive **25×5 Obligation & Clause Matrix** (17 requirements + 8 active enforcement mechanisms × 5 jurisdictions, colored by strongest active binding level `L0–L4`, with group/level/search filters and slide-over instrument + bilingual quote drawer) |
+| `/compare` | `src/app/compare/page.tsx` | Head-to-head bilateral diff (`?a=<slug>&b=<slug>&mode=headline\|all`) with dynamic `generateMetadata`, POL breakdown, 8-frame delta butterfly chart, true label-conditioned *"Same Rule, Different Reason"* & *"Same Reason, Different Rule"* diffs (showing `nA`/`nB` and strictly frame-matched quotes) |
+| `/documents` | `src/app/documents/page.tsx` | Responsive corpus explorer with country flags, `corpus_role` & `lifecycle_stage` badges/filters, binding/type/requirement/framing/sort filters, full-text + evidence-quote search, and CSV/JSON/BibTeX export links |
+| `/documents/[documentId]` | `src/app/documents/[documentId]/page.tsx` | Rebuilt evidence reader with sticky left rail, jumpable Section Contents, NFKC/whitespace/PDF-hyphen `<mark>` highlighting, live `verbatim`/`approx`/`unmatched` grounding badges, `#quote-*` deep permalinks, Copy Citation button, authoritative vs. model binding strength, `obligationStrength`, dual-language `quote` + `[MT] quoteEn` (`lang` attrs, zero CJK italics), and precision-aware dates (never `"January 1"` on year-only dates) |
+| `/jurisdictions/[slug]` | `src/app/jurisdictions/[slug]/page.tsx` | Country readout with shared `<TopNav />`, `?mode=headline\|all` toggle, unified scoring-engine shares, longitudinal timeline, distance-to-peers rail, and SQL-filtered source list (SSG + ISR 1h) |
+| `/methodology` | `src/app/methodology/page.tsx` | Transparent Claude Sonnet 4.6 machine-coding disclosure (no human review queue), live `provenanceSummary` & grounding stats, starter gold-set disclosure (`data/eval/gold_set_v1.json`), TVD & Regime Coverage formulas, permutation null calibration, 4-specification sensitivity & Spearman `ρ` grid, 8-frame codebook synced from `label-definitions.json`, API catalog, and copyable versioned BibTeX |
+| `/opengraph-image` | `src/app/opengraph-image.tsx` | Dynamic Open Graph social preview card |
 
-Each frame also has a short definition, a long definition, and an illustrative example (all in `frameDefinition` in the same file). UI copy never invents phrasing — it pulls from the vocab.
+Prototype `/sandbox/*` routes have been removed. Dark-themed `not-found.tsx`, `error.tsx`, `global-error.tsx`, `robots.ts`, and XML-valid `sitemap.ts` (including `/matrix` and all 10 `/compare` pairs) are included.
 
-**Type.** Geist Mono across the whole app. Label type is 10–11 px uppercase with `tracking-[0.08em]` to `tracking-[0.22em]` depending on prominence. Body text is 12–14 px.
+### Public Read-Only CORS APIs & Operations
 
-**Navigation.** Deliberately has no top nav bar. Top-level pages (home, documents) show a two-link inline nav (`overview · documents`) centered above the masthead rule, with the active link highlighted. Detail pages (jurisdictions, documents/[id]) use a left-aligned breadcrumb (`overview / documents / [id]`) that doubles as nav. No duplicated brand link — the masthead on each page *is* the brand.
+All GET APIs emit `Cache-Control: public, s-maxage=300, stale-while-revalidate=60` and `Access-Control-Allow-Origin: *`:
 
-## The scoring model
+| Endpoint | Parameters | Response |
+|---|---|---|
+| `GET /api/overview` | `?mode=headline\|all` *(aliases `weighted\|equal` supported)* | Full `OverviewData` snapshot validated against [`packages/schemas/overview-api.schema.json`](../../packages/schemas/overview-api.schema.json) |
+| `GET /api/matrix` | `?mode=headline\|all` | 25×5 `ObligationMatrixData` validated against [`packages/schemas/matrix-api.schema.json`](../../packages/schemas/matrix-api.schema.json) |
+| `GET /api/jurisdictions` | `?mode=headline\|all` | All five jurisdiction snapshots and peer-distance metrics |
+| `GET /api/jurisdictions/[slug]` | `?mode=headline\|all` | Single jurisdiction snapshot, `pairwise` peer distances, deterministic `analysis`, and latest `documents` |
+| `GET /api/documents` | `?j=&role=&life=&b=&f=&s=&t=&r=&q=` | Filtered corpus index |
+| `GET /api/documents/[documentId]` | — | Single document detail with parsed sections, extracted obligations, 8-frame scores, and bilingual evidence spans |
+| `GET /api/export` | `?format=csv\|json\|bibtex&j=<slug>&mode=headline\|all` | Research exports: CSV with **raw UTF-8 BOM (`0xEF 0xBB 0xBF`)**, canonical taxonomy keys, all 8 `frame_*` scores, `effective_date`, and provenance; JSON; versioned BibTeX separating `datasetVersion` from `latestPublicationDate` |
+| `POST /api/revalidate` | `Authorization: Bearer <secret>` or `x-revalidate-secret` | Constant-time checks `OBSERVATORY_REVALIDATE_SECRET` and purges the `"observatory"` ISR cache tag + layout cache |
 
-The three scores on every country card — POL, FRM, CMP — and the pairwise matrix are computed in-app, not stored in the database. See `src/lib/overview-data.ts` for the full implementation.
+---
+
+## Data flow, DB ordering & ISR caching
 
 ```
-For each jurisdiction J:
-
-  policy_profile(J)   = normalized distribution over the safety_requirement
-                        labels extracted from J's analyzed documents.
-
-  framing_profile(J)  = normalized distribution over the frame_confidence
-                        scores from J's analyzed documents.
-
-Distance between two distributions (total variation / 2, ∈ [0, 1]):
-
-  D(p, q) = (1/2) · sum_over_labels |p(label) − q(label)|
-
-Per-country divergence from peers:
-
-  pol(J) = D(policy_profile(J),  average(policy_profile(K)  for K ≠ J))  × 100
-  frm(J) = D(framing_profile(J), average(framing_profile(K) for K ≠ J))  × 100
-  cmp(J) = 0.6 × pol(J) + 0.4 × frm(J)      rounded
-
-Pairwise matrix entry (i, j):
-
-  M[i][j] = 0.6 × D(policy_profile(i),  policy_profile(j))  × 100
-          + 0.4 × D(framing_profile(i), framing_profile(j)) × 100
+Neon Postgres ──── getOverviewData(mode) ─────┐
+(authoritative     getObligationMatrix(mode)  │
+ in prod;          getLatestSources(opts)     ├──→ Next.js 16 RSC (ISR revalidate = 3600,
+ ORDER BY          getDocumentListItems()     │     cache tag "observatory")
+ updated_at DESC,  getDocumentDetail(id)      │          │
+ id DESC)          getComparisonCorpus()      │          ▼
+                   getJurisdictionAnalysis()  │    HTML + small client islands
+Local corpus  ──── getBilateralComparison()   │    (OverviewDashboard, DecouplingMap,
+(data/parsed +     (when fallback allowed)    │     MatrixClient, EvidenceReader,
+ data/analysis)                               │     DocumentsList, CompareControls,
+                                              │     JurisdictionView, HoverTip)
+Empty prod    ──── explicit "No data loaded" ─┘    (NEVER serves fake seedData under VERCEL_ENV!)
 ```
 
-Supporting functions in `overview-data.ts`:
+- **Production empty-DB refusal (`A1`):** When `process.env.VERCEL_ENV` is set, `allowSeedFallback()` returns `false` — if Neon is empty or `DATABASE_URL` is absent, the app renders an explicit *"No observatory data loaded"* state (`hasData: false`, `buildEmptyOverviewData`) rather than silently serving synthetic `seedData`.
+- **Deterministic latest analysis & schema parity (`A2`, `A5`, `A7`, `A8`):** All DB lateral joins order by `m.updated_at DESC, m.id DESC`; scoring uses authoritative manifest `documents.binding_strength` (migration `005` with graceful `42703` fallback); local & DB paths compute identical unified confidence, precision-aware dates, and honest `taxonomyVersion` (`"1.0-legacy"` when `analysis_metadata` is absent — never stamping `"2.1.0"` on legacy data or using file `mtime`).
+- **Single-batch comparison corpus (`A10`):** `getComparisonCorpus()` loads the corpus once for `/compare` and `/matrix`, eliminating N+1 per-document fetches.
+- **SQL-level jurisdiction filtering:** `getLatestSources({ jurisdiction, limit, perJurisdiction })` filters directly in SQL ordered by official `publication_date DESC` and uses `ROW_NUMBER() OVER (PARTITION BY d.jurisdiction ...)` on `/` so all five jurisdictions (including China) are richly represented.
 
-- `normalizeCounts` — probability-normalize a `Map<string, number>`.
-- `distributionDistance` — total-variation distance between two maps.
-- `buildProfiles` — build the policy_profile and framing_profile maps per jurisdiction from the extracted rows.
-- `divergenceFromPeers` — per-jurisdiction distance to the average of the other four.
-- `buildPairwiseMatrix` — the 5×5 pairwise matrix.
+---
 
-The scoring is **relative to this specific five-jurisdiction group**. Swap any jurisdiction in or out and every score changes. That's by design and documented on the scoring ribbon in the UI itself.
+## The statistical scoring engine
 
-## Animations + hover affordances
+Implemented as a pure, zero-IO module in `src/lib/scoring.ts` (covered by **13 unit test suites** in `src/lib/__tests__/scoring.test.ts`).
 
-CSS keyframes live in `src/app/globals.css`:
+### Scoring modes (`?mode=headline|all`)
 
-- `ago-fade-up` — opacity-only fade-in for panels. **Does not use `transform`** on purpose — transforms create stacking contexts that trap descendant popovers.
-- `ago-bar` — vertical bar grow-in (`scaleY(0) → scaleY(1)`, `transform-origin: bottom`), 550 ms cubic-bezier, used for the country-card histograms. Staggered by `animationDelay: index * 40ms`.
-- `ago-bar-x` — horizontal bar grow-in (`scaleX(0) → scaleX(1)`, `transform-origin: left`), 600 ms cubic-bezier, used for the distance-to-peers bars on the pairwise panels and jurisdiction pages.
-- `ago-pop-in` — popover fade + slight translate, 140 ms.
-- `ago-matrix` — CSS `:has()`-driven row + column highlighting on matrix hover. Pure CSS, no JS.
+- **`headline` (default — Codebook §8.2):** Strictly filters to `corpus_role === "primary_instrument"` AND `lifecycle_stage` in `["active", "adopted_not_yet_effective"]` (currently `n = 62` across the 5 jurisdictions). Documents with missing role or lifecycle are labeled `"Unclassified"` and excluded.
+- **`all`:** Unweighted full-corpus view (`n = 103`), including companion resources, drafts, and historical baselines. Legacy URL query aliases `?mode=weighted` (`→ headline`) and `?mode=equal` (`→ all`) remain supported.
 
-**Hover affordances.** Every interactive element on the page that reveals more detail uses the same primitives:
+### Dual-axis divergence (`POL` vs. `FRM`), Regime Coverage (`COV L1`) & Uncertainty
 
-- A dashed-border → solid-border transition on chips (`MetricChip`, dominant-frame box).
-- A `cursor: help` everywhere a popover lives.
-- A persistent low-opacity `ⓘ` circle (`HoverHint`) that brightens on hover — signals "more info here" at rest, not only on hover.
-- The popover itself (`HoverTip`) renders into `document.body` via React Portal so it's never clipped.
+- **Policy Divergence (`POL`):** Multi-dimensional TVD across `safety_requirements` (`0.45`), `enforcement_mechanisms` (`0.30`, with symmetric `none_specified` handling), and authoritative manifest `binding_strength` (`0.25`, without circular binding-weight multiplication). Exposed via `policyBreakdown: { requirements, enforcement, binding }`.
+- **Framing Divergence (`FRM`):** Prefers explicit `frame_share` when present; on legacy `frame_confidence` vectors, zeroes sub-`0.15` noise values (`frame_mention_floor` from `label-definitions.json`) before normalizing each document to `1.0`. Displayed frame histograms use **Largest Remainder (Hamilton) apportionment** (`hamiltonRound`) summing to exact `100%`.
+- **Regime Coverage Index (`COV L1` / `coverageDivergence`):** Computes each jurisdiction's strongest binding level (`L0–L4`: none / voluntary or strategy / guidance or standard / executive action / binding law) across all 25 requirement and enforcement controls, compared via normalized L1 distance — invariant to adding companion FAQs.
+- **Composite (`CMP`):** Kept secondary to `POL` vs. `FRM` (`CMP = Math.round(0.6 * rawPOL + 0.4 * rawFRM)`).
+- **Seeded bootstrap 90% CIs & permutation null (`B2`):** Uses a deterministic Mulberry32 PRNG for **200 bootstrap resamples** (`policyCI`, `framingCI`, `compositeCI`, `coverageCI`) and **200 label-permutation null draws** (`nullCalibration`, providing distinct single-country vs. pairwise null means and 90th percentiles).
+- **4-specification sensitivity grid (`B10`):** Computes `headline`, `binding_weighted`, `coverage_l1`, and `all` with exact Spearman rank correlation (`ρ`) on `/methodology`.
+- **Confidence transparency (`B9`):** Relabeled *"Model self-reported"* across the UI using canonical thresholds from `label-definitions.json` (`< 0.70` policy / `< 0.60` framing).
+
+---
+
+## Client islands, typography & accessibility
+
+- **Typography (`C6`):** **Geist Sans** (`font-sans`) for readable prose and explanations; **Geist Mono** (`font-mono`) for numbers, taxonomy codes, tables, and formulas; strict **`>= 11px`** font floor across all components.
+- **Interactive 2D Decoupling Map (`src/app/_home/decoupling-map.tsx`):** SVG scatter plotting all 10 country pairs (`X = Policy Distance`, `Y = Framing Distance`, diagonal reference, quadrant labels, click → `/compare`) with an accessible `scatter / table` toggle.
+- **Rebuilt Evidence Reader (`src/app/documents/[documentId]/_evidence-reader.tsx` + `src/lib/quote-matcher.ts`):** Sticky desktop rail, jumpable section Contents, NFKC + whitespace/PDF-hyphenation matching mapped back to exact original offsets (`<mark id="active-evidence-mark">`), live `verbatim` / `approx` / `unmatched` badges, `#quote-*` deep permalinks, Copy Citation button, dual-language `quote` + `[MT] quoteEn` with `lang` attributes and zero CJK italics, and zero unused `normalizedText` sent to the browser.
+- **Accessible Popovers (`src/app/_home/hover-tip.tsx`):** React Portal popover using `useSyncExternalStore` with hover, focus, tap/click toggle, outside-click & `Escape` dismiss, auto-flip, and viewport-safe `maxWidth`.
+- **Accessible Charts & Navigation:** `cards / table`, `scatter / table`, and `chart / table` toggles; `aria-pressed` states; visible `:focus-visible` rings; `@layer base` dark `:root` tokens; `@media (prefers-reduced-motion: reduce)`; `safeExternalUrl()` protocol guard; security headers in `next.config.ts`.
+
+---
+
+## Design system (null-calibrated sequential scale)
+
+Dark terminal palette (`#0a0f18` page, `#0f1623` panels, `#05090f` popovers) verified **WCAG 2.1 AA** (`>= 4.5:1` on 100% of readable text).
+
+Because higher divergence is descriptive rather than morally "bad", divergence bands use a **neutral sequential single-hue scale** calibrated against each mode's permutation null (`src/lib/frame-vocab.ts`):
+
+| Band | Null Threshold | Dark Foreground Hex | Label |
+|---|---|---|---|
+| `within_null` | `< nullMean` | `#94a3b8` (slate) | *within null noise* |
+| `above_null` | `>= nullMean` | `#38bdf8` (sky) | *above random null* |
+| `strong_divergence` | `>= nullP90` | `#67e8f9` (bright cyan) | *above 90th-pct null* |
+
+**Eight-frame palette** (definitions synced verbatim with `data/taxonomies/label-definitions.json`):
+
+| Code | Frame | Bar Hue | Text Hue (AA) |
+|---|---|---|---|
+| `XRS` | Existential & catastrophic risk | `#d64b7d` | `#f27aa5` |
+| `SEC` | National security | `#c75146` | `#f07c70` |
+| `RGT` | Fundamental rights | `#2f6eba` | `#6ea8f0` |
+| `ECO` | Economic competitiveness | `#c98a2b` | `#e6ae49` |
+| `INV` | Innovation enablement | `#2f8872` | `#4cc9a8` |
+| `SOC` | Social stability & public order | `#7a4ea8` | `#b88ef0` |
+| `SAF` | Consumer & public safety | `#2a8aa5` | `#56c2e0` |
+| `LAB` | Labor & workforce transition | `#7f8f2a` | `#b4c94b` |
+
+---
 
 ## Source file map
 
 ```
 apps/web/src/
 ├── app/
-│   ├── layout.tsx                      Fonts, metadata, dark body background.
-│   │                                   No top nav — pages carry their own.
-│   ├── page.tsx                        / — overview (masthead, tracking strip,
-│   │                                   scoring+vocab panels, country cards,
-│   │                                   pairwise small-multiples, sources panel)
-│   ├── globals.css                     Tailwind + custom ago-* keyframes
-│   │
-│   ├── _home/                          Private client islands (not routed)
-│   │   ├── hover-tip.tsx               React Portal popover primitive
-│   │   ├── frame-tip.tsx               FrameTip + MetricTip wrappers
-│   │   └── sources-panel.tsx           Latest sources client filter
-│   │
-│   ├── api/
-│   │   └── overview/                   API route (reserved for future ISR use)
-│   │
+│   ├── layout.tsx, globals.css, page.tsx
+│   ├── error.tsx, global-error.tsx, not-found.tsx
+│   ├── opengraph-image.tsx, robots.ts, sitemap.ts
+│   ├── _components/
+│   │   ├── copy-button.tsx             Citation & BibTeX copy control
+│   │   ├── timeline-chart.tsx          Longitudinal yearly chart (low-n muting + table toggle)
+│   │   └── top-nav.tsx                 Shared top navigation (incl. /matrix)
+│   ├── _home/
+│   │   ├── decoupling-map.tsx          2D Policy vs. Framing scatter + accessible table
+│   │   ├── hover-tip.tsx               Accessible React Portal popover
+│   │   ├── frame-tip.tsx               FrameTip & MetricTip wrappers
+│   │   ├── overview-dashboard.tsx      Findings, mode switcher, cards/table, 5x5 matrix
+│   │   └── sources-panel.tsx           Balanced five-jurisdiction source panel
+│   ├── compare/
+│   │   ├── page.tsx                    /compare — label-conditioned bilateral diff + dynamic metadata
+│   │   └── _compare-controls.tsx
 │   ├── documents/
-│   │   ├── page.tsx                    /documents — corpus list
-│   │   ├── _documents-list.tsx         Multi-dimension client filter
+│   │   ├── page.tsx                    /documents — role/lifecycle/quote corpus browser
+│   │   ├── _documents-list.tsx
 │   │   └── [documentId]/
-│   │       └── page.tsx                /documents/[id] — detail view
-│   │
-│   ├── jurisdictions/
-│   │   └── [slug]/
-│   │       └── page.tsx                /jurisdictions/[slug] — country page
-│   │
-│   └── sandbox/                        Design exploration pages (kept as
-│                                       historical reference; not linked from
-│                                       the live nav). Safe to prune any time.
-│
+│   │       ├── page.tsx                /documents/[id] — detail view
+│   │       └── _evidence-reader.tsx    Sticky rail, NFKC <mark>, permalinks, dual-language quotes
+│   ├── jurisdictions/[slug]/
+│   │   ├── page.tsx                    /jurisdictions/[slug] — SSG + ISR country readout
+│   │   └── _jurisdiction-view.tsx      Unified shares & ?mode=headline|all toggle
+│   ├── matrix/
+│   │   ├── page.tsx                    /matrix — 25x5 Obligation & Clause Matrix
+│   │   └── _matrix-client.tsx          Interactive filters & slide-over evidence drawer
+│   ├── methodology/page.tsx            /methodology — provenance, CIs, null, sensitivity & BibTeX
+│   └── api/
+│       ├── overview/route.ts           GET /api/overview
+│       ├── matrix/route.ts             GET /api/matrix
+│       ├── jurisdictions/route.ts      GET /api/jurisdictions
+│       ├── jurisdictions/[slug]/route.ts
+│       ├── documents/route.ts          GET /api/documents
+│       ├── documents/[documentId]/route.ts
+│       ├── export/route.ts             GET /api/export?format=csv|json|bibtex
+│       └── revalidate/route.ts         POST /api/revalidate
 └── lib/
-    ├── seed-data.ts                    OverviewData shape + types +
-    │                                   deterministic demo data
-    ├── frame-vocab.ts                  frameHue, frameAbbr, frameShort,
-    │                                   frameDefinition, scoreHexDark/Light,
-    │                                   scoreBand
-    ├── jurisdictions.ts                jurisdictionOrder + jurisdictionMeta
-    │                                   (slug, name, shortName, flagUrl)
-    ├── db.ts                           Neon client wrapper +
-    │                                   allowLocalFallback + dataset label
-    ├── overview-data.ts                getOverviewData, getLatestSources,
-    │                                   scoring helpers, filesystem fallback
-    ├── document-data.ts                getDocumentListItems,
-    │                                   getDocumentDetail, filesystem fallback
-    ├── jurisdiction-analysis.ts        getJurisdictionAnalysis,
-    │                                   humanize helpers
-    └── sources-data.ts                 SourceEntry type, synthetic fallback,
-                                        countByJurisdiction
+    ├── scoring.ts                      Pure TVD, COV L1, bootstrap CIs, null & sensitivity engine
+    ├── __tests__/scoring.test.ts       13-suite invariant & label-definitions parity test runner
+    ├── quote-matcher.ts                NFKC + whitespace/PDF-hyphenation exact-offset matcher
+    ├── overview-data.ts                DB/FS overview & balanced latest-sources fetchers
+    ├── matrix-data.ts                  25x5 Obligation Matrix builder
+    ├── compare-data.ts                 Label-conditioned bilateral diff & evidence pairing
+    ├── document-data.ts                Corpus list, single-batch comparison corpus & doc detail
+    ├── jurisdiction-analysis.ts        machine_jurisdiction_analyses loader
+    ├── export-formatters.ts            UTF-8 BOM CSV, JSON & versioned BibTeX serializers
+    ├── frame-vocab.ts                  8-frame hues, definitions & null-calibrated sequential scale
+    ├── taxonomy-vocab.ts               Taxonomy v2.1.0 & label-definitions formatters
+    ├── jurisdictions.ts                Jurisdiction order, slugs, metadata
+    ├── db.ts                           Memoized Neon client, CORS headers & VERCEL_ENV guards
+    ├── seed-data.ts                    OverviewData types, buildEmptyOverviewData & dev seed
+    ├── sources-data.ts                 SourceEntry helpers
+    ├── url-safety.ts                   safeExternalUrl() protocol guard
+    └── use-url-search.ts               SSR-safe query-param hook & RootLayout URL observer
 ```
 
-## Local development
+---
 
-### Prerequisites
+## Local development & testing
 
-- Node.js ≥ 20
-- npm (or pnpm/yarn — scripts are npm-flavored but portable)
-
-### Running against the committed corpus (no DB, no env)
+Requires **Node.js ≥ 22.18.0** (uses native TypeScript stripping for `npm test`).
 
 ```bash
 cd apps/web
@@ -257,73 +213,47 @@ npm run dev
 # → http://localhost:3000
 ```
 
-The web app will discover the parsed/analyzed JSON under `../../data/parsed/` and `../../data/analysis/` and render the full dashboard against it. No `DATABASE_URL` needed.
-
-### Running against a local Postgres
+Verification suite:
 
 ```bash
-# from repo root
-docker compose up -d postgres
-export DATABASE_URL=postgresql://postgres:postgres@localhost:5432/observatory
-make migrate
-make persist-db   # replays data/analysis/*.json into the DB
-
-cd apps/web && npm run dev
-```
-
-### Running against Neon (production-like)
-
-```bash
-# from repo root
-make vercel-pull-preview        # or vercel-pull-prod
 cd apps/web
-npm run dev                     # dev loads .vercel/.env.preview.local automatically
+npm run lint           # ESLint (0 errors, 0 warnings)
+npx tsc --noEmit       # Strict TypeScript check
+npm test               # 13 unit test suites (scoring, parity, quote-matcher, BOM CSV, BibTeX)
+npm run build          # Clean production build (22 routes)
 ```
 
-Set `OBSERVATORY_STRICT_DATABASE=1` locally to force DB-only reads (no filesystem fallback). Useful when you want to confirm the production path is healthy.
-
-## Deployment (Vercel)
-
-Linked Vercel project: `babel-observatory`. Production URL: `https://project-babel.com`.
-
-From the repo root:
+Local production smoke test against the committed `data/` corpus without `DATABASE_URL`:
 
 ```bash
-make vercel-pull-prod           # pulls .vercel/.env.production.local
-make build-prod                 # next build with prod env loaded
-cd apps/web
-npm run deploy:preview          # npx vercel deploy --yes
-npm run deploy:prod             # npx vercel deploy --prod --yes
+OBSERVATORY_ALLOW_LOCAL_FALLBACK=1 npm run start
 ```
-
-Database-side deploy ops also live in the root Makefile:
-
-- `make migrate-prod` — applies SQL migrations against the production `DATABASE_URL`.
-- `make sync-prod-db` — persist + aggregate in one command.
-- `make persist-prod` — replay the filesystem corpus into production.
-
-Set `OBSERVATORY_STRICT_DATABASE=1` on the production Vercel project environment so failed DB reads raise a real error instead of silently falling through to the filesystem or seed data.
-
-## Environment variables
-
-All consumed by `src/lib/db.ts` and downstream fetchers:
-
-| Variable | Required | Purpose |
-|---|---|---|
-| `DATABASE_URL` | Prod only | Neon Postgres connection string. If absent, the app falls back to the filesystem corpus. |
-| `OBSERVATORY_STRICT_DATABASE` | No | `1` = fail the request if a DB read fails. Default `0` allows filesystem fallback. Set to `1` in production. |
-| `VERCEL` / `VERCEL_ENV` | Auto | Vercel sets these. The presence of either enables strict DB behavior. |
-
-`.env.example` at the repo root lists the Anthropic-related variables too — those are only consumed by the pipeline, not the web app.
-
-## Conventions
-
-- **Next.js 16 App Router.** `params` and `searchParams` are `Promise<…>` and must be `await`ed. See `next/dist/docs/` inside `node_modules` for the canonical conventions.
-- **React Server Components are the default.** Client boundaries are explicit (`"use client"`) and live under underscore-prefixed private folders (`_home/`, `_documents-list.tsx`).
-- **No editorial content.** Every label, frame definition, score, and number traces back to the pipeline or the canonical vocab file.
-- **Popovers always use React Portals.** Any hover-revealed content mounts into `document.body`. This is non-negotiable — any time someone adds a new popover by inlining it inside a card, a stacking context somewhere else on the page will eventually trap it.
-- **TypeScript is strict.** Run `npx tsc --noEmit` before committing. `npm run lint` for ESLint.
 
 ---
 
-For the product thesis and research motivation, see the [root README](../../README.md) and [docs/product/brief.md](../../docs/product/brief.md). For the pipeline that feeds this app, see [services/pipeline/README.md](../../services/pipeline/README.md). For the schema the app reads, see [sql/migrations/README.md](../../sql/migrations/README.md).
+## Deployment (Vercel)
+
+Linked Vercel project: `babel-observatory` (`https://project-babel.com`). See [`docs/operations/vercel-launch.md`](../../docs/operations/vercel-launch.md) for the **Pre-Deploy Section 0 Re-Run Checklist**, Neon migration `005` cutover, ISR revalidation, and smoke verification.
+
+---
+
+## Environment variables
+
+| Variable | Required | Purpose |
+|---|---|---|
+| `DATABASE_URL` | Production | Neon Postgres connection string. |
+| `OBSERVATORY_STRICT_DATABASE` | Production (`1`) | Disables local filesystem and seed fallbacks. |
+| `OBSERVATORY_ALLOW_LOCAL_FALLBACK` | Local prod test (`1`) | Explicitly enables reading committed `data/` under `next start` when `DATABASE_URL` is unset. |
+| `OBSERVATORY_REVALIDATE_SECRET` | Production | Authorizes `POST /api/revalidate` cache purges. |
+| `VERCEL` / `VERCEL_ENV` | Auto | Injected by Vercel; enforces strict DB mode and explicit empty state when DB is empty/missing. |
+
+---
+
+## Conventions
+
+- **Next.js 16 App Router:** `params` and `searchParams` are `Promise<...>` and must be `await`ed.
+- **Single source of truth for definitions:** Keep `frame-vocab.ts` and `taxonomy-vocab.ts` synced verbatim with `data/taxonomies/label-definitions.json` (verified in `scoring.test.ts`).
+- **Pure scoring & matching:** Keep `scoring.ts` and `quote-matcher.ts` free of Node/DB imports.
+- **Portal popovers:** Tooltip/definition overlays always render via `HoverTip` into `document.body`.
+
+See [`services/pipeline/README.md`](../../services/pipeline/README.md) and [`packages/schemas/README.md`](../../packages/schemas/README.md).

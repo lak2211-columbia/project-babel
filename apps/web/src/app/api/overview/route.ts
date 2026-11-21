@@ -1,10 +1,10 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-import { getOverviewData } from "@/lib/overview-data";
+import { PUBLIC_API_HEADERS } from "@/lib/db";
+import { getOverviewData, parseScoringMode } from "@/lib/overview-data";
 
-export const dynamic = "force-dynamic";
-
-export async function GET() {
-  const overviewData = await getOverviewData();
-  return NextResponse.json(overviewData);
+export async function GET(request: NextRequest) {
+  const mode = parseScoringMode(request.nextUrl.searchParams.get("mode"));
+  const overviewData = await getOverviewData(mode);
+  return NextResponse.json(overviewData, { headers: PUBLIC_API_HEADERS });
 }

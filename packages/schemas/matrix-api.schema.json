@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-babel.com/schemas/matrix-api.schema.json",
+  "title": "Project Babel Obligation & Clause Matrix API Response",
+  "description": "JSON response contract returned by GET /api/matrix?mode=headline|all exposing the 25x5 Regime Coverage Matrix (17 policy requirements + 8 active enforcement mechanisms across 5 jurisdictions, colored by strongest binding level L0..L4).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mode",
+    "totalInstrumentsInPool",
+    "jurisdictions",
+    "rows"
+  ],
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": ["headline", "all"]
+    },
+    "totalInstrumentsInPool": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "jurisdictions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "key",
+          "slug",
+          "name",
+          "shortName",
+          "flagUrl",
+          "instrumentCount",
+          "bindingControlsCount"
+        ],
+        "properties": {
+          "key": { "$ref": "#/$defs/jurisdictionKey" },
+          "slug": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "shortName": { "type": "string", "minLength": 2, "maxLength": 4 },
+          "flagUrl": { "type": "string", "minLength": 1 },
+          "instrumentCount": { "type": "integer", "minimum": 0 },
+          "bindingControlsCount": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "rows": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/matrixRow" }
+    }
+  },
+  "$defs": {
+    "jurisdictionKey": {
+      "type": "string",
+      "enum": [
+        "united_states",
+        "european_union",
+        "south_korea",
+        "japan",
+        "china"
+      ]
+    },
+    "frameLabel": {
+      "type": "string",
+      "enum": [
+        "existential_catastrophic",
+        "national_security",
+        "fundamental_rights",
+        "economic_competitiveness",
+        "innovation_enablement",
+        "social_stability",
+        "consumer_public_safety",
+        "labor_transition"
+      ]
+    },
+    "evidenceSpan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["quote"],
+      "properties": {
+        "quote": { "type": "string", "minLength": 1 },
+        "sourceSection": { "type": ["string", "null"] },
+        "quoteEn": { "type": ["string", "null"] },
+        "frame": { "type": ["string", "null"] },
+        "groundingStatus": {
+          "type": ["string", "null"],
+          "enum": ["verbatim", "approximate", "not_found", null]
+        },
+        "startChar": { "type": ["integer", "null"], "minimum": 0 },
+        "endChar": { "type": ["integer", "null"], "minimum": 0 }
+      }
+    },
+    "instrumentRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "documentId",
+        "title",
+        "languageCode",
+        "bindingStrength",
+        "bindingStrengthLabel",
+        "bindingLevel",
+        "obligationStrength",
+        "obligationStrengthLabel",
+        "publicationDate",
+        "effectiveDate",
+        "corpusRoleLabel",
+        "lifecycleStageLabel",
+        "dominantFrame",
+        "quotes"
+      ],
+      "properties": {
+        "documentId": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "languageCode": { "type": "string", "minLength": 2 },
+        "bindingStrength": { "type": "string", "minLength": 1 },
+        "bindingStrengthLabel": { "type": "string", "minLength": 1 },
+        "bindingLevel": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "obligationStrength": { "type": ["string", "null"] },
+        "obligationStrengthLabel": { "type": ["string", "null"] },
+        "publicationDate": { "type": "string" },
+        "effectiveDate": { "type": ["string", "null"] },
+        "corpusRoleLabel": { "type": "string", "minLength": 1 },
+        "lifecycleStageLabel": { "type": "string", "minLength": 1 },
+        "dominantFrame": {
+          "anyOf": [{ "$ref": "#/$defs/frameLabel" }, { "type": "null" }]
+        },
+        "quotes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidenceSpan" }
+        }
+      }
+    },
+    "matrixCell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "jurisdictionKey",
+        "jurisdictionSlug",
+        "jurisdictionShort",
+        "strongestLevel",
+        "strongestLevelLabel",
+        "strongestBindingKey",
+        "instrumentCount",
+        "instruments"
+      ],
+      "properties": {
+        "jurisdictionKey": { "$ref": "#/$defs/jurisdictionKey" },
+        "jurisdictionSlug": { "type": "string", "minLength": 1 },
+        "jurisdictionShort": { "type": "string", "minLength": 2, "maxLength": 4 },
+        "strongestLevel": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "strongestLevelLabel": { "type": "string", "minLength": 1 },
+        "strongestBindingKey": { "type": ["string", "null"] },
+        "instrumentCount": { "type": "integer", "minimum": 0 },
+        "instruments": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/instrumentRef" }
+        }
+      }
+    },
+    "matrixRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group",
+        "key",
+        "label",
+        "cells",
+        "maxLevelAcrossPeers",
+        "jurisdictionsImposing"
+      ],
+      "properties": {
+        "group": { "type": "string", "enum": ["requirement", "enforcement"] },
+        "key": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "cells": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "united_states",
+            "european_union",
+            "south_korea",
+            "japan",
+            "china"
+          ],
+          "properties": {
+            "united_states": { "$ref": "#/$defs/matrixCell" },
+            "european_union": { "$ref": "#/$defs/matrixCell" },
+            "south_korea": { "$ref": "#/$defs/matrixCell" },
+            "japan": { "$ref": "#/$defs/matrixCell" },
+            "china": { "$ref": "#/$defs/matrixCell" }
+          }
+        },
+        "maxLevelAcrossPeers": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "jurisdictionsImposing": { "type": "integer", "minimum": 0, "maximum": 5 }
+      }
+    }
+  }
+}

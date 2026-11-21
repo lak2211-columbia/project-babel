@@ -6,16 +6,14 @@ from pathlib import Path
 from observatory.analysis import ANALYSIS_DIR
 from observatory.parser import PARSED_DATA_DIR
 from observatory.source_registry import ROOT, load_all_source_manifests
+from observatory.url_safety import repo_rel_posix
 
 
 RAW_DATA_DIR = ROOT / "data" / "raw"
 
 
 def _display_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT))
-    except ValueError:
-        return str(path)
+    return repo_rel_posix(path, root=ROOT)
 
 
 def _manifest_document_index() -> dict[tuple[str, str], dict]:
@@ -27,6 +25,9 @@ def _manifest_document_index() -> dict[tuple[str, str], dict]:
                 "issuing_body": document.issuing_body,
                 "canonical_url": str(document.canonical_url),
                 "source_url": str(document.canonical_url),
+                "source_tier": document.source_tier,
+                "corpus_role": document.corpus_role,
+                "lifecycle_stage": document.lifecycle_stage,
                 "languages": list(document.languages),
                 "language": document.languages[0],
                 "publication_date": document.publication_date,
@@ -37,7 +38,7 @@ def _manifest_document_index() -> dict[tuple[str, str], dict]:
 
 
 def _write_json(path: Path, payload: dict) -> None:
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 
 
 def sync_source_metadata() -> list[dict[str, str]]:

@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #eef1ee;
-  --foreground: #16201d;
+  --background: #0a0f18;
+  --foreground: #cdd6e1;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -12,31 +13,39 @@
   --font-mono: var(--font-geist-mono);
 }
 
-* {
-  box-sizing: border-box;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--background);
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :is(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: #2f6eba;
+    color: #f4f8fc;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-::selection {
-  background: #b9ded5;
-  color: #16201d;
-}
-
-/* ---------- Sandbox / Terminal animations ---------- */
+/* ---------- Animations ---------- */
 
 @keyframes ago-bar-grow {
   from {
@@ -50,24 +59,11 @@ a {
 }
 
 @keyframes ago-fade-up {
-  /* Opacity-only fade. No transform — transforms create stacking
-     contexts that trap descendant popovers. */
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes ago-pop-in {
-  from {
-    opacity: 0;
-    transform: translateY(-2px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
   }
 }
 
@@ -96,55 +92,29 @@ a {
   animation: ago-fade-up 0.45s ease-out both;
 }
 
-/* CSS-only hover popover */
-.ago-pop-host {
-  /* position: relative without z-index so the host does NOT create a
-     persistent stacking context. The popover inside only needs to be
-     positioned relative to the host. */
-  position: relative;
-}
-.ago-pop-host:hover,
-.ago-pop-host:focus-visible,
-.ago-pop-host:focus-within {
-  /* Only elevate on hover/focus so the stacking context briefly
-     forms and the popover wins against anything else on the page. */
-  z-index: 60;
-}
-.ago-pop {
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(-2px) scale(0.98);
-  transition: opacity 140ms ease-out, transform 140ms ease-out, visibility 140ms;
-  visibility: hidden;
-}
-.ago-pop-host:hover > .ago-pop,
-.ago-pop-host:focus-visible > .ago-pop,
-.ago-pop-host:focus-within > .ago-pop {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  visibility: visible;
-  pointer-events: auto;
+/* Subtle diagonal hatch for sparse low-n timeline bars (B8) */
+.ago-sparse-hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(148, 163, 184, 0.14),
+    rgba(148, 163, 184, 0.14) 3px,
+    transparent 3px,
+    transparent 7px
+  );
 }
 
-/* Matrix row + column hover highlight (CSS :has, supported in all modern browsers) */
-.ago-matrix tbody tr {
-  transition: background-color 150ms ease-out;
-}
-.ago-matrix:has(td[data-col="0"]:hover) td[data-col="0"],
-.ago-matrix:has(td[data-col="1"]:hover) td[data-col="1"],
-.ago-matrix:has(td[data-col="2"]:hover) td[data-col="2"],
-.ago-matrix:has(td[data-col="3"]:hover) td[data-col="3"],
-.ago-matrix:has(td[data-col="4"]:hover) td[data-col="4"] {
-  background: rgba(255, 255, 255, 0.03);
-}
-.ago-matrix tbody tr:has(td:hover) {
-  background: rgba(255, 255, 255, 0.03);
-}
-.ago-matrix tbody tr:has(td:hover) th[data-row-label],
-.ago-matrix:has(td[data-col="0"]:hover) thead th[data-col="0"],
-.ago-matrix:has(td[data-col="1"]:hover) thead th[data-col="1"],
-.ago-matrix:has(td[data-col="2"]:hover) thead th[data-col="2"],
-.ago-matrix:has(td[data-col="3"]:hover) thead th[data-col="3"],
-.ago-matrix:has(td[data-col="4"]:hover) thead th[data-col="4"] {
-  color: #e6edf5;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .ago-bar,
+  .ago-bar-x,
+  .ago-fade-up {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
 }

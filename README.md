@@ -1,137 +1,71 @@
 # Project Babel
 
-**An observatory for AI governance. Measuring how five governments differ on what they require of AI — and why they say those rules are necessary.**
+**An open, reproducible observatory for comparative AI governance. Measuring how five governments differ on *what* they require of AI — and *why* they say those rules are necessary.**
+
+Live observatory: **[project-babel.com](https://project-babel.com)**
 
 ---
 
 ## What this is
 
-Project Babel is a research observatory that tracks how the United States, the European Union, South Korea, Japan, and China govern artificial intelligence. It reads official government documents — legislation, executive directives, regulatory guidance, strategy papers, voluntary commitments — and turns each one into two structured things: the *rules* it imposes, and the *reasons* it gives for imposing them.
+Project Babel tracks how the **United States, European Union, South Korea, Japan, and China** govern artificial intelligence using primary official government documents — legislation, executive orders, regulatory guidance, technical standards, national strategies, and voluntary commitments.
 
-The rules and the reasons are then compared across all five jurisdictions to produce a **relative** divergence score for each country: how far its approach sits from the group average on two axes, and how different each pair of countries is from each other. None of this is a ranking against an external ideal. The numbers measure distance between peers, not quality or correctness.
+Every document is converted into two independent, quote-grounded structures governed by **Taxonomy v2.1.0** (`data/taxonomies/observatory-taxonomy.json`) and a single canonical definitions registry (`data/taxonomies/label-definitions.json`):
 
-If the goal is to answer *"which governments are quietly converging, and which are drifting apart?"* without relying on an editorial take, Project Babel is an attempt to build the apparatus that answers it with data.
+1. **Policy structure (*what is required*)** — concrete safety requirements (17 labels spanning risk assessments, red-teaming, agentic autonomy controls, frontier safety evaluations, training data governance, content provenance, and domestic representatives, each with optional deontic `obligation_strength`: `mandatory` | `conditional` | `recommended` | `aspirational`), enforcement mechanisms (9 labels), and authoritative manifest legal binding strength (`binding_law` through `strategy_statement`).
+2. **Risk framing (*why it is required*)** — stated rationales scored across a fixed **eight-label framing vocabulary**: existential/catastrophic risk, national security, fundamental rights, economic competitiveness, innovation enablement, social stability & public order, consumer & public safety, and labor & workforce transition.
 
-## Why this exists
+Comparing both axes across all five jurisdictions produces **relative, null-calibrated peer-distance scores with bootstrap 90% confidence intervals** — never editorial letter grades or normative rankings.
 
-AI governance has moved from speeches to enforceable instruments in the space of two or three years. Two problems follow from that speed:
+## Why Policy–Framing Decoupling matters
 
-1. **Apparent coordination may be illusory.** Two countries can sign the same international communiqué and still regulate AI for completely different reasons — one for national security, one for individual rights. When the framing drifts, the rules eventually drift with it.
-2. **Apparent fragmentation may be temporary.** Two countries can look unaligned at first glance while converging on a shared set of concrete requirements (risk assessments, red-teaming, transparency duties). If the *reasoning* behind those rules is similar, the fragmentation may resolve on its own.
+Traditional trackers catalog either *which laws exist* or *subjective corporate safety grades*. Project Babel isolates the gap between rules and rationales:
 
-Neither pattern shows up in summary-level reporting. You need to read the documents, extract what they actually require, classify what they actually say about risk, and then do the math. Project Babel does all three, reproducibly, for as many official documents as can be found and verified.
+1. **Same rule, different reason (fragile alignment):** Two governments can converge on identical technical controls — e.g., AI agent identity/permission controls or synthetic-media watermarking — while justifying them through incompatible rationales (national security vs. social stability vs. fundamental rights). When underlying rationales diverge, technical convergence sits on unstable ground.
+2. **Same reason, different rule (convergence candidates):** Two governments that justify AI governance through compatible framings while differing on current statutory teeth are stronger candidates for durable future alignment.
 
-## The two questions
+The dashboard leads with **POL vs. FRM** decoupling findings, an interactive **2D Decoupling Map**, a **5×5 Pairwise Matrix**, a **25×5 Obligation & Clause Matrix** (`/matrix`), and label-conditioned bilateral diffs (`/compare`) traceable down to verified verbatim source quotes.
 
-Every document in the corpus is coded against two independent dimensions:
+## How the scoring works
 
-1. **What is required?** — concrete safeguards and enforcement mechanisms named in the text (risk assessment, red-teaming, incident reporting, transparency disclosure, registration, procurement control, civil penalty, licensing, etc.). This is the **policy** dimension.
-2. **Why is it required?** — the stated rationale the document offers for its rules, classified against a fixed eight-label vocabulary: national security, fundamental rights, economic competitiveness, innovation enablement, social stability, consumer/public safety, existential/catastrophic, and labor transition. This is the **framing** dimension.
+Each jurisdiction receives dual-axis peer-distance metrics alongside a regime-level binding coverage index:
 
-Every number the dashboard shows is derived from those two extractions and nothing else. There is no editorial scoring, no expert-panel weighting, no external benchmark. Just structured extraction and distance math over the distributions of what governments require and what reasons they give.
-
-## How the scoring works (in plain language)
-
-Each country gets three scores: **policy divergence (POL)**, **framing divergence (FRM)**, and a **composite (CMP)**.
-
-Each score asks one question: *how much does this country stand out from the other four?*
-
-- **0** means the country's pattern matches its peers almost exactly.
-- **100** means nothing in common with the rest of the group.
-- Composite is the headline number — a weighted blend of policy (0.6) and framing (0.4).
-
-There are three visual bands:
-
-- **0–44** — looks like peers (green)
-- **45–64** — noticeably different (amber)
-- **65–100** — an outlier in this group (rose)
-
-The math is total-variation distance between each country's extracted distributions and the average of the other four. Swap any jurisdiction in or out of the group and the numbers change — by design. Nothing here is an absolute judgment about any country's AI regulation. It's a group portrait of comparative distance.
+- **Policy Divergence (`POL`)** — weighted multi-dimensional Total Variation Distance (TVD) across per-document normalized `safety_requirements` (`0.45`), `enforcement_mechanisms` (`0.30`), and authoritative manifest `binding_strength` (`0.25`), exposed via `policyBreakdown`.
+- **Framing Divergence (`FRM`)** — TVD across the eight-frame distribution (using explicit `frame_share` when present, or zeroing sub-`0.15` noise before normalizing per-document `frame_confidence` to `1.0`), displayed with Largest Remainder (Hamilton) rounding summing to exact `100%`.
+- **Regime Coverage Index (`COV L1`)** — normalized L1 distance across each jurisdiction's strongest active binding level (`L0–L4`) for all 25 requirement and enforcement controls, invariant to companion FAQ volume.
+- **Composite (`CMP`)** — secondary blend `round(0.6 × rawPOL + 0.4 × rawFRM)` with zero post-hoc min-max stretching.
+- **Uncertainty & Null Calibration:** Deterministic 200-resample bootstrap **90% confidence intervals** (`[low, high]`) per jurisdiction plus a **200-draw label-permutation null baseline** calibrating a neutral sequential single-hue visual scale (*within null noise* → *above random null* → *above 90th-pct null*).
+- **Transparent scoring modes (`?mode=headline|all`):**
+  - **`headline` (default — Codebook §8.2):** Strictly filters to `active` or `adopted_not_yet_effective` `primary_instrument`s (`n = 62`), excluding companion resources, drafts, superseded texts, and unclassified rows.
+  - **`all`:** Equally weights the full analyzed corpus (`n = 103`), paired with a 4-specification sensitivity & Spearman `ρ` grid on `/methodology`.
 
 ## Who this is for
 
-- **Policy researchers** who need a reproducible snapshot of cross-jurisdictional AI governance for longitudinal work.
-- **Standards and safety teams** trying to understand which concrete requirements are converging and which aren't.
-- **Journalists and think-tank analysts** who need a structured view of five governments' posture without hand-coding hundreds of documents themselves.
-- **Anyone building on the AI Act, the Executive Orders, the Korean AI Basic Act, the Hiroshima AI Process, or China's generative-AI measures** who needs to place their work in the comparative context.
+- **Policy researchers & political scientists** studying comparative regulation, longitudinal institutional drift, and policy–framing decoupling
+- **AI safety & standards teams** auditing which jurisdictions impose binding rules across 25 concrete controls (`/matrix`)
+- **Journalists & think-tank analysts** needing label-conditioned bilateral comparisons (`/compare`), dual-language original + machine-translated evidence quotes, and UTF-8 BOM CSV / JSON / versioned BibTeX exports
+- **Builders & compliance teams** contextualizing the EU AI Act & Digital Omnibus, US Executive Orders & NIST CAISI frameworks, South Korea's AI Basic Act, Japan's AI Promotion Act & Basic Plans, and China's CAC measures & TC260 frameworks
 
-Everything the platform shows is traceable back to the original government source. Clicking any document in the dashboard takes you to its extracted policy structure, its framing analysis, and the normalized text itself.
+## Scope, corpus & provenance honesty
 
-## Scope
+- **Tracked sovereign jurisdictions (5):** United States, European Union, South Korea, Japan, China. *(Major US state statutes — e.g., CA SB 53/AB 2013, CO SB 26-189, TX TRAIGA, NY RAISE — are tracked explicitly as sub-national context rather than mixed silently into federal sovereign scores.)*
+- **Curated corpus:** **103** verified, deduplicated official documents (**62** active/adopted primary instruments) across **52** official portals, plus a curated **19-target late-2026 expansion queue** (`data/source_tracking/late_2026_priority_targets.json`) and a 5-document multilingual starter gold-set benchmark (`data/eval/gold_set_v1.json`, `starter_v0.1_internal`).
+- **Pre-deploy provenance note:** The committed `data/analysis/` files on disk are legacy April 2026 analyses (`taxonomyVersion: "1.0-legacy"`) preserved until the full Parser `0.3.0` + Taxonomy `2.1.0` re-run is executed with `ANTHROPIC_API_KEY`. The pipeline (`LegacyProvenanceError`) and UI (`provenanceSummary`) surface this explicitly and never fabricate v2 provenance on legacy files; see [`docs/operations/vercel-launch.md`](docs/operations/vercel-launch.md) for the exact pre-deploy re-run checklist.
 
-**Currently tracked jurisdictions (five):**
+## Architecture & repository map
 
-- United States — federal legislation, executive orders, NIST guidance, congressional mandates, agency rulemaking
-- European Union — the AI Act, GPAI code of practice, Commission guidelines, standardisation work, the AI Pact
-- South Korea — the AI Basic Act and enforcement decrees, MOGAHA/KISDI guidelines, industrial strategy papers
-- Japan — METI guidance, Cabinet Office strategy, Hiroshima AI Process code, expert-panel reports
-- China — CAC generative-AI measures, algorithmic recommendation rules, national AI supervision regulations
-
-**Document classes in scope:**
-
-- Enacted legislation
-- Executive orders and presidential/cabinet directives
-- National AI strategies
-- Regulatory guidance (binding and advisory)
-- Standards and voluntary commitments
-
-**Document classes out of scope:**
-
-- Think-tank white papers, op-eds, academic literature
-- Industry self-regulation outside of voluntary government-adjacent commitments
-- Non-AI-specific regulation that happens to touch AI (e.g., general data protection law)
-
-## What's in this repository
-
-Project Babel is a **single repository with three independently-runnable layers**:
-
-1. **Pipeline** (`services/pipeline/`) — a Python CLI that discovers, fetches, parses, and analyzes official documents using Claude Sonnet 4.6 with structured outputs, then writes results to Postgres.
-2. **Database** (`sql/migrations/`) — Postgres schema deployed on Neon, storing documents, machine analyses, extracted policy requirements, enforcement mechanisms, and per-frame confidence scores.
-3. **Web app** (`apps/web/`) — a Next.js 16 analytical dashboard that reads from the database (with filesystem and seed fallbacks) and renders the comparative view, the per-country pages, the corpus browser, and the document detail views.
-
-Each layer has its own README with the technical detail:
-
-| Layer | Path | README |
+| Layer | Path | Documentation |
 |---|---|---|
-| **Web app** — dashboard UI, routes, data fetching | `apps/web/` | [apps/web/README.md](apps/web/README.md) |
-| **Pipeline** — Python ingestion + analysis CLI | `services/pipeline/` | [services/pipeline/README.md](services/pipeline/README.md) |
-| **Database** — schema + migrations | `sql/migrations/` | [sql/migrations/README.md](sql/migrations/README.md) |
-| **Data** — raw/parsed/analyzed corpus | `data/` | [data/README.md](data/README.md) |
-| **Docs** — product brief, architecture, codebook, ops | `docs/` | [docs/README.md](docs/README.md) |
-
-## Repository map
-
-```
-.
-├── README.md                  ← this file
-├── AGENTS.md                  contributor conventions
-├── Makefile                   one-liner wrappers for pipeline + deploy ops
-├── docker-compose.yml         local Postgres for offline dev
-├── .env.example               expected environment variables
-│
-├── apps/web/                  Next.js dashboard (see apps/web/README.md)
-├── services/pipeline/         Python ingestion pipeline (see services/pipeline/README.md)
-├── sql/migrations/            Postgres schema (see sql/migrations/README.md)
-├── data/                      Raw, parsed, and analyzed corpus (see data/README.md)
-├── docs/                      Product + research + ops docs (see docs/README.md)
-├── packages/schemas/          Shared JSON schemas between pipeline and UI
-├── prompts/                   Anthropic prompt assets for extraction and framing
-└── scripts/                   bootstrap + Vercel env helpers
-```
-
-## Methodology principles
-
-The project holds itself to a few deliberate constraints:
-
-- **Every claim in the UI traces back to a source document.** There is no hand-edited narrative sitting on top of the data. Frame definitions, requirement labels, rationale text — all derived from the extraction pipeline and a single vocabulary file (`apps/web/src/lib/frame-vocab.ts`).
-- **Scoring is relative, not absolute.** Comparison across five jurisdictions. Distance from peers, not distance from an ideal. No rankings, no stars, no traffic-light quality judgments.
-- **LLM-only extraction.** Every analysis in production is produced by Claude Sonnet 4.6 with structured outputs. There is no human-review layer; every machine analysis is considered authoritative for downstream aggregation. This is a deliberate choice — see `docs/operations/` for rationale.
-- **Reproducible from scratch.** Clone, bootstrap, `make fetch && make parse && make analyze && make persist-db`, and you recover the same corpus and the same scores (allowing for upstream document revisions the next time `make refresh` runs).
-- **Fallbacks are layered, not alternative paths.** Database → filesystem corpus → baked-in seed data. The dashboard always renders something truthful, even when a layer is missing or unreachable.
+| **Web app** — Next.js 16 (Node 22+) dashboard, statistical engine, `/matrix`, `/compare`, `/methodology`, CORS APIs & UTF-8 BOM CSV/JSON/BibTeX exports | `apps/web/` | [`apps/web/README.md`](apps/web/README.md) |
+| **Pipeline** — Python 3.11 discovery, SSRF-hardened HTTP/Playwright retrieval, Parser `0.3.0` offline parsing, Claude Sonnet 4.6 token-aware chunked analysis, NFKC grounding & gold-set eval | `services/pipeline/` | [`services/pipeline/README.md`](services/pipeline/README.md) |
+| **Database** — Neon Postgres migrations `001`–`005` (`documents` + authoritative `binding_strength`, longitudinal `document_snapshots`, indexed `machine_*` tables, `machine_jurisdiction_analyses`) | `sql/migrations/` | [`sql/migrations/README.md`](sql/migrations/README.md) |
+| **Shared schemas** — CI-enforced Draft 2020-12 JSON Schemas (`validate-artifacts`) across taxonomy, label definitions, manifests, analyses, `/api/overview`, and `/api/matrix` | `packages/schemas/` | [`packages/schemas/README.md`](packages/schemas/README.md) |
+| **Data corpus** — Taxonomy v2.1.0, `label-definitions.json`, manifests, starter gold set, raw/parsed/analyzed artifacts, recovery & expansion queues | `data/` | [`data/README.md`](data/README.md) |
+| **Documentation** — Product brief, architecture, Codebook v2.1.0, operational runbooks | `docs/` | [`docs/README.md`](docs/README.md) |
 
 ## Getting started
 
-If you want to run the web app locally against the repo's committed corpus, without setting up a database:
+Run the dashboard locally against the committed `data/` corpus without Postgres (requires **Node.js ≥ 22.18.0**):
 
 ```bash
 cd apps/web
@@ -140,28 +74,22 @@ npm run dev
 # → http://localhost:3000
 ```
 
-That's the minimum path. The web app will find the parsed/analyzed documents in `data/` and render the dashboard against them.
+Run pipeline validation, schema checks, gold-set evaluation, and tests (POSIX or Windows):
 
-If you want to run the full ingestion + analysis pipeline, see [services/pipeline/README.md](services/pipeline/README.md). If you want to deploy or work against a real database, see [apps/web/README.md](apps/web/README.md) and [sql/migrations/README.md](sql/migrations/README.md).
+```bash
+# POSIX
+./scripts/bootstrap.sh && make taxonomy && make sources && make validate-artifacts && make test
 
-## Status
-
-Five jurisdictions, ~120 analyzed documents at the time of writing, one snapshot refreshed on demand via `make refresh`. The corpus grows when new official publications are discovered and promoted from `data/source_tracking/`. The source registry is hand-curated; discovery runs find candidates, enrichment resolves metadata, and a promotion step moves high-signal candidates into the tracked manifest.
-
-Live production: Neon Postgres + Vercel (Next.js 16).
-
-## Project documentation
-
-- **Product thesis + MVP scope** — [docs/product/brief.md](docs/product/brief.md)
-- **Architecture overview** — [docs/architecture.md](docs/architecture.md)
-- **Research codebook** — [docs/research/codebook.md](docs/research/codebook.md) (label vocabulary, framing rules, confidence guidance)
-- **Operations** — [docs/operations/](docs/operations/) (database, source inventory, blocked-source playbook, roadmap)
-- **Decision records** — [docs/adr/](docs/adr/)
+# Windows (PowerShell)
+powershell -ExecutionPolicy Bypass -File scripts/bootstrap.ps1
+$env:PYTHONPATH="services/pipeline/src"
+services\pipeline\.venv\Scripts\python.exe -m observatory.cli validate-taxonomy
+services\pipeline\.venv\Scripts\python.exe -m observatory.cli validate-sources
+services\pipeline\.venv\Scripts\python.exe -m observatory.cli validate-artifacts
+services\pipeline\.venv\Scripts\python.exe -m observatory.cli evaluate-gold-set data/eval/gold_set_v1.json
+services\pipeline\.venv\Scripts\python.exe -m pytest -c services/pipeline/pyproject.toml services/pipeline/tests
+```
 
 ## License and attribution
 
-Code in this repository is published as an open research project. The raw government documents under `data/raw/` are copies of public government publications retained for pipeline reproducibility — each retrieval log records the canonical URL, and the authoritative source is always the issuing government. See [data/README.md](data/README.md) for per-jurisdiction licensing notes.
-
----
-
-*Project Babel is an ongoing research effort, not a finished product. The scope, the scoring, and the framing vocabulary will keep evolving as more documents are added and as the underlying pipeline is refined.*
+Code in this repository is published as an open research project. Raw government documents under `data/raw/` are retained copies of official public publications for reproducibility — each retrieval log records the canonical URL, and the authoritative source is always the issuing government. See [`data/README.md`](data/README.md) for per-jurisdiction licensing notes.

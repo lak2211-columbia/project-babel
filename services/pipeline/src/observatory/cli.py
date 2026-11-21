@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
 from observatory.analysis import (
     analyze_jurisdictions,
     analyze_parsed_documents,
+    check_corpus_grounding,
+    evaluate_gold_set,
+    export_json_schemas,
     persist_analysis_artifacts,
 )
 from observatory.audit import write_source_quality_audit
@@ -16,23 +20,35 @@ from observatory.expansion import write_source_expansion_plan
 from observatory.freshness import run_source_refresh
 from observatory.metadata_sync import sync_source_metadata
 from observatory.parser import parse_raw_documents
-from observatory.source_promotion import enrich_source_candidates, promote_source_families
 from observatory.retrieval import fetch_seed_documents, import_local_seed_document
+from observatory.schema_validation import validate_repository_artifacts
+from observatory.source_promotion import enrich_source_candidates, promote_source_families
 from observatory.source_registry import (
     load_all_source_manifests,
     summarize_source_manifests,
     validate_source_manifests,
 )
-from observatory.taxonomy import validate_taxonomy
+from observatory.taxonomy import get_canonical_thresholds, validate_taxonomy
 
 
-def app() -> None:
-    if len(sys.argv) < 2:
-        raise SystemExit(
-            "usage: observatory <validate-taxonomy|validate-sources|summarize-sources|report-source-coverage|report-source-expansion-plan|report-source-quality-audit|sync-source-metadata|discover-source-candidates|enrich-source-candidates|promote-source-families|fetch-seed-documents|refresh-sources|import-local-document|parse-raw-documents|analyze-documents|analyze-jurisdictions|persist-analysis-artifacts|migrate-db|sync-db-to-source-manifests>"
-        )
+USAGE = (
+    "usage: observatory <validate-taxonomy|validate-sources|validate-artifacts|summarize-sources|"
+    "report-source-coverage|report-source-expansion-plan|report-source-quality-audit|"
+    "sync-source-metadata|discover-source-candidates|enrich-source-candidates|"
+    "promote-source-families|fetch-seed-documents|refresh-sources|import-local-document|"
+    "parse-raw-documents|analyze-documents|analyze-jurisdictions|persist-analysis-artifacts|"
+    "check-grounding|export-schemas|evaluate-gold-set|migrate-db|sync-db-to-source-manifests>"
+)
 
-    command = sys.argv[1]
+
+def app(argv: list[str] | None = None) -> None:
+    args = sys.argv[1:] if argv is None else argv
+    if not args:
+        raise SystemExit(USAGE)
+
+    command = args[0]
+    rest = args[1:]
+
     if command == "validate-taxonomy":
         validate_taxonomy()
         print("taxonomy ok")
@@ -40,6 +56,27 @@ def app() -> None:
     if command == "validate-sources":
         validate_source_manifests()
         print("sources ok")
+        return
+    if command == "validate-artifacts":
+        as_json = False
+        for argument in rest:
+            if argument == "--json":
+                as_json = True
+                continue
+            raise SystemExit(f"unknown validate-artifacts option: {argument}")
+        report = validate_repository_artifacts()
+        if as_json:
+            print(json.dumps(report, indent=2, ensure_ascii=False))
+        else:
+            for check in report["checks"]:
+                print(f"{check['schema']}: validated={check['count']} errors={check['errors']}")
+            if report["error_count"] == 0:
+                print(f"artifacts ok ({report['validated_count']} validated)")
+            else:
+                for err in report["errors"][:25]:
+                    print(f"  ERROR {err['artifact']} ({err['schema']} {err['path']}): {err['message']}")
+        if report["error_count"] > 0:
+            raise SystemExit(f"artifact schema validation failed with {report['error_count']} errors")
         return
     if command == "summarize-sources":
         manifests = load_all_source_manifests()
@@ -97,7 +134,7 @@ def app() -> None:
         use_browser = False
         limit = 5
         recommendations: set[str] = {"promote_now", "inspect_next"}
-        for argument in sys.argv[2:]:
+        for argument in rest:
             if argument == "--refresh":
                 refresh = True
                 continue
@@ -142,12 +179,12 @@ def app() -> None:
             print(f"{result['jurisdiction']}: {result['portal_id']} -> {result['status']}{suffix}")
         return
     if command == "promote-source-families":
-        jurisdiction: str | None = None
-        portal_id: str | None = None
+        jurisdiction = None
+        portal_id = None
         use_browser = False
         limit = 10
-        recommendations: set[str] = {"promote_now"}
-        for argument in sys.argv[2:]:
+        recommendations = {"promote_now"}
+        for argument in rest:
             if argument == "--with-browser":
                 use_browser = True
                 continue
@@ -191,16 +228,20 @@ def app() -> None:
             print(f"{result['jurisdiction']}: {result['portal_id']} -> {result['status']}{suffix}")
         return
     if command == "fetch-seed-documents":
-        jurisdiction: str | None = None
+        jurisdiction = None
         refresh = False
         max_attempts = 3
         use_browser = False
-        for argument in sys.argv[2:]:
+        fetch_companions = False
+        for argument in rest:
             if argument == "--refresh":
                 refresh = True
                 continue
             if argument == "--with-browser":
                 use_browser = True
+                continue
+            if argument == "--with-companions":
+                fetch_companions = True
                 continue
             if argument.startswith("--max-attempts="):
                 try:
@@ -212,7 +253,7 @@ def app() -> None:
                 raise SystemExit(f"unknown fetch-seed-documents option: {argument}")
             if jurisdiction is not None:
                 raise SystemExit(
-                    "usage: observatory fetch-seed-documents [jurisdiction] [--refresh] [--with-browser] [--max-attempts=N]"
+                    "usage: observatory fetch-seed-documents [jurisdiction] [--refresh] [--with-browser] [--with-companions] [--max-attempts=N]"
                 )
             jurisdiction = argument
 
@@ -221,6 +262,7 @@ def app() -> None:
             refresh=refresh,
             max_attempts=max_attempts,
             use_browser=use_browser,
+            fetch_companions=fetch_companions,
         )
         for result in results:
             suffix_parts = []
@@ -232,31 +274,34 @@ def app() -> None:
                 suffix_parts.append(f"attempts={result['attempts']}")
             if "error" in result:
                 suffix_parts.append(f"error={result['error']}")
-            suffix = ""
-            if suffix_parts:
-                suffix = " (" + ", ".join(suffix_parts) + ")"
+            suffix = f" ({', '.join(suffix_parts)})" if suffix_parts else ""
             print(f"{result['jurisdiction']}: {result['document_id']} -> {result['status']}{suffix}")
         return
     if command == "analyze-jurisdictions":
-        jurisdiction = sys.argv[2] if len(sys.argv) > 2 else None
-        refresh = "--refresh" in sys.argv[2:]
-        positional = [argument for argument in sys.argv[2:] if not argument.startswith("--")]
-        if len(positional) > 1:
-            raise SystemExit("usage: observatory analyze-jurisdictions [jurisdiction] [--refresh]")
-        jurisdiction = positional[0] if positional else None
+        jurisdiction = None
+        refresh = False
+        for argument in rest:
+            if argument in {"--refresh", "--refresh-existing"}:
+                refresh = True
+                continue
+            if argument.startswith("--"):
+                raise SystemExit(f"unknown analyze-jurisdictions option: {argument}")
+            if jurisdiction is not None:
+                raise SystemExit("usage: observatory analyze-jurisdictions [jurisdiction] [--refresh|--refresh-existing]")
+            jurisdiction = argument
         results = analyze_jurisdictions(jurisdiction=jurisdiction, refresh_existing=refresh)
         for result in results:
             print(f"{result['jurisdiction']} -> {result['status']}")
         return
     if command == "refresh-sources":
-        jurisdiction: str | None = None
-        portal_id: str | None = None
+        jurisdiction = None
+        portal_id = None
         max_attempts = 3
         use_browser_discovery = False
         use_browser_fetch = False
         skip_discovery = False
         skip_fetch = False
-        for argument in sys.argv[2:]:
+        for argument in rest:
             if argument == "--skip-discovery":
                 skip_discovery = True
                 continue
@@ -330,17 +375,17 @@ def app() -> None:
             print("blocked seed documents: none")
         return
     if command == "import-local-document":
-        if len(sys.argv) < 5:
+        if len(rest) < 3:
             raise SystemExit(
                 "usage: observatory import-local-document <jurisdiction> <document_id> <file_path> [--source-url=URL] [--resolved-url=URL] [--content-type=TYPE]"
             )
-        jurisdiction = sys.argv[2]
-        document_id = sys.argv[3]
-        file_path = sys.argv[4]
+        jurisdiction = rest[0]
+        document_id = rest[1]
+        file_path = rest[2]
         source_url: str | None = None
         resolved_url: str | None = None
         content_type: str | None = None
-        for argument in sys.argv[5:]:
+        for argument in rest[3:]:
             if argument.startswith("--source-url="):
                 source_url = argument.split("=", 1)[1]
                 continue
@@ -362,17 +407,15 @@ def app() -> None:
             )
         except ValueError as exc:
             raise SystemExit(str(exc)) from exc
-        suffix = ""
-        if "artifact_state" in result:
-            suffix = f" (artifact={result['artifact_state']})"
+        suffix = f" (artifact={result['artifact_state']})" if "artifact_state" in result else ""
         print(f"{result['jurisdiction']}: {result['document_id']} -> {result['status']}{suffix}")
         return
     if command == "discover-source-candidates":
-        jurisdiction: str | None = None
-        portal_id: str | None = None
+        jurisdiction = None
+        portal_id = None
         refresh = False
         use_browser = False
-        for argument in sys.argv[2:]:
+        for argument in rest:
             if argument == "--refresh":
                 refresh = True
                 continue
@@ -405,25 +448,43 @@ def app() -> None:
                 suffix_parts.append(f"candidates={result['candidate_count']}")
             if "error" in result:
                 suffix_parts.append(f"error={result['error']}")
-            suffix = ""
-            if suffix_parts:
-                suffix = " (" + ", ".join(suffix_parts) + ")"
+            suffix = f" ({', '.join(suffix_parts)})" if suffix_parts else ""
             print(f"{result['jurisdiction']}: {result['portal_id']} -> {result['status']}{suffix}")
         return
     if command == "parse-raw-documents":
-        jurisdiction = sys.argv[2] if len(sys.argv) > 2 else None
-        results = parse_raw_documents(jurisdiction=jurisdiction)
-        for result in results:
-            print(
-                f"{result['jurisdiction']}: {result['document_id']} -> {result['status']}"
+        jurisdiction = None
+        document_id: str | None = None
+        refresh = False
+        for argument in rest:
+            if argument == "--refresh":
+                refresh = True
+                continue
+            if argument.startswith("--"):
+                raise SystemExit(f"unknown parse-raw-documents option: {argument}")
+            if jurisdiction is None:
+                jurisdiction = argument
+                continue
+            if document_id is None:
+                document_id = argument
+                continue
+            raise SystemExit("usage: observatory parse-raw-documents [jurisdiction] [document_id] [--refresh]")
+        try:
+            results = parse_raw_documents(
+                jurisdiction=jurisdiction,
+                document_id=document_id,
+                refresh=refresh,
             )
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+        for result in results:
+            print(f"{result['jurisdiction']}: {result['document_id']} -> {result['status']}")
         return
     if command == "analyze-documents":
-        jurisdiction: str | None = None
-        document_id: str | None = None
+        jurisdiction = None
+        document_id = None
         refresh_existing = False
-        for argument in sys.argv[2:]:
-            if argument == "--refresh":
+        for argument in rest:
+            if argument in {"--refresh", "--refresh-existing"}:
                 refresh_existing = True
                 continue
             if argument.startswith("--"):
@@ -445,26 +506,110 @@ def app() -> None:
             raise SystemExit(str(exc)) from exc
         for result in results:
             if "document_id" in result:
-                print(
-                    f"{result['jurisdiction']}: {result['document_id']} -> {result['status']}"
-                )
+                print(f"{result['jurisdiction']}: {result['document_id']} -> {result['status']}")
             else:
                 print(f"{result['jurisdiction']}: {result['status']}")
         return
     if command == "persist-analysis-artifacts":
-        jurisdiction = sys.argv[2] if len(sys.argv) > 2 else None
-        document_id = sys.argv[3] if len(sys.argv) > 3 else None
+        jurisdiction = None
+        document_id = None
+        allow_legacy = False
+        for argument in rest:
+            if argument == "--allow-legacy":
+                allow_legacy = True
+                continue
+            if argument.startswith("--"):
+                raise SystemExit(f"unknown persist-analysis-artifacts option: {argument}")
+            if jurisdiction is None:
+                jurisdiction = argument
+                continue
+            if document_id is None:
+                document_id = argument
+                continue
+            raise SystemExit("usage: observatory persist-analysis-artifacts [jurisdiction] [document_id] [--allow-legacy]")
         try:
-            results = persist_analysis_artifacts(jurisdiction=jurisdiction, document_id=document_id)
+            results = persist_analysis_artifacts(
+                jurisdiction=jurisdiction,
+                document_id=document_id,
+                allow_legacy=allow_legacy,
+            )
         except ValueError as exc:
             raise SystemExit(str(exc)) from exc
         for result in results:
             if "document_id" in result:
-                print(
-                    f"{result['jurisdiction']}: {result['document_id']} -> {result['status']}"
-                )
+                print(f"{result['jurisdiction']}: {result['document_id']} -> {result['status']}")
             else:
                 print(f"{result['jurisdiction']}: {result['status']}")
+        return
+    if command == "check-grounding":
+        jurisdiction = None
+        document_id = None
+        min_ratio = get_canonical_thresholds()["grounding_pass_threshold"]
+        as_json = False
+        for argument in rest:
+            if argument == "--json":
+                as_json = True
+                continue
+            if argument.startswith("--min-ratio="):
+                try:
+                    min_ratio = float(argument.split("=", 1)[1])
+                except ValueError as exc:
+                    raise SystemExit("check-grounding --min-ratio must be a float") from exc
+                continue
+            if argument.startswith("--"):
+                raise SystemExit(f"unknown check-grounding option: {argument}")
+            if jurisdiction is None:
+                jurisdiction = argument
+                continue
+            if document_id is None:
+                document_id = argument
+                continue
+            raise SystemExit("usage: observatory check-grounding [jurisdiction] [document_id] [--min-ratio=F] [--json]")
+        try:
+            report = check_corpus_grounding(
+                jurisdiction=jurisdiction,
+                document_id=document_id,
+                min_ratio=min_ratio,
+            )
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+        if as_json:
+            print(json.dumps(report, indent=2, ensure_ascii=False))
+            return
+        exact_pct = f"{report['overall_exact_ratio']:.1%}" if report["overall_exact_ratio"] is not None else "n/a"
+        grounded_pct = (
+            f"{report['overall_grounding_ratio']:.1%}"
+            if report["overall_grounding_ratio"] is not None
+            else "n/a"
+        )
+        print(
+            f"grounding: docs={report['document_count']} flagged={report['flagged_count']} "
+            f"(gate={report['min_ratio_threshold']:.2f}) "
+            f"exact={report['exact_matches']}/{report['total_quotes']} ({exact_pct}) "
+            f"grounded={grounded_pct}"
+        )
+        for item in report["flagged_documents"][:20]:
+            ratio_str = f"{item['grounding_ratio']:.2f}" if item["grounding_ratio"] is not None else "n/a"
+            print(
+                f"  flagged: {item['jurisdiction']}/{item['document_id']} "
+                f"ratio={ratio_str} ungrounded={item['ungrounded_quotes']}/{item['total_quotes']}"
+            )
+        return
+    if command == "export-schemas":
+        if len(rest) != 1 or rest[0].startswith("--"):
+            raise SystemExit("usage: observatory export-schemas <output_dir>")
+        written = export_json_schemas(Path(rest[0]))
+        for path_str in written:
+            print(f"wrote {path_str}")
+        return
+    if command == "evaluate-gold-set":
+        if len(rest) != 1 or rest[0].startswith("--"):
+            raise SystemExit("usage: observatory evaluate-gold-set <gold_path>")
+        try:
+            report = evaluate_gold_set(Path(rest[0]))
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+        print(json.dumps(report, indent=2, ensure_ascii=False))
         return
     if command == "migrate-db":
         try:
@@ -478,37 +623,57 @@ def app() -> None:
             print(f"applied {version}")
         return
     if command == "sync-db-to-source-manifests":
-        jurisdiction: str | None = None
+        jurisdiction = None
         reset_jurisdiction_analyses = False
-        for argument in sys.argv[2:]:
+        dry_run = False
+        force = False
+        max_delete_ratio = 0.20
+        for argument in rest:
             if argument == "--reset-jurisdiction-analyses":
                 reset_jurisdiction_analyses = True
+                continue
+            if argument == "--dry-run":
+                dry_run = True
+                continue
+            if argument == "--force":
+                force = True
+                continue
+            if argument.startswith("--max-delete-ratio="):
+                try:
+                    max_delete_ratio = float(argument.split("=", 1)[1])
+                except ValueError as exc:
+                    raise SystemExit("sync-db-to-source-manifests --max-delete-ratio must be a float") from exc
                 continue
             if argument.startswith("--"):
                 raise SystemExit(f"unknown sync-db-to-source-manifests option: {argument}")
             if jurisdiction is not None:
                 raise SystemExit(
-                    "usage: observatory sync-db-to-source-manifests [jurisdiction] [--reset-jurisdiction-analyses]"
+                    "usage: observatory sync-db-to-source-manifests [jurisdiction] [--reset-jurisdiction-analyses] [--dry-run] [--max-delete-ratio=F] [--force]"
                 )
             jurisdiction = argument
         try:
             result = sync_database_to_source_manifests(
                 jurisdiction=jurisdiction,
                 reset_jurisdiction_analyses=reset_jurisdiction_analyses,
+                dry_run=dry_run,
+                max_delete_ratio=max_delete_ratio,
+                force=force,
             )
         except ValueError as exc:
             raise SystemExit(str(exc)) from exc
 
         deleted_document_ids = result["deleted_document_ids"]
+        mode = "dry-run" if result["dry_run"] else "applied"
         print(
-            "sync-db-to-source-manifests: "
+            f"sync-db-to-source-manifests ({mode}): "
             f"kept={result['kept_document_count']} "
             f"deleted={len(deleted_document_ids)} "
             f"jurisdictions={','.join(result['scoped_jurisdictions'])}"
         )
         if deleted_document_ids:
+            prefix = "would delete" if result["dry_run"] else "deleted"
             for document_id in deleted_document_ids:
-                print(f"deleted {document_id}")
+                print(f"{prefix} {document_id}")
         if result["reset_jurisdiction_analyses"]:
             print("reset machine_jurisdiction_analyses")
         return

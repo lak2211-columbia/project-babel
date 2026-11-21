@@ -51,11 +51,21 @@ def test_run_source_refresh_aggregates_discovery_fetch_and_blocked_docs(monkeypa
             ],
         },
     )
+    monkeypatch.setattr(
+        freshness,
+        "write_source_expansion_plan",
+        lambda: {
+            "plan_json_path": "data/source_tracking/source_expansion_plan.json",
+            "plan_markdown_path": "docs/operations/source-expansion-plan.md",
+        },
+    )
 
     result = freshness.run_source_refresh(jurisdiction="japan", portal_id="portal", use_browser_fetch=True)
 
     assert result["discovery_results"][0]["status"] == "discovered"
     assert result["fetch_results"][0]["status"] == "downloaded_new"
+    assert result["expansion_json_path"] == "data/source_tracking/source_expansion_plan.json"
+    assert result["expansion_markdown_path"] == "docs/operations/source-expansion-plan.md"
     assert result["blocked_documents"] == [
         {
             "jurisdiction": "japan",
@@ -67,6 +77,7 @@ def test_run_source_refresh_aggregates_discovery_fetch_and_blocked_docs(monkeypa
 
 def test_run_source_refresh_requires_work(monkeypatch) -> None:
     monkeypatch.setattr(freshness, "write_source_inventory", lambda: {})
+    monkeypatch.setattr(freshness, "write_source_expansion_plan", lambda: {})
 
     try:
         freshness.run_source_refresh(discover=False, fetch=False)

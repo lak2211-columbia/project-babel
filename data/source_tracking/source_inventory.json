@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-15T17:33:06.254033+00:00",
+  "generated_at": "2026-11-21T02:27:33.846956+00:00",
   "inventory_json_path": "data/source_tracking/source_inventory.json",
   "inventory_markdown_path": "docs/operations/source-inventory.md",
   "jurisdictions": [
     {
       "jurisdiction": "china",
       "description": "Official State Council, CAC, and sectoral sources for China's AI governance regime and implementation measures.",
-      "portal_count": 6,
-      "seed_document_count": 19,
-      "fetched_seed_document_count": 19,
-      "parsed_seed_document_count": 19,
-      "analyzed_seed_document_count": 19,
+      "portal_count": 8,
+      "seed_document_count": 18,
+      "fetched_seed_document_count": 18,
+      "parsed_seed_document_count": 18,
+      "analyzed_seed_document_count": 18,
       "source_portals": [
         {
           "id": "cn_state_council_policy",
@@ -143,6 +143,51 @@
           "discovery_target_count": 1,
           "discovery_candidate_count": 2,
           "discovery_output_path": "data/discovery/china/cn_cma_ai_measures.json"
+        },
+        {
+          "id": "cn_npc_laws",
+          "name": "National People's Congress (NPC / NPCSC) Statutory Database",
+          "issuing_body": "National People's Congress Standing Committee (NPCSC)",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "retrieval_strategy": "html",
+          "canonical_url": "https://www.npc.gov.cn/",
+          "priority": "high",
+          "languages": [
+            "zh"
+          ],
+          "coverage_notes": "National statutory registry covering primary PRC legislation such as the Amended Cybersecurity Law (effective Jan 1, 2026, Art. 20 AI governance clause).",
+          "tags": [
+            "npc",
+            "legislation",
+            "cybersecurity_law"
+          ],
+          "discovery_target_count": 1,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "cn_miit_ai",
+          "name": "Ministry of Industry and Information Technology (MIIT) AI & Standards Portal",
+          "issuing_body": "Ministry of Industry and Information Technology (MIIT)",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://www.miit.gov.cn/",
+          "priority": "high",
+          "languages": [
+            "zh"
+          ],
+          "coverage_notes": "Industrial AI policy, AI+ manufacturing/embodied AI directives, and national mandatory AI standards (e.g., GB 45438-2025).",
+          "tags": [
+            "miit",
+            "standards",
+            "embodied_ai",
+            "gb_45438"
+          ],
+          "discovery_target_count": 1,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
         }
       ],
       "seed_documents": [
@@ -440,7 +485,7 @@
             "platform_content_governance",
             "consumer_protection"
           ],
-          "lifecycle_stage": "draft",
+          "lifecycle_stage": "superseded",
           "priority": "high",
           "languages": [
             "zh"
@@ -499,7 +544,7 @@
           "issuing_body": "Cyberspace Administration of China",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "platform_content_governance",
             "consumer_protection"
@@ -597,7 +642,8 @@
           "source_tier": "statutory_rule",
           "policy_domains": [
             "platform_content_governance",
-            "consumer_protection"
+            "consumer_protection",
+            "companion_ai"
           ],
           "lifecycle_stage": "active",
           "priority": "high",
@@ -625,10 +671,11 @@
           "issuing_body": "Cyberspace Administration of China",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "platform_content_governance",
-            "consumer_protection"
+            "consumer_protection",
+            "companion_ai"
           ],
           "lifecycle_stage": "active",
           "priority": "medium",
@@ -656,7 +703,7 @@
           "issuing_body": "State Council / National Medical Products Administration",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "healthcare_medical_devices",
             "industrial_innovation"
@@ -687,10 +734,11 @@
           "issuing_body": "Cyberspace Administration of China",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "platform_content_governance",
-            "consumer_protection"
+            "consumer_protection",
+            "companion_ai"
           ],
           "lifecycle_stage": "active",
           "priority": "medium",
@@ -711,74 +759,48 @@
           "raw_path": "data/raw/china/cn_anthropomorphic_interaction_expert_interpretation_2026",
           "parsed_path": "data/parsed/china/cn_anthropomorphic_interaction_expert_interpretation_2026/normalized.json",
           "analysis_path": "data/analysis/china/cn_anthropomorphic_interaction_expert_interpretation_2026/document_analysis.json"
-        },
-        {
-          "id": "cn_c_1777558395023172_1df2a067",
-          "title": "国家网信办等五部门联合公布《人工智能拟人化互动服务管理暂行办法》_中央网络安全和信息化委员会办公室",
-          "issuing_body": "Cyberspace Administration of China",
-          "document_type": "legislation",
-          "binding_strength": "binding_law",
-          "source_tier": "statutory_rule",
-          "policy_domains": [
-            "frontier_gpai"
-          ],
-          "lifecycle_stage": "active",
-          "priority": "high",
-          "languages": [
-            "zh"
-          ],
-          "document_format": "html",
-          "canonical_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm",
-          "retrieval_urls": [],
-          "source_portal_ids": [
-            "cn_cac"
-          ],
-          "fetched": true,
-          "parsed": true,
-          "analyzed": true,
-          "latest_retrieval_status": "downloaded_new",
-          "latest_retrieval_error": null,
-          "raw_path": "data/raw/china/cn_c_1777558395023172_1df2a067",
-          "parsed_path": "data/parsed/china/cn_c_1777558395023172_1df2a067/normalized.json",
-          "analysis_path": "data/analysis/china/cn_c_1777558395023172_1df2a067/document_analysis.json"
         }
       ],
       "portal_kind_counts": {
         "library": 1,
-        "portal": 5
+        "portal": 6,
+        "registry": 1
       },
       "issuer_type_counts": {
         "executive": 3,
-        "regulator": 2,
+        "legal_registry": 1,
+        "regulator": 3,
         "standards_body": 1
       },
       "document_type_counts": {
-        "legislation": 6,
+        "legislation": 5,
         "regulatory_guidance": 7,
         "standards_guideline": 3,
         "strategy_paper": 3
       },
       "binding_strength_counts": {
-        "binding_law": 6,
+        "binding_law": 5,
         "regulatory_guidance": 7,
         "standards_guideline": 3,
         "strategy_statement": 3
       },
       "source_tier_counts": {
+        "implementation_resource": 4,
         "policy_strategy": 3,
-        "regulatory_guidance": 7,
-        "statutory_rule": 6,
+        "regulatory_guidance": 3,
+        "statutory_rule": 5,
         "technical_standard": 3
       },
       "lifecycle_stage_counts": {
-        "active": 18,
-        "draft": 1
+        "active": 17,
+        "superseded": 1
       },
       "policy_domain_counts": {
         "civil_rights_nondiscrimination": 1,
+        "companion_ai": 3,
         "consumer_protection": 10,
         "critical_infrastructure": 1,
-        "frontier_gpai": 5,
+        "frontier_gpai": 4,
         "healthcare_medical_devices": 1,
         "industrial_innovation": 5,
         "national_security": 1,
@@ -789,7 +811,7 @@
     {
       "jurisdiction": "european_union",
       "description": "Official EU legal text, implementation guidance, and data-protection sources for the AI Act and related governance instruments.",
-      "portal_count": 5,
+      "portal_count": 6,
       "seed_document_count": 18,
       "fetched_seed_document_count": 18,
       "parsed_seed_document_count": 18,
@@ -813,7 +835,7 @@
             "official_journal",
             "ai_act"
           ],
-          "discovery_target_count": 0,
+          "discovery_target_count": 1,
           "discovery_candidate_count": 0,
           "discovery_output_path": null
         },
@@ -904,6 +926,29 @@
           "discovery_target_count": 1,
           "discovery_candidate_count": 2,
           "discovery_output_path": "data/discovery/european_union/eu_edps_genai.json"
+        },
+        {
+          "id": "eu_ai_office_policies",
+          "name": "European Commission & AI Office — European Approach to AI",
+          "issuing_body": "European Commission / European AI Office",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "coverage_notes": "Central policy hub for 2026 EU AI Office outputs including Article 50 Transparency Code/Guidelines, Article 6 High-Risk Guidelines, and the Apply AI Strategy.",
+          "tags": [
+            "ai_office",
+            "article_50",
+            "apply_ai",
+            "high_risk"
+          ],
+          "discovery_target_count": 1,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
         }
       ],
       "seed_documents": [
@@ -981,7 +1026,7 @@
           "issuing_body": "European Commission",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "frontier_gpai",
             "standards_assurance"
@@ -1112,7 +1157,7 @@
           "issuing_body": "European Commission",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "frontier_gpai",
             "standards_assurance"
@@ -1477,7 +1522,7 @@
           "issuing_body": "European Data Protection Board",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "frontier_gpai",
             "privacy_data_protection"
@@ -1506,10 +1551,10 @@
       "portal_kind_counts": {
         "helpdesk": 1,
         "library": 3,
-        "portal": 1
+        "portal": 2
       },
       "issuer_type_counts": {
-        "executive": 2,
+        "executive": 3,
         "legal_registry": 1,
         "regulator": 2
       },
@@ -1524,8 +1569,8 @@
         "voluntary_commitment": 4
       },
       "source_tier_counts": {
-        "implementation_resource": 5,
-        "regulatory_guidance": 8,
+        "implementation_resource": 8,
+        "regulatory_guidance": 5,
         "statutory_rule": 1,
         "voluntary_framework": 4
       },
@@ -1546,11 +1591,11 @@
     {
       "jurisdiction": "japan",
       "description": "Official Cabinet Secretariat, Cabinet Office, Digital Agency, METI, MIC, MEXT, PPC, MHLW, MAFF, CFA, and Cultural Affairs materials for Japan's AI governance approach.",
-      "portal_count": 14,
-      "seed_document_count": 32,
-      "fetched_seed_document_count": 32,
-      "parsed_seed_document_count": 32,
-      "analyzed_seed_document_count": 32,
+      "portal_count": 17,
+      "seed_document_count": 28,
+      "fetched_seed_document_count": 28,
+      "parsed_seed_document_count": 28,
+      "analyzed_seed_document_count": 28,
       "source_portals": [
         {
           "id": "jp_cas_human_centric_ai",
@@ -1865,6 +1910,76 @@
           "discovery_target_count": 1,
           "discovery_candidate_count": 0,
           "discovery_output_path": null
+        },
+        {
+          "id": "jp_aisi",
+          "name": "Japan AI Safety Institute (J-AISI)",
+          "issuing_body": "Japan AI Safety Institute (IPA / J-AISI)",
+          "issuer_type": "standards_body",
+          "portal_kind": "library",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://aisi.go.jp/output/output_framework/",
+          "priority": "high",
+          "languages": [
+            "ja",
+            "en"
+          ],
+          "coverage_notes": "Official technical evaluation and red-teaming framework publications of the Japan AI Safety Institute.",
+          "tags": [
+            "aisi",
+            "red_teaming",
+            "evaluation",
+            "safety"
+          ],
+          "discovery_target_count": 1,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "jp_mic_ai_guidelines",
+          "name": "MIC AI Network Society & Hiroshima AI Process Portal",
+          "issuing_body": "Ministry of Internal Affairs and Communications (MIC)",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://www.soumu.go.jp/main_sosiki/kenkyu/ai_network/02ryutsu03_04000149.html",
+          "priority": "high",
+          "languages": [
+            "ja",
+            "en"
+          ],
+          "coverage_notes": "Official MIC repository for AI Guidelines for Business Ver. 1.2 (including AI agent and physical AI governance) and Hiroshima AI Process International Code of Conduct.",
+          "tags": [
+            "mic",
+            "business_guidelines",
+            "hiroshima_process",
+            "agentic_ai"
+          ],
+          "discovery_target_count": 1,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "jp_egov_law",
+          "name": "e-Gov Law Search (Japan Statutory Registry)",
+          "issuing_body": "Digital Agency of Japan",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "retrieval_strategy": "browser",
+          "canonical_url": "https://laws.e-gov.go.jp/",
+          "priority": "high",
+          "languages": [
+            "ja"
+          ],
+          "coverage_notes": "Authoritative statutory text registry for enacted Japanese legislation including the AI Promotion Act (Act No. 53 of 2025).",
+          "tags": [
+            "statute",
+            "legal_registry",
+            "ai_act"
+          ],
+          "discovery_target_count": 0,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
         }
       ],
       "seed_documents": [
@@ -1910,7 +2025,7 @@
             "standards_assurance",
             "industrial_innovation"
           ],
-          "lifecycle_stage": "active",
+          "lifecycle_stage": "superseded",
           "priority": "high",
           "languages": [
             "en"
@@ -1944,7 +2059,7 @@
             "industrial_innovation",
             "standards_assurance"
           ],
-          "lifecycle_stage": "active",
+          "lifecycle_stage": "superseded",
           "priority": "medium",
           "languages": [
             "en"
@@ -2001,80 +2116,12 @@
           "analysis_path": "data/analysis/japan/jp_ai_guidelines_for_business_ver_1_0/document_analysis.json"
         },
         {
-          "id": "jp_ai_guidelines_for_business_pdf",
-          "title": "AI Guidelines for Business Ver 1.0 (PDF)",
-          "issuing_body": "Ministry of Economy, Trade and Industry / Ministry of Internal Affairs and Communications",
-          "document_type": "standards_guideline",
-          "binding_strength": "standards_guideline",
-          "source_tier": "technical_standard",
-          "policy_domains": [
-            "industrial_innovation",
-            "standards_assurance"
-          ],
-          "lifecycle_stage": "active",
-          "priority": "high",
-          "languages": [
-            "ja"
-          ],
-          "document_format": "pdf",
-          "canonical_url": "https://www.meti.go.jp/press/2024/04/20240419004/20240419004-1.pdf",
-          "retrieval_urls": [
-            "https://www.meti.go.jp/press/2024/04/20240419004/20240419004.html"
-          ],
-          "source_portal_ids": [
-            "jp_meti_press_ai",
-            "jp_meti_ai_governance_docs"
-          ],
-          "fetched": true,
-          "parsed": true,
-          "analyzed": true,
-          "latest_retrieval_status": "skipped_existing",
-          "latest_retrieval_error": null,
-          "raw_path": "data/raw/japan/jp_ai_guidelines_for_business_pdf",
-          "parsed_path": "data/parsed/japan/jp_ai_guidelines_for_business_pdf/normalized.json",
-          "analysis_path": "data/analysis/japan/jp_ai_guidelines_for_business_pdf/document_analysis.json"
-        },
-        {
-          "id": "jp_ai_act_2025_overview_page",
-          "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（ＡＩ法）",
-          "issuing_body": "Cabinet Office",
-          "document_type": "regulatory_guidance",
-          "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
-          "policy_domains": [
-            "frontier_gpai",
-            "industrial_innovation"
-          ],
-          "lifecycle_stage": "active",
-          "priority": "high",
-          "languages": [
-            "ja"
-          ],
-          "document_format": "pdf",
-          "canonical_url": "https://www8.cao.go.jp/cstp/ai/ai_hou_gaiyou.pdf",
-          "retrieval_urls": [
-            "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
-            "https://laws.e-gov.go.jp/law/507AC0000000053"
-          ],
-          "source_portal_ids": [
-            "jp_cao_ai_strategy"
-          ],
-          "fetched": true,
-          "parsed": true,
-          "analyzed": true,
-          "latest_retrieval_status": "imported_local_updated",
-          "latest_retrieval_error": null,
-          "raw_path": "data/raw/japan/jp_ai_act_2025_overview_page",
-          "parsed_path": "data/parsed/japan/jp_ai_act_2025_overview_page/normalized.json",
-          "analysis_path": "data/analysis/japan/jp_ai_act_2025_overview_page/document_analysis.json"
-        },
-        {
           "id": "jp_ai_act_2025_overview_en_pdf",
           "title": "the AI Act (Overview) (Provisional Translation)",
           "issuing_body": "Cabinet Office",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "frontier_gpai",
             "industrial_innovation"
@@ -2138,7 +2185,7 @@
           "issuing_body": "Cabinet Office",
           "document_type": "standards_guideline",
           "binding_strength": "standards_guideline",
-          "source_tier": "technical_standard",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "industrial_innovation",
             "standards_assurance"
@@ -2527,7 +2574,7 @@
           "issuing_body": "Ministry of Health, Labour and Welfare",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "healthcare_medical_devices",
             "privacy_data_protection",
@@ -2561,7 +2608,7 @@
           "issuing_body": "Ministry of Health, Labour and Welfare",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "healthcare_medical_devices",
             "privacy_data_protection",
@@ -2628,7 +2675,7 @@
           "issuing_body": "Cabinet Office",
           "document_type": "strategy_paper",
           "binding_strength": "strategy_statement",
-          "source_tier": "policy_strategy",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "frontier_gpai"
           ],
@@ -2660,7 +2707,7 @@
           "issuing_body": "Cabinet Office",
           "document_type": "strategy_paper",
           "binding_strength": "strategy_statement",
-          "source_tier": "policy_strategy",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "frontier_gpai"
           ],
@@ -2696,7 +2743,7 @@
           "policy_domains": [
             "frontier_gpai"
           ],
-          "lifecycle_stage": "active",
+          "lifecycle_stage": "superseded",
           "priority": "high",
           "languages": [
             "ja"
@@ -2728,7 +2775,7 @@
           "policy_domains": [
             "frontier_gpai"
           ],
-          "lifecycle_stage": "active",
+          "lifecycle_stage": "superseded",
           "priority": "high",
           "languages": [
             "ja"
@@ -2756,7 +2803,7 @@
           "issuing_body": "Cabinet Office",
           "document_type": "strategy_paper",
           "binding_strength": "strategy_statement",
-          "source_tier": "policy_strategy",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "frontier_gpai"
           ],
@@ -2788,7 +2835,7 @@
           "issuing_body": "Children and Families Agency",
           "document_type": "strategy_paper",
           "binding_strength": "strategy_statement",
-          "source_tier": "policy_strategy",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "platform_content_governance",
             "frontier_gpai"
@@ -2814,42 +2861,12 @@
           "analysis_path": "data/analysis/japan/jp_ai_72333136/document_analysis.json"
         },
         {
-          "id": "jp_ai_pdf_80kb_7e18f8d0",
-          "title": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF：80KB）",
-          "issuing_body": "Cabinet Secretariat",
-          "document_type": "strategy_paper",
-          "binding_strength": "strategy_statement",
-          "source_tier": "policy_strategy",
-          "policy_domains": [
-            "frontier_gpai"
-          ],
-          "lifecycle_stage": "active",
-          "priority": "high",
-          "languages": [
-            "ja"
-          ],
-          "document_format": "pdf",
-          "canonical_url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/pdf/aigensoku.pdf",
-          "retrieval_urls": [],
-          "source_portal_ids": [
-            "jp_cas_human_centric_ai"
-          ],
-          "fetched": true,
-          "parsed": true,
-          "analyzed": true,
-          "latest_retrieval_status": "skipped_existing",
-          "latest_retrieval_error": null,
-          "raw_path": "data/raw/japan/jp_ai_pdf_80kb_7e18f8d0",
-          "parsed_path": "data/parsed/japan/jp_ai_pdf_80kb_7e18f8d0/normalized.json",
-          "analysis_path": "data/analysis/japan/jp_ai_pdf_80kb_7e18f8d0/document_analysis.json"
-        },
-        {
           "id": "jp_ai_q_a_pdf_493kb_1812c77d",
           "title": "「農業分野におけるAI・データに関する契約ガイドライン」に関するQ＆A(PDF : 493KB)",
           "issuing_body": "Ministry of Agriculture, Forestry and Fisheries",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "industrial_innovation",
             "public_sector_procurement"
@@ -2873,83 +2890,57 @@
           "raw_path": "data/raw/japan/jp_ai_q_a_pdf_493kb_1812c77d",
           "parsed_path": "data/parsed/japan/jp_ai_q_a_pdf_493kb_1812c77d/normalized.json",
           "analysis_path": "data/analysis/japan/jp_ai_q_a_pdf_493kb_1812c77d/document_analysis.json"
-        },
-        {
-          "id": "jp_jp_bunka_copyright_ai_0a336ada",
-          "title": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について（令和8年3月24日）",
-          "issuing_body": "Agency for Cultural Affairs",
-          "document_type": "regulatory_guidance",
-          "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
-          "policy_domains": [
-            "copyright_ip",
-            "frontier_gpai"
-          ],
-          "lifecycle_stage": "active",
-          "priority": "medium",
-          "languages": [
-            "ja"
-          ],
-          "document_format": "pdf",
-          "canonical_url": "https://www.bunka.go.jp/seisaku/chosakuken/pdf/94350404_01.pdf",
-          "retrieval_urls": [],
-          "source_portal_ids": [
-            "jp_bunka_copyright_ai"
-          ],
-          "fetched": true,
-          "parsed": true,
-          "analyzed": true,
-          "latest_retrieval_status": "downloaded_new",
-          "latest_retrieval_error": null,
-          "raw_path": "data/raw/japan/jp_jp_bunka_copyright_ai_0a336ada",
-          "parsed_path": "data/parsed/japan/jp_jp_bunka_copyright_ai_0a336ada/normalized.json",
-          "analysis_path": "data/analysis/japan/jp_jp_bunka_copyright_ai_0a336ada/document_analysis.json"
         }
       ],
       "portal_kind_counts": {
-        "library": 1,
-        "portal": 13
+        "library": 2,
+        "portal": 14,
+        "registry": 1
       },
       "issuer_type_counts": {
-        "executive": 13,
-        "regulator": 1
+        "executive": 14,
+        "legal_registry": 1,
+        "regulator": 1,
+        "standards_body": 1
       },
       "document_type_counts": {
-        "regulatory_guidance": 14,
-        "standards_guideline": 8,
-        "strategy_paper": 10
+        "regulatory_guidance": 12,
+        "standards_guideline": 7,
+        "strategy_paper": 9
       },
       "binding_strength_counts": {
-        "regulatory_guidance": 14,
-        "standards_guideline": 8,
-        "strategy_statement": 10
+        "regulatory_guidance": 12,
+        "standards_guideline": 7,
+        "strategy_statement": 9
       },
       "source_tier_counts": {
-        "policy_strategy": 10,
-        "regulatory_guidance": 14,
-        "technical_standard": 8
+        "implementation_resource": 9,
+        "policy_strategy": 5,
+        "regulatory_guidance": 8,
+        "technical_standard": 6
       },
       "lifecycle_stage_counts": {
-        "active": 32
+        "active": 24,
+        "superseded": 4
       },
       "policy_domain_counts": {
         "civil_rights_nondiscrimination": 1,
-        "copyright_ip": 3,
+        "copyright_ip": 2,
         "education": 3,
-        "frontier_gpai": 20,
+        "frontier_gpai": 17,
         "healthcare_medical_devices": 3,
-        "industrial_innovation": 15,
+        "industrial_innovation": 13,
         "platform_content_governance": 1,
         "privacy_data_protection": 4,
         "public_sector_governance": 1,
         "public_sector_procurement": 5,
-        "standards_assurance": 6
+        "standards_assurance": 5
       }
     },
     {
       "jurisdiction": "south_korea",
       "description": "Official legal, public-sector, privacy, and medical-device sources for South Korea's AI framework and implementation.",
-      "portal_count": 7,
+      "portal_count": 9,
       "seed_document_count": 16,
       "fetched_seed_document_count": 16,
       "parsed_seed_document_count": 16,
@@ -3111,6 +3102,51 @@
           "discovery_target_count": 1,
           "discovery_candidate_count": 4,
           "discovery_output_path": "data/discovery/south_korea/kr_mfds_ai_medical.json"
+        },
+        {
+          "id": "kr_ai_act_helpdesk",
+          "name": "Korea AI Basic Act Support Desk (MSIT / KOSA)",
+          "issuing_body": "Ministry of Science and ICT (MSIT) / Korea Software Industry Association",
+          "issuer_type": "executive",
+          "portal_kind": "helpdesk",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://www.sw.or.kr/AI_act_helpdesk/main.jsp",
+          "priority": "high",
+          "languages": [
+            "ko"
+          ],
+          "coverage_notes": "Official implementation helpdesk distributing finalized 2026 MSIT AI Basic Act guidelines (Safety Assurance, High-Impact Determination, Transparency, Impact Assessment).",
+          "tags": [
+            "ai_basic_act",
+            "helpdesk",
+            "guidelines"
+          ],
+          "discovery_target_count": 1,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "kr_aisi",
+          "name": "Korea AI Safety Institute (AISI)",
+          "issuing_body": "Korea AI Safety Institute",
+          "issuer_type": "standards_body",
+          "portal_kind": "portal",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://www.aisi.re.kr/",
+          "priority": "high",
+          "languages": [
+            "ko",
+            "en"
+          ],
+          "coverage_notes": "Statutory AI safety research and evaluation body designated under Presidential Decree No. 36053 of the AI Basic Act.",
+          "tags": [
+            "aisi",
+            "frontier_safety",
+            "evaluation"
+          ],
+          "discovery_target_count": 1,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
         }
       ],
       "seed_documents": [
@@ -3151,9 +3187,9 @@
           "id": "kr_ai_basic_act_enforcement_decree",
           "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 시행령",
           "issuing_body": "President of the Republic of Korea / Ministry of Government Legislation",
-          "document_type": "regulatory_guidance",
-          "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
           "policy_domains": [
             "frontier_gpai",
             "public_sector_governance"
@@ -3192,7 +3228,7 @@
             "frontier_gpai",
             "public_sector_governance"
           ],
-          "lifecycle_stage": "draft",
+          "lifecycle_stage": "superseded",
           "priority": "medium",
           "languages": [
             "ko"
@@ -3225,7 +3261,7 @@
             "public_sector_governance",
             "privacy_data_protection"
           ],
-          "lifecycle_stage": "adopted_not_yet_effective",
+          "lifecycle_stage": "active",
           "priority": "medium",
           "languages": [
             "ko"
@@ -3555,7 +3591,7 @@
           "issuing_body": "Personal Information Protection Commission",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "public_sector_governance",
             "privacy_data_protection"
@@ -3586,7 +3622,7 @@
           "issuing_body": "Personal Information Protection Commission",
           "document_type": "regulatory_guidance",
           "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "public_sector_governance",
             "privacy_data_protection"
@@ -3648,33 +3684,34 @@
         }
       ],
       "portal_kind_counts": {
-        "helpdesk": 1,
+        "helpdesk": 2,
         "library": 3,
-        "portal": 2,
+        "portal": 3,
         "registry": 1
       },
       "issuer_type_counts": {
-        "executive": 4,
+        "executive": 5,
         "legal_registry": 1,
-        "regulator": 2
+        "regulator": 2,
+        "standards_body": 1
       },
       "document_type_counts": {
-        "legislation": 2,
-        "regulatory_guidance": 14
+        "legislation": 3,
+        "regulatory_guidance": 13
       },
       "binding_strength_counts": {
-        "binding_law": 2,
-        "regulatory_guidance": 14
+        "binding_law": 3,
+        "regulatory_guidance": 13
       },
       "source_tier_counts": {
-        "regulatory_guidance": 14,
-        "statutory_rule": 2
+        "implementation_resource": 2,
+        "regulatory_guidance": 11,
+        "statutory_rule": 3
       },
       "lifecycle_stage_counts": {
-        "active": 12,
-        "adopted_not_yet_effective": 1,
-        "draft": 2,
-        "superseded": 1
+        "active": 13,
+        "draft": 1,
+        "superseded": 2
       },
       "policy_domain_counts": {
         "consumer_protection": 1,
@@ -3689,11 +3726,11 @@
     {
       "jurisdiction": "united_states",
       "description": "Official executive, standards, civil-rights, consumer-protection, and health-regulation sources for U.S. AI governance.",
-      "portal_count": 9,
-      "seed_document_count": 24,
-      "fetched_seed_document_count": 24,
-      "parsed_seed_document_count": 24,
-      "analyzed_seed_document_count": 24,
+      "portal_count": 12,
+      "seed_document_count": 23,
+      "fetched_seed_document_count": 23,
+      "parsed_seed_document_count": 23,
+      "analyzed_seed_document_count": 23,
       "source_portals": [
         {
           "id": "us_white_house_actions",
@@ -3892,6 +3929,74 @@
           "discovery_target_count": 2,
           "discovery_candidate_count": 1,
           "discovery_output_path": "data/discovery/united_states/us_cfpb_ai_finance.json"
+        },
+        {
+          "id": "us_federal_register_ai",
+          "name": "Federal Register — Presidential Documents & AI/SI Rulemaking",
+          "issuing_body": "Office of the Federal Register (NARA)",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "retrieval_strategy": "html",
+          "canonical_url": "https://www.federalregister.gov/presidential-documents/executive-orders",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "coverage_notes": "Authoritative federal gazette for Executive Orders (EO 14409, EO 14434, Dec 2025 National Policy Framework EO) and federal AI/Super Intelligence rulemaking.",
+          "tags": [
+            "federal_register",
+            "executive_orders",
+            "super_intelligence",
+            "rulemaking"
+          ],
+          "discovery_target_count": 1,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "us_nist_caisi_si",
+          "name": "NIST Center for AI Standards and Innovation (CAISI) / Super Intelligence Portal",
+          "issuing_body": "National Institute of Standards and Technology (NIST / CAISI)",
+          "issuer_type": "standards_body",
+          "portal_kind": "portal",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://www.nist.gov/super-intelligence",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "coverage_notes": "Official portal for NIST CAISI frontier evaluations, the 2026 AI/SI Agent Standards Initiative, NCCoE agent-IAM concept papers, and CSRC Cyber AI Profile (NIST IR 8596).",
+          "tags": [
+            "caisi",
+            "agentic_ai",
+            "super_intelligence",
+            "standards"
+          ],
+          "discovery_target_count": 1,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "us_congress_govinfo",
+          "name": "GovInfo Public Laws (U.S. Congress)",
+          "issuing_body": "U.S. Government Publishing Office / U.S. Congress",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://www.govinfo.gov/app/collection/plaw",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "coverage_notes": "Canonical federal statutory repository for enacted U.S. AI legislation (e.g., TAKE IT DOWN Act, Pub. L. 119-12).",
+          "tags": [
+            "legislation",
+            "public_law",
+            "congress"
+          ],
+          "discovery_target_count": 0,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
         }
       ],
       "seed_documents": [
@@ -3937,7 +4042,8 @@
           "policy_domains": [
             "industrial_innovation",
             "national_security",
-            "frontier_gpai"
+            "frontier_gpai",
+            "sovereign_compute"
           ],
           "lifecycle_stage": "active",
           "priority": "high",
@@ -3965,8 +4071,8 @@
           "title": "M-25-21: Accelerating Federal Use of AI through Innovation, Governance, and Public Trust",
           "issuing_body": "Office of Management and Budget",
           "document_type": "regulatory_guidance",
-          "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "binding_strength": "executive_action",
+          "source_tier": "executive_action",
           "policy_domains": [
             "public_sector_governance",
             "frontier_gpai"
@@ -3997,8 +4103,8 @@
           "title": "M-25-22: Driving Efficient Acquisition of Artificial Intelligence in Government",
           "issuing_body": "Office of Management and Budget",
           "document_type": "regulatory_guidance",
-          "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "binding_strength": "executive_action",
+          "source_tier": "executive_action",
           "policy_domains": [
             "public_sector_procurement",
             "public_sector_governance",
@@ -4065,7 +4171,7 @@
           "issuing_body": "National Institute of Standards and Technology",
           "document_type": "standards_guideline",
           "binding_strength": "standards_guideline",
-          "source_tier": "technical_standard",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "standards_assurance",
             "frontier_gpai"
@@ -4164,7 +4270,7 @@
           "issuing_body": "National Institute of Standards and Technology",
           "document_type": "strategy_paper",
           "binding_strength": "strategy_statement",
-          "source_tier": "policy_strategy",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "frontier_gpai",
             "standards_assurance",
@@ -4196,7 +4302,7 @@
           "issuing_body": "National Institute of Standards and Technology",
           "document_type": "strategy_paper",
           "binding_strength": "strategy_statement",
-          "source_tier": "policy_strategy",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "frontier_gpai",
             "standards_assurance",
@@ -4235,7 +4341,7 @@
             "privacy_data_protection",
             "consumer_protection"
           ],
-          "lifecycle_stage": "active",
+          "lifecycle_stage": "superseded",
           "priority": "high",
           "languages": [
             "en"
@@ -4431,7 +4537,7 @@
           "issuing_body": "National Institute of Standards and Technology",
           "document_type": "standards_guideline",
           "binding_strength": "standards_guideline",
-          "source_tier": "technical_standard",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "standards_assurance",
             "frontier_gpai"
@@ -4462,7 +4568,7 @@
           "issuing_body": "National Institute of Standards and Technology",
           "document_type": "standards_guideline",
           "binding_strength": "standards_guideline",
-          "source_tier": "technical_standard",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "standards_assurance",
             "frontier_gpai"
@@ -4493,7 +4599,7 @@
           "issuing_body": "National Institute of Standards and Technology",
           "document_type": "standards_guideline",
           "binding_strength": "standards_guideline",
-          "source_tier": "technical_standard",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "standards_assurance",
             "frontier_gpai"
@@ -4524,7 +4630,7 @@
           "issuing_body": "National Institute of Standards and Technology",
           "document_type": "standards_guideline",
           "binding_strength": "standards_guideline",
-          "source_tier": "technical_standard",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "standards_assurance",
             "frontier_gpai"
@@ -4553,14 +4659,14 @@
           "id": "us_ai_risk_management_framework_initial_draft_march_fb5a1e0e",
           "title": "AI Risk Management Framework: Initial Draft - March 17, 2022",
           "issuing_body": "National Institute of Standards and Technology",
-          "document_type": "regulatory_guidance",
-          "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "document_type": "standards_guideline",
+          "binding_strength": "standards_guideline",
+          "source_tier": "technical_standard",
           "policy_domains": [
             "standards_assurance",
             "frontier_gpai"
           ],
-          "lifecycle_stage": "draft",
+          "lifecycle_stage": "superseded",
           "priority": "high",
           "languages": [
             "en"
@@ -4584,14 +4690,14 @@
           "id": "us_ai_risk_management_framework_second_draft_august_e303aeb7",
           "title": "AI Risk Management Framework: Second Draft - August 18, 2022",
           "issuing_body": "National Institute of Standards and Technology",
-          "document_type": "regulatory_guidance",
-          "binding_strength": "regulatory_guidance",
-          "source_tier": "regulatory_guidance",
+          "document_type": "standards_guideline",
+          "binding_strength": "standards_guideline",
+          "source_tier": "technical_standard",
           "policy_domains": [
             "standards_assurance",
             "frontier_gpai"
           ],
-          "lifecycle_stage": "draft",
+          "lifecycle_stage": "superseded",
           "priority": "high",
           "languages": [
             "en"
@@ -4612,51 +4718,17 @@
           "analysis_path": "data/analysis/united_states/us_ai_risk_management_framework_second_draft_august_e303aeb7/document_analysis.json"
         },
         {
-          "id": "us_ai_risk_management_framework_nist_e9c27a02",
-          "title": "AI Risk Management Framework | NIST",
-          "issuing_body": "National Institute of Standards and Technology",
-          "document_type": "standards_guideline",
-          "binding_strength": "standards_guideline",
-          "source_tier": "technical_standard",
-          "policy_domains": [
-            "standards_assurance",
-            "frontier_gpai"
-          ],
-          "lifecycle_stage": "active",
-          "priority": "high",
-          "languages": [
-            "en"
-          ],
-          "document_format": "pdf",
-          "canonical_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
-          "retrieval_urls": [
-            "https://www.nist.gov/itl/ai-risk-management-framework",
-            "https://doi.org/10.6028/NIST.AI.100-1"
-          ],
-          "source_portal_ids": [
-            "us_nist_ai"
-          ],
-          "fetched": true,
-          "parsed": true,
-          "analyzed": true,
-          "latest_retrieval_status": "downloaded_unchanged",
-          "latest_retrieval_error": null,
-          "raw_path": "data/raw/united_states/us_ai_risk_management_framework_nist_e9c27a02",
-          "parsed_path": "data/parsed/united_states/us_ai_risk_management_framework_nist_e9c27a02/normalized.json",
-          "analysis_path": "data/analysis/united_states/us_ai_risk_management_framework_nist_e9c27a02/document_analysis.json"
-        },
-        {
           "id": "us_from_principles_to_practice_ostp_the_white_house_8a01bf26",
           "title": "From Principles to Practice | OSTP | The White House",
           "issuing_body": "White House Office of Science and Technology Policy",
-          "document_type": "legislation",
-          "binding_strength": "binding_law",
-          "source_tier": "statutory_rule",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "voluntary_commitment",
+          "source_tier": "implementation_resource",
           "policy_domains": [
             "civil_rights_nondiscrimination",
             "frontier_gpai"
           ],
-          "lifecycle_stage": "active",
+          "lifecycle_stage": "superseded",
           "priority": "high",
           "languages": [
             "en"
@@ -4679,51 +4751,53 @@
       ],
       "portal_kind_counts": {
         "library": 6,
-        "portal": 3
+        "portal": 4,
+        "registry": 2
       },
       "issuer_type_counts": {
         "executive": 3,
+        "legal_registry": 2,
         "multi_agency": 1,
         "regulator": 3,
-        "standards_body": 2
+        "standards_body": 3
       },
       "document_type_counts": {
         "executive_order": 1,
-        "legislation": 1,
-        "regulatory_guidance": 7,
-        "standards_guideline": 9,
+        "regulatory_guidance": 6,
+        "standards_guideline": 10,
         "strategy_paper": 6
       },
       "binding_strength_counts": {
-        "binding_law": 1,
-        "executive_action": 1,
-        "regulatory_guidance": 7,
-        "standards_guideline": 9,
-        "strategy_statement": 6
+        "executive_action": 3,
+        "regulatory_guidance": 3,
+        "standards_guideline": 10,
+        "strategy_statement": 6,
+        "voluntary_commitment": 1
       },
       "source_tier_counts": {
-        "executive_action": 1,
-        "policy_strategy": 6,
-        "regulatory_guidance": 7,
-        "statutory_rule": 1,
-        "technical_standard": 9
+        "executive_action": 3,
+        "implementation_resource": 8,
+        "policy_strategy": 4,
+        "regulatory_guidance": 3,
+        "technical_standard": 5
       },
       "lifecycle_stage_counts": {
-        "active": 22,
-        "draft": 2
+        "active": 19,
+        "superseded": 4
       },
       "policy_domain_counts": {
         "civil_rights_nondiscrimination": 5,
         "consumer_protection": 5,
         "finance": 3,
-        "frontier_gpai": 19,
+        "frontier_gpai": 18,
         "healthcare_medical_devices": 1,
         "industrial_innovation": 4,
         "national_security": 3,
         "privacy_data_protection": 1,
         "public_sector_governance": 3,
         "public_sector_procurement": 1,
-        "standards_assurance": 14
+        "sovereign_compute": 1,
+        "standards_assurance": 13
       }
     }
   ]

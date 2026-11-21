@@ -1,8 +1,11 @@
 from __future__ import annotations
 
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
+
+
+VALID_GROUNDING_STATUSES = {"verbatim", "approximate", "not_found"}
 
 
 class StrictBaseModel(BaseModel):
@@ -10,20 +13,37 @@ class StrictBaseModel(BaseModel):
 
 
 class EvidenceSpan(StrictBaseModel):
-    quote: str
+    quote: str = Field(min_length=1)
     source_section: Optional[str] = None
+    quote_en: Optional[str] = None
+    frame: Optional[str] = None
+    grounding_status: Optional[str] = None
+    start_char: Optional[int] = Field(default=None, ge=0)
+    end_char: Optional[int] = Field(default=None, ge=0)
+
+    @field_validator("grounding_status")
+    @classmethod
+    def validate_grounding_status(cls, value: Optional[str]) -> Optional[str]:
+        if value is not None and value not in VALID_GROUNDING_STATUSES:
+            raise ValueError(f"grounding_status must be one of {sorted(VALID_GROUNDING_STATUSES)}")
+        return value
 
 
 class SafetyRequirement(StrictBaseModel):
     label: str
     confidence: float = Field(ge=0.0, le=1.0)
-    evidence: List[EvidenceSpan] = Field(default_factory=list)
+    obligation_strength: Optional[str] = None
+    evidence: List[EvidenceSpan] = Field(min_length=1)
+
+
+# Alias for schema/codebook clarity (backwards-compatible with SafetyRequirement).
+PolicyRequirementRecord = SafetyRequirement
 
 
 class EnforcementMechanism(StrictBaseModel):
     label: str
     confidence: float = Field(ge=0.0, le=1.0)
-    evidence: List[EvidenceSpan] = Field(default_factory=list)
+    evidence: List[EvidenceSpan] = Field(min_length=1)
 
 
 class PolicyExtraction(StrictBaseModel):
@@ -49,8 +69,53 @@ class RiskFramingAnalysis(StrictBaseModel):
     dominant_frame: str
     secondary_frames: List[str] = Field(default_factory=list)
     frame_confidence: Dict[str, float] = Field(default_factory=dict)
+    frame_share: Optional[Dict[str, float]] = None
     rationale_summary: str
     evidence_spans: List[EvidenceSpan] = Field(default_factory=list)
+
+    @field_validator("frame_confidence")
+    @classmethod
+    def validate_frame_confidence_bounds(cls, value: Dict[str, float]) -> Dict[str, float]:
+        for frame, score in value.items():
+            if not isinstance(score, (int, float)) or score != score:  # NaN check
+                raise ValueError(f"frame_confidence score for '{frame}' must be a valid number")
+            if score < 0.0 or score > 1.0:
+                raise ValueError(f"frame_confidence score for '{frame}' must be between 0.0 and 1.0")
+        return value
+
+    @field_validator("frame_share")
+    @classmethod
+    def validate_frame_share_bounds(cls, value: Optional[Dict[str, float]]) -> Optional[Dict[str, float]]:
+        if value is None:
+            return None
+        total = 0.0
+        for frame, share in value.items():
+            if not isinstance(share, (int, float)) or share != share:
+                raise ValueError(f"frame_share value for '{frame}' must be a valid number")
+            if share < 0.0 or share > 1.0:
+                raise ValueError(f"frame_share value for '{frame}' must be between 0.0 and 1.0")
+            total += float(share)
+        if value and total > 1e-6 and abs(total - 1.0) > 0.05:
+            raise ValueError(f"frame_share values must sum to ~1.0 (got {total:.4f})")
+        return value
+
+
+class AnalysisProvenance(StrictBaseModel):
+    provider: str
+    model: str
+    effort: Optional[str] = None
+    temperature: Optional[float] = None
+    analyzed_at: Optional[str] = None
+    analysis_version: str
+    taxonomy_version: str
+    taxonomy_hash: str
+    extraction_prompt_hash: str
+    framing_prompt_hash: str
+    input_sha256: str
+    chunked: bool = False
+    chunk_count: int = 1
+    usage: Dict[str, Any] = Field(default_factory=dict)
+    grounding_summary: Optional[Dict[str, Any]] = None
 
 
 class DocumentAnalysis(StrictBaseModel):
@@ -59,6 +124,7 @@ class DocumentAnalysis(StrictBaseModel):
     language: str
     policy_extraction: PolicyExtraction
     risk_framing: RiskFramingAnalysis
+    analysis_metadata: Optional[AnalysisProvenance] = None
 
 
 class JurisdictionLabelStat(StrictBaseModel):

@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-babel.com/schemas/observatory-taxonomy.schema.json",
+  "title": "Project Babel Observatory Taxonomy",
+  "description": "Canonical label registry and versioning metadata for Project Babel AI governance extraction, framing classification, and source manifests (Taxonomy v2.1.0).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "taxonomy_version",
+    "schema_version",
+    "updated_at",
+    "versioning_policy",
+    "jurisdictions",
+    "document_types",
+    "binding_strength",
+    "issuer_types",
+    "source_tiers",
+    "corpus_roles",
+    "policy_domains",
+    "lifecycle_stages",
+    "policy_requirements",
+    "obligation_strengths",
+    "enforcement_mechanisms",
+    "application_domains",
+    "risk_framings"
+  ],
+  "properties": {
+    "taxonomy_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Semantic version (MAJOR.MINOR.PATCH) of the canonical taxonomy."
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$",
+      "description": "Schema format version governing the taxonomy JSON layout."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "ISO 8601 calendar date of the latest taxonomy revision."
+    },
+    "versioning_policy": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable compatibility and semantic-versioning rules for taxonomy changes."
+    },
+    "jurisdictions": {
+      "$ref": "#/$defs/labelList",
+      "description": "Tracked sovereign or supranational jurisdictions."
+    },
+    "document_types": {
+      "$ref": "#/$defs/labelList",
+      "description": "Structural class of an official publication."
+    },
+    "binding_strength": {
+      "$ref": "#/$defs/labelList",
+      "description": "Legal or supervisory force carried by a document."
+    },
+    "issuer_types": {
+      "$ref": "#/$defs/labelList",
+      "description": "Institutional class of an issuing authority or official portal."
+    },
+    "source_tiers": {
+      "$ref": "#/$defs/labelList",
+      "description": "Normative hierarchy tier used for coverage planning and tier-weighted scoring."
+    },
+    "corpus_roles": {
+      "$ref": "#/$defs/labelList",
+      "description": "Analytical role distinguishing active primary instruments from companions, drafts, and historical baselines."
+    },
+    "policy_domains": {
+      "$ref": "#/$defs/labelList",
+      "description": "Substantive AI governance domain tags."
+    },
+    "lifecycle_stages": {
+      "$ref": "#/$defs/labelList",
+      "description": "Current legal or operational status of a document."
+    },
+    "policy_requirements": {
+      "$ref": "#/$defs/labelList",
+      "description": "Concrete safety, governance, transparency, or operational requirements extracted from official texts."
+    },
+    "obligation_strengths": {
+      "$ref": "#/$defs/labelList",
+      "description": "Deontic modality of an extracted requirement (mandatory, conditional, recommended, aspirational)."
+    },
+    "enforcement_mechanisms": {
+      "$ref": "#/$defs/labelList",
+      "description": "Sanctions, supervisory hooks, and compliance levers referenced in official texts."
+    },
+    "application_domains": {
+      "$ref": "#/$defs/labelList",
+      "description": "Regulated AI application sectors and system classes covered by a document."
+    },
+    "risk_framings": {
+      "$ref": "#/$defs/labelList",
+      "minItems": 8,
+      "maxItems": 8,
+      "description": "Fixed eight-label rationale vocabulary measuring why governments justify AI governance."
+    }
+  },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "labelList": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/slug"
+      }
+    }
+  }
+}

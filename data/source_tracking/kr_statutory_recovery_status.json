@@ -1,0 +1,119 @@
+{
+  "schema_version": "2.1",
+  "generated_at": "2026-11-20T00:00:00Z",
+  "summary": "Forensic recovery tracker for legacy corpus provenance gaps, browser re-fetch targets, canonical full-text stub replacements, and Mythos Section 0 corpus flags.",
+  "legacy_corpus_provenance_status": {
+    "status": "legacy_rerun_required_before_prod_publish",
+    "finding": "All 103 committed document_analysis.json artifacts on disk were produced by the legacy parser (0.1.0) and pre-v2.0 prompts without analysis_metadata, input_sha256, chunk_count, or Taxonomy v2.0/v2.1 labels. Existing parsed/ and analysis/ artifacts are intentionally preserved on disk until the owner executes a full authenticated re-parse (Parser 0.3.0) + re-analysis run (`make parse && make analyze --refresh && make check-grounding`)."
+  },
+  "mythos_section_0_investigations": {
+    "us_nist_rmf_identical_framing_tokens": {
+      "documents": [
+        "united_states/us_nist_ai_rmf_1_0",
+        "united_states/us_ai_risk_management_framework_second_draft_august_e303aeb7"
+      ],
+      "status": "distinct_pdfs_both_truncated_by_legacy_14k_cap",
+      "finding": "Confirmed NOT the same wrapper text. The two documents are distinct full PDFs with distinct SHA-256 hashes, byte sizes, extracted lengths, section counts, publication dates, metadata/controls token counts, and verbatim evidence quotes: us_nist_ai_rmf_1_0 (sha256=7576edb5..., 1,946,127 B, 106,538 chars, 48 sections, pub 2023-01-26, meta=5,225 / ctrl=5,976 / framing=4,835 tokens) vs us_ai_risk_management_framework_second_draft_august_e303aeb7 (sha256=87d67b51..., 1,748,696 B, 86,091 chars, 36 sections, pub 2022-08-18, meta=5,193 / ctrl=5,989 / framing=4,835 tokens). The identical 4,835 framing token count occurred solely because both long English PDFs hit the legacy RISK_FRAMING_MAX_CHARS=14,000 hard truncation ceiling.",
+      "remediation": "us_ai_risk_management_framework_second_draft_august_e303aeb7 is quarantined from headline metrics (corpus_role='draft_consultation', lifecycle_stage='superseded'). Queue us_nist_ai_rmf_1_0 for full-context re-analysis under Parser 0.3.0 + v2.1 prompts."
+    },
+    "us_cfpb_chatbots_input_mismatch": {
+      "document_id": "united_states/us_cfpb_chatbots_issue_spotlight_2023",
+      "status": "corrupt_binary_pdf_saved_as_html_then_overwritten_by_blurb",
+      "finding": "Retrieval Attempt 1 (2026-04-15T01:10:02Z) fetched the 464,816-byte CFPB PDF (https://files.consumerfinance.gov/f/documents/cfpb_chatbot-issue-spotlight_2023-06.pdf) and saved it as source.html. The legacy parser fed raw binary PDF bytes to Claude (186,033 policy / 184,570 framing input tokens), confirmed verbatim in document_analysis.json implementation_notes ('The document text is primarily binary/encoded PDF content with limited extractable plain text'; policy_conf=0.45, 0/7 grounded quotes). Two minutes later (01:12:00Z), Attempt 2 fetched the 158,638-byte HTML landing page (1,189 chars of 3-paragraph summary blurb) and overwrote source.html without re-analyzing.",
+      "remediation": "Updated data/sources/united_states.json to set document_format='pdf' and add https://files.consumerfinance.gov/f/documents/cfpb_chatbot-issue-spotlight_2023-06.pdf in retrieval_urls. Next `fetch-seed-documents united_states --refresh` + `parse-raw-documents` + `analyze-documents --refresh` will replace the stub cleanly."
+    }
+  },
+  "kr_statutory_browser_recovery": {
+    "status": "browser_refetch_required",
+    "git_history_checked": true,
+    "manual_imports_checked": true,
+    "finding": "All three South Korean binding legal texts were overwritten with unrendered 144 KB law.go.kr SPA HTML shells (~385–431 extracted chars of UI chrome) during a plain-HTTP refresh on 2026-04-15T05:46Z prior to initial commit ca3f88e. No un-overwritten copy exists in git history or data/manual_imports/. Existing document_analysis.json outputs were produced earlier from the 236–307 KB Playwright-rendered texts (21k–29k input tokens) and MUST NOT be overwritten via `make analyze` until raw/ and parsed/ are restored via browser capture.",
+    "affected_documents": [
+      {
+        "document_id": "kr_ai_basic_act",
+        "current_parsed_chars": 385,
+        "last_good_browser_bytes": 259574,
+        "last_good_timestamp": "2026-04-14T23:55:04Z",
+        "overwritten_timestamp": "2026-04-15T05:46:36Z",
+        "current_quote_grounding": "0/21 (0%)"
+      },
+      {
+        "document_id": "kr_ai_and_data_administration_act",
+        "current_parsed_chars": 387,
+        "last_good_browser_bytes": 236350,
+        "last_good_timestamp": "2026-04-14T23:55:26Z",
+        "overwritten_timestamp": "2026-04-15T05:46:46Z",
+        "current_quote_grounding": "0/14 (0%)"
+      },
+      {
+        "document_id": "kr_ai_basic_act_enforcement_decree",
+        "current_parsed_chars": 431,
+        "last_good_browser_bytes": 307443,
+        "last_good_timestamp": "2026-04-14T23:55:14Z",
+        "overwritten_timestamp": "2026-04-15T05:46:39Z",
+        "current_quote_grounding": "0/16 (0%)"
+      }
+    ],
+    "recovery_commands": [
+      "PYTHONPATH=services/pipeline/src python -m observatory.cli fetch-seed-documents south_korea --refresh --with-browser",
+      "PYTHONPATH=services/pipeline/src python -m observatory.cli parse-raw-documents south_korea --refresh",
+      "PYTHONPATH=services/pipeline/src python -m observatory.cli report-source-quality-audit"
+    ]
+  },
+  "stub_and_synthetic_replacement_queue": [
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_gpai_scope_obligations_guidelines_2025",
+      "issue": "Current PDF (3,383 chars) is only the 2-page cover Communication C(2025) 5045 final, missing the ~40-page GPAI Guidelines Annex.",
+      "action": "Replace raw PDF with full GPAI Guidelines Annex and re-parse/re-analyze."
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_cfpb_chatbots_issue_spotlight_2023",
+      "issue": "Analyzed on 186,033 tokens (raw PDF saved as source.html; implementation_notes confirms binary gibberish) before being overwritten by 1,189-char HTML summary page (0/7 quotes grounded, policy_conf=0.45).",
+      "action": "Manifest updated to document_format='pdf' with canonical CFPB PDF retrieval_url; re-fetch as source.pdf, re-parse cleanly, and re-analyze."
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_nist_ai_rmf_playbook",
+      "issue": "Current artifact (1,950 chars) is the NIST HTML overview page with federal banner chrome rather than the Playbook content.",
+      "action": "Ingest official NIST AI RMF Playbook JSON/PDF export or keep quarantined as companion_resource."
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_ai_governance_guidelines_2021",
+      "issue": "Backed by 8.6 KB synthetic summary PDF from manual_imports/japan/ and latest retrieval timed out; marked historical_baseline/superseded.",
+      "action": "Replace with official METI 20210709_9.pdf when reachable."
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_ai_governance_ver_1_1_report",
+      "issue": "Backed by 6.2 KB synthetic summary PDF from manual_imports/japan/; marked historical_baseline/superseded.",
+      "action": "Replace with official METI 20210709_8.pdf when reachable."
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_ai_ethics_norms_2021",
+      "issue": "Current artifact (1,239 chars) is MOST press release rather than the full 2021 Ethics Norms text.",
+      "action": "Fetch canonical full text from MOST/State Council."
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_ai_governance_principles_2019",
+      "issue": "Current artifact (1,525 chars) is MOST press release rather than the full 8-principle text.",
+      "action": "Fetch canonical full text from MOST/State Council."
+    }
+  ],
+  "truncated_split_pass_reanalysis_priority": [
+    "european_union/eu_ai_act_regulation_2024_1689 (581,799c — analyzed on ~4.8k–5.9k tokens / Recitals 1–10 only)",
+    "european_union/eu_prohibited_ai_practices_guidelines (421,669c — ~5.0k–6.3k tokens)",
+    "japan/jp_ai_data_contract_guidelines_1_1_2019 (385,884c — ~8.7k–13.6k tokens, 0 reqs extracted)",
+    "japan/jp_ai_72333136 (218,738c — ~14.9k–18.9k tokens)",
+    "japan/jp_agri_ai_data_contract_guideline_2020 (133,249c — ~7.3k–7.5k tokens)",
+    "south_korea/kr_high_impact_ai_operator_obligations_guideline_2026 (108,975c — ~8.5k–19.5k tokens)",
+    "united_states/us_nist_ai_rmf_1_0 (106,538c — ~4.8k–6.0k tokens; hit same 14k framing cap as RMF 2nd draft)",
+    "european_union/eu_gpai_code_safety_security_chapter_2025 (105,445c — ~5.0k–6.2k tokens)",
+    "japan/jp_ai_guidelines_for_business_ver_1_0 (104,180c — ~4.8k–6.0k tokens)",
+    "united_states/us_ai_risk_management_framework_second_draft_august_e303aeb7 (86,091c — ~4.8k–6.0k tokens; quarantined draft)"
+  ]
+}

@@ -1,5 +1,6 @@
 import "server-only";
 
+import { unstable_cache } from "next/cache";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -7,9 +8,14 @@ import {
   allowLocalFallback,
   getDatabaseClient,
   handleDatabaseReadFailure,
+  OBSERVATORY_CACHE_TAG,
+  OBSERVATORY_REVALIDATE_SECONDS,
+  withDbTimeout,
 } from "@/lib/db";
-import type { FrameLabel } from "@/lib/seed-data";
+import { frameTextHue } from "@/lib/frame-vocab";
 import { jurisdictionMeta, type JurisdictionKey } from "@/lib/jurisdictions";
+import type { FrameLabel } from "@/lib/seed-data";
+import { humanizeTaxonomyLabel } from "@/lib/taxonomy-vocab";
 
 export type JurisdictionAnalysisLabelStat = {
   label: string;
@@ -62,27 +68,40 @@ type DbRow = {
   analysis_payload: JurisdictionAnalysis;
 };
 
-const WORKSPACE_ROOT = path.resolve(process.cwd(), "..", "..");
+const WORKSPACE_ROOT = path.resolve(
+  /*turbopackIgnore: true*/ process.cwd(),
+  "..",
+  "..",
+);
 
-export async function getJurisdictionAnalysis(
+async function loadJurisdictionAnalysisUncached(
   jurisdiction: JurisdictionKey,
 ): Promise<JurisdictionAnalysis | null> {
   const sql = getDatabaseClient();
   if (sql) {
     try {
-      const rows = (await sql`
-        SELECT analysis_payload
-        FROM machine_jurisdiction_analyses
-        WHERE jurisdiction = ${jurisdiction}
-        ORDER BY created_at DESC
-        LIMIT 1
-      `) as DbRow[];
+      const rows = (await withDbTimeout(
+        sql`
+          SELECT analysis_payload
+          FROM machine_jurisdiction_analyses
+          WHERE jurisdiction = ${jurisdiction}
+          ORDER BY created_at DESC
+          LIMIT 1
+        `,
+        `jurisdiction analysis ${jurisdiction}`,
+      )) as DbRow[];
       const payload = rows[0]?.analysis_payload;
       if (payload) {
         return normalizeJurisdictionAnalysis(payload, jurisdiction);
       }
+      if (!allowLocalFallback()) {
+        return null;
+      }
     } catch (error) {
-      handleDatabaseReadFailure(`jurisdiction analysis for ${jurisdiction} from Neon`, error);
+      handleDatabaseReadFailure(
+        `jurisdiction analysis for ${jurisdiction} from Neon`,
+        error,
+      );
       if (!allowLocalFallback()) {
         throw error;
       }
@@ -90,6 +109,21 @@ export async function getJurisdictionAnalysis(
   }
 
   return loadFallbackJurisdictionAnalysis(jurisdiction);
+}
+
+const getJurisdictionAnalysisCached = unstable_cache(
+  loadJurisdictionAnalysisUncached,
+  ["observatory-jurisdiction-analysis"],
+  {
+    revalidate: OBSERVATORY_REVALIDATE_SECONDS,
+    tags: [OBSERVATORY_CACHE_TAG],
+  },
+);
+
+export async function getJurisdictionAnalysis(
+  jurisdiction: JurisdictionKey,
+): Promise<JurisdictionAnalysis | null> {
+  return getJurisdictionAnalysisCached(jurisdiction);
 }
 
 async function loadFallbackJurisdictionAnalysis(
@@ -132,61 +166,17 @@ function normalizeJurisdictionAnalysis(
   };
 }
 
-export function humanizeJurisdictionAnalysisLabel(label?: string | null): string {
-  if (!label) return "Unspecified";
-  const labels: Record<string, string> = {
-    risk_assessment: "Risk assessment",
-    pre_deployment_testing: "Pre-deployment testing",
-    red_teaming: "Red-teaming",
-    incident_reporting: "Incident reporting",
-    transparency_disclosure: "Transparency and disclosure",
-    model_documentation: "Model documentation",
-    third_party_audit: "Third-party audit",
-    access_controls: "Access controls",
-    compute_governance: "Compute governance",
-    content_provenance: "Content provenance",
-    human_oversight: "Human oversight",
-    registration_licensing: "Registration or licensing",
-    civil_penalty: "Civil penalties",
-    criminal_penalty: "Criminal penalties",
-    market_access_restriction: "Market-access restrictions",
-    procurement_condition: "Procurement conditions",
-    licensing_requirement: "Licensing requirements",
-    regulatory_supervision: "Regulatory supervision",
-    reporting_obligation: "Reporting obligations",
-    soft_enforcement: "Soft enforcement",
-    none_specified: "No explicit enforcement mechanism",
-    binding_law: "Binding law",
-    executive_action: "Executive action",
-    regulatory_guidance: "Regulatory guidance",
-    standards_guideline: "Standards guidance",
-    voluntary_commitment: "Voluntary commitment",
-    strategy_statement: "Strategy statement",
-    legislation: "Legislation",
-    executive_order: "Executive action",
-    strategy_paper: "Strategy paper",
-    existential_catastrophic: "Existential or catastrophic risk",
-    national_security: "National security",
-    economic_competitiveness: "Economic competitiveness",
-    fundamental_rights: "Fundamental rights",
-    social_stability: "Social stability and public order",
-    innovation_enablement: "Innovation enablement",
-    consumer_public_safety: "Consumer and public safety",
-    labor_transition: "Labor and economic transition",
-  };
-  return labels[label] ?? label.replaceAll("_", " ");
+export function humanizeJurisdictionAnalysisLabel(
+  label?: string | null,
+): string {
+  return humanizeTaxonomyLabel(label);
 }
 
 export function jurisdictionAnalysisFrameColor(frame?: string | null): string {
-  const colorMap: Partial<Record<FrameLabel, string>> = {
-    national_security: "#c75146",
-    fundamental_rights: "#2f6eba",
-    economic_competitiveness: "#c98a2b",
-    innovation_enablement: "#2f8872",
-    social_stability: "#7a4ea8",
-    consumer_public_safety: "#2a8aa5",
-  };
-  return colorMap[frame as FrameLabel] ?? "#7a8697";
+  if (frame && frame in frameTextHue) {
+    return frameTextHue[frame as FrameLabel];
+  }
+  return "#a3b0c2";
 }
 
 export function jurisdictionName(jurisdiction: JurisdictionKey): string {

@@ -1,5 +1,5 @@
 {
-  "manifest_version": "2026-04-14",
+  "manifest_version": "2.0",
   "jurisdiction": "united_states",
   "description": "Official executive, standards, civil-rights, consumer-protection, and health-regulation sources for U.S. AI governance.",
   "source_portals": [
@@ -28,7 +28,8 @@
           "link_selector": "a[href]",
           "include_title_patterns": [
             "Artificial Intelligence",
-            "AI"
+            "AI",
+            "super intelligence"
           ],
           "max_candidates": 50
         }
@@ -59,7 +60,8 @@
           "link_selector": "a[href]",
           "include_title_patterns": [
             "Artificial Intelligence",
-            "AI"
+            "AI",
+            "super intelligence"
           ],
           "max_candidates": 50
         }
@@ -316,6 +318,100 @@
           "max_candidates": 50
         }
       ]
+    },
+    {
+      "id": "us_federal_register_ai",
+      "name": "Federal Register — Presidential Documents & AI/SI Rulemaking",
+      "issuing_body": "Office of the Federal Register (NARA)",
+      "issuer_type": "legal_registry",
+      "canonical_url": "https://www.federalregister.gov/presidential-documents/executive-orders",
+      "portal_kind": "registry",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Authoritative federal gazette for Executive Orders (EO 14409, EO 14434, Dec 2025 National Policy Framework EO) and federal AI/Super Intelligence rulemaking.",
+      "tags": [
+        "federal_register",
+        "executive_orders",
+        "super_intelligence",
+        "rulemaking"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.federalregister.gov/presidential-documents/executive-orders",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_url_patterns": [
+            "/documents/"
+          ],
+          "include_title_patterns": [
+            "artificial intelligence",
+            "super intelligence",
+            "frontier ai"
+          ],
+          "same_host_only": true,
+          "max_candidates": 30
+        }
+      ]
+    },
+    {
+      "id": "us_nist_caisi_si",
+      "name": "NIST Center for AI Standards and Innovation (CAISI) / Super Intelligence Portal",
+      "issuing_body": "National Institute of Standards and Technology (NIST / CAISI)",
+      "issuer_type": "standards_body",
+      "canonical_url": "https://www.nist.gov/super-intelligence",
+      "portal_kind": "portal",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official portal for NIST CAISI frontier evaluations, the 2026 AI/SI Agent Standards Initiative, NCCoE agent-IAM concept papers, and CSRC Cyber AI Profile (NIST IR 8596).",
+      "tags": [
+        "caisi",
+        "agentic_ai",
+        "super_intelligence",
+        "standards"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.nist.gov/super-intelligence",
+          "kind": "html_links",
+          "link_selector": "main a[href]",
+          "include_title_patterns": [
+            "agent",
+            "super intelligence",
+            "artificial intelligence",
+            "standard",
+            "profile",
+            "cyber"
+          ],
+          "same_host_only": true,
+          "max_candidates": 25
+        }
+      ]
+    },
+    {
+      "id": "us_congress_govinfo",
+      "name": "GovInfo Public Laws (U.S. Congress)",
+      "issuing_body": "U.S. Government Publishing Office / U.S. Congress",
+      "issuer_type": "legal_registry",
+      "canonical_url": "https://www.govinfo.gov/app/collection/plaw",
+      "portal_kind": "registry",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Canonical federal statutory repository for enacted U.S. AI legislation (e.g., TAKE IT DOWN Act, Pub. L. 119-12).",
+      "tags": [
+        "legislation",
+        "public_law",
+        "congress"
+      ],
+      "discovery_targets": []
     }
   ],
   "seed_documents": [
@@ -347,7 +443,8 @@
         "executive_order",
         "innovation",
         "national_security"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_ai_action_plan_pdf",
@@ -360,7 +457,8 @@
       "policy_domains": [
         "industrial_innovation",
         "national_security",
-        "frontier_gpai"
+        "frontier_gpai",
+        "sovereign_compute"
       ],
       "lifecycle_stage": "active",
       "publication_date": "2025-07-23",
@@ -378,7 +476,8 @@
         "strategy",
         "action_plan",
         "federal_policy"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_omb_m_25_21",
@@ -386,8 +485,8 @@
       "issuing_body": "Office of Management and Budget",
       "canonical_url": "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf",
       "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "binding_strength": "executive_action",
+      "source_tier": "executive_action",
       "policy_domains": [
         "public_sector_governance",
         "frontier_gpai"
@@ -409,7 +508,8 @@
         "federal_use",
         "governance",
         "high_impact_ai"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_omb_m_25_22",
@@ -417,8 +517,8 @@
       "issuing_body": "Office of Management and Budget",
       "canonical_url": "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-22-Driving-Efficient-Acquisition-of-Artificial-Intelligence-in-Government.pdf",
       "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "binding_strength": "executive_action",
+      "source_tier": "executive_action",
       "policy_domains": [
         "public_sector_procurement",
         "public_sector_governance",
@@ -441,7 +541,8 @@
         "procurement",
         "federal_use",
         "high_impact_ai"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_nist_ai_rmf_1_0",
@@ -474,7 +575,9 @@
         "nist",
         "risk_management",
         "standards"
-      ]
+      ],
+      "corpus_role": "primary_instrument",
+      "supersedes_id": "us_ai_risk_management_framework_second_draft_august_e303aeb7"
     },
     {
       "id": "us_nist_ai_rmf_playbook",
@@ -483,7 +586,7 @@
       "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/nist-ai-rmf-playbook",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
-      "source_tier": "technical_standard",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "standards_assurance",
         "frontier_gpai"
@@ -504,7 +607,8 @@
         "nist",
         "implementation",
         "risk_management"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "us_nist_genai_profile",
@@ -538,7 +642,8 @@
         "nist",
         "generative_ai",
         "risk_management"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_ai_standards_nist",
@@ -569,7 +674,8 @@
         "standards",
         "global_engagement",
         "federal_coordination"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_technical_contributions_ai_governance_nist",
@@ -578,7 +684,7 @@
       "canonical_url": "https://www.nist.gov/artificial-intelligence/technical-contributions-ai-governance",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
-      "source_tier": "policy_strategy",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "frontier_gpai",
         "standards_assurance",
@@ -600,7 +706,8 @@
         "ai_governance",
         "federal_coordination",
         "international_governance"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "us_ai_congressional_mandates_executive_orders_nist",
@@ -609,7 +716,7 @@
       "canonical_url": "https://www.nist.gov/artificial-intelligence/ai-congressional-mandates-executive-orders-and-actions",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
-      "source_tier": "policy_strategy",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "frontier_gpai",
         "standards_assurance",
@@ -632,7 +739,8 @@
         "congressional_mandates",
         "executive_orders",
         "ai_governance"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "us_ai_bill_of_rights_blueprint_2022",
@@ -650,7 +758,7 @@
         "privacy_data_protection",
         "consumer_protection"
       ],
-      "lifecycle_stage": "active",
+      "lifecycle_stage": "superseded",
       "publication_date": "2022-10-04",
       "languages": [
         "en"
@@ -665,7 +773,8 @@
         "civil_rights",
         "privacy",
         "rights_framework"
-      ]
+      ],
+      "corpus_role": "historical_baseline"
     },
     {
       "id": "us_ftc_online_harms_ai_report_2022",
@@ -698,7 +807,8 @@
         "consumer_protection",
         "bias",
         "surveillance"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_joint_statement_ai_discrimination_2023",
@@ -731,7 +841,8 @@
         "civil_rights",
         "enforcement",
         "algorithmic_discrimination"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_fda_ai_pccp_guidance_2025",
@@ -764,7 +875,8 @@
         "healthcare",
         "medical_devices",
         "risk_management"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_cfpb_circular_2022_03_complex_algorithms",
@@ -798,13 +910,17 @@
         "finance",
         "consumer_protection",
         "algorithmic_credit"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_cfpb_chatbots_issue_spotlight_2023",
       "title": "Chatbots in consumer finance",
       "issuing_body": "Consumer Financial Protection Bureau",
       "canonical_url": "https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/",
+      "retrieval_urls": [
+        "https://files.consumerfinance.gov/f/documents/cfpb_chatbot-issue-spotlight_2023-06.pdf"
+      ],
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
       "source_tier": "policy_strategy",
@@ -818,7 +934,7 @@
       "languages": [
         "en"
       ],
-      "document_format": "html",
+      "document_format": "pdf",
       "source_portal_ids": [
         "us_cfpb_ai_finance"
       ],
@@ -829,7 +945,8 @@
         "consumer_protection",
         "chatbots",
         "finance"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "us_crosswalks_to_the_nist_artificial_intelligence_r_8c897d8c",
@@ -838,7 +955,7 @@
       "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/crosswalks-nist-artificial-intelligence-risk-management-framework",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
-      "source_tier": "technical_standard",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "standards_assurance",
         "frontier_gpai"
@@ -860,7 +977,8 @@
         "implementation",
         "primary_text",
         "auto_promoted"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "us_roadmap_for_the_nist_artificial_intelligence_ris_bc6cf1d8",
@@ -869,7 +987,7 @@
       "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/roadmap-nist-artificial-intelligence-risk-management-framework-ai",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
-      "source_tier": "technical_standard",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "standards_assurance",
         "frontier_gpai"
@@ -891,7 +1009,8 @@
         "implementation",
         "primary_text",
         "auto_promoted"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "us_ai_risk_management_framework_engage_nist_0abb57bc",
@@ -900,7 +1019,7 @@
       "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-risk-management-framework-engage",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
-      "source_tier": "technical_standard",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "standards_assurance",
         "frontier_gpai"
@@ -922,7 +1041,8 @@
         "implementation",
         "primary_text",
         "auto_promoted"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "us_ai_risk_management_framework_faqs_nist_56d7e05a",
@@ -931,7 +1051,7 @@
       "canonical_url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-risk-management-framework-faqs",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
-      "source_tier": "technical_standard",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "standards_assurance",
         "frontier_gpai"
@@ -953,21 +1073,22 @@
         "implementation",
         "faq",
         "auto_promoted"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "us_ai_risk_management_framework_initial_draft_march_fb5a1e0e",
       "title": "AI Risk Management Framework: Initial Draft - March 17, 2022",
       "issuing_body": "National Institute of Standards and Technology",
       "canonical_url": "https://www.nist.gov/system/files/documents/2022/03/17/AI-RMF-1stdraft.pdf",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
       "policy_domains": [
         "standards_assurance",
         "frontier_gpai"
       ],
-      "lifecycle_stage": "draft",
+      "lifecycle_stage": "superseded",
       "publication_date": "2022-03-17",
       "languages": [
         "en"
@@ -984,21 +1105,22 @@
         "implementation",
         "consultation_draft",
         "auto_promoted"
-      ]
+      ],
+      "corpus_role": "draft_consultation"
     },
     {
       "id": "us_ai_risk_management_framework_second_draft_august_e303aeb7",
       "title": "AI Risk Management Framework: Second Draft - August 18, 2022",
       "issuing_body": "National Institute of Standards and Technology",
       "canonical_url": "https://www.nist.gov/system/files/documents/2022/08/18/AI_RMF_2nd_draft.pdf",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
       "policy_domains": [
         "standards_assurance",
         "frontier_gpai"
       ],
-      "lifecycle_stage": "draft",
+      "lifecycle_stage": "superseded",
       "publication_date": "2022-08-18",
       "languages": [
         "en"
@@ -1015,56 +1137,23 @@
         "implementation",
         "consultation_draft",
         "auto_promoted"
-      ]
-    },
-    {
-      "id": "us_ai_risk_management_framework_nist_e9c27a02",
-      "title": "AI Risk Management Framework | NIST",
-      "issuing_body": "National Institute of Standards and Technology",
-      "canonical_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
-      "retrieval_urls": [
-        "https://www.nist.gov/itl/ai-risk-management-framework",
-        "https://doi.org/10.6028/NIST.AI.100-1"
       ],
-      "document_type": "standards_guideline",
-      "binding_strength": "standards_guideline",
-      "source_tier": "technical_standard",
-      "policy_domains": [
-        "standards_assurance",
-        "frontier_gpai"
-      ],
-      "lifecycle_stage": "active",
-      "publication_date": "2021-07-12",
-      "languages": [
-        "en"
-      ],
-      "document_format": "pdf",
-      "source_portal_ids": [
-        "us_nist_ai"
-      ],
-      "priority": "high",
-      "relevance_notes": "Auto-promoted from us_nist_ai; role=primary_text; bucket=implementation_guidance; family=ai risk management framework",
-      "tags": [
-        "standards",
-        "nist",
-        "technical_guidance",
-        "primary_text",
-        "auto_promoted"
-      ]
+      "corpus_role": "draft_consultation",
+      "supersedes_id": "us_ai_risk_management_framework_initial_draft_march_fb5a1e0e"
     },
     {
       "id": "us_from_principles_to_practice_ostp_the_white_house_8a01bf26",
       "title": "From Principles to Practice | OSTP | The White House",
       "issuing_body": "White House Office of Science and Technology Policy",
       "canonical_url": "https://bidenwhitehouse.archives.gov/ostp/ai-bill-of-rights/from-principles-to-practice/",
-      "document_type": "legislation",
-      "binding_strength": "binding_law",
-      "source_tier": "statutory_rule",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "voluntary_commitment",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "civil_rights_nondiscrimination",
         "frontier_gpai"
       ],
-      "lifecycle_stage": "active",
+      "lifecycle_stage": "superseded",
       "publication_date": "2022-10-04",
       "languages": [
         "en"
@@ -1081,7 +1170,8 @@
         "rights_based_governance",
         "primary_text",
         "auto_promoted"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     }
   ]
 }

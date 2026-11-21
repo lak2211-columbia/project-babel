@@ -1,4 +1,8 @@
 {
+  "taxonomy_version": "2.1.0",
+  "schema_version": "2.1",
+  "updated_at": "2026-11-20",
+  "versioning_policy": "Semantic versioning (MAJOR.MINOR.PATCH): MAJOR for breaking renames or removals of canonical keys/labels; MINOR for additive dimensions or labels preserving 100% backwards compatibility with existing corpus artifacts; PATCH for non-semantic metadata clarifications.",
   "jurisdictions": [
     "united_states",
     "european_union",
@@ -38,6 +42,12 @@
     "implementation_resource",
     "voluntary_framework"
   ],
+  "corpus_roles": [
+    "primary_instrument",
+    "companion_resource",
+    "draft_consultation",
+    "historical_baseline"
+  ],
   "policy_domains": [
     "frontier_gpai",
     "privacy_data_protection",
@@ -53,7 +63,11 @@
     "industrial_innovation",
     "education",
     "finance",
-    "critical_infrastructure"
+    "critical_infrastructure",
+    "agentic_ai",
+    "embodied_physical_ai",
+    "companion_ai",
+    "sovereign_compute"
   ],
   "lifecycle_stages": [
     "draft",
@@ -73,7 +87,18 @@
     "compute_governance",
     "content_provenance",
     "human_oversight",
-    "registration_licensing"
+    "registration_licensing",
+    "agentic_autonomy_controls",
+    "training_data_governance",
+    "frontier_safety_evaluation",
+    "open_weight_obligations",
+    "domestic_representative"
+  ],
+  "obligation_strengths": [
+    "mandatory",
+    "conditional",
+    "recommended",
+    "aspirational"
   ],
   "enforcement_mechanisms": [
     "civil_penalty",

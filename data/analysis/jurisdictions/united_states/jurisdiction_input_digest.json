@@ -1,16 +1,18 @@
 {
   "jurisdiction": "united_states",
-  "source_count": 24,
-  "source_window_start": "2021-07-12",
+  "source_count": 23,
+  "source_window_start": "2021-07-13",
   "source_window_end": "2025-08-18",
   "documents": [
     {
       "document_id": "us_ai_action_plan_pdf",
       "title": "Winning the Race: America's AI Action Plan",
       "publication_date": "2025-07-23",
-      "issuing_body": "The White House (OSTP / NSC)",
+      "issuing_body": "The White House",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "national_security",
       "secondary_frames": [
         "economic_competitiveness",
@@ -35,9 +37,11 @@
       "document_id": "us_ai_bill_of_rights_blueprint_2022",
       "title": "Blueprint for an AI Bill of Rights",
       "publication_date": "2022-10-04",
-      "issuing_body": "White House Office of Science and Technology Policy",
+      "issuing_body": "The White House",
       "document_type": "strategy_paper",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "consumer_public_safety",
@@ -60,9 +64,11 @@
       "document_id": "us_ai_congressional_mandates_executive_orders_nist",
       "title": "AI Congressional Mandates, Executive Orders and Actions | NIST",
       "publication_date": "2025-01-21",
-      "issuing_body": "U.S. National Institute of Standards and Technology (NIST)",
+      "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "regulatory_guidance",
       "binding_strength": "strategy_statement",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
         "national_security",
@@ -90,6 +96,8 @@
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "innovation_enablement",
@@ -112,6 +120,8 @@
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "innovation_enablement",
@@ -137,6 +147,8 @@
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
+      "corpus_role": "draft_consultation",
+      "lifecycle_stage": "superseded",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "innovation_enablement",
@@ -157,37 +169,14 @@
       "confidence": 0.785
     },
     {
-      "document_id": "us_ai_risk_management_framework_nist_e9c27a02",
-      "title": "AI Risk Management Framework | NIST",
-      "publication_date": "2021-07-12",
-      "issuing_body": "National Institute of Standards and Technology (NIST)",
-      "document_type": "standards_guideline",
-      "binding_strength": "voluntary_commitment",
-      "dominant_frame": "consumer_public_safety",
-      "secondary_frames": [
-        "innovation_enablement",
-        "fundamental_rights"
-      ],
-      "top_requirements": [
-        "risk_assessment",
-        "model_documentation",
-        "transparency_disclosure"
-      ],
-      "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "none_specified"
-      ],
-      "implementation_notes": "The AI RMF is explicitly intended for voluntary use. A companion Playbook, Roadmap, and Crosswalk have been published. A Generative AI Profile (NIST-AI-600-1) was released July 26, 2024. A concept note for a Critical Infrastructure Profile was released April 7, 2026. The Trustworthy and Responsible AI Resource Center was launched March 30, 2023 to facilitate implementation.",
-      "framing_rationale_summary": "The NIST AI RMF is primarily framed around managing risks to individuals, organizations, and society, with emphasis on trustworthiness and safety in AI products and services. Secondary frames include innovation enablement (voluntary use, building industry capacity) and fundamental rights (trustworthiness considerations).",
-      "confidence": 0.76
-    },
-    {
       "document_id": "us_ai_risk_management_framework_second_draft_august_e303aeb7",
       "title": "AI Risk Management Framework: Second Draft - August 18, 2022",
       "publication_date": "2022-08-18",
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "draft_consultation",
+      "lifecycle_stage": "superseded",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "fundamental_rights",
@@ -214,6 +203,8 @@
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
@@ -233,9 +224,11 @@
       "document_id": "us_cfpb_chatbots_issue_spotlight_2023",
       "title": "Chatbots in consumer finance",
       "publication_date": "2023-06-06",
-      "issuing_body": "Consumer Financial Protection Bureau",
+      "issuing_body": "Consumer Financial Protection Bureau (CFPB)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "fundamental_rights",
@@ -260,6 +253,8 @@
       "issuing_body": "Consumer Financial Protection Bureau (CFPB)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "consumer_public_safety",
@@ -285,6 +280,8 @@
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "innovation_enablement",
@@ -304,9 +301,11 @@
       "document_id": "us_eo_14179_removing_barriers_ai",
       "title": "Removing Barriers to American Leadership in Artificial Intelligence",
       "publication_date": "2025-01-23",
-      "issuing_body": "Executive Office of the President (White House)",
+      "issuing_body": "The White House",
       "document_type": "executive_order",
       "binding_strength": "executive_action",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
         "national_security",
@@ -324,9 +323,11 @@
       "document_id": "us_fda_ai_pccp_guidance_2025",
       "title": "Marketing Submission Recommendations for a Predetermined Change Control Plan for Artificial Intelligence-Enabled Device Software Functions",
       "publication_date": "2025-08-18",
-      "issuing_body": "U.S. Food and Drug Administration (FDA) - Center for Devices and Radiological Health (CDRH), Center for Biologics Evaluation and Research (CBER), Center for Drug Evaluation and Research (CDER)",
+      "issuing_body": "Food and Drug Administration (FDA)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "innovation_enablement",
@@ -350,9 +351,11 @@
       "document_id": "us_from_principles_to_practice_ostp_the_white_house_8a01bf26",
       "title": "From Principles to Practice | OSTP | The White House",
       "publication_date": "2022-10-04",
-      "issuing_body": "Office of Science and Technology Policy (OSTP), The White House",
+      "issuing_body": "The White House",
       "document_type": "regulatory_guidance",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "superseded",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "consumer_public_safety",
@@ -375,9 +378,11 @@
       "document_id": "us_ftc_online_harms_ai_report_2022",
       "title": "Combatting Online Harms Through Innovation: A Report to Congress",
       "publication_date": "2022-06-16",
-      "issuing_body": "Federal Trade Commission",
+      "issuing_body": "Federal Trade Commission (FTC)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "fundamental_rights",
@@ -401,9 +406,11 @@
       "document_id": "us_joint_statement_ai_discrimination_2023",
       "title": "Joint Statement on Enforcement Efforts Against Discrimination and Bias in Automated Systems",
       "publication_date": "2023-04-25",
-      "issuing_body": "CFPB, DOJ Civil Rights Division, EEOC, FTC (Joint)",
+      "issuing_body": "Federal Trade Commission (FTC)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "consumer_public_safety",
@@ -430,6 +437,8 @@
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "fundamental_rights",
@@ -453,9 +462,11 @@
       "document_id": "us_nist_ai_rmf_playbook",
       "title": "NIST AI RMF Playbook",
       "publication_date": "2022-07-08",
-      "issuing_body": "NIST Information Technology Laboratory (ITL)",
+      "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "innovation_enablement"
@@ -478,6 +489,8 @@
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "fundamental_rights",
@@ -501,9 +514,11 @@
       "document_id": "us_omb_m_25_21",
       "title": "M-25-21: Accelerating Federal Use of AI through Innovation, Governance, and Public Trust",
       "publication_date": "2025-04-03",
-      "issuing_body": "Office of Management and Budget",
+      "issuing_body": "Office of Management and Budget (OMB)",
       "document_type": "regulatory_guidance",
       "binding_strength": "executive_action",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
@@ -529,9 +544,11 @@
       "document_id": "us_omb_m_25_22",
       "title": "M-25-22: Driving Efficient Acquisition of Artificial Intelligence in Government",
       "publication_date": "2025-04-03",
-      "issuing_body": "Office of Management and Budget",
+      "issuing_body": "Office of Management and Budget (OMB)",
       "document_type": "regulatory_guidance",
       "binding_strength": "executive_action",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
         "innovation_enablement",
@@ -559,6 +576,8 @@
       "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "standards_guideline",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "fundamental_rights",
@@ -581,9 +600,11 @@
       "document_id": "us_technical_contributions_ai_governance_nist",
       "title": "Technical Contributions to AI Governance | NIST",
       "publication_date": "2021-07-26",
-      "issuing_body": "National Institute of Standards and Technology (NIST), Information Technology Laboratory (ITL) AI Program",
+      "issuing_body": "National Institute of Standards and Technology (NIST)",
       "document_type": "regulatory_guidance",
       "binding_strength": "standards_guideline",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "national_security",
@@ -601,316 +622,261 @@
   "aggregates": {
     "document_types": [
       {
-        "label": "standards_guideline",
-        "count": 11,
-        "share": 0.458
-      },
-      {
         "label": "regulatory_guidance",
         "count": 10,
-        "share": 0.417
+        "share": 0.435
+      },
+      {
+        "label": "standards_guideline",
+        "count": 10,
+        "share": 0.435
       },
       {
         "label": "strategy_paper",
         "count": 2,
-        "share": 0.083
+        "share": 0.087
       },
       {
         "label": "executive_order",
         "count": 1,
-        "share": 0.042
+        "share": 0.043
       }
     ],
     "binding_strengths": [
       {
         "label": "voluntary_commitment",
-        "count": 10,
-        "share": 0.417
+        "count": 9,
+        "share": 0.391
       },
       {
         "label": "regulatory_guidance",
         "count": 5,
-        "share": 0.208
+        "share": 0.217
       },
       {
         "label": "standards_guideline",
         "count": 4,
-        "share": 0.167
+        "share": 0.174
       },
       {
         "label": "executive_action",
         "count": 3,
-        "share": 0.125
+        "share": 0.13
       },
       {
         "label": "strategy_statement",
         "count": 2,
-        "share": 0.083
+        "share": 0.087
       }
     ],
     "requirements": [
       {
         "label": "risk_assessment",
-        "count": 20,
-        "share": 0.833
-      },
-      {
-        "label": "transparency_disclosure",
-        "count": 18,
-        "share": 0.75
+        "count": 19,
+        "share": 0.826
       },
       {
         "label": "human_oversight",
         "count": 17,
-        "share": 0.708
+        "share": 0.739
+      },
+      {
+        "label": "transparency_disclosure",
+        "count": 17,
+        "share": 0.739
       },
       {
         "label": "model_documentation",
-        "count": 15,
-        "share": 0.625
+        "count": 14,
+        "share": 0.609
       },
       {
         "label": "pre_deployment_testing",
         "count": 11,
-        "share": 0.458
+        "share": 0.478
       },
       {
         "label": "incident_reporting",
         "count": 8,
-        "share": 0.333
+        "share": 0.348
       },
       {
         "label": "third_party_audit",
         "count": 8,
-        "share": 0.333
+        "share": 0.348
       },
       {
         "label": "access_controls",
         "count": 6,
-        "share": 0.25
+        "share": 0.261
       },
       {
         "label": "content_provenance",
         "count": 5,
-        "share": 0.208
+        "share": 0.217
       },
       {
         "label": "red_teaming",
         "count": 2,
-        "share": 0.083
+        "share": 0.087
       },
       {
         "label": "registration_licensing",
         "count": 2,
-        "share": 0.083
+        "share": 0.087
       },
       {
         "label": "compute_governance",
         "count": 1,
-        "share": 0.042
+        "share": 0.043
       }
     ],
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "count": 20,
-        "share": 0.833
+        "count": 19,
+        "share": 0.826
       },
       {
         "label": "reporting_obligation",
         "count": 10,
-        "share": 0.417
+        "share": 0.435
       },
       {
         "label": "regulatory_supervision",
         "count": 7,
-        "share": 0.292
+        "share": 0.304
       },
       {
         "label": "none_specified",
-        "count": 6,
-        "share": 0.25
+        "count": 5,
+        "share": 0.217
       },
       {
         "label": "civil_penalty",
         "count": 3,
-        "share": 0.125
+        "share": 0.13
       },
       {
         "label": "market_access_restriction",
         "count": 2,
-        "share": 0.083
+        "share": 0.087
       },
       {
         "label": "procurement_condition",
         "count": 2,
-        "share": 0.083
+        "share": 0.087
       }
     ],
     "institutions": [
       {
         "label": "National Institute of Standards and Technology (NIST)",
-        "count": 11,
-        "share": 0.458
+        "count": 12,
+        "share": 0.522
       },
       {
-        "label": "NIST",
-        "count": 2,
-        "share": 0.083
+        "label": "The White House",
+        "count": 5,
+        "share": 0.217
       },
       {
-        "label": "NIST Information Technology Laboratory (ITL)",
+        "label": "Consumer Financial Protection Bureau (CFPB)",
         "count": 2,
-        "share": 0.083
+        "share": 0.087
+      },
+      {
+        "label": "Federal Trade Commission (FTC)",
+        "count": 2,
+        "share": 0.087
       },
       {
         "label": "National Artificial Intelligence Advisory Committee (NAIAC)",
         "count": 2,
-        "share": 0.083
+        "share": 0.087
       },
       {
-        "label": "Office of Management and Budget",
+        "label": "Office of Management and Budget (OMB)",
         "count": 2,
-        "share": 0.083
+        "share": 0.087
       },
       {
         "label": "AI Standards Coordination Working Group (AISCWG)",
         "count": 1,
-        "share": 0.042
+        "share": 0.043
       },
       {
-        "label": "CFPB, DOJ Civil Rights Division, EEOC, FTC (Joint)",
+        "label": "Food and Drug Administration (FDA)",
         "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "Consumer Financial Protection Bureau",
-        "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "Consumer Financial Protection Bureau (CFPB)",
-        "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "Executive Office of the President (White House)",
-        "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "Federal Trade Commission",
-        "count": 1,
-        "share": 0.042
+        "share": 0.043
       },
       {
         "label": "ICSP AI Standards Coordination Working Group (AISCWG)",
         "count": 1,
-        "share": 0.042
+        "share": 0.043
       },
       {
         "label": "Interagency Committee on Standards Policy (ICSP)",
         "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "NIST Information Technology Laboratory (ITL) AI Program",
-        "count": 1,
-        "share": 0.042
+        "share": 0.043
       },
       {
         "label": "NITRD AI Working Group",
         "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "National Institute of Standards and Technology (NIST), Information Technology Laboratory (ITL) AI Program",
-        "count": 1,
-        "share": 0.042
+        "share": 0.043
       },
       {
         "label": "National Science and Technology Council Machine Learning and AI Subcommittee",
         "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "Office of Science and Technology Policy (OSTP), The White House",
-        "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "The White House (OSTP / NSC)",
-        "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "U.S. Food and Drug Administration (FDA) - Center for Devices and Radiological Health (CDRH), Center for Biologics Evaluation and Research (CBER), Center for Drug Evaluation and Research (CDER)",
-        "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "U.S. National Institute of Standards and Technology (NIST)",
-        "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "White House National AI Initiative Office",
-        "count": 1,
-        "share": 0.042
-      },
-      {
-        "label": "White House Office of Science and Technology Policy",
-        "count": 1,
-        "share": 0.042
+        "share": 0.043
       }
     ],
     "frames": [
       {
         "label": "consumer_public_safety",
-        "score": 12.42,
-        "share": 0.335,
-        "document_mentions": 23
+        "score": 10.937,
+        "share": 0.476,
+        "document_mentions": 22
       },
       {
         "label": "fundamental_rights",
-        "score": 6.87,
-        "share": 0.185,
+        "score": 3.701,
+        "share": 0.161,
         "document_mentions": 12
       },
       {
         "label": "innovation_enablement",
-        "score": 6.23,
-        "share": 0.168,
+        "score": 3.517,
+        "share": 0.153,
         "document_mentions": 12
       },
       {
         "label": "economic_competitiveness",
-        "score": 4.29,
-        "share": 0.116,
+        "score": 1.863,
+        "share": 0.081,
+        "document_mentions": 7
+      },
+      {
+        "label": "social_stability",
+        "score": 1.196,
+        "share": 0.052,
         "document_mentions": 7
       },
       {
         "label": "national_security",
-        "score": 3.01,
-        "share": 0.081,
+        "score": 1.098,
+        "share": 0.048,
         "document_mentions": 5
       },
       {
-        "label": "social_stability",
-        "score": 2.7,
-        "share": 0.073,
-        "document_mentions": 7
-      },
-      {
         "label": "labor_transition",
-        "score": 1.02,
-        "share": 0.027,
+        "score": 0.446,
+        "share": 0.019,
         "document_mentions": 1
       },
       {
         "label": "existential_catastrophic",
-        "score": 0.59,
-        "share": 0.016,
+        "score": 0.241,
+        "share": 0.01,
         "document_mentions": 1
       }
     ]

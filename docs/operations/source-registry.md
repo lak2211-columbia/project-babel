@@ -2,27 +2,27 @@
 
 ## Goal
 
-Build the source layer for maximum analytical coverage without diluting provenance quality.
+Build the official-source layer for maximum cross-jurisdiction comparability without diluting legal or provenance quality.
 
-The registry should prioritize:
+The registry prioritizes:
 
-1. Official primary sources
-2. Cross-jurisdiction comparability
-3. Stable retrieval paths
-4. Clear separation between source portals and seed documents
+1. **Official primary sources** (legislatures, executive offices, regulators, ministries, national standards bodies, AI safety institutes)
+2. **Cross-jurisdiction comparability** across the five tracked jurisdictions (US, EU, South Korea, Japan, China)
+3. **Stable, safe retrieval paths** with verifiable SHA-256 content hashes and append-only logs
+4. **Clear analytical separation** between primary instruments, companion resources, consultations/drafts, and historical baselines
 
 ## Inclusion rules
 
-- Include only official government, legislative, regulatory, or standards-body sources in the primary registry.
-- Prefer canonical publication pages over third-party mirrors.
-- Use seed documents for high-value instruments that are analytically important enough to ingest immediately.
-- Use source portals for broader coverage surfaces that should later be crawled or reviewed periodically.
+- Include only official government, legislative, regulatory, or public standards-body sources.
+- Prefer canonical legal texts and full PDFs over landing-page wrappers, press summaries, or FAQs.
+- Never ingest synthetic summaries as primary documents; every manual import must preserve the original official publication and provenance URL.
+- Use `source_portals` for recurring discovery surfaces and `seed_documents` for curated instruments tracked directly in the corpus.
 
-## Manifest layout
+## Manifest layout & schema contract
 
-Each jurisdiction manifest lives in `data/sources/<jurisdiction>.json`.
+Each jurisdiction manifest lives in `data/sources/<jurisdiction>.json` and is validated against [`packages/schemas/source-manifest.schema.json`](../../packages/schemas/source-manifest.schema.json) and `data/taxonomies/observatory-taxonomy.json` (Taxonomy v2.1.0) via `validate-sources` and `validate-artifacts`.
 
-Each manifest contains:
+Top-level fields:
 
 - `manifest_version`
 - `jurisdiction`
@@ -30,164 +30,88 @@ Each manifest contains:
 - `source_portals`
 - `seed_documents`
 
-## Source portal guidance
+### Seed document fields (Taxonomy v2.1.0)
 
-Use source portals for:
+Each `seed_documents[]` entry defines:
 
-- legal text repositories
-- ministry or commission policy portals
-- implementation helpdesks
-- official document libraries
+- `id`, `title`, `issuing_body`, `canonical_url`, optional `retrieval_urls[]`
+- Browser-capture directives (`browser_required`, `browser_wait_for_selector`, `browser_min_text_length`, `browser_click_selectors`)
+- Orthogonal classification axes:
+  - `document_type` (`legislation`, `executive_order`, `regulatory_guidance`, `strategy_paper`, `standards_guideline`, `voluntary_commitment`)
+  - `binding_strength` (`binding_law`, `executive_action`, `regulatory_guidance`, `standards_guideline`, `voluntary_commitment`, `strategy_statement`)
+  - `source_tier` (`statutory_rule`, `executive_action`, `regulatory_guidance`, `technical_standard`, `policy_strategy`, `implementation_resource`, `voluntary_framework`)
+  - `corpus_role` (`primary_instrument`, `companion_resource`, `draft_consultation`, `historical_baseline`)
+  - `lifecycle_stage` (`draft`, `adopted_not_yet_effective`, `active`, `superseded`)
+  - `supersedes_id` (optional document ID link for longitudinal supersession chains)
+  - `policy_domains[]` (19 domains including `agentic_ai`, `embodied_physical_ai`, `companion_ai`, `sovereign_compute`)
+- Strict ISO calendar dates (`publication_date`, optional `effective_date` in `YYYY-MM-DD`)
+- `languages[]`, `document_format` (`html` | `pdf` | `mixed`), `source_portal_ids[]`, `priority`, `relevance_notes`, `tags[]`
 
-Portals should make it easy to expand coverage later without rewriting the schema.
+### Source portals & discovery targets
 
-Portals can also define `discovery_targets` for recurring candidate scans. A discovery target points at an official landing page or sitemap and can filter candidates by:
-
-- URL substring patterns
-- visible link-title patterns
-- same-host restrictions
-- optional browser-backed rendering for JS-heavy official sites
-
-## Seed document guidance
-
-Seed documents should represent:
-
-- binding laws or executive actions
-- foundational strategies
-- current regulator guidance
-- high-signal implementation materials
-
-Each seed document should include:
-
-- canonical URL
-- optional retrieval URLs when the canonical page is not the most stable machine fetch target
-- optional browser flags for JS-heavy official portals
-- document type
-- binding strength
-- source portal references
-- language metadata
-- priority
-- short relevance note
+Portals register official registries, ministry libraries, AI safety institutes (`aisi.go.jp`, `nist.gov`, `tc260.org.cn`, `eur-lex.europa.eu`, `federalregister.gov`, `msit.go.kr`, `npc.gov.cn`), and helpdesks. `discovery_targets[]` support `html_links` and recursive `sitemap` / `sitemapindex` crawls with URL/title filters, `same_host_only` guards, and optional browser rendering.
 
 ## Storage conventions
 
-- Raw artifacts: `data/raw/<jurisdiction>/<document_id>/`
-- Parsed text: `data/parsed/<jurisdiction>/<document_id>/`
-- Retrieval logs: `data/retrieval/<jurisdiction>/<document_id>.json`
-- Discovery candidates: `data/discovery/<jurisdiction>/<portal_id>.json`
-- Candidate enrichment snapshots: `data/source_tracking/candidate_enrichment/<jurisdiction>/<portal_id>.json`
-- Source inventory snapshots: `data/source_tracking/source_inventory.json`
-- Source expansion plan snapshots: `data/source_tracking/source_expansion_plan.json`
-- Human-readable source inventory: `docs/operations/source-inventory.md`
-- Human-readable source expansion plan: `docs/operations/source-expansion-plan.md`
-- Blocked-source recovery playbook: `docs/operations/blocked-source-playbook.md`
+All paths persisted inside JSON metadata and Postgres are POSIX repo-relative paths (`/`):
 
-Each successful fetch updates `metadata.json` under the raw artifact directory with:
+- Raw artifacts & metadata: `data/raw/<jurisdiction>/<document_id>/`
+- Parsed text & sections: `data/parsed/<jurisdiction>/<document_id>/normalized.json`
+- Append-only retrieval logs: `data/retrieval/<jurisdiction>/<document_id>.json`
+- Discovery candidate scans: `data/discovery/<jurisdiction>/<portal_id>.json`
+- Enrichment cache: `data/source_tracking/candidate_enrichment/<jurisdiction>/<portal_id>.json`
+- Tracking snapshots:
+  - `data/source_tracking/source_inventory.json`
+  - `data/source_tracking/source_expansion_plan.json`
+  - `data/source_tracking/source_quality_audit.json`
+  - `data/source_tracking/late_2026_priority_targets.json` (curated late-2026 expansion queue)
+- Generated markdown reports:
+  - `docs/operations/source-inventory.md`
+  - `docs/operations/source-expansion-plan.md`
+  - `docs/operations/source-quality-audit.md`
+  - `docs/operations/blocked-source-playbook.md`
 
-- `sha256` content hash
-- `content_bytes`
-- `artifact_state` (`new`, `updated`, or `unchanged`)
-- `retrieval_count`
-- `fetch_url` and `resolved_url` so the exact machine retrieval path is auditable
-- `etag` and `last_modified` when exposed by the upstream server
-- `retrieval_log_path`
+## Retrieval & parsing safety guarantees
 
-## Validation
+- **SSRF protection:** Shared URL validator allows only `http`/`https`, resolves hosts, and blocks loopback, private, link-local, and multicast IPs (including redirect targets), enforcing a response byte cap.
+- **Strict HTTP & PDF checks:** Browser and HTTP downloads reject non-`2xx` responses (`<200` or `>=400`), verify `%PDF-` magic bytes before classifying payloads as PDFs, and validate/log linked PDFs.
+- **SPA-overwrite protection:** Plain HTTP fetches cannot overwrite a larger existing artifact belonging to a `browser_required: true` document with a smaller client-rendered shell (protecting `law.go.kr` and similar JS portals).
+- **Conditional refresh & metadata preservation:** Fetch sends `If-None-Match` / `If-Modified-Since` when available and preserves parser-populated metadata keys across `--refresh` runs.
+- **Strictly offline parsing:** All embedded/linked artifact fetching occurs during retrieval; `parse-raw-documents` reads local raw artifacts only.
 
-Run:
+## Validation & routine commands
 
-```bash
-make sources
-cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli summarize-sources
-cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli discover-source-candidates --refresh
-cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli discover-source-candidates japan --refresh --with-browser
-cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli report-source-coverage
-cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli report-source-expansion-plan
-cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli refresh-sources
-make fetch
-# refresh an existing jurisdiction and compare hashes
-cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli fetch-seed-documents united_states --refresh --max-attempts=5
-make parse
-```
-
-Validation currently checks:
-
-- manifest filename and jurisdiction match
-- unique ids
-- known taxonomy labels for document type and binding strength
-- valid portal references
-- basic URL and date structure
-
-The fetch command now also:
-
-- retries transient network and HTTP failures
-- writes an append-only retrieval log for each document
-- preserves fetch-attempt history across refresh runs
-- distinguishes unchanged source refreshes from source updates using SHA-256 hashes
-- supports ranked `retrieval_urls` before the canonical URL
-- can discover linked official PDFs from an official HTML landing page for PDF-type documents
-- can use `--with-browser` for documents marked as browser-required in the manifest
-- records whether the successful artifact came from `http` or `browser` transport
-
-The discovery command:
-
-- scans official portals without immediately promoting every candidate into the corpus
-- writes cached candidate lists per portal for later review and diffing
-- supports browser-backed discovery for sites that render links client-side
-- can be used as the front half of a recurring freshness workflow
-
-The coverage report command:
-
-- writes a machine-readable source inventory inside the repo
-- writes a markdown inventory that explains where information is flowing from by jurisdiction
-- writes a blocked-source playbook with recovery commands for any official seed document still missing locally
-- records, for each seed document, whether it has been fetched, parsed, and analyzed
-- records, for each seed document, the latest retrieval status so blocked sources stay visible
-- records, for each portal, how many cached discovery candidates are currently available
-
-The expansion plan command:
-
-- ranks discovery candidates before they become seed documents
-- identifies which portals deserve immediate promotion work versus discovery-filter cleanup
-- proposes a first-pass source tier and policy-domain classification for each high-signal candidate
-
-The enrichment command:
-
-- fetches representative high-signal candidates before promotion
-- extracts publication dates, languages, resolved titles, and linked PDF artifacts when possible
-- writes a persistent metadata layer that promotion can reuse
-
-The promotion command:
-
-- converts high-signal candidate families into new seed documents
-- refuses promotion when publication date or language metadata is missing
-- preserves canonical URLs while adding retrieval URLs for downloadable PDF artifacts
-
-The refresh command:
-
-- runs discovery, fetch, and coverage generation in one pass
-- accepts jurisdiction scoping plus portal scoping for targeted refresh runs
-- can enable browser-backed discovery and fetch separately
-- prints the remaining blocked seed documents at the end so the next recovery action is explicit
-
-When an official source is blocked from the current runtime environment but the official file can be acquired manually, use:
+POSIX (`make`) or cross-platform (`python -m observatory.cli` from `services/pipeline` with `PYTHONPATH=src`):
 
 ```bash
-cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src \
-  python -m observatory.cli import-local-document <jurisdiction> <document_id> /absolute/path/to/file
+# Validate taxonomy and all five source manifests
+python -m observatory.cli validate-taxonomy
+python -m observatory.cli validate-sources
+python -m observatory.cli summarize-sources
+
+# Discovery, enrichment, and promotion
+python -m observatory.cli discover-source-candidates --refresh
+python -m observatory.cli report-source-coverage
+python -m observatory.cli report-source-expansion-plan
+python -m observatory.cli report-source-quality-audit
+python -m observatory.cli enrich-source-candidates --refresh
+python -m observatory.cli promote-source-families
+
+# Fetch (with optional browser fallback) and offline parse
+python -m observatory.cli fetch-seed-documents --refresh
+python -m observatory.cli fetch-seed-documents south_korea --refresh --with-browser
+python -m observatory.cli parse-raw-documents
+
+# Full discovery + fetch + coverage refresh loop
+python -m observatory.cli refresh-sources
 ```
 
-This preserves provenance by writing the raw artifact, metadata, and retrieval log into the same tracked layout used by automated fetches.
+For blocked official portals where the authentic primary file was acquired manually:
 
-## Completeness strategy
+```bash
+python -m observatory.cli import-local-document \
+  <jurisdiction> <document_id> /path/to/official_file.pdf \
+  --source-url=<canonical_url>
+```
 
-The registry should expand in layers:
-
-1. Official portals per jurisdiction
-2. Foundational laws, strategies, and guidance
-3. Sector-specific or implementation-level guidance
-4. Historical backfill
-5. Portal discovery scans and candidate review
-6. Automated freshness checks
-
-This keeps the system useful early while still moving toward broad coverage.
+See [`docs/operations/blocked-source-playbook.md`](blocked-source-playbook.md) for portal-specific recovery procedures and the late-2026 ingestion queue.

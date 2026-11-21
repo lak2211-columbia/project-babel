@@ -1,45 +1,59 @@
-PYTHONPATH=services/pipeline/src
+ifeq ($(OS),Windows_NT)
+  PIPELINE_PYTHON := $(if $(wildcard services/pipeline/.venv/Scripts/python.exe),services/pipeline/.venv/Scripts/python.exe,python)
+else
+  PIPELINE_PYTHON := $(if $(wildcard services/pipeline/.venv/bin/python),services/pipeline/.venv/bin/python,python3)
+endif
 
-.PHONY: bootstrap test taxonomy sources discover coverage expansion audit enrich promote fetch refresh parse analyze persist-db migrate sync-db browser-install vercel-pull-preview vercel-pull-prod build-prod migrate-prod sync-prod-db persist-prod deploy-preview deploy-prod
+export PYTHONPATH := services/pipeline/src
+RUN_PIPELINE := $(PIPELINE_PYTHON) -m observatory.cli
+
+.PHONY: bootstrap test taxonomy sources validate-artifacts discover coverage expansion audit enrich promote fetch refresh parse analyze analyze-jurisdictions grounding persist-db migrate sync-db sync-db-dry-run browser-install vercel-pull-preview vercel-pull-prod build-prod migrate-prod sync-prod-db persist-prod deploy-preview deploy-prod
 
 bootstrap:
+ifeq ($(OS),Windows_NT)
+	powershell -ExecutionPolicy Bypass -File scripts/bootstrap.ps1
+else
 	./scripts/bootstrap.sh
+endif
 
 test:
-	cd services/pipeline && . .venv/bin/activate && pytest
+	$(PIPELINE_PYTHON) -m pytest -c services/pipeline/pyproject.toml services/pipeline/tests
 
 taxonomy:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli validate-taxonomy
+	$(RUN_PIPELINE) validate-taxonomy
 
 sources:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli validate-sources
+	$(RUN_PIPELINE) validate-sources
+
+validate-artifacts:
+	$(RUN_PIPELINE) validate-artifacts
 
 discover:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli discover-source-candidates --refresh
+	$(RUN_PIPELINE) discover-source-candidates --refresh
 
 coverage:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli report-source-coverage
+	$(RUN_PIPELINE) report-source-coverage
 
 expansion:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli report-source-expansion-plan
+	$(RUN_PIPELINE) report-source-expansion-plan
 
 audit:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli report-source-quality-audit
+	$(RUN_PIPELINE) report-source-quality-audit
 
 enrich:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli enrich-source-candidates --refresh
+	$(RUN_PIPELINE) enrich-source-candidates --refresh
 
 promote:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli promote-source-families
+	$(RUN_PIPELINE) promote-source-families
 
 fetch:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli fetch-seed-documents
+	$(RUN_PIPELINE) fetch-seed-documents
 
 refresh:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli refresh-sources
+	$(RUN_PIPELINE) refresh-sources
 
 browser-install:
-	cd services/pipeline && . .venv/bin/activate && python -m playwright install chromium
+	$(PIPELINE_PYTHON) -m playwright install chromium
 
 vercel-pull-preview:
 	cd apps/web && npx vercel env pull .vercel/.env.preview.local --environment=preview --yes
@@ -51,28 +65,37 @@ build-prod:
 	./scripts/run-with-vercel-env.sh production bash -lc 'cd apps/web && npm run build'
 
 parse:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli parse-raw-documents
+	$(RUN_PIPELINE) parse-raw-documents
 
 analyze:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli analyze-documents
+	$(RUN_PIPELINE) analyze-documents
+
+analyze-jurisdictions:
+	$(RUN_PIPELINE) analyze-jurisdictions --refresh-existing
+
+grounding:
+	$(RUN_PIPELINE) check-grounding
 
 persist-db:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli persist-analysis-artifacts
+	$(RUN_PIPELINE) persist-analysis-artifacts
 
 migrate:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli migrate-db
+	$(RUN_PIPELINE) migrate-db
+
+sync-db-dry-run:
+	$(RUN_PIPELINE) sync-db-to-source-manifests --dry-run
 
 sync-db:
-	cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli sync-db-to-source-manifests --reset-jurisdiction-analyses
+	$(RUN_PIPELINE) sync-db-to-source-manifests
 
 migrate-prod:
-	./scripts/run-with-vercel-env.sh production bash -lc 'cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli migrate-db'
+	./scripts/run-with-vercel-env.sh production $(PIPELINE_PYTHON) -m observatory.cli migrate-db
 
 sync-prod-db:
-	./scripts/run-with-vercel-env.sh production bash -lc 'cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli sync-db-to-source-manifests --reset-jurisdiction-analyses'
+	./scripts/run-with-vercel-env.sh production $(PIPELINE_PYTHON) -m observatory.cli sync-db-to-source-manifests
 
 persist-prod:
-	./scripts/run-with-vercel-env.sh production bash -lc 'cd services/pipeline && . .venv/bin/activate && PYTHONPATH=src python -m observatory.cli persist-analysis-artifacts'
+	./scripts/run-with-vercel-env.sh production $(PIPELINE_PYTHON) -m observatory.cli persist-analysis-artifacts
 
 deploy-preview:
 	cd apps/web && npx vercel deploy --yes

@@ -1,13 +1,18 @@
 "use client";
 
-import { frameAbbr, frameDefinition, frameHue } from "@/lib/frame-vocab";
+import {
+  frameAbbr,
+  frameDefinition,
+  frameHue,
+  frameTextHue,
+} from "@/lib/frame-vocab";
 import { frameLabels, type FrameLabel } from "@/lib/seed-data";
 
 import { HoverTip } from "./hover-tip";
 
 /**
- * Hover tooltip for a risk framing label. Renders its content into a
- * portal on document.body — no ancestor stacking context can clip it.
+ * Tooltip for a risk framing label synced with Codebook v2.1.0 / label-definitions.json.
+ * Enforces >= 11px typography floor and Geist Sans prose readability.
  */
 export function FrameTip({
   frame,
@@ -19,43 +24,41 @@ export function FrameTip({
   align?: "start" | "center";
 }) {
   const definition = frameDefinition[frame];
-  const color = frameHue[frame];
+  const barColor = frameHue[frame];
+  const textColor = frameTextHue[frame];
   return (
-    <HoverTip
-      trigger={children}
-      align={align}
-      width={320}
-    >
-      <div aria-hidden className="h-[2px] w-full" style={{ background: color }} />
-      <div className="px-3.5 py-3">
-        <div className="flex items-baseline justify-between gap-3 border-b border-white/5 pb-2">
+    <HoverTip trigger={children} align={align} width={360}>
+      <div aria-hidden className="h-[2px] w-full" style={{ background: barColor }} />
+      <div className="px-4 py-3.5 font-sans">
+        <div className="flex items-baseline justify-between gap-3 border-b border-white/10 pb-2 font-mono">
           <p
-            className="text-[10px] font-semibold uppercase tracking-[0.12em]"
-            style={{ color }}
+            className="text-[11px] font-semibold uppercase tracking-[0.1em]"
+            style={{ color: textColor }}
           >
             {frameLabels[frame]}
           </p>
-          <span className="text-[9px] uppercase tracking-[0.1em] text-[#5d6675]">
+          <span className="text-[11px] uppercase tracking-[0.08em] text-[#94a3b8]">
             {frameAbbr[frame]}
           </span>
         </div>
-        <p className="mt-2.5 text-[11px] font-semibold leading-snug text-[#e6edf5]">
+        <p className="mt-2.5 text-[12.5px] font-semibold leading-snug text-[#f1f5f9]">
           {definition.short}
         </p>
-        <p className="mt-2 text-[11px] leading-relaxed text-[#7a8697]">
+        <p className="mt-2 text-[12px] leading-relaxed text-[#cbd5e1]">
           {definition.long}
         </p>
-        <div className="mt-3 border-t border-white/5 pt-2.5">
-          <p className="flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#5d6675]">
-            <span
-              aria-hidden
-              className="inline-block h-[1px] w-3"
-              style={{ background: `${color}80` }}
-            />
-            Example
+        <div className="mt-3 space-y-1.5 border-t border-white/10 pt-2.5 text-[11.5px] leading-relaxed">
+          <p className="text-[#cbd5e1]">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-[#67e8f9]">
+              include:{" "}
+            </span>
+            {definition.includeWhen}
           </p>
-          <p className="mt-1 text-[11px] leading-relaxed text-[#cdd6e1]">
-            {definition.example}
+          <p className="text-[#94a3b8]">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-[#94a3b8]">
+              exclude:{" "}
+            </span>
+            {definition.excludeWhen}
           </p>
         </div>
       </div>
@@ -64,7 +67,7 @@ export function FrameTip({
 }
 
 /**
- * Metric chip hover tooltip (POL/FRM/CMP).
+ * Metric chip tooltip (POL/FRM/COV/CMP).
  */
 export function MetricTip({
   metric,
@@ -80,29 +83,25 @@ export function MetricTip({
   children: React.ReactNode;
 }) {
   return (
-    <HoverTip trigger={children} align="start" width={320}>
-      <div aria-hidden className="h-[2px] w-full bg-[#cdd6e1]/40" />
-      <div className="px-3.5 py-3">
-        <div className="flex items-baseline justify-between gap-3 border-b border-white/5 pb-2">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#e6edf5]">
+    <HoverTip trigger={children} align="start" width={360}>
+      <div aria-hidden className="h-[2px] w-full bg-[#38bdf8]/60" />
+      <div className="px-4 py-3.5 font-sans">
+        <div className="flex items-baseline justify-between gap-3 border-b border-white/10 pb-2 font-mono">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#f1f5f9]">
             {metric.code} · {metric.label}
           </p>
-          <span className="text-[9px] uppercase tracking-[0.1em] text-[#5d6675]">
+          <span className="text-[11px] uppercase tracking-[0.08em] text-[#94a3b8]">
             {metric.question}
           </span>
         </div>
-        <p className="mt-2.5 text-[11px] leading-relaxed text-[#cdd6e1]">
+        <p className="mt-2.5 text-[12px] leading-relaxed text-[#cbd5e1]">
           {metric.desc}
         </p>
-        <div className="mt-3 border-t border-white/5 pt-2.5">
-          <p className="flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#5d6675]">
-            <span
-              aria-hidden
-              className="inline-block h-[1px] w-3 bg-[#cdd6e1]/40"
-            />
-            Example
+        <div className="mt-3 border-t border-white/10 pt-2.5">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-[#94a3b8]">
+            How to interpret
           </p>
-          <p className="mt-1 text-[11px] leading-relaxed text-[#7a8697]">
+          <p className="mt-1 text-[12px] leading-relaxed text-[#a3b0c2]">
             {metric.example}
           </p>
         </div>

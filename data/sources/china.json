@@ -1,5 +1,5 @@
 {
-  "manifest_version": "2026-04-14",
+  "manifest_version": "2.0",
   "jurisdiction": "china",
   "description": "Official State Council, CAC, and sectoral sources for China's AI governance regime and implementation measures.",
   "source_portals": [
@@ -173,7 +173,10 @@
             "人工智能",
             "安全",
             "标识",
-            "生成"
+            "生成",
+            "安全治理框架",
+            "智能体",
+            "GB 45438"
           ],
           "max_candidates": 100
         }
@@ -209,6 +212,76 @@
           "max_candidates": 50
         }
       ]
+    },
+    {
+      "id": "cn_npc_laws",
+      "name": "National People's Congress (NPC / NPCSC) Statutory Database",
+      "issuing_body": "National People's Congress Standing Committee (NPCSC)",
+      "issuer_type": "legal_registry",
+      "canonical_url": "https://www.npc.gov.cn/",
+      "portal_kind": "registry",
+      "retrieval_strategy": "html",
+      "languages": [
+        "zh"
+      ],
+      "priority": "high",
+      "coverage_notes": "National statutory registry covering primary PRC legislation such as the Amended Cybersecurity Law (effective Jan 1, 2026, Art. 20 AI governance clause).",
+      "tags": [
+        "npc",
+        "legislation",
+        "cybersecurity_law"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.npc.gov.cn/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "人工智能",
+            "网络安全法",
+            "数据安全法",
+            "算法"
+          ],
+          "same_host_only": true,
+          "max_candidates": 20
+        }
+      ]
+    },
+    {
+      "id": "cn_miit_ai",
+      "name": "Ministry of Industry and Information Technology (MIIT) AI & Standards Portal",
+      "issuing_body": "Ministry of Industry and Information Technology (MIIT)",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.miit.gov.cn/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "zh"
+      ],
+      "priority": "high",
+      "coverage_notes": "Industrial AI policy, AI+ manufacturing/embodied AI directives, and national mandatory AI standards (e.g., GB 45438-2025).",
+      "tags": [
+        "miit",
+        "standards",
+        "embodied_ai",
+        "gb_45438"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://www.miit.gov.cn/",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_title_patterns": [
+            "人工智能",
+            "智能体",
+            "具身智能",
+            "标识",
+            "标准"
+          ],
+          "same_host_only": true,
+          "max_candidates": 20
+        }
+      ]
     }
   ],
   "seed_documents": [
@@ -240,7 +313,8 @@
         "national_strategy",
         "state_council",
         "foundational"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_ai_governance_principles_2019",
@@ -269,7 +343,8 @@
         "governance_principles",
         "ethics",
         "responsible_ai"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_ai_ethics_norms_2021",
@@ -298,7 +373,8 @@
         "ethics",
         "governance",
         "soft_law"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_algorithm_governance_guidance_2021",
@@ -327,7 +403,8 @@
         "algorithm_governance",
         "interagency",
         "guidance"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_algorithm_recommendation_provisions_2021",
@@ -358,7 +435,8 @@
         "algorithm_regulation",
         "binding_rule",
         "platform_governance"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_deep_synthesis_provisions_2022",
@@ -389,7 +467,8 @@
         "deep_synthesis",
         "binding_rule",
         "synthetic_media"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_genai_interim_measures_2023",
@@ -420,7 +499,8 @@
         "generative_ai",
         "binding_rule",
         "provider_obligations"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_ai_standardization_guide_2024",
@@ -449,7 +529,8 @@
         "standards",
         "standardization",
         "industrial_policy"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_ai_safety_governance_framework_2024",
@@ -478,7 +559,8 @@
         "ai_safety",
         "framework",
         "risk_governance"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_ai_labeling_draft_2024",
@@ -492,7 +574,7 @@
         "platform_content_governance",
         "consumer_protection"
       ],
-      "lifecycle_stage": "draft",
+      "lifecycle_stage": "superseded",
       "publication_date": "2024-09-14",
       "languages": [
         "zh"
@@ -507,7 +589,8 @@
         "labeling",
         "generated_content",
         "cac"
-      ]
+      ],
+      "corpus_role": "draft_consultation"
     },
     {
       "id": "cn_ai_content_labeling_measures_2025",
@@ -539,7 +622,9 @@
         "labeling",
         "generated_content",
         "binding_rule"
-      ]
+      ],
+      "corpus_role": "primary_instrument",
+      "supersedes_id": "cn_ai_labeling_draft_2024"
     },
     {
       "id": "cn_ai_labeling_expert_interpretation_2025",
@@ -548,7 +633,7 @@
       "canonical_url": "https://www.cac.gov.cn/2025-03/15/c_1743755860373970.htm",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "platform_content_governance",
         "consumer_protection"
@@ -568,7 +653,8 @@
         "labeling",
         "interpretation",
         "generated_content"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "cn_ai_abuse_cleanup_2025",
@@ -597,7 +683,8 @@
         "enforcement",
         "platform_governance",
         "ai_abuse"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_meteorological_ai_measures_2025",
@@ -629,7 +716,8 @@
         "sectoral_regulation",
         "meteorology",
         "implementation"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_anthropomorphic_interaction_measures_2026",
@@ -641,7 +729,8 @@
       "source_tier": "statutory_rule",
       "policy_domains": [
         "platform_content_governance",
-        "consumer_protection"
+        "consumer_protection",
+        "companion_ai"
       ],
       "lifecycle_stage": "active",
       "publication_date": "2026-04-10",
@@ -658,7 +747,9 @@
         "anthropomorphic_ai",
         "binding_rule",
         "interaction_governance"
-      ]
+      ],
+      "effective_date": "2026-07-15",
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "cn_anthropomorphic_interaction_measures_qa_2026",
@@ -667,10 +758,11 @@
       "canonical_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395284407.htm",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "platform_content_governance",
-        "consumer_protection"
+        "consumer_protection",
+        "companion_ai"
       ],
       "lifecycle_stage": "active",
       "publication_date": "2026-04-10",
@@ -687,7 +779,8 @@
         "anthropomorphic_ai",
         "official_interpretation",
         "cac"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "cn_ai_drug_regulation_implementation_opinion_interpretation_2026",
@@ -696,7 +789,7 @@
       "canonical_url": "https://www.gov.cn/zhengce/202604/content_7064589.htm",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "healthcare_medical_devices",
         "industrial_innovation"
@@ -716,7 +809,8 @@
         "healthcare",
         "drug_regulation",
         "official_interpretation"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "cn_anthropomorphic_interaction_expert_interpretation_2026",
@@ -725,10 +819,11 @@
       "canonical_url": "https://www.cac.gov.cn/2026-04/10/c_1777558285804391.htm",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "platform_content_governance",
-        "consumer_protection"
+        "consumer_protection",
+        "companion_ai"
       ],
       "lifecycle_stage": "active",
       "publication_date": "2026-04-10",
@@ -745,37 +840,8 @@
         "anthropomorphic_ai",
         "official_interpretation",
         "cac"
-      ]
-    },
-    {
-      "id": "cn_c_1777558395023172_1df2a067",
-      "title": "国家网信办等五部门联合公布《人工智能拟人化互动服务管理暂行办法》_中央网络安全和信息化委员会办公室",
-      "issuing_body": "Cyberspace Administration of China",
-      "canonical_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm",
-      "document_type": "legislation",
-      "binding_strength": "binding_law",
-      "source_tier": "statutory_rule",
-      "policy_domains": [
-        "frontier_gpai"
       ],
-      "lifecycle_stage": "active",
-      "publication_date": "2026-04-10",
-      "languages": [
-        "zh"
-      ],
-      "document_format": "html",
-      "source_portal_ids": [
-        "cn_cac"
-      ],
-      "priority": "high",
-      "relevance_notes": "Auto-promoted from cn_cac; role=primary_text; bucket=implementation_guidance; family=国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
-      "tags": [
-        "cac",
-        "content_governance",
-        "algorithmic_regulation",
-        "primary_text",
-        "auto_promoted"
-      ]
+      "corpus_role": "companion_resource"
     }
   ]
 }

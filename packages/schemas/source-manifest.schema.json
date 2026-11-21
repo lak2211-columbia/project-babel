@@ -1,0 +1,362 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-babel.com/schemas/source-manifest.schema.json",
+  "title": "Project Babel Jurisdiction Source Manifest",
+  "description": "Contract for per-jurisdiction official portal registries and curated seed documents under data/sources/<jurisdiction>.json (Taxonomy v2.0.0).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "jurisdiction",
+    "description",
+    "source_portals",
+    "seed_documents"
+  ],
+  "properties": {
+    "manifest_version": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Manifest revision date or version identifier."
+    },
+    "jurisdiction": {
+      "$ref": "#/$defs/jurisdiction"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_portals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sourcePortal"
+      }
+    },
+    "seed_documents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/seedDocument"
+      }
+    }
+  },
+  "$defs": {
+    "idSlug": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+$"
+    },
+    "isoDate": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "httpUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "jurisdiction": {
+      "type": "string",
+      "enum": [
+        "united_states",
+        "european_union",
+        "south_korea",
+        "japan",
+        "china"
+      ]
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "portalKind": {
+      "type": "string",
+      "enum": ["portal", "library", "helpdesk", "registry"]
+    },
+    "retrievalStrategy": {
+      "type": "string",
+      "enum": ["html", "pdf", "mixed", "manual", "browser"]
+    },
+    "documentFormat": {
+      "type": "string",
+      "enum": ["html", "pdf", "mixed"]
+    },
+    "issuerType": {
+      "type": "string",
+      "enum": [
+        "executive",
+        "regulator",
+        "standards_body",
+        "legal_registry",
+        "multi_agency"
+      ]
+    },
+    "documentType": {
+      "type": "string",
+      "enum": [
+        "legislation",
+        "executive_order",
+        "regulatory_guidance",
+        "strategy_paper",
+        "standards_guideline",
+        "voluntary_commitment"
+      ]
+    },
+    "bindingStrength": {
+      "type": "string",
+      "enum": [
+        "binding_law",
+        "executive_action",
+        "regulatory_guidance",
+        "standards_guideline",
+        "voluntary_commitment",
+        "strategy_statement"
+      ]
+    },
+    "sourceTier": {
+      "type": "string",
+      "enum": [
+        "statutory_rule",
+        "executive_action",
+        "regulatory_guidance",
+        "technical_standard",
+        "policy_strategy",
+        "implementation_resource",
+        "voluntary_framework"
+      ]
+    },
+    "corpusRole": {
+      "type": "string",
+      "enum": [
+        "primary_instrument",
+        "companion_resource",
+        "draft_consultation",
+        "historical_baseline"
+      ]
+    },
+    "lifecycleStage": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "adopted_not_yet_effective",
+        "active",
+        "superseded"
+      ]
+    },
+    "policyDomain": {
+      "type": "string",
+      "enum": [
+        "frontier_gpai",
+        "privacy_data_protection",
+        "civil_rights_nondiscrimination",
+        "consumer_protection",
+        "public_sector_governance",
+        "public_sector_procurement",
+        "healthcare_medical_devices",
+        "standards_assurance",
+        "platform_content_governance",
+        "copyright_ip",
+        "national_security",
+        "industrial_innovation",
+        "education",
+        "finance",
+        "critical_infrastructure",
+        "agentic_ai",
+        "embodied_physical_ai",
+        "companion_ai",
+        "sovereign_compute"
+      ]
+    },
+    "discoveryTarget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "kind"],
+      "properties": {
+        "url": { "$ref": "#/$defs/httpUrl" },
+        "kind": {
+          "type": "string",
+          "enum": ["html_links", "sitemap"]
+        },
+        "link_selector": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "include_url_patterns": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "exclude_url_patterns": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "include_title_patterns": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "exclude_title_patterns": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "same_host_only": {
+          "type": "boolean",
+          "default": true
+        },
+        "browser_required": {
+          "type": "boolean",
+          "default": false
+        },
+        "browser_wait_for_selector": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "browser_min_text_length": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "browser_click_selectors": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "max_candidates": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        }
+      },
+      "if": {
+        "properties": { "kind": { "const": "html_links" } }
+      },
+      "then": {
+        "required": ["link_selector"],
+        "properties": {
+          "link_selector": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "sourcePortal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "issuing_body",
+        "canonical_url",
+        "portal_kind",
+        "retrieval_strategy",
+        "languages",
+        "priority",
+        "coverage_notes"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/idSlug" },
+        "name": { "type": "string", "minLength": 1 },
+        "issuing_body": { "type": "string", "minLength": 1 },
+        "issuer_type": {
+          "anyOf": [{ "$ref": "#/$defs/issuerType" }, { "type": "null" }]
+        },
+        "canonical_url": { "$ref": "#/$defs/httpUrl" },
+        "portal_kind": { "$ref": "#/$defs/portalKind" },
+        "retrieval_strategy": { "$ref": "#/$defs/retrievalStrategy" },
+        "languages": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "priority": { "$ref": "#/$defs/priority" },
+        "coverage_notes": { "type": "string", "minLength": 1 },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "discovery_targets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/discoveryTarget" }
+        }
+      }
+    },
+    "seedDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "issuing_body",
+        "canonical_url",
+        "document_type",
+        "binding_strength",
+        "languages",
+        "document_format",
+        "source_portal_ids",
+        "priority",
+        "relevance_notes"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/idSlug" },
+        "title": { "type": "string", "minLength": 1 },
+        "issuing_body": { "type": "string", "minLength": 1 },
+        "canonical_url": { "$ref": "#/$defs/httpUrl" },
+        "retrieval_urls": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/httpUrl" }
+        },
+        "browser_required": {
+          "type": "boolean",
+          "default": false
+        },
+        "browser_wait_for_selector": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "browser_min_text_length": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "browser_click_selectors": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "document_type": { "$ref": "#/$defs/documentType" },
+        "binding_strength": { "$ref": "#/$defs/bindingStrength" },
+        "source_tier": {
+          "anyOf": [{ "$ref": "#/$defs/sourceTier" }, { "type": "null" }]
+        },
+        "corpus_role": {
+          "anyOf": [{ "$ref": "#/$defs/corpusRole" }, { "type": "null" }]
+        },
+        "supersedes_id": {
+          "anyOf": [{ "$ref": "#/$defs/idSlug" }, { "type": "null" }]
+        },
+        "policy_domains": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/policyDomain" }
+        },
+        "lifecycle_stage": {
+          "anyOf": [{ "$ref": "#/$defs/lifecycleStage" }, { "type": "null" }]
+        },
+        "publication_date": {
+          "anyOf": [{ "$ref": "#/$defs/isoDate" }, { "type": "null" }]
+        },
+        "effective_date": {
+          "anyOf": [{ "$ref": "#/$defs/isoDate" }, { "type": "null" }]
+        },
+        "languages": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "document_format": { "$ref": "#/$defs/documentFormat" },
+        "source_portal_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/idSlug" }
+        },
+        "priority": { "$ref": "#/$defs/priority" },
+        "relevance_notes": { "type": "string", "minLength": 1 },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

@@ -2,20 +2,17 @@ from __future__ import annotations
 
 import json
 import re
-import socket
 import subprocess
 import unicodedata
-from io import BytesIO
 from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import datetime
+from hashlib import sha256
+from io import BytesIO
 from pathlib import Path
 from shutil import which
 from tempfile import TemporaryDirectory
 from typing import Any
-from urllib.error import HTTPError, URLError
-from urllib.parse import urljoin, urlparse
-from urllib.request import Request, urlopen
 from xml.etree import ElementTree as ET
 from zipfile import BadZipFile, ZipFile
 
@@ -25,9 +22,10 @@ from pypdf import PdfReader
 
 from observatory.linked_artifacts import extract_linked_artifact_candidates
 from observatory.source_registry import ROOT
+from observatory.url_safety import decode_html_bytes, repo_rel_posix, same_host_family
 
 
-PARSER_VERSION = "0.1.0"
+PARSER_VERSION = "0.3.0"
 RAW_DATA_DIR = ROOT / "data" / "raw"
 PARSED_DATA_DIR = ROOT / "data" / "parsed"
 CONTENT_ROOT_SELECTORS = (
@@ -60,6 +58,7 @@ CONTENT_ROOT_SELECTORS = (
     ".texte",
 )
 TEXT_BLOCK_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6", "p", "li", "blockquote", "pre", "td", "th"}
+INNER_BLOCK_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6", "p", "li", "blockquote", "pre"}
 DATE_INPUT_FORMATS = (
     "%Y-%m-%d",
     "%Y/%m/%d",
@@ -105,12 +104,23 @@ DATE_INLINE_PATTERNS = (
         re.IGNORECASE,
     ),
 )
+CJK_DATE_PATTERNS = (
+    re.compile(r"(?P<year>20\d{2})\s*年\s*(?P<month>\d{1,2})\s*月\s*(?P<day>\d{1,2})\s*日"),
+    re.compile(r"(?P<year>20\d{2})\s*년\s*(?P<month>\d{1,2})\s*월\s*(?P<day>\d{1,2})\s*일"),
+    re.compile(r"(?P<year>20\d{2})\.\s*(?P<month>\d{1,2})\.\s*(?P<day>\d{1,2})\.?"),
+)
+JAPANESE_ERA_PATTERNS = (
+    (re.compile(r"令和\s*(?P<era>元|\d{1,2})\s*年\s*(?P<month>\d{1,2})\s*月\s*(?P<day>\d{1,2})\s*日"), 2018),
+    (re.compile(r"平成\s*(?P<era>元|\d{1,2})\s*年\s*(?P<month>\d{1,2})\s*月\s*(?P<day>\d{1,2})\s*日"), 1988),
+)
 PUBLICATION_LABEL_PATTERN = re.compile(
-    r"^(publication|published|published on|date published|date of publication|posted)\s*:?\s+(.+)$",
+    r"^(publication|published|published on|date published|date of publication|posted|"
+    r"发布时间|发布日期|成文日期|公表日|公開日|공포일|등록일|작성일)\s*[:：]?\s*(.+)$",
     re.IGNORECASE,
 )
 UPDATED_LABEL_PATTERN = re.compile(
-    r"^(last update|last updated|updated|updated on|date updated|last modified|modified)\s*:?\s+(.+)$",
+    r"^(last update|last updated|updated|updated on|date updated|last modified|modified|"
+    r"更新时间|更新日|最終更新日|수정일)\s*[:：]?\s*(.+)$",
     re.IGNORECASE,
 )
 PUBLICATION_META_KEYS = {
@@ -137,6 +147,29 @@ UPDATED_META_KEYS = {
 PUBLICATION_JSON_KEYS = {"datepublished", "datecreated", "uploaddate"}
 UPDATED_JSON_KEYS = {"datemodified", "dateupdated"}
 
+BOILERPLATE_LINE_PATTERNS = (
+    re.compile(r"^an official website of the united states government\.?$", re.IGNORECASE),
+    re.compile(r"^here['’]s how you know$", re.IGNORECASE),
+    re.compile(r"^official websites use \.gov$", re.IGNORECASE),
+    re.compile(r"^a \.gov website belongs to an official government organization in the united states\.?$", re.IGNORECASE),
+    re.compile(r"^secure \.gov websites use https$", re.IGNORECASE),
+    re.compile(r"^a lock\s*\(.*\)\s*or https:// means you['’]ve safely connected to the \.gov website\.?.*$", re.IGNORECASE),
+    re.compile(r"^share sensitive information only on official, secure websites\.?$", re.IGNORECASE),
+    re.compile(r"^skip to main content$", re.IGNORECASE),
+    re.compile(r"^首\s*页\s+时政要闻\s+网信政务"),
+    re.compile(r"^中央网络安全和信息化委员会办公室\s+中华人民共和国国家互联网信息办公室$"),
+    re.compile(r"^(无障碍浏览|网站无障碍|关怀版|繁体|ENGLISH|邮箱|微博|微信|客户端)\s*"),
+)
+LOW_QUALITY_TITLE_PATTERNS = (
+    re.compile(r"^slide\s+\d+$", re.IGNORECASE),
+    re.compile(r"^スライド\s*\d+$"),
+    re.compile(r"^page\s+\d+$", re.IGNORECASE),
+    re.compile(r"^microsoft word", re.IGNORECASE),
+    re.compile(r"^powerpoint presentation", re.IGNORECASE),
+    re.compile(r"^untitled", re.IGNORECASE),
+    re.compile(r"^document\d*$", re.IGNORECASE),
+)
+
 
 @dataclass(frozen=True)
 class SourceDateCandidate:
@@ -162,6 +195,356 @@ class ParsedDocument(BaseModel):
     sections: list[ParsedSection] = Field(default_factory=list)
     warnings: list[str] = Field(default_factory=list)
     source_artifact_path: str
+    source_sha256: str | None = None
+    extractor: str | None = None
+
+
+LEGAL_PROSE_CONTINUATION_WORDS = {
+    "of",
+    "shall",
+    "should",
+    "must",
+    "may",
+    "is",
+    "are",
+    "was",
+    "were",
+    "does",
+    "do",
+    "did",
+    "applies",
+    "apply",
+    "applied",
+    "sets",
+    "establishes",
+    "requires",
+    "provides",
+    "and",
+    "or",
+    "to",
+    "for",
+    "in",
+    "on",
+    "by",
+    "from",
+    "with",
+    "under",
+    "pursuant",
+    "thereof",
+    "above",
+    "below",
+}
+
+COMPOUND_HYPHEN_PREFIXES = {
+    "non",
+    "pre",
+    "post",
+    "co",
+    "re",
+    "sub",
+    "anti",
+    "cross",
+    "multi",
+    "self",
+    "high",
+    "low",
+    "open",
+    "third",
+    "first",
+    "second",
+    "real",
+    "well",
+    "long",
+    "short",
+    "full",
+    "half",
+    "mid",
+    "inter",
+    "intra",
+    "micro",
+    "macro",
+    "cyber",
+    "human",
+    "risk",
+    "ai",
+    "eu",
+    "us",
+    "e",
+    "x",
+}
+
+LEGAL_HEADING_PATTERNS: tuple[tuple[re.Pattern[str], int, bool], ...] = (
+    # (pattern, level, keep_line_in_content)
+    (re.compile(r"^(?:CHAPTER|TITLE|PART|ANNEX)\s+(?:[IVXLCDM]+|\d+[A-Za-z]?)\b(?:\s*[:.\-—–]?\s*.*)?$", re.IGNORECASE), 1, False),
+    (re.compile(r"^(?:PREAMBLE|RECITALS)$", re.IGNORECASE), 1, False),
+    (re.compile(r"^第\s*[一二三四五六七八九十百千\d]+\s*[编編篇章](?:\s+.*)?$"), 1, False),
+    (re.compile(r"^제\s*\d+\s*장(?:\s+.*)?$"), 1, False),
+    (re.compile(r"^부칙(?:\s*<.*>)?$"), 1, False),
+    (re.compile(r"^(?:SECTION|Sec\.)\s+\d+(?:\.\d+)*(?:[.:—–-]?\s+.*)?$", re.IGNORECASE), 2, True),
+    (re.compile(r"^第\s*[一二三四五六七八九十百千\d]+\s*[节節](?:\s+.*)?$"), 2, False),
+    (re.compile(r"^제\s*\d+\s*절(?:\s+.*)?$"), 2, False),
+    (re.compile(r"^(?:ARTICLE|Art\.)\s+\d+[a-z]?\b(?:\s*[:.\-—–]?\s*.*)?$", re.IGNORECASE), 3, True),
+    (re.compile(r"^(第\s*[一二三四五六七八九十百千\d]+\s*[条條](?:\s*[（(][^）)]{1,40}[）)])?)"), 3, True),
+    (re.compile(r"^(제\s*\d+\s*조(?:의\s*\d+)?(?:\s*\([^)]{1,40}\))?)"), 3, True),
+)
+
+PDF_PAGE_NUMBER_PATTERNS = (
+    re.compile(r"^[-—–]?\s*\d{1,4}\s*[-—–]?$"),
+    re.compile(r"^page\s+\d{1,4}(?:\s*(?:of|/)\s*\d{1,4})?$", re.IGNORECASE),
+    re.compile(r"^\d{1,4}\s*/\s*\d{1,4}$"),
+)
+
+PDF_LIST_OR_BREAK_START_RE = re.compile(
+    r"^(?:[•·▪▫◦\-*—–]\s+|\(?\d{1,3}[.)]\s+|\([a-zA-ZivxIVX]{1,4}\)\s+|[a-zA-Z]\)\s+)"
+)
+
+
+def _match_legal_heading(line: str) -> tuple[str, int, bool] | None:
+    stripped = line.strip()
+    if not stripped:
+        return None
+
+    for pattern, level, keep_line in LEGAL_HEADING_PATTERNS:
+        match = pattern.match(stripped)
+        if match is None:
+            continue
+        # Guard English Article/Section/Chapter headings against inline legal prose references
+        if stripped[0].isascii():
+            # Reject long narrative lines unless Section/Article prefix is cleanly punctuated
+            if not keep_line and (len(stripped) > 160 or stripped.endswith(",")):
+                continue
+            words = stripped.split()
+            if len(words) >= 3 and words[0].lower() in {"article", "art.", "section", "sec.", "chapter", "title", "part", "annex"}:
+                third_word = words[2].strip(",.;:()").lower()
+                if third_word in LEGAL_PROSE_CONTINUATION_WORDS:
+                    continue
+            if keep_line and len(stripped) > 140:
+                # Extract concise heading prefix (e.g. "Section 1. Purpose." or "Article 5")
+                prefix_match = re.match(
+                    r"^((?:SECTION|Sec\.|ARTICLE|Art\.)\s+\d+[a-z]?(?:\.\d+)*[.:—–-]?(?:\s+[A-Z][^.:;\n]{0,65}[.:]?)?)",
+                    stripped,
+                    re.IGNORECASE,
+                )
+                heading = prefix_match.group(1).strip(" .:-—–") if prefix_match else " ".join(words[:4])
+                return heading, level, True
+            if len(stripped) <= 140:
+                return stripped, level, keep_line
+
+        # CJK / Korean legal headings
+        if keep_line and match.lastindex:
+            heading = match.group(1).strip()
+            return heading, level, True
+        if len(stripped) <= 120:
+            return stripped, level, keep_line
+
+    return None
+
+
+def _split_text_by_legal_headings(
+    text: str,
+    *,
+    fallback_heading: str,
+    fallback_level: int = 1,
+    min_headings: int = 2,
+) -> list[ParsedSection] | None:
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    if not lines:
+        return None
+
+    heading_hits = 0
+    for line in lines:
+        if _match_legal_heading(line) is not None:
+            heading_hits += 1
+    if heading_hits < min_headings:
+        return None
+
+    sections: list[ParsedSection] = []
+    current_heading = fallback_heading
+    current_level = fallback_level
+    current_lines: list[str] = []
+
+    for line in lines:
+        matched = _match_legal_heading(line)
+        if matched is not None:
+            heading_text, heading_level, keep_line = matched
+            _finalize_section(sections, current_heading, current_level, current_lines)
+            current_heading = heading_text
+            current_level = heading_level
+            current_lines = [line] if keep_line else []
+            continue
+        current_lines.append(line)
+
+    _finalize_section(sections, current_heading, current_level, current_lines)
+    return sections if len(sections) >= min_headings else None
+
+
+def _apply_legal_sectionizer(sections: list[ParsedSection], *, min_headings: int = 2) -> list[ParsedSection]:
+    expanded: list[ParsedSection] = []
+    for section in sections:
+        sub_sections = _split_text_by_legal_headings(
+            section.content,
+            fallback_heading=section.heading,
+            fallback_level=section.level,
+            min_headings=min_headings,
+        )
+        if sub_sections is not None:
+            expanded.extend(sub_sections)
+        else:
+            expanded.append(section)
+    return expanded
+
+
+def _is_cjk_char(ch: str) -> bool:
+    code = ord(ch)
+    return (
+        0x4E00 <= code <= 0x9FFF
+        or 0x3400 <= code <= 0x4DBF
+        or 0x3040 <= code <= 0x30FF
+    )
+
+
+def _normalize_pdf_header_key(line: str) -> str:
+    collapsed = " ".join(line.split()).strip().lower()
+    return re.sub(r"\d+", "#", collapsed)
+
+
+def _is_pdf_page_number_line(line: str) -> bool:
+    stripped = line.strip()
+    return any(pattern.match(stripped) for pattern in PDF_PAGE_NUMBER_PATTERNS)
+
+
+def _dehyphenate_and_reflow_pdf_page(raw_page_text: str) -> str:
+    # Normalize CRLF and soft hyphens first while preserving blank-line paragraph separators.
+    text = raw_page_text.replace("\r\n", "\n").replace("\r", "\n").replace("\xa0", " ")
+    text = re.sub(r"\u00ad\s*\n\s*", "", text)
+
+    # Split into raw paragraphs separated by >=1 blank lines (or whitespace-only lines).
+    raw_paragraphs = re.split(r"\n[ \t]*\n+", text)
+    cleaned_paragraphs: list[str] = []
+
+    for paragraph in raw_paragraphs:
+        lines = [" ".join(line.split()) for line in paragraph.splitlines()]
+        lines = [line for line in lines if line]
+        if not lines:
+            continue
+
+        rebuilt: list[str] = []
+        for line in lines:
+            if not rebuilt:
+                rebuilt.append(line)
+                continue
+
+            prev = rebuilt[-1]
+            # Never merge across legal headings or list items
+            if _match_legal_heading(line) is not None or _match_legal_heading(prev) is not None:
+                rebuilt.append(line)
+                continue
+            if PDF_LIST_OR_BREAK_START_RE.match(line):
+                rebuilt.append(line)
+                continue
+
+            # De-hyphenate wrapped Latin words across line break
+            hyphen_match = re.search(r"([A-Za-z]{2,})-$", prev)
+            next_word_match = re.match(r"^([a-z]{2,})", line)
+            if hyphen_match and next_word_match:
+                left = hyphen_match.group(1)
+                if left.lower() in COMPOUND_HYPHEN_PREFIXES:
+                    rebuilt[-1] = f"{prev}{line}"
+                else:
+                    rebuilt[-1] = f"{prev[:-1]}{line}"
+                continue
+
+            # Keep break if previous line clearly ended a sentence and next line begins a new paragraph-like sentence
+            prev_ends_sentence = prev[-1] in ".?!:;。？！："
+            if prev_ends_sentence and len(prev) < 60:
+                rebuilt.append(line)
+                continue
+            if prev_ends_sentence and (line[0].isupper() or _is_cjk_char(line[0])) and len(prev) < 85:
+                rebuilt.append(line)
+                continue
+
+            # Keep short standalone title/heading lines intact
+            if len(prev) < 42 and not prev.endswith((",", ";", "-", "—", "–")) and (line[0].isupper() or _is_cjk_char(line[0])):
+                rebuilt.append(line)
+                continue
+
+            # Join wrapped line cleanly
+            if _is_cjk_char(prev[-1]) and _is_cjk_char(line[0]):
+                rebuilt[-1] = f"{prev}{line}"
+            else:
+                rebuilt[-1] = f"{prev} {line}"
+
+        cleaned_paragraphs.append("\n".join(rebuilt))
+
+    return "\n\n".join(p for p in cleaned_paragraphs if p).strip()
+
+
+def _clean_pdf_page_sections(sections: list[ParsedSection]) -> list[ParsedSection]:
+    if not sections:
+        return sections
+
+    page_lines: list[list[str]] = [
+        [line.rstrip() for line in section.content.replace("\r\n", "\n").splitlines()]
+        for section in sections
+    ]
+
+    # Detect repeated running headers/footers across >= 3 pages
+    repeated_keys: set[str] = set()
+    if len(page_lines) >= 3:
+        edge_counts: dict[str, int] = {}
+        for lines in page_lines:
+            non_empty = [line.strip() for line in lines if line.strip()]
+            if not non_empty:
+                continue
+            edge_candidates = set()
+            for candidate in (*non_empty[:2], *non_empty[-2:]):
+                if _match_legal_heading(candidate) is not None:
+                    continue
+                if len(candidate) <= 120:
+                    edge_candidates.add(_normalize_pdf_header_key(candidate))
+            for key in edge_candidates:
+                if key:
+                    edge_counts[key] = edge_counts.get(key, 0) + 1
+        threshold = max(3, int(len(page_lines) * 0.45 + 0.5))
+        repeated_keys = {key for key, count in edge_counts.items() if count >= threshold}
+
+    cleaned_sections: list[ParsedSection] = []
+    for section, lines in zip(sections, page_lines):
+        # Strip top/bottom running headers, footers, and standalone page numbers (never legal headings)
+        non_empty_indices = [idx for idx, line in enumerate(lines) if line.strip()]
+        drop_indices: set[int] = set()
+        for edge_idx in (*non_empty_indices[:2], *non_empty_indices[-2:]):
+            stripped = lines[edge_idx].strip()
+            if _match_legal_heading(stripped) is not None:
+                continue
+            if _is_pdf_page_number_line(stripped) or _normalize_pdf_header_key(stripped) in repeated_keys:
+                drop_indices.add(edge_idx)
+
+        filtered_text = "\n".join(
+            line for idx, line in enumerate(lines) if idx not in drop_indices
+        )
+        reflowed = _dehyphenate_and_reflow_pdf_page(filtered_text)
+        if not reflowed:
+            continue
+        cleaned_sections.append(
+            ParsedSection(
+                heading=section.heading,
+                level=section.level,
+                content=reflowed,
+            )
+        )
+
+    # If the full PDF contains clear statutory structure (>=3 legal headings), sectionize by legal headings.
+    combined_text = _plain_text_from_sections(cleaned_sections)
+    legal_sections = _split_text_by_legal_headings(
+        combined_text,
+        fallback_heading="Preamble",
+        fallback_level=1,
+        min_headings=3,
+    )
+    if legal_sections is not None:
+        return legal_sections
+    return cleaned_sections
 
 
 @dataclass
@@ -178,6 +561,25 @@ def _normalize_text(value: str) -> str:
     return cleaned.strip()
 
 
+def _strip_boilerplate_lines(value: str) -> str:
+    kept: list[str] = []
+    for line in value.splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if any(pattern.search(stripped) for pattern in BOILERPLATE_LINE_PATTERNS):
+            continue
+        kept.append(stripped)
+    return "\n".join(kept).strip()
+
+
+def _is_low_quality_title(value: str | None) -> bool:
+    if not value or not value.strip():
+        return True
+    cleaned = value.strip()
+    return any(pattern.search(cleaned) for pattern in LOW_QUALITY_TITLE_PATTERNS)
+
+
 def _parse_date_value(value: str) -> str | None:
     normalized = _normalize_text(value)
     if not normalized:
@@ -192,6 +594,34 @@ def _parse_date_value(value: str) -> str | None:
     for fmt in DATE_INPUT_FORMATS:
         try:
             return datetime.strptime(normalized, fmt).date().isoformat()
+        except ValueError:
+            continue
+
+    for pattern, base_year in JAPANESE_ERA_PATTERNS:
+        match = pattern.search(normalized)
+        if match is None:
+            continue
+        era_raw = match.group("era")
+        era_year = 1 if era_raw == "元" else int(era_raw)
+        try:
+            return datetime(
+                year=base_year + era_year,
+                month=int(match.group("month")),
+                day=int(match.group("day")),
+            ).date().isoformat()
+        except ValueError:
+            continue
+
+    for pattern in CJK_DATE_PATTERNS:
+        match = pattern.search(normalized)
+        if match is None:
+            continue
+        try:
+            return datetime(
+                year=int(match.group("year")),
+                month=int(match.group("month")),
+                day=int(match.group("day")),
+            ).date().isoformat()
         except ValueError:
             continue
 
@@ -222,30 +652,26 @@ def _metadata_language(metadata: dict[str, Any]) -> str | None:
 
 
 def _display_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT))
-    except ValueError:
-        return str(path)
+    return repo_rel_posix(path, root=ROOT)
 
 
 def _same_host_family(base_url: str, candidate_url: str) -> bool:
-    base_host = urlparse(base_url).netloc.lower()
-    candidate_host = urlparse(candidate_url).netloc.lower()
-    if base_host.endswith(".europa.eu") and candidate_host.endswith(".europa.eu"):
-        return True
-    return (
-        candidate_host == base_host
-        or candidate_host.endswith(f".{base_host}")
-        or base_host.endswith(f".{candidate_host}")
-    )
+    return same_host_family(base_url, candidate_url)
 
 
 def _keyword_tokens(value: str) -> set[str]:
-    return {
+    latin_tokens = {
         token
         for token in re.findall(r"[a-z0-9]{3,}", value.lower())
         if token not in {"the", "and", "for", "with", "from", "that", "this", "page"}
     }
+    cjk_tokens: set[str] = set()
+    for run in re.findall(r"[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]{2,}", value):
+        cjk_tokens.add(run)
+        if len(run) > 2:
+            for index in range(len(run) - 1):
+                cjk_tokens.add(run[index : index + 2])
+    return latin_tokens | cjk_tokens
 
 
 def _next_textual_sibling(element: Tag) -> str | None:
@@ -384,7 +810,7 @@ def _visible_date_candidates(soup: BeautifulSoup) -> list[SourceDateCandidate]:
                 )
 
     for element in body.find_all(["h1", "h2", "h3", "h4", "h5", "h6", "dt", "th", "strong", "b"]):
-        label = _normalize_text(element.get_text(" ", strip=True)).lower().rstrip(":")
+        label = _normalize_text(element.get_text(" ", strip=True)).lower().rstrip(":：")
         if not label:
             continue
         sibling_text = _next_textual_sibling(element)
@@ -393,7 +819,20 @@ def _visible_date_candidates(soup: BeautifulSoup) -> list[SourceDateCandidate]:
         parsed = _parse_date_value(sibling_text)
         if not parsed:
             continue
-        if label in {"publication", "published", "published on", "date published", "date of publication"}:
+        if label in {
+            "publication",
+            "published",
+            "published on",
+            "date published",
+            "date of publication",
+            "发布时间",
+            "发布日期",
+            "成文日期",
+            "公表日",
+            "公開日",
+            "공포일",
+            "등록일",
+        }:
             candidates.append(
                 SourceDateCandidate(
                     field="publication_date",
@@ -403,7 +842,19 @@ def _visible_date_candidates(soup: BeautifulSoup) -> list[SourceDateCandidate]:
                     priority=105,
                 )
             )
-        if label in {"last update", "last updated", "updated", "updated on", "date updated", "last modified", "modified"}:
+        if label in {
+            "last update",
+            "last updated",
+            "updated",
+            "updated on",
+            "date updated",
+            "last modified",
+            "modified",
+            "更新时间",
+            "更新日",
+            "最終更新日",
+            "수정일",
+        }:
             candidates.append(
                 SourceDateCandidate(
                     field="last_updated_date",
@@ -417,8 +868,8 @@ def _visible_date_candidates(soup: BeautifulSoup) -> list[SourceDateCandidate]:
     return candidates
 
 
-def extract_html_source_metadata(artifact_path: Path) -> dict[str, str]:
-    html = artifact_path.read_text(encoding="utf-8", errors="ignore")
+def extract_html_source_metadata(artifact_path: Path, *, content_type: str | None = None) -> dict[str, str]:
+    html = decode_html_bytes(artifact_path.read_bytes(), content_type=content_type)
     soup = BeautifulSoup(html, "html.parser")
 
     candidates = [
@@ -530,6 +981,14 @@ def _prune_noise_nodes(root: Tag) -> None:
         ".pagination",
         ".breadcrumb",
         ".breadcrumbs",
+        ".usa-banner",
+        "#usa-banner",
+        ".usa-skipnav",
+        ".nist-header",
+        ".nist-footer",
+        ".cac-header",
+        ".head_nav",
+        ".top_nav",
     ):
         for node in root.select(selector):
             node.decompose()
@@ -574,9 +1033,10 @@ def _select_content_root(body: Tag) -> Tag:
 def _content_text_nodes(root: Tag) -> list[Tag]:
     collected: list[Tag] = []
     for element in root.find_all(TEXT_BLOCK_TAGS):
-        if element.name in {"td", "th"} and element.find(TEXT_BLOCK_TAGS - {"td", "th"}):
+        # Prevent nested block duplication (e.g., <li><p>...</p></li> or <blockquote><p>...</p></blockquote>).
+        if element.name in {"td", "th", "li", "blockquote"} and element.find(INNER_BLOCK_TAGS):
             continue
-        text = _normalize_text(element.get_text("\n", strip=True))
+        text = _strip_boilerplate_lines(_normalize_text(element.get_text("\n", strip=True)))
         if not text:
             continue
         collected.append(element)
@@ -599,7 +1059,7 @@ def _looks_like_image_only_content(root: Tag) -> bool:
 
 
 def _finalize_section(sections: list[ParsedSection], heading: str, level: int, content_lines: list[str]) -> None:
-    content = "\n".join(line for line in content_lines if line).strip()
+    content = _strip_boilerplate_lines("\n".join(line for line in content_lines if line).strip())
     if content:
         sections.append(ParsedSection(heading=heading, level=level, content=content))
 
@@ -625,15 +1085,16 @@ def _is_emphasized_heading(element: Tag, text: str) -> bool:
     return False
 
 
-def _fetch_embedded_html_if_needed(
+def _resolve_embedded_html_offline(
     artifact_path: Path,
     metadata: dict[str, Any],
 ) -> tuple[Path, list[str]]:
+    """Use already-fetched embedded iframe HTML offline without performing network I/O."""
     warnings: list[str] = []
     if artifact_path.suffix.lower() != ".html":
         return artifact_path, warnings
 
-    html = artifact_path.read_text(encoding="utf-8", errors="ignore")
+    html = decode_html_bytes(artifact_path.read_bytes(), content_type=metadata.get("content_type"))
     soup = BeautifulSoup(html, "html.parser")
     iframe = soup.find("iframe")
     visible_text = _normalize_text(soup.get_text("\n"))
@@ -647,31 +1108,11 @@ def _fetch_embedded_html_if_needed(
 
     embedded_path = artifact_path.with_name("embedded_source.html")
     if embedded_path.exists():
-        metadata["embedded_artifact_path"] = str(embedded_path.relative_to(ROOT))
-        metadata_path = artifact_path.with_name("metadata.json")
-        metadata_path.write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         warnings.append("used_cached_embedded_html")
         return embedded_path, warnings
 
-    target_url = urljoin(metadata["canonical_url"], iframe_src)
-    request = Request(
-        target_url,
-        headers={"User-Agent": "AI-Governance-Observatory/0.1 (+https://github.com/openai/codex)"},
-    )
-    try:
-        with urlopen(request, timeout=15) as response:
-            embedded_payload = response.read()
-    except (HTTPError, URLError, TimeoutError, socket.timeout) as exc:
-        warnings.append(f"iframe_fetch_failed:{exc}")
-        warnings.append(f"iframe_src:{target_url}")
-        return artifact_path, warnings
-
-    embedded_path.write_bytes(embedded_payload)
-    metadata["embedded_artifact_path"] = str(embedded_path.relative_to(ROOT))
-    metadata_path = artifact_path.with_name("metadata.json")
-    metadata_path.write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    warnings.append(f"fetched_embedded_html:{target_url}")
-    return embedded_path, warnings
+    warnings.append("embedded_html_not_fetched")
+    return artifact_path, warnings
 
 
 def _wrapper_page_visible_text(html: str) -> str:
@@ -679,18 +1120,6 @@ def _wrapper_page_visible_text(html: str) -> str:
     _prune_noise_nodes(soup)
     content_root = _select_content_root(soup)
     return _normalize_text(content_root.get_text("\n"))
-
-
-def _download_context_text(anchor: Tag) -> str:
-    for parent in anchor.parents:
-        if not isinstance(parent, Tag):
-            continue
-        if parent.name not in {"div", "li", "article", "section", "tr", "td"}:
-            continue
-        text = _normalize_text(parent.get_text(" ", strip=True))
-        if 20 <= len(text) <= 600:
-            return text
-    return _normalize_text(anchor.get_text(" ", strip=True))
 
 
 def _artifact_selection_bonus(title: str | None, context_lower: str, format_hint: str | None) -> int:
@@ -712,7 +1141,13 @@ def _artifact_selection_bonus(title: str | None, context_lower: str, format_hint
     return bonus
 
 
-def _effective_linked_format(candidate_url: str, context_lower: str, has_download_attr: bool, format_hint: str | None, pdf_hint: bool) -> str | None:
+def _effective_linked_format(
+    candidate_url: str,
+    context_lower: str,
+    has_download_attr: bool,
+    format_hint: str | None,
+    pdf_hint: bool,
+) -> str | None:
     if format_hint in {"pdf", "hwpx", "odt"}:
         return format_hint
     if pdf_hint:
@@ -830,15 +1265,16 @@ def _payload_looks_like_odt(payload: bytes) -> bool:
     return mimetype == "application/vnd.oasis.opendocument.text"
 
 
-def _fetch_linked_artifact_if_needed(
+def _resolve_linked_artifact_offline(
     artifact_path: Path,
     metadata: dict[str, Any],
 ) -> tuple[Path, list[str]]:
+    """Resolve an already-fetched linked artifact offline, verifying cached URL freshness."""
     warnings: list[str] = []
     if artifact_path.suffix.lower() != ".html":
         return artifact_path, warnings
 
-    html = artifact_path.read_text(encoding="utf-8", errors="ignore")
+    html = decode_html_bytes(artifact_path.read_bytes(), content_type=metadata.get("content_type"))
     visible_text = _wrapper_page_visible_text(html)
     pdf_marker_count = html.lower().count("(pdf)")
 
@@ -846,11 +1282,12 @@ def _fetch_linked_artifact_if_needed(
     download_anchor_count = sum(
         1 for anchor in soup.find_all("a", href=True) if anchor.has_attr("download")
     )
+    base_url = str(metadata.get("resolved_url") or metadata.get("canonical_url") or "")
     linked_candidates = [
         candidate
         for candidate in extract_linked_artifact_candidates(
             soup,
-            base_url=str(metadata.get("resolved_url") or metadata.get("canonical_url") or ""),
+            base_url=base_url,
             same_host_family=_same_host_family,
         )
         if _effective_linked_format(
@@ -867,80 +1304,30 @@ def _fetch_linked_artifact_if_needed(
 
     selected_download = _select_primary_linked_artifact(
         soup,
-        base_url=str(metadata.get("resolved_url") or metadata.get("canonical_url") or ""),
+        base_url=base_url,
         metadata=metadata,
     )
     if selected_download is None:
-        stale_keys = ("linked_artifact_path", "linked_artifact_url", "linked_artifact_label", "linked_artifact_format")
-        if any(key in metadata for key in stale_keys):
-            for key in stale_keys:
-                metadata.pop(key, None)
-            metadata_path = artifact_path.with_name("metadata.json")
-            metadata_path.write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         return artifact_path, warnings
 
-    candidate_url, candidate_label, format_hint = selected_download
+    candidate_url, _candidate_label, format_hint = selected_download
     linked_suffix = ".pdf" if format_hint == "pdf" else ".hwpx" if format_hint == "hwpx" else ".odt"
     linked_path = artifact_path.with_name(f"linked_source{linked_suffix}")
+    recorded_url = metadata.get("linked_artifact_url")
     if linked_path.exists():
-        metadata["linked_artifact_path"] = _display_path(linked_path)
-        metadata["linked_artifact_url"] = candidate_url
-        metadata["linked_artifact_label"] = candidate_label
-        metadata["linked_artifact_format"] = format_hint
-        metadata_path = artifact_path.with_name("metadata.json")
-        metadata_path.write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        if recorded_url and recorded_url != candidate_url:
+            warnings.append("cached_linked_artifact_url_mismatch")
+            return artifact_path, warnings
         warnings.append("used_cached_linked_artifact")
         return linked_path, warnings
 
-    request = Request(
-        candidate_url,
-        headers={
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
-            "Referer": str(metadata.get("resolved_url") or metadata.get("canonical_url") or candidate_url),
-            "Accept": "application/pdf,application/octet-stream,text/html;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en-US,en;q=0.9",
-        },
-    )
-    try:
-        with urlopen(request, timeout=30) as response:
-            payload = response.read()
-            content_type = response.headers.get("Content-Type")
-    except (HTTPError, URLError, TimeoutError, socket.timeout) as exc:
-        warnings.append(f"linked_artifact_fetch_failed:{exc}")
-        warnings.append(f"linked_artifact_url:{candidate_url}")
-        return artifact_path, warnings
-
-    normalized_content_type = content_type.split(";")[0].strip().lower() if content_type else ""
-    if format_hint == "pdf":
-        if normalized_content_type != "application/pdf" and not payload.lstrip().startswith(b"%PDF-"):
-            warnings.append(f"linked_artifact_unexpected_content_type:{content_type or 'unknown'}")
-            warnings.append(f"linked_artifact_url:{candidate_url}")
-            return artifact_path, warnings
-    elif format_hint == "hwpx":
-        if not _payload_looks_like_hwpx(payload):
-            warnings.append(f"linked_artifact_unexpected_content_type:{content_type or 'unknown'}")
-            warnings.append(f"linked_artifact_url:{candidate_url}")
-            return artifact_path, warnings
-    elif format_hint == "odt":
-        if not _payload_looks_like_odt(payload):
-            warnings.append(f"linked_artifact_unexpected_content_type:{content_type or 'unknown'}")
-            warnings.append(f"linked_artifact_url:{candidate_url}")
-            return artifact_path, warnings
-
-    linked_path.write_bytes(payload)
-    metadata["linked_artifact_path"] = _display_path(linked_path)
-    metadata["linked_artifact_url"] = candidate_url
-    metadata["linked_artifact_label"] = candidate_label
-    metadata["linked_artifact_format"] = format_hint
-    metadata_path = artifact_path.with_name("metadata.json")
-    metadata_path.write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    warnings.append(f"fetched_linked_artifact:{candidate_url}")
-    return linked_path, warnings
+    warnings.append(f"linked_artifact_not_fetched:{candidate_url}")
+    return artifact_path, warnings
 
 
 def parse_html_artifact(artifact_path: Path, metadata: dict[str, Any]) -> ParsedDocument:
-    parse_source_path, prefetch_warnings = _fetch_embedded_html_if_needed(artifact_path, metadata)
-    parse_source_path, linked_warnings = _fetch_linked_artifact_if_needed(parse_source_path, metadata)
+    parse_source_path, prefetch_warnings = _resolve_embedded_html_offline(artifact_path, metadata)
+    parse_source_path, linked_warnings = _resolve_linked_artifact_offline(parse_source_path, metadata)
     if parse_source_path.suffix.lower() == ".pdf":
         parsed_pdf = parse_pdf_artifact(parse_source_path, metadata)
         parsed_pdf.warnings = [*prefetch_warnings, *linked_warnings, *parsed_pdf.warnings]
@@ -957,12 +1344,15 @@ def parse_html_artifact(artifact_path: Path, metadata: dict[str, Any]) -> Parsed
         parsed_odt.source_artifact_path = _display_path(parse_source_path)
         return parsed_odt
 
-    html = parse_source_path.read_text(encoding="utf-8", errors="ignore")
+    raw_bytes = parse_source_path.read_bytes()
+    source_hash = sha256(raw_bytes).hexdigest()
+    html = decode_html_bytes(raw_bytes, content_type=metadata.get("content_type"))
     soup = BeautifulSoup(html, "html.parser")
 
     _prune_noise_nodes(soup)
 
-    title = _normalize_text(soup.title.get_text(" ", strip=True)) if soup.title else metadata["title"]
+    extracted_title = _normalize_text(soup.title.get_text(" ", strip=True)) if soup.title else ""
+    title = extracted_title if extracted_title and not _is_low_quality_title(extracted_title) else metadata["title"]
     language = None
     html_tag = soup.find("html")
     if html_tag is not None:
@@ -982,7 +1372,7 @@ def parse_html_artifact(artifact_path: Path, metadata: dict[str, Any]) -> Parsed
         current_lines: list[str] = []
 
         for element in _content_text_nodes(content_root):
-            text = _normalize_text(element.get_text("\n", strip=True))
+            text = _strip_boilerplate_lines(_normalize_text(element.get_text("\n", strip=True)))
             if not text:
                 continue
 
@@ -1004,17 +1394,16 @@ def parse_html_artifact(artifact_path: Path, metadata: dict[str, Any]) -> Parsed
         _finalize_section(sections, current_heading, current_level, current_lines)
 
         if not sections:
-            fallback_text = _normalize_text(content_root.get_text("\n"))
+            fallback_text = _strip_boilerplate_lines(_normalize_text(content_root.get_text("\n")))
             if fallback_text:
                 sections = [ParsedSection(heading=title or "Document", level=1, content=fallback_text)]
             else:
                 warnings.append("empty_html_after_cleaning")
 
+        sections = _apply_legal_sectionizer(sections, min_headings=2)
+
     plain_text = "\n\n".join(section.content for section in sections if section.content).strip()
-    if parse_source_path != artifact_path:
-        source_artifact_path = _display_path(parse_source_path)
-    else:
-        source_artifact_path = _display_path(artifact_path)
+    source_artifact_path = _display_path(parse_source_path)
 
     return ParsedDocument(
         parser_version=PARSER_VERSION,
@@ -1025,6 +1414,8 @@ def parse_html_artifact(artifact_path: Path, metadata: dict[str, Any]) -> Parsed
         sections=sections,
         warnings=warnings,
         source_artifact_path=source_artifact_path,
+        source_sha256=source_hash,
+        extractor="beautifulsoup4",
     )
 
 
@@ -1051,21 +1442,23 @@ def _extract_pdf_sections_with_pypdf(artifact_path: Path) -> tuple[list[ParsedSe
     sections: list[ParsedSection] = []
     warnings: list[str] = []
     for page_index, page in enumerate(reader.pages, start=1):
-        text = _normalize_text(page.extract_text() or "")
-        if not text:
+        raw_text = (page.extract_text() or "").replace("\r\n", "\n").strip()
+        if not raw_text:
             warnings.append(f"empty_pdf_page:{page_index}")
             continue
         sections.append(
             ParsedSection(
                 heading=f"Page {page_index}",
                 level=1,
-                content=text,
+                content=raw_text,
             )
         )
 
     title = None
     if reader.metadata and reader.metadata.title:
-        title = _normalize_text(str(reader.metadata.title)) or None
+        candidate = _normalize_text(str(reader.metadata.title)) or None
+        if candidate and not _is_low_quality_title(candidate):
+            title = candidate
 
     return sections, warnings, title
 
@@ -1079,6 +1472,8 @@ def _extract_pdf_sections_with_pdftotext(artifact_path: Path) -> tuple[list[Pars
         [executable, "-layout", "-enc", "UTF-8", str(artifact_path), "-"],
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         check=False,
     )
     if result.returncode != 0:
@@ -1087,15 +1482,15 @@ def _extract_pdf_sections_with_pdftotext(artifact_path: Path) -> tuple[list[Pars
     sections: list[ParsedSection] = []
     warnings: list[str] = []
     for page_index, page_text in enumerate(result.stdout.replace("\r\n", "\n").split("\f"), start=1):
-        text = _normalize_text(page_text)
-        if not text:
+        raw_text = page_text.strip()
+        if not raw_text:
             warnings.append(f"empty_pdftotext_page:{page_index}")
             continue
         sections.append(
             ParsedSection(
                 heading=f"Page {page_index}",
                 level=1,
-                content=text,
+                content=raw_text,
             )
         )
 
@@ -1103,20 +1498,24 @@ def _extract_pdf_sections_with_pdftotext(artifact_path: Path) -> tuple[list[Pars
 
 
 def parse_pdf_artifact(artifact_path: Path, metadata: dict[str, Any]) -> ParsedDocument:
+    source_hash = sha256(artifact_path.read_bytes()).hexdigest() if artifact_path.exists() else None
     sections, warnings, extracted_title = _extract_pdf_sections_with_pypdf(artifact_path)
     pdftotext_sections, pdftotext_warnings = _extract_pdf_sections_with_pdftotext(artifact_path)
+    extractor = "pypdf"
 
     if _pdf_extraction_score(pdftotext_sections) > (_pdf_extraction_score(sections) + 250):
         sections = pdftotext_sections
         warnings = [warning for warning in warnings if not warning.startswith("empty_pdf_page:")]
         warnings.extend(pdftotext_warnings)
         warnings.append("used_pdftotext_fallback")
+        extractor = "pdftotext"
     elif pdftotext_sections:
         warnings.extend(pdftotext_warnings)
 
+    sections = _clean_pdf_page_sections(sections)
     plain_text = _plain_text_from_sections(sections)
     title = metadata["title"]
-    if extracted_title:
+    if extracted_title and not _is_low_quality_title(extracted_title):
         title = extracted_title
 
     return ParsedDocument(
@@ -1128,6 +1527,8 @@ def parse_pdf_artifact(artifact_path: Path, metadata: dict[str, Any]) -> ParsedD
         sections=sections,
         warnings=warnings,
         source_artifact_path=_display_path(artifact_path),
+        source_sha256=source_hash,
+        extractor=extractor,
     )
 
 
@@ -1201,7 +1602,7 @@ def _extract_hwpx_sections(artifact_path: Path) -> tuple[list[ParsedSection], li
 
     try:
         with ZipFile(artifact_path) as archive:
-            preview_text = _normalize_text(archive.read("Preview/PrvText.txt").decode("utf-8", errors="ignore"))
+            preview_text = _normalize_text(archive.read("Preview/PrvText.txt").decode("utf-8", errors="replace"))
     except (BadZipFile, FileNotFoundError, KeyError) as exc:
         return [], [*warnings, f"hwpx_preview_unavailable:{type(exc).__name__}"]
 
@@ -1212,8 +1613,11 @@ def _extract_hwpx_sections(artifact_path: Path) -> tuple[list[ParsedSection], li
 
 
 def parse_hwpx_artifact(artifact_path: Path, metadata: dict[str, Any]) -> ParsedDocument:
+    source_hash = sha256(artifact_path.read_bytes()).hexdigest() if artifact_path.exists() else None
     title, language, metadata_warnings = _extract_hwpx_metadata(artifact_path)
     sections, section_warnings = _extract_hwpx_sections(artifact_path)
+    extractor = "hwpx_preview" if "used_hwpx_preview_fallback" in section_warnings else "hwpx_xml"
+    sections = _apply_legal_sectionizer(sections, min_headings=2)
     return ParsedDocument(
         parser_version=PARSER_VERSION,
         title=title or metadata["title"],
@@ -1223,6 +1627,8 @@ def parse_hwpx_artifact(artifact_path: Path, metadata: dict[str, Any]) -> Parsed
         sections=sections,
         warnings=[*metadata_warnings, *section_warnings],
         source_artifact_path=_display_path(artifact_path),
+        source_sha256=source_hash,
+        extractor=extractor,
     )
 
 
@@ -1239,8 +1645,10 @@ def _extract_odt_sections_with_textutil(artifact_path: Path) -> tuple[list[Parse
                 check=True,
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
             )
-            plain_text = _normalize_text(output_path.read_text(encoding="utf-8", errors="ignore"))
+            plain_text = _normalize_text(output_path.read_text(encoding="utf-8", errors="replace"))
     except (FileNotFoundError, OSError, subprocess.CalledProcessError) as exc:
         return [], [f"textutil_failed:{type(exc).__name__}"]
 
@@ -1262,27 +1670,43 @@ def _extract_odt_sections_from_xml(artifact_path: Path) -> tuple[list[ParsedSect
     except ET.ParseError:
         return [], ["odt_content_parse_failed"]
 
-    paragraphs: list[str] = []
+    sections: list[ParsedSection] = []
+    current_heading = "Document"
+    current_level = 1
+    current_lines: list[str] = []
     for element in root.iter():
         if not isinstance(element.tag, str):
             continue
-        if element.tag.rsplit("}", 1)[-1] != "p":
+        local_name = element.tag.rsplit("}", 1)[-1]
+        if local_name not in {"p", "h"}:
             continue
         text = _normalize_text("".join(text_node for text_node in element.itertext() if text_node))
-        if text:
-            paragraphs.append(text)
+        if not text:
+            continue
+        if local_name == "h":
+            _finalize_section(sections, current_heading, current_level, current_lines)
+            current_heading = text
+            current_level = 1
+            current_lines = []
+            continue
+        current_lines.append(text)
 
-    if not paragraphs:
+    _finalize_section(sections, current_heading, current_level, current_lines)
+    if not sections:
         return [], ["empty_odt_after_extraction"]
 
-    return [ParsedSection(heading="Document", level=1, content="\n".join(paragraphs))], []
+    return sections, []
 
 
 def parse_odt_artifact(artifact_path: Path, metadata: dict[str, Any]) -> ParsedDocument:
+    source_hash = sha256(artifact_path.read_bytes()).hexdigest() if artifact_path.exists() else None
     sections, warnings = _extract_odt_sections_with_textutil(artifact_path)
+    extractor = "textutil"
     if not sections:
         sections, xml_warnings = _extract_odt_sections_from_xml(artifact_path)
         warnings = [*warnings, *xml_warnings]
+        extractor = "odt_xml"
+    sections = _apply_legal_sectionizer(sections, min_headings=2)
 
     return ParsedDocument(
         parser_version=PARSER_VERSION,
@@ -1293,6 +1717,8 @@ def parse_odt_artifact(artifact_path: Path, metadata: dict[str, Any]) -> ParsedD
         sections=sections,
         warnings=warnings,
         source_artifact_path=_display_path(artifact_path),
+        source_sha256=source_hash,
+        extractor=extractor,
     )
 
 
@@ -1362,6 +1788,8 @@ def parse_artifact(artifact_path: Path, metadata: dict[str, Any]) -> ParsedDocum
 def parse_raw_documents(
     jurisdiction: str | None = None,
     document_id: str | None = None,
+    *,
+    refresh: bool = False,
 ) -> list[dict[str, str]]:
     records = _load_raw_document_records(jurisdiction=jurisdiction, document_id=document_id)
     if not records:
@@ -1370,12 +1798,38 @@ def parse_raw_documents(
     results: list[dict[str, str]] = []
     for record in records:
         artifact_path = _artifact_path(record.metadata)
-        if artifact_path.suffix.lower() == ".html":
-            extracted_metadata = extract_html_source_metadata(artifact_path)
+        target_dir = PARSED_DATA_DIR / record.jurisdiction / record.document_id
+        parsed_json_path = target_dir / "normalized.json"
+
+        if not refresh and parsed_json_path.exists() and artifact_path.exists():
+            try:
+                existing_parsed = json.loads(parsed_json_path.read_text(encoding="utf-8"))
+                current_hash = sha256(artifact_path.read_bytes()).hexdigest()
+                if (
+                    existing_parsed.get("parser_version") == PARSER_VERSION
+                    and existing_parsed.get("source_sha256") == current_hash
+                ):
+                    results.append(
+                        {
+                            "jurisdiction": record.jurisdiction,
+                            "document_id": record.document_id,
+                            "status": "skipped_unchanged",
+                        }
+                    )
+                    continue
+            except (OSError, json.JSONDecodeError):
+                pass
+
+        if artifact_path.suffix.lower() == ".html" and artifact_path.exists():
+            extracted_metadata = extract_html_source_metadata(
+                artifact_path,
+                content_type=record.metadata.get("content_type"),
+            )
             if extracted_metadata and _apply_extracted_source_metadata(record.metadata, extracted_metadata):
                 record.metadata_path.write_text(
                     json.dumps(record.metadata, indent=2, ensure_ascii=False) + "\n",
                     encoding="utf-8",
+                    newline="\n",
                 )
         try:
             parsed = parse_artifact(artifact_path, record.metadata)
@@ -1389,16 +1843,19 @@ def parse_raw_documents(
             )
             continue
 
-        target_dir = PARSED_DATA_DIR / record.jurisdiction / record.document_id
         target_dir.mkdir(parents=True, exist_ok=True)
-        parsed_json_path = target_dir / "normalized.json"
         parsed_text_path = target_dir / "normalized.txt"
 
         parsed_json_path.write_text(
             parsed.model_dump_json(indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
+            newline="\n",
         )
-        parsed_text_path.write_text(parsed.plain_text + ("\n" if parsed.plain_text else ""), encoding="utf-8")
+        parsed_text_path.write_text(
+            parsed.plain_text + ("\n" if parsed.plain_text else ""),
+            encoding="utf-8",
+            newline="\n",
+        )
 
         results.append(
             {

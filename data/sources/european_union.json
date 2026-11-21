@@ -1,5 +1,5 @@
 {
-  "manifest_version": "2026-04-14",
+  "manifest_version": "2.0",
   "jurisdiction": "european_union",
   "description": "Official EU legal text, implementation guidance, and data-protection sources for the AI Act and related governance instruments.",
   "source_portals": [
@@ -20,6 +20,25 @@
         "legal_text",
         "official_journal",
         "ai_act"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+          "kind": "html_links",
+          "link_selector": "a[href]",
+          "include_url_patterns": [
+            "CELEX:3202",
+            "eli/reg/202"
+          ],
+          "include_title_patterns": [
+            "artificial intelligence",
+            "2024/1689",
+            "2026/1744",
+            "amending"
+          ],
+          "same_host_only": true,
+          "max_candidates": 20
+        }
       ]
     },
     {
@@ -156,6 +175,46 @@
           "max_candidates": 25
         }
       ]
+    },
+    {
+      "id": "eu_ai_office_policies",
+      "name": "European Commission & AI Office — European Approach to AI",
+      "issuing_body": "European Commission / European AI Office",
+      "issuer_type": "executive",
+      "canonical_url": "https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence",
+      "portal_kind": "portal",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Central policy hub for 2026 EU AI Office outputs including Article 50 Transparency Code/Guidelines, Article 6 High-Risk Guidelines, and the Apply AI Strategy.",
+      "tags": [
+        "ai_office",
+        "article_50",
+        "apply_ai",
+        "high_risk"
+      ],
+      "discovery_targets": [
+        {
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence",
+          "kind": "html_links",
+          "link_selector": "main a[href]",
+          "include_url_patterns": [
+            "/en/policies/",
+            "/en/library/"
+          ],
+          "include_title_patterns": [
+            "artificial intelligence",
+            "transparency",
+            "code of practice",
+            "high-risk",
+            "apply ai"
+          ],
+          "same_host_only": true,
+          "max_candidates": 30
+        }
+      ]
     }
   ],
   "seed_documents": [
@@ -192,7 +251,8 @@
         "ai_act",
         "binding_law",
         "risk_based_regulation"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_ai_system_definition_guidelines",
@@ -224,7 +284,8 @@
         "guidelines",
         "scope",
         "ai_definition"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_gpai_provider_guidelines",
@@ -233,7 +294,7 @@
       "canonical_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "frontier_gpai",
         "standards_assurance"
@@ -254,7 +315,8 @@
         "gpai",
         "guidelines",
         "provider_obligations"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "eu_gpai_code_transparency_chapter_2025",
@@ -286,7 +348,8 @@
         "gpai",
         "code_of_practice",
         "transparency"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_gpai_code_copyright_chapter_2025",
@@ -318,7 +381,8 @@
         "gpai",
         "code_of_practice",
         "copyright"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_gpai_code_safety_security_chapter_2025",
@@ -350,7 +414,8 @@
         "gpai",
         "code_of_practice",
         "safety_security"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_gpai_vademecum_2025",
@@ -362,7 +427,7 @@
       ],
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "frontier_gpai",
         "standards_assurance"
@@ -382,7 +447,8 @@
         "gpai",
         "vademecum",
         "implementation"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "eu_prohibited_ai_practices_guidelines",
@@ -416,7 +482,8 @@
         "guidelines",
         "prohibited_practices",
         "ai_act"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_edpb_ai_models_opinion_28_2024",
@@ -448,7 +515,8 @@
         "gdpr",
         "privacy",
         "ai_models"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_edps_genai_guidance_2025",
@@ -481,7 +549,8 @@
         "privacy",
         "generative_ai",
         "data_protection"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_training_content_template_faq_2025",
@@ -512,7 +581,8 @@
         "gpai",
         "transparency",
         "training_data"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "eu_gpai_code_qa_2025",
@@ -543,7 +613,8 @@
         "gpai",
         "code_of_practice",
         "implementation"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "eu_ai_pact_page",
@@ -573,7 +644,8 @@
         "ai_pact",
         "voluntary",
         "implementation"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_ai_act_navigation_qa",
@@ -603,7 +675,8 @@
         "ai_act",
         "faq",
         "implementation"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "eu_ai_act_standardisation_page",
@@ -633,7 +706,8 @@
         "ai_act",
         "standards",
         "implementation"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     },
     {
       "id": "eu_gpai_scope_obligations_guidelines_2025",
@@ -665,7 +739,8 @@
         "gpai",
         "scope",
         "provider_obligations"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_training_content_public_summary_template_2025",
@@ -699,7 +774,8 @@
         "gpai",
         "training_data",
         "transparency"
-      ]
+      ],
+      "corpus_role": "primary_instrument"
     },
     {
       "id": "eu_request_for_an_article_64_2_opinion_from_efe0d88a",
@@ -708,7 +784,7 @@
       "canonical_url": "https://www.edpb.europa.eu/system/files/2024-12/ie-sa-article-64-2-request-re-ai-model-processing-redacted-en.pdf",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
+      "source_tier": "implementation_resource",
       "policy_domains": [
         "frontier_gpai",
         "privacy_data_protection"
@@ -730,7 +806,8 @@
         "ai_models",
         "primary_text",
         "auto_promoted"
-      ]
+      ],
+      "corpus_role": "companion_resource"
     }
   ]
 }

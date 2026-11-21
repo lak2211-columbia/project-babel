@@ -515,9 +515,16 @@ def test_concurrent_workers_execution_is_thread_safe_and_preserves_order(tmp_pat
 
 
 def test_pymupdf_primary_extractor_and_graceful_fallback(tmp_path: Path, monkeypatch) -> None:
-    # Real PDF should use PyMuPDF as primary extractor when fitz is installed
+    # Real PDF should use PyMuPDF as primary extractor when pymupdf is installed
+    # (isolate from host-installed poppler/pdftotext so CI runners behave deterministically)
     real_pdf = ROOT / "data" / "raw" / "japan" / "jp_social_principles_human_centric_ai" / "source.pdf"
-    parsed_real = parser_module.parse_pdf_artifact(real_pdf, {"title": "Social Principles of Human-Centric AI"})
+    with monkeypatch.context() as m:
+        m.setattr(
+            parser_module,
+            "_extract_pdf_sections_with_pdftotext",
+            lambda _p: ([], ["pdftotext_unavailable"]),
+        )
+        parsed_real = parser_module.parse_pdf_artifact(real_pdf, {"title": "Social Principles of Human-Centric AI"})
     assert parsed_real.extractor == "pymupdf"
     assert parsed_real.parser_version == "0.3.0"
     assert "AI" in parsed_real.plain_text

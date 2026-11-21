@@ -1,0 +1,143 @@
+{
+  "benchmark_id": "gold_set_v1",
+  "benchmark_status": "starter_v0.1_internal",
+  "taxonomy_version": "2.1.0",
+  "created_at": "2026-11-20",
+  "annotator_note": "Internal 5-document multilingual starter benchmark (1 well-parsed primary instrument per jurisdiction: EN/EN/KO/JA/ZH), hand-coded directly from full committed normalized.json texts against Codebook v2.1.0 and data/taxonomies/label-definitions.json. Intended to verify end-to-end gold-set evaluation and expose legacy v1 extraction gaps; external dual-annotator validation across 25–30 documents remains pending before publication-grade inter-rater benchmarks.",
+  "documents": [
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_joint_statement_ai_discrimination_2023",
+      "title": "Joint Statement on Enforcement Efforts Against Discrimination and Bias in Automated Systems",
+      "language": "en",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "policy_requirements": [
+        "risk_assessment",
+        "transparency_disclosure",
+        "training_data_governance"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "innovation_enablement"
+      ],
+      "evidence_notes": "CFPB/DOJ/EEOC/FTC joint statement (7,803 chars): anchors rationale in civil rights, fairness, equality, and anti-discrimination; cites FTC risk assessment/mitigation expectations, CFPB adverse-action transparency against opaque black-box credit models, and FTC algorithmic disgorgement for unlawfully collected training data; carries explicit non-binding disclaimer while signaling vigorous supervision under existing statutes."
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_gpai_code_transparency_chapter_2025",
+      "title": "Code of Practice for General-Purpose AI Models — Transparency Chapter",
+      "language": "en",
+      "document_type": "voluntary_commitment",
+      "binding_strength": "voluntary_commitment",
+      "policy_requirements": [
+        "model_documentation",
+        "transparency_disclosure",
+        "access_controls",
+        "open_weight_obligations"
+      ],
+      "enforcement_mechanisms": [
+        "reporting_obligation",
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "innovation_enablement",
+        "economic_competitiveness"
+      ],
+      "evidence_notes": "EU GPAI Code of Practice Transparency Chapter (10,844 chars): voluntary signatory commitments (Measures 1.1–1.3) operationalizing AI Act Art. 53(1)(a)-(b) Model Documentation Form (10-year retention), downstream/AI Office disclosure within 14 days, Art. 78 confidentiality & cybersecurity/integrity controls, and explicit Art. 53(2) open-source license exemption with systemic-risk override; Objectives anchor in Art. 1(1) Charter fundamental rights alongside health/safety, innovation, and internal market functioning."
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_ai_transparency_guideline_2026",
+      "title": "인공지능 투명성 확보 가이드라인 (AI Transparency Guideline)",
+      "language": "ko",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "policy_requirements": [
+        "transparency_disclosure",
+        "content_provenance"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "social_stability",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "fundamental_rights"
+      ],
+      "evidence_notes": "MSIT AI Transparency Guideline (18,217 chars): operationalizes AI Basic Act Art. 31 & Enforcement Decree Art. 23 prior-notice duties (사전 고지 의무) and visible/machine-readable watermarking & metadata labeling for general AI and deepfake outputs (표시 의무); framed primarily around preventing public confusion/misinformation, election disinformation, and strengthening social trust (사회적 신뢰 제고), with secondary consumer/deepfake-victim safety and creative-expression protections."
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_ai_guideline_2025_page",
+      "title": "人工知能関連技術の研究開発及び活用の適正性確保に関する指針 (Guidelines for Ensuring the Proper Development and Use of AI-Related Technologies)",
+      "language": "ja",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "policy_requirements": [
+        "risk_assessment",
+        "pre_deployment_testing",
+        "red_teaming",
+        "transparency_disclosure",
+        "content_provenance",
+        "human_oversight",
+        "access_controls",
+        "training_data_governance",
+        "third_party_audit"
+      ],
+      "enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "fundamental_rights",
+        "consumer_public_safety",
+        "economic_competitiveness"
+      ],
+      "evidence_notes": "AI Strategy HQ Art. 13 Guideline (9,595 chars): explicitly non-binding voluntary/agile PDCA framework promoting social implementation and reducing adoption barriers; specifies risk-based assessment (Sec 1(3)①), internal & independent external testing and red-teaming (fn.8), user transparency & output provenance/watermarking (Sec 2(2)-(3)), final human judgment/oversight (Sec 1(2), 4(2)), AI security against unauthorized manipulation (Sec 1(2)), and training-data IP/privacy provenance & creator benefit-sharing (Sec 2(2),(5))."
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_genai_interim_measures_2023",
+      "title": "生成式人工智能服务管理暂行办法 (Interim Measures for the Management of Generative AI Services)",
+      "language": "zh",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "policy_requirements": [
+        "risk_assessment",
+        "training_data_governance",
+        "transparency_disclosure",
+        "content_provenance",
+        "incident_reporting",
+        "registration_licensing",
+        "model_documentation",
+        "access_controls"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision",
+        "market_access_restriction",
+        "civil_penalty",
+        "criminal_penalty",
+        "reporting_obligation",
+        "licensing_requirement"
+      ],
+      "dominant_frame": "social_stability",
+      "secondary_frames": [
+        "innovation_enablement",
+        "national_security",
+        "fundamental_rights",
+        "consumer_public_safety"
+      ],
+      "evidence_notes": "CAC & 6-ministry binding departmental regulation (3,440 chars, 24 articles, eff. 2023-08-15): Art. 1 & 4(1) center on socialist core values, social stability, public order, and national security alongside Art. 3/5/6 inclusive-prudential innovation; mandates Art. 7–8 lawful training data & annotation QA, Art. 10 user transparency & minor anti-addiction, Art. 11/9/14 security/access safeguards & incident reporting, Art. 12 content labeling, Art. 17 security assessment & algorithm filing, Art. 19 inspection documentation, Art. 20–21 service suspension/offshore blocking, administrative & criminal penalties, and Art. 23 licensing."
+    }
+  ]
+}

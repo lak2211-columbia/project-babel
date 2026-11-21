@@ -7,6 +7,8 @@ from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup, Tag
 
+from observatory.url_safety import decode_html_bytes, same_host_family
+
 
 DOWNLOAD_URL_MARKERS = ("/download/", "/document/", "redirection/document/", "/down.do", "filedown.do")
 PIPC_DOWNLOAD_PATTERN = re.compile(
@@ -47,15 +49,7 @@ def _context_text(anchor: Tag) -> str:
 
 
 def _default_same_host_family(base_url: str, candidate_url: str) -> bool:
-    base_host = urlparse(base_url).netloc.lower()
-    candidate_host = urlparse(candidate_url).netloc.lower()
-    if base_host.endswith(".europa.eu") and candidate_host.endswith(".europa.eu"):
-        return True
-    return (
-        candidate_host == base_host
-        or candidate_host.endswith(f".{base_host}")
-        or base_host.endswith(f".{candidate_host}")
-    )
+    return same_host_family(base_url, candidate_url)
 
 
 def _is_http_url(candidate_url: str) -> bool:
@@ -139,6 +133,8 @@ def extract_linked_artifact_candidates(
 ) -> list[LinkedArtifactCandidate]:
     if isinstance(payload_or_soup, BeautifulSoup):
         soup = payload_or_soup
+    elif isinstance(payload_or_soup, bytes):
+        soup = BeautifulSoup(decode_html_bytes(payload_or_soup), "html.parser")
     else:
         soup = BeautifulSoup(payload_or_soup, "html.parser")
 

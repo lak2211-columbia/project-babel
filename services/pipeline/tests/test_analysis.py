@@ -4,7 +4,48 @@ from urllib.error import URLError
 
 import observatory.analysis as analysis_module
 from observatory.persistence import build_analysis_persistence_bundle
+from observatory.source_registry import JurisdictionManifest
 from observatory.taxonomy import load_taxonomy
+
+
+def _fake_manifest(jurisdiction: str, document_ids: list[str]) -> JurisdictionManifest:
+    return JurisdictionManifest.model_validate(
+        {
+            "manifest_version": "2.0",
+            "jurisdiction": jurisdiction,
+            "description": "Test fixture",
+            "source_portals": [
+                {
+                    "id": "portal",
+                    "name": "Portal",
+                    "issuing_body": "Agency",
+                    "canonical_url": "https://example.com",
+                    "portal_kind": "portal",
+                    "retrieval_strategy": "html",
+                    "languages": ["en"],
+                    "priority": "high",
+                    "coverage_notes": "Fixture",
+                }
+            ],
+            "seed_documents": [
+                {
+                    "id": doc_id,
+                    "title": f"Fixture {doc_id}",
+                    "issuing_body": "Agency",
+                    "canonical_url": f"https://example.com/{doc_id}",
+                    "document_type": "regulatory_guidance",
+                    "binding_strength": "regulatory_guidance",
+                    "publication_date": "2025-02-01",
+                    "languages": ["en"],
+                    "document_format": "html",
+                    "source_portal_ids": ["portal"],
+                    "priority": "high",
+                    "relevance_notes": "Fixture",
+                }
+                for doc_id in document_ids
+            ],
+        }
+    )
 
 
 class FakeStructuredOutputClient:
@@ -177,12 +218,18 @@ def test_analyze_parsed_documents_skips_existing_artifacts(tmp_path: Path, monke
     (parsed_doc_dir / "normalized.json").write_text(
         json.dumps(
             {
-                "parser_version": "0.1.0",
+                "parser_version": "0.3.0",
                 "title": "Social Principles of Human-Centric AI",
                 "language": "en",
                 "document_format": "pdf",
-                "plain_text": "AI should benefit society and support human judgment.",
-                "sections": [],
+                "plain_text": "AI should benefit society and people must judge and decide for themselves in a non-regulatory, non-binding framework to realize Society 5.0.",
+                "sections": [
+                    {
+                        "heading": "Overview",
+                        "level": 1,
+                        "content": "AI should benefit society and people must judge and decide for themselves in a non-regulatory, non-binding framework to realize Society 5.0.",
+                    }
+                ],
                 "warnings": [],
                 "source_artifact_path": "data/raw/japan/jp_social_principles_human_centric_ai/source.pdf",
             },
@@ -202,18 +249,34 @@ def test_analyze_parsed_documents_skips_existing_artifacts(tmp_path: Path, monke
         ),
         encoding="utf-8",
     )
+    # Section 0: Legacy artifact without analysis_metadata must NEVER be treated as current.
     (existing_analysis_dir / "document_analysis.json").write_text("{}", encoding="utf-8")
 
     monkeypatch.setattr(analysis_module, "PARSED_DATA_DIR", parsed_dir)
     monkeypatch.setattr(analysis_module, "RAW_DATA_DIR", raw_dir)
     monkeypatch.setattr(analysis_module, "ANALYSIS_DIR", analysis_dir)
 
-    results = analysis_module.analyze_parsed_documents(
+    first_client = FakeStructuredOutputClient()
+    first_results = analysis_module.analyze_parsed_documents(
         jurisdiction="japan",
-        client=FakeStructuredOutputClient(),
+        client=first_client,
     )
+    assert first_client.calls == 3
+    assert {
+        "jurisdiction": "japan",
+        "document_id": "jp_social_principles_human_centric_ai",
+        "status": "analyzed",
+        "previous_status": "stale_legacy_no_provenance",
+    } in first_results
 
-    assert results == [
+    # Second run with matching analysis_metadata skips cleanly without calling the client.
+    second_client = FakeStructuredOutputClient()
+    second_results = analysis_module.analyze_parsed_documents(
+        jurisdiction="japan",
+        client=second_client,
+    )
+    assert second_client.calls == 0
+    assert second_results == [
         {
             "jurisdiction": "japan",
             "document_id": "jp_social_principles_human_centric_ai",
@@ -264,6 +327,11 @@ def test_analyze_parsed_documents_skips_low_fidelity_input(tmp_path: Path, monke
     monkeypatch.setattr(analysis_module, "PARSED_DATA_DIR", parsed_dir)
     monkeypatch.setattr(analysis_module, "RAW_DATA_DIR", raw_dir)
     monkeypatch.setattr(analysis_module, "ANALYSIS_DIR", analysis_dir)
+    monkeypatch.setattr(
+        analysis_module,
+        "load_all_source_manifests",
+        lambda: [_fake_manifest("south_korea", ["kr_ai_top3_powerhouse_strategy_2026"])],
+    )
 
     client = FakeStructuredOutputClient()
     results = analysis_module.analyze_parsed_documents(
@@ -443,30 +511,43 @@ def test_persistence_bundle_uses_machine_outputs_without_review_queue() -> None:
         }
     )
 
+    provenance = analysis_module.AnalysisProvenance(
+        provider="test-provider",
+        model="claude-sonnet-4-6",
+        effort="low",
+        analyzed_at="2026-11-20T00:00:00Z",
+        analysis_version="0.3.0",
+        taxonomy_version="2.1.0",
+        taxonomy_hash="taxhash123",
+        extraction_prompt_hash="exthash123",
+        framing_prompt_hash="frmhash123",
+        input_sha256="inputhash123",
+    )
     bundle = build_analysis_persistence_bundle(
         document_id="jp_social_principles_human_centric_ai",
         jurisdiction="japan",
         title="Social Principles of Human-Centric AI",
         canonical_url="https://example.com/japan-ai-principles",
         language="en",
-        parser_version="0.1.0",
+        parser_version="0.3.0",
         raw_artifact_path="data/raw/japan/jp_social_principles_human_centric_ai/source.pdf",
         normalized_text_path="data/parsed/japan/jp_social_principles_human_centric_ai/normalized.json",
         normalized_text="AI should benefit society and support human judgment.",
         raw_metadata={"language": "en"},
-        provider="test-provider",
-        model="claude-sonnet-4-6",
-        effort="low",
-        extraction_prompt="extract policy",
-        framing_prompt="classify framing",
         extraction=extraction,
         framing=framing,
         raw_policy_response={"id": "policy-response"},
         raw_framing_response={"id": "framing-response"},
+        analysis_metadata=provenance,
+        binding_strength="strategy_statement",
     )
 
     assert bundle.overall_confidence == 0.71
     assert bundle.dominant_frame_confidence == 0.63
+    assert bundle.analyzed_at == "2026-11-20T00:00:00Z"
+    assert bundle.binding_strength == "strategy_statement"
+    assert bundle.extraction_prompt_hash == "exthash123"
+    assert bundle.framing_prompt_hash == "frmhash123"
 
 
 def test_persist_analysis_artifacts_replays_saved_outputs(tmp_path: Path, monkeypatch) -> None:
@@ -580,11 +661,30 @@ def test_persist_analysis_artifacts_replays_saved_outputs(tmp_path: Path, monkey
     monkeypatch.setattr(analysis_module, "PARSED_DATA_DIR", parsed_dir)
     monkeypatch.setattr(analysis_module, "RAW_DATA_DIR", raw_dir)
     monkeypatch.setattr(analysis_module, "ANALYSIS_DIR", analysis_dir)
+    monkeypatch.setattr(
+        analysis_module,
+        "load_all_source_manifests",
+        lambda: [_fake_manifest("european_union", ["eu_test_guidance"])],
+    )
 
     store = RecordingStore()
+    # Section 0: Legacy artifacts without analysis_metadata are REFUSED unless allow_legacy=True.
+    try:
+        analysis_module.persist_analysis_artifacts(
+            jurisdiction="european_union",
+            store=store,
+        )
+    except analysis_module.LegacyProvenanceError as exc:
+        assert "analysis_metadata" in str(exc)
+    else:
+        raise AssertionError("Expected LegacyProvenanceError for legacy artifact without allow_legacy=True")
+    assert len(store.bundles) == 0
+
+    # Explicit allow_legacy=True stamps legacy sentinels without fabricating current hashes or effort.
     results = analysis_module.persist_analysis_artifacts(
         jurisdiction="european_union",
         store=store,
+        allow_legacy=True,
     )
 
     assert {
@@ -597,6 +697,13 @@ def test_persist_analysis_artifacts_replays_saved_outputs(tmp_path: Path, monkey
     assert len(store.jurisdiction_bundles) == 1
     assert store.bundles[0].provider == "anthropic"
     assert store.bundles[0].model == "claude-sonnet-4-6"
+    assert store.bundles[0].effort is None
+    assert store.bundles[0].taxonomy_version == "legacy"
+    assert store.bundles[0].analysis_version == "legacy_v1"
+    assert store.bundles[0].prompt_hashes == {}
+    assert store.bundles[0].extraction_prompt_hash == ""
+    assert store.bundles[0].framing_prompt_hash == ""
+    assert store.bundles[0].binding_strength == "regulatory_guidance"
     assert store.bundles[0].policy_extraction["covered_actors"] == ["providers of AI systems"]
     assert store.bundles[0].policy_extraction["compliance_deadlines"] == ["2025-08-02"]
 

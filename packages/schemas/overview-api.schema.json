@@ -1,0 +1,494 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-babel.com/schemas/overview-api.schema.json",
+  "title": "Project Babel Overview API Response",
+  "description": "JSON response contract returned by GET /api/overview?mode=headline|all (legacy aliases weighted|equal supported) and consumed by the Project Babel dashboard (Taxonomy v2.1.0).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "hasData",
+    "datasetLabel",
+    "scoringMode",
+    "taxonomyVersion",
+    "datasetVersion",
+    "snapshotDate",
+    "lastAnalyzedDate",
+    "corpusWindow",
+    "provenanceSummary",
+    "nullCalibration",
+    "findings",
+    "sensitivityGrid",
+    "summary",
+    "countries",
+    "matrix",
+    "pairwiseDetails",
+    "timeline",
+    "queue"
+  ],
+  "properties": {
+    "hasData": {
+      "type": "boolean",
+      "description": "False only when production Vercel has no loaded database rows (explicit empty state rather than fake seed data)."
+    },
+    "datasetLabel": { "type": "string", "minLength": 1 },
+    "scoringMode": {
+      "type": "string",
+      "enum": ["headline", "all"],
+      "description": "Canonical scoring mode: 'headline' filters strictly to active/adopted primary instruments (Codebook §8.2); 'all' weights the entire corpus equally."
+    },
+    "taxonomyVersion": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Honest taxonomy version reflected by actual loaded artifacts (e.g., '1.0-legacy', '2.1.0', 'mixed', or 'unloaded')."
+    },
+    "datasetVersion": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Analysis snapshot version identifier, kept distinct from latest source publication date."
+    },
+    "snapshotDate": { "type": "string", "minLength": 1 },
+    "lastAnalyzedDate": { "type": "string", "minLength": 1 },
+    "corpusWindow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["startYear", "endYear", "label"],
+      "properties": {
+        "startYear": { "type": ["integer", "null"], "minimum": 1990 },
+        "endYear": { "type": ["integer", "null"], "minimum": 1990 },
+        "label": { "type": "string", "minLength": 1 }
+      }
+    },
+    "provenanceSummary": { "$ref": "#/$defs/provenanceSummary" },
+    "nullCalibration": { "$ref": "#/$defs/nullCalibration" },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/headlineFinding" }
+    },
+    "sensitivityGrid": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sensitivityModeRow" }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publishedSources",
+        "reviewedOutputs",
+        "headlineDocuments",
+        "bindingInstruments",
+        "lowConfidenceOutputs",
+        "compositeDivergence",
+        "hiddenFaultLine"
+      ],
+      "properties": {
+        "publishedSources": { "type": "integer", "minimum": 0 },
+        "reviewedOutputs": { "type": "integer", "minimum": 0 },
+        "headlineDocuments": { "type": "integer", "minimum": 0 },
+        "bindingInstruments": { "type": "integer", "minimum": 0 },
+        "lowConfidenceOutputs": { "type": "integer", "minimum": 0 },
+        "compositeDivergence": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "hiddenFaultLine": { "type": "string", "minLength": 1 }
+      }
+    },
+    "countries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/countrySnapshot" }
+    },
+    "matrix": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "pairwiseDetails": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/pairwiseDetail" }
+    },
+    "timeline": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/yearlyTimelinePoint" }
+    },
+    "timelineByJurisdiction": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/yearlyTimelinePoint" }
+      }
+    },
+    "queue": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/queueDocument" }
+    }
+  },
+  "$defs": {
+    "frameLabel": {
+      "type": "string",
+      "enum": [
+        "existential_catastrophic",
+        "national_security",
+        "fundamental_rights",
+        "economic_competitiveness",
+        "innovation_enablement",
+        "social_stability",
+        "consumer_public_safety",
+        "labor_transition"
+      ]
+    },
+    "confidenceInterval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["low", "high"],
+      "properties": {
+        "low": { "type": "number", "minimum": 0, "maximum": 100 },
+        "high": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "policyBreakdown": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requirements", "enforcement", "binding"],
+      "properties": {
+        "requirements": { "type": "number", "minimum": 0, "maximum": 100 },
+        "enforcement": { "type": "number", "minimum": 0, "maximum": 100 },
+        "binding": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "labelShare": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "share", "count"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "share": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "distinctiveGap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "key", "label", "ownShare", "peerShare", "delta"],
+      "properties": {
+        "dimension": {
+          "type": "string",
+          "enum": ["requirement", "enforcement", "binding", "frame"]
+        },
+        "key": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "ownShare": { "type": "number", "minimum": 0, "maximum": 100 },
+        "peerShare": { "type": "number", "minimum": 0, "maximum": 100 },
+        "delta": { "type": "number", "minimum": -100, "maximum": 100 }
+      }
+    },
+    "provenanceSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "totalAnalyzed",
+        "headlineIncluded",
+        "legacyCount",
+        "v2Count",
+        "taxonomyVersions",
+        "models",
+        "meanGroundingRatio",
+        "groundingSampleCount"
+      ],
+      "properties": {
+        "totalAnalyzed": { "type": "integer", "minimum": 0 },
+        "headlineIncluded": { "type": "integer", "minimum": 0 },
+        "legacyCount": { "type": "integer", "minimum": 0 },
+        "v2Count": { "type": "integer", "minimum": 0 },
+        "taxonomyVersions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "models": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "meanGroundingRatio": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "groundingSampleCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "nullCalibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "permutations",
+        "countryPolicyMean",
+        "countryPolicyP90",
+        "countryFramingMean",
+        "countryFramingP90",
+        "countryCompositeMean",
+        "countryCompositeP90",
+        "pairwisePolicyMean",
+        "pairwisePolicyP90",
+        "pairwiseFramingMean",
+        "pairwiseFramingP90",
+        "pairwiseCompositeMean",
+        "pairwiseCompositeP90"
+      ],
+      "properties": {
+        "permutations": { "type": "integer", "minimum": 0 },
+        "countryPolicyMean": { "type": "number", "minimum": 0, "maximum": 100 },
+        "countryPolicyP90": { "type": "number", "minimum": 0, "maximum": 100 },
+        "countryFramingMean": { "type": "number", "minimum": 0, "maximum": 100 },
+        "countryFramingP90": { "type": "number", "minimum": 0, "maximum": 100 },
+        "countryCompositeMean": { "type": "number", "minimum": 0, "maximum": 100 },
+        "countryCompositeP90": { "type": "number", "minimum": 0, "maximum": 100 },
+        "pairwisePolicyMean": { "type": "number", "minimum": 0, "maximum": 100 },
+        "pairwisePolicyP90": { "type": "number", "minimum": 0, "maximum": 100 },
+        "pairwiseFramingMean": { "type": "number", "minimum": 0, "maximum": 100 },
+        "pairwiseFramingP90": { "type": "number", "minimum": 0, "maximum": 100 },
+        "pairwiseCompositeMean": { "type": "number", "minimum": 0, "maximum": 100 },
+        "pairwiseCompositeP90": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "headlineFinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kicker", "headline", "detail", "href", "hrefLabel"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "kicker": { "type": "string", "minLength": 1 },
+        "headline": { "type": "string", "minLength": 1 },
+        "detail": { "type": "string", "minLength": 1 },
+        "href": { "type": "string", "minLength": 1 },
+        "hrefLabel": { "type": "string", "minLength": 1 }
+      }
+    },
+    "sensitivityModeRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "modeId",
+        "label",
+        "description",
+        "scoresByJurisdiction",
+        "spearmanVsHeadline"
+      ],
+      "properties": {
+        "modeId": {
+          "type": "string",
+          "enum": ["headline", "binding_weighted", "coverage_l1", "all"]
+        },
+        "label": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "scoresByJurisdiction": {
+          "type": "object",
+          "additionalProperties": { "type": "number", "minimum": 0, "maximum": 100 }
+        },
+        "spearmanVsHeadline": { "type": "number", "minimum": -1, "maximum": 1 }
+      }
+    },
+    "frameMixItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "value"],
+      "properties": {
+        "label": { "$ref": "#/$defs/frameLabel" },
+        "value": { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "countrySnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slug",
+        "name",
+        "shortName",
+        "flagUrl",
+        "reviewedDocuments",
+        "totalCorpusDocuments",
+        "bindingLawCount",
+        "lowConfidenceCount",
+        "latestPublicationDate",
+        "lastAnalyzedDate",
+        "lastUpdated",
+        "policyDivergence",
+        "framingDivergence",
+        "compositeDivergence",
+        "coverageDivergence",
+        "rawPolicyDivergence",
+        "rawFramingDivergence",
+        "rawCompositeDivergence",
+        "policyCI",
+        "framingCI",
+        "compositeCI",
+        "coverageCI",
+        "policyBreakdown",
+        "dominantFrame",
+        "requirements",
+        "distinctiveGaps",
+        "requirementShares",
+        "enforcementShares",
+        "bindingShares",
+        "obligationLevels",
+        "rationale",
+        "frameMix"
+      ],
+      "properties": {
+        "slug": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "shortName": { "type": "string", "minLength": 2, "maxLength": 4 },
+        "flagUrl": { "type": "string", "minLength": 1 },
+        "reviewedDocuments": { "type": "integer", "minimum": 0 },
+        "totalCorpusDocuments": { "type": "integer", "minimum": 0 },
+        "bindingLawCount": { "type": "integer", "minimum": 0 },
+        "lowConfidenceCount": { "type": "integer", "minimum": 0 },
+        "latestPublicationDate": { "type": "string" },
+        "lastAnalyzedDate": { "type": "string" },
+        "lastUpdated": { "type": "string" },
+        "policyDivergence": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "framingDivergence": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "compositeDivergence": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "coverageDivergence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Regime Coverage Index (normalized L1 distance across max binding level 0..4 for all 25 requirement & enforcement controls)."
+        },
+        "rawPolicyDivergence": { "type": "number", "minimum": 0, "maximum": 100 },
+        "rawFramingDivergence": { "type": "number", "minimum": 0, "maximum": 100 },
+        "rawCompositeDivergence": { "type": "number", "minimum": 0, "maximum": 100 },
+        "policyCI": { "$ref": "#/$defs/confidenceInterval" },
+        "framingCI": { "$ref": "#/$defs/confidenceInterval" },
+        "compositeCI": { "$ref": "#/$defs/confidenceInterval" },
+        "coverageCI": { "$ref": "#/$defs/confidenceInterval" },
+        "policyBreakdown": { "$ref": "#/$defs/policyBreakdown" },
+        "dominantFrame": { "$ref": "#/$defs/frameLabel" },
+        "requirements": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "distinctiveGaps": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/distinctiveGap" }
+        },
+        "requirementShares": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/labelShare" }
+        },
+        "enforcementShares": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/labelShare" }
+        },
+        "bindingShares": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/labelShare" }
+        },
+        "obligationLevels": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0, "maximum": 4 }
+        },
+        "rationale": { "type": "string" },
+        "frameMix": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": { "$ref": "#/$defs/frameMixItem" }
+        }
+      }
+    },
+    "pairwiseDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "leftSlug",
+        "rightSlug",
+        "policyDistance",
+        "framingDistance",
+        "compositeDistance",
+        "coverageDistance",
+        "decouplingGap",
+        "policyBreakdown"
+      ],
+      "properties": {
+        "leftSlug": { "type": "string", "minLength": 1 },
+        "rightSlug": { "type": "string", "minLength": 1 },
+        "policyDistance": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "framingDistance": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "compositeDistance": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "coverageDistance": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "decouplingGap": { "type": "integer", "minimum": -100, "maximum": 100 },
+        "policyBreakdown": { "$ref": "#/$defs/policyBreakdown" }
+      }
+    },
+    "yearlyTimelinePoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "year",
+        "totalDocuments",
+        "bindingDocuments",
+        "byJurisdiction",
+        "frameShares",
+        "dominantFrame"
+      ],
+      "properties": {
+        "year": { "type": "integer", "minimum": 1990 },
+        "totalDocuments": { "type": "integer", "minimum": 0 },
+        "bindingDocuments": { "type": "integer", "minimum": 0 },
+        "byJurisdiction": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "frameShares": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "existential_catastrophic",
+            "national_security",
+            "fundamental_rights",
+            "economic_competitiveness",
+            "innovation_enablement",
+            "social_stability",
+            "consumer_public_safety",
+            "labor_transition"
+          ],
+          "properties": {
+            "existential_catastrophic": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "national_security": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "fundamental_rights": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "economic_competitiveness": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "innovation_enablement": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "social_stability": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "consumer_public_safety": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "labor_transition": { "type": "integer", "minimum": 0, "maximum": 100 }
+          }
+        },
+        "dominantFrame": { "$ref": "#/$defs/frameLabel" }
+      }
+    },
+    "queueDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "jurisdiction",
+        "jurisdictionSlug",
+        "documentType",
+        "bindingStrength",
+        "dominantFrame",
+        "publicationDate",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "jurisdiction": { "type": "string", "minLength": 1 },
+        "jurisdictionSlug": { "type": "string", "minLength": 1 },
+        "documentType": { "type": "string", "minLength": 1 },
+        "bindingStrength": { "type": "string", "minLength": 1 },
+        "dominantFrame": { "$ref": "#/$defs/frameLabel" },
+        "publicationDate": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    }
+  }
+}

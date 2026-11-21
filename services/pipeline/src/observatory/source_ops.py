@@ -19,8 +19,12 @@ JURISDICTION_TARGET_RANGES = {
     "china": {"minimum": 30, "target": 45, "maximum": 60},
 }
 
+DEFAULT_TARGET_RANGE = {"minimum": 25, "target": 40, "maximum": 60}
+
 AI_RELEVANCE_KEYWORDS = (
     "artificial intelligence",
+    "super intelligence",
+    "superintelligence",
     "generative ai",
     "general-purpose ai",
     "general purpose ai",
@@ -31,9 +35,8 @@ AI_RELEVANCE_KEYWORDS = (
     "algorithms",
     "machine learning",
     "chatbot",
-    "ai ",
+    "ai",
     "/ai",
-    " ai/",
     "인공지능",
     "생성형",
     "알고리즘",
@@ -170,7 +173,7 @@ CONSULTATION_KEYWORDS = (
     "call for comments",
     "public consultation",
     "request for an article",
-    " 의견수렴",
+    "의견수렴",
     "征求意见",
 )
 LOW_SIGNAL_KEYWORDS = (
@@ -341,8 +344,25 @@ def candidate_text(candidate: dict[str, Any]) -> str:
     )
 
 
+_LATIN_TOKEN_RE = re.compile(r"^[a-z0-9][a-z0-9\s\-&]*[a-z0-9]$|^[a-z0-9]$")
+_KEYWORD_REGEX_CACHE: dict[str, re.Pattern[str]] = {}
+
+
+def _matches_keyword(text: str, keyword: str) -> bool:
+    kw = keyword.strip().casefold()
+    if not kw:
+        return False
+    if _LATIN_TOKEN_RE.match(kw):
+        pattern = _KEYWORD_REGEX_CACHE.get(kw)
+        if pattern is None:
+            pattern = re.compile(rf"(?<![a-z0-9]){re.escape(kw)}(?![a-z0-9])")
+            _KEYWORD_REGEX_CACHE[kw] = pattern
+        return pattern.search(text) is not None
+    return kw in text
+
+
 def _matches_any_keyword(text: str, keywords: tuple[str, ...]) -> bool:
-    return any(keyword.casefold() in text for keyword in keywords)
+    return any(_matches_keyword(text, keyword) for keyword in keywords)
 
 
 def infer_source_role(candidate: dict[str, Any]) -> str:
@@ -507,19 +527,19 @@ def recommendation_for_candidate(*, score: int, source_role: str, status: str) -
 
 def classify_candidate(candidate: dict[str, Any], portal_tags: list[str], source_role: str) -> tuple[str, str, str]:
     text = candidate_text(candidate)
-    if "executive order" in text:
+    if _matches_keyword(text, "executive order"):
         return ("executive_order", "executive_action", "executive_action")
-    if "pact" in text or "commitment" in text:
+    if _matches_any_keyword(text, ("pact", "commitment")):
         return ("voluntary_commitment", "voluntary_commitment", "voluntary_framework")
     if source_role == "consultation_draft":
         return ("regulatory_guidance", "regulatory_guidance", "consultation_draft")
-    if any(keyword in text for keyword in ("standard", "standards", "framework", "playbook", "profile", "code of practice", "template", "ガイドライン", "标准", "표준")):
+    if _matches_any_keyword(text, ("standard", "standards", "framework", "playbook", "profile", "code of practice", "template", "ガイドライン", "标准", "표준")):
         return ("standards_guideline", "standards_guideline", "technical_standard")
-    if source_role in {"faq", "implementation_tool"} or any(keyword in text for keyword in ("overview", "implementation", "enforcement", "service desk", "timeline", "whistleblower")):
+    if source_role in {"faq", "implementation_tool"} or _matches_any_keyword(text, ("overview", "implementation", "enforcement", "service desk", "timeline", "whistleblower")):
         return ("regulatory_guidance", "regulatory_guidance", "implementation_resource")
-    if any(keyword in text for keyword in ("guidance", "guideline", "circular", "opinion", "checklist", "指南", "지침", "가이드라인", "意見")):
+    if _matches_any_keyword(text, ("guidance", "guideline", "circular", "opinion", "checklist", "指南", "지침", "가이드라인", "意見")):
         return ("regulatory_guidance", "regulatory_guidance", "regulatory_guidance")
-    if any(keyword in text for keyword in ("act", "law", "regulation", "decree", "measures", "provisions", "办法", "措施", "规定", "법", "법률", "시행령")):
+    if _matches_any_keyword(text, ("act", "law", "regulation", "decree", "measures", "provisions", "办法", "措施", "规定", "법", "법률", "시행령")):
         return ("legislation", "binding_law", "statutory_rule")
     if "standards" in portal_tags:
         return ("standards_guideline", "standards_guideline", "technical_standard")
@@ -530,7 +550,7 @@ def infer_policy_domains(candidate: dict[str, Any], portal_tags: list[str]) -> l
     text = candidate_text(candidate)
     domains: list[str] = []
     for domain, keywords in POLICY_DOMAIN_HINTS.items():
-        if any(keyword.casefold() in text for keyword in keywords):
+        if _matches_any_keyword(text, keywords):
             domains.append(domain)
     for tag in portal_tags:
         domain = TAG_TO_DOMAIN.get(tag)
@@ -843,7 +863,10 @@ def build_source_operations_model() -> dict[str, Any]:
                 -item["candidate_count"],
             )
         )
-        target_range = JURISDICTION_TARGET_RANGES[jurisdiction_inventory["jurisdiction"]]
+        target_range = JURISDICTION_TARGET_RANGES.get(
+            jurisdiction_inventory["jurisdiction"],
+            DEFAULT_TARGET_RANGE,
+        )
         jurisdictions.append(
             {
                 "jurisdiction": jurisdiction_inventory["jurisdiction"],

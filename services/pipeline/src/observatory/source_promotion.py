@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import mimetypes
 import re
 import socket
 from datetime import datetime, timezone
@@ -12,7 +11,7 @@ from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
-from urllib.request import Request, urlopen
+from urllib.request import Request
 
 from bs4 import BeautifulSoup
 from pypdf import PdfReader
@@ -27,6 +26,18 @@ from observatory.source_registry import (
     source_manifest_path,
     write_source_manifest,
 )
+from observatory.url_safety import (
+    BROWSER_USER_AGENT,
+    DEFAULT_MAX_RESPONSE_BYTES,
+    UnsafeURLError,
+    decode_html_bytes,
+    read_bounded,
+    repo_rel_posix,
+    safe_urlopen,
+    validate_public_http_url,
+)
+
+urlopen = safe_urlopen
 
 
 CANDIDATE_ENRICHMENT_DIR = ROOT / "data" / "source_tracking" / "candidate_enrichment"
@@ -72,10 +83,7 @@ def _iso_now() -> str:
 
 
 def _display_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT))
-    except ValueError:
-        return str(path)
+    return repo_rel_posix(path, root=ROOT)
 
 
 def _portal_output_path(jurisdiction: str, portal_id: str) -> Path:
@@ -84,10 +92,7 @@ def _portal_output_path(jurisdiction: str, portal_id: str) -> Path:
 
 def _request_headers() -> dict[str, str]:
     return {
-        "User-Agent": (
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
-        ),
+        "User-Agent": BROWSER_USER_AGENT,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf;q=0.8,*/*;q=0.7",
         "Accept-Language": "en-US,en;q=0.9",
     }
@@ -164,8 +169,8 @@ def _walk_json(value: Any) -> list[tuple[str, Any]]:
     return []
 
 
-def _extract_html_metadata(payload: bytes, *, resolved_url: str) -> dict[str, Any]:
-    html = payload.decode("utf-8", errors="ignore")
+def _extract_html_metadata(payload: bytes, *, resolved_url: str, content_type: str | None = None) -> dict[str, Any]:
+    html = decode_html_bytes(payload, content_type=content_type)
     soup = BeautifulSoup(html, "html.parser")
     metadata: dict[str, Any] = {}
 
@@ -276,8 +281,11 @@ def _extract_pdf_metadata(payload: bytes) -> dict[str, Any]:
 
 
 def _fetch_candidate_payload(url: str, *, use_browser: bool = False) -> dict[str, Any]:
+    validate_public_http_url(url, resolve_dns=False)
     if use_browser:
         browser_result = fetch_url_with_browser(url, user_agent=_request_headers()["User-Agent"])
+        if browser_result.status_code < 200 or browser_result.status_code >= 400:
+            raise BrowserFetchError(f"browser enrichment returned HTTP {browser_result.status_code} for {url}")
         return {
             "payload": browser_result.payload,
             "resolved_url": browser_result.resolved_url,
@@ -289,7 +297,7 @@ def _fetch_candidate_payload(url: str, *, use_browser: bool = False) -> dict[str
 
     request = Request(url, headers=_request_headers())
     with urlopen(request, timeout=45) as response:
-        payload = response.read()
+        payload = read_bounded(response, max_bytes=DEFAULT_MAX_RESPONSE_BYTES)
         headers = {
             "content_language": response.headers.get("Content-Language"),
             "etag": response.headers.get("ETag"),
@@ -315,18 +323,20 @@ def enrich_candidate_record(
     payload = fetch_result["payload"]
     resolved_url = str(fetch_result["resolved_url"])
     content_type = fetch_result["content_type"]
-    normalized_content_type = content_type.split(";", 1)[0].strip().lower() if isinstance(content_type, str) else ""
 
     metadata: dict[str, Any] = {}
-    if normalized_content_type == "application/pdf" or payload.lstrip().startswith(b"%PDF-"):
+    if payload.lstrip().startswith(b"%PDF-"):
         metadata.update(_extract_pdf_metadata(payload))
         metadata["document_format"] = "pdf"
     else:
-        metadata.update(_extract_html_metadata(payload, resolved_url=resolved_url))
+        metadata.update(
+            _extract_html_metadata(
+                payload,
+                resolved_url=resolved_url,
+                content_type=content_type if isinstance(content_type, str) else None,
+            )
+        )
         metadata["document_format"] = "html"
-        guessed_type, _ = mimetypes.guess_type(urlparse(resolved_url).path)
-        if guessed_type == "application/pdf" and metadata["document_format"] != "pdf":
-            metadata["document_format"] = "pdf"
 
     headers = fetch_result["headers"] if isinstance(fetch_result["headers"], dict) else {}
     if "publication_date" not in metadata:
@@ -444,10 +454,12 @@ def enrich_source_candidates(
                 except (
                     BrowserFetchError,
                     BrowserUnavailableError,
+                    UnsafeURLError,
                     HTTPError,
                     URLError,
                     TimeoutError,
                     socket.timeout,
+                    ValueError,
                 ) as exc:
                     errors.append({"url": representative["url"], "error": f"{type(exc).__name__}: {exc}"})
 
@@ -462,7 +474,11 @@ def enrich_source_candidates(
                 "errors": errors,
             }
             output_path.parent.mkdir(parents=True, exist_ok=True)
-            output_path.write_text(json.dumps(output_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            output_path.write_text(
+                json.dumps(output_payload, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
             results.append(
                 {
                     "jurisdiction": current_jurisdiction,
@@ -485,8 +501,17 @@ def _slugify(value: str) -> str:
     return "_".join(tokens[:8])
 
 
+def _jurisdiction_prefix(jurisdiction: str) -> str:
+    if jurisdiction in JURISDICTION_PREFIX:
+        return JURISDICTION_PREFIX[jurisdiction]
+    parts = [part for part in jurisdiction.lower().split("_") if part]
+    if len(parts) >= 2:
+        return f"{parts[0][0]}{parts[1][0]}"
+    return (jurisdiction.lower()[:2] or "xx")
+
+
 def _build_document_id(*, jurisdiction: str, portal_id: str, title: str, canonical_url: str, family_id: str) -> str:
-    prefix = JURISDICTION_PREFIX[jurisdiction]
+    prefix = _jurisdiction_prefix(jurisdiction)
     slug = _slugify(title)
     if not slug or not any(char.isalpha() for char in slug):
         slug = _slugify(Path(urlparse(canonical_url).path).stem) or _slugify(portal_id) or "document"

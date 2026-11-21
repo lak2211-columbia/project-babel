@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import json
 import socket
+import time
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlparse, urlsplit, urlunsplit
-from urllib.request import Request, urlopen
+from urllib.request import Request
 
 from bs4 import BeautifulSoup
 
@@ -20,8 +20,17 @@ from observatory.browser_fetch import (
 from observatory.source_registry import (
     ROOT,
     DiscoveryTarget,
-    SourcePortal,
     load_all_source_manifests,
+)
+from observatory.url_safety import (
+    DEFAULT_DISCOVERY_USER_AGENT,
+    DEFAULT_MAX_RESPONSE_BYTES,
+    UnsafeURLError,
+    decode_html_bytes,
+    read_bounded,
+    safe_urlopen,
+    same_host_family,
+    validate_public_http_url,
 )
 
 
@@ -29,6 +38,12 @@ DISCOVERY_DIR = ROOT / "data" / "discovery"
 XML_NAMESPACES = {
     "sm": "http://www.sitemaps.org/schemas/sitemap/0.9",
 }
+RETRYABLE_HTTP_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
+MAX_SITEMAP_DEPTH = 2
+MAX_NESTED_SITEMAPS = 10
+
+# Module-level symbol so tests can monkeypatch `observatory.discovery.urlopen`.
+urlopen = safe_urlopen
 
 
 @dataclass
@@ -41,21 +56,12 @@ class DiscoveryCandidate:
 
 def _request_headers() -> dict[str, str]:
     return {
-        "User-Agent": (
-            "Mozilla/5.0 (compatible; AIGovernanceObservatory/0.1; "
-            "+https://example.invalid/observatory)"
-        )
+        "User-Agent": DEFAULT_DISCOVERY_USER_AGENT,
     }
 
 
 def _same_host_family(base_url: str, candidate_url: str) -> bool:
-    base_host = urlparse(base_url).netloc.lower()
-    candidate_host = urlparse(candidate_url).netloc.lower()
-    return (
-        candidate_host == base_host
-        or candidate_host.endswith(f".{base_host}")
-        or base_host.endswith(f".{candidate_host}")
-    )
+    return same_host_family(base_url, candidate_url)
 
 
 def _matches_url_patterns(url: str, target: DiscoveryTarget) -> bool:
@@ -93,20 +99,48 @@ def _normalize_candidate_url(url: str) -> str:
     )
 
 
+def _fetch_http_bytes(url: str, *, max_attempts: int = 2) -> tuple[bytes, str]:
+    validate_public_http_url(url, resolve_dns=False)
+    request = Request(url, headers=_request_headers())
+    last_exc: Exception | None = None
+    for attempt in range(1, max(max_attempts, 1) + 1):
+        try:
+            with urlopen(request, timeout=45) as response:
+                payload = read_bounded(response, max_bytes=DEFAULT_MAX_RESPONSE_BYTES)
+                resolved = response.geturl() if hasattr(response, "geturl") else url
+                return payload, resolved
+        except HTTPError as exc:
+            last_exc = exc
+            if exc.code in RETRYABLE_HTTP_STATUS_CODES and attempt < max_attempts:
+                time.sleep(0.5 * attempt)
+                continue
+            raise
+        except (URLError, TimeoutError, socket.timeout) as exc:
+            last_exc = exc
+            if attempt < max_attempts:
+                time.sleep(0.5 * attempt)
+                continue
+            raise
+    assert last_exc is not None
+    raise last_exc
+
+
 def _fetch_target_payload(target: DiscoveryTarget, use_browser: bool) -> tuple[bytes, str]:
+    target_url = str(target.url)
+    validate_public_http_url(target_url, resolve_dns=False)
     if use_browser and target.browser_required:
         browser_result = fetch_url_with_browser(
-            str(target.url),
+            target_url,
             wait_for_selector=target.browser_wait_for_selector,
             min_text_length=target.browser_min_text_length,
             click_selectors=target.browser_click_selectors,
             user_agent=_request_headers()["User-Agent"],
         )
+        if browser_result.status_code < 200 or browser_result.status_code >= 400:
+            raise BrowserFetchError(f"browser discovery returned HTTP {browser_result.status_code} for {target_url}")
         return browser_result.payload, browser_result.resolved_url
 
-    request = Request(str(target.url), headers=_request_headers())
-    with urlopen(request, timeout=45) as response:
-        return response.read(), response.geturl() if hasattr(response, "geturl") else str(target.url)
+    return _fetch_http_bytes(target_url)
 
 
 def _discover_from_html_links(
@@ -115,8 +149,9 @@ def _discover_from_html_links(
     payload: bytes,
     base_url: str,
 ) -> list[DiscoveryCandidate]:
-    soup = BeautifulSoup(payload, "html.parser")
+    soup = BeautifulSoup(decode_html_bytes(payload), "html.parser")
     candidates: list[DiscoveryCandidate] = []
+    seen_urls: set[str] = set()
     anchors = soup.select(target.link_selector or "a[href]")
     for anchor in anchors:
         href = anchor.get("href")
@@ -126,11 +161,14 @@ def _discover_from_html_links(
         parsed = urlparse(candidate_url)
         if parsed.scheme not in {"http", "https"}:
             continue
+        if candidate_url in seen_urls:
+            continue
         title = anchor.get_text(" ", strip=True) or None
         if not _matches_url_patterns(candidate_url, target):
             continue
         if not _matches_title_patterns(title, target):
             continue
+        seen_urls.add(candidate_url)
         candidates.append(
             DiscoveryCandidate(
                 url=candidate_url,
@@ -147,26 +185,41 @@ def _discover_from_sitemap(
     *,
     target: DiscoveryTarget,
     payload: bytes,
+    depth: int = 0,
+    seen_sitemaps: set[str] | None = None,
 ) -> list[DiscoveryCandidate]:
     root = ET.fromstring(payload)
     candidates: list[DiscoveryCandidate] = []
+    visited = seen_sitemaps if seen_sitemaps is not None else set()
 
     if root.tag.endswith("sitemapindex"):
+        nested_fetched = 0
         for loc in root.findall(".//sm:sitemap/sm:loc", XML_NAMESPACES):
             if loc.text is None:
                 continue
             nested_url = _normalize_candidate_url(loc.text.strip())
-            if not _matches_url_patterns(nested_url, target):
+            if nested_url in visited:
                 continue
-            candidates.append(
-                DiscoveryCandidate(
-                    url=nested_url,
-                    title=None,
-                    discovered_from=str(target.url),
-                )
-            )
-            if target.max_candidates is not None and len(candidates) >= target.max_candidates:
+            if target.same_host_only and not _same_host_family(str(target.url), nested_url):
+                continue
+            visited.add(nested_url)
+            if depth >= MAX_SITEMAP_DEPTH or nested_fetched >= MAX_NESTED_SITEMAPS:
                 break
+            nested_fetched += 1
+            try:
+                nested_payload, _ = _fetch_http_bytes(nested_url, max_attempts=1)
+                nested_candidates = _discover_from_sitemap(
+                    target=target,
+                    payload=nested_payload,
+                    depth=depth + 1,
+                    seen_sitemaps=visited,
+                )
+            except (UnsafeURLError, ET.ParseError, HTTPError, URLError, TimeoutError, socket.timeout, ValueError):
+                continue
+            for item in nested_candidates:
+                candidates.append(item)
+                if target.max_candidates is not None and len(candidates) >= target.max_candidates:
+                    return candidates
         return candidates
 
     for entry in root.findall(".//sm:url", XML_NAMESPACES):
@@ -254,11 +307,13 @@ def discover_source_candidates(
             except (
                 BrowserFetchError,
                 BrowserUnavailableError,
+                UnsafeURLError,
                 ET.ParseError,
                 HTTPError,
                 URLError,
                 TimeoutError,
                 socket.timeout,
+                ValueError,
             ) as exc:
                 results.append(
                     {
@@ -294,7 +349,11 @@ def discover_source_candidates(
                     for candidate in candidates
                 ],
             }
-            output_path.write_text(json.dumps(output_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            output_path.write_text(
+                json.dumps(output_payload, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
             results.append(
                 {
                     "jurisdiction": manifest.jurisdiction,

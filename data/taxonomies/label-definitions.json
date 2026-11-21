@@ -1,0 +1,399 @@
+{
+  "taxonomy_version": "2.1.0",
+  "schema_version": "2.1",
+  "updated_at": "2026-11-20",
+  "thresholds": {
+    "grounding_pass_threshold": 0.9,
+    "low_confidence_policy": 0.7,
+    "low_confidence_framing": 0.6,
+    "frame_mention_floor": 0.15
+  },
+  "categories": {
+    "risk_framings": {
+      "existential_catastrophic": {
+        "label": "Existential & catastrophic risk",
+        "short_label": "Catastroph.",
+        "abbr": "XRS",
+        "definition": "Frames AI governance around severe, irreversible, or civilization-scale harms such as CBRN proliferation, mass-casualty cyberattacks, uncontrollable autonomous AI, or extreme systemic loss of human control.",
+        "include_when": "The text explicitly cites catastrophic misuse (CBRN, mass cyber/bio harm), autonomous self-replication, loss of human control, or extreme systemic societal-scale accidents as a reason for rules.",
+        "exclude_when": "Do not assign for ordinary consumer bugs, routine privacy breaches, algorithmic bias, or standard operational software reliability issues."
+      },
+      "national_security": {
+        "label": "National security",
+        "short_label": "Security",
+        "abbr": "SEC",
+        "definition": "Frames AI governance around defense readiness, intelligence advantage, geopolitical/strategic rivalry, foreign-adversary threats, export or compute sovereignty, or critical national-defense resilience.",
+        "include_when": "The document explicitly invokes military/defense capability, intelligence, adversary competition, strategic sovereignty, or national-security critical infrastructure protection.",
+        "exclude_when": "Do not assign for purely commercial growth, domestic productivity, or trade competitiveness without explicit security, defense, adversary, or strategic-sovereignty language."
+      },
+      "economic_competitiveness": {
+        "label": "Economic competitiveness",
+        "short_label": "Competit.",
+        "abbr": "ECO",
+        "definition": "Frames AI governance around macroeconomic growth, national productivity, global market leadership, industrial strength, trade/export advantage, or preventing domestic firms from falling behind foreign peers.",
+        "include_when": "The text justifies policy through GDP growth, industrial competitiveness, global AI leadership, market expansion, or strategic commercial positioning.",
+        "exclude_when": "Do not assign for worker displacement, job protection, or workforce reskilling/retraining rationales (use labor_transition), nor for generic friction-reduction/sandbox language without competitive positioning (use innovation_enablement)."
+      },
+      "fundamental_rights": {
+        "label": "Fundamental rights",
+        "short_label": "Rights",
+        "abbr": "RGT",
+        "definition": "Frames AI governance around protecting human dignity, constitutional or civil rights, personal-data privacy, non-discrimination, fairness, due process, freedom of expression, democratic values, or the rule of law.",
+        "include_when": "The text anchors intervention in individual rights, privacy/data-protection rights, equality/anti-discrimination, human dignity, procedural fairness, or democratic freedoms.",
+        "exclude_when": "Do not assign when harm prevention is strictly framed around physical product safety, market defects, or financial fraud without rights, privacy, equality, or dignity language (use consumer_public_safety)."
+      },
+      "social_stability": {
+        "label": "Social stability & public order",
+        "short_label": "Stability",
+        "abbr": "SOC",
+        "definition": "Frames AI governance around public order, collective harmony, socialist core values, public-opinion ecosystem governance, disinformation/rumor containment, cultural/moral norms, or societal cohesion.",
+        "include_when": "The text cites public order, social harmony, ideological/value alignment, information-ecosystem stability, rumor/disinformation containment, or collective social trust.",
+        "exclude_when": "Do not assign for individual constitutional rights claims (use fundamental_rights) or narrow defective-product / individual consumer-protection rules (use consumer_public_safety)."
+      },
+      "innovation_enablement": {
+        "label": "Innovation enablement",
+        "short_label": "Innov.",
+        "abbr": "INV",
+        "definition": "Frames AI governance around accelerating beneficial AI R&D, keeping rules proportional or agile, lowering compliance friction, fostering trustworthy adoption ecosystems, regulatory sandboxes, or public/private utilization.",
+        "include_when": "The text argues that proportional governance, clear standards, sandboxes, or voluntary guidance are needed to unlock safe AI experimentation, deployment, and public/private adoption.",
+        "exclude_when": "Do not assign when the dominant rationale is zero-sum international economic rivalry or market leadership (use economic_competitiveness)."
+      },
+      "consumer_public_safety": {
+        "label": "Consumer & public safety",
+        "short_label": "Safety",
+        "abbr": "SAF",
+        "definition": "Frames AI governance around protecting consumers, patients, children, or bystanders from physical injury, medical error, financial fraud, deceptive practices, unsafe products, or operational system harms.",
+        "include_when": "The text centers on preventing tangible harm to end users, patients, minors, or the public via product safety, clinical reliability, fraud/deception prevention, or operational risk mitigation.",
+        "exclude_when": "Do not assign when the rationale is primarily constitutional/human rights or privacy rights (use fundamental_rights) or collective public order (use social_stability)."
+      },
+      "labor_transition": {
+        "label": "Labor & workforce transition",
+        "short_label": "Labor",
+        "abbr": "LAB",
+        "definition": "Frames AI governance around workforce disruption, job displacement, worker protections, workforce reskilling/upskilling, collective bargaining, or equitable adjustment of labor markets to automation.",
+        "include_when": "The text explicitly cites employment disruption, worker retraining/reskilling, labor-market adjustment, workplace rights, or equitable distribution of automation gains as a reason for policy.",
+        "exclude_when": "Do not assign merely because employment/HR appears in a list of high-risk application domains without explicit workforce-transition or reskilling rationale."
+      }
+    },
+    "policy_requirements": {
+      "risk_assessment": {
+        "label": "Risk assessment",
+        "short_label": "Risk assess.",
+        "definition": "Systematic identification, analysis, impact assessment, or tier classification of AI risks (including fundamental-rights, privacy, or high-impact system assessments).",
+        "include_when": "The text requires or recommends documented risk management processes, risk classification, or algorithmic/fundamental-rights/privacy impact assessments.",
+        "exclude_when": "Do not conflate with empirical pre-release benchmarking (pre_deployment_testing) or adversarial attack probing (red_teaming)."
+      },
+      "pre_deployment_testing": {
+        "label": "Pre-deployment testing",
+        "short_label": "Pre-deploy test",
+        "definition": "Empirical functional validation, accuracy/robustness benchmarking, conformity testing, or performance verification conducted prior to release or substantial modification.",
+        "include_when": "The text explicitly expects empirical model/system testing, validation, or conformity verification before placing on the market or deploying.",
+        "exclude_when": "Do not assign for administrative high-impact applicability self-checks or paper-only risk checklists (use risk_assessment), nor for specialized adversarial attack simulation (use red_teaming)."
+      },
+      "red_teaming": {
+        "label": "Red-teaming",
+        "short_label": "Red-team",
+        "definition": "Structured adversarial testing, penetration testing, jailbreak/misuse probing, or simulated hostile-actor evaluation designed to elicit harmful or prohibited AI behavior.",
+        "include_when": "The text explicitly calls for adversarial testing, red-teaming, misuse stress-testing, or hostile-input probing.",
+        "exclude_when": "Do not assign for routine functional QA, accuracy validation, or standard software testing without an adversarial element (use pre_deployment_testing)."
+      },
+      "incident_reporting": {
+        "label": "Incident reporting",
+        "short_label": "Incidents",
+        "definition": "Mandatory or recommended notification of serious AI malfunctions, safety/security breaches, rights infringements, or post-market adverse events to authorities or affected users.",
+        "include_when": "The text specifies reporting duties triggered by serious incidents, safety failures, cyber breaches, or real-world harms.",
+        "exclude_when": "Do not assign for routine periodic compliance filings or initial registration notices unrelated to incidents or failures."
+      },
+      "transparency_disclosure": {
+        "label": "Transparency & disclosure",
+        "short_label": "Transparency",
+        "definition": "Outward-facing notice to users, affected persons, or the public that they are interacting with AI, how automated decisions work, known limitations, or available opt-outs/recourse.",
+        "include_when": "The text mandates or recommends user-facing AI interaction notices, explainability disclosures to affected individuals, or public usage notices.",
+        "exclude_when": "Do not conflate with internal/regulator technical dossiers (model_documentation) or artifact-level synthetic watermarking/metadata (content_provenance)."
+      },
+      "model_documentation": {
+        "label": "Model documentation",
+        "short_label": "Model docs",
+        "definition": "Creation and retention of structured technical documentation, model cards, system cards, compliance logs, design specifications, or downstream integrator instructions.",
+        "include_when": "The text requires or recommends maintaining technical dossiers, model/system cards, audit logs, or downstream technical documentation.",
+        "exclude_when": "Do not assign for brief end-user UI notices (use transparency_disclosure)."
+      },
+      "third_party_audit": {
+        "label": "Third-party audit",
+        "short_label": "3rd-party audit",
+        "definition": "Independent external audit, notified-body conformity assessment, accredited certification, or external verification performed by an entity independent of the provider/deployer.",
+        "include_when": "The text specifies assessment, certification, or auditing by an independent external auditor, notified body, or accredited third party.",
+        "exclude_when": "Do not assign for purely internal self-assessments or internal compliance reviews (use risk_assessment)."
+      },
+      "access_controls": {
+        "label": "Access controls",
+        "short_label": "Access ctrl",
+        "definition": "Cybersecurity safeguards, authentication, role-based access, model-weight security, API gating, rate-limiting, or input/data security protecting AI assets.",
+        "include_when": "The text specifies security controls over model weights, APIs, training environments, authentication, or restricted access to sensitive capabilities/data.",
+        "exclude_when": "Do not conflate with autonomous-agent tool-permission scoping or execution kill-switches (use agentic_autonomy_controls)."
+      },
+      "compute_governance": {
+        "label": "Compute governance",
+        "short_label": "Compute gov.",
+        "definition": "Obligations triggered by training-compute thresholds (e.g., FLOPs thresholds such as 10^25 FLOPs), compute-cluster reporting, cloud/chip KYC, or compute-resource oversight.",
+        "include_when": "The text sets quantitative compute/FLOP thresholds, requires reporting large training runs, or imposes oversight on cloud/compute providers.",
+        "exclude_when": "Do not assign for general industrial investment or national datacenter buildout plans lacking operational compute oversight controls."
+      },
+      "content_provenance": {
+        "label": "Content provenance",
+        "short_label": "Provenance",
+        "definition": "Explicit or implicit marking, watermarking, cryptographic provenance metadata (e.g., C2PA), or machine-readable labeling of AI-generated or synthetically altered media.",
+        "include_when": "The text requires or recommends visible labels, invisible watermarks, or metadata provenance embedded in synthetic text, audio, image, or video outputs.",
+        "exclude_when": "Do not assign for generic chatbot interaction banners or algorithmic-decision explanations that do not mark synthetic outputs (use transparency_disclosure)."
+      },
+      "human_oversight": {
+        "label": "Human oversight",
+        "short_label": "Human overs.",
+        "definition": "Operational human-in-the-loop or human-on-the-loop review, manual override/stop controls, meaningful human appeal/intervention, or limits on solely automated consequential decisions.",
+        "include_when": "The text establishes concrete duties for human supervision, override/intervention capability, or human review of automated decisions.",
+        "exclude_when": "Do not assign for purely rhetorical slogans such as 'human-centric AI' or 'serving humanity' without operational human-control expectations."
+      },
+      "registration_licensing": {
+        "label": "Registration or licensing",
+        "short_label": "Registration",
+        "definition": "Prior registration in a public or regulatory AI/algorithm registry, pre-market filing, conformity declaration filing, or formal permit/license to deploy or operate.",
+        "include_when": "The text requires operators/providers to register models, algorithms, or high-risk systems with an authority or obtain a license/filing approval.",
+        "exclude_when": "Do not conflate with offshore legal representative appointment (use domestic_representative) or enforcement sanction authority (pair with licensing_requirement under enforcement_mechanisms)."
+      },
+      "agentic_autonomy_controls": {
+        "label": "Agentic autonomy controls",
+        "short_label": "Agent ctrl",
+        "definition": "Operational safeguards for autonomous or tool-using AI agents: unique agent identity/attribution, least-privilege tool/API permissions, action scoping, credential revocation, default-deny execution, or emergency kill-switches.",
+        "include_when": "The text explicitly governs multi-step autonomous agents, tool/API invocation permissions, delegated identity, or agent execution interruptibility.",
+        "exclude_when": "Do not assign for static Q&A chatbots or single-turn generative models without autonomous action/tool execution."
+      },
+      "training_data_governance": {
+        "label": "Training data governance",
+        "short_label": "Training data",
+        "definition": "Operative obligations on training/fine-tuning datasets: lawful provenance and licensing checks, copyright opt-out compliance, dataset bias/quality curation, training personal-data minimization, or public training-content summaries.",
+        "include_when": "The text sets concrete rules governing collection, curation, lawful provenance, copyright compliance, or disclosure of AI training/fine-tuning datasets.",
+        "exclude_when": "Do not assign for generic runtime user-privacy notices unrelated to model training or fine-tuning data."
+      },
+      "frontier_safety_evaluation": {
+        "label": "Frontier safety evaluation",
+        "short_label": "Frontier eval",
+        "definition": "Structured frontier-model or systemic-risk capability evaluations targeting severe harms (CBRN, offensive cyber, autonomous replication, loss of control), including pre-release government or AISI evaluation access.",
+        "include_when": "The text requires or establishes frontier/systemic capability evaluations or government/AI Safety Institute pre-release model evaluations.",
+        "exclude_when": "Do not assign for routine narrow-sector product QA or medical-device clinical accuracy trials (use pre_deployment_testing)."
+      },
+      "open_weight_obligations": {
+        "label": "Open-weight obligations",
+        "short_label": "Open-weight",
+        "definition": "Explicit legal obligations, conditional exemptions, or systemic-risk overrides governing open-source or open-weight AI model releases and downstream modification.",
+        "include_when": "The text explicitly defines duties, exemptions, or carve-out conditions for open-weight or open-source AI models.",
+        "exclude_when": "Do not assign when the document never distinguishes open-weight/open-source releases from proprietary deployments."
+      },
+      "domestic_representative": {
+        "label": "Domestic representative",
+        "short_label": "Domestic rep",
+        "definition": "Requirement for foreign or offshore AI providers lacking a local establishment to designate an authorized domestic legal representative or point of contact inside the jurisdiction.",
+        "include_when": "The text mandates that extraterritorial/foreign AI providers appoint a local authorized representative or domestic legal agent.",
+        "exclude_when": "Do not assign for general domestic company registration or internal Chief AI Officer appointments."
+      }
+    },
+    "obligation_strengths": {
+      "mandatory": {
+        "label": "Mandatory",
+        "short_label": "Mandatory",
+        "definition": "Unconditional binding duty expressed with compulsory legal language ('shall', 'must', 'is required to', '하여야 한다', '应当', 'なければならない').",
+        "include_when": "The operative clause imposes an unqualified compulsory requirement on covered entities.",
+        "exclude_when": "Do not assign when the duty is triggered only by specific thresholds/exceptions (use conditional) or phrased as 'should'/'endeavour to' (use recommended/aspirational)."
+      },
+      "conditional": {
+        "label": "Conditional",
+        "short_label": "Conditional",
+        "definition": "Binding or operational duty triggered only when specified thresholds, risk tiers, procurement contexts, or opt-in safe harbors apply ('where high-risk', 'if compute exceeds...', 'as a condition of...').",
+        "include_when": "The obligation applies strictly upon meeting explicit scope triggers, thresholds, or opt-in conditions stated in the text.",
+        "exclude_when": "Do not assign for universal unconditional mandates (use mandatory) or purely non-binding suggestions (use recommended)."
+      },
+      "recommended": {
+        "label": "Recommended",
+        "short_label": "Recommended",
+        "definition": "Actionable non-binding expectation, best practice, or soft-law guidance ('should', 'is encouraged to', 'is expected to', '할 수 있다/권고한다', '望ましい', '鼓励').",
+        "include_when": "The text prescribes concrete operational practices through guidance, standards, or 'should'/'endeavour to' phrasing without legal compulsion.",
+        "exclude_when": "Do not assign for legally binding mandates (use mandatory) or high-level policy slogans lacking operational steps (use aspirational)."
+      },
+      "aspirational": {
+        "label": "Aspirational",
+        "short_label": "Aspirational",
+        "definition": "High-level principle, strategic goal, or future policy intent ('strive to promote', 'aims to foster', 'will explore') without concrete operational compliance steps.",
+        "include_when": "The text expresses broad normative vision, long-term strategic ambition, or exploratory intent rather than actionable compliance duties.",
+        "exclude_when": "Do not assign when the document specifies concrete operational controls or actionable checklists (use recommended, conditional, or mandatory)."
+      }
+    },
+    "enforcement_mechanisms": {
+      "civil_penalty": {
+        "label": "Civil penalties",
+        "short_label": "Civil fine",
+        "definition": "Administrative fines, statutory monetary penalties, civil damages, or turnover-based financial sanctions.",
+        "include_when": "The text explicitly authorizes monetary fines, administrative penalties, or statutory civil liability damages.",
+        "exclude_when": "Do not assign for criminal imprisonment/prosecution (use criminal_penalty) or unpenalized corrective notices (use regulatory_supervision)."
+      },
+      "criminal_penalty": {
+        "label": "Criminal penalties",
+        "short_label": "Criminal",
+        "definition": "Imprisonment, criminal fines, or referral for criminal prosecution under penal statutes.",
+        "include_when": "The text explicitly specifies criminal offenses, custodial sentences, or referral to criminal law/prosecutors.",
+        "exclude_when": "Do not assign for purely administrative or civil monetary fines (use civil_penalty)."
+      },
+      "market_access_restriction": {
+        "label": "Market-access restrictions",
+        "short_label": "Market ban",
+        "definition": "Product bans, market withdrawal or recall orders, service suspension, app-store takedowns, or prohibitions on placing non-compliant systems on the market.",
+        "include_when": "The text authorizes prohibiting, suspending, withdrawing, recalling, or blocking market availability of an AI system/service.",
+        "exclude_when": "Do not assign for routine pre-market license issuance/revocation alone (use licensing_requirement) unless market withdrawal/ban powers are stated."
+      },
+      "procurement_condition": {
+        "label": "Procurement conditions",
+        "short_label": "Procurement",
+        "definition": "Compliance clauses tied to government purchasing, public-sector contracting, or federal/ministerial funding eligibility.",
+        "include_when": "The text conditions government acquisition, vendor contracts, or public funding on meeting AI governance requirements.",
+        "exclude_when": "Do not assign for general private-sector regulation unrelated to public procurement or funding."
+      },
+      "licensing_requirement": {
+        "label": "Licensing requirements",
+        "short_label": "Licensing",
+        "definition": "Regulatory authority to condition lawful operation on prior licensing, pre-market approval, or algorithm filing, including suspension or revocation of authorization.",
+        "include_when": "The text grants authorities power to withhold, condition, suspend, or revoke a mandatory operating license or pre-market approval.",
+        "exclude_when": "Do not assign for purely voluntary certification schemes (use soft_enforcement)."
+      },
+      "regulatory_supervision": {
+        "label": "Regulatory supervision",
+        "short_label": "Supervision",
+        "definition": "Investigatory powers, inspections, information/document demands, corrective orders, cease-and-desist notices, or ongoing supervisory oversight by an authority.",
+        "include_when": "The text empowers a regulator or ministry to inspect, investigate, request records, or issue corrective/compliance orders.",
+        "exclude_when": "Do not assign when the issuer only publishes non-binding voluntary advice without supervisory authority (use soft_enforcement)."
+      },
+      "reporting_obligation": {
+        "label": "Reporting obligations",
+        "short_label": "Reporting",
+        "definition": "Enforceable statutory or administrative duty to submit compliance reports, impact assessments, filings, or disclosures to a government authority.",
+        "include_when": "The text obligates covered entities to submit filings, assessments, or compliance reports to an authority as an oversight hook.",
+        "exclude_when": "Do not assign for voluntary self-disclosure pledges lacking an official submission channel (use soft_enforcement)."
+      },
+      "soft_enforcement": {
+        "label": "Soft enforcement",
+        "short_label": "Soft enf.",
+        "definition": "Voluntary adherence, best-practice recommendations, self-regulation, public naming/guidance persuasion, or safe-harbor incentives lacking direct coercive sanctions.",
+        "include_when": "The text relies on voluntary adoption, non-binding guidance, codes of practice, or reputational/safe-harbor incentives.",
+        "exclude_when": "Do not assign as the sole mechanism when the document establishes binding statutory fines or coercive orders."
+      },
+      "none_specified": {
+        "label": "No explicit enforcement",
+        "short_label": "None spec.",
+        "definition": "The document articulates no enforcement, compliance, or oversight mechanism whatsoever.",
+        "include_when": "The text is a pure vision statement, R&D roadmap, or administrative notice containing zero compliance or enforcement hooks.",
+        "exclude_when": "Do not co-assign alongside active enforcement mechanisms unless the text explicitly carves out unenforceable sections."
+      }
+    },
+    "binding_strength": {
+      "binding_law": {
+        "label": "Binding law",
+        "short_label": "Binding law",
+        "definition": "Enacted primary statute, EU Regulation, presidential enforcement decree, or formally promulgated administrative regulation carrying direct legal obligations and enforceable remedies.",
+        "include_when": "The document itself is enacted legislation or a binding statutory regulation/decree in force or formally promulgated.",
+        "exclude_when": "Never assign to FAQs, Q&As, press releases, overview slides, or un-enacted draft notices even if they describe a binding law."
+      },
+      "executive_action": {
+        "label": "Executive action",
+        "short_label": "Exec. action",
+        "definition": "Presidential executive order, binding OMB directive to federal agencies, or cabinet-level executive order binding government bodies.",
+        "include_when": "The document is a formal head-of-state, presidential, cabinet, or OMB directive binding executive agencies.",
+        "exclude_when": "Do not assign to parliamentary statutes (use binding_law) or non-binding ministry white papers (use strategy_statement)."
+      },
+      "regulatory_guidance": {
+        "label": "Regulatory guidance",
+        "short_label": "Reg. guidance",
+        "definition": "Interpretive or supervisory guidance from a regulator or ministry carrying administrative compliance weight, safe-harbor presumption, or enforcement signaling.",
+        "include_when": "The document is official regulator/ministry guidance interpreting legal duties or outlining supervisory expectations.",
+        "exclude_when": "Do not assign to formally enacted statutory decrees (use binding_law) or technical metrology standards (use standards_guideline)."
+      },
+      "standards_guideline": {
+        "label": "Standards guideline",
+        "short_label": "Standard",
+        "definition": "Technical framework, evaluation guide, risk-management profile, or voluntary national standard (e.g., NIST RMF, TC260/GB/T, J-AISI guides) without direct legal compulsion unless incorporated by reference.",
+        "include_when": "The document is issued by a standards body, AISI, or technical ministry as a technical assurance framework or guideline.",
+        "exclude_when": "Do not assign to signatory political pledges or codes of practice (use voluntary_commitment)."
+      },
+      "voluntary_commitment": {
+        "label": "Voluntary commitment",
+        "short_label": "Voluntary",
+        "definition": "Formal signatory pledge, code of practice, or multilateral voluntary code of conduct where adherence is opt-in.",
+        "include_when": "The document is a formal pledge, pact, or signatory code of practice/conduct (e.g., EU AI Pact, EU GPAI Code of Practice, Hiroshima Code).",
+        "exclude_when": "Do not assign to non-signatory technical standards (use standards_guideline) or unilateral government strategies (use strategy_statement)."
+      },
+      "strategy_statement": {
+        "label": "Strategy statement",
+        "short_label": "Strategy",
+        "definition": "Aspirational national AI plan, policy vision, action plan, or research report containing no operative legal or technical compliance duties.",
+        "include_when": "The document sets broad national policy priorities, R&D goals, or strategic agendas without operative regulatory mandates.",
+        "exclude_when": "Do not assign to legally binding directives (use executive_action or binding_law)."
+      }
+    },
+    "corpus_roles": {
+      "primary_instrument": {
+        "label": "Primary instrument",
+        "short_label": "Primary",
+        "definition": "Canonical, distinct primary text of a law, executive action, substantive regulatory guideline, technical standard, national strategy, or major voluntary framework. Default population for headline divergence metrics.",
+        "include_when": "The document is the authoritative primary text of a distinct governance instrument.",
+        "exclude_when": "Exclude FAQs, Q&As, press releases, overview slides, bilingual duplicates, consultation drafts, and superseded versions."
+      },
+      "companion_resource": {
+        "label": "Companion resource",
+        "short_label": "Companion",
+        "definition": "Official supplementary material tied to a primary instrument: FAQs, Q&As, expert interpretations, press announcements, transmittal memos, templates, portal overview pages, crosswalks, or translation mirrors.",
+        "include_when": "The artifact explains, summarizes, translates, or accompanies a distinct primary instrument.",
+        "exclude_when": "Do not assign to standalone primary statutes, guidelines, or technical frameworks."
+      },
+      "draft_consultation": {
+        "label": "Draft / consultation",
+        "short_label": "Draft",
+        "definition": "Public consultation draft, legislative notice, or superseded pre-adoption draft version retained for provenance and drafting history.",
+        "include_when": "The document is a draft bill, notice for public comment, or pre-final draft.",
+        "exclude_when": "Exclude adopted or active primary instruments (use primary_instrument)."
+      },
+      "historical_baseline": {
+        "label": "Historical baseline",
+        "short_label": "Historical",
+        "definition": "Superseded or revoked official instrument retained explicitly for longitudinal policy–framing drift analysis.",
+        "include_when": "The document was once an authoritative primary instrument but has been formally superseded or revoked.",
+        "exclude_when": "Exclude currently active instruments (use primary_instrument) and un-adopted drafts (use draft_consultation)."
+      }
+    },
+    "lifecycle_stages": {
+      "draft": {
+        "label": "Draft",
+        "short_label": "Draft",
+        "definition": "Published for public comment, expert review, or legislative deliberation; not yet formally adopted.",
+        "include_when": "The text is explicitly marked as a draft, proposal, or consultation notice without formal enactment.",
+        "exclude_when": "Once superseded by an adopted final version, transition to superseded."
+      },
+      "adopted_not_yet_effective": {
+        "label": "Adopted (pending)",
+        "short_label": "Pending",
+        "definition": "Formally enacted or promulgated instrument whose statutory effective date lies in the future.",
+        "include_when": "The law or rule is officially adopted/promulgated with a future effective_date.",
+        "exclude_when": "Transition to active once effective_date has passed."
+      },
+      "active": {
+        "label": "Active",
+        "short_label": "Active",
+        "definition": "Currently in legal force or actively maintained official government policy/guidance.",
+        "include_when": "The instrument's effective date has passed (or it applies immediately upon publication) and it has not been repealed or superseded.",
+        "exclude_when": "Do not assign to pending future-effective statutes (use adopted_not_yet_effective), un-enacted drafts (use draft), or replaced texts (use superseded)."
+      },
+      "superseded": {
+        "label": "Superseded",
+        "short_label": "Superseded",
+        "definition": "Formally replaced, repealed, revoked, or succeeded by a newer official version (chained via supersedes_id on the replacement document).",
+        "include_when": "A newer enacted law, executive order, plan, or version has officially replaced or revoked this document.",
+        "exclude_when": "Do not assign to instruments that remain concurrently valid alongside newer sectoral guidance."
+      }
+    }
+  }
+}

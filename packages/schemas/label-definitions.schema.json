@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-babel.com/schemas/label-definitions.schema.json",
+  "title": "Project Babel Canonical Label Definitions & Thresholds",
+  "description": "Single machine-readable source of truth for analytical label definitions, inclusion/exclusion rules, and canonical quality thresholds shared across Python prompts and the Next.js web application (Taxonomy v2.1.0).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "taxonomy_version",
+    "schema_version",
+    "updated_at",
+    "thresholds",
+    "categories"
+  ],
+  "properties": {
+    "taxonomy_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grounding_pass_threshold",
+        "low_confidence_policy",
+        "low_confidence_framing",
+        "frame_mention_floor"
+      ],
+      "properties": {
+        "grounding_pass_threshold": { "$ref": "#/$defs/unitInterval" },
+        "low_confidence_policy": { "$ref": "#/$defs/unitInterval" },
+        "low_confidence_framing": { "$ref": "#/$defs/unitInterval" },
+        "frame_mention_floor": { "$ref": "#/$defs/unitInterval" }
+      }
+    },
+    "categories": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "risk_framings",
+        "policy_requirements",
+        "obligation_strengths",
+        "enforcement_mechanisms",
+        "binding_strength",
+        "corpus_roles",
+        "lifecycle_stages"
+      ],
+      "properties": {
+        "risk_framings": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "existential_catastrophic",
+            "national_security",
+            "economic_competitiveness",
+            "fundamental_rights",
+            "social_stability",
+            "innovation_enablement",
+            "consumer_public_safety",
+            "labor_transition"
+          ],
+          "properties": {
+            "existential_catastrophic": { "$ref": "#/$defs/framingDefinition" },
+            "national_security": { "$ref": "#/$defs/framingDefinition" },
+            "economic_competitiveness": { "$ref": "#/$defs/framingDefinition" },
+            "fundamental_rights": { "$ref": "#/$defs/framingDefinition" },
+            "social_stability": { "$ref": "#/$defs/framingDefinition" },
+            "innovation_enablement": { "$ref": "#/$defs/framingDefinition" },
+            "consumer_public_safety": { "$ref": "#/$defs/framingDefinition" },
+            "labor_transition": { "$ref": "#/$defs/framingDefinition" }
+          }
+        },
+        "policy_requirements": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "risk_assessment",
+            "pre_deployment_testing",
+            "red_teaming",
+            "incident_reporting",
+            "transparency_disclosure",
+            "model_documentation",
+            "third_party_audit",
+            "access_controls",
+            "compute_governance",
+            "content_provenance",
+            "human_oversight",
+            "registration_licensing",
+            "agentic_autonomy_controls",
+            "training_data_governance",
+            "frontier_safety_evaluation",
+            "open_weight_obligations",
+            "domestic_representative"
+          ],
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": { "$ref": "#/$defs/labelDefinition" }
+          }
+        },
+        "obligation_strengths": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mandatory",
+            "conditional",
+            "recommended",
+            "aspirational"
+          ],
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": { "$ref": "#/$defs/labelDefinition" }
+          }
+        },
+        "enforcement_mechanisms": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "civil_penalty",
+            "criminal_penalty",
+            "market_access_restriction",
+            "procurement_condition",
+            "licensing_requirement",
+            "regulatory_supervision",
+            "reporting_obligation",
+            "soft_enforcement",
+            "none_specified"
+          ],
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": { "$ref": "#/$defs/labelDefinition" }
+          }
+        },
+        "binding_strength": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "binding_law",
+            "executive_action",
+            "regulatory_guidance",
+            "standards_guideline",
+            "voluntary_commitment",
+            "strategy_statement"
+          ],
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": { "$ref": "#/$defs/labelDefinition" }
+          }
+        },
+        "corpus_roles": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primary_instrument",
+            "companion_resource",
+            "draft_consultation",
+            "historical_baseline"
+          ],
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": { "$ref": "#/$defs/labelDefinition" }
+          }
+        },
+        "lifecycle_stages": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "active",
+            "adopted_not_yet_effective",
+            "draft",
+            "superseded"
+          ],
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": { "$ref": "#/$defs/labelDefinition" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "unitInterval": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "labelDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "short_label",
+        "definition",
+        "include_when",
+        "exclude_when"
+      ],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "short_label": { "type": "string", "minLength": 1 },
+        "definition": { "type": "string", "minLength": 1 },
+        "include_when": { "type": "string", "minLength": 1 },
+        "exclude_when": { "type": "string", "minLength": 1 }
+      }
+    },
+    "framingDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "short_label",
+        "abbr",
+        "definition",
+        "include_when",
+        "exclude_when"
+      ],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "short_label": { "type": "string", "minLength": 1 },
+        "abbr": { "type": "string", "pattern": "^[A-Z]{2,4}$" },
+        "definition": { "type": "string", "minLength": 1 },
+        "include_when": { "type": "string", "minLength": 1 },
+        "exclude_when": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

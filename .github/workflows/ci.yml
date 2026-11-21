@@ -6,7 +6,11 @@ on:
 
 jobs:
   pipeline:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -15,10 +19,44 @@ jobs:
       - name: Install pipeline
         run: |
           python -m pip install --upgrade pip
-          pip install -e services/pipeline[dev]
+          pip install -e "services/pipeline[dev]"
       - name: Validate taxonomy
-        run: PYTHONPATH=services/pipeline/src python -m observatory.cli validate-taxonomy
-      - name: Run tests
-        run: |
-          cd services/pipeline
-          pytest
+        env:
+          PYTHONPATH: services/pipeline/src
+        run: python -m observatory.cli validate-taxonomy
+      - name: Validate source manifests
+        env:
+          PYTHONPATH: services/pipeline/src
+        run: python -m observatory.cli validate-sources
+      - name: Validate artifacts against schemas
+        env:
+          PYTHONPATH: services/pipeline/src
+        run: python -m observatory.cli validate-artifacts
+      - name: Run pipeline tests
+        working-directory: services/pipeline
+        run: pytest
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - name: Install web dependencies
+        run: npm ci
+      - name: Lint web app
+        run: npm run lint
+      - name: Typecheck web app
+        run: npx tsc --noEmit
+      - name: Run web tests
+        run: npm test
+      - name: Build web app
+        env:
+          OBSERVATORY_ALLOW_LOCAL_FALLBACK: "1"
+        run: npm run build

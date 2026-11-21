@@ -7,8 +7,14 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse, urlunparse
 
+from pydantic import ValidationError
+
+from observatory.analysis import score_document_grounding
 from observatory.coverage import TRACKING_DIR
+from observatory.models import DocumentAnalysis
 from observatory.source_registry import ROOT, load_all_source_manifests
+from observatory.taxonomy import get_canonical_thresholds
+from observatory.url_safety import repo_rel_posix
 
 
 SOURCE_AUDIT_JSON_PATH = TRACKING_DIR / "source_quality_audit.json"
@@ -30,8 +36,8 @@ REMOVE_PATTERNS = (
     r"\bmeeting index page\b",
     r"\blists session dates\b",
     r"\bmoved page\b",
-    r"\b移動ページ\b",
-    r"\b開催状況\b",
+    r"移動ページ",
+    r"開催状況",
 )
 REMOVE_TITLE_PATTERNS = (
     r"\bservice desk\b",
@@ -42,8 +48,8 @@ REMOVE_TITLE_PATTERNS = (
     r"\bmeeting\b",
     r"\bcomments received\b",
     r"\bconfirmation request\b",
-    r"\b移動ページ\b",
-    r"\b開催状況\b",
+    r"移動ページ",
+    r"開催状況",
 )
 CONTEXT_PATTERNS = (
     r"\btimeline\b",
@@ -135,6 +141,28 @@ HUB_LISTING_PATTERNS = (
     r"official source:",
     r"英訳はこちら",
 )
+AI_TOPIC_PATTERNS = (
+    r"\bai\b",
+    r"\bartificial intelligence\b",
+    r"\bsuper\s*intelligence\b",
+    r"\bmachine learning\b",
+    r"\bgenerative\b",
+    r"\balgorithm",
+    r"\bchatbot\b",
+    r"\bfoundation model\b",
+    r"\bdeep synthesis\b",
+    r"人工知能",
+    r"生成",
+    r"アルゴリズム",
+    r"人工智能",
+    r"算法",
+    r"深度合成",
+    r"인공지능",
+    r"알고리즘",
+    r"생성형",
+)
+CJK_CHAR_PATTERN = re.compile(r"[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]")
+MOJIBAKE_CHAR_PATTERN = re.compile(r"[\u00c0-\u00ff\ufffd]")
 
 
 def _normalize_text(value: str | None) -> str:
@@ -143,11 +171,46 @@ def _normalize_text(value: str | None) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def _non_whitespace_chars(value: str | None) -> int:
+    if not value:
+        return 0
+    return len("".join(value.split()))
+
+
 def _word_count(value: str | None) -> int:
+    """CJK-aware effective word count so Chinese/Japanese texts are not penalized as thin."""
     text = _normalize_text(value)
     if not text:
         return 0
-    return len(text.split())
+    cjk_chars = len(CJK_CHAR_PATTERN.findall(text))
+    non_cjk = CJK_CHAR_PATTERN.sub(" ", text)
+    latin_words = len(non_cjk.split())
+    # Roughly 2 CJK characters correspond to 1 English word for length thresholds.
+    return latin_words + (cjk_chars // 2)
+
+
+def _looks_garbled_mojibake(value: str | None) -> bool:
+    """Detect Shift-JIS/CID PDF mojibake (e.g. `lÔªAIð¹ïÆµÄg`) and replacement characters."""
+    if not value:
+        return False
+    sample = "".join(value.split())[:4000]
+    if len(sample) < 30:
+        return False
+    if sample.count("\ufffd") >= 5:
+        return True
+    latin1_hits = len(MOJIBAKE_CHAR_PATTERN.findall(sample))
+    # Genuine European languages (e.g., French/German) rarely exceed ~12% Latin-1 supplement;
+    # Shift-JIS/CID mojibake exceeds 20% and mixes symbols/control artifacts.
+    if (latin1_hits / len(sample)) >= 0.18:
+        symbol_hits = sum(1 for ch in sample if ch in "ª¹²³µ¶·¸º¼½¾¿ÆÐØÞßðþ")
+        if symbol_hits >= 5 or (latin1_hits / len(sample)) >= 0.25:
+            return True
+    return False
+
+
+def _has_ai_topic_signal(title: str, plain_text: str | None) -> bool:
+    combined = f"{title}\n{plain_text or ''}"
+    return bool(_find_matches(combined, AI_TOPIC_PATTERNS))
 
 
 def _load_json(path: Path) -> dict[str, Any] | None:
@@ -186,6 +249,7 @@ def _link_status(
     *,
     document: Any,
     parsed_word_count: int,
+    parsed_char_count: int,
     plain_text: str | None,
     analysis_notes: str,
     raw_payload: dict[str, Any] | None,
@@ -207,6 +271,16 @@ def _link_status(
     raw_publication_date = raw_payload.get("publication_date")
     if raw_publication_date and document.publication_date and raw_publication_date != document.publication_date:
         metadata_issues.append("seed publication_date differs from fetched metadata")
+
+    # Detect SPA shell overwrite on browser_required or statutory sources (e.g., law.go.kr).
+    is_statutory = document.binding_strength == "binding_law" or document.source_tier == "statutory_rule"
+    is_law_go_kr = "law.go.kr" in canonical_url.casefold()
+    if parsed_char_count < 500 and (document.browser_required or is_statutory):
+        if is_law_go_kr and "제1조" not in (plain_text or ""):
+            findings.append("law.go.kr SPA shell capture (<500 chars, missing statutory articles '제1조')")
+        else:
+            findings.append(f"possible SPA shell capture ({parsed_char_count} non-whitespace chars on statutory/browser-required source)")
+        return "spa_shell_capture", "refetch_with_browser", findings, metadata_issues
 
     transport = str(raw_payload.get("transport") or "")
     content_type = str(raw_payload.get("content_type") or "")
@@ -248,7 +322,12 @@ def _link_status(
     return "direct_document", None, findings, metadata_issues
 
 
-def _audit_document(jurisdiction: str, document: Any) -> dict[str, Any]:
+def _audit_document(
+    jurisdiction: str,
+    document: Any,
+    *,
+    duplicate_sha_peers: list[str] | None = None,
+) -> dict[str, Any]:
     raw_path = RAW_DIR / jurisdiction / document.id / "metadata.json"
     parsed_path = PARSED_DIR / jurisdiction / document.id / "normalized.json"
     analysis_path = ANALYSIS_DIR / jurisdiction / document.id / "document_analysis.json"
@@ -258,11 +337,16 @@ def _audit_document(jurisdiction: str, document: Any) -> dict[str, Any]:
 
     plain_text = parsed_payload.get("plain_text") if isinstance(parsed_payload, dict) else None
     parsed_word_count = _word_count(plain_text)
+    parsed_char_count = _non_whitespace_chars(plain_text)
     analysis_notes = ""
+    analysis_rationale = ""
     if isinstance(analysis_payload, dict):
         policy_extraction = analysis_payload.get("policy_extraction") or {}
         if isinstance(policy_extraction, dict):
             analysis_notes = _normalize_text(policy_extraction.get("implementation_notes"))
+        risk_framing = analysis_payload.get("risk_framing") or {}
+        if isinstance(risk_framing, dict):
+            analysis_rationale = _normalize_text(risk_framing.get("rationale_summary"))
 
     title = _normalize_text(document.title)
     audit_text = " ".join(
@@ -344,10 +428,51 @@ def _audit_document(jurisdiction: str, document: Any) -> dict[str, Any]:
     ) = _link_status(
         document=document,
         parsed_word_count=parsed_word_count,
+        parsed_char_count=parsed_char_count,
         plain_text=plain_text,
         analysis_notes=analysis_notes,
         raw_payload=raw_payload,
     )
+
+    # Real defect detectors: mojibake/CID garble, 0-AI-keyword off-topic, duplicate SHA256, quote grounding.
+    if _looks_garbled_mojibake(plain_text) or _looks_garbled_mojibake(analysis_rationale):
+        score -= 45
+        fidelity_findings.append("garbled CID/Shift-JIS mojibake detected in parsed text or analysis")
+        source_link_action = source_link_action or "reparse_or_replace_source"
+
+    if parsed_char_count >= 200 and not _has_ai_topic_signal(title, plain_text):
+        score -= 45
+        findings.append("off-topic document: zero AI governance keywords in title or text")
+        fidelity_findings.append("off-topic document: zero AI keywords detected")
+
+    if duplicate_sha_peers:
+        score -= 35
+        peers_text = ", ".join(duplicate_sha_peers)
+        metadata_issues.append(f"duplicate raw artifact SHA-256 shared with: {peers_text}")
+        fidelity_findings.append(f"exact duplicate raw artifact SHA-256 ({peers_text})")
+        source_link_action = source_link_action or "deduplicate_seed_document"
+
+    grounding_ratio: float | None = None
+    ungrounded_quotes = 0
+    grounding_gate = get_canonical_thresholds()["grounding_pass_threshold"]
+    if isinstance(analysis_payload, dict) and isinstance(plain_text, str) and parsed_char_count > 0:
+        try:
+            validated_analysis = DocumentAnalysis.model_validate(analysis_payload)
+            grounding = score_document_grounding(validated_analysis, plain_text)
+            grounding_ratio = grounding["grounding_ratio"]
+            ungrounded_quotes = grounding["ungrounded_quotes"]
+            if grounding["total_quotes"] == 0 or grounding_ratio is None:
+                fidelity_findings.append("zero evidence quotes extracted")
+            elif grounding_ratio < grounding_gate or ungrounded_quotes >= 3:
+                fidelity_findings.append(
+                    f"low quote grounding ({grounding['exact_matches'] + grounding['fuzzy_matches']}/"
+                    f"{grounding['total_quotes']} matched, ratio={grounding_ratio:.2f})"
+                )
+        except ValidationError:
+            pass
+
+    if source_link_status == "spa_shell_capture":
+        score -= 30
 
     action = "keep_core"
     audit_bucket = "core"
@@ -372,10 +497,14 @@ def _audit_document(jurisdiction: str, document: Any) -> dict[str, Any]:
         "document_type": document.document_type,
         "binding_strength": document.binding_strength,
         "source_tier": document.source_tier,
+        "corpus_role": document.corpus_role,
         "publication_date": document.publication_date,
         "source_portal_ids": document.source_portal_ids,
         "parsed_word_count": parsed_word_count,
+        "parsed_non_whitespace_chars": parsed_char_count,
         "analysis_present": analysis_payload is not None,
+        "grounding_ratio": grounding_ratio,
+        "ungrounded_quotes": ungrounded_quotes,
         "score": score,
         "audit_bucket": audit_bucket,
         "action": action,
@@ -391,15 +520,45 @@ def _audit_document(jurisdiction: str, document: Any) -> dict[str, Any]:
     }
 
 
+def _duplicate_sha256_index(manifests: list[Any]) -> dict[tuple[str, str], list[str]]:
+    by_sha: dict[str, list[tuple[str, str]]] = {}
+    for manifest in manifests:
+        for document in manifest.seed_documents:
+            raw_path = RAW_DIR / manifest.jurisdiction / document.id / "metadata.json"
+            raw_payload = _load_json(raw_path)
+            if not isinstance(raw_payload, dict):
+                continue
+            digest = raw_payload.get("sha256")
+            if isinstance(digest, str) and digest:
+                by_sha.setdefault(digest, []).append((manifest.jurisdiction, document.id))
+
+    duplicates: dict[tuple[str, str], list[str]] = {}
+    for members in by_sha.values():
+        if len(members) < 2:
+            continue
+        for member in members:
+            peers = [f"{jur}:{doc_id}" for jur, doc_id in members if (jur, doc_id) != member]
+            duplicates[member] = sorted(peers)
+    return duplicates
+
+
 def build_source_quality_audit() -> dict[str, Any]:
     manifests = load_all_source_manifests()
+    duplicate_index = _duplicate_sha256_index(manifests)
     generated_at = datetime.now(timezone.utc).isoformat()
     jurisdictions: list[dict[str, Any]] = []
     global_recommendations: list[dict[str, Any]] = []
     source_repairs: list[dict[str, Any]] = []
 
     for manifest in manifests:
-        records = [_audit_document(manifest.jurisdiction, document) for document in manifest.seed_documents]
+        records = [
+            _audit_document(
+                manifest.jurisdiction,
+                document,
+                duplicate_sha_peers=duplicate_index.get((manifest.jurisdiction, document.id)),
+            )
+            for document in manifest.seed_documents
+        ]
         records.sort(key=lambda item: ({"remove_from_seed": 0, "review_for_removal": 1, "keep_supporting": 2, "keep_core": 3}[item["action"]], item["score"], item["title"]))
 
         summary = {
@@ -414,7 +573,7 @@ def build_source_quality_audit() -> dict[str, Any]:
             summary["bucket_counts"][record["audit_bucket"]] = summary["bucket_counts"].get(record["audit_bucket"], 0) + 1
             if record["action"] in {"remove_from_seed", "review_for_removal"}:
                 global_recommendations.append(record)
-            if record["source_link_action"] or record["metadata_issues"]:
+            if record["source_link_action"] or record["metadata_issues"] or record["fidelity_findings"]:
                 source_repairs.append(record)
 
         jurisdictions.append(summary)
@@ -424,8 +583,8 @@ def build_source_quality_audit() -> dict[str, Any]:
 
     return {
         "generated_at": generated_at,
-        "audit_json_path": str(SOURCE_AUDIT_JSON_PATH.relative_to(ROOT)),
-        "audit_markdown_path": str(SOURCE_AUDIT_MARKDOWN_PATH.relative_to(ROOT)),
+        "audit_json_path": repo_rel_posix(SOURCE_AUDIT_JSON_PATH, root=ROOT),
+        "audit_markdown_path": repo_rel_posix(SOURCE_AUDIT_MARKDOWN_PATH, root=ROOT),
         "jurisdictions": jurisdictions,
         "recommended_changes": global_recommendations,
         "source_repairs": source_repairs,
@@ -477,7 +636,7 @@ def _write_markdown(audit: dict[str, Any]) -> None:
             issue_notes = item["fidelity_findings"] + item["metadata_issues"]
             lines.append(
                 f"| `{item['jurisdiction']}` | `{item['source_link_status']}` | "
-                f"`{item['source_link_action'] or 'metadata_check'}` | "
+                f"`{item['source_link_action'] or 'quality_check'}` | "
                 f"`{item['document_id']}` | {'; '.join(issue_notes) or 'n/a'} |"
             )
     else:
@@ -498,7 +657,7 @@ def _write_markdown(audit: dict[str, Any]) -> None:
             ]
         )
         for item in jurisdiction["documents"]:
-            if item["action"] == "keep_core" and not item["source_link_action"] and not item["metadata_issues"]:
+            if item["action"] == "keep_core" and not item["source_link_action"] and not item["metadata_issues"] and not item["fidelity_findings"]:
                 continue
             note_parts = item["findings"] + item["fidelity_findings"] + item["metadata_issues"]
             lines.append(
@@ -507,18 +666,22 @@ def _write_markdown(audit: dict[str, Any]) -> None:
                 f"`{item['document_id']}` | {'; '.join(note_parts) or 'n/a'} |"
             )
         if all(
-            item["action"] == "keep_core" and not item["source_link_action"] and not item["metadata_issues"]
+            item["action"] == "keep_core" and not item["source_link_action"] and not item["metadata_issues"] and not item["fidelity_findings"]
             for item in jurisdiction["documents"]
         ):
             lines.append("| `n/a` | `0` | `n/a` | `n/a` | `n/a` | `n/a` | No flagged documents. |")
 
     SOURCE_AUDIT_MARKDOWN_PATH.parent.mkdir(parents=True, exist_ok=True)
-    SOURCE_AUDIT_MARKDOWN_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    SOURCE_AUDIT_MARKDOWN_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 
 def write_source_quality_audit() -> dict[str, Any]:
     audit = build_source_quality_audit()
     SOURCE_AUDIT_JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
-    SOURCE_AUDIT_JSON_PATH.write_text(json.dumps(audit, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    SOURCE_AUDIT_JSON_PATH.write_text(
+        json.dumps(audit, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     _write_markdown(audit)
     return audit

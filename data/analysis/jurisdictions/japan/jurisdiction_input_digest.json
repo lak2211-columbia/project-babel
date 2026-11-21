@@ -1,8 +1,8 @@
 {
   "jurisdiction": "japan",
-  "source_count": 32,
+  "source_count": 28,
   "source_window_start": "2018-08-17",
-  "source_window_end": "2026-03-25",
+  "source_window_end": "2026-01-16",
   "documents": [
     {
       "document_id": "jp_admin_genai_procurement_guideline_2025",
@@ -11,6 +11,8 @@
       "issuing_body": "デジタル社会推進会議幹事会 (Digital Society Promotion Council Executive Committee)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "innovation_enablement",
@@ -38,6 +40,8 @@
       "issuing_body": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries of Japan)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "economic_competitiveness",
@@ -60,12 +64,14 @@
       "document_id": "jp_ai_68c2d8ca",
       "title": "ＡＩ戦略推進関係省庁会議（第2回）議事要旨",
       "publication_date": "2025-05-14",
-      "issuing_body": "内閣府・AI戦略推進関係省庁会議",
+      "issuing_body": "Cabinet Office / Secretariat of Japan",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
-      "dominant_frame": "economic_competitiveness",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
       "secondary_frames": [
-        "innovation_enablement",
+        "economic_competitiveness",
         "consumer_public_safety",
         "national_security"
       ],
@@ -80,8 +86,8 @@
         "regulatory_supervision"
       ],
       "implementation_notes": "Meeting minutes of the 2nd AI Strategy Promotion Inter-Ministerial Conference. Key items: AI bill legislative progress reported; Digital Agency presented draft AI government procurement/utilization guidelines and requested ministries appoint Chief AI Officers (CAIO); FSA published AI Discussion Paper on financial sector use cases; METI introduced GENIAC-PRIZE program for generative AI social implementation. Chair noted Diet deliberations touched on human-centric AI, local government AI use, and deepfake pornography risks. Goal stated as making Japan 'the world's most AI-friendly country for development and utilization'.",
-      "framing_rationale_summary": "The document is primarily framed around Japan's ambition to become 'the world's most AI-friendly country for development and utilization,' with emphasis on accelerating AI implementation across government and society, promoting generative AI social deployment, and maintaining international competitiveness. Innovation enablement is also strong, but the competitive national positioning language is dominant.",
-      "confidence": 0.685
+      "framing_rationale_summary": "The document is primarily framed around enabling rapid AI adoption and social implementation ('world's most AI-friendly country for development and utilization', promoting generative AI deployment programs, and accelerating nationwide AI implementation), with national economic competitiveness as a closely paired secondary rationale.",
+      "confidence": 0.735
     },
     {
       "document_id": "jp_ai_72333136",
@@ -90,6 +96,8 @@
       "issuing_body": "こども家庭庁 (Children and Families Agency, Japan)",
       "document_type": "regulatory_guidance",
       "binding_strength": "strategy_statement",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
@@ -112,9 +120,11 @@
       "document_id": "jp_ai_act_2025_overview_en_pdf",
       "title": "the AI Act (Overview) (Provisional Translation)",
       "publication_date": "2025-09-12",
-      "issuing_body": "Cabinet Office, Government of Japan",
+      "issuing_body": "Cabinet Office / Secretariat of Japan",
       "document_type": "legislation",
       "binding_strength": "binding_law",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
         "innovation_enablement",
@@ -135,37 +145,14 @@
       "confidence": 0.75
     },
     {
-      "document_id": "jp_ai_act_2025_overview_page",
-      "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（ＡＩ法）",
-      "publication_date": "2025-09-12",
-      "issuing_body": "内閣府・日本国政府（国会）",
-      "document_type": "legislation",
-      "binding_strength": "binding_law",
-      "dominant_frame": "economic_competitiveness",
-      "secondary_frames": [
-        "innovation_enablement",
-        "national_security"
-      ],
-      "top_requirements": [
-        "transparency_disclosure",
-        "risk_assessment",
-        "incident_reporting"
-      ],
-      "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "regulatory_supervision"
-      ],
-      "implementation_notes": "法律はイノベーション促進とリスク対応の両立を目指す。事業者は国等の施策に協力する義務を負う。AI基本計画により政府施策の基本方針を策定。附則に見直し規定あり。禁止行為の明示的規定は本概要には記載なし。",
-      "framing_rationale_summary": "The document primarily frames AI governance around Japan's competitive position, noting that Japan's AI development lags behind other countries and setting an explicit goal of becoming the most AI-friendly nation in the world. National competitiveness, international norm-setting leadership, and economic development are central justifications. Innovation enablement is a strong secondary frame, as the law explicitly aims to balance innovation promotion with risk response. National security appears as a stated basic principle.",
-      "confidence": 0.785
-    },
-    {
       "document_id": "jp_ai_contract_checklist_2025",
       "title": "AIの利用・開発に関する契約チェックリスト",
       "publication_date": "2025-02-18",
-      "issuing_body": "Ministry of Economy, Trade and Industry (METI), Japan",
+      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
       "document_type": "standards_guideline",
       "binding_strength": "standards_guideline",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "fundamental_rights",
@@ -188,9 +175,11 @@
       "document_id": "jp_ai_copyright_thinking_2024",
       "title": "ＡＩと著作権に関する考え方について",
       "publication_date": "2024-03-15",
-      "issuing_body": "文化審議会著作権分科会法制度小委員会 (Subcommittee on Legal Systems, Copyright Division, Council for Cultural Affairs, Agency for Cultural Affairs, Japan)",
+      "issuing_body": "Agency for Cultural Affairs (Japan)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "innovation_enablement",
@@ -208,9 +197,11 @@
       "document_id": "jp_ai_data_contract_guidelines_1_1_2019",
       "title": "AI・データの利用に関する契約ガイドライン 1.1版（全体版）",
       "publication_date": "2019-12-01",
-      "issuing_body": "経済産業省 (Ministry of Economy, Trade and Industry, METI)",
+      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "fundamental_rights",
@@ -232,6 +223,8 @@
       "issuing_body": "人工知能戦略本部 (AI Strategy Headquarters)",
       "document_type": "executive_order",
       "binding_strength": "executive_action",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [],
       "top_requirements": [],
@@ -246,9 +239,11 @@
       "document_id": "jp_ai_governance_guidelines_2021",
       "title": "Governance Guidelines for Implementation of AI Principles",
       "publication_date": "2021-07-09",
-      "issuing_body": "Ministry of Economy, Trade and Industry (METI) - Expert Group on How AI Principles Should be Implemented, AI Governance Guidelines WG",
+      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
       "document_type": "standards_guideline",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
@@ -271,9 +266,11 @@
       "document_id": "jp_ai_governance_ver_1_1_report",
       "title": "AI Governance in Japan Ver. 1.1",
       "publication_date": "2021-07-09",
-      "issuing_body": "Ministry of Economy, Trade and Industry (METI) Expert Group on How AI Principles Should be Implemented",
+      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
@@ -300,6 +297,8 @@
       "issuing_body": "Artificial Intelligence Strategic Headquarters",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "consumer_public_safety",
       "secondary_frames": [
         "fundamental_rights",
@@ -325,9 +324,11 @@
       "document_id": "jp_ai_guideline_2025_page",
       "title": "人工知能関連技術の研究開発及び活用の適正性確保に関する指針",
       "publication_date": "2025-12-19",
-      "issuing_body": "人工知能戦略本部 (AI Strategy Headquarters, Cabinet Office, Japan)",
+      "issuing_body": "Cabinet Office / Secretariat of Japan",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "innovation_enablement",
@@ -350,37 +351,14 @@
       "confidence": 0.665
     },
     {
-      "document_id": "jp_ai_guidelines_for_business_pdf",
-      "title": "AI Guidelines for Business Ver 1.0 (PDF)",
-      "publication_date": "2024-04-19",
-      "issuing_body": "Ministry of Internal Affairs and Communications / Ministry of Economy, Trade and Industry",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "voluntary_commitment",
-      "dominant_frame": "consumer_public_safety",
-      "secondary_frames": [
-        "innovation_enablement",
-        "social_stability",
-        "fundamental_rights"
-      ],
-      "top_requirements": [
-        "risk_assessment",
-        "transparency_disclosure",
-        "human_oversight"
-      ],
-      "top_enforcement_mechanisms": [
-        "soft_enforcement"
-      ],
-      "implementation_notes": "Document is explicitly non-binding soft law using a goal-based approach. It integrates three previous guidelines (AI R&D Guidelines, AI Utilization Guidelines, Governance Guidelines Ver.1.1). Intended as a living document to be updated via agile governance. Full policy details are in Parts 2-5 which are not fully represented in the extracted text.",
-      "framing_rationale_summary": "The document primarily frames AI governance around ensuring safe and secure use of AI in business contexts, reducing social risks such as misinformation, IP infringement, and other harms that arise from AI deployment. The goal-based, risk-based approach is centered on protecting society from AI risks while enabling innovation, with safety and security language dominant throughout.",
-      "confidence": 0.65
-    },
-    {
       "document_id": "jp_ai_guidelines_for_business_ver_1_0",
       "title": "AI Guidelines for Business Ver 1.0 (Provisional Translation)",
       "publication_date": "2024-04-19",
-      "issuing_body": "Ministry of Economy, Trade and Industry (METI), Japan",
+      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
       "document_type": "regulatory_guidance",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "social_stability",
@@ -401,38 +379,14 @@
       "confidence": 0.765
     },
     {
-      "document_id": "jp_ai_pdf_80kb_7e18f8d0",
-      "title": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF：80KB）",
-      "publication_date": "2019-04-05",
-      "issuing_body": "統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)",
-      "document_type": "strategy_paper",
-      "binding_strength": "strategy_statement",
-      "dominant_frame": "fundamental_rights",
-      "secondary_frames": [
-        "innovation_enablement",
-        "social_stability",
-        "economic_competitiveness"
-      ],
-      "top_requirements": [
-        "human_oversight",
-        "transparency_disclosure",
-        "risk_assessment"
-      ],
-      "top_enforcement_mechanisms": [
-        "soft_enforcement",
-        "none_specified"
-      ],
-      "implementation_notes": "This is Japan's 'Human-Centered AI Society Principles' adopted by the Integrated Innovation Strategy Promotion Council. It establishes non-binding principles for an 'AI-Ready Society' aligned with Society 5.0. The document outlines seven AI social principles including human-centricity, safety/security, privacy protection, security assurance, fairness, accountability/transparency, and innovation. It does not establish enforcement mechanisms, penalties, or binding compliance deadlines. The document is aspirational and strategic in nature.",
-      "framing_rationale_summary": "The document's core framing centers on human dignity, diversity, inclusion, and fairness as the foundational reasons for AI governance. The title itself—'Human-Centered AI Society Principles'—signals a rights-based orientation. The text explicitly articulates three societal values: dignity (lÔÌ¸µ), diversity & inclusion, and sustainability, with detailed principles on fairness, accountability, privacy, and non-discrimination. Innovation enablement and economic competitiveness (Society 5.0, SDGs) are prominent secondary rationales.",
-      "confidence": 0.775
-    },
-    {
       "document_id": "jp_ai_q_a_pdf_493kb_1812c77d",
       "title": "「農業分野におけるAI・データに関する契約ガイドライン」に関するQ＆A(PDF : 493KB)",
       "publication_date": "2024-03-29",
       "issuing_body": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries, Japan)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
@@ -456,9 +410,11 @@
       "document_id": "jp_ai_senryaku_5eb91d1a",
       "title": "第14回 ＡＩ戦略会議 議事要旨",
       "publication_date": "2025-06-02",
-      "issuing_body": "内閣府・AI戦略会議（Cabinet Office, AI Strategy Council）",
+      "issuing_body": "Cabinet Office / Secretariat of Japan",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
         "innovation_enablement",
@@ -486,6 +442,8 @@
       "issuing_body": "内閣（閣議決定）/ Cabinet of Japan",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
         "innovation_enablement",
@@ -514,6 +472,8 @@
       "issuing_body": "こども家庭庁 (Children and Families Agency, Japan)",
       "document_type": "regulatory_guidance",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
@@ -536,9 +496,11 @@
       "document_id": "jp_content_genai_guidebook_2024",
       "title": "コンテンツ制作のための生成AI利活用ガイドブック",
       "publication_date": "2024-07-05",
-      "issuing_body": "経済産業省（Ministry of Economy, Trade and Industry）",
+      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
       "document_type": "regulatory_guidance",
       "binding_strength": "voluntary_commitment",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "innovation_enablement",
@@ -561,9 +523,11 @@
       "document_id": "jp_genai_privacy_alert_2023",
       "title": "生成AIサービスの利用に関する注意喚起等について",
       "publication_date": "2023-06-02",
-      "issuing_body": "個人情報保護委員会 (Personal Information Protection Commission)",
+      "issuing_body": "Personal Information Protection Commission (PPC)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "innovation_enablement",
@@ -586,9 +550,11 @@
       "document_id": "jp_index_12711198",
       "title": "人工知能技術戦略実行計画",
       "publication_date": "2018-08-17",
-      "issuing_body": "人工知能技術戦略会議（内閣府・総務省・文部科学省・経済産業省等）",
+      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
         "innovation_enablement",
@@ -603,35 +569,14 @@
       "confidence": 0.87
     },
     {
-      "document_id": "jp_jp_bunka_copyright_ai_0a336ada",
-      "title": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について（令和8年3月24日）",
-      "publication_date": "2026-03-25",
-      "issuing_body": "文化庁著作権課著作物流通推進室",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
-      "dominant_frame": "innovation_enablement",
-      "secondary_frames": [
-        "consumer_public_safety"
-      ],
-      "top_requirements": [
-        "registration_licensing",
-        "human_oversight"
-      ],
-      "top_enforcement_mechanisms": [
-        "regulatory_supervision",
-        "reporting_obligation"
-      ],
-      "implementation_notes": "This notice clarifies that on-site inspections and information collection under Copyright Act Articles 104-28(1) and 104-41(1) may be conducted using online meeting systems or other digital technologies when the Commissioner of the Agency for Cultural Affairs deems it necessary, in line with digital reform principles from the Digital Extraordinary Administrative Research Committee.",
-      "framing_rationale_summary": "The document primarily frames copyright law reform in terms of enabling digital transformation and reducing regulatory friction to help individuals and businesses create new value, consistent with Japan's Digital Principles reform agenda. Safety/oversight elements appear as secondary concerns around proper administration of compensation management bodies.",
-      "confidence": 0.775
-    },
-    {
       "document_id": "jp_kaigi_3537a511",
       "title": "ＡＩ戦略 2022",
       "publication_date": "2022-04-22",
       "issuing_body": "統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
         "national_security",
@@ -655,9 +600,11 @@
       "document_id": "jp_medical_digital_data_ai_guideline_2024",
       "title": "医療デジタルデータのAI研究開発等への利活用に係るガイドライン",
       "publication_date": "2024-10-01",
-      "issuing_body": "Ministry of Health, Labour and Welfare (厚生労働省) / Guidelines Drafting Group for AI R&D Utilization of Digital Data",
+      "issuing_body": "Ministry of Health, Labour and Welfare (MHLW)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "economic_competitiveness",
       "secondary_frames": [
         "fundamental_rights",
@@ -680,9 +627,11 @@
       "document_id": "jp_medical_digital_data_ai_guideline_notice_2024",
       "title": "「医療デジタルデータの AI 研究開発等への利活用に係るガイドライン」について",
       "publication_date": "2024-09-30",
-      "issuing_body": "厚生労働省大臣官房厚生科学課・医政局研究開発政策課 (Ministry of Health, Labour and Welfare)",
+      "issuing_body": "Ministry of Health, Labour and Welfare (MHLW)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "consumer_public_safety",
@@ -704,9 +653,11 @@
       "document_id": "jp_medical_digital_data_ai_guideline_points_2024",
       "title": "「医療デジタルデータの AI 研究開発等への利活用に係るガイドライン」の留意点について",
       "publication_date": "2024-12-19",
-      "issuing_body": "厚生労働省大臣官房厚生科学課・医政局研究開発政策課",
+      "issuing_body": "Ministry of Health, Labour and Welfare (MHLW)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "companion_resource",
+      "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "consumer_public_safety",
@@ -732,6 +683,8 @@
       "issuing_body": "文部科学省初等中等教育局",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
@@ -755,9 +708,11 @@
       "document_id": "jp_social_principles_human_centric_ai",
       "title": "Social Principles of Human-Centric AI",
       "publication_date": "2019-02-15",
-      "issuing_body": "Cabinet Office, Government of Japan (AI Strategy Expert Meeting for Strength and Promotion of the Innovation / Council for Social Principles of Human-centric AI)",
+      "issuing_body": "Cabinet Office / Secretariat of Japan",
       "document_type": "strategy_paper",
       "binding_strength": "strategy_statement",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "fundamental_rights",
       "secondary_frames": [
         "social_stability",
@@ -784,6 +739,8 @@
       "issuing_body": "文部科学省 高等教育局 専門教育課・大学教育・入試課 (Ministry of Education, Culture, Sports, Science and Technology)",
       "document_type": "regulatory_guidance",
       "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
       "dominant_frame": "innovation_enablement",
       "secondary_frames": [
         "consumer_public_safety",
@@ -807,530 +764,355 @@
     "document_types": [
       {
         "label": "regulatory_guidance",
-        "count": 19,
-        "share": 0.594
+        "count": 17,
+        "share": 0.607
       },
       {
         "label": "strategy_paper",
-        "count": 8,
+        "count": 7,
         "share": 0.25
-      },
-      {
-        "label": "legislation",
-        "count": 2,
-        "share": 0.062
       },
       {
         "label": "standards_guideline",
         "count": 2,
-        "share": 0.062
+        "share": 0.071
       },
       {
         "label": "executive_order",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
+      },
+      {
+        "label": "legislation",
+        "count": 1,
+        "share": 0.036
       }
     ],
     "binding_strengths": [
       {
         "label": "regulatory_guidance",
-        "count": 14,
-        "share": 0.438
+        "count": 13,
+        "share": 0.464
       },
       {
         "label": "strategy_statement",
-        "count": 9,
-        "share": 0.281
+        "count": 8,
+        "share": 0.286
       },
       {
         "label": "voluntary_commitment",
-        "count": 5,
-        "share": 0.156
+        "count": 4,
+        "share": 0.143
       },
       {
         "label": "binding_law",
-        "count": 2,
-        "share": 0.062
+        "count": 1,
+        "share": 0.036
       },
       {
         "label": "executive_action",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "standards_guideline",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       }
     ],
     "requirements": [
       {
         "label": "transparency_disclosure",
-        "count": 25,
-        "share": 0.781
+        "count": 22,
+        "share": 0.786
       },
       {
         "label": "risk_assessment",
-        "count": 24,
+        "count": 21,
         "share": 0.75
       },
       {
         "label": "human_oversight",
-        "count": 23,
-        "share": 0.719
+        "count": 20,
+        "share": 0.714
       },
       {
         "label": "model_documentation",
         "count": 14,
-        "share": 0.438
+        "share": 0.5
       },
       {
         "label": "access_controls",
-        "count": 13,
-        "share": 0.406
+        "count": 12,
+        "share": 0.429
       },
       {
         "label": "incident_reporting",
-        "count": 10,
-        "share": 0.312
+        "count": 9,
+        "share": 0.321
       },
       {
         "label": "content_provenance",
         "count": 6,
-        "share": 0.188
-      },
-      {
-        "label": "registration_licensing",
-        "count": 5,
-        "share": 0.156
+        "share": 0.214
       },
       {
         "label": "third_party_audit",
         "count": 5,
-        "share": 0.156
+        "share": 0.179
       },
       {
         "label": "pre_deployment_testing",
         "count": 4,
-        "share": 0.125
+        "share": 0.143
       },
       {
         "label": "red_teaming",
         "count": 4,
-        "share": 0.125
+        "share": 0.143
+      },
+      {
+        "label": "registration_licensing",
+        "count": 4,
+        "share": 0.143
       }
     ],
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "count": 29,
-        "share": 0.906
+        "count": 26,
+        "share": 0.929
       },
       {
         "label": "regulatory_supervision",
-        "count": 15,
-        "share": 0.469
+        "count": 13,
+        "share": 0.464
       },
       {
         "label": "reporting_obligation",
-        "count": 9,
-        "share": 0.281
+        "count": 8,
+        "share": 0.286
       },
       {
         "label": "none_specified",
-        "count": 8,
+        "count": 7,
         "share": 0.25
       },
       {
         "label": "procurement_condition",
         "count": 4,
-        "share": 0.125
+        "share": 0.143
       },
       {
         "label": "civil_penalty",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       }
     ],
     "institutions": [
       {
-        "label": "経済産業省",
+        "label": "Ministry of Economy, Trade and Industry (METI)",
+        "count": 10,
+        "share": 0.357
+      },
+      {
+        "label": "Cabinet Office / Secretariat of Japan",
+        "count": 9,
+        "share": 0.321
+      },
+      {
+        "label": "Ministry of Health, Labour and Welfare (MHLW)",
+        "count": 5,
+        "share": 0.179
+      },
+      {
+        "label": "Personal Information Protection Commission (PPC)",
+        "count": 5,
+        "share": 0.179
+      },
+      {
+        "label": "Digital Agency of Japan",
         "count": 4,
-        "share": 0.125
+        "share": 0.143
       },
       {
-        "label": "人工知能戦略本部 (AI Strategy Headquarters)",
-        "count": 3,
-        "share": 0.094
+        "label": "Ministry of Internal Affairs and Communications (MIC)",
+        "count": 4,
+        "share": 0.143
       },
       {
-        "label": "統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)",
-        "count": 3,
-        "share": 0.094
-      },
-      {
-        "label": "Ministry of Economy, Trade and Industry (METI), Japan",
+        "label": "AI Safety Institute (AISI)",
         "count": 2,
-        "share": 0.062
+        "share": 0.071
+      },
+      {
+        "label": "Agency for Cultural Affairs (Japan)",
+        "count": 2,
+        "share": 0.071
       },
       {
         "label": "こども家庭庁 (Children and Families Agency)",
         "count": 2,
-        "share": 0.062
+        "share": 0.071
       },
       {
         "label": "こども家庭庁 (Children and Families Agency, Japan)",
         "count": 2,
-        "share": 0.062
+        "share": 0.071
       },
       {
-        "label": "デジタル庁",
+        "label": "人工知能戦略本部 (AI Strategy Headquarters)",
         "count": 2,
-        "share": 0.062
-      },
-      {
-        "label": "個人情報保護委員会",
-        "count": 2,
-        "share": 0.062
-      },
-      {
-        "label": "個人情報保護委員会 (Personal Information Protection Commission)",
-        "count": 2,
-        "share": 0.062
-      },
-      {
-        "label": "内閣府",
-        "count": 2,
-        "share": 0.062
+        "share": 0.071
       },
       {
         "label": "文部科学省",
         "count": 2,
-        "share": 0.062
-      },
-      {
-        "label": "文部科学省初等中等教育局",
-        "count": 2,
-        "share": 0.062
-      },
-      {
-        "label": "経済産業省（Ministry of Economy, Trade and Industry）",
-        "count": 2,
-        "share": 0.062
-      },
-      {
-        "label": "総務省",
-        "count": 2,
-        "share": 0.062
+        "share": 0.071
       },
       {
         "label": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries)",
         "count": 2,
-        "share": 0.062
-      },
-      {
-        "label": "AI Safety Institute (AISI)",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "AIセーフティ・インスティテュート（AISI）",
-        "count": 1,
-        "share": 0.031
+        "share": 0.071
       },
       {
         "label": "AI戦略本部",
         "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "AI戦略本部（本部長：内閣総理大臣、構成員：全ての国務大臣）",
-        "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "Artificial Intelligence Strategic Headquarters",
         "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "Cabinet Office, Government of Japan",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "Cabinet Office, Government of Japan (AI Strategy Expert Meeting for Strength and Promotion of the Innovation / Council for Social Principles of Human-centric AI)",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "Ministry of Economy, Trade and Industry (METI) - Expert Group on How AI Principles Should be Implemented, AI Governance Guidelines WG",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "Ministry of Economy, Trade and Industry (METI) Expert Group on How AI Principles Should be Implemented",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "Ministry of Health, Labour and Welfare (厚生労働省) / Guidelines Drafting Group for AI R&D Utilization of Digital Data",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "Ministry of Internal Affairs and Communications",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "Ministry of Internal Affairs and Communications / Ministry of Economy, Trade and Industry",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "デジタル庁 (Digital Agency)",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "デジタル庁（Digital Agency）",
-        "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "デジタル社会推進会議幹事会 (Digital Society Promotion Council Executive Committee)",
         "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "人工知能戦略本部 (AI Strategy Headquarters, Cabinet Office, Japan)",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "人工知能技術戦略会議（内閣府・総務省・文部科学省・経済産業省等）",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "個人情報保護委員会（Personal Information Protection Commission）",
-        "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "公正取引委員会",
         "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "内閣府・AI戦略会議（Cabinet Office, AI Strategy Council）",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "内閣府・AI戦略推進関係省庁会議",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "内閣府・日本国政府（国会）",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "内閣府知的財産戦略推進事務局",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "内閣府科学技術・イノベーション推進事務局",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "内閣府（Cabinet Office）",
-        "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "内閣（閣議決定）/ Cabinet of Japan",
         "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "厚生労働省",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "厚生労働省 (Ministry of Health, Labour and Welfare)",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "厚生労働省大臣官房厚生科学課・医政局研究開発政策課",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "厚生労働省大臣官房厚生科学課・医政局研究開発政策課 (Ministry of Health, Labour and Welfare)",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "厚生労働省（Ministry of Health, Labour and Welfare）",
-        "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "国土交通省",
         "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "文化審議会著作権分科会法制度小委員会 (Subcommittee on Legal Systems, Copyright Division, Council for Cultural Affairs, Agency for Cultural Affairs, Japan)",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "文化庁",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "文化庁 (Agency for Cultural Affairs)",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "文化庁著作権課著作物流通推進室",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "文化庁長官",
-        "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "文部科学省 高等教育局 専門教育課・大学教育・入試課 (Ministry of Education, Culture, Sports, Science and Technology)",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
+      },
+      {
+        "label": "文部科学省初等中等教育局",
+        "count": 1,
+        "share": 0.036
       },
       {
         "label": "文部科学省（Ministry of Education, Culture, Sports, Science and Technology）",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "知財総合支援窓口 INPIT (Intellectual Property Support Centers)",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
-        "label": "経済産業省 (METI)",
+        "label": "統合イノベーション戦略推進会議 (Integrated Innovation Strategy Promotion Council)",
         "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "経済産業省 (Ministry of Economy, Trade and Industry, METI)",
-        "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "総務省（Ministry of Internal Affairs and Communications）",
-        "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "警察庁（National Police Agency）",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "農林水産省",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries of Japan)",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "農林水産省 (Ministry of Agriculture, Forestry and Fisheries, Japan)",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "金融庁",
         "count": 1,
-        "share": 0.031
-      },
-      {
-        "label": "関係行政機関",
-        "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "防災担当",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       },
       {
         "label": "防衛省（Ministry of Defense）",
         "count": 1,
-        "share": 0.031
+        "share": 0.036
       }
     ],
     "frames": [
       {
         "label": "innovation_enablement",
-        "score": 15.7,
-        "share": 0.303,
-        "document_mentions": 28
+        "score": 9.126,
+        "share": 0.326,
+        "document_mentions": 25
       },
       {
         "label": "consumer_public_safety",
-        "score": 9.85,
-        "share": 0.19,
-        "document_mentions": 29
+        "score": 6.269,
+        "share": 0.224,
+        "document_mentions": 25
       },
       {
         "label": "fundamental_rights",
-        "score": 8.76,
-        "share": 0.169,
-        "document_mentions": 19
+        "score": 4.999,
+        "share": 0.179,
+        "document_mentions": 18
       },
       {
         "label": "economic_competitiveness",
-        "score": 8.32,
-        "share": 0.16,
-        "document_mentions": 16
+        "score": 3.626,
+        "share": 0.129,
+        "document_mentions": 14
       },
       {
         "label": "social_stability",
-        "score": 3.95,
-        "share": 0.076,
-        "document_mentions": 9
+        "score": 1.565,
+        "share": 0.056,
+        "document_mentions": 8
       },
       {
         "label": "labor_transition",
-        "score": 2.46,
-        "share": 0.047,
+        "score": 1.276,
+        "share": 0.046,
         "document_mentions": 4
       },
       {
         "label": "national_security",
-        "score": 2.24,
-        "share": 0.043,
+        "score": 0.907,
+        "share": 0.032,
         "document_mentions": 5
       },
       {
         "label": "existential_catastrophic",
-        "score": 0.6,
-        "share": 0.012,
+        "score": 0.232,
+        "share": 0.008,
         "document_mentions": 1
       }
     ]

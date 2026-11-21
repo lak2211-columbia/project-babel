@@ -378,24 +378,14 @@ def test_parse_html_artifact_prefers_primary_linked_pdf_for_thin_download_wrappe
         "language": "en",
     }
 
-    class FakeResponse:
-        def __init__(self) -> None:
-            self.headers = {"Content-Type": "application/pdf"}
+    cached_pdf = tmp_path / "linked_source.pdf"
+    cached_pdf.write_bytes(b"%PDF-1.7 fake fixture")
+    metadata["linked_artifact_url"] = "https://example.com/download/118480"
 
-        def read(self) -> bytes:
-            return b"%PDF-1.7 fake fixture"
-
-        def __enter__(self):
-            return self
-
-        def __exit__(self, exc_type, exc, tb) -> None:
-            return None
-
-    monkeypatch.setattr("observatory.parser.urlopen", lambda request, timeout=30: FakeResponse())
     monkeypatch.setattr(
         "observatory.parser.parse_pdf_artifact",
         lambda path, metadata: ParsedDocument(
-            parser_version="0.1.0",
+            parser_version="0.2.0",
             title=metadata["title"],
             language="en",
             document_format="pdf",
@@ -410,7 +400,7 @@ def test_parse_html_artifact_prefers_primary_linked_pdf_for_thin_download_wrappe
 
     assert parsed.document_format == "pdf"
     assert parsed.plain_text == "Full PDF text"
-    assert any(warning.startswith("fetched_linked_artifact:") for warning in parsed.warnings)
+    assert "used_cached_linked_artifact" in parsed.warnings
     assert metadata["linked_artifact_url"] == "https://example.com/download/118480"
 
 
@@ -444,24 +434,14 @@ def test_parse_html_artifact_accepts_europa_cross_host_download_for_official_pdf
         "language": "en",
     }
 
-    class FakeResponse:
-        def __init__(self) -> None:
-            self.headers = {"Content-Type": "application/pdf"}
+    cached_pdf = tmp_path / "linked_source.pdf"
+    cached_pdf.write_bytes(b"%PDF-1.7 fake fixture")
+    metadata["linked_artifact_url"] = "https://ec.europa.eu/newsroom/dae/redirection/document/112455"
 
-        def read(self) -> bytes:
-            return b"%PDF-1.7 fake fixture"
-
-        def __enter__(self):
-            return self
-
-        def __exit__(self, exc_type, exc, tb) -> None:
-            return None
-
-    monkeypatch.setattr("observatory.parser.urlopen", lambda request, timeout=30: FakeResponse())
     monkeypatch.setattr(
         "observatory.parser.parse_pdf_artifact",
         lambda path, metadata: ParsedDocument(
-            parser_version="0.1.0",
+            parser_version="0.2.0",
             title=metadata["title"],
             language="en",
             document_format="pdf",
@@ -476,6 +456,7 @@ def test_parse_html_artifact_accepts_europa_cross_host_download_for_official_pdf
 
     assert parsed.document_format == "pdf"
     assert parsed.plain_text == "Commission guideline PDF"
+    assert "used_cached_linked_artifact" in parsed.warnings
     assert metadata["linked_artifact_url"] == "https://ec.europa.eu/newsroom/dae/redirection/document/112455"
 
 
@@ -520,24 +501,14 @@ def test_parse_html_artifact_download_wrapper_with_long_intro_still_prefers_prim
         "language": "en",
     }
 
-    class FakeResponse:
-        def __init__(self) -> None:
-            self.headers = {"Content-Type": "application/pdf"}
+    cached_pdf = tmp_path / "linked_source.pdf"
+    cached_pdf.write_bytes(b"%PDF-1.7 fake fixture")
+    metadata["linked_artifact_url"] = "https://ec.europa.eu/newsroom/dae/redirection/document/112455"
 
-        def read(self) -> bytes:
-            return b"%PDF-1.7 fake fixture"
-
-        def __enter__(self):
-            return self
-
-        def __exit__(self, exc_type, exc, tb) -> None:
-            return None
-
-    monkeypatch.setattr("observatory.parser.urlopen", lambda request, timeout=30: FakeResponse())
     monkeypatch.setattr(
         "observatory.parser.parse_pdf_artifact",
         lambda path, metadata: ParsedDocument(
-            parser_version="0.1.0",
+            parser_version="0.2.0",
             title=metadata["title"],
             language="en",
             document_format="pdf",
@@ -551,6 +522,7 @@ def test_parse_html_artifact_download_wrapper_with_long_intro_still_prefers_prim
     parsed = parse_html_artifact(artifact, metadata)
 
     assert parsed.document_format == "pdf"
+    assert "used_cached_linked_artifact" in parsed.warnings
     assert metadata["linked_artifact_url"] == "https://ec.europa.eu/newsroom/dae/redirection/document/112455"
 
 
@@ -793,37 +765,22 @@ def test_parse_html_artifact_prefers_linked_hwpx_for_legislative_notice(
         """,
         encoding="utf-8",
     )
-    hwpx_path = tmp_path / "fixture.hwpx"
-    _write_hwpx_fixture(hwpx_path)
-    hwpx_bytes = hwpx_path.read_bytes()
+    linked_hwpx = tmp_path / "linked_source.hwpx"
+    _write_hwpx_fixture(linked_hwpx)
     metadata = {
         "title": "인공지능 기본법 시행령 제정안 입법예고",
         "canonical_url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=84&mId=109&mPid=103&nttSeqNo=3186315&sCode=user",
         "resolved_url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=84&mId=109&mPid=103&nttSeqNo=3186315&sCode=user",
         "artifact_path": str(artifact),
+        "linked_artifact_url": "https://www.msit.go.kr/ssm/file/fileDown.do?atchFileNo=51534&fileOrd=4",
         "language": "ko",
     }
-
-    class FakeResponse:
-        def __init__(self) -> None:
-            self.headers = {"Content-Type": "application/octet-stream"}
-
-        def read(self) -> bytes:
-            return hwpx_bytes
-
-        def __enter__(self):
-            return self
-
-        def __exit__(self, exc_type, exc, tb) -> None:
-            return None
-
-    monkeypatch.setattr("observatory.parser.urlopen", lambda request, timeout=30: FakeResponse())
 
     parsed = parse_html_artifact(artifact, metadata)
 
     assert parsed.document_format == "hwpx"
     assert metadata["linked_artifact_url"] == "https://www.msit.go.kr/ssm/file/fileDown.do?atchFileNo=51534&fileOrd=4"
-    assert any(warning.startswith("fetched_linked_artifact:") for warning in parsed.warnings)
+    assert "used_cached_linked_artifact" in parsed.warnings
 
 
 def test_parse_html_artifact_prefers_linked_odt_for_download_wrapper(
@@ -848,34 +805,19 @@ def test_parse_html_artifact_prefers_linked_odt_for_download_wrapper(
         """,
         encoding="utf-8",
     )
-    odt_path = tmp_path / "fixture.odt"
-    _write_odt_fixture(odt_path)
-    odt_bytes = odt_path.read_bytes()
+    linked_odt = tmp_path / "linked_source.odt"
+    _write_odt_fixture(linked_odt)
     metadata = {
         "title": "Public-sector AI privacy impact assessment items",
         "canonical_url": "https://example.com/library/ai-pia-items",
         "resolved_url": "https://example.com/library/ai-pia-items",
         "artifact_path": str(artifact),
+        "linked_artifact_url": "https://example.com/document/ai-pia-items.odt",
         "language": "en",
     }
-
-    class FakeResponse:
-        def __init__(self) -> None:
-            self.headers = {"Content-Type": "application/octet-stream"}
-
-        def read(self) -> bytes:
-            return odt_bytes
-
-        def __enter__(self):
-            return self
-
-        def __exit__(self, exc_type, exc, tb) -> None:
-            return None
-
-    monkeypatch.setattr("observatory.parser.urlopen", lambda request, timeout=30: FakeResponse())
 
     parsed = parse_html_artifact(artifact, metadata)
 
     assert parsed.document_format == "odt"
     assert metadata["linked_artifact_url"] == "https://example.com/document/ai-pia-items.odt"
-    assert any(warning.startswith("fetched_linked_artifact:") for warning in parsed.warnings)
+    assert "used_cached_linked_artifact" in parsed.warnings

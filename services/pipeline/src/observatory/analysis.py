@@ -1,14 +1,21 @@
 from __future__ import annotations
 
+import inspect
 import json
 import os
+import random
+import re
 import shutil
 import socket
 import time
+import unicodedata
 from collections import Counter, defaultdict
+from collections.abc import Sequence
 from copy import deepcopy
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
+from hashlib import sha256
 from pathlib import Path
 from typing import Any, Protocol
 from urllib.error import HTTPError, URLError
@@ -18,8 +25,10 @@ from pydantic import Field, ValidationError
 
 from observatory.db import PostgresAnalysisStore
 from observatory.models import (
+    AnalysisProvenance,
     DocumentAnalysis,
     EnforcementMechanism,
+    EvidenceSpan,
     JurisdictionAnalysis,
     JurisdictionFrameStat,
     JurisdictionLabelStat,
@@ -29,23 +38,32 @@ from observatory.models import (
     SafetyRequirement,
     StrictBaseModel,
 )
-from observatory.parser import PARSED_DATA_DIR, ParsedDocument
+from observatory.parser import PARSED_DATA_DIR, ParsedDocument, ParsedSection
 from observatory.persistence import (
+    PIPELINE_ANALYSIS_VERSION,
     AnalysisStore,
     build_analysis_persistence_bundle,
     build_jurisdiction_analysis_persistence_bundle,
 )
-from observatory.prompts import load_prompt
-from observatory.source_registry import ROOT, load_all_source_manifests
-from observatory.taxonomy import load_taxonomy
+from observatory.prompts import build_shared_codebook_system_prefix, load_prompt
+from observatory.source_registry import ROOT, SeedDocument, load_all_source_manifests
+from observatory.taxonomy import (
+    get_canonical_thresholds,
+    get_taxonomy_version,
+    load_taxonomy,
+)
+from observatory.url_safety import repo_rel_posix
 
 
 ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
 DEFAULT_ANTHROPIC_VERSION = "2023-06-01"
 DEFAULT_MODEL = "claude-sonnet-4-6"
 DEFAULT_EFFORT = "low"
+DEFAULT_TEMPERATURE = 0.0
 DEFAULT_MAX_RETRIES = 3
-RETRYABLE_HTTP_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
+DEFAULT_REQUEST_TIMEOUT_SECONDS = 600
+RETRYABLE_HTTP_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504, 529}
+MAX_RETRY_AFTER_SECONDS = 60.0
 ANALYSIS_DIR = ROOT / "data" / "analysis"
 RAW_DATA_DIR = ROOT / "data" / "raw"
 UNSUPPORTED_ANTHROPIC_SCHEMA_KEYS = {
@@ -54,9 +72,41 @@ UNSUPPORTED_ANTHROPIC_SCHEMA_KEYS = {
     "exclusiveMinimum",
     "exclusiveMaximum",
 }
-POLICY_METADATA_MAX_CHARS = 14000
-POLICY_CONTROLS_MAX_CHARS = 18000
-RISK_FRAMING_MAX_CHARS = 14000
+
+# Token-aware budgets accounting for CJK (~1.2 chars/token) vs Latin (~3.8 chars/token).
+DIRECT_FULL_TEXT_MAX_TOKENS = 90_000
+CHUNK_MAX_TOKENS = 45_000
+DIRECT_FULL_TEXT_MAX_CHARS = 350_000
+CHUNK_MAX_CHARS = 180_000
+CHUNK_OVERLAP_SECTIONS = 1
+POLICY_METADATA_MAX_CHARS = DIRECT_FULL_TEXT_MAX_CHARS
+POLICY_CONTROLS_MAX_CHARS = DIRECT_FULL_TEXT_MAX_CHARS
+RISK_FRAMING_MAX_CHARS = DIRECT_FULL_TEXT_MAX_CHARS
+
+# Output token budgets (D3): controls budget >= 8192 with 1x escalation retry on max_tokens.
+POLICY_METADATA_MAX_TOKENS = 4096
+POLICY_CONTROLS_MAX_TOKENS = 8192
+RISK_FRAMING_MAX_TOKENS = 4096
+MAX_TOKENS_RETRY_CAP = 16384
+MAX_EVIDENCE_SPANS_PER_LABEL = 2
+MAX_EVIDENCE_SPANS_FRAMING = 6
+MAX_EVIDENCE_QUOTE_CHARS = 400
+OBLIGATION_STRENGTH_RANK = {
+    "mandatory": 4,
+    "conditional": 3,
+    "recommended": 2,
+    "aspirational": 1,
+}
+
+
+class MaxTokensTruncatedError(RuntimeError):
+    """Raised when the Anthropic API truncates a structured response at max_tokens."""
+
+
+class LegacyProvenanceError(ValueError):
+    """Raised when attempting to persist a legacy artifact lacking analysis_metadata without --allow-legacy."""
+
+# Multilingual (EN + ZH + JA + KO) fallback section-scoring keywords for excerpt helpers.
 POLICY_METADATA_KEYWORDS = (
     "scope",
     "purpose",
@@ -75,6 +125,40 @@ POLICY_METADATA_KEYWORDS = (
     "application date",
     "entry into force",
     "effective",
+    # Chinese
+    "适用范围",
+    "目的",
+    "定义",
+    "提供者",
+    "使用者",
+    "主管部门",
+    "法律责任",
+    "处罚",
+    "罚款",
+    "施行",
+    "有效期",
+    # Japanese
+    "目的",
+    "定義",
+    "対象",
+    "事業者",
+    "開発者",
+    "提供者",
+    "利用者",
+    "主務大臣",
+    "罰則",
+    "施行",
+    # Korean
+    "목적",
+    "정의",
+    "적용범위",
+    "사업자",
+    "개발사업자",
+    "이용사업자",
+    "과태료",
+    "벌칙",
+    "시행일",
+    "과학기술정보통신부",
 )
 POLICY_CONTROLS_KEYWORDS = (
     "risk management",
@@ -99,6 +183,53 @@ POLICY_CONTROLS_KEYWORDS = (
     "enforcement",
     "inspection",
     "certification",
+    "watermark",
+    "agentic",
+    "training data",
+    "open-weight",
+    "representative",
+    # Chinese
+    "风险评估",
+    "安全评估",
+    "备案",
+    "标识",
+    "监督检查",
+    "审计",
+    "监测",
+    "报告",
+    "透明",
+    "训练数据",
+    "禁止",
+    "算法",
+    "人工干预",
+    "安全测试",
+    # Japanese
+    "リスク評価",
+    "安全性評価",
+    "透明性",
+    "説明責任",
+    "監査",
+    "レッドチーム",
+    "インシデント",
+    "報告",
+    "学習データ",
+    "人間中心",
+    "監督",
+    "検証",
+    # Korean
+    "위험관리",
+    "영향평가",
+    "안전성",
+    "투명성",
+    "고지",
+    "표시",
+    "신고",
+    "감독",
+    "시정명령",
+    "국내대리인",
+    "고영향",
+    "검증",
+    "레드팀",
 )
 RISK_FRAMING_KEYWORDS = (
     "security",
@@ -117,15 +248,47 @@ RISK_FRAMING_KEYWORDS = (
     "harm",
     "human dignity",
     "economic growth",
+    "catastrophic",
+    "workforce",
+    "labor",
+    # Chinese
+    "国家安全",
+    "社会稳定",
+    "公共秩序",
+    "社会主义核心价值观",
+    "创新发展",
+    "合法权益",
+    "竞争力",
+    "公共利益",
+    "安全可控",
+    # Japanese
+    "イノベーション",
+    "国際競争力",
+    "人間中心",
+    "基本的人権",
+    "安全保障",
+    "信頼",
+    "経済成長",
+    "社会課題",
+    # Korean
+    "국가경쟁력",
+    "혁신",
+    "신뢰",
+    "기본권",
+    "국민의 안전",
+    "국가안보",
+    "공공의 안녕",
+    "산업 진흥",
 )
+
 LOW_FIDELITY_PARSER_WARNINGS = {
     "image_only_html_content",
     "empty_html_after_cleaning",
 }
 MIN_ANALYSIS_NON_WHITESPACE_CHARS = 160
 MIN_SUBSTANTIVE_SECTION_CHARS = 40
-JURISDICTION_ANALYSIS_VERSION = "0.1.0"
-JURISDICTION_ANALYSIS_METHOD = "deterministic_v1"
+JURISDICTION_ANALYSIS_VERSION = "0.2.0"
+JURISDICTION_ANALYSIS_METHOD = "deterministic_v2"
 JURISDICTION_DISPLAY_NAMES = {
     "united_states": "United States",
     "european_union": "European Union",
@@ -172,6 +335,11 @@ LABEL_TEXT = {
     "content_provenance": "content provenance",
     "human_oversight": "human oversight",
     "registration_licensing": "registration or licensing",
+    "agentic_autonomy_controls": "agentic autonomy controls",
+    "training_data_governance": "training data governance",
+    "frontier_safety_evaluation": "frontier safety evaluation",
+    "open_weight_obligations": "open-weight obligations",
+    "domestic_representative": "domestic representative",
     "civil_penalty": "civil penalties",
     "criminal_penalty": "criminal penalties",
     "market_access_restriction": "market-access restrictions",
@@ -198,6 +366,88 @@ SOURCE_SALIENCE_WEIGHT = {
     "strategy_statement": 2.8,
     "voluntary_commitment": 2.4,
 }
+NON_STATUTORY_TITLE_MARKERS = (
+    "faq",
+    "q&a",
+    "questions and answers",
+    "questions & answers",
+    "答记者问",
+    "질의응답",
+    "overview",
+    "press release",
+    "draft notice",
+    "입법예고",
+    "행정예고",
+    "public consultation",
+    "征求意见",
+    "vademecum",
+    "template",
+    "interpretation",
+    "解读",
+)
+
+# Jurisdiction-scoped canonical institution alias rules: (pattern, canonical_name, allowed_jurisdictions).
+# Ambiguous acronyms/terms like `\bmost\b` and `State Council` are strictly scoped to their jurisdiction (D9).
+INSTITUTION_ALIAS_RULES: tuple[tuple[re.Pattern[str], str, frozenset[str] | None], ...] = (
+    (re.compile(r"\bnist\b|national institute of standards and technology", re.IGNORECASE), "National Institute of Standards and Technology (NIST)", frozenset({"united_states"})),
+    (re.compile(r"\bwhite house\b|\bexecutive office of the president\b|\bpresident of the united states\b", re.IGNORECASE), "The White House", frozenset({"united_states"})),
+    (re.compile(r"\bomb\b|office of management and budget", re.IGNORECASE), "Office of Management and Budget (OMB)", frozenset({"united_states"})),
+    (re.compile(r"\bostp\b|office of science and technology policy", re.IGNORECASE), "Office of Science and Technology Policy (OSTP)", frozenset({"united_states"})),
+    (re.compile(r"\bftc\b|federal trade commission", re.IGNORECASE), "Federal Trade Commission (FTC)", frozenset({"united_states"})),
+    (re.compile(r"\bfda\b|food and drug administration", re.IGNORECASE), "Food and Drug Administration (FDA)", frozenset({"united_states"})),
+    (re.compile(r"\bcfpb\b|consumer financial protection bureau", re.IGNORECASE), "Consumer Financial Protection Bureau (CFPB)", frozenset({"united_states"})),
+    (re.compile(r"\bntia\b|national telecommunications and information administration", re.IGNORECASE), "National Telecommunications and Information Administration (NTIA)", frozenset({"united_states"})),
+    (re.compile(r"european commission|\bai office\b|european ai office", re.IGNORECASE), "European Commission (AI Office)", frozenset({"european_union"})),
+    (re.compile(r"\bai board\b|european artificial intelligence board", re.IGNORECASE), "European Artificial Intelligence Board (AI Board)", frozenset({"european_union"})),
+    (re.compile(r"european parliament|council of the european union", re.IGNORECASE), "European Parliament and Council", frozenset({"european_union"})),
+    (re.compile(r"\bedpb\b|european data protection board", re.IGNORECASE), "European Data Protection Board (EDPB)", frozenset({"european_union"})),
+    (re.compile(r"\bmsit\b|ministry of science and ict|과학기술정보통신부", re.IGNORECASE), "Ministry of Science and ICT (MSIT)", frozenset({"south_korea"})),
+    (re.compile(r"\bpipc\b|개인정보\s*보호\s*위원회|personal information protection commission.*korea", re.IGNORECASE), "Personal Information Protection Commission (PIPC)", frozenset({"south_korea"})),
+    (re.compile(r"personal information protection commission.*japan|個人情報保護委員会|\bppc\b", re.IGNORECASE), "Personal Information Protection Commission (PPC)", frozenset({"japan"})),
+    (re.compile(r"\bmeti\b|ministry of economy,?\s*trade and industry|経済産業省", re.IGNORECASE), "Ministry of Economy, Trade and Industry (METI)", frozenset({"japan"})),
+    (re.compile(r"\bmic\b|ministry of internal affairs and communications|総務省", re.IGNORECASE), "Ministry of Internal Affairs and Communications (MIC)", frozenset({"japan"})),
+    (re.compile(r"cabinet office|内閣府|cabinet secretariat|内閣官房", re.IGNORECASE), "Cabinet Office / Secretariat of Japan", frozenset({"japan"})),
+    (re.compile(r"digital agency|デジタル庁", re.IGNORECASE), "Digital Agency of Japan", frozenset({"japan"})),
+    (re.compile(r"\bmhlw\b|ministry of health,?\s*labour and welfare|厚生労働省", re.IGNORECASE), "Ministry of Health, Labour and Welfare (MHLW)", frozenset({"japan"})),
+    (re.compile(r"agency for cultural affairs|文化庁", re.IGNORECASE), "Agency for Cultural Affairs (Japan)", frozenset({"japan"})),
+    (re.compile(r"\baisi\b|ai safety institute", re.IGNORECASE), "AI Safety Institute (AISI)", None),
+    (re.compile(r"\bcac\b|cyberspace administration of china|国家互联网信息办公室|中央网信办", re.IGNORECASE), "Cyberspace Administration of China (CAC)", frozenset({"china"})),
+    (re.compile(r"\bmost\b|ministry of science and technology|科学技术部|科技部", re.IGNORECASE), "Ministry of Science and Technology (MOST)", frozenset({"china"})),
+    (re.compile(r"\btc260\b|全国网络安全标准化技术委员会|全国信息安全标准化技术委员会", re.IGNORECASE), "TC260 (National Cybersecurity Standardization Technical Committee)", frozenset({"china"})),
+    (re.compile(r"state council|国务院", re.IGNORECASE), "State Council of China", frozenset({"china"})),
+    (re.compile(r"\bmiit\b|ministry of industry and information technology|工业和信息化部", re.IGNORECASE), "Ministry of Industry and Information Technology (MIIT)", frozenset({"china"})),
+    (re.compile(r"\bnmpa\b|national medical products administration|国家药监局|国家药品监督管理局", re.IGNORECASE), "National Medical Products Administration (NMPA)", frozenset({"china"})),
+)
+
+# Patterns that are too ambiguous in English to match without an explicit jurisdiction match.
+JURISDICTION_REQUIRED_ALIAS_CANONICALS = frozenset(
+    {
+        "Ministry of Science and Technology (MOST)",
+        "State Council of China",
+    }
+)
+
+# Model token rates (USD per 1M tokens) for observability cost estimation.
+MODEL_COST_PER_MILLION = {
+    "input": 3.0,
+    "output": 15.0,
+    "cache_creation": 3.75,
+    "cache_read": 0.30,
+}
+
+POLICY_METADATA_FOCUS_INSTRUCTIONS = (
+    "Extract only the document-level policy metadata, scope, dates, authorities, deadlines, "
+    "and implementation notes. Do not include safety requirement or enforcement mechanism arrays."
+)
+POLICY_CONTROLS_FOCUS_INSTRUCTIONS = (
+    "Extract only the named safety requirements and enforcement mechanisms. "
+    "Use conservative labels and provide verbatim original-language evidence spans for each item."
+)
+RISK_FRAMING_FOCUS_INSTRUCTIONS = (
+    "Focus on the document's stated reasons for AI governance, especially rights, security, "
+    "competition, innovation, public-order, and societal-risk language. Provide calibrated scores "
+    "for all eight risk frames."
+)
 
 
 class StructuredOutputClient(Protocol):
@@ -218,6 +468,7 @@ class ParsedDocumentRecord:
     parsed_path: Path
     parsed_document: ParsedDocument
     raw_metadata: dict[str, Any]
+    seed_document: SeedDocument | None = None
 
 
 @dataclass
@@ -240,12 +491,65 @@ class PolicyMetadataExtraction(StrictBaseModel):
     compliance_deadlines: list[str] = Field(default_factory=list)
     penalties_summary: str | None = None
     implementation_notes: str | None = None
-    confidence: float
+    confidence: float = Field(ge=0.0, le=1.0)
 
 
 class PolicyControlsExtraction(StrictBaseModel):
     safety_requirements: list[SafetyRequirement] = Field(default_factory=list)
     enforcement_mechanisms: list[EnforcementMechanism] = Field(default_factory=list)
+
+
+def _retry_delay_seconds(attempt: int, retry_after_header: str | None = None) -> float:
+    if retry_after_header:
+        cleaned = retry_after_header.strip()
+        try:
+            seconds = float(cleaned)
+            if seconds >= 0:
+                return min(seconds, MAX_RETRY_AFTER_SECONDS)
+        except ValueError:
+            try:
+                target_dt = parsedate_to_datetime(cleaned)
+                if target_dt.tzinfo is None:
+                    target_dt = target_dt.replace(tzinfo=timezone.utc)
+                delta = (target_dt - datetime.now(timezone.utc)).total_seconds()
+                if delta > 0:
+                    return min(delta, MAX_RETRY_AFTER_SECONDS)
+            except (TypeError, ValueError, OverflowError):
+                pass
+    return float(min(2 ** (attempt - 1), 8))
+
+
+def _estimate_usage_cost_usd(usage: dict[str, Any]) -> float:
+    input_tokens = int(usage.get("input_tokens") or 0)
+    output_tokens = int(usage.get("output_tokens") or 0)
+    cache_creation = int(usage.get("cache_creation_input_tokens") or 0)
+    cache_read = int(usage.get("cache_read_input_tokens") or 0)
+    cost = (
+        (input_tokens / 1_000_000) * MODEL_COST_PER_MILLION["input"]
+        + (output_tokens / 1_000_000) * MODEL_COST_PER_MILLION["output"]
+        + (cache_creation / 1_000_000) * MODEL_COST_PER_MILLION["cache_creation"]
+        + (cache_read / 1_000_000) * MODEL_COST_PER_MILLION["cache_read"]
+    )
+    return round(cost, 6)
+
+
+def _accumulate_usage(responses: Sequence[dict[str, Any]]) -> dict[str, Any]:
+    totals = {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+    }
+    for response in responses:
+        usage = response.get("usage") if isinstance(response, dict) else None
+        if not isinstance(usage, dict):
+            continue
+        for key in totals:
+            totals[key] += int(usage.get(key) or 0)
+    return {
+        **totals,
+        "estimated_cost_usd": _estimate_usage_cost_usd(totals),
+    }
 
 
 class ClaudeAPIClient:
@@ -257,16 +561,22 @@ class ClaudeAPIClient:
         api_key: str | None = None,
         model: str | None = None,
         effort: str | None = None,
+        temperature: float | None = DEFAULT_TEMPERATURE,
         anthropic_version: str = DEFAULT_ANTHROPIC_VERSION,
         max_retries: int = DEFAULT_MAX_RETRIES,
+        timeout_seconds: int = DEFAULT_REQUEST_TIMEOUT_SECONDS,
+        enable_prompt_caching: bool = True,
     ) -> None:
         self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
         if not self.api_key:
             raise ValueError("ANTHROPIC_API_KEY is required")
         self.model = model or os.getenv("ANTHROPIC_MODEL", DEFAULT_MODEL)
         self.effort = effort or os.getenv("ANTHROPIC_EFFORT", DEFAULT_EFFORT)
+        self.temperature = temperature
         self.anthropic_version = anthropic_version
         self.max_retries = max(max_retries, 1)
+        self.timeout_seconds = max(int(timeout_seconds), 1)
+        self.enable_prompt_caching = enable_prompt_caching
 
     def create_json_response(
         self,
@@ -275,13 +585,71 @@ class ClaudeAPIClient:
         user_prompt: str,
         schema: dict[str, Any],
         max_tokens: int,
+        system_prefix: str | None = None,
+        cached_document_context: str | None = None,
     ) -> tuple[dict[str, Any], dict[str, Any]]:
         sanitized_schema = _sanitize_schema_for_anthropic(schema)
-        payload = {
+        if self.enable_prompt_caching:
+            if system_prefix is not None and cached_document_context is not None:
+                # D8: Keep `system` and `messages[0].content[0]` strictly byte-identical across
+                # all 3 calls per chunk so Anthropic's sequential prefix cache hits BOTH breakpoints;
+                # place the varying task-specific `system_prompt` AFTER the cached document block.
+                system_field: Any = [
+                    {
+                        "type": "text",
+                        "text": system_prefix,
+                        "cache_control": {"type": "ephemeral"},
+                    }
+                ]
+                user_content: Any = [
+                    {
+                        "type": "text",
+                        "text": cached_document_context,
+                        "cache_control": {"type": "ephemeral"},
+                    },
+                    {"type": "text", "text": f"{system_prompt}\n\n{user_prompt}"},
+                ]
+            elif system_prefix is not None:
+                system_field = [
+                    {
+                        "type": "text",
+                        "text": system_prefix,
+                        "cache_control": {"type": "ephemeral"},
+                    },
+                    {
+                        "type": "text",
+                        "text": system_prompt,
+                    },
+                ]
+                user_content = user_prompt
+            else:
+                system_field = [
+                    {
+                        "type": "text",
+                        "text": system_prompt,
+                        "cache_control": {"type": "ephemeral"},
+                    }
+                ]
+                if cached_document_context is not None:
+                    user_content = [
+                        {
+                            "type": "text",
+                            "text": cached_document_context,
+                            "cache_control": {"type": "ephemeral"},
+                        },
+                        {"type": "text", "text": user_prompt},
+                    ]
+                else:
+                    user_content = user_prompt
+        else:
+            system_field = f"{system_prefix}\n\n{system_prompt}" if system_prefix else system_prompt
+            user_content = f"{cached_document_context}\n\n{user_prompt}" if cached_document_context else user_prompt
+
+        payload: dict[str, Any] = {
             "model": self.model,
             "max_tokens": max_tokens,
-            "system": system_prompt,
-            "messages": [{"role": "user", "content": user_prompt}],
+            "system": system_field,
+            "messages": [{"role": "user", "content": user_content}],
             "output_config": {
                 "effort": self.effort,
                 "format": {
@@ -290,6 +658,9 @@ class ClaudeAPIClient:
                 },
             },
         }
+        if self.temperature is not None:
+            payload["temperature"] = self.temperature
+
         request = Request(
             ANTHROPIC_API_URL,
             data=json.dumps(payload).encode("utf-8"),
@@ -303,28 +674,34 @@ class ClaudeAPIClient:
         response_payload: dict[str, Any] | None = None
         for attempt in range(1, self.max_retries + 1):
             try:
-                with urlopen(request, timeout=120) as response:
+                with urlopen(request, timeout=self.timeout_seconds) as response:
                     response_payload = json.load(response)
                 break
             except HTTPError as exc:
                 message = exc.read().decode("utf-8", errors="ignore")
+                retry_after = exc.headers.get("Retry-After") if exc.headers else None
                 if exc.code in RETRYABLE_HTTP_STATUS_CODES and attempt < self.max_retries:
-                    time.sleep(min(2 ** (attempt - 1), 8))
+                    time.sleep(_retry_delay_seconds(attempt, retry_after))
                     continue
                 raise RuntimeError(f"Anthropic API HTTP {exc.code}: {message}") from exc
             except (TimeoutError, socket.timeout) as exc:
                 if attempt < self.max_retries:
-                    time.sleep(min(2 ** (attempt - 1), 8))
+                    time.sleep(_retry_delay_seconds(attempt))
                     continue
-                raise RuntimeError("Anthropic API request timed out") from exc
+                raise RuntimeError(f"Anthropic API request timed out after {self.timeout_seconds}s") from exc
             except URLError as exc:
                 if attempt < self.max_retries:
-                    time.sleep(min(2 ** (attempt - 1), 8))
+                    time.sleep(_retry_delay_seconds(attempt))
                     continue
                 raise RuntimeError(f"Anthropic API network error: {exc.reason}") from exc
 
         if response_payload is None:
             raise RuntimeError("Anthropic API request failed without a response payload")
+
+        if response_payload.get("stop_reason") == "max_tokens":
+            raise MaxTokensTruncatedError(
+                f"Anthropic API response truncated at max_tokens={max_tokens}"
+            )
 
         text_blocks = [
             block.get("text", "")
@@ -349,6 +726,8 @@ def _primary_language(record: ParsedDocumentRecord) -> str:
         primary = metadata_languages[0]
         if isinstance(primary, str) and primary:
             return primary
+    if record.seed_document and record.seed_document.languages:
+        return record.seed_document.languages[0]
     return "unknown"
 
 
@@ -356,6 +735,8 @@ def _source_url(record: ParsedDocumentRecord) -> str:
     candidate = record.raw_metadata.get("source_url") or record.raw_metadata.get("canonical_url")
     if isinstance(candidate, str) and candidate:
         return candidate
+    if record.seed_document is not None:
+        return str(record.seed_document.canonical_url)
     return "unknown"
 
 
@@ -363,12 +744,12 @@ def _load_parsed_document_records(
     jurisdiction: str | None = None,
     document_id: str | None = None,
 ) -> list[ParsedDocumentRecord]:
-    allowed_documents_by_jurisdiction: dict[str, set[str]] = {}
+    allowed_documents_by_jurisdiction: dict[str, dict[str, SeedDocument]] = {}
     for manifest in load_all_source_manifests():
         if jurisdiction is not None and manifest.jurisdiction != jurisdiction:
             continue
         allowed_documents_by_jurisdiction[manifest.jurisdiction] = {
-            document.id for document in manifest.seed_documents
+            document.id: document for document in manifest.seed_documents
         }
 
     records: list[ParsedDocumentRecord] = []
@@ -382,7 +763,8 @@ def _load_parsed_document_records(
             continue
         if document_id is not None and doc_id != document_id:
             continue
-        if doc_id not in allowed_documents_by_jurisdiction.get(doc_jurisdiction, set()):
+        seed_map = allowed_documents_by_jurisdiction.get(doc_jurisdiction, {})
+        if doc_id not in seed_map:
             continue
 
         metadata_path = RAW_DATA_DIR / doc_jurisdiction / doc_id / "metadata.json"
@@ -398,10 +780,55 @@ def _load_parsed_document_records(
                 parsed_path=parsed_path,
                 parsed_document=parsed_document,
                 raw_metadata=raw_metadata,
+                seed_document=seed_map[doc_id],
             )
         )
 
     return records
+
+
+def _strip_pipeline_only_span_fields(
+    schema: dict[str, Any],
+    *,
+    include_frame_enum: list[str] | None = None,
+) -> None:
+    defs = schema.get("$defs")
+    if not isinstance(defs, dict):
+        return
+    span_def = defs.get("EvidenceSpan")
+    if not isinstance(span_def, dict):
+        return
+    props = span_def.get("properties")
+    if not isinstance(props, dict):
+        return
+    for pipeline_field in ("grounding_status", "start_char", "end_char"):
+        props.pop(pipeline_field, None)
+    if include_frame_enum is not None:
+        props["frame"] = {
+            "anyOf": [
+                {"enum": include_frame_enum, "type": "string"},
+                {"type": "null"},
+            ]
+        }
+    else:
+        props.pop("frame", None)
+
+
+def _inject_obligation_strength_enum(schema: dict[str, Any], allowed_values: list[str]) -> None:
+    defs = schema.get("$defs")
+    if not isinstance(defs, dict):
+        return
+    req_def = defs.get("SafetyRequirement")
+    if not isinstance(req_def, dict):
+        return
+    props = req_def.get("properties")
+    if isinstance(props, dict) and "obligation_strength" in props:
+        props["obligation_strength"] = {
+            "anyOf": [
+                {"enum": allowed_values, "type": "string"},
+                {"type": "null"},
+            ]
+        }
 
 
 def _policy_extraction_schema() -> dict[str, Any]:
@@ -422,6 +849,9 @@ def _policy_extraction_schema() -> dict[str, Any]:
         array_field="enforcement_mechanisms",
         allowed_values=taxonomy["enforcement_mechanisms"],
     )
+    if "obligation_strengths" in taxonomy:
+        _inject_obligation_strength_enum(schema, taxonomy["obligation_strengths"])
+    _strip_pipeline_only_span_fields(schema, include_frame_enum=None)
     return schema
 
 
@@ -448,6 +878,9 @@ def _policy_controls_schema() -> dict[str, Any]:
         array_field="enforcement_mechanisms",
         allowed_values=taxonomy["enforcement_mechanisms"],
     )
+    if "obligation_strengths" in taxonomy:
+        _inject_obligation_strength_enum(schema, taxonomy["obligation_strengths"])
+    _strip_pipeline_only_span_fields(schema, include_frame_enum=None)
     return schema
 
 
@@ -457,7 +890,7 @@ def _risk_framing_schema() -> dict[str, Any]:
     properties = schema["properties"]
     properties["dominant_frame"]["enum"] = taxonomy["risk_framings"]
     properties["secondary_frames"]["items"]["enum"] = taxonomy["risk_framings"]
-    properties["frame_confidence"] = {
+    closed_frame_map = {
         "type": "object",
         "properties": {
             frame: {
@@ -465,9 +898,14 @@ def _risk_framing_schema() -> dict[str, Any]:
             }
             for frame in taxonomy["risk_framings"]
         },
+        "required": list(taxonomy["risk_framings"]),
         "additionalProperties": False,
-        "default": {},
     }
+    properties["frame_confidence"] = closed_frame_map
+    properties["frame_share"] = deepcopy(closed_frame_map)
+    if "frame_share" not in schema.get("required", []):
+        schema.setdefault("required", []).append("frame_share")
+    _strip_pipeline_only_span_fields(schema, include_frame_enum=taxonomy["risk_framings"])
     return schema
 
 
@@ -492,6 +930,30 @@ def _inject_enum_into_array_item_label(
     defs[ref_key]["properties"]["label"]["enum"] = allowed_values
 
 
+def normalize_frame_confidence(
+    frame_confidence: dict[str, float],
+    *,
+    valid_frames: Sequence[str] | None = None,
+    dominant_frame: str | None = None,
+) -> dict[str, float]:
+    """Return an L1-normalized distribution over all canonical frames summing to 1.0."""
+    frames = list(valid_frames) if valid_frames is not None else load_taxonomy()["risk_framings"]
+    cleaned: dict[str, float] = {}
+    for frame in frames:
+        raw = frame_confidence.get(frame, 0.0)
+        score = float(raw) if isinstance(raw, (int, float)) and raw == raw else 0.0
+        cleaned[frame] = min(max(score, 0.0), 1.0)
+
+    total = sum(cleaned.values())
+    if total <= 0.0:
+        if dominant_frame and dominant_frame in cleaned:
+            cleaned[dominant_frame] = 1.0
+            return cleaned
+        return cleaned
+
+    return {frame: score / total for frame, score in cleaned.items()}
+
+
 def _validate_taxonomy_alignment(
     extraction: PolicyExtraction,
     framing: RiskFramingAnalysis,
@@ -503,24 +965,91 @@ def _validate_taxonomy_alignment(
         raise ValueError(f"unknown document type label '{extraction.document_type}'")
     if extraction.binding_strength not in taxonomy["binding_strength"]:
         raise ValueError(f"unknown binding strength label '{extraction.binding_strength}'")
+
+    seen_domains: set[str] = set()
     for domain in extraction.covered_application_domains:
         if domain not in taxonomy["application_domains"]:
             raise ValueError(f"unknown application domain label '{domain}'")
+        if domain in seen_domains:
+            raise ValueError(f"duplicate application domain label '{domain}'")
+        seen_domains.add(domain)
+
+    valid_obligation_strengths = set(taxonomy.get("obligation_strengths", []))
+    seen_requirements: set[str] = set()
     for requirement in extraction.safety_requirements:
         if requirement.label not in taxonomy["policy_requirements"]:
             raise ValueError(f"unknown safety requirement label '{requirement.label}'")
+        if requirement.label in seen_requirements:
+            raise ValueError(f"duplicate safety requirement label '{requirement.label}'")
+        if (
+            requirement.obligation_strength is not None
+            and valid_obligation_strengths
+            and requirement.obligation_strength not in valid_obligation_strengths
+        ):
+            raise ValueError(
+                f"unknown obligation_strength '{requirement.obligation_strength}' "
+                f"for requirement '{requirement.label}'"
+            )
+        if not requirement.evidence or not any(span.quote.strip() for span in requirement.evidence):
+            raise ValueError(f"safety requirement '{requirement.label}' must include at least one evidence span")
+        seen_requirements.add(requirement.label)
+
+    seen_mechanisms: set[str] = set()
     for mechanism in extraction.enforcement_mechanisms:
         if mechanism.label not in taxonomy["enforcement_mechanisms"]:
             raise ValueError(f"unknown enforcement mechanism label '{mechanism.label}'")
+        if mechanism.label in seen_mechanisms:
+            raise ValueError(f"duplicate enforcement mechanism label '{mechanism.label}'")
+        if not mechanism.evidence or not any(span.quote.strip() for span in mechanism.evidence):
+            raise ValueError(f"enforcement mechanism '{mechanism.label}' must include at least one evidence span")
+        seen_mechanisms.add(mechanism.label)
+
     valid_frames = set(taxonomy["risk_framings"])
     if framing.dominant_frame not in valid_frames:
         raise ValueError(f"unknown dominant frame label '{framing.dominant_frame}'")
+
+    seen_secondary: set[str] = set()
     for frame in framing.secondary_frames:
         if frame not in valid_frames:
             raise ValueError(f"unknown secondary frame label '{frame}'")
-    for frame in framing.frame_confidence:
+        if frame == framing.dominant_frame:
+            raise ValueError(f"dominant frame '{frame}' must not also appear in secondary_frames")
+        if frame in seen_secondary:
+            raise ValueError(f"duplicate secondary frame label '{frame}'")
+        seen_secondary.add(frame)
+
+    for frame, score in framing.frame_confidence.items():
         if frame not in valid_frames:
             raise ValueError(f"unknown frame confidence label '{frame}'")
+        if score < 0.0 or score > 1.0:
+            raise ValueError(f"frame confidence score for '{frame}' out of bounds: {score}")
+
+    if framing.frame_share is not None:
+        for frame, share in framing.frame_share.items():
+            if frame not in valid_frames:
+                raise ValueError(f"unknown frame_share label '{frame}'")
+            if share < 0.0 or share > 1.0:
+                raise ValueError(f"frame_share value for '{frame}' out of bounds: {share}")
+
+    for span in framing.evidence_spans:
+        if span.frame is not None and span.frame not in valid_frames:
+            raise ValueError(f"unknown evidence span frame label '{span.frame}'")
+
+    if framing.frame_confidence:
+        if framing.dominant_frame not in framing.frame_confidence:
+            raise ValueError(
+                f"dominant frame '{framing.dominant_frame}' is missing from frame_confidence"
+            )
+        dominant_score = framing.frame_confidence[framing.dominant_frame]
+        highest_frame, highest_score = max(
+            framing.frame_confidence.items(),
+            key=lambda item: item[1],
+        )
+        if highest_score > dominant_score + 1e-9:
+            raise ValueError(
+                f"dominant frame '{framing.dominant_frame}' ({dominant_score}) "
+                f"is scored below '{highest_frame}' ({highest_score})"
+            )
 
 
 def _build_system_prompt(prompt_filename: str, schema: dict[str, Any]) -> str:
@@ -543,6 +1072,38 @@ def _build_task_system_prompt(
     return f"{_build_system_prompt(prompt_filename, schema)}\n\nTask focus:\n{focus_instructions}"
 
 
+def _build_analysis_prompts() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any], str, str, str, str]:
+    """Single source of truth for schemas, shared cacheable codebook prefix, and task prompts (D2 + D8)."""
+    metadata_schema = _policy_metadata_schema()
+    controls_schema = _policy_controls_schema()
+    framing_schema = _risk_framing_schema()
+    shared_system_prefix = build_shared_codebook_system_prefix()
+    metadata_system_prompt = _build_task_system_prompt(
+        "structured_extraction.md",
+        metadata_schema,
+        focus_instructions=POLICY_METADATA_FOCUS_INSTRUCTIONS,
+    )
+    controls_system_prompt = _build_task_system_prompt(
+        "structured_extraction.md",
+        controls_schema,
+        focus_instructions=POLICY_CONTROLS_FOCUS_INSTRUCTIONS,
+    )
+    framing_system_prompt = _build_task_system_prompt(
+        "risk_framing_analysis.md",
+        framing_schema,
+        focus_instructions=RISK_FRAMING_FOCUS_INSTRUCTIONS,
+    )
+    return (
+        metadata_schema,
+        controls_schema,
+        framing_schema,
+        shared_system_prefix,
+        metadata_system_prompt,
+        controls_system_prompt,
+        framing_system_prompt,
+    )
+
+
 def _sanitize_schema_for_anthropic(schema: dict[str, Any]) -> dict[str, Any]:
     def sanitize(value: Any) -> Any:
         if isinstance(value, dict):
@@ -559,17 +1120,42 @@ def _sanitize_schema_for_anthropic(schema: dict[str, Any]) -> dict[str, Any]:
     return sanitize(deepcopy(schema))
 
 
-def _build_user_prompt(record: ParsedDocumentRecord, *, excerpt: str, task_label: str) -> str:
-    return (
+def _build_document_context_block(
+    record: ParsedDocumentRecord,
+    *,
+    excerpt: str,
+    chunk_note: str | None = None,
+) -> str:
+    header = (
         f"Document ID: {record.document_id}\n"
         f"Jurisdiction: {record.jurisdiction}\n"
         f"Title: {record.raw_metadata.get('title', record.parsed_document.title)}\n"
         f"Language: {_primary_language(record)}\n"
         f"Source URL: {_source_url(record)}\n"
-        f"Task: {task_label}\n\n"
-        "Document excerpt selected for this task:\n"
-        f"{excerpt}"
     )
+    if chunk_note:
+        header += f"Chunk: {chunk_note}\n"
+    return f"{header}\nDocument text:\n{excerpt}"
+
+
+def _build_user_prompt(
+    record: ParsedDocumentRecord,
+    *,
+    excerpt: str,
+    task_label: str,
+    chunk_note: str | None = None,
+) -> str:
+    context_block = _build_document_context_block(record, excerpt=excerpt, chunk_note=chunk_note)
+    return f"{context_block}\n\nTask: {task_label}"
+
+
+def _build_task_trigger_prompt(task_label: str, *, chunk_note: str | None = None) -> str:
+    if chunk_note:
+        return (
+            f"Execute task `{task_label}` strictly on chunk {chunk_note} of the document provided above. "
+            "Do not extrapolate from unprovided chunks."
+        )
+    return f"Execute task `{task_label}` on the document provided above."
 
 
 def _normalize_excerpt_text(value: str) -> str:
@@ -588,7 +1174,156 @@ def _truncate_excerpt(value: str, max_chars: int) -> str:
 
 def _section_score(text: str, keywords: tuple[str, ...]) -> int:
     lowered = text.lower()
-    return sum(lowered.count(keyword) for keyword in keywords)
+    return sum(lowered.count(keyword.lower()) for keyword in keywords)
+
+
+def _format_section_block(section: ParsedSection) -> str:
+    content = _normalize_excerpt_text(section.content)
+    if not content:
+        return ""
+    heading = _normalize_excerpt_text(section.heading)
+    if heading:
+        return f"Section: {heading}\n{content}"
+    return content
+
+
+def _full_formatted_document_text(record: ParsedDocumentRecord) -> str:
+    blocks = [_format_section_block(section) for section in record.parsed_document.sections]
+    non_empty = [block for block in blocks if block]
+    if non_empty:
+        return "\n\n".join(non_empty)
+    return record.parsed_document.plain_text.strip()
+
+
+def _is_cjk_script_char(ch: str) -> bool:
+    code = ord(ch)
+    return (
+        0x3040 <= code <= 0x30FF  # Hiragana / Katakana
+        or 0x3400 <= code <= 0x4DBF  # CJK Extension A
+        or 0x4E00 <= code <= 0x9FFF  # CJK Unified Ideographs
+        or 0xAC00 <= code <= 0xD7AF  # Hangul Syllables
+        or 0xF900 <= code <= 0xFAFF  # CJK Compatibility Ideographs
+    )
+
+
+def _estimate_tokens(text: str) -> int:
+    """Estimate LLM tokens accounting for CJK (~1.2 chars/token) vs Latin (~3.8 chars/token) (D5)."""
+    if not text:
+        return 0
+    cjk_chars = sum(1 for ch in text if _is_cjk_script_char(ch))
+    other_chars = len(text) - cjk_chars
+    estimated = (cjk_chars / 1.2) + (other_chars / 3.8)
+    return max(1, int(estimated + 0.999))
+
+
+def _split_oversized_block(
+    block: str,
+    *,
+    chunk_max_chars: int,
+    chunk_max_tokens: int,
+) -> list[str]:
+    if len(block) <= chunk_max_chars and _estimate_tokens(block) <= chunk_max_tokens:
+        return [block]
+
+    # Compute effective char ceiling respecting the tighter of char budget and token budget.
+    est_tokens = max(_estimate_tokens(block), 1)
+    chars_per_token = len(block) / est_tokens
+    token_char_ceiling = max(int(chunk_max_tokens * chars_per_token * 0.95), 400)
+    effective_max_chars = min(chunk_max_chars, token_char_ceiling)
+    overlap_chars = min(2000, effective_max_chars // 5)
+    step = max(effective_max_chars - overlap_chars, 200)
+
+    pieces: list[str] = []
+    start = 0
+    length = len(block)
+    while start < length:
+        end = min(start + effective_max_chars, length)
+        # Try to snap cleanly to a paragraph/sentence boundary near end
+        if end < length:
+            snap_newline = block.rfind("\n", start + step // 2, end)
+            if snap_newline > start:
+                end = snap_newline
+        piece = block[start:end].strip()
+        if piece:
+            pieces.append(piece)
+        if end >= length:
+            break
+        next_start = max(start + 1, end - overlap_chars)
+        start = next_start
+    return pieces
+
+
+def _chunk_document_for_analysis(
+    record: ParsedDocumentRecord,
+    *,
+    direct_max_chars: int = DIRECT_FULL_TEXT_MAX_CHARS,
+    chunk_max_chars: int = CHUNK_MAX_CHARS,
+    direct_max_tokens: int = DIRECT_FULL_TEXT_MAX_TOKENS,
+    chunk_max_tokens: int = CHUNK_MAX_TOKENS,
+    overlap_sections: int = CHUNK_OVERLAP_SECTIONS,
+) -> list[str]:
+    """Return full text as 1 chunk when within char & token budgets, else deduped section chunks (D4+D5)."""
+    full_text = _full_formatted_document_text(record)
+    if len(full_text) <= direct_max_chars and _estimate_tokens(full_text) <= direct_max_tokens:
+        return [full_text]
+
+    section_blocks = [
+        _format_section_block(section)
+        for section in record.parsed_document.sections
+    ]
+    section_blocks = [block for block in section_blocks if block]
+    if not section_blocks:
+        section_blocks = [full_text]
+
+    atomic_blocks: list[str] = []
+    for block in section_blocks:
+        atomic_blocks.extend(
+            _split_oversized_block(
+                block,
+                chunk_max_chars=chunk_max_chars,
+                chunk_max_tokens=chunk_max_tokens,
+            )
+        )
+
+    chunks: list[str] = []
+    index = 0
+    total_blocks = len(atomic_blocks)
+    prev_end_index = -1
+
+    while index < total_blocks:
+        current: list[str] = []
+        current_chars = 0
+        current_tokens = 0
+        start_index = index
+        while index < total_blocks:
+            block = atomic_blocks[index]
+            added_chars = len(block) + (2 if current else 0)
+            added_tokens = _estimate_tokens(block)
+            if current and (
+                current_chars + added_chars > chunk_max_chars
+                or current_tokens + added_tokens > chunk_max_tokens
+            ):
+                break
+            current.append(block)
+            current_chars += added_chars
+            current_tokens += added_tokens
+            index += 1
+
+        end_index = index
+        # D4 #1: Never emit a chunk whose block range is a subset of the previous chunk.
+        if end_index <= prev_end_index:
+            break
+        chunks.append("\n\n".join(current))
+        prev_end_index = end_index
+
+        if index >= total_blocks:
+            break
+        if overlap_sections > 0:
+            next_start = max(start_index + 1, index - overlap_sections)
+            # Only backtrack when the remaining tail still introduces new blocks beyond prev_end_index.
+            index = next_start
+
+    return chunks
 
 
 def _build_analysis_excerpt(
@@ -597,19 +1332,20 @@ def _build_analysis_excerpt(
     keywords: tuple[str, ...],
     max_chars: int,
 ) -> str:
+    """Build full text when it fits within max_chars, else prioritize highest-scoring sections."""
+    full_text = _full_formatted_document_text(record)
+    if len(full_text) <= max_chars:
+        return full_text
+
     sections = record.parsed_document.sections
     if not sections:
         return _truncate_excerpt(record.parsed_document.plain_text, max_chars)
 
     scored_sections: list[tuple[int, int, str]] = []
     for index, section in enumerate(sections):
-        content = _normalize_excerpt_text(section.content)
-        if not content:
+        block = _format_section_block(section)
+        if not block:
             continue
-        heading = _normalize_excerpt_text(section.heading)
-        block = content
-        if heading:
-            block = f"Section: {heading}\n{content}"
         score = _section_score(block, keywords)
         if index < 2:
             score += 1
@@ -620,15 +1356,1018 @@ def _build_analysis_excerpt(
 
     prioritized = sorted(scored_sections, key=lambda item: (-item[0], item[1]))
     selected_indexes: set[int] = set()
-    for _, index, _ in prioritized:
+    budget = 0
+    for _, index, block in prioritized:
+        if selected_indexes and budget + len(block) + 2 > max_chars:
+            continue
         selected_indexes.add(index)
-        if len(selected_indexes) >= 8:
+        budget += len(block) + 2
+        if budget >= max_chars:
             break
-    ordered_blocks = [block for _, index, block in sorted(scored_sections, key=lambda item: item[1]) if index in selected_indexes]
+
+    ordered_blocks = [
+        block
+        for _, index, block in sorted(scored_sections, key=lambda item: item[1])
+        if index in selected_indexes
+    ]
     excerpt = "\n\n".join(ordered_blocks)
     if len(excerpt) < max_chars // 2:
         excerpt = record.parsed_document.plain_text
     return _truncate_excerpt(excerpt, max_chars)
+
+
+def _metadata_chunk_informativeness(chunk: PolicyMetadataExtraction, *, is_primary: bool) -> float:
+    score = 2.0 if is_primary else 0.0
+    if chunk.publication_date:
+        score += 1.0
+    if chunk.effective_date:
+        score += 1.0
+    if chunk.penalties_summary and chunk.penalties_summary.strip():
+        score += 1.0
+    if chunk.covered_actors:
+        score += 1.0
+    if chunk.enforcement_authorities:
+        score += 1.0
+    if chunk.compliance_deadlines:
+        score += 1.0
+    if chunk.prohibited_practices:
+        score += 1.0
+    if chunk.covered_application_domains:
+        score += 0.5
+    return score
+
+
+def _merge_policy_metadata_chunks(
+    chunks: Sequence[PolicyMetadataExtraction],
+) -> PolicyMetadataExtraction:
+    if len(chunks) == 1:
+        return chunks[0]
+
+    primary = chunks[0]
+    covered_actors = _unique_preserving_order(
+        [actor for chunk in chunks for actor in chunk.covered_actors]
+    )
+    covered_domains = _unique_preserving_order(
+        [domain for chunk in chunks for domain in chunk.covered_application_domains]
+    )
+    prohibited_practices = _unique_preserving_order(
+        [practice for chunk in chunks for practice in chunk.prohibited_practices]
+    )
+    enforcement_authorities = _unique_preserving_order(
+        [authority for chunk in chunks for authority in chunk.enforcement_authorities]
+    )
+    compliance_deadlines = _unique_preserving_order(
+        [deadline for chunk in chunks for deadline in chunk.compliance_deadlines]
+    )
+    publication_date = next((chunk.publication_date for chunk in chunks if chunk.publication_date), None)
+    effective_date = next((chunk.effective_date for chunk in chunks if chunk.effective_date), None)
+    penalties = _unique_preserving_order(
+        [chunk.penalties_summary.strip() for chunk in chunks if chunk.penalties_summary and chunk.penalties_summary.strip()]
+    )
+    notes = _unique_preserving_order(
+        [chunk.implementation_notes.strip() for chunk in chunks if chunk.implementation_notes and chunk.implementation_notes.strip()]
+    )
+
+    # D4 #4: Do not dilute metadata confidence over uninformed later chunks.
+    weights = [
+        _metadata_chunk_informativeness(chunk, is_primary=(idx == 0))
+        for idx, chunk in enumerate(chunks)
+    ]
+    informative_pairs = [(chunk.confidence, weight) for chunk, weight in zip(chunks, weights) if weight > 0.0]
+    total_weight = sum(weight for _, weight in informative_pairs) or 1.0
+    weighted_confidence = round(
+        sum(conf * weight for conf, weight in informative_pairs) / total_weight,
+        3,
+    )
+    return PolicyMetadataExtraction(
+        issuing_body=primary.issuing_body,
+        document_type=primary.document_type,
+        binding_strength=primary.binding_strength,
+        publication_date=publication_date,
+        effective_date=effective_date,
+        covered_actors=covered_actors,
+        covered_application_domains=covered_domains,
+        prohibited_practices=prohibited_practices,
+        enforcement_authorities=enforcement_authorities,
+        compliance_deadlines=compliance_deadlines,
+        penalties_summary=" ".join(penalties[:3]) if penalties else None,
+        implementation_notes=" ".join(notes[:3]) if notes else None,
+        confidence=weighted_confidence,
+    )
+
+
+def _merge_evidence_spans(
+    spans: Sequence[EvidenceSpan],
+    *,
+    limit: int = MAX_EVIDENCE_SPANS_PER_LABEL,
+) -> list[EvidenceSpan]:
+    seen_quotes: set[str] = set()
+    merged: list[EvidenceSpan] = []
+    for span in spans:
+        key = " ".join(span.quote.split()).lower()
+        if not key or key in seen_quotes:
+            continue
+        seen_quotes.add(key)
+        merged.append(span)
+        if len(merged) >= limit:
+            break
+    return merged
+
+
+def _stronger_obligation_strength(a: str | None, b: str | None) -> str | None:
+    if a is None:
+        return b
+    if b is None:
+        return a
+    return a if OBLIGATION_STRENGTH_RANK.get(a, 0) >= OBLIGATION_STRENGTH_RANK.get(b, 0) else b
+
+
+def _merge_policy_controls_chunks(
+    chunks: Sequence[PolicyControlsExtraction],
+    *,
+    plain_text: str | None = None,
+) -> PolicyControlsExtraction:
+    if len(chunks) == 1:
+        return chunks[0]
+
+    prepared = _build_normalized_index(plain_text) if plain_text is not None else None
+
+    def _prioritize_and_filter_spans(
+        spans: Sequence[EvidenceSpan],
+        *,
+        require_grounded: bool,
+    ) -> list[EvidenceSpan]:
+        if prepared is None:
+            return _merge_evidence_spans(spans, limit=MAX_EVIDENCE_SPANS_PER_LABEL)
+        ranked: list[tuple[int, EvidenceSpan]] = []
+        for span in spans:
+            status, start_char, end_char = _match_span_in_text(
+                span.quote,
+                plain_text or "",
+                prepared_index=prepared,
+            )
+            annotated = span.model_copy(
+                update={
+                    "grounding_status": status,
+                    "start_char": start_char,
+                    "end_char": end_char,
+                }
+            )
+            priority = 0 if status == "verbatim" else 1 if status == "approximate" else 2
+            ranked.append((priority, annotated))
+        if require_grounded:
+            grounded_only = [span for priority, span in sorted(ranked, key=lambda item: item[0]) if priority < 2]
+            return _merge_evidence_spans(grounded_only, limit=MAX_EVIDENCE_SPANS_PER_LABEL)
+        ordered = [span for _, span in sorted(ranked, key=lambda item: item[0])]
+        return _merge_evidence_spans(ordered, limit=MAX_EVIDENCE_SPANS_PER_LABEL)
+
+    req_by_label: dict[str, tuple[float, str | None, list[EvidenceSpan]]] = {}
+    for chunk in chunks:
+        for req in chunk.safety_requirements:
+            existing = req_by_label.get(req.label)
+            if existing is None:
+                req_by_label[req.label] = (req.confidence, req.obligation_strength, list(req.evidence))
+            else:
+                req_by_label[req.label] = (
+                    max(existing[0], req.confidence),
+                    _stronger_obligation_strength(existing[1], req.obligation_strength),
+                    [*existing[2], *req.evidence],
+                )
+
+    enf_by_label: dict[str, tuple[float, list[EvidenceSpan]]] = {}
+    for chunk in chunks:
+        for mech in chunk.enforcement_mechanisms:
+            existing = enf_by_label.get(mech.label)
+            if existing is None:
+                enf_by_label[mech.label] = (mech.confidence, list(mech.evidence))
+            else:
+                enf_by_label[mech.label] = (
+                    max(existing[0], mech.confidence),
+                    [*existing[1], *mech.evidence],
+                )
+
+    # Drop `none_specified` when concrete enforcement mechanisms were extracted in other chunks.
+    if len(enf_by_label) > 1 and "none_specified" in enf_by_label:
+        enf_by_label.pop("none_specified", None)
+
+    # D4 #5: In multi-chunk merges with source text, require >= 1 grounded span per label to curb length-driven false positives.
+    merged_reqs: list[SafetyRequirement] = []
+    for label, (conf, ob_strength, evidence) in sorted(req_by_label.items(), key=lambda item: (-item[1][0], item[0])):
+        chosen_spans = _prioritize_and_filter_spans(evidence, require_grounded=(prepared is not None))
+        if not chosen_spans:
+            continue
+        merged_reqs.append(
+            SafetyRequirement(
+                label=label,
+                confidence=round(conf, 3),
+                obligation_strength=ob_strength,
+                evidence=chosen_spans,
+            )
+        )
+
+    merged_enfs: list[EnforcementMechanism] = []
+    for label, (conf, evidence) in sorted(enf_by_label.items(), key=lambda item: (-item[1][0], item[0])):
+        require_grounded = prepared is not None and label != "none_specified"
+        chosen_spans = _prioritize_and_filter_spans(evidence, require_grounded=require_grounded)
+        if not chosen_spans:
+            continue
+        merged_enfs.append(
+            EnforcementMechanism(
+                label=label,
+                confidence=round(conf, 3),
+                evidence=chosen_spans,
+            )
+        )
+
+    return PolicyControlsExtraction(
+        safety_requirements=merged_reqs,
+        enforcement_mechanisms=merged_enfs,
+    )
+
+
+def _is_no_framing_chunk(chunk: RiskFramingAnalysis) -> bool:
+    max_conf = max(chunk.frame_confidence.values(), default=0.0)
+    if max_conf <= 0.05 and not chunk.evidence_spans:
+        return True
+    lowered = chunk.rationale_summary.strip().lower()
+    if max_conf <= 0.05 and "no explicit framing language" in lowered:
+        return True
+    return False
+
+
+def _chunk_framing_evidence_weight(chunk: RiskFramingAnalysis) -> float:
+    if _is_no_framing_chunk(chunk):
+        return 0.0
+    max_conf = max(chunk.frame_confidence.values(), default=0.0)
+    if max_conf <= 0.0:
+        return 0.0
+    evidence_count = len([span for span in chunk.evidence_spans if span.quote and span.quote.strip()])
+    return max_conf * (1.0 + 0.5 * min(evidence_count, 6))
+
+
+def _merge_risk_framing_chunks(
+    chunks: Sequence[RiskFramingAnalysis],
+    chunk_weights: Sequence[int] | None = None,
+) -> RiskFramingAnalysis:
+    if len(chunks) == 1:
+        return chunks[0]
+
+    valid_frames = load_taxonomy()["risk_framings"]
+    # D4 #2: Weight framing chunks by framing evidence rather than raw character length.
+    evidence_weights = [_chunk_framing_evidence_weight(chunk) for chunk in chunks]
+    active_indices = [idx for idx, weight in enumerate(evidence_weights) if weight > 0.0]
+
+    if active_indices:
+        total_weight = sum(evidence_weights[idx] for idx in active_indices)
+        used_weights = [(idx, evidence_weights[idx] / total_weight) for idx in active_indices]
+    else:
+        fallback = [max(w, 1) for w in chunk_weights] if chunk_weights else [1] * len(chunks)
+        total_fb = float(sum(fallback)) or 1.0
+        used_weights = [(idx, fallback[idx] / total_fb) for idx in range(len(chunks))]
+        active_indices = list(range(len(chunks)))
+
+    weighted_scores: dict[str, float] = {frame: 0.0 for frame in valid_frames}
+    weighted_shares: dict[str, float] = {frame: 0.0 for frame in valid_frames}
+    any_explicit_share = any(
+        chunks[idx].frame_share is not None and sum(chunks[idx].frame_share.values()) > 1e-6
+        for idx in active_indices
+    )
+    for idx, factor in used_weights:
+        chunk = chunks[idx]
+        for frame in valid_frames:
+            weighted_scores[frame] += chunk.frame_confidence.get(frame, 0.0) * factor
+        if any_explicit_share:
+            chunk_share = (
+                chunk.frame_share
+                if chunk.frame_share is not None and sum(chunk.frame_share.values()) > 1e-6
+                else normalize_frame_confidence(
+                    chunk.frame_confidence,
+                    valid_frames=valid_frames,
+                    dominant_frame=chunk.dominant_frame,
+                )
+            )
+            for frame in valid_frames:
+                weighted_shares[frame] += chunk_share.get(frame, 0.0) * factor
+
+    rounded_scores = {
+        frame: round(min(max(score, 0.0), 1.0), 3)
+        for frame, score in weighted_scores.items()
+    }
+    rounded_shares: dict[str, float] | None = None
+    if any_explicit_share:
+        share_total = sum(weighted_shares.values())
+        if share_total > 1e-6:
+            rounded_shares = {
+                frame: round(weighted_shares[frame] / share_total, 4)
+                for frame in valid_frames
+            }
+            # Ensure exact sum to 1.0 after rounding on the leading frame.
+            top_share_frame = max(rounded_shares, key=lambda f: rounded_shares[f])
+            drift = round(1.0 - sum(rounded_shares.values()), 4)
+            rounded_shares[top_share_frame] = round(max(0.0, rounded_shares[top_share_frame] + drift), 4)
+
+    ranked_frames = sorted(rounded_scores.items(), key=lambda item: (-item[1], item[0]))
+    dominant_frame = ranked_frames[0][0]
+    secondary_frames = [
+        frame
+        for frame, score in ranked_frames[1:]
+        if score >= 0.25
+    ][:3]
+
+    # D4 #3: Aggregate evidence spans round-robin across ALL framing-bearing chunks (capped at 2/frame, 6 total).
+    ordered_active_chunks = [
+        chunks[idx]
+        for idx, _ in sorted(used_weights, key=lambda item: (-item[1], item[0]))
+    ]
+    round_robin_spans: list[EvidenceSpan] = []
+    max_span_len = max((len(chunk.evidence_spans) for chunk in ordered_active_chunks), default=0)
+    for pos in range(max_span_len):
+        for chunk in ordered_active_chunks:
+            if pos < len(chunk.evidence_spans):
+                round_robin_spans.append(chunk.evidence_spans[pos])
+
+    per_frame_counts: Counter[str] = Counter()
+    seen_quotes: set[str] = set()
+    all_evidence: list[EvidenceSpan] = []
+    for span in round_robin_spans:
+        key = " ".join(span.quote.split()).lower()
+        if not key or key in seen_quotes:
+            continue
+        frame_tag = span.frame or "__untagged__"
+        if span.frame and per_frame_counts[frame_tag] >= MAX_EVIDENCE_SPANS_PER_LABEL:
+            continue
+        seen_quotes.add(key)
+        per_frame_counts[frame_tag] += 1
+        all_evidence.append(span)
+        if len(all_evidence) >= MAX_EVIDENCE_SPANS_FRAMING:
+            break
+
+    # D4 #3: Aggregate rationales across ALL framing-bearing chunks, dropping no-framing escapes.
+    rationales = _unique_preserving_order(
+        [
+            chunk.rationale_summary.strip()
+            for chunk in ordered_active_chunks
+            if chunk.rationale_summary.strip()
+            and "no explicit framing language" not in chunk.rationale_summary.strip().lower()
+        ]
+    )
+    if not rationales:
+        rationales = _unique_preserving_order(
+            [chunk.rationale_summary.strip() for chunk in chunks if chunk.rationale_summary.strip()]
+        )
+    return RiskFramingAnalysis(
+        dominant_frame=dominant_frame,
+        secondary_frames=secondary_frames,
+        frame_confidence=rounded_scores,
+        frame_share=rounded_shares,
+        rationale_summary=" ".join(rationales),
+        evidence_spans=all_evidence,
+    )
+
+
+@dataclass(frozen=True)
+class _PreparedGroundingIndex:
+    raw_text: str
+    norm_text: str
+    norm_to_raw: list[int]
+    compact_text: str
+    compact_to_raw: list[int]
+
+
+_HYPHEN_CHARS = frozenset({"-", "\u00ad", "\u2010", "\u2011", "\u2012", "\u2013", "\u2014"})
+_QUOTE_CHAR_MAP = {
+    "\u2018": "'",
+    "\u2019": "'",
+    "\u201a": "'",
+    "\u201b": "'",
+    "\u201c": '"',
+    "\u201d": '"',
+    "\u201e": '"',
+    "\u201f": '"',
+    "\xa0": " ",
+}
+
+
+def _normalize_single_char(ch: str) -> str:
+    nfkc = unicodedata.normalize("NFKC", ch)
+    out_chars: list[str] = []
+    for sub in nfkc:
+        mapped = _QUOTE_CHAR_MAP.get(sub, sub)
+        out_chars.append(mapped.lower())
+    return "".join(out_chars)
+
+
+def _normalize_for_grounding(value: str) -> str:
+    nfkc = unicodedata.normalize("NFKC", value)
+    for src, dst in _QUOTE_CHAR_MAP.items():
+        nfkc = nfkc.replace(src, dst)
+    return " ".join(nfkc.split()).lower()
+
+
+def _compact_for_grounding(value: str) -> str:
+    norm = _normalize_for_grounding(value)
+    out = [ch for ch in norm if ch not in _HYPHEN_CHARS and not ch.isspace()]
+    return "".join(out)
+
+
+def _build_normalized_index(plain_text: str) -> _PreparedGroundingIndex:
+    norm_chars: list[str] = []
+    norm_to_raw: list[int] = []
+    compact_chars: list[str] = []
+    compact_to_raw: list[int] = []
+    in_space = True
+
+    for raw_idx, raw_ch in enumerate(plain_text):
+        expanded = _normalize_single_char(raw_ch)
+        for ch in expanded:
+            if ch.isspace():
+                if not in_space:
+                    norm_chars.append(" ")
+                    norm_to_raw.append(raw_idx)
+                    in_space = True
+            else:
+                norm_chars.append(ch)
+                norm_to_raw.append(raw_idx)
+                in_space = False
+                if ch not in _HYPHEN_CHARS:
+                    compact_chars.append(ch)
+                    compact_to_raw.append(raw_idx)
+
+    if norm_chars and norm_chars[-1] == " ":
+        norm_chars.pop()
+        norm_to_raw.pop()
+
+    return _PreparedGroundingIndex(
+        raw_text=plain_text,
+        norm_text="".join(norm_chars),
+        norm_to_raw=norm_to_raw,
+        compact_text="".join(compact_chars),
+        compact_to_raw=compact_to_raw,
+    )
+
+
+def _match_span_in_text(
+    quote: str,
+    plain_text: str,
+    *,
+    prepared_index: _PreparedGroundingIndex | None = None,
+) -> tuple[str, int | None, int | None]:
+    """Match a quote against source plain_text with NFKC, hyphen-insensitive, and ordered-window matching (D6)."""
+    if not quote or not quote.strip() or not plain_text:
+        return "not_found", None, None
+
+    idx_obj = prepared_index or _build_normalized_index(plain_text)
+    norm_quote = _normalize_for_grounding(quote)
+    if not norm_quote:
+        return "not_found", None, None
+
+    # 1. Exact NFKC + whitespace-collapsed match -> verbatim
+    pos = idx_obj.norm_text.find(norm_quote)
+    if pos != -1:
+        end_pos = pos + len(norm_quote) - 1
+        start_raw = idx_obj.norm_to_raw[pos]
+        end_raw = idx_obj.norm_to_raw[end_pos] + 1
+        return "verbatim", start_raw, end_raw
+
+    # 2. Whitespace- & hyphen-insensitive match (handles PDF line-wrap hyphens & spacing artifacts) -> approximate
+    compact_quote = _compact_for_grounding(quote)
+    if len(compact_quote) >= 6:
+        cpos = idx_obj.compact_text.find(compact_quote)
+        if cpos != -1:
+            cend = cpos + len(compact_quote) - 1
+            start_raw = idx_obj.compact_to_raw[cpos]
+            end_raw = idx_obj.compact_to_raw[cend] + 1
+            return "approximate", start_raw, end_raw
+
+    # 3. Ordered-window clause matching for ellipsis-split or multi-clause quotes -> approximate
+    raw_clauses = [
+        clause.strip(" .,;:\"'()[]")
+        for clause in re.split(r"\.{3,}|…|\[\.{3,}\]|\[…\]", norm_quote)
+        if len(clause.strip(" .,;:\"'()[]")) >= 10
+    ]
+    if len(raw_clauses) >= 2:
+        max_window = max(len(norm_quote) * 4, 2500)
+        first_clause = raw_clauses[0]
+        search_from = 0
+        while True:
+            first_pos = idx_obj.norm_text.find(first_clause, search_from)
+            if first_pos == -1:
+                break
+            cursor = first_pos + len(first_clause)
+            matched_all = True
+            last_end = cursor - 1
+            for clause in raw_clauses[1:]:
+                next_pos = idx_obj.norm_text.find(clause, cursor)
+                if next_pos == -1 or (next_pos + len(clause) - first_pos) > max_window:
+                    matched_all = False
+                    break
+                cursor = next_pos + len(clause)
+                last_end = cursor - 1
+            if matched_all:
+                return "approximate", idx_obj.norm_to_raw[first_pos], idx_obj.norm_to_raw[last_end] + 1
+            search_from = first_pos + 1
+
+    return "not_found", None, None
+
+
+def ground_document_analysis(
+    analysis: DocumentAnalysis,
+    plain_text: str,
+) -> tuple[DocumentAnalysis, dict[str, Any]]:
+    """Score grounding and persist per-span grounding_status, start_char, and end_char onto EvidenceSpans (D6)."""
+    prepared = _build_normalized_index(plain_text)
+    exact_matches = 0
+    fuzzy_matches = 0
+    total_quotes = 0
+    ungrounded_samples: list[str] = []
+
+    def _annotate_span(span: EvidenceSpan) -> EvidenceSpan:
+        nonlocal exact_matches, fuzzy_matches, total_quotes
+        quote = span.quote.strip() if span.quote else ""
+        if not quote:
+            return span
+        total_quotes += 1
+        status, start_char, end_char = _match_span_in_text(quote, plain_text, prepared_index=prepared)
+        if status == "verbatim":
+            exact_matches += 1
+        elif status == "approximate":
+            fuzzy_matches += 1
+        elif len(ungrounded_samples) < 5:
+            ungrounded_samples.append(quote[:140])
+        return span.model_copy(
+            update={
+                "grounding_status": status,
+                "start_char": start_char,
+                "end_char": end_char,
+            }
+        )
+
+    new_reqs = [
+        req.model_copy(update={"evidence": [_annotate_span(span) for span in req.evidence]})
+        for req in analysis.policy_extraction.safety_requirements
+    ]
+    new_enfs = [
+        mech.model_copy(update={"evidence": [_annotate_span(span) for span in mech.evidence]})
+        for mech in analysis.policy_extraction.enforcement_mechanisms
+    ]
+    new_framing_spans = [_annotate_span(span) for span in analysis.risk_framing.evidence_spans]
+
+    annotated_analysis = analysis.model_copy(
+        update={
+            "policy_extraction": analysis.policy_extraction.model_copy(
+                update={
+                    "safety_requirements": new_reqs,
+                    "enforcement_mechanisms": new_enfs,
+                }
+            ),
+            "risk_framing": analysis.risk_framing.model_copy(
+                update={"evidence_spans": new_framing_spans}
+            ),
+        }
+    )
+
+    ungrounded_quotes = total_quotes - exact_matches - fuzzy_matches
+    # A12: Return None (never 1.0) when zero evidence quotes exist.
+    exact_ratio = round(exact_matches / total_quotes, 3) if total_quotes else None
+    grounding_ratio = round((exact_matches + fuzzy_matches) / total_quotes, 3) if total_quotes else None
+
+    summary = {
+        "total_quotes": total_quotes,
+        "exact_matches": exact_matches,
+        "fuzzy_matches": fuzzy_matches,
+        "ungrounded_quotes": ungrounded_quotes,
+        "exact_ratio": exact_ratio,
+        "grounding_ratio": grounding_ratio,
+        "ungrounded_samples": ungrounded_samples,
+    }
+    return annotated_analysis, summary
+
+
+def score_document_grounding(
+    analysis: DocumentAnalysis,
+    plain_text: str,
+) -> dict[str, Any]:
+    """Verify whether extracted evidence quotes appear verbatim in the parsed source text (A12 + D6)."""
+    _annotated, summary = ground_document_analysis(analysis, plain_text)
+    return summary
+
+
+def check_corpus_grounding(
+    *,
+    jurisdiction: str | None = None,
+    document_id: str | None = None,
+    min_ratio: float | None = None,
+) -> dict[str, Any]:
+    resolved_min_ratio = (
+        float(min_ratio)
+        if min_ratio is not None
+        else get_canonical_thresholds()["grounding_pass_threshold"]
+    )
+    records = _load_parsed_document_records(jurisdiction=jurisdiction, document_id=document_id)
+    if not records:
+        raise ValueError("no parsed documents matched the requested filters")
+
+    per_document: list[dict[str, Any]] = []
+    flagged: list[dict[str, Any]] = []
+    total_quotes = 0
+    total_exact = 0
+    total_fuzzy = 0
+
+    for record in records:
+        try:
+            analysis, _raw_policy, _raw_framing = _load_analysis_artifacts(record)
+        except (ValidationError, ValueError, RuntimeError, json.JSONDecodeError, OSError):
+            continue
+        score = score_document_grounding(analysis, record.parsed_document.plain_text)
+        total_quotes += score["total_quotes"]
+        total_exact += score["exact_matches"]
+        total_fuzzy += score["fuzzy_matches"]
+        entry = {
+            "jurisdiction": record.jurisdiction,
+            "document_id": record.document_id,
+            "language": analysis.language,
+            **score,
+        }
+        per_document.append(entry)
+        ratio = score["grounding_ratio"]
+        if (
+            score["total_quotes"] == 0
+            or ratio is None
+            or ratio < resolved_min_ratio
+            or score["ungrounded_quotes"] >= 3
+        ):
+            flagged.append(entry)
+
+    return {
+        "min_ratio_threshold": resolved_min_ratio,
+        "document_count": len(per_document),
+        "flagged_count": len(flagged),
+        "total_quotes": total_quotes,
+        "exact_matches": total_exact,
+        "fuzzy_matches": total_fuzzy,
+        "ungrounded_quotes": total_quotes - total_exact - total_fuzzy,
+        "overall_exact_ratio": round(total_exact / total_quotes, 3) if total_quotes else None,
+        "overall_grounding_ratio": round((total_exact + total_fuzzy) / total_quotes, 3) if total_quotes else None,
+        "flagged_documents": sorted(
+            flagged,
+            key=lambda item: (
+                -1.0 if item["grounding_ratio"] is None else item["grounding_ratio"],
+                -item["ungrounded_quotes"],
+            ),
+        ),
+        "documents": per_document,
+    }
+
+
+def export_json_schemas(output_dir: Path) -> list[str]:
+    """Export Draft 2020-12 JSON Schemas derived from Pydantic models + live taxonomy."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    schemas = {
+        "policy-extraction.schema.json": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "https://project-babel.com/schemas/policy-extraction.schema.json",
+            **_policy_extraction_schema(),
+        },
+        "risk-framing.schema.json": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "https://project-babel.com/schemas/risk-framing.schema.json",
+            **_risk_framing_schema(),
+        },
+        "document-analysis.schema.json": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "https://project-babel.com/schemas/document-analysis.schema.json",
+            **DocumentAnalysis.model_json_schema(),
+        },
+        "jurisdiction-analysis.schema.json": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "https://project-babel.com/schemas/jurisdiction-analysis.schema.json",
+            **JurisdictionAnalysis.model_json_schema(),
+        },
+    }
+    written: list[str] = []
+    for filename, schema_payload in schemas.items():
+        path = output_dir / filename
+        path.write_text(
+            json.dumps(schema_payload, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+            newline="\n",
+        )
+        written.append(repo_rel_posix(path))
+    return written
+
+
+def _precision_recall_f1(tp: int, fp: int, fn: int) -> tuple[float | None, float | None, float | None]:
+    """Compute precision, recall, and F1, returning None (never 1.0) on empty sets (D12)."""
+    precision = round(tp / (tp + fp), 3) if (tp + fp) > 0 else None
+    recall = round(tp / (tp + fn), 3) if (tp + fn) > 0 else None
+    denom = (2 * tp) + fp + fn
+    f1 = round((2 * tp) / denom, 3) if denom > 0 else None
+    return precision, recall, f1
+
+
+def _cohens_kappa(gold_labels: Sequence[str], pred_labels: Sequence[str]) -> float | None:
+    """Compute unweighted Cohen's kappa for nominal label agreement."""
+    n = len(gold_labels)
+    if n == 0 or n != len(pred_labels):
+        return None
+    observed = sum(1 for g, p in zip(gold_labels, pred_labels) if g == p) / n
+    gold_counts = Counter(gold_labels)
+    pred_counts = Counter(pred_labels)
+    categories = set(gold_counts) | set(pred_counts)
+    expected = sum((gold_counts[cat] / n) * (pred_counts[cat] / n) for cat in categories)
+    if abs(1.0 - expected) < 1e-12:
+        return None
+    return round((observed - expected) / (1.0 - expected), 3)
+
+
+def _bootstrap_interval(
+    values: Sequence[float],
+) -> list[float] | None:
+    if not values:
+        return None
+    ordered = sorted(values)
+    n = len(ordered)
+    low_idx = int(0.025 * (n - 1))
+    high_idx = int(0.975 * (n - 1))
+    return [round(ordered[low_idx], 3), round(ordered[high_idx], 3)]
+
+
+def _load_gold_set_entries(gold_path: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    if not gold_path.exists():
+        raise ValueError(f"gold set path does not exist: {gold_path}")
+
+    bundle_meta: dict[str, Any] = {}
+    if gold_path.is_file():
+        payload = json.loads(gold_path.read_text(encoding="utf-8"))
+        if isinstance(payload, dict) and isinstance(payload.get("documents"), list):
+            for meta_key in ("benchmark_id", "benchmark_status", "taxonomy_version", "created_at", "annotator_note"):
+                if meta_key in payload:
+                    bundle_meta[meta_key] = payload[meta_key]
+            entries = list(payload["documents"])
+        elif isinstance(payload, list):
+            entries = list(payload)
+        else:
+            raise ValueError(f"unsupported gold set JSON structure in {gold_path}")
+        if not entries:
+            raise ValueError(f"no gold documents found in {gold_path}")
+        return entries, bundle_meta
+
+    if gold_path.is_dir():
+        gold_files = sorted(gold_path.glob("*.json"))
+        if not gold_files:
+            raise ValueError(f"no gold fixture JSON files found in {gold_path}")
+        entries = []
+        for file_path in gold_files:
+            item = json.loads(file_path.read_text(encoding="utf-8"))
+            if isinstance(item, dict) and isinstance(item.get("documents"), list):
+                entries.extend(item["documents"])
+            else:
+                entries.append(item)
+        return entries, bundle_meta
+
+    raise ValueError(f"gold set path is neither file nor directory: {gold_path}")
+
+
+def evaluate_gold_set(
+    gold_path: Path,
+    *,
+    n_bootstrap: int = 1000,
+    seed: int = 42,
+) -> dict[str, Any]:
+    """Evaluate saved pipeline analyses against a gold-set bundle file or fixture directory (D12)."""
+    gold_entries, bundle_meta = _load_gold_set_entries(gold_path)
+
+    req_tp = req_fp = req_fn = 0
+    enf_tp = enf_fp = enf_fn = 0
+    per_label_req: dict[str, list[int]] = defaultdict(lambda: [0, 0, 0])  # [tp, fp, fn]
+    per_label_enf: dict[str, list[int]] = defaultdict(lambda: [0, 0, 0])
+    dominant_gold_list: list[str] = []
+    dominant_pred_list: list[str] = []
+    binding_gold_list: list[str] = []
+    binding_pred_list: list[str] = []
+    per_doc_records: list[dict[str, Any]] = []
+    details: list[dict[str, Any]] = []
+
+    for gold in gold_entries:
+        jurisdiction = gold["jurisdiction"]
+        document_id = gold["document_id"]
+        pred_path = ANALYSIS_DIR / jurisdiction / document_id / "document_analysis.json"
+        if not pred_path.exists():
+            details.append({"document_id": document_id, "jurisdiction": jurisdiction, "status": "missing_prediction"})
+            continue
+
+        pred = DocumentAnalysis.model_validate(json.loads(pred_path.read_text(encoding="utf-8")))
+
+        gold_reqs = set(gold.get("policy_requirements", gold.get("safety_requirements", [])))
+        pred_reqs = {item.label for item in pred.policy_extraction.safety_requirements}
+        doc_req_tp = len(gold_reqs & pred_reqs)
+        doc_req_fp = len(pred_reqs - gold_reqs)
+        doc_req_fn = len(gold_reqs - pred_reqs)
+        req_tp += doc_req_tp
+        req_fp += doc_req_fp
+        req_fn += doc_req_fn
+        for label in gold_reqs | pred_reqs:
+            if label in gold_reqs and label in pred_reqs:
+                per_label_req[label][0] += 1
+            elif label in pred_reqs:
+                per_label_req[label][1] += 1
+            else:
+                per_label_req[label][2] += 1
+
+        gold_enfs = set(gold.get("enforcement_mechanisms", []))
+        pred_enfs = {item.label for item in pred.policy_extraction.enforcement_mechanisms}
+        doc_enf_tp = len(gold_enfs & pred_enfs)
+        doc_enf_fp = len(pred_enfs - gold_enfs)
+        doc_enf_fn = len(gold_enfs - pred_enfs)
+        enf_tp += doc_enf_tp
+        enf_fp += doc_enf_fp
+        enf_fn += doc_enf_fn
+        for label in gold_enfs | pred_enfs:
+            if label in gold_enfs and label in pred_enfs:
+                per_label_enf[label][0] += 1
+            elif label in pred_enfs:
+                per_label_enf[label][1] += 1
+            else:
+                per_label_enf[label][2] += 1
+
+        gold_dom = str(gold.get("dominant_frame") or "")
+        pred_dom = pred.risk_framing.dominant_frame
+        dom_match = pred_dom == gold_dom
+        dominant_gold_list.append(gold_dom)
+        dominant_pred_list.append(pred_dom)
+
+        gold_bind = str(gold.get("binding_strength") or "")
+        pred_bind = pred.policy_extraction.binding_strength
+        bind_match = pred_bind == gold_bind
+        binding_gold_list.append(gold_bind)
+        binding_pred_list.append(pred_bind)
+
+        per_doc_records.append(
+            {
+                "req_tp": doc_req_tp,
+                "req_fp": doc_req_fp,
+                "req_fn": doc_req_fn,
+                "enf_tp": doc_enf_tp,
+                "enf_fp": doc_enf_fp,
+                "enf_fn": doc_enf_fn,
+                "dom_gold": gold_dom,
+                "dom_pred": pred_dom,
+                "dom_match": dom_match,
+                "bind_match": bind_match,
+            }
+        )
+        details.append(
+            {
+                "jurisdiction": jurisdiction,
+                "document_id": document_id,
+                "dominant_frame_match": dom_match,
+                "gold_dominant_frame": gold_dom,
+                "predicted_dominant_frame": pred_dom,
+                "binding_strength_match": bind_match,
+                "gold_binding_strength": gold_bind,
+                "predicted_binding_strength": pred_bind,
+                "missing_requirements": sorted(gold_reqs - pred_reqs),
+                "extra_requirements": sorted(pred_reqs - gold_reqs),
+                "missing_enforcement": sorted(gold_enfs - pred_enfs),
+                "extra_enforcement": sorted(pred_enfs - gold_enfs),
+            }
+        )
+
+    evaluated = len(per_doc_records)
+    req_p, req_r, req_f1 = _precision_recall_f1(req_tp, req_fp, req_fn)
+    enf_p, enf_r, enf_f1 = _precision_recall_f1(enf_tp, enf_fp, enf_fn)
+
+    def _summarize_per_label(table: dict[str, list[int]]) -> tuple[dict[str, dict[str, Any]], float | None]:
+        summary: dict[str, dict[str, Any]] = {}
+        macro_f1_values: list[float] = []
+        for label in sorted(table):
+            tp, fp, fn = table[label]
+            p, r, f1 = _precision_recall_f1(tp, fp, fn)
+            support = tp + fn
+            summary[label] = {
+                "tp": tp,
+                "fp": fp,
+                "fn": fn,
+                "support": support,
+                "precision": p,
+                "recall": r,
+                "f1": f1,
+            }
+            if support > 0 and f1 is not None:
+                macro_f1_values.append(f1)
+        macro_f1 = round(sum(macro_f1_values) / len(macro_f1_values), 3) if macro_f1_values else None
+        return summary, macro_f1
+
+    per_label_req_summary, req_macro_f1 = _summarize_per_label(per_label_req)
+    per_label_enf_summary, enf_macro_f1 = _summarize_per_label(per_label_enf)
+
+    dominant_hits = sum(1 for item in per_doc_records if item["dom_match"])
+    binding_hits = sum(1 for item in per_doc_records if item["bind_match"])
+    dom_accuracy = round(dominant_hits / evaluated, 3) if evaluated else None
+    bind_accuracy = round(binding_hits / evaluated, 3) if evaluated else None
+    dom_kappa = _cohens_kappa(dominant_gold_list, dominant_pred_list)
+    bind_kappa = _cohens_kappa(binding_gold_list, binding_pred_list)
+
+    # Seeded bootstrap 95% confidence intervals across evaluated documents.
+    bootstrap_cis: dict[str, list[float] | None] = {
+        "requirement_micro_f1": None,
+        "enforcement_micro_f1": None,
+        "dominant_frame_accuracy": None,
+        "binding_strength_accuracy": None,
+        "dominant_frame_cohens_kappa": None,
+    }
+    if evaluated > 0 and n_bootstrap > 0:
+        rng = random.Random(seed)
+        boot_req_f1: list[float] = []
+        boot_enf_f1: list[float] = []
+        boot_dom_acc: list[float] = []
+        boot_bind_acc: list[float] = []
+        boot_dom_kappa: list[float] = []
+        for _ in range(n_bootstrap):
+            sample = [per_doc_records[rng.randrange(evaluated)] for _ in range(evaluated)]
+            b_req_f1 = _precision_recall_f1(
+                sum(s["req_tp"] for s in sample),
+                sum(s["req_fp"] for s in sample),
+                sum(s["req_fn"] for s in sample),
+            )[2]
+            if b_req_f1 is not None:
+                boot_req_f1.append(b_req_f1)
+            b_enf_f1 = _precision_recall_f1(
+                sum(s["enf_tp"] for s in sample),
+                sum(s["enf_fp"] for s in sample),
+                sum(s["enf_fn"] for s in sample),
+            )[2]
+            if b_enf_f1 is not None:
+                boot_enf_f1.append(b_enf_f1)
+            boot_dom_acc.append(sum(1 for s in sample if s["dom_match"]) / evaluated)
+            boot_bind_acc.append(sum(1 for s in sample if s["bind_match"]) / evaluated)
+            b_kappa = _cohens_kappa(
+                [s["dom_gold"] for s in sample],
+                [s["dom_pred"] for s in sample],
+            )
+            if b_kappa is not None:
+                boot_dom_kappa.append(b_kappa)
+        bootstrap_cis = {
+            "requirement_micro_f1": _bootstrap_interval(boot_req_f1),
+            "enforcement_micro_f1": _bootstrap_interval(boot_enf_f1),
+            "dominant_frame_accuracy": _bootstrap_interval(boot_dom_acc),
+            "binding_strength_accuracy": _bootstrap_interval(boot_bind_acc),
+            "dominant_frame_cohens_kappa": _bootstrap_interval(boot_dom_kappa),
+        }
+
+    return {
+        **bundle_meta,
+        "evaluated_count": evaluated,
+        "bootstrap_iterations": n_bootstrap if evaluated > 0 else 0,
+        "bootstrap_seed": seed,
+        "requirement_micro_precision": req_p,
+        "requirement_micro_recall": req_r,
+        "requirement_micro_f1": req_f1,
+        "requirement_macro_f1": req_macro_f1,
+        "enforcement_micro_precision": enf_p,
+        "enforcement_micro_recall": enf_r,
+        "enforcement_micro_f1": enf_f1,
+        "enforcement_macro_f1": enf_macro_f1,
+        "dominant_frame_accuracy": dom_accuracy,
+        "dominant_frame_cohens_kappa": dom_kappa,
+        "binding_strength_accuracy": bind_accuracy,
+        "binding_strength_cohens_kappa": bind_kappa,
+        "bootstrap_95_ci": bootstrap_cis,
+        "per_label_requirements": per_label_req_summary,
+        "per_label_enforcement": per_label_enf_summary,
+        "details": details,
+    }
+
+
+def _canonicalize_institution_name(name: str, *, jurisdiction: str | None = None) -> str:
+    cleaned = " ".join(name.split()).strip()
+    if not cleaned:
+        return ""
+    for pattern, canonical, allowed_jurisdictions in INSTITUTION_ALIAS_RULES:
+        if jurisdiction is not None:
+            if allowed_jurisdictions is not None and jurisdiction not in allowed_jurisdictions:
+                continue
+        elif canonical in JURISDICTION_REQUIRED_ALIAS_CANONICALS:
+            # Ambiguous English phrases ("\bmost\b", "State Council") never match without explicit china scope.
+            continue
+        if pattern.search(cleaned):
+            return canonical
+    return cleaned
+
+
+def _is_non_statutory_companion(item: JurisdictionDocumentRecord) -> bool:
+    seed = item.parsed_record.seed_document
+    if seed is not None:
+        if seed.corpus_role in {"companion_resource", "draft_consultation", "historical_baseline"}:
+            return True
+        if seed.lifecycle_stage in {"draft", "superseded"}:
+            return True
+        if seed.source_tier == "implementation_resource":
+            return True
+    title_lower = item.analysis.title.casefold()
+    if any(marker in title_lower for marker in NON_STATUTORY_TITLE_MARKERS):
+        return True
+    return False
 
 
 def analyze_jurisdictions(
@@ -674,10 +2413,12 @@ def analyze_jurisdictions(
         (output_dir / "jurisdiction_input_digest.json").write_text(
             json.dumps(digest, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
+            newline="\n",
         )
         (output_dir / "jurisdiction_analysis.json").write_text(
             analysis.model_dump_json(indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
+            newline="\n",
         )
 
         if store is not None:
@@ -691,7 +2432,7 @@ def analyze_jurisdictions(
                 results.append(
                     {
                         "jurisdiction": current_jurisdiction,
-                        "status": f"persist_error:{type(exc).__name__}",
+                        "status": f"persist_error:{type(exc).__name__}: {exc}",
                     }
                 )
                 continue
@@ -716,6 +2457,7 @@ def _load_jurisdiction_documents(jurisdiction: str) -> list[JurisdictionDocument
         publication_date = (
             record.raw_metadata.get("publication_date")
             or record.raw_metadata.get("source_publication_date")
+            or (record.seed_document.publication_date if record.seed_document else None)
             or analysis.policy_extraction.publication_date
         )
         documents.append(
@@ -736,6 +2478,8 @@ def _build_jurisdiction_input_digest(
     jurisdiction: str,
     documents: list[JurisdictionDocumentRecord],
 ) -> dict[str, Any]:
+    valid_frames = load_taxonomy()["risk_framings"]
+    frame_mention_floor = get_canonical_thresholds()["frame_mention_floor"]
     document_type_counts = Counter[str]()
     binding_counts = Counter[str]()
     requirement_counts = Counter[str]()
@@ -749,27 +2493,46 @@ def _build_jurisdiction_input_digest(
     for item in documents:
         extraction = item.analysis.policy_extraction
         framing = item.analysis.risk_framing
+        seed = item.parsed_record.seed_document
+        authoritative_binding = (
+            seed.binding_strength if seed is not None and seed.binding_strength else extraction.binding_strength
+        )
         document_type_counts[extraction.document_type] += 1
-        binding_counts[extraction.binding_strength] += 1
+        binding_counts[authoritative_binding] += 1
+
+        # Deduplicate canonical institutions per document (jurisdiction-scoped, D9).
+        doc_institutions: set[str] = set()
         if extraction.issuing_body:
-            institution_counts[extraction.issuing_body] += 1
+            canonical = _canonicalize_institution_name(extraction.issuing_body, jurisdiction=jurisdiction)
+            if canonical:
+                doc_institutions.add(canonical)
         for authority in extraction.enforcement_authorities:
             if authority:
-                institution_counts[authority] += 1
+                canonical = _canonicalize_institution_name(authority, jurisdiction=jurisdiction)
+                if canonical:
+                    doc_institutions.add(canonical)
+        for inst in doc_institutions:
+            institution_counts[inst] += 1
+
         for requirement in extraction.safety_requirements:
             requirement_counts[requirement.label] += 1
         for mechanism in extraction.enforcement_mechanisms:
             enforcement_counts[mechanism.label] += 1
 
+        # Normalize per-document frame distribution so every document carries equal 1.0 frame weight.
+        normalized_frames = normalize_frame_confidence(
+            framing.frame_share if framing.frame_share else framing.frame_confidence,
+            valid_frames=valid_frames,
+            dominant_frame=framing.dominant_frame,
+        )
         seen_frames: set[str] = set()
-        for frame, score in framing.frame_confidence.items():
-            frame_score_totals[frame] += score
-            if score >= 0.15:
+        for frame, norm_score in normalized_frames.items():
+            if norm_score > 0.0:
+                frame_score_totals[frame] += norm_score
+            raw_score = framing.frame_confidence.get(frame, 0.0)
+            if raw_score >= frame_mention_floor:
                 seen_frames.add(frame)
-        if not framing.frame_confidence and framing.dominant_frame:
-            frame_score_totals[framing.dominant_frame] += 1.0
-            seen_frames.add(framing.dominant_frame)
-        elif framing.dominant_frame:
+        if framing.dominant_frame:
             seen_frames.add(framing.dominant_frame)
         for frame in seen_frames:
             frame_document_mentions[frame] += 1
@@ -779,9 +2542,11 @@ def _build_jurisdiction_input_digest(
                 "document_id": item.parsed_record.document_id,
                 "title": item.analysis.title,
                 "publication_date": item.publication_date,
-                "issuing_body": extraction.issuing_body,
+                "issuing_body": _canonicalize_institution_name(extraction.issuing_body, jurisdiction=jurisdiction),
                 "document_type": extraction.document_type,
-                "binding_strength": extraction.binding_strength,
+                "binding_strength": authoritative_binding,
+                "corpus_role": item.parsed_record.seed_document.corpus_role if item.parsed_record.seed_document else None,
+                "lifecycle_stage": item.parsed_record.seed_document.lifecycle_stage if item.parsed_record.seed_document else None,
                 "dominant_frame": item.analysis.risk_framing.dominant_frame,
                 "secondary_frames": item.analysis.risk_framing.secondary_frames,
                 "top_requirements": [requirement.label for requirement in extraction.safety_requirements[:3]],
@@ -1147,7 +2912,10 @@ def _select_key_sources(
 
     ranked = sorted(
         documents,
-        key=lambda item: _source_salience(item, earliest_year=earliest, span_years=span),
+        key=lambda item: (
+            _source_salience(item, earliest_year=earliest, span_years=span),
+            item.parsed_record.document_id,
+        ),
         reverse=True,
     )
     return [
@@ -1172,7 +2940,28 @@ def _source_salience(
 ) -> float:
     extraction = item.analysis.policy_extraction
     framing = item.analysis.risk_framing
-    base = SOURCE_SALIENCE_WEIGHT.get(extraction.binding_strength, 2.0)
+    seed = item.parsed_record.seed_document
+    effective_binding = (
+        seed.binding_strength
+        if seed is not None and seed.binding_strength
+        else extraction.binding_strength
+    )
+    base = SOURCE_SALIENCE_WEIGHT.get(effective_binding, 2.0)
+
+    # Strongly prioritize active primary instruments and demote drafts/superseded/companions/FAQs.
+    if seed is not None:
+        if seed.corpus_role == "primary_instrument":
+            base += 2.5
+        elif seed.corpus_role in {"companion_resource", "draft_consultation", "historical_baseline"}:
+            base -= 2.5
+        if seed.lifecycle_stage == "active":
+            base += 0.8
+        elif seed.lifecycle_stage in {"draft", "superseded"}:
+            base -= 2.0
+
+    if _is_non_statutory_companion(item):
+        base -= 1.5
+
     richness = (
         min(len(extraction.safety_requirements), 4) * 0.35
         + min(len(extraction.enforcement_mechanisms), 3) * 0.35
@@ -1189,6 +2978,7 @@ def _source_salience(
 def _source_contribution(item: JurisdictionDocumentRecord) -> str:
     extraction = item.analysis.policy_extraction
     framing = item.analysis.risk_framing
+    seed = item.parsed_record.seed_document
     prefix_map = {
         "binding_law": "Statutory anchor",
         "executive_action": "Executive coordination anchor",
@@ -1197,6 +2987,21 @@ def _source_contribution(item: JurisdictionDocumentRecord) -> str:
         "voluntary_commitment": "Soft-law signal",
         "strategy_statement": "Strategic direction anchor",
     }
+    effective_binding = (
+        seed.binding_strength
+        if seed is not None and seed.binding_strength
+        else extraction.binding_strength
+    )
+    if _is_non_statutory_companion(item):
+        if seed is not None and seed.lifecycle_stage == "draft":
+            prefix = "Consultation draft"
+        elif seed is not None and seed.lifecycle_stage == "superseded":
+            prefix = "Historical reference"
+        else:
+            prefix = "Companion implementation resource"
+    else:
+        prefix = prefix_map.get(effective_binding, "Key source")
+
     requirements = [_humanize_label(requirement.label) for requirement in extraction.safety_requirements[:2]]
     mechanisms = [
         _humanize_label(mechanism.label)
@@ -1208,8 +3013,8 @@ def _source_contribution(item: JurisdictionDocumentRecord) -> str:
     else:
         focus = f"for the {FRAME_LABELS.get(framing.dominant_frame, framing.dominant_frame).lower()} rationale"
     if mechanisms:
-        return f"{prefix_map.get(extraction.binding_strength, 'Key source')} {focus}, with {mechanisms[0]} as the clearest consequence or oversight hook."
-    return f"{prefix_map.get(extraction.binding_strength, 'Key source')} {focus}."
+        return f"{prefix} {focus}, with {mechanisms[0]} as the clearest consequence or oversight hook."
+    return f"{prefix} {focus}."
 
 
 def _join_text(values: list[str]) -> str:
@@ -1271,6 +3076,152 @@ def _analysis_fidelity_issue(record: ParsedDocumentRecord) -> str | None:
     return None
 
 
+def _stable_text_hash(value: str) -> str:
+    return sha256(value.encode("utf-8")).hexdigest()
+
+
+STALE_ANALYSIS_FILENAMES = (
+    "document_analysis.json",
+    "policy_extraction.json",
+    "risk_framing.json",
+    "policy_metadata.json",
+    "policy_controls.json",
+    "policy_response.raw.json",
+    "framing_response.raw.json",
+)
+
+
+def _analysis_currency_status(
+    *,
+    analysis_path: Path,
+    input_sha256: str,
+    model: str,
+    effort: str | None,
+    taxonomy_hash: str,
+    extraction_prompt_hash: str,
+    framing_prompt_hash: str,
+) -> tuple[bool, str]:
+    """Determine whether an on-disk document_analysis.json matches current inputs and provenance (Section 0)."""
+    if not analysis_path.exists():
+        return False, "missing"
+    try:
+        payload = json.loads(analysis_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False, "invalid_json"
+
+    provenance = payload.get("analysis_metadata")
+    if not isinstance(provenance, dict):
+        # Section 0: NEVER treat legacy artifacts lacking provenance as current.
+        return False, "stale_legacy_no_provenance"
+
+    is_current = (
+        provenance.get("input_sha256") == input_sha256
+        and provenance.get("model") == model
+        and provenance.get("effort") == effort
+        and provenance.get("taxonomy_hash") == taxonomy_hash
+        and provenance.get("extraction_prompt_hash") == extraction_prompt_hash
+        and provenance.get("framing_prompt_hash") == framing_prompt_hash
+    )
+    return (True, "current") if is_current else (False, "stale_inputs_changed")
+
+
+def _existing_analysis_is_current(
+    *,
+    analysis_path: Path,
+    input_sha256: str,
+    model: str,
+    effort: str | None,
+    taxonomy_hash: str,
+    extraction_prompt_hash: str,
+    framing_prompt_hash: str,
+) -> bool:
+    is_current, _status = _analysis_currency_status(
+        analysis_path=analysis_path,
+        input_sha256=input_sha256,
+        model=model,
+        effort=effort,
+        taxonomy_hash=taxonomy_hash,
+        extraction_prompt_hash=extraction_prompt_hash,
+        framing_prompt_hash=framing_prompt_hash,
+    )
+    return is_current
+
+
+def _invoke_client_once(
+    client: StructuredOutputClient,
+    *,
+    system_prompt: str,
+    user_prompt: str,
+    schema: dict[str, Any],
+    max_tokens: int,
+    system_prefix: str | None = None,
+    cached_document_context: str | None = None,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    sig = inspect.signature(client.create_json_response)
+    params = sig.parameters
+    accepts_kwargs = any(p.kind == inspect.Parameter.VAR_KEYWORD for p in params.values())
+
+    call_kwargs: dict[str, Any] = {
+        "schema": schema,
+        "max_tokens": max_tokens,
+    }
+    if accepts_kwargs or "system_prefix" in params:
+        call_kwargs["system_prompt"] = system_prompt
+        call_kwargs["system_prefix"] = system_prefix
+    else:
+        call_kwargs["system_prompt"] = (
+            f"{system_prefix}\n\n{system_prompt}" if system_prefix else system_prompt
+        )
+
+    if accepts_kwargs or "cached_document_context" in params:
+        call_kwargs["user_prompt"] = user_prompt
+        call_kwargs["cached_document_context"] = cached_document_context
+    else:
+        call_kwargs["user_prompt"] = (
+            f"{cached_document_context}\n\n{user_prompt}"
+            if cached_document_context
+            else user_prompt
+        )
+
+    return client.create_json_response(**call_kwargs)
+
+
+def _call_structured_client(
+    client: StructuredOutputClient,
+    *,
+    system_prompt: str,
+    user_prompt: str,
+    schema: dict[str, Any],
+    max_tokens: int,
+    system_prefix: str | None = None,
+    cached_document_context: str | None = None,
+    retry_on_max_tokens: bool = True,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    try:
+        return _invoke_client_once(
+            client,
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            schema=schema,
+            max_tokens=max_tokens,
+            system_prefix=system_prefix,
+            cached_document_context=cached_document_context,
+        )
+    except MaxTokensTruncatedError:
+        if not retry_on_max_tokens or max_tokens >= MAX_TOKENS_RETRY_CAP:
+            raise
+        escalated_tokens = min(max(max_tokens * 2, 12288), MAX_TOKENS_RETRY_CAP)
+        return _invoke_client_once(
+            client,
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            schema=schema,
+            max_tokens=escalated_tokens,
+            system_prefix=system_prefix,
+            cached_document_context=cached_document_context,
+        )
+
+
 def analyze_parsed_documents(
     *,
     jurisdiction: str | None = None,
@@ -1285,258 +3236,334 @@ def analyze_parsed_documents(
 
     if client is None:
         client = ClaudeAPIClient()
+    managed_store = False
     if store is None and os.getenv("DATABASE_URL"):
         store = PostgresAnalysisStore()
+        managed_store = True
 
-    policy_schema = _policy_extraction_schema()
-    metadata_schema = _policy_metadata_schema()
-    controls_schema = _policy_controls_schema()
-    framing_schema = _risk_framing_schema()
-    metadata_system_prompt = _build_task_system_prompt(
-        "structured_extraction.md",
+    (
         metadata_schema,
-        focus_instructions=(
-            "Extract only the document-level policy metadata, scope, dates, authorities, deadlines, "
-            "and implementation notes. Do not include safety requirement or enforcement mechanism arrays."
-        ),
-    )
-    controls_system_prompt = _build_task_system_prompt(
-        "structured_extraction.md",
         controls_schema,
-        focus_instructions=(
-            "Extract only the named safety requirements and enforcement mechanisms. "
-            "Use conservative labels and provide short evidence spans for each item."
-        ),
-    )
-    framing_system_prompt = _build_task_system_prompt(
-        "risk_framing_analysis.md",
         framing_schema,
-        focus_instructions=(
-            "Focus on the document's stated reasons for AI governance, especially rights, security, "
-            "competition, innovation, public-order, and societal-risk language."
-        ),
+        shared_system_prefix,
+        metadata_system_prompt,
+        controls_system_prompt,
+        framing_system_prompt,
+    ) = _build_analysis_prompts()
+
+    taxonomy_hash = _stable_text_hash(json.dumps(load_taxonomy(), ensure_ascii=False, sort_keys=True))
+    taxonomy_version = get_taxonomy_version()
+    combined_extraction_prompt = (
+        f"{shared_system_prefix}\n\n---\n\n{metadata_system_prompt}\n\n---\n\n{controls_system_prompt}"
     )
+    combined_framing_prompt = f"{shared_system_prefix}\n\n---\n\n{framing_system_prompt}"
+    extraction_prompt_hash = _stable_text_hash(combined_extraction_prompt)
+    framing_prompt_hash = _stable_text_hash(combined_framing_prompt)
+    client_provider = getattr(client, "provider", "custom")
+    client_model = getattr(client, "model", "unknown")
+    client_effort = getattr(client, "effort", None)
+    client_temperature = getattr(client, "temperature", None)
 
     results: list[dict[str, str]] = []
     touched_jurisdictions: set[str] = set()
-    for record in records:
-        target_dir = ANALYSIS_DIR / record.jurisdiction / record.document_id
-        if not refresh_existing and (target_dir / "document_analysis.json").exists():
-            results.append(
-                {
-                    "jurisdiction": record.jurisdiction,
-                    "document_id": record.document_id,
-                    "status": "skipped_existing",
-                }
-            )
-            continue
-        fidelity_issue = _analysis_fidelity_issue(record)
-        if fidelity_issue is not None:
-            if target_dir.exists() and refresh_existing:
-                shutil.rmtree(target_dir)
-            target_dir.mkdir(parents=True, exist_ok=True)
-            (target_dir / "analysis_skipped.json").write_text(
-                json.dumps(
-                    {
-                        "source_id": record.document_id,
-                        "reason": "low_fidelity_input",
-                        "detail": fidelity_issue,
-                        "parser_warnings": record.parsed_document.warnings,
-                        "plain_text_non_whitespace_chars": _non_whitespace_length(record.parsed_document.plain_text),
-                    },
-                    indent=2,
-                    ensure_ascii=False,
-                )
-                + "\n",
-                encoding="utf-8",
-            )
-            results.append(
-                {
-                    "jurisdiction": record.jurisdiction,
-                    "document_id": record.document_id,
-                    "status": "skipped_low_fidelity",
-                }
-            )
-            continue
-        metadata_prompt = _build_user_prompt(
-            record,
-            excerpt=_build_analysis_excerpt(
-                record,
-                keywords=POLICY_METADATA_KEYWORDS,
-                max_chars=POLICY_METADATA_MAX_CHARS,
-            ),
-            task_label="policy_metadata",
-        )
-        controls_prompt = _build_user_prompt(
-            record,
-            excerpt=_build_analysis_excerpt(
-                record,
-                keywords=POLICY_CONTROLS_KEYWORDS,
-                max_chars=POLICY_CONTROLS_MAX_CHARS,
-            ),
-            task_label="policy_controls",
-        )
-        framing_prompt = _build_user_prompt(
-            record,
-            excerpt=_build_analysis_excerpt(
-                record,
-                keywords=RISK_FRAMING_KEYWORDS,
-                max_chars=RISK_FRAMING_MAX_CHARS,
-            ),
-            task_label="risk_framing",
-        )
-        try:
-            metadata_payload, raw_metadata_response = client.create_json_response(
-                system_prompt=metadata_system_prompt,
-                user_prompt=metadata_prompt,
-                schema=metadata_schema,
-                max_tokens=3072,
-            )
-            controls_payload, raw_controls_response = client.create_json_response(
-                system_prompt=controls_system_prompt,
-                user_prompt=controls_prompt,
-                schema=controls_schema,
-                max_tokens=4096,
-            )
-            framing_payload, raw_framing_response = client.create_json_response(
-                system_prompt=framing_system_prompt,
-                user_prompt=framing_prompt,
-                schema=framing_schema,
-                max_tokens=3072,
-            )
-            metadata_extraction = PolicyMetadataExtraction.model_validate(metadata_payload)
-            controls_extraction = PolicyControlsExtraction.model_validate(controls_payload)
-            extraction = PolicyExtraction(
-                jurisdiction=record.jurisdiction,
-                issuing_body=metadata_extraction.issuing_body,
-                document_type=metadata_extraction.document_type,
-                binding_strength=metadata_extraction.binding_strength,
-                publication_date=metadata_extraction.publication_date,
-                effective_date=metadata_extraction.effective_date,
-                covered_actors=metadata_extraction.covered_actors,
-                covered_application_domains=metadata_extraction.covered_application_domains,
-                prohibited_practices=metadata_extraction.prohibited_practices,
-                safety_requirements=controls_extraction.safety_requirements,
-                enforcement_mechanisms=controls_extraction.enforcement_mechanisms,
-                enforcement_authorities=metadata_extraction.enforcement_authorities,
-                compliance_deadlines=metadata_extraction.compliance_deadlines,
-                penalties_summary=metadata_extraction.penalties_summary,
-                implementation_notes=metadata_extraction.implementation_notes,
-                confidence=metadata_extraction.confidence,
-            )
-            framing = RiskFramingAnalysis.model_validate(framing_payload)
-            _validate_taxonomy_alignment(extraction, framing)
-        except (ValidationError, ValueError, RuntimeError, json.JSONDecodeError) as exc:
-            results.append(
-                {
-                    "jurisdiction": record.jurisdiction,
-                    "document_id": record.document_id,
-                    "status": f"analysis_error:{type(exc).__name__}",
-                }
-            )
-            continue
 
-        analysis = DocumentAnalysis(
-            source_id=record.document_id,
-            title=record.raw_metadata.get("title", record.parsed_document.title),
-            language=_primary_language(record),
-            policy_extraction=extraction,
-            risk_framing=framing,
-        )
+    def _run_batch(active_store: AnalysisStore | None) -> None:
+        for record in records:
+            target_dir = ANALYSIS_DIR / record.jurisdiction / record.document_id
+            input_sha256 = _stable_text_hash(record.parsed_document.plain_text)
 
-        target_dir.mkdir(parents=True, exist_ok=True)
-
-        (target_dir / "policy_extraction.json").write_text(
-            extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-        (target_dir / "risk_framing.json").write_text(
-            framing.model_dump_json(indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-        (target_dir / "document_analysis.json").write_text(
-            analysis.model_dump_json(indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-        (target_dir / "policy_metadata.json").write_text(
-            metadata_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-        (target_dir / "policy_controls.json").write_text(
-            controls_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-        (target_dir / "policy_response.raw.json").write_text(
-            json.dumps(
-                {
-                    "metadata_response": raw_metadata_response,
-                    "controls_response": raw_controls_response,
-                },
-                indent=2,
-                ensure_ascii=False,
+            is_current, currency_reason = _analysis_currency_status(
+                analysis_path=target_dir / "document_analysis.json",
+                input_sha256=input_sha256,
+                model=client_model,
+                effort=client_effort,
+                taxonomy_hash=taxonomy_hash,
+                extraction_prompt_hash=extraction_prompt_hash,
+                framing_prompt_hash=framing_prompt_hash,
             )
-            + "\n",
-            encoding="utf-8",
-        )
-        (target_dir / "framing_response.raw.json").write_text(
-            json.dumps(raw_framing_response, indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-
-        if store is not None:
-            try:
-                bundle = build_analysis_persistence_bundle(
-                    document_id=record.document_id,
-                    jurisdiction=record.jurisdiction,
-                    title=record.raw_metadata.get("title", record.parsed_document.title),
-                    canonical_url=_source_url(record),
-                    language=_primary_language(record),
-                    parser_version=record.parsed_document.parser_version,
-                    raw_artifact_path=record.parsed_document.source_artifact_path,
-                    normalized_text_path=str(record.parsed_path),
-                    normalized_text=record.parsed_document.plain_text,
-                    raw_metadata=record.raw_metadata,
-                    provider=getattr(client, "provider", "custom"),
-                    model=getattr(client, "model", "unknown"),
-                    effort=getattr(client, "effort", None),
-                    extraction_prompt=f"{metadata_system_prompt}\n\n---\n\n{controls_system_prompt}",
-                    framing_prompt=framing_system_prompt,
-                    extraction=extraction,
-                    framing=framing,
-                    raw_policy_response={
-                        "metadata_response": raw_metadata_response,
-                        "controls_response": raw_controls_response,
-                    },
-                    raw_framing_response=raw_framing_response,
-                )
-                store.persist_analysis_bundle(bundle)
-            except Exception as exc:
+            if not refresh_existing and is_current:
                 results.append(
                     {
                         "jurisdiction": record.jurisdiction,
                         "document_id": record.document_id,
-                        "status": f"persist_error:{type(exc).__name__}",
+                        "status": "skipped_existing",
                     }
                 )
                 continue
 
-        results.append(
-            {
+            fidelity_issue = _analysis_fidelity_issue(record)
+            if fidelity_issue is not None:
+                # D10: Always remove stale analysis files when low-fidelity skip triggers.
+                if target_dir.exists():
+                    for stale_name in STALE_ANALYSIS_FILENAMES:
+                        stale_file = target_dir / stale_name
+                        if stale_file.exists():
+                            stale_file.unlink()
+                target_dir.mkdir(parents=True, exist_ok=True)
+                (target_dir / "analysis_skipped.json").write_text(
+                    json.dumps(
+                        {
+                            "source_id": record.document_id,
+                            "reason": "low_fidelity_input",
+                            "detail": fidelity_issue,
+                            "parser_warnings": record.parsed_document.warnings,
+                            "plain_text_non_whitespace_chars": _non_whitespace_length(record.parsed_document.plain_text),
+                        },
+                        indent=2,
+                        ensure_ascii=False,
+                    )
+                    + "\n",
+                    encoding="utf-8",
+                    newline="\n",
+                )
+                results.append(
+                    {
+                        "jurisdiction": record.jurisdiction,
+                        "document_id": record.document_id,
+                        "status": "skipped_low_fidelity",
+                    }
+                )
+                continue
+
+            chunks = _chunk_document_for_analysis(record)
+            chunk_count = len(chunks)
+            metadata_chunks: list[PolicyMetadataExtraction] = []
+            controls_chunks: list[PolicyControlsExtraction] = []
+            framing_chunks: list[RiskFramingAnalysis] = []
+            raw_metadata_responses: list[dict[str, Any]] = []
+            raw_controls_responses: list[dict[str, Any]] = []
+            raw_framing_responses: list[dict[str, Any]] = []
+
+            try:
+                for idx, chunk_text in enumerate(chunks, start=1):
+                    chunk_note = f"{idx}/{chunk_count}" if chunk_count > 1 else None
+                    # D8: Shared cacheable document context across all 3 calls for this chunk.
+                    cached_doc_ctx = _build_document_context_block(
+                        record,
+                        excerpt=chunk_text,
+                        chunk_note=chunk_note,
+                    )
+                    metadata_payload, raw_meta_resp = _call_structured_client(
+                        client,
+                        system_prefix=shared_system_prefix,
+                        system_prompt=metadata_system_prompt,
+                        cached_document_context=cached_doc_ctx,
+                        user_prompt=_build_task_trigger_prompt("policy_metadata", chunk_note=chunk_note),
+                        schema=metadata_schema,
+                        max_tokens=POLICY_METADATA_MAX_TOKENS,
+                    )
+                    controls_payload, raw_ctrl_resp = _call_structured_client(
+                        client,
+                        system_prefix=shared_system_prefix,
+                        system_prompt=controls_system_prompt,
+                        cached_document_context=cached_doc_ctx,
+                        user_prompt=_build_task_trigger_prompt("policy_controls", chunk_note=chunk_note),
+                        schema=controls_schema,
+                        max_tokens=POLICY_CONTROLS_MAX_TOKENS,
+                    )
+                    framing_payload, raw_frame_resp = _call_structured_client(
+                        client,
+                        system_prefix=shared_system_prefix,
+                        system_prompt=framing_system_prompt,
+                        cached_document_context=cached_doc_ctx,
+                        user_prompt=_build_task_trigger_prompt("risk_framing", chunk_note=chunk_note),
+                        schema=framing_schema,
+                        max_tokens=RISK_FRAMING_MAX_TOKENS,
+                    )
+                    metadata_chunks.append(PolicyMetadataExtraction.model_validate(metadata_payload))
+                    controls_chunks.append(PolicyControlsExtraction.model_validate(controls_payload))
+                    framing_chunks.append(RiskFramingAnalysis.model_validate(framing_payload))
+                    raw_metadata_responses.append(raw_meta_resp)
+                    raw_controls_responses.append(raw_ctrl_resp)
+                    raw_framing_responses.append(raw_frame_resp)
+
+                metadata_extraction = _merge_policy_metadata_chunks(metadata_chunks)
+                controls_extraction = _merge_policy_controls_chunks(
+                    controls_chunks,
+                    plain_text=record.parsed_document.plain_text,
+                )
+                framing = _merge_risk_framing_chunks(framing_chunks, [len(chunk) for chunk in chunks])
+
+                extraction = PolicyExtraction(
+                    jurisdiction=record.jurisdiction,
+                    issuing_body=metadata_extraction.issuing_body,
+                    document_type=metadata_extraction.document_type,
+                    binding_strength=metadata_extraction.binding_strength,
+                    publication_date=metadata_extraction.publication_date,
+                    effective_date=metadata_extraction.effective_date,
+                    covered_actors=metadata_extraction.covered_actors,
+                    covered_application_domains=metadata_extraction.covered_application_domains,
+                    prohibited_practices=metadata_extraction.prohibited_practices,
+                    safety_requirements=controls_extraction.safety_requirements,
+                    enforcement_mechanisms=controls_extraction.enforcement_mechanisms,
+                    enforcement_authorities=metadata_extraction.enforcement_authorities,
+                    compliance_deadlines=metadata_extraction.compliance_deadlines,
+                    penalties_summary=metadata_extraction.penalties_summary,
+                    implementation_notes=metadata_extraction.implementation_notes,
+                    confidence=metadata_extraction.confidence,
+                )
+                _validate_taxonomy_alignment(extraction, framing)
+            except (ValidationError, ValueError, RuntimeError, json.JSONDecodeError) as exc:
+                # D3: Record full exception type + message in status.
+                results.append(
+                    {
+                        "jurisdiction": record.jurisdiction,
+                        "document_id": record.document_id,
+                        "status": f"analysis_error:{type(exc).__name__}: {exc}",
+                    }
+                )
+                continue
+
+            raw_policy_response: dict[str, Any] = {
+                "provider": client_provider,
+                "model": client_model,
+                "effort": client_effort,
+                "metadata_response": raw_metadata_responses[0] if chunk_count == 1 else raw_metadata_responses,
+                "controls_response": raw_controls_responses[0] if chunk_count == 1 else raw_controls_responses,
+            }
+            raw_framing_response: dict[str, Any] = (
+                raw_framing_responses[0]
+                if chunk_count == 1
+                else {"provider": client_provider, "model": client_model, "effort": client_effort, "chunks": raw_framing_responses}
+            )
+            usage_summary = _accumulate_usage(
+                [*raw_metadata_responses, *raw_controls_responses, *raw_framing_responses]
+            )
+
+            preliminary_analysis = DocumentAnalysis(
+                source_id=record.document_id,
+                title=record.raw_metadata.get("title", record.parsed_document.title),
+                language=_primary_language(record),
+                policy_extraction=extraction,
+                risk_framing=framing,
+            )
+            # D6: Ground and persist per-span grounding_status, start_char, and end_char.
+            grounded_analysis, grounding_summary = ground_document_analysis(
+                preliminary_analysis,
+                record.parsed_document.plain_text,
+            )
+            analyzed_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+            provenance = AnalysisProvenance(
+                provider=client_provider,
+                model=client_model,
+                effort=client_effort,
+                temperature=client_temperature,
+                analyzed_at=analyzed_at,
+                analysis_version=PIPELINE_ANALYSIS_VERSION,
+                taxonomy_version=taxonomy_version,
+                taxonomy_hash=taxonomy_hash,
+                extraction_prompt_hash=extraction_prompt_hash,
+                framing_prompt_hash=framing_prompt_hash,
+                input_sha256=input_sha256,
+                chunked=chunk_count > 1,
+                chunk_count=chunk_count,
+                usage=usage_summary,
+                grounding_summary=grounding_summary,
+            )
+            analysis = grounded_analysis.model_copy(update={"analysis_metadata": provenance})
+
+            target_dir.mkdir(parents=True, exist_ok=True)
+            skip_marker = target_dir / "analysis_skipped.json"
+            if skip_marker.exists():
+                skip_marker.unlink()
+
+            (target_dir / "policy_extraction.json").write_text(
+                analysis.policy_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+            (target_dir / "risk_framing.json").write_text(
+                analysis.risk_framing.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+            (target_dir / "document_analysis.json").write_text(
+                analysis.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+            (target_dir / "policy_metadata.json").write_text(
+                metadata_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+            (target_dir / "policy_controls.json").write_text(
+                controls_extraction.model_dump_json(indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+            (target_dir / "policy_response.raw.json").write_text(
+                json.dumps(raw_policy_response, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+            (target_dir / "framing_response.raw.json").write_text(
+                json.dumps(raw_framing_response, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+
+            if active_store is not None:
+                try:
+                    bundle = build_analysis_persistence_bundle(
+                        document_id=record.document_id,
+                        jurisdiction=record.jurisdiction,
+                        title=record.raw_metadata.get("title", record.parsed_document.title),
+                        canonical_url=_source_url(record),
+                        language=_primary_language(record),
+                        parser_version=record.parsed_document.parser_version,
+                        raw_artifact_path=record.parsed_document.source_artifact_path,
+                        normalized_text_path=repo_rel_posix(record.parsed_path),
+                        normalized_text=record.parsed_document.plain_text,
+                        raw_metadata=record.raw_metadata,
+                        extraction=analysis.policy_extraction,
+                        framing=analysis.risk_framing,
+                        raw_policy_response=raw_policy_response,
+                        raw_framing_response=raw_framing_response,
+                        analysis_metadata=provenance,
+                        binding_strength=record.seed_document.binding_strength if record.seed_document else None,
+                        sections=[section.model_dump(mode="json") for section in record.parsed_document.sections],
+                        parser_warnings=record.parsed_document.warnings,
+                        source_tier=record.seed_document.source_tier if record.seed_document else None,
+                        corpus_role=record.seed_document.corpus_role if record.seed_document else None,
+                        lifecycle_stage=record.seed_document.lifecycle_stage if record.seed_document else None,
+                        grounding_ratio=grounding_summary["grounding_ratio"],
+                    )
+                    active_store.persist_analysis_bundle(bundle)
+                except Exception as exc:
+                    results.append(
+                        {
+                            "jurisdiction": record.jurisdiction,
+                            "document_id": record.document_id,
+                            "status": f"persist_error:{type(exc).__name__}: {exc}",
+                        }
+                    )
+                    continue
+
+            result_entry = {
                 "jurisdiction": record.jurisdiction,
                 "document_id": record.document_id,
                 "status": "analyzed",
             }
-        )
-        touched_jurisdictions.add(record.jurisdiction)
+            if currency_reason == "stale_legacy_no_provenance":
+                result_entry["previous_status"] = "stale_legacy_no_provenance"
+            results.append(result_entry)
+            touched_jurisdictions.add(record.jurisdiction)
 
-    for touched_jurisdiction in sorted(touched_jurisdictions):
-        results.extend(
-            analyze_jurisdictions(
-                jurisdiction=touched_jurisdiction,
-                store=store,
-                refresh_existing=True,
+        for touched_jurisdiction in sorted(touched_jurisdictions):
+            results.extend(
+                analyze_jurisdictions(
+                    jurisdiction=touched_jurisdiction,
+                    store=active_store,
+                    refresh_existing=True,
+                )
             )
-        )
+
+    if managed_store and isinstance(store, PostgresAnalysisStore):
+        with store as active_store:
+            _run_batch(active_store)
+    else:
+        _run_batch(store)
 
     return results
 
@@ -1546,96 +3573,104 @@ def persist_analysis_artifacts(
     jurisdiction: str | None = None,
     document_id: str | None = None,
     store: AnalysisStore | None = None,
+    allow_legacy: bool = False,
 ) -> list[dict[str, str]]:
     records = _load_parsed_document_records(jurisdiction=jurisdiction, document_id=document_id)
     if not records:
         raise ValueError("no parsed documents matched the requested filters")
 
+    managed_store = False
     if store is None:
         store = PostgresAnalysisStore()
-
-    metadata_schema = _policy_metadata_schema()
-    controls_schema = _policy_controls_schema()
-    framing_schema = _risk_framing_schema()
-    metadata_system_prompt = _build_task_system_prompt(
-        "structured_extraction.md",
-        metadata_schema,
-        focus_instructions=(
-            "Extract only the document-level policy metadata, scope, dates, authorities, deadlines, "
-            "and implementation notes. Do not include safety requirement or enforcement mechanism arrays."
-        ),
-    )
-    controls_system_prompt = _build_task_system_prompt(
-        "structured_extraction.md",
-        controls_schema,
-        focus_instructions=(
-            "Extract only the named safety requirements and enforcement mechanisms. "
-            "Use conservative labels and provide short evidence spans for each item."
-        ),
-    )
-    framing_system_prompt = _build_task_system_prompt("risk_framing_analysis.md", framing_schema, focus_instructions="")
+        managed_store = True
 
     results: list[dict[str, str]] = []
     touched_jurisdictions: set[str] = set()
-    for record in records:
-        try:
-            analysis, raw_policy_response, raw_framing_response = _load_analysis_artifacts(record)
-            extraction = analysis.policy_extraction
-            framing = analysis.risk_framing
-            _validate_taxonomy_alignment(extraction, framing)
-            provider, model, effort = _artifact_runtime_metadata(
-                raw_policy_response=raw_policy_response,
-                raw_framing_response=raw_framing_response,
-            )
-            bundle = build_analysis_persistence_bundle(
-                document_id=record.document_id,
-                jurisdiction=record.jurisdiction,
-                title=record.raw_metadata.get("title", record.parsed_document.title),
-                canonical_url=_source_url(record),
-                language=_primary_language(record),
-                parser_version=record.parsed_document.parser_version,
-                raw_artifact_path=record.parsed_document.source_artifact_path,
-                normalized_text_path=str(record.parsed_path),
-                normalized_text=record.parsed_document.plain_text,
-                raw_metadata=record.raw_metadata,
-                provider=provider,
-                model=model,
-                effort=effort,
-                extraction_prompt=f"{metadata_system_prompt}\n\n---\n\n{controls_system_prompt}",
-                framing_prompt=framing_system_prompt,
-                extraction=extraction,
-                framing=framing,
-                raw_policy_response=raw_policy_response,
-                raw_framing_response=raw_framing_response,
-            )
-            store.persist_analysis_bundle(bundle)
-        except (ValidationError, ValueError, RuntimeError, json.JSONDecodeError, OSError) as exc:
+
+    def _run_persist(active_store: AnalysisStore) -> None:
+        for record in records:
+            try:
+                analysis, raw_policy_response, raw_framing_response = _load_analysis_artifacts(record)
+                extraction = analysis.policy_extraction
+                framing = analysis.risk_framing
+                _validate_taxonomy_alignment(extraction, framing)
+
+                if analysis.analysis_metadata is None and not allow_legacy:
+                    raise LegacyProvenanceError(
+                        f"refusing to persist legacy analysis for '{record.document_id}' without "
+                        "analysis_metadata; re-run analyze-documents or pass --allow-legacy"
+                    )
+
+                provider, model, effort = _artifact_runtime_metadata(
+                    analysis=analysis,
+                    raw_policy_response=raw_policy_response,
+                    raw_framing_response=raw_framing_response,
+                )
+                grounding = score_document_grounding(analysis, record.parsed_document.plain_text)
+                bundle = build_analysis_persistence_bundle(
+                    document_id=record.document_id,
+                    jurisdiction=record.jurisdiction,
+                    title=record.raw_metadata.get("title", record.parsed_document.title),
+                    canonical_url=_source_url(record),
+                    language=_primary_language(record),
+                    parser_version=record.parsed_document.parser_version,
+                    raw_artifact_path=record.parsed_document.source_artifact_path,
+                    normalized_text_path=repo_rel_posix(record.parsed_path),
+                    normalized_text=record.parsed_document.plain_text,
+                    raw_metadata=record.raw_metadata,
+                    extraction=extraction,
+                    framing=framing,
+                    raw_policy_response=raw_policy_response,
+                    raw_framing_response=raw_framing_response,
+                    analysis_metadata=analysis.analysis_metadata,
+                    allow_legacy=allow_legacy,
+                    provider=provider,
+                    model=model,
+                    effort=effort,
+                    binding_strength=record.seed_document.binding_strength if record.seed_document else None,
+                    sections=[section.model_dump(mode="json") for section in record.parsed_document.sections],
+                    parser_warnings=record.parsed_document.warnings,
+                    source_tier=record.seed_document.source_tier if record.seed_document else None,
+                    corpus_role=record.seed_document.corpus_role if record.seed_document else None,
+                    lifecycle_stage=record.seed_document.lifecycle_stage if record.seed_document else None,
+                    grounding_ratio=grounding["grounding_ratio"],
+                )
+                active_store.persist_analysis_bundle(bundle)
+            except LegacyProvenanceError:
+                raise
+            except Exception as exc:
+                results.append(
+                    {
+                        "jurisdiction": record.jurisdiction,
+                        "document_id": record.document_id,
+                        "status": f"persist_error:{type(exc).__name__}: {exc}",
+                    }
+                )
+                continue
+
             results.append(
                 {
                     "jurisdiction": record.jurisdiction,
                     "document_id": record.document_id,
-                    "status": f"persist_error:{type(exc).__name__}",
+                    "status": "persisted",
                 }
             )
-            continue
+            touched_jurisdictions.add(record.jurisdiction)
 
-        results.append(
-            {
-                "jurisdiction": record.jurisdiction,
-                "document_id": record.document_id,
-                "status": "persisted",
-            }
-        )
-        touched_jurisdictions.add(record.jurisdiction)
-
-    for touched_jurisdiction in sorted(touched_jurisdictions):
-        results.extend(
-            analyze_jurisdictions(
-                jurisdiction=touched_jurisdiction,
-                store=store,
-                refresh_existing=True,
+        for touched_jurisdiction in sorted(touched_jurisdictions):
+            results.extend(
+                analyze_jurisdictions(
+                    jurisdiction=touched_jurisdiction,
+                    store=active_store,
+                    refresh_existing=True,
+                )
             )
-        )
+
+    if managed_store and isinstance(store, PostgresAnalysisStore):
+        with store as active_store:
+            _run_persist(active_store)
+    else:
+        _run_persist(store)
 
     return results
 
@@ -1644,6 +3679,9 @@ def _load_analysis_artifacts(
     record: ParsedDocumentRecord,
 ) -> tuple[DocumentAnalysis, dict[str, Any], dict[str, Any]]:
     analysis_dir = ANALYSIS_DIR / record.jurisdiction / record.document_id
+    # D10: Honor analysis_skipped.json even if stale JSON artifacts were ever left behind.
+    if (analysis_dir / "analysis_skipped.json").exists():
+        raise ValueError(f"analysis skipped due to low fidelity for '{record.document_id}'")
     document_analysis_path = analysis_dir / "document_analysis.json"
     policy_response_path = analysis_dir / "policy_response.raw.json"
     framing_response_path = analysis_dir / "framing_response.raw.json"
@@ -1684,28 +3722,54 @@ def _load_optional_json(path: Path) -> dict[str, Any]:
     return payload
 
 
+def _nested_response_field(payload: dict[str, Any], key: str) -> str | None:
+    direct = payload.get(key)
+    if isinstance(direct, str) and direct:
+        return direct
+    for container_key in ("metadata_response", "controls_response"):
+        nested = payload.get(container_key)
+        if isinstance(nested, dict):
+            value = nested.get(key)
+            if isinstance(value, str) and value:
+                return value
+        elif isinstance(nested, list):
+            for entry in nested:
+                if isinstance(entry, dict):
+                    value = entry.get(key)
+                    if isinstance(value, str) and value:
+                        return value
+    return None
+
+
 def _artifact_runtime_metadata(
     *,
+    analysis: DocumentAnalysis | None = None,
     raw_policy_response: dict[str, Any],
     raw_framing_response: dict[str, Any],
 ) -> tuple[str, str, str | None]:
-    model = _first_string(
-        raw_policy_response.get("model"),
-        raw_framing_response.get("model"),
-    ) or "artifact-replay"
+    if analysis is not None and analysis.analysis_metadata is not None:
+        meta = analysis.analysis_metadata
+        return meta.provider, meta.model, meta.effort
+
+    model = (
+        _first_string(
+            _nested_response_field(raw_policy_response, "model"),
+            _nested_response_field(raw_framing_response, "model"),
+        )
+        or "artifact-replay"
+    )
     provider = _first_string(
-        raw_policy_response.get("provider"),
-        raw_framing_response.get("provider"),
+        _nested_response_field(raw_policy_response, "provider"),
+        _nested_response_field(raw_framing_response, "provider"),
     )
     if provider is None:
         provider = "anthropic" if model.startswith("claude") else "artifact-replay"
 
+    # Section 0: Never fabricate effort from current env vars for legacy artifacts.
     effort = _first_string(
-        raw_policy_response.get("effort"),
-        raw_framing_response.get("effort"),
+        _nested_response_field(raw_policy_response, "effort"),
+        _nested_response_field(raw_framing_response, "effort"),
     )
-    if effort is None and provider == "anthropic":
-        effort = os.getenv("ANTHROPIC_EFFORT", DEFAULT_EFFORT)
 
     return provider, model, effort
 

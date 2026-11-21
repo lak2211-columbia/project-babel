@@ -1,35 +1,37 @@
 {
-  "generated_at": "2026-04-15T17:33:06.556611+00:00",
+  "generated_at": "2026-11-21T02:27:34.607907+00:00",
   "jurisdictions": [
     {
       "jurisdiction": "china",
       "description": "Official State Council, CAC, and sectoral sources for China's AI governance regime and implementation measures.",
       "coverage_snapshot": {
-        "portal_count": 6,
-        "seed_document_count": 19,
+        "portal_count": 8,
+        "seed_document_count": 18,
         "target_range": {
           "minimum": 30,
           "target": 45,
           "maximum": 60
         },
-        "gap_to_minimum": 11,
+        "gap_to_minimum": 12,
         "document_type_counts": {
-          "legislation": 6,
+          "legislation": 5,
           "regulatory_guidance": 7,
           "standards_guideline": 3,
           "strategy_paper": 3
         },
         "source_tier_counts": {
+          "implementation_resource": 4,
           "policy_strategy": 3,
-          "regulatory_guidance": 7,
-          "statutory_rule": 6,
+          "regulatory_guidance": 3,
+          "statutory_rule": 5,
           "technical_standard": 3
         },
         "policy_domain_counts": {
           "civil_rights_nondiscrimination": 1,
+          "companion_ai": 3,
           "consumer_protection": 10,
           "critical_infrastructure": 1,
-          "frontier_gpai": 5,
+          "frontier_gpai": 4,
           "healthcare_medical_devices": 1,
           "industrial_innovation": 5,
           "national_security": 1,
@@ -48,16 +50,15 @@
             "content_governance",
             "algorithmic_regulation"
           ],
-          "existing_seed_count": 13,
+          "existing_seed_count": 12,
           "candidate_count": 4,
           "family_count": 4,
-          "high_signal_family_count": 0,
+          "high_signal_family_count": 1,
           "expected_coverage_buckets": [
             "enforcement_interpretation",
             "implementation_guidance"
           ],
           "covered_coverage_buckets": [
-            "consultation_draft",
             "implementation_guidance",
             "sectoral_guidance",
             "statutory_rule",
@@ -67,15 +68,65 @@
             "enforcement_interpretation"
           ],
           "covered_bucket_counts": {
-            "consultation_draft": 1,
             "implementation_guidance": 6,
             "sectoral_guidance": 1,
-            "statutory_rule": 6,
+            "statutory_rule": 5,
             "strategy_architecture": 1
           },
-          "candidate_bucket_counts": {},
-          "suggested_action": "monitor_only",
-          "priority_families": []
+          "candidate_bucket_counts": {
+            "implementation_guidance": 1
+          },
+          "suggested_action": "inspect_families",
+          "priority_families": [
+            {
+              "family_id": "title:国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+              "family_label": "国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+              "status": "new_family",
+              "member_count": 1,
+              "new_candidate_count": 1,
+              "source_role_counts": {
+                "primary_text": 1
+              },
+              "best_candidate_score": 12,
+              "best_recommendation": "promote_now",
+              "best_source_role": "primary_text",
+              "proposed_document_type": "legislation",
+              "proposed_binding_strength": "binding_law",
+              "proposed_source_tier": "statutory_rule",
+              "proposed_policy_domains": [
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "representative_title": "国家网信办等五部门联合公布《人工智能拟人化互动服务管理暂行办法》",
+              "representative_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm",
+              "members": [
+                {
+                  "title": "国家网信办等五部门联合公布《人工智能拟人化互动服务管理暂行办法》",
+                  "url": "https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm",
+                  "status": "new_candidate",
+                  "source_role": "primary_text",
+                  "family_id": "title:国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+                  "family_label": "国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+                  "score": 12,
+                  "recommendation": "promote_now",
+                  "proposed_document_type": "legislation",
+                  "proposed_binding_strength": "binding_law",
+                  "proposed_source_tier": "statutory_rule",
+                  "proposed_policy_domains": [
+                    "frontier_gpai"
+                  ],
+                  "coverage_bucket": "implementation_guidance",
+                  "last_modified": null,
+                  "discovered_from": "https://www.cac.gov.cn/",
+                  "score_reasons": [
+                    "AI-relevant title or URL",
+                    "instrument-like title",
+                    "primary_text role"
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "portal_id": "cn_cma_ai_measures",
@@ -239,15 +290,124 @@
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
+        },
+        {
+          "portal_id": "cn_npc_laws",
+          "portal_name": "National People's Congress (NPC / NPCSC) Statutory Database",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "tags": [
+            "npc",
+            "legislation",
+            "cybersecurity_law"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "cn_miit_ai",
+          "portal_name": "Ministry of Industry and Information Technology (MIIT) AI & Standards Portal",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "tags": [
+            "miit",
+            "standards",
+            "embodied_ai",
+            "gb_45438"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "technical_standard"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "technical_standard"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
         }
       ],
-      "priority_families": []
+      "priority_families": [
+        {
+          "jurisdiction": "china",
+          "portal_id": "cn_cac",
+          "portal_name": "Cyberspace Administration of China",
+          "family_id": "title:国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+          "family_label": "国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+          "status": "new_family",
+          "member_count": 1,
+          "new_candidate_count": 1,
+          "source_role_counts": {
+            "primary_text": 1
+          },
+          "best_candidate_score": 12,
+          "best_recommendation": "promote_now",
+          "best_source_role": "primary_text",
+          "proposed_document_type": "legislation",
+          "proposed_binding_strength": "binding_law",
+          "proposed_source_tier": "statutory_rule",
+          "proposed_policy_domains": [
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "representative_title": "国家网信办等五部门联合公布《人工智能拟人化互动服务管理暂行办法》",
+          "representative_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm",
+          "members": [
+            {
+              "title": "国家网信办等五部门联合公布《人工智能拟人化互动服务管理暂行办法》",
+              "url": "https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm",
+              "status": "new_candidate",
+              "source_role": "primary_text",
+              "family_id": "title:国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+              "family_label": "国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+              "score": 12,
+              "recommendation": "promote_now",
+              "proposed_document_type": "legislation",
+              "proposed_binding_strength": "binding_law",
+              "proposed_source_tier": "statutory_rule",
+              "proposed_policy_domains": [
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "last_modified": null,
+              "discovered_from": "https://www.cac.gov.cn/",
+              "score_reasons": [
+                "AI-relevant title or URL",
+                "instrument-like title",
+                "primary_text role"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "jurisdiction": "european_union",
       "description": "Official EU legal text, implementation guidance, and data-protection sources for the AI Act and related governance instruments.",
       "coverage_snapshot": {
-        "portal_count": 5,
+        "portal_count": 6,
         "seed_document_count": 18,
         "target_range": {
           "minimum": 40,
@@ -261,8 +421,8 @@
           "voluntary_commitment": 4
         },
         "source_tier_counts": {
-          "implementation_resource": 5,
-          "regulatory_guidance": 8,
+          "implementation_resource": 8,
+          "regulatory_guidance": 5,
           "statutory_rule": 1,
           "voluntary_framework": 4
         },
@@ -553,6 +713,35 @@
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
+        },
+        {
+          "portal_id": "eu_ai_office_policies",
+          "portal_name": "European Commission & AI Office — European Approach to AI",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "ai_office",
+            "article_50",
+            "apply_ai",
+            "high_risk"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
         }
       ],
       "priority_families": [
@@ -666,39 +855,298 @@
       "jurisdiction": "japan",
       "description": "Official Cabinet Secretariat, Cabinet Office, Digital Agency, METI, MIC, MEXT, PPC, MHLW, MAFF, CFA, and Cultural Affairs materials for Japan's AI governance approach.",
       "coverage_snapshot": {
-        "portal_count": 14,
-        "seed_document_count": 32,
+        "portal_count": 17,
+        "seed_document_count": 28,
         "target_range": {
           "minimum": 40,
           "target": 55,
           "maximum": 70
         },
-        "gap_to_minimum": 8,
+        "gap_to_minimum": 12,
         "document_type_counts": {
-          "regulatory_guidance": 14,
-          "standards_guideline": 8,
-          "strategy_paper": 10
+          "regulatory_guidance": 12,
+          "standards_guideline": 7,
+          "strategy_paper": 9
         },
         "source_tier_counts": {
-          "policy_strategy": 10,
-          "regulatory_guidance": 14,
-          "technical_standard": 8
+          "implementation_resource": 9,
+          "policy_strategy": 5,
+          "regulatory_guidance": 8,
+          "technical_standard": 6
         },
         "policy_domain_counts": {
           "civil_rights_nondiscrimination": 1,
-          "copyright_ip": 3,
+          "copyright_ip": 2,
           "education": 3,
-          "frontier_gpai": 20,
+          "frontier_gpai": 17,
           "healthcare_medical_devices": 3,
-          "industrial_innovation": 15,
+          "industrial_innovation": 13,
           "platform_content_governance": 1,
           "privacy_data_protection": 4,
           "public_sector_governance": 1,
           "public_sector_procurement": 5,
-          "standards_assurance": 6
+          "standards_assurance": 5
         }
       },
       "portal_operations": [
+        {
+          "portal_id": "jp_cao_ai_strategy",
+          "portal_name": "Cabinet Office AI Strategy",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "cabinet_office",
+            "ai_act",
+            "guidelines",
+            "cross_ministry"
+          ],
+          "existing_seed_count": 9,
+          "candidate_count": 22,
+          "family_count": 22,
+          "high_signal_family_count": 1,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "implementation_guidance": 5,
+            "strategy_architecture": 3,
+            "technical_standard": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 7,
+            "strategy_architecture": 8
+          },
+          "suggested_action": "inspect_families",
+          "priority_families": [
+            {
+              "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+              "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+              "status": "new_family",
+              "member_count": 1,
+              "new_candidate_count": 1,
+              "source_role_counts": {
+                "primary_text": 1
+              },
+              "best_candidate_score": 12,
+              "best_recommendation": "promote_now",
+              "best_source_role": "primary_text",
+              "proposed_document_type": "legislation",
+              "proposed_binding_strength": "binding_law",
+              "proposed_source_tier": "statutory_rule",
+              "proposed_policy_domains": [
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "representative_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
+              "representative_url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
+              "members": [
+                {
+                  "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
+                  "url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
+                  "status": "new_candidate",
+                  "source_role": "primary_text",
+                  "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+                  "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+                  "score": 12,
+                  "recommendation": "promote_now",
+                  "proposed_document_type": "legislation",
+                  "proposed_binding_strength": "binding_law",
+                  "proposed_source_tier": "statutory_rule",
+                  "proposed_policy_domains": [
+                    "frontier_gpai"
+                  ],
+                  "coverage_bucket": "implementation_guidance",
+                  "last_modified": null,
+                  "discovered_from": "https://www8.cao.go.jp/cstp/ai/index.html",
+                  "score_reasons": [
+                    "AI-relevant title or URL",
+                    "instrument-like title",
+                    "primary_text role"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "portal_id": "jp_bunka_copyright_ai",
+          "portal_name": "Agency for Cultural Affairs AI Copyright Materials",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "copyright",
+            "culture",
+            "intellectual_property"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 15,
+          "family_count": 15,
+          "high_signal_family_count": 1,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 15
+          },
+          "suggested_action": "inspect_families",
+          "priority_families": [
+            {
+              "family_id": "title:デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+              "family_label": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+              "status": "new_family",
+              "member_count": 1,
+              "new_candidate_count": 1,
+              "source_role_counts": {
+                "primary_text": 1
+              },
+              "best_candidate_score": 5,
+              "best_recommendation": "inspect_next",
+              "best_source_role": "primary_text",
+              "proposed_document_type": "strategy_paper",
+              "proposed_binding_strength": "strategy_statement",
+              "proposed_source_tier": "policy_strategy",
+              "proposed_policy_domains": [
+                "copyright_ip"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "representative_title": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について（令和8年3月24日）",
+              "representative_url": "https://www.bunka.go.jp/seisaku/chosakuken/pdf/94350404_01.pdf",
+              "members": [
+                {
+                  "title": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について（令和8年3月24日）",
+                  "url": "https://www.bunka.go.jp/seisaku/chosakuken/pdf/94350404_01.pdf",
+                  "status": "new_candidate",
+                  "source_role": "primary_text",
+                  "family_id": "title:デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+                  "family_label": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+                  "score": 5,
+                  "recommendation": "inspect_next",
+                  "proposed_document_type": "strategy_paper",
+                  "proposed_binding_strength": "strategy_statement",
+                  "proposed_source_tier": "policy_strategy",
+                  "proposed_policy_domains": [
+                    "copyright_ip"
+                  ],
+                  "coverage_bucket": "implementation_guidance",
+                  "last_modified": null,
+                  "discovered_from": "https://www.bunka.go.jp/seisaku/chosakuken/index.html",
+                  "score_reasons": [
+                    "weak AI relevance signal",
+                    "instrument-like title",
+                    "primary_text role",
+                    "direct PDF artifact"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "portal_id": "jp_cas_human_centric_ai",
+          "portal_name": "Human-Centric AI Social Principles",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "cabinet_secretariat",
+            "principles",
+            "human_centric_ai"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 2,
+          "family_count": 2,
+          "high_signal_family_count": 1,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "strategy_architecture",
+            "technical_standard"
+          ],
+          "missing_coverage_buckets": [
+            "implementation_guidance"
+          ],
+          "covered_bucket_counts": {
+            "strategy_architecture": 1,
+            "technical_standard": 1
+          },
+          "candidate_bucket_counts": {
+            "implementation_guidance": 1
+          },
+          "suggested_action": "inspect_families",
+          "priority_families": [
+            {
+              "family_id": "title:人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+              "family_label": "人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+              "status": "new_family",
+              "member_count": 1,
+              "new_candidate_count": 1,
+              "source_role_counts": {
+                "primary_text": 1
+              },
+              "best_candidate_score": 11,
+              "best_recommendation": "promote_now",
+              "best_source_role": "primary_text",
+              "proposed_document_type": "strategy_paper",
+              "proposed_binding_strength": "strategy_statement",
+              "proposed_source_tier": "policy_strategy",
+              "proposed_policy_domains": [
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "representative_title": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF：80KB）",
+              "representative_url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/pdf/aigensoku.pdf",
+              "members": [
+                {
+                  "title": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF：80KB）",
+                  "url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/pdf/aigensoku.pdf",
+                  "status": "new_candidate",
+                  "source_role": "primary_text",
+                  "family_id": "title:人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+                  "family_label": "人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+                  "score": 11,
+                  "recommendation": "promote_now",
+                  "proposed_document_type": "strategy_paper",
+                  "proposed_binding_strength": "strategy_statement",
+                  "proposed_source_tier": "policy_strategy",
+                  "proposed_policy_domains": [
+                    "frontier_gpai"
+                  ],
+                  "coverage_bucket": "implementation_guidance",
+                  "last_modified": null,
+                  "discovered_from": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/",
+                  "score_reasons": [
+                    "AI-relevant title or URL",
+                    "instrument-like title",
+                    "primary_text role",
+                    "direct PDF artifact",
+                    "low-signal event/news language"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "portal_id": "jp_ppc_guidance",
           "portal_name": "Personal Information Protection Commission Guidance",
@@ -731,81 +1179,8 @@
           },
           "candidate_bucket_counts": {
             "enforcement_interpretation": 2,
-            "implementation_guidance": 35,
-            "strategy_architecture": 7
-          },
-          "suggested_action": "retune_discovery_filters",
-          "priority_families": []
-        },
-        {
-          "portal_id": "jp_cao_ai_strategy",
-          "portal_name": "Cabinet Office AI Strategy",
-          "issuer_type": "executive",
-          "portal_kind": "portal",
-          "tags": [
-            "cabinet_office",
-            "ai_act",
-            "guidelines",
-            "cross_ministry"
-          ],
-          "existing_seed_count": 10,
-          "candidate_count": 22,
-          "family_count": 22,
-          "high_signal_family_count": 0,
-          "expected_coverage_buckets": [
-            "implementation_guidance",
-            "strategy_architecture"
-          ],
-          "covered_coverage_buckets": [
-            "implementation_guidance",
-            "strategy_architecture",
-            "technical_standard"
-          ],
-          "missing_coverage_buckets": [],
-          "covered_bucket_counts": {
-            "implementation_guidance": 2,
-            "strategy_architecture": 6,
-            "technical_standard": 2
-          },
-          "candidate_bucket_counts": {
-            "implementation_guidance": 6,
-            "strategy_architecture": 8
-          },
-          "suggested_action": "retune_discovery_filters",
-          "priority_families": []
-        },
-        {
-          "portal_id": "jp_bunka_copyright_ai",
-          "portal_name": "Agency for Cultural Affairs AI Copyright Materials",
-          "issuer_type": "executive",
-          "portal_kind": "portal",
-          "tags": [
-            "copyright",
-            "culture",
-            "intellectual_property"
-          ],
-          "existing_seed_count": 2,
-          "candidate_count": 15,
-          "family_count": 15,
-          "high_signal_family_count": 0,
-          "expected_coverage_buckets": [
-            "implementation_guidance",
-            "sectoral_guidance",
-            "strategy_architecture"
-          ],
-          "covered_coverage_buckets": [
-            "implementation_guidance",
-            "sectoral_guidance"
-          ],
-          "missing_coverage_buckets": [
-            "strategy_architecture"
-          ],
-          "covered_bucket_counts": {
-            "implementation_guidance": 2,
-            "sectoral_guidance": 2
-          },
-          "candidate_bucket_counts": {
-            "implementation_guidance": 14
+            "implementation_guidance": 40,
+            "strategy_architecture": 2
           },
           "suggested_action": "retune_discovery_filters",
           "priority_families": []
@@ -865,14 +1240,14 @@
           ],
           "covered_coverage_buckets": [
             "implementation_guidance",
-            "sectoral_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
             "strategy_architecture"
           ],
-          "missing_coverage_buckets": [],
           "covered_bucket_counts": {
-            "implementation_guidance": 1,
-            "sectoral_guidance": 1,
-            "strategy_architecture": 1
+            "implementation_guidance": 2,
+            "sectoral_guidance": 1
           },
           "candidate_bucket_counts": {
             "implementation_guidance": 1,
@@ -990,39 +1365,6 @@
           "priority_families": []
         },
         {
-          "portal_id": "jp_cas_human_centric_ai",
-          "portal_name": "Human-Centric AI Social Principles",
-          "issuer_type": "executive",
-          "portal_kind": "portal",
-          "tags": [
-            "cabinet_secretariat",
-            "principles",
-            "human_centric_ai"
-          ],
-          "existing_seed_count": 3,
-          "candidate_count": 2,
-          "family_count": 2,
-          "high_signal_family_count": 0,
-          "expected_coverage_buckets": [
-            "implementation_guidance",
-            "strategy_architecture"
-          ],
-          "covered_coverage_buckets": [
-            "strategy_architecture",
-            "technical_standard"
-          ],
-          "missing_coverage_buckets": [
-            "implementation_guidance"
-          ],
-          "covered_bucket_counts": {
-            "strategy_architecture": 2,
-            "technical_standard": 1
-          },
-          "candidate_bucket_counts": {},
-          "suggested_action": "monitor_only",
-          "priority_families": []
-        },
-        {
           "portal_id": "jp_meti_press_ai",
           "portal_name": "METI AI Press Releases",
           "issuer_type": "executive",
@@ -1032,7 +1374,7 @@
             "press",
             "industry_policy"
           ],
-          "existing_seed_count": 2,
+          "existing_seed_count": 1,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -1048,7 +1390,7 @@
             "strategy_architecture"
           ],
           "covered_bucket_counts": {
-            "technical_standard": 2
+            "technical_standard": 1
           },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
@@ -1064,7 +1406,7 @@
             "governance_guidelines",
             "expert_group"
           ],
-          "existing_seed_count": 4,
+          "existing_seed_count": 3,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -1081,7 +1423,7 @@
           ],
           "covered_bucket_counts": {
             "strategy_architecture": 1,
-            "technical_standard": 3
+            "technical_standard": 2
           },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
@@ -1182,15 +1524,254 @@
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
+        },
+        {
+          "portal_id": "jp_aisi",
+          "portal_name": "Japan AI Safety Institute (J-AISI)",
+          "issuer_type": "standards_body",
+          "portal_kind": "library",
+          "tags": [
+            "aisi",
+            "red_teaming",
+            "evaluation",
+            "safety"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "technical_standard"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "technical_standard"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_mic_ai_guidelines",
+          "portal_name": "MIC AI Network Society & Hiroshima AI Process Portal",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "mic",
+            "business_guidelines",
+            "hiroshima_process",
+            "agentic_ai"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "jp_egov_law",
+          "portal_name": "e-Gov Law Search (Japan Statutory Registry)",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "tags": [
+            "statute",
+            "legal_registry",
+            "ai_act"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
         }
       ],
-      "priority_families": []
+      "priority_families": [
+        {
+          "jurisdiction": "japan",
+          "portal_id": "jp_cao_ai_strategy",
+          "portal_name": "Cabinet Office AI Strategy",
+          "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+          "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+          "status": "new_family",
+          "member_count": 1,
+          "new_candidate_count": 1,
+          "source_role_counts": {
+            "primary_text": 1
+          },
+          "best_candidate_score": 12,
+          "best_recommendation": "promote_now",
+          "best_source_role": "primary_text",
+          "proposed_document_type": "legislation",
+          "proposed_binding_strength": "binding_law",
+          "proposed_source_tier": "statutory_rule",
+          "proposed_policy_domains": [
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "representative_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
+          "representative_url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
+          "members": [
+            {
+              "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
+              "url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
+              "status": "new_candidate",
+              "source_role": "primary_text",
+              "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+              "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+              "score": 12,
+              "recommendation": "promote_now",
+              "proposed_document_type": "legislation",
+              "proposed_binding_strength": "binding_law",
+              "proposed_source_tier": "statutory_rule",
+              "proposed_policy_domains": [
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "last_modified": null,
+              "discovered_from": "https://www8.cao.go.jp/cstp/ai/index.html",
+              "score_reasons": [
+                "AI-relevant title or URL",
+                "instrument-like title",
+                "primary_text role"
+              ]
+            }
+          ]
+        },
+        {
+          "jurisdiction": "japan",
+          "portal_id": "jp_cas_human_centric_ai",
+          "portal_name": "Human-Centric AI Social Principles",
+          "family_id": "title:人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+          "family_label": "人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+          "status": "new_family",
+          "member_count": 1,
+          "new_candidate_count": 1,
+          "source_role_counts": {
+            "primary_text": 1
+          },
+          "best_candidate_score": 11,
+          "best_recommendation": "promote_now",
+          "best_source_role": "primary_text",
+          "proposed_document_type": "strategy_paper",
+          "proposed_binding_strength": "strategy_statement",
+          "proposed_source_tier": "policy_strategy",
+          "proposed_policy_domains": [
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "representative_title": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF：80KB）",
+          "representative_url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/pdf/aigensoku.pdf",
+          "members": [
+            {
+              "title": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF：80KB）",
+              "url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/pdf/aigensoku.pdf",
+              "status": "new_candidate",
+              "source_role": "primary_text",
+              "family_id": "title:人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+              "family_label": "人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+              "score": 11,
+              "recommendation": "promote_now",
+              "proposed_document_type": "strategy_paper",
+              "proposed_binding_strength": "strategy_statement",
+              "proposed_source_tier": "policy_strategy",
+              "proposed_policy_domains": [
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "last_modified": null,
+              "discovered_from": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/",
+              "score_reasons": [
+                "AI-relevant title or URL",
+                "instrument-like title",
+                "primary_text role",
+                "direct PDF artifact",
+                "low-signal event/news language"
+              ]
+            }
+          ]
+        },
+        {
+          "jurisdiction": "japan",
+          "portal_id": "jp_bunka_copyright_ai",
+          "portal_name": "Agency for Cultural Affairs AI Copyright Materials",
+          "family_id": "title:デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+          "family_label": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+          "status": "new_family",
+          "member_count": 1,
+          "new_candidate_count": 1,
+          "source_role_counts": {
+            "primary_text": 1
+          },
+          "best_candidate_score": 5,
+          "best_recommendation": "inspect_next",
+          "best_source_role": "primary_text",
+          "proposed_document_type": "strategy_paper",
+          "proposed_binding_strength": "strategy_statement",
+          "proposed_source_tier": "policy_strategy",
+          "proposed_policy_domains": [
+            "copyright_ip"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "representative_title": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について（令和8年3月24日）",
+          "representative_url": "https://www.bunka.go.jp/seisaku/chosakuken/pdf/94350404_01.pdf",
+          "members": [
+            {
+              "title": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について（令和8年3月24日）",
+              "url": "https://www.bunka.go.jp/seisaku/chosakuken/pdf/94350404_01.pdf",
+              "status": "new_candidate",
+              "source_role": "primary_text",
+              "family_id": "title:デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+              "family_label": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+              "score": 5,
+              "recommendation": "inspect_next",
+              "proposed_document_type": "strategy_paper",
+              "proposed_binding_strength": "strategy_statement",
+              "proposed_source_tier": "policy_strategy",
+              "proposed_policy_domains": [
+                "copyright_ip"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "last_modified": null,
+              "discovered_from": "https://www.bunka.go.jp/seisaku/chosakuken/index.html",
+              "score_reasons": [
+                "weak AI relevance signal",
+                "instrument-like title",
+                "primary_text role",
+                "direct PDF artifact"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "jurisdiction": "south_korea",
       "description": "Official legal, public-sector, privacy, and medical-device sources for South Korea's AI framework and implementation.",
       "coverage_snapshot": {
-        "portal_count": 7,
+        "portal_count": 9,
         "seed_document_count": 16,
         "target_range": {
           "minimum": 25,
@@ -1199,12 +1780,13 @@
         },
         "gap_to_minimum": 9,
         "document_type_counts": {
-          "legislation": 2,
-          "regulatory_guidance": 14
+          "legislation": 3,
+          "regulatory_guidance": 13
         },
         "source_tier_counts": {
-          "regulatory_guidance": 14,
-          "statutory_rule": 2
+          "implementation_resource": 2,
+          "regulatory_guidance": 11,
+          "statutory_rule": 3
         },
         "policy_domain_counts": {
           "consumer_protection": 1,
@@ -1236,7 +1818,6 @@
             "strategy_architecture"
           ],
           "covered_coverage_buckets": [
-            "consultation_draft",
             "implementation_guidance",
             "sectoral_guidance",
             "statutory_rule"
@@ -1245,10 +1826,9 @@
             "strategy_architecture"
           ],
           "covered_bucket_counts": {
-            "consultation_draft": 1,
-            "implementation_guidance": 2,
+            "implementation_guidance": 1,
             "sectoral_guidance": 3,
-            "statutory_rule": 1
+            "statutory_rule": 2
           },
           "candidate_bucket_counts": {
             "implementation_guidance": 4
@@ -1350,15 +1930,13 @@
             "statutory_rule"
           ],
           "covered_coverage_buckets": [
-            "implementation_guidance",
             "sectoral_guidance",
             "statutory_rule"
           ],
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
-            "implementation_guidance": 1,
             "sectoral_guidance": 3,
-            "statutory_rule": 2
+            "statutory_rule": 3
           },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
@@ -1460,6 +2038,60 @@
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
+        },
+        {
+          "portal_id": "kr_ai_act_helpdesk",
+          "portal_name": "Korea AI Basic Act Support Desk (MSIT / KOSA)",
+          "issuer_type": "executive",
+          "portal_kind": "helpdesk",
+          "tags": [
+            "ai_basic_act",
+            "helpdesk",
+            "guidelines"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "kr_aisi",
+          "portal_name": "Korea AI Safety Institute (AISI)",
+          "issuer_type": "standards_body",
+          "portal_kind": "portal",
+          "tags": [
+            "aisi",
+            "frontier_safety",
+            "evaluation"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "technical_standard"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "technical_standard"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
         }
       ],
       "priority_families": []
@@ -1468,40 +2100,40 @@
       "jurisdiction": "united_states",
       "description": "Official executive, standards, civil-rights, consumer-protection, and health-regulation sources for U.S. AI governance.",
       "coverage_snapshot": {
-        "portal_count": 9,
-        "seed_document_count": 24,
+        "portal_count": 12,
+        "seed_document_count": 23,
         "target_range": {
           "minimum": 40,
           "target": 55,
           "maximum": 70
         },
-        "gap_to_minimum": 16,
+        "gap_to_minimum": 17,
         "document_type_counts": {
           "executive_order": 1,
-          "legislation": 1,
-          "regulatory_guidance": 7,
-          "standards_guideline": 9,
+          "regulatory_guidance": 6,
+          "standards_guideline": 10,
           "strategy_paper": 6
         },
         "source_tier_counts": {
-          "executive_action": 1,
-          "policy_strategy": 6,
-          "regulatory_guidance": 7,
-          "statutory_rule": 1,
-          "technical_standard": 9
+          "executive_action": 3,
+          "implementation_resource": 8,
+          "policy_strategy": 4,
+          "regulatory_guidance": 3,
+          "technical_standard": 5
         },
         "policy_domain_counts": {
           "civil_rights_nondiscrimination": 5,
           "consumer_protection": 5,
           "finance": 3,
-          "frontier_gpai": 19,
+          "frontier_gpai": 18,
           "healthcare_medical_devices": 1,
           "industrial_innovation": 4,
           "national_security": 3,
           "privacy_data_protection": 1,
           "public_sector_governance": 3,
           "public_sector_procurement": 1,
-          "standards_assurance": 14
+          "sovereign_compute": 1,
+          "standards_assurance": 13
         }
       },
       "portal_operations": [
@@ -1523,17 +2155,13 @@
             "technical_standard"
           ],
           "covered_coverage_buckets": [
-            "consultation_draft",
-            "enforcement_interpretation",
             "implementation_guidance",
             "technical_standard"
           ],
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
-            "consultation_draft": 2,
-            "enforcement_interpretation": 1,
-            "implementation_guidance": 2,
-            "technical_standard": 7
+            "implementation_guidance": 5,
+            "technical_standard": 4
           },
           "candidate_bucket_counts": {
             "implementation_guidance": 2,
@@ -1653,31 +2281,81 @@
             "nist",
             "technical_guidance"
           ],
-          "existing_seed_count": 7,
+          "existing_seed_count": 6,
           "candidate_count": 13,
           "family_count": 13,
-          "high_signal_family_count": 0,
+          "high_signal_family_count": 1,
           "expected_coverage_buckets": [
             "technical_standard"
           ],
           "covered_coverage_buckets": [
+            "implementation_guidance",
             "sectoral_guidance",
-            "strategy_architecture",
             "technical_standard"
           ],
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
+            "implementation_guidance": 3,
             "sectoral_guidance": 1,
-            "strategy_architecture": 2,
-            "technical_standard": 5
+            "technical_standard": 3
           },
           "candidate_bucket_counts": {
-            "consultation_draft": 1,
-            "implementation_guidance": 7,
+            "implementation_guidance": 8,
             "strategy_architecture": 1
           },
-          "suggested_action": "retune_discovery_filters",
-          "priority_families": []
+          "suggested_action": "inspect_families",
+          "priority_families": [
+            {
+              "family_id": "title:zero drafts pilot project",
+              "family_label": "zero drafts pilot project",
+              "status": "new_family",
+              "member_count": 1,
+              "new_candidate_count": 1,
+              "source_role_counts": {
+                "primary_text": 1
+              },
+              "best_candidate_score": 12,
+              "best_recommendation": "promote_now",
+              "best_source_role": "primary_text",
+              "proposed_document_type": "standards_guideline",
+              "proposed_binding_strength": "standards_guideline",
+              "proposed_source_tier": "technical_standard",
+              "proposed_policy_domains": [
+                "standards_assurance",
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "representative_title": "Zero Drafts Pilot Project",
+              "representative_url": "https://www.nist.gov/artificial-intelligence/nists-ai-standards-zero-drafts-pilot-project-accelerate-standardization",
+              "members": [
+                {
+                  "title": "Zero Drafts Pilot Project",
+                  "url": "https://www.nist.gov/artificial-intelligence/nists-ai-standards-zero-drafts-pilot-project-accelerate-standardization",
+                  "status": "new_candidate",
+                  "source_role": "primary_text",
+                  "family_id": "title:zero drafts pilot project",
+                  "family_label": "zero drafts pilot project",
+                  "score": 12,
+                  "recommendation": "promote_now",
+                  "proposed_document_type": "standards_guideline",
+                  "proposed_binding_strength": "standards_guideline",
+                  "proposed_source_tier": "technical_standard",
+                  "proposed_policy_domains": [
+                    "standards_assurance",
+                    "frontier_gpai"
+                  ],
+                  "coverage_bucket": "implementation_guidance",
+                  "last_modified": null,
+                  "discovered_from": "https://www.nist.gov/artificial-intelligence",
+                  "score_reasons": [
+                    "AI-relevant title or URL",
+                    "instrument-like title",
+                    "primary_text role"
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "portal_id": "us_fda_ai_medical",
@@ -1734,16 +2412,14 @@
             "strategy_architecture"
           ],
           "covered_coverage_buckets": [
+            "implementation_guidance",
             "sectoral_guidance",
-            "statutory_rule",
             "strategy_architecture"
           ],
-          "missing_coverage_buckets": [
-            "implementation_guidance"
-          ],
+          "missing_coverage_buckets": [],
           "covered_bucket_counts": {
+            "implementation_guidance": 1,
             "sectoral_guidance": 1,
-            "statutory_rule": 1,
             "strategy_architecture": 1
           },
           "candidate_bucket_counts": {},
@@ -1809,7 +2485,7 @@
           ],
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
-            "implementation_guidance": 3,
+            "implementation_guidance": 1,
             "sectoral_guidance": 2,
             "strategy_architecture": 1
           },
@@ -1838,13 +2514,13 @@
             "strategy_architecture"
           ],
           "covered_coverage_buckets": [
-            "implementation_guidance",
             "sectoral_guidance",
             "strategy_architecture"
           ],
-          "missing_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "implementation_guidance"
+          ],
           "covered_bucket_counts": {
-            "implementation_guidance": 2,
             "sectoral_guidance": 2,
             "strategy_architecture": 1
           },
@@ -1919,6 +2595,86 @@
             "implementation_guidance": 1,
             "sectoral_guidance": 1
           },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_federal_register_ai",
+          "portal_name": "Federal Register — Presidential Documents & AI/SI Rulemaking",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "tags": [
+            "federal_register",
+            "executive_orders",
+            "super_intelligence",
+            "rulemaking"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_nist_caisi_si",
+          "portal_name": "NIST Center for AI Standards and Innovation (CAISI) / Super Intelligence Portal",
+          "issuer_type": "standards_body",
+          "portal_kind": "portal",
+          "tags": [
+            "caisi",
+            "agentic_ai",
+            "super_intelligence",
+            "standards"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "technical_standard"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "technical_standard"
+          ],
+          "covered_bucket_counts": {},
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_congress_govinfo",
+          "portal_name": "GovInfo Public Laws (U.S. Congress)",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "tags": [
+            "legislation",
+            "public_law",
+            "congress"
+          ],
+          "existing_seed_count": 0,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_coverage_buckets": [],
+          "missing_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_bucket_counts": {},
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
@@ -2030,11 +2786,166 @@
               ]
             }
           ]
+        },
+        {
+          "jurisdiction": "united_states",
+          "portal_id": "us_nist_ai",
+          "portal_name": "NIST Artificial Intelligence",
+          "family_id": "title:zero drafts pilot project",
+          "family_label": "zero drafts pilot project",
+          "status": "new_family",
+          "member_count": 1,
+          "new_candidate_count": 1,
+          "source_role_counts": {
+            "primary_text": 1
+          },
+          "best_candidate_score": 12,
+          "best_recommendation": "promote_now",
+          "best_source_role": "primary_text",
+          "proposed_document_type": "standards_guideline",
+          "proposed_binding_strength": "standards_guideline",
+          "proposed_source_tier": "technical_standard",
+          "proposed_policy_domains": [
+            "standards_assurance",
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "representative_title": "Zero Drafts Pilot Project",
+          "representative_url": "https://www.nist.gov/artificial-intelligence/nists-ai-standards-zero-drafts-pilot-project-accelerate-standardization",
+          "members": [
+            {
+              "title": "Zero Drafts Pilot Project",
+              "url": "https://www.nist.gov/artificial-intelligence/nists-ai-standards-zero-drafts-pilot-project-accelerate-standardization",
+              "status": "new_candidate",
+              "source_role": "primary_text",
+              "family_id": "title:zero drafts pilot project",
+              "family_label": "zero drafts pilot project",
+              "score": 12,
+              "recommendation": "promote_now",
+              "proposed_document_type": "standards_guideline",
+              "proposed_binding_strength": "standards_guideline",
+              "proposed_source_tier": "technical_standard",
+              "proposed_policy_domains": [
+                "standards_assurance",
+                "frontier_gpai"
+              ],
+              "coverage_bucket": "implementation_guidance",
+              "last_modified": null,
+              "discovered_from": "https://www.nist.gov/artificial-intelligence",
+              "score_reasons": [
+                "AI-relevant title or URL",
+                "instrument-like title",
+                "primary_text role"
+              ]
+            }
+          ]
         }
       ]
     }
   ],
   "global_priority_families": [
+    {
+      "jurisdiction": "china",
+      "portal_id": "cn_cac",
+      "portal_name": "Cyberspace Administration of China",
+      "family_id": "title:国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+      "family_label": "国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+      "status": "new_family",
+      "member_count": 1,
+      "new_candidate_count": 1,
+      "source_role_counts": {
+        "primary_text": 1
+      },
+      "best_candidate_score": 12,
+      "best_recommendation": "promote_now",
+      "best_source_role": "primary_text",
+      "proposed_document_type": "legislation",
+      "proposed_binding_strength": "binding_law",
+      "proposed_source_tier": "statutory_rule",
+      "proposed_policy_domains": [
+        "frontier_gpai"
+      ],
+      "coverage_bucket": "implementation_guidance",
+      "representative_title": "国家网信办等五部门联合公布《人工智能拟人化互动服务管理暂行办法》",
+      "representative_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm",
+      "members": [
+        {
+          "title": "国家网信办等五部门联合公布《人工智能拟人化互动服务管理暂行办法》",
+          "url": "https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm",
+          "status": "new_candidate",
+          "source_role": "primary_text",
+          "family_id": "title:国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+          "family_label": "国家网信办等五部门联合公布 人工智能拟人化互动服务管理暂行办法",
+          "score": 12,
+          "recommendation": "promote_now",
+          "proposed_document_type": "legislation",
+          "proposed_binding_strength": "binding_law",
+          "proposed_source_tier": "statutory_rule",
+          "proposed_policy_domains": [
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "last_modified": null,
+          "discovered_from": "https://www.cac.gov.cn/",
+          "score_reasons": [
+            "AI-relevant title or URL",
+            "instrument-like title",
+            "primary_text role"
+          ]
+        }
+      ]
+    },
+    {
+      "jurisdiction": "japan",
+      "portal_id": "jp_cao_ai_strategy",
+      "portal_name": "Cabinet Office AI Strategy",
+      "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+      "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+      "status": "new_family",
+      "member_count": 1,
+      "new_candidate_count": 1,
+      "source_role_counts": {
+        "primary_text": 1
+      },
+      "best_candidate_score": 12,
+      "best_recommendation": "promote_now",
+      "best_source_role": "primary_text",
+      "proposed_document_type": "legislation",
+      "proposed_binding_strength": "binding_law",
+      "proposed_source_tier": "statutory_rule",
+      "proposed_policy_domains": [
+        "frontier_gpai"
+      ],
+      "coverage_bucket": "implementation_guidance",
+      "representative_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
+      "representative_url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
+      "members": [
+        {
+          "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI法）",
+          "url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
+          "status": "new_candidate",
+          "source_role": "primary_text",
+          "family_id": "title:人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+          "family_label": "人工知能関連技術の研究開発及び活用の推進に関する法律 ai法",
+          "score": 12,
+          "recommendation": "promote_now",
+          "proposed_document_type": "legislation",
+          "proposed_binding_strength": "binding_law",
+          "proposed_source_tier": "statutory_rule",
+          "proposed_policy_domains": [
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "last_modified": null,
+          "discovered_from": "https://www8.cao.go.jp/cstp/ai/index.html",
+          "score_reasons": [
+            "AI-relevant title or URL",
+            "instrument-like title",
+            "primary_text role"
+          ]
+        }
+      ]
+    },
     {
       "jurisdiction": "united_states",
       "portal_id": "us_nist_rmf",
@@ -2142,6 +3053,112 @@
       ]
     },
     {
+      "jurisdiction": "united_states",
+      "portal_id": "us_nist_ai",
+      "portal_name": "NIST Artificial Intelligence",
+      "family_id": "title:zero drafts pilot project",
+      "family_label": "zero drafts pilot project",
+      "status": "new_family",
+      "member_count": 1,
+      "new_candidate_count": 1,
+      "source_role_counts": {
+        "primary_text": 1
+      },
+      "best_candidate_score": 12,
+      "best_recommendation": "promote_now",
+      "best_source_role": "primary_text",
+      "proposed_document_type": "standards_guideline",
+      "proposed_binding_strength": "standards_guideline",
+      "proposed_source_tier": "technical_standard",
+      "proposed_policy_domains": [
+        "standards_assurance",
+        "frontier_gpai"
+      ],
+      "coverage_bucket": "implementation_guidance",
+      "representative_title": "Zero Drafts Pilot Project",
+      "representative_url": "https://www.nist.gov/artificial-intelligence/nists-ai-standards-zero-drafts-pilot-project-accelerate-standardization",
+      "members": [
+        {
+          "title": "Zero Drafts Pilot Project",
+          "url": "https://www.nist.gov/artificial-intelligence/nists-ai-standards-zero-drafts-pilot-project-accelerate-standardization",
+          "status": "new_candidate",
+          "source_role": "primary_text",
+          "family_id": "title:zero drafts pilot project",
+          "family_label": "zero drafts pilot project",
+          "score": 12,
+          "recommendation": "promote_now",
+          "proposed_document_type": "standards_guideline",
+          "proposed_binding_strength": "standards_guideline",
+          "proposed_source_tier": "technical_standard",
+          "proposed_policy_domains": [
+            "standards_assurance",
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "last_modified": null,
+          "discovered_from": "https://www.nist.gov/artificial-intelligence",
+          "score_reasons": [
+            "AI-relevant title or URL",
+            "instrument-like title",
+            "primary_text role"
+          ]
+        }
+      ]
+    },
+    {
+      "jurisdiction": "japan",
+      "portal_id": "jp_cas_human_centric_ai",
+      "portal_name": "Human-Centric AI Social Principles",
+      "family_id": "title:人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+      "family_label": "人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+      "status": "new_family",
+      "member_count": 1,
+      "new_candidate_count": 1,
+      "source_role_counts": {
+        "primary_text": 1
+      },
+      "best_candidate_score": 11,
+      "best_recommendation": "promote_now",
+      "best_source_role": "primary_text",
+      "proposed_document_type": "strategy_paper",
+      "proposed_binding_strength": "strategy_statement",
+      "proposed_source_tier": "policy_strategy",
+      "proposed_policy_domains": [
+        "frontier_gpai"
+      ],
+      "coverage_bucket": "implementation_guidance",
+      "representative_title": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF：80KB）",
+      "representative_url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/pdf/aigensoku.pdf",
+      "members": [
+        {
+          "title": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF：80KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/pdf/aigensoku.pdf",
+          "status": "new_candidate",
+          "source_role": "primary_text",
+          "family_id": "title:人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+          "family_label": "人間中心のai 社会原則 統合イノベーション戦略推進会議決定 80kb",
+          "score": 11,
+          "recommendation": "promote_now",
+          "proposed_document_type": "strategy_paper",
+          "proposed_binding_strength": "strategy_statement",
+          "proposed_source_tier": "policy_strategy",
+          "proposed_policy_domains": [
+            "frontier_gpai"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "last_modified": null,
+          "discovered_from": "https://www.cas.go.jp/jp/seisaku/jinkouchinou/",
+          "score_reasons": [
+            "AI-relevant title or URL",
+            "instrument-like title",
+            "primary_text role",
+            "direct PDF artifact",
+            "low-signal event/news language"
+          ]
+        }
+      ]
+    },
+    {
       "jurisdiction": "european_union",
       "portal_id": "eu_digital_strategy_ai",
       "portal_name": "Shaping Europe's Digital Future - AI",
@@ -2241,6 +3258,58 @@
             "AI-relevant title or URL",
             "instrument-like title",
             "wrapper_page role"
+          ]
+        }
+      ]
+    },
+    {
+      "jurisdiction": "japan",
+      "portal_id": "jp_bunka_copyright_ai",
+      "portal_name": "Agency for Cultural Affairs AI Copyright Materials",
+      "family_id": "title:デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+      "family_label": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+      "status": "new_family",
+      "member_count": 1,
+      "new_candidate_count": 1,
+      "source_role_counts": {
+        "primary_text": 1
+      },
+      "best_candidate_score": 5,
+      "best_recommendation": "inspect_next",
+      "best_source_role": "primary_text",
+      "proposed_document_type": "strategy_paper",
+      "proposed_binding_strength": "strategy_statement",
+      "proposed_source_tier": "policy_strategy",
+      "proposed_policy_domains": [
+        "copyright_ip"
+      ],
+      "coverage_bucket": "implementation_guidance",
+      "representative_title": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について（令和8年3月24日）",
+      "representative_url": "https://www.bunka.go.jp/seisaku/chosakuken/pdf/94350404_01.pdf",
+      "members": [
+        {
+          "title": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について（令和8年3月24日）",
+          "url": "https://www.bunka.go.jp/seisaku/chosakuken/pdf/94350404_01.pdf",
+          "status": "new_candidate",
+          "source_role": "primary_text",
+          "family_id": "title:デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+          "family_label": "デジタル原則を踏まえた著作権法の規定の適用に係る解釈の明確化について 令和8年3月24日",
+          "score": 5,
+          "recommendation": "inspect_next",
+          "proposed_document_type": "strategy_paper",
+          "proposed_binding_strength": "strategy_statement",
+          "proposed_source_tier": "policy_strategy",
+          "proposed_policy_domains": [
+            "copyright_ip"
+          ],
+          "coverage_bucket": "implementation_guidance",
+          "last_modified": null,
+          "discovered_from": "https://www.bunka.go.jp/seisaku/chosakuken/index.html",
+          "score_reasons": [
+            "weak AI relevance signal",
+            "instrument-like title",
+            "primary_text role",
+            "direct PDF artifact"
           ]
         }
       ]

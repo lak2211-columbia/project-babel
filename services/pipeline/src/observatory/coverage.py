@@ -6,6 +6,7 @@ from pathlib import Path
 
 from observatory.discovery import DISCOVERY_DIR
 from observatory.source_registry import ROOT, load_all_source_manifests
+from observatory.url_safety import repo_rel_posix
 
 
 TRACKING_DIR = ROOT / "data" / "source_tracking"
@@ -147,7 +148,7 @@ def build_source_inventory() -> dict:
                         discovery_payload.get("candidate_count", 0) if discovery_payload is not None else 0
                     ),
                     "discovery_output_path": (
-                        str((DISCOVERY_DIR / manifest.jurisdiction / f"{portal.id}.json").relative_to(ROOT))
+                        repo_rel_posix(DISCOVERY_DIR / manifest.jurisdiction / f"{portal.id}.json", root=ROOT)
                         if discovery_payload is not None
                         else None
                     ),
@@ -178,17 +179,17 @@ def build_source_inventory() -> dict:
                 "latest_retrieval_status": latest_attempt.get("status"),
                 "latest_retrieval_error": latest_attempt.get("error"),
                 "raw_path": (
-                    str((RAW_DIR / manifest.jurisdiction / document.id).relative_to(ROOT))
+                    repo_rel_posix(RAW_DIR / manifest.jurisdiction / document.id, root=ROOT)
                     if state["fetched"]
                     else None
                 ),
                 "parsed_path": (
-                    str((PARSED_DIR / manifest.jurisdiction / document.id / "normalized.json").relative_to(ROOT))
+                    repo_rel_posix(PARSED_DIR / manifest.jurisdiction / document.id / "normalized.json", root=ROOT)
                     if state["parsed"]
                     else None
                 ),
                 "analysis_path": (
-                    str((ANALYSIS_DIR / manifest.jurisdiction / document.id / "document_analysis.json").relative_to(ROOT))
+                    repo_rel_posix(ANALYSIS_DIR / manifest.jurisdiction / document.id / "document_analysis.json", root=ROOT)
                     if state["analyzed"]
                     else None
                 ),
@@ -233,8 +234,8 @@ def build_source_inventory() -> dict:
 
     return {
         "generated_at": generated_at,
-        "inventory_json_path": str(INVENTORY_JSON_PATH.relative_to(ROOT)),
-        "inventory_markdown_path": str(INVENTORY_MARKDOWN_PATH.relative_to(ROOT)),
+        "inventory_json_path": repo_rel_posix(INVENTORY_JSON_PATH, root=ROOT),
+        "inventory_markdown_path": repo_rel_posix(INVENTORY_MARKDOWN_PATH, root=ROOT),
         "jurisdictions": jurisdictions,
     }
 
@@ -363,15 +364,17 @@ def _render_blocked_playbook(inventory: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
-def write_source_inventory() -> dict:
+def write_source_inventory(*, write_blocked_playbook: bool = True) -> dict:
     inventory = build_source_inventory()
     TRACKING_DIR.mkdir(parents=True, exist_ok=True)
     INVENTORY_MARKDOWN_PATH.parent.mkdir(parents=True, exist_ok=True)
-    BLOCKED_PLAYBOOK_PATH.parent.mkdir(parents=True, exist_ok=True)
     INVENTORY_JSON_PATH.write_text(
         json.dumps(inventory, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
-    INVENTORY_MARKDOWN_PATH.write_text(_render_markdown(inventory), encoding="utf-8")
-    BLOCKED_PLAYBOOK_PATH.write_text(_render_blocked_playbook(inventory), encoding="utf-8")
+    INVENTORY_MARKDOWN_PATH.write_text(_render_markdown(inventory), encoding="utf-8", newline="\n")
+    if write_blocked_playbook:
+        BLOCKED_PLAYBOOK_PATH.parent.mkdir(parents=True, exist_ok=True)
+        BLOCKED_PLAYBOOK_PATH.write_text(_render_blocked_playbook(inventory), encoding="utf-8", newline="\n")
     return inventory

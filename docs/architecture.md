@@ -1,101 +1,58 @@
 # System Architecture
 
+Project Babel is a single-repository, three-layer comparative AI governance observatory governed by seven CI-enforced JSON Schema contracts (`packages/schemas/`), **Taxonomy v2.1.0** (`data/taxonomies/observatory-taxonomy.json`), and a single machine-readable label definitions file (`data/taxonomies/label-definitions.json`).
+
 ## Product layers
 
-### 1. Source registry and ingestion
+### 1. Source registry, discovery, and SSRF-hardened retrieval
 
-The platform starts from official source documents:
+Official government sources are registered in per-jurisdiction manifests (`data/sources/<jurisdiction>.json`) validated against `packages/schemas/source-manifest.schema.json`.
 
-- Government websites
-- Legislative texts
-- Regulatory guidance
-- Strategy documents
-- Standards or voluntary commitments from public institutions
+- **Source portals & discovery:** Configured official portals (legal registries, ministries, safety institutes, standards bodies) support HTML link and recursive `sitemap`/`sitemapindex` discovery, with optional Playwright rendering.
+- **End-to-end SSRF & SPA safety:** `url_safety.py` enforces `http`/`https` schemes and globally routable IPs (`is_global`, blocking loopback, RFC1918, CGNAT `100.64.0.0/10`, link-local, multicast, and shorthand IPv4 literals across redirect hops); Playwright enforces `context.route("**/*", ...)` on every sub-request. Selector-aware SPA-overwrite protection (`#bodyContent`), `%PDF-` magic-byte verification, HTTP status checks, and conditional `ETag`/`Last-Modified` prevent empty shells or error pages from corrupting raw artifacts.
+- **Cross-platform reproducibility:** `.gitattributes` keeps `data/raw/**` binary (`-text`) and text/JSON/SQL/code `eol=lf`; all Python writes pass `newline="\n"`; all stored paths use `repo_rel_posix()`.
 
-Core outputs:
+### 2. Offline section-aware parsing (`Parser 0.3.0`)
 
-- Source metadata
-- Raw artifact storage
-- Parsed plain text
-- Language and translation metadata
+`parse-raw-documents` is strictly offline and deterministic — zero live network imports or calls.
 
-### 2. Structured extraction pipeline
+- **Legal-heading sectionizer:** Splits statutory texts on `Chapter`, `Article N`, `Section N`, `Annex`, `第N条`, and `제N조` boundaries (prose-safe).
+- **PDF normalization:** Strips repeated running headers/footers (preserving top-of-page legal headings), de-hyphenates wrapped words, reflows paragraphs, and records explicit `extractor` provenance.
+- **Multilingual HTML & dates:** Clean CJK charset detection, nested block deduplication, NIST/CAC nav-chrome stripping, and ISO/CJK/Japanese era date parsing.
 
-Each parsed document is analyzed for:
+### 3. Codebook-injected extraction & risk framing pipeline
 
-- Jurisdiction
-- Issuing body
-- Document type
-- Binding strength
-- Effective dates
-- Covered AI applications
-- Safety requirements
-- Enforcement mechanism
-- References to standards, audits, testing, disclosure, or incident reporting
+Each normalized document is analyzed independently along two surfaces using Anthropic Claude Sonnet 4.6 structured outputs (`temperature=0.0`, `600s` timeout, `8192→16384` controls token retry, HTTP `529`/`Retry-After` resilience, genuine dual-breakpoint prompt caching):
 
-This layer produces normalized records that can be compared across jurisdictions and time.
+- **Single-source codebook prompts:** `prompts.py` dynamically injects `definition`, `include_when`, and `exclude_when` from `data/taxonomies/label-definitions.json`.
+- **Policy extraction (`PolicyExtraction`):** Authoritative policy controls across 17 requirements (with optional deontic `obligation_strength` and required `>= 1` verbatim evidence span), 9 enforcement mechanisms, 10 application domains, actors, deadlines, and penalties.
+- **Risk framing (`RiskFramingAnalysis`):** Dominant frame, secondary frames, complete 8-frame `frame_confidence` vector, optional `frame_share` summing to `~1.0`, rationale summary, and frame-tagged verbatim spans (`quote` + optional `quote_en`).
+- **Token-aware CJK/Latin chunking:** Budgets by estimated tokens (`~1.2` chars/tok CJK vs. `~3.8` chars/tok Latin; `90k`/`45k` budgets) with evidence-weighted framing merges, subset-chunk deduplication, and multi-chunk grounded-span verification.
 
-### 3. Risk framing analysis pipeline
+### 4. Automated quality gates, grounding & gold-set evaluation
 
-The same document is separately scored for its dominant and secondary framings:
+Project Babel is machine-operated without a human approval queue:
 
-- Existential or catastrophic risk
-- National security
-- Economic competitiveness
-- Fundamental rights and civil liberties
-- Social stability and public order
-- Innovation enablement
-- Consumer or public safety
-- Labor and economic transition
+- **Schema & provenance guards:** `validate-artifacts` validates all 115 committed corpus artifacts against `packages/schemas/*.schema.json`; `_analysis_currency_status()` flags legacy provenance-free files (`stale_legacy_no_provenance`); `persist-analysis-artifacts` refuses to fabricate provenance (`LegacyProvenanceError` unless `--allow-legacy`).
+- **NFKC offset grounding (`check-grounding`):** Persists `grounding_status` (`verbatim` | `approximate` | `not_found`) and `start_char`/`end_char` offsets against `normalized.json` using the canonical `0.90` gate (`None` on zero quotes).
+- **Gold-set evaluation (`evaluate-gold-set`):** Scores extraction/framing against `data/eval/gold_set_v1.json` (`starter_v0.1_internal`) with per-label P/R/F1, Cohen's κ, and seeded 95% bootstrap CIs.
+- **Corpus quality audits (`report-source-quality-audit`):** Flags SPA shells, mojibake, zero-AI-keyword docs, zero-quote analyses, duplicate SHA-256s, and CJK-aware text length.
 
-This layer should preserve:
+### 5. Deterministic jurisdiction synthesis
 
-- Per-frame confidence scores
-- Representative evidence spans
-- Dominant frame
-- Secondary frames
+`analyze-jurisdictions` derives reproducible jurisdiction readouts purely from saved document analyses with jurisdiction-scoped institution alias canonicalization (`\bmost\b` / `State Council` strictly China-only), active statutory anchors ranked ahead of FAQs/drafts, and idempotent fingerprints excluding `generated_at`.
 
-### 4. Automated quality gates
+### 6. Postgres persistence (`001`–`005`) & analytical serving layer
 
-Low-confidence outputs should be flagged for follow-up, but the platform should stay fully machine-operated. Confidence scores and validation checks should inform monitoring, not a human approval queue.
+- **Database (Neon Postgres):** Migrations `001`–`005` store `documents` (with authoritative manifest `binding_strength`, `content_sha256`, `effective_date`, `publication_date_precision`, `source_tier`, `corpus_role`, `lifecycle_stage`, `sections_json`, `parser_warnings_json`), longitudinal `document_snapshots`, `machine_document_analyses` (`updated_at DESC, id DESC` index, `frame_shares_json`, `analyzed_at`, `grounding_ratio`, `taxonomy_version`), indexed/constrained child tables (incl. `obligation_strength`), and `machine_jurisdiction_analyses`.
+- **Web app (`apps/web/`, Next.js 16, Node 22+):** ISR caching (`revalidate = 3600`, tag `"observatory"`, `POST /api/revalidate`), CORS read APIs (`s-maxage=300, stale-while-revalidate=60`), strict `VERCEL_ENV` empty-DB refusal (never serving fake `seedData`), pure statistical engine (`headline` vs. `all`, multi-dimensional `POL`, sub-`0.15` noise-filtered / `frame_share` `FRM`, Regime Coverage `COV L1`, deterministic 200-resample bootstrap 90% CIs, 200-draw permutation null calibration, 4-spec sensitivity & Spearman `ρ`), 2D Decoupling Map, `/matrix`, label-conditioned `/compare`, NFKC `<mark>` evidence reader, UTF-8 BOM taxonomy-key CSV & versioned BibTeX exports, and neutral sequential single-hue visuals.
 
-### 5. Jurisdiction synthesis layer
+## End-to-end data flow
 
-After document-level extraction and framing run, the platform should derive a jurisdiction-level readout from the saved machine analyses. This layer should stay reproducible from saved artifacts rather than introducing analyst-only summary text.
-
-Core outputs:
-
-- Jurisdiction-specific narrative summary
-- Binding-strength and document-type mix
-- Dominant requirements and enforcement hooks
-- Framing landscape grounded in the current corpus
-- Key-source shortlist with contribution notes
-
-### 6. Analytical serving layer
-
-The product UI should query:
-
-- Documents
-- Extracted policy requirements
-- Risk framing scores
-- Jurisdiction snapshots
-- Jurisdiction analyses
-- Divergence index views
-
-## Proposed technical shape
-
-- Database: Postgres for normalized analytical data
-- Pipeline: Python for ingestion, parsing, extraction, and evaluation
-- UI: Next.js app for comparative analysis and search
-- Shared contracts: schemas versioned in-repo
-
-## Data flow
-
-1. Register a source document.
-2. Store raw artifact and parsed text.
-3. Run structured extraction.
-4. Run framing analysis.
-5. Refresh jurisdiction synthesis from the saved document analyses.
-6. Score confidence and flag uncertain outputs.
-7. Persist machine outputs.
-8. Refresh analytical views and derived divergence metrics.
+1. Validate taxonomy (`validate-taxonomy`), manifests (`validate-sources`), and schemas (`validate-artifacts`).
+2. Discover candidates and safely fetch official raw artifacts (`refresh-sources` / `fetch-seed-documents`).
+3. Parse raw artifacts strictly offline under Parser `0.3.0` (`parse-raw-documents`).
+4. Run codebook-injected Claude Sonnet 4.6 analysis (`analyze-documents`), NFKC grounding (`check-grounding`), and gold-set eval (`evaluate-gold-set data/eval/gold_set_v1.json`).
+5. Synthesize jurisdiction readouts (`analyze-jurisdictions`) and run corpus quality audit (`report-source-quality-audit`).
+6. Apply SQL migrations `001`–`005` (`migrate-db`), dry-run manifest sync (`sync-db-to-source-manifests --dry-run`), and replay v2 analyses idempotently (`persist-analysis-artifacts`).
+7. Purge Next.js ISR caches (`POST /api/revalidate`).

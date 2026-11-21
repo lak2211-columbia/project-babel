@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 from typing import Literal, Sequence
 
 from pydantic import AnyHttpUrl, BaseModel, Field, field_validator, model_validator
 
 from observatory.taxonomy import load_taxonomy
+from observatory.url_safety import is_valid_iso_date
 
 
 ROOT = Path(__file__).resolve().parents[4]
@@ -152,6 +154,8 @@ class SeedDocument(BaseModel):
     document_type: str
     binding_strength: str
     source_tier: str | None = None
+    corpus_role: str | None = None
+    supersedes_id: str | None = None
     policy_domains: list[str] = Field(default_factory=list)
     lifecycle_stage: str | None = None
     publication_date: str | None = None
@@ -173,14 +177,26 @@ class SeedDocument(BaseModel):
             raise ValueError("document id must use lowercase letters, numbers, underscores, or dashes")
         return value
 
+    @field_validator("supersedes_id")
+    @classmethod
+    def validate_supersedes_id(cls, value: str | None) -> str | None:
+        if value is None:
+            return None
+        cleaned = value.strip()
+        if not cleaned:
+            return None
+        allowed = set("abcdefghijklmnopqrstuvwxyz0123456789_-")
+        if any(char not in allowed for char in cleaned):
+            raise ValueError("supersedes_id must use lowercase letters, numbers, underscores, or dashes")
+        return cleaned
+
     @field_validator("publication_date", "effective_date")
     @classmethod
     def validate_date_string(cls, value: str | None) -> str | None:
         if value is None:
             return value
-        parts = value.split("-")
-        if len(parts) != 3 or any(not part.isdigit() for part in parts):
-            raise ValueError("dates must be ISO formatted as YYYY-MM-DD")
+        if not is_valid_iso_date(value):
+            raise ValueError("dates must be valid calendar ISO dates formatted as YYYY-MM-DD")
         return value
 
     @field_validator("retrieval_urls")
@@ -292,6 +308,7 @@ def load_source_manifest(path: Path) -> JurisdictionManifest:
     allowed_binding_strength = set(taxonomy["binding_strength"])
     allowed_issuer_types = set(taxonomy["issuer_types"])
     allowed_source_tiers = set(taxonomy["source_tiers"])
+    allowed_corpus_roles = set(taxonomy.get("corpus_roles", []))
     allowed_policy_domains = set(taxonomy["policy_domains"])
     allowed_lifecycle_stages = set(taxonomy["lifecycle_stages"])
     for portal in manifest.source_portals:
@@ -311,6 +328,10 @@ def load_source_manifest(path: Path) -> JurisdictionManifest:
         if document.source_tier is not None and document.source_tier not in allowed_source_tiers:
             raise ValueError(
                 f"manifest '{path.name}' uses unknown source tier '{document.source_tier}'"
+            )
+        if document.corpus_role is not None and allowed_corpus_roles and document.corpus_role not in allowed_corpus_roles:
+            raise ValueError(
+                f"manifest '{path.name}' uses unknown corpus role '{document.corpus_role}'"
             )
         if document.lifecycle_stage is not None and document.lifecycle_stage not in allowed_lifecycle_stages:
             raise ValueError(
@@ -368,5 +389,7 @@ def write_source_manifest(
     target_path = path or source_manifest_path(manifest.jurisdiction, sources_dir=sources_dir)
     payload = manifest.model_dump(mode="json", exclude_none=True, exclude_defaults=True)
     target_path.parent.mkdir(parents=True, exist_ok=True)
-    target_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    temp_path = target_path.with_name(f".{target_path.name}.tmp")
+    temp_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+    os.replace(temp_path, target_path)
     return target_path

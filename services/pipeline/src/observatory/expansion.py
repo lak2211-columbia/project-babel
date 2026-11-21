@@ -6,6 +6,7 @@ from pathlib import Path
 from observatory.coverage import TRACKING_DIR
 from observatory.source_ops import build_source_operations_model
 from observatory.source_registry import ROOT
+from observatory.url_safety import repo_rel_posix
 
 
 EXPANSION_PLAN_JSON_PATH = TRACKING_DIR / "source_expansion_plan.json"
@@ -13,10 +14,7 @@ EXPANSION_PLAN_MARKDOWN_PATH = ROOT / "docs" / "operations" / "source-expansion-
 
 
 def _display_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT))
-    except ValueError:
-        return str(path)
+    return repo_rel_posix(path, root=ROOT)
 
 
 def build_source_expansion_plan() -> dict:
@@ -109,7 +107,11 @@ def _render_markdown(plan: dict) -> str:
 def write_source_expansion_plan() -> dict:
     plan = build_source_expansion_plan()
     EXPANSION_PLAN_JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
-    EXPANSION_PLAN_JSON_PATH.write_text(json.dumps(plan, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    EXPANSION_PLAN_JSON_PATH.write_text(
+        json.dumps(plan, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     EXPANSION_PLAN_MARKDOWN_PATH.parent.mkdir(parents=True, exist_ok=True)
-    EXPANSION_PLAN_MARKDOWN_PATH.write_text(_render_markdown(plan), encoding="utf-8")
+    EXPANSION_PLAN_MARKDOWN_PATH.write_text(_render_markdown(plan), encoding="utf-8", newline="\n")
     return plan

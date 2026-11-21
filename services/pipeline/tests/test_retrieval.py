@@ -683,19 +683,33 @@ def test_fetch_seed_documents_uses_browser_fallback_for_browser_required_documen
         ],
     )
 
-    monkeypatch.setattr(retrieval, "urlopen", lambda request, timeout=20: (_ for _ in ()).throw(TimeoutError()))
-    monkeypatch.setattr(
-        retrieval,
-        "fetch_url_with_browser",
-        lambda url, wait_for_selector=None, min_text_length=None, click_selectors=None, timeout_seconds=45, user_agent=None: BrowserFetchResult(
+    captured_browser_kwargs: dict[str, object] = {}
+
+    def _fake_browser_fetch(
+        url,
+        wait_for_selector=None,
+        min_text_length=None,
+        click_selectors=None,
+        timeout_seconds=45,
+        user_agent=None,
+        locale="en-US",
+    ):
+        captured_browser_kwargs["locale"] = locale
+        captured_browser_kwargs["wait_for_selector"] = wait_for_selector
+        return BrowserFetchResult(
             payload=b"<html><body><div id='content'>Rendered law text</div></body></html>",
             content_type="text/html; charset=utf-8",
             status_code=200,
             resolved_url=url,
-        ),
-    )
+        )
+
+    monkeypatch.setattr(retrieval, "urlopen", lambda request, timeout=20: (_ for _ in ()).throw(TimeoutError()))
+    monkeypatch.setattr(retrieval, "fetch_url_with_browser", _fake_browser_fetch)
 
     results = retrieval.fetch_seed_documents(use_browser=True)
+
+    assert captured_browser_kwargs["locale"] == "ko-KR"
+    assert captured_browser_kwargs["wait_for_selector"] == "#content"
 
     assert results == [
         {

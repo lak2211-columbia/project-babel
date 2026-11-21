@@ -1,0 +1,490 @@
+{
+  "source_id": "us_dod_directive_3000_09_autonomy_2023",
+  "title": "DoD Directive 3000.09: Autonomy in Weapon Systems",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "U.S. Department of Defense",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "executive_action",
+    "publication_date": "2023-01-25",
+    "effective_date": "2023-01-25",
+    "covered_actors": [
+      "All organizational entities within the U.S. Department of Defense: Office of the Secretary of Defense (OSD), Military Departments, Chairman and Vice Chairman of the Joint Chiefs of Staff (CJCS/VCJCS) and Joint Staff, Combatant Commands, DoD Office of Inspector General, Defense Agencies, and DoD Field Activities (§ 1.1.a(1))",
+      "Senior DoD approval, oversight, and advisory authorities: Deputy Secretary of Defense (urgent military need waiver authority), USD(P), USD(R&E), USD(A&S), USD(P&R), DOT&E, General Counsel of the DoD (GC DoD), Chief Digital and Artificial Intelligence Officer (CDAO), Assistant to the Secretary of Defense for Public Affairs, Secretaries of the Military Departments, Commander USSOCOM, Combatant Commanders, and the Autonomous Weapon Systems Working Group (Sections 2, 4, and 5)",
+      "Scope covers design, development, acquisition, testing, fielding, employment, and international sales/transfers of autonomous and semi-autonomous weapon systems (including guided munitions capable of automated target selection applying lethal/non-lethal, kinetic/non-kinetic force); excludes cyberspace capabilities, unarmed platforms, unguided or manually guided munitions, mines, unexploded ordnance, and non-weapon autonomous systems (§ 1.1)"
+    ],
+    "covered_application_domains": [
+      "defense",
+      "public_sector_use"
+    ],
+    "prohibited_practices": [
+      "Entering formal development or fielding covered autonomous weapon systems (outside the four § 1.2.d carve-outs for purely semi-autonomous systems, operator-supervised local anti-materiel defense, operator-supervised defense of unmanned platforms, or non-lethal/non-kinetic anti-materiel systems) without prior dual-gate senior review and approval from USD(P), USD(R&E)/USD(A&S), and VCJCS (or a Deputy Secretary of Defense waiver for urgent military need) (§ 1.2.c, § 4.1, § 4.2, Figure 1)",
+      "Employing or modifying autonomous or semi-autonomous weapon systems to operate outside § 1.2.d policies or outside the scope of a prior senior approval (including substantial changes to system algorithms, mission sets, operational environments, target sets, or expected adversarial countermeasures) without obtaining new senior-level review and approval (§ 1.2.c(2), § 2.12.c, § 4.1.a)",
+      "Employing autonomous or semi-autonomous weapon systems in violation of the law of war, applicable treaties, weapon system safety rules, applicable rules of engagement (ROE), or the DoD AI Ethical Principles (§ 1.2.b, § 1.2.f, § 2.9.c, § 2.12.b)",
+      "Continuing an autonomous or semi-autonomous weapon engagement when the system is unable to complete the engagement within commander- and operator-intended timeframe, geographic area, and environmental or operational constraints without terminating the engagement or obtaining additional operator input (§ 1.2.a(1)(b), § 4.1.c(2))"
+    ],
+    "safety_requirements": [
+      {
+        "label": "human_oversight",
+        "confidence": 0.99,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "Autonomous and semi-autonomous weapon systems will be designed to allow commanders and operators to exercise appropriate levels of human judgment over the use of force.",
+            "source_section": "Section 1.2.a (Policy)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5702,
+            "end_char": 5870
+          },
+          {
+            "quote": "Certify that operators have been trained in system capabilities, doctrine, and TTPs to exercise appropriate levels of human judgment over the use of force and employ systems with appropriate care in accordance with the law of war, applicable treaties, weapon system safety rules, and ROE that are applicable or reasonably expected to be applicable.",
+            "source_section": "Section 2.9.b(7) (Responsibilities)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23130,
+            "end_char": 23478
+          }
+        ]
+      },
+      {
+        "label": "agentic_autonomy_controls",
+        "confidence": 0.96,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "(b) Complete engagements within a timeframe and geographic area, as well as other relevant environmental and operational constraints, consistent with commander and operator intentions. If unable to do so, the systems will terminate the engagement or obtain additional operator input before continuing the engagement.",
+            "source_section": "Section 1.2.a(1)(b) (Policy)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6486,
+            "end_char": 6802
+          },
+          {
+            "quote": "(5) Governable.\nThe DoD will design and engineer AI capabilities to fulfill their intended functions while possessing the ability to detect and avoid unintended consequences, and the ability to disengage or deactivate deployed systems that demonstrate unintended behavior.",
+            "source_section": "Section 1.2.f(5) (DoD AI Ethical Principles)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12851,
+            "end_char": 13123
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.99,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "a. Systems will go through rigorous hardware and software V&V and realistic system developmental and operational T&E, including analysis of unanticipated emergent behavior.",
+            "source_section": "Section 3.a (V&V and T&E)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27225,
+            "end_char": 27397
+          },
+          {
+            "quote": "(2) Systems incorporating AI capabilities will go through rigorous developmental and operational T&E to verify and validate that the AI is robust according to design requirements.",
+            "source_section": "Section 3.a(2) (V&V and T&E)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27580,
+            "end_char": 27759
+          }
+        ]
+      },
+      {
+        "label": "red_teaming",
+        "confidence": 0.91,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "(4) For systems incorporating AI capabilities, design the system to utilize robust AI, in accordance with the DoD Responsible AI Strategy and Implementation Pathway, so that the system is resilient in real-world settings and against adversarial attacks and spoofing.",
+            "source_section": "Section 2.9.b(4) (Responsibilities)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22330,
+            "end_char": 22596
+          },
+          {
+            "quote": "(1) Hardware and software V&V will include iterative cyber T&E in accordance with DoDI 5000.89, to verify that the weapon system is resilient and survivable in contested cyberspace.",
+            "source_section": "Section 3.a(1) (V&V and T&E)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27398,
+            "end_char": 27579
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.97,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "(2) Consistent with the potential consequences of an unintended engagement or unauthorized parties interfering with the operation of the system, physical hardware and software will be designed with appropriate:\n(a) System safety, anti-tamper mechanisms, and cybersecurity in accordance with DoD Instruction (DoDI) 8500.01 and Military Standard 882E.",
+            "source_section": "Section 1.2.a(2)(a) (Policy)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6889,
+            "end_char": 7238
+          },
+          {
+            "quote": "(2) System safety, anti-tamper mechanisms, cyber survivability, operational resilience, and cybersecurity capabilities have been implemented in accordance with DoDI 5000.83, the Joint Capabilities Integration and Development System Manual, and DoDI 8500.01 to minimize the probability and consequences of failures.",
+            "source_section": "Section 4.1.d(2) (Senior Review Before Fielding)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 33201,
+            "end_char": 33515
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.95,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "a. Oversees establishment of standards and evaluation metrics for developmental testing, safety certification, and reliability assessment of autonomous and semi-autonomous weapon\n\nSECTION 2: RESPONSIBILITIES\n8 systems, with particular attention to the risk of unintended engagements or operational interference by unauthorized parties.",
+            "source_section": "Section 2.3.a (USD(R&E) Responsibilities)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14946,
+            "end_char": 15281
+          },
+          {
+            "quote": "c. Ensure that legal reviews of the intended acquisition, procurement, or modification of autonomous and semi-autonomous weapon systems are conducted in accordance with DoDD 5000.01, DoDD 2311.01, and, where applicable, DoDD 3000.03E. Legal reviews must address consistency with all applicable domestic and international law and, in particular, the law of war.",
+            "source_section": "Section 2.9.c (Legal Reviews)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23755,
+            "end_char": 24115
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.97,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "4.1. Autonomous weapon systems intended to be used in a manner that falls outside the policies in Paragraphs 1.2.d.(1) through 1.2.d.(4) must be approved by the USD(P), USD(R&E), and VCJCS before formal development and by the USD(P), USD(A&S), and VCJCS before fielding.",
+            "source_section": "Section 4.1 (Guidelines for Review of Certain Autonomous Weapon Systems)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 29270,
+            "end_char": 29540
+          },
+          {
+            "quote": "e. International sales or transfers of autonomous and semi-autonomous weapon systems will be approved in accordance with existing technology security and foreign disclosure requirements and processes in accordance with DoDD 5111.21.",
+            "source_section": "Section 1.2.e (Policy)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 11353,
+            "end_char": 11585
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.92,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "(3) Traceable.\nThe DoD’s AI capabilities will be developed and deployed such that relevant personnel possess an appropriate understanding of the technology, development processes, and operational methods applicable to AI capabilities, including with transparent and auditable methodologies, data sources, and design procedures and documentation.",
+            "source_section": "Section 1.2.f(3) (DoD AI Ethical Principles)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12261,
+            "end_char": 12606
+          },
+          {
+            "quote": "b. Ensures that DoD guidance relating to the Defense Acquisition System includes a requirement to document the determination that an autonomous or semi-autonomous weapon system is intended to be used in a manner that falls within the policies in Paragraphs 1.2.d.(1) through 1.2.d.(4), and therefore does not require senior approval in accordance with this directive.",
+            "source_section": "Section 2.2.b (USD(A&S) Responsibilities)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14384,
+            "end_char": 14751
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.86,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "(a) Be readily understandable to trained operators, such as by clearly indicating what actions operators need to perform and which actions the system will perform.\n(b) Provide transparent feedback on system status.\n(c) Provide clear procedures for trained operators to activate and deactivate system functions.",
+            "source_section": "Section 1.2.a(3)(a)–(c) (Policy)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7576,
+            "end_char": 7886
+          },
+          {
+            "quote": "(c) Technologies and data sources that are transparent to, auditable by, and explainable by relevant personnel.",
+            "source_section": "Section 1.2.a(2)(c) (Policy)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7282,
+            "end_char": 7393
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "licensing_requirement",
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "quote": "autonomous weapon systems, including weapon systems with both autonomous and semi-autonomous modes of operation, must be approved by the Under Secretary of Defense for Policy (USD(P)), the Under Secretary of Defense for Research and Engineering (USD(R&E)), and the Vice Chairman of the Joint Chiefs of Staff (VCJCS) before formal development.",
+            "source_section": "Section 1.2.c (Policy)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8464,
+            "end_char": 8806
+          },
+          {
+            "quote": "Did the review process result in approval to develop or field the system? Proceed with formal development or fielding in accordance with applicable DoD acquisition policies and procedures. Do not develop or field the system.",
+            "source_section": "Section 4, Figure 1 (Senior Review Flow Chart)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 36495,
+            "end_char": 36719
+          }
+        ]
+      },
+      {
+        "label": "procurement_condition",
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "quote": "d. Consider for support only those autonomous and semi-autonomous weapon systems that are technically feasible, consistent with applicable law, and consistent with the standards in this directive.",
+            "source_section": "Section 2.9.d (Responsibilities)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24116,
+            "end_char": 24312
+          },
+          {
+            "quote": "e. Reviews and approves operational and live fire test plans for autonomous and semiautonomous weapon systems for Major Defense Acquisition Programs and programs designated for DOT&E oversight.",
+            "source_section": "Section 2.5.e (DOT&E Responsibilities)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 18587,
+            "end_char": 18780
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "quote": "a. Monitors and evaluates AI capabilities in and cybersecurity for autonomous and semiautonomous weapon systems, in accordance with Paragraph 1.2.a.(2)(a) of this directive and DoDI 8500.01, and advises the Secretary of Defense on such matters.",
+            "source_section": "Section 2.8.a (CDAO Responsibilities)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19545,
+            "end_char": 19789
+          },
+          {
+            "quote": "d. In coordination with the USD(R&E) and DOT&E, the owning Component will provide for monitoring to identify and address when changes to the system design or operational environment require additional T&E to provide sufficient confidence that the system will continue to avoid unintended engagements and resist interference by unauthorized parties.",
+            "source_section": "Section 3.d (Post-Fielding Monitoring)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28776,
+            "end_char": 29124
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.87,
+        "evidence": [
+          {
+            "quote": "e. In accordance with Paragraphs 1.2.c and 1.2.d, submit any autonomous weapon system for which approval is required to the USD(P), USD(A&S) or USD(R&E), and the VCJCS before a decision to enter formal development, and again before fielding of any such system.",
+            "source_section": "Section 2.9.e (Responsibilities)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24345,
+            "end_char": 24605
+          },
+          {
+            "quote": "c. After IOT&E, as directed by the DOT&E, system data will be collected and any further changes to the system will undergo appropriate V&V and T&E to ensure that critical safety features have not been degraded.",
+            "source_section": "Section 3.c (V&V and T&E)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27918,
+            "end_char": 28128
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Deputy Secretary of Defense (issuing authority and sole urgent-military-need waiver authority under § 4.2)",
+      "Under Secretary of Defense for Policy (USD(P)), Under Secretary of Defense for Research and Engineering (USD(R&E)), Under Secretary of Defense for Acquisition and Sustainment (USD(A&S)), and Vice Chairman of the Joint Chiefs of Staff (VCJCS) (dual-gate senior approval authorities before formal development and before fielding)",
+      "Director, Operational Test and Evaluation (DOT&E) (operational and live-fire test plan approval, V&V/T&E standards, and post-IOT&E regression T&E direction)",
+      "Chief Digital and Artificial Intelligence Officer (CDAO) (AI capability/cybersecurity monitoring, testability policy, and AI Ethical Principles implementation)",
+      "General Counsel of the Department of Defense (GC DoD) (coordination of legal and law-of-war reviews)",
+      "Autonomous Weapon Systems Working Group (inter-component technical/policy advisory body supporting senior reviews, Section 5)",
+      "Secretaries of the Military Departments, Commander USSOCOM, Combatant Commanders, and Directors of Defense Agencies / DoD Field Activities"
+    ],
+    "compliance_deadlines": [
+      "2023-01-25: Immediate effective date of reissued DoD Directive 3000.09 (canceling and reissuing the November 21, 2012 version)",
+      "Before formal development (Milestone B for MDAPs or after preliminary design review for non-MDAPs): Mandatory senior review and approval (by USD(P), USD(R&E), VCJCS), preliminary legal review, V&V/T&E planning, and acquisition-system § 1.2.d carve-out documentation",
+      "Before fielding (operational deployment): Mandatory second senior review and approval (by USD(P), USD(A&S), VCJCS), final legal review, completed V&V and realistic operational T&E, rapid-reprogramming demonstration, operator training certification, and post-fielding monitoring setup",
+      "Post-IOT&E and lifecycle modifications: Mandatory V&V/T&E for any software or operating-state changes (including follow-on operational T&E for state-transition-matrix modifications) and fresh dual-gate senior review for substantial modifications outside prior approval scope"
+    ],
+    "penalties_summary": "As a binding internal Department of Defense executive directive, DoD Directive 3000.09 enforces compliance through hard acquisition and operational gates rather than monetary fines: covered autonomous weapon systems lacking dual-gate senior approval (or a Deputy Secretary of Defense urgent-military-need waiver) may not enter formal development or be fielded ('Do not develop or field the system'), Military Departments and Defense Agencies may consider for support only compliant systems, DOT&E must approve operational/live-fire test plans, and Combatant Commanders are prohibited from employing or modifying systems outside approved operational parameters.",
+    "implementation_notes": "Approved by Deputy Secretary of Defense Kathleen H. Hicks and effective January 25, 2023, DoD Directive 3000.09 reissues and cancels the 2012 directive to modernize U.S. defense governance for AI-enabled autonomous and semi-autonomous weapon systems. It binds all DoD components to design systems enabling appropriate levels of human judgment over the use of force; enforce temporal, geographic, and operational engagement bounds with automatic termination or operator re-authorization; execute rigorous hardware/software V&V, iterative cyber T&E, emergent-behavior analysis, rapid-reprogramming validation, and post-IOT&E regression testing; comply with DoDI 8500.01 cybersecurity, MIL-STD-882E system safety, the law of war, and the five DoD AI Ethical Principles (Responsible, Equitable, Traceable, Reliable, Governable); and route covered autonomous weapon systems through dual-gate senior review (pre-development and pre-fielding) supported by a permanent Autonomous Weapon Systems Working Group.",
+    "confidence": 0.99
+  },
+  "risk_framing": {
+    "dominant_frame": "national_security",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "fundamental_rights"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.15,
+      "national_security": 0.98,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.68,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.1,
+      "consumer_public_safety": 0.85,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.56,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.18,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.0,
+      "consumer_public_safety": 0.26,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "DoD Directive 3000.09 is dominantly framed around national security, governing the acquisition, resilience, warfighter readiness, and operational deployment of autonomous and semi-autonomous military weapon systems against adaptive adversaries in contested cyberspace while explicitly balancing risk reduction with meeting mission objectives and preserving urgent-military-need waivers. Consumer and public safety serves as a major secondary rationale centered on operational weapon safety, preventing unintended engagements, protecting non-targets, minimizing failure probabilities and collateral damage, and avoiding unintended death, injury, or property and environmental harm. Fundamental rights provides an important secondary legal and ethical frame anchored in strict compliance with the law of war, international treaties, rules of engagement, human judgment over the use of force, and the DoD AI Ethical Principles requiring responsible, equitable, bias-minimized, traceable, and governable AI capabilities.",
+    "evidence_spans": [
+      {
+        "quote": "(a) Function as anticipated in realistic operational environments against adaptive adversaries taking realistic and practicable countermeasures.",
+        "source_section": "Section 1.2.a(1)(a) (Policy)",
+        "quote_en": null,
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 6341,
+        "end_char": 6485
+      },
+      {
+        "quote": "minimizing the probability and consequences of failure means reducing the probability and consequences of unintended engagements to acceptable levels while meeting mission objectives and does not mean achieving the lowest possible level of risk by never engaging targets.",
+        "source_section": "Glossary G.2 (Definition of 'failure')",
+        "quote_en": null,
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 40785,
+        "end_char": 41056
+      },
+      {
+        "quote": "Establishes guidelines designed to minimize the probability and consequences of failures in autonomous and semi-autonomous weapon systems that could lead to unintended engagements.",
+        "source_section": "Cover Page (Purpose)",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 673,
+        "end_char": 853
+      },
+      {
+        "quote": "focused on addressing weapon safety issues and concerns that present significant mishap risk and is applied with a view towards ensuring freedom from conditions that can cause occupational illness, unintended death or injury, unintended damage to or loss of equipment or property, or unintended damage to the environment.",
+        "source_section": "Glossary G.2 (Definition of 'weapon system safety rules')",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 44437,
+        "end_char": 44758
+      },
+      {
+        "quote": "b. Persons who authorize the use of, direct the use of, or operate autonomous and semiautonomous weapon systems will do so with appropriate care and in accordance with the law of war, applicable treaties, weapon system safety rules, and applicable rules of engagement (ROE).",
+        "source_section": "Section 1.2.b (Policy)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 7887,
+        "end_char": 8161
+      },
+      {
+        "quote": "(2) Equitable.\nThe DoD will take deliberate steps to minimize unintended bias in AI capabilities.",
+        "source_section": "Section 1.2.f(2) (DoD AI Ethical Principles)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 12163,
+        "end_char": 12260
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:13:22.364303Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "fd9b240fbd4d777be376afc53d3cd95cef05b6d4205c5c465fc7c94d5e1cba98",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 46359,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 32,
+      "exact_matches": 32,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

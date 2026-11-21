@@ -27,6 +27,8 @@ def _manifest_document_index() -> dict[tuple[str, str], dict]:
                 "source_url": str(document.canonical_url),
                 "source_tier": document.source_tier,
                 "corpus_role": document.corpus_role,
+                "subnational_unit": document.subnational_unit,
+                "supersedes_id": document.supersedes_id,
                 "lifecycle_stage": document.lifecycle_stage,
                 "languages": list(document.languages),
                 "language": document.languages[0],

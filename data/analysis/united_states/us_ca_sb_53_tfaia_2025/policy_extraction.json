@@ -1,0 +1,318 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "California State Legislature",
+  "document_type": "legislation",
+  "binding_strength": "binding_law",
+  "publication_date": "2025-09-29",
+  "effective_date": "2026-01-01",
+  "covered_actors": [
+    "Frontier developers (any person who has trained, or initiated training of, a foundation model trained using > 10^26 integer or floating-point operations including original training, fine-tuning, reinforcement learning, or material modifications)",
+    "Large frontier developers (frontier developers that together with affiliates had annual gross revenues exceeding $500,000,000 in the preceding calendar year)",
+    "Covered employees (employees responsible for assessing, managing, or addressing risk of critical safety incidents) protected under Labor Code §§ 1107–1107.2",
+    "California Office of Emergency Services (CalOES), California Attorney General, California Department of Technology, and California Government Operations Agency (CalCompute consortium)"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models"
+  ],
+  "prohibited_practices": [
+    "Making a materially false or misleading statement about catastrophic risk from frontier models or management of catastrophic risk (for frontier developers), or about implementation of or compliance with a frontier AI framework (for large frontier developers), excluding reasonable good-faith statements (Bus. & Prof. Code § 22757.12(e))",
+    "Adopting, enforcing, or entering into any rule, regulation, policy, or contract preventing a covered employee from disclosing—or retaliating against a covered employee for disclosing—reasonable-cause information that a frontier developer's activities pose a specific and substantial danger to public health or safety from catastrophic risk or violate the TFAIA (Labor Code § 1107.1(a)–(b))"
+  ],
+  "safety_requirements": [
+    {
+      "label": "compute_governance",
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(i) (1) “Frontier model” means a foundation model that was trained using a quantity of computing power greater than 10^26 integer or floating-point operations.",
+          "source_section": "Bus. & Prof. Code § 22757.11(i)(1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14554,
+          "end_char": 14713
+        },
+        {
+          "quote": "(j) “Large frontier developer” means a frontier developer that together with its affiliates collectively had annual gross revenues in excess of five hundred million dollars ($500,000,000) in the preceding calendar year.",
+          "source_section": "Bus. & Prof. Code § 22757.11(j)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14978,
+          "end_char": 15197
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.97,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "A large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its internet website a frontier AI framework that applies to the large frontier developer’s frontier models and describes how the large frontier developer approaches all of the following:",
+          "source_section": "Bus. & Prof. Code § 22757.12(a)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 15433,
+          "end_char": 15725
+        },
+        {
+          "quote": "(10) Assessing and managing catastrophic risk resulting from the internal use of its frontier models, including risks resulting from a frontier model circumventing oversight mechanisms.",
+          "source_section": "Bus. & Prof. Code § 22757.12(a)(10)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17048,
+          "end_char": 17233
+        }
+      ]
+    },
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.97,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(2) Defining and assessing thresholds used by the large frontier developer to identify and assess whether a frontier model has capabilities that could pose a catastrophic risk, which may include multiple-tiered thresholds.\n(3) Applying mitigations to address the potential for catastrophic risks based on the results of assessments undertaken pursuant to paragraph (2).",
+          "source_section": "Bus. & Prof. Code § 22757.12(a)(2)–(3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 15859,
+          "end_char": 16228
+        },
+        {
+          "quote": "(4) Reviewing assessments and adequacy of mitigations as part of the decision to deploy a frontier model or use it extensively internally.",
+          "source_section": "Bus. & Prof. Code § 22757.12(a)(4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 16229,
+          "end_char": 16367
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.88,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(5) Using third parties to assess the potential for catastrophic risks and the effectiveness of mitigations of catastrophic risks.",
+          "source_section": "Bus. & Prof. Code § 22757.12(a)(5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 16368,
+          "end_char": 16498
+        },
+        {
+          "quote": "(A) Assessments of catastrophic risks from the frontier model conducted pursuant to the large frontier developer’s frontier AI framework.\n(B) The results of those assessments.\n(C) The extent to which third-party evaluators were involved.",
+          "source_section": "Bus. & Prof. Code § 22757.12(c)(2)(A)–(C)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18587,
+          "end_char": 18824
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.97,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(c) (1) Before, or concurrently with, deploying a new frontier model or a substantially modified version of an existing frontier model, a frontier developer shall clearly and conspicuously publish on its internet website a transparency report containing all of the following:",
+          "source_section": "Bus. & Prof. Code § 22757.12(c)(1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17619,
+          "end_char": 17894
+        },
+        {
+          "quote": "(2) If a large frontier developer makes a material modification to its frontier AI framework, the large frontier developer shall clearly and conspicuously publish the modified frontier AI framework and a justification for that modification within 30 days.",
+          "source_section": "Bus. & Prof. Code § 22757.12(b)(2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17363,
+          "end_char": 17618
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.95,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(g) “Frontier AI framework” means documented technical and organizational protocols to manage, assess, and mitigate catastrophic risks.",
+          "source_section": "Bus. & Prof. Code § 22757.11(g)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14118,
+          "end_char": 14253
+        },
+        {
+          "quote": "(3) A frontier developer that publishes the information described in paragraph (1) or (2) as part of a larger document, including a system card or model card, shall be deemed in compliance with the applicable paragraph.",
+          "source_section": "Bus. & Prof. Code § 22757.12(c)(3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18940,
+          "end_char": 19159
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.99,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "a frontier developer shall report any critical safety incident pertaining to one or more of its frontier models to the Office of Emergency Services within 15 days of discovering the critical safety incident.",
+          "source_section": "Bus. & Prof. Code § 22757.13(c)(1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 21927,
+          "end_char": 22134
+        },
+        {
+          "quote": "(2) If a frontier developer discovers that a critical safety incident poses an imminent risk of death or serious physical injury, the frontier developer shall disclose that incident within 24 hours to an authority, including any law enforcement agency or public safety agency with jurisdiction, that is appropriate based on the nature of that incident and as required by law.",
+          "source_section": "Bus. & Prof. Code § 22757.13(c)(2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22135,
+          "end_char": 22510
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.92,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(7) Cybersecurity practices to secure unreleased model weights from unauthorized modification or transfer by internal or external parties.",
+          "source_section": "Bus. & Prof. Code § 22757.12(a)(7)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 16757,
+          "end_char": 16895
+        },
+        {
+          "quote": "(2) The Office of Emergency Services shall take all necessary precautions to limit access to any reports related to internal use of frontier models to only personnel with a specific need to know the information and to protect the reports from unauthorized access.",
+          "source_section": "Bus. & Prof. Code § 22757.13(b)(2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 21629,
+          "end_char": 21892
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "civil_penalty",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "A large frontier developer that fails to publish or transmit a compliant document required to be published or transmitted under this chapter, makes a statement in violation of subdivision (e) of Section 22757.12, fails to report an incident as required by Section 22757.13, or fails to comply with its own frontier AI framework shall be subject to a civil penalty",
+          "source_section": "Bus. & Prof. Code § 22757.15(a)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 29845,
+          "end_char": 30208
+        },
+        {
+          "quote": "shall be subject to a civil penalty in an amount dependent upon the severity of the violation that does not exceed one million dollars ($1,000,000) per violation.\n(b) A civil penalty described in this section shall be recovered in a civil action brought only by the Attorney General.",
+          "source_section": "Bus. & Prof. Code § 22757.15(a)–(b)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 30173,
+          "end_char": 30456
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "(d) A large frontier developer shall transmit to the Office of Emergency Services a summary of any assessment of catastrophic risk resulting from internal use of its frontier models every three months or pursuant to another reasonable schedule specified by the large frontier developer and communicated in writing to the Office of Emergency Services with written updates, as appropriate.",
+          "source_section": "Bus. & Prof. Code § 22757.12(d)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19335,
+          "end_char": 19722
+        },
+        {
+          "quote": "a frontier developer shall report any critical safety incident pertaining to one or more of its frontier models to the Office of Emergency Services within 15 days of discovering the critical safety incident.",
+          "source_section": "Bus. & Prof. Code § 22757.13(c)(1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 21927,
+          "end_char": 22134
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.89,
+      "evidence": [
+        {
+          "quote": "(d) The Office of Emergency Services shall review critical safety incident reports submitted by frontier developers and may review reports submitted by members of the public.",
+          "source_section": "Bus. & Prof. Code § 22757.13(d)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22841,
+          "end_char": 23015
+        },
+        {
+          "quote": "The Office of Emergency Services may adopt regulations designating one or more federal laws, regulations, or guidance documents that meet all of the following conditions for the purposes of subdivision (i):",
+          "source_section": "Bus. & Prof. Code § 22757.13(h)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 24805,
+          "end_char": 25011
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "California Attorney General (exclusive enforcement authority for TFAIA civil penalties up to $1,000,000 per violation; whistleblower report intake and annual reporting)",
+    "California Office of Emergency Services (CalOES) (critical safety incident and internal-use risk assessment intake, review, federal-equivalency regulations, and annual aggregated reporting)",
+    "California Department of Technology (annual review and legislative recommendations on frontier model and developer definitions)",
+    "California Government Operations Agency (CalCompute consortium framework report)",
+    "California Superior Courts (civil penalty actions by the Attorney General and injunctive relief and attorney's fees actions by whistleblowers under Labor Code § 1107.1)",
+    "Law enforcement and public safety agencies with jurisdiction (24-hour imminent-risk critical safety incident notifications)"
+  ],
+  "compliance_deadlines": [
+    "2026-01-01: Effective date for TFAIA transparency, safety framework, incident reporting, and Labor Code whistleblower protections",
+    "Before or concurrently with deploying a new or substantially modified frontier model: Publish frontier model transparency report (Bus. & Prof. Code § 22757.12(c))",
+    "At least once per year: Review and update frontier AI framework (§ 22757.12(b)(1))",
+    "Within 30 days of material modification: Publish modified frontier AI framework and justification (§ 22757.12(b)(2))",
+    "Every 3 months (or developer-specified reasonable schedule): Transmit internal-use catastrophic-risk assessment summary to CalOES (§ 22757.12(d)); quarterly sharing of anonymous whistleblower reports with officers/directors (Labor Code § 1107.1(e)(2))",
+    "Within 15 days of discovering a critical safety incident (or within 24 hours if posing imminent risk of death or serious physical injury): Report to CalOES or appropriate public safety authority (§ 22757.13(c))",
+    "5 years: Retain unredacted versions of redacted published compliance documents (§ 22757.12(f)(2))",
+    "On or before 2027-01-01 (and annually thereafter for CalOES/DT/AG): CalCompute framework report to Legislature (subject to appropriation), Dept. of Technology threshold recommendations, and CalOES/AG annual aggregated reports"
+  ],
+  "penalties_summary": "A large frontier developer that fails to publish or transmit a required document, makes a materially false or misleading statement about catastrophic risk or framework compliance, fails to report a critical safety incident, or fails to comply with its own published frontier AI framework is subject to a civil penalty of up to $1,000,000 per violation depending on severity, recoverable exclusively in a civil action brought by the California Attorney General (Bus. & Prof. Code § 22757.15). Under Labor Code § 1107.1, covered-employee whistleblowers may seek temporary, preliminary, and permanent injunctive relief (not stayed pending appeal) and reasonable attorney's fees, with a burden-shifting standard requiring clear and convincing proof of an independent legitimate basis.",
+  "implementation_notes": "Enacted September 29, 2025, effective January 1, 2026. Adds three distinct statutory pillars: (1) Bus. & Prof. Code §§ 22757.10–22757.16 (TFAIA), imposing a >10^26 FLOPs frontier model threshold and >$500M revenue large-frontier-developer tier, mandatory published frontier AI frameworks covering catastrophic-risk thresholds, mitigations, third-party assessments, and unreleased model-weight cybersecurity, pre-deployment transparency reports (satisfiable via model/system cards), quarterly confidential CalOES internal-use risk summaries, 15-day/24-hour critical safety incident reporting, and CalOES federal-equivalency compliance recognition; (2) Gov. Code § 11546.8 establishing a 14-member CalCompute public cloud cluster consortium (operative upon budget appropriation); and (3) Labor Code §§ 1107–1107.2 granting frontier AI safety whistleblower anti-retaliation protections and requiring anonymous internal reporting channels for large frontier developers. Preempts local California frontier catastrophic-risk regulations adopted on or after January 1, 2025.",
+  "confidence": 0.98
+}

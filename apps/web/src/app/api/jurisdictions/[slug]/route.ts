@@ -8,6 +8,7 @@ import {
   getOverviewData,
   parseScoringMode,
 } from "@/lib/overview-data";
+import { parseIncludeSubnational } from "@/lib/taxonomy-vocab";
 
 export async function GET(
   request: NextRequest,
@@ -15,6 +16,9 @@ export async function GET(
 ) {
   const { slug } = await context.params;
   const mode = parseScoringMode(request.nextUrl.searchParams.get("mode"));
+  const includeSubnational = parseIncludeSubnational(
+    request.nextUrl.searchParams.get("states"),
+  );
 
   const jurisdictionEntry = Object.entries(jurisdictionMeta).find(
     ([key, meta]) => meta.slug === slug || key === slug,
@@ -31,7 +35,7 @@ export async function GET(
   ];
 
   const [overview, analysis, documents] = await Promise.all([
-    getOverviewData(mode),
+    getOverviewData(mode, includeSubnational),
     getJurisdictionAnalysis(jurisdictionKey),
     getLatestSources({ jurisdiction: jurisdictionKey, limit: 50 }),
   ]);
@@ -46,6 +50,8 @@ export async function GET(
       hasData: overview.hasData,
       datasetLabel: overview.datasetLabel,
       scoringMode: overview.scoringMode,
+      includeSubnational: overview.includeSubnational,
+      subnationalCount: overview.subnationalCount,
       taxonomyVersion: overview.taxonomyVersion,
       datasetVersion: overview.datasetVersion,
       snapshotDate: overview.snapshotDate,

@@ -1,0 +1,95 @@
+{
+  "dominant_frame": "fundamental_rights",
+  "secondary_frames": [
+    "economic_competitiveness",
+    "consumer_public_safety",
+    "innovation_enablement",
+    "labor_transition"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.15,
+    "economic_competitiveness": 0.9,
+    "fundamental_rights": 0.94,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.86,
+    "consumer_public_safety": 0.88,
+    "labor_transition": 0.56
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.24,
+    "fundamental_rights": 0.34,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.16,
+    "consumer_public_safety": 0.2,
+    "labor_transition": 0.06
+  },
+  "rationale_summary": "The 2020 EU White Paper on Artificial Intelligence is dominantly framed around fundamental rights, anchoring its proposed 'ecosystem of trust' in European values, human dignity, personal data protection, non-discrimination across protected traits, freedom of expression, effective judicial redress, and Charter constraints on remote biometric identification. Economic competitiveness is a closely paired secondary frame, invoking fierce global competition, Europe's investment gap against North America and Asia, industrial B2B strengths in robotics and low-power electronics, and preventing single-market fragmentation to preserve EU technological leadership and sovereignty. Consumer and public safety serves as the twin regulatory risk pillar alongside rights, targeting physical injury, mental safety, defective AI-enabled products, cybersecurity vulnerabilities, and victim compensation under safety and liability law. Innovation enablement shapes the proportional risk-based design—avoiding excessive burdens on small and medium-sized enterprises, proposing voluntary quality labels, and mobilizing research and testing infrastructures—while labor and workforce transition appears as a targeted secondary rationale emphasizing workforce upskilling, gender inclusion in AI talent, social-partner involvement, and protecting workers' rights in automated recruitment and workplace monitoring.",
+  "evidence_spans": [
+    {
+      "quote": "Given the major impact that AI can have on our society and the need to build trust, it is vital that European AI is grounded in our values and fundamental rights such as human dignity and privacy protection.",
+      "source_section": "Section 1 (Introduction)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5154,
+      "end_char": 5361
+    },
+    {
+      "quote": "The use of AI can affect the values on which the EU is founded and lead to breaches of fundamental rights33, including the rights to freedom of expression, freedom of assembly, human dignity, non-discrimination based on sex, racial or ethnic origin, religion or belief, disability, age or sexual orientation",
+      "source_section": "Section 5.A (Risks for Fundamental Rights)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 35018,
+      "end_char": 35325
+    },
+    {
+      "quote": "Against a background of fierce global competition, a solid European approach is needed, building on the European strategy for AI presented in April 20181.",
+      "source_section": "Introduction (Page 1)",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 910,
+      "end_char": 1064
+    },
+    {
+      "quote": "Europe can combine its technological and industrial strengths with a high-quality digital infrastructure and a regulatory framework based on its fundamental values to become a global leader in innovation in the data economy",
+      "source_section": "Section 1 (Introduction)",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 3927,
+      "end_char": 4150
+    },
+    {
+      "quote": "AI technologies may present new safety risks for users when they are embedded in products and services. For example, as result of a flaw in the object recognition technology, an autonomous car can wrongly identify an object on the road and cause an accident involving injuries and material damage.",
+      "source_section": "Section 5.A (Risks for Safety and Liability Regime)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 39923,
+      "end_char": 40220
+    },
+    {
+      "quote": "As a matter of principle, the new regulatory framework for AI should be effective to achieve its objectives while not being excessively prescriptive so that it could create a disproportionate burden, especially for SMEs. To strike this balance, the Commission is of the view that it should follow a risk-based approach.",
+      "source_section": "Section 5.C (Scope of a Future EU Regulatory Framework)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 58120,
+      "end_char": 58439
+    },
+    {
+      "quote": "Developing the skills necessary to work in AI and upskilling the workforce to become fit for the AI-led transformation will be a priority of the revised Coordinated Plan on AI to be developed with Member States.",
+      "source_section": "Section 4.C (Skills)",
+      "quote_en": null,
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 20849,
+      "end_char": 21060
+    }
+  ]
+}

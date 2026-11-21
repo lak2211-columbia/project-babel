@@ -51,11 +51,19 @@ export default async function JurisdictionPage({
   const jurisdictionKey = jurisdictionEntry[0] as JurisdictionKey;
 
   const [headline, all, analysis, countryDocuments] = await Promise.all([
-    getOverviewData("headline"),
-    getOverviewData("all"),
+    getOverviewData("headline", false),
+    getOverviewData("all", false),
     getJurisdictionAnalysis(jurisdictionKey),
     getLatestSources({ jurisdiction: jurisdictionKey, limit: 30 }),
   ]);
+
+  const [headlineWithStates, allWithStates] =
+    headline.subnationalCount > 0
+      ? await Promise.all([
+          getOverviewData("headline", true),
+          getOverviewData("all", true),
+        ])
+      : [undefined, undefined];
 
   if (
     !headline.hasData ||
@@ -70,6 +78,8 @@ export default async function JurisdictionPage({
       jurisdictionKey={jurisdictionKey}
       headline={headline}
       all={all}
+      headlineWithStates={headlineWithStates}
+      allWithStates={allWithStates}
       analysis={analysis}
       countryDocuments={countryDocuments}
     />

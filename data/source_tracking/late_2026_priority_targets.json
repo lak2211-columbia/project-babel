@@ -415,9 +415,9 @@
       ],
       "priority": "high",
       "relevance_notes": "99-task national execution plan targeting AI G3 competitiveness and sovereign compute infrastructure.",
-      "stage_4a_status": "deferred",
-      "ingested_document_id": null,
-      "stage_4a_notes": "Full 99-task NAISC PDF attachment on aikorea.go.kr/korea.kr not directly downloadable via automated query without false-match press releases; deferred to maintain strict quality gate"
+      "stage_4a_status": "ingested_phase_5a",
+      "ingested_document_id": "kr_national_ai_action_plan_2026_2028",
+      "stage_4a_notes": "Ingested in Phase 5A: official Feb 25, 2026 NAISC 2nd Plenary HWPX (korea.kr newsId=156745851, fileId=198370373, 262,274 B, 20,237 chars)."
     },
     {
       "id": "jp_second_basic_ai_plan_2026",
@@ -634,7 +634,7 @@
       "relevance_notes": "Adds Article 20 codifying AI R&D, compute/data infrastructure, ethics, and risk monitoring into national primary legislation with penalties up to RMB 50M / 5% turnover.",
       "stage_4a_status": "deferred",
       "ingested_document_id": null,
-      "stage_4a_notes": "flk.npc.gov.cn API returned 552-byte non-JSON redirect and npc.gov.cn/gov.cn archive pages did not expose a direct stable full-text HTML URL during Stage 4A; deferred without fabricating or scraping unofficial mirrors"
+      "stage_4a_notes": "Confirmed live at flk.npc.gov.cn/detail?id=021e7d7684474107b8f3febbb1c4f8b5 (2025-10-28, eff 2026-01-01) in Phase 5A, but NPC Suwell OFD viewer sets Export=false/Printable=false; deferred without bypassing viewer restrictions."
     },
     {
       "id": "cn_state_council_ai_plus_opinion_2025_and_gb45438",
@@ -682,7 +682,12 @@
       "title": "California Transparency in Frontier Artificial Intelligence Act (SB 53) & AB 2013",
       "lifecycle_stage": "active",
       "effective_date": "2026-01-01",
-      "note": "Excluded from federal sovereign index; tracked for opt-in U.S. state overlay."
+      "note": "Excluded from federal sovereign index; tracked for opt-in U.S. state overlay.",
+      "phase_5a_status": "ingested_phase_5a",
+      "ingested_document_ids": [
+        "us_ca_sb_53_tfaia_2025",
+        "us_ca_ab_2013_training_data_2024"
+      ]
     },
     {
       "id": "us_co_sb_26_189_and_hb_26_1263_2026",
@@ -691,7 +696,12 @@
       "title": "Colorado SB 26-189 (May 2026 AI Act Replacement) & HB 26-1263 Chatbot Safety Act",
       "lifecycle_stage": "adopted_not_yet_effective",
       "effective_date": "2027-01-01",
-      "note": "Excluded from federal sovereign index; tracked for opt-in U.S. state overlay."
+      "note": "Excluded from federal sovereign index; tracked for opt-in U.S. state overlay.",
+      "phase_5a_status": "ingested_phase_5a",
+      "ingested_document_ids": [
+        "us_co_sb_24_205_ai_act_2024",
+        "us_co_sb_26_189_admt_act_2026"
+      ]
     },
     {
       "id": "us_tx_traiga_2025",
@@ -700,7 +710,11 @@
       "title": "Texas Responsible Artificial Intelligence Governance Act (TRAIGA)",
       "lifecycle_stage": "active",
       "effective_date": "2026-01-01",
-      "note": "Excluded from federal sovereign index; tracked for opt-in U.S. state overlay."
+      "note": "Excluded from federal sovereign index; tracked for opt-in U.S. state overlay.",
+      "phase_5a_status": "ingested_phase_5a",
+      "ingested_document_ids": [
+        "us_tx_hb_149_traiga_2025"
+      ]
     },
     {
       "id": "us_ny_raise_act_2025",
@@ -709,10 +723,14 @@
       "title": "New York Responsible AI Safety and Education (RAISE) Act",
       "lifecycle_stage": "active",
       "effective_date": "2026-01-01",
-      "note": "Excluded from federal sovereign index; tracked for opt-in U.S. state overlay."
+      "note": "Excluded from federal sovereign index; tracked for opt-in U.S. state overlay.",
+      "phase_5a_status": "ingested_phase_5a",
+      "ingested_document_ids": [
+        "us_ny_raise_act_2025"
+      ]
     }
   ],
-  "updated_at": "2026-11-21T05:20:15Z",
+  "updated_at": "2026-11-21T20:46:41Z",
   "stage_4a_summary": {
     "ingested_new_instruments": 18,
     "upgraded_existing_stubs": 6,
@@ -726,5 +744,41 @@
       "china": 2
     },
     "total_registered_seeds": 121
+  },
+  "phase_5a_summary": {
+    "ingested_new_instruments": 23,
+    "new_sovereign_instruments": 17,
+    "new_subnational_overlay_statutes": 6,
+    "new_official_portals_registered": 9,
+    "per_jurisdiction_new": {
+      "united_states": 13,
+      "european_union": 3,
+      "south_korea": 3,
+      "japan": 3,
+      "china": 1
+    },
+    "total_registered_seeds": 144,
+    "deferred_after_live_probe": [
+      {
+        "target": "cn_amended_cybersecurity_law_2025_art20",
+        "reason": "Verified live at flk.npc.gov.cn/detail?id=021e7d7684474107b8f3febbb1c4f8b5 (2025-10-28, eff 2026-01-01), but NPC Suwell OFD viewer sets Export=false/Printable=false; respected access controls and did not scrape unofficial mirrors."
+      },
+      {
+        "target": "cn_tc260_003_genai_security_requirements_2024",
+        "reason": "TC260 post page (postDetail.html?id=20240301164054) did not expose a direct unauthenticated PDF download link during live Playwright probe."
+      },
+      {
+        "target": "us_eeoc_title_vii_ai_adverse_impact_2023",
+        "reason": "Both eeoc.gov/laws/guidance/select-issues-assessing-adverse-impact-software-algorithms-and-artificial-intelligence and eeoc.gov/ai returned HTTP 404 (removed from live EEOC site); did not ingest unofficial mirror."
+      },
+      {
+        "target": "kr_aisi_publications",
+        "reason": "Both www.aisi.re.kr and aisi.re.kr timed out at TCP/TLS connect (geo-restricted/unreachable outside KR); deferred cleanly."
+      },
+      {
+        "target": "kr_ai_basic_act_data_amendment_2026",
+        "reason": "Live law.go.kr inspection confirmed the currently promulgated consolidated AI Basic Act is 법률 제21311호 (amended 2026-01-20, eff 2026-07-21, already captured in kr_ai_basic_act); Oct 2026 Cabinet amendment bill is not yet promulgated."
+      }
+    ]
   }
 }

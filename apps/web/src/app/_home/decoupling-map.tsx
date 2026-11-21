@@ -11,22 +11,149 @@ import type {
   ScoringMode,
 } from "@/lib/seed-data";
 
+type Box = { x1: number; y1: number; x2: number; y2: number };
+
+type PlacedLabel = {
+  lx: number;
+  ly: number;
+  anchor: "start" | "middle" | "end";
+  needsLeader: boolean;
+  box: Box;
+};
+
+function overlapArea(a: Box, b: Box): number {
+  const ox = Math.max(0, Math.min(a.x2, b.x2) - Math.max(a.x1, b.x1));
+  const oy = Math.max(0, Math.min(a.y2, b.y2) - Math.max(a.y1, b.y1));
+  return ox * oy;
+}
+
 /**
- * Interactive 2D Policy–Framing Decoupling Map (C2):
+ * Deterministic 2D label collision-avoidance solver (Phase 5A QA polish):
+ * Evaluates directional candidate positions around each plotted point and picks
+ * the lowest-penalty non-overlapping box within the SVG plot bounds so closely
+ * spaced pairs (e.g., EU/US, CN/JP, JP/US, KR/US) never collide.
+ */
+function placePairLabels(
+  points: { key: string; cx: number; cy: number; label: string }[],
+  bounds: { left: number; right: number; top: number; bottom: number },
+): Map<string, PlacedLabel> {
+  const placed = new Map<string, PlacedLabel>();
+  const placedBoxes: Box[] = [];
+  const labelW = 42;
+  const labelH = 14;
+  const pad = 2;
+
+  const candidates: {
+    dx: number;
+    dy: number;
+    anchor: "start" | "middle" | "end";
+    rankCost: number;
+  }[] = [
+    { dx: 10, dy: 4, anchor: "start", rankCost: 0 },
+    { dx: -10, dy: 4, anchor: "end", rankCost: 1 },
+    { dx: 0, dy: -11, anchor: "middle", rankCost: 2 },
+    { dx: 0, dy: 19, anchor: "middle", rankCost: 3 },
+    { dx: 11, dy: -9, anchor: "start", rankCost: 4 },
+    { dx: -11, dy: -9, anchor: "end", rankCost: 5 },
+    { dx: 11, dy: 17, anchor: "start", rankCost: 6 },
+    { dx: -11, dy: 17, anchor: "end", rankCost: 7 },
+    { dx: 18, dy: -16, anchor: "start", rankCost: 10 },
+    { dx: -18, dy: -16, anchor: "end", rankCost: 11 },
+    { dx: 18, dy: 24, anchor: "start", rankCost: 12 },
+    { dx: -18, dy: 24, anchor: "end", rankCost: 13 },
+    { dx: 0, dy: -24, anchor: "middle", rankCost: 14 },
+    { dx: 0, dy: 30, anchor: "middle", rankCost: 15 },
+    { dx: 26, dy: 4, anchor: "start", rankCost: 18 },
+    { dx: -26, dy: 4, anchor: "end", rankCost: 19 },
+  ];
+
+  // Place densest / central points first so crowded clusters get clean spread
+  const ordered = [...points].sort((a, b) => a.cx - b.cx || a.cy - b.cy);
+
+  for (const pt of ordered) {
+    let best: PlacedLabel | null = null;
+    let bestPenalty = Number.POSITIVE_INFINITY;
+
+    for (const cand of candidates) {
+      const lx = pt.cx + cand.dx;
+      const ly = pt.cy + cand.dy;
+      const x1 =
+        cand.anchor === "start"
+          ? lx - pad
+          : cand.anchor === "end"
+            ? lx - labelW - pad
+            : lx - labelW / 2 - pad;
+      const x2 = x1 + labelW + pad * 2;
+      const y1 = ly - labelH + 2 - pad;
+      const y2 = ly + 3 + pad;
+      const box: Box = { x1, y1, x2, y2 };
+
+      let penalty = cand.rankCost;
+
+      // Penalize clipping plot edges (including quadrant callout text zones)
+      if (x1 < bounds.left) penalty += (bounds.left - x1) * 40;
+      if (x2 > bounds.right) penalty += (x2 - bounds.right) * 40;
+      if (y1 < bounds.top + 18) penalty += (bounds.top + 18 - y1) * 40;
+      if (y2 > bounds.bottom - 16) penalty += (y2 - (bounds.bottom - 16)) * 40;
+
+      // Heavily penalize overlapping any already-placed label box
+      for (const prev of placedBoxes) {
+        const area = overlapArea(box, prev);
+        if (area > 0) penalty += 2000 + area * 12;
+      }
+
+      // Penalize overlapping any scatter dot
+      for (const other of points) {
+        const dotBox: Box = {
+          x1: other.cx - 8,
+          y1: other.cy - 8,
+          x2: other.cx + 8,
+          y2: other.cy + 8,
+        };
+        const area = overlapArea(box, dotBox);
+        if (area > 0) penalty += 1500 + area * 10;
+      }
+
+      if (penalty < bestPenalty) {
+        bestPenalty = penalty;
+        const dist = Math.hypot(cand.dx, cand.dy);
+        best = {
+          lx,
+          ly,
+          anchor: cand.anchor,
+          needsLeader: dist >= 18,
+          box,
+        };
+      }
+    }
+
+    if (best) {
+      placed.set(pt.key, best);
+      placedBoxes.push(best.box);
+    }
+  }
+
+  return placed;
+}
+
+/**
+ * Interactive 2D Policy–Framing Decoupling Map (C2 + Phase 5A collision solver):
  * Plots all 10 unique jurisdiction pairs on Policy Distance (X) vs. Framing
- * Distance (Y) with the POL = FRM diagonal, quadrant callouts, click-to-compare
- * links, and an accessible tabular alternative (C6).
+ * Distance (Y) with the POL = FRM diagonal, quadrant callouts, non-overlapping
+ * labels, click-to-compare links, and an accessible tabular alternative (C6).
  */
 export function DecouplingMap({
   countries,
   pairwiseDetails,
   nullCalibration,
   mode,
+  includeSubnational = false,
 }: {
   countries: CountrySnapshot[];
   pairwiseDetails: PairwiseDetail[];
   nullCalibration: NullCalibration;
   mode: ScoringMode;
+  includeSubnational?: boolean;
 }) {
   const [view, setView] = useState<"chart" | "table">("chart");
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
@@ -57,16 +184,26 @@ export function DecouplingMap({
 
   // SVG coordinate system
   const W = 540;
-  const H = 340;
+  const H = 348;
   const padL = 52;
-  const padR = 24;
+  const padR = 26;
   const padT = 22;
-  const padB = 44;
+  const padB = 46;
   const plotW = W - padL - padR;
   const plotH = H - padT - padB;
 
   const sx = (val: number) => padL + (val / axisMax) * plotW;
   const sy = (val: number) => padT + plotH - (val / axisMax) * plotH;
+
+  const labelPlacements = placePairLabels(
+    uniquePairs.map((pair) => ({
+      key: pair.key,
+      cx: sx(Math.min(axisMax, pair.policyDistance)),
+      cy: sy(Math.min(axisMax, pair.framingDistance)),
+      label: `${pair.leftShort}/${pair.rightShort}`,
+    })),
+    { left: padL + 4, right: W - padR - 4, top: padT, bottom: padT + plotH },
+  );
 
   const activePair =
     uniquePairs.find((p) => p.key === hoveredKey) ??
@@ -74,7 +211,8 @@ export function DecouplingMap({
       (a, b) => Math.abs(b.decouplingGap) - Math.abs(a.decouplingGap),
     )[0];
 
-  const modeQuery = mode === "all" ? "&mode=all" : "";
+  const querySuffix =
+    (mode === "all" ? "&mode=all" : "") + (includeSubnational ? "&states=1" : "");
   const ticks = [0, Math.round(axisMax / 2), axisMax];
 
   return (
@@ -142,7 +280,7 @@ export function DecouplingMap({
                   <tr key={p.key} className="hover:bg-white/[0.03]">
                     <td className="py-1.5 pr-3">
                       <Link
-                        href={`/compare?a=${p.leftSlug}&b=${p.rightSlug}${modeQuery}`}
+                        href={`/compare?a=${p.leftSlug}&b=${p.rightSlug}${querySuffix}`}
                         className="text-[#f1f5f9] underline decoration-white/25 underline-offset-2 hover:text-[#67e8f9]"
                       >
                         {p.leftShort} / {p.rightShort}
@@ -194,7 +332,10 @@ export function DecouplingMap({
               <rect
                 x={sx(0)}
                 y={sy(Math.min(axisMax, nullCalibration.pairwiseFramingMean))}
-                width={sx(Math.min(axisMax, nullCalibration.pairwisePolicyMean)) - sx(0)}
+                width={
+                  sx(Math.min(axisMax, nullCalibration.pairwisePolicyMean)) -
+                  sx(0)
+                }
                 height={
                   sy(0) -
                   sy(Math.min(axisMax, nullCalibration.pairwiseFramingMean))
@@ -265,7 +406,7 @@ export function DecouplingMap({
             </text>
             <text
               x={W - padR - 6}
-              y={padT + plotH - 8}
+              y={padT + plotH - 6}
               textAnchor="end"
               fill="#94a3b8"
               fontSize="11"
@@ -297,11 +438,15 @@ export function DecouplingMap({
               FRAMING DISTANCE →
             </text>
 
-            {/* 10 clickable pair points */}
+            {/* 10 clickable pair points with collision-free labels */}
             {uniquePairs.map((pair) => {
               const cx = sx(Math.min(axisMax, pair.policyDistance));
               const cy = sy(Math.min(axisMax, pair.framingDistance));
               const isSelected = activePair?.key === pair.key;
+              const placement = labelPlacements.get(pair.key);
+              const lx = placement?.lx ?? cx + 10;
+              const ly = placement?.ly ?? cy + 4;
+              const anchor = placement?.anchor ?? "start";
               const color = scoreHexDark(
                 pair.compositeDistance,
                 nullCalibration.pairwiseCompositeMean,
@@ -311,12 +456,28 @@ export function DecouplingMap({
               return (
                 <Link
                   key={pair.key}
-                  href={`/compare?a=${pair.leftSlug}&b=${pair.rightSlug}${modeQuery}`}
+                  href={`/compare?a=${pair.leftSlug}&b=${pair.rightSlug}${querySuffix}`}
                   aria-label={`Compare ${pair.leftName} vs ${pair.rightName}: Policy ${pair.policyDistance}, Framing ${pair.framingDistance}`}
                   onMouseEnter={() => setHoveredKey(pair.key)}
                   onFocus={() => setHoveredKey(pair.key)}
                 >
                   <g className="cursor-pointer">
+                    {placement?.needsLeader ? (
+                      <line
+                        x1={cx}
+                        y1={cy}
+                        x2={
+                          anchor === "start"
+                            ? lx - 2
+                            : anchor === "end"
+                              ? lx + 2
+                              : lx
+                        }
+                        y2={ly - 4}
+                        stroke="rgba(148, 163, 184, 0.45)"
+                        strokeWidth={1}
+                      />
+                    ) : null}
                     <circle
                       cx={cx}
                       cy={cy}
@@ -326,8 +487,9 @@ export function DecouplingMap({
                       strokeWidth={isSelected ? 2 : 1.5}
                     />
                     <text
-                      x={cx + 9}
-                      y={cy + 4}
+                      x={lx}
+                      y={ly}
+                      textAnchor={anchor}
                       fill={isSelected ? "#f8fafc" : "#cbd5e1"}
                       fontSize="11"
                       fontWeight={isSelected ? 700 : 500}
@@ -359,7 +521,7 @@ export function DecouplingMap({
                 </span>
               </div>
               <Link
-                href={`/compare?a=${activePair.leftSlug}&b=${activePair.rightSlug}${modeQuery}`}
+                href={`/compare?a=${activePair.leftSlug}&b=${activePair.rightSlug}${querySuffix}`}
                 className="font-mono text-[11px] uppercase tracking-wider text-[#67e8f9] underline decoration-[#67e8f9]/40 underline-offset-2 hover:text-white"
               >
                 open diff →

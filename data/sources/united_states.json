@@ -412,6 +412,122 @@
         "congress"
       ],
       "discovery_targets": []
+    },
+    {
+      "id": "us_hhs_onc",
+      "name": "HHS Assistant Secretary for Technology Policy / ONC Health IT",
+      "issuing_body": "U.S. Department of Health and Human Services (HHS / ONC)",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.healthit.gov/topic/laws-regulation-and-policy/health-data-technology-and-interoperability-certification-program",
+      "portal_kind": "portal",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Federal health IT certification rules governing clinical AI and predictive decision support interventions (HTI-1).",
+      "tags": [
+        "healthcare",
+        "onc",
+        "hti1",
+        "algorithm_transparency"
+      ]
+    },
+    {
+      "id": "us_treasury",
+      "name": "U.S. Department of the Treasury — AI & Cybersecurity in Finance",
+      "issuing_body": "U.S. Department of the Treasury",
+      "issuer_type": "regulator",
+      "canonical_url": "https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscal-service",
+      "portal_kind": "portal",
+      "retrieval_strategy": "pdf",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Treasury reports and risk-management guidance on AI cybersecurity, fraud, and financial-sector governance.",
+      "tags": [
+        "finance",
+        "treasury",
+        "cybersecurity"
+      ]
+    },
+    {
+      "id": "us_bis_export",
+      "name": "Bureau of Industry and Security (BIS) — Advanced Computing Export Controls",
+      "issuing_body": "U.S. Department of Commerce, Bureau of Industry and Security",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.bis.gov/",
+      "portal_kind": "registry",
+      "retrieval_strategy": "html",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Export Administration Regulations (EAR) rules governing advanced AI semiconductors, remote compute access, and model controls.",
+      "tags": [
+        "bis",
+        "export_controls",
+        "compute_governance",
+        "national_security"
+      ]
+    },
+    {
+      "id": "us_copyright_office",
+      "name": "U.S. Copyright Office — Copyright and Artificial Intelligence",
+      "issuing_body": "U.S. Copyright Office",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.copyright.gov/ai/",
+      "portal_kind": "library",
+      "retrieval_strategy": "pdf",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Official U.S. Copyright Office policy reports on AI copyrightability, generative AI training, and fair use.",
+      "tags": [
+        "copyright",
+        "training_data",
+        "intellectual_property"
+      ]
+    },
+    {
+      "id": "us_dod",
+      "name": "U.S. Department of Defense — Directives & AI Autonomy Policy",
+      "issuing_body": "U.S. Department of Defense",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.esd.whs.mil/DD/",
+      "portal_kind": "library",
+      "retrieval_strategy": "pdf",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "DoD issuances governing autonomy in weapon systems, human judgment controls, and defense AI governance.",
+      "tags": [
+        "defense",
+        "national_security",
+        "autonomy"
+      ]
+    },
+    {
+      "id": "us_state_legislatures",
+      "name": "U.S. State Legislative Registries (Opt-In Subnational AI Overlay)",
+      "issuing_body": "U.S. State Legislatures (CA, CO, TX, NY)",
+      "issuer_type": "legal_registry",
+      "canonical_url": "https://leginfo.legislature.ca.gov/",
+      "portal_kind": "registry",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "en"
+      ],
+      "priority": "high",
+      "coverage_notes": "Authoritative state legislative portals tracked strictly under corpus_role='subnational_overlay' (excluded from federal sovereign baselines by default).",
+      "tags": [
+        "subnational_overlay",
+        "state_law",
+        "legislation"
+      ]
     }
   ],
   "seed_documents": [
@@ -1400,6 +1516,488 @@
         "standards"
       ],
       "corpus_role": "draft_consultation"
+    },
+    {
+      "id": "us_hhs_onc_hti1_final_rule_2024",
+      "title": "HHS / ONC HTI-1 Final Rule: Health Data, Technology, and Interoperability — Certification Program Updates, Algorithm Transparency, and Information Sharing (89 FR 1192)",
+      "issuing_body": "U.S. Department of Health and Human Services (HHS / ONC)",
+      "canonical_url": "https://www.federalregister.gov/documents/2024/01/09/2023-28857/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and",
+      "retrieval_urls": [
+        "https://www.federalregister.gov/documents/full_text/html/2024/01/09/2023-28857.html"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "healthcare_medical_devices",
+        "standards_assurance",
+        "civil_rights_nondiscrimination"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-01-09",
+      "effective_date": "2024-02-08",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_hhs_onc",
+        "us_federal_register_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Binding federal regulation (45 CFR Part 170, 89 FR 1192) establishing 'FAVES' intervention risk management, source-attribute transparency, and ongoing maintenance-of-certification duties for Predictive Decision Support Interventions (AI/ML) in certified health IT.",
+      "tags": [
+        "healthcare",
+        "hti1",
+        "algorithm_transparency",
+        "final_rule"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_treasury_ai_cybersecurity_financial_2024",
+      "title": "Managing Artificial Intelligence-Specific Cybersecurity Risks in the Financial Services Sector",
+      "issuing_body": "U.S. Department of the Treasury",
+      "canonical_url": "https://home.treasury.gov/system/files/136/Managing-Artificial-Intelligence-Specific-Cybersecurity-Risks-In-The-Financial-Services-Sector.pdf",
+      "retrieval_urls": [
+        "https://home.treasury.gov/system/files/136/Managing-Artificial-Intelligence-Specific-Cybersecurity-Risks-In-The-Financial-Services-Sector.pdf"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "finance",
+        "critical_infrastructure",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-03-27",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_treasury"
+      ],
+      "priority": "high",
+      "relevance_notes": "52-page Treasury OCCIP report detailing AI-specific cybersecurity, fraud, data poisoning, third-party supply-chain, and model risk management controls for U.S. financial institutions.",
+      "tags": [
+        "finance",
+        "treasury",
+        "cybersecurity",
+        "risk_management"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_bis_remote_access_semiconductors_2026",
+      "title": "BIS Rule: Addressing Remote Access to Advanced Semiconductors (91 FR 74970)",
+      "issuing_body": "U.S. Department of Commerce, Bureau of Industry and Security (BIS)",
+      "canonical_url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors",
+      "retrieval_urls": [
+        "https://www.federalregister.gov/documents/full_text/html/2026/11/19/2026-23529.html"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "sovereign_compute",
+        "national_security",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-11-19",
+      "effective_date": "2026-11-19",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_bis_export",
+        "us_federal_register_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Binding November 19, 2026 BIS Export Administration Regulations rule (91 FR 74970) establishing federal compute governance, know-your-customer, licensing, and access controls over remote cloud access to advanced AI semiconductors.",
+      "tags": [
+        "bis",
+        "export_controls",
+        "compute_governance",
+        "semiconductors"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_bis_advanced_computing_license_policy_2026",
+      "title": "BIS Final Rule: Revision to License Review Policy for Advanced Computing Commodities (91 FR 1684)",
+      "issuing_body": "U.S. Department of Commerce, Bureau of Industry and Security (BIS)",
+      "canonical_url": "https://www.federalregister.gov/documents/2026/01/15/2026-00789/revision-to-license-review-policy-for-advanced-computing-commodities",
+      "retrieval_urls": [
+        "https://www.federalregister.gov/documents/full_text/html/2026/01/15/2026-00789.html"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "sovereign_compute",
+        "national_security",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-01-15",
+      "effective_date": "2026-01-15",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_bis_export",
+        "us_federal_register_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "Binding January 15, 2026 BIS final rule (91 FR 1684) revising EAR export license review standards, technical testing, and security conditions for advanced AI computing chips.",
+      "tags": [
+        "bis",
+        "export_controls",
+        "compute_governance",
+        "licensing"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_copyright_office_ai_part3_training_2025",
+      "title": "Copyright and Artificial Intelligence, Part 3: Generative AI Training",
+      "issuing_body": "U.S. Copyright Office",
+      "canonical_url": "https://www.copyright.gov/ai/",
+      "retrieval_urls": [
+        "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-3-Generative-AI-Training-Report-Pre-Publication-Version.pdf"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "copyright_ip",
+        "frontier_gpai",
+        "platform_content_governance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-05-09",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_copyright_office"
+      ],
+      "priority": "high",
+      "relevance_notes": "113-page U.S. Copyright Office report analyzing copyright law, fair use factors, lawful access, opt-out mechanisms, and voluntary licensing for generative AI training datasets.",
+      "tags": [
+        "copyright",
+        "training_data",
+        "fair_use",
+        "generative_ai"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_copyright_office_ai_part2_copyrightability_2025",
+      "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability",
+      "issuing_body": "U.S. Copyright Office",
+      "canonical_url": "https://www.copyright.gov/ai/",
+      "retrieval_urls": [
+        "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "copyright_ip",
+        "frontier_gpai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-01-29",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_copyright_office"
+      ],
+      "priority": "high",
+      "relevance_notes": "52-page U.S. Copyright Office report setting federal standards on human authorship, AI-assisted creative control, and copyrightability of AI-generated outputs.",
+      "tags": [
+        "copyright",
+        "copyrightability",
+        "human_authorship",
+        "generative_ai"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_dod_directive_3000_09_autonomy_2023",
+      "title": "DoD Directive 3000.09: Autonomy in Weapon Systems",
+      "issuing_body": "U.S. Department of Defense",
+      "canonical_url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/300009p.PDF",
+      "retrieval_urls": [
+        "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/300009p.PDF"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "executive_action",
+      "source_tier": "executive_action",
+      "policy_domains": [
+        "national_security",
+        "agentic_ai",
+        "embodied_physical_ai",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2023-01-25",
+      "effective_date": "2023-01-25",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_dod"
+      ],
+      "priority": "high",
+      "relevance_notes": "Binding DoD issuance establishing senior-level review, rigorous hardware/software V&V and T&E, cybersecurity safeguards, and appropriate levels of human judgment over autonomous and semi-autonomous weapon systems.",
+      "tags": [
+        "dod",
+        "national_security",
+        "autonomy",
+        "human_oversight"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "us_ca_sb_53_tfaia_2025",
+      "title": "California SB 53: Transparency in Frontier Artificial Intelligence Act (TFAIA)",
+      "issuing_body": "California State Legislature",
+      "canonical_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+      "retrieval_urls": [
+        "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "frontier_gpai",
+        "sovereign_compute",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-09-29",
+      "effective_date": "2026-01-01",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "priority": "high",
+      "relevance_notes": "Enacted California frontier AI safety statute imposing 10^26 FLOPs compute thresholds, published frontier AI safety frameworks, catastrophic-risk assessments, critical safety incident reporting to CalOES, and whistleblower protections. Tracked under opt-in subnational_overlay.",
+      "tags": [
+        "california",
+        "sb53",
+        "frontier_ai",
+        "state_law",
+        "subnational_overlay"
+      ],
+      "corpus_role": "subnational_overlay",
+      "subnational_unit": "California"
+    },
+    {
+      "id": "us_ca_ab_2013_training_data_2024",
+      "title": "California AB 2013: Generative Artificial Intelligence — Training Data Transparency Act",
+      "issuing_body": "California State Legislature",
+      "canonical_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2013",
+      "retrieval_urls": [
+        "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2013"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "frontier_gpai",
+        "copyright_ip",
+        "privacy_data_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-09-28",
+      "effective_date": "2026-01-01",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "priority": "high",
+      "relevance_notes": "Enacted California statute mandating public high-level summaries of generative AI training datasets including sources, IP status, personal data, and synthetic data disclosures. Tracked under opt-in subnational_overlay.",
+      "tags": [
+        "california",
+        "ab2013",
+        "training_data",
+        "transparency",
+        "subnational_overlay"
+      ],
+      "corpus_role": "subnational_overlay",
+      "subnational_unit": "California"
+    },
+    {
+      "id": "us_co_sb_24_205_ai_act_2024",
+      "title": "Colorado SB 24-205: Consumer Protections for Artificial Intelligence",
+      "issuing_body": "Colorado General Assembly",
+      "canonical_url": "https://leg.colorado.gov/bills/sb24-205",
+      "retrieval_urls": [
+        "https://leg.colorado.gov/sites/default/files/2024a_205_signed.pdf"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "civil_rights_nondiscrimination",
+        "consumer_protection",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "superseded",
+      "publication_date": "2024-05-17",
+      "effective_date": "2026-02-01",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "priority": "high",
+      "relevance_notes": "Pioneering 2024 Colorado high-risk AI algorithmic discrimination statute; repealed and reenacted by SB 26-189 (May 14, 2026). Tracked under opt-in subnational_overlay as superseded baseline for longitudinal state-law diff.",
+      "tags": [
+        "colorado",
+        "sb24_205",
+        "high_risk_ai",
+        "state_law",
+        "subnational_overlay"
+      ],
+      "corpus_role": "subnational_overlay",
+      "subnational_unit": "Colorado"
+    },
+    {
+      "id": "us_co_sb_26_189_admt_act_2026",
+      "title": "Colorado SB 26-189: Automated Decision-Making Technology (ADMT) Act (Ch. 131)",
+      "issuing_body": "Colorado General Assembly",
+      "canonical_url": "https://leg.colorado.gov/bills/sb26-189",
+      "retrieval_urls": [
+        "https://leg.colorado.gov/laws/session-laws/SB26-189/131/download"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "civil_rights_nondiscrimination",
+        "consumer_protection",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "adopted_not_yet_effective",
+      "publication_date": "2026-05-14",
+      "effective_date": "2027-01-01",
+      "supersedes_id": "us_co_sb_24_205_ai_act_2024",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "priority": "high",
+      "relevance_notes": "Enacted May 14, 2026 (Session Laws Ch. 131, effective Jan 1, 2027) repealing and replacing Colorado SB 24-205 with targeted consumer protections and disclosures for Automated Decision-Making Technology (ADMT) in consequential decisions. Tracked under opt-in subnational_overlay.",
+      "tags": [
+        "colorado",
+        "sb26_189",
+        "admt",
+        "state_law",
+        "subnational_overlay"
+      ],
+      "corpus_role": "subnational_overlay",
+      "subnational_unit": "Colorado"
+    },
+    {
+      "id": "us_tx_hb_149_traiga_2025",
+      "title": "Texas HB 149: Texas Responsible Artificial Intelligence Governance Act (TRAIGA)",
+      "issuing_body": "Texas Legislature",
+      "canonical_url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149",
+      "retrieval_urls": [
+        "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149F.htm"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "consumer_protection",
+        "civil_rights_nondiscrimination",
+        "public_sector_governance",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-06-22",
+      "effective_date": "2026-01-01",
+      "languages": [
+        "en"
+      ],
+      "document_format": "html",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "priority": "high",
+      "relevance_notes": "Enacted 89th Texas Legislature statute prohibiting harmful/discriminatory AI uses, regulating government AI transparency and biometric scraping, creating an AI regulatory sandbox, and vesting exclusive enforcement in the Texas Attorney General. Tracked under opt-in subnational_overlay.",
+      "tags": [
+        "texas",
+        "traiga",
+        "hb149",
+        "state_law",
+        "subnational_overlay"
+      ],
+      "corpus_role": "subnational_overlay",
+      "subnational_unit": "Texas"
+    },
+    {
+      "id": "us_ny_raise_act_2025",
+      "title": "New York S6953A: Responsible AI Safety and Education (RAISE) Act",
+      "issuing_body": "New York State Legislature",
+      "canonical_url": "https://www.nysenate.gov/legislation/bills/2025/S6953/amendment/A",
+      "retrieval_urls": [
+        "https://legislation.nysenate.gov/pdf/bills/2025/S6953A"
+      ],
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "policy_domains": [
+        "frontier_gpai",
+        "sovereign_compute",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2025-12-19",
+      "effective_date": "2026-03-19",
+      "languages": [
+        "en"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "priority": "high",
+      "relevance_notes": "New York frontier AI safety statute mandating written safety and security protocols, third-party audits, 72-hour critical safety incident reporting, and Attorney General civil enforcement for large frontier model developers. Tracked under opt-in subnational_overlay.",
+      "tags": [
+        "new_york",
+        "raise_act",
+        "frontier_ai",
+        "state_law",
+        "subnational_overlay"
+      ],
+      "corpus_role": "subnational_overlay",
+      "subnational_unit": "New York"
     }
   ]
 }

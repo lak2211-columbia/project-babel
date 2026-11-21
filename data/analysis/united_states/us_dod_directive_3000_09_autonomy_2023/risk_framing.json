@@ -1,0 +1,84 @@
+{
+  "dominant_frame": "national_security",
+  "secondary_frames": [
+    "consumer_public_safety",
+    "fundamental_rights"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.15,
+    "national_security": 0.98,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.68,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.1,
+    "consumer_public_safety": 0.85,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.56,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.18,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.0,
+    "consumer_public_safety": 0.26,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "DoD Directive 3000.09 is dominantly framed around national security, governing the acquisition, resilience, warfighter readiness, and operational deployment of autonomous and semi-autonomous military weapon systems against adaptive adversaries in contested cyberspace while explicitly balancing risk reduction with meeting mission objectives and preserving urgent-military-need waivers. Consumer and public safety serves as a major secondary rationale centered on operational weapon safety, preventing unintended engagements, protecting non-targets, minimizing failure probabilities and collateral damage, and avoiding unintended death, injury, or property and environmental harm. Fundamental rights provides an important secondary legal and ethical frame anchored in strict compliance with the law of war, international treaties, rules of engagement, human judgment over the use of force, and the DoD AI Ethical Principles requiring responsible, equitable, bias-minimized, traceable, and governable AI capabilities.",
+  "evidence_spans": [
+    {
+      "quote": "(a) Function as anticipated in realistic operational environments against adaptive adversaries taking realistic and practicable countermeasures.",
+      "source_section": "Section 1.2.a(1)(a) (Policy)",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 6341,
+      "end_char": 6485
+    },
+    {
+      "quote": "minimizing the probability and consequences of failure means reducing the probability and consequences of unintended engagements to acceptable levels while meeting mission objectives and does not mean achieving the lowest possible level of risk by never engaging targets.",
+      "source_section": "Glossary G.2 (Definition of 'failure')",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 40785,
+      "end_char": 41056
+    },
+    {
+      "quote": "Establishes guidelines designed to minimize the probability and consequences of failures in autonomous and semi-autonomous weapon systems that could lead to unintended engagements.",
+      "source_section": "Cover Page (Purpose)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 673,
+      "end_char": 853
+    },
+    {
+      "quote": "focused on addressing weapon safety issues and concerns that present significant mishap risk and is applied with a view towards ensuring freedom from conditions that can cause occupational illness, unintended death or injury, unintended damage to or loss of equipment or property, or unintended damage to the environment.",
+      "source_section": "Glossary G.2 (Definition of 'weapon system safety rules')",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 44437,
+      "end_char": 44758
+    },
+    {
+      "quote": "b. Persons who authorize the use of, direct the use of, or operate autonomous and semiautonomous weapon systems will do so with appropriate care and in accordance with the law of war, applicable treaties, weapon system safety rules, and applicable rules of engagement (ROE).",
+      "source_section": "Section 1.2.b (Policy)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 7887,
+      "end_char": 8161
+    },
+    {
+      "quote": "(2) Equitable.\nThe DoD will take deliberate steps to minimize unintended bias in AI capabilities.",
+      "source_section": "Section 1.2.f(2) (DoD AI Ethical Principles)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 12163,
+      "end_char": 12260
+    }
+  ]
+}

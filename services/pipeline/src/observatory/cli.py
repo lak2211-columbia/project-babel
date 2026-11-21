@@ -19,7 +19,7 @@ from observatory.coverage import write_source_inventory
 from observatory.db import apply_sql_migrations, sync_database_to_source_manifests
 from observatory.discovery import discover_source_candidates
 from observatory.expansion import write_source_expansion_plan
-from observatory.freshness import run_source_refresh
+from observatory.freshness import check_source_freshness, run_source_refresh
 from observatory.metadata_sync import sync_source_metadata
 from observatory.parser import parse_raw_documents
 from observatory.retrieval import fetch_seed_documents, import_local_seed_document
@@ -37,7 +37,7 @@ USAGE = (
     "usage: observatory <validate-taxonomy|validate-sources|validate-artifacts|summarize-sources|"
     "report-source-coverage|report-source-expansion-plan|report-source-quality-audit|"
     "sync-source-metadata|discover-source-candidates|enrich-source-candidates|"
-    "promote-source-families|fetch-seed-documents|refresh-sources|import-local-document|"
+    "promote-source-families|fetch-seed-documents|refresh-sources|check-freshness|import-local-document|"
     "parse-raw-documents|analyze-documents|ingest-document-analysis|analyze-jurisdictions|persist-analysis-artifacts|"
     "check-grounding|export-schemas|evaluate-gold-set|migrate-db|sync-db-to-source-manifests>"
 )
@@ -375,6 +375,123 @@ def app(argv: list[str] | None = None) -> None:
                 )
         else:
             print("blocked seed documents: none")
+        return
+    if command == "check-freshness":
+        jurisdiction = None
+        timeout = 15
+        workers = 4
+        output_json_path: Path | None = None
+        output_md_path: Path | None = None
+        write_reports = True
+        as_json = False
+        index = 0
+        while index < len(rest):
+            argument = rest[index]
+            if argument == "--json":
+                as_json = True
+                index += 1
+                continue
+            if argument == "--no-write":
+                write_reports = False
+                index += 1
+                continue
+            if argument.startswith("--jurisdiction="):
+                jurisdiction = argument.split("=", 1)[1] or None
+                index += 1
+                continue
+            if argument == "--jurisdiction":
+                if index + 1 >= len(rest):
+                    raise SystemExit("check-freshness --jurisdiction requires a value")
+                jurisdiction = rest[index + 1] or None
+                index += 2
+                continue
+            if argument.startswith("--timeout="):
+                try:
+                    timeout = int(argument.split("=", 1)[1])
+                except ValueError as exc:
+                    raise SystemExit("check-freshness --timeout must be an integer") from exc
+                index += 1
+                continue
+            if argument == "--timeout":
+                if index + 1 >= len(rest):
+                    raise SystemExit("check-freshness --timeout requires an integer value")
+                try:
+                    timeout = int(rest[index + 1])
+                except ValueError as exc:
+                    raise SystemExit("check-freshness --timeout must be an integer") from exc
+                index += 2
+                continue
+            if argument.startswith("--workers="):
+                try:
+                    workers = int(argument.split("=", 1)[1])
+                except ValueError as exc:
+                    raise SystemExit("check-freshness --workers must be an integer") from exc
+                index += 1
+                continue
+            if argument == "--workers":
+                if index + 1 >= len(rest):
+                    raise SystemExit("check-freshness --workers requires an integer value")
+                try:
+                    workers = int(rest[index + 1])
+                except ValueError as exc:
+                    raise SystemExit("check-freshness --workers must be an integer") from exc
+                index += 2
+                continue
+            if argument.startswith("--output-json="):
+                output_json_path = Path(argument.split("=", 1)[1])
+                index += 1
+                continue
+            if argument == "--output-json":
+                if index + 1 >= len(rest):
+                    raise SystemExit("check-freshness --output-json requires a file path")
+                output_json_path = Path(rest[index + 1])
+                index += 2
+                continue
+            if argument.startswith("--output-md="):
+                output_md_path = Path(argument.split("=", 1)[1])
+                index += 1
+                continue
+            if argument == "--output-md":
+                if index + 1 >= len(rest):
+                    raise SystemExit("check-freshness --output-md requires a file path")
+                output_md_path = Path(rest[index + 1])
+                index += 2
+                continue
+            if argument.startswith("--"):
+                raise SystemExit(f"unknown check-freshness option: {argument}")
+            if jurisdiction is not None:
+                raise SystemExit(
+                    "usage: observatory check-freshness [jurisdiction] [--jurisdiction=JUR] "
+                    "[--timeout=N] [--workers=N] [--output-json=PATH] [--output-md=PATH] [--no-write] [--json]"
+                )
+            jurisdiction = argument
+            index += 1
+        try:
+            report = check_source_freshness(
+                jurisdiction=jurisdiction,
+                timeout=timeout,
+                output_json_path=output_json_path,
+                output_md_path=output_md_path,
+                write_reports=write_reports,
+                max_workers=workers,
+            )
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+        if as_json:
+            print(json.dumps(report, indent=2, ensure_ascii=False))
+            return
+        if report["report_json_path"]:
+            print(f"wrote {report['report_json_path']}")
+        if report["report_markdown_path"]:
+            print(f"wrote {report['report_markdown_path']}")
+        print(
+            f"freshness: checked={report['checked_count']} "
+            f"unchanged={report['unchanged_count']} "
+            f"ok={report['ok_count']} "
+            f"drifted={report['drifted_count']} "
+            f"blocked={report['blocked_count']} "
+            f"unreachable={report['unreachable_count']}"
+        )
         return
     if command == "import-local-document":
         if len(rest) < 3:

@@ -1,0 +1,305 @@
+{
+  "jurisdiction": "european_union",
+  "issuing_body": "European Commission",
+  "document_type": "strategy_paper",
+  "binding_strength": "strategy_statement",
+  "publication_date": "2021-04-21",
+  "effective_date": null,
+  "covered_actors": [
+    "European Commission and EU Member States (plus EEA/associated states such as Norway) coordinating through the Member States' Group on AI and Digitising European Industry, AI Watch (JRC), and EU agencies (ENISA, Europol, Frontex, eu-LISA, EASA)",
+    "Horizon Europe and Digital Europe public-private partnerships (AI, Data and Robotics PPP, EuroHPC JU, Key Digital Technologies JU, Photonics, Made in Europe, CCAM, Agriculture of Data), AI Lighthouse excellence networks, Testing and Experimentation Facilities (TEFs), and European Digital Innovation Hubs (EDIHs)",
+    "European SMEs, start-ups, industrial enterprises, healthcare providers, public administrations and public procurers, universities, social partners, notified conformity-assessment bodies, European standardisation organisations, and international bodies (GPAI, OECD, UNESCO, WIPO, ISO/IEEE)",
+    "Explicitly excludes the development and use of AI for military purposes (Introduction, Page 5)"
+  ],
+  "covered_application_domains": [
+    "healthcare",
+    "critical_infrastructure",
+    "public_sector_use",
+    "law_enforcement",
+    "education",
+    "employment",
+    "finance"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.93,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "TEFs have an important role in testing robustness, reliability and safety of AI technologies through testing their ability to comply with obligations that are set to be defined in AI regulation.",
+          "source_section": "Chapter 6 (Testing and Experimentation Facilities)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 75445,
+          "end_char": 75639
+        },
+        {
+          "quote": "test the expected performance and safety of AI-powered robots through dedicated world-class TEFs under the Digital Europe programme, to be built from 2022 onwards. The TEFs should also contribute to conformity assessment procedures and the development of standardisation activities in this field;",
+          "source_section": "Chapter 13 (Strategy for Robotics in the World of AI)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 161179,
+          "end_char": 161475
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.89,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "In order to ensure truly inclusive transport and mobility services, datasets used to train AI algorithms must be representative and balanced to avoid unintended results and potential discrimination of certain transport users.",
+          "source_section": "Chapter 16 (Make Mobility Smarter, Safer and More Sustainable Through AI)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 185247,
+          "end_char": 185472
+        },
+        {
+          "quote": "This legislation action will complement the proposed AI horizontal legislation and would aim to support the training and testing of AI algorithms, as well as the work of regulators to evaluate the AI used in health (Q4 2021)198;",
+          "source_section": "Chapter 12 (Use the Next Generation of AI to Improve Health)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 149794,
+          "end_char": 150022
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.87,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "Propose in 2021 legislative action on a horizontal framework for AI, focusing on issues of safety and the respect for fundamental rights specific to AI technologies. • The proposed framework provides a definition of AI, it is risk-based (i.e. defines what a ‘high risk’ AI is) and lays down mandatory requirements for high-risk AI systems.",
+          "source_section": "Chapter 9 (Develop a Policy Framework to Ensure Trust in AI Systems)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 113400,
+          "end_char": 113739
+        },
+        {
+          "quote": "Assessment list for trustworthy artificial intelligence (ALTAI) for self-assessment (2020). This self-assessment tool translates EU AI principles into a checklist that guides developers and deployers of AI.",
+          "source_section": "Chapter 1.2 (Expert Groups on AI, Footnote 23)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 26558,
+          "end_char": 26764
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.87,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Outside of the high-risk category, all providers of AI systems are subject to the existing legislation and transparency requirements, and additionally could choose to subscribe to voluntary, non-binding, self-regulatory schemes, such as codes of conduct;",
+          "source_section": "Chapter 9 (Develop a Policy Framework to Ensure Trust in AI Systems)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 115199,
+          "end_char": 115453
+        },
+        {
+          "quote": "continue to support public administrations including cities and communities in procuring trustworthy AI by developing a set of minimal capabilities for algorithms to be used in contract conditions (e.g. Fair AI MIM)226 through the Living-in.EU movement227 and by other means. The minimal capabilities could include APIs for disclosing levels of automated decision-making.",
+          "source_section": "Chapter 14 (Make the Public Sector a Trailblazer for Using AI)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 172906,
+          "end_char": 173277
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.86,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "AI can unlock data insights to support diagnostics and treatments, but a human clinician should always make the final choices (human oversight).",
+          "source_section": "Chapter 12 (AI in Health, Footnote 184)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 143286,
+          "end_char": 143430
+        },
+        {
+          "quote": "law enforcement, migration and asylum AI applications are never used as a self-standing ‘decision-maker’. AI systems are used to assist, for example, by providing clues for investigation or assessment in a concrete context, but a human always takes the final decision.",
+          "source_section": "Chapter 15 (Law Enforcement, Migration and Asylum, Footnote 228)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 175691,
+          "end_char": 175959
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.85,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "capacity-building initiatives for national competent authorities and notified bodies that would be responsible for ex ante conformity assessment procedures of certain high-risk AI systems, developing guidance documents and toolkits;",
+          "source_section": "Chapter 9 (Develop a Policy Framework to Ensure Trust in AI Systems)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 119563,
+          "end_char": 119795
+        },
+        {
+          "quote": "analyse in 2021-2022 the feasibility of using TEFs, EDIHs and the AI-on-demand platform to assist already established national bodies in assessment and certification of AI technologies.",
+          "source_section": "Chapter 9 (Develop a Policy Framework to Ensure Trust in AI Systems)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 120321,
+          "end_char": 120506
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.84,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "support public administrations, including cities and communities in creating AI algorithm registries to increase citizen trust, and encourage the use of catalogues of AI-enabled applications for administrations to increase the take-up of AI by the public sector",
+          "source_section": "Chapter 14 (Make the Public Sector a Trailblazer for Using AI)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 172543,
+          "end_char": 172804
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.84,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "emphasised the need to secure AI systems against external cybersecurity risks and misuses and the increasing opportunities to use AI to support cybersecurity.",
+          "source_section": "Chapter 1.2 (ENISA AI Threat Landscape, Footnote 30)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 27692,
+          "end_char": 27850
+        },
+        {
+          "quote": "set out implementing acts for technical specifications for automated vehicles and fully automated vehicles, including safety issues linked to the use of AI and cybersecurity256;",
+          "source_section": "Chapter 16 (Make Mobility Smarter, Safer and More Sustainable Through AI)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 191778,
+          "end_char": 191955
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "Outside of the high-risk category, all providers of AI systems are subject to the existing legislation and transparency requirements, and additionally could choose to subscribe to voluntary, non-binding, self-regulatory schemes, such as codes of conduct;",
+          "source_section": "Chapter 9 (Develop a Policy Framework to Ensure Trust in AI Systems)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 115199,
+          "end_char": 115453
+        },
+        {
+          "quote": "Member States are invited to support the Commission in this effort and closely collaborate by providing regular updates, analysis and reports on actions taken and progress achieved.",
+          "source_section": "Conclusions (Page 56)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 201945,
+          "end_char": 202126
+        }
+      ]
+    },
+    {
+      "label": "procurement_condition",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "continue to support public administrations including cities and communities in procuring trustworthy AI by developing a set of minimal capabilities for algorithms to be used in contract conditions (e.g. Fair AI MIM)226 through the Living-in.EU movement227 and by other means. The minimal capabilities could include APIs for disclosing levels of automated decision-making.",
+          "source_section": "Chapter 14 (Make the Public Sector a Trailblazer for Using AI)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 172906,
+          "end_char": 173277
+        },
+        {
+          "quote": "Starting in 2022, a new eligibility criterion to get access to Horizon Europe funding will be introduced. Public bodies, research organisations and higher education establishments will be required to have a gender equality plan for all Horizon Europe funded projects138.",
+          "source_section": "Chapter 8 (Nurture Talent and Improve the Supply of Skills)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 104392,
+          "end_char": 104662
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "quote": "conformity assessments and an ex post compliance and enforcement system.",
+          "source_section": "Chapter 9 (Develop a Policy Framework to Ensure Trust in AI Systems)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 115126,
+          "end_char": 115198
+        },
+        {
+          "quote": "capacity-building initiatives for national competent authorities and notified bodies that would be responsible for ex ante conformity assessment procedures of certain high-risk AI systems, developing guidance documents and toolkits;",
+          "source_section": "Chapter 9 (Develop a Policy Framework to Ensure Trust in AI Systems)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 119563,
+          "end_char": 119795
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "European Commission (coordinating joint actions, EU funding programmes, AI Watch monitoring, and companion legislative proposals)",
+    "EU Member States and national competent authorities / notified bodies (national AI strategies, RRF investment plans, and planned ex-ante/ex-post AI Act compliance oversight)",
+    "EU specialised agencies and bodies (ENISA, Joint Research Centre / AI Watch, Eurostat, Europol, Frontex, eu-LISA, EASA)"
+  ],
+  "compliance_deadlines": [
+    "2021–2027: Multiannual funding cycle targeting at least EUR 1 billion/year from Horizon Europe and Digital Europe to leverage EUR 20 billion/year in total EU public and private AI investment, alongside up to EUR 134 billion RRF digital expenditure target",
+    "2021 (Q2–Q4): Launch European Alliances on industrial data/edge/cloud and microelectronics, co-programmed AI/Data/Robotics PPP, first TEF/EDIH/data-space calls, Adopt AI programme, horizontal AI Act legislative proposal (COM(2021) 206), European Health Data Space proposal (Q4 2021), and mobility AI roadmap",
+    "2022: Commission proposals to adapt EU liability framework and sectoral safety legislation, launch of mandatory Horizon Europe gender-equality-plan eligibility criterion, TEF deployments in health/robotics/smart communities, vehicle automation/cybersecurity rules applicable from July 6, 2022, and Commission timeline/methodology for the next Coordinated Plan review",
+    "2023–2025: Completion of Destination Earth Phase 1 (end 2023), common European agriculture data space and Agriculture of Data PPP (2023–2024), and EU-wide European Health Data Space infrastructure (by 2025)"
+  ],
+  "penalties_summary": "As a non-binding strategic coordination plan (COM(2021) 205 final ANNEX) accompanying the Commission's April 2021 AI Act proposal, the 2021 Review imposes no direct civil or criminal penalties. Compliance relies on Member State coordination, Horizon Europe and Digital Europe funding eligibility rules (such as ethics-by-design and mandatory gender equality plans from 2022), public procurement contract criteria (such as Fair AI minimal capabilities and prospective environmental scoring), voluntary codes of conduct, and capacity-building for the separate horizontal AI regulation's planned ex-ante conformity assessment and ex-post market surveillance system.",
+  "implementation_notes": "Published April 21, 2021 as the Annex to COM(2021) 205 final alongside the initial EU AI Act legislative proposal (COM(2021) 206), updating the 2018 Coordinated Plan across 4 strategic pillars and 17 chapters (7 horizontal + 7 high-impact sectoral areas: climate/environment, health, robotics, public sector, law enforcement/migration/asylum, mobility, and agriculture), plus a 40-action 2021–2025+ timeline (Appendix 1) and Member State strategy/budget inventory (Appendix 2). Mobilises Digital Europe, Horizon Europe, InvestEU, and the Recovery and Resilience Facility to scale European data spaces, EuroHPC supercomputing, low-power edge/neuromorphic chips, AI Lighthouse research networks, 210 European Digital Innovation Hubs, Testing and Experimentation Facilities, regulatory sandboxes, AI-on-demand marketplace, and trustworthy public procurement. Retained as a superseded 2021 historical baseline for longitudinal EU policy-framing analysis.",
+  "confidence": 0.97
+}

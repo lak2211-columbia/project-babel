@@ -2,8 +2,8 @@
   "jurisdiction": "china",
   "analysis_method": "deterministic_v2",
   "analysis_version": "0.2.0",
-  "generated_at": "2026-11-21T06:47:22.743541Z",
-  "source_count": 20,
+  "generated_at": "2026-11-21T21:16:36.663980Z",
+  "source_count": 21,
   "source_document_ids": [
     "cn_ai_abuse_cleanup_2025",
     "cn_ai_content_labeling_measures_2025",
@@ -22,17 +22,18 @@
     "cn_deep_synthesis_provisions_2022",
     "cn_genai_interim_measures_2023",
     "cn_meteorological_ai_measures_2025",
+    "cn_miit_ai_industry_standardization_guidelines_2024",
     "cn_new_generation_ai_plan_2017",
     "cn_state_council_ai_plus_opinion_2025",
     "cn_tc260_ai_safety_governance_framework_3_0_2026"
   ],
   "source_window_start": "2017-07-20",
   "source_window_end": "2026-09-14",
-  "summary": "China's current AI governance record is mixed across law, guidance, and strategic coordination, with Cyberspace Administration of China (CAC) and Ministry of Industry and Information Technology (MIIT) appearing most often in the source base. Across the analyzed documents, Social stability and public order and Innovation enablement both materially shape the jurisdiction's rationale, while risk assessment, content provenance, and transparency and disclosure recur most often in the operative expectations.",
+  "summary": "China's current AI governance record is mixed across law, guidance, and strategic coordination, with Cyberspace Administration of China (CAC) and Ministry of Industry and Information Technology (MIIT) appearing most often in the source base. Across the analyzed documents, Innovation enablement and Social stability and public order both materially shape the jurisdiction's rationale, while risk assessment, content provenance, and access controls recur most often in the operative expectations.",
   "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from Cyberspace Administration of China (CAC), Ministry of Industry and Information Technology (MIIT), and Ministry of Science and Technology (MOST), and the corpus is weighted toward regulatory guidance and legislation.",
-  "framing_landscape": "The framing mix is relatively split: Social stability and public order leads, but Innovation enablement is close enough that the jurisdiction should not be read through a single rationale alone.",
-  "implementation_and_enforcement": "Operationally, the sources most often point to risk assessment, content provenance, and transparency and disclosure. When the corpus gets concrete about consequences, it most often references regulatory supervision and reporting obligations.",
-  "source_coverage_note": "This readout is based on 20 analyzed documents spanning 2017-07-20 to 2026-09-14. The corpus is weighted toward regulatory guidance and legislation. On the binding side it leans toward regulatory guidance and binding law, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are 人工智能安全治理框架 3.0 (AI Safety Governance Framework 3.0) and 《人工智能拟人化互动服务管理暂行办法》答记者问.",
+  "framing_landscape": "The framing mix is relatively split: Innovation enablement leads, but Social stability and public order is close enough that the jurisdiction should not be read through a single rationale alone.",
+  "implementation_and_enforcement": "Operationally, the sources most often point to risk assessment, content provenance, and access controls. When the corpus gets concrete about consequences, it most often references regulatory supervision and soft enforcement.",
+  "source_coverage_note": "This readout is based on 21 analyzed documents spanning 2017-07-20 to 2026-09-14. The corpus is weighted toward regulatory guidance and legislation. On the binding side it leans toward regulatory guidance and binding law, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are 人工智能安全治理框架 3.0 (AI Safety Governance Framework 3.0) and 《人工智能拟人化互动服务管理暂行办法》答记者问.",
   "key_sources": [
     {
       "document_id": "cn_anthropomorphic_interaction_measures_2026",
@@ -75,104 +76,104 @@
     {
       "label": "regulatory_guidance",
       "count": 7,
-      "share": 0.35
+      "share": 0.333
     },
     {
       "label": "legislation",
       "count": 5,
-      "share": 0.25
+      "share": 0.238
     },
     {
       "label": "standards_guideline",
-      "count": 4,
-      "share": 0.2
+      "count": 5,
+      "share": 0.238
     }
   ],
   "top_binding_strengths": [
     {
       "label": "regulatory_guidance",
       "count": 7,
-      "share": 0.35
+      "share": 0.333
     },
     {
       "label": "binding_law",
       "count": 5,
-      "share": 0.25
+      "share": 0.238
     },
     {
       "label": "standards_guideline",
-      "count": 4,
-      "share": 0.2
+      "count": 5,
+      "share": 0.238
     }
   ],
   "top_requirements": [
     {
       "label": "risk_assessment",
-      "count": 15,
-      "share": 0.75
+      "count": 16,
+      "share": 0.762
     },
     {
       "label": "content_provenance",
-      "count": 12,
-      "share": 0.6
+      "count": 13,
+      "share": 0.619
+    },
+    {
+      "label": "access_controls",
+      "count": 11,
+      "share": 0.524
     },
     {
       "label": "transparency_disclosure",
       "count": 11,
-      "share": 0.55
-    },
-    {
-      "label": "access_controls",
-      "count": 10,
-      "share": 0.5
+      "share": 0.524
     }
   ],
   "top_enforcement_mechanisms": [
     {
       "label": "regulatory_supervision",
       "count": 11,
-      "share": 0.55
+      "share": 0.524
+    },
+    {
+      "label": "soft_enforcement",
+      "count": 10,
+      "share": 0.476
     },
     {
       "label": "reporting_obligation",
       "count": 9,
-      "share": 0.45
-    },
-    {
-      "label": "soft_enforcement",
-      "count": 9,
-      "share": 0.45
+      "share": 0.429
     },
     {
       "label": "market_access_restriction",
       "count": 5,
-      "share": 0.25
+      "share": 0.238
     }
   ],
   "top_frames": [
     {
-      "label": "social_stability",
-      "score": 4.69,
+      "label": "innovation_enablement",
+      "score": 4.91,
       "share": 0.234,
-      "document_mentions": 18
+      "document_mentions": 20
     },
     {
-      "label": "innovation_enablement",
-      "score": 4.61,
-      "share": 0.23,
+      "label": "social_stability",
+      "score": 4.69,
+      "share": 0.223,
       "document_mentions": 19
     },
     {
       "label": "consumer_public_safety",
-      "score": 3.82,
-      "share": 0.191,
-      "document_mentions": 19
+      "score": 3.97,
+      "share": 0.189,
+      "document_mentions": 20
     },
     {
       "label": "fundamental_rights",
       "score": 2.83,
-      "share": 0.142,
-      "document_mentions": 18
+      "share": 0.135,
+      "document_mentions": 19
     }
   ],
   "key_institutions": [

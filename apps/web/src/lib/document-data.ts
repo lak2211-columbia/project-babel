@@ -3,6 +3,7 @@ import "server-only";
 import { unstable_cache } from "next/cache";
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
+import { cache } from "react";
 
 import {
   allowLocalFallback,
@@ -42,6 +43,7 @@ import {
   humanizeLanguage,
   humanizeLifecycleStage,
   humanizeObligationStrength,
+  humanizeProseTaxonomyKeys,
   humanizeRequirement,
   toHtmlLang,
 } from "@/lib/taxonomy-vocab";
@@ -182,6 +184,8 @@ type MetadataFile = {
   lifecycle_stage?: string;
   source_tier?: string;
   binding_strength?: string;
+  subnational_unit?: string | null;
+  supersedes_id?: string | null;
 };
 
 type ManifestSeedEntry = {
@@ -198,6 +202,8 @@ type ManifestSeedEntry = {
   source_tier?: string;
   binding_strength?: string;
   document_type?: string;
+  subnational_unit?: string | null;
+  supersedes_id?: string | null;
 };
 
 type DocumentIndexRow = {
@@ -213,6 +219,8 @@ type DocumentIndexRow = {
   corpus_role: string | null;
   lifecycle_stage: string | null;
   source_tier: string | null;
+  subnational_unit?: string | null;
+  supersedes_id?: string | null;
   issuing_body_hint: string | null;
   machine_updated_at: string | null;
   overall_confidence: number | string | null;
@@ -265,6 +273,8 @@ export type DocumentListItem = {
   corpusRoleLabel: string;
   lifecycleStage: string | null;
   lifecycleStageLabel: string;
+  subnationalUnit: string | null;
+  supersedesId: string | null;
   overallConfidence: number | null;
   policyConfidence: number | null;
   dominantFrameConfidence: number | null;
@@ -283,8 +293,11 @@ export type DocumentListItem = {
   evidenceSearchText: string;
 };
 
-/** Full batch record used by compare-data.ts (A10) and matrix-data.ts (C1) — zero N+1! */
-export type ComparisonCorpusDocument = DocumentListItem & {
+/** Full batch record used by compare-data.ts (A10), matrix-data.ts (C1), /clauses, and /evolution — zero N+1! */
+export type ComparisonCorpusDocument = Omit<
+  DocumentListItem,
+  "evidenceSearchText"
+> & {
   safetyRequirements: ExtractedControl[];
   enforcementMechanisms: ExtractedControl[];
   framingEvidence: EvidenceSpan[];
@@ -319,6 +332,8 @@ export type DocumentDetail = {
   corpusRoleLabel: string;
   lifecycleStage: string | null;
   lifecycleStageLabel: string;
+  subnationalUnit: string | null;
+  supersedesId: string | null;
   overallConfidence: number | null;
   policyConfidence: number | null;
   dominantFrameConfidence: number | null;
@@ -546,7 +561,9 @@ function resolveTaxonomyVersion(raw?: string | null): {
   return { version: trimmed, isLegacy: false };
 }
 
-async function queryIndexRowsFromDb(): Promise<DocumentIndexRow[]> {
+async function queryIndexRowsFromDb(
+  jurisdiction: JurisdictionKey,
+): Promise<DocumentIndexRow[]> {
   const sql = getDatabaseClient();
   if (!sql) return [];
 
@@ -571,6 +588,8 @@ async function queryIndexRowsFromDb(): Promise<DocumentIndexRow[]> {
           COALESCE(d.corpus_role, d.raw_metadata->>'corpus_role') AS corpus_role,
           COALESCE(d.lifecycle_stage, d.raw_metadata->>'lifecycle_stage') AS lifecycle_stage,
           COALESCE(d.source_tier, d.raw_metadata->>'source_tier') AS source_tier,
+          NULLIF(TRIM(d.raw_metadata->>'subnational_unit'), '') AS subnational_unit,
+          NULLIF(TRIM(d.raw_metadata->>'supersedes_id'), '') AS supersedes_id,
           d.issuing_body_hint,
           latest_machine.analyzed_at::text AS machine_updated_at,
           latest_machine.overall_confidence,
@@ -601,11 +620,12 @@ async function queryIndexRowsFromDb(): Promise<DocumentIndexRow[]> {
           FROM machine_policy_requirements mpr
           WHERE mpr.machine_analysis_id = latest_machine.id
         ) mpr_obligations ON TRUE
+        WHERE d.jurisdiction = ${jurisdiction}
         ORDER BY
           COALESCE(d.publication_date::text, d.raw_metadata->>'publication_date', d.raw_metadata->>'source_publication_date') DESC NULLS LAST,
           d.id ASC
       `,
-      "document index v5",
+      `document index v5 (${jurisdiction})`,
     )) as DocumentIndexRow[];
   } catch (error) {
     if (!isUndefinedColumnError(error)) throw error;
@@ -631,6 +651,8 @@ async function queryIndexRowsFromDb(): Promise<DocumentIndexRow[]> {
         d.raw_metadata->>'corpus_role' AS corpus_role,
         d.raw_metadata->>'lifecycle_stage' AS lifecycle_stage,
         d.raw_metadata->>'source_tier' AS source_tier,
+        NULLIF(TRIM(d.raw_metadata->>'subnational_unit'), '') AS subnational_unit,
+        NULLIF(TRIM(d.raw_metadata->>'supersedes_id'), '') AS supersedes_id,
         d.issuing_body_hint,
         NULL::text AS machine_updated_at,
         latest_machine.overall_confidence,
@@ -655,11 +677,12 @@ async function queryIndexRowsFromDb(): Promise<DocumentIndexRow[]> {
         ORDER BY m.updated_at DESC, m.id DESC
         LIMIT 1
       ) latest_machine ON TRUE
+      WHERE d.jurisdiction = ${jurisdiction}
       ORDER BY
         COALESCE(d.publication_date::text, d.raw_metadata->>'publication_date', d.raw_metadata->>'source_publication_date') DESC NULLS LAST,
         d.id ASC
     `,
-    "document index v1",
+    `document index v1 (${jurisdiction})`,
   )) as DocumentIndexRow[];
 }
 
@@ -736,6 +759,8 @@ function mapDbRowToComparisonDoc(row: DocumentIndexRow): ComparisonCorpusDocumen
     corpusRoleLabel: humanizeCorpusRole(corpusRoleKey),
     lifecycleStage: lifecycleKey,
     lifecycleStageLabel: humanizeLifecycleStage(lifecycleKey),
+    subnationalUnit: row.subnational_unit?.trim() || null,
+    supersedesId: row.supersedes_id?.trim() || null,
     overallConfidence: unifiedConf,
     policyConfidence: policyConf,
     dominantFrameConfidence: domFrameConf,
@@ -759,37 +784,45 @@ function mapDbRowToComparisonDoc(row: DocumentIndexRow): ComparisonCorpusDocumen
     safetyRequirements,
     enforcementMechanisms,
     framingEvidence,
-    evidenceSearchText: buildEvidenceSearchText(
-      safetyRequirements,
-      enforcementMechanisms,
-      framingEvidence,
-    ),
   };
 }
 
-async function loadComparisonCorpusUncached(): Promise<ComparisonCorpusDocument[]> {
+async function loadJurisdictionCorpusUncached(
+  jurisdiction: JurisdictionKey,
+): Promise<ComparisonCorpusDocument[]> {
   const sql = getDatabaseClient();
   if (!sql) {
-    return allowLocalFallback() ? loadFallbackComparisonCorpus() : [];
+    return allowLocalFallback()
+      ? loadFallbackComparisonCorpus(jurisdiction)
+      : [];
   }
   try {
-    const rows = await queryIndexRowsFromDb();
+    const rows = await queryIndexRowsFromDb(jurisdiction);
     if (!rows.length) {
-      return allowLocalFallback() ? loadFallbackComparisonCorpus() : [];
+      return allowLocalFallback()
+        ? loadFallbackComparisonCorpus(jurisdiction)
+        : [];
     }
     return rows.map(mapDbRowToComparisonDoc);
   } catch (error) {
-    handleDatabaseReadFailure("document corpus from Neon", error);
+    handleDatabaseReadFailure(
+      `document corpus (${jurisdiction}) from Neon`,
+      error,
+    );
     if (!allowLocalFallback()) {
       throw error;
     }
-    return loadFallbackComparisonCorpus();
+    return loadFallbackComparisonCorpus(jurisdiction);
   }
 }
 
-const getComparisonCorpusCached = unstable_cache(
-  loadComparisonCorpusUncached,
-  ["observatory-comparison-corpus-v3"],
+/**
+ * Per-jurisdiction cached shard so every Next.js Data Cache entry stays far
+ * below the 2 MB item limit (~200–450 KB per shard even at 144+ instruments).
+ */
+const getJurisdictionCorpusCached = unstable_cache(
+  loadJurisdictionCorpusUncached,
+  ["observatory-jurisdiction-corpus-v5"],
   {
     revalidate: OBSERVATORY_REVALIDATE_SECONDS,
     tags: [OBSERVATORY_CACHE_TAG],
@@ -797,13 +830,27 @@ const getComparisonCorpusCached = unstable_cache(
 );
 
 /**
- * Single cached batch loader returning full corpus with extracted controls &
+ * Single batch loader returning full corpus with extracted controls &
  * evidence quotes — eliminates all N+1 queries in compare-data.ts (A10) and
- * powers /matrix (C1), /documents (C7), and /api/export (C8).
+ * powers /matrix (C1), /documents (C7), /clauses, /evolution, and /api/export (C8).
+ * Shards Next.js Data Cache per jurisdiction (<500 KB/shard) and deduplicates
+ * across the current request via React cache().
  */
-export async function getComparisonCorpus(): Promise<ComparisonCorpusDocument[]> {
-  return getComparisonCorpusCached();
-}
+export const getComparisonCorpus = cache(
+  async (): Promise<ComparisonCorpusDocument[]> => {
+    const shards = await Promise.all(
+      jurisdictionOrder.map((jurisdiction) =>
+        getJurisdictionCorpusCached(jurisdiction),
+      ),
+    );
+    return shards.flat().sort((left, right) => {
+      if (right.dateSort !== left.dateSort) {
+        return right.dateSort - left.dateSort;
+      }
+      return left.id.localeCompare(right.id);
+    });
+  },
+);
 
 export async function getDocumentListItems(): Promise<DocumentListItem[]> {
   const corpus = await getComparisonCorpus();
@@ -833,6 +880,8 @@ export async function getDocumentListItems(): Promise<DocumentListItem[]> {
     corpusRoleLabel: doc.corpusRoleLabel,
     lifecycleStage: doc.lifecycleStage,
     lifecycleStageLabel: doc.lifecycleStageLabel,
+    subnationalUnit: doc.subnationalUnit,
+    supersedesId: doc.supersedesId,
     overallConfidence: doc.overallConfidence,
     policyConfidence: doc.policyConfidence,
     dominantFrameConfidence: doc.dominantFrameConfidence,
@@ -847,7 +896,11 @@ export async function getDocumentListItems(): Promise<DocumentListItem[]> {
     topRequirements: doc.topRequirements,
     requirementKeys: doc.requirementKeys,
     enforcementKeys: doc.enforcementKeys,
-    evidenceSearchText: doc.evidenceSearchText,
+    evidenceSearchText: buildEvidenceSearchText(
+      doc.safetyRequirements,
+      doc.enforcementMechanisms,
+      doc.framingEvidence,
+    ),
   }));
 }
 
@@ -880,6 +933,8 @@ async function loadDocumentDetailUncached(
             COALESCE(d.corpus_role, d.raw_metadata->>'corpus_role') AS corpus_role,
             COALESCE(d.lifecycle_stage, d.raw_metadata->>'lifecycle_stage') AS lifecycle_stage,
             COALESCE(d.source_tier, d.raw_metadata->>'source_tier') AS source_tier,
+            NULLIF(TRIM(d.raw_metadata->>'subnational_unit'), '') AS subnational_unit,
+            NULLIF(TRIM(d.raw_metadata->>'supersedes_id'), '') AS supersedes_id,
             d.issuing_body_hint,
             d.normalized_text_path,
             d.normalized_text,
@@ -941,6 +996,8 @@ async function loadDocumentDetailUncached(
             d.raw_metadata->>'corpus_role' AS corpus_role,
             d.raw_metadata->>'lifecycle_stage' AS lifecycle_stage,
             d.raw_metadata->>'source_tier' AS source_tier,
+            NULLIF(TRIM(d.raw_metadata->>'subnational_unit'), '') AS subnational_unit,
+            NULLIF(TRIM(d.raw_metadata->>'supersedes_id'), '') AS supersedes_id,
             d.issuing_body_hint,
             d.normalized_text_path,
             d.normalized_text,
@@ -1053,13 +1110,17 @@ async function loadDocumentDetailUncached(
       corpusRoleLabel: humanizeCorpusRole(corpusRoleKey),
       lifecycleStage: lifecycleKey,
       lifecycleStageLabel: humanizeLifecycleStage(lifecycleKey),
+      subnationalUnit: row.subnational_unit?.trim() || null,
+      supersedesId: row.supersedes_id?.trim() || null,
       overallConfidence: unifiedConf,
       policyConfidence: policyConf,
       dominantFrameConfidence: domFrameConf,
       coveredApplicationDomains: (policy.covered_application_domains ?? []).map(
         (key) => ({ key, label: humanizeDomain(key) }),
       ),
-      implementationNotes: policy.implementation_notes?.trim() || null,
+      implementationNotes: policy.implementation_notes?.trim()
+        ? humanizeProseTaxonomyKeys(policy.implementation_notes.trim())
+        : null,
       analysisState:
         row.policy_extraction || row.risk_framing ? "analyzed" : "parsed",
       dominantFrame: toFrameLabel(framing.dominant_frame),
@@ -1080,8 +1141,9 @@ async function loadDocumentDetailUncached(
         policy.enforcement_mechanisms,
         humanizeEnforcement,
       ),
-      rationaleSummary:
-        framing.rationale_summary ?? "No rationale summary available yet.",
+      rationaleSummary: framing.rationale_summary
+        ? humanizeProseTaxonomyKeys(framing.rationale_summary)
+        : "No rationale summary available yet.",
       sections,
       warnings,
       parserVersion: row.parser_version,
@@ -1112,7 +1174,7 @@ async function loadDocumentDetailUncached(
 
 const getDocumentDetailCached = unstable_cache(
   loadDocumentDetailUncached,
-  ["observatory-document-detail-v3"],
+  ["observatory-document-detail-v4"],
   {
     revalidate: OBSERVATORY_REVALIDATE_SECONDS,
     tags: [OBSERVATORY_CACHE_TAG],
@@ -1220,9 +1282,13 @@ async function readLegacyRawModel(
   return rawPolicy?.model ?? rawPolicy?.metadata?.model ?? null;
 }
 
-async function loadFallbackRecords(): Promise<FallbackRecord[]> {
+async function loadFallbackRecords(
+  onlyJurisdiction?: JurisdictionKey,
+): Promise<FallbackRecord[]> {
   const [jurisdictionDirs, manifestIndex] = await Promise.all([
-    safeReadDir(PARSED_ROOT),
+    onlyJurisdiction
+      ? Promise.resolve([onlyJurisdiction])
+      : safeReadDir(PARSED_ROOT),
     loadManifestIndex(),
   ]);
   const records: FallbackRecord[] = [];
@@ -1317,8 +1383,10 @@ function buildLocalProvenance(record: FallbackRecord): DocumentProvenance {
   };
 }
 
-async function loadFallbackComparisonCorpus(): Promise<ComparisonCorpusDocument[]> {
-  const records = await loadFallbackRecords();
+async function loadFallbackComparisonCorpus(
+  onlyJurisdiction?: JurisdictionKey,
+): Promise<ComparisonCorpusDocument[]> {
+  const records = await loadFallbackRecords(onlyJurisdiction);
   return records
     .sort((left, right) => {
       if (right.sortTimestamp !== left.sortTimestamp) {
@@ -1403,6 +1471,14 @@ async function loadFallbackComparisonCorpus(): Promise<ComparisonCorpusDocument[
         corpusRoleLabel: humanizeCorpusRole(corpusRoleKey),
         lifecycleStage: lifecycleKey,
         lifecycleStageLabel: humanizeLifecycleStage(lifecycleKey),
+        subnationalUnit:
+          record.seed?.subnational_unit?.trim() ||
+          record.metadata?.subnational_unit?.trim() ||
+          null,
+        supersedesId:
+          record.seed?.supersedes_id?.trim() ||
+          record.metadata?.supersedes_id?.trim() ||
+          null,
         overallConfidence: unifiedConf,
         policyConfidence: policyConf,
         dominantFrameConfidence: domFrameConf,
@@ -1430,11 +1506,6 @@ async function loadFallbackComparisonCorpus(): Promise<ComparisonCorpusDocument[
         safetyRequirements,
         enforcementMechanisms,
         framingEvidence,
-        evidenceSearchText: buildEvidenceSearchText(
-          safetyRequirements,
-          enforcementMechanisms,
-          framingEvidence,
-        ),
       };
     });
 }
@@ -1514,13 +1585,23 @@ async function loadFallbackDocumentDetail(
     corpusRoleLabel: humanizeCorpusRole(corpusRoleKey),
     lifecycleStage: lifecycleKey,
     lifecycleStageLabel: humanizeLifecycleStage(lifecycleKey),
+    subnationalUnit:
+      record.seed?.subnational_unit?.trim() ||
+      record.metadata?.subnational_unit?.trim() ||
+      null,
+    supersedesId:
+      record.seed?.supersedes_id?.trim() ||
+      record.metadata?.supersedes_id?.trim() ||
+      null,
     overallConfidence: unifiedConf,
     policyConfidence: policyConf,
     dominantFrameConfidence: domFrameConf,
     coveredApplicationDomains: (policy?.covered_application_domains ?? []).map(
       (key) => ({ key, label: humanizeDomain(key) }),
     ),
-    implementationNotes: policy?.implementation_notes?.trim() || null,
+    implementationNotes: policy?.implementation_notes?.trim()
+      ? humanizeProseTaxonomyKeys(policy.implementation_notes.trim())
+      : null,
     analysisState: record.analysis ? "analyzed" : "parsed",
     dominantFrame: toFrameLabel(framing?.dominant_frame),
     secondaryFrames: (framing?.secondary_frames ?? []).flatMap((frame) => {
@@ -1539,8 +1620,9 @@ async function loadFallbackDocumentDetail(
       policy?.enforcement_mechanisms,
       humanizeEnforcement,
     ),
-    rationaleSummary:
-      framing?.rationale_summary ?? "No framing analysis has been stored yet.",
+    rationaleSummary: framing?.rationale_summary
+      ? humanizeProseTaxonomyKeys(framing.rationale_summary)
+      : "No framing analysis has been stored yet.",
     sections: record.parsed.sections?.length
       ? record.parsed.sections
       : [{ heading: "Full text", level: 1, content: record.parsed.plain_text }],

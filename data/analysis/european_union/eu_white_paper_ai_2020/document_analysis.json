@@ -1,0 +1,410 @@
+{
+  "source_id": "eu_white_paper_ai_2020",
+  "title": "White Paper on Artificial Intelligence — A European approach to excellence and trust (COM(2020) 65 final)",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission",
+    "document_type": "strategy_paper",
+    "binding_strength": "strategy_statement",
+    "publication_date": "2020-02-19",
+    "effective_date": null,
+    "covered_actors": [
+      "European Commission, EU Member States, national competent authorities, market surveillance authorities, and Member State-designated notified conformity-assessment bodies",
+      "Economic operators providing AI-enabled products or services in the EU regardless of place of establishment (developers, deployers, producers, distributors, importers, service providers, and professional/private users)",
+      "Research centres, universities, Digital Innovation Hubs, SMEs, start-ups, public administrations, social partners, and civil society stakeholders (explicitly excluding AI developed and used for military purposes)"
+    ],
+    "covered_application_domains": [
+      "healthcare",
+      "critical_infrastructure",
+      "public_sector_use",
+      "employment",
+      "biometrics",
+      "law_enforcement",
+      "finance",
+      "education"
+    ],
+    "prohibited_practices": [
+      "Reaffirms under existing EU consumer law that algorithmic exploitation of consumer behaviour in violation of EU rules is not permitted, and under GDPR Article 9 / Law Enforcement Directive Article 10 that processing biometric data to uniquely identify a natural person is prohibited in principle absent strict legal grounds and safeguards; launches a European debate on remote biometric identification in public places rather than enacting new prohibitions itself"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.94,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "More specifically, an AI application should be considered high-risk where it meets the following two cumulative criteria: • First, the AI application is employed in a sector where, given the characteristics of the activities typically undertaken, significant risks can be expected to occur.",
+            "source_section": "Section 5.C (Scope of a Future EU Regulatory Framework)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 59296,
+            "end_char": 59586
+          },
+          {
+            "quote": "The autonomous behaviour of certain AI systems during its life cycle may entail important product changes having an impact on safety, which may require a new risk assessment.",
+            "source_section": "Section 5.B (Report on Safety and Liability Implications)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 51342,
+            "end_char": 51516
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.96,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Requirements to take reasonable measures aimed at ensuring that such subsequent use of AI systems does not lead to outcomes entailing prohibited discrimination. These requirements could entail in particular obligations to use data sets that are sufficiently representative",
+            "source_section": "Section 5.D(a) (Training Data)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 66217,
+            "end_char": 66489
+          },
+          {
+            "quote": "For instance, requirements ensuring that AI systems are trained on data sets that are sufficiently broad and cover all relevant scenarios needed to avoid dangerous situations.",
+            "source_section": "Section 5.D(a) (Training Data)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 66038,
+            "end_char": 66213
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "accurate records regarding the data set used to train and test the AI systems, including a description of the main characteristics and how the data set was selected;\n\n• in certain justified cases, the data sets themselves;",
+            "source_section": "Section 5.D(b) (Keeping of Records and Data)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 67822,
+            "end_char": 68044
+          },
+          {
+            "quote": "documentation on the programming53 and training methodologies, processes and techniques used to build, test and validate the AI systems, including where relevant in respect of safety and avoiding bias that could lead to prohibited discrimination.",
+            "source_section": "Section 5.D(b) (Keeping of Records and Data)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 68048,
+            "end_char": 68294
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.96,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Ensuring clear information to be provided as to the AI system’s capabilities and limitations, in particular the purpose for which the systems are intended, the conditions under which they can be expected to function as intended and the expected level of accuracy in achieving the specified purpose.",
+            "source_section": "Section 5.D(c) (Information Provision)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 69363,
+            "end_char": 69661
+          },
+          {
+            "quote": "Separately, citizens should be clearly informed when they are interacting with an AI system and not a human being.",
+            "source_section": "Section 5.D(c) (Information Provision)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 69811,
+            "end_char": 69925
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.94,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "an objective, prior conformity assessment would be necessary to verify and ensure that certain of the above mentioned mandatory requirements applicable to high-risk applications (see section D above) are complied with. The prior conformity assessment could include procedures for testing, inspection or certification59.",
+            "source_section": "Section 5.F (Compliance and Enforcement)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 79988,
+            "end_char": 80307
+          },
+          {
+            "quote": "Requirements ensuring that the AI systems are robust and accurate, or at least correctly reflect their level of accuracy, during all life cycle phases;\n\n•\nRequirements ensuring that outcomes are reproducible;",
+            "source_section": "Section 5.D(d) (Robustness and Accuracy)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 71072,
+            "end_char": 71280
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.87,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Requirements ensuring that AI systems are resilient against both overt attacks and more subtle attempts to manipulate data or algorithms themselves, and that mitigating measures are taken in such cases.",
+            "source_section": "Section 5.D(d) (Robustness and Accuracy)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 71712,
+            "end_char": 71914
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.97,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "the output of the AI system does not become effective unless it has been previously reviewed and validated by a human (e.g. the rejection of an application for social security benefits may be taken by a human only);",
+            "source_section": "Section 5.D(e) (Human Oversight)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 72793,
+            "end_char": 73008
+          },
+          {
+            "quote": "monitoring of the AI system while in operation and the ability to intervene in real time and deactivate (e.g. a stop button or procedure is available in a driverless car when a human determines that car operation is not safe);",
+            "source_section": "Section 5.D(e) (Human Oversight)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 73256,
+            "end_char": 73482
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.93,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "carrying out of conformity assessments could be entrusted to notified bodies designated by Member States. Testing centres should enable the independent audit and assessment of AI-systems in accordance with the requirements outlined above.",
+            "source_section": "Section 5.H (Governance)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 87672,
+            "end_char": 87910
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "quote": "establish a voluntary labelling scheme. Under the scheme, interested economic operators that are not covered by the mandatory requirements could decide to make themselves subject, on a voluntary basis, either to those requirements or to a specific set of similar requirements especially established for the purposes of the voluntary scheme.",
+            "source_section": "Section 5.G (Voluntary Labelling for No-High Risk AI Applications)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 84350,
+            "end_char": 84690
+          },
+          {
+            "quote": "The purpose of this White Paper is to set out policy options on how to achieve these objectives.",
+            "source_section": "Introduction (Page 2)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 1918,
+            "end_char": 2014
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.91,
+        "evidence": [
+          {
+            "quote": "Any prior conformity assessment should be without prejudice to monitoring compliance and ex post enforcement by competent national authorities.",
+            "source_section": "Section 5.F (Compliance and Enforcement)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 82818,
+            "end_char": 82961
+          },
+          {
+            "quote": "Such monitoring of compliance should be part of a continuous market surveillance scheme.",
+            "source_section": "Section 5.F (Compliance and Enforcement)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 83581,
+            "end_char": 83669
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "European Commission (policy consultation, future legislative proposals, and coordination)",
+      "Competent national authorities and market surveillance authorities (proposed ex-post compliance monitoring and inspection)",
+      "Notified bodies designated by Member States (proposed independent prior conformity assessment and auditing)",
+      "European Union Agency for Cybersecurity (ENISA) (proposed AI threat-landscape assessment support)"
+    ],
+    "compliance_deadlines": [
+      "2020-05-19: Closing date for open public consultation on the White Paper policy options",
+      "2020-06: Expected finalisation of revised High-Level Expert Group Ethics Guidelines assessment list",
+      "End of 2020: Planned Commission proposal to Member States for a revision of the Coordinated Plan on AI (Action 1)",
+      "Q1 2020 / 2021–2027: Launch of €100M AI/blockchain equity pilot and MFF Digital Europe / Horizon Europe / InvestEU investment cycle targeting >€20B/year in total EU AI investment over the decade"
+    ],
+    "penalties_summary": "As a non-binding Commission White Paper launching public consultation on policy options, COM(2020) 65 final establishes no standalone fines or criminal sanctions. It emphasizes that existing EU consumer, data-protection, product-safety, and liability regimes remain fully enforceable—noting that violations of consumer rules must be punished and victims need effective judicial redress—while proposing future ex-ante notified-body conformity assessments (requiring non-compliant systems to be remedied, such as re-training) and continuous ex-post market surveillance.",
+    "implementation_notes": "Adopted February 19, 2020 (COM(2020) 65 final) alongside the European Strategy for Data and the Report on Safety and Liability Implications of AI, IoT, and Robotics. Serves as the foundational policy blueprint and historical baseline for the EU AI Act (Regulation (EU) 2024/1689). Introduces the twin 'ecosystem of excellence' (six policy actions spanning revised Coordinated Plan, lighthouse research/testing centres, AI master's networks, specialised Digital Innovation Hubs, Horizon Europe AI/data/robotics PPP, and Adopt AI public-sector procurement) and 'ecosystem of trust' (cumulative sector-plus-use high-risk criteria, per-se high-risk recruitment and remote biometric identification, training-data/record-keeping/transparency/robustness/human-oversight requirements, extraterritorial EU market scope, notified-body prior conformity assessment, and a voluntary quality label for non-high-risk AI).",
+    "confidence": 0.97
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "economic_competitiveness",
+      "consumer_public_safety",
+      "innovation_enablement",
+      "labor_transition"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.15,
+      "economic_competitiveness": 0.9,
+      "fundamental_rights": 0.94,
+      "social_stability": 0.15,
+      "innovation_enablement": 0.86,
+      "consumer_public_safety": 0.88,
+      "labor_transition": 0.56
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.24,
+      "fundamental_rights": 0.34,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.16,
+      "consumer_public_safety": 0.2,
+      "labor_transition": 0.06
+    },
+    "rationale_summary": "The 2020 EU White Paper on Artificial Intelligence is dominantly framed around fundamental rights, anchoring its proposed 'ecosystem of trust' in European values, human dignity, personal data protection, non-discrimination across protected traits, freedom of expression, effective judicial redress, and Charter constraints on remote biometric identification. Economic competitiveness is a closely paired secondary frame, invoking fierce global competition, Europe's investment gap against North America and Asia, industrial B2B strengths in robotics and low-power electronics, and preventing single-market fragmentation to preserve EU technological leadership and sovereignty. Consumer and public safety serves as the twin regulatory risk pillar alongside rights, targeting physical injury, mental safety, defective AI-enabled products, cybersecurity vulnerabilities, and victim compensation under safety and liability law. Innovation enablement shapes the proportional risk-based design—avoiding excessive burdens on small and medium-sized enterprises, proposing voluntary quality labels, and mobilizing research and testing infrastructures—while labor and workforce transition appears as a targeted secondary rationale emphasizing workforce upskilling, gender inclusion in AI talent, social-partner involvement, and protecting workers' rights in automated recruitment and workplace monitoring.",
+    "evidence_spans": [
+      {
+        "quote": "Given the major impact that AI can have on our society and the need to build trust, it is vital that European AI is grounded in our values and fundamental rights such as human dignity and privacy protection.",
+        "source_section": "Section 1 (Introduction)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 5154,
+        "end_char": 5361
+      },
+      {
+        "quote": "The use of AI can affect the values on which the EU is founded and lead to breaches of fundamental rights33, including the rights to freedom of expression, freedom of assembly, human dignity, non-discrimination based on sex, racial or ethnic origin, religion or belief, disability, age or sexual orientation",
+        "source_section": "Section 5.A (Risks for Fundamental Rights)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 35018,
+        "end_char": 35325
+      },
+      {
+        "quote": "Against a background of fierce global competition, a solid European approach is needed, building on the European strategy for AI presented in April 20181.",
+        "source_section": "Introduction (Page 1)",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 910,
+        "end_char": 1064
+      },
+      {
+        "quote": "Europe can combine its technological and industrial strengths with a high-quality digital infrastructure and a regulatory framework based on its fundamental values to become a global leader in innovation in the data economy",
+        "source_section": "Section 1 (Introduction)",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 3927,
+        "end_char": 4150
+      },
+      {
+        "quote": "AI technologies may present new safety risks for users when they are embedded in products and services. For example, as result of a flaw in the object recognition technology, an autonomous car can wrongly identify an object on the road and cause an accident involving injuries and material damage.",
+        "source_section": "Section 5.A (Risks for Safety and Liability Regime)",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 39923,
+        "end_char": 40220
+      },
+      {
+        "quote": "As a matter of principle, the new regulatory framework for AI should be effective to achieve its objectives while not being excessively prescriptive so that it could create a disproportionate burden, especially for SMEs. To strike this balance, the Commission is of the view that it should follow a risk-based approach.",
+        "source_section": "Section 5.C (Scope of a Future EU Regulatory Framework)",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 58120,
+        "end_char": 58439
+      },
+      {
+        "quote": "Developing the skills necessary to work in AI and upskilling the workforce to become fit for the AI-led transformation will be a priority of the revised Coordinated Plan on AI to be developed with Member States.",
+        "source_section": "Section 4.C (Skills)",
+        "quote_en": null,
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 20849,
+        "end_char": 21060
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:11:37.518168Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "9ecd3a1e3861eddbab260d44f5244d3eeecd482eeb20e94abea1758bf88a16d7",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 91293,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 25,
+      "exact_matches": 25,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

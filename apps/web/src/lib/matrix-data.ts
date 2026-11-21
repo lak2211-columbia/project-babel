@@ -36,6 +36,7 @@ export type MatrixInstrumentRef = {
   effectiveDate: string | null;
   corpusRoleLabel: string;
   lifecycleStageLabel: string;
+  subnationalUnit: string | null;
   dominantFrame: FrameLabel | null;
   quotes: EvidenceSpan[];
 };
@@ -62,6 +63,8 @@ export type ObligationMatrixRow = {
 
 export type ObligationMatrixData = {
   mode: ScoringMode;
+  includeSubnational: boolean;
+  subnationalCount: number;
   totalInstrumentsInPool: number;
   jurisdictions: {
     key: JurisdictionKey;
@@ -77,19 +80,28 @@ export type ObligationMatrixData = {
 
 async function buildObligationMatrixUncached(
   mode: ScoringMode,
+  includeSubnational = false,
 ): Promise<ObligationMatrixData> {
   const corpus = await getComparisonCorpus();
+  const analyzed = corpus.filter((doc) => doc.analysisState === "analyzed");
+  const subnationalCount = analyzed.filter(
+    (doc) => doc.corpusRole === "subnational_overlay",
+  ).length;
+  const scoped = includeSubnational
+    ? analyzed
+    : analyzed.filter((doc) => doc.corpusRole !== "subnational_overlay");
   const pool =
     mode === "headline"
-      ? corpus.filter(
-          (doc) =>
-            doc.analysisState === "analyzed" &&
-            isHeadlineEligible({
+      ? scoped.filter((doc) =>
+          isHeadlineEligible(
+            {
               corpusRole: doc.corpusRole,
               lifecycleStage: doc.lifecycleStage,
-            }),
+            },
+            { includeSubnational },
+          ),
         )
-      : corpus.filter((doc) => doc.analysisState === "analyzed");
+      : scoped;
 
   const controlSpecs: { group: "requirement" | "enforcement"; key: string; label: string }[] = [
     ...POLICY_REQUIREMENT_ORDER.map((key) => ({
@@ -137,6 +149,7 @@ async function buildObligationMatrixUncached(
           effectiveDate: doc.effectiveDateLabel,
           corpusRoleLabel: doc.corpusRoleLabel,
           lifecycleStageLabel: doc.lifecycleStageLabel,
+          subnationalUnit: doc.subnationalUnit,
           dominantFrame: doc.dominantFrame,
           quotes: control.evidence.slice(0, 2),
         });
@@ -193,6 +206,8 @@ async function buildObligationMatrixUncached(
 
   return {
     mode,
+    includeSubnational,
+    subnationalCount,
     totalInstrumentsInPool: pool.length,
     jurisdictions,
     rows,
@@ -201,7 +216,7 @@ async function buildObligationMatrixUncached(
 
 const getObligationMatrixCached = unstable_cache(
   buildObligationMatrixUncached,
-  ["observatory-obligation-matrix-v3"],
+  ["observatory-obligation-matrix-v4"],
   {
     revalidate: OBSERVATORY_REVALIDATE_SECONDS,
     tags: [OBSERVATORY_CACHE_TAG],
@@ -210,6 +225,7 @@ const getObligationMatrixCached = unstable_cache(
 
 export async function getObligationMatrix(
   mode: ScoringMode = "headline",
+  includeSubnational = false,
 ): Promise<ObligationMatrixData> {
-  return getObligationMatrixCached(mode);
+  return getObligationMatrixCached(mode, includeSubnational);
 }

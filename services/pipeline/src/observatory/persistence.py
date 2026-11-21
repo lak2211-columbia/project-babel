@@ -118,6 +118,8 @@ def build_analysis_persistence_bundle(
     parser_warnings: list[str] | None = None,
     source_tier: str | None = None,
     corpus_role: str | None = None,
+    subnational_unit: str | None = None,
+    supersedes_id: str | None = None,
     lifecycle_stage: str | None = None,
     grounding_ratio: float | None = None,
 ) -> AnalysisPersistenceBundle:
@@ -206,6 +208,13 @@ def build_analysis_persistence_bundle(
     resolved_source_tier = source_tier or _string_or_none(raw_metadata.get("source_tier"))
     resolved_corpus_role = corpus_role or _string_or_none(raw_metadata.get("corpus_role"))
     resolved_lifecycle_stage = lifecycle_stage or _string_or_none(raw_metadata.get("lifecycle_stage"))
+    resolved_subnational_unit = _string_or_none(subnational_unit) or _string_or_none(raw_metadata.get("subnational_unit"))
+    resolved_supersedes_id = _string_or_none(supersedes_id) or _string_or_none(raw_metadata.get("supersedes_id"))
+    persisted_raw_metadata = dict(raw_metadata)
+    if resolved_subnational_unit is not None:
+        persisted_raw_metadata["subnational_unit"] = resolved_subnational_unit
+    if resolved_supersedes_id is not None:
+        persisted_raw_metadata["supersedes_id"] = resolved_supersedes_id
     resolved_frame_shares = dict(framing.frame_share) if framing.frame_share is not None else None
 
     return AnalysisPersistenceBundle(
@@ -221,7 +230,7 @@ def build_analysis_persistence_bundle(
         raw_artifact_path=raw_posix_path,
         normalized_text_path=normalized_posix_path,
         normalized_text=normalized_text,
-        raw_metadata=raw_metadata,
+        raw_metadata=persisted_raw_metadata,
         provider=resolved_provider,
         model=resolved_model,
         effort=resolved_effort,

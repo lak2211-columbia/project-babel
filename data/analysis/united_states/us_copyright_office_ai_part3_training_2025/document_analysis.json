@@ -1,0 +1,251 @@
+{
+  "source_id": "us_copyright_office_ai_part3_training_2025",
+  "title": "Copyright and Artificial Intelligence, Part 3: Generative AI Training",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "U.S. Copyright Office",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2025-05-09",
+    "effective_date": null,
+    "covered_actors": [
+      "Generative AI foundation model developers, downstream fine-tuners, open-weight model distributors, and retrieval-augmented generation (RAG) AI system deployers",
+      "Third-party training dataset curators, web scrapers, data aggregators, and research or nonprofit dataset builders",
+      "Copyright owners, authors, creative professionals, publishers, stock media agencies, film and music rightsholders, and collective management organizations (CMOs)",
+      "Federal courts, Congress, and antitrust authorities (U.S. Department of Justice and Federal Trade Commission)"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [
+      "Unauthorized commercial copying of vast troves of expressive copyrighted works—especially from pirated shadow libraries or via paywall/technological-protection circumvention—to produce competing expressive outputs in existing markets where licensing is reasonably available (outside Section 107 fair use)",
+      "Circumvention of technological protection measures controlling access to copyrighted works (17 U.S.C. § 1201) and unauthorized retrieval or reproduction of copyrighted works in RAG indexes or outputs that substitute for the originals without license or fair use"
+    ],
+    "safety_requirements": [
+      {
+        "label": "training_data_governance",
+        "confidence": 0.94,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "In the Office’s view, the knowing use of a dataset that consists of pirated or illegally accessed works should weigh against fair use without being determinative.",
+            "source_section": "IV.A.4 Unlawful Access",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 184553,
+            "end_char": 184715
+          },
+          {
+            "quote": "But making commercial use of vast troves of copyrighted works to produce expressive content that competes with them in existing markets, especially where this is accomplished through illegal access, goes beyond established fair use boundaries.",
+            "source_section": "VI. Conclusion",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 380923,
+            "end_char": 381166
+          }
+        ]
+      },
+      {
+        "label": "open_weight_obligations",
+        "confidence": 0.78,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "Companies that release open weight models may nevertheless engage in a commercial use if they deploy them in their own monetized products and services or require licensing from large-scale commercial users.",
+            "source_section": "IV.A.3 Commerciality (Footnote 284)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 177948,
+            "end_char": 178154
+          },
+          {
+            "quote": "Whether a model’s weights implicate the reproduction or derivative work rights turns on whether the model has retained or memorized substantial protectable expression from the work(s) at issue.",
+            "source_section": "III.B Training",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 102733,
+            "end_char": 102926
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "quote": "In light of the foregoing, at this point in time, the Office recommends allowing the licensing market to continue to develop without government intervention. If market failures are shown as to specific types of works in specific contexts, targeted intervention such as ECL should be considered.",
+            "source_section": "V.C Analysis and Recommendations",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 378986,
+            "end_char": 379280
+          },
+          {
+            "quote": "Given the robust growth of voluntary licensing, as well as the lack of stakeholder support for any statutory change, the Office believes government intervention would be premature at this time.",
+            "source_section": "VI. Conclusion",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 381436,
+            "end_char": 381629
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Federal courts (adjudicating prima facie infringement under 17 U.S.C. §§ 106 and 501(a) and Section 107 fair use defenses on a case-by-case basis)",
+      "U.S. Department of Justice and Federal Trade Commission (antitrust oversight and Section 5 FTC Act enforcement regarding AI market competition and collective licensing guidance)",
+      "U.S. Copyright Office (statutory advisory role under 17 U.S.C. § 701(b) monitoring technological, judicial, and licensing market developments)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": "The pre-publication report creates no new statutory penalties, compulsory licensing duties, or administrative fines; it clarifies how existing Title 17 copyright infringement liability and Section 107 fair use defenses apply across data collection, model training, memorized weights, and RAG deployment, explicitly deferring output liability, CMI (Section 1202), and enforcement allocation to a subsequent Part of the Report while noting that anti-competitive practices remain subject to DOJ/FTC antitrust and Section 5 enforcement.",
+    "implementation_notes": "Pre-publication version of Part 3 of the U.S. Copyright Office's Report on Copyright and Artificial Intelligence, issued May 9, 2025 following over 10,000 Notice of Inquiry comments. Analyzes prima facie reproduction and derivative-work infringement across dataset curation, model training, memorized model weights, RAG, and outputs; provides a four-factor Section 107 fair use framework distinguishing transformative noncommercial research and guarded non-substitutive deployments from commercial expressive market substitution, market dilution (including stylistic imitation), and pirated/unlawful dataset access; surveys EU, Japan, Singapore, UK, Israel, South Korea, China, Brazil, and Spain approaches; rejects compulsory licensing and mandatory opt-outs at this stage; encourages DOJ antitrust clarity for collective licensing; and recommends allowing voluntary direct and collective licensing markets to mature with extended collective licensing (ECL) reserved for demonstrated sector-specific market failures.",
+    "confidence": 0.94
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "fundamental_rights",
+      "labor_transition",
+      "economic_competitiveness"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.05,
+      "economic_competitiveness": 0.68,
+      "fundamental_rights": 0.78,
+      "social_stability": 0.08,
+      "innovation_enablement": 0.86,
+      "consumer_public_safety": 0.08,
+      "labor_transition": 0.74
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.18,
+      "fundamental_rights": 0.26,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.34,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.22
+    },
+    "rationale_summary": "The Copyright Office's generative AI training report is dominantly framed around innovation enablement, arguing that flexible fair-use doctrine and non-interventionist, market-led voluntary licensing best allow transformative AI innovation and practical licensing ecosystems to flourish without locking in rigid compulsory statutes. Fundamental rights is a strong secondary frame grounded in authors' exclusive statutory property rights, lawful access control, and consent principles—leading the Office to reject mandatory opt-outs and compulsory derogations of authorial rights. Labor and workforce transition carries substantial weight as the Office highlights unprecedented market dilution, royalty dilution, and stylistic imitation threatening creative professionals' livelihoods and incentives to keep creating. Economic competitiveness forms a distinct secondary pillar, explicitly tying balanced copyright and licensing solutions—and fair use for analytical and research deployments—to sustaining American global leadership across both its world-class technology and creative industries.",
+    "evidence_spans": [
+      {
+        "quote": "The public interest requires striking an effective balance, allowing technological innovation to flourish while maintaining a thriving creative community.",
+        "source_section": "I. Introduction",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 8311,
+        "end_char": 8465
+      },
+      {
+        "quote": "Effective licensing options can ensure that innovation continues to advance without undermining intellectual property rights. These groundbreaking technologies should benefit both the innovators who design them and the creators whose content fuels them, as well as the general public.",
+        "source_section": "VI. Conclusion",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 382116,
+        "end_char": 382400
+      },
+      {
+        "quote": "Copyright owners have a right to control access to their works, even if someone seeks to obtain them in order to make a fair use.",
+        "source_section": "IV.A.4 Unlawful Access",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 185052,
+        "end_char": 185181
+      },
+      {
+        "quote": "As to the possibility of an opt-out mechanism, the Office agrees that requiring copyright owners to opt out is inconsistent with the basic principle that consent is required for uses within the scope of their statutory rights.",
+        "source_section": "V.C Analysis and Recommendations",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 375739,
+        "end_char": 375965
+      },
+      {
+        "quote": "The speed and scale at which AI systems generate content pose a serious risk of diluting markets for works of the same kind as in their training data.",
+        "source_section": "IV.D.2 Market Dilution",
+        "quote_en": null,
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 230371,
+        "end_char": 230521
+      },
+      {
+        "quote": "Even when the output is not substantially similar to a specific underlying work, stylistic imitation made possible by its use in training may impact the creator’s market.",
+        "source_section": "IV.D.2 Market Dilution",
+        "quote_en": null,
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 233739,
+        "end_char": 233909
+      },
+      {
+        "quote": "When a model is deployed for purposes such as analysis or research—the types of uses that are critical to international competitiveness—the outputs are unlikely to substitute for expressive works used in training.",
+        "source_section": "VI. Conclusion",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 380709,
+        "end_char": 380922
+      },
+      {
+        "quote": "In our view, American leadership in the AI space would best be furthered by supporting both of these world-class industries that contribute so much to our economic and cultural advancement.",
+        "source_section": "VI. Conclusion",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 381926,
+        "end_char": 382115
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:04:24.026808Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "154dcf0a63a6a90a0cba920ddc332b69dae2952296b9be29d6ef2dc457ed7841",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 382815,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 14,
+      "exact_matches": 14,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

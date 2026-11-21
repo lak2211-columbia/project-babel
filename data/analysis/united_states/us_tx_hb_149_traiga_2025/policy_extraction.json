@@ -1,0 +1,296 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "Texas Legislature",
+  "document_type": "legislation",
+  "binding_strength": "binding_law",
+  "publication_date": "2025-06-22",
+  "effective_date": "2026-01-01",
+  "covered_actors": [
+    "Any person who promotes, advertises, or conducts business in Texas, produces a product or service used by Texas residents, or develops or deploys an artificial intelligence system in Texas (Tex. Bus. & Com. Code § 551.002)",
+    "Private-sector AI developers and deployers, personal-data processors handling data collected, stored, or processed by AI systems (§ 541.104(a)), and entities capturing or storing biometric identifiers for commercial or AI-training purposes (§ 503.001)",
+    "Texas governmental entities and state agencies (departments, commissions, boards, offices, authorities, and political subdivisions, excluding hospital districts and public institutions of higher education under § 552.001(3))",
+    "Licensed health care service and treatment providers deploying AI in patient care (§ 552.051(f))",
+    "AI regulatory sandbox program participants approved by the Texas Department of Information Resources (DIR) and applicable state licensing agencies (Chapter 553)"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "public_sector_use",
+    "biometrics",
+    "healthcare",
+    "finance",
+    "education"
+  ],
+  "prohibited_practices": [
+    "Developing or deploying an AI system that intentionally aims to incite or encourage a person to commit physical self-harm (including suicide), harm another person, or engage in criminal activity (§ 552.052)",
+    "Governmental entities using or deploying an AI system to evaluate or classify persons based on social behavior or personal characteristics to assign a social score resulting in unrelated or disproportionate detrimental treatment or constitutional/statutory rights infringement (§ 552.053)",
+    "Governmental entities developing or deploying an AI system to uniquely identify a specific individual via biometric data or targeted/untargeted scraping of internet or public media without consent where it infringes constitutional or statutory rights, and commercial capture/storage of biometric identifiers from scraped public media not posted by the individual (§ 552.054, § 503.001(b-1))",
+    "Developing or deploying an AI system with the sole intent to infringe, restrict, or otherwise impair individual rights guaranteed under the U.S. Constitution (§ 552.055)",
+    "Developing or deploying an AI system with the intent to unlawfully discriminate against a protected class (race, color, national origin, sex, age, religion, or disability) in violation of state or federal law, noting disparate impact alone does not prove discriminatory intent (§ 552.056)",
+    "Developing or distributing an AI system with the sole intent of producing or distributing child sexual abuse material (Penal Code § 43.26) or unlawful sexually explicit deepfakes (Penal Code § 21.165), or intentionally developing/distributing an AI system engaging in text-based sexually explicit conversations while impersonating or imitating a child under age 18 (§ 552.057)",
+    "Political subdivisions adopting local ordinances, resolutions, rules, or regulations governing the use of AI systems (statewide local preemption, § 552.003)"
+  ],
+  "safety_requirements": [
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.96,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "A governmental agency that makes available an\nartificial intelligence system intended to interact with consumers\nshall disclose to each consumer, before or at the time of\ninteraction, that the consumer is interacting with an artificial\nintelligence system.",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.051(b))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7409,
+          "end_char": 7665
+        },
+        {
+          "quote": "If an artificial intelligence system is used in relation\nto health care service or treatment, the provider of the service or\ntreatment shall provide the disclosure under Subsection (b) to the\nrecipient of the service or treatment or the recipient's personal\nrepresentative not later than the date the service or treatment is\nfirst provided,",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.051(f))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 8201,
+          "end_char": 8541
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.88,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "the training, processing, or storage of biometric\nidentifiers involved in developing, training, evaluating,\ndisseminating, or otherwise offering artificial intelligence\nmodels or systems, unless a system is used or deployed for the\npurpose of uniquely identifying a specific individual; or",
+          "source_section": "Section 2 (Tex. Bus. & Com. Code § 503.001(e)(2))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1371,
+          "end_char": 1660
+        },
+        {
+          "quote": "If a biometric identifier captured for the purpose of\ntraining an artificial intelligence system is subsequently used for\na commercial purpose not described by Subsection (e), the person\npossessing the biometric identifier is subject to:\n(1)\nthis section's provisions for the possession and\ndestruction of a biometric identifier; and\n(2)\nthe penalties associated with a violation of this\nsection.",
+          "source_section": "Section 2 (Tex. Bus. & Com. Code § 503.001(f))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2201,
+          "end_char": 2597
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.86,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "include a benefit assessment that addresses\npotential impacts on consumers, privacy, and public safety;\n(3)\ndescribe the applicant's plan for mitigating any\nadverse consequences that may occur during the test; and",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 553.052(b)(2)–(3))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 23046,
+          "end_char": 23259
+        },
+        {
+          "quote": "if the defendant substantially complies with\nthe most recent version of the \"Artificial Intelligence Risk\nManagement Framework: Generative Artificial Intelligence Profile\"\npublished by the National Institute of Standards and Technology or\nanother nationally or internationally recognized risk management\nframework for artificial intelligence systems, an internal review\nprocess.",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.105(e)(2)(D))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18672,
+          "end_char": 19050
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.84,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "(2) assisting the controller with regard to complying\nwith\nrequirements\n[\nthe requirement\n] relating to the security of\nprocessing personal data\n, and if applicable, the personal data\ncollected, stored, and processed by an artificial intelligence\nsystem, as that term is defined by Section 551.001,",
+          "source_section": "Section 3 (Tex. Bus. & Com. Code § 541.104(a)(2))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3167,
+          "end_char": 3465
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.82,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "The attorney general may request from the person\nreported through the online mechanism, pursuant to a civil\ninvestigative demand issued under Subsection (a):\n(1)\na high-level description of the purpose, intended\nuse, deployment context, and associated benefits of the artificial\nintelligence system with which the person is affiliated;",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.103(b)(1))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14689,
+          "end_char": 15024
+        },
+        {
+          "quote": "provide a detailed description of the artificial\nintelligence system the applicant desires to test in the program,\nand its intended use;",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 553.052(b)(1))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22905,
+          "end_char": 23041
+        }
+      ]
+    },
+    {
+      "label": "red_teaming",
+      "confidence": 0.8,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(2)\nthe defendant discovers a violation of this\nchapter through:\n(A)\nfeedback from a developer, deployer, or other\nperson who believes a violation has occurred;\n(B)\ntesting, including adversarial testing or\nred-team testing;",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.105(e)(2)(B))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18381,
+          "end_char": 18605
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "civil_penalty",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "A person who\nviolates this chapter and does not cure the violation under Section\n552.104 is liable to this state for a civil penalty in an amount of:\n(1)\nfor each violation the court determines to be\ncurable or a breach of a statement submitted to the attorney general\nunder Section 552.104(b)(2), not less than $10,000 and not more\nthan $12,000;",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.105(a)(1))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 16979,
+          "end_char": 17325
+        },
+        {
+          "quote": "(2)\nfor each violation the court determines to be\nuncurable, not less than $80,000 and not more than $200,000; and\n(3)\nfor a continued violation, not less than $2,000\nand not more than $40,000 for each day the violation continues.",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.105(a)(2)–(3))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17326,
+          "end_char": 17556
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "The attorney\ngeneral has exclusive authority to enforce this chapter, except to\nthe extent provided by Section 552.106.\n(b)\nThis chapter does not provide a basis for, and is not\nsubject to, a private right of action for a violation of this\nchapter or any other law.",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.101)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 13778,
+          "end_char": 14043
+        },
+        {
+          "quote": "If the\nattorney general receives a complaint through the online mechanism\nunder Section 552.102 alleging a violation of this chapter, the\nattorney general may issue a civil investigative demand to\ndetermine if a violation has occurred.",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.103(a))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14331,
+          "end_char": 14566
+        }
+      ]
+    },
+    {
+      "label": "licensing_requirement",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "quote": "Sanctions under this section may include:\n(1)\nsuspension, probation, or revocation of a license,\nregistration, certificate, or other authorization to engage in an\nactivity; and\n(2) a monetary penalty not to exceed $100,000.",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.106(b))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19605,
+          "end_char": 19828
+        },
+        {
+          "quote": "A person must obtain approval from the department and any\napplicable agency before testing an artificial intelligence system\nunder the program.",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 553.052(a))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22652,
+          "end_char": 22795
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "quote": "A program participant shall provide a quarterly report to the\ndepartment.\n(b) The report shall include:\n(1)\nmetrics for the artificial intelligence system's\nperformance;\n(2)\nupdates on how the artificial intelligence system\nmitigates any risks associated with its operation; and",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 553.102(a)–(b))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 24705,
+          "end_char": 24983
+        },
+        {
+          "quote": "provides the attorney general with a written\nstatement that the person has:\n(i) cured the alleged violation;\n(ii)\nprovided supporting documentation to\nshow the manner in which the person cured the violation; and\n(iii)\nmade any necessary changes to\ninternal policies to reasonably prevent further violation of this\nchapter.",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.104(b)(2)(B))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 16611,
+          "end_char": 16933
+        }
+      ]
+    },
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "quote": "LIMITATION OF AUTHORITY. The council may\nnot:\n(1)\nadopt rules or promulgate guidance that is binding\nfor any entity;\n(2)\ninterfere with or override the operation of a\nstate agency; or\n(3)\nperform a duty or exercise a power not granted by\nthis chapter.",
+          "source_section": "Section 4 (Tex. Bus. & Com. Code § 554.103)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 30400,
+          "end_char": 30651
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "Texas Attorney General (exclusive enforcement authority for Chapter 552, online consumer complaint portal, Civil Investigative Demands, 60-day notice-and-cure, civil penalties, and injunctive relief)",
+    "Applicable Texas state licensing/regulatory agencies (license suspension, probation, revocation, and up to $100,000 penalty upon AG finding and recommendation under § 552.106; co-oversight of regulatory sandbox participants)",
+    "Texas Department of Information Resources (DIR) (administration and oversight of the 36-month AI regulatory sandbox program under Chapter 553, administrative support for the Texas AI Council, and state agency AI inventories under Gov. Code §§ 2054.068, 2054.0965)",
+    "Texas Department of Insurance (exclusive oversight of the business of insurance under § 552.002(2))",
+    "Texas Artificial Intelligence Council (advisory and non-binding oversight/reporting body under Chapter 554) and Texas Sunset Advisory Commission (state agency AI review under Gov. Code § 325.011(15))"
+  ],
+  "compliance_deadlines": [
+    "2026-01-01: General effective date of Texas HB 149 (TRAIGA) (Section 10)",
+    "2026-09-01 (not later than September 1, 2026): Texas Attorney General must publish online consumer complaint mechanism and information required under § 552.102 (Section 8)",
+    "60-day statutory cure period: Violators receive 60 days after written AG notice of violation to cure, submit written certification with supporting documentation, and update internal policies before AG suit (§ 552.104(b))",
+    "Up to 36 months (extendable for good cause): Maximum regulatory sandbox testing/deployment period with mandatory quarterly participant reports to DIR and annual DIR reports to the legislature (§§ 553.053, 553.102, 553.103)",
+    "Healthcare AI disclosure: Must be provided not later than the date service or treatment is first provided (or as soon as reasonably possible in emergencies) (§ 552.051(f))"
+  ],
+  "penalties_summary": "Uncured violations of Chapter 552 carry state civil penalties enforceable exclusively by the Texas Attorney General (no private right of action): $10,000–$12,000 per curable violation (or breach of a cure statement), $80,000–$200,000 per uncurable violation, and $2,000–$40,000 per day for continuing violations, plus injunctive relief, attorney's fees, and investigative costs (§ 552.105). Following an AG violation finding and recommendation, state licensing agencies may suspend, place on probation, or revoke licenses/authorizations and impose additional monetary penalties up to $100,000 (§ 552.106). Commercial misuse of biometric identifiers captured for AI training triggers existing § 503.001 biometric statutory penalties. Rebuttable presumption of reasonable care, no penalties for undeployed systems, and liability safe harbors apply for third-party misuse, red-team/adversarial testing discovery, and substantial compliance with the NIST Generative AI Profile.",
+  "implementation_notes": "Enacted in the 89th Texas Legislature (signed June 22, 2025; effective January 1, 2026), TRAIGA adds Subtitle D (Chapters 551–554) to Title 11 of the Texas Business & Commerce Code while amending Texas biometric (§ 503.001), data privacy (§ 541.104), and state-agency IT/Sunset statutes. Rather than imposing European-style risk-tier compliance mandates on private developers, Texas pairs narrow intent-based red-line prohibitions (self-harm/violence/crime incitement, governmental social scoring, rights-infringing governmental biometric scraping, sole-intent constitutional infringement, intentional protected-class discrimination, CSAM/deepfake/child-impersonating sexual chatbots) with statewide local preemption, a 36-month deregulatory AI sandbox administered by DIR, safe harbors for red-teaming and NIST AI RMF compliance, and a seven-member advisory Texas AI Council barred from issuing binding rules. Section 9 conditions mandatory state-agency implementation duties on specific legislative appropriations.",
+  "confidence": 0.97
+}

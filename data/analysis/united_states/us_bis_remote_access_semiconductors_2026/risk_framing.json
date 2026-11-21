@@ -1,0 +1,84 @@
+{
+  "dominant_frame": "national_security",
+  "secondary_frames": [
+    "existential_catastrophic",
+    "innovation_enablement"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.76,
+    "national_security": 0.99,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.35,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.22,
+    "national_security": 0.68,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.1,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "This BIS interim final rule is predominantly framed around national security, seeking to stop foreign adversaries headquartered in Country Group D:5 or Macau from circumventing U.S. chip export controls via overseas cloud data centers and third-country diversion hubs to train advanced AI ('Super Intelligence') models supporting military and intelligence activities, cyber-espionage, algorithmic theft, and shifts in global military balances of power—invoking an E.O. 14192 national-security exemption. Existential and catastrophic risk forms a prominent secondary rationale because BIS explicitly anchors the 12,000,000 aggregate TPP remote-compute threshold in preventing foreign actors from accelerating development of weapons of mass destruction and executing sophisticated zero-day cyberattacks against critical infrastructure. A targeted innovation enablement layer appears in formally rescinding the AI Diffusion Rule's worldwide license requirements and country tiers to streamline licensing, retaining License Exception ACM to support allied supply chains, and exempting commercial recommender systems and U.S.-headquartered firms from unnecessary licensing friction.",
+  "evidence_spans": [
+    {
+      "quote": "In this interim final rule (IFR), the Department of Commerce is establishing new rules to prevent certain foreign actors from leveraging advanced computing power based on U.S. technology to threaten U.S. national security and foreign policy interests.",
+      "source_section": "Summary",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 668,
+      "end_char": 919
+    },
+    {
+      "quote": "This rule is exempt from the requirements of\nE.O. 14192\nbecause it is being issued with respect to a national security function of the United States, per section 5(a) of\nE.O. 14192\n.",
+      "source_section": "Rulemaking Requirements",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 36179,
+      "end_char": 36361
+    },
+    {
+      "quote": "Access to advanced computing power presents significant national security and foreign policy concerns, primarily by enabling foreign countries or other entities of concern to accelerate the development of weapons of mass destruction (WMD), execute sophisticated zero-day cyberattacks on critical infrastructure, and disrupt global military balances of power",
+      "source_section": "Preamble (Section III.A — New § 744.24)",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 15064,
+      "end_char": 15421
+    },
+    {
+      "quote": "using advanced SI for developing more effective weapons of mass destruction and advanced conventional weapons, coordinated cyber-espionage and targeted cyber-disruption, algorithmic theft, and weaponized disinformation.",
+      "source_section": "Preamble (Section I — Background)",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 9382,
+      "end_char": 9601
+    },
+    {
+      "quote": "The license requirement will not apply to commercial recommender systems, such as those used by online retailers or social media companies, as these functions do not pose the same national security threat.",
+      "source_section": "Summary",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1615,
+      "end_char": 1820
+    },
+    {
+      "quote": "BIS is retaining License Exception ACM under § 740.28 due to the benefits this license exception plays in supporting the supply chains of export, reexports, and transfers (in-country) of advanced SI items destined to ultimate end users outside of Macau or destinations in Country Group D:5.",
+      "source_section": "Preamble (Section IV.E — License Exception ACM)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 30901,
+      "end_char": 31191
+    }
+  ]
+}

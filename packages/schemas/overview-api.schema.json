@@ -2,13 +2,15 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://project-babel.com/schemas/overview-api.schema.json",
   "title": "Project Babel Overview API Response",
-  "description": "JSON response contract returned by GET /api/overview?mode=headline|all (legacy aliases weighted|equal supported) and consumed by the Project Babel dashboard (Taxonomy v2.1.0).",
+  "description": "JSON response contract returned by GET /api/overview?mode=headline|all&states=0|1 (legacy aliases weighted|equal supported) and consumed by the Project Babel dashboard (Taxonomy v2.1.0).",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "hasData",
     "datasetLabel",
     "scoringMode",
+    "includeSubnational",
+    "subnationalCount",
     "taxonomyVersion",
     "datasetVersion",
     "snapshotDate",
@@ -35,6 +37,15 @@
       "type": "string",
       "enum": ["headline", "all"],
       "description": "Canonical scoring mode: 'headline' filters strictly to active/adopted primary instruments (Codebook §8.2); 'all' weights the entire corpus equally."
+    },
+    "includeSubnational": {
+      "type": "boolean",
+      "description": "Whether opt-in subnational_overlay instruments (e.g., U.S. state statutes) are included in the active scoring pool."
+    },
+    "subnationalCount": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of analyzed subnational_overlay instruments available in the corpus."
     },
     "taxonomyVersion": {
       "type": "string",

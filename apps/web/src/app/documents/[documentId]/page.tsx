@@ -7,7 +7,10 @@ import { TopNav } from "@/app/_components/top-nav";
 import { getDocumentDetail } from "@/lib/document-data";
 import { getOverviewData } from "@/lib/overview-data";
 import type { AnalysisState } from "@/lib/sources-data";
-import { BINDING_STRENGTH_COLORS } from "@/lib/taxonomy-vocab";
+import {
+  BINDING_STRENGTH_COLORS,
+  formatSubnationalBadge,
+} from "@/lib/taxonomy-vocab";
 
 import { DocumentEvidenceReader } from "./_evidence-reader";
 
@@ -122,6 +125,11 @@ export default async function DocumentDetailPage({
                 <span className="rounded-[2px] border border-white/15 bg-white/[0.02] px-2 py-0.5 font-mono text-[11px] uppercase tracking-[0.06em] text-[#cbd5e1]">
                   {document.documentType}
                 </span>
+                {formatSubnationalBadge(document.subnationalUnit) ? (
+                  <span className="rounded-[2px] border border-[#e6ae49]/45 bg-[#e6ae49]/15 px-2 py-0.5 font-mono text-[11px] font-semibold uppercase tracking-[0.06em] text-[#fef3c7]">
+                    {formatSubnationalBadge(document.subnationalUnit)}
+                  </span>
+                ) : null}
               </div>
 
               <p className="mt-3 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#94a3b8]">
@@ -151,6 +159,27 @@ export default async function DocumentDetailPage({
                 ) : null}
                 <MetaRow label="language" value={document.language} />
                 <MetaRow label="issuing body" value={document.issuingBody} />
+                {formatSubnationalBadge(document.subnationalUnit) ? (
+                  <MetaRow
+                    label="state overlay"
+                    value={formatSubnationalBadge(document.subnationalUnit)!}
+                  />
+                ) : null}
+                {document.supersedesId ? (
+                  <>
+                    <dt className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#94a3b8]">
+                      supersedes
+                    </dt>
+                    <dd className="text-right text-[12px]">
+                      <Link
+                        href={`/documents/${encodeURIComponent(document.supersedesId)}`}
+                        className="font-mono text-[11px] text-[#67e8f9] underline decoration-[#67e8f9]/40 underline-offset-2 hover:text-white"
+                      >
+                        {document.supersedesId} →
+                      </Link>
+                    </dd>
+                  </>
+                ) : null}
                 <MetaRow
                   label="authoritative tier"
                   value={document.bindingStrengthLabel}

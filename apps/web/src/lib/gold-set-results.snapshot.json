@@ -1,147 +1,157 @@
 {
-  "benchmark_id": "gold_set_v1",
-  "benchmark_status": "starter_v0.1_internal",
+  "benchmark_id": "gold_set_v2",
+  "benchmark_status": "stratified_v1.0_blind_internal",
   "taxonomy_version": "2.1.0",
-  "created_at": "2026-11-20",
-  "annotator_note": "Internal 5-document multilingual starter benchmark (1 well-parsed primary instrument per jurisdiction: EN/EN/KO/JA/ZH), hand-coded directly from full committed normalized.json texts against Codebook v2.1.0 and data/taxonomies/label-definitions.json. Intended to verify end-to-end gold-set evaluation and expose legacy v1 extraction gaps; external dual-annotator validation across 25–30 documents remains pending before publication-grade inter-rater benchmarks.",
-  "evaluated_count": 5,
+  "created_at": "2026-11-21",
+  "annotator_note": "Stratified 25-document multilingual blind gold-set benchmark (5 documents per jurisdiction across EN/KO/JA/ZH spanning all 6 binding-strength strata and all 17 Taxonomy v2.1.0 policy requirements). Every document was coded strictly blind from its full parsed primary text (data/parsed/<jurisdiction>/<document_id>/normalized.json) against Codebook v2.1.0 (docs/research/codebook.md) and canonical label definitions (data/taxonomies/label-definitions.json) without consulting any pipeline outputs under data/analysis/. Includes all 5 starter anchors from gold_set_v1.json re-verified against Parser 0.3.0 texts plus 20 newly blind-coded instruments. External multi-institution dual-annotator inter-rater review remains the next academic milestone.",
+  "evaluated_count": 25,
   "bootstrap_iterations": 1000,
   "bootstrap_seed": 42,
-  "requirement_micro_precision": 0.909,
-  "requirement_micro_recall": 0.769,
-  "requirement_micro_f1": 0.833,
-  "requirement_macro_f1": 0.737,
-  "enforcement_micro_precision": 0.929,
-  "enforcement_micro_recall": 0.929,
-  "enforcement_micro_f1": 0.929,
-  "enforcement_macro_f1": 0.932,
+  "requirement_micro_precision": 0.876,
+  "requirement_micro_recall": 0.923,
+  "requirement_micro_f1": 0.899,
+  "requirement_macro_f1": 0.887,
+  "enforcement_micro_precision": 0.947,
+  "enforcement_micro_recall": 0.96,
+  "enforcement_micro_f1": 0.954,
+  "enforcement_macro_f1": 0.964,
   "dominant_frame_accuracy": 0.8,
-  "dominant_frame_cohens_kappa": 0.706,
-  "binding_strength_accuracy": 0.8,
-  "binding_strength_cohens_kappa": 0.706,
+  "dominant_frame_cohens_kappa": 0.747,
+  "dominant_frame_krippendorffs_alpha": 0.748,
+  "binding_strength_accuracy": 0.92,
+  "binding_strength_cohens_kappa": 0.891,
+  "binding_strength_krippendorffs_alpha": 0.893,
   "bootstrap_95_ci": {
     "requirement_micro_f1": [
-      0.7,
-      0.913
+      0.85,
+      0.936
     ],
     "enforcement_micro_f1": [
-      0.778,
-      1.0
+      0.918,
+      0.982
     ],
     "dominant_frame_accuracy": [
-      0.4,
-      1.0
+      0.64,
+      0.92
     ],
     "binding_strength_accuracy": [
-      0.4,
+      0.8,
       1.0
     ],
     "dominant_frame_cohens_kappa": [
-      0.25,
-      1.0
+      0.53,
+      0.899
+    ],
+    "dominant_frame_krippendorffs_alpha": [
+      0.51,
+      0.901
     ]
+  },
+  "by_jurisdiction": {
+    "china": {
+      "evaluated_count": 5,
+      "requirement_micro_precision": 0.973,
+      "requirement_micro_recall": 0.857,
+      "requirement_micro_f1": 0.911,
+      "requirement_macro_f1": 0.919,
+      "enforcement_micro_precision": 0.947,
+      "enforcement_micro_recall": 0.947,
+      "enforcement_micro_f1": 0.947,
+      "enforcement_macro_f1": 0.964,
+      "dominant_frame_accuracy": 0.8,
+      "binding_strength_accuracy": 1.0
+    },
+    "european_union": {
+      "evaluated_count": 5,
+      "requirement_micro_precision": 0.912,
+      "requirement_micro_recall": 0.912,
+      "requirement_micro_f1": 0.912,
+      "requirement_macro_f1": 0.929,
+      "enforcement_micro_precision": 1.0,
+      "enforcement_micro_recall": 1.0,
+      "enforcement_micro_f1": 1.0,
+      "enforcement_macro_f1": 1.0,
+      "dominant_frame_accuracy": 0.8,
+      "binding_strength_accuracy": 1.0
+    },
+    "japan": {
+      "evaluated_count": 5,
+      "requirement_micro_precision": 0.758,
+      "requirement_micro_recall": 0.893,
+      "requirement_micro_f1": 0.82,
+      "requirement_macro_f1": 0.83,
+      "enforcement_micro_precision": 0.875,
+      "enforcement_micro_recall": 1.0,
+      "enforcement_micro_f1": 0.933,
+      "enforcement_macro_f1": 1.0,
+      "dominant_frame_accuracy": 0.6,
+      "binding_strength_accuracy": 0.6
+    },
+    "south_korea": {
+      "evaluated_count": 5,
+      "requirement_micro_precision": 0.875,
+      "requirement_micro_recall": 0.977,
+      "requirement_micro_f1": 0.923,
+      "requirement_macro_f1": 0.921,
+      "enforcement_micro_precision": 1.0,
+      "enforcement_micro_recall": 0.895,
+      "enforcement_micro_f1": 0.944,
+      "enforcement_macro_f1": 0.948,
+      "dominant_frame_accuracy": 1.0,
+      "binding_strength_accuracy": 1.0
+    },
+    "united_states": {
+      "evaluated_count": 5,
+      "requirement_micro_precision": 0.84,
+      "requirement_micro_recall": 1.0,
+      "requirement_micro_f1": 0.913,
+      "requirement_macro_f1": 0.982,
+      "enforcement_micro_precision": 0.846,
+      "enforcement_micro_recall": 1.0,
+      "enforcement_micro_f1": 0.917,
+      "enforcement_macro_f1": 0.911,
+      "dominant_frame_accuracy": 0.8,
+      "binding_strength_accuracy": 1.0
+    }
   },
   "per_label_requirements": {
     "access_controls": {
-      "tp": 1,
-      "fp": 0,
-      "fn": 2,
-      "support": 3,
-      "precision": 1.0,
-      "recall": 0.333,
-      "f1": 0.5
-    },
-    "content_provenance": {
-      "tp": 3,
-      "fp": 0,
-      "fn": 0,
-      "support": 3,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "human_oversight": {
-      "tp": 1,
-      "fp": 0,
-      "fn": 0,
-      "support": 1,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "incident_reporting": {
-      "tp": 1,
-      "fp": 0,
-      "fn": 0,
-      "support": 1,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "model_documentation": {
-      "tp": 1,
-      "fp": 0,
-      "fn": 1,
-      "support": 2,
-      "precision": 1.0,
-      "recall": 0.5,
-      "f1": 0.667
-    },
-    "open_weight_obligations": {
-      "tp": 1,
+      "tp": 13,
       "fp": 1,
+      "fn": 3,
+      "support": 16,
+      "precision": 0.929,
+      "recall": 0.812,
+      "f1": 0.867
+    },
+    "agentic_autonomy_controls": {
+      "tp": 2,
+      "fp": 2,
       "fn": 0,
-      "support": 1,
+      "support": 2,
       "precision": 0.5,
       "recall": 1.0,
       "f1": 0.667
     },
-    "pre_deployment_testing": {
-      "tp": 0,
-      "fp": 0,
-      "fn": 1,
-      "support": 1,
-      "precision": null,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "red_teaming": {
-      "tp": 1,
+    "compute_governance": {
+      "tp": 5,
       "fp": 0,
       "fn": 0,
-      "support": 1,
+      "support": 5,
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0
     },
-    "registration_licensing": {
-      "tp": 1,
-      "fp": 0,
+    "content_provenance": {
+      "tp": 11,
+      "fp": 3,
       "fn": 0,
-      "support": 1,
-      "precision": 1.0,
+      "support": 11,
+      "precision": 0.786,
       "recall": 1.0,
-      "f1": 1.0
+      "f1": 0.88
     },
-    "risk_assessment": {
-      "tp": 3,
-      "fp": 0,
-      "fn": 0,
-      "support": 3,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "third_party_audit": {
-      "tp": 0,
-      "fp": 0,
-      "fn": 1,
-      "support": 1,
-      "precision": null,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "training_data_governance": {
+    "domestic_representative": {
       "tp": 3,
       "fp": 1,
       "fn": 0,
@@ -150,63 +160,135 @@
       "recall": 1.0,
       "f1": 0.857
     },
-    "transparency_disclosure": {
-      "tp": 4,
-      "fp": 0,
-      "fn": 1,
-      "support": 5,
-      "precision": 1.0,
-      "recall": 0.8,
-      "f1": 0.889
-    }
-  },
-  "per_label_enforcement": {
-    "civil_penalty": {
-      "tp": 1,
+    "frontier_safety_evaluation": {
+      "tp": 9,
       "fp": 0,
       "fn": 0,
-      "support": 1,
+      "support": 9,
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0
     },
-    "criminal_penalty": {
-      "tp": 1,
+    "human_oversight": {
+      "tp": 10,
+      "fp": 1,
+      "fn": 1,
+      "support": 11,
+      "precision": 0.909,
+      "recall": 0.909,
+      "f1": 0.909
+    },
+    "incident_reporting": {
+      "tp": 11,
+      "fp": 1,
+      "fn": 0,
+      "support": 11,
+      "precision": 0.917,
+      "recall": 1.0,
+      "f1": 0.957
+    },
+    "model_documentation": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 1,
+      "support": 15,
+      "precision": 1.0,
+      "recall": 0.933,
+      "f1": 0.966
+    },
+    "open_weight_obligations": {
+      "tp": 6,
+      "fp": 3,
+      "fn": 0,
+      "support": 6,
+      "precision": 0.667,
+      "recall": 1.0,
+      "f1": 0.8
+    },
+    "pre_deployment_testing": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 2,
+      "support": 9,
+      "precision": 1.0,
+      "recall": 0.778,
+      "f1": 0.875
+    },
+    "red_teaming": {
+      "tp": 7,
+      "fp": 2,
+      "fn": 0,
+      "support": 7,
+      "precision": 0.778,
+      "recall": 1.0,
+      "f1": 0.875
+    },
+    "registration_licensing": {
+      "tp": 4,
       "fp": 0,
       "fn": 0,
-      "support": 1,
+      "support": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "risk_assessment": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 0,
+      "support": 16,
+      "precision": 0.941,
+      "recall": 1.0,
+      "f1": 0.97
+    },
+    "third_party_audit": {
+      "tp": 6,
+      "fp": 2,
+      "fn": 4,
+      "support": 10,
+      "precision": 0.75,
+      "recall": 0.6,
+      "f1": 0.667
+    },
+    "training_data_governance": {
+      "tp": 15,
+      "fp": 4,
+      "fn": 0,
+      "support": 15,
+      "precision": 0.789,
+      "recall": 1.0,
+      "f1": 0.882
+    },
+    "transparency_disclosure": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 2,
+      "support": 18,
+      "precision": 0.941,
+      "recall": 0.889,
+      "f1": 0.914
+    }
+  },
+  "per_label_enforcement": {
+    "civil_penalty": {
+      "tp": 10,
+      "fp": 1,
+      "fn": 1,
+      "support": 11,
+      "precision": 0.909,
+      "recall": 0.909,
+      "f1": 0.909
+    },
+    "criminal_penalty": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "support": 5,
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0
     },
     "licensing_requirement": {
-      "tp": 1,
-      "fp": 0,
-      "fn": 0,
-      "support": 1,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "market_access_restriction": {
-      "tp": 1,
-      "fp": 1,
-      "fn": 0,
-      "support": 1,
-      "precision": 0.5,
-      "recall": 1.0,
-      "f1": 0.667
-    },
-    "regulatory_supervision": {
-      "tp": 3,
-      "fp": 0,
-      "fn": 1,
-      "support": 4,
-      "precision": 1.0,
-      "recall": 0.75,
-      "f1": 0.857
-    },
-    "reporting_obligation": {
       "tp": 2,
       "fp": 0,
       "fn": 0,
@@ -215,17 +297,87 @@
       "recall": 1.0,
       "f1": 1.0
     },
-    "soft_enforcement": {
-      "tp": 4,
+    "market_access_restriction": {
+      "tp": 7,
+      "fp": 1,
+      "fn": 0,
+      "support": 7,
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.933
+    },
+    "procurement_condition": {
+      "tp": 2,
       "fp": 0,
       "fn": 0,
-      "support": 4,
+      "support": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "regulatory_supervision": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 2,
+      "support": 19,
+      "precision": 0.944,
+      "recall": 0.895,
+      "f1": 0.919
+    },
+    "reporting_obligation": {
+      "tp": 10,
+      "fp": 1,
+      "fn": 0,
+      "support": 10,
+      "precision": 0.909,
+      "recall": 1.0,
+      "f1": 0.952
+    },
+    "soft_enforcement": {
+      "tp": 19,
+      "fp": 0,
+      "fn": 0,
+      "support": 19,
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0
     }
   },
   "details": [
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_take_it_down_act_2025",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "consumer_public_safety",
+      "predicted_dominant_frame": "consumer_public_safety",
+      "binding_strength_match": true,
+      "gold_binding_strength": "binding_law",
+      "predicted_binding_strength": "binding_law",
+      "missing_requirements": [],
+      "extra_requirements": [],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "en",
+      "stratum": "binding_law"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_eo_14409_advanced_ai_innovation_security_2026",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "national_security",
+      "predicted_dominant_frame": "national_security",
+      "binding_strength_match": true,
+      "gold_binding_strength": "executive_action",
+      "predicted_binding_strength": "executive_action",
+      "missing_requirements": [],
+      "extra_requirements": [],
+      "missing_enforcement": [],
+      "extra_enforcement": [
+        "regulatory_supervision"
+      ],
+      "language": "en",
+      "stratum": "executive_action"
+    },
     {
       "jurisdiction": "united_states",
       "document_id": "us_joint_statement_ai_discrimination_2023",
@@ -240,7 +392,116 @@
       "missing_enforcement": [],
       "extra_enforcement": [
         "market_access_restriction"
-      ]
+      ],
+      "language": "en",
+      "stratum": "regulatory_guidance"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_nist_ai_rmf_1_0",
+      "dominant_frame_match": false,
+      "gold_dominant_frame": "consumer_public_safety",
+      "predicted_dominant_frame": "innovation_enablement",
+      "binding_strength_match": true,
+      "gold_binding_strength": "standards_guideline",
+      "predicted_binding_strength": "standards_guideline",
+      "missing_requirements": [],
+      "extra_requirements": [
+        "red_teaming"
+      ],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "en",
+      "stratum": "standards_guideline"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_ai_action_plan_pdf",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "economic_competitiveness",
+      "predicted_dominant_frame": "economic_competitiveness",
+      "binding_strength_match": true,
+      "gold_binding_strength": "strategy_statement",
+      "predicted_binding_strength": "strategy_statement",
+      "missing_requirements": [],
+      "extra_requirements": [
+        "open_weight_obligations",
+        "red_teaming",
+        "risk_assessment"
+      ],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "en",
+      "stratum": "strategy_statement"
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_digital_omnibus_ai_regulation_2026_1744",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "innovation_enablement",
+      "predicted_dominant_frame": "innovation_enablement",
+      "binding_strength_match": true,
+      "gold_binding_strength": "binding_law",
+      "predicted_binding_strength": "binding_law",
+      "missing_requirements": [],
+      "extra_requirements": [],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "en",
+      "stratum": "binding_law"
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_article_50_transparency_guidelines_2026",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "fundamental_rights",
+      "predicted_dominant_frame": "fundamental_rights",
+      "binding_strength_match": true,
+      "gold_binding_strength": "regulatory_guidance",
+      "predicted_binding_strength": "regulatory_guidance",
+      "missing_requirements": [],
+      "extra_requirements": [],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "en",
+      "stratum": "regulatory_guidance"
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_gpai_scope_obligations_guidelines_2025",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "innovation_enablement",
+      "predicted_dominant_frame": "innovation_enablement",
+      "binding_strength_match": true,
+      "gold_binding_strength": "regulatory_guidance",
+      "predicted_binding_strength": "regulatory_guidance",
+      "missing_requirements": [],
+      "extra_requirements": [],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "en",
+      "stratum": "regulatory_guidance"
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_edpb_ai_models_opinion_28_2024",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "fundamental_rights",
+      "predicted_dominant_frame": "fundamental_rights",
+      "binding_strength_match": true,
+      "gold_binding_strength": "regulatory_guidance",
+      "predicted_binding_strength": "regulatory_guidance",
+      "missing_requirements": [
+        "access_controls"
+      ],
+      "extra_requirements": [
+        "content_provenance",
+        "third_party_audit"
+      ],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "en",
+      "stratum": "regulatory_guidance"
     },
     {
       "jurisdiction": "european_union",
@@ -259,7 +520,45 @@
         "training_data_governance"
       ],
       "missing_enforcement": [],
-      "extra_enforcement": []
+      "extra_enforcement": [],
+      "language": "en",
+      "stratum": "voluntary_commitment"
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_ai_basic_act",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "innovation_enablement",
+      "predicted_dominant_frame": "innovation_enablement",
+      "binding_strength_match": true,
+      "gold_binding_strength": "binding_law",
+      "predicted_binding_strength": "binding_law",
+      "missing_requirements": [
+        "pre_deployment_testing"
+      ],
+      "extra_requirements": [],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "ko",
+      "stratum": "binding_law"
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_ai_basic_act_enforcement_decree",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "innovation_enablement",
+      "predicted_dominant_frame": "innovation_enablement",
+      "binding_strength_match": true,
+      "gold_binding_strength": "binding_law",
+      "predicted_binding_strength": "binding_law",
+      "missing_requirements": [],
+      "extra_requirements": [
+        "third_party_audit"
+      ],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "ko",
+      "stratum": "binding_law"
     },
     {
       "jurisdiction": "south_korea",
@@ -277,7 +576,128 @@
       "missing_enforcement": [
         "regulatory_supervision"
       ],
-      "extra_enforcement": []
+      "extra_enforcement": [],
+      "language": "ko",
+      "stratum": "regulatory_guidance"
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_ai_safety_guideline_2026_draft",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "consumer_public_safety",
+      "predicted_dominant_frame": "consumer_public_safety",
+      "binding_strength_match": true,
+      "gold_binding_strength": "regulatory_guidance",
+      "predicted_binding_strength": "regulatory_guidance",
+      "missing_requirements": [],
+      "extra_requirements": [
+        "domestic_representative",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "ko",
+      "stratum": "regulatory_guidance"
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_genai_personal_data_guide_2025",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "fundamental_rights",
+      "predicted_dominant_frame": "fundamental_rights",
+      "binding_strength_match": true,
+      "gold_binding_strength": "regulatory_guidance",
+      "predicted_binding_strength": "regulatory_guidance",
+      "missing_requirements": [],
+      "extra_requirements": [
+        "agentic_autonomy_controls"
+      ],
+      "missing_enforcement": [
+        "civil_penalty"
+      ],
+      "extra_enforcement": [],
+      "language": "ko",
+      "stratum": "regulatory_guidance"
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_ai_promotion_act_statute_2025",
+      "dominant_frame_match": false,
+      "gold_dominant_frame": "economic_competitiveness",
+      "predicted_dominant_frame": "innovation_enablement",
+      "binding_strength_match": true,
+      "gold_binding_strength": "binding_law",
+      "predicted_binding_strength": "binding_law",
+      "missing_requirements": [],
+      "extra_requirements": [],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "ja",
+      "stratum": "binding_law"
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_second_basic_ai_plan_2026",
+      "dominant_frame_match": false,
+      "gold_dominant_frame": "economic_competitiveness",
+      "predicted_dominant_frame": "innovation_enablement",
+      "binding_strength_match": true,
+      "gold_binding_strength": "strategy_statement",
+      "predicted_binding_strength": "strategy_statement",
+      "missing_requirements": [],
+      "extra_requirements": [
+        "access_controls",
+        "agentic_autonomy_controls",
+        "content_provenance",
+        "human_oversight",
+        "incident_reporting",
+        "training_data_governance"
+      ],
+      "missing_enforcement": [],
+      "extra_enforcement": [
+        "civil_penalty"
+      ],
+      "language": "ja",
+      "stratum": "strategy_statement"
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_ai_guidelines_for_business_ver_1_2_2026",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "innovation_enablement",
+      "predicted_dominant_frame": "innovation_enablement",
+      "binding_strength_match": false,
+      "gold_binding_strength": "standards_guideline",
+      "predicted_binding_strength": "regulatory_guidance",
+      "missing_requirements": [],
+      "extra_requirements": [
+        "open_weight_obligations"
+      ],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "ja",
+      "stratum": "standards_guideline"
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_aisi_red_teaming_guide_2025",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "consumer_public_safety",
+      "predicted_dominant_frame": "consumer_public_safety",
+      "binding_strength_match": true,
+      "gold_binding_strength": "standards_guideline",
+      "predicted_binding_strength": "standards_guideline",
+      "missing_requirements": [
+        "third_party_audit"
+      ],
+      "extra_requirements": [
+        "training_data_governance"
+      ],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "ja",
+      "stratum": "standards_guideline"
     },
     {
       "jurisdiction": "japan",
@@ -294,7 +714,9 @@
       ],
       "extra_requirements": [],
       "missing_enforcement": [],
-      "extra_enforcement": []
+      "extra_enforcement": [],
+      "language": "ja",
+      "stratum": "standards_guideline"
     },
     {
       "jurisdiction": "china",
@@ -311,7 +733,86 @@
       ],
       "extra_requirements": [],
       "missing_enforcement": [],
-      "extra_enforcement": []
+      "extra_enforcement": [],
+      "language": "zh",
+      "stratum": "binding_law"
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_deep_synthesis_provisions_2022",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "social_stability",
+      "predicted_dominant_frame": "social_stability",
+      "binding_strength_match": true,
+      "gold_binding_strength": "binding_law",
+      "predicted_binding_strength": "binding_law",
+      "missing_requirements": [
+        "human_oversight",
+        "third_party_audit"
+      ],
+      "extra_requirements": [],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "zh",
+      "stratum": "binding_law"
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_ai_content_labeling_measures_2025",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "social_stability",
+      "predicted_dominant_frame": "social_stability",
+      "binding_strength_match": true,
+      "gold_binding_strength": "binding_law",
+      "predicted_binding_strength": "binding_law",
+      "missing_requirements": [
+        "transparency_disclosure"
+      ],
+      "extra_requirements": [],
+      "missing_enforcement": [
+        "regulatory_supervision"
+      ],
+      "extra_enforcement": [],
+      "language": "zh",
+      "stratum": "binding_law"
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_anthropomorphic_interaction_measures_2026",
+      "dominant_frame_match": true,
+      "gold_dominant_frame": "consumer_public_safety",
+      "predicted_dominant_frame": "consumer_public_safety",
+      "binding_strength_match": true,
+      "gold_binding_strength": "binding_law",
+      "predicted_binding_strength": "binding_law",
+      "missing_requirements": [],
+      "extra_requirements": [
+        "content_provenance"
+      ],
+      "missing_enforcement": [],
+      "extra_enforcement": [
+        "reporting_obligation"
+      ],
+      "language": "zh",
+      "stratum": "binding_law"
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_tc260_ai_safety_governance_framework_3_0_2026",
+      "dominant_frame_match": false,
+      "gold_dominant_frame": "consumer_public_safety",
+      "predicted_dominant_frame": "innovation_enablement",
+      "binding_strength_match": true,
+      "gold_binding_strength": "standards_guideline",
+      "predicted_binding_strength": "standards_guideline",
+      "missing_requirements": [
+        "third_party_audit"
+      ],
+      "extra_requirements": [],
+      "missing_enforcement": [],
+      "extra_enforcement": [],
+      "language": "zh",
+      "stratum": "standards_guideline"
     }
   ]
 }

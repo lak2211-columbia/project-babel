@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T06:30:42.974256+00:00",
+  "generated_at": "2026-11-21T21:16:38.275276+00:00",
   "inventory_json_path": "data/source_tracking/source_inventory.json",
   "inventory_markdown_path": "docs/operations/source-inventory.md",
   "jurisdictions": [
@@ -7,10 +7,10 @@
       "jurisdiction": "china",
       "description": "Official State Council, CAC, and sectoral sources for China's AI governance regime and implementation measures.",
       "portal_count": 8,
-      "seed_document_count": 20,
-      "fetched_seed_document_count": 20,
-      "parsed_seed_document_count": 20,
-      "analyzed_seed_document_count": 20,
+      "seed_document_count": 21,
+      "fetched_seed_document_count": 21,
+      "parsed_seed_document_count": 21,
+      "analyzed_seed_document_count": 21,
       "source_portals": [
         {
           "id": "cn_state_council_policy",
@@ -831,6 +831,42 @@
           "raw_path": "data/raw/china/cn_state_council_ai_plus_opinion_2025",
           "parsed_path": "data/parsed/china/cn_state_council_ai_plus_opinion_2025/normalized.json",
           "analysis_path": "data/analysis/china/cn_state_council_ai_plus_opinion_2025/document_analysis.json"
+        },
+        {
+          "id": "cn_miit_ai_industry_standardization_guidelines_2024",
+          "title": "国家人工智能产业综合标准化体系建设指南（2024版）(工信部联科〔2024〕113号 / MIIT Guidelines for Construction of National AI Industry Comprehensive Standardization System)",
+          "issuing_body": "Ministry of Industry and Information Technology (MIIT), CAC, NDRC, and SAC",
+          "document_type": "standards_guideline",
+          "binding_strength": "standards_guideline",
+          "source_tier": "technical_standard",
+          "policy_domains": [
+            "standards_assurance",
+            "industrial_innovation",
+            "frontier_gpai",
+            "sovereign_compute"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "zh"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202407/content_6960720.htm",
+          "retrieval_urls": [
+            "https://www.gov.cn/zhengce/zhengceku/202407/P020240702716282797987.pdf"
+          ],
+          "source_portal_ids": [
+            "cn_miit_ai",
+            "cn_state_council_policy"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/china/cn_miit_ai_industry_standardization_guidelines_2024",
+          "parsed_path": "data/parsed/china/cn_miit_ai_industry_standardization_guidelines_2024/normalized.json",
+          "analysis_path": "data/analysis/china/cn_miit_ai_industry_standardization_guidelines_2024/document_analysis.json"
         }
       ],
       "portal_kind_counts": {
@@ -847,14 +883,14 @@
       "document_type_counts": {
         "legislation": 5,
         "regulatory_guidance": 7,
-        "standards_guideline": 4,
+        "standards_guideline": 5,
         "strategy_paper": 4
       },
       "binding_strength_counts": {
         "binding_law": 5,
         "executive_action": 1,
         "regulatory_guidance": 7,
-        "standards_guideline": 4,
+        "standards_guideline": 5,
         "strategy_statement": 3
       },
       "source_tier_counts": {
@@ -862,10 +898,10 @@
         "policy_strategy": 4,
         "regulatory_guidance": 3,
         "statutory_rule": 5,
-        "technical_standard": 4
+        "technical_standard": 5
       },
       "lifecycle_stage_counts": {
-        "active": 18,
+        "active": 19,
         "superseded": 2
       },
       "policy_domain_counts": {
@@ -875,24 +911,24 @@
         "consumer_protection": 10,
         "critical_infrastructure": 1,
         "embodied_physical_ai": 1,
-        "frontier_gpai": 5,
+        "frontier_gpai": 6,
         "healthcare_medical_devices": 1,
-        "industrial_innovation": 6,
+        "industrial_innovation": 7,
         "national_security": 2,
         "platform_content_governance": 11,
         "public_sector_governance": 1,
-        "sovereign_compute": 1,
-        "standards_assurance": 4
+        "sovereign_compute": 2,
+        "standards_assurance": 5
       }
     },
     {
       "jurisdiction": "european_union",
       "description": "Official EU legal text, implementation guidance, and data-protection sources for the AI Act and related governance instruments.",
       "portal_count": 6,
-      "seed_document_count": 21,
-      "fetched_seed_document_count": 21,
-      "parsed_seed_document_count": 21,
-      "analyzed_seed_document_count": 21,
+      "seed_document_count": 24,
+      "fetched_seed_document_count": 24,
+      "parsed_seed_document_count": 24,
+      "analyzed_seed_document_count": 24,
       "source_portals": [
         {
           "id": "eu_eur_lex",
@@ -1730,6 +1766,113 @@
           "raw_path": "data/raw/european_union/eu_code_practice_transparency_ai_content_2026",
           "parsed_path": "data/parsed/european_union/eu_code_practice_transparency_ai_content_2026/normalized.json",
           "analysis_path": "data/analysis/european_union/eu_code_practice_transparency_ai_content_2026/document_analysis.json"
+        },
+        {
+          "id": "eu_white_paper_ai_2020",
+          "title": "White Paper on Artificial Intelligence — A European approach to excellence and trust (COM(2020) 65 final)",
+          "issuing_body": "European Commission",
+          "document_type": "strategy_paper",
+          "binding_strength": "strategy_statement",
+          "source_tier": "policy_strategy",
+          "policy_domains": [
+            "frontier_gpai",
+            "industrial_innovation",
+            "standards_assurance",
+            "civil_rights_nondiscrimination"
+          ],
+          "lifecycle_stage": "superseded",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0065",
+          "retrieval_urls": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52020DC0065"
+          ],
+          "source_portal_ids": [
+            "eu_eur_lex",
+            "eu_digital_strategy_ai"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/european_union/eu_white_paper_ai_2020",
+          "parsed_path": "data/parsed/european_union/eu_white_paper_ai_2020/normalized.json",
+          "analysis_path": "data/analysis/european_union/eu_white_paper_ai_2020/document_analysis.json"
+        },
+        {
+          "id": "eu_coordinated_plan_ai_review_2021",
+          "title": "Fostering a European approach to Artificial Intelligence — 2021 Review of the Coordinated Plan on AI (COM(2021) 205 final)",
+          "issuing_body": "European Commission",
+          "document_type": "strategy_paper",
+          "binding_strength": "strategy_statement",
+          "source_tier": "policy_strategy",
+          "policy_domains": [
+            "industrial_innovation",
+            "sovereign_compute",
+            "public_sector_governance",
+            "standards_assurance"
+          ],
+          "lifecycle_stage": "superseded",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0205",
+          "retrieval_urls": [
+            "https://ec.europa.eu/newsroom/dae/redirection/document/75787"
+          ],
+          "source_portal_ids": [
+            "eu_eur_lex",
+            "eu_digital_strategy_ai"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/european_union/eu_coordinated_plan_ai_review_2021",
+          "parsed_path": "data/parsed/european_union/eu_coordinated_plan_ai_review_2021/normalized.json",
+          "analysis_path": "data/analysis/european_union/eu_coordinated_plan_ai_review_2021/document_analysis.json"
+        },
+        {
+          "id": "eu_ai_scientific_panel_implementing_reg_2025_454",
+          "title": "Commission Implementing Regulation (EU) 2025/454 laying down rules for the establishment of a Scientific Panel of Independent Experts in the field of AI",
+          "issuing_body": "European Commission",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "policy_domains": [
+            "frontier_gpai",
+            "standards_assurance",
+            "public_sector_governance"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "html",
+          "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0454",
+          "retrieval_urls": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R0454"
+          ],
+          "source_portal_ids": [
+            "eu_eur_lex",
+            "eu_ai_office_policies"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/european_union/eu_ai_scientific_panel_implementing_reg_2025_454",
+          "parsed_path": "data/parsed/european_union/eu_ai_scientific_panel_implementing_reg_2025_454/normalized.json",
+          "analysis_path": "data/analysis/european_union/eu_ai_scientific_panel_implementing_reg_2025_454/document_analysis.json"
         }
       ],
       "portal_kind_counts": {
@@ -1743,44 +1886,49 @@
         "regulator": 2
       },
       "document_type_counts": {
-        "legislation": 2,
+        "legislation": 3,
         "regulatory_guidance": 14,
+        "strategy_paper": 2,
         "voluntary_commitment": 5
       },
       "binding_strength_counts": {
-        "binding_law": 2,
+        "binding_law": 3,
         "regulatory_guidance": 14,
+        "strategy_statement": 2,
         "voluntary_commitment": 5
       },
       "source_tier_counts": {
         "implementation_resource": 8,
+        "policy_strategy": 2,
         "regulatory_guidance": 6,
-        "statutory_rule": 2,
+        "statutory_rule": 3,
         "voluntary_framework": 5
       },
       "lifecycle_stage_counts": {
-        "active": 21
+        "active": 22,
+        "superseded": 2
       },
       "policy_domain_counts": {
-        "civil_rights_nondiscrimination": 2,
+        "civil_rights_nondiscrimination": 3,
         "consumer_protection": 5,
         "copyright_ip": 4,
-        "frontier_gpai": 21,
-        "industrial_innovation": 4,
+        "frontier_gpai": 23,
+        "industrial_innovation": 6,
         "platform_content_governance": 2,
         "privacy_data_protection": 4,
-        "public_sector_governance": 1,
-        "standards_assurance": 11
+        "public_sector_governance": 3,
+        "sovereign_compute": 1,
+        "standards_assurance": 14
       }
     },
     {
       "jurisdiction": "japan",
       "description": "Official Cabinet Secretariat, Cabinet Office, Digital Agency, METI, MIC, MEXT, PPC, MHLW, MAFF, CFA, and Cultural Affairs materials for Japan's AI governance approach.",
-      "portal_count": 17,
-      "seed_document_count": 34,
-      "fetched_seed_document_count": 34,
-      "parsed_seed_document_count": 34,
-      "analyzed_seed_document_count": 34,
+      "portal_count": 18,
+      "seed_document_count": 37,
+      "fetched_seed_document_count": 37,
+      "parsed_seed_document_count": 37,
+      "analyzed_seed_document_count": 37,
       "source_portals": [
         {
           "id": "jp_cas_human_centric_ai",
@@ -2161,6 +2309,28 @@
             "statute",
             "legal_registry",
             "ai_act"
+          ],
+          "discovery_target_count": 0,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "jp_fsa",
+          "name": "Financial Services Agency (FSA) — AI in Financial Services",
+          "issuing_body": "Financial Services Agency (金融庁)",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "retrieval_strategy": "pdf",
+          "canonical_url": "https://www.fsa.go.jp/",
+          "priority": "high",
+          "languages": [
+            "ja"
+          ],
+          "coverage_notes": "FSA discussion papers and supervisory guidance on responsible AI and generative AI governance in Japanese financial institutions.",
+          "tags": [
+            "finance",
+            "fsa",
+            "supervision"
           ],
           "discovery_target_count": 0,
           "discovery_candidate_count": 0,
@@ -3288,71 +3458,180 @@
           "raw_path": "data/raw/japan/jp_hiroshima_ai_process_code_of_conduct_2023",
           "parsed_path": "data/parsed/japan/jp_hiroshima_ai_process_code_of_conduct_2023/normalized.json",
           "analysis_path": "data/analysis/japan/jp_hiroshima_ai_process_code_of_conduct_2023/document_analysis.json"
+        },
+        {
+          "id": "jp_fsa_ai_discussion_paper_v1_1_2026",
+          "title": "AIディスカッションペーパー（第1.1版）— 金融分野におけるAIの健全な利活用の促進に向けた初期的な論点整理 (FSA AI Discussion Paper Ver. 1.1)",
+          "issuing_body": "Financial Services Agency (FSA / 金融庁)",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "policy_domains": [
+            "finance",
+            "frontier_gpai",
+            "agentic_ai",
+            "consumer_protection"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "ja"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://www.fsa.go.jp/news/r7/sonota/20260303/01.html",
+          "retrieval_urls": [
+            "https://www.fsa.go.jp/news/r7/sonota/20260303/aidp_version1.1.pdf"
+          ],
+          "source_portal_ids": [
+            "jp_fsa"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/japan/jp_fsa_ai_discussion_paper_v1_1_2026",
+          "parsed_path": "data/parsed/japan/jp_fsa_ai_discussion_paper_v1_1_2026/normalized.json",
+          "analysis_path": "data/analysis/japan/jp_fsa_ai_discussion_paper_v1_1_2026/document_analysis.json"
+        },
+        {
+          "id": "jp_meti_cloud_program_economic_security_policy",
+          "title": "クラウドプログラムに係る安定供給確保を図るための取組方針 (METI Stable Supply Support Policy for Cloud Programs under the Economic Security Promotion Act)",
+          "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
+          "document_type": "strategy_paper",
+          "binding_strength": "executive_action",
+          "source_tier": "executive_action",
+          "policy_domains": [
+            "sovereign_compute",
+            "national_security",
+            "critical_infrastructure",
+            "industrial_innovation"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "ja"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://www.meti.go.jp/policy/economy/economic_security/cloud/index.html",
+          "retrieval_urls": [
+            "https://www.meti.go.jp/policy/economy/economic_security/cloud/cloud.pdf"
+          ],
+          "source_portal_ids": [
+            "jp_meti_ai_governance_docs"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/japan/jp_meti_cloud_program_economic_security_policy",
+          "parsed_path": "data/parsed/japan/jp_meti_cloud_program_economic_security_policy/normalized.json",
+          "analysis_path": "data/analysis/japan/jp_meti_cloud_program_economic_security_policy/document_analysis.json"
+        },
+        {
+          "id": "jp_bunka_ai_copyright_checklist_guidance_2024",
+          "title": "AIと著作権に関するチェックリスト＆ガイダンス (Bunka AI and Copyright Checklist & Guidance)",
+          "issuing_body": "Agency for Cultural Affairs (Bunka / 文化庁)",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "policy_domains": [
+            "copyright_ip",
+            "frontier_gpai",
+            "platform_content_governance"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "ja"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html",
+          "retrieval_urls": [
+            "https://www.bunka.go.jp/seisaku/chosakuken/pdf/94097701_01.pdf"
+          ],
+          "source_portal_ids": [
+            "jp_bunka_copyright_ai"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/japan/jp_bunka_ai_copyright_checklist_guidance_2024",
+          "parsed_path": "data/parsed/japan/jp_bunka_ai_copyright_checklist_guidance_2024/normalized.json",
+          "analysis_path": "data/analysis/japan/jp_bunka_ai_copyright_checklist_guidance_2024/document_analysis.json"
         }
       ],
       "portal_kind_counts": {
         "library": 2,
-        "portal": 14,
+        "portal": 15,
         "registry": 1
       },
       "issuer_type_counts": {
         "executive": 14,
         "legal_registry": 1,
-        "regulator": 1,
+        "regulator": 2,
         "standards_body": 1
       },
       "document_type_counts": {
         "legislation": 1,
-        "regulatory_guidance": 12,
+        "regulatory_guidance": 14,
         "standards_guideline": 10,
-        "strategy_paper": 10,
+        "strategy_paper": 11,
         "voluntary_commitment": 1
       },
       "binding_strength_counts": {
         "binding_law": 1,
-        "regulatory_guidance": 12,
+        "executive_action": 1,
+        "regulatory_guidance": 14,
         "standards_guideline": 10,
         "strategy_statement": 10,
         "voluntary_commitment": 1
       },
       "source_tier_counts": {
+        "executive_action": 1,
         "implementation_resource": 9,
         "policy_strategy": 6,
-        "regulatory_guidance": 8,
+        "regulatory_guidance": 10,
         "statutory_rule": 1,
         "technical_standard": 9,
         "voluntary_framework": 1
       },
       "lifecycle_stage_counts": {
-        "active": 28,
+        "active": 31,
         "superseded": 6
       },
       "policy_domain_counts": {
-        "agentic_ai": 3,
+        "agentic_ai": 4,
         "civil_rights_nondiscrimination": 1,
-        "copyright_ip": 2,
+        "consumer_protection": 1,
+        "copyright_ip": 3,
+        "critical_infrastructure": 1,
         "education": 3,
         "embodied_physical_ai": 2,
-        "frontier_gpai": 22,
+        "finance": 1,
+        "frontier_gpai": 24,
         "healthcare_medical_devices": 3,
-        "industrial_innovation": 15,
-        "national_security": 2,
-        "platform_content_governance": 2,
+        "industrial_innovation": 16,
+        "national_security": 3,
+        "platform_content_governance": 3,
         "privacy_data_protection": 4,
         "public_sector_governance": 3,
         "public_sector_procurement": 5,
-        "sovereign_compute": 1,
+        "sovereign_compute": 2,
         "standards_assurance": 9
       }
     },
     {
       "jurisdiction": "south_korea",
       "description": "Official legal, public-sector, privacy, and medical-device sources for South Korea's AI framework and implementation.",
-      "portal_count": 9,
-      "seed_document_count": 17,
-      "fetched_seed_document_count": 17,
-      "parsed_seed_document_count": 17,
-      "analyzed_seed_document_count": 17,
+      "portal_count": 11,
+      "seed_document_count": 20,
+      "fetched_seed_document_count": 20,
+      "parsed_seed_document_count": 20,
+      "analyzed_seed_document_count": 20,
       "source_portals": [
         {
           "id": "kr_law_center",
@@ -3553,6 +3832,51 @@
             "evaluation"
           ],
           "discovery_target_count": 1,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "kr_naisc",
+          "name": "Presidential Council on National AI Strategy (NAISC / Korea.kr)",
+          "issuing_body": "Presidential Council on National AI Strategy (국가인공지능전략위원회)",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://www.aikorea.go.kr/",
+          "priority": "high",
+          "languages": [
+            "ko"
+          ],
+          "coverage_notes": "Presidential National AI Strategy Committee plenary decisions and the Korea National AI Action Plan (2026–2028).",
+          "tags": [
+            "strategy",
+            "action_plan",
+            "executive"
+          ],
+          "discovery_target_count": 0,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "kr_fsc",
+          "name": "Financial Services Commission (FSC) — Financial Sector AI Governance",
+          "issuing_body": "Financial Services Commission (금융위원회)",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://www.fsc.go.kr/no010101",
+          "priority": "high",
+          "languages": [
+            "ko"
+          ],
+          "coverage_notes": "Financial Services Commission and Financial Security Institute guidelines on financial-sector AI governance and frontier AI security.",
+          "tags": [
+            "finance",
+            "fsc",
+            "security",
+            "guideline"
+          ],
+          "discovery_target_count": 0,
           "discovery_candidate_count": 0,
           "discovery_output_path": null
         }
@@ -4125,57 +4449,170 @@
           "raw_path": "data/raw/south_korea/kr_high_impact_ai_determination_guideline_2026",
           "parsed_path": "data/parsed/south_korea/kr_high_impact_ai_determination_guideline_2026/normalized.json",
           "analysis_path": "data/analysis/south_korea/kr_high_impact_ai_determination_guideline_2026/document_analysis.json"
+        },
+        {
+          "id": "kr_national_ai_action_plan_2026_2028",
+          "title": "대한민국 인공지능 행동계획 확정 (Korea National AI Action Plan 2026–2028 — NAISC 2nd Plenary Decision)",
+          "issuing_body": "Presidential Council on National AI Strategy (국가인공지능전략위원회)",
+          "document_type": "strategy_paper",
+          "binding_strength": "strategy_statement",
+          "source_tier": "policy_strategy",
+          "policy_domains": [
+            "industrial_innovation",
+            "sovereign_compute",
+            "public_sector_governance",
+            "frontier_gpai",
+            "embodied_physical_ai"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "ko"
+          ],
+          "document_format": "mixed",
+          "canonical_url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156745851",
+          "retrieval_urls": [
+            "https://www.korea.kr/common/download.do?fileId=198370373&tblKey=GMN"
+          ],
+          "source_portal_ids": [
+            "kr_naisc",
+            "kr_msit_main"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/south_korea/kr_national_ai_action_plan_2026_2028",
+          "parsed_path": "data/parsed/south_korea/kr_national_ai_action_plan_2026_2028/normalized.json",
+          "analysis_path": "data/analysis/south_korea/kr_national_ai_action_plan_2026_2028/document_analysis.json"
+        },
+        {
+          "id": "kr_fsc_frontier_ai_security_guideline_2026",
+          "title": "프런티어 AI 보안 위협 금융분야 대응 요령 (버전 1.0) / Frontier AI Security Threat Response Guidelines for the Financial Sector (Ver. 1.0)",
+          "issuing_body": "Financial Services Commission (FSC) / Financial Security Institute (FSI)",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "policy_domains": [
+            "finance",
+            "frontier_gpai",
+            "critical_infrastructure",
+            "standards_assurance"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "ko"
+          ],
+          "document_format": "mixed",
+          "canonical_url": "https://www.fsc.go.kr/no010101/87240",
+          "retrieval_urls": [
+            "https://www.fsc.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=87240&fileTy=ATTACH&fileNo=3"
+          ],
+          "source_portal_ids": [
+            "kr_fsc"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/south_korea/kr_fsc_frontier_ai_security_guideline_2026",
+          "parsed_path": "data/parsed/south_korea/kr_fsc_frontier_ai_security_guideline_2026/normalized.json",
+          "analysis_path": "data/analysis/south_korea/kr_fsc_frontier_ai_security_guideline_2026/document_analysis.json"
+        },
+        {
+          "id": "kr_fsc_financial_ai_guideline_2021",
+          "title": "금융분야 AI 가이드라인 및 주요 검토 필요사항 (Financial Sector AI Guidelines, 2021)",
+          "issuing_body": "Financial Services Commission (FSC)",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "policy_domains": [
+            "finance",
+            "consumer_protection",
+            "standards_assurance"
+          ],
+          "lifecycle_stage": "superseded",
+          "priority": "medium",
+          "languages": [
+            "ko"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://www.fsc.go.kr/no010101/76206",
+          "retrieval_urls": [
+            "https://www.fsc.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=76206&fileTy=ATTACH&fileNo=18"
+          ],
+          "source_portal_ids": [
+            "kr_fsc"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/south_korea/kr_fsc_financial_ai_guideline_2021",
+          "parsed_path": "data/parsed/south_korea/kr_fsc_financial_ai_guideline_2021/normalized.json",
+          "analysis_path": "data/analysis/south_korea/kr_fsc_financial_ai_guideline_2021/document_analysis.json"
         }
       ],
       "portal_kind_counts": {
         "helpdesk": 2,
         "library": 3,
-        "portal": 3,
+        "portal": 5,
         "registry": 1
       },
       "issuer_type_counts": {
-        "executive": 5,
+        "executive": 6,
         "legal_registry": 1,
-        "regulator": 2,
+        "regulator": 3,
         "standards_body": 1
       },
       "document_type_counts": {
         "legislation": 3,
-        "regulatory_guidance": 14
+        "regulatory_guidance": 16,
+        "strategy_paper": 1
       },
       "binding_strength_counts": {
         "binding_law": 3,
-        "regulatory_guidance": 14
+        "regulatory_guidance": 16,
+        "strategy_statement": 1
       },
       "source_tier_counts": {
         "implementation_resource": 2,
-        "regulatory_guidance": 12,
+        "policy_strategy": 1,
+        "regulatory_guidance": 14,
         "statutory_rule": 3
       },
       "lifecycle_stage_counts": {
-        "active": 14,
+        "active": 16,
         "draft": 1,
-        "superseded": 2
+        "superseded": 3
       },
       "policy_domain_counts": {
         "civil_rights_nondiscrimination": 1,
-        "consumer_protection": 1,
-        "critical_infrastructure": 2,
-        "frontier_gpai": 14,
+        "consumer_protection": 2,
+        "critical_infrastructure": 3,
+        "embodied_physical_ai": 1,
+        "finance": 2,
+        "frontier_gpai": 16,
         "healthcare_medical_devices": 1,
+        "industrial_innovation": 1,
         "privacy_data_protection": 7,
-        "public_sector_governance": 10,
-        "standards_assurance": 5
+        "public_sector_governance": 11,
+        "sovereign_compute": 1,
+        "standards_assurance": 7
       }
     },
     {
       "jurisdiction": "united_states",
       "description": "Official executive, standards, civil-rights, consumer-protection, and health-regulation sources for U.S. AI governance.",
-      "portal_count": 12,
-      "seed_document_count": 29,
-      "fetched_seed_document_count": 29,
-      "parsed_seed_document_count": 29,
-      "analyzed_seed_document_count": 29,
+      "portal_count": 18,
+      "seed_document_count": 42,
+      "fetched_seed_document_count": 42,
+      "parsed_seed_document_count": 42,
+      "analyzed_seed_document_count": 42,
       "source_portals": [
         {
           "id": "us_white_house_actions",
@@ -4438,6 +4875,140 @@
             "legislation",
             "public_law",
             "congress"
+          ],
+          "discovery_target_count": 0,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "us_hhs_onc",
+          "name": "HHS Assistant Secretary for Technology Policy / ONC Health IT",
+          "issuing_body": "U.S. Department of Health and Human Services (HHS / ONC)",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "retrieval_strategy": "html",
+          "canonical_url": "https://www.healthit.gov/topic/laws-regulation-and-policy/health-data-technology-and-interoperability-certification-program",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "coverage_notes": "Federal health IT certification rules governing clinical AI and predictive decision support interventions (HTI-1).",
+          "tags": [
+            "healthcare",
+            "onc",
+            "hti1",
+            "algorithm_transparency"
+          ],
+          "discovery_target_count": 0,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "us_treasury",
+          "name": "U.S. Department of the Treasury — AI & Cybersecurity in Finance",
+          "issuing_body": "U.S. Department of the Treasury",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "retrieval_strategy": "pdf",
+          "canonical_url": "https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscal-service",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "coverage_notes": "Treasury reports and risk-management guidance on AI cybersecurity, fraud, and financial-sector governance.",
+          "tags": [
+            "finance",
+            "treasury",
+            "cybersecurity"
+          ],
+          "discovery_target_count": 0,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "us_bis_export",
+          "name": "Bureau of Industry and Security (BIS) — Advanced Computing Export Controls",
+          "issuing_body": "U.S. Department of Commerce, Bureau of Industry and Security",
+          "issuer_type": "regulator",
+          "portal_kind": "registry",
+          "retrieval_strategy": "html",
+          "canonical_url": "https://www.bis.gov/",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "coverage_notes": "Export Administration Regulations (EAR) rules governing advanced AI semiconductors, remote compute access, and model controls.",
+          "tags": [
+            "bis",
+            "export_controls",
+            "compute_governance",
+            "national_security"
+          ],
+          "discovery_target_count": 0,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "us_copyright_office",
+          "name": "U.S. Copyright Office — Copyright and Artificial Intelligence",
+          "issuing_body": "U.S. Copyright Office",
+          "issuer_type": "regulator",
+          "portal_kind": "library",
+          "retrieval_strategy": "pdf",
+          "canonical_url": "https://www.copyright.gov/ai/",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "coverage_notes": "Official U.S. Copyright Office policy reports on AI copyrightability, generative AI training, and fair use.",
+          "tags": [
+            "copyright",
+            "training_data",
+            "intellectual_property"
+          ],
+          "discovery_target_count": 0,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "us_dod",
+          "name": "U.S. Department of Defense — Directives & AI Autonomy Policy",
+          "issuing_body": "U.S. Department of Defense",
+          "issuer_type": "executive",
+          "portal_kind": "library",
+          "retrieval_strategy": "pdf",
+          "canonical_url": "https://www.esd.whs.mil/DD/",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "coverage_notes": "DoD issuances governing autonomy in weapon systems, human judgment controls, and defense AI governance.",
+          "tags": [
+            "defense",
+            "national_security",
+            "autonomy"
+          ],
+          "discovery_target_count": 0,
+          "discovery_candidate_count": 0,
+          "discovery_output_path": null
+        },
+        {
+          "id": "us_state_legislatures",
+          "name": "U.S. State Legislative Registries (Opt-In Subnational AI Overlay)",
+          "issuing_body": "U.S. State Legislatures (CA, CO, TX, NY)",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "retrieval_strategy": "mixed",
+          "canonical_url": "https://leginfo.legislature.ca.gov/",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "coverage_notes": "Authoritative state legislative portals tracked strictly under corpus_role='subnational_overlay' (excluded from federal sovereign baselines by default).",
+          "tags": [
+            "subnational_overlay",
+            "state_law",
+            "legislation"
           ],
           "discovery_target_count": 0,
           "discovery_candidate_count": 0,
@@ -5407,64 +5978,513 @@
           "raw_path": "data/raw/united_states/us_nist_ir_8596_cyber_ai_profile_2025",
           "parsed_path": "data/parsed/united_states/us_nist_ir_8596_cyber_ai_profile_2025/normalized.json",
           "analysis_path": "data/analysis/united_states/us_nist_ir_8596_cyber_ai_profile_2025/document_analysis.json"
+        },
+        {
+          "id": "us_hhs_onc_hti1_final_rule_2024",
+          "title": "HHS / ONC HTI-1 Final Rule: Health Data, Technology, and Interoperability — Certification Program Updates, Algorithm Transparency, and Information Sharing (89 FR 1192)",
+          "issuing_body": "U.S. Department of Health and Human Services (HHS / ONC)",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "policy_domains": [
+            "healthcare_medical_devices",
+            "standards_assurance",
+            "civil_rights_nondiscrimination"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "html",
+          "canonical_url": "https://www.federalregister.gov/documents/2024/01/09/2023-28857/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and",
+          "retrieval_urls": [
+            "https://www.federalregister.gov/documents/full_text/html/2024/01/09/2023-28857.html"
+          ],
+          "source_portal_ids": [
+            "us_hhs_onc",
+            "us_federal_register_ai"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_hhs_onc_hti1_final_rule_2024",
+          "parsed_path": "data/parsed/united_states/us_hhs_onc_hti1_final_rule_2024/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_hhs_onc_hti1_final_rule_2024/document_analysis.json"
+        },
+        {
+          "id": "us_treasury_ai_cybersecurity_financial_2024",
+          "title": "Managing Artificial Intelligence-Specific Cybersecurity Risks in the Financial Services Sector",
+          "issuing_body": "U.S. Department of the Treasury",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "policy_domains": [
+            "finance",
+            "critical_infrastructure",
+            "standards_assurance"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://home.treasury.gov/system/files/136/Managing-Artificial-Intelligence-Specific-Cybersecurity-Risks-In-The-Financial-Services-Sector.pdf",
+          "retrieval_urls": [
+            "https://home.treasury.gov/system/files/136/Managing-Artificial-Intelligence-Specific-Cybersecurity-Risks-In-The-Financial-Services-Sector.pdf"
+          ],
+          "source_portal_ids": [
+            "us_treasury"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_treasury_ai_cybersecurity_financial_2024",
+          "parsed_path": "data/parsed/united_states/us_treasury_ai_cybersecurity_financial_2024/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_treasury_ai_cybersecurity_financial_2024/document_analysis.json"
+        },
+        {
+          "id": "us_bis_remote_access_semiconductors_2026",
+          "title": "BIS Rule: Addressing Remote Access to Advanced Semiconductors (91 FR 74970)",
+          "issuing_body": "U.S. Department of Commerce, Bureau of Industry and Security (BIS)",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "policy_domains": [
+            "sovereign_compute",
+            "national_security",
+            "frontier_gpai"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "html",
+          "canonical_url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors",
+          "retrieval_urls": [
+            "https://www.federalregister.gov/documents/full_text/html/2026/11/19/2026-23529.html"
+          ],
+          "source_portal_ids": [
+            "us_bis_export",
+            "us_federal_register_ai"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_bis_remote_access_semiconductors_2026",
+          "parsed_path": "data/parsed/united_states/us_bis_remote_access_semiconductors_2026/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_bis_remote_access_semiconductors_2026/document_analysis.json"
+        },
+        {
+          "id": "us_bis_advanced_computing_license_policy_2026",
+          "title": "BIS Final Rule: Revision to License Review Policy for Advanced Computing Commodities (91 FR 1684)",
+          "issuing_body": "U.S. Department of Commerce, Bureau of Industry and Security (BIS)",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "policy_domains": [
+            "sovereign_compute",
+            "national_security",
+            "frontier_gpai"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "html",
+          "canonical_url": "https://www.federalregister.gov/documents/2026/01/15/2026-00789/revision-to-license-review-policy-for-advanced-computing-commodities",
+          "retrieval_urls": [
+            "https://www.federalregister.gov/documents/full_text/html/2026/01/15/2026-00789.html"
+          ],
+          "source_portal_ids": [
+            "us_bis_export",
+            "us_federal_register_ai"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_bis_advanced_computing_license_policy_2026",
+          "parsed_path": "data/parsed/united_states/us_bis_advanced_computing_license_policy_2026/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_bis_advanced_computing_license_policy_2026/document_analysis.json"
+        },
+        {
+          "id": "us_copyright_office_ai_part3_training_2025",
+          "title": "Copyright and Artificial Intelligence, Part 3: Generative AI Training",
+          "issuing_body": "U.S. Copyright Office",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "policy_domains": [
+            "copyright_ip",
+            "frontier_gpai",
+            "platform_content_governance"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://www.copyright.gov/ai/",
+          "retrieval_urls": [
+            "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-3-Generative-AI-Training-Report-Pre-Publication-Version.pdf"
+          ],
+          "source_portal_ids": [
+            "us_copyright_office"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_copyright_office_ai_part3_training_2025",
+          "parsed_path": "data/parsed/united_states/us_copyright_office_ai_part3_training_2025/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_copyright_office_ai_part3_training_2025/document_analysis.json"
+        },
+        {
+          "id": "us_copyright_office_ai_part2_copyrightability_2025",
+          "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability",
+          "issuing_body": "U.S. Copyright Office",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "policy_domains": [
+            "copyright_ip",
+            "frontier_gpai"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://www.copyright.gov/ai/",
+          "retrieval_urls": [
+            "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf"
+          ],
+          "source_portal_ids": [
+            "us_copyright_office"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_copyright_office_ai_part2_copyrightability_2025",
+          "parsed_path": "data/parsed/united_states/us_copyright_office_ai_part2_copyrightability_2025/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_copyright_office_ai_part2_copyrightability_2025/document_analysis.json"
+        },
+        {
+          "id": "us_dod_directive_3000_09_autonomy_2023",
+          "title": "DoD Directive 3000.09: Autonomy in Weapon Systems",
+          "issuing_body": "U.S. Department of Defense",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "executive_action",
+          "source_tier": "executive_action",
+          "policy_domains": [
+            "national_security",
+            "agentic_ai",
+            "embodied_physical_ai",
+            "standards_assurance"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/300009p.PDF",
+          "retrieval_urls": [
+            "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/300009p.PDF"
+          ],
+          "source_portal_ids": [
+            "us_dod"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_dod_directive_3000_09_autonomy_2023",
+          "parsed_path": "data/parsed/united_states/us_dod_directive_3000_09_autonomy_2023/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_dod_directive_3000_09_autonomy_2023/document_analysis.json"
+        },
+        {
+          "id": "us_ca_sb_53_tfaia_2025",
+          "title": "California SB 53: Transparency in Frontier Artificial Intelligence Act (TFAIA)",
+          "issuing_body": "California State Legislature",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "policy_domains": [
+            "frontier_gpai",
+            "sovereign_compute",
+            "standards_assurance"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+          "retrieval_urls": [
+            "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml"
+          ],
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_ca_sb_53_tfaia_2025",
+          "parsed_path": "data/parsed/united_states/us_ca_sb_53_tfaia_2025/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_ca_sb_53_tfaia_2025/document_analysis.json"
+        },
+        {
+          "id": "us_ca_ab_2013_training_data_2024",
+          "title": "California AB 2013: Generative Artificial Intelligence — Training Data Transparency Act",
+          "issuing_body": "California State Legislature",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "policy_domains": [
+            "frontier_gpai",
+            "copyright_ip",
+            "privacy_data_protection"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2013",
+          "retrieval_urls": [
+            "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2013"
+          ],
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_ca_ab_2013_training_data_2024",
+          "parsed_path": "data/parsed/united_states/us_ca_ab_2013_training_data_2024/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_ca_ab_2013_training_data_2024/document_analysis.json"
+        },
+        {
+          "id": "us_co_sb_24_205_ai_act_2024",
+          "title": "Colorado SB 24-205: Consumer Protections for Artificial Intelligence",
+          "issuing_body": "Colorado General Assembly",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "policy_domains": [
+            "civil_rights_nondiscrimination",
+            "consumer_protection",
+            "standards_assurance"
+          ],
+          "lifecycle_stage": "superseded",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://leg.colorado.gov/bills/sb24-205",
+          "retrieval_urls": [
+            "https://leg.colorado.gov/sites/default/files/2024a_205_signed.pdf"
+          ],
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_co_sb_24_205_ai_act_2024",
+          "parsed_path": "data/parsed/united_states/us_co_sb_24_205_ai_act_2024/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_co_sb_24_205_ai_act_2024/document_analysis.json"
+        },
+        {
+          "id": "us_co_sb_26_189_admt_act_2026",
+          "title": "Colorado SB 26-189: Automated Decision-Making Technology (ADMT) Act (Ch. 131)",
+          "issuing_body": "Colorado General Assembly",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "policy_domains": [
+            "civil_rights_nondiscrimination",
+            "consumer_protection",
+            "standards_assurance"
+          ],
+          "lifecycle_stage": "adopted_not_yet_effective",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://leg.colorado.gov/bills/sb26-189",
+          "retrieval_urls": [
+            "https://leg.colorado.gov/laws/session-laws/SB26-189/131/download"
+          ],
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_co_sb_26_189_admt_act_2026",
+          "parsed_path": "data/parsed/united_states/us_co_sb_26_189_admt_act_2026/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_co_sb_26_189_admt_act_2026/document_analysis.json"
+        },
+        {
+          "id": "us_tx_hb_149_traiga_2025",
+          "title": "Texas HB 149: Texas Responsible Artificial Intelligence Governance Act (TRAIGA)",
+          "issuing_body": "Texas Legislature",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "policy_domains": [
+            "consumer_protection",
+            "civil_rights_nondiscrimination",
+            "public_sector_governance",
+            "industrial_innovation"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "html",
+          "canonical_url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149",
+          "retrieval_urls": [
+            "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149F.htm"
+          ],
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_tx_hb_149_traiga_2025",
+          "parsed_path": "data/parsed/united_states/us_tx_hb_149_traiga_2025/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_tx_hb_149_traiga_2025/document_analysis.json"
+        },
+        {
+          "id": "us_ny_raise_act_2025",
+          "title": "New York S6953A: Responsible AI Safety and Education (RAISE) Act",
+          "issuing_body": "New York State Legislature",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "policy_domains": [
+            "frontier_gpai",
+            "sovereign_compute",
+            "standards_assurance"
+          ],
+          "lifecycle_stage": "active",
+          "priority": "high",
+          "languages": [
+            "en"
+          ],
+          "document_format": "pdf",
+          "canonical_url": "https://www.nysenate.gov/legislation/bills/2025/S6953/amendment/A",
+          "retrieval_urls": [
+            "https://legislation.nysenate.gov/pdf/bills/2025/S6953A"
+          ],
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "fetched": true,
+          "parsed": true,
+          "analyzed": true,
+          "latest_retrieval_status": "downloaded_new",
+          "latest_retrieval_error": null,
+          "raw_path": "data/raw/united_states/us_ny_raise_act_2025",
+          "parsed_path": "data/parsed/united_states/us_ny_raise_act_2025/normalized.json",
+          "analysis_path": "data/analysis/united_states/us_ny_raise_act_2025/document_analysis.json"
         }
       ],
       "portal_kind_counts": {
-        "library": 6,
-        "portal": 4,
-        "registry": 2
+        "library": 8,
+        "portal": 6,
+        "registry": 4
       },
       "issuer_type_counts": {
-        "executive": 3,
-        "legal_registry": 2,
+        "executive": 4,
+        "legal_registry": 3,
         "multi_agency": 1,
-        "regulator": 3,
+        "regulator": 7,
         "standards_body": 3
       },
       "document_type_counts": {
         "executive_order": 4,
-        "legislation": 1,
-        "regulatory_guidance": 6,
+        "legislation": 10,
+        "regulatory_guidance": 10,
         "standards_guideline": 12,
         "strategy_paper": 6
       },
       "binding_strength_counts": {
-        "binding_law": 1,
-        "executive_action": 6,
-        "regulatory_guidance": 3,
+        "binding_law": 10,
+        "executive_action": 7,
+        "regulatory_guidance": 6,
         "standards_guideline": 12,
         "strategy_statement": 6,
         "voluntary_commitment": 1
       },
       "source_tier_counts": {
-        "executive_action": 6,
+        "executive_action": 7,
         "implementation_resource": 7,
         "policy_strategy": 4,
-        "regulatory_guidance": 3,
-        "statutory_rule": 1,
+        "regulatory_guidance": 6,
+        "statutory_rule": 10,
         "technical_standard": 8
       },
       "lifecycle_stage_counts": {
-        "active": 24,
+        "active": 35,
+        "adopted_not_yet_effective": 1,
         "draft": 1,
-        "superseded": 4
+        "superseded": 5
       },
       "policy_domain_counts": {
-        "agentic_ai": 2,
-        "civil_rights_nondiscrimination": 6,
-        "consumer_protection": 6,
-        "critical_infrastructure": 1,
-        "finance": 3,
-        "frontier_gpai": 22,
-        "healthcare_medical_devices": 1,
-        "industrial_innovation": 7,
-        "national_security": 4,
-        "platform_content_governance": 1,
-        "privacy_data_protection": 1,
-        "public_sector_governance": 5,
+        "agentic_ai": 3,
+        "civil_rights_nondiscrimination": 10,
+        "consumer_protection": 9,
+        "copyright_ip": 3,
+        "critical_infrastructure": 2,
+        "embodied_physical_ai": 1,
+        "finance": 4,
+        "frontier_gpai": 29,
+        "healthcare_medical_devices": 2,
+        "industrial_innovation": 8,
+        "national_security": 7,
+        "platform_content_governance": 2,
+        "privacy_data_protection": 2,
+        "public_sector_governance": 6,
         "public_sector_procurement": 1,
-        "sovereign_compute": 3,
-        "standards_assurance": 16
+        "sovereign_compute": 7,
+        "standards_assurance": 23
       }
     }
   ]

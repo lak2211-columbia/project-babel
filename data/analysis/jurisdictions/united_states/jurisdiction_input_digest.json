@@ -1,8 +1,8 @@
 {
   "jurisdiction": "united_states",
-  "source_count": 29,
+  "source_count": 36,
   "source_window_start": "2021-07-13",
-  "source_window_end": "2026-10-02",
+  "source_window_end": "2026-11-19",
   "documents": [
     {
       "document_id": "us_ai_action_plan_pdf",
@@ -214,6 +214,62 @@
       "confidence": 0.945
     },
     {
+      "document_id": "us_bis_advanced_computing_license_policy_2026",
+      "title": "BIS Final Rule: Revision to License Review Policy for Advanced Computing Commodities (91 FR 1684)",
+      "publication_date": "2026-01-15",
+      "issuing_body": "U.S. Department of Commerce, Bureau of Industry and Security (BIS)",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "national_security",
+      "secondary_frames": [
+        "economic_competitiveness",
+        "existential_catastrophic"
+      ],
+      "top_requirements": [
+        "compute_governance",
+        "registration_licensing",
+        "third_party_audit"
+      ],
+      "top_enforcement_mechanisms": [
+        "licensing_requirement",
+        "market_access_restriction",
+        "reporting_obligation"
+      ],
+      "implementation_notes": "Published and effective January 15, 2026 (91 FR 1684, Docket No. 260112-0028, RIN 0694-AK43), this BIS final rule amends 15 CFR §§ 742.6, 744.23, 748.8, and Supplement No. 2 to Part 748 (adding paragraph (dd)) to shift U.S. export license review for commercially available mid-tier advanced AI chips (TPP < 21,000 and total DRAM bandwidth < 6,500 GB/s, such as NVIDIA H200 and AMD MI325X) destined to China and Macau from a presumption of denial to case-by-case review. Eligibility requires nine binding certifications: U.S. supply sufficiency and zero global foundry-capacity diversion, a 50% cap relative to aggregate TPP shipped to U.S. commercial customers, prohibition of military/military-intelligence/WMD/part-744 end uses and remote access, consignee KYC and physical security disclosures, IaaS remote end-user reporting across eight countries of concern, IaaS restrictions barring unauthorized transfers of trained model weights or remote access to trained algorithms, and pre-export independent U.S. third-party testing lab verification.",
+      "framing_rationale_summary": "This BIS final rule is dominantly framed around national security, justifying its tightly conditioned case-by-case export licensing policy as necessary to protect U.S. national security and foreign policy interests, preserve U.S. technological superiority, prevent military and military-intelligence end uses or unauthorized remote access, and ensure destination countries do not exceed U.S. compute capabilities—explicitly noting exemption from E.O. 14192 because its primary direct benefit is improving national security. Economic competitiveness forms a clear secondary frame through provisions safeguarding U.S. leadership in AI, preventing delays to U.S. commercial customer chip orders, blocking diversion of global foundry capacity away from U.S. end users, and capping China and Macau exports at 50 percent of aggregate U.S. commercial shipments. A minor existential and catastrophic risk element appears in the mandatory certification screening out nuclear, missile, chemical, and biological weapons end uses and end users.",
+      "confidence": 0.985
+    },
+    {
+      "document_id": "us_bis_remote_access_semiconductors_2026",
+      "title": "BIS Rule: Addressing Remote Access to Advanced Semiconductors (91 FR 74970)",
+      "publication_date": "2026-11-19",
+      "issuing_body": "U.S. Department of Commerce, Bureau of Industry and Security (BIS)",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "national_security",
+      "secondary_frames": [
+        "existential_catastrophic",
+        "innovation_enablement"
+      ],
+      "top_requirements": [
+        "compute_governance",
+        "registration_licensing",
+        "access_controls"
+      ],
+      "top_enforcement_mechanisms": [
+        "licensing_requirement",
+        "market_access_restriction",
+        "reporting_obligation"
+      ],
+      "implementation_notes": "Published and effective November 19, 2026 (91 FR 74970, Docket No. 261116-0005, RIN 0694-AK50; using 'Super Intelligence (SI)' terminology pursuant to EO 14434), this sweeping BIS Interim Final Rule establishes four major pillars: (1) new 15 CFR § 744.24 prohibiting unlicensed exports, reexports, or transfers of advanced AI semiconductors to overseas data centers worldwide providing >12,000,000 aggregate TPP (including across physically or digitally linked data centers) to Country Group D:5 or Macau companies, backed by KYC ownership due diligence, no de minimis relief, mandatory recipient end-use notices, and a narrow commercial-recommender-system exclusion (explicitly excluding generative models); (2) new diversion-risk destination license requirements for Indonesia, Malaysia, Singapore, Brazil, and Thailand (§ 742.6(a)(6)(iii)(A)(1)), excluding U.S.-headquartered entities subject to monthly § 743.10 reporting; (3) tighter front-end fabricator/OSAT presumptions under ECCN 3A090.a Note 1 and § 744.23(a)(3)(i)(C); and (4) formal rescission of the January 2025 Biden-era AI Diffusion Rule—eliminating ECCN 4E091 AI model-weights controls, the model-weights FDP rule, country tiers, Data Center VEU authorizations, and License Exceptions AIA and LPP while retaining License Exception ACM and worldwide advanced-computing FDP jurisdiction under § 734.9(h).",
+      "framing_rationale_summary": "This BIS interim final rule is predominantly framed around national security, seeking to stop foreign adversaries headquartered in Country Group D:5 or Macau from circumventing U.S. chip export controls via overseas cloud data centers and third-country diversion hubs to train advanced AI ('Super Intelligence') models supporting military and intelligence activities, cyber-espionage, algorithmic theft, and shifts in global military balances of power—invoking an E.O. 14192 national-security exemption. Existential and catastrophic risk forms a prominent secondary rationale because BIS explicitly anchors the 12,000,000 aggregate TPP remote-compute threshold in preventing foreign actors from accelerating development of weapons of mass destruction and executing sophisticated zero-day cyberattacks against critical infrastructure. A targeted innovation enablement layer appears in formally rescinding the AI Diffusion Rule's worldwide license requirements and country tiers to streamline licensing, retaining License Exception ACM to support allied supply chains, and exempting commercial recommender systems and U.S.-headquartered firms from unnecessary licensing friction.",
+      "confidence": 0.985
+    },
+    {
       "document_id": "us_cfpb_chatbots_issue_spotlight_2023",
       "title": "Chatbots in consumer finance",
       "publication_date": "2023-06-06",
@@ -266,6 +322,57 @@
       "confidence": 0.95
     },
     {
+      "document_id": "us_copyright_office_ai_part2_copyrightability_2025",
+      "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability",
+      "publication_date": "2025-01-29",
+      "issuing_body": "U.S. Copyright Office",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "labor_transition",
+        "innovation_enablement"
+      ],
+      "top_requirements": [
+        "transparency_disclosure"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Part 2 of the U.S. Copyright Office's multi-part report on Copyright and Artificial Intelligence, released January 29, 2025 following the August 2023 Notice of Inquiry (over 10,000 public comments). Reaffirms that U.S. copyright requires human authorship under the Copyright Clause and Title 17, distinguishes assistive AI uses (fully protectable) from generative AI outputs lacking sufficient human expressive control, concludes that prompts alone—even detailed or iteratively revised prompts—do not confer authorship under current technology, confirms protection for perceptible human expressive inputs and creative selection/arrangement/modification of AI outputs on a case-by-case basis, surveys international approaches (South Korea, Japan, China, EU, UK, Canada, Australia), and rejects creating new copyright or sui generis protection for purely AI-generated works. To be operationalized via updated registration guidance and revisions to the Compendium of U.S. Copyright Office Practices.",
+      "framing_rationale_summary": "The Copyright Office's copyrightability report is dominantly framed around fundamental rights, anchoring U.S. AI copyright policy in constitutional Copyright Clause principles, free expression, human-centered authorship, and empowering creators—including creators with disabilities—to realize their own creative expression rather than departing from constitutional principles for foreign competition. Labor and workforce transition serves as a major secondary frame: the Office explicitly warns against granting copyright or sui generis protection to purely AI-generated outputs because an oversupply of rapidly generated synthetic content risks diluting royalties, displacing creative professions, and undermining human authors' ability to make a living from their craft. Innovation enablement is a strong supporting frame, emphasizing that existing copyright law adapts flexibly to new technology, protects assistive AI tool use without friction, and preserves ample development incentives without premature statutory disruption.",
+      "confidence": 0.91
+    },
+    {
+      "document_id": "us_copyright_office_ai_part3_training_2025",
+      "title": "Copyright and Artificial Intelligence, Part 3: Generative AI Training",
+      "publication_date": "2025-05-09",
+      "issuing_body": "U.S. Copyright Office",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "fundamental_rights",
+        "labor_transition",
+        "economic_competitiveness"
+      ],
+      "top_requirements": [
+        "training_data_governance",
+        "open_weight_obligations"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Pre-publication version of Part 3 of the U.S. Copyright Office's Report on Copyright and Artificial Intelligence, issued May 9, 2025 following over 10,000 Notice of Inquiry comments. Analyzes prima facie reproduction and derivative-work infringement across dataset curation, model training, memorized model weights, RAG, and outputs; provides a four-factor Section 107 fair use framework distinguishing transformative noncommercial research and guarded non-substitutive deployments from commercial expressive market substitution, market dilution (including stylistic imitation), and pirated/unlawful dataset access; surveys EU, Japan, Singapore, UK, Israel, South Korea, China, Brazil, and Spain approaches; rejects compulsory licensing and mandatory opt-outs at this stage; encourages DOJ antitrust clarity for collective licensing; and recommends allowing voluntary direct and collective licensing markets to mature with extended collective licensing (ECL) reserved for demonstrated sector-specific market failures.",
+      "framing_rationale_summary": "The Copyright Office's generative AI training report is dominantly framed around innovation enablement, arguing that flexible fair-use doctrine and non-interventionist, market-led voluntary licensing best allow transformative AI innovation and practical licensing ecosystems to flourish without locking in rigid compulsory statutes. Fundamental rights is a strong secondary frame grounded in authors' exclusive statutory property rights, lawful access control, and consent principles—leading the Office to reject mandatory opt-outs and compulsory derogations of authorial rights. Labor and workforce transition carries substantial weight as the Office highlights unprecedented market dilution, royalty dilution, and stylistic imitation threatening creative professionals' livelihoods and incentives to keep creating. Economic competitiveness forms a distinct secondary pillar, explicitly tying balanced copyright and licensing solutions—and fair use for analytical and research deployments—to sustaining American global leadership across both its world-class technology and creative industries.",
+      "confidence": 0.9
+    },
+    {
       "document_id": "us_crosswalks_to_the_nist_artificial_intelligence_r_8c897d8c",
       "title": "Crosswalks to the NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0) | NIST",
       "publication_date": "2023-01-25",
@@ -288,6 +395,34 @@
       "implementation_notes": "Companion NIST webpage introducing crosswalks mapping AI RMF 1.0 to external AI standards and governance frameworks. Reaffirms the AI RMF's voluntary, rights-preserving, non-sector-specific, and use-case-agnostic design under P.L. 116-283 and invites public comments on crosswalks.",
       "framing_rationale_summary": "This brief companion page is dominantly framed around innovation_enablement, emphasizing a voluntary, flexible, non-sector-specific, internationally aligned standards resource designed to equip AI actors to increase system trustworthiness without prescriptive mandates. Innovation_enablement edges out fundamental_rights (signaled explicitly by 'rights-preserving') and consumer_public_safety (managing the many risks of AI to promote responsible use), both of which appear as concise supporting rationales.",
       "confidence": 0.9
+    },
+    {
+      "document_id": "us_dod_directive_3000_09_autonomy_2023",
+      "title": "DoD Directive 3000.09: Autonomy in Weapon Systems",
+      "publication_date": "2023-01-25",
+      "issuing_body": "U.S. Department of Defense",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "executive_action",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "national_security",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "fundamental_rights"
+      ],
+      "top_requirements": [
+        "human_oversight",
+        "agentic_autonomy_controls",
+        "pre_deployment_testing"
+      ],
+      "top_enforcement_mechanisms": [
+        "licensing_requirement",
+        "procurement_condition",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Approved by Deputy Secretary of Defense Kathleen H. Hicks and effective January 25, 2023, DoD Directive 3000.09 reissues and cancels the 2012 directive to modernize U.S. defense governance for AI-enabled autonomous and semi-autonomous weapon systems. It binds all DoD components to design systems enabling appropriate levels of human judgment over the use of force; enforce temporal, geographic, and operational engagement bounds with automatic termination or operator re-authorization; execute rigorous hardware/software V&V, iterative cyber T&E, emergent-behavior analysis, rapid-reprogramming validation, and post-IOT&E regression testing; comply with DoDI 8500.01 cybersecurity, MIL-STD-882E system safety, the law of war, and the five DoD AI Ethical Principles (Responsible, Equitable, Traceable, Reliable, Governable); and route covered autonomous weapon systems through dual-gate senior review (pre-development and pre-fielding) supported by a permanent Autonomous Weapon Systems Working Group.",
+      "framing_rationale_summary": "DoD Directive 3000.09 is dominantly framed around national security, governing the acquisition, resilience, warfighter readiness, and operational deployment of autonomous and semi-autonomous military weapon systems against adaptive adversaries in contested cyberspace while explicitly balancing risk reduction with meeting mission objectives and preserving urgent-military-need waivers. Consumer and public safety serves as a major secondary rationale centered on operational weapon safety, preventing unintended engagements, protecting non-targets, minimizing failure probabilities and collateral damage, and avoiding unintended death, injury, or property and environmental harm. Fundamental rights provides an important secondary legal and ethical frame anchored in strict compliance with the law of war, international treaties, rules of engagement, human judgment over the use of force, and the DoD AI Ethical Principles requiring responsible, equitable, bias-minimized, traceable, and governable AI capabilities.",
+      "confidence": 0.985
     },
     {
       "document_id": "us_eo_14179_removing_barriers_ai",
@@ -464,6 +599,35 @@
       ],
       "implementation_notes": "Submitted June 16, 2022 by the FTC Bureau of Consumer Protection pursuant to Pub. L. No. 116-260, Title XV, § 1501(j). Evaluates automated and AI-based tools across seven Congressionally designated online harm categories (scams/fraud, deepfakes/fake reviews/bots, dark patterns, illegal content including opioids/CSAM/revenge porn/hate crimes/harassment/violence, terrorist and violent extremist content, election disinformation, and counterfeits). Concludes that AI detection tools remain rudimentary, brittle, context-blind, prone to bias/discrimination/overblocking, and incentivize commercial surveillance. Recommends against laws mandating AI content-filtering, and instead calls for human oversight with moderator protections, meaningful transparency/explainability/contestability, researcher access with privacy safeguards, certified independent audits and standardized Algorithmic Impact Assessments, whistleblower protections, responsible data science and documentation, content provenance/authentication (e.g., C2PA), user control tools, and transparency/accountability legislation.",
       "framing_rationale_summary": "The FTC Report to Congress is dominantly framed around fundamental_rights, warning that automated content-moderation tools remain rudimentary and can exacerbate algorithmic bias and discrimination against marginalized communities, chill First Amendment protected speech through overblocking, incentivize invasive commercial surveillance eroding user privacy, and deprive affected individuals of due process, explainability, contestability, and redress. Fundamental_rights narrowly edges out consumer_public_safety because while the report surveys severe online consumer harms, the FTC's core governance argument in the Executive Summary and Recommendations centers on rights-based transparency, accountability, non-discrimination, privacy, and free-speech guardrails against over-reliance on AI filtering. Consumer_public_safety is a close runner-up covering online scams, deceptive dark patterns, fake reviews, counterfeits, opioids, CSAM, revenge porn, and harassment, supported by social_stability (election disinformation, violent extremism, public trust, and the 'Liar's Dividend') and a minor national_security thread (foreign influence operations and counterterrorism).",
+      "confidence": 0.955
+    },
+    {
+      "document_id": "us_hhs_onc_hti1_final_rule_2024",
+      "title": "HHS / ONC HTI-1 Final Rule: Health Data, Technology, and Interoperability — Certification Program Updates, Algorithm Transparency, and Information Sharing (89 FR 1192)",
+      "publication_date": "2024-01-09",
+      "issuing_body": "U.S. Department of Health and Human Services (HHS / ONC)",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "fundamental_rights",
+        "innovation_enablement",
+        "economic_competitiveness"
+      ],
+      "top_requirements": [
+        "model_documentation",
+        "transparency_disclosure",
+        "risk_assessment"
+      ],
+      "top_enforcement_mechanisms": [
+        "regulatory_supervision",
+        "reporting_obligation",
+        "procurement_condition"
+      ],
+      "implementation_notes": "Published January 9, 2024 (89 FR 1192) and effective February 8, 2024 under the HITECH Act and 21st Century Cures Act. Establishes the first binding U.S. federal regulation setting algorithm transparency and AI risk management obligations for clinical and operational healthcare AI/ML ('Predictive Decision Support Interventions' in 45 CFR § 170.102, explicitly encompassing supervised, semi-supervised, and self-supervised models including LLMs and generative AI, while excluding purely unsupervised similarity models). Replaces legacy CDS (§ 170.315(a)(9)) with DSI (§ 170.315(b)(11)) in the Base EHR definition starting January 1, 2025, requiring: (1) structured 'source attributes' (31+ metadata fields functioning as clinical model nutrition labels covering intended use, out-of-scope cautions, training data criteria and demographic/SDOH/health-status representativeness, fairness approaches, external/local validation, quantitative performance, and update schedules); (2) Intervention Risk Management (IRM) practices covering NIST AI RMF-aligned risk analysis across eight characteristics (validity, reliability, robustness, fairness, intelligibility, safety, security, privacy), risk mitigation, and data governance for all developer-supplied Predictive DSIs; (3) public hyperlink disclosure of IRM summary practices via ONC-ACBs on CHPL (§ 170.523(f)(1)(xxi)); (4) ongoing Assurances Maintenance of Certification review/updates (§ 170.402(b)(4)) and annual Real World Testing (§ 170.405); and (5) complementary interoperability, USCDI v3, SMART App Launch 2.0 / 1-hour API revocation, Insights Condition reporting (§ 170.407), and Part 171 Information Blocking / TEFCA Manner Exception rules.",
+      "framing_rationale_summary": "The HHS/ONC HTI-1 Final Rule is dominantly framed around consumer and public safety, grounding its Predictive Decision Support Intervention transparency, risk-management, and interoperability mandates in protecting patients from clinical harm, reducing medical errors, improving sepsis and care outcomes, and ensuring healthcare AI tools are fair, appropriate, valid, effective, and safe. Fundamental rights forms a deeply intertwined secondary frame anchored in advancing 'health equity by design,' rooting out algorithmic bias and discrimination against historically underserved and marginalized communities (implementing Executive Orders 13985 and 14091), and strengthening patient data privacy, access, and authorization-revocation rights. Innovation enablement plays a major supporting role: ONC calibrates transparency guardrails without rigid performance thresholds to build public trust, unlock wider adoption of promising clinical AI tools, and foster a vibrant standards-based FHIR application ecosystem. Economic competitiveness serves as a distinct supporting frame tied to Executive Order 14036, curbing information blocking and market consolidation while correcting information asymmetry so healthcare markets reward higher-quality predictive models.",
       "confidence": 0.955
     },
     {
@@ -754,6 +918,34 @@
       "implementation_notes": "Brief NIST ITL AI Program informational overview (originally published 2021-07-26 and later updated to reference the 2023 G7 Hiroshima Process) summarizing NIST's role as a neutral technical convener, federal AI standards coordinator, and interagency/international AI governance participant. Contains no operative compliance requirements or enforcement hooks.",
       "framing_rationale_summary": "This short institutional overview has sparse explicit rationale language, centered primarily on innovation_enablement: grounding domestic and international AI governance in scientific and technical realities through neutral convening, federal standards coordination, and shared research infrastructure (NAIRR) to shape effective AI development. Consumer_public_safety appears modestly via the goal of 'effective and reliable AI,' and economic_competitiveness plays a minor role through partnerships with the International Trade Administration in international governance.",
       "confidence": 0.865
+    },
+    {
+      "document_id": "us_treasury_ai_cybersecurity_financial_2024",
+      "title": "Managing Artificial Intelligence-Specific Cybersecurity Risks in the Financial Services Sector",
+      "publication_date": "2024-03-27",
+      "issuing_body": "U.S. Department of the Treasury",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "innovation_enablement",
+        "national_security",
+        "fundamental_rights"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "access_controls",
+        "training_data_governance"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Issued March 27, 2024 pursuant to Executive Order 14110 (150-day mandate) based on 42 stakeholder interviews and an annexed FSSCC R&D Committee white paper. Maps AI-specific cybersecurity and fraud threats (social engineering, malware generation, data poisoning, inference leakage, evasion, model extraction, deepfake identity impersonation, synthetic identity fraud, and third-/fourth-party supply chain risks) to existing U.S. financial supervisory frameworks and NIST AI RMF/CSF controls. Proposes ten follow-on workstreams including a common AI lexicon, narrowing the fraud-data divide for smaller institutions, expanding NIST AI RMF into a financial-sector profile with USAISI, exploring AI data supply-chain 'nutrition labels', black-box explainability R&D, workforce training, digital identity standards, and FSB/OECD/G7 international coordination.",
+      "framing_rationale_summary": "Treasury's report is dominantly framed around consumer and public safety, centering on protecting financial institutions, their personnel, and consumers from escalating cyber-enabled fraud, deepfake identity impersonation, synthetic identity theft, data poisoning, and operational IT disruptions. Innovation enablement serves as a strong secondary rationale: Treasury stresses the importance of prudent technological innovation, flexible non-prescriptive guidance, and public-private collaboration to help firms of all sizes safely adopt AI tools for cyber defense and anti-fraud operations. National security is a meaningful secondary frame rooted in protecting the financial services critical infrastructure sector against sophisticated cyberthreat and nation-state actors, alongside anti-money laundering and counter-terrorist financing resilience. Fundamental rights appears as a supporting secondary concern, highlighting consumer privacy, data protection, fairness, and the risk that financial AI systems could perpetuate or amplify inequities against historically marginalized groups.",
+      "confidence": 0.94
     }
   ],
   "aggregates": {
@@ -761,460 +953,590 @@
       {
         "label": "standards_guideline",
         "count": 12,
-        "share": 0.414
+        "share": 0.333
+      },
+      {
+        "label": "regulatory_guidance",
+        "count": 9,
+        "share": 0.25
       },
       {
         "label": "strategy_paper",
         "count": 7,
-        "share": 0.241
-      },
-      {
-        "label": "regulatory_guidance",
-        "count": 5,
-        "share": 0.172
+        "share": 0.194
       },
       {
         "label": "executive_order",
         "count": 4,
-        "share": 0.138
+        "share": 0.111
       },
       {
         "label": "legislation",
-        "count": 1,
-        "share": 0.034
+        "count": 4,
+        "share": 0.111
       }
     ],
     "binding_strengths": [
       {
         "label": "standards_guideline",
         "count": 12,
-        "share": 0.414
+        "share": 0.333
       },
       {
         "label": "executive_action",
+        "count": 7,
+        "share": 0.194
+      },
+      {
+        "label": "regulatory_guidance",
         "count": 6,
-        "share": 0.207
+        "share": 0.167
       },
       {
         "label": "strategy_statement",
         "count": 6,
-        "share": 0.207
-      },
-      {
-        "label": "regulatory_guidance",
-        "count": 3,
-        "share": 0.103
+        "share": 0.167
       },
       {
         "label": "binding_law",
-        "count": 1,
-        "share": 0.034
+        "count": 4,
+        "share": 0.111
       },
       {
         "label": "voluntary_commitment",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       }
     ],
     "requirements": [
       {
         "label": "risk_assessment",
-        "count": 18,
-        "share": 0.621
-      },
-      {
-        "label": "pre_deployment_testing",
-        "count": 16,
-        "share": 0.552
-      },
-      {
-        "label": "transparency_disclosure",
-        "count": 16,
-        "share": 0.552
+        "count": 21,
+        "share": 0.583
       },
       {
         "label": "access_controls",
-        "count": 15,
-        "share": 0.517
+        "count": 20,
+        "share": 0.556
+      },
+      {
+        "label": "pre_deployment_testing",
+        "count": 20,
+        "share": 0.556
+      },
+      {
+        "label": "transparency_disclosure",
+        "count": 20,
+        "share": 0.556
       },
       {
         "label": "training_data_governance",
-        "count": 14,
-        "share": 0.483
-      },
-      {
-        "label": "human_oversight",
-        "count": 11,
-        "share": 0.379
+        "count": 17,
+        "share": 0.472
       },
       {
         "label": "model_documentation",
-        "count": 11,
-        "share": 0.379
+        "count": 16,
+        "share": 0.444
+      },
+      {
+        "label": "human_oversight",
+        "count": 13,
+        "share": 0.361
+      },
+      {
+        "label": "third_party_audit",
+        "count": 9,
+        "share": 0.25
       },
       {
         "label": "incident_reporting",
         "count": 8,
-        "share": 0.276
+        "share": 0.222
       },
       {
         "label": "red_teaming",
-        "count": 7,
-        "share": 0.241
+        "count": 8,
+        "share": 0.222
       },
       {
-        "label": "third_party_audit",
+        "label": "registration_licensing",
         "count": 7,
-        "share": 0.241
+        "share": 0.194
       },
       {
         "label": "frontier_safety_evaluation",
         "count": 4,
-        "share": 0.138
+        "share": 0.111
+      },
+      {
+        "label": "agentic_autonomy_controls",
+        "count": 3,
+        "share": 0.083
+      },
+      {
+        "label": "compute_governance",
+        "count": 3,
+        "share": 0.083
       },
       {
         "label": "content_provenance",
         "count": 3,
-        "share": 0.103
-      },
-      {
-        "label": "registration_licensing",
-        "count": 3,
-        "share": 0.103
-      },
-      {
-        "label": "agentic_autonomy_controls",
-        "count": 2,
-        "share": 0.069
+        "share": 0.083
       },
       {
         "label": "open_weight_obligations",
-        "count": 2,
-        "share": 0.069
-      },
-      {
-        "label": "compute_governance",
-        "count": 1,
-        "share": 0.034
+        "count": 3,
+        "share": 0.083
       }
     ],
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "count": 20,
-        "share": 0.69
+        "count": 23,
+        "share": 0.639
       },
       {
         "label": "regulatory_supervision",
-        "count": 10,
-        "share": 0.345
+        "count": 16,
+        "share": 0.444
+      },
+      {
+        "label": "reporting_obligation",
+        "count": 7,
+        "share": 0.194
+      },
+      {
+        "label": "market_access_restriction",
+        "count": 6,
+        "share": 0.167
+      },
+      {
+        "label": "procurement_condition",
+        "count": 6,
+        "share": 0.167
       },
       {
         "label": "none_specified",
         "count": 5,
-        "share": 0.172
+        "share": 0.139
       },
       {
-        "label": "market_access_restriction",
+        "label": "licensing_requirement",
         "count": 4,
-        "share": 0.138
-      },
-      {
-        "label": "procurement_condition",
-        "count": 4,
-        "share": 0.138
-      },
-      {
-        "label": "reporting_obligation",
-        "count": 3,
-        "share": 0.103
+        "share": 0.111
       },
       {
         "label": "criminal_penalty",
         "count": 2,
-        "share": 0.069
+        "share": 0.056
       },
       {
         "label": "civil_penalty",
         "count": 1,
-        "share": 0.034
-      },
-      {
-        "label": "licensing_requirement",
-        "count": 1,
-        "share": 0.034
+        "share": 0.028
       }
     ],
     "institutions": [
       {
         "label": "National Institute of Standards and Technology (NIST)",
         "count": 16,
-        "share": 0.552
+        "share": 0.444
+      },
+      {
+        "label": "Federal Trade Commission (FTC)",
+        "count": 7,
+        "share": 0.194
       },
       {
         "label": "The White House",
         "count": 7,
-        "share": 0.241
+        "share": 0.194
       },
       {
-        "label": "Federal Trade Commission (FTC)",
-        "count": 6,
-        "share": 0.207
+        "label": "Consumer Financial Protection Bureau (CFPB)",
+        "count": 4,
+        "share": 0.111
       },
       {
         "label": "Office of Management and Budget (OMB)",
         "count": 4,
-        "share": 0.138
-      },
-      {
-        "label": "Consumer Financial Protection Bureau (CFPB)",
-        "count": 3,
-        "share": 0.103
+        "share": 0.111
       },
       {
         "label": "Department of Justice (DOJ)",
         "count": 2,
-        "share": 0.069
+        "share": 0.056
       },
       {
         "label": "Food and Drug Administration (FDA)",
         "count": 2,
-        "share": 0.069
+        "share": 0.056
+      },
+      {
+        "label": "U.S. Copyright Office",
+        "count": 2,
+        "share": 0.056
+      },
+      {
+        "label": "U.S. Department of Commerce, Bureau of Industry and Security (BIS)",
+        "count": 2,
+        "share": 0.056
       },
       {
         "label": "Agency AI Governance Boards",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Agency Chief AI Officers (CAIOs)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Assistant to the President for Science and Technology (APST)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Attorney General / Department of Justice",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Attorney General / Department of Justice (AI Litigation Task Force)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "Autonomous Weapon Systems Working Group (inter-component technical/policy advisory body supporting senior reviews, Section 5)",
+        "count": 1,
+        "share": 0.028
       },
       {
         "label": "Board of Governors of the Federal Reserve System",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "Centers for Medicare & Medicaid Services (CMS) (Medicare Promoting Interoperability Program and MIPS Quality Payment Program CEHRT compliance linkage)",
+        "count": 1,
+        "share": 0.028
       },
       {
         "label": "Chief AI Officer Council",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "Chief Digital and Artificial Intelligence Officer (CDAO) (AI capability/cybersecurity monitoring, testability policy, and AI Ethical Principles implementation)",
+        "count": 1,
+        "share": 0.028
       },
       {
         "label": "Committee on National Security Systems (CNSS)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Department of Agriculture",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Department of Defense (DOD) and Office of the Director of National Intelligence (ODNI)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Department of Homeland Security (DHS) / Cybersecurity and Infrastructure Security Agency (CISA)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Department of Justice Civil Rights Division (DOJ)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Department of Labor (DOL) and Department of the Treasury",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Department of State (DOS)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Department of Transportation",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "Deputy Secretary of Defense (issuing authority and sole urgent-military-need waiver authority under § 4.2)",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "Director, Operational Test and Evaluation (DOT&E) (operational and live-fire test plan approval, V&V/T&E standards, and post-IOT&E regression T&E direction)",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "End-User Review Committee (ERC) (interagency body reviewing VEU status and commercial-recommender-system exclusion filings under § 744.24(b)(2))",
+        "count": 1,
+        "share": 0.028
       },
       {
         "label": "Equal Employment Opportunity Commission (EEOC)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Executive departments and agencies administering discretionary grant programs",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Farm Credit Administration",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Federal Communications Commission (FCC)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Federal Deposit Insurance Corporation (FDIC)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "Federal courts (adjudicating copyrightability, infringement enforcement, and judicial review of Copyright Office registration decisions)",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "Federal courts (adjudicating prima facie infringement under 17 U.S.C. §§ 106 and 501(a) and Section 107 fair use defenses on a case-by-case basis)",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "General Counsel of the Department of Defense (GC DoD) (coordination of legal and law-of-war reviews)",
+        "count": 1,
+        "share": 0.028
       },
       {
         "label": "General Services Administration (GSA)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "HHS Office of Inspector General (OIG) (enforcement of 45 CFR Part 171 Information Blocking penalties and provider disincentive referrals)",
+        "count": 1,
+        "share": 0.028
       },
       {
         "label": "Heads of covered Executive Branch departments and agencies (including independent regulatory agencies)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Heads of covered executive departments and agencies (44 U.S.C. § 3502(1))",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Interagency Committee on Standards Policy (ICSP) AI Standards Coordination Working Group (AISCWG)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "Interagency export-control reviewing agencies participating in case-by-case license determinations",
+        "count": 1,
+        "share": 0.028
       },
       {
         "label": "National Credit Union Administration (NCUA)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "National Cyber Director",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "National Telecommunications and Information Administration (NTIA)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "ONC-Authorized Certification Bodies (ONC-ACBs) and ONC-Authorized Testing Laboratories (ONC-ATLs) (accredited certification, surveillance, CHPL publication, and records retention)",
+        "count": 1,
+        "share": 0.028
       },
       {
         "label": "Office of Science and Technology Policy (OSTP)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Office of the Comptroller of the Currency (OCC)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "Office of the National Coordinator for Health Information Technology (ONC / ASTP), U.S. Department of Health and Human Services (direct review under 45 CFR § 170.580, corrective action orders, and certification suspension or termination)",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "Secretaries of the Military Departments, Commander USSOCOM, Combatant Commanders, and Directors of Defense Agencies / DoD Field Activities",
+        "count": 1,
+        "share": 0.028
       },
       {
         "label": "Secretary of Homeland Security / Cybersecurity and Infrastructure Security Agency (CISA)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Secretary of War / National Security Agency (NSA)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Secretary of the Treasury",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "Senior Agency Officials for Privacy (SAOPs)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "State attorneys general and state regulators",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "U.S. Congress",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
       },
       {
         "label": "U.S. Congress (recipient of legislative recommendations)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "U.S. Copyright Office (Examining Division and Review Board administering copyright registration, refusals, limitations, and cancellations under 17 U.S.C. §§ 410(a), 701(a))",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "U.S. Copyright Office (statutory advisory role under 17 U.S.C. § 701(b) monitoring technological, judicial, and licensing market developments)",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "U.S. Department of Commerce, Bureau of Industry and Security (BIS) (Office of National Security Controls, Office of Exporter Services, and Secretary/Under Secretary of Commerce for Industry and Security — export licensing, 'is informed' notices, Entity List designations, temporary export prohibitions, monthly reporting, and on-site VEU audits)",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "U.S. Department of Commerce, Bureau of Industry and Security (BIS) (licensing authority, certification verification, third-party lab qualification revocation, and EAR compliance oversight under ECRA, 50 U.S.C. 4801–4852)",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "U.S. Department of Defense",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "U.S. Department of Health and Human Services (HHS / ONC)",
+        "count": 1,
+        "share": 0.028
       },
       {
         "label": "U.S. Department of Justice / federal prosecutors and federal courts (criminal offenses, forfeiture, and restitution under 47 U.S.C. 223(h) and Title 18)",
         "count": 1,
-        "share": 0.034
+        "share": 0.028
+      },
+      {
+        "label": "U.S. Department of State and Assistant to the President for National Security Affairs (consultation and high-risk destination notification authority triggering 10-day Commerce action under § 744.24(a)(2))",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "U.S. Department of the Treasury",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "U.S. Department of the Treasury (convening and policy coordination role via CESG, FBIIC, and FinCEN)",
+        "count": 1,
+        "share": 0.028
+      },
+      {
+        "label": "Under Secretary of Defense for Policy (USD(P)), Under Secretary of Defense for Research and Engineering (USD(R&E)), Under Secretary of Defense for Acquisition and Sustainment (USD(A&S)), and Vice Chairman of the Joint Chiefs of Staff (VCJCS) (dual-gate senior approval authorities before formal development and before fielding)",
+        "count": 1,
+        "share": 0.028
       }
     ],
     "frames": [
       {
         "label": "innovation_enablement",
-        "score": 9.24,
-        "share": 0.319,
-        "document_mentions": 27
+        "score": 10.35,
+        "share": 0.287,
+        "document_mentions": 32
       },
       {
         "label": "consumer_public_safety",
-        "score": 7.19,
-        "share": 0.248,
-        "document_mentions": 27
+        "score": 8.35,
+        "share": 0.232,
+        "document_mentions": 30
       },
       {
         "label": "fundamental_rights",
-        "score": 6.3,
-        "share": 0.217,
-        "document_mentions": 24
+        "score": 7.61,
+        "share": 0.211,
+        "document_mentions": 29
       },
       {
         "label": "economic_competitiveness",
-        "score": 3.46,
-        "share": 0.119,
-        "document_mentions": 24
+        "score": 3.94,
+        "share": 0.109,
+        "document_mentions": 30
       },
       {
         "label": "national_security",
-        "score": 1.71,
-        "share": 0.059,
-        "document_mentions": 17
+        "score": 3.83,
+        "share": 0.106,
+        "document_mentions": 21
+      },
+      {
+        "label": "labor_transition",
+        "score": 0.73,
+        "share": 0.02,
+        "document_mentions": 6
+      },
+      {
+        "label": "existential_catastrophic",
+        "score": 0.6,
+        "share": 0.017,
+        "document_mentions": 10
       },
       {
         "label": "social_stability",
         "score": 0.59,
-        "share": 0.02,
-        "document_mentions": 17
-      },
-      {
-        "label": "existential_catastrophic",
-        "score": 0.3,
-        "share": 0.01,
-        "document_mentions": 7
-      },
-      {
-        "label": "labor_transition",
-        "score": 0.21,
-        "share": 0.007,
-        "document_mentions": 4
+        "share": 0.016,
+        "document_mentions": 18
       }
     ]
   }

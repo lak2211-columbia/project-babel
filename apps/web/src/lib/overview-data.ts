@@ -116,15 +116,25 @@ export function parseScoringMode(value?: string | null): ScoringMode {
   return "headline";
 }
 
-function emptyOrSeedFallback(mode: ScoringMode): OverviewData {
+function emptyOrSeedFallback(
+  mode: ScoringMode,
+  includeSubnational = false,
+): OverviewData {
   // A1: Never silently serve fake seedData on Vercel deployments!
   if (!allowSeedFallback()) {
-    return buildEmptyOverviewData(mode, "No observatory data loaded");
+    return buildEmptyOverviewData(
+      mode,
+      "No observatory data loaded",
+      includeSubnational,
+    );
   }
-  return { ...seedData, scoringMode: mode };
+  return { ...seedData, scoringMode: mode, includeSubnational };
 }
 
-async function loadOverviewDataUncached(mode: ScoringMode): Promise<OverviewData> {
+async function loadOverviewDataUncached(
+  mode: ScoringMode,
+  includeSubnational = false,
+): Promise<OverviewData> {
   const sql = getDatabaseClient();
   if (!sql) {
     if (allowLocalFallback()) {
@@ -134,10 +144,11 @@ async function loadOverviewDataUncached(mode: ScoringMode): Promise<OverviewData
           ...fallbackInput,
           datasetLabel: "Filesystem analysis snapshot",
           mode,
+          includeSubnational,
         });
       }
     }
-    return emptyOrSeedFallback(mode);
+    return emptyOrSeedFallback(mode, includeSubnational);
   }
 
   try {
@@ -241,10 +252,11 @@ async function loadOverviewDataUncached(mode: ScoringMode): Promise<OverviewData
             ...fallbackInput,
             datasetLabel: "Filesystem analysis snapshot",
             mode,
+            includeSubnational,
           });
         }
       }
-      return emptyOrSeedFallback(mode);
+      return emptyOrSeedFallback(mode, includeSubnational);
     }
 
     return buildOverviewFromRows({
@@ -252,6 +264,7 @@ async function loadOverviewDataUncached(mode: ScoringMode): Promise<OverviewData
       rows,
       datasetLabel: currentDatasetLabel(),
       mode,
+      includeSubnational,
     });
   } catch (error) {
     handleDatabaseReadFailure("overview data from Neon", error);
@@ -264,15 +277,16 @@ async function loadOverviewDataUncached(mode: ScoringMode): Promise<OverviewData
         ...fallbackInput,
         datasetLabel: "Filesystem analysis snapshot",
         mode,
+        includeSubnational,
       });
     }
-    return emptyOrSeedFallback(mode);
+    return emptyOrSeedFallback(mode, includeSubnational);
   }
 }
 
 const getOverviewDataCached = unstable_cache(
   loadOverviewDataUncached,
-  ["observatory-overview-v3"],
+  ["observatory-overview-v5"],
   {
     revalidate: OBSERVATORY_REVALIDATE_SECONDS,
     tags: [OBSERVATORY_CACHE_TAG],
@@ -281,8 +295,9 @@ const getOverviewDataCached = unstable_cache(
 
 export async function getOverviewData(
   mode: ScoringMode = "headline",
+  includeSubnational = false,
 ): Promise<OverviewData> {
-  return getOverviewDataCached(mode);
+  return getOverviewDataCached(mode, includeSubnational);
 }
 
 function toNum(value: number | string | null | undefined): number | null {
@@ -299,6 +314,7 @@ function buildOverviewFromRows(input: {
   rows: DbOverviewRow[];
   datasetLabel: string;
   mode: ScoringMode;
+  includeSubnational: boolean;
 }): OverviewData {
   const scoringDocs: ScoringDocumentInput[] = [];
   const queueCandidates: (QueueDocument & { sortTs: number })[] = [];
@@ -334,18 +350,25 @@ function buildOverviewFromRows(input: {
       toNum(row.overall_confidence),
     );
 
-    // A8: Honest taxonomy version tracking
-    const rawTax = row.taxonomy_version?.trim();
-    if (!rawTax || rawTax === "legacy" || rawTax.startsWith("1.0")) {
-      legacyCount += 1;
-      taxonomyVersionSet.add("1.0-legacy");
-    } else {
-      v2Count += 1;
-      taxonomyVersionSet.add(rawTax);
+    const corpusRoleKey = row.corpus_role?.trim() || null;
+    const includedInScope =
+      input.includeSubnational || corpusRoleKey !== "subnational_overlay";
+
+    // A8 + Phase 5A: Honest taxonomy & grounding tracking strictly aligned to active scope
+    // so legacyCount + v2Count === totalAnalyzed and groundingSampleCount <= totalAnalyzed.
+    if (includedInScope) {
+      const rawTax = row.taxonomy_version?.trim();
+      if (!rawTax || rawTax === "legacy" || rawTax.startsWith("1.0")) {
+        legacyCount += 1;
+        taxonomyVersionSet.add("1.0-legacy");
+      } else {
+        v2Count += 1;
+        taxonomyVersionSet.add(rawTax);
+      }
+      if (row.model) modelSet.add(row.model);
+      const gr = toNum(row.grounding_ratio);
+      if (gr !== null) groundingValues.push(gr);
     }
-    if (row.model) modelSet.add(row.model);
-    const gr = toNum(row.grounding_ratio);
-    if (gr !== null) groundingValues.push(gr);
 
     scoringDocs.push({
       documentId: row.document_id,
@@ -354,7 +377,7 @@ function buildOverviewFromRows(input: {
       machineCreatedAt: row.machine_updated_at ?? null,
       documentType: policy.document_type ?? null,
       bindingStrength: authoritativeBinding,
-      corpusRole: row.corpus_role?.trim() || null,
+      corpusRole: corpusRoleKey,
       lifecycleStage: row.lifecycle_stage?.trim() || null,
       policyConfidence: policyConf,
       dominantFrameConfidence: domFrameConf,
@@ -366,26 +389,30 @@ function buildOverviewFromRows(input: {
       frameShare: row.frame_shares_json ?? framing.frame_share ?? null,
     });
 
-    const meta = jurisdictionMeta[row.jurisdiction];
-    const dominantFrame: FrameLabel = isKnownFrameLabel(framing.dominant_frame)
-      ? framing.dominant_frame
-      : "innovation_enablement";
-    const pubLabel = formatLongDate(pubIso, precision);
-    queueCandidates.push({
-      id: row.document_id,
-      title: row.title,
-      jurisdiction: meta.name,
-      jurisdictionSlug: meta.slug,
-      documentType: humanizeDocumentType(policy.document_type),
-      bindingStrength: humanizeBindingStrength(authoritativeBinding),
-      dominantFrame,
-      publicationDate: pubLabel,
-      updatedAt: pubLabel,
-      sortTs: toTimestamp(pubIso ?? row.machine_updated_at),
-    });
+    if (includedInScope) {
+      const meta = jurisdictionMeta[row.jurisdiction];
+      const dominantFrame: FrameLabel = isKnownFrameLabel(framing.dominant_frame)
+        ? framing.dominant_frame
+        : "innovation_enablement";
+      const pubLabel = formatLongDate(pubIso, precision);
+      queueCandidates.push({
+        id: row.document_id,
+        title: row.title,
+        jurisdiction: meta.name,
+        jurisdictionSlug: meta.slug,
+        documentType: humanizeDocumentType(policy.document_type),
+        bindingStrength: humanizeBindingStrength(authoritativeBinding),
+        dominantFrame,
+        publicationDate: pubLabel,
+        updatedAt: pubLabel,
+        sortTs: toTimestamp(pubIso ?? row.machine_updated_at),
+      });
+    }
   }
 
-  const scored = computeScoringEngine(scoringDocs, input.mode);
+  const scored = computeScoringEngine(scoringDocs, input.mode, {
+    includeSubnational: input.includeSubnational,
+  });
 
   const countries: CountrySnapshot[] = jurisdictionOrder.map((jurisdiction) => {
     const meta = jurisdictionMeta[jurisdiction];
@@ -484,15 +511,25 @@ function buildOverviewFromRows(input: {
       ? `${new Date(scored.latestAnalyzedTimestamp).toISOString().slice(0, 10)} (${taxonomyVersion})`
       : `2026-04-15 (${taxonomyVersion})`;
 
+  const subnationalCount = scoringDocs.filter(
+    (doc) => doc.corpusRole === "subnational_overlay",
+  ).length;
+  const scopedTotalCount = input.includeSubnational
+    ? scoringDocs.length
+    : scoringDocs.length - subnationalCount;
+
   const headlineEligibleCount = scoringDocs.filter((doc) =>
-    isHeadlineEligible({
-      corpusRole: doc.corpusRole,
-      lifecycleStage: doc.lifecycleStage,
-    }),
+    isHeadlineEligible(
+      {
+        corpusRole: doc.corpusRole,
+        lifecycleStage: doc.lifecycleStage,
+      },
+      { includeSubnational: input.includeSubnational },
+    ),
   ).length;
 
   const provenanceSummary: ProvenanceSummary = {
-    totalAnalyzed: scoringDocs.length,
+    totalAnalyzed: scopedTotalCount,
     headlineIncluded: headlineEligibleCount,
     legacyCount,
     v2Count,
@@ -529,6 +566,8 @@ function buildOverviewFromRows(input: {
     hasData: true,
     datasetLabel: input.datasetLabel,
     scoringMode: input.mode,
+    includeSubnational: input.includeSubnational,
+    subnationalCount,
     taxonomyVersion,
     datasetVersion,
     snapshotDate,
@@ -543,8 +582,10 @@ function buildOverviewFromRows(input: {
     findings: scored.findings,
     sensitivityGrid: scored.sensitivityGrid,
     summary: {
-      publishedSources: input.documentCount,
-      reviewedOutputs: scoringDocs.length,
+      publishedSources: input.includeSubnational
+        ? input.documentCount
+        : Math.max(0, input.documentCount - subnationalCount),
+      reviewedOutputs: scopedTotalCount,
       headlineDocuments: headlineEligibleCount,
       bindingInstruments,
       lowConfidenceOutputs,

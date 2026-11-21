@@ -2,11 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://project-babel.com/schemas/matrix-api.schema.json",
   "title": "Project Babel Obligation & Clause Matrix API Response",
-  "description": "JSON response contract returned by GET /api/matrix?mode=headline|all exposing the 25x5 Regime Coverage Matrix (17 policy requirements + 8 active enforcement mechanisms across 5 jurisdictions, colored by strongest binding level L0..L4).",
+  "description": "JSON response contract returned by GET /api/matrix?mode=headline|all&states=0|1 exposing the 25x5 Regime Coverage Matrix (17 policy requirements + 8 active enforcement mechanisms across 5 jurisdictions, colored by strongest binding level L0..L4).",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "mode",
+    "includeSubnational",
+    "subnationalCount",
     "totalInstrumentsInPool",
     "jurisdictions",
     "rows"
@@ -15,6 +17,15 @@
     "mode": {
       "type": "string",
       "enum": ["headline", "all"]
+    },
+    "includeSubnational": {
+      "type": "boolean",
+      "description": "Whether opt-in subnational_overlay instruments (e.g., U.S. state statutes) are included."
+    },
+    "subnationalCount": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of analyzed subnational_overlay instruments available in the corpus."
     },
     "totalInstrumentsInPool": {
       "type": "integer",
@@ -108,6 +119,7 @@
         "effectiveDate",
         "corpusRoleLabel",
         "lifecycleStageLabel",
+        "subnationalUnit",
         "dominantFrame",
         "quotes"
       ],
@@ -124,6 +136,7 @@
         "effectiveDate": { "type": ["string", "null"] },
         "corpusRoleLabel": { "type": "string", "minLength": 1 },
         "lifecycleStageLabel": { "type": "string", "minLength": 1 },
+        "subnationalUnit": { "type": ["string", "null"] },
         "dominantFrame": {
           "anyOf": [{ "$ref": "#/$defs/frameLabel" }, { "type": "null" }]
         },

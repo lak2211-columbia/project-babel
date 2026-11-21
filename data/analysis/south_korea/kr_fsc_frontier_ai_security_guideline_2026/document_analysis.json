@@ -1,0 +1,357 @@
+{
+  "source_id": "kr_fsc_frontier_ai_security_guideline_2026",
+  "title": "프런티어 AI 보안 위협 금융분야 대응 요령 (버전 1.0) / Frontier AI Security Threat Response Guidelines for the Financial Sector (Ver. 1.0)",
+  "language": "ko",
+  "policy_extraction": {
+    "jurisdiction": "south_korea",
+    "issuing_body": "Financial Security Institute (FSI) / Financial Services Commission (FSC)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2026-07-01",
+    "effective_date": "2026-07-01",
+    "covered_actors": [
+      "Domestic financial companies and financial institutions operating digital financial infrastructure and customer-facing services (금융회사 등)",
+      "Boards of directors, CEOs, CISOs, CIOs, and CISO-direct Frontier AI Threat Response Teams (이사회, CEO, CISO, CIO, 프런티어 AI 위협 대응반)",
+      "Third-party IT/security vendors, cloud providers, and outsourced operators in the financial software supply chain (위탁 업체, 제3자 소프트웨어 공급자)"
+    ],
+    "covered_application_domains": [
+      "finance",
+      "critical_infrastructure",
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "access_controls",
+        "confidence": 0.98,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "ㅇ 내부의 구성원을 믿는 경계 기반 보안이 아닌 공격자가 내부에 침입했을 수 있다고 가정, 항상 검증하는 제로트러스트 개념 적용",
+            "source_section": "2. 금융분야 대응 요령 - 바. 침해 확산 방지",
+            "quote_en": "Apply the Zero Trust concept of assuming an attacker may already have penetrated the interior and continuously verifying everything, rather than perimeter-based security that trusts internal members.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23800,
+            "end_char": 23871
+          },
+          {
+            "quote": "ㅇ 다중 인증, 최소 권한, 마이크로세그멘테이션, 휴면계정 제거, API 접근통제, 중요 데이터 접근 검증 등 핵심 통제 강화\n* 고객정보, 결제/인증, 계정계, 대외계, 관리자 콘솔 등은 별도로 분리하여 운영하고, 내부망이라는 이유만으로 무조건적 신뢰 금지",
+            "source_section": "2. 금융분야 대응 요령 - 바. 침해 확산 방지",
+            "quote_en": "Strengthen core controls including multi-factor authentication, least privilege, microsegmentation, removal of dormant accounts, API access controls, and verification of access to critical data. Operate customer data, payment/authentication, core banking, external-facing systems, and admin consoles separately, prohibiting unconditional trust merely because a system is on the internal network.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24192,
+            "end_char": 24336
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.93,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "ㅇ 시스템, 애플리케이션, API, 클라우드, 오픈소스, 위탁 업체, 제3자 소프트웨어 등 모든 자산을 통합적으로 관리할 필요\nㅇ 특히, 인터넷 노출 여부, 업무 중요도, 데이터 민감도, 패치 상태 등을 종합적으로 관리해야 유사시 즉시 대응이 가능",
+            "source_section": "2. 금융분야 대응 요령 - 다. 자산ㆍ공급망 관리 강화",
+            "quote_en": "All assets—including systems, applications, APIs, cloud, open-source software, outsourced vendors, and third-party software—need integrated management; in particular, internet exposure, business criticality, data sensitivity, and patch status must be managed comprehensively to enable immediate response in contingencies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15376,
+            "end_char": 15514
+          },
+          {
+            "quote": "ㅇ 이사회 내 정보보호위원회 등에서 AI 보안 위협 대응을 논의하고, CISO는 패치 관리, 외부 노출 자산, 서비스별 복원력 수준, 제3자 리스크, AI 방어 자동화 수준 등을 보고",
+            "source_section": "2. 금융분야 대응 요령 - 가. 경영진 책임 강화",
+            "quote_en": "Discuss frontier AI security threat responses within the board's Information Security Committee or equivalent body, with the CISO reporting on patch management, externally exposed assets, per-service resilience levels, third-party risks, and AI defense automation levels.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7102,
+            "end_char": 7204
+          }
+        ]
+      },
+      {
+        "label": "red_teaming",
+        "confidence": 0.91,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "ㅇ AI 에이전트 등을 이용한 레드티밍 및 취약점 검증 자동화 적용도 고려할 필요",
+            "source_section": "2. 금융분야 대응 요령 - 나. 취약점 및 패치 관리",
+            "quote_en": "Consider also adopting automated red-teaming and vulnerability verification utilizing AI agents and similar technologies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12733,
+            "end_char": 12778
+          },
+          {
+            "quote": "□ 다수의 심각한 보안 사고가 동시에 발생하는 상황을 가정하여 정기적* 모의훈련 실시\n* 매주 또는 매월, 취약점 대응이 안정화될 때까지 진행\nㅇ 모의훈련 결과는 중요 사고 대응을 위한 매뉴얼 마련, 취약점 관리와 개발ㆍ배포 통합, 인프라 강화 등에 반영",
+            "source_section": "2. 금융분야 대응 요령 - 가. 경영진 책임 강화",
+            "quote_en": "Conduct regular simulated drills (weekly or monthly until vulnerability response stabilizes) assuming multiple severe security incidents occur simultaneously, and reflect drill results in major incident response manuals, integration of vulnerability management with development/deployment, and infrastructure reinforcement.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7493,
+            "end_char": 7635
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "□ 내외부 SW 취약점점검ㆍ모니터링ㆍ조치 체계(VulnOps)를 통합ㆍ배포(CI/CD) 파이프라인에 적용\nㅇ 형상관리, 소스코드 빌드 시스템 등으로 구성된 파이프라인에 취약점 점검 및 패치를 위한 기능* 또는 플러그인 적용\n* 프런티어 AI 기반 취약점 점검, 신규 패치 모니터링ㆍ개발, 패치 사전 테스트ㆍ배포 등 적용",
+            "source_section": "2. 금융분야 대응 요령 - 나. 취약점 및 패치 관리",
+            "quote_en": "Integrate internal and external software vulnerability inspection, monitoring, and remediation frameworks (VulnOps) into CI/CD pipelines, applying functions or plugins for frontier AI-based vulnerability scanning, new patch monitoring and development, and pre-deployment patch testing and rollout.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12554,
+            "end_char": 12732
+          },
+          {
+            "quote": "ㅇ (격리 검증 구역) 외부 업체 솔루션 및 신규 오픈소스 소프트웨어 도입 시, 내부망과 격리된 샌드박스 검증 환경 구축ㆍ운영",
+            "source_section": "2. 금융분야 대응 요령 - 다. 자산ㆍ공급망 관리 강화 (적용 예시)",
+            "quote_en": "(Isolated verification zone) When adopting external vendor solutions or new open-source software, establish and operate a sandbox verification environment isolated from the internal network.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 18496,
+            "end_char": 18566
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "ㅇ (일부 자동화+인간개입) 계정 잠금, 트래픽 차단, 시스템 격리, 패치 배포 등은 사전 시뮬레이션과 인간 승인을 전제로 운영",
+            "source_section": "2. 금융분야 대응 요령 - 라. AI 기반 방어 자동화",
+            "quote_en": "(Partial automation + human intervention) Operate high-impact actions such as account lockouts, traffic blocking, system isolation, and patch deployment on the premise of prior simulation and human approval.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19819,
+            "end_char": 19890
+          },
+          {
+            "quote": "ㅇ 보안 장애 및 오탐으로 인한 서비스 중단을 방지하기 위해 AI의 자율 제어 권한을 3단계로 차등화",
+            "source_section": "2. 금융분야 대응 요령 - 라. AI 기반 방어 자동화 (적용 예시)",
+            "quote_en": "To prevent service disruptions caused by security failures or false positives, differentiate AI's autonomous control authority into three tiers.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20724,
+            "end_char": 20780
+          }
+        ]
+      },
+      {
+        "label": "agentic_autonomy_controls",
+        "confidence": 0.87,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "□ AI 기반 공격에 대비해 보안시스템 자동화 체계를 마련할 수 있으며, 보안 자동화 과정의 오탐지, 과잉대응, 서비스 장애 가능성에 대비하기 위해 업무 위험도 등을 고려하여 자동화 수준을 차등화할 필요",
+            "source_section": "2. 금융분야 대응 요령 - 라. AI 기반 방어 자동화",
+            "quote_en": "An automated security system may be established to prepare for AI-based attacks, and to guard against false positives, overreaction, and service outages during security automation, the level of automation must be differentiated according to business risk.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19204,
+            "end_char": 19317
+          },
+          {
+            "quote": "ㅇ 보안 장애 및 오탐으로 인한 서비스 중단을 방지하기 위해 AI의 자율 제어 권한을 3단계로 차등화",
+            "source_section": "2. 금융분야 대응 요령 - 라. AI 기반 방어 자동화 (적용 예시)",
+            "quote_en": "To prevent service disruptions caused by security failures or false positives, differentiate AI's autonomous control authority into three tiers.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20724,
+            "end_char": 20780
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.89,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "□ 금융AI보안연구소 지원센터(aisupport@fsec.or.kr, 02-3495-9851)를 통해 프런티어 AI 보안 위협 공동 대응 및 관련 안내 지원\nㅇ 아울러, 보안 위협 발생 시에는 금융ISAC(isac@fsec.or.kr, 02-3495-9999)을 통해 관련 정보를 전파하고, 신속하게 대응",
+            "source_section": "2. 금융분야 대응 요령 - 마. 금융권 공동 대응 및 시스템 복원력 강화",
+            "quote_en": "Support joint financial-sector response and guidance on frontier AI security threats through the Financial AI Security Research Institute Support Center, and when security threats occur, disseminate relevant information through Financial ISAC and respond swiftly.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22613,
+            "end_char": 22783
+          },
+          {
+            "quote": "ㅇ 특히, AI의 대규모 보안 위협에 대한 개별 금융회사 차원의 대응에는 한계가 있으므로 복원력 중심의 공동 대응* 필요\n* 위협정보 공유, 공동 탐지룰, 취약점 선공개 대응, 공급망 공동 점검, 모의훈련 등",
+            "source_section": "2. 금융분야 대응 요령 - 마. 금융권 공동 대응 및 시스템 복원력 강화",
+            "quote_en": "In particular, because individual financial companies face limits in responding alone to large-scale AI security threats, resilience-centered joint response—including threat intelligence sharing, shared detection rules, advance vulnerability disclosure coordination, joint supply-chain checks, and drills—is necessary.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22496,
+            "end_char": 22612
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "quote": "※ 본 대응 요령은 규제적 성격이 아니며, 프런티어 AI 보안 위협 대응을 위한 안내로서 참고",
+            "source_section": "1. 배경",
+            "quote_en": "Note: These response guidelines are not regulatory in nature and serve as reference guidance for responding to frontier AI security threats.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 960,
+            "end_char": 1012
+          },
+          {
+            "quote": "□ 이를 분석하여 ①거버넌스, ②취약점 관리, ③자산ㆍ공급망 식별/관리, ④AI 기술 활용, ⑤복원력, ⑥침해 확산 방지 등 6개 핵심 대응 요령 도출\nㅇ 금융회사 등이 참고할 수 있도록 국내 금융권에 특화된 상세 요령을 안내",
+            "source_section": "1. 배경",
+            "quote_en": "Analyzing international measures, six core response guidelines are derived—governance, vulnerability management, asset and supply-chain identification/management, AI technology utilization, resilience, and preventing breach propagation—providing detailed guidance tailored to the domestic financial sector for financial institutions' reference.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 833,
+            "end_char": 959
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Financial Security Institute (FSI / 금융보안원) — Financial AI Security Research Institute Support Center and Financial ISAC",
+      "Financial Services Commission (FSC)"
+    ],
+    "compliance_deadlines": [
+      "2026-07-01: Issuance and immediate effective date of Ver. 1.0 response guidelines",
+      "Recommended operational benchmarks: Weekly/monthly simultaneous multi-incident drills; 24-hour virtual patching or mandatory patching for critical vulnerabilities scoring >= 15 under priority formulas; 14-day isolated sandbox verification for third-party/open-source adoption"
+    ],
+    "penalties_summary": "None specified. The document explicitly declares that it is non-regulatory reference guidance without statutory sanctions, although its patch-prioritization framework treats compliance with existing laws (Electronic Financial Transactions Act, Credit Information Act, PIPA, ISMS-P) as a high-priority scoring factor.",
+    "implementation_notes": "Issued July 1, 2026 by the Financial Security Institute (Publication No. 2026-비정기-AGR-AI안전평가-700, Ver. 1.0) in direct response to the 'Mythos shock' (Anthropic's Mythos System Card and Project Glasswing discovering 10,000+ high-risk vulnerabilities in one month). Synthesizes Korean MSIT, UK DSIT, Singapore CSA, NYDFS, CSA, and FS-ISAC advisories into concrete operational controls for Korean financial firms: Board/CEO KRI governance, CISO Frontier AI Threat Response Teams, CI/CD VulnOps with AI-agent red-teaming, SBOM/SCA supply-chain automation, three-tier human-in-the-loop scoping of autonomous defensive AI agents, BCP automated rollback/ISAC joint response, and Zero Trust microsegmentation with phishing-resistant MFA.",
+    "confidence": 0.95
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "existential_catastrophic",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.8,
+      "national_security": 0.25,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.15,
+      "social_stability": 0.1,
+      "innovation_enablement": 0.62,
+      "consumer_public_safety": 0.94,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.3,
+      "national_security": 0.05,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.15,
+      "consumer_public_safety": 0.5,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The 2026 FSI/FSC Frontier AI Security Threat Response Guidelines are dominantly framed around consumer and public safety, focusing on protecting financial stability, institutional trust, business continuity, core customer payment and authentication infrastructure, and sensitive customer data against cyber breaches, AI-assisted voice/deepfake phishing, ransomware, and operational service disruptions. Existential and catastrophic risk is a strong secondary frame grounded in the triggering frontier-AI cyber threat—specifically the 'Mythos shock' demonstrating mass-scale zero-day vulnerability discovery exceeding 10,000 high-risk flaws in a single month, autonomous machine-speed attacks outpacing human cognition, and rapid systemic contagion across shared financial infrastructure where perfect defense is unattainable. Innovation enablement plays a supporting secondary role by adopting non-regulatory reference guidance and encouraging financial institutions to harness defensive frontier AI models, DevSecOps agents, and shared FSI security platforms safely.",
+    "evidence_spans": [
+      {
+        "quote": "□ AI 보안 위협은 기술적 위험 외에도 금융회사 등의 신뢰, 업무 연속성, 금융안정, 규제 준수 등 경영 전반에 영향을 미치는 사항\nㅇ 이사회 및 CEO 등 경영진 중심의 전사적 대응이 필요",
+        "source_section": "2. 금융분야 대응 요령 - 가. 경영진 책임 강화",
+        "quote_en": "Beyond technical risk, AI security threats affect overall corporate management including the trust of financial institutions, business continuity, financial stability, and regulatory compliance, necessitating an enterprise-wide response led by the board of directors, CEO, and senior management.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 6665,
+        "end_char": 6772
+      },
+      {
+        "quote": "ㅇ (MFA 강화) 중요 서버 접속, 중요 정보 조회, 이상 행위 탐지시 생체 인증, 하드웨어 보안토큰 등 강화된 추가 인증을 적용하여 침해사고 방지 ※ SMS 인증 및 OTP의 경우 공격자가 AI 보이스, 딥페이크, 피싱 사이트 등을 악용하는 경우 우회 가능성 존재",
+        "source_section": "2. 금융분야 대응 요령 - 바. 침해 확산 방지 (적용 예시)",
+        "quote_en": "(MFA strengthening) Prevent breach incidents by applying strengthened additional authentication such as biometric authentication or hardware security tokens when accessing critical servers, querying critical information, or detecting anomalous behavior. Note: SMS authentication and OTP carry bypass risks if attackers exploit AI voice, deepfakes, or phishing sites.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 24846,
+        "end_char": 24995
+      },
+      {
+        "quote": "□ 앤트로픽社 미토스 시스템 카드*와 글래스윙 프로젝트 중간 결과**를 통해 공개된 높은 성능은 금융 보안 체계에 새로운 위협으로 대두\n* AI 모델의 성능 및 안전성 평가 결과 등이 포함된 기술 문서\n** 한 달 만에 1만 건 이상의 신규 고위험 취약점을 발견",
+        "source_section": "1. 배경",
+        "quote_en": "The high performance disclosed through Anthropic's Mythos System Card (a technical document containing AI model performance and safety evaluation results) and interim results of Project Glasswing (which discovered over 10,000 new high-risk vulnerabilities in a single month) has emerged as a new threat to financial security architectures.",
+        "frame": "existential_catastrophic",
+        "grounding_status": "verbatim",
+        "start_char": 612,
+        "end_char": 758
+      },
+      {
+        "quote": "□ (회복 중심 리스크 관리) 프런티어 AI 기반 공격에 대한 완벽한 방어는 매우 어렵기 때문에, 신속한 회복력(Resilience) 중심 사후 관리 대책 수립",
+        "source_section": "2. 금융분야 대응 요령 - 마. 금융권 공동 대응 및 시스템 복원력 강화",
+        "quote_en": "(Resilience-centered risk management) Because perfect defense against frontier AI-based attacks is extremely difficult, establish post-incident management measures centered on rapid resilience.",
+        "frame": "existential_catastrophic",
+        "grounding_status": "verbatim",
+        "start_char": 22197,
+        "end_char": 22286
+      },
+      {
+        "quote": "□ 취약점 점검에 활용할 수 있는 프런티어 AI 모델 중 금융회사 여건에 적합한 모델을 활용하여 내부 SW 점검\nㅇ 영향도ㆍ노출도가 높은 시스템ㆍ서비스를 우선적으로 점검을 수행하고 발견된 취약점에 대해 검토 후 조치",
+        "source_section": "2. 금융분야 대응 요령 - 나. 취약점 및 패치 관리",
+        "quote_en": "Utilize frontier AI models suited to the financial company's conditions among those available for vulnerability inspection to inspect internal software, prioritizing high-impact and high-exposure systems and services and remediating discovered vulnerabilities after review.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 10060,
+        "end_char": 10180
+      },
+      {
+        "quote": "※ 본 대응 요령은 규제적 성격이 아니며, 프런티어 AI 보안 위협 대응을 위한 안내로서 참고",
+        "source_section": "1. 배경",
+        "quote_en": "Note: These response guidelines are not regulatory in nature and serve as reference guidance for responding to frontier AI security threats.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 960,
+        "end_char": 1012
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:05:17.901190Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "0660c38be43ecf763d29e636d6c24f63497e83d3392ded139eff274684fe3a80",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 25892,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 22,
+      "exact_matches": 22,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

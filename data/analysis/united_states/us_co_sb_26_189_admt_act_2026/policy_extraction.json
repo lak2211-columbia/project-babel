@@ -1,0 +1,168 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "Colorado General Assembly",
+  "document_type": "legislation",
+  "binding_strength": "binding_law",
+  "publication_date": "2026-05-14",
+  "effective_date": "2027-01-01",
+  "covered_actors": [
+    "Developers doing business in Colorado that develop, offer, sell, lease, license, or make commercially available a covered Automated Decision-Making Technology (ADMT) or covered component, or intentionally and substantially modify an ADMT into a covered ADMT (excluding purely non-consequential research, internal affiliate uses, or downstream unaffiliated modifications)",
+    "Deployers doing business in Colorado that deploy a covered ADMT to materially influence a consequential decision affecting consumers (including employees, Colorado-resident job applicants, and individuals evaluated for opportunities or services in Colorado)",
+    "HIPAA-covered health-care entities operating in Colorado (exempt from general Part 17 provisions except employment decisions, but required to provide general patient notices of advanced technologies and financial-assistance/discounted-care ADMT disclosures)",
+    "Insurers subject to C.R.S. § 10-3-1104.9 (deemed compliant for insurance practice while remaining subject to Part 17 for insurer employment decisions and Commissioner notice rulemaking)"
+  ],
+  "covered_application_domains": [
+    "education",
+    "employment",
+    "finance",
+    "healthcare",
+    "public_sector_use"
+  ],
+  "prohibited_practices": [
+    "Engaging in an unfair or deceptive trade practice under the Colorado Consumer Protection Act by violating Part 17 developer documentation, recordkeeping, deployer notice/post-adverse-outcome disclosure, or consumer correction and human-review requirements (C.R.S. §§ 6-1-1706(2)(a), 6-1-105(1)(uuuu))",
+    "Enforcing or relying on contractual indemnification, defense, or hold-harmless provisions between developers and deployers that purport to indemnify a party for its own acts or omissions causing unlawful discrimination under the Colorado Anti-Discrimination Act or other Colorado anti-discrimination law in consequential ADMT decisions (void as contrary to public policy under § 6-1-1707(7)(a))",
+    "Committing unlawful discrimination under Colorado anti-discrimination laws (including the Colorado Anti-Discrimination Act) arising from a consequential decision materially influenced by a covered ADMT, for which developers and deployers face relative-fault liability (§ 6-1-1707(1)–(2), (9))"
+  ],
+  "safety_requirements": [
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "(1) PRIOR TO A DEPLOYER USING A COVERED ADMT TO MATERIALLY INFLUENCE A CONSEQUENTIAL DECISION, THE DEPLOYER SHALL PROVIDE A CLEAR AND CONSPICUOUS NOTICE TO A CONSUMER THAT THE DEPLOYER USED OR WILL USE A COVERED ADMT IN A CONSEQUENTIAL DECISION AFFECTING THE CONSUMER AND INSTRUCTIONS REGARDING HOW THE CONSUMER MAY OBTAIN THE ADDITIONAL INFORMATION DESCRIBED IN THIS SECTION.",
+          "source_section": "Section 1 (C.R.S. § 6-1-1704(1))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14377,
+          "end_char": 14753
+        },
+        {
+          "quote": "(3) IF A DEPLOYER USES A COVERED ADMT TO MATERIALLY INFLUENCE A CONSEQUENTIAL DECISION THAT RESULTS IN AN ADVERSE OUTCOME FOR A CONSUMER, THE DEPLOYER SHALL PROVIDE WITHIN THIRTY DAYS AFTER MAKING THE DECISION:\n(a) A PLAIN LANGUAGE DESCRIPTION OF THE CONSEQUENTIAL DECISION AND THE ROLE THE COVERED ADMT PLAYED IN THE CONSEQUENTIAL DECISION;",
+          "source_section": "Section 1 (C.R.S. § 6-1-1704(3)(a))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 15064,
+          "end_char": 15405
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.97,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "(1) ON AND AFTER JANUARY 1, 2027, A DEVELOPER SHALL MAKE AVAILABLE TO EACH DEPLOYER OF A COVERED ADMT DEVELOPED BY THE DEVELOPER, IN A FORM AND MANNER THAT IS REASONABLY UNDERSTANDABLE TO A DEPLOYER AND THAT PROTECTS TRADE SECRETS OR INFORMATION PROTECTED FROM DISCLOSURE BY STATE OR FEDERAL LAW:\n(a) A GENERAL STATEMENT DESCRIBING THE INTENDED USES AND KNOWN HARMFUL OR INAPPROPRIATE USES OF THE COVERED ADMT;",
+          "source_section": "Section 1 (C.R.S. § 6-1-1702(1)(a))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 11174,
+          "end_char": 11584
+        },
+        {
+          "quote": "(4) A DEVELOPER SHALL RETAIN, FOR NOT LESS THAN THREE YEARS AFTER THE CREATION OF A RECORD REQUIRED OR CREATED UNDER THIS SECTION OR FOR A LONGER PERIOD IF REQUIRED BY APPLICABLE STATE OR FEDERAL LAW, RECORDS REASONABLY NECESSARY TO DEMONSTRATE COMPLIANCE WITH THIS SECTION.",
+          "source_section": "Section 1 (C.R.S. § 6-1-1702(4))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12945,
+          "end_char": 13219
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.94,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "(15) \"MEANINGFUL HUMAN REVIEW\" MEANS REVIEW BY A INDIVIDUAL DESIGNATED BY THE DEPLOYER WHO HAS AUTHORITY TO APPROVE, MODIFY, OR OVERRIDE A CONSEQUENTIAL DECISION AND WHO:\n(a) CONSIDERS RELEVANT, AVAILABLE PRIMARY EVIDENCE;\n(b) IS TRAINED TO CONDUCT THE REVIEW;\n(c) DOES NOT DEFAULT TO THE SYSTEM OUTPUT; AND",
+          "source_section": "Section 1 (C.R.S. § 6-1-1701(15))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10360,
+          "end_char": 10667
+        },
+        {
+          "quote": "(II) AN OPPORTUNITY FOR MEANINGFUL HUMAN REVIEW AND RECONSIDERATION OF THE CONSEQUENTIAL DECISION, TO THE EXTENT COMMERCIALLY REASONABLE.",
+          "source_section": "Section 1 (C.R.S. § 6-1-1705(1)(a)(II))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 21104,
+          "end_char": 21241
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "civil_penalty",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "(2) (a) A VIOLATION OF THIS PART 17 IS A DECEPTIVE TRADE PRACTICE AND IS SUBJECT TO THE PROVISIONS OF THE \"COLORADO CONSUMER PROTECTION ACT\", THIS ARTICLE 1.",
+          "source_section": "Section 1 (C.R.S. § 6-1-1706(2)(a))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 23125,
+          "end_char": 23282
+        },
+        {
+          "quote": "(d) IF A VIOLATION IS DISCOVERED IN THE COURSE OF AN ENFORCEMENT ACTION, A COURT MAY CONSIDER THAT A DEVELOPER OR DEPLOYER CURED THE VIOLATION WITHIN SIXTY DAYS AFTER RECEIPT OF WRITTEN NOTICE AS A MITIGATING FACTOR IN DETERMINING CIVIL PENALTIES OR OTHER MONETARY RELIEF, IF ANY.",
+          "source_section": "Section 1 (C.R.S. § 6-1-1706(3)(d))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 24222,
+          "end_char": 24502
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "(b) VIOLATIONS OF THE DISCLOSURE REQUIREMENTS AND CONSUMER RIGHTS DESCRIBED IN SECTIONS 6-1-1702, 6-1-1703, 6-1-1704, AND 6-1-1705 ARE ENFORCEABLE EXCLUSIVELY BY THE ATTORNEY GENERAL WITHOUT REGARD TO ANY OTHER PROVISION IN THIS TITLE 6.",
+          "source_section": "Section 1 (C.R.S. § 6-1-1706(1)(b))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 22887,
+          "end_char": 23124
+        },
+        {
+          "quote": "(3) (a) PRIOR TO ANY ENFORCEMENT ACTION FOR A VIOLATION OF THIS PART 17, THE ATTORNEY GENERAL SHALL ISSUE A NOTICE OF VIOLATION TO A DEVELOPER OR DEPLOYER IF A CURE IS DEEMED POSSIBLE BY THE ATTORNEY GENERAL.\n(b) IF THE DEVELOPER OR DEPLOYER FAILS TO CURE A VIOLATION WITHIN SIXTY\nCh. 131\nDAYS AFTER RECEIPT OF A NOTICE OF VIOLATION, THE ATTORNEY GENERAL MAY BRING AN ACTION PURSUANT TO THIS SECTION.",
+          "source_section": "Section 1 (C.R.S. § 6-1-1706(3)(a)–(b))",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 23541,
+          "end_char": 23941
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "Colorado Attorney General (Colorado Department of Law) — exclusive enforcement authority for Part 17 deceptive trade practice violations and implementing rulemaking",
+    "Colorado Commissioner of Insurance (Division of Insurance) — rulemaking authority for insurer consumer disclosures under C.R.S. § 10-3-1104.9(3)(e)",
+    "Colorado courts and civil-rights enforcement authorities under existing Colorado anti-discrimination law (including the Colorado Anti-Discrimination Act) for relative-fault discrimination claims under § 6-1-1707"
+  ],
+  "compliance_deadlines": [
+    "2026-05-14: Passage and immediate effectiveness of rulemaking authorizations (§§ 6-1-1704(4), 6-1-1705(3), 6-1-1706(6), 10-3-1104.9(3)(e)) and FY 2026-27 Department of Law appropriation ($46,190 for 0.4 FTE)",
+    "2027-01-01: Mandatory deadline for Attorney General rules clarifying post-adverse-outcome disclosures (§ 6-1-1704(4)(b)) and consumer correction/human-review rights (§ 6-1-1705(3)); substantive effective date applying Part 17 to consequential decisions made on or after January 1, 2027",
+    "Within 30 days after an adverse consequential decision: Deployer must furnish plain-language explanation, ADMT details request process, and consumer-rights notice (§ 6-1-1704(3)); HIPAA covered entities using ADMT for financial assistance may notify in advance or within 30 calendar days (§ 6-1-1708(3)(e))",
+    "Minimum 3-year record retention for developers (from record creation, § 6-1-1702(4)) and deployers (from consequential decision date, § 6-1-1703)",
+    "60-day cure period after AG notice of violation (effective through January 1, 2030, when § 6-1-1706(3) repeals); annual AG SMART Act enforcement reporting beginning January 2028"
+  ],
+  "penalties_summary": "Violations of Part 17 are declared deceptive trade practices enforceable exclusively by the Colorado Attorney General under the Colorado Consumer Protection Act (C.R.S. Title 6, Article 1), carrying civil penalties and monetary or injunctive relief after a 60-day right-to-cure period (through January 1, 2030, bypassed for knowing or repeated violations). No new private right of action is created under Part 17, but § 6-1-1707 expressly preserves existing statutory claims and allocates relative-fault civil liability between developers and deployers for unlawful discrimination under the Colorado Anti-Discrimination Act while voiding contractual anti-discrimination indemnification clauses.",
+  "implementation_notes": "Enacted May 14, 2026 (Session Laws Chapter 131, effective January 1, 2027), Colorado SB 26-189 repeals and reenacts Part 17 of Title 6, Article 1 (replacing 2024's SB 24-205) to replace broad high-risk AI risk-management and impact-assessment mandates with targeted Automated Decision-Making Technology (ADMT) transparency, developer-to-deployer documentation, 3-year recordkeeping, personal-data correction, meaningful human review and reconsideration, and relative-fault anti-discrimination liability across seven consequential domains (education, employment, residential real estate, financial/lending services, insurance, health-care services, and essential government services/public benefits). Harmonizes compliance with federal ECOA/Regulation B, FCRA, FERPA, HIPAA, GLBA, and FDA medical-device oversight.",
+  "confidence": 0.97
+}

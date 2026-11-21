@@ -1,0 +1,337 @@
+{
+  "source_id": "jp_bunka_ai_copyright_checklist_guidance_2024",
+  "title": "AIと著作権に関するチェックリスト＆ガイダンス (Bunka AI and Copyright Checklist & Guidance)",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "Agency for Cultural Affairs (Bunka / 文化庁)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2024-07-31",
+    "effective_date": "2024-07-31",
+    "covered_actors": [
+      "AI Developers (AI開発者, including R&D researchers, model builders, and fine-tuners such as LoRA creators, not limited to business enterprises)",
+      "AI Providers (AI提供者, integrating AI systems into applications, products, and services)",
+      "AI Business Users (AI利用者 / 業務利用者, deploying AI systems or services in business operations)",
+      "General / Non-Business Users (業務外利用者 / 一般利用者, using generative AI outside business activities)",
+      "Copyright holders, performers, and neighboring-rights holders (著作権者、実演家等の権利者)"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [
+      "Unlicensed reproduction of copyrighted works for AI training where an 'enjoyment purpose' (享受目的) co-exists outside Copyright Act Art. 30-4 (such as intentional overfitting, small-sample LoRA fine-tuning targeting a specific creator's works to output creative expression, or building RAG databases designed to output existing creative expressions)",
+      "Unlicensed copying of paid AI-training database works or circumventing technical anti-crawling restrictions (ID/password login walls or robots.txt) where it unreasonably prejudices copyright owners' interests under the Art. 30-4 proviso",
+      "Knowingly collecting AI training data from websites hosting infringing pirated copies (海賊版サイト)",
+      "Generating, publicly transmitting, or distributing AI outputs that exhibit both similarity (類似性) to and reliance on (依拠性) existing copyrighted works outside applicable statutory limitations"
+    ],
+    "safety_requirements": [
+      {
+        "label": "training_data_governance",
+        "confidence": 0.98,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "海賊版等の、権利を侵害してアップロードされているデータを学習データとして収集す\nることは、海賊版による権利侵害の助長に繋がるおそれもあり、厳に慎むべきものです。\nあるウェブサイトが海賊版等の権利侵害複製物を掲載していることを知りながら、当該\nウェブサイトから学習データの収集を行った場合、この学習データを用いて開発された\n生成AIにより生じる著作権侵害について、AI開発者も著作権侵害の責任を問われる\n可能性があります。",
+            "source_section": "第1部 1. AI開発者のリスク低減方策 - 1-1-5 海賊版サイトと知りながら学習データの収集源としない",
+            "quote_en": "Collecting data uploaded in infringement of rights such as pirated editions as training data should be strictly refrained from, as it may encourage infringement by piracy sites. If an AI developer collects training data from a website while knowing it hosts pirated or other infringing copies, the AI developer may also be held liable for copyright infringement caused by generative AI developed using that training data.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4921,
+            "end_char": 5131
+          },
+          {
+            "quote": "AI学習データの収集は、クローラと呼ばれるプログラムにより行われることが一般的ですが、ID/パスワードによるアクセス制限や、ウェブサイト内のファイル「robots.txt」 等により、クローラによるAI学習データの収集を制限する技術的措置がとられていることがあります。",
+            "source_section": "第1部 1. AI開発者のリスク低減方策 - 1-1-3 AI学習データの収集を制限する技術的措置を尊重",
+            "quote_en": "AI training data is generally collected by programs called crawlers, and technical measures restricting crawler collection of AI training data—such as ID/password access controls or a website's 'robots.txt' file—may be in place.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 4385,
+            "end_char": 4519
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "著作権法第30条の4等の要件を満たしていることを事後に適切に立証できるよう、\n学習データの出所（どのようなデータセットを利用したか、クローリングの際の収集ポリ\nシー等）、学習の過程・方法に関する意思決定（どのような学習済みモデルを作成する\nために、どの学習データを用いて、どのような学習を行ったか）等について記録を保存・\n文書化しておく等、事後的に確認・検証が可能な状態を確保しておくことが望まれます。",
+            "source_section": "第1部 1. AI開発者のリスク低減方策 - 1-2-2 トレーサビリティの向上",
+            "quote_en": "To enable appropriate ex-post proof that requirements such as Copyright Act Article 30-4 were met, it is desirable to ensure a state allowing ex-post verification and confirmation, such as preserving and documenting records of training data provenance (datasets used, crawling collection policies, etc.) and decisions regarding training processes and methods.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6449,
+            "end_char": 6650
+          },
+          {
+            "quote": "AI生成物の利用に際しては、まずは既存の著作物と類似していないか確認することが重要ですが（3-1-5参照）、これに加えて、依拠性がないことを説明できるよう、生成に用いたプロンプト等、生成物の生成過程を確認可能な状態にしておくよう努めることが望まれます。",
+            "source_section": "第1部 3. AI利用者（業務利用者）のリスク低減方策 - 3-1-7",
+            "quote_en": "When utilizing AI outputs, it is important first to check that they are not similar to existing copyrighted works, and in addition it is desirable to endeavor to keep generation processes—such as the prompts used—in a verifiable state so as to be able to explain the absence of reliance.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13709,
+            "end_char": 13835
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.93,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "①提供されるシステム・サービスにおいて生成AIを利用している事実 ：生成AIを使用する場合は「考え方」で示されているような著作権との関係を踏まえて使用する必要があることから、提供されるシステム・サービスにおいて生成AIを利用している事実は適切に情報提供されることが望まれます。",
+            "source_section": "第1部 2. AI提供者のリスク低減方策 - 2-2-1 提供するAIシステム・サービスについての適切な情報提供",
+            "quote_en": "(1) The fact that generative AI is used in the provided system or service: Because using generative AI requires taking copyright implications into account as set out in the General Understanding, it is desirable to appropriately disclose the fact that generative AI is used in the provided system or service.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9157,
+            "end_char": 9295
+          },
+          {
+            "quote": "あるAI生成物について、これが著作物であることを前提にライセンス契約等の取引の対象とする場合には、関係するステークホルダーに対して、AIを利用したAI生成物であることや、その著作物性等について、適切に説明することが求められます。 また、当該AI生成物が、既存の著作物の著作権を侵害するものでないこと（特に、既存の著作物と類似したものとなっていないこと等）についても、可能な確認措置（インターネット検索等）を行っていることを適切に説明できるようにしておくことが望まれます。",
+            "source_section": "第1部 3. AI利用者（業務利用者）のリスク低減方策 - 3-1-6 関係するステークホルダーに対して、AIの利用について適切に説明",
+            "quote_en": "Where an AI-generated output is made the subject of a transaction such as a licensing contract on the premise that it is a copyrighted work, it is required to appropriately explain to relevant stakeholders that it is an AI-generated output utilizing AI and its copyrightability, and it is desirable to be able to explain that feasible verification checks (such as internet searches) were performed to confirm non-infringement.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13125,
+            "end_char": 13360
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.85,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "AI利用者としては、利用するAIシステム・サービスに応じて、著作権侵害を生じさせ\nない適正な方法で生成AIを利用できるよう、生成AIの利用に関する内部的ルールの\n策定等、著作権侵害に対する適切な予防措置を講じることが望まれます。",
+            "source_section": "第1部 3. AI利用者（業務利用者）のリスク低減方策 - 3-1-2 著作権侵害に対する適切な予防措置及び対応の検討",
+            "quote_en": "AI business users are encouraged to take appropriate preventive measures against copyright infringement—such as formulating internal rules on the use of generative AI—tailored to the AI systems and services used so that generative AI is utilized properly without causing copyright infringement.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12040,
+            "end_char": 12154
+          },
+          {
+            "quote": "そのため、AI生成物については、その利用に先立って、まずは既存の著作物と類似していないかを確認*することが必要です。",
+            "source_section": "第1部 3. AI利用者（業務利用者）のリスク低減方策 - 3-1-5",
+            "quote_en": "Therefore, prior to utilizing AI-generated outputs, it is necessary first to verify whether they are similar to existing copyrighted works (for example, using internet text or image search).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12514,
+            "end_char": 12572
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.78,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "また、仮に生成AIの利用により著作権侵害が生じた場合に講じるべき対応（例えば、\n事案に関する情報共有、AIシステム・サービスの停止・復旧、権利者への対応、原因解明、 再発防止措置等）についても、あらかじめ想定し検討しておくことが望まれます。",
+            "source_section": "第1部 3. AI利用者（業務利用者）のリスク低減方策 - 3-1-2 著作権侵害に対する適切な予防措置及び対応の検討",
+            "quote_en": "In addition, it is desirable to anticipate and consider in advance the responses to be taken if copyright infringement occurs through the use of generative AI (such as sharing information about the incident, suspending and restoring the AI system or service, responding to rightsholders, investigating root causes, and preventing recurrence).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12155,
+            "end_char": 12275
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "quote": "「第1部AI開発・提供・利用のチェックリスト」で示す各ステークホルダーのリスク低減方策は、これらを全て記載どおりに実施しなければ直ちに当該ステークホルダーに法的責任が生じるといったことや、逆にこれらを全て実施すれば法的責任を何ら問われないといったことを意味するものではありませんので、 留意してください。",
+            "source_section": "第1部 このチェックリストについて",
+            "quote_en": "Please note that the risk-reduction measures for each stakeholder set out in Part 1 ('Checklist for AI Development, Provision, and Use') do not mean that failure to implement all measures as written immediately results in legal liability, nor conversely that implementing all of them completely immunizes a stakeholder from legal liability.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 3115,
+            "end_char": 3267
+          }
+        ]
+      },
+      {
+        "label": "civil_penalty",
+        "confidence": 0.84,
+        "evidence": [
+          {
+            "quote": "著作権侵害があると認められる場合、権利者としては、侵害行為の差止請求（著作権法第112条）や損害賠償請求（民法第709条）等の措置*をとることが考えられます。",
+            "source_section": "第2部 権利者のためのガイダンス - 侵害に対して著作権者が取り得る措置",
+            "quote_en": "Where copyright infringement is found, rightsholders may pursue measures such as injunctions against infringing acts (Copyright Act Article 112) and claims for civil damages (Civil Code Article 709).",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20733,
+            "end_char": 20812
+          }
+        ]
+      },
+      {
+        "label": "criminal_penalty",
+        "confidence": 0.82,
+        "evidence": [
+          {
+            "quote": "また、著作権侵害に対しては刑事罰が定められていることから、捜査機関に対して告訴等により侵害者の処罰を求めることも考えられます。",
+            "source_section": "第2部 権利者のためのガイダンス - 侵害に対して著作権者が取り得る措置",
+            "quote_en": "Furthermore, because criminal penalties are established for copyright infringement, rightsholders may also seek criminal punishment of infringers by filing a complaint with investigative authorities.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20815,
+            "end_char": 20878
+          }
+        ]
+      },
+      {
+        "label": "market_access_restriction",
+        "confidence": 0.82,
+        "evidence": [
+          {
+            "quote": "① 著作権を侵害する新たな生成物の生成（複製）の差止め ② 既に生成された、著作権を侵害するAI生成物の利用行為（公衆送信等）の差止め・生成物の廃棄 ③ （一定の場合*）将来のAI開発に用いられるデータセットからの、侵害された既存の著作物の除去 ④ （一定の場合*）侵害物の生成に用いられた生成AIによる新たな侵害の予防に必要な措置",
+            "source_section": "第2部 権利者のためのガイダンス - 侵害に対して著作権者が取り得る措置",
+            "quote_en": "(1) Injunction against generating (reproducing) new infringing outputs; (2) injunction against using (e.g., publicly transmitting) already-generated infringing AI outputs and destruction of outputs; (3) in certain cases, removal of infringed existing works from datasets used for future AI development; and (4) in certain cases, measures necessary to prevent further infringement by the generative AI used to produce infringing outputs.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 21133,
+            "end_char": 21299
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Agency for Cultural Affairs (Bunka / 文化庁) — Copyright Division and free AI-copyright legal consultation desks",
+      "Japanese civil courts (injunctions under Copyright Act Art. 112, damages under Civil Code Art. 709, unjust enrichment under Art. 703, document production orders under Copyright Act Art. 114-3 / Code of Civil Procedure Art. 223)",
+      "Investigative and prosecutorial authorities (criminal copyright offenses, generally upon rightsholder complaint)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": "The Checklist & Guidance itself is non-binding soft guidance (non-adherence does not automatically establish liability, nor does full adherence grant automatic immunity). However, Part 2 details enforceable remedies under Japan's Copyright Act and Civil Code that rightsholders may pursue against infringing AI developers, providers, and users: civil injunctions (halting infringing generation/distribution, destroying outputs, removing works from future training datasets, and potentially destroying trained models that reproduce works at high probability), civil damages and unjust enrichment claims, and criminal penalties upon rightsholder complaint.",
+    "implementation_notes": "Issued July 31, 2024 by the Copyright Division of the Agency for Cultural Affairs (Bunka), synthesizing the Copyright Subdivision's March 2024 'General Understanding on AI and Copyright', the Cabinet Office IP Secretariat's May 2024 Interim Report, and METI/MIC's April 2024 AI Guidelines for Business (v1.0). Organizes actionable risk-reduction checklists across four stakeholder roles (AI developers, providers, business users, and general users) alongside a dedicated Part 2 rightsholder guidance explaining Copyright Act Art. 30-4 boundaries, robots.txt/login opt-outs, paid AI dataset markets, evidentiary proof of similarity/reliance, civil/criminal remedies, and Bunka's free lawyer consultation desks.",
+    "confidence": 0.95
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "fundamental_rights",
+      "consumer_public_safety"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.4,
+      "fundamental_rights": 0.86,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.9,
+      "consumer_public_safety": 0.6,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.08,
+      "fundamental_rights": 0.36,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.44,
+      "consumer_public_safety": 0.12,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "The Agency for Cultural Affairs' AI and Copyright Checklist & Guidance is dominantly framed around innovation enablement, providing voluntary, plain-language risk-reduction checklists and legal clarity across developers, providers, businesses, and general users to dispel stakeholder concerns, navigate Japan's Copyright Act Article 30-4 framework, and build a shared foundation for appropriate generative AI utilization. Fundamental rights is a closely paired secondary frame centered on empowering creators, performers, and copyright holders to protect their individual legal rights, exercise technical and contractual opt-outs, receive fair remuneration, and invoke civil and criminal legal remedies with free legal support. Consumer and public safety plays a supporting secondary role by guiding users away from inadvertent infringement and unintended harm to end users, alongside a modest economic competitiveness thread protecting paid AI training-data licensing markets and commercial transactions.",
+    "evidence_spans": [
+      {
+        "quote": "生成AIに関する技術については、関係者からの懸念の解消に向けて、AI開発者等、\nその開発や提供を行う事業者等から分かりやすい形で社会に対する発信がされること\nが望まれます。生成AIやこれに関連する技術・仕組みについて、共通の理解が関係\n当事者間で醸成されることは、今後、生成AIを利用するかどうか、また、利用する場合\nどのように利用するべきか、といった判断を関係当事者が適切に行えるようになること、\nひいては、生成AIの適切な利活用の土台として必要です。",
+        "source_section": "第1部 1. AI開発者のリスク低減方策 - 1-3-3 生成AIの仕組みや技術の概要等について、広く情報提供",
+        "quote_en": "Regarding generative AI technologies, clear communication to society from AI developers and other businesses is desirable to resolve stakeholder concerns. Fostering a shared understanding of generative AI and related technologies and mechanisms among stakeholders is necessary so parties can make sound decisions on whether and how to use generative AI, and ultimately serves as the foundation for appropriate utilization of generative AI.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 7725,
+        "end_char": 7952
+      },
+      {
+        "quote": "「第1部AI開発・提供・利用のチェックリスト」では、主に生成AIを含むシステム・サービスを開発・提供する方や、AIシステム・サービスを業務で（又は業務外で）利用する方向けに、AIの開発・提供・利用に伴うリスクを低減させる上で役立つと考えられる方策を記載しています。",
+        "source_section": "はじめに - 資料の構成について",
+        "quote_en": "Part 1 ('Checklist for AI Development, Provision, and Use') sets out measures considered useful for reducing risks associated with AI development, provision, and use, primarily for those who develop or provide systems and services incorporating generative AI and those who use AI systems and services for business (or non-business) purposes.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 1144,
+        "end_char": 1276
+      },
+      {
+        "quote": "このガイダンスや「考え方」は、権利者の方が生成AIとの関係で、自らの権利を保護し、適切に行使することを支援するために作成されたものです。このガイダンスや「考え方」で示されている内容を踏まえて、権利者の方が、 著作権侵害に対して権利行使をするか否か、適切に判断することができる状態が望まれます* 。",
+        "source_section": "第2部 著作権侵害への対応と相談窓口の活用",
+        "quote_en": "This guidance and the 'General Understanding' were prepared to support rightsholders in protecting and appropriately exercising their own rights in relation to generative AI. Based on the contents presented herein, it is desirable that rightsholders be in a position to make informed judgments on whether to exercise their rights against copyright infringement.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 25231,
+        "end_char": 25379
+      },
+      {
+        "quote": "また、「第2部権利者のためのガイダンス」では、主に著作権者等、著作権法上の権利を有する権利者の方向けに、「生成AIとの関係で、自らの著作物等がどのように利用されるのか」、「侵害に対してどのような対抗措置を取ることができるのか」、「権利の保護や適切な対価の還元を確保するために、権利者としてどのようなことが可能なのか」といった点を、その前提として把握しておくべきポイントと共に解説します。",
+        "source_section": "はじめに - 資料の構成について",
+        "quote_en": "Part 2 ('Guidance for Rightsholders') explains to copyright holders and other rightsholders under the Copyright Act how their works may be used in relation to generative AI, what countermeasures they can take against infringement, and what actions rightsholders can take to ensure rights protection and appropriate return of compensation.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 1329,
+        "end_char": 1522
+      },
+      {
+        "quote": "また、AIの活用において業務外利用者に何らかの影響が考えられる場合は、当該者に対するAIによる意図しない不利益の回避、AIによる便益最大化の実現に努める役割を担う。",
+        "source_section": "第1部 このチェックリストについて",
+        "quote_en": "Furthermore, where the utilization of AI may have some impact on non-business users, AI business users play the role of striving to avoid unintended disadvantages caused by AI to those individuals and maximize the benefits of AI.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 2411,
+        "end_char": 2493
+      },
+      {
+        "quote": "そのため、権利者としては、インターネット上に自らの作品を公開する場合、その作品を含んだAI学習用データベース（データセット）を、AI学習等の情報解析目的で販売（ライセンス提供）するようにしておくことで、無許諾で学習されることを法的に防ぐことが可能です。",
+        "source_section": "第2部 自身の作品がAI学習に利用されることへの対応 - 事前の対応②",
+        "quote_en": "Therefore, when publishing their works online, rightsholders can legally prevent unlicensed training by selling (licensing) an AI-training database (dataset) containing their works for information analysis purposes such as AI training.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 23513,
+        "end_char": 23639
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:09:03.656499Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "d8089788ee40db8b6eff8cc038cba22500c2115726e6cf55a1fe960a1c352e45",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 25876,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 19,
+      "exact_matches": 19,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

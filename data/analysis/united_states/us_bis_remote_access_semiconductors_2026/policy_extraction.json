@@ -1,0 +1,243 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "U.S. Department of Commerce, Bureau of Industry and Security (BIS)",
+  "document_type": "legislation",
+  "binding_strength": "binding_law",
+  "publication_date": "2026-11-19",
+  "effective_date": "2026-11-19",
+  "covered_actors": [
+    "Exporters, reexporters, and in-country transferors worldwide of advanced computing ('Super Intelligence (SI)') semiconductors, systems, software, and technology under ECCNs 3A090 (except 3A090.c), 4A090, and corresponding .z entries, including subsequent possessors not party to the original shipment (§ 744.24 Note 1)",
+    "Foreign and overseas data center owners and operators worldwide supplying or intending to supply remote access to >12,000,000 aggregate TPP (at one data center or across physically or digitally linked data centers) to or for entities headquartered (or with ultimate parents headquartered) in Country Group D:5 or Macau (§ 744.24(a)(1), (b)(3), (e))",
+    "Exporters, reexporters, and transferors shipping advanced semiconductors to Indonesia, Malaysia, Singapore, Brazil, or Thailand (new diversion-risk destination controls under § 742.6(a)(6)(iii)(A)(1)), and U.S.-headquartered ultimate consignees/end users in those destinations qualifying for license exclusion via monthly § 743.10 reporting",
+    "Front-end semiconductor fabricators and Outsourced Semiconductor Assembly and Test (OSAT) companies worldwide exporting or transferring applicable advanced-node logic ICs (ECCN 3A090.a) designed by non-approved, non-authorized IC designers (§ 744.23(a)(3)(i)(C), Note 1 to 3A090.a)",
+    "Non-D:5 cloud customers training SI models for or providing SI models to Country Group D:5 or Macau entities, and Validated End-Users (VEUs) under § 748.15"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "defense",
+    "critical_infrastructure"
+  ],
+  "prohibited_practices": [
+    "Knowingly exporting, reexporting, or transferring (in-country) controlled advanced computing items (ECCNs 3A090, 4A090, and .z items) without a BIS license to any data center worldwide providing or intending to provide >12,000,000 aggregate TPP (at a single data center or through physically or digitally linked data centers) to or for companies headquartered (or with ultimate parents headquartered) in Country Group D:5 or Macau, including via non-D:5 intermediary customers training or providing SI models for D:5 entities or via subsequent changes in end-use (§ 744.24(a)(1), (e))",
+    "Relying on EAR de minimis provisions when U.S.-origin advanced computing items are incorporated or commingled into foreign-made items with knowledge of prohibited § 744.24(a)(1) data-center end-use (Note 2 to § 744.24(a)(1))",
+    "Exporting, reexporting, or transferring (in-country) controlled advanced computing items without a license to or within Indonesia, Malaysia, Singapore, Brazil, or Thailand (absent the U.S.-headquartered entity reporting exclusion), Country Groups D:1, D:4, D:5, or unapproved UAE entities (§ 742.6(a)(6)(iii)(A)), or worldwide for entities headquartered (or with ultimate parents headquartered) in Country Group D:5 or Macau (§ 744.23(a)(3)(i)(A)–(B))",
+    "Front-end fabricators or OSATs exporting or transferring applicable advanced-node logic ICs (ECCN 3A090.a) designed by non-approved, non-authorized IC designers without a license, with presumption-overcoming pathways removed for IC designers located in or headquartered in Country Groups D:1, D:4, D:5 or the five newly designated diversion-risk destinations (§ 744.23(a)(3)(i)(C), Note 1 to 3A090.a)",
+    "Continuing pre-existing remote compute provisioning (>12,000,000 aggregate TPP) to Country Group D:5 or Macau entities beyond 90 days after November 19, 2026 without obtaining a BIS license (§ 744.24(b)(3))"
+  ],
+  "safety_requirements": [
+    {
+      "label": "compute_governance",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "You may not knowingly export, reexport, or transfer (in-county) items specified in paragraph (a) of § 744.24 for use in a data center to or within any destination worldwide that will provide access to more than 12,000,000 “aggregate TPP” (either at one data center or through `linked data centers' (including digitally-linked infrastructure, not just physically-linked infrastructure)",
+          "source_section": "Preamble (Section III.A — New § 744.24)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 13180,
+          "end_char": 13564
+        },
+        {
+          "quote": "For purposes of this section, a `linked data center' means a data center that uses networking infrastructure that links two or more separate data centers together, through digitally-linked or physically-linked infrastructure, that allows physical and virtual facilities to share resources, balance workloads, and replicate data as a unified whole.",
+          "source_section": "15 CFR § 744.24(d)(2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 62072,
+          "end_char": 62419
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "First, under § 742.6(a)(6)(iii)(A)(\n1\n), a license is required for exports, reexports, or transfers (in-country) to or within Indonesia, Malaysia, Singapore, Brazil, and Thailand.",
+          "source_section": "Preamble (Section II — Changes to § 742.6 Regional Stability)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10498,
+          "end_char": 10677
+        },
+        {
+          "quote": "Any data center providing significant volume of compute power to companies headquartered, or with an ultimate parent headquartered, in Macau or Country Group D:5 prior to the publication date of this rule that wishes to continue providing these services must obtain a license with 90 days of the effective date of this IFR or face future export restrictions.",
+          "source_section": "15 CFR § 744.24(b)(3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7380,
+          "end_char": 7738
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.96,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "To satisfy the requirement that you do not have “knowledge” for purposes of this paragraph, you will be expected to obtain and be able to provide sufficient information from the foreign data center regarding that data center's “know your customer” due diligence checks.",
+          "source_section": "15 CFR § 744.24(a)(1), Note 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 57498,
+          "end_char": 57767
+        },
+        {
+          "quote": "A foreign data center declining or being unable to provide information sufficient to verify compliance with this end use control shall be considered a red flag that presumptively provides you with “knowledge” unless you are able to resolve that red flag before proceeding with the transaction.",
+          "source_section": "15 CFR § 744.24(a)(1), Note 3",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 58047,
+          "end_char": 58340
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.88,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "(60) § 744.24, Restrictions on exports, reexports, and transfers (in-country) of certain advanced computing items for use in data centers for end users and destinations of concern.",
+          "source_section": "15 CFR § 762.2(b)(60) (Recordkeeping)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 72357,
+          "end_char": 72537
+        },
+        {
+          "quote": "Prior to an initial export, reexport, or transfer (in-country) to a validated end-user under a VEU Authorization, exporters, reexporters, and transferors must obtain certifications from the validated end-user regarding end-use and compliance with VEU requirements.",
+          "source_section": "15 CFR § 748.15(e)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 66853,
+          "end_char": 67117
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "licensing_requirement",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "BIS may inform persons, either individually by specific notice or through amendment to the EAR, that a license is required for the export, reexport, or transfer (in-country) of specified items to certain persons or destinations, because there is an unacceptable risk of use in, or diversion to, the activities specified in paragraph (a)(1) of this section.",
+          "source_section": "15 CFR § 744.24(a)(2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 58396,
+          "end_char": 58752
+        },
+        {
+          "quote": "All other applications for exports, reexports, or transfers (in-country) to or within Country Group D:5 and Macau or for an entity headquartered or with an ultimate parent headquartered in Country Group D:5 or Macau will be reviewed under a presumption of denial.",
+          "source_section": "15 CFR § 742.6(b)(10)(iii)(A)(2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 48557,
+          "end_char": 48820
+        }
+      ]
+    },
+    {
+      "label": "market_access_restriction",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "Commerce will be actively monitoring for countries that tolerate evasion of this IFR and will consider a range of consequences for such countries, such as import restrictions, new license requirements on advanced semiconductor exports, downgrading the country's status in the U.S. export control regime, and Entity List designations and temporary export prohibitions for foreign persons involved in such activities.",
+          "source_section": "Summary",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2544,
+          "end_char": 2959
+        },
+        {
+          "quote": "The prohibitions pursuant to paragraph (a)(1) apply regardless of whether a U.S.-origin item specified under paragraph (a) of this section has been incorporated or commingled into or with a foreign-made item. Reexporters and transferors may not rely on the de minimis provisions for incorporating or commingling U.S.-origin items specified under paragraph (a) into foreign-made items",
+          "source_section": "15 CFR § 744.24(a)(1), Note 2",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 56860,
+          "end_char": 57243
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "quote": "Reports regarding any export, reexport, or transfer (in-country) subject to the provisions of this section are due no later than the first business day of the month following the transaction.",
+          "source_section": "15 CFR § 743.10(d)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 52062,
+          "end_char": 52253
+        },
+        {
+          "quote": "The prohibitions under this section do not apply when the computing power access is only being provided for a `commercial recommender system' and you submit the following information to\nhttps://www.bis.gov/​ai/​exclusionnotesubmission\n,\nwhich will be shared with the End User Review Committee.",
+          "source_section": "15 CFR § 744.24(b)(2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 60035,
+          "end_char": 60328
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "Upon request by BIS,\n(\nprinted page 74980)\nexporters, reexporters, transferors, and validated end-users must allow review of records, including on-site reviews covering the information set forth in paragraphs (e) and (f)(1) of this section.",
+          "source_section": "15 CFR § 748.15(f)(2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 68816,
+          "end_char": 69056
+        },
+        {
+          "quote": "The Secretary of State or the Assistant to the President for National Security Affairs may notify the Secretary of Commerce that a certain destination is at high risk of use in, or diversion to, the activities specified in paragraph (a)(1) of this section.",
+          "source_section": "15 CFR § 744.24(a)(2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 59257,
+          "end_char": 59513
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "U.S. Department of Commerce, Bureau of Industry and Security (BIS) (Office of National Security Controls, Office of Exporter Services, and Secretary/Under Secretary of Commerce for Industry and Security — export licensing, 'is informed' notices, Entity List designations, temporary export prohibitions, monthly reporting, and on-site VEU audits)",
+    "End-User Review Committee (ERC) (interagency body reviewing VEU status and commercial-recommender-system exclusion filings under § 744.24(b)(2))",
+    "U.S. Department of State and Assistant to the President for National Security Affairs (consultation and high-risk destination notification authority triggering 10-day Commerce action under § 744.24(a)(2))"
+  ],
+  "compliance_deadlines": [
+    "2026-11-19: Immediate effective date of the Interim Final Rule (91 FR 74970) and start date for mandatory § 744.24(e) recipient end-use notifications and § 743.10 monthly reporting coverage",
+    "2026-12-21: Savings Clause cutoff date to complete en-route shipments that were aboard a carrier on November 19, 2026 under prior NLR/license-exception eligibility",
+    "2026-12-31 (plus 180-day transition): Authorized IC designer application cutoff under Note 1 to ECCN 3A090.a",
+    "2027-01-19: Public comment deadline on the Interim Final Rule (Docket BIS-2026-0628)",
+    "Within 90 days of November 19, 2026 (by February 17, 2027): Pre-existing overseas data centers providing >12,000,000 aggregate TPP compute access (or commercial recommender services) to Country Group D:5 or Macau companies must obtain a BIS license to continue (§ 744.24(b)(3), Preamble Section III.B)",
+    "First business day of each following month: Monthly § 743.10 exclusion reports due to BIS for U.S.-headquartered consignees/end users in Indonesia, Malaysia, Singapore, Brazil, and Thailand; February 15 annually for VEU reexport reports (§ 748.15(f)(1)(iii))"
+  ],
+  "penalties_summary": "Issued under ECRA (50 U.S.C. 4801–4852), the rule backs its remote-compute and diversion controls with mandatory licensing restrictions, denial of EAR de minimis and license-exception relief, 'is informed' individual licensing orders, Entity List designations, temporary export prohibitions for foreign persons involved in evasion, potential import restrictions, and country-level downgrades in the U.S. export control regime. Pre-existing data centers failing to obtain a license within 90 days face future export restrictions, and non-compliant parties are directed to submit voluntary self-disclosures under 15 CFR § 764.5.",
+  "implementation_notes": "Published and effective November 19, 2026 (91 FR 74970, Docket No. 261116-0005, RIN 0694-AK50; using 'Super Intelligence (SI)' terminology pursuant to EO 14434), this sweeping BIS Interim Final Rule establishes four major pillars: (1) new 15 CFR § 744.24 prohibiting unlicensed exports, reexports, or transfers of advanced AI semiconductors to overseas data centers worldwide providing >12,000,000 aggregate TPP (including across physically or digitally linked data centers) to Country Group D:5 or Macau companies, backed by KYC ownership due diligence, no de minimis relief, mandatory recipient end-use notices, and a narrow commercial-recommender-system exclusion (explicitly excluding generative models); (2) new diversion-risk destination license requirements for Indonesia, Malaysia, Singapore, Brazil, and Thailand (§ 742.6(a)(6)(iii)(A)(1)), excluding U.S.-headquartered entities subject to monthly § 743.10 reporting; (3) tighter front-end fabricator/OSAT presumptions under ECCN 3A090.a Note 1 and § 744.23(a)(3)(i)(C); and (4) formal rescission of the January 2025 Biden-era AI Diffusion Rule—eliminating ECCN 4E091 AI model-weights controls, the model-weights FDP rule, country tiers, Data Center VEU authorizations, and License Exceptions AIA and LPP while retaining License Exception ACM and worldwide advanced-computing FDP jurisdiction under § 734.9(h).",
+  "confidence": 0.98
+}

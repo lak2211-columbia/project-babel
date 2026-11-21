@@ -1,0 +1,84 @@
+{
+  "dominant_frame": "innovation_enablement",
+  "secondary_frames": [
+    "consumer_public_safety",
+    "fundamental_rights"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.8,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.92,
+    "consumer_public_safety": 0.88,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.24,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.42,
+    "consumer_public_safety": 0.34,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The 2021 FSC Financial Sector AI Guidelines are dominantly framed around innovation enablement, explicitly adopting light-touch, voluntary best-practice governance and sectoral self-regulation in the early stage of market adoption to build trustworthiness, remove regulatory uncertainty under existing financial laws, and promote widespread AI utilization in finance. Consumer and public safety is a close secondary frame centered on protecting financial consumers from operational errors, outsourcing harm, and financial losses while safeguarding financial market soundness and customer trust. Fundamental rights forms a substantive third frame anchored in preventing unfair discrimination in high-risk financial decisions such as lending and underwriting, protecting sensitive personal data and privacy, and upholding statutory individual rights to explanation, objection, and redress against automated profiling.",
+  "evidence_spans": [
+    {
+      "quote": "□소비자 및 금융산업·시장 건전성 보호를 위해 AI 운영의 방향성을 제시하되, AI 활성화를 위해 ‘약한 규제’ 형식의 가이드라인 필요",
+      "source_section": "Ⅰ. 금융분야 AI 규율 형식",
+      "quote_en": "While providing operational direction for AI to protect consumers and the soundness of the financial industry and market, a 'light-touch regulation' style guideline is needed to promote AI activation.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 883,
+      "end_char": 958
+    },
+    {
+      "quote": "가. 가이드라인은 금융분야에서의 인공지능(이하 ‘AI’라 한다.) 시스템 의 개발, 사업화 및 활용과 관련한 기획·설계, 평가·검증, 도입·운영 및 모니터링의 전 과정에서 신뢰성을 제고하여 AI 활성화를 제고하고 금융서비스에 대한 고객신뢰를 확보하는데 기여하는 것을 목적으로 한다.",
+      "source_section": "참고1 금융분야 AI 운영 가이드라인 (안) - 1. 목적과 적용 범위",
+      "quote_en": "a. The guideline aims to enhance trustworthiness across the entire process of planning and design, evaluation and verification, and deployment, operation, and monitoring related to the development, commercialization, and use of artificial intelligence systems in the financial sector, thereby contributing to promoting AI activation and securing customer trust in financial services.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 6587,
+      "end_char": 6744
+    },
+    {
+      "quote": "- 기존 금융업법상 규제를 AI 서비스에 적용할 경우, 나타날 수 있는규제 불확실성을 해소하는 보완장치를마련함에 초점",
+      "source_section": "Ⅲ. 향후 추진계획",
+      "quote_en": "Focus on preparing supplementary safeguards that eliminate regulatory uncertainty that may arise when applying existing financial-sector statutory regulations to AI services.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 12539,
+      "end_char": 12604
+    },
+    {
+      "quote": "다. 금융회사 등과 외부기관은 AI 시스템 개발·운영 등에 따라 소비자 피해가 발생한 경우 손해배상 지연 등을 방지하기 위한 명확한 책임 조항 및 손해배상 처리 절차 등을 마련한다.",
+      "source_section": "참고1 금융분야 AI 운영 가이드라인 (안) - 7. AI 시스템 업무위탁에 관한 특례",
+      "quote_en": "c. Financial companies, etc., and external institutions establish clear liability clauses and compensation handling procedures to prevent delays in damages compensation when consumer harm occurs in connection with AI system development or operation.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 10298,
+      "end_char": 10399
+    },
+    {
+      "quote": "라. 금융회사 등이 개인에 대한 부당한 차별 등 개인의 권익와 안전, 자유에 대한 중대한 위험을 초래할 수 있는 서비스(이하 ‘고위험 서비 스’라 한다.)에 대해 AI 시스템을 활용하는 경우, 적절한 내부통제 활 동 및 승인절차를 마련하고, 승인 책임자를 지정한다",
+      "source_section": "참고1 금융분야 AI 운영 가이드라인 (안) - 2. 거버넌스의 구축",
+      "quote_en": "d. Where financial companies, etc., utilize AI systems for services that may pose significant risks to individual rights, interests, safety, and freedom—such as unfair discrimination against individuals (hereinafter 'high-risk services')—they establish appropriate internal control activities and approval procedures and designate an approval officer.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 7795,
+      "end_char": 7942
+    },
+    {
+      "quote": "* AI 등 자동화평가 결과에 대해 설명요구, 이의제기, 기초데이터의 제출· 정정, 결과의 재산정을 요구할 수 있는 권리 (｢신용정보법｣ §36-2)",
+      "source_section": "Ⅱ. AI 가이드라인 주요내용 - 바. 도입·운영·모니터링",
+      "quote_en": "The right to request explanation, raise objections, submit or correct underlying data, and request recalculation regarding the results of automated evaluations such as AI (Credit Information Act Article 36-2).",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5423,
+      "end_char": 5506
+    }
+  ]
+}

@@ -2,10 +2,10 @@
 
 The parsing and analysis stack (`parser.py` `0.3.0`, `prompts.py`, `analysis.py`, `models.py`) transforms saved raw government artifacts into schema-validated structured extractions and deterministic jurisdiction syntheses:
 
-1. **`ParsedDocument` (Parser `0.3.0` + PyMuPDF)** — strictly offline HTML/PDF/HWPX/ODT extraction using **`pymupdf` (`fitz`) as the primary PDF extractor** (`pdftotext`/`pypdf` fallback), legal-heading sectionizing (`Chapter`, `Article N`, `Section N`, `Annex`, `第N条`, `제N조`), PDF repeated header/footer stripping (preserving top-of-page legal headings), compound-aware de-hyphenation, paragraph reflow, and explicit `extractor` provenance (`77 pymupdf`, `43 beautifulsoup4`, `1 hwpx_xml` across the 121-document corpus).
+1. **`ParsedDocument` (Parser `0.3.0` + PyMuPDF)** — strictly offline HTML/PDF/HWPX/ODT extraction using **`pymupdf` (`fitz`) as the primary PDF extractor** (`pdftotext`/`pypdf` fallback), legal-heading sectionizing (`Chapter`, `Article N`, `Section N`, `Annex`, `第N条`, `제N조`), PDF repeated header/footer stripping (preserving top-of-page legal headings), compound-aware de-hyphenation, paragraph reflow, CAC (`cac.gov.cn`) and Korean `law.go.kr` (`#hisComment` & `.cont_subtit`) boilerplate stripping, and explicit `extractor` provenance (`93 pymupdf`, `48 beautifulsoup4`, `3 hwpx_xml` across the 144-document corpus).
 2. **`PolicyExtraction`** — issuing body, document type, binding strength, publication/effective dates, covered actors, application domains (10 labels), prohibited practices, concrete safety requirements (Taxonomy v2.1.0: 17 labels, each with optional deontic `obligation_strength`: `mandatory` | `conditional` | `recommended` | `aspirational`), enforcement mechanisms (9 labels), authorities, compliance deadlines, penalties summary, implementation notes, and required verbatim evidence spans (`>= 1` span per label).
 3. **`RiskFramingAnalysis`** — dominant frame, secondary frames, complete eight-frame `frame_confidence` vector, compositional `frame_share` allocation summing to `~1.0`, rationale summary, and frame-tagged verbatim evidence spans.
-4. **`JurisdictionAnalysis`** — deterministic per-jurisdiction narrative synthesis built strictly from saved document analyses (zero LLM calls) with jurisdiction-scoped institution alias canonicalization (e.g., `\bmost\b` and `State Council` restricted strictly to `china`).
+4. **`JurisdictionAnalysis`** — deterministic sovereign per-jurisdiction narrative synthesis built strictly from saved document analyses (zero LLM calls; strictly excluding `corpus_role == "subnational_overlay"` by default so the 6 opt-in U.S. state statutes never pollute federal summaries) with jurisdiction-scoped institution alias canonicalization (e.g., `\bmost\b` and `State Council` restricted strictly to `china`).
 
 ## Multi-provider frontier engine & concurrency
 
@@ -31,18 +31,19 @@ Configured via `.env` or environment variables (or CLI flags `--provider`, `--mo
 - **Language-aware token budgets:** For documents exceeding a provider's direct window (e.g., Anthropic's `90k` single-pass / `45k` chunk budgets; Gemini runs single-pass up to `450k` tokens), chunking estimates CJK (`~1.2` chars/tok) vs. Latin (`~3.8` chars/tok) tokens, deduplicates subset overlap chunks, weights framing merges by framing-evidence strength, aggregates rationales across all chunks, and requires `>= 1` grounded span per merged requirement.
 - **Strict legacy provenance guard:** `_analysis_currency_status()` rejects artifacts lacking `analysis_metadata` (`stale_legacy_no_provenance`); low-fidelity skips delete stale `document_analysis.json` and honor `analysis_skipped.json`.
 
-## Grounding verification & starter gold-set evaluation
+## Grounding verification & 25-document blind gold-set evaluation
 
 All canonical quality thresholds load from `data/taxonomies/label-definitions.json` (`grounding_pass_threshold: 0.90`, `low_confidence_policy: 0.70`, `low_confidence_framing: 0.60`, `frame_mention_floor: 0.15`):
 
 - **NFKC verbatim snapping & offset persistence (`check-grounding`):** Normalizes Unicode via NFKC, performs whitespace/hyphen-insensitive + ordered-window matching, snaps near-verbatim quotes back to exact `plain_text` substrings, returns `None` (never `1.0`) when zero quotes exist, and persists `grounding_status` (`verbatim` | `approximate` | `not_found`) + `start_char`/`end_char` into every `EvidenceSpan`.
-  - **Current verified corpus (121/121 `gemini-4-neon`, Taxonomy v2.1.0, `analysis_version: "0.3.0"`):** **`2,271 / 2,271` (`100.0%`) exact verbatim grounding**, `0` ungrounded, `flagged = 0`, `min_per_doc = 100.0%`.
-- **Starter multilingual gold-set benchmark (`evaluate-gold-set data/eval/gold_set_v1.json`, `n=5`, `starter_v0.1_internal`):**
-  - Persisted in [`data/eval/gold_set_results.json`](../../data/eval/gold_set_results.json) and mirrored byte-identically to [`apps/web/src/lib/gold-set-results.snapshot.json`](../../apps/web/src/lib/gold-set-results.snapshot.json) for `/methodology#validation`:
-  - **Policy requirements:** Micro F1 **`0.833`** (Macro `0.737`)
-  - **Enforcement mechanisms:** Micro F1 **`0.929`** (Macro `0.932`)
-  - **Dominant risk frame:** Accuracy **`0.800`** (`κ = 0.706`)
-  - **Binding strength:** Accuracy **`0.800`** (`κ = 0.706`)
+  - **Current verified corpus (144/144 `gemini-4-neon`, Taxonomy v2.1.0, `analysis_version: "0.3.0"`):** **`2,786 / 2,786` (`100.0%`) exact verbatim grounding**, `0` ungrounded, `flagged = 0`, `min_per_doc = 100.0%`.
+- **25-document stratified multilingual blind gold-set benchmark (`evaluate-gold-set data/eval/gold_set_v2.json`, `n=25`, `5 × 5` across EN/KO/JA/ZH, `stratified_v1.0_blind_internal`):**
+  - Every document coded strictly blind from its full `normalized.json` text without consulting `data/analysis/` (spanning all `6/6` binding strata, all `17/17` v2.1 requirements, and all `8/8` active enforcement mechanisms). Persisted in [`data/eval/gold_set_results.json`](../../data/eval/gold_set_results.json) and mirrored byte-identically to [`apps/web/src/lib/gold-set-results.snapshot.json`](../../apps/web/src/lib/gold-set-results.snapshot.json) for `/methodology#validation`:
+  - **Policy requirements:** Micro F1 **`0.899`** (`P=0.876`, `R=0.923`, 95% CI `[0.850, 0.936]`) | Macro F1 **`0.887`**
+  - **Enforcement mechanisms:** Micro F1 **`0.954`** (`P=0.947`, `R=0.960`, 95% CI `[0.918, 0.982]`) | Macro F1 **`0.964`**
+  - **Dominant risk frame:** Accuracy **`0.800`** (`20/25`) | **Cohen's κ = `0.747`** | **Nominal Krippendorff's α = `0.748`** (`[0.510, 0.901]`)
+  - **Binding strength:** Accuracy **`0.920`** (`23/25`) | **Cohen's κ = `0.891`** | **Nominal Krippendorff's α = `0.893`**
+  - **Multilingual `by_jurisdiction` (Req F1 / Enf F1):** `US 0.913 / 0.917` · `EU 0.912 / 1.000` · `KR 0.923 / 0.944` · `JP 0.820 / 0.933` · `CN 0.911 / 0.947`.
 
 ## Commands
 
@@ -63,13 +64,14 @@ PYTHONPATH=services/pipeline/src python -m observatory.cli ingest-document-analy
   united_states us_eo_14409_advanced_ai_innovation_security_2026 /path/to/payload.json \
   --provider=gemini --model=gemini-4-neon --effort=xhigh --min-grounding=0.90
 
-# Deterministically refresh jurisdiction readouts (no LLM API calls)
+# Deterministically refresh sovereign jurisdiction readouts (no LLM API calls)
 make analyze-jurisdictions
 
-# Audit grounding, gold set, and Draft 2020-12 schemas
+# Audit grounding, 25-doc gold set v2, freshness, and Draft 2020-12 schemas
 make grounding
 PYTHONPATH=services/pipeline/src python -m observatory.cli evaluate-gold-set \
-  data/eval/gold_set_v1.json --output-json data/eval/gold_set_results.json
+  data/eval/gold_set_v2.json --output-json data/eval/gold_set_results.json
+make freshness
 make validate-artifacts
 
 # Replay verified v2.1 analyses idempotently into Postgres

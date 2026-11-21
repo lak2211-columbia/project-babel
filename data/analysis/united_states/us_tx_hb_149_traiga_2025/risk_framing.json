@@ -1,0 +1,84 @@
+{
+  "dominant_frame": "innovation_enablement",
+  "secondary_frames": [
+    "fundamental_rights",
+    "consumer_public_safety"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.86,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.84,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.32,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.38,
+    "consumer_public_safety": 0.3,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Texas HB 149 (TRAIGA) is led by an innovation enablement rationale, opening Subtitle D with the purpose to facilitate and advance responsible AI development and use, establishing a 36-month regulatory sandbox waiving state licensing requirements to encourage safe testing across healthcare, finance, education, and public services, preempting local AI regulations, carving out AI training from biometric consent rules, creating NIST framework and red-teaming safe harbors, and directing the Texas AI Council to identify laws impeding innovation and guard against regulatory capture. Fundamental rights is a strong secondary rationale reflected in explicit prohibitions against infringing U.S. Constitutional rights, free-speech protection, bans on governmental social scoring and rights-infringing biometric scraping, and bans on intentional protected-class discrimination. Consumer and public safety forms a co-present secondary pillar aimed at protecting individuals from known and foreseeable AI risks, prohibiting AI systems intended to incite self-harm, violence, crime, or child sexual exploitation, requiring transparent consumer and patient AI disclosures, and authorizing sandbox removal when systems pose undue risk to public safety or welfare.",
+  "evidence_spans": [
+    {
+      "quote": "This subtitle shall be broadly construed and applied to promote its\nunderlying purposes, which are to:\n(1)\nfacilitate and advance the responsible\ndevelopment and use of artificial intelligence systems;",
+      "source_section": "Section 4 (Tex. Bus. & Com. Code § 551.003(1))",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 4946,
+      "end_char": 5147
+    },
+    {
+      "quote": "(3)\nidentify existing laws and regulations that impede\ninnovation in the development of artificial intelligence systems\nand recommend appropriate reforms;",
+      "source_section": "Section 4 (Tex. Bus. & Com. Code § 554.001(a)(3))",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 26229,
+      "end_char": 26383
+    },
+    {
+      "quote": "A person may\nnot develop or deploy an artificial intelligence system with the\nsole intent for the artificial intelligence system to infringe,\nrestrict, or otherwise impair an individual's rights guaranteed\nunder the United States Constitution.",
+      "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.055(a))",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 11238,
+      "end_char": 11481
+    },
+    {
+      "quote": "A person may not develop or deploy an artificial\nintelligence system with the intent to unlawfully discriminate\nagainst a protected class in violation of state or federal law.",
+      "source_section": "Section 4 (Tex. Bus. & Com. Code § 552.056(b))",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 12276,
+      "end_char": 12451
+    },
+    {
+      "quote": "(2)\nprotect individuals and groups of individuals from\nknown and reasonably foreseeable risks associated with artificial\nintelligence systems;",
+      "source_section": "Section 4 (Tex. Bus. & Com. Code § 551.003(2))",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 5148,
+      "end_char": 5290
+    },
+    {
+      "quote": "(2)\nencourage responsible deployment of artificial\nintelligence systems while balancing the need for consumer\nprotection, privacy, and public safety;",
+      "source_section": "Section 4 (Tex. Bus. & Com. Code § 553.051(b)(2))",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 21362,
+      "end_char": 21511
+    }
+  ]
+}

@@ -12,6 +12,7 @@ import {
   BINDING_STRENGTH_ORDER,
   CORPUS_ROLE_ORDER,
   DOCUMENT_TYPE_LABELS,
+  formatSubnationalBadge,
   humanizeBindingStrength,
   humanizeCorpusRole,
   humanizeDocumentType,
@@ -409,13 +410,17 @@ export function DocumentsList({
             />
             {CORPUS_ROLE_ORDER.map((key) => {
               const isActive = role === key;
+              const count = roleCounts.get(key) ?? 0;
+              if (key === "subnational_overlay" && count === 0 && !isActive) {
+                return null;
+              }
               return (
                 <FilterChip
                   key={key}
                   isActive={isActive}
                   onClick={() => syncUrl({ role: isActive ? undefined : key })}
                   label={humanizeCorpusRole(key)}
-                  count={roleCounts.get(key) ?? 0}
+                  count={count}
                 />
               );
             })}
@@ -706,6 +711,16 @@ function DocumentRow({ doc }: { doc: DocumentListItem }) {
             >
               {doc.bindingStrengthLabel}
             </span>
+            {formatSubnationalBadge(doc.subnationalUnit) ? (
+              <span className="rounded-[2px] border border-[#e6ae49]/45 bg-[#e6ae49]/15 px-1.5 py-0.5 font-semibold text-[#fef3c7]">
+                {formatSubnationalBadge(doc.subnationalUnit)}
+              </span>
+            ) : null}
+            {doc.supersedesId ? (
+              <span className="rounded-[2px] border border-[#67e8f9]/35 bg-[#67e8f9]/10 px-1.5 py-0.5 text-[#67e8f9]">
+                Supersedes prior
+              </span>
+            ) : null}
           </div>
 
           <p className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 font-mono text-[11px] text-[#94a3b8]">

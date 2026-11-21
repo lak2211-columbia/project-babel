@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-babel.com/schemas/clauses-api.schema.json",
+  "title": "Project Babel Cross-Jurisdiction Clauses API Response",
+  "description": "JSON response contract returned by GET /api/clauses?mode=headline|all&states=0|1&category=...&control=...&j=...&minLevel=...&obligation=...&q=...&limit=...&offset=... exposing grounded verbatim multilingual clauses across the corpus (Taxonomy v2.1.0).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mode",
+    "includeSubnational",
+    "subnationalCount",
+    "totalDatasetClauses",
+    "matchedCount",
+    "limit",
+    "offset",
+    "hasMore",
+    "clauses"
+  ],
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": ["headline", "all"]
+    },
+    "includeSubnational": {
+      "type": "boolean"
+    },
+    "subnationalCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "totalDatasetClauses": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "matchedCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "limit": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "offset": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "hasMore": {
+      "type": "boolean"
+    },
+    "clauses": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/clauseRecord" }
+    }
+  },
+  "$defs": {
+    "clauseRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "anchorId",
+        "documentId",
+        "documentTitle",
+        "jurisdictionKey",
+        "jurisdictionSlug",
+        "jurisdictionName",
+        "jurisdictionShort",
+        "flagUrl",
+        "languageCode",
+        "publicationDate",
+        "publicationDateIso",
+        "dateSort",
+        "bindingStrength",
+        "bindingStrengthLabel",
+        "bindingLevel",
+        "corpusRole",
+        "corpusRoleLabel",
+        "lifecycleStage",
+        "lifecycleStageLabel",
+        "subnationalUnit",
+        "isHeadlineFederal",
+        "isSubnationalOverlay",
+        "category",
+        "controlKey",
+        "controlLabel",
+        "obligationStrength",
+        "obligationStrengthLabel",
+        "quote",
+        "quoteEn",
+        "sourceSection",
+        "groundingStatus"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "anchorId": { "type": "string", "minLength": 1 },
+        "documentId": { "type": "string", "minLength": 1 },
+        "documentTitle": { "type": "string", "minLength": 1 },
+        "jurisdictionKey": { "type": "string", "minLength": 1 },
+        "jurisdictionSlug": { "type": "string", "minLength": 1 },
+        "jurisdictionName": { "type": "string", "minLength": 1 },
+        "jurisdictionShort": { "type": "string", "minLength": 2, "maxLength": 4 },
+        "flagUrl": { "type": "string", "minLength": 1 },
+        "languageCode": { "type": "string", "minLength": 2 },
+        "publicationDate": { "type": "string" },
+        "publicationDateIso": { "type": ["string", "null"] },
+        "dateSort": { "type": "number" },
+        "bindingStrength": { "type": "string", "minLength": 1 },
+        "bindingStrengthLabel": { "type": "string", "minLength": 1 },
+        "bindingLevel": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "corpusRole": { "type": ["string", "null"] },
+        "corpusRoleLabel": { "type": "string", "minLength": 1 },
+        "lifecycleStage": { "type": ["string", "null"] },
+        "lifecycleStageLabel": { "type": "string", "minLength": 1 },
+        "subnationalUnit": { "type": ["string", "null"] },
+        "isHeadlineFederal": { "type": "boolean" },
+        "isSubnationalOverlay": { "type": "boolean" },
+        "category": {
+          "type": "string",
+          "enum": ["requirement", "enforcement", "framing"]
+        },
+        "controlKey": { "type": "string", "minLength": 1 },
+        "controlLabel": { "type": "string", "minLength": 1 },
+        "obligationStrength": { "type": ["string", "null"] },
+        "obligationStrengthLabel": { "type": ["string", "null"] },
+        "quote": { "type": "string", "minLength": 1 },
+        "quoteEn": { "type": ["string", "null"] },
+        "sourceSection": { "type": ["string", "null"] },
+        "groundingStatus": {
+          "type": ["string", "null"],
+          "enum": ["verbatim", "approximate", "not_found", null]
+        }
+      }
+    }
+  }
+}

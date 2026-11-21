@@ -1,0 +1,180 @@
+{
+  "jurisdiction": "china",
+  "issuing_body": "Ministry of Industry and Information Technology (MIIT), Cyberspace Administration of China (CAC), National Development and Reform Commission (NDRC), and Standardization Administration of China (SAC)",
+  "document_type": "standards_guideline",
+  "binding_strength": "standards_guideline",
+  "publication_date": "2024-06-05",
+  "effective_date": "2024-07-02",
+  "covered_actors": [
+    "AI standardization technical organizations and standardization research institutions (人工智能领域标准化技术组织、标准化研究机构)",
+    "Enterprises across the AI industry chain spanning foundational, framework, model, and application layers (人工智能全产业链大中小企业)",
+    "Industry associations, universities, research institutes, and national technical standard innovation bases (行业协会、高校、研究机构、国家技术标准创新基地)"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "critical_infrastructure",
+    "biometrics",
+    "public_sector_use",
+    "education",
+    "healthcare",
+    "finance"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.88,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "规范\n人工智能全生命周期的伦理治理要求，包括人工智能伦理风险评\n估，人工智能的公平性、可解释性等伦理治理技术要求与评测方\n法，人工智能伦理审查等标准。",
+          "source_section": "四、重点方向（七）安全/治理标准 - 2. 治理标准",
+          "quote_en": "Specify full-lifecycle ethical governance requirements for AI, including standards for AI ethical risk assessment, technical requirements and evaluation methods for ethical governance such as fairness and explainability, and AI ethics review.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5418,
+          "end_char": 5493
+        },
+        {
+          "quote": "4. 管理标准。规范人工智能技术、产品、系统、服务等全\n生命周期涉及的人员、组织管理要求和评价，包括面向人工智能\n组织的管理要求，人工智能管理体系、分类方法、评级流程等标\n准。",
+          "source_section": "四、重点方向（一）基础共性标准 - 4. 管理标准",
+          "quote_en": "4. Management standards. Specify personnel and organizational management requirements and evaluations across the full lifecycle of AI technologies, products, systems, and services, including management requirements for AI-oriented organizations, AI management systems, classification methods, and rating workflows.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2063,
+          "end_char": 2151
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.88,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "3. 测试评估标准。规范人工智能技术发展的成熟度、人工\n智能体系架构之间的适配度、行业发展水平、企业智能化能力等\n方面的测试及评估的指标要求，包括与人工智能相关的服务能力\n成熟度评估，人工智能通用性测试指南、评估原则和等级要求，\n企业智能化能力框架及测评要求等标准。",
+          "source_section": "四、重点方向（一）基础共性标准 - 3. 测试评估标准",
+          "quote_en": "3. Testing and evaluation standards. Specify testing and evaluation indicator requirements for AI technological maturity, architectural compatibility, industry development levels, and enterprise AI capabilities, including AI service capability maturity assessments, general AI testing guidelines, evaluation principles and tier requirements, and enterprise AI capability frameworks and testing requirements.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1929,
+          "end_char": 2062
+        },
+        {
+          "quote": "3. 大模型标准。规范大模型训练、推理、部署等环节的技\n术要求，包括大模型通用技术要求、评测指标与方法、服务能力\n成熟度评估、生成内容评价等标准。",
+          "source_section": "四、重点方向（三）关键技术标准 - 3. 大模型标准",
+          "quote_en": "3. Large model standards. Specify technical requirements for large-model training, inference, deployment, and other stages, including general technical requirements for large models, evaluation metrics and methods, service capability maturity assessments, and generated-content evaluation standards.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3372,
+          "end_char": 3445
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.84,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "1. 安全标准。规范人工智能技术、产品、系统、应用、服\n务等全生命周期的安全要求，包括基础安全，数据、算法和模型\n安全，网络、技术和系统安全，安全管理和服务，安全测试评估，\n安全标注，内容标识，产品和应用安全等标准。",
+          "source_section": "四、重点方向（七）安全/治理标准 - 1. 安全标准",
+          "quote_en": "1. Safety and security standards. Specify full-lifecycle security requirements for AI technologies, products, systems, applications, and services, including foundational security, data, algorithm, and model security, network, technology, and system security, security management and services, safety testing and evaluation, safety annotation, content labeling, and product and application security standards.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5226,
+          "end_char": 5334
+        }
+      ]
+    },
+    {
+      "label": "content_provenance",
+      "confidence": 0.88,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "4. 数字人标准。规范数字人的外形、动作生成、语音识别\n与合成、自然语言交互等技术要求，包括数字人基础能力评估、\n多媒体合成渲染、基础数据采集方法、标识和识别方法等标准。",
+          "source_section": "四、重点方向（四）智能产品与服务标准 - 4. 数字人标准",
+          "quote_en": "4. Digital human standards. Specify technical requirements for digital human appearance, motion generation, speech recognition and synthesis, and natural language interaction, including foundational capability assessments, multimedia synthesis and rendering, base data collection methods, and labeling and identification methods.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4482,
+          "end_char": 4567
+        },
+        {
+          "quote": "5. 智能语音标准。规范前端处理、语音处理、语音接口、\n数据资源等技术要求和评测方法，包括深度合成的鉴伪方法、全\n双工交互、语音大模型等标准。",
+          "source_section": "四、重点方向（三）关键技术标准 - 5. 智能语音标准",
+          "quote_en": "5. Intelligent voice standards. Specify technical requirements and evaluation methods for front-end processing, voice processing, voice interfaces, and data resources, including deep-synthesis authenticity detection methods, full-duplex interaction, and large voice model standards.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3542,
+          "end_char": 3613
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.86,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "1. 基础数据服务标准。规范人工智能研发、测试、应用等\n过程中涉及数据服务的要求，包括数据采集、数据标注、数据治\n理、数据质量等标准。",
+          "source_section": "四、重点方向（二）基础支撑标准 - 1. 基础数据服务标准",
+          "quote_en": "1. Foundational data service standards. Specify requirements for data services involved in AI R&D, testing, and application processes, including standards for data collection, data annotation, data governance, and data quality.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2328,
+          "end_char": 2395
+        },
+        {
+          "quote": "1. 机器学习标准。规范机器学习的训练数据、数据预处理、\n模型表达和格式、模型效果评价等，包括自监督学习、无监督学\n习、半监督学习、深度学习、强化学习等标准。",
+          "source_section": "四、重点方向（三）关键技术标准 - 1. 机器学习标准",
+          "quote_en": "1. Machine learning standards. Specify training data, data preprocessing, model representation and formats, and model performance evaluation for machine learning, including standards for self-supervised, unsupervised, semi-supervised, deep, and reinforcement learning.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3176,
+          "end_char": 3255
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "quote": "（三）加强宣贯推广。指导行业协会、标准化技术组织、国\n家技术标准创新基地等，面向企业开展人工智能标准体系、重点\n标准的宣贯和培训，引导企业在研发、设计、生产、管理、检测\n等环节对标达标，持续提升标准助力产业高质量发展效能。",
+          "source_section": "五、保障措施（三）加强宣贯推广",
+          "quote_en": "(3) Strengthen outreach and promotion. Guide industry associations, standardization technical organizations, and national technical standard innovation bases to conduct outreach and training on the AI standard system and key standards for enterprises, guiding enterprises to benchmark and conform to standards across R&D, design, production, management, and testing, and continuously enhancing the effectiveness of standards in supporting high-quality industrial development.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5682,
+          "end_char": 5793
+        },
+        {
+          "quote": "到2026 年，标准与产业科技创新的联动水平持续提升，\n新制定国家标准和行业标准50 项以上，引领人工智能产业\n高质量发展的标准体系加快形成。开展标准宣贯和实施推广\n的企业超过1000 家，标准服务企业创新发展的成效更加凸\n显。参与制定国际标准20 项以上，促进人工智能产业全球\n化发展。",
+          "source_section": "二、总体要求",
+          "quote_en": "By 2026, alignment between standards and industrial sci-tech innovation will continuously improve, with more than 50 newly formulated national and industry standards accelerating the formation of a standard system guiding high-quality AI industry development. Over 1,000 enterprises will conduct standard outreach and implementation, making standards more effective in serving enterprise innovation, and China will participate in formulating over 20 international standards to promote the global development of the AI industry.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 799,
+          "end_char": 943
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "Ministry of Industry and Information Technology (MIIT)",
+    "Cyberspace Administration of China (CAC)",
+    "National Development and Reform Commission (NDRC)",
+    "Standardization Administration of China (SAC)",
+    "AI standardization technical organizations and industry associations (人工智能领域标准化技术组织、行业协会)"
+  ],
+  "compliance_deadlines": [
+    "By 2026: Newly formulate 50+ national and industry AI standards, engage over 1,000 enterprises in standard outreach and implementation, and participate in formulating 20+ international standards"
+  ],
+  "penalties_summary": "None specified. The guidelines serve as a national AI standardization roadmap implemented through voluntary outreach, training, and enterprise benchmarking rather than coercive sanctions or monetary penalties.",
+  "implementation_notes": "Jointly issued under Document MIIT-Lian-Ke [2024] No. 113 (2024 Edition) by MIIT, CAC, NDRC, and SAC. Establishes a seven-pillar national AI industry standardization architecture covering foundational common standards, foundational support (data, chips, sensors, compute centers, frameworks), key technologies (including large models, AI agents, and embodied intelligence), smart products/services, new industrialization, sector applications, and safety/governance. Operative standard topics are coded as aspirational because the document sets a 2026 standard-development roadmap rather than imposing standalone operational compliance procedures.",
+  "confidence": 0.93
+}

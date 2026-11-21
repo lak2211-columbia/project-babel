@@ -1,0 +1,336 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "New York State Legislature",
+  "document_type": "legislation",
+  "binding_strength": "binding_law",
+  "publication_date": "2025-12-19",
+  "effective_date": "2026-03-19",
+  "covered_actors": [
+    "Large developers — nongovernmental persons or entities that have trained at least one frontier model (trained using >10^26 computational operations with compute cost >$100M, or produced via knowledge distillation from such a frontier model) costing >$5M in compute and have spent >$100M in aggregate compute costs training frontier models, including transferees receiving full intellectual property rights (excluding accredited colleges and universities engaging in academic research) (§ 1420(6), (9))",
+    "Prospective large developers setting out to train a frontier model that upon completion would qualify them as a large developer (pre-training protocol and DHSES filing duties under § 1421(7))",
+    "Contractors, subcontractors, corporate officers, and unpaid advisors involved in assessing, managing, or addressing critical-harm risks from frontier models, as well as covered employees entitled to anti-retaliation whistleblower protections (§ 1422)",
+    "Territorial scope: Frontier models developed, deployed, or operating in whole or in part in New York State (§ 1425)"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models"
+  ],
+  "prohibited_practices": [
+    "Deploying a frontier model if doing so would create an unreasonable risk of critical harm (death or serious injury of 100+ people or >=$1 billion in monetary/property damages caused or materially enabled via CBRN weapons or autonomous/limited-human-intervention serious penal-law crimes) (§ 1421(2), § 1420(7))",
+    "Knowingly making false or materially misleading statements or omissions in or regarding safety and security protocols, audit reports, or incident disclosures produced under Article 44-B (§ 1421(6))",
+    "Preventing an employee (including contractors, subcontractors, corporate officers, and unpaid critical-harm risk advisors) from disclosing, or retaliating against them for disclosing or threatening to disclose, reasonable-cause concerns of unreasonable or substantial risk of critical harm to the large developer or the Attorney General (§ 1422(1))",
+    "Using contractual waivers or liability-shifting terms (including contracts of adhesion) to waive, preclude, burden, or shift liability for Article 44-B violations (void as a matter of public policy under § 1423(2)(a))"
+  ],
+  "safety_requirements": [
+    {
+      "label": "compute_governance",
+      "confidence": 0.99,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "6. \"Frontier model\" means either of the following: 27 (a) an artificial intelligence model trained using greater than 10º26 28 computational operations (e.g., integer or floating-point operations), 29 the compute cost of which exceeds one hundred million dollars; or",
+          "source_section": "N.Y. Gen. Bus. Law § 1420(6)(a) (Page 2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3382,
+          "end_char": 3648
+        },
+        {
+          "quote": "9. \"Large developer\" means a person that has trained at least one 55 frontier model, the compute cost of which exceeds five million dollars, 56 and has spent over one hundred million dollars in compute costs in\n\n1 aggregate in training frontier models.",
+          "source_section": "N.Y. Gen. Bus. Law § 1420(9) (Pages 2–3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5112,
+          "end_char": 5364
+        }
+      ]
+    },
+    {
+      "label": "frontier_safety_evaluation",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "(c) Describe in detail the testing procedure to evaluate if the fron- 27 tier model poses an unreasonable risk of critical harm;",
+          "source_section": "N.Y. Gen. Bus. Law § 1420(12)(c) (Page 3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7004,
+          "end_char": 7132
+        },
+        {
+          "quote": "(d) Describe in detail how the testing procedure assesses whether the 29 frontier model could be misused, be modified, be executed with increased 30 computational resources, evade the control of its large developer or 31 user, be combined with other software or be used to create another fron- 32 tier model in a manner that would increase the risk of critical harm;",
+          "source_section": "N.Y. Gen. Bus. Law § 1420(12)(d) (Page 3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 7136,
+          "end_char": 7502
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.97,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "1. Before deploying a frontier model, the large developer of 11 such frontier model shall do all of the following: 12 (a) Implement a written safety and security protocol;",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(1)(a) (Page 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9489,
+          "end_char": 9660
+        },
+        {
+          "quote": "3. A large developer shall conduct an annual review of any safety and 35 security protocol required by this section to account for any changes 36 to the capabilities of their frontier models and industry best practices 37 and, if necessary, make modifications to such safety and security proto- 38 col.",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(3) (Page 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10992,
+          "end_char": 11294
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.94,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "(d) Record, as and when reasonably possible, and retain for as long as 26 the frontier model is deployed plus five years information on the 27 specific tests and test results used in any assessment of the frontier 28 model that provides sufficient detail for third parties to replicate the 29 testing procedure; and",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(1)(d) (Page 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10458,
+          "end_char": 10773
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.97,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "(b) Describe reasonable administrative, technical, and physical 22 cybersecurity protections for frontier models within the large develop- 23 er's control that, if successfully implemented, appropriately reduce the 24 risk of unauthorized access to, or misuse of, the frontier models lead- 25 ing to critical harm, including by sophisticated actors;",
+          "source_section": "N.Y. Gen. Bus. Law § 1420(12)(b) (Page 3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6651,
+          "end_char": 7000
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "4. (a) Beginning on the effective date of this article, or ninety days 42 after a developer first qualifies as a large developer, whichever is 43 later, a large developer shall annually retain a third party to perform 44 an independent audit of compliance with the requirements of this 45 section.",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(4)(a) (Page 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 11495,
+          "end_char": 11792
+        },
+        {
+          "quote": "(b) The third party shall be granted access to unredacted materials as 48 necessary to comply with the third party's obligations under this subdi- 49 vision.",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(4)(b) (Page 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 11869,
+          "end_char": 12026
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.99,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "5. A large developer shall disclose each safety incident affecting 20 the frontier model to the division of homeland security and emergency 21 services within seventy-two hours of the large developer learning of the 22 safety incident or within seventy-two hours of the large developer 23 learning facts sufficient to establish a reasonable belief that a safety 24 incident has occurred.",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(5) (Page 5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 13421,
+          "end_char": 13808
+        },
+        {
+          "quote": "(b) Theft, misappropriation, malicious use, inadvertent release, unau- 48 thorized access, or escape of the model weights of a frontier model;",
+          "source_section": "N.Y. Gen. Bus. Law § 1420(13)(b) (Page 3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 8274,
+          "end_char": 8416
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.95,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "(c) (i) Conspicuously publish a copy of the safety and security proto- 19 col with appropriate redactions and transmit a copy of such redacted 20 safety and security protocol to the division of homeland security and 21 emergency services;",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(1)(c)(i) (Page 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9997,
+          "end_char": 10235
+        },
+        {
+          "quote": "(e) (i) The large developer shall conspicuously publish a copy of the 12 third party's report with appropriate redactions and transmit a copy of 13 such redacted report to the division of homeland security and emergency 14 services.",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(4)(e)(i) (Page 5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12945,
+          "end_char": 13177
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.97,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "(b) Retain an unredacted copy of the safety and security protocol, 14 including records and dates of any updates or revisions. Such unredacted 15 copy of the safety and security protocol, including records and dates of 16 any updates or revisions, shall be retained for as long as a frontier 17 model is deployed plus five years;",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(1)(b) (Page 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 9664,
+          "end_char": 9993
+        },
+        {
+          "quote": "(d) The large developer shall retain an unredacted copy of the report 10 for as long as a frontier model is deployed plus five years.",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(4)(d) (Page 5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12808,
+          "end_char": 12941
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "civil_penalty",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "quote": "1. The attorney general may bring a civil action 24 for a violation of this article and to recover all of the following: 25 (a) For a violation of section fourteen hundred twenty-one of this 26 article, a civil penalty in an amount not exceeding ten million dollars 27 for a first violation and in an amount not exceeding thirty million 28 dollars for any subsequent violation.",
+          "source_section": "N.Y. Gen. Bus. Law § 1423(1)(a) (Page 6)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17420,
+          "end_char": 17797
+        },
+        {
+          "quote": "(b) For a violation of section fourteen hundred twenty-two of this 30 article, a civil penalty in an amount not exceeding ten thousand dollars 31 per employee for each violation of such section to be awarded to the 32 employee who was retaliated against.",
+          "source_section": "N.Y. Gen. Bus. Law § 1423(1)(b) (Page 6)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 17801,
+          "end_char": 18055
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "quote": "(ii) Grant the division of homeland security and emergency services or 23 the attorney general access to the safety and security protocol, with 24 redactions only to the extent required by federal law, upon request;",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(1)(c)(ii) (Page 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10239,
+          "end_char": 10454
+        },
+        {
+          "quote": "(c) For a violation of section fourteen hundred twenty-one or fourteen 34 hundred twenty-two of this article, injunctive or declaratory relief.",
+          "source_section": "N.Y. Gen. Bus. Law § 1423(1)(c) (Page 6)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 18059,
+          "end_char": 18202
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "quote": "5. A large developer shall disclose each safety incident affecting 20 the frontier model to the division of homeland security and emergency 21 services within seventy-two hours of the large developer learning of the",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(5) (Page 5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 13421,
+          "end_char": 13636
+        },
+        {
+          "quote": "(b) Transmit a copy of an appropriately redacted safety and security 44 protocol to the division of homeland security and emergency services.",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(7)(b) (Page 5)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 15046,
+          "end_char": 15187
+        }
+      ]
+    },
+    {
+      "label": "market_access_restriction",
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "quote": "2. A large developer shall not deploy a frontier model if doing so 33 would create an unreasonable risk of critical harm.",
+          "source_section": "N.Y. Gen. Bus. Law § 1421(2) (Page 4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10867,
+          "end_char": 10988
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "New York Attorney General (civil enforcement actions for civil penalties up to $10M/$30M, employee anti-retaliation penalties, injunctive/declaratory relief, and access to unredacted safety protocols, audit reports, and safety incident disclosures)",
+    "New York State Division of Homeland Security and Emergency Services (DHSES) (recipient of redacted safety and security protocols, annual third-party audit reports, and 72-hour critical safety incident disclosures, with authority to request unredacted protocols/reports and share incident disclosures with the Attorney General)",
+    "New York courts (temporary or preliminary injunctive relief for whistleblowing employees under § 1422(2); piercing corporate formalities and imposing joint and several liability on affiliated entities purposely structured to evade liability under § 1423(2)(b))"
+  ],
+  "compliance_deadlines": [
+    "2026-03-19 (90th day after becoming law): Effective date of Article 44-B (§ 3)",
+    "Prior to deploying a frontier model (and prior to training for prospective large developers under § 1421(7)): Implement written safety and security protocol, publish redacted copy, and transmit to DHSES (§ 1421(1), (7))",
+    "Within 72 hours of learning of a safety incident (or facts establishing reasonable belief): Disclose safety incident to DHSES (§ 1421(5))",
+    "On effective date or within 90 days of first qualifying as a large developer (and annually thereafter): Retain independent third-party auditor (§ 1421(4)(a)), conduct annual protocol review (§ 1421(3)), and inform/post conspicuous whistleblower rights notice for employees (§ 1422(3))",
+    "Duration of frontier model deployment plus 5 years: Retain unredacted safety and security protocol, update records, replicable test/evaluation records, and unredacted third-party audit reports (§ 1421(1)(b), (1)(d), (4)(d))"
+  ],
+  "penalties_summary": "The New York Attorney General may seek civil penalties up to $10 million for a first violation of § 1421 and up to $30 million for any subsequent violation, up to $10,000 per retaliated employee under § 1422 (awarded directly to the retaliated employee), and injunctive or declaratory relief (§ 1423(1)). Retaliated employees may also independently petition a court for temporary or preliminary injunctive relief (§ 1422(2)). Contractual liability waivers or risk-shifting clauses (including contracts of adhesion) are void as contrary to public policy, and courts must disregard corporate formalities and impose joint and several liability on affiliated entities deliberately structured to avoid or frustrate recovery (§ 1423(2)).",
+  "implementation_notes": "New York S6953A adds Article 44-B (General Business Law §§ 1420–1426) governing large developers of frontier AI models (>10^26 computational operations and >$100M compute cost, plus knowledge-distilled derivatives) developed, deployed, or operating in whole or in part in New York State. Enforces pre-deployment (and pre-training for prospective large developers) written safety and security protocols covering catastrophic-risk capability evaluation and cybersecurity against sophisticated actors, a prohibition on deploying models posing unreasonable risk of critical harm, mandatory annual independent third-party compliance audits, 72-hour critical safety incident reporting to DHSES, 5-year post-deployment retention of unredacted protocols and replicable test logs, and comprehensive employee/contractor whistleblower protections. Exempts accredited colleges and universities conducting academic research.",
+  "confidence": 0.98
+}

@@ -1,0 +1,105 @@
+{
+  "dominant_frame": "economic_competitiveness",
+  "secondary_frames": [
+    "innovation_enablement",
+    "fundamental_rights",
+    "consumer_public_safety",
+    "labor_transition",
+    "national_security"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.44,
+    "economic_competitiveness": 0.94,
+    "fundamental_rights": 0.82,
+    "social_stability": 0.15,
+    "innovation_enablement": 0.91,
+    "consumer_public_safety": 0.76,
+    "labor_transition": 0.72
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.04,
+    "economic_competitiveness": 0.32,
+    "fundamental_rights": 0.16,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.28,
+    "consumer_public_safety": 0.12,
+    "labor_transition": 0.08
+  },
+  "rationale_summary": "The 2021 Review of the EU Coordinated Plan on AI is dominantly framed around economic competitiveness, explicitly structured around asserting European global leadership, maximising Europe's capacity to compete globally, capturing first-mover adopter advantages, scaling to EUR 20 billion in annual public-private AI investment, and strengthening European industrial leadership across semiconductors, cloud-to-edge computing, robotics, mobility, and precision agriculture. Innovation enablement is a tightly coupled second frame driving the plan's operational architecture: removing single-market fragmentation and transaction costs, launching common European data spaces, funding 210 European Digital Innovation Hubs and Testing and Experimentation Facilities for small and medium-sized enterprises, promoting regulatory sandboxes, and transforming public procurement to move AI from lab to market. Fundamental rights anchors the human-centric trustworthiness pillar—grounding governance in EU values, GDPR compliance, non-discrimination, gender equality, and rule-of-law safeguards in health and law enforcement—while consumer and public safety supports clinical safety, human-robot physical safety, automated-vehicle reliability, victim liability compensation, and citizen security against crime and cybercrime. Labor and workforce transition plays a dedicated role through extensive reskilling, upskilling, and skills-intelligence initiatives to prevent job-market polarisation, and national security enters modestly through semiconductor supply-chain resilience, open strategic autonomy, cybersecurity threat shields against geopolitical tensions, and dual-use export accountability despite excluding military AI.",
+  "evidence_spans": [
+    {
+      "quote": "The global leadership of Europe in adopting the latest technologies, seizing the benefits and promoting the development of human-centric, sustainable, secure, inclusive and trustworthy artificial intelligence (AI) depends on the ability of the European Union (EU) to accelerate, act and align AI policy priorities and investments2.",
+      "source_section": "Introduction (Page 2)",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 4627,
+      "end_char": 4958
+    },
+    {
+      "quote": "The first 2 years of implementation have confirmed that joint actions and structured cooperation between Member States and the Commission are the key to the EU’s global competitiveness and leadership in AI development and uptake.",
+      "source_section": "Conclusions (Page 56)",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 200689,
+      "end_char": 200918
+    },
+    {
+      "quote": "Regulatory sandboxes, in essence provide an experimentation facility for public regulation, and allow a more rapid evaluation of the impact of public intervention. The feedback received by the Commission indicates widespread support for regulatory sandboxes",
+      "source_section": "Chapter 9 (Develop a Policy Framework to Ensure Trust in AI Systems)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 112998,
+      "end_char": 113255
+    },
+    {
+      "quote": "The aim is to provide developers with an infrastructure for testing AI technology before bringing it to the market; and • Digital Innovation Hubs (DIHs) – ‘one-stop shops’ that help all companies interested to use AI to become more competitive",
+      "source_section": "Chapter 6 (TEFs and European Digital Innovation Hubs)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 71879,
+      "end_char": 72122
+    },
+    {
+      "quote": "Given the major social and environmental impacts of AI technologies, a human-centric approach to their development and use, the protection of EU values and fundamental rights such as non-discrimination, privacy and data protection, and the sustainable and efficient use of resources are among the key principles that guide the European approach.",
+      "source_section": "Chapter 9 (Develop a Policy Framework to Ensure Trust in AI Systems)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 107653,
+      "end_char": 107998
+    },
+    {
+      "quote": "proximity to humans and interaction with them requires very high safety standards to prevent accidents and injuries. It also raises issues regarding ensuring accessibility and inclusiveness of persons with disabilities.",
+      "source_section": "Chapter 13 (Strategy for Robotics in the World of AI)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 157378,
+      "end_char": 157597
+    },
+    {
+      "quote": "Improvement in computing and AI skills for all is also needed to avoid job market polarisation and a possible rise in inequality within and between countries.",
+      "source_section": "Chapter 8 (Nurture Talent and Improve the Supply of Skills)",
+      "quote_en": null,
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 94000,
+      "end_char": 94158
+    },
+    {
+      "quote": "The revision of the Dual-Use Regulation164 will allow the EU to set new rules allowing for more accountability and transparency in the trade of dual-use items, helping to ensure that there is no misuse of AI from Europe.",
+      "source_section": "Chapter 10 (Promote the EU Vision on Sustainable and Trustworthy AI in the World)",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 124051,
+      "end_char": 124271
+    }
+  ]
+}

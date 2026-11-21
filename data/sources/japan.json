@@ -576,6 +576,25 @@
         "ai_act"
       ],
       "discovery_targets": []
+    },
+    {
+      "id": "jp_fsa",
+      "name": "Financial Services Agency (FSA) — AI in Financial Services",
+      "issuing_body": "Financial Services Agency (金融庁)",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.fsa.go.jp/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "pdf",
+      "languages": [
+        "ja"
+      ],
+      "priority": "high",
+      "coverage_notes": "FSA discussion papers and supervisory guidance on responsible AI and generative AI governance in Japanese financial institutions.",
+      "tags": [
+        "finance",
+        "fsa",
+        "supervision"
+      ]
     }
   ],
   "seed_documents": [
@@ -1727,6 +1746,114 @@
         "g7",
         "code_of_conduct",
         "frontier_ai"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "jp_fsa_ai_discussion_paper_v1_1_2026",
+      "title": "AIディスカッションペーパー（第1.1版）— 金融分野におけるAIの健全な利活用の促進に向けた初期的な論点整理 (FSA AI Discussion Paper Ver. 1.1)",
+      "issuing_body": "Financial Services Agency (FSA / 金融庁)",
+      "canonical_url": "https://www.fsa.go.jp/news/r7/sonota/20260303/01.html",
+      "retrieval_urls": [
+        "https://www.fsa.go.jp/news/r7/sonota/20260303/aidp_version1.1.pdf"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "finance",
+        "frontier_gpai",
+        "agentic_ai",
+        "consumer_protection"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-03-03",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_fsa"
+      ],
+      "priority": "high",
+      "relevance_notes": "55-page March 3, 2026 FSA AI Discussion Paper Ver. 1.1 detailing risk-based financial AI and AI agent governance, pre-deployment validation, customer disclosures, continuous monitoring, and supervisory expectations.",
+      "tags": [
+        "finance",
+        "fsa",
+        "discussion_paper",
+        "agentic_ai"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "jp_meti_cloud_program_economic_security_policy",
+      "title": "クラウドプログラムに係る安定供給確保を図るための取組方針 (METI Stable Supply Support Policy for Cloud Programs under the Economic Security Promotion Act)",
+      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
+      "canonical_url": "https://www.meti.go.jp/policy/economy/economic_security/cloud/index.html",
+      "retrieval_urls": [
+        "https://www.meti.go.jp/policy/economy/economic_security/cloud/cloud.pdf"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "executive_action",
+      "source_tier": "executive_action",
+      "policy_domains": [
+        "sovereign_compute",
+        "national_security",
+        "critical_infrastructure",
+        "industrial_innovation"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-02-05",
+      "effective_date": "2024-02-05",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_meti_ai_governance_docs"
+      ],
+      "priority": "high",
+      "relevance_notes": "25-page METI Economic Security Promotion Act policy (revised Feb 5, 2024) governing designated critical 'Cloud Program' compute infrastructure, sovereign AI supercomputing subsidies, supply-chain security, and cybersecurity assurance requirements.",
+      "tags": [
+        "economic_security",
+        "sovereign_compute",
+        "cloud_program",
+        "meti"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "jp_bunka_ai_copyright_checklist_guidance_2024",
+      "title": "AIと著作権に関するチェックリスト＆ガイダンス (Bunka AI and Copyright Checklist & Guidance)",
+      "issuing_body": "Agency for Cultural Affairs (Bunka / 文化庁)",
+      "canonical_url": "https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html",
+      "retrieval_urls": [
+        "https://www.bunka.go.jp/seisaku/chosakuken/pdf/94097701_01.pdf"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "copyright_ip",
+        "frontier_gpai",
+        "platform_content_governance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2024-07-31",
+      "languages": [
+        "ja"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "jp_bunka_copyright_ai"
+      ],
+      "priority": "high",
+      "relevance_notes": "44-page July 31, 2024 Agency for Cultural Affairs practical checklist and legal guidance operationalizing Copyright Act Article 30-4 training-data safeguards, opt-out signals, output similarity risk checks, and stakeholder roles across AI developers, providers, and users.",
+      "tags": [
+        "copyright",
+        "bunka",
+        "checklist",
+        "training_data"
       ],
       "corpus_role": "primary_instrument"
     }

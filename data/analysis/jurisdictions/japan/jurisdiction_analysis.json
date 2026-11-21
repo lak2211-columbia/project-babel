@@ -2,8 +2,8 @@
   "jurisdiction": "japan",
   "analysis_method": "deterministic_v2",
   "analysis_version": "0.2.0",
-  "generated_at": "2026-11-21T06:36:37.677771Z",
-  "source_count": 34,
+  "generated_at": "2026-11-21T21:16:36.956327Z",
+  "source_count": 37,
   "source_document_ids": [
     "jp_admin_genai_procurement_guideline_2025",
     "jp_agri_ai_data_contract_guideline_2020",
@@ -26,8 +26,10 @@
     "jp_aisi_evaluation_perspectives_guide_2026",
     "jp_aisi_red_teaming_guide_2025",
     "jp_basic_ai_plan_page",
+    "jp_bunka_ai_copyright_checklist_guidance_2024",
     "jp_childcare_genai_handbook_2025",
     "jp_content_genai_guidebook_2024",
+    "jp_fsa_ai_discussion_paper_v1_1_2026",
     "jp_genai_privacy_alert_2023",
     "jp_hiroshima_ai_process_code_of_conduct_2023",
     "jp_index_12711198",
@@ -35,6 +37,7 @@
     "jp_medical_digital_data_ai_guideline_2024",
     "jp_medical_digital_data_ai_guideline_notice_2024",
     "jp_medical_digital_data_ai_guideline_points_2024",
+    "jp_meti_cloud_program_economic_security_policy",
     "jp_school_genai_guideline_ver_2_2024",
     "jp_second_basic_ai_plan_2026",
     "jp_social_principles_human_centric_ai",
@@ -46,8 +49,17 @@
   "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from Ministry of Economy, Trade and Industry (METI), Cabinet Office / Secretariat of Japan, and AI Safety Institute (AISI), and the corpus is weighted toward regulatory guidance and strategy paper.",
   "framing_landscape": "Innovation enablement is the clearest rationale in the corpus, with Fundamental rights and Economic competitiveness still materially shaping how governance is justified.",
   "implementation_and_enforcement": "Operationally, the sources most often point to training data governance, transparency and disclosure, and access controls. Enforcement language is comparatively soft and usually framed through soft enforcement and regulatory supervision rather than hard sanctions.",
-  "source_coverage_note": "This readout is based on 34 analyzed documents spanning 2018-08-17 to 2026-07-14. The corpus is weighted toward regulatory guidance and strategy paper. On the binding side it leans toward regulatory guidance and standards guidance, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are 人工知能基本計画 ～日本ＡＸ、より強く、より豊かに～ (Second AI Basic Plan — Cabinet Decision of July 14, 2026) and AIセーフティに関する評価観点ガイド (第1.20版) / J-AISI Guide to Evaluation Perspectives on AI Safety (Ver. 1.20).",
+  "source_coverage_note": "This readout is based on 37 analyzed documents spanning 2018-08-17 to 2026-07-14. The corpus is weighted toward regulatory guidance and strategy paper. On the binding side it leans toward regulatory guidance and standards guidance, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are 人工知能基本計画 ～日本ＡＸ、より強く、より豊かに～ (Second AI Basic Plan — Cabinet Decision of July 14, 2026) and AIセーフティに関する評価観点ガイド (第1.20版) / J-AISI Guide to Evaluation Perspectives on AI Safety (Ver. 1.20).",
   "key_sources": [
+    {
+      "document_id": "jp_meti_cloud_program_economic_security_policy",
+      "title": "クラウドプログラムに係る安定供給確保を図るための取組方針 (METI Stable Supply Support Policy for Cloud Programs under the Economic Security Promotion Act)",
+      "publication_date": "2024-02-05",
+      "document_type": "strategy_paper",
+      "binding_strength": "executive_action",
+      "dominant_frame": "national_security",
+      "contribution": "Executive coordination anchor for compute governance and registration or licensing, with procurement conditions as the clearest consequence or oversight hook."
+    },
     {
       "document_id": "jp_admin_genai_procurement_guideline_2025",
       "title": "行政の進化と革新のための生成AIの調達・利活用に係るガイドライン",
@@ -58,6 +70,15 @@
       "contribution": "Regulatory implementation anchor for risk assessment and pre-deployment testing, with procurement conditions as the clearest consequence or oversight hook."
     },
     {
+      "document_id": "jp_fsa_ai_discussion_paper_v1_1_2026",
+      "title": "AIディスカッションペーパー（第1.1版）— 金融分野におけるAIの健全な利活用の促進に向けた初期的な論点整理 (FSA AI Discussion Paper Ver. 1.1)",
+      "publication_date": "2026-03-03",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "dominant_frame": "innovation_enablement",
+      "contribution": "Regulatory implementation anchor for risk assessment and pre-deployment testing, with soft enforcement as the clearest consequence or oversight hook."
+    },
+    {
       "document_id": "jp_ai_promotion_act_statute_2025",
       "title": "人工知能関連技術の研究開発及び活用の推進に関する法律 (Act No. 53 of 2025 — AI Promotion Act Full Statutory Text)",
       "publication_date": "2025-06-04",
@@ -65,128 +86,110 @@
       "binding_strength": "binding_law",
       "dominant_frame": "innovation_enablement",
       "contribution": "Statutory anchor for transparency and disclosure, with regulatory supervision as the clearest consequence or oversight hook."
-    },
-    {
-      "document_id": "jp_childcare_genai_handbook_2025",
-      "title": "生成AIの導入・活用に向けた実践ハンドブック",
-      "publication_date": "2025-07-09",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
-      "dominant_frame": "innovation_enablement",
-      "contribution": "Regulatory implementation anchor for human oversight and transparency and disclosure, with soft enforcement as the clearest consequence or oversight hook."
-    },
-    {
-      "document_id": "jp_ai_contract_checklist_2025",
-      "title": "AIの利用・開発に関する契約チェックリスト",
-      "publication_date": "2025-02-18",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
-      "dominant_frame": "innovation_enablement",
-      "contribution": "Regulatory implementation anchor for risk assessment and incident reporting, with soft enforcement as the clearest consequence or oversight hook."
     }
   ],
   "top_document_types": [
     {
       "label": "regulatory_guidance",
-      "count": 15,
-      "share": 0.441
+      "count": 17,
+      "share": 0.459
     },
     {
       "label": "strategy_paper",
-      "count": 10,
-      "share": 0.294
+      "count": 11,
+      "share": 0.297
     },
     {
       "label": "standards_guideline",
       "count": 6,
-      "share": 0.176
+      "share": 0.162
     }
   ],
   "top_binding_strengths": [
     {
       "label": "regulatory_guidance",
-      "count": 12,
-      "share": 0.353
+      "count": 14,
+      "share": 0.378
     },
     {
       "label": "standards_guideline",
       "count": 10,
-      "share": 0.294
+      "share": 0.27
     },
     {
       "label": "strategy_statement",
       "count": 10,
-      "share": 0.294
+      "share": 0.27
     }
   ],
   "top_requirements": [
     {
       "label": "training_data_governance",
-      "count": 25,
-      "share": 0.735
+      "count": 27,
+      "share": 0.73
     },
     {
       "label": "transparency_disclosure",
-      "count": 21,
-      "share": 0.618
+      "count": 24,
+      "share": 0.649
     },
     {
       "label": "access_controls",
-      "count": 19,
-      "share": 0.559
+      "count": 21,
+      "share": 0.568
     },
     {
       "label": "risk_assessment",
-      "count": 16,
-      "share": 0.471
+      "count": 19,
+      "share": 0.514
     }
   ],
   "top_enforcement_mechanisms": [
     {
       "label": "soft_enforcement",
-      "count": 30,
-      "share": 0.882
+      "count": 33,
+      "share": 0.892
     },
     {
       "label": "regulatory_supervision",
-      "count": 7,
-      "share": 0.206
+      "count": 9,
+      "share": 0.243
+    },
+    {
+      "label": "procurement_condition",
+      "count": 5,
+      "share": 0.135
     },
     {
       "label": "none_specified",
       "count": 4,
-      "share": 0.118
-    },
-    {
-      "label": "procurement_condition",
-      "count": 4,
-      "share": 0.118
+      "share": 0.108
     }
   ],
   "top_frames": [
     {
       "label": "innovation_enablement",
-      "score": 14.87,
-      "share": 0.437,
-      "document_mentions": 34
+      "score": 15.92,
+      "share": 0.43,
+      "document_mentions": 37
     },
     {
       "label": "fundamental_rights",
-      "score": 6.95,
-      "share": 0.204,
-      "document_mentions": 32
+      "score": 7.41,
+      "share": 0.2,
+      "document_mentions": 35
     },
     {
       "label": "economic_competitiveness",
-      "score": 4.45,
-      "share": 0.131,
-      "document_mentions": 25
+      "score": 4.95,
+      "share": 0.134,
+      "document_mentions": 28
     },
     {
       "label": "consumer_public_safety",
-      "score": 4.43,
-      "share": 0.13,
-      "document_mentions": 31
+      "score": 4.86,
+      "share": 0.131,
+      "document_mentions": 34
     }
   ],
   "key_institutions": [
@@ -195,5 +198,5 @@
     "AI Safety Institute (AISI)",
     "Digital Agency of Japan"
   ],
-  "confidence": 0.926
+  "confidence": 0.928
 }

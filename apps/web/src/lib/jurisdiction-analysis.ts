@@ -15,7 +15,10 @@ import {
 import { frameTextHue } from "@/lib/frame-vocab";
 import { jurisdictionMeta, type JurisdictionKey } from "@/lib/jurisdictions";
 import type { FrameLabel } from "@/lib/seed-data";
-import { humanizeTaxonomyLabel } from "@/lib/taxonomy-vocab";
+import {
+  humanizeProseTaxonomyKeys,
+  humanizeTaxonomyLabel,
+} from "@/lib/taxonomy-vocab";
 
 export type JurisdictionAnalysisLabelStat = {
   label: string;
@@ -113,7 +116,7 @@ async function loadJurisdictionAnalysisUncached(
 
 const getJurisdictionAnalysisCached = unstable_cache(
   loadJurisdictionAnalysisUncached,
-  ["observatory-jurisdiction-analysis"],
+  ["observatory-jurisdiction-analysis-v2"],
   {
     revalidate: OBSERVATORY_REVALIDATE_SECONDS,
     tags: [OBSERVATORY_CACHE_TAG],
@@ -155,7 +158,23 @@ function normalizeJurisdictionAnalysis(
   return {
     ...payload,
     jurisdiction,
-    key_sources: payload.key_sources ?? [],
+    summary: humanizeProseTaxonomyKeys(payload.summary ?? ""),
+    governance_posture: humanizeProseTaxonomyKeys(
+      payload.governance_posture ?? "",
+    ),
+    framing_landscape: humanizeProseTaxonomyKeys(
+      payload.framing_landscape ?? "",
+    ),
+    implementation_and_enforcement: humanizeProseTaxonomyKeys(
+      payload.implementation_and_enforcement ?? "",
+    ),
+    source_coverage_note: humanizeProseTaxonomyKeys(
+      payload.source_coverage_note ?? "",
+    ),
+    key_sources: (payload.key_sources ?? []).map((src) => ({
+      ...src,
+      contribution: humanizeProseTaxonomyKeys(src.contribution ?? ""),
+    })),
     top_document_types: payload.top_document_types ?? [],
     top_binding_strengths: payload.top_binding_strengths ?? [],
     top_requirements: payload.top_requirements ?? [],

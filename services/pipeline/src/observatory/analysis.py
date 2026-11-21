@@ -2350,6 +2350,26 @@ def _cohens_kappa(gold_labels: Sequence[str], pred_labels: Sequence[str]) -> flo
     return round((observed - expected) / (1.0 - expected), 3)
 
 
+def _krippendorffs_alpha_nominal(gold_labels: Sequence[str], pred_labels: Sequence[str]) -> float | None:
+    """Compute nominal Krippendorff's alpha for two coders over N aligned items."""
+    num_units = len(gold_labels)
+    if num_units == 0 or num_units != len(pred_labels):
+        return None
+    observed_disagreement = sum(1 for g, p in zip(gold_labels, pred_labels) if g != p) / num_units
+    total_values = 2 * num_units
+    if total_values <= 1:
+        return None
+    combined_counts = Counter(gold_labels)
+    combined_counts.update(pred_labels)
+    expected_agreement = sum(count * (count - 1) for count in combined_counts.values()) / (
+        total_values * (total_values - 1)
+    )
+    expected_disagreement = 1.0 - expected_agreement
+    if expected_disagreement < 1e-12:
+        return 1.0 if observed_disagreement < 1e-12 else 0.0
+    return round(1.0 - (observed_disagreement / expected_disagreement), 3)
+
+
 def _bootstrap_interval(
     values: Sequence[float],
 ) -> list[float] | None:
@@ -2411,6 +2431,7 @@ def evaluate_gold_set(
     enf_tp = enf_fp = enf_fn = 0
     per_label_req: dict[str, list[int]] = defaultdict(lambda: [0, 0, 0])  # [tp, fp, fn]
     per_label_enf: dict[str, list[int]] = defaultdict(lambda: [0, 0, 0])
+    jur_stats: dict[str, dict[str, Any]] = {}
     dominant_gold_list: list[str] = []
     dominant_pred_list: list[str] = []
     binding_gold_list: list[str] = []
@@ -2427,6 +2448,23 @@ def evaluate_gold_set(
             continue
 
         pred = DocumentAnalysis.model_validate(json.loads(pred_path.read_text(encoding="utf-8")))
+        j_bucket = jur_stats.setdefault(
+            jurisdiction,
+            {
+                "evaluated_count": 0,
+                "req_tp": 0,
+                "req_fp": 0,
+                "req_fn": 0,
+                "enf_tp": 0,
+                "enf_fp": 0,
+                "enf_fn": 0,
+                "per_label_req": defaultdict(lambda: [0, 0, 0]),
+                "per_label_enf": defaultdict(lambda: [0, 0, 0]),
+                "dom_hits": 0,
+                "bind_hits": 0,
+            },
+        )
+        j_bucket["evaluated_count"] += 1
 
         gold_reqs = set(gold.get("policy_requirements", gold.get("safety_requirements", [])))
         pred_reqs = {item.label for item in pred.policy_extraction.safety_requirements}
@@ -2436,13 +2474,19 @@ def evaluate_gold_set(
         req_tp += doc_req_tp
         req_fp += doc_req_fp
         req_fn += doc_req_fn
+        j_bucket["req_tp"] += doc_req_tp
+        j_bucket["req_fp"] += doc_req_fp
+        j_bucket["req_fn"] += doc_req_fn
         for label in gold_reqs | pred_reqs:
             if label in gold_reqs and label in pred_reqs:
                 per_label_req[label][0] += 1
+                j_bucket["per_label_req"][label][0] += 1
             elif label in pred_reqs:
                 per_label_req[label][1] += 1
+                j_bucket["per_label_req"][label][1] += 1
             else:
                 per_label_req[label][2] += 1
+                j_bucket["per_label_req"][label][2] += 1
 
         gold_enfs = set(gold.get("enforcement_mechanisms", []))
         pred_enfs = {item.label for item in pred.policy_extraction.enforcement_mechanisms}
@@ -2452,23 +2496,33 @@ def evaluate_gold_set(
         enf_tp += doc_enf_tp
         enf_fp += doc_enf_fp
         enf_fn += doc_enf_fn
+        j_bucket["enf_tp"] += doc_enf_tp
+        j_bucket["enf_fp"] += doc_enf_fp
+        j_bucket["enf_fn"] += doc_enf_fn
         for label in gold_enfs | pred_enfs:
             if label in gold_enfs and label in pred_enfs:
                 per_label_enf[label][0] += 1
+                j_bucket["per_label_enf"][label][0] += 1
             elif label in pred_enfs:
                 per_label_enf[label][1] += 1
+                j_bucket["per_label_enf"][label][1] += 1
             else:
                 per_label_enf[label][2] += 1
+                j_bucket["per_label_enf"][label][2] += 1
 
         gold_dom = str(gold.get("dominant_frame") or "")
         pred_dom = pred.risk_framing.dominant_frame
         dom_match = pred_dom == gold_dom
+        if dom_match:
+            j_bucket["dom_hits"] += 1
         dominant_gold_list.append(gold_dom)
         dominant_pred_list.append(pred_dom)
 
         gold_bind = str(gold.get("binding_strength") or "")
         pred_bind = pred.policy_extraction.binding_strength
         bind_match = pred_bind == gold_bind
+        if bind_match:
+            j_bucket["bind_hits"] += 1
         binding_gold_list.append(gold_bind)
         binding_pred_list.append(pred_bind)
 
@@ -2486,22 +2540,25 @@ def evaluate_gold_set(
                 "bind_match": bind_match,
             }
         )
-        details.append(
-            {
-                "jurisdiction": jurisdiction,
-                "document_id": document_id,
-                "dominant_frame_match": dom_match,
-                "gold_dominant_frame": gold_dom,
-                "predicted_dominant_frame": pred_dom,
-                "binding_strength_match": bind_match,
-                "gold_binding_strength": gold_bind,
-                "predicted_binding_strength": pred_bind,
-                "missing_requirements": sorted(gold_reqs - pred_reqs),
-                "extra_requirements": sorted(pred_reqs - gold_reqs),
-                "missing_enforcement": sorted(gold_enfs - pred_enfs),
-                "extra_enforcement": sorted(pred_enfs - gold_enfs),
-            }
-        )
+        detail_entry: dict[str, Any] = {
+            "jurisdiction": jurisdiction,
+            "document_id": document_id,
+            "dominant_frame_match": dom_match,
+            "gold_dominant_frame": gold_dom,
+            "predicted_dominant_frame": pred_dom,
+            "binding_strength_match": bind_match,
+            "gold_binding_strength": gold_bind,
+            "predicted_binding_strength": pred_bind,
+            "missing_requirements": sorted(gold_reqs - pred_reqs),
+            "extra_requirements": sorted(pred_reqs - gold_reqs),
+            "missing_enforcement": sorted(gold_enfs - pred_enfs),
+            "extra_enforcement": sorted(pred_enfs - gold_enfs),
+        }
+        if gold.get("language"):
+            detail_entry["language"] = gold["language"]
+        if gold.get("stratum"):
+            detail_entry["stratum"] = gold["stratum"]
+        details.append(detail_entry)
 
     evaluated = len(per_doc_records)
     req_p, req_r, req_f1 = _precision_recall_f1(req_tp, req_fp, req_fn)
@@ -2531,12 +2588,36 @@ def evaluate_gold_set(
     per_label_req_summary, req_macro_f1 = _summarize_per_label(per_label_req)
     per_label_enf_summary, enf_macro_f1 = _summarize_per_label(per_label_enf)
 
+    by_jurisdiction: dict[str, dict[str, Any]] = {}
+    for jur_key in sorted(jur_stats):
+        jb = jur_stats[jur_key]
+        j_eval = jb["evaluated_count"]
+        j_req_p, j_req_r, j_req_f1 = _precision_recall_f1(jb["req_tp"], jb["req_fp"], jb["req_fn"])
+        j_enf_p, j_enf_r, j_enf_f1 = _precision_recall_f1(jb["enf_tp"], jb["enf_fp"], jb["enf_fn"])
+        _, j_req_macro_f1 = _summarize_per_label(jb["per_label_req"])
+        _, j_enf_macro_f1 = _summarize_per_label(jb["per_label_enf"])
+        by_jurisdiction[jur_key] = {
+            "evaluated_count": j_eval,
+            "requirement_micro_precision": j_req_p,
+            "requirement_micro_recall": j_req_r,
+            "requirement_micro_f1": j_req_f1,
+            "requirement_macro_f1": j_req_macro_f1,
+            "enforcement_micro_precision": j_enf_p,
+            "enforcement_micro_recall": j_enf_r,
+            "enforcement_micro_f1": j_enf_f1,
+            "enforcement_macro_f1": j_enf_macro_f1,
+            "dominant_frame_accuracy": round(jb["dom_hits"] / j_eval, 3) if j_eval else None,
+            "binding_strength_accuracy": round(jb["bind_hits"] / j_eval, 3) if j_eval else None,
+        }
+
     dominant_hits = sum(1 for item in per_doc_records if item["dom_match"])
     binding_hits = sum(1 for item in per_doc_records if item["bind_match"])
     dom_accuracy = round(dominant_hits / evaluated, 3) if evaluated else None
     bind_accuracy = round(binding_hits / evaluated, 3) if evaluated else None
     dom_kappa = _cohens_kappa(dominant_gold_list, dominant_pred_list)
     bind_kappa = _cohens_kappa(binding_gold_list, binding_pred_list)
+    dom_alpha = _krippendorffs_alpha_nominal(dominant_gold_list, dominant_pred_list)
+    bind_alpha = _krippendorffs_alpha_nominal(binding_gold_list, binding_pred_list)
 
     # Seeded bootstrap 95% confidence intervals across evaluated documents.
     bootstrap_cis: dict[str, list[float] | None] = {
@@ -2545,6 +2626,7 @@ def evaluate_gold_set(
         "dominant_frame_accuracy": None,
         "binding_strength_accuracy": None,
         "dominant_frame_cohens_kappa": None,
+        "dominant_frame_krippendorffs_alpha": None,
     }
     if evaluated > 0 and n_bootstrap > 0:
         rng = random.Random(seed)
@@ -2553,6 +2635,7 @@ def evaluate_gold_set(
         boot_dom_acc: list[float] = []
         boot_bind_acc: list[float] = []
         boot_dom_kappa: list[float] = []
+        boot_dom_alpha: list[float] = []
         for _ in range(n_bootstrap):
             sample = [per_doc_records[rng.randrange(evaluated)] for _ in range(evaluated)]
             b_req_f1 = _precision_recall_f1(
@@ -2571,18 +2654,21 @@ def evaluate_gold_set(
                 boot_enf_f1.append(b_enf_f1)
             boot_dom_acc.append(sum(1 for s in sample if s["dom_match"]) / evaluated)
             boot_bind_acc.append(sum(1 for s in sample if s["bind_match"]) / evaluated)
-            b_kappa = _cohens_kappa(
-                [s["dom_gold"] for s in sample],
-                [s["dom_pred"] for s in sample],
-            )
+            sample_dom_gold = [s["dom_gold"] for s in sample]
+            sample_dom_pred = [s["dom_pred"] for s in sample]
+            b_kappa = _cohens_kappa(sample_dom_gold, sample_dom_pred)
             if b_kappa is not None:
                 boot_dom_kappa.append(b_kappa)
+            b_alpha = _krippendorffs_alpha_nominal(sample_dom_gold, sample_dom_pred)
+            if b_alpha is not None:
+                boot_dom_alpha.append(b_alpha)
         bootstrap_cis = {
             "requirement_micro_f1": _bootstrap_interval(boot_req_f1),
             "enforcement_micro_f1": _bootstrap_interval(boot_enf_f1),
             "dominant_frame_accuracy": _bootstrap_interval(boot_dom_acc),
             "binding_strength_accuracy": _bootstrap_interval(boot_bind_acc),
             "dominant_frame_cohens_kappa": _bootstrap_interval(boot_dom_kappa),
+            "dominant_frame_krippendorffs_alpha": _bootstrap_interval(boot_dom_alpha),
         }
 
     return {
@@ -2600,9 +2686,12 @@ def evaluate_gold_set(
         "enforcement_macro_f1": enf_macro_f1,
         "dominant_frame_accuracy": dom_accuracy,
         "dominant_frame_cohens_kappa": dom_kappa,
+        "dominant_frame_krippendorffs_alpha": dom_alpha,
         "binding_strength_accuracy": bind_accuracy,
         "binding_strength_cohens_kappa": bind_kappa,
+        "binding_strength_krippendorffs_alpha": bind_alpha,
         "bootstrap_95_ci": bootstrap_cis,
+        "by_jurisdiction": by_jurisdiction,
         "per_label_requirements": per_label_req_summary,
         "per_label_enforcement": per_label_enf_summary,
         "details": details,
@@ -2628,7 +2717,7 @@ def _canonicalize_institution_name(name: str, *, jurisdiction: str | None = None
 def _is_non_statutory_companion(item: JurisdictionDocumentRecord) -> bool:
     seed = item.parsed_record.seed_document
     if seed is not None:
-        if seed.corpus_role in {"companion_resource", "draft_consultation", "historical_baseline"}:
+        if seed.corpus_role in {"companion_resource", "draft_consultation", "historical_baseline", "subnational_overlay"}:
             return True
         if seed.lifecycle_stage in {"draft", "superseded"}:
             return True
@@ -2717,9 +2806,20 @@ def analyze_jurisdictions(
     return results
 
 
-def _load_jurisdiction_documents(jurisdiction: str) -> list[JurisdictionDocumentRecord]:
+def _load_jurisdiction_documents(
+    jurisdiction: str,
+    *,
+    include_subnational: bool = False,
+) -> list[JurisdictionDocumentRecord]:
     documents: list[JurisdictionDocumentRecord] = []
     for record in _load_parsed_document_records(jurisdiction=jurisdiction):
+        corpus_role = (
+            record.seed_document.corpus_role
+            if record.seed_document is not None and record.seed_document.corpus_role
+            else record.raw_metadata.get("corpus_role")
+        )
+        if not include_subnational and corpus_role == "subnational_overlay":
+            continue
         try:
             analysis, _raw_policy_response, _raw_framing_response = _load_analysis_artifacts(record)
         except (ValidationError, ValueError, RuntimeError, json.JSONDecodeError, OSError):
@@ -3222,7 +3322,7 @@ def _source_salience(
     if seed is not None:
         if seed.corpus_role == "primary_instrument":
             base += 2.5
-        elif seed.corpus_role in {"companion_resource", "draft_consultation", "historical_baseline"}:
+        elif seed.corpus_role in {"companion_resource", "draft_consultation", "historical_baseline", "subnational_overlay"}:
             base -= 2.5
         if seed.lifecycle_stage == "active":
             base += 0.8
@@ -3850,6 +3950,8 @@ def analyze_parsed_documents(
                     parser_warnings=record.parsed_document.warnings,
                     source_tier=record.seed_document.source_tier if record.seed_document else None,
                     corpus_role=record.seed_document.corpus_role if record.seed_document else None,
+                    subnational_unit=record.seed_document.subnational_unit if record.seed_document else None,
+                    supersedes_id=record.seed_document.supersedes_id if record.seed_document else None,
                     lifecycle_stage=record.seed_document.lifecycle_stage if record.seed_document else None,
                     grounding_ratio=grounding_summary["grounding_ratio"],
                 )
@@ -4177,6 +4279,8 @@ def persist_analysis_artifacts(
                     parser_warnings=record.parsed_document.warnings,
                     source_tier=record.seed_document.source_tier if record.seed_document else None,
                     corpus_role=record.seed_document.corpus_role if record.seed_document else None,
+                    subnational_unit=record.seed_document.subnational_unit if record.seed_document else None,
+                    supersedes_id=record.seed_document.supersedes_id if record.seed_document else None,
                     lifecycle_stage=record.seed_document.lifecycle_stage if record.seed_document else None,
                     grounding_ratio=grounding["grounding_ratio"],
                 )

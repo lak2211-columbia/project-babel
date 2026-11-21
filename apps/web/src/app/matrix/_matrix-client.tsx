@@ -14,7 +14,9 @@ import type {
 import type { ScoringMode } from "@/lib/seed-data";
 import {
   BINDING_LEVEL_LABELS,
+  formatSubnationalBadge,
   isCjkText,
+  parseIncludeSubnational,
   toHtmlLang,
 } from "@/lib/taxonomy-vocab";
 import { replaceUrlQuery, useUrlSearch } from "@/lib/use-url-search";
@@ -58,15 +60,42 @@ const LEVEL_STYLES: Record<
 export function ObligationMatrixClient({
   headline,
   all,
+  headlineWithStates,
+  allWithStates,
 }: {
   headline: ObligationMatrixData;
   all: ObligationMatrixData;
+  headlineWithStates?: ObligationMatrixData;
+  allWithStates?: ObligationMatrixData;
 }) {
   const urlSearch = useUrlSearch();
-  const rawMode = new URLSearchParams(urlSearch).get("mode")?.toLowerCase();
+  const searchParams = new URLSearchParams(urlSearch);
+  const rawMode = searchParams.get("mode")?.toLowerCase();
   const mode: ScoringMode =
     rawMode === "all" || rawMode === "equal" ? "all" : "headline";
-  const data = mode === "all" ? all : headline;
+  const subnationalCount = headline.subnationalCount;
+  const canToggleStates =
+    subnationalCount > 0 && Boolean(headlineWithStates && allWithStates);
+  const includeSubnational =
+    canToggleStates && parseIncludeSubnational(searchParams.get("states"));
+  const data =
+    mode === "all"
+      ? includeSubnational && allWithStates
+        ? allWithStates
+        : all
+      : includeSubnational && headlineWithStates
+        ? headlineWithStates
+        : headline;
+  const activeHeadline =
+    includeSubnational && headlineWithStates ? headlineWithStates : headline;
+  const activeAll = includeSubnational && allWithStates ? allWithStates : all;
+  const querySuffix = (() => {
+    const qp = new URLSearchParams();
+    if (mode === "all") qp.set("mode", "all");
+    if (includeSubnational) qp.set("states", "1");
+    const s = qp.toString();
+    return s ? `?${s}` : "";
+  })();
 
   const [groupFilter, setGroupFilter] = useState<
     "all" | "requirement" | "enforcement"
@@ -84,6 +113,16 @@ export function ObligationMatrixClient({
         params.set("mode", "all");
       } else {
         params.delete("mode");
+      }
+    });
+  }
+
+  function toggleStates() {
+    replaceUrlQuery((params) => {
+      if (includeSubnational) {
+        params.delete("states");
+      } else {
+        params.set("states", "1");
       }
     });
   }
@@ -155,7 +194,7 @@ export function ObligationMatrixClient({
                       : "border-white/15 text-[#94a3b8] hover:border-white/30 hover:text-[#f1f5f9]"
                   }`}
                 >
-                  active primary ({headline.totalInstrumentsInPool})
+                  active primary ({activeHeadline.totalInstrumentsInPool})
                 </button>
                 <button
                   type="button"
@@ -167,17 +206,45 @@ export function ObligationMatrixClient({
                       : "border-white/15 text-[#94a3b8] hover:border-white/30 hover:text-[#f1f5f9]"
                   }`}
                 >
-                  full corpus ({all.totalInstrumentsInPool})
+                  full corpus ({activeAll.totalInstrumentsInPool})
                 </button>
+                {canToggleStates ? (
+                  <button
+                    type="button"
+                    aria-pressed={includeSubnational}
+                    onClick={toggleStates}
+                    className={`rounded-[2px] border px-2.5 py-1 transition-colors ${
+                      includeSubnational
+                        ? "border-[#e6ae49]/60 bg-[#e6ae49]/15 font-semibold text-[#fef3c7]"
+                        : "border-white/15 text-[#94a3b8] hover:border-white/30 hover:text-[#f1f5f9]"
+                    }`}
+                  >
+                    {includeSubnational ? "✓ " : "+ "}U.S. State Laws (
+                    {subnationalCount})
+                  </button>
+                ) : null}
               </div>
               <a
-                href={`/api/matrix?mode=${mode}`}
+                href={`/api/matrix?mode=${mode}${includeSubnational ? "&states=1" : ""}`}
                 className="font-mono text-[11px] uppercase tracking-wider text-[#67e8f9] underline decoration-[#67e8f9]/40 underline-offset-2 hover:text-white"
               >
                 download matrix json →
               </a>
             </div>
           </div>
+
+          {includeSubnational ? (
+            <p className="mt-3 rounded-[2px] border border-[#e6ae49]/35 bg-[#e6ae49]/10 px-3 py-2 text-[12px] leading-relaxed text-[#fef3c7]">
+              <strong className="font-semibold">
+                U.S. state statutory overlay active (+{subnationalCount} state
+                statutes):
+              </strong>{" "}
+              Enacted U.S. state AI statutes (e.g. California, Colorado, Texas)
+              are overlaid onto the United States column to reflect binding
+              subnational compliance duties alongside sovereign federal
+              instruments.
+            </p>
+          ) : null}
 
           {/* 0..4 Legend */}
           <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-white/10 pt-3 font-mono text-[11px]">
@@ -276,7 +343,7 @@ export function ObligationMatrixClient({
                       className="min-w-[96px] px-2 py-2 text-center font-medium"
                     >
                       <Link
-                        href={`/jurisdictions/${j.slug}${mode === "all" ? "?mode=all" : ""}`}
+                        href={`/jurisdictions/${j.slug}${querySuffix}`}
                         className="inline-flex flex-col items-center gap-1 text-[#f1f5f9] hover:text-[#67e8f9]"
                       >
                         <span className="flex items-center gap-1.5">
@@ -445,6 +512,11 @@ export function ObligationMatrixClient({
                           {inst.obligationStrengthLabel ? (
                             <span className="rounded-[2px] border border-white/15 bg-white/[0.04] px-1.5 py-0.5 text-[#cbd5e1]">
                               {inst.obligationStrengthLabel}
+                            </span>
+                          ) : null}
+                          {formatSubnationalBadge(inst.subnationalUnit) ? (
+                            <span className="rounded-[2px] border border-[#e6ae49]/45 bg-[#e6ae49]/15 px-1.5 py-0.5 font-semibold text-[#fef3c7]">
+                              {formatSubnationalBadge(inst.subnationalUnit)}
                             </span>
                           ) : null}
                           <span className="ml-auto text-[#94a3b8]">

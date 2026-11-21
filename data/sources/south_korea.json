@@ -325,6 +325,45 @@
           "max_candidates": 20
         }
       ]
+    },
+    {
+      "id": "kr_naisc",
+      "name": "Presidential Council on National AI Strategy (NAISC / Korea.kr)",
+      "issuing_body": "Presidential Council on National AI Strategy (국가인공지능전략위원회)",
+      "issuer_type": "executive",
+      "canonical_url": "https://www.aikorea.go.kr/",
+      "portal_kind": "portal",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "ko"
+      ],
+      "priority": "high",
+      "coverage_notes": "Presidential National AI Strategy Committee plenary decisions and the Korea National AI Action Plan (2026–2028).",
+      "tags": [
+        "strategy",
+        "action_plan",
+        "executive"
+      ]
+    },
+    {
+      "id": "kr_fsc",
+      "name": "Financial Services Commission (FSC) — Financial Sector AI Governance",
+      "issuing_body": "Financial Services Commission (금융위원회)",
+      "issuer_type": "regulator",
+      "canonical_url": "https://www.fsc.go.kr/no010101",
+      "portal_kind": "portal",
+      "retrieval_strategy": "mixed",
+      "languages": [
+        "ko"
+      ],
+      "priority": "high",
+      "coverage_notes": "Financial Services Commission and Financial Security Institute guidelines on financial-sector AI governance and frontier AI security.",
+      "tags": [
+        "finance",
+        "fsc",
+        "security",
+        "guideline"
+      ]
     }
   ],
   "seed_documents": [
@@ -924,6 +963,119 @@
         "guideline"
       ],
       "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "kr_national_ai_action_plan_2026_2028",
+      "title": "대한민국 인공지능 행동계획 확정 (Korea National AI Action Plan 2026–2028 — NAISC 2nd Plenary Decision)",
+      "issuing_body": "Presidential Council on National AI Strategy (국가인공지능전략위원회)",
+      "canonical_url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156745851",
+      "retrieval_urls": [
+        "https://www.korea.kr/common/download.do?fileId=198370373&tblKey=GMN"
+      ],
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "policy_domains": [
+        "industrial_innovation",
+        "sovereign_compute",
+        "public_sector_governance",
+        "frontier_gpai",
+        "embodied_physical_ai"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-02-25",
+      "effective_date": "2026-02-25",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "mixed",
+      "source_portal_ids": [
+        "kr_naisc",
+        "kr_msit_main"
+      ],
+      "priority": "high",
+      "relevance_notes": "Official February 25, 2026 NAISC 2nd Plenary Meeting document confirming Korea's 99-task, 326-recommendation National AI Action Plan (2026–2028) targeting AI G3 competitiveness, sovereign GPU/semiconductor 'AI Highway', physical AI, and AI Basic Society.",
+      "tags": [
+        "national_strategy",
+        "action_plan",
+        "ai_g3",
+        "sovereign_compute"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "kr_fsc_frontier_ai_security_guideline_2026",
+      "title": "프런티어 AI 보안 위협 금융분야 대응 요령 (버전 1.0) / Frontier AI Security Threat Response Guidelines for the Financial Sector (Ver. 1.0)",
+      "issuing_body": "Financial Services Commission (FSC) / Financial Security Institute (FSI)",
+      "canonical_url": "https://www.fsc.go.kr/no010101/87240",
+      "retrieval_urls": [
+        "https://www.fsc.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=87240&fileTy=ATTACH&fileNo=3"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "finance",
+        "frontier_gpai",
+        "critical_infrastructure",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "active",
+      "publication_date": "2026-07-01",
+      "effective_date": "2026-07-01",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "mixed",
+      "source_portal_ids": [
+        "kr_fsc"
+      ],
+      "priority": "high",
+      "relevance_notes": "July 1, 2026 FSC/Financial Security Institute guideline (2026-비정기-AGR-AI안전평가-700) establishing frontier AI security threat identification, red-teaming/testing safe harbors, access controls, and incident response procedures for Korean financial institutions.",
+      "tags": [
+        "finance",
+        "fsc",
+        "frontier_ai",
+        "cybersecurity",
+        "red_teaming"
+      ],
+      "corpus_role": "primary_instrument"
+    },
+    {
+      "id": "kr_fsc_financial_ai_guideline_2021",
+      "title": "금융분야 AI 가이드라인 및 주요 검토 필요사항 (Financial Sector AI Guidelines, 2021)",
+      "issuing_body": "Financial Services Commission (FSC)",
+      "canonical_url": "https://www.fsc.go.kr/no010101/76206",
+      "retrieval_urls": [
+        "https://www.fsc.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=76206&fileTy=ATTACH&fileNo=18"
+      ],
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "policy_domains": [
+        "finance",
+        "consumer_protection",
+        "standards_assurance"
+      ],
+      "lifecycle_stage": "superseded",
+      "publication_date": "2021-07-08",
+      "effective_date": "2021-07-08",
+      "languages": [
+        "ko"
+      ],
+      "document_format": "pdf",
+      "source_portal_ids": [
+        "kr_fsc"
+      ],
+      "priority": "medium",
+      "relevance_notes": "Foundational July 8, 2021 FSC Financial Sector AI Guidelines establishing Korea's initial financial AI governance, data fairness, explainability, and consumer-protection principles prior to the 2026 unified revision. Anchors Korea's pre-2024 longitudinal baseline.",
+      "tags": [
+        "finance",
+        "fsc",
+        "historical_baseline",
+        "guideline"
+      ],
+      "corpus_role": "historical_baseline"
     }
   ]
 }

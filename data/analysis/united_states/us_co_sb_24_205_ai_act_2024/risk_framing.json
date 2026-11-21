@@ -1,0 +1,75 @@
+{
+  "dominant_frame": "fundamental_rights",
+  "secondary_frames": [
+    "consumer_public_safety",
+    "innovation_enablement"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.94,
+    "social_stability": 0.05,
+    "innovation_enablement": 0.52,
+    "consumer_public_safety": 0.9,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.52,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.1,
+    "consumer_public_safety": 0.38,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Colorado SB 24-205 is dominantly framed around fundamental rights, centering its entire regulatory duty of reasonable care on preventing unlawful algorithmic discrimination across protected civil-rights characteristics while guaranteeing individual profiling opt-out rights, personal-data correction, accessible explanations, human appeal review of adverse consequential decisions, and explicit federal and state constitutional free-speech safeguards. Consumer and public safety serves as a closely intertwined secondary frame: the statute is titled as a consumer-protection act, codified directly into the Colorado Consumer Protection Act's unfair and deceptive trade practice provisions, mandates clear AI interaction notices for consumers, preserves emergency life-and-safety actions and product recalls, and invokes the General Assembly's public-health-and-safety clause. Innovation enablement acts as a measured third frame through small-deployer carve-outs, pre-market research and testing exclusions, trade-secret confidentiality, and NIST AI RMF and ISO/IEC 42001 compliance safe harbors.",
+  "evidence_spans": [
+    {
+      "quote": "(1) (a) \"ALGORITHMIC DISCRIMINATION\" MEANS ANY CONDITION IN WHICH THE USE OF AN ARTIFICIAL INTELLIGENCE SYSTEM RESULTS IN AN UNLAWFUL DIFFERENTIAL TREATMENT OR IMPACT THAT DISFAVORS AN INDIVIDUAL OR GROUP OF INDIVIDUALS",
+      "source_section": "C.R.S. § 6-1-1701(1)(a)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 506,
+      "end_char": 725
+    },
+    {
+      "quote": "(4) NOTHING IN THIS PART 17 IMPOSES ANY OBLIGATION ON A DEVELOPER, A DEPLOYER, OR OTHER PERSON THAT ADVERSELY AFFECTS THE RIGHTS OR FREEDOMS OF A PERSON, INCLUDING THE RIGHTS OF A PERSON TO FREEDOM OF SPEECH OR FREEDOM OF THE PRESS THAT ARE GUARANTEED IN:\n(a) THE FIRST AMENDMENT TO THE UNITED STATES CONSTITUTION;\nOR\n(b) SECTION 10 OF ARTICLE II OF THE STATE CONSTITUTION.",
+      "source_section": "C.R.S. § 6-1-1705(4)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 31157,
+      "end_char": 31530
+    },
+    {
+      "quote": "CONCERNING CONSUMER PROTECTIONS IN INTERACTIONS WITH ARTIFICIAL INTELLIGENCE SYSTEMS.",
+      "source_section": "Bill Title / Enacting Clause",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 148,
+      "end_char": 233
+    },
+    {
+      "quote": "Safety clause. The general assembly finds, determines, and declares that this act is necessary for the immediate preservation of the public peace, health, or safety or for appropriations for\n\nthe support and maintenance of the departments of the state and state institutions.",
+      "source_section": "Section 3 (Safety Clause)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 40687,
+      "end_char": 40962
+    },
+    {
+      "quote": "(h) CONDUCT RESEARCH, TESTING, AND DEVELOPMENT ACTIVITIES REGARDING AN ARTIFICIAL INTELLIGENCE SYSTEM OR MODEL, OTHER THAN TESTING CONDUCTED UNDER REAL-WORLD CONDITIONS, BEFORE THE ARTIFICIAL INTELLIGENCE SYSTEM OR MODEL IS PLACED ON THE MARKET, DEPLOYED, OR PUT INTO SERVICE, AS APPLICABLE;",
+      "source_section": "C.R.S. § 6-1-1705(1)(h)",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 30208,
+      "end_char": 30499
+    }
+  ]
+}

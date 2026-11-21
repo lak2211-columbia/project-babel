@@ -1,0 +1,397 @@
+{
+  "source_id": "us_treasury_ai_cybersecurity_financial_2024",
+  "title": "Managing Artificial Intelligence-Specific Cybersecurity Risks in the Financial Services Sector",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "U.S. Department of the Treasury",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2024-03-27",
+    "effective_date": null,
+    "covered_actors": [
+      "U.S. financial institutions of all sizes (depository institutions, community banks, credit unions, global systemically important banks, investment product providers, insurance companies, credit and financing organizations, and financial market utilities)",
+      "Third-party and fourth-party financial technology service providers, core banking providers, AI vendors, cloud service providers, and data providers serving the financial services sector",
+      "U.S. financial sector regulatory agencies and public-private coordinating bodies (Treasury, FBIIC, FSOC, FSSCC, FS-ISAC, NIST/USAISI)"
+    ],
+    "covered_application_domains": [
+      "finance",
+      "critical_infrastructure",
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Effective risk management processes for the introduction of new technologies and business activities, such as AI-supported activities, help financial institutions to effectively identify, measure, monitor, and control the risks associated with these new activities.",
+            "source_section": "4.1 U.S. Financial Sector Regulatory Landscape",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 55606,
+            "end_char": 55871
+          },
+          {
+            "quote": "Regardless of the location within the governance structure, financial institutions are advised to integrate AI plans into their enterprise risk management functions and connect them with other parts of the organization to address the multifaceted risks posed by AI.",
+            "source_section": "5.3 Integrating Risk Management Functions for AI",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 75338,
+            "end_char": 75603
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.95,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Financial institutions should map security controls to AI applications and ensure that AI systems are subject to at least the same levels of cybersecurity as that of any other IT system used by a financial institution.",
+            "source_section": "5.9 Cybersecurity Best Practices Closely Apply to AI Systems",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 86063,
+            "end_char": 86281
+          },
+          {
+            "quote": "Interviewed financial institutions reported that they are aware that they should be implementing and extending multifactor authentication solutions to enhance both cybersecurity and fraud protections against AI-powered threats.",
+            "source_section": "5.7 Implementing Risk-Based Tiered Multifactor Authentication Mechanisms",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 82925,
+            "end_char": 83152
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.9,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "They should consider extending best practices for data security to training data and test data, which might have been overlooked as low risk in the past but can influence model behavior and attestation because of the correlation between the models and the data they ingest.",
+            "source_section": "5.9 Cybersecurity Best Practices Closely Apply to AI Systems",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 87917,
+            "end_char": 88190
+          },
+          {
+            "quote": "If a use case is intended to have anti-bias assurances, it may be appropriate to train AI models only on data that is prepared with anti-bias standards.",
+            "source_section": "5.8 Picking the Right Tool for the Job and Risk Tolerance",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 85510,
+            "end_char": 85662
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Regardless of whether an AI tool or service is formally considered a model within the context of model risk management, appropriate risk management, including validation and testing, helps ensure AI tools and services operate as intended.",
+            "source_section": "4.1 U.S. Financial Sector Regulatory Landscape",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 56728,
+            "end_char": 56966
+          },
+          {
+            "quote": "Sound technology risk management should include maintenance of an inventory of AI technologies being implemented, assessment of the level of risk associated with each AI use case, expectations for testing and ongoing validation, and issue and incident tracking.",
+            "source_section": "4.1 U.S. Financial Sector Regulatory Landscape",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 59956,
+            "end_char": 60217
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "When implementing third-party AI, especially when limited model design documentation may be available, conducting and maintaining evidence of testing and validation performed, including any assumptions and model limitations, promotes effective risk management.",
+            "source_section": "4.1 U.S. Financial Sector Regulatory Landscape",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 61168,
+            "end_char": 61428
+          },
+          {
+            "quote": "Relatedly, financial institutions stated that they would benefit from a standardized description, similar to a nutrition label, for vendor-provided Generative AI systems to clearly identify what data was used to train a model, where it came from, and how any data submitted to the model will be incorporated.",
+            "source_section": "6.6 Best Practices for Data Supply Chain Mapping and \"Nutrition Labels\"",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 98946,
+            "end_char": 99254
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.8,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Disclose the scope of AI system use in their products or services and notify them of material changes.",
+            "source_section": "5.5 Asking the Right Questions of Vendors",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 80784,
+            "end_char": 80886
+          },
+          {
+            "quote": "Explain the impact the AI systems could have on the financial institution’s customers and how the financial institution can explain this impact to their customers.",
+            "source_section": "5.5 Asking the Right Questions of Vendors",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 80989,
+            "end_char": 81152
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.76,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "Furthermore, transparency is required to improve human review processes and establish accountability in AI systems’ teams.",
+            "source_section": "5.1 Situating AI Risk Management Within Existing Enterprise Risk Management Programs",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 73229,
+            "end_char": 73351
+          },
+          {
+            "quote": "However, it is equally vital to maintain skilled human oversight to interpret AI data accurately and mitigate potential AI inaccuracies or biases.",
+            "source_section": "Annex A: FSSCC R&D Committee Paper",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 129217,
+            "end_char": 129363
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "quote": "This report fulfills the requirement in EO 14110 on the Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence that: Within 150 days of the date of this order, the Secretary of the Treasury shall issue a public report on best practices for financial institutions to manage AI-specific cybersecurity risks.",
+            "source_section": "1.1 Background and Purpose of this Report",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 13264,
+            "end_char": 13591
+          },
+          {
+            "quote": "This report also does not weigh in on whether there are regulatory gaps or issues that may necessitate additional legislation, regulation, or guidance.",
+            "source_section": "4.1 U.S. Financial Sector Regulatory Landscape",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 54997,
+            "end_char": 55148
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "Advances in technology do not render existing risk management and compliance requirements or expectations inapplicable. Various existing laws, regulations, and supervisory guidance are applicable to financial institutions’ use of AI.",
+            "source_section": "4.1 U.S. Financial Sector Regulatory Landscape",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 54307,
+            "end_char": 54540
+          },
+          {
+            "quote": "Regulatory agencies set standards and expectations for sound risk management and evaluate controls for the use of technology, including AI technologies.",
+            "source_section": "4.1 U.S. Financial Sector Regulatory Landscape",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 59662,
+            "end_char": 59814
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "U.S. Department of the Treasury (convening and policy coordination role via CESG, FBIIC, and FinCEN)",
+      "Federal and state financial regulatory agencies (Federal Reserve Board, OCC, FDIC, SEC, CFTC, CFPB, NCUA, FHFA, and state insurance regulators via NAIC) exercising existing supervisory oversight"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": "The report establishes no new statutory penalties or coercive enforcement powers; it articulates voluntary best practices and next-step public-private workstreams while reminding financial institutions that existing financial-sector statutes, regulations, and supervisory guidance (including model risk management, third-party risk management, GLBA data safeguards, fair lending, and UDAP prohibitions) remain fully applicable under federal and state financial regulators.",
+    "implementation_notes": "Issued March 27, 2024 pursuant to Executive Order 14110 (150-day mandate) based on 42 stakeholder interviews and an annexed FSSCC R&D Committee white paper. Maps AI-specific cybersecurity and fraud threats (social engineering, malware generation, data poisoning, inference leakage, evasion, model extraction, deepfake identity impersonation, synthetic identity fraud, and third-/fourth-party supply chain risks) to existing U.S. financial supervisory frameworks and NIST AI RMF/CSF controls. Proposes ten follow-on workstreams including a common AI lexicon, narrowing the fraud-data divide for smaller institutions, expanding NIST AI RMF into a financial-sector profile with USAISI, exploring AI data supply-chain 'nutrition labels', black-box explainability R&D, workforce training, digital identity standards, and FSB/OECD/G7 international coordination.",
+    "confidence": 0.94
+  },
+  "risk_framing": {
+    "dominant_frame": "consumer_public_safety",
+    "secondary_frames": [
+      "innovation_enablement",
+      "national_security",
+      "fundamental_rights"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.68,
+      "economic_competitiveness": 0.15,
+      "fundamental_rights": 0.62,
+      "social_stability": 0.12,
+      "innovation_enablement": 0.8,
+      "consumer_public_safety": 0.94,
+      "labor_transition": 0.1
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.16,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.12,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.24,
+      "consumer_public_safety": 0.48,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "Treasury's report is dominantly framed around consumer and public safety, centering on protecting financial institutions, their personnel, and consumers from escalating cyber-enabled fraud, deepfake identity impersonation, synthetic identity theft, data poisoning, and operational IT disruptions. Innovation enablement serves as a strong secondary rationale: Treasury stresses the importance of prudent technological innovation, flexible non-prescriptive guidance, and public-private collaboration to help firms of all sizes safely adopt AI tools for cyber defense and anti-fraud operations. National security is a meaningful secondary frame rooted in protecting the financial services critical infrastructure sector against sophisticated cyberthreat and nation-state actors, alongside anti-money laundering and counter-terrorist financing resilience. Fundamental rights appears as a supporting secondary concern, highlighting consumer privacy, data protection, fairness, and the risk that financial AI systems could perpetuate or amplify inequities against historically marginalized groups.",
+    "evidence_spans": [
+      {
+        "quote": "Financial institutions’ primary cybersecurity goal generally remains the protection of their important assets: their personnel and customers, and their data, including internal information and information received from counterparties.",
+        "source_section": "2.4 Cybersecurity and Risks Related to AI Models",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 34161,
+        "end_char": 34395
+      },
+      {
+        "quote": "Fraudsters can use AI to mimic voice, video, and other behavioral identity factors that financial institutions use to verify a customer’s identity. Financial institution representatives that participated in our discussions consistently identified this kind of sophisticated identity impersonation as a chief concern about the malicious use of AI.",
+        "source_section": "3.3 Identity Impersonation and Synthetic Identity",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 46190,
+        "end_char": 46536
+      },
+      {
+        "quote": "The U.S. Department of the Treasury (Treasury) recognizes both the importance of responsible technological innovation across the financial sector and the increasing opportunities surrounding AI systems in the financial sector.",
+        "source_section": "Executive Summary",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 828,
+        "end_char": 1054
+      },
+      {
+        "quote": "This effort will explore potentially enhancing coordination across regulators with the goal of fostering responsible AI advancements, while addressing risk, and understanding applicable regulatory regimes.",
+        "source_section": "6.4 Regulation of AI in Financial Services Remains an Open Question",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 96156,
+        "end_char": 96361
+      },
+      {
+        "quote": "Like other critical infrastructure sectors, the financial services sector is increasingly subject to costly cybersecurity threats and cyber-enabled fraud.",
+        "source_section": "Executive Summary",
+        "quote_en": null,
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 3093,
+        "end_char": 3247
+      },
+      {
+        "quote": "The potential for nation state actors to exploit GenAI for misinformation campaigns poses a significant and evolving threat.",
+        "source_section": "Annex A: FSSCC R&D Committee Paper",
+        "quote_en": null,
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 122598,
+        "end_char": 122722
+      },
+      {
+        "quote": "Applications of AI in consumer financial services, insurance underwriting, fraud detection, and other areas of financial services have the potential to perpetuate or amplify existing inequities. Use of AI in these contexts also raises questions regarding consumer privacy and data security.",
+        "source_section": "7. Conclusion and Other Treasury AI Work",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 109851,
+        "end_char": 110141
+      },
+      {
+        "quote": "Beyond legal compliance, interview participants point to a growing demand for ethical considerations in AI development and deployment. This includes ensuring AI systems are fair, transparent, and accountable, and do not perpetuate biases or discrimination.",
+        "source_section": "3.4 Third-Party Risks and Magnified Data Security and Privacy",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 52098,
+        "end_char": 52354
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T20:59:40.304614Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "fb3d9154e3091b400aecc1c6a5ab38d41c2e703ba7f27ec11bfad4ee9e197197",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 141138,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 26,
+      "exact_matches": 26,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

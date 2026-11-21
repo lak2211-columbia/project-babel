@@ -1,8 +1,8 @@
 {
   "jurisdiction": "south_korea",
-  "source_count": 17,
-  "source_window_start": "2024-04-23",
-  "source_window_end": "2026-02-27",
+  "source_count": 20,
+  "source_window_start": "2021-07-08",
+  "source_window_end": "2026-07-01",
   "documents": [
     {
       "document_id": "kr_ai_and_data_administration_act",
@@ -234,6 +234,58 @@
       "confidence": 0.94
     },
     {
+      "document_id": "kr_fsc_financial_ai_guideline_2021",
+      "title": "금융분야 AI 가이드라인 및 주요 검토 필요사항 (Financial Sector AI Guidelines, 2021)",
+      "publication_date": "2021-07-08",
+      "issuing_body": "Financial Services Commission (FSC)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "fundamental_rights"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "pre_deployment_testing",
+        "transparency_disclosure"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Issued July 8, 2021 by the FSC Financial Innovation Bureau (Financial Data Policy Division) as Korea's foundational financial-sector AI governance framework (historical baseline later superseded by updated financial AI guidance). Pairs an introductory policy rationale with the full operational Financial Sector AI Operational Guideline (Annex 1) and ISO AI risk-mitigation reference table (Annex 2), covering governance, high-risk approval officers, lifecycle risk assessment, training-data quality and privacy, performance/fairness testing, explainability, customer notices, security against poisoning/adversarial attacks, and outsourcing controls.",
+      "framing_rationale_summary": "The 2021 FSC Financial Sector AI Guidelines are dominantly framed around innovation enablement, explicitly adopting light-touch, voluntary best-practice governance and sectoral self-regulation in the early stage of market adoption to build trustworthiness, remove regulatory uncertainty under existing financial laws, and promote widespread AI utilization in finance. Consumer and public safety is a close secondary frame centered on protecting financial consumers from operational errors, outsourcing harm, and financial losses while safeguarding financial market soundness and customer trust. Fundamental rights forms a substantive third frame anchored in preventing unfair discrimination in high-risk financial decisions such as lending and underwriting, protecting sensitive personal data and privacy, and upholding statutory individual rights to explanation, objection, and redress against automated profiling.",
+      "confidence": 0.93
+    },
+    {
+      "document_id": "kr_fsc_frontier_ai_security_guideline_2026",
+      "title": "프런티어 AI 보안 위협 금융분야 대응 요령 (버전 1.0) / Frontier AI Security Threat Response Guidelines for the Financial Sector (Ver. 1.0)",
+      "publication_date": "2026-07-01",
+      "issuing_body": "Financial Security Institute (FSI) / Financial Services Commission (FSC)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "existential_catastrophic",
+        "innovation_enablement"
+      ],
+      "top_requirements": [
+        "access_controls",
+        "risk_assessment",
+        "red_teaming"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Issued July 1, 2026 by the Financial Security Institute (Publication No. 2026-비정기-AGR-AI안전평가-700, Ver. 1.0) in direct response to the 'Mythos shock' (Anthropic's Mythos System Card and Project Glasswing discovering 10,000+ high-risk vulnerabilities in one month). Synthesizes Korean MSIT, UK DSIT, Singapore CSA, NYDFS, CSA, and FS-ISAC advisories into concrete operational controls for Korean financial firms: Board/CEO KRI governance, CISO Frontier AI Threat Response Teams, CI/CD VulnOps with AI-agent red-teaming, SBOM/SCA supply-chain automation, three-tier human-in-the-loop scoping of autonomous defensive AI agents, BCP automated rollback/ISAC joint response, and Zero Trust microsegmentation with phishing-resistant MFA.",
+      "framing_rationale_summary": "The 2026 FSI/FSC Frontier AI Security Threat Response Guidelines are dominantly framed around consumer and public safety, focusing on protecting financial stability, institutional trust, business continuity, core customer payment and authentication infrastructure, and sensitive customer data against cyber breaches, AI-assisted voice/deepfake phishing, ransomware, and operational service disruptions. Existential and catastrophic risk is a strong secondary frame grounded in the triggering frontier-AI cyber threat—specifically the 'Mythos shock' demonstrating mass-scale zero-day vulnerability discovery exceeding 10,000 high-risk flaws in a single month, autonomous machine-speed attacks outpacing human cognition, and rapid systemic contagion across shared financial infrastructure where perfect defense is unattainable. Innovation enablement plays a supporting secondary role by adopting non-regulatory reference guidance and encouraging financial institutions to harness defensive frontier AI models, DevSecOps agents, and shared FSI security platforms safely.",
+      "confidence": 0.945
+    },
+    {
       "document_id": "kr_genai_medical_device_guideline_2025",
       "title": "생성형 인공지능 의료기기 허가·심사 가이드라인",
       "publication_date": "2025-01-24",
@@ -345,6 +397,35 @@
       "implementation_notes": "111-page official MSIT/NIA implementation guideline (2026-01-22) operationalizing High-Impact AI operator obligations under AI Basic Act Article 34, Enforcement Decree Article 27, and MSIT's Technical Notice across 10 statutory high-impact domains (energy, drinking water, healthcare/medical devices, nuclear facilities, law-enforcement biometrics, recruitment/loans, transportation, public-service decisions, and K-12 student assessment) plus GPAI models integrated into high-impact systems. Synthesizes TTA Trustworthy AI Development Guide, NIST AI RMF, and EU AI Act across five statutory duties—(1) lifecycle risk management & governance, (2) explainability & training-data overview disclosure, (3) user protection (data governance, adversarial robustness, testing, monitoring, feedback, redress/compensation), (4) human oversight (intervention triggers, emergency stop, inspections, training), and (5) 5-year Safety & Trustworthiness Document retention—with dedicated open-source model guidance in every chapter, trade-secret carve-outs, equivalence-statement flexibility, a blank document template, a 69-item TTA crosswalk, and a complete AI recruitment example.",
       "framing_rationale_summary": "The guideline is dominantly framed around consumer_public_safety, centering all five statutory duties on protecting human life, physical safety, and property against accidents, operational malfunctions, medical misdiagnoses, critical-infrastructure failures, and adversarial attacks through risk mitigation, safety modes, emergency stops, and victim compensation. Consumer_public_safety edges out fundamental_rights because safety assurance and accident prevention—explicitly contrasted with data-only privacy laws as protecting users' life, body, and property across nuclear, water, energy, transport, and medical systems—drive the document's operational controls and human-oversight architecture. Fundamental_rights is a very close runner-up, co-anchored in the statutory threshold ('life, physical safety, and fundamental rights') and pervading explainability, anti-discrimination/recruitment fairness, user objection/review rights, and personal-data protection. Innovation_enablement is a major third frame emphasizing voluntary flexibility, avoiding duplicate regulation via developer-to-user compliance inheritance and equivalence statements, trade-secret exclusions, and enabling legal-burden-free experimentation. Economic_competitiveness plays a clear supporting role in preparing domestic AI operators for global regulatory regimes (such as the EU AI Act) and strengthening international competitiveness.",
       "confidence": 0.955
+    },
+    {
+      "document_id": "kr_national_ai_action_plan_2026_2028",
+      "title": "대한민국 인공지능 행동계획 확정 (Korea National AI Action Plan 2026–2028 — NAISC 2nd Plenary Decision)",
+      "publication_date": "2026-02-25",
+      "issuing_body": "Presidential Council on National AI Strategy (국가인공지능전략위원회)",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "economic_competitiveness",
+      "secondary_frames": [
+        "innovation_enablement",
+        "national_security",
+        "consumer_public_safety",
+        "labor_transition"
+      ],
+      "top_requirements": [
+        "red_teaming",
+        "incident_reporting",
+        "training_data_governance"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement",
+        "procurement_condition"
+      ],
+      "implementation_notes": "Official press release and plenary decision annexes from the 2nd Plenary Meeting of the Presidential Council on National AI Strategy (NAISC, chaired by President Lee Jae-myung, Feb. 25, 2026). Formally finalizes the Korea National AI Action Plan (2026–2028) as the statutory AI Basic Plan under Article 6 of Korea's AI Basic Act (effective Jan. 22, 2026), together with four companion decisions: AI Government Infrastructure Governance & Innovation Direction (post-NIRS Daejeon fire), Coordinated Vulnerability Disclosure (CVD/VDP) Roadmap, K-Moonshot S&T AI Strategy, and NAISC operating-rule revisions adding AI Democracy and Education/Talent subcommittees plus Security and Regional Special Committees.",
+      "framing_rationale_summary": "The Korea National AI Action Plan (2026–2028) and accompanying NAISC 2nd Plenary decisions are dominantly framed around economic competitiveness, establishing a concrete blueprint for Korea to leap into the global top three AI powers, achieve global first place in physical AI and manufacturing AI by 2030, export full-stack Korean AI solutions, and reclaim global scientific leadership through K-Moonshot in direct response to US and Chinese national AI initiatives. Innovation enablement is a major secondary frame, driving the buildout of an 'AI Highway' of compute and data, regulatory reform to resolve legal uncertainty over AI training data and copyright, public-sector digital transformation, and regulatory sandboxes for vulnerability disclosure pilots. National security forms a prominent third frame encompassing sovereign general-purpose models, domestic AI semiconductors, an AI-based defense powerhouse with accelerated military AI acquisition, and overcoming a national cybersecurity crisis across government networks. Consumer and public safety (resilient public datacenter safety, disaster recovery after the NIRS fire, and proactive white-hat cyber defense) and labor and workforce transition (building an AI Basic Society with human-AI collaborative employment ecosystems and proactively addressing job-structure shifts and equitable distribution of AI transition gains) serve as substantial supporting frames, alongside a modest fundamental rights thread reflected in creator/privacy safeguards and the new AI Democracy Subcommittee.",
+      "confidence": 0.95
     },
     {
       "document_id": "kr_public_personal_data_ai_guide_2024",
@@ -486,395 +567,441 @@
     "document_types": [
       {
         "label": "regulatory_guidance",
-        "count": 14,
-        "share": 0.824
+        "count": 16,
+        "share": 0.8
       },
       {
         "label": "legislation",
         "count": 3,
-        "share": 0.176
+        "share": 0.15
+      },
+      {
+        "label": "strategy_paper",
+        "count": 1,
+        "share": 0.05
       }
     ],
     "binding_strengths": [
       {
         "label": "regulatory_guidance",
-        "count": 14,
-        "share": 0.824
+        "count": 16,
+        "share": 0.8
       },
       {
         "label": "binding_law",
         "count": 3,
-        "share": 0.176
+        "share": 0.15
+      },
+      {
+        "label": "strategy_statement",
+        "count": 1,
+        "share": 0.05
       }
     ],
     "requirements": [
       {
         "label": "risk_assessment",
-        "count": 16,
-        "share": 0.941
+        "count": 18,
+        "share": 0.9
       },
       {
         "label": "training_data_governance",
-        "count": 16,
-        "share": 0.941
+        "count": 18,
+        "share": 0.9
       },
       {
         "label": "transparency_disclosure",
-        "count": 16,
-        "share": 0.941
+        "count": 17,
+        "share": 0.85
+      },
+      {
+        "label": "human_oversight",
+        "count": 15,
+        "share": 0.75
       },
       {
         "label": "model_documentation",
         "count": 14,
-        "share": 0.824
-      },
-      {
-        "label": "human_oversight",
-        "count": 13,
-        "share": 0.765
+        "share": 0.7
       },
       {
         "label": "access_controls",
-        "count": 10,
-        "share": 0.588
+        "count": 13,
+        "share": 0.65
       },
       {
         "label": "third_party_audit",
         "count": 10,
-        "share": 0.588
+        "share": 0.5
+      },
+      {
+        "label": "incident_reporting",
+        "count": 8,
+        "share": 0.4
+      },
+      {
+        "label": "pre_deployment_testing",
+        "count": 8,
+        "share": 0.4
       },
       {
         "label": "open_weight_obligations",
         "count": 7,
-        "share": 0.412
+        "share": 0.35
+      },
+      {
+        "label": "red_teaming",
+        "count": 7,
+        "share": 0.35
       },
       {
         "label": "content_provenance",
         "count": 6,
-        "share": 0.353
+        "share": 0.3
       },
       {
         "label": "domestic_representative",
         "count": 6,
-        "share": 0.353
-      },
-      {
-        "label": "pre_deployment_testing",
-        "count": 6,
-        "share": 0.353
+        "share": 0.3
       },
       {
         "label": "compute_governance",
         "count": 5,
-        "share": 0.294
-      },
-      {
-        "label": "incident_reporting",
-        "count": 5,
-        "share": 0.294
-      },
-      {
-        "label": "red_teaming",
-        "count": 5,
-        "share": 0.294
+        "share": 0.25
       },
       {
         "label": "frontier_safety_evaluation",
         "count": 4,
-        "share": 0.235
+        "share": 0.2
       },
       {
         "label": "registration_licensing",
         "count": 4,
-        "share": 0.235
+        "share": 0.2
       },
       {
         "label": "agentic_autonomy_controls",
-        "count": 1,
-        "share": 0.059
+        "count": 2,
+        "share": 0.1
       }
     ],
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "count": 17,
+        "count": 20,
         "share": 1.0
       },
       {
         "label": "regulatory_supervision",
         "count": 12,
-        "share": 0.706
+        "share": 0.6
       },
       {
         "label": "reporting_obligation",
         "count": 8,
-        "share": 0.471
+        "share": 0.4
       },
       {
         "label": "procurement_condition",
-        "count": 5,
-        "share": 0.294
+        "count": 6,
+        "share": 0.3
       },
       {
         "label": "civil_penalty",
         "count": 4,
-        "share": 0.235
+        "share": 0.2
       },
       {
         "label": "criminal_penalty",
         "count": 3,
-        "share": 0.176
+        "share": 0.15
       },
       {
         "label": "licensing_requirement",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       }
     ],
     "institutions": [
       {
         "label": "Ministry of Science and ICT (MSIT)",
-        "count": 11,
-        "share": 0.647
+        "count": 12,
+        "share": 0.6
       },
       {
         "label": "Personal Information Protection Commission (PIPC)",
-        "count": 7,
-        "share": 0.412
+        "count": 8,
+        "share": 0.4
       },
       {
         "label": "AI Safety Institute (AISI)",
         "count": 5,
-        "share": 0.294
+        "share": 0.25
       },
       {
         "label": "Ministry of the Interior and Safety (행정안전부)",
         "count": 3,
-        "share": 0.176
+        "share": 0.15
       },
       {
         "label": "AI Officer Council (인공지능책임관협의회)",
         "count": 2,
-        "share": 0.118
+        "share": 0.1
+      },
+      {
+        "label": "Financial Services Commission (FSC)",
+        "count": 2,
+        "share": 0.1
       },
       {
         "label": "Korea Internet & Security Agency (한국인터넷진흥원, KISA — CSAP cloud security certification)",
         "count": 2,
-        "share": 0.118
+        "share": 0.1
       },
       {
         "label": "National Assembly of the Republic of Korea",
         "count": 2,
-        "share": 0.118
+        "share": 0.1
       },
       {
         "label": "National Information Society Agency (한국지능정보사회진흥원)",
         "count": 2,
-        "share": 0.118
+        "share": 0.1
       },
       {
         "label": "National Information Society Agency (한국지능정보사회진흥원, NIA)",
         "count": 2,
-        "share": 0.118
+        "share": 0.1
       },
       {
         "label": "Presidential Committee on the Digital Platform Government (디지털플랫폼정부위원회)",
         "count": 2,
-        "share": 0.118
+        "share": 0.1
       },
       {
         "label": "Presidential Committee on the Digital Platform Government / National Information Society Agency",
         "count": 2,
-        "share": 0.118
+        "share": 0.1
       },
       {
         "label": "AI Policy Center (인공지능정책센터 — including NIA / 한국지능정보사회진흥원)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "AI Policy Center (인공지능정책센터 — including National Information Society Agency / 한국지능정보사회진흥원)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "AI Policy Center (인공지능정책센터)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
+      },
+      {
+        "label": "Financial Security Institute (FSI / 금융보안원) — Financial AI Security Research Institute Support Center and Financial ISAC",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Financial Security Institute (FSI) / Financial Services Commission (FSC)",
+        "count": 1,
+        "share": 0.05
+      },
+      {
+        "label": "Financial industry associations (6 sectoral associations overseeing self-regulatory working guides)",
+        "count": 1,
+        "share": 0.05
       },
       {
         "label": "High-Impact AI Expert Committee (고영향 인공지능 전문위원회)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "High-Impact AI Expert Committee (전문위원회)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Korea Information Society Development Institute (정보통신정책연구원, KISDI — dedicated impact assessment support agency)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Korea Internet & Security Agency (한국인터넷진흥원 / KISA)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Korea Internet & Security Agency (한국인터넷진흥원 / KISA, referenced under Network Act Article 48-3 cyber-incident reporting)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Korea Internet & Security Agency (한국인터넷진흥원 / KISA, supporting agency and personal-data exposure URL detection partner)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Ministry of Food and Drug Safety",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Ministry of Food and Drug Safety (식품의약품안전처 — Digital Medical Product Impact Assessment coordination)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Ministry of Food and Drug Safety (식품의약품안전처)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Ministry of National Defense (국방부), National Intelligence Service (국가정보원), and National Police Agency (경찰청) — for Art. 2 national-security scope exclusions",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Ministry of National Defense (국방부), National Intelligence Service (국가정보원), and National Police Agency (경찰청) — for Draft Art. 2 national-security exclusions",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Ministry of the Interior and Safety (행정안전부 — public data consultation under Art. 6(3))",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "National AI Committee (국가인공지능위원회 — referenced for 2030 public AI policy targets)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "National AI Committee (국가인공지능위원회) and 13 listed central ministries/commissions (Draft Art. 4(1))",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "National AI Committee (위원회, referenced under AI Basic Act Art. 34(1)(6) for deliberating additional high-impact AI safety/trustworthiness measures)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "National AI Committee / National AI Strategy Committee (국가인공지능위원회 / 국가인공지능전략위원회)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "National AI Strategy Committee (국가인공지능전략위원회)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "National Information Society Agency (한국지능정보사회진흥원 / NIA, designated AI Policy Center)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "National Information Society Agency (한국지능정보사회진흥원 / NIA, referenced for High-Impact AI Determination Guideline support)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "National Institute of Food and Drug Safety Evaluation — Medical Device Review Department / Digital Health Regulatory Support Division (식품의약품안전평가원 의료기기심사부 디지털헬스규제지원과)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
+      },
+      {
+        "label": "National Intelligence Service (NIS / 국가정보원)",
+        "count": 1,
+        "share": 0.05
       },
       {
         "label": "National Intelligence Service (국가정보원 — N2SF security guidelines and agency security reviews)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "National Intelligence Service (국가정보원 — referenced for GenAI security guidance and network security policy)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "President of the Republic of Korea",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
+      },
+      {
+        "label": "Presidential Council on National AI Strategy (국가인공지능전략위원회)",
+        "count": 1,
+        "share": 0.05
       },
       {
         "label": "Public Data Dispute Mediation Committee (공공데이터분쟁조정위원회)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Public Data Strategy Committee (공공데이터전략위원회)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       },
       {
         "label": "Relevant central administrative agencies and local governments (관계 중앙행정기관 및 지방자치단체)",
         "count": 1,
-        "share": 0.059
+        "share": 0.05
       }
     ],
     "frames": [
       {
         "label": "fundamental_rights",
-        "score": 6.22,
-        "share": 0.366,
-        "document_mentions": 17
+        "score": 6.51,
+        "share": 0.326,
+        "document_mentions": 20
       },
       {
         "label": "innovation_enablement",
-        "score": 4.84,
-        "share": 0.285,
-        "document_mentions": 16
+        "score": 5.65,
+        "share": 0.283,
+        "document_mentions": 19
       },
       {
         "label": "consumer_public_safety",
-        "score": 3.34,
-        "share": 0.196,
-        "document_mentions": 17
+        "score": 4.28,
+        "share": 0.214,
+        "document_mentions": 20
       },
       {
         "label": "economic_competitiveness",
-        "score": 1.23,
-        "share": 0.072,
-        "document_mentions": 10
-      },
-      {
-        "label": "social_stability",
-        "score": 0.61,
-        "share": 0.036,
+        "score": 1.59,
+        "share": 0.079,
         "document_mentions": 12
       },
       {
         "label": "national_security",
-        "score": 0.48,
-        "share": 0.028,
-        "document_mentions": 7
+        "score": 0.71,
+        "share": 0.036,
+        "document_mentions": 9
+      },
+      {
+        "label": "social_stability",
+        "score": 0.61,
+        "share": 0.031,
+        "document_mentions": 13
       },
       {
         "label": "existential_catastrophic",
-        "score": 0.28,
-        "share": 0.016,
-        "document_mentions": 1
+        "score": 0.58,
+        "share": 0.029,
+        "document_mentions": 3
+      },
+      {
+        "label": "labor_transition",
+        "score": 0.07,
+        "share": 0.004,
+        "document_mentions": 5
       }
     ]
   }

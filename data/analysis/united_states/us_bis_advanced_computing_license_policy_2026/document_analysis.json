@@ -1,0 +1,401 @@
+{
+  "source_id": "us_bis_advanced_computing_license_policy_2026",
+  "title": "BIS Final Rule: Revision to License Review Policy for Advanced Computing Commodities (91 FR 1684)",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "U.S. Department of Commerce, Bureau of Industry and Security (BIS)",
+    "document_type": "legislation",
+    "binding_strength": "binding_law",
+    "publication_date": "2026-01-15",
+    "effective_date": "2026-01-15",
+    "covered_actors": [
+      "U.S. exporters applying for BIS licenses under 15 CFR §§ 742.6(b)(10)(iii)(A)(1) and 744.23(d)(3)(iii) to export commercially available advanced computing commodities (TPP < 21,000 and total DRAM bandwidth < 6,500 GB/s, such as NVIDIA H200 or AMD MI325X) from the United States to end-users located in China or Macau",
+      "Ultimate consignees and Infrastructure-as-a-Service (IaaS) providers in China or Macau receiving covered advanced computing commodities (subject to KYC, physical security, remote-access limits, and model-weight transfer restrictions)",
+      "Qualified independent U.S.-headquartered third-party testing laboratories conducting pre-export verification in the customs territory of the United States (15 CFR Part 748, Supp. No. 2, para. (dd)(3))",
+      "Reexporters, in-country transferors, and entities headquartered (or with ultimate parents headquartered) in Country Group D:5 or Macau located outside China/Macau (remaining under presumption of denial)"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models",
+      "defense"
+    ],
+    "prohibited_practices": [
+      "Exporting, reexporting, or transferring controlled advanced computing commodities without required BIS license authorization; applications lacking paragraph (dd) certifications, reexports, in-country transfers, and exports outside China/Macau to entities headquartered (or with ultimate parents headquartered) in Country Group D:5 or Macau remain subject to a presumption of denial (§ 742.6(b)(10)(iii)(A)(1))",
+      "Supplying covered AI commodities for a military end use, military-intelligence end use, military end user, or military-intelligence end user (§§ 744.21, 744.22), or for nuclear, missile, or chemical or biological weapons end uses/end users (§§ 744.2–4), or involving §§ 744.8 or 744.11 parties, or granting such restricted parties remote access to the AI commodities or to any algorithm trained on them (Part 748 Supp. No. 2 para. (dd)(1)(iv), (vii)(3))",
+      "Transferring model weights trained on exported AI commodities by an IaaS ultimate consignee or end user to any end user not previously disclosed on the license or without BIS authorization (para. (dd)(1)(vii)(2))",
+      "Fulfilling authorized exports to China or Macau in a manner that delays fulfilling U.S. customer orders for advanced-node ICs, diverts global foundry capacity from U.S. end users, or exceeds 50 percent of aggregate TPP shipped to commercial U.S. customers for end use in the United States (para. (dd)(1)(ii)–(iii))"
+    ],
+    "safety_requirements": [
+      {
+        "label": "compute_governance",
+        "confidence": 0.99,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "BIS is revising paragraph (b)(10)(iii)(A)(1) to include a case-by-case license review policy for license applications to export from the United States commodities with a TPP less than 21,000, and a `total DRAM bandwidth' less than 6,500 GB/s (\ne.g.,\nNVIDIA H200 or AMD MI325X), when destined to end-users located in either China or Macau, provided certain conditions are met.",
+            "source_section": "Preamble (Section II — Changes to § 742.6)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5547,
+            "end_char": 5922
+          },
+          {
+            "quote": "the aggregate TPP of “advanced-node integrate circuits” exported to China or Macau will be no more than 50 percent of the aggregate TPP shipped to customers in the United States for end-use in the United States for the same advanced computing commodities from when such circuits started shipping to commercial U.S. customers in the United States for end-use in the United States to the time of the license application;",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)(iii)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22994,
+            "end_char": 23412
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.99,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "License applications that are not supported by the certification described under this paragraph or a commitment to submit the certificate prior to export, will be reviewed under the presumption of denial license review policy specified under § 742.6(b)(10)(iii)(A)(1) of the EAR.",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20560,
+            "end_char": 20839
+          },
+          {
+            "quote": "License applicants must submit certifications to BIS via SNAP-R prior to the export of the advanced computing commodities from the United States.",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(2)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27470,
+            "end_char": 27615
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.98,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "The applicant confirms that, prior to export on an approved license from the United States, every shipment of advanced computing commodities described in this license application will be reviewed by a qualified third-party testing lab who meets the qualifications described in paragraph (dd)(3) of this supplement.",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)(ix)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 25882,
+            "end_char": 26196
+          },
+          {
+            "quote": "The third-party testing lab must not have any ownership or financial stake in either the ultimate consignee, the exporter, or any other party to the transaction, and not otherwise benefit from the export other than by the fees they are paid for their testing service; and",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(3)(i)(B)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28129,
+            "end_char": 28400
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.92,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "Prior to any export from the United States, the exporter must receive from the third-party testing lab a certification confirming that the technical capabilities and functions of the advanced computing commodities described in the exporter's license application are accurate and submit that certification to BIS in accordance with the certification prior to export.",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(3)(ii)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28953,
+            "end_char": 29318
+          },
+          {
+            "quote": "Such a review can be performed by a representative sampling of a batch of semiconductors chosen by the lab, rather than the lab reviewing every individual semiconductor that the exporter intends to export.",
+            "source_section": "Preamble (Section IV — Supplement No. 2 to Part 748)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9065,
+            "end_char": 9270
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.96,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "The applicant obtains a description of Know Your Customer procedures from the ultimate consignee for the AI commodities described in the license application to prevent remote access from end uses or end users described in paragraph (dd)(1)(iv). The applicant must submit this information to BIS.",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)(v)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24132,
+            "end_char": 24427
+          },
+          {
+            "quote": "(2) will not transfer model weights trained on the AI commodities to any end user not previously disclosed on the license or without authorization from BIS;\nand\n(3) will not directly or indirectly provide a party described in (dd)(1)(iv) with remote access to any algorithm trained on the AI commodities;",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)(vii)(2)–(3)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 25400,
+            "end_char": 25704
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.86,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "The applicant must also provide the following performance specifications to BIS in the license application: the TPP, the `total DRAM bandwidth', the `interconnect bandwidth', `copackaged DRAM capacity' and the peak power consumption at max TPP. The applicant must also provide an explanation for any changes to the specifications for this model since launched or previously shipped;",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)(i)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 21617,
+            "end_char": 21999
+          },
+          {
+            "quote": "The applicant must describe the physical security for the ultimate consignee of the AI commodities described in the license application; and",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)(viii)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 25736,
+            "end_char": 25876
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "licensing_requirement",
+        "confidence": 0.99,
+        "evidence": [
+          {
+            "quote": "All other applications for exports, reexports, or transfers (in-country) will be reviewed under a presumption of denial to or within Macau or destinations specified in Country Group D:5 or to an entity headquartered in, or whose ultimate parent company is headquartered in, either Macau or a destination specified in Country Group D:5.",
+            "source_section": "15 CFR § 742.6(b)(10)(iii)(A)(1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17779,
+            "end_char": 18114
+          },
+          {
+            "quote": "BIS may revoke the qualification of any third-party testing lab at any time and for any reason. This could be communicated, for example, in a letter to an exporter or a BIS publication such as website guidance. Such revocation suspends the case-by-case license review policy availability of § 742.6(b)(10)(iii)(A)(1) for any exporter working with that third-party testing lab",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(3)(iii)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 29325,
+            "end_char": 29700
+          }
+        ]
+      },
+      {
+        "label": "market_access_restriction",
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "quote": "Section 1754(a)(1)-(16) of ECRA (\n50 U.S.C. 4813(a)(1)-(16)\n) authorizes,\ninter alia,\nthe establishment of a list of controlled items;",
+            "source_section": "Export Control Reform Act of 2018 Authority",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 11936,
+            "end_char": 12070
+          },
+          {
+            "quote": "any exports authorized by this license will not be filled if doing so would result in any delay in fulfilling any existing or new orders from customers in the United States for end use in the United States for any of its “advanced-node integrated circuits” products (taking into account normal lead times),",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)(ii)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22158,
+            "end_char": 22464
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "The applicant provides BIS with a list of any intended `Infrastructure-as-a-Service (IaaS) remote end users of the AI commodities described in the license application, located in Belarus, China, Cuba, Iran, Macau, North Korea, Russia, and Venezuela, or an entity headquartered in, or whose ultimate parent company is headquartered in the foregoing destinations.",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)(vi)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 24451,
+            "end_char": 24812
+          },
+          {
+            "quote": "BIS also estimates a minimal increase under OMB control number 0694-0122 to account for the responsibility of the exporter to report the results from third-party testing lab confirmation.",
+            "source_section": "Rulemaking Requirements (Paperwork Reduction Act)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14644,
+            "end_char": 14831
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.93,
+        "evidence": [
+          {
+            "quote": "BIS will routinely confirm the accuracy of relevant elements of the following certifications, using any methods it deems appropriate.",
+            "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 21215,
+            "end_char": 21348
+          },
+          {
+            "quote": "Based on the records and information provided as part of the application process, BIS and reviewing agencies will determine, on a case-by-case basis, whether to approve or deny the license of these specific commodities.",
+            "source_section": "Preamble (Background)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 5130,
+            "end_char": 5349
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "U.S. Department of Commerce, Bureau of Industry and Security (BIS) (licensing authority, certification verification, third-party lab qualification revocation, and EAR compliance oversight under ECRA, 50 U.S.C. 4801–4852)",
+      "Interagency export-control reviewing agencies participating in case-by-case license determinations"
+    ],
+    "compliance_deadlines": [
+      "2026-01-15: Immediate effective date of the final rule (exempt from APA notice-and-comment and delayed effective date under ECRA § 1762, 50 U.S.C. 4821)",
+      "At license application and prior to any export from the United States: Exporters must submit paragraph (dd) certifications, U.S. shipment/supply data, KYC and physical security disclosures, IaaS remote end-user lists, and U.S. third-party testing lab technical verification certifications via SNAP-R",
+      "5-year records retention under OMB Control No. 0694-0096"
+    ],
+    "penalties_summary": "Issued under the Export Control Reform Act of 2018 (50 U.S.C. 4801–4852), the rule enforces compliance primarily through export licensing denials (defaulting to a presumption of denial if paragraph (dd) certifications are absent or incomplete), prohibitions on unauthorized exports, reexports, and transfers, routine BIS accuracy audits of certifications, and immediate unilateral BIS revocation of third-party testing lab qualifications—which suspends case-by-case review availability for affected exporters until a new qualified U.S. lab is designated.",
+    "implementation_notes": "Published and effective January 15, 2026 (91 FR 1684, Docket No. 260112-0028, RIN 0694-AK43), this BIS final rule amends 15 CFR §§ 742.6, 744.23, 748.8, and Supplement No. 2 to Part 748 (adding paragraph (dd)) to shift U.S. export license review for commercially available mid-tier advanced AI chips (TPP < 21,000 and total DRAM bandwidth < 6,500 GB/s, such as NVIDIA H200 and AMD MI325X) destined to China and Macau from a presumption of denial to case-by-case review. Eligibility requires nine binding certifications: U.S. supply sufficiency and zero global foundry-capacity diversion, a 50% cap relative to aggregate TPP shipped to U.S. commercial customers, prohibition of military/military-intelligence/WMD/part-744 end uses and remote access, consignee KYC and physical security disclosures, IaaS remote end-user reporting across eight countries of concern, IaaS restrictions barring unauthorized transfers of trained model weights or remote access to trained algorithms, and pre-export independent U.S. third-party testing lab verification.",
+    "confidence": 0.98
+  },
+  "risk_framing": {
+    "dominant_frame": "national_security",
+    "secondary_frames": [
+      "economic_competitiveness",
+      "existential_catastrophic"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.28,
+      "national_security": 0.99,
+      "economic_competitiveness": 0.72,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.1,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.08,
+      "national_security": 0.72,
+      "economic_competitiveness": 0.2,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.0,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "This BIS final rule is dominantly framed around national security, justifying its tightly conditioned case-by-case export licensing policy as necessary to protect U.S. national security and foreign policy interests, preserve U.S. technological superiority, prevent military and military-intelligence end uses or unauthorized remote access, and ensure destination countries do not exceed U.S. compute capabilities—explicitly noting exemption from E.O. 14192 because its primary direct benefit is improving national security. Economic competitiveness forms a clear secondary frame through provisions safeguarding U.S. leadership in AI, preventing delays to U.S. commercial customer chip orders, blocking diversion of global foundry capacity away from U.S. end users, and capping China and Macau exports at 50 percent of aggregate U.S. commercial shipments. A minor existential and catastrophic risk element appears in the mandatory certification screening out nuclear, missile, chemical, and biological weapons end uses and end users.",
+    "evidence_spans": [
+      {
+        "quote": "Consistent with U.S. national security and foreign policy objectives, which recognize the need to maintain the United States' technological superiority, BIS is adjusting the license review policy to case-by-case for exports of certain commercially available advanced computing commodities to end-users located in China and Macau.",
+        "source_section": "Preamble (Background)",
+        "quote_en": null,
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 1896,
+        "end_char": 2225
+      },
+      {
+        "quote": "this rule is exempt from the requirements of\nE.O. 14192\n, because its primary direct benefit is to improve national security, per section 5(a) of\nE.O. 14192\n.",
+        "source_section": "Rulemaking Requirements",
+        "quote_en": null,
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 12746,
+        "end_char": 12904
+      },
+      {
+        "quote": "intended to ensure that the advanced computing capabilities of the destination country do not exceed the capabilities or supply capacity of the United States, or negatively impact the global foundry capacity that would otherwise be used to produce similar node or more advanced integrated circuits, in a way that would be detrimental to U.S. national security interests.",
+        "source_section": "Preamble (Section II — Changes to § 742.6)",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 6272,
+        "end_char": 6642
+      },
+      {
+        "quote": "that global foundry capacity that would otherwise be used to produce similar node or more advanced integrated circuits for end users in the United States will not be diverted to produce the commodities authorized by this license for exports to China;",
+        "source_section": "Preamble (Background)",
+        "quote_en": null,
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 3868,
+        "end_char": 4118
+      },
+      {
+        "quote": "are not for a nuclear, missile, or chemical or biological weapons end use or end user pursuant to §§ 744.2-4,",
+        "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)(iv)",
+        "quote_en": null,
+        "frame": "existential_catastrophic",
+        "grounding_status": "verbatim",
+        "start_char": 23715,
+        "end_char": 23824
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:13:19.966772Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "af0fee77b1bf370de120ca9c658cbee214a31215c25bbc10bddd2c03bf7d8279",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 30002,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 25,
+      "exact_matches": 25,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

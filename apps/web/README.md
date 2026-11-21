@@ -27,29 +27,33 @@ For the project overview and research thesis, see the [root README](../../README
 
 | Path | File | Purpose |
 |---|---|---|
-| `/` | `src/app/page.tsx` | Comparative overview leading with dynamic empirical decoupling findings, dynamic **v2.1 verified provenance** strip (showing live formatted model name(s), `Taxonomy v2.1.0`, and corpus mean grounding % — falling back to an amber warning banner whenever `legacyCount > 0`), `POL` vs. `FRM` country cards (90% bootstrap CIs, `COV L1`, distinctive peer gaps, `cards / table` toggle), interactive 2D **Decoupling Map** (`scatter / table`), ONE clean **5×5 Pairwise Matrix**, longitudinal timeline (`chart / table`), and balanced five-jurisdiction latest sources |
-| `/matrix` | `src/app/matrix/page.tsx` | Interactive **25×5 Obligation & Clause Matrix** (17 requirements + 8 active enforcement mechanisms × 5 jurisdictions, colored by strongest active binding level `L0–L4`, with group/level/search filters and slide-over instrument + `obligation_strength` + bilingual quote drawer) |
-| `/compare` | `src/app/compare/page.tsx` | Head-to-head bilateral diff (`?a=<slug>&b=<slug>&mode=headline\|all`) with dynamic `generateMetadata`, POL breakdown, 8-frame delta butterfly chart, true label-conditioned *"Same Rule, Different Reason"* & *"Same Reason, Different Rule"* diffs (showing `nA`/`nB` and strictly frame-matched quotes) |
-| `/documents` | `src/app/documents/page.tsx` | Responsive corpus explorer with country flags, `corpus_role` & `lifecycle_stage` badges/filters, binding/type/requirement/framing/sort filters, full-text + evidence-quote search, and CSV/JSON/BibTeX export links |
-| `/documents/[documentId]` | `src/app/documents/[documentId]/page.tsx` | Rebuilt evidence reader with sticky left rail, jumpable Section Contents, NFKC/whitespace/PDF-hyphen `<mark>` highlighting, live `verbatim`/`approx`/`unmatched` grounding badges, `#quote-*` deep permalinks, Copy Citation button, dynamic model provenance, authoritative vs. model binding strength, `obligationStrength` pills (`Mandatory` / `Conditional` / `Recommended` / `Aspirational`), dual-language `quote` + `[MT] quoteEn` (`lang` attrs, zero CJK italics), and precision-aware dates (never `"January 1"` on year-only dates) |
-| `/jurisdictions/[slug]` | `src/app/jurisdictions/[slug]/page.tsx` | Country readout with shared `<TopNav />`, `?mode=headline\|all` toggle, unified scoring-engine shares, longitudinal timeline, distance-to-peers rail, and SQL-filtered source list (SSG + ISR 1h) |
-| `/methodology` | `src/app/methodology/page.tsx` | Dynamic machine-coding disclosure (zero hardcoded model names — formatted from `provenanceSummary.models`, no human review queue), live `provenanceSummary` & grounding stats, live **Starter Gold-Set Benchmark Scorecard** (`#validation`, loaded from `data/eval/gold_set_results.json` or bundled `gold-set-results.snapshot.json` with `starter_v0.1_internal` caveat), TVD & Regime Coverage formulas, permutation null calibration, 4-specification sensitivity & Spearman `ρ` grid, 8-frame codebook synced from `label-definitions.json`, API catalog, and copyable versioned BibTeX |
+| `/` | `src/app/page.tsx` | Comparative overview leading with dynamic empirical decoupling findings, dynamic **v2.1 verified provenance** strip (`Gemini 4 Neon`, `Taxonomy v2.1.0`, `100%` grounding — falling back to amber warning only if `legacyCount > 0`), opt-in **`+ U.S. State Laws`** (`?states=1`) toggle, `POL` vs. `FRM` country cards (90% bootstrap CIs, `COV L1`, distinctive peer gaps, `whitespace-nowrap` badges, `cards / table` toggle), collision-free interactive 2D **Decoupling Map** (`scatter / table`), ONE clean **5×5 Pairwise Matrix**, longitudinal timeline (`chart / table`), and balanced five-jurisdiction latest sources |
+| `/matrix` | `src/app/matrix/page.tsx` | Interactive **25×5 Obligation & Clause Matrix** (17 requirements + 8 active enforcement mechanisms × 5 jurisdictions, colored by strongest active binding level `L0–L4`, with `?states=1` opt-in state overlay, amber state badges, group/level/search filters, and slide-over instrument + `obligation_strength` + bilingual quote drawer) |
+| `/clauses` | `src/app/clauses/page.tsx` | **Cross-Jurisdiction Clause & Citation Explorer** searching and filtering all **`2,786`** grounded verbatim quotes across `144` instruments by control (17 req / 8 enf / 8 frames), jurisdiction, binding level (`L1–L4`), `obligation_strength`, scope (`headline` / `all` + `?states=1`), and full-text query (native + `[MT]` English), with `#quote-*` deep links, copyable citations, and filtered UTF-8 BOM CSV + JSON downloads |
+| `/evolution` | `src/app/evolution/page.tsx` | **Longitudinal Regime Evolution (2019–2026) & Amendment Lineage** featuring a multi-jurisdiction SVG trajectory chart (`breadth`, `active`, `bindingCount`, `bindingShare` + accessible `table` toggle), `?states=1` support, and **12 live `supersedes_id` "Then vs. Now" amendment diff cards** (`#supersessions`) |
+| `/compare` | `src/app/compare/page.tsx` | Head-to-head bilateral diff (`?a=<slug>&b=<slug>&mode=headline\|all&states=0\|1`) with dynamic `generateMetadata`, POL breakdown, 8-frame delta butterfly chart, true label-conditioned *"Same Rule, Different Reason"* & *"Same Reason, Different Rule"* diffs (showing `nA`/`nB` and strictly frame-matched quotes) |
+| `/documents` | `src/app/documents/page.tsx` | Responsive corpus explorer with country flags, `corpus_role` (incl. `subnational_overlay` amber state badges) & `lifecycle_stage` badges/filters, binding/type/requirement/framing/sort filters, full-text + evidence-quote search, and CSV/JSON/BibTeX export links |
+| `/documents/[documentId]` | `src/app/documents/[documentId]/page.tsx` | Rebuilt evidence reader with sticky left rail, jumpable Section Contents, clickable `Supersedes →` links, NFKC/whitespace/PDF-hyphen `<mark>` highlighting, live `verbatim`/`approx`/`unmatched` grounding badges, `#quote-*` deep permalinks, Copy Citation button, dynamic model provenance, humanized taxonomy prose (`humanizeProseTaxonomyKeys()`), authoritative vs. model binding strength, `obligationStrength` pills, dual-language `quote` + `[MT] quoteEn` (`lang` attrs, zero CJK italics), and precision-aware dates |
+| `/jurisdictions/[slug]` | `src/app/jurisdictions/[slug]/page.tsx` | Country readout with shared 7-link `<TopNav />`, `?mode=headline\|all` & `?states=1` toggles, unified scoring-engine shares, longitudinal timeline, distance-to-peers rail, and SQL-filtered source list (SSG + ISR 1h) |
+| `/methodology` | `src/app/methodology/page.tsx` | Dynamic machine-coding disclosure (zero hardcoded model names, no human review queue), live `provenanceSummary` & grounding stats (`100%`, `n=138` sovereign / `n=144` with `?states=1`), live **25-Doc Stratified Multilingual Gold-Set v2 Scorecard** (`#validation` — Req F1 `0.899`, Enf F1 `0.954`, Cohen's κ `0.747`, nominal Krippendorff's α `0.748`, Per-Jurisdiction EN/KO/JA/ZH table, collapsible Per-Label P/R/F1 table), **Corpus Freshness & Supersession Ledger (`#freshness`)** referencing `freshness-watch.yml`, TVD & Regime Coverage formulas, permutation null calibration, 4-specification sensitivity & Spearman `ρ` grid, 8-frame codebook synced from `label-definitions.json`, API catalog, and copyable versioned BibTeX |
 | `/opengraph-image` | `src/app/opengraph-image.tsx` | Dynamic Open Graph social preview card |
 
-Prototype `/sandbox/*` routes have been removed. Dark-themed `not-found.tsx`, `error.tsx`, `global-error.tsx`, `robots.ts`, and XML-valid `sitemap.ts` (including `/matrix` and all 10 `/compare` pairs) are included.
+Prototype `/sandbox/*` routes have been removed. Dark-themed `not-found.tsx`, `error.tsx`, `global-error.tsx`, `robots.ts`, and XML-valid `sitemap.ts` (including `/matrix`, `/clauses`, `/evolution`, and all 10 `/compare` pairs) are included.
 
 ### Public Read-Only CORS APIs & Operations
 
-All GET APIs emit `Cache-Control: public, s-maxage=300, stale-while-revalidate=60` and `Access-Control-Allow-Origin: *`:
+All GET APIs emit `Cache-Control: public, s-maxage=300, stale-while-revalidate=60` (or `s-maxage=3600` on `/api/clauses`) and `Access-Control-Allow-Origin: *`:
 
 | Endpoint | Parameters | Response |
 |---|---|---|
-| `GET /api/overview` | `?mode=headline\|all` *(aliases `weighted\|equal` supported)* | Full `OverviewData` snapshot validated against [`packages/schemas/overview-api.schema.json`](../../packages/schemas/overview-api.schema.json) |
-| `GET /api/matrix` | `?mode=headline\|all` | 25×5 `ObligationMatrixData` validated against [`packages/schemas/matrix-api.schema.json`](../../packages/schemas/matrix-api.schema.json) |
-| `GET /api/jurisdictions` | `?mode=headline\|all` | All five jurisdiction snapshots and peer-distance metrics |
-| `GET /api/jurisdictions/[slug]` | `?mode=headline\|all` | Single jurisdiction snapshot, `pairwise` peer distances, deterministic `analysis`, and latest `documents` |
-| `GET /api/documents` | `?j=&role=&life=&b=&f=&s=&t=&r=&q=` | Filtered corpus index |
-| `GET /api/documents/[documentId]` | — | Single document detail with parsed sections, extracted obligations, 8-frame scores, and bilingual evidence spans |
+| `GET /api/overview` | `?mode=headline\|all&states=0\|1` *(aliases `weighted\|equal` supported)* | Full `OverviewData` snapshot validated against [`packages/schemas/overview-api.schema.json`](../../packages/schemas/overview-api.schema.json) |
+| `GET /api/matrix` | `?mode=headline\|all&states=0\|1` | 25×5 `ObligationMatrixData` validated against [`packages/schemas/matrix-api.schema.json`](../../packages/schemas/matrix-api.schema.json) |
+| `GET /api/clauses` | `?mode=&states=&category=&control=&j=&minLevel=&obligation=&q=&limit=&offset=&format=json\|csv&download=1` | Paginated verbatim clauses JSON validated against [`packages/schemas/clauses-api.schema.json`](../../packages/schemas/clauses-api.schema.json), or filtered RFC 4180 UTF-8 BOM CSV |
+| `GET /api/evolution` | `?states=0\|1` | Annual 2019–2026 trajectories, 12 `supersedes_id` diffs, and freshness rows validated against [`packages/schemas/evolution-api.schema.json`](../../packages/schemas/evolution-api.schema.json) |
+| `GET /api/jurisdictions` | `?mode=headline\|all&states=0\|1` | All five jurisdiction snapshots and peer-distance metrics |
+| `GET /api/jurisdictions/[slug]` | `?mode=headline\|all&states=0\|1` | Single jurisdiction snapshot, `pairwise` peer distances, deterministic `analysis`, and latest `documents` |
+| `GET /api/documents` | `?j=&role=&life=&b=&f=&s=&t=&r=&q=` | Filtered corpus index (`144` docs) |
+| `GET /api/documents/[documentId]` | — | Single document detail with parsed sections, extracted obligations, 8-frame scores, `subnationalUnit`, `supersedesId`, and bilingual evidence spans |
 | `GET /api/export` | `?format=csv\|json\|bibtex&j=<slug>&mode=headline\|all` | Research exports: CSV with **raw UTF-8 BOM (`0xEF 0xBB 0xBF`)**, canonical taxonomy keys, all 8 `frame_*` scores, `effective_date`, and provenance; JSON; versioned BibTeX separating `datasetVersion` from `latestPublicationDate` |
 | `POST /api/revalidate` | `Authorization: Bearer <secret>` or `x-revalidate-secret` | Constant-time checks `OBSERVATORY_REVALIDATE_SECRET` and purges the `"observatory"` ISR cache tag + layout cache |
 
@@ -82,17 +86,18 @@ Empty prod    ──── explicit "No data loaded" ─┘    (NEVER serves fak
 
 ## The statistical scoring engine
 
-Implemented as a pure, zero-IO module in `src/lib/scoring.ts` (covered by **15 unit test suites** in `src/lib/__tests__/scoring.test.ts`).
+Implemented as a pure, zero-IO module in `src/lib/scoring.ts` (covered by **18 unit test suites** in `src/lib/__tests__/scoring.test.ts`).
 
-### Scoring modes (`?mode=headline|all`)
+### Scoring modes (`?mode=headline|all` + opt-in `?states=1`)
 
-- **`headline` (default — Codebook §8.2):** Strictly filters to `corpus_role === "primary_instrument"` AND `lifecycle_stage` in `["active", "adopted_not_yet_effective"]` (currently **`n = 77`** across the 5 jurisdictions). Documents with missing role or lifecycle are labeled `"Unclassified"` and excluded.
-- **`all`:** Unweighted full-corpus view (**`n = 121`**: US 29, EU 21, KR 17, JP 34, CN 20), including companion resources, drafts, and historical baselines. Legacy URL query aliases `?mode=weighted` (`→ headline`) and `?mode=equal` (`→ all`) remain supported.
+- **`headline` (default — Codebook §8.2):** Strictly filters to sovereign `corpus_role === "primary_instrument"` AND `lifecycle_stage` in `["active", "adopted_not_yet_effective"]` (currently **`n = 91`** across the 5 sovereign jurisdictions: US 25, EU 15, KR 14, JP 22, CN 15). Documents with missing role or lifecycle are labeled `"Unclassified"` and excluded, and `corpus_role === "subnational_overlay"` is strictly excluded by default (`isHeadlineEligible(doc, { includeSubnational: false }) === false`).
+- **`all`:** Unweighted full-corpus view (**`n = 138`** sovereign: US 36, EU 24, KR 20, JP 37, CN 21; **`n = 144`** when `?states=1` opts in the 6 U.S. state statutes), including companion resources, drafts, and historical baselines. Legacy URL query aliases `?mode=weighted` (`→ headline`) and `?mode=equal` (`→ all`) remain supported.
+- **Opt-in U.S. State Overlay (`?states=1`):** Includes active `subnational_overlay` instruments (`5` active state laws in `headline`, all `6` in `all` including superseded CO SB 24-205) across `/`, `/matrix`, `/clauses`, `/evolution`, `/compare`, `/jurisdictions/[slug]`, and JSON APIs while surfacing amber state badges (`California · State Law`, etc.) and a methodological disclosure banner.
 
 ### Dual-axis divergence (`POL` vs. `FRM`), Regime Coverage (`COV L1`) & Uncertainty
 
 - **Policy Divergence (`POL`):** Multi-dimensional TVD across `safety_requirements` (`0.45`), `enforcement_mechanisms` (`0.30`, with symmetric `none_specified` handling), and authoritative manifest `binding_strength` (`0.25`, without circular binding-weight multiplication). Exposed via `policyBreakdown: { requirements, enforcement, binding }`.
-- **Framing Divergence (`FRM`):** Uses explicit compositional `frame_share` directly (populated on all 121/121 v2.1.0 documents); falls back to zeroing sub-`0.15` noise in `frame_confidence` before normalizing to `1.0` for legacy artifacts. Displayed frame histograms use **Largest Remainder (Hamilton) apportionment** (`hamiltonRound`) summing to exact `100%`.
+- **Framing Divergence (`FRM`):** Uses explicit compositional `frame_share` directly (populated on all 144/144 v2.1.0 documents); falls back to zeroing sub-`0.15` noise in `frame_confidence` before normalizing to `1.0` for legacy artifacts. Displayed frame histograms use **Largest Remainder (Hamilton) apportionment** (`hamiltonRound`) summing to exact `100%`.
 - **Regime Coverage Index (`COV L1` / `coverageDivergence`):** Computes each jurisdiction's strongest binding level (`L0–L4`: none / voluntary or strategy / guidance or standard / executive action / binding law) across all 25 requirement and enforcement controls, compared via normalized L1 distance — invariant to adding companion FAQs.
 - **Composite (`CMP`):** Kept secondary to `POL` vs. `FRM` (`CMP = Math.round(0.6 * rawPOL + 0.4 * rawFRM)`).
 - **Seeded bootstrap 90% CIs & permutation null:** Deterministic Mulberry32 PRNG for **200 bootstrap resamples** (`policyCI`, `framingCI`, `compositeCI`, `coverageCI`) and **200 label-permutation null draws** (`nullCalibration`, providing distinct single-country vs. pairwise null means and 90th percentiles).
@@ -104,7 +109,7 @@ Implemented as a pure, zero-IO module in `src/lib/scoring.ts` (covered by **15 u
 ## Client islands, typography & accessibility
 
 - **Typography:** **Geist Sans** (`font-sans`) for readable prose and explanations; **Geist Mono** (`font-mono`) for numbers, taxonomy codes, tables, and formulas; strict **`>= 11px`** font floor across all components; responsive mobile metadata strips (`hidden sm:inline` separators so `390px` viewports never show orphan trailing dots).
-- **Interactive 2D Decoupling Map (`src/app/_home/decoupling-map.tsx`):** SVG scatter plotting all 10 country pairs (`X = Policy Distance`, `Y = Framing Distance`, diagonal reference, quadrant labels, click → `/compare`) with an accessible `scatter / table` toggle.
+- **Interactive 2D Decoupling Map (`src/app/_home/decoupling-map.tsx`):** SVG scatter plotting all 10 country pairs (`X = Policy Distance`, `Y = Framing Distance`, diagonal reference, quadrant labels, deterministic 16-candidate bounding-box label collision avoidance with leader ticks, click → `/compare`) with an accessible `scatter / table` toggle.
 - **Rebuilt Evidence Reader (`src/app/documents/[documentId]/_evidence-reader.tsx` + `src/lib/quote-matcher.ts`):** Sticky desktop rail, jumpable section Contents, verified persisted-offset + NFKC whitespace/PDF-hyphenation matching (`<mark id="active-evidence-mark">`), live `verbatim` / `approx` / `unmatched` badges, `#quote-*` deep permalinks, Copy Citation button, dual-language `quote` + `[MT] quoteEn` with `lang` attributes and zero CJK italics, and zero unused `normalizedText` sent to the browser.
 - **Accessible Popovers (`src/app/_home/hover-tip.tsx`):** React Portal popover using `useSyncExternalStore` with hover, focus, tap/click toggle, outside-click & `Escape` dismiss, auto-flip, and viewport-safe `maxWidth`.
 - **Accessible Charts & Navigation:** `cards / table`, `scatter / table`, and `chart / table` toggles; `aria-pressed` states; visible `:focus-visible` rings; `@layer base` dark `:root` tokens; `@media (prefers-reduced-motion: reduce)`; `safeExternalUrl()` protocol guard; security headers in `next.config.ts`.
@@ -149,32 +154,40 @@ apps/web/src/
 │   ├── _components/
 │   │   ├── copy-button.tsx             Citation & BibTeX copy control
 │   │   ├── timeline-chart.tsx          Longitudinal yearly chart (low-n muting + table toggle)
-│   │   └── top-nav.tsx                 Shared top navigation (incl. /matrix)
+│   │   └── top-nav.tsx                 Shared 7-link top navigation (/matrix, /clauses, /evolution, /compare, /documents, /methodology)
 │   ├── _home/
-│   │   ├── decoupling-map.tsx          2D Policy vs. Framing scatter + accessible table
+│   │   ├── decoupling-map.tsx          2D Policy vs. Framing scatter (collision-free labels) + accessible table
 │   │   ├── hover-tip.tsx               Accessible React Portal popover
 │   │   ├── frame-tip.tsx               FrameTip & MetricTip wrappers
-│   │   ├── overview-dashboard.tsx      Findings, v2.1 provenance strip, mode switcher, cards/table, 5x5 matrix
+│   │   ├── overview-dashboard.tsx      Findings, v2.1 provenance strip, mode + ?states=1 switchers, cards/table, 5x5 matrix
 │   │   └── sources-panel.tsx           Balanced five-jurisdiction source panel
+│   ├── clauses/
+│   │   ├── page.tsx                    /clauses — Cross-Jurisdiction Clause & Citation Explorer
+│   │   └── _clauses-explorer.tsx       Client filters, debounced /api/clauses queries & CSV/JSON export
+│   ├── evolution/
+│   │   ├── page.tsx                    /evolution — Longitudinal Regime Evolution (2019–2026) & Amendment Diffs
+│   │   └── _evolution-client.tsx       SVG trajectory chart, table toggle & 12 supersedes_id diff cards
 │   ├── compare/
 │   │   ├── page.tsx                    /compare — label-conditioned bilateral diff + dynamic metadata
 │   │   └── _compare-controls.tsx
 │   ├── documents/
-│   │   ├── page.tsx                    /documents — role/lifecycle/quote corpus browser
+│   │   ├── page.tsx                    /documents — role/lifecycle/state-overlay/quote corpus browser
 │   │   ├── _documents-list.tsx
 │   │   └── [documentId]/
-│   │       ├── page.tsx                /documents/[id] — detail view
+│   │       ├── page.tsx                /documents/[id] — detail view (with Supersedes link & state badge)
 │   │       └── _evidence-reader.tsx    Sticky rail, NFKC <mark>, permalinks, dual-language quotes
 │   ├── jurisdictions/[slug]/
 │   │   ├── page.tsx                    /jurisdictions/[slug] — SSG + ISR country readout
-│   │   └── _jurisdiction-view.tsx      Unified shares & ?mode=headline|all toggle
+│   │   └── _jurisdiction-view.tsx      Unified shares & ?mode=headline|all + ?states=1 toggles
 │   ├── matrix/
 │   │   ├── page.tsx                    /matrix — 25x5 Obligation & Clause Matrix
-│   │   └── _matrix-client.tsx          Interactive filters & slide-over evidence drawer
-│   ├── methodology/page.tsx            /methodology — provenance, live gold-set scorecard, CIs, null, sensitivity & BibTeX
+│   │   └── _matrix-client.tsx          Interactive filters, ?states=1 toggle & slide-over evidence drawer
+│   ├── methodology/page.tsx            /methodology — provenance, 25-doc gold-set v2 scorecard, freshness ledger, CIs, null, sensitivity & BibTeX
 │   └── api/
 │       ├── overview/route.ts           GET /api/overview
 │       ├── matrix/route.ts             GET /api/matrix
+│       ├── clauses/route.ts            GET /api/clauses (JSON + UTF-8 BOM CSV)
+│       ├── evolution/route.ts          GET /api/evolution
 │       ├── jurisdictions/route.ts      GET /api/jurisdictions
 │       ├── jurisdictions/[slug]/route.ts
 │       ├── documents/route.ts          GET /api/documents
@@ -182,11 +195,15 @@ apps/web/src/
 │       ├── export/route.ts             GET /api/export?format=csv|json|bibtex
 │       └── revalidate/route.ts         POST /api/revalidate
 └── lib/
-    ├── scoring.ts                      Pure TVD, COV L1, bootstrap CIs, null & sensitivity engine
-    ├── __tests__/scoring.test.ts       15-suite invariant, model-format, frameShare, gold-set & parity test runner
-    ├── eval-parser.ts                  Pure starter gold-set evaluation JSON parser
+    ├── scoring.ts                      Pure TVD, COV L1, bootstrap CIs, null, subnational overlay & sensitivity engine
+    ├── __tests__/scoring.test.ts       18-suite invariant, subnational, clauses, evolution, prose-humanizer, gold-set v2 & parity tests
+    ├── clauses-filter.ts               Pure clause search, filtering & RFC 4180 UTF-8 BOM CSV serializer
+    ├── clauses-data.ts                 React cache()-backed flat clause index builder over getComparisonCorpus()
+    ├── evolution-engine.ts             Pure 2019–2026 annual trajectory, supersedes_id diff & freshness engine
+    ├── evolution-data.ts               Cached evolution loader reading DB raw_metadata / local manifests
+    ├── eval-parser.ts                  Pure gold-set v1/v2 evaluation JSON parser (Krippendorff's α, by_jurisdiction, per-label P/R/F1)
     ├── eval-data.ts                    Cached loader reading data/eval/gold_set_results.json or bundled snapshot
-    ├── gold-set-results.snapshot.json  Byte-identical mirror of data/eval/gold_set_results.json for Vercel
+    ├── gold-set-results.snapshot.json  Byte-identical mirror of data/eval/gold_set_results.json (25-doc v2) for Vercel
     ├── quote-matcher.ts                Verified offset + NFKC whitespace/PDF-hyphenation matcher
     ├── overview-data.ts                DB/FS overview & balanced latest-sources fetchers
     ├── matrix-data.ts                  25x5 Obligation Matrix builder
@@ -195,7 +212,7 @@ apps/web/src/
     ├── jurisdiction-analysis.ts        machine_jurisdiction_analyses loader
     ├── export-formatters.ts            UTF-8 BOM CSV, JSON & versioned BibTeX serializers
     ├── frame-vocab.ts                  8-frame hues, definitions & null-calibrated sequential scale
-    ├── taxonomy-vocab.ts               Taxonomy v2.1.0, model display formatters & provenance helpers
+    ├── taxonomy-vocab.ts               Taxonomy v2.1.0, model formatters, humanizeProseTaxonomyKeys() & subnational helpers
     ├── jurisdictions.ts                Jurisdiction order, slugs, metadata
     ├── db.ts                           Memoized Neon client, CORS headers & VERCEL_ENV guards
     ├── seed-data.ts                    OverviewData types, buildEmptyOverviewData & dev seed
@@ -223,11 +240,11 @@ Verification suite:
 cd apps/web
 npm run lint           # ESLint (0 errors, 0 warnings)
 npx tsc --noEmit       # Strict TypeScript check
-npm test               # 15 unit test suites (scoring, model formatters, frameShare, gold-set parser, quote-matcher, BOM CSV, BibTeX)
-npm run build          # Clean production build (22 routes)
+npm test               # 18 unit test suites (scoring, subnational, clauses, evolution, prose humanizer, gold-set v2, quote-matcher, BOM CSV, BibTeX)
+npm run build          # Clean production build (26 routes)
 ```
 
-Local production smoke test against the committed 121-doc `data/` corpus without `DATABASE_URL`:
+Local production smoke test against the committed 144-doc `data/` corpus without `DATABASE_URL`:
 
 ```bash
 OBSERVATORY_ALLOW_LOCAL_FALLBACK=1 npm run start

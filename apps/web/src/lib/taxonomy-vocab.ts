@@ -106,6 +106,7 @@ export const OBLIGATION_STRENGTH_COLORS: Record<string, string> = {
 
 export const CORPUS_ROLE_ORDER = [
   "primary_instrument",
+  "subnational_overlay",
   "companion_resource",
   "draft_consultation",
   "historical_baseline",
@@ -113,6 +114,7 @@ export const CORPUS_ROLE_ORDER = [
 
 export const CORPUS_ROLE_LABELS: Record<string, string> = {
   primary_instrument: "Primary instrument",
+  subnational_overlay: "Subnational overlay",
   companion_resource: "Companion resource",
   draft_consultation: "Draft / consultation",
   historical_baseline: "Historical baseline",
@@ -120,6 +122,7 @@ export const CORPUS_ROLE_LABELS: Record<string, string> = {
 
 export const CORPUS_ROLE_MULTIPLIERS: Record<string, number> = {
   primary_instrument: 1.0,
+  subnational_overlay: 0.75,
   draft_consultation: 0.4,
   companion_resource: 0.35,
   historical_baseline: 0.25,
@@ -450,4 +453,55 @@ export function extractGroundingRatio(
     if (Number.isFinite(parsed)) return parsed;
   }
   return null;
+}
+
+/** Parses `?states=1` / `?states=true` opt-in U.S. State Law overlay flag (Phase 5A). */
+export function parseIncludeSubnational(value?: string | null): boolean {
+  const normalized = (value ?? "").trim().toLowerCase();
+  return normalized === "1" || normalized === "true" || normalized === "yes";
+}
+
+/** Formats subnational unit badge cleanly (e.g. "California" -> "California · State Law"). */
+export function formatSubnationalBadge(unit?: string | null): string | null {
+  const trimmed = (unit ?? "").trim();
+  if (!trimmed) return null;
+  if (/state law/i.test(trimmed)) return trimmed;
+  return `${trimmed} · State Law`;
+}
+
+const PROSE_FRAME_LABELS: Record<string, string> = {
+  existential_catastrophic: "Existential & Catastrophic Risk",
+  national_security: "National Security",
+  fundamental_rights: "Fundamental Rights",
+  economic_competitiveness: "Economic Competitiveness",
+  innovation_enablement: "Innovation Enablement",
+  social_stability: "Social Stability & Public Order",
+  consumer_public_safety: "Consumer & Public Safety",
+  labor_transition: "Labor & Workforce Transition",
+};
+
+const PROSE_TAXONOMY_KEYS: Record<string, string> = {
+  ...PROSE_FRAME_LABELS,
+  ...POLICY_REQUIREMENT_LABELS,
+  ...ENFORCEMENT_MECHANISM_LABELS,
+  ...BINDING_STRENGTH_LABELS,
+};
+
+const PROSE_TAXONOMY_REGEX = new RegExp(
+  `\\b(${Object.keys(PROSE_TAXONOMY_KEYS)
+    .sort((a, b) => b.length - a.length)
+    .join("|")})\\b`,
+  "g",
+);
+
+/**
+ * Replaces raw snake_case taxonomy identifiers (e.g. `innovation_enablement`,
+ * `fundamental_rights`, `consumer_public_safety`) appearing inside rationale or
+ * summary prose with clean human-readable labels (Phase 5A QA polish).
+ */
+export function humanizeProseTaxonomyKeys(text?: string | null): string {
+  if (!text) return "";
+  return text.replace(PROSE_TAXONOMY_REGEX, (match) => {
+    return PROSE_TAXONOMY_KEYS[match] ?? match;
+  });
 }

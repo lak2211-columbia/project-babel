@@ -1,0 +1,75 @@
+{
+  "dominant_frame": "national_security",
+  "secondary_frames": [
+    "economic_competitiveness",
+    "existential_catastrophic"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.28,
+    "national_security": 0.99,
+    "economic_competitiveness": 0.72,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.1,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.08,
+    "national_security": 0.72,
+    "economic_competitiveness": 0.2,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.0,
+    "consumer_public_safety": 0.0,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "This BIS final rule is dominantly framed around national security, justifying its tightly conditioned case-by-case export licensing policy as necessary to protect U.S. national security and foreign policy interests, preserve U.S. technological superiority, prevent military and military-intelligence end uses or unauthorized remote access, and ensure destination countries do not exceed U.S. compute capabilities—explicitly noting exemption from E.O. 14192 because its primary direct benefit is improving national security. Economic competitiveness forms a clear secondary frame through provisions safeguarding U.S. leadership in AI, preventing delays to U.S. commercial customer chip orders, blocking diversion of global foundry capacity away from U.S. end users, and capping China and Macau exports at 50 percent of aggregate U.S. commercial shipments. A minor existential and catastrophic risk element appears in the mandatory certification screening out nuclear, missile, chemical, and biological weapons end uses and end users.",
+  "evidence_spans": [
+    {
+      "quote": "Consistent with U.S. national security and foreign policy objectives, which recognize the need to maintain the United States' technological superiority, BIS is adjusting the license review policy to case-by-case for exports of certain commercially available advanced computing commodities to end-users located in China and Macau.",
+      "source_section": "Preamble (Background)",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 1896,
+      "end_char": 2225
+    },
+    {
+      "quote": "this rule is exempt from the requirements of\nE.O. 14192\n, because its primary direct benefit is to improve national security, per section 5(a) of\nE.O. 14192\n.",
+      "source_section": "Rulemaking Requirements",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 12746,
+      "end_char": 12904
+    },
+    {
+      "quote": "intended to ensure that the advanced computing capabilities of the destination country do not exceed the capabilities or supply capacity of the United States, or negatively impact the global foundry capacity that would otherwise be used to produce similar node or more advanced integrated circuits, in a way that would be detrimental to U.S. national security interests.",
+      "source_section": "Preamble (Section II — Changes to § 742.6)",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 6272,
+      "end_char": 6642
+    },
+    {
+      "quote": "that global foundry capacity that would otherwise be used to produce similar node or more advanced integrated circuits for end users in the United States will not be diverted to produce the commodities authorized by this license for exports to China;",
+      "source_section": "Preamble (Background)",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 3868,
+      "end_char": 4118
+    },
+    {
+      "quote": "are not for a nuclear, missile, or chemical or biological weapons end use or end user pursuant to §§ 744.2-4,",
+      "source_section": "15 CFR Part 748, Supp. No. 2, para. (dd)(1)(iv)",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 23715,
+      "end_char": 23824
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "dominant_frame": "national_security",
+  "secondary_frames": [
+    "economic_competitiveness",
+    "innovation_enablement"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.97,
+    "economic_competitiveness": 0.88,
+    "fundamental_rights": 0.25,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.78,
+    "consumer_public_safety": 0.48,
+    "labor_transition": 0.1
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.5,
+    "economic_competitiveness": 0.28,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.16,
+    "consumer_public_safety": 0.06,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "METI's Stable Supply Support Policy for Cloud Programs is dominantly framed around national security, promulgated under the Economic Security Promotion Act to prevent situations impairing national and public security amid rapidly shifting global geopolitical conditions, reduce excessive dependence on foreign hyperscalers (noting US and Chinese dominance of ~70% of the global cloud market), mitigate risks of overseas service cutoffs or unauthorized access to sensitive government and critical-infrastructure data beyond Japan's control, and build sovereign domestic cloud and AI-compute capacity. Economic competitiveness is a strong secondary frame emphasizing industrial competitiveness across sectors such as materials, healthcare, and weather forecasting, reversing the decline of domestic cloud providers and outflow of top engineering talent, and ensuring sustainable industrial bases by FY2027. Innovation enablement forms a substantive third frame through testbed expansion and below-market compute pricing for startups and SMEs developing next-generation AI and quantum applications, with a minor consumer and public safety thread addressing supply continuity and supply-chain cyberattacks against vital infrastructure.",
+  "evidence_spans": [
+    {
+      "quote": "他方、日本は、そうしたプログラムの供給を海外に依存していることから、現状が変\nわらなければ、高いセキュリティが求められる領域も含めて、国内に事業基盤を有する\n事業者が基盤クラウド事業から撤退を余儀なくされ、海外からネットワーク経由で提供\nされる基盤クラウドの停止やそれに伴う利用者の事業そのものが停止する、我が国が直\n接管理できない状況下で情報に不当にアクセスされる等のリスクがある。",
+      "source_section": "（３）外部から行われる行為による供給途絶等の蓋然性",
+      "quote_en": "On the other hand, because Japan depends on overseas sources for the supply of such programs, if the current situation does not change, domestic-based operators—even in fields requiring high security—may be forced to exit the foundational cloud business, creating risks that foundational clouds provided from overseas via networks could be suspended, halting users' businesses, or that information could be improperly accessed under circumstances Japan cannot directly control.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 8355,
+      "end_char": 8547
+    },
+    {
+      "quote": "我が国にとって重要なデータの自律的管理が可能なクラウドを確保するために、政府や企\n業のニーズを踏まえつつ、2023 年度から国内に事業基盤を有する事業者が保有できていない、利便性やセキュリティを左右する重要な基盤クラウドプログラムの技術の開発を行うとともに、将来の基盤クラウドプログラムの開発に必要な高度な電子計算機の利用環境を整備することで、基盤クラウドプログラムの安定供給を確保し、2027 年度までに国内に事業基盤を有する事業者が基盤クラウドを持続的に提供できるような体制を構築する。",
+      "source_section": "目標",
+      "quote_en": "To secure clouds capable of autonomous management of data critical to Japan, while meeting government and corporate needs, Japan will develop key foundational cloud program technologies lacking among domestic-based providers from FY2023 and establish usage environments for advanced computers required for future cloud program development, securing stable supply so domestic-based operators can sustainably provide foundational clouds by FY2027.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 11899,
+      "end_char": 12144
+    },
+    {
+      "quote": "さらに、材料開発や医療・ヘルスケア、気象予測等の分野でデジタル技術の活用が進んでい\nる状況等を踏まえれば、今後、あらゆる産業における競争力強化のためには、更なるデジタ\nル化促進と、そのニーズに対応できる産業基盤を確保していくことが重要である。また、カ\nーボンニュートラルの実現に向けても、デジタル技術の活用が不可欠であり、その中枢とな\nるクラウドサービスやそれを支える産業基盤の重要性がますます増加している。",
+      "source_section": "はじめに",
+      "quote_en": "Furthermore, given expanding digital technology use in fields such as materials development, healthcare, and weather forecasting, strengthening competitiveness across all industries requires accelerating digitalization and securing an industrial base capable of meeting those needs; digital technology is also indispensable for carbon neutrality, further increasing the importance of cloud services and their supporting industrial base.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 1680,
+      "end_char": 1884
+    },
+    {
+      "quote": "その上で、今後、日本が更なる大量・高速処理のニーズに対応できる基盤クラウド\nプログラムを開発・提供できない場合、情報処理に関する知見を有する組織・人材が\n日本から喪失し、日本が競争力を有する材料開発や医療・ヘルスケア等の産業を含め\nたあらゆる領域において、将来の情報処理を他国に依存するおそれがある。",
+      "source_section": "（２）外部依存性 - ② 将来の重要性及び成長性",
+      "quote_en": "Moreover, if Japan fails to develop and provide foundational cloud programs capable of handling future massive, high-speed processing needs, organizations and talent with information-processing expertise will be lost from Japan, risking future dependence on other countries for information processing across all fields, including industries where Japan holds competitiveness such as materials development and healthcare.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 5660,
+      "end_char": 5810
+    },
+    {
+      "quote": "現在、高度な\n電子計算機の供給は限定的であるため、一部の事業者のみが利用している状況であり、\nスタートアップ等の小規模な事業者等が利用できるように、高度な電子計算機の利用\n機会を拡大していくことが極めて重要である。",
+      "source_section": "（６）クラウドプログラムのサプライチェーンが抱える課題及び動向 - ② 基盤的技術の獲得の必要性",
+      "quote_en": "Because the supply of advanced electronic computers is currently limited and only a subset of operators can access them, expanding access opportunities to advanced electronic computers so that startups and other small-scale operators can utilize them is extremely important.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 10915,
+      "end_char": 11022
+    },
+    {
+      "quote": "⚫ スタートアップ等30による基盤クラウドプログラムの開発を促進するため、当該クラウドサービスが、その他の同種の電子計算機を利用する場合の市場価格等に比べて安価な価格で提供されること。",
+      "source_section": "供給確保計画の認定要件 - （２）次世代に向けた基盤クラウドプログラムの開発に必要な生産基盤の整備",
+      "quote_en": "To promote development of foundational cloud programs by startups and similar entities (including startups developing AI and quantum applications), the cloud service must be provided at a lower price compared to market prices for using comparable advanced computers.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 16847,
+      "end_char": 16939
+    },
+    {
+      "quote": "昨今、複雑化・巧妙化したサイバー攻撃の脅威が増大する中、対策が手薄になりがちな自\n社内の工場や海外拠点等が被害を受ける等の事案が発生しているところ、万一サイバー攻撃\nで事業が停止した場合、物資の安定供給を確保できなくなるおそれがある。このような状況\nを踏まえると、自社内全体を俯瞰したサイバーセキュリティ対策の必要性が増しており、サ\nイバーセキュリティの確保がサプライチェーンの維持ひいては特定重要物資の安定的な供\n給のために不可欠な要素となっている。",
+      "source_section": "サイバーセキュリティの確保",
+      "quote_en": "Amid rising threats from increasingly complex and sophisticated cyberattacks, incidents have occurred damaging factories and overseas bases where defenses tend to be weak, risking an inability to ensure stable supply if operations halt due to a cyberattack; ensuring cybersecurity across the enterprise is indispensable for maintaining supply chains and stable supply of specified critical products.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 20491,
+      "end_char": 20717
+    }
+  ]
+}

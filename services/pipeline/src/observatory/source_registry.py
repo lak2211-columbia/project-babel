@@ -155,6 +155,7 @@ class SeedDocument(BaseModel):
     binding_strength: str
     source_tier: str | None = None
     corpus_role: str | None = None
+    subnational_unit: str | None = None
     supersedes_id: str | None = None
     policy_domains: list[str] = Field(default_factory=list)
     lifecycle_stage: str | None = None
@@ -176,6 +177,14 @@ class SeedDocument(BaseModel):
         if any(char not in allowed for char in value):
             raise ValueError("document id must use lowercase letters, numbers, underscores, or dashes")
         return value
+
+    @field_validator("subnational_unit")
+    @classmethod
+    def validate_subnational_unit(cls, value: str | None) -> str | None:
+        if value is None:
+            return None
+        cleaned = value.strip()
+        return cleaned or None
 
     @field_validator("supersedes_id")
     @classmethod
@@ -308,7 +317,7 @@ def load_source_manifest(path: Path) -> JurisdictionManifest:
     allowed_binding_strength = set(taxonomy["binding_strength"])
     allowed_issuer_types = set(taxonomy["issuer_types"])
     allowed_source_tiers = set(taxonomy["source_tiers"])
-    allowed_corpus_roles = set(taxonomy.get("corpus_roles", []))
+    allowed_corpus_roles = set(taxonomy.get("corpus_roles", [])) | {"subnational_overlay"}
     allowed_policy_domains = set(taxonomy["policy_domains"])
     allowed_lifecycle_stages = set(taxonomy["lifecycle_stages"])
     for portal in manifest.source_portals:

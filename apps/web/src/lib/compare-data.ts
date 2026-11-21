@@ -103,6 +103,8 @@ export type FrameDeltaRow = {
 export type BilateralComparison = {
   hasData: boolean;
   mode: ScoringMode;
+  includeSubnational: boolean;
+  subnationalCount: number;
   countryA: CountrySnapshot;
   countryB: CountrySnapshot;
   policyDistance: number;
@@ -297,9 +299,10 @@ async function buildBilateralComparisonUncached(
   keyA: JurisdictionKey,
   keyB: JurisdictionKey,
   mode: ScoringMode,
+  includeSubnational = false,
 ): Promise<BilateralComparison> {
   const [overview, corpus] = await Promise.all([
-    getOverviewData(mode),
+    getOverviewData(mode, includeSubnational),
     getComparisonCorpus(),
   ]);
 
@@ -346,6 +349,8 @@ async function buildBilateralComparisonUncached(
     return {
       hasData: false,
       mode,
+      includeSubnational,
+      subnationalCount: 0,
       countryA: countryA ?? emptyCountry,
       countryB: countryB ?? { ...emptyCountry, slug: slugB, name: jurisdictionMeta[keyB].name, shortName: jurisdictionMeta[keyB].shortName, flagUrl: jurisdictionMeta[keyB].flagUrl },
       policyDistance: 0,
@@ -400,17 +405,22 @@ async function buildBilateralComparisonUncached(
   );
 
   // Filter corpus to active mode population & sort binding_law first (zero N+1!)
+  const analyzed = corpus.filter((doc) => doc.analysisState === "analyzed");
+  const scoped = includeSubnational
+    ? analyzed
+    : analyzed.filter((doc) => doc.corpusRole !== "subnational_overlay");
   const pool =
     mode === "headline"
-      ? corpus.filter(
-          (doc) =>
-            doc.analysisState === "analyzed" &&
-            isHeadlineEligible({
+      ? scoped.filter((doc) =>
+          isHeadlineEligible(
+            {
               corpusRole: doc.corpusRole,
               lifecycleStage: doc.lifecycleStage,
-            }),
+            },
+            { includeSubnational },
+          ),
         )
-      : corpus.filter((doc) => doc.analysisState === "analyzed");
+      : scoped;
 
   const rankDocs = (slug: string) =>
     pool
@@ -547,6 +557,8 @@ async function buildBilateralComparisonUncached(
   return {
     hasData: true,
     mode,
+    includeSubnational,
+    subnationalCount: overview.subnationalCount,
     countryA,
     countryB,
     policyDistance: pair?.policyDistance ?? 0,
@@ -569,7 +581,7 @@ async function buildBilateralComparisonUncached(
 
 const getBilateralComparisonCached = unstable_cache(
   buildBilateralComparisonUncached,
-  ["observatory-bilateral-compare-v3"],
+  ["observatory-bilateral-compare-v4"],
   {
     revalidate: OBSERVATORY_REVALIDATE_SECONDS,
     tags: [OBSERVATORY_CACHE_TAG],
@@ -580,6 +592,7 @@ export async function getBilateralComparison(
   keyA: JurisdictionKey,
   keyB: JurisdictionKey,
   mode: ScoringMode = "headline",
+  includeSubnational = false,
 ): Promise<BilateralComparison> {
-  return getBilateralComparisonCached(keyA, keyB, mode);
+  return getBilateralComparisonCached(keyA, keyB, mode, includeSubnational);
 }

@@ -4,8 +4,17 @@ import path from "node:path";
 import test from "node:test";
 
 import {
+  filterClauses,
+  formatClausesAsCsv,
+  type ClauseRecord,
+} from "../clauses-filter.ts";
+import {
   parseGoldSetEvaluation,
 } from "../eval-parser.ts";
+import {
+  computeEvolutionAnalysis,
+  type EvolutionDocumentInput,
+} from "../evolution-engine.ts";
 import {
   formatDocumentsAsBibtex,
   formatDocumentsAsCsv,
@@ -55,10 +64,13 @@ import {
   extractGroundingRatio,
   formatModelDisplayName,
   formatModelList,
+  formatSubnationalBadge,
   getProvenanceBannerKind,
   humanizeCorpusRole,
   humanizeLifecycleStage,
+  humanizeProseTaxonomyKeys,
   isCjkText,
+  parseIncludeSubnational,
   toHtmlLang,
 } from "../taxonomy-vocab.ts";
 import { safeExternalUrl } from "../url-safety.ts";
@@ -947,4 +959,476 @@ test("parseGoldSetEvaluation parses evaluate-gold-set JSON and rejects empty/inv
   assert.equal(parsed.requirementMicroF1, 0.8);
   assert.deepEqual(parsed.bootstrap95CI.requirementMicroF1, [0.7, 0.9]);
   assert.equal(parsed.dominantFrameCohensKappa, 0.75);
+  assert.equal(parsed.dominantFrameKrippendorffsAlpha, null);
+  assert.deepEqual(parsed.byJurisdiction, []);
+  assert.deepEqual(parsed.perLabelRequirements, []);
+
+  // Phase 5A: gold_set_v2 fields (Krippendorff's alpha, by_jurisdiction, per-label P/R/F1)
+  const parsedV2 = parseGoldSetEvaluation({
+    benchmark_id: "gold_set_v2",
+    benchmark_status: "blind_coded_v2_n25",
+    version: "2.0",
+    annotator_note: "Blind-coded against codebook v2.1.0",
+    evaluated_count: 25,
+    bootstrap_iterations: 1000,
+    model: "gemini-4-neon",
+    requirement_micro_f1: 0.85,
+    enforcement_micro_f1: 0.88,
+    dominant_frame_accuracy: 0.84,
+    dominant_frame_cohens_kappa: 0.8,
+    dominant_frame_krippendorffs_alpha: 0.812,
+    binding_strength_accuracy: 0.96,
+    binding_strength_cohens_kappa: 0.94,
+    binding_strength_krippendorffs_alpha: 0.945,
+    by_jurisdiction: {
+      china: {
+        evaluated_count: 5,
+        requirement_micro_f1: 0.86,
+        enforcement_micro_f1: 0.9,
+        dominant_frame_accuracy: 0.8,
+        binding_strength_accuracy: 1.0,
+      },
+      united_states: {
+        evaluated_count: 5,
+        requirement_micro_f1: 0.84,
+        enforcement_micro_f1: 0.85,
+        dominant_frame_accuracy: 0.8,
+        binding_strength_accuracy: 1.0,
+      },
+    },
+    per_label_requirements: {
+      risk_assessment: {
+        tp: 18,
+        fp: 2,
+        fn: 1,
+        support: 19,
+        precision: 0.9,
+        recall: 0.947,
+        f1: 0.923,
+      },
+    },
+    per_label_enforcement: {
+      civil_penalty: {
+        tp: 10,
+        fp: 1,
+        fn: 1,
+        support: 11,
+        precision: 0.909,
+        recall: 0.909,
+        f1: 0.909,
+      },
+    },
+  });
+  assert.ok(parsedV2);
+  assert.equal(parsedV2.benchmarkId, "gold_set_v2");
+  assert.equal(parsedV2.dominantFrameKrippendorffsAlpha, 0.812);
+  assert.equal(parsedV2.bindingStrengthKrippendorffsAlpha, 0.945);
+  assert.equal(parsedV2.byJurisdiction.length, 2);
+  // Canonical jurisdiction order: US before CN
+  assert.equal(parsedV2.byJurisdiction[0].jurisdiction, "united_states");
+  assert.equal(parsedV2.byJurisdiction[1].jurisdiction, "china");
+  assert.equal(parsedV2.perLabelRequirements[0].label, "risk_assessment");
+  assert.equal(parsedV2.perLabelEnforcement[0].label, "civil_penalty");
+});
+
+test("Phase 5A: subnational_overlay opt-in toggle invariants, badges, and prose key humanizer", () => {
+  // parseIncludeSubnational
+  assert.equal(parseIncludeSubnational(null), false);
+  assert.equal(parseIncludeSubnational("0"), false);
+  assert.equal(parseIncludeSubnational("false"), false);
+  assert.equal(parseIncludeSubnational("1"), true);
+  assert.equal(parseIncludeSubnational("true"), true);
+  assert.equal(parseIncludeSubnational("yes"), true);
+
+  // formatSubnationalBadge
+  assert.equal(formatSubnationalBadge("California"), "California · State Law");
+  assert.equal(formatSubnationalBadge("Colorado · State Law"), "Colorado · State Law");
+  assert.equal(formatSubnationalBadge(""), null);
+  assert.equal(formatSubnationalBadge(null), null);
+
+  // humanizeProseTaxonomyKeys replaces raw snake_case keys cleanly without mangling prose
+  assert.equal(
+    humanizeProseTaxonomyKeys(
+      "The statute prioritizes innovation_enablement alongside fundamental_rights and requires red_teaming under binding_law.",
+    ),
+    "The statute prioritizes Innovation Enablement alongside Fundamental Rights and requires Red-teaming under Binding law.",
+  );
+
+  // isHeadlineEligible strictly excludes subnational_overlay by default, includes when opted in
+  const caStatute: ScoringDocumentInput = {
+    documentId: "us_ca_sb_53_2025",
+    jurisdiction: "united_states",
+    publicationDate: "2025-09-29",
+    machineCreatedAt: "2026-11-21T00:00:00Z",
+    bindingStrength: "binding_law",
+    corpusRole: "subnational_overlay",
+    lifecycleStage: "active",
+    safetyRequirements: [{ label: "red_teaming" }, { label: "incident_reporting" }],
+    enforcementMechanisms: [{ label: "civil_penalty" }],
+    dominantFrame: "existential_catastrophic",
+    frameConfidence: { existential_catastrophic: 0.9 },
+    frameShare: { existential_catastrophic: 1.0 },
+  };
+  assert.equal(isHeadlineEligible(caStatute), false);
+  assert.equal(isHeadlineEligible(caStatute, { includeSubnational: false }), false);
+  assert.equal(isHeadlineEligible(caStatute, { includeSubnational: true }), true);
+  assert.equal(
+    isHeadlineEligible(
+      { ...caStatute, lifecycleStage: "superseded" },
+      { includeSubnational: true },
+    ),
+    false,
+  );
+
+  // computeScoringEngine excludes subnational_overlay in BOTH headline and all modes unless opted in
+  const usFederal: ScoringDocumentInput = {
+    documentId: "us_fed_eo",
+    jurisdiction: "united_states",
+    publicationDate: "2025-01-23",
+    machineCreatedAt: "2026-11-21T00:00:00Z",
+    bindingStrength: "executive_action",
+    corpusRole: "primary_instrument",
+    lifecycleStage: "active",
+    safetyRequirements: [{ label: "risk_assessment" }],
+    enforcementMechanisms: [{ label: "procurement_condition" }],
+    dominantFrame: "innovation_enablement",
+    frameConfidence: { innovation_enablement: 0.9 },
+    frameShare: { innovation_enablement: 1.0 },
+  };
+  const euLaw: ScoringDocumentInput = {
+    documentId: "eu_ai_act",
+    jurisdiction: "european_union",
+    publicationDate: "2024-06-13",
+    machineCreatedAt: "2026-11-21T00:00:00Z",
+    bindingStrength: "binding_law",
+    corpusRole: "primary_instrument",
+    lifecycleStage: "active",
+    safetyRequirements: [{ label: "risk_assessment" }],
+    enforcementMechanisms: [{ label: "civil_penalty" }],
+    dominantFrame: "fundamental_rights",
+    frameConfidence: { fundamental_rights: 0.9 },
+    frameShare: { fundamental_rights: 1.0 },
+  };
+
+  const baselineHeadline = computeScoringEngine([usFederal, caStatute, euLaw], "headline", {
+    includeSubnational: false,
+  });
+  assert.equal(baselineHeadline.byJurisdiction.get("united_states")?.documentCount, 1);
+  assert.equal(baselineHeadline.byJurisdiction.get("united_states")?.bindingLawCount, 0);
+
+  const baselineAll = computeScoringEngine([usFederal, caStatute, euLaw], "all", {
+    includeSubnational: false,
+  });
+  assert.equal(baselineAll.byJurisdiction.get("united_states")?.documentCount, 1);
+
+  const optedInHeadline = computeScoringEngine([usFederal, caStatute, euLaw], "headline", {
+    includeSubnational: true,
+  });
+  assert.equal(optedInHeadline.byJurisdiction.get("united_states")?.documentCount, 2);
+  assert.equal(optedInHeadline.byJurisdiction.get("united_states")?.bindingLawCount, 1);
+});
+
+test("Phase 5A: filterClauses and formatClausesAsCsv (UTF-8 BOM, formula neutralization, multilingual search)", () => {
+  const sampleClauses: ClauseRecord[] = [
+    {
+      id: "eu_ai_act#quote-req-red_teaming-0",
+      anchorId: "quote-req-red_teaming-0",
+      documentId: "eu_ai_act",
+      documentTitle: "Regulation (EU) 2024/1689",
+      jurisdictionKey: "european_union",
+      jurisdictionSlug: "european-union",
+      jurisdictionName: "European Union",
+      jurisdictionShort: "EU",
+      flagUrl: "/flags/eu.svg",
+      languageCode: "en",
+      publicationDate: "June 13, 2024",
+      publicationDateIso: "2024-06-13",
+      dateSort: Date.UTC(2024, 5, 13),
+      bindingStrength: "binding_law",
+      bindingStrengthLabel: "Binding Law",
+      bindingLevel: 4,
+      corpusRole: "primary_instrument",
+      corpusRoleLabel: "Primary Instrument",
+      lifecycleStage: "active",
+      lifecycleStageLabel: "Active",
+      subnationalUnit: null,
+      isHeadlineFederal: true,
+      isSubnationalOverlay: false,
+      category: "requirement",
+      controlKey: "red_teaming",
+      controlLabel: "Red-Teaming / Adversarial Testing",
+      obligationStrength: "mandatory",
+      obligationStrengthLabel: "Mandatory",
+      quote: "Providers shall perform model evaluation including adversarial testing.",
+      quoteEn: null,
+      sourceSection: "Article 55(1)(a)",
+      groundingStatus: "verbatim",
+    },
+    {
+      id: "cn_genai_2023#quote-req-content_moderation-0",
+      anchorId: "quote-req-content_moderation-0",
+      documentId: "cn_genai_2023",
+      documentTitle: "生成式人工智能服务管理暂行办法",
+      jurisdictionKey: "china",
+      jurisdictionSlug: "china",
+      jurisdictionName: "China",
+      jurisdictionShort: "CN",
+      flagUrl: "/flags/cn.svg",
+      languageCode: "zh",
+      publicationDate: "July 10, 2023",
+      publicationDateIso: "2023-07-10",
+      dateSort: Date.UTC(2023, 6, 10),
+      bindingStrength: "binding_law",
+      bindingStrengthLabel: "Binding Law",
+      bindingLevel: 4,
+      corpusRole: "primary_instrument",
+      corpusRoleLabel: "Primary Instrument",
+      lifecycleStage: "active",
+      lifecycleStageLabel: "Active",
+      subnationalUnit: null,
+      isHeadlineFederal: true,
+      isSubnationalOverlay: false,
+      category: "requirement",
+      controlKey: "content_moderation",
+      controlLabel: "Content Moderation / Safety Filtering",
+      obligationStrength: "mandatory",
+      obligationStrengthLabel: "Mandatory",
+      quote: "坚持社会主义核心价值观",
+      quoteEn: "Uphold core socialist values and filter unlawful content.",
+      sourceSection: "第四条",
+      groundingStatus: "verbatim",
+    },
+    {
+      id: "us_ca_sb53#quote-req-red_teaming-0",
+      anchorId: "quote-req-red_teaming-0",
+      documentId: "us_ca_sb53",
+      documentTitle: "=California Transparency in Frontier AI Act",
+      jurisdictionKey: "united_states",
+      jurisdictionSlug: "united-states",
+      jurisdictionName: "United States",
+      jurisdictionShort: "US",
+      flagUrl: "/flags/us.svg",
+      languageCode: "en",
+      publicationDate: "September 29, 2025",
+      publicationDateIso: "2025-09-29",
+      dateSort: Date.UTC(2025, 8, 29),
+      bindingStrength: "binding_law",
+      bindingStrengthLabel: "Binding Law",
+      bindingLevel: 4,
+      corpusRole: "subnational_overlay",
+      corpusRoleLabel: "Subnational State Overlay",
+      lifecycleStage: "active",
+      lifecycleStageLabel: "Active",
+      subnationalUnit: "California",
+      isHeadlineFederal: false,
+      isSubnationalOverlay: true,
+      category: "requirement",
+      controlKey: "red_teaming",
+      controlLabel: "Red-Teaming / Adversarial Testing",
+      obligationStrength: "mandatory",
+      obligationStrengthLabel: "Mandatory",
+      quote: "Frontier developers shall conduct catastrophic risk testing.",
+      quoteEn: null,
+      sourceSection: "Section 22757.12",
+      groundingStatus: "verbatim",
+    },
+  ];
+
+  // Default excludes subnational_overlay
+  const defaultRedTeam = filterClauses(sampleClauses, {
+    mode: "headline",
+    includeSubnational: false,
+    category: "requirement",
+    control: "red_teaming",
+  });
+  assert.equal(defaultRedTeam.length, 1);
+  assert.equal(defaultRedTeam[0].documentId, "eu_ai_act");
+
+  // Opt-in includes California state law
+  const withStatesRedTeam = filterClauses(sampleClauses, {
+    mode: "headline",
+    includeSubnational: true,
+    category: "requirement",
+    control: "red_teaming",
+  });
+  assert.equal(withStatesRedTeam.length, 2);
+
+  // Full-text search hits English [MT] translation on Chinese quote
+  const mtMatch = filterClauses(sampleClauses, {
+    mode: "headline",
+    includeSubnational: false,
+    query: "socialist values",
+  });
+  assert.equal(mtMatch.length, 1);
+  assert.equal(mtMatch[0].documentId, "cn_genai_2023");
+
+  // UTF-8 BOM CSV + formula neutralization + deep citation URL
+  const csv = formatClausesAsCsv(withStatesRedTeam);
+  assert.ok(
+    csv.startsWith(
+      "\uFEFFjurisdiction,jurisdiction_code,subnational_unit,document_id,document_title,",
+    ),
+  );
+  assert.ok(csv.includes("'=California Transparency in Frontier AI Act"));
+  assert.ok(csv.includes("California"));
+  assert.ok(
+    csv.includes("https://project-babel.com/documents/eu_ai_act#quote-req-red_teaming-0"),
+  );
+});
+
+test("Phase 5A: computeEvolutionAnalysis builds 2019–2026 trajectories, supersedes_id diffs, and freshness ledger", () => {
+  const docs: EvolutionDocumentInput[] = [
+    {
+      id: "us_eo_14110",
+      title: "Executive Order 14110 (2023)",
+      jurisdictionKey: "united_states",
+      jurisdictionSlug: "united-states",
+      jurisdictionName: "United States",
+      jurisdictionShort: "US",
+      flagUrl: "/flags/us.svg",
+      languageCode: "en",
+      publicationDate: "October 30, 2023",
+      publicationDateIso: "2023-10-30",
+      dateSort: Date.UTC(2023, 9, 30),
+      bindingStrength: "executive_action",
+      bindingStrengthLabel: "Executive Action",
+      corpusRole: "primary_instrument",
+      corpusRoleLabel: "Primary Instrument",
+      lifecycleStage: "superseded",
+      lifecycleStageLabel: "Superseded",
+      subnationalUnit: null,
+      supersedesId: null,
+      dominantFrame: "consumer_public_safety",
+      frameScoresMap: { consumer_public_safety: 0.9 },
+      frameShare: { consumer_public_safety: 1.0 },
+      requirementKeys: ["red_teaming", "risk_assessment", "watermarking"],
+      enforcementKeys: ["mandatory_reporting"],
+    },
+    {
+      id: "us_eo_14179",
+      title: "Executive Order 14179 (2025)",
+      jurisdictionKey: "united_states",
+      jurisdictionSlug: "united-states",
+      jurisdictionName: "United States",
+      jurisdictionShort: "US",
+      flagUrl: "/flags/us.svg",
+      languageCode: "en",
+      publicationDate: "January 23, 2025",
+      publicationDateIso: "2025-01-23",
+      dateSort: Date.UTC(2025, 0, 23),
+      bindingStrength: "executive_action",
+      bindingStrengthLabel: "Executive Action",
+      corpusRole: "primary_instrument",
+      corpusRoleLabel: "Primary Instrument",
+      lifecycleStage: "active",
+      lifecycleStageLabel: "Active",
+      subnationalUnit: null,
+      supersedesId: "us_eo_14110",
+      dominantFrame: "innovation_enablement",
+      frameScoresMap: { innovation_enablement: 0.9 },
+      frameShare: { innovation_enablement: 1.0 },
+      requirementKeys: ["risk_assessment", "compute_governance"],
+      enforcementKeys: ["procurement_condition"],
+    },
+    {
+      id: "us_ca_sb_53",
+      title: "California SB 53",
+      jurisdictionKey: "united_states",
+      jurisdictionSlug: "united-states",
+      jurisdictionName: "United States",
+      jurisdictionShort: "US",
+      flagUrl: "/flags/us.svg",
+      languageCode: "en",
+      publicationDate: "September 29, 2025",
+      publicationDateIso: "2025-09-29",
+      dateSort: Date.UTC(2025, 8, 29),
+      bindingStrength: "binding_law",
+      bindingStrengthLabel: "Binding Law",
+      corpusRole: "subnational_overlay",
+      corpusRoleLabel: "Subnational State Overlay",
+      lifecycleStage: "active",
+      lifecycleStageLabel: "Active",
+      subnationalUnit: "California",
+      supersedesId: null,
+      dominantFrame: "existential_catastrophic",
+      frameScoresMap: { existential_catastrophic: 0.9 },
+      frameShare: { existential_catastrophic: 1.0 },
+      requirementKeys: ["red_teaming"],
+      enforcementKeys: ["civil_penalty"],
+    },
+  ];
+
+  const base = computeEvolutionAnalysis(docs, { includeSubnational: false });
+  assert.equal(base.subnationalCount, 1);
+  assert.equal(base.includeSubnational, false);
+  assert.equal(base.supersessionDiffs.length, 1);
+  const diff = base.supersessionDiffs[0];
+  assert.equal(diff.predecessor.id, "us_eo_14110");
+  assert.equal(diff.successor.id, "us_eo_14179");
+  assert.equal(diff.dominantFrameChange.changed, true);
+  assert.equal(diff.bindingChange.changed, false);
+  assert.deepEqual(
+    diff.addedRequirements.map((r) => r.key),
+    ["compute_governance"],
+  );
+  assert.deepEqual(
+    diff.removedRequirements.map((r) => r.key),
+    ["red_teaming", "watermarking"],
+  );
+  assert.deepEqual(
+    diff.addedEnforcement.map((e) => e.key),
+    ["procurement_condition"],
+  );
+  assert.deepEqual(
+    diff.removedEnforcement.map((e) => e.key),
+    ["mandatory_reporting"],
+  );
+
+  // Active count in 2024 includes EO 14110 (not yet superseded); in 2025 EO 14110 retires and EO 14179 activates
+  const usTraj = base.seriesByJurisdiction.united_states;
+  const p2024 = usTraj.find((p) => p.year === 2024)!;
+  const p2025 = usTraj.find((p) => p.year === 2025)!;
+  assert.equal(p2024.activeDocuments, 1);
+  assert.equal(p2025.activeDocuments, 1);
+  assert.equal(p2025.bindingLawCount, 0);
+
+  // With states=true, 2025 gains California SB 53 as active binding law
+  const withStates = computeEvolutionAnalysis(docs, {
+    includeSubnational: true,
+  });
+  const usWithStates = withStates.seriesByJurisdiction.united_states;
+  assert.equal(
+    usWithStates.find((p) => p.year === 2025)!.bindingLawCount,
+    1,
+  );
+  assert.equal(
+    usWithStates.find((p) => p.year === 2025)!.activeDocuments,
+    2,
+  );
+
+  // Freshness ledger respects sovereign scope on totalDocuments & latestPublicationDate while reporting subnationalCount
+  const usFresh = base.freshnessByJurisdiction.find(
+    (f) => f.jurisdictionKey === "united_states",
+  )!;
+  assert.equal(usFresh.totalDocuments, 2);
+  assert.equal(usFresh.subnationalCount, 1);
+  assert.equal(usFresh.supersessionChainCount, 1);
+  assert.equal(usFresh.latestPublicationDate, "January 23, 2025");
+
+  const usFreshStates = withStates.freshnessByJurisdiction.find(
+    (f) => f.jurisdictionKey === "united_states",
+  )!;
+  assert.equal(usFreshStates.totalDocuments, 3);
+  assert.equal(usFreshStates.latestPublicationDate, "September 29, 2025");
+
+  // Empty-DB invariant: freshnessByJurisdiction must retain valid non-empty flagUrl, name, shortName, slug
+  const emptyEvo = computeEvolutionAnalysis([], { includeSubnational: false });
+  assert.equal(emptyEvo.freshnessByJurisdiction.length, 5);
+  for (const row of emptyEvo.freshnessByJurisdiction) {
+    assert.ok(row.flagUrl.startsWith("/flags/"), `Invalid empty-DB flagUrl: ${row.flagUrl}`);
+    assert.ok(row.shortName.length === 2, `Invalid shortName: ${row.shortName}`);
+    assert.ok(!row.name.includes("_"), `Raw key leaked into name: ${row.name}`);
+  }
+  assert.equal(emptyEvo.freshnessByJurisdiction[0].name, "United States");
+  assert.equal(emptyEvo.freshnessByJurisdiction[0].shortName, "US");
 });

@@ -11,20 +11,32 @@ export function CompareControls({
   slugA,
   slugB,
   mode,
+  includeSubnational = false,
+  subnationalCount = 0,
 }: {
   options: Option[];
   slugA: string;
   slugB: string;
   mode: ScoringMode;
+  includeSubnational?: boolean;
+  subnationalCount?: number;
 }) {
   const router = useRouter();
 
-  function navigate(nextA: string, nextB: string, nextMode: ScoringMode) {
+  function navigate(
+    nextA: string,
+    nextB: string,
+    nextMode: ScoringMode,
+    nextStates: boolean,
+  ) {
     const params = new URLSearchParams();
     params.set("a", nextA);
     params.set("b", nextB);
     if (nextMode === "all") {
       params.set("mode", "all");
+    }
+    if (nextStates) {
+      params.set("states", "1");
     }
     router.push(`/compare?${params.toString()}`);
   }
@@ -42,7 +54,7 @@ export function CompareControls({
                 nextA === slugB
                   ? (options.find((o) => o.slug !== nextA)?.slug ?? slugB)
                   : slugB;
-              navigate(nextA, nextB, mode);
+              navigate(nextA, nextB, mode, includeSubnational);
             }}
             className="rounded-[2px] border border-white/20 bg-[#0a0f18] px-2.5 py-1.5 font-sans text-[13px] normal-case text-[#f1f5f9]"
           >
@@ -56,7 +68,7 @@ export function CompareControls({
 
         <button
           type="button"
-          onClick={() => navigate(slugB, slugA, mode)}
+          onClick={() => navigate(slugB, slugA, mode, includeSubnational)}
           aria-label="Swap jurisdictions"
           className="rounded-[2px] border border-white/20 bg-white/[0.04] px-2.5 py-1.5 font-mono text-[11px] uppercase tracking-wider text-[#f1f5f9] transition-colors hover:border-[#38bdf8]/60"
         >
@@ -73,7 +85,7 @@ export function CompareControls({
                 nextB === slugA
                   ? (options.find((o) => o.slug !== nextB)?.slug ?? slugA)
                   : slugA;
-              navigate(nextA, nextB, mode);
+              navigate(nextA, nextB, mode, includeSubnational);
             }}
             className="rounded-[2px] border border-white/20 bg-[#0a0f18] px-2.5 py-1.5 font-sans text-[13px] normal-case text-[#f1f5f9]"
           >
@@ -95,7 +107,7 @@ export function CompareControls({
         <button
           type="button"
           aria-pressed={mode === "headline"}
-          onClick={() => navigate(slugA, slugB, "headline")}
+          onClick={() => navigate(slugA, slugB, "headline", includeSubnational)}
           className={`rounded-[2px] border px-2.5 py-1 transition-colors ${
             mode === "headline"
               ? "border-[#38bdf8]/60 bg-[#38bdf8]/15 font-semibold text-[#f1f5f9]"
@@ -107,7 +119,7 @@ export function CompareControls({
         <button
           type="button"
           aria-pressed={mode === "all"}
-          onClick={() => navigate(slugA, slugB, "all")}
+          onClick={() => navigate(slugA, slugB, "all", includeSubnational)}
           className={`rounded-[2px] border px-2.5 py-1 transition-colors ${
             mode === "all"
               ? "border-[#38bdf8]/60 bg-[#38bdf8]/15 font-semibold text-[#f1f5f9]"
@@ -116,6 +128,23 @@ export function CompareControls({
         >
           full corpus
         </button>
+        {subnationalCount > 0 ? (
+          <button
+            type="button"
+            aria-pressed={includeSubnational}
+            onClick={() =>
+              navigate(slugA, slugB, mode, !includeSubnational)
+            }
+            className={`rounded-[2px] border px-2.5 py-1 transition-colors ${
+              includeSubnational
+                ? "border-[#e6ae49]/60 bg-[#e6ae49]/15 font-semibold text-[#fef3c7]"
+                : "border-white/15 text-[#94a3b8] hover:border-white/30 hover:text-[#f1f5f9]"
+            }`}
+          >
+            {includeSubnational ? "✓ " : "+ "}U.S. State Laws ({subnationalCount}
+            )
+          </button>
+        ) : null}
       </div>
     </div>
   );

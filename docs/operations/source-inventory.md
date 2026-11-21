@@ -2,22 +2,22 @@
 
 This file is generated from `data/sources/` manifests plus cached discovery outputs and local corpus state.
 
-- Generated at: `2026-11-21T06:30:42.974256+00:00`
+- Generated at: `2026-11-21T21:16:38.275276+00:00`
 - JSON mirror: `data/source_tracking/source_inventory.json`
 
 ## china
 
 Official State Council, CAC, and sectoral sources for China's AI governance regime and implementation measures.
 
-- Portals: `8` | Seed documents: `20` | Fetched: `20` | Parsed: `20` | Analyzed: `20`
+- Portals: `8` | Seed documents: `21` | Fetched: `21` | Parsed: `21` | Analyzed: `21`
 
 - Portal kinds: `library=1`, `portal=6`, `registry=1`
 - Portal issuer types: `executive=3`, `legal_registry=1`, `regulator=3`, `standards_body=1`
-- Document types: `legislation=5`, `regulatory_guidance=7`, `standards_guideline=4`, `strategy_paper=4`
-- Binding strength: `binding_law=5`, `executive_action=1`, `regulatory_guidance=7`, `standards_guideline=4`, `strategy_statement=3`
-- Source tiers: `implementation_resource=4`, `policy_strategy=4`, `regulatory_guidance=3`, `statutory_rule=5`, `technical_standard=4`
-- Lifecycle stages: `active=18`, `superseded=2`
-- Policy domains: `agentic_ai=2`, `civil_rights_nondiscrimination=1`, `companion_ai=3`, `consumer_protection=10`, `critical_infrastructure=1`, `embodied_physical_ai=1`, `frontier_gpai=5`, `healthcare_medical_devices=1`, `industrial_innovation=6`, `national_security=2`, `platform_content_governance=11`, `public_sector_governance=1`, `sovereign_compute=1`, `standards_assurance=4`
+- Document types: `legislation=5`, `regulatory_guidance=7`, `standards_guideline=5`, `strategy_paper=4`
+- Binding strength: `binding_law=5`, `executive_action=1`, `regulatory_guidance=7`, `standards_guideline=5`, `strategy_statement=3`
+- Source tiers: `implementation_resource=4`, `policy_strategy=4`, `regulatory_guidance=3`, `statutory_rule=5`, `technical_standard=5`
+- Lifecycle stages: `active=19`, `superseded=2`
+- Policy domains: `agentic_ai=2`, `civil_rights_nondiscrimination=1`, `companion_ai=3`, `consumer_protection=10`, `critical_infrastructure=1`, `embodied_physical_ai=1`, `frontier_gpai=6`, `healthcare_medical_devices=1`, `industrial_innovation=7`, `national_security=2`, `platform_content_governance=11`, `public_sector_governance=1`, `sovereign_compute=2`, `standards_assurance=5`
 
 ### Portals
 
@@ -56,20 +56,21 @@ Official State Council, CAC, and sectoral sources for China's AI governance regi
 | `cn_anthropomorphic_interaction_expert_interpretation_2026` | `regulatory_guidance` | `regulatory_guidance` | `implementation_resource` | `active` | `cn_cac` | yes | yes | yes | `skipped_existing` |
 | `cn_tc260_ai_safety_governance_framework_3_0_2026` | `standards_guideline` | `standards_guideline` | `technical_standard` | `active` | `cn_tc260, cn_cac` | yes | yes | yes | `downloaded_new` |
 | `cn_state_council_ai_plus_opinion_2025` | `strategy_paper` | `executive_action` | `policy_strategy` | `active` | `cn_state_council_policy` | yes | yes | yes | `downloaded_new` |
+| `cn_miit_ai_industry_standardization_guidelines_2024` | `standards_guideline` | `standards_guideline` | `technical_standard` | `active` | `cn_miit_ai, cn_state_council_policy` | yes | yes | yes | `downloaded_new` |
 
 ## european_union
 
 Official EU legal text, implementation guidance, and data-protection sources for the AI Act and related governance instruments.
 
-- Portals: `6` | Seed documents: `21` | Fetched: `21` | Parsed: `21` | Analyzed: `21`
+- Portals: `6` | Seed documents: `24` | Fetched: `24` | Parsed: `24` | Analyzed: `24`
 
 - Portal kinds: `helpdesk=1`, `library=3`, `portal=2`
 - Portal issuer types: `executive=3`, `legal_registry=1`, `regulator=2`
-- Document types: `legislation=2`, `regulatory_guidance=14`, `voluntary_commitment=5`
-- Binding strength: `binding_law=2`, `regulatory_guidance=14`, `voluntary_commitment=5`
-- Source tiers: `implementation_resource=8`, `regulatory_guidance=6`, `statutory_rule=2`, `voluntary_framework=5`
-- Lifecycle stages: `active=21`
-- Policy domains: `civil_rights_nondiscrimination=2`, `consumer_protection=5`, `copyright_ip=4`, `frontier_gpai=21`, `industrial_innovation=4`, `platform_content_governance=2`, `privacy_data_protection=4`, `public_sector_governance=1`, `standards_assurance=11`
+- Document types: `legislation=3`, `regulatory_guidance=14`, `strategy_paper=2`, `voluntary_commitment=5`
+- Binding strength: `binding_law=3`, `regulatory_guidance=14`, `strategy_statement=2`, `voluntary_commitment=5`
+- Source tiers: `implementation_resource=8`, `policy_strategy=2`, `regulatory_guidance=6`, `statutory_rule=3`, `voluntary_framework=5`
+- Lifecycle stages: `active=22`, `superseded=2`
+- Policy domains: `civil_rights_nondiscrimination=3`, `consumer_protection=5`, `copyright_ip=4`, `frontier_gpai=23`, `industrial_innovation=6`, `platform_content_governance=2`, `privacy_data_protection=4`, `public_sector_governance=3`, `sovereign_compute=1`, `standards_assurance=14`
 
 ### Portals
 
@@ -107,20 +108,23 @@ Official EU legal text, implementation guidance, and data-protection sources for
 | `eu_digital_omnibus_ai_regulation_2026_1744` | `legislation` | `binding_law` | `statutory_rule` | `active` | `eu_eur_lex, eu_digital_strategy_ai` | yes | yes | yes | `downloaded_new` |
 | `eu_article_50_transparency_guidelines_2026` | `regulatory_guidance` | `regulatory_guidance` | `regulatory_guidance` | `active` | `eu_ai_office_policies, eu_digital_strategy_ai` | yes | yes | yes | `downloaded_new` |
 | `eu_code_practice_transparency_ai_content_2026` | `voluntary_commitment` | `voluntary_commitment` | `voluntary_framework` | `active` | `eu_ai_office_policies, eu_digital_strategy_ai` | yes | yes | yes | `downloaded_new` |
+| `eu_white_paper_ai_2020` | `strategy_paper` | `strategy_statement` | `policy_strategy` | `superseded` | `eu_eur_lex, eu_digital_strategy_ai` | yes | yes | yes | `downloaded_new` |
+| `eu_coordinated_plan_ai_review_2021` | `strategy_paper` | `strategy_statement` | `policy_strategy` | `superseded` | `eu_eur_lex, eu_digital_strategy_ai` | yes | yes | yes | `downloaded_new` |
+| `eu_ai_scientific_panel_implementing_reg_2025_454` | `legislation` | `binding_law` | `statutory_rule` | `active` | `eu_eur_lex, eu_ai_office_policies` | yes | yes | yes | `downloaded_new` |
 
 ## japan
 
 Official Cabinet Secretariat, Cabinet Office, Digital Agency, METI, MIC, MEXT, PPC, MHLW, MAFF, CFA, and Cultural Affairs materials for Japan's AI governance approach.
 
-- Portals: `17` | Seed documents: `34` | Fetched: `34` | Parsed: `34` | Analyzed: `34`
+- Portals: `18` | Seed documents: `37` | Fetched: `37` | Parsed: `37` | Analyzed: `37`
 
-- Portal kinds: `library=2`, `portal=14`, `registry=1`
-- Portal issuer types: `executive=14`, `legal_registry=1`, `regulator=1`, `standards_body=1`
-- Document types: `legislation=1`, `regulatory_guidance=12`, `standards_guideline=10`, `strategy_paper=10`, `voluntary_commitment=1`
-- Binding strength: `binding_law=1`, `regulatory_guidance=12`, `standards_guideline=10`, `strategy_statement=10`, `voluntary_commitment=1`
-- Source tiers: `implementation_resource=9`, `policy_strategy=6`, `regulatory_guidance=8`, `statutory_rule=1`, `technical_standard=9`, `voluntary_framework=1`
-- Lifecycle stages: `active=28`, `superseded=6`
-- Policy domains: `agentic_ai=3`, `civil_rights_nondiscrimination=1`, `copyright_ip=2`, `education=3`, `embodied_physical_ai=2`, `frontier_gpai=22`, `healthcare_medical_devices=3`, `industrial_innovation=15`, `national_security=2`, `platform_content_governance=2`, `privacy_data_protection=4`, `public_sector_governance=3`, `public_sector_procurement=5`, `sovereign_compute=1`, `standards_assurance=9`
+- Portal kinds: `library=2`, `portal=15`, `registry=1`
+- Portal issuer types: `executive=14`, `legal_registry=1`, `regulator=2`, `standards_body=1`
+- Document types: `legislation=1`, `regulatory_guidance=14`, `standards_guideline=10`, `strategy_paper=11`, `voluntary_commitment=1`
+- Binding strength: `binding_law=1`, `executive_action=1`, `regulatory_guidance=14`, `standards_guideline=10`, `strategy_statement=10`, `voluntary_commitment=1`
+- Source tiers: `executive_action=1`, `implementation_resource=9`, `policy_strategy=6`, `regulatory_guidance=10`, `statutory_rule=1`, `technical_standard=9`, `voluntary_framework=1`
+- Lifecycle stages: `active=31`, `superseded=6`
+- Policy domains: `agentic_ai=4`, `civil_rights_nondiscrimination=1`, `consumer_protection=1`, `copyright_ip=3`, `critical_infrastructure=1`, `education=3`, `embodied_physical_ai=2`, `finance=1`, `frontier_gpai=24`, `healthcare_medical_devices=3`, `industrial_innovation=16`, `national_security=3`, `platform_content_governance=3`, `privacy_data_protection=4`, `public_sector_governance=3`, `public_sector_procurement=5`, `sovereign_compute=2`, `standards_assurance=9`
 
 ### Portals
 
@@ -143,6 +147,7 @@ Official Cabinet Secretariat, Cabinet Office, Digital Agency, METI, MIC, MEXT, P
 | `jp_aisi` | `library` | `standards_body` | `mixed` | Official technical evaluation and red-teaming framework publications of the Japan AI Safety Institute. | 0 |
 | `jp_mic_ai_guidelines` | `portal` | `executive` | `mixed` | Official MIC repository for AI Guidelines for Business Ver. 1.2 (including AI agent and physical AI governance) and Hiroshima AI Process International Code of Conduct. | 0 |
 | `jp_egov_law` | `registry` | `legal_registry` | `browser` | Authoritative statutory text registry for enacted Japanese legislation including the AI Promotion Act (Act No. 53 of 2025). | 0 |
+| `jp_fsa` | `portal` | `regulator` | `pdf` | FSA discussion papers and supervisory guidance on responsible AI and generative AI governance in Japanese financial institutions. | 0 |
 
 ### Seed documents
 
@@ -182,20 +187,23 @@ Official Cabinet Secretariat, Cabinet Office, Digital Agency, METI, MIC, MEXT, P
 | `jp_aisi_evaluation_perspectives_guide_2026` | `standards_guideline` | `standards_guideline` | `technical_standard` | `active` | `jp_aisi` | yes | yes | yes | `downloaded_new` |
 | `jp_aisi_red_teaming_guide_2025` | `standards_guideline` | `standards_guideline` | `technical_standard` | `active` | `jp_aisi` | yes | yes | yes | `downloaded_new` |
 | `jp_hiroshima_ai_process_code_of_conduct_2023` | `voluntary_commitment` | `voluntary_commitment` | `voluntary_framework` | `active` | `jp_mic_ai_guidelines, jp_cao_ai_strategy` | yes | yes | yes | `downloaded_new` |
+| `jp_fsa_ai_discussion_paper_v1_1_2026` | `regulatory_guidance` | `regulatory_guidance` | `regulatory_guidance` | `active` | `jp_fsa` | yes | yes | yes | `downloaded_new` |
+| `jp_meti_cloud_program_economic_security_policy` | `strategy_paper` | `executive_action` | `executive_action` | `active` | `jp_meti_ai_governance_docs` | yes | yes | yes | `downloaded_new` |
+| `jp_bunka_ai_copyright_checklist_guidance_2024` | `regulatory_guidance` | `regulatory_guidance` | `regulatory_guidance` | `active` | `jp_bunka_copyright_ai` | yes | yes | yes | `downloaded_new` |
 
 ## south_korea
 
 Official legal, public-sector, privacy, and medical-device sources for South Korea's AI framework and implementation.
 
-- Portals: `9` | Seed documents: `17` | Fetched: `17` | Parsed: `17` | Analyzed: `17`
+- Portals: `11` | Seed documents: `20` | Fetched: `20` | Parsed: `20` | Analyzed: `20`
 
-- Portal kinds: `helpdesk=2`, `library=3`, `portal=3`, `registry=1`
-- Portal issuer types: `executive=5`, `legal_registry=1`, `regulator=2`, `standards_body=1`
-- Document types: `legislation=3`, `regulatory_guidance=14`
-- Binding strength: `binding_law=3`, `regulatory_guidance=14`
-- Source tiers: `implementation_resource=2`, `regulatory_guidance=12`, `statutory_rule=3`
-- Lifecycle stages: `active=14`, `draft=1`, `superseded=2`
-- Policy domains: `civil_rights_nondiscrimination=1`, `consumer_protection=1`, `critical_infrastructure=2`, `frontier_gpai=14`, `healthcare_medical_devices=1`, `privacy_data_protection=7`, `public_sector_governance=10`, `standards_assurance=5`
+- Portal kinds: `helpdesk=2`, `library=3`, `portal=5`, `registry=1`
+- Portal issuer types: `executive=6`, `legal_registry=1`, `regulator=3`, `standards_body=1`
+- Document types: `legislation=3`, `regulatory_guidance=16`, `strategy_paper=1`
+- Binding strength: `binding_law=3`, `regulatory_guidance=16`, `strategy_statement=1`
+- Source tiers: `implementation_resource=2`, `policy_strategy=1`, `regulatory_guidance=14`, `statutory_rule=3`
+- Lifecycle stages: `active=16`, `draft=1`, `superseded=3`
+- Policy domains: `civil_rights_nondiscrimination=1`, `consumer_protection=2`, `critical_infrastructure=3`, `embodied_physical_ai=1`, `finance=2`, `frontier_gpai=16`, `healthcare_medical_devices=1`, `industrial_innovation=1`, `privacy_data_protection=7`, `public_sector_governance=11`, `sovereign_compute=1`, `standards_assurance=7`
 
 ### Portals
 
@@ -210,6 +218,8 @@ Official legal, public-sector, privacy, and medical-device sources for South Kor
 | `kr_mfds_ai_medical` | `library` | `regulator` | `mixed` | Official review and compliance guidance for generative AI medical devices and other regulated digital-health applications. | 4 |
 | `kr_ai_act_helpdesk` | `helpdesk` | `executive` | `mixed` | Official implementation helpdesk distributing finalized 2026 MSIT AI Basic Act guidelines (Safety Assurance, High-Impact Determination, Transparency, Impact Assessment). | 0 |
 | `kr_aisi` | `portal` | `standards_body` | `mixed` | Statutory AI safety research and evaluation body designated under Presidential Decree No. 36053 of the AI Basic Act. | 0 |
+| `kr_naisc` | `portal` | `executive` | `mixed` | Presidential National AI Strategy Committee plenary decisions and the Korea National AI Action Plan (2026–2028). | 0 |
+| `kr_fsc` | `portal` | `regulator` | `mixed` | Financial Services Commission and Financial Security Institute guidelines on financial-sector AI governance and frontier AI security. | 0 |
 
 ### Seed documents
 
@@ -232,20 +242,23 @@ Official legal, public-sector, privacy, and medical-device sources for South Kor
 | `kr_public_sector_ai_privacy_pia_items_2025` | `regulatory_guidance` | `regulatory_guidance` | `implementation_resource` | `active` | `kr_pipc_guidance` | yes | yes | yes | `downloaded_new` |
 | `kr_genai_medical_device_guideline_2025` | `regulatory_guidance` | `regulatory_guidance` | `regulatory_guidance` | `active` | `kr_mfds_ai_medical` | yes | yes | yes | `skipped_existing` |
 | `kr_high_impact_ai_determination_guideline_2026` | `regulatory_guidance` | `regulatory_guidance` | `regulatory_guidance` | `active` | `kr_ai_act_helpdesk, kr_msit_main` | yes | yes | yes | `downloaded_new` |
+| `kr_national_ai_action_plan_2026_2028` | `strategy_paper` | `strategy_statement` | `policy_strategy` | `active` | `kr_naisc, kr_msit_main` | yes | yes | yes | `downloaded_new` |
+| `kr_fsc_frontier_ai_security_guideline_2026` | `regulatory_guidance` | `regulatory_guidance` | `regulatory_guidance` | `active` | `kr_fsc` | yes | yes | yes | `downloaded_new` |
+| `kr_fsc_financial_ai_guideline_2021` | `regulatory_guidance` | `regulatory_guidance` | `regulatory_guidance` | `superseded` | `kr_fsc` | yes | yes | yes | `downloaded_new` |
 
 ## united_states
 
 Official executive, standards, civil-rights, consumer-protection, and health-regulation sources for U.S. AI governance.
 
-- Portals: `12` | Seed documents: `29` | Fetched: `29` | Parsed: `29` | Analyzed: `29`
+- Portals: `18` | Seed documents: `42` | Fetched: `42` | Parsed: `42` | Analyzed: `42`
 
-- Portal kinds: `library=6`, `portal=4`, `registry=2`
-- Portal issuer types: `executive=3`, `legal_registry=2`, `multi_agency=1`, `regulator=3`, `standards_body=3`
-- Document types: `executive_order=4`, `legislation=1`, `regulatory_guidance=6`, `standards_guideline=12`, `strategy_paper=6`
-- Binding strength: `binding_law=1`, `executive_action=6`, `regulatory_guidance=3`, `standards_guideline=12`, `strategy_statement=6`, `voluntary_commitment=1`
-- Source tiers: `executive_action=6`, `implementation_resource=7`, `policy_strategy=4`, `regulatory_guidance=3`, `statutory_rule=1`, `technical_standard=8`
-- Lifecycle stages: `active=24`, `draft=1`, `superseded=4`
-- Policy domains: `agentic_ai=2`, `civil_rights_nondiscrimination=6`, `consumer_protection=6`, `critical_infrastructure=1`, `finance=3`, `frontier_gpai=22`, `healthcare_medical_devices=1`, `industrial_innovation=7`, `national_security=4`, `platform_content_governance=1`, `privacy_data_protection=1`, `public_sector_governance=5`, `public_sector_procurement=1`, `sovereign_compute=3`, `standards_assurance=16`
+- Portal kinds: `library=8`, `portal=6`, `registry=4`
+- Portal issuer types: `executive=4`, `legal_registry=3`, `multi_agency=1`, `regulator=7`, `standards_body=3`
+- Document types: `executive_order=4`, `legislation=10`, `regulatory_guidance=10`, `standards_guideline=12`, `strategy_paper=6`
+- Binding strength: `binding_law=10`, `executive_action=7`, `regulatory_guidance=6`, `standards_guideline=12`, `strategy_statement=6`, `voluntary_commitment=1`
+- Source tiers: `executive_action=7`, `implementation_resource=7`, `policy_strategy=4`, `regulatory_guidance=6`, `statutory_rule=10`, `technical_standard=8`
+- Lifecycle stages: `active=35`, `adopted_not_yet_effective=1`, `draft=1`, `superseded=5`
+- Policy domains: `agentic_ai=3`, `civil_rights_nondiscrimination=10`, `consumer_protection=9`, `copyright_ip=3`, `critical_infrastructure=2`, `embodied_physical_ai=1`, `finance=4`, `frontier_gpai=29`, `healthcare_medical_devices=2`, `industrial_innovation=8`, `national_security=7`, `platform_content_governance=2`, `privacy_data_protection=2`, `public_sector_governance=6`, `public_sector_procurement=1`, `sovereign_compute=7`, `standards_assurance=23`
 
 ### Portals
 
@@ -263,6 +276,12 @@ Official executive, standards, civil-rights, consumer-protection, and health-reg
 | `us_federal_register_ai` | `registry` | `legal_registry` | `html` | Authoritative federal gazette for Executive Orders (EO 14409, EO 14434, Dec 2025 National Policy Framework EO) and federal AI/Super Intelligence rulemaking. | 0 |
 | `us_nist_caisi_si` | `portal` | `standards_body` | `mixed` | Official portal for NIST CAISI frontier evaluations, the 2026 AI/SI Agent Standards Initiative, NCCoE agent-IAM concept papers, and CSRC Cyber AI Profile (NIST IR 8596). | 0 |
 | `us_congress_govinfo` | `registry` | `legal_registry` | `mixed` | Canonical federal statutory repository for enacted U.S. AI legislation (e.g., TAKE IT DOWN Act, Pub. L. 119-12). | 0 |
+| `us_hhs_onc` | `portal` | `regulator` | `html` | Federal health IT certification rules governing clinical AI and predictive decision support interventions (HTI-1). | 0 |
+| `us_treasury` | `portal` | `regulator` | `pdf` | Treasury reports and risk-management guidance on AI cybersecurity, fraud, and financial-sector governance. | 0 |
+| `us_bis_export` | `registry` | `regulator` | `html` | Export Administration Regulations (EAR) rules governing advanced AI semiconductors, remote compute access, and model controls. | 0 |
+| `us_copyright_office` | `library` | `regulator` | `pdf` | Official U.S. Copyright Office policy reports on AI copyrightability, generative AI training, and fair use. | 0 |
+| `us_dod` | `library` | `executive` | `pdf` | DoD issuances governing autonomy in weapon systems, human judgment controls, and defense AI governance. | 0 |
+| `us_state_legislatures` | `registry` | `legal_registry` | `mixed` | Authoritative state legislative portals tracked strictly under corpus_role='subnational_overlay' (excluded from federal sovereign baselines by default). | 0 |
 
 ### Seed documents
 
@@ -297,4 +316,17 @@ Official executive, standards, civil-rights, consumer-protection, and health-reg
 | `us_take_it_down_act_2025` | `legislation` | `binding_law` | `statutory_rule` | `active` | `us_congress_govinfo, us_ftc_ai_policy` | yes | yes | yes | `downloaded_new` |
 | `us_nist_caisi_agent_standards_initiative_2026` | `standards_guideline` | `standards_guideline` | `technical_standard` | `active` | `us_nist_caisi_si, us_nist_ai` | yes | yes | yes | `downloaded_new` |
 | `us_nist_ir_8596_cyber_ai_profile_2025` | `standards_guideline` | `standards_guideline` | `technical_standard` | `draft` | `us_nist_ai, us_nist_caisi_si` | yes | yes | yes | `downloaded_new` |
+| `us_hhs_onc_hti1_final_rule_2024` | `legislation` | `binding_law` | `statutory_rule` | `active` | `us_hhs_onc, us_federal_register_ai` | yes | yes | yes | `downloaded_new` |
+| `us_treasury_ai_cybersecurity_financial_2024` | `regulatory_guidance` | `regulatory_guidance` | `regulatory_guidance` | `active` | `us_treasury` | yes | yes | yes | `downloaded_new` |
+| `us_bis_remote_access_semiconductors_2026` | `legislation` | `binding_law` | `statutory_rule` | `active` | `us_bis_export, us_federal_register_ai` | yes | yes | yes | `downloaded_new` |
+| `us_bis_advanced_computing_license_policy_2026` | `legislation` | `binding_law` | `statutory_rule` | `active` | `us_bis_export, us_federal_register_ai` | yes | yes | yes | `downloaded_new` |
+| `us_copyright_office_ai_part3_training_2025` | `regulatory_guidance` | `regulatory_guidance` | `regulatory_guidance` | `active` | `us_copyright_office` | yes | yes | yes | `downloaded_new` |
+| `us_copyright_office_ai_part2_copyrightability_2025` | `regulatory_guidance` | `regulatory_guidance` | `regulatory_guidance` | `active` | `us_copyright_office` | yes | yes | yes | `downloaded_new` |
+| `us_dod_directive_3000_09_autonomy_2023` | `regulatory_guidance` | `executive_action` | `executive_action` | `active` | `us_dod` | yes | yes | yes | `downloaded_new` |
+| `us_ca_sb_53_tfaia_2025` | `legislation` | `binding_law` | `statutory_rule` | `active` | `us_state_legislatures` | yes | yes | yes | `downloaded_new` |
+| `us_ca_ab_2013_training_data_2024` | `legislation` | `binding_law` | `statutory_rule` | `active` | `us_state_legislatures` | yes | yes | yes | `downloaded_new` |
+| `us_co_sb_24_205_ai_act_2024` | `legislation` | `binding_law` | `statutory_rule` | `superseded` | `us_state_legislatures` | yes | yes | yes | `downloaded_new` |
+| `us_co_sb_26_189_admt_act_2026` | `legislation` | `binding_law` | `statutory_rule` | `adopted_not_yet_effective` | `us_state_legislatures` | yes | yes | yes | `downloaded_new` |
+| `us_tx_hb_149_traiga_2025` | `legislation` | `binding_law` | `statutory_rule` | `active` | `us_state_legislatures` | yes | yes | yes | `downloaded_new` |
+| `us_ny_raise_act_2025` | `legislation` | `binding_law` | `statutory_rule` | `active` | `us_state_legislatures` | yes | yes | yes | `downloaded_new` |
 

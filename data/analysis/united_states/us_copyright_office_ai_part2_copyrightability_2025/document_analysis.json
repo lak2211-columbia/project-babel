@@ -1,0 +1,244 @@
+{
+  "source_id": "us_copyright_office_ai_part2_copyrightability_2025",
+  "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "U.S. Copyright Office",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2025-01-29",
+    "effective_date": null,
+    "covered_actors": [
+      "Human authors, creators, artists, writers, musicians, filmmakers, software developers, and copyright registration applicants using generative AI or AI-assisted tools",
+      "Generative AI system developers, platforms, and commercial deployers producing AI-generated outputs",
+      "U.S. Copyright Office examiners and Review Board administering copyright registration under Title 17, along with federal courts and Congress"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.78,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "It explained that if a work contains more than a de minimis amount of AI-generated material, the applicant should disclose that information and provide a brief statement describing the human author’s contribution.",
+            "source_section": "I.B The Copyright Office's AI Initiative",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17380,
+            "end_char": 17593
+          },
+          {
+            "quote": "The applicant disclaimed “any non-human expression” appearing in the final work, such as the realistic, three-dimensional representation of the nose, lips, and rosebuds, as well as the lighting and shadows in the background.",
+            "source_section": "II.E Expressive Inputs",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 86057,
+            "end_char": 86281
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "quote": "Questions of copyrightability and AI can be resolved pursuant to existing law, without the need for legislative change.",
+            "source_section": "Executive Summary",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8639,
+            "end_char": 8758
+          },
+          {
+            "quote": "It will also provide ongoing assistance to the public, including through additional registration guidance and an update to the Compendium of U.S. Copyright Office Practices.",
+            "source_section": "Executive Summary",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9939,
+            "end_char": 10112
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.78,
+        "evidence": [
+          {
+            "quote": "The Register of Copyrights is responsible for administering the copyright system, including examining claims for copyright registration. 17 U.S.C. §§ 410(a), 701(a).",
+            "source_section": "I.A Technology and Copyright (Footnote 5)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15603,
+            "end_char": 15768
+          },
+          {
+            "quote": "After reviewing the information provided in the application, the Office registered the work with an annotation stating: “Registration limited to unaltered human pictorial authorship that is clearly perceptible in the deposit and separable from the non-human expression that is excluded from the claim.”",
+            "source_section": "II.E Expressive Inputs",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 86282,
+            "end_char": 86584
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "U.S. Copyright Office (Examining Division and Review Board administering copyright registration, refusals, limitations, and cancellations under 17 U.S.C. §§ 410(a), 701(a))",
+      "Federal courts (adjudicating copyrightability, infringement enforcement, and judicial review of Copyright Office registration decisions)"
+    ],
+    "compliance_deadlines": [],
+    "penalties_summary": "The report establishes no new fines or statutory penalties; non-compliance with human-authorship standards or AI-material disclosure rules results in refusal, limitation, or cancellation of copyright registration under Title 17 (preventing enforcement of exclusive rights in court or eligibility for statutory blanket royalty pools such as the Mechanical Licensing Collective).",
+    "implementation_notes": "Part 2 of the U.S. Copyright Office's multi-part report on Copyright and Artificial Intelligence, released January 29, 2025 following the August 2023 Notice of Inquiry (over 10,000 public comments). Reaffirms that U.S. copyright requires human authorship under the Copyright Clause and Title 17, distinguishes assistive AI uses (fully protectable) from generative AI outputs lacking sufficient human expressive control, concludes that prompts alone—even detailed or iteratively revised prompts—do not confer authorship under current technology, confirms protection for perceptible human expressive inputs and creative selection/arrangement/modification of AI outputs on a case-by-case basis, surveys international approaches (South Korea, Japan, China, EU, UK, Canada, Australia), and rejects creating new copyright or sui generis protection for purely AI-generated works. To be operationalized via updated registration guidance and revisions to the Compendium of U.S. Copyright Office Practices.",
+    "confidence": 0.94
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "labor_transition",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.22,
+      "fundamental_rights": 0.88,
+      "social_stability": 0.15,
+      "innovation_enablement": 0.72,
+      "consumer_public_safety": 0.1,
+      "labor_transition": 0.78
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.45,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.25,
+      "consumer_public_safety": 0.0,
+      "labor_transition": 0.3
+    },
+    "rationale_summary": "The Copyright Office's copyrightability report is dominantly framed around fundamental rights, anchoring U.S. AI copyright policy in constitutional Copyright Clause principles, free expression, human-centered authorship, and empowering creators—including creators with disabilities—to realize their own creative expression rather than departing from constitutional principles for foreign competition. Labor and workforce transition serves as a major secondary frame: the Office explicitly warns against granting copyright or sui generis protection to purely AI-generated outputs because an oversupply of rapidly generated synthetic content risks diluting royalties, displacing creative professions, and undermining human authors' ability to make a living from their craft. Innovation enablement is a strong supporting frame, emphasizing that existing copyright law adapts flexibly to new technology, protects assistive AI tool use without friction, and preserves ample development incentives without premature statutory disruption.",
+    "evidence_spans": [
+      {
+        "quote": "Its mission is to promote “creativity and free expression by administering the nation’s copyright laws and by providing impartial, expert advice on copyright law and policy for the benefit of all.”",
+        "source_section": "About the U.S. Copyright Office",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 1493,
+        "end_char": 1690
+      },
+      {
+        "quote": "Regardless of what other countries conclude, however, the United States is bound by our own Constitution and copyright principles. We should not abandon or distort those principles simply because other countries may not share them. Rather, we should make a persuasive case that a human-centered approach is good policy and inherent to copyright.",
+        "source_section": "IV.C Countering International Competition",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 136974,
+        "end_char": 137319
+      },
+      {
+        "quote": "The Office strongly supports the empowerment of all creators, including those with disabilities. We stress that to the extent these functionalities are used as tools to recast, transform, or adapt an author’s expression, copyright protection would be available for the resulting work.",
+        "source_section": "IV.B Empowering Creators with Disabilities",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 133675,
+        "end_char": 133959
+      },
+      {
+        "quote": "If a flood of easily and rapidly AI-generated content drowns out human-authored works in the marketplace, additional legal protection would undermine rather than advance the goals of the copyright system.",
+        "source_section": "IV.A Providing Incentives",
+        "quote_en": null,
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 127011,
+        "end_char": 127215
+      },
+      {
+        "quote": "There are already indications that AI-generated content has impacted some creators’ ability to be compensated for their work.",
+        "source_section": "IV.A Providing Incentives",
+        "quote_en": null,
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 129432,
+        "end_char": 129557
+      },
+      {
+        "quote": "If authors cannot make a living from their craft, they are likely to produce fewer works. And in our view, society would be poorer if the sparks of human creativity become fewer or dimmer.",
+        "source_section": "IV.A Providing Incentives",
+        "quote_en": null,
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 130001,
+        "end_char": 130189
+      },
+      {
+        "quote": "Authors have used computer-assisted technology for decades to enhance, modify, and add to their creations—expanding their range of expression and advancing the goals of the copyright system. And today they are leveraging advancements in technology to push the boundaries of creativity in exciting ways.",
+        "source_section": "I. Introduction",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 10507,
+        "end_char": 10809
+      },
+      {
+        "quote": "Much of the concern expressed focused on the assistive use of AI tools, and this Report seeks to provide assurances that such uses do not undermine protection.",
+        "source_section": "IV.D Providing Greater Clarity",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 140431,
+        "end_char": 140590
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:01:10.797404Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "f9fef20f5fe3d607781c504958f0eda2aacc7ba7fb8960e85faadfa8f17d2fe1",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 145649,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 14,
+      "exact_matches": 14,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

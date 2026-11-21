@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-21T06:30:45.183905+00:00",
+  "generated_at": "2026-11-21T21:16:39.463521+00:00",
   "audit_json_path": "data/source_tracking/source_quality_audit.json",
   "audit_markdown_path": "docs/operations/source-quality-audit.md",
   "jurisdictions": [
     {
       "jurisdiction": "china",
-      "seed_document_count": 20,
+      "seed_document_count": 21,
       "action_counts": {
-        "keep_core": 20
+        "keep_core": 21
       },
       "bucket_counts": {
-        "core": 20
+        "core": 21
       },
       "documents": [
         {
@@ -64,8 +64,8 @@
           "source_portal_ids": [
             "cn_cac"
           ],
-          "parsed_word_count": 1603,
-          "parsed_non_whitespace_chars": 3000,
+          "parsed_word_count": 1500,
+          "parsed_non_whitespace_chars": 2763,
           "analysis_present": true,
           "grounding_ratio": 1.0,
           "ungrounded_quotes": 0,
@@ -89,6 +89,88 @@
         },
         {
           "jurisdiction": "china",
+          "document_id": "cn_ai_standardization_guide_2024",
+          "title": "国家人工智能产业综合标准化体系建设指南",
+          "document_type": "standards_guideline",
+          "binding_strength": "standards_guideline",
+          "source_tier": "technical_standard",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2024-07-02",
+          "source_portal_ids": [
+            "cn_state_council_policy"
+          ],
+          "parsed_word_count": 3031,
+          "parsed_non_whitespace_chars": 5504,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 83,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument",
+            "foundational policy framing or strategy document"
+          ],
+          "metadata_issues": [
+            "duplicate raw artifact SHA-256 shared with: china:cn_miit_ai_industry_standardization_guidelines_2024"
+          ],
+          "source_link_status": "direct_document",
+          "source_link_action": "deduplicate_seed_document",
+          "fidelity_findings": [
+            "exact duplicate raw artifact SHA-256 (china:cn_miit_ai_industry_standardization_guidelines_2024)"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "The 2024 edition of the National AI Industry Comprehensive Standardization System Construction Guide serves as a non-binding national standardization roadmap and technical taxonomy rather than a directly enforceable regulation. It organizes China's AI standard system into seven pillars—foundational common standards, foundational support (data, chips, compute), key technologies (including large models, agents, embodied AI, and biometrics), smart products and services, enabling new industrialization, industry applications, and safety/governance (including security testing, content labeling, ethical risk assessment, and ethics review). Implementation relies on standardization technical organizations, industry associations, talent development, and voluntary enterprise benchmarking, with no mandatory legal duties or sanctions specified. Specific issuing ministries are not printed inside the attachment text.",
+          "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202407/P020240702716282797987.pdf"
+        },
+        {
+          "jurisdiction": "china",
+          "document_id": "cn_miit_ai_industry_standardization_guidelines_2024",
+          "title": "国家人工智能产业综合标准化体系建设指南（2024版）(工信部联科〔2024〕113号 / MIIT Guidelines for Construction of National AI Industry Comprehensive Standardization System)",
+          "document_type": "standards_guideline",
+          "binding_strength": "standards_guideline",
+          "source_tier": "technical_standard",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2024-06-05",
+          "source_portal_ids": [
+            "cn_miit_ai",
+            "cn_state_council_policy"
+          ],
+          "parsed_word_count": 3031,
+          "parsed_non_whitespace_chars": 5504,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 83,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument",
+            "foundational policy framing or strategy document"
+          ],
+          "metadata_issues": [
+            "duplicate raw artifact SHA-256 shared with: china:cn_ai_standardization_guide_2024"
+          ],
+          "source_link_status": "resolved_to_different_asset",
+          "source_link_action": "retarget_canonical_url",
+          "fidelity_findings": [
+            "canonical URL resolves to a different document asset",
+            "exact duplicate raw artifact SHA-256 (china:cn_ai_standardization_guide_2024)"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Jointly issued under Document MIIT-Lian-Ke [2024] No. 113 (2024 Edition) by MIIT, CAC, NDRC, and SAC. Establishes a seven-pillar national AI industry standardization architecture covering foundational common standards, foundational support (data, chips, sensors, compute centers, frameworks), key technologies (including large models, AI agents, and embodied intelligence), smart products/services, new industrialization, sector applications, and safety/governance. Operative standard topics are coded as aspirational because the document sets a 2026 standard-development roadmap rather than imposing standalone operational compliance procedures.",
+          "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202407/content_6960720.htm"
+        },
+        {
+          "jurisdiction": "china",
           "document_id": "cn_anthropomorphic_interaction_expert_interpretation_2026",
           "title": "专家解读｜人工智能拟人化互动服务的制度指引",
           "document_type": "regulatory_guidance",
@@ -99,8 +181,8 @@
           "source_portal_ids": [
             "cn_cac"
           ],
-          "parsed_word_count": 1838,
-          "parsed_non_whitespace_chars": 3482,
+          "parsed_word_count": 1735,
+          "parsed_non_whitespace_chars": 3245,
           "analysis_present": true,
           "grounding_ratio": 1.0,
           "ungrounded_quotes": 0,
@@ -135,8 +217,8 @@
           "source_portal_ids": [
             "cn_cac"
           ],
-          "parsed_word_count": 1318,
-          "parsed_non_whitespace_chars": 2512,
+          "parsed_word_count": 1214,
+          "parsed_non_whitespace_chars": 2275,
           "analysis_present": true,
           "grounding_ratio": 1.0,
           "ungrounded_quotes": 0,
@@ -171,8 +253,8 @@
           "source_portal_ids": [
             "cn_cac"
           ],
-          "parsed_word_count": 827,
-          "parsed_non_whitespace_chars": 1573,
+          "parsed_word_count": 723,
+          "parsed_non_whitespace_chars": 1336,
           "analysis_present": true,
           "grounding_ratio": 1.0,
           "ungrounded_quotes": 0,
@@ -278,8 +360,8 @@
           "source_portal_ids": [
             "cn_cac"
           ],
-          "parsed_word_count": 1601,
-          "parsed_non_whitespace_chars": 2948,
+          "parsed_word_count": 1498,
+          "parsed_non_whitespace_chars": 2711,
           "analysis_present": true,
           "grounding_ratio": 1.0,
           "ungrounded_quotes": 0,
@@ -355,8 +437,8 @@
           "parsed_word_count": 733,
           "parsed_non_whitespace_chars": 1363,
           "analysis_present": true,
-          "grounding_ratio": 0.714,
-          "ungrounded_quotes": 2,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
           "score": 100,
           "audit_bucket": "core",
           "action": "keep_core",
@@ -369,9 +451,7 @@
           "metadata_issues": [],
           "source_link_status": "direct_document",
           "source_link_action": null,
-          "fidelity_findings": [
-            "low quote grounding (5/7 matched, ratio=0.71)"
-          ],
+          "fidelity_findings": [],
           "remove_matches": [],
           "context_matches": [],
           "analysis_notes": "Jointly promulgated departmental regulation (国信办通字〔2025〕2号) grounded in the Cybersecurity Law and existing algorithm, deep synthesis, and generative AI rules. The provided text (Notice and Articles 1, 3, 4, 5, 6, 10) mandates explicit user-perceptible labels and implicit file-metadata labels for synthetic content providers, metadata verification and labeling by dissemination platforms, and user self-declaration, while encouraging digital watermarks. Effective date and penalty provisions do not appear in the provided text.",
@@ -389,11 +469,11 @@
           "source_portal_ids": [
             "cn_cac"
           ],
-          "parsed_word_count": 925,
-          "parsed_non_whitespace_chars": 1799,
+          "parsed_word_count": 822,
+          "parsed_non_whitespace_chars": 1562,
           "analysis_present": true,
-          "grounding_ratio": 0.667,
-          "ungrounded_quotes": 3,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
           "score": 100,
           "audit_bucket": "core",
           "action": "keep_core",
@@ -406,9 +486,7 @@
           "metadata_issues": [],
           "source_link_status": "direct_document",
           "source_link_action": null,
-          "fidelity_findings": [
-            "low quote grounding (6/9 matched, ratio=0.67)"
-          ],
+          "fidelity_findings": [],
           "remove_matches": [],
           "context_matches": [],
           "analysis_notes": "This document is a public consultation notice and un-enacted draft departmental regulation (征求意见稿) issued by the Cyberspace Administration of China (CAC) on 2024-09-14, so it is coded as regulatory_guidance rather than binding_law. It exempts industry organizations, enterprises, educational/research institutions, public cultural institutions, and professional institutions that develop or apply AI-generated/synthetic content technologies without providing services to the domestic public. The provided text contains Articles 1–6, 10, and 14 (omitting Articles 7–9 and 11–13), and Article 14 leaves the exact 2024 effective date blank.",
@@ -605,11 +683,11 @@
           "source_portal_ids": [
             "cn_cac"
           ],
-          "parsed_word_count": 1625,
-          "parsed_non_whitespace_chars": 3022,
+          "parsed_word_count": 1521,
+          "parsed_non_whitespace_chars": 2785,
           "analysis_present": true,
-          "grounding_ratio": 0.792,
-          "ungrounded_quotes": 5,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
           "score": 106,
           "audit_bucket": "core",
           "action": "keep_core",
@@ -622,9 +700,7 @@
           "metadata_issues": [],
           "source_link_status": "direct_document",
           "source_link_action": null,
-          "fidelity_findings": [
-            "low quote grounding (19/24 matched, ratio=0.79)"
-          ],
+          "fidelity_findings": [],
           "remove_matches": [],
           "context_matches": [],
           "analysis_notes": "Promulgated as Order No. 21 on 2026-04-10 (approved at the 3rd CAC Executive Meeting on 2026-02-02) pursuant to the Cybersecurity Law, Data Security Law, Personal Information Protection Law, and Regulations on the Protection of Minors Online. Covers continuous emotional interaction services (care, companionship, support via text, image, audio, or video) while explicitly excluding smart customer service, Q&A, work assistants, education, and scientific research lacking continuous emotional interaction. Mandates full-lifecycle safety management, training data governance, AI interaction notices and 2-hour continuous-use reminders, minors' mode and parental consent for users under 14, emergency intervention for self-harm or major financial loss risks, and security assessment filings with provincial CACs upon launch, major updates, or reaching 1 million registered users or 100,000 monthly active users. The provided text is a partial excerpt omitting certain articles (e.g., Articles 3, 5-7, 12, 15, 19-21, 24-28, and 31).",
@@ -703,57 +779,21 @@
           "context_matches": [],
           "analysis_notes": "Applies to generative AI services (generating text, images, audio, video, etc.) provided to the public in China, while exempting organizations, enterprises, educational/research institutions, and public cultural or professional institutions that develop and apply generative AI without serving the domestic public (Art. 2). Establishes an inclusive, prudent, and classified/graded regulatory approach (Art. 3, Art. 16). Links compliance to existing regimes: content labeling under the Deep Synthesis Provisions (Art. 12), security assessment and algorithm filing for services with public opinion attributes or social mobilization capabilities under the Algorithm Recommendation Provisions (Art. 17), and applicable administrative licensing and foreign investment laws (Art. 23).",
           "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm"
-        },
-        {
-          "jurisdiction": "china",
-          "document_id": "cn_ai_standardization_guide_2024",
-          "title": "国家人工智能产业综合标准化体系建设指南",
-          "document_type": "standards_guideline",
-          "binding_strength": "standards_guideline",
-          "source_tier": "technical_standard",
-          "corpus_role": "primary_instrument",
-          "publication_date": "2024-07-02",
-          "source_portal_ids": [
-            "cn_state_council_policy"
-          ],
-          "parsed_word_count": 3031,
-          "parsed_non_whitespace_chars": 5504,
-          "analysis_present": true,
-          "grounding_ratio": 1.0,
-          "ungrounded_quotes": 0,
-          "score": 118,
-          "audit_bucket": "core",
-          "action": "keep_core",
-          "findings": [
-            "substantive document type",
-            "high-signal source tier",
-            "substantive extracted text",
-            "title or notes indicate a substantive policy instrument",
-            "foundational policy framing or strategy document"
-          ],
-          "metadata_issues": [],
-          "source_link_status": "direct_document",
-          "source_link_action": null,
-          "fidelity_findings": [],
-          "remove_matches": [],
-          "context_matches": [],
-          "analysis_notes": "The 2024 edition of the National AI Industry Comprehensive Standardization System Construction Guide serves as a non-binding national standardization roadmap and technical taxonomy rather than a directly enforceable regulation. It organizes China's AI standard system into seven pillars—foundational common standards, foundational support (data, chips, compute), key technologies (including large models, agents, embodied AI, and biometrics), smart products and services, enabling new industrialization, industry applications, and safety/governance (including security testing, content labeling, ethical risk assessment, and ethics review). Implementation relies on standardization technical organizations, industry associations, talent development, and voluntary enterprise benchmarking, with no mandatory legal duties or sanctions specified. Specific issuing ministries are not printed inside the attachment text.",
-          "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202407/P020240702716282797987.pdf"
         }
       ]
     },
     {
       "jurisdiction": "european_union",
-      "seed_document_count": 21,
+      "seed_document_count": 24,
       "action_counts": {
         "remove_from_seed": 1,
-        "keep_supporting": 4,
-        "keep_core": 16
+        "keep_supporting": 5,
+        "keep_core": 18
       },
       "bucket_counts": {
         "remove": 1,
-        "supporting": 4,
-        "core": 16
+        "supporting": 5,
+        "core": 18
       },
       "documents": [
         {
@@ -952,6 +992,48 @@
           ],
           "analysis_notes": "Voluntary opt-in Code of Practice serving as a guiding document for Signatories (providers of general-purpose AI models with systemic risk) to demonstrate compliance with Articles 53 and 55 of the EU AI Act, though adherence does not constitute conclusive evidence of legal compliance. Establishes 10 Commitments and 4 Appendices covering systemic risk management frameworks, specified systemic risks (CBRN, loss of control, cyber offence, harmful manipulation), state-of-the-art and independent external model evaluations, cybersecurity protections for unreleased model weights, governance and whistleblower protections, serious incident reporting, and public transparency. Provides proportionality and simplified compliance options for SMEs and SMCs, exemptions for 'similarly safe or safer' models, and exemptions from cybersecurity weight-protection commitments once model parameters are publicly available or inferior to publicly available models.",
           "canonical_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118119"
+        },
+        {
+          "jurisdiction": "european_union",
+          "document_id": "eu_coordinated_plan_ai_review_2021",
+          "title": "Fostering a European approach to Artificial Intelligence — 2021 Review of the Coordinated Plan on AI (COM(2021) 205 final)",
+          "document_type": "strategy_paper",
+          "binding_strength": "strategy_statement",
+          "source_tier": "policy_strategy",
+          "corpus_role": "historical_baseline",
+          "publication_date": "2021-04-21",
+          "source_portal_ids": [
+            "eu_eur_lex",
+            "eu_digital_strategy_ai"
+          ],
+          "parsed_word_count": 34117,
+          "parsed_non_whitespace_chars": 194955,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 64,
+          "audit_bucket": "supporting",
+          "action": "keep_supporting",
+          "findings": [
+            "contextual or strategic document type",
+            "secondary source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument",
+            "context-heavy or companion-page language"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [
+            "\\bbudget\\b",
+            "\\btimeline\\b"
+          ],
+          "analysis_notes": "Published April 21, 2021 as the Annex to COM(2021) 205 final alongside the initial EU AI Act legislative proposal (COM(2021) 206), updating the 2018 Coordinated Plan across 4 strategic pillars and 17 chapters (7 horizontal + 7 high-impact sectoral areas: climate/environment, health, robotics, public sector, law enforcement/migration/asylum, mobility, and agriculture), plus a 40-action 2021–2025+ timeline (Appendix 1) and Member State strategy/budget inventory (Appendix 2). Mobilises Digital Europe, Horizon Europe, InvestEU, and the Recovery and Resilience Facility to scale European data spaces, EuroHPC supercomputing, low-power edge/neuromorphic chips, AI Lighthouse research networks, 210 European Digital Innovation Hubs, Testing and Experimentation Facilities, regulatory sandboxes, AI-on-demand marketplace, and trustworthy public procurement. Retained as a superseded 2021 historical baseline for longitudinal EU policy-framing analysis.",
+          "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0205"
         },
         {
           "jurisdiction": "european_union",
@@ -1242,6 +1324,45 @@
         },
         {
           "jurisdiction": "european_union",
+          "document_id": "eu_white_paper_ai_2020",
+          "title": "White Paper on Artificial Intelligence — A European approach to excellence and trust (COM(2020) 65 final)",
+          "document_type": "strategy_paper",
+          "binding_strength": "strategy_statement",
+          "source_tier": "policy_strategy",
+          "corpus_role": "historical_baseline",
+          "publication_date": "2020-02-19",
+          "source_portal_ids": [
+            "eu_eur_lex",
+            "eu_digital_strategy_ai"
+          ],
+          "parsed_word_count": 13984,
+          "parsed_non_whitespace_chars": 77235,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 98,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "contextual or strategic document type",
+            "secondary source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument",
+            "foundational policy framing or strategy document"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Adopted February 19, 2020 (COM(2020) 65 final) alongside the European Strategy for Data and the Report on Safety and Liability Implications of AI, IoT, and Robotics. Serves as the foundational policy blueprint and historical baseline for the EU AI Act (Regulation (EU) 2024/1689). Introduces the twin 'ecosystem of excellence' (six policy actions spanning revised Coordinated Plan, lighthouse research/testing centres, AI master's networks, specialised Digital Innovation Hubs, Horizon Europe AI/data/robotics PPP, and Adopt AI public-sector procurement) and 'ecosystem of trust' (cumulative sector-plus-use high-risk criteria, per-se high-risk recruitment and remote biometric identification, training-data/record-keeping/transparency/robustness/human-oversight requirements, extraterritorial EU market scope, notified-body prior conformity assessment, and a voluntary quality label for non-high-risk AI).",
+          "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0065"
+        },
+        {
+          "jurisdiction": "european_union",
           "document_id": "eu_article_50_transparency_guidelines_2026",
           "title": "Commission Guidelines on the Implementation of Transparency Obligations for Certain AI Systems under Article 50 of the AI Act (C(2026) 7702 final)",
           "document_type": "regulatory_guidance",
@@ -1317,6 +1438,44 @@
         },
         {
           "jurisdiction": "european_union",
+          "document_id": "eu_ai_scientific_panel_implementing_reg_2025_454",
+          "title": "Commission Implementing Regulation (EU) 2025/454 laying down rules for the establishment of a Scientific Panel of Independent Experts in the field of AI",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2025-03-10",
+          "source_portal_ids": [
+            "eu_eur_lex",
+            "eu_ai_office_policies"
+          ],
+          "parsed_word_count": 4998,
+          "parsed_non_whitespace_chars": 26871,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 106,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Adopted March 7, 2025 and published March 10, 2025 (OJ L 2025/454), directly applicable in all Member States from March 30, 2025. Operationalizes Article 68 of Regulation (EU) 2024/1689 by establishing an independent Scientific Panel of up to 60 multidisciplinary experts (with EU/EEA geographic diversity, at least four-fifths EU/EEA nationals, and gender-balance rules), co-hosted by the AI Office and Joint Research Centre. Codifies strict conflict-of-interest independence from AI/GPAI providers, public transparency of expert CVs/declarations/opinions (subject to trade-secret and strategic-interest exclusions), secure time-limited data-access protocols for Article 91 documentation requests (requiring one-third panel backing), and simple-majority voting plus a dedicated secure transmission interface for Article 90 qualified alerts.",
+          "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0454"
+        },
+        {
+          "jurisdiction": "european_union",
           "document_id": "eu_prohibited_ai_practices_guidelines",
           "title": "Commission publishes the Guidelines on prohibited artificial intelligence (AI) practices, as defined by the AI Act.",
           "document_type": "regulatory_guidance",
@@ -1331,8 +1490,8 @@
           "parsed_word_count": 63819,
           "parsed_non_whitespace_chars": 355842,
           "analysis_present": true,
-          "grounding_ratio": 0.967,
-          "ungrounded_quotes": 1,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
           "score": 106,
           "audit_bucket": "core",
           "action": "keep_core",
@@ -1537,16 +1696,16 @@
     },
     {
       "jurisdiction": "japan",
-      "seed_document_count": 34,
+      "seed_document_count": 37,
       "action_counts": {
         "review_for_removal": 2,
         "keep_supporting": 3,
-        "keep_core": 29
+        "keep_core": 32
       },
       "bucket_counts": {
         "context": 2,
         "supporting": 3,
-        "core": 29
+        "core": 32
       },
       "documents": [
         {
@@ -1944,6 +2103,43 @@
         },
         {
           "jurisdiction": "japan",
+          "document_id": "jp_meti_cloud_program_economic_security_policy",
+          "title": "クラウドプログラムに係る安定供給確保を図るための取組方針 (METI Stable Supply Support Policy for Cloud Programs under the Economic Security Promotion Act)",
+          "document_type": "strategy_paper",
+          "binding_strength": "executive_action",
+          "source_tier": "executive_action",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2024-02-05",
+          "source_portal_ids": [
+            "jp_meti_ai_governance_docs"
+          ],
+          "parsed_word_count": 10516,
+          "parsed_non_whitespace_chars": 21390,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 88,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "contextual or strategic document type",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument",
+            "foundational policy framing or strategy document"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_asset",
+          "source_link_action": "retarget_canonical_url",
+          "fidelity_findings": [
+            "canonical URL resolves to a different document asset"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Official ministerial Support Policy (取組方針) issued under Article 8(1) of Japan's Economic Security Promotion Act (Act No. 43 of 2022) and Enforcement Order Art. 1(8), revised and effective February 5, 2024. Designates foundational cloud programs and advanced compute production bases (supercomputers, AI computers, quantum computers) as Specified Critical Products eligible for NEDO Stable Supply Support Fund grants and JFC financing, establishing quantitative FP16 compute capacity thresholds (0.75 EFLOPS by H1 FY2025; 7.5 EFLOPS by end of FY2027), domestic management-base and startup-pricing conditions, user-requested architecture transparency, BCP and export-control compliance, annual and disruption reporting, and supply-chain cybersecurity and human-rights recommendations.",
+          "canonical_url": "https://www.meti.go.jp/policy/economy/economic_security/cloud/index.html"
+        },
+        {
+          "jurisdiction": "japan",
           "document_id": "jp_aisi_red_teaming_guide_2025",
           "title": "AIセーフティに関するレッドチーミング手法ガイド (第1.10版) / J-AISI Guide to Red Teaming Methodology on AI Safety (Ver. 1.10)",
           "document_type": "standards_guideline",
@@ -2162,6 +2358,43 @@
         },
         {
           "jurisdiction": "japan",
+          "document_id": "jp_bunka_ai_copyright_checklist_guidance_2024",
+          "title": "AIと著作権に関するチェックリスト＆ガイダンス (Bunka AI and Copyright Checklist & Guidance)",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2024-07-31",
+          "source_portal_ids": [
+            "jp_bunka_copyright_ai"
+          ],
+          "parsed_word_count": 12510,
+          "parsed_non_whitespace_chars": 24860,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 106,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_asset",
+          "source_link_action": "retarget_canonical_url",
+          "fidelity_findings": [
+            "canonical URL resolves to a different document asset"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Issued July 31, 2024 by the Copyright Division of the Agency for Cultural Affairs (Bunka), synthesizing the Copyright Subdivision's March 2024 'General Understanding on AI and Copyright', the Cabinet Office IP Secretariat's May 2024 Interim Report, and METI/MIC's April 2024 AI Guidelines for Business (v1.0). Organizes actionable risk-reduction checklists across four stakeholder roles (AI developers, providers, business users, and general users) alongside a dedicated Part 2 rightsholder guidance explaining Copyright Act Art. 30-4 boundaries, robots.txt/login opt-outs, paid AI dataset markets, evidentiary proof of similarity/reliance, civil/criminal remedies, and Bunka's free lawyer consultation desks.",
+          "canonical_url": "https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html"
+        },
+        {
+          "jurisdiction": "japan",
           "document_id": "jp_ai_contract_checklist_2025",
           "title": "AIの利用・開発に関する契約チェックリスト",
           "document_type": "regulatory_guidance",
@@ -2231,6 +2464,43 @@
           "context_matches": [],
           "analysis_notes": "Non-binding technical evaluation guide (Ver. 1.20, revised July 7, 2026) maintained as a Living Document by Japan's AI Safety Institute (J-AISI) in alignment with the METI/MIC AI Guidelines for Business (Ver. 1.2). Primarily scopes LLM systems, multimodal foundation models (added in the March 28, 2025 revision), and LLM-based AI agent systems (newly expanded in Ver. 1.20 with added evaluation perspectives for observation and control of autonomous behavior and external environment interactions). Intended as a voluntary reference for technical and management-level AI safety evaluations rather than a legally binding mandate.",
           "canonical_url": "https://aisi.go.jp/output/output_framework/guide_to_evaluation_perspective_on_ai_safety/"
+        },
+        {
+          "jurisdiction": "japan",
+          "document_id": "jp_fsa_ai_discussion_paper_v1_1_2026",
+          "title": "AIディスカッションペーパー（第1.1版）— 金融分野におけるAIの健全な利活用の促進に向けた初期的な論点整理 (FSA AI Discussion Paper Ver. 1.1)",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2026-03-03",
+          "source_portal_ids": [
+            "jp_fsa"
+          ],
+          "parsed_word_count": 29416,
+          "parsed_non_whitespace_chars": 61646,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 106,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_asset",
+          "source_link_action": "retarget_canonical_url",
+          "fidelity_findings": [
+            "canonical URL resolves to a different document asset"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Version 1.1 (March 2026) of the Financial Services Agency's AI Discussion Paper, updating Ver. 1.0 with insights from the June–December 2025 FSA AI Public-Private Forum and reflecting Japan's May 2025 AI Promotion Act and December 2025 Basic AI Plan. Covers conventional AI, generative AI (internal, indirect customer, and direct customer deployments), and emerging AI agents / agentic AI across 130 surveyed financial institutions, detailing emerging customer-facing guardrails (Box 4), AI-agent lifecycle/permission platforms, APPI and FIEA regulatory clarifications, systemic financial-stability risks, regional-bank GenAI DX pilots (Box 5), and FSA's own SupTech AI initiatives.",
+          "canonical_url": "https://www.fsa.go.jp/news/r7/sonota/20260303/01.html"
         },
         {
           "jurisdiction": "japan",
@@ -2768,16 +3038,16 @@
     },
     {
       "jurisdiction": "south_korea",
-      "seed_document_count": 17,
+      "seed_document_count": 20,
       "action_counts": {
         "review_for_removal": 1,
         "keep_supporting": 1,
-        "keep_core": 15
+        "keep_core": 18
       },
       "bucket_counts": {
         "context": 1,
         "supporting": 1,
-        "core": 15
+        "core": 18
       },
       "documents": [
         {
@@ -2854,6 +3124,48 @@
           ],
           "analysis_notes": "Official PIPC press release (published 2025-09-04) announcing the 2025-09-03 plenary adoption and 2025-09-05 entry into force of the amended Public Notice on Privacy Impact Assessment and accompanying PIA Implementation Guide. While public institutions exceeding statutory personal-data file thresholds (50,000+ sensitive/unique IDs, 500,000+ linked records, or 1,000,000+ personal records) face mandatory PIAs under the Notice, this press release itself is regulatory guidance/companion communication rather than binding law, and explicitly frames the criteria as voluntary reference material for private enterprises.",
           "canonical_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11475"
+        },
+        {
+          "jurisdiction": "south_korea",
+          "document_id": "kr_national_ai_action_plan_2026_2028",
+          "title": "대한민국 인공지능 행동계획 확정 (Korea National AI Action Plan 2026–2028 — NAISC 2nd Plenary Decision)",
+          "document_type": "strategy_paper",
+          "binding_strength": "strategy_statement",
+          "source_tier": "policy_strategy",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2026-02-25",
+          "source_portal_ids": [
+            "kr_naisc",
+            "kr_msit_main"
+          ],
+          "parsed_word_count": 8985,
+          "parsed_non_whitespace_chars": 17999,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 76,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "contextual or strategic document type",
+            "secondary source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument",
+            "foundational policy framing or strategy document",
+            "context-heavy or companion-page language"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_asset",
+          "source_link_action": "retarget_canonical_url",
+          "fidelity_findings": [
+            "canonical URL resolves to a different document asset"
+          ],
+          "remove_matches": [],
+          "context_matches": [
+            "\\bpress release\\b"
+          ],
+          "analysis_notes": "Official press release and plenary decision annexes from the 2nd Plenary Meeting of the Presidential Council on National AI Strategy (NAISC, chaired by President Lee Jae-myung, Feb. 25, 2026). Formally finalizes the Korea National AI Action Plan (2026–2028) as the statutory AI Basic Plan under Article 6 of Korea's AI Basic Act (effective Jan. 22, 2026), together with four companion decisions: AI Government Infrastructure Governance & Innovation Direction (post-NIRS Daejeon fire), Coordinated Vulnerability Disclosure (CVD/VDP) Roadmap, K-Moonshot S&T AI Strategy, and NAISC operating-rule revisions adding AI Democracy and Education/Talent subcommittees plus Security and Regional Special Committees.",
+          "canonical_url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156745851"
         },
         {
           "jurisdiction": "south_korea",
@@ -3081,8 +3393,8 @@
             "kr_public_sector_ai_law",
             "kr_law_center"
           ],
-          "parsed_word_count": 7143,
-          "parsed_non_whitespace_chars": 13829,
+          "parsed_word_count": 7133,
+          "parsed_non_whitespace_chars": 13800,
           "analysis_present": true,
           "grounding_ratio": 1.0,
           "ungrounded_quotes": 0,
@@ -3117,8 +3429,8 @@
             "kr_law_center",
             "kr_msit_main"
           ],
-          "parsed_word_count": 10089,
-          "parsed_non_whitespace_chars": 19124,
+          "parsed_word_count": 10036,
+          "parsed_non_whitespace_chars": 19017,
           "analysis_present": true,
           "grounding_ratio": 1.0,
           "ungrounded_quotes": 0,
@@ -3153,8 +3465,8 @@
             "kr_law_center",
             "kr_msit_main"
           ],
-          "parsed_word_count": 8612,
-          "parsed_non_whitespace_chars": 16152,
+          "parsed_word_count": 8560,
+          "parsed_non_whitespace_chars": 16045,
           "analysis_present": true,
           "grounding_ratio": 1.0,
           "ungrounded_quotes": 0,
@@ -3322,6 +3634,43 @@
         },
         {
           "jurisdiction": "south_korea",
+          "document_id": "kr_fsc_frontier_ai_security_guideline_2026",
+          "title": "프런티어 AI 보안 위협 금융분야 대응 요령 (버전 1.0) / Frontier AI Security Threat Response Guidelines for the Financial Sector (Ver. 1.0)",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2026-07-01",
+          "source_portal_ids": [
+            "kr_fsc"
+          ],
+          "parsed_word_count": 9446,
+          "parsed_non_whitespace_chars": 19640,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 106,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Issued July 1, 2026 by the Financial Security Institute (Publication No. 2026-비정기-AGR-AI안전평가-700, Ver. 1.0) in direct response to the 'Mythos shock' (Anthropic's Mythos System Card and Project Glasswing discovering 10,000+ high-risk vulnerabilities in one month). Synthesizes Korean MSIT, UK DSIT, Singapore CSA, NYDFS, CSA, and FS-ISAC advisories into concrete operational controls for Korean financial firms: Board/CEO KRI governance, CISO Frontier AI Threat Response Teams, CI/CD VulnOps with AI-agent red-teaming, SBOM/SCA supply-chain automation, three-tier human-in-the-loop scoping of autonomous defensive AI agents, BCP automated rollback/ISAC joint response, and Zero Trust microsegmentation with phishing-resistant MFA.",
+          "canonical_url": "https://www.fsc.go.kr/no010101/87240"
+        },
+        {
+          "jurisdiction": "south_korea",
           "document_id": "kr_high_impact_ai_determination_guideline_2026",
           "title": "고영향 인공지능 판단 가이드라인 (High-Impact AI Determination Guideline)",
           "document_type": "regulatory_guidance",
@@ -3394,23 +3743,61 @@
           "context_matches": [],
           "analysis_notes": "Official MSIT/NIA/KISDI implementation guideline under AI Basic Act Art. 35 and Draft Decree Art. 28 establishing a voluntary three-stage methodology (Pre-preparation, Main Assessment, Post-assessment) for Fundamental Rights Impact Assessments. Draws explicitly on Korean Constitutional Court jurisprudence across 11 fundamental rights (AI-general rights such as data self-determination, privacy, equality, property; product/service rights such as life, health, expression, assembly, right to know, occupational, artistic, and academic freedom) as well as EU AI Act Art. 27 FRIA, EU GPAI Code of Practice, UNESCO Ethical Impact Assessment, and ISO/IEC 42001/42005 to foster cross-border interoperability and prevent duplicative evaluations alongside PIPA PIA and MFDS Digital Medical Product Impact Assessments. Includes a standardized report template, three worked hypothetical cases (AI recruitment, deepfake face-swap, AI student grading), KISDI consulting desk contacts, and FAQ.",
           "canonical_url": "https://www.nia.or.kr/common/board/Download.do?bcIdx=28987&cbIdx=99835&fileNo=24"
+        },
+        {
+          "jurisdiction": "south_korea",
+          "document_id": "kr_fsc_financial_ai_guideline_2021",
+          "title": "금융분야 AI 가이드라인 및 주요 검토 필요사항 (Financial Sector AI Guidelines, 2021)",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "corpus_role": "historical_baseline",
+          "publication_date": "2021-07-08",
+          "source_portal_ids": [
+            "kr_fsc"
+          ],
+          "parsed_word_count": 4979,
+          "parsed_non_whitespace_chars": 9753,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 118,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument",
+            "foundational policy framing or strategy document"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Issued July 8, 2021 by the FSC Financial Innovation Bureau (Financial Data Policy Division) as Korea's foundational financial-sector AI governance framework (historical baseline later superseded by updated financial AI guidance). Pairs an introductory policy rationale with the full operational Financial Sector AI Operational Guideline (Annex 1) and ISO AI risk-mitigation reference table (Annex 2), covering governance, high-risk approval officers, lifecycle risk assessment, training-data quality and privacy, performance/fairness testing, explainability, customer notices, security against poisoning/adversarial attacks, and outsourcing controls.",
+          "canonical_url": "https://www.fsc.go.kr/no010101/76206"
         }
       ]
     },
     {
       "jurisdiction": "united_states",
-      "seed_document_count": 29,
+      "seed_document_count": 42,
       "action_counts": {
         "remove_from_seed": 1,
         "review_for_removal": 3,
         "keep_supporting": 5,
-        "keep_core": 20
+        "keep_core": 33
       },
       "bucket_counts": {
         "remove": 1,
         "context": 3,
         "supporting": 5,
-        "core": 20
+        "core": 33
       },
       "documents": [
         {
@@ -3901,6 +4288,87 @@
         },
         {
           "jurisdiction": "united_states",
+          "document_id": "us_ca_sb_53_tfaia_2025",
+          "title": "California SB 53: Transparency in Frontier Artificial Intelligence Act (TFAIA)",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "corpus_role": "subnational_overlay",
+          "publication_date": "2025-09-29",
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "parsed_word_count": 6891,
+          "parsed_non_whitespace_chars": 38375,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 84,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument",
+            "context-heavy or companion-page language"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [
+            "\\bbudget\\b",
+            "\\bwhistleblower\\b"
+          ],
+          "analysis_notes": "Enacted September 29, 2025, effective January 1, 2026. Adds three distinct statutory pillars: (1) Bus. & Prof. Code §§ 22757.10–22757.16 (TFAIA), imposing a >10^26 FLOPs frontier model threshold and >$500M revenue large-frontier-developer tier, mandatory published frontier AI frameworks covering catastrophic-risk thresholds, mitigations, third-party assessments, and unreleased model-weight cybersecurity, pre-deployment transparency reports (satisfiable via model/system cards), quarterly confidential CalOES internal-use risk summaries, 15-day/24-hour critical safety incident reporting, and CalOES federal-equivalency compliance recognition; (2) Gov. Code § 11546.8 establishing a 14-member CalCompute public cloud cluster consortium (operative upon budget appropriation); and (3) Labor Code §§ 1107–1107.2 granting frontier AI safety whistleblower anti-retaliation protections and requiring anonymous internal reporting channels for large frontier developers. Preempts local California frontier catastrophic-risk regulations adopted on or after January 1, 2025.",
+          "canonical_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_ny_raise_act_2025",
+          "title": "New York S6953A: Responsible AI Safety and Education (RAISE) Act",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "corpus_role": "subnational_overlay",
+          "publication_date": "2025-12-19",
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "parsed_word_count": 3375,
+          "parsed_non_whitespace_chars": 17244,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 84,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument",
+            "context-heavy or companion-page language"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [
+            "\\bwhistleblower\\b"
+          ],
+          "analysis_notes": "New York S6953A adds Article 44-B (General Business Law §§ 1420–1426) governing large developers of frontier AI models (>10^26 computational operations and >$100M compute cost, plus knowledge-distilled derivatives) developed, deployed, or operating in whole or in part in New York State. Enforces pre-deployment (and pre-training for prospective large developers) written safety and security protocols covering catastrophic-risk capability evaluation and cybersecurity against sophisticated actors, a prohibition on deploying models posing unreasonable risk of critical harm, mandatory annual independent third-party compliance audits, 72-hour critical safety incident reporting to DHSES, 5-year post-deployment retention of unredacted protocols and replicable test logs, and comprehensive employee/contractor whistleblower protections. Exempts accredited colleges and universities conducting academic research.",
+          "canonical_url": "https://www.nysenate.gov/legislation/bills/2025/S6953/amendment/A"
+        },
+        {
+          "jurisdiction": "united_states",
           "document_id": "us_ai_bill_of_rights_blueprint_2022",
           "title": "Blueprint for an AI Bill of Rights",
           "document_type": "strategy_paper",
@@ -4003,6 +4471,40 @@
           "context_matches": [],
           "analysis_notes": "Published July 2025 pursuant to EO 14179 by APST Michael J. Kratsios, Special Advisor David O. Sacks, and APNSA Marco A. Rubio. Sets out over 90 recommended federal policy actions across three pillars: (I) Accelerate AI Innovation (deregulation, revising NIST AI RMF, supporting open-weight models, regulatory sandboxes, worker retraining/AI Workforce Research Hub, science/datasets, evaluations, federal/DOD adoption, legal deepfake forensics); (II) Build American AI Infrastructure (NEPA/FAST-41/CWA permitting reform, grid expansion, semiconductor reshoring, high-security military data centers, skilled trades apprenticeships, AI-ISAC, CISA AI incident playbooks); and (III) Lead in International AI Diplomacy and Security (full-stack AI exports, countering China in standards bodies, chip location verification and sub-system export controls, CAISI frontier CBRNE/cyber evaluations, enforceable biosecurity synthesis screening).",
           "canonical_url": "https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_dod_directive_3000_09_autonomy_2023",
+          "title": "DoD Directive 3000.09: Autonomy in Weapon Systems",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "executive_action",
+          "source_tier": "executive_action",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2023-01-25",
+          "source_portal_ids": [
+            "us_dod"
+          ],
+          "parsed_word_count": 6295,
+          "parsed_non_whitespace_chars": 40037,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 88,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "direct_document",
+          "source_link_action": null,
+          "fidelity_findings": [],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Approved by Deputy Secretary of Defense Kathleen H. Hicks and effective January 25, 2023, DoD Directive 3000.09 reissues and cancels the 2012 directive to modernize U.S. defense governance for AI-enabled autonomous and semi-autonomous weapon systems. It binds all DoD components to design systems enabling appropriate levels of human judgment over the use of force; enforce temporal, geographic, and operational engagement bounds with automatic termination or operator re-authorization; execute rigorous hardware/software V&V, iterative cyber T&E, emergent-behavior analysis, rapid-reprogramming validation, and post-IOT&E regression testing; comply with DoDI 8500.01 cybersecurity, MIL-STD-882E system safety, the law of war, and the five DoD AI Ethical Principles (Responsible, Equitable, Traceable, Reliable, Governable); and route covered autonomous weapon systems through dual-gate senior review (pre-development and pre-fielding) supported by a permanent Autonomous Weapon Systems Working Group.",
+          "canonical_url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/300009p.PDF"
         },
         {
           "jurisdiction": "united_states",
@@ -4110,6 +4612,149 @@
           "context_matches": [],
           "analysis_notes": "Issued April 3, 2025 by OMB Director Russell T. Vought pursuant to the Advancing American AI Act and EO 14179, rescinding and replacing OMB Memorandum M-24-18. Establishes binding acquisition lifecycle governance for civilian executive agencies (excluding Intelligence Community elements, National Security Systems, and common commercial products with embedded ancillary AI), pairing pro-competition anti-lock-in and Buy American AI policies with mandatory privacy/PII safeguards, data-ownership protections, proposal testing, independent agency evaluation rights, M-25-21 high-impact risk clauses, and FISMA Authorization to Operate compliance.",
           "canonical_url": "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-22-Driving-Efficient-Acquisition-of-Artificial-Intelligence-in-Government.pdf"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_bis_advanced_computing_license_policy_2026",
+          "title": "BIS Final Rule: Revision to License Review Policy for Advanced Computing Commodities (91 FR 1684)",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2026-01-15",
+          "source_portal_ids": [
+            "us_bis_export",
+            "us_federal_register_ai"
+          ],
+          "parsed_word_count": 4730,
+          "parsed_non_whitespace_chars": 25254,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 98,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Published and effective January 15, 2026 (91 FR 1684, Docket No. 260112-0028, RIN 0694-AK43), this BIS final rule amends 15 CFR §§ 742.6, 744.23, 748.8, and Supplement No. 2 to Part 748 (adding paragraph (dd)) to shift U.S. export license review for commercially available mid-tier advanced AI chips (TPP < 21,000 and total DRAM bandwidth < 6,500 GB/s, such as NVIDIA H200 and AMD MI325X) destined to China and Macau from a presumption of denial to case-by-case review. Eligibility requires nine binding certifications: U.S. supply sufficiency and zero global foundry-capacity diversion, a 50% cap relative to aggregate TPP shipped to U.S. commercial customers, prohibition of military/military-intelligence/WMD/part-744 end uses and remote access, consignee KYC and physical security disclosures, IaaS remote end-user reporting across eight countries of concern, IaaS restrictions barring unauthorized transfers of trained model weights or remote access to trained algorithms, and pre-export independent U.S. third-party testing lab verification.",
+          "canonical_url": "https://www.federalregister.gov/documents/2026/01/15/2026-00789/revision-to-license-review-policy-for-advanced-computing-commodities"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_bis_remote_access_semiconductors_2026",
+          "title": "BIS Rule: Addressing Remote Access to Advanced Semiconductors (91 FR 74970)",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2026-11-19",
+          "source_portal_ids": [
+            "us_bis_export",
+            "us_federal_register_ai"
+          ],
+          "parsed_word_count": 29930,
+          "parsed_non_whitespace_chars": 160871,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 98,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Published and effective November 19, 2026 (91 FR 74970, Docket No. 261116-0005, RIN 0694-AK50; using 'Super Intelligence (SI)' terminology pursuant to EO 14434), this sweeping BIS Interim Final Rule establishes four major pillars: (1) new 15 CFR § 744.24 prohibiting unlicensed exports, reexports, or transfers of advanced AI semiconductors to overseas data centers worldwide providing >12,000,000 aggregate TPP (including across physically or digitally linked data centers) to Country Group D:5 or Macau companies, backed by KYC ownership due diligence, no de minimis relief, mandatory recipient end-use notices, and a narrow commercial-recommender-system exclusion (explicitly excluding generative models); (2) new diversion-risk destination license requirements for Indonesia, Malaysia, Singapore, Brazil, and Thailand (§ 742.6(a)(6)(iii)(A)(1)), excluding U.S.-headquartered entities subject to monthly § 743.10 reporting; (3) tighter front-end fabricator/OSAT presumptions under ECCN 3A090.a Note 1 and § 744.23(a)(3)(i)(C); and (4) formal rescission of the January 2025 Biden-era AI Diffusion Rule—eliminating ECCN 4E091 AI model-weights controls, the model-weights FDP rule, country tiers, Data Center VEU authorizations, and License Exceptions AIA and LPP while retaining License Exception ACM and worldwide advanced-computing FDP jurisdiction under § 734.9(h).",
+          "canonical_url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_treasury_ai_cybersecurity_financial_2024",
+          "title": "Managing Artificial Intelligence-Specific Cybersecurity Risks in the Financial Services Sector",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2024-03-27",
+          "source_portal_ids": [
+            "us_treasury"
+          ],
+          "parsed_word_count": 19138,
+          "parsed_non_whitespace_chars": 121950,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 98,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "direct_document",
+          "source_link_action": null,
+          "fidelity_findings": [],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Issued March 27, 2024 pursuant to Executive Order 14110 (150-day mandate) based on 42 stakeholder interviews and an annexed FSSCC R&D Committee white paper. Maps AI-specific cybersecurity and fraud threats (social engineering, malware generation, data poisoning, inference leakage, evasion, model extraction, deepfake identity impersonation, synthetic identity fraud, and third-/fourth-party supply chain risks) to existing U.S. financial supervisory frameworks and NIST AI RMF/CSF controls. Proposes ten follow-on workstreams including a common AI lexicon, narrowing the fraud-data divide for smaller institutions, expanding NIST AI RMF into a financial-sector profile with USAISI, exploring AI data supply-chain 'nutrition labels', black-box explainability R&D, workforce training, digital identity standards, and FSB/OECD/G7 international coordination.",
+          "canonical_url": "https://home.treasury.gov/system/files/136/Managing-Artificial-Intelligence-Specific-Cybersecurity-Risks-In-The-Financial-Services-Sector.pdf"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_ca_ab_2013_training_data_2024",
+          "title": "California AB 2013: Generative Artificial Intelligence — Training Data Transparency Act",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "corpus_role": "subnational_overlay",
+          "publication_date": "2024-09-28",
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "parsed_word_count": 1060,
+          "parsed_non_whitespace_chars": 5873,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 100,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "moderate extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "direct_document",
+          "source_link_action": null,
+          "fidelity_findings": [],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Enacted September 28, 2024 (Chapter 817, Statutes of 2024), adding Title 15.2 to Part 4 of Division 3 of the California Civil Code with a compliance deadline of January 1, 2026. Mandates a 12-item public website summary of training datasets—including dataset sources/owners, intended purpose alignment, data point counts and types/labels, intellectual property status, purchasing/licensing status, personal and aggregate consumer information under CCPA § 1798.140, cleaning/processing modifications, collection time windows, first-use dates, and synthetic data generation—with retrospective reach to systems released on or after January 1, 2022 and narrow carve-outs for security/integrity, national-airspace aircraft operation, and federal defense systems.",
+          "canonical_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2013"
         },
         {
           "jurisdiction": "united_states",
@@ -4290,6 +4935,80 @@
         },
         {
           "jurisdiction": "united_states",
+          "document_id": "us_co_sb_24_205_ai_act_2024",
+          "title": "Colorado SB 24-205: Consumer Protections for Artificial Intelligence",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "corpus_role": "subnational_overlay",
+          "publication_date": "2024-05-17",
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "parsed_word_count": 6167,
+          "parsed_non_whitespace_chars": 35098,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 106,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_asset",
+          "source_link_action": "retarget_canonical_url",
+          "fidelity_findings": [
+            "canonical URL resolves to a different document asset"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Enacted May 17, 2024 as the first comprehensive U.S. state high-risk AI anti-discrimination statute (C.R.S. Title 6, Article 1, Part 17, originally scheduled to take effect February 1, 2026; subsequently repealed and replaced by Colorado SB 26-189 in May 2026 and retained in the subnational overlay as a superseded longitudinal baseline). Covers high-risk AI systems making or acting as a substantial factor in consequential decisions across education, employment, financial/lending services, essential government services, health-care services, housing, insurance, and legal services, plus horizontal consumer AI interaction disclosures (§ 6-1-1704). Incorporates NIST AI RMF and ISO/IEC 42001 as benchmark compliance frameworks, grants trade-secret and Colorado Open Records Act confidentiality for AG-reviewed compliance records, and excludes small deployers (<50 FTEs not training on own data) from risk-program, impact-assessment, and website-statement requirements.",
+          "canonical_url": "https://leg.colorado.gov/bills/sb24-205"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_co_sb_26_189_admt_act_2026",
+          "title": "Colorado SB 26-189: Automated Decision-Making Technology (ADMT) Act (Ch. 131)",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "corpus_role": "subnational_overlay",
+          "publication_date": "2026-05-14",
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "parsed_word_count": 5711,
+          "parsed_non_whitespace_chars": 31951,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 106,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_asset",
+          "source_link_action": "retarget_canonical_url",
+          "fidelity_findings": [
+            "canonical URL resolves to a different document asset"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Enacted May 14, 2026 (Session Laws Chapter 131, effective January 1, 2027), Colorado SB 26-189 repeals and reenacts Part 17 of Title 6, Article 1 (replacing 2024's SB 24-205) to replace broad high-risk AI risk-management and impact-assessment mandates with targeted Automated Decision-Making Technology (ADMT) transparency, developer-to-deployer documentation, 3-year recordkeeping, personal-data correction, meaningful human review and reconsideration, and relative-fault anti-discrimination liability across seven consequential domains (education, employment, residential real estate, financial/lending services, insurance, health-care services, and essential government services/public benefits). Harmonizes compliance with federal ECOA/Regulation B, FCRA, FERPA, HIPAA, GLBA, and FDA medical-device oversight.",
+          "canonical_url": "https://leg.colorado.gov/bills/sb26-189"
+        },
+        {
+          "jurisdiction": "united_states",
           "document_id": "us_cfpb_circular_2022_03_complex_algorithms",
           "title": "Consumer Financial Protection Circular 2022-03: Adverse action notification requirements in connection with credit decisions based on complex algorithms",
           "document_type": "regulatory_guidance",
@@ -4322,6 +5041,118 @@
           "context_matches": [],
           "analysis_notes": "Issued May 26, 2022 as an APA general statement of policy (5 U.S.C. 553(b)) promoting enforcement consistency across federal and state consumer financial enforcers. Confirms that ECOA and Regulation B written adverse action notice duties apply equally regardless of model complexity, that disclosing FCRA credit-score factors or generic sample checklist reasons does not satisfy ECOA unless they reflect the actual principal factors scored, and that creditors using post-hoc explanation methods must validate the accuracy of those approximations.",
           "canonical_url": "https://files.consumerfinance.gov/f/documents/cfpb_2022-03_circular_2022-05.pdf"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_copyright_office_ai_part2_copyrightability_2025",
+          "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2025-01-29",
+          "source_portal_ids": [
+            "us_copyright_office"
+          ],
+          "parsed_word_count": 21756,
+          "parsed_non_whitespace_chars": 123913,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 106,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_asset",
+          "source_link_action": "retarget_canonical_url",
+          "fidelity_findings": [
+            "canonical URL resolves to a different document asset"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Part 2 of the U.S. Copyright Office's multi-part report on Copyright and Artificial Intelligence, released January 29, 2025 following the August 2023 Notice of Inquiry (over 10,000 public comments). Reaffirms that U.S. copyright requires human authorship under the Copyright Clause and Title 17, distinguishes assistive AI uses (fully protectable) from generative AI outputs lacking sufficient human expressive control, concludes that prompts alone—even detailed or iteratively revised prompts—do not confer authorship under current technology, confirms protection for perceptible human expressive inputs and creative selection/arrangement/modification of AI outputs on a case-by-case basis, surveys international approaches (South Korea, Japan, China, EU, UK, Canada, Australia), and rejects creating new copyright or sui generis protection for purely AI-generated works. To be operationalized via updated registration guidance and revisions to the Compendium of U.S. Copyright Office Practices.",
+          "canonical_url": "https://www.copyright.gov/ai/"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_copyright_office_ai_part3_training_2025",
+          "title": "Copyright and Artificial Intelligence, Part 3: Generative AI Training",
+          "document_type": "regulatory_guidance",
+          "binding_strength": "regulatory_guidance",
+          "source_tier": "regulatory_guidance",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2025-05-09",
+          "source_portal_ids": [
+            "us_copyright_office"
+          ],
+          "parsed_word_count": 56696,
+          "parsed_non_whitespace_chars": 325929,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 106,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_asset",
+          "source_link_action": "retarget_canonical_url",
+          "fidelity_findings": [
+            "canonical URL resolves to a different document asset"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Pre-publication version of Part 3 of the U.S. Copyright Office's Report on Copyright and Artificial Intelligence, issued May 9, 2025 following over 10,000 Notice of Inquiry comments. Analyzes prima facie reproduction and derivative-work infringement across dataset curation, model training, memorized model weights, RAG, and outputs; provides a four-factor Section 107 fair use framework distinguishing transformative noncommercial research and guarded non-substitutive deployments from commercial expressive market substitution, market dilution (including stylistic imitation), and pirated/unlawful dataset access; surveys EU, Japan, Singapore, UK, Israel, South Korea, China, Brazil, and Spain approaches; rejects compulsory licensing and mandatory opt-outs at this stage; encourages DOJ antitrust clarity for collective licensing; and recommends allowing voluntary direct and collective licensing markets to mature with extended collective licensing (ECL) reserved for demonstrated sector-specific market failures.",
+          "canonical_url": "https://www.copyright.gov/ai/"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_hhs_onc_hti1_final_rule_2024",
+          "title": "HHS / ONC HTI-1 Final Rule: Health Data, Technology, and Interoperability — Certification Program Updates, Algorithm Transparency, and Information Sharing (89 FR 1192)",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "corpus_role": "primary_instrument",
+          "publication_date": "2024-01-09",
+          "source_portal_ids": [
+            "us_hhs_onc",
+            "us_federal_register_ai"
+          ],
+          "parsed_word_count": 267706,
+          "parsed_non_whitespace_chars": 1505539,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 106,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Published January 9, 2024 (89 FR 1192) and effective February 8, 2024 under the HITECH Act and 21st Century Cures Act. Establishes the first binding U.S. federal regulation setting algorithm transparency and AI risk management obligations for clinical and operational healthcare AI/ML ('Predictive Decision Support Interventions' in 45 CFR § 170.102, explicitly encompassing supervised, semi-supervised, and self-supervised models including LLMs and generative AI, while excluding purely unsupervised similarity models). Replaces legacy CDS (§ 170.315(a)(9)) with DSI (§ 170.315(b)(11)) in the Base EHR definition starting January 1, 2025, requiring: (1) structured 'source attributes' (31+ metadata fields functioning as clinical model nutrition labels covering intended use, out-of-scope cautions, training data criteria and demographic/SDOH/health-status representativeness, fairness approaches, external/local validation, quantitative performance, and update schedules); (2) Intervention Risk Management (IRM) practices covering NIST AI RMF-aligned risk analysis across eight characteristics (validity, reliability, robustness, fairness, intelligibility, safety, security, privacy), risk mitigation, and data governance for all developer-supplied Predictive DSIs; (3) public hyperlink disclosure of IRM summary practices via ONC-ACBs on CHPL (§ 170.523(f)(1)(xxi)); (4) ongoing Assurances Maintenance of Certification review/updates (§ 170.402(b)(4)) and annual Real World Testing (§ 170.405); and (5) complementary interoperability, USCDI v3, SMART App Launch 2.0 / 1-hour API revocation, Insights Condition reporting (§ 170.407), and Part 171 Information Blocking / TEFCA Manner Exception rules.",
+          "canonical_url": "https://www.federalregister.gov/documents/2024/01/09/2023-28857/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and"
         },
         {
           "jurisdiction": "united_states",
@@ -4471,6 +5302,43 @@
           "context_matches": [],
           "analysis_notes": "Public Law 119-12 (139 Stat. 55), approved May 19, 2025. First binding U.S. federal statute targeting AI-generated nonconsensual intimate visual depictions ('digital forgeries') alongside authentic NCII. Section 2 amends Section 223 of the Communications Act of 1934 to create federal criminal offenses; Section 3 mandates a covered-platform notice-and-takedown regime within 1 year (by May 19, 2026) requiring 48-hour removal and reasonable efforts to remove known identical copies, backed by good-faith takedown liability immunity and FTC UDAP rule-violation enforcement. Excludes broadband ISPs, email, and primarily non-UGC preselected-content services.",
           "canonical_url": "https://www.govinfo.gov/app/details/PLAW-119publ12"
+        },
+        {
+          "jurisdiction": "united_states",
+          "document_id": "us_tx_hb_149_traiga_2025",
+          "title": "Texas HB 149: Texas Responsible Artificial Intelligence Governance Act (TRAIGA)",
+          "document_type": "legislation",
+          "binding_strength": "binding_law",
+          "source_tier": "statutory_rule",
+          "corpus_role": "subnational_overlay",
+          "publication_date": "2025-06-22",
+          "source_portal_ids": [
+            "us_state_legislatures"
+          ],
+          "parsed_word_count": 5808,
+          "parsed_non_whitespace_chars": 32452,
+          "analysis_present": true,
+          "grounding_ratio": 1.0,
+          "ungrounded_quotes": 0,
+          "score": 106,
+          "audit_bucket": "core",
+          "action": "keep_core",
+          "findings": [
+            "substantive document type",
+            "high-signal source tier",
+            "substantive extracted text",
+            "title or notes indicate a substantive policy instrument"
+          ],
+          "metadata_issues": [],
+          "source_link_status": "resolved_to_different_page",
+          "source_link_action": null,
+          "fidelity_findings": [
+            "canonical URL resolves to a different page"
+          ],
+          "remove_matches": [],
+          "context_matches": [],
+          "analysis_notes": "Enacted in the 89th Texas Legislature (signed June 22, 2025; effective January 1, 2026), TRAIGA adds Subtitle D (Chapters 551–554) to Title 11 of the Texas Business & Commerce Code while amending Texas biometric (§ 503.001), data privacy (§ 541.104), and state-agency IT/Sunset statutes. Rather than imposing European-style risk-tier compliance mandates on private developers, Texas pairs narrow intent-based red-line prohibitions (self-harm/violence/crime incitement, governmental social scoring, rights-infringing governmental biometric scraping, sole-intent constitutional infringement, intentional protected-class discrimination, CSAM/deepfake/child-impersonating sexual chatbots) with statewide local preemption, a 36-month deregulatory AI sandbox administered by DIR, safe harbors for red-teaming and NIST AI RMF compliance, and a seven-member advisory Texas AI Council barred from issuing binding rules. Section 9 conditions mandatory state-agency implementation duties on specific legislative appropriations.",
+          "canonical_url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149"
         }
       ]
     }
@@ -4780,6 +5648,125 @@
   ],
   "source_repairs": [
     {
+      "jurisdiction": "china",
+      "document_id": "cn_ai_standardization_guide_2024",
+      "title": "国家人工智能产业综合标准化体系建设指南",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2024-07-02",
+      "source_portal_ids": [
+        "cn_state_council_policy"
+      ],
+      "parsed_word_count": 3031,
+      "parsed_non_whitespace_chars": 5504,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 83,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument",
+        "foundational policy framing or strategy document"
+      ],
+      "metadata_issues": [
+        "duplicate raw artifact SHA-256 shared with: china:cn_miit_ai_industry_standardization_guidelines_2024"
+      ],
+      "source_link_status": "direct_document",
+      "source_link_action": "deduplicate_seed_document",
+      "fidelity_findings": [
+        "exact duplicate raw artifact SHA-256 (china:cn_miit_ai_industry_standardization_guidelines_2024)"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "The 2024 edition of the National AI Industry Comprehensive Standardization System Construction Guide serves as a non-binding national standardization roadmap and technical taxonomy rather than a directly enforceable regulation. It organizes China's AI standard system into seven pillars—foundational common standards, foundational support (data, chips, compute), key technologies (including large models, agents, embodied AI, and biometrics), smart products and services, enabling new industrialization, industry applications, and safety/governance (including security testing, content labeling, ethical risk assessment, and ethics review). Implementation relies on standardization technical organizations, industry associations, talent development, and voluntary enterprise benchmarking, with no mandatory legal duties or sanctions specified. Specific issuing ministries are not printed inside the attachment text.",
+      "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202407/P020240702716282797987.pdf"
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_miit_ai_industry_standardization_guidelines_2024",
+      "title": "国家人工智能产业综合标准化体系建设指南（2024版）(工信部联科〔2024〕113号 / MIIT Guidelines for Construction of National AI Industry Comprehensive Standardization System)",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "source_tier": "technical_standard",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2024-06-05",
+      "source_portal_ids": [
+        "cn_miit_ai",
+        "cn_state_council_policy"
+      ],
+      "parsed_word_count": 3031,
+      "parsed_non_whitespace_chars": 5504,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 83,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument",
+        "foundational policy framing or strategy document"
+      ],
+      "metadata_issues": [
+        "duplicate raw artifact SHA-256 shared with: china:cn_ai_standardization_guide_2024"
+      ],
+      "source_link_status": "resolved_to_different_asset",
+      "source_link_action": "retarget_canonical_url",
+      "fidelity_findings": [
+        "canonical URL resolves to a different document asset",
+        "exact duplicate raw artifact SHA-256 (china:cn_ai_standardization_guide_2024)"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Jointly issued under Document MIIT-Lian-Ke [2024] No. 113 (2024 Edition) by MIIT, CAC, NDRC, and SAC. Establishes a seven-pillar national AI industry standardization architecture covering foundational common standards, foundational support (data, chips, sensors, compute centers, frameworks), key technologies (including large models, AI agents, and embodied intelligence), smart products/services, new industrialization, sector applications, and safety/governance. Operative standard topics are coded as aspirational because the document sets a 2026 standard-development roadmap rather than imposing standalone operational compliance procedures.",
+      "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202407/content_6960720.htm"
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_bunka_ai_copyright_checklist_guidance_2024",
+      "title": "AIと著作権に関するチェックリスト＆ガイダンス (Bunka AI and Copyright Checklist & Guidance)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2024-07-31",
+      "source_portal_ids": [
+        "jp_bunka_copyright_ai"
+      ],
+      "parsed_word_count": 12510,
+      "parsed_non_whitespace_chars": 24860,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 106,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_asset",
+      "source_link_action": "retarget_canonical_url",
+      "fidelity_findings": [
+        "canonical URL resolves to a different document asset"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Issued July 31, 2024 by the Copyright Division of the Agency for Cultural Affairs (Bunka), synthesizing the Copyright Subdivision's March 2024 'General Understanding on AI and Copyright', the Cabinet Office IP Secretariat's May 2024 Interim Report, and METI/MIC's April 2024 AI Guidelines for Business (v1.0). Organizes actionable risk-reduction checklists across four stakeholder roles (AI developers, providers, business users, and general users) alongside a dedicated Part 2 rightsholder guidance explaining Copyright Act Art. 30-4 boundaries, robots.txt/login opt-outs, paid AI dataset markets, evidentiary proof of similarity/reliance, civil/criminal remedies, and Bunka's free lawyer consultation desks.",
+      "canonical_url": "https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html"
+    },
+    {
       "jurisdiction": "japan",
       "document_id": "jp_aisi_red_teaming_guide_2025",
       "title": "AIセーフティに関するレッドチーミング手法ガイド (第1.10版) / J-AISI Guide to Red Teaming Methodology on AI Safety (Ver. 1.10)",
@@ -4851,6 +5838,43 @@
       "context_matches": [],
       "analysis_notes": "Non-binding technical evaluation guide (Ver. 1.20, revised July 7, 2026) maintained as a Living Document by Japan's AI Safety Institute (J-AISI) in alignment with the METI/MIC AI Guidelines for Business (Ver. 1.2). Primarily scopes LLM systems, multimodal foundation models (added in the March 28, 2025 revision), and LLM-based AI agent systems (newly expanded in Ver. 1.20 with added evaluation perspectives for observation and control of autonomous behavior and external environment interactions). Intended as a voluntary reference for technical and management-level AI safety evaluations rather than a legally binding mandate.",
       "canonical_url": "https://aisi.go.jp/output/output_framework/guide_to_evaluation_perspective_on_ai_safety/"
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_fsa_ai_discussion_paper_v1_1_2026",
+      "title": "AIディスカッションペーパー（第1.1版）— 金融分野におけるAIの健全な利活用の促進に向けた初期的な論点整理 (FSA AI Discussion Paper Ver. 1.1)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2026-03-03",
+      "source_portal_ids": [
+        "jp_fsa"
+      ],
+      "parsed_word_count": 29416,
+      "parsed_non_whitespace_chars": 61646,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 106,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_asset",
+      "source_link_action": "retarget_canonical_url",
+      "fidelity_findings": [
+        "canonical URL resolves to a different document asset"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Version 1.1 (March 2026) of the Financial Services Agency's AI Discussion Paper, updating Ver. 1.0 with insights from the June–December 2025 FSA AI Public-Private Forum and reflecting Japan's May 2025 AI Promotion Act and December 2025 Basic AI Plan. Covers conventional AI, generative AI (internal, indirect customer, and direct customer deployments), and emerging AI agents / agentic AI across 130 surveyed financial institutions, detailing emerging customer-facing guardrails (Box 4), AI-agent lifecycle/permission platforms, APPI and FIEA regulatory clarifications, systemic financial-stability risks, regional-bank GenAI DX pilots (Box 5), and FSA's own SupTech AI initiatives.",
+      "canonical_url": "https://www.fsa.go.jp/news/r7/sonota/20260303/01.html"
     },
     {
       "jurisdiction": "japan",
@@ -4927,6 +5951,43 @@
       "context_matches": [],
       "analysis_notes": "Japan-led G7 Hiroshima AI Process International Code of Conduct (adopted October 30, 2023), structured as a non-binding, risk-based 'living document' setting 11 voluntary actions for organizations developing advanced AI systems (including frontier foundation models and generative AI) across private, public, academic, and civil-society sectors. Built on the OECD AI Principles, it outlines lifecycle risk evaluation (explicitly covering CBRN, offensive cyber, physical/critical-infrastructure safety, self-replication, bias/privacy, disinformation/democracy, and city-scale systemic chain-reaction risks), red-teaming, post-deployment vulnerability monitoring and bug bounties, public transparency reports, cross-sector incident sharing, model-weight and insider-threat security, watermarking/provenance tools, international technical standards development, and training-data privacy/IP safeguards. Accountability relies on voluntary endorsement, internal self-assessment, and planned monitoring mechanisms to be developed with the OECD and GPAI while jurisdictions craft domestic approaches.",
       "canonical_url": "https://www.soumu.go.jp/hiroshimaaiprocess/en/index.html"
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_meti_cloud_program_economic_security_policy",
+      "title": "クラウドプログラムに係る安定供給確保を図るための取組方針 (METI Stable Supply Support Policy for Cloud Programs under the Economic Security Promotion Act)",
+      "document_type": "strategy_paper",
+      "binding_strength": "executive_action",
+      "source_tier": "executive_action",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2024-02-05",
+      "source_portal_ids": [
+        "jp_meti_ai_governance_docs"
+      ],
+      "parsed_word_count": 10516,
+      "parsed_non_whitespace_chars": 21390,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 88,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "contextual or strategic document type",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument",
+        "foundational policy framing or strategy document"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_asset",
+      "source_link_action": "retarget_canonical_url",
+      "fidelity_findings": [
+        "canonical URL resolves to a different document asset"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Official ministerial Support Policy (取組方針) issued under Article 8(1) of Japan's Economic Security Promotion Act (Act No. 43 of 2022) and Enforcement Order Art. 1(8), revised and effective February 5, 2024. Designates foundational cloud programs and advanced compute production bases (supercomputers, AI computers, quantum computers) as Specified Critical Products eligible for NEDO Stable Supply Support Fund grants and JFC financing, establishing quantitative FP16 compute capacity thresholds (0.75 EFLOPS by H1 FY2025; 7.5 EFLOPS by end of FY2027), domestic management-base and startup-pricing conditions, user-requested architecture transparency, BCP and export-control compliance, annual and disruption reporting, and supply-chain cybersecurity and human-rights recommendations.",
+      "canonical_url": "https://www.meti.go.jp/policy/economy/economic_security/cloud/index.html"
     },
     {
       "jurisdiction": "japan",
@@ -5007,6 +6068,48 @@
     },
     {
       "jurisdiction": "south_korea",
+      "document_id": "kr_national_ai_action_plan_2026_2028",
+      "title": "대한민국 인공지능 행동계획 확정 (Korea National AI Action Plan 2026–2028 — NAISC 2nd Plenary Decision)",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2026-02-25",
+      "source_portal_ids": [
+        "kr_naisc",
+        "kr_msit_main"
+      ],
+      "parsed_word_count": 8985,
+      "parsed_non_whitespace_chars": 17999,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 76,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "contextual or strategic document type",
+        "secondary source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument",
+        "foundational policy framing or strategy document",
+        "context-heavy or companion-page language"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_asset",
+      "source_link_action": "retarget_canonical_url",
+      "fidelity_findings": [
+        "canonical URL resolves to a different document asset"
+      ],
+      "remove_matches": [],
+      "context_matches": [
+        "\\bpress release\\b"
+      ],
+      "analysis_notes": "Official press release and plenary decision annexes from the 2nd Plenary Meeting of the Presidential Council on National AI Strategy (NAISC, chaired by President Lee Jae-myung, Feb. 25, 2026). Formally finalizes the Korea National AI Action Plan (2026–2028) as the statutory AI Basic Plan under Article 6 of Korea's AI Basic Act (effective Jan. 22, 2026), together with four companion decisions: AI Government Infrastructure Governance & Innovation Direction (post-NIRS Daejeon fire), Coordinated Vulnerability Disclosure (CVD/VDP) Roadmap, K-Moonshot S&T AI Strategy, and NAISC operating-rule revisions adding AI Democracy and Education/Talent subcommittees plus Security and Regional Special Committees.",
+      "canonical_url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156745851"
+    },
+    {
+      "jurisdiction": "south_korea",
       "document_id": "kr_ai_safety_guideline_2026_draft",
       "title": "인공지능 안전성 확보 가이드라인(안)",
       "document_type": "regulatory_guidance",
@@ -5082,6 +6185,154 @@
       ],
       "analysis_notes": "Published June 2023 as a CFPB research Issue Spotlight examining rule-based and LLM/generative AI chatbots across U.S. consumer finance (including all top 10 commercial banks). Analyzes consumer complaints documenting 'doom loops', unrecognized disputes, factual hallucinations, blocked human offramps, system downtime, impersonation/phishing scams, chat-log data security risks, and training-data privacy leakage, while encouraging consumer complaints and industry whistleblower tips alongside active CFPB market monitoring.",
       "canonical_url": "https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_co_sb_24_205_ai_act_2024",
+      "title": "Colorado SB 24-205: Consumer Protections for Artificial Intelligence",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "corpus_role": "subnational_overlay",
+      "publication_date": "2024-05-17",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "parsed_word_count": 6167,
+      "parsed_non_whitespace_chars": 35098,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 106,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_asset",
+      "source_link_action": "retarget_canonical_url",
+      "fidelity_findings": [
+        "canonical URL resolves to a different document asset"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Enacted May 17, 2024 as the first comprehensive U.S. state high-risk AI anti-discrimination statute (C.R.S. Title 6, Article 1, Part 17, originally scheduled to take effect February 1, 2026; subsequently repealed and replaced by Colorado SB 26-189 in May 2026 and retained in the subnational overlay as a superseded longitudinal baseline). Covers high-risk AI systems making or acting as a substantial factor in consequential decisions across education, employment, financial/lending services, essential government services, health-care services, housing, insurance, and legal services, plus horizontal consumer AI interaction disclosures (§ 6-1-1704). Incorporates NIST AI RMF and ISO/IEC 42001 as benchmark compliance frameworks, grants trade-secret and Colorado Open Records Act confidentiality for AG-reviewed compliance records, and excludes small deployers (<50 FTEs not training on own data) from risk-program, impact-assessment, and website-statement requirements.",
+      "canonical_url": "https://leg.colorado.gov/bills/sb24-205"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_co_sb_26_189_admt_act_2026",
+      "title": "Colorado SB 26-189: Automated Decision-Making Technology (ADMT) Act (Ch. 131)",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "corpus_role": "subnational_overlay",
+      "publication_date": "2026-05-14",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "parsed_word_count": 5711,
+      "parsed_non_whitespace_chars": 31951,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 106,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_asset",
+      "source_link_action": "retarget_canonical_url",
+      "fidelity_findings": [
+        "canonical URL resolves to a different document asset"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Enacted May 14, 2026 (Session Laws Chapter 131, effective January 1, 2027), Colorado SB 26-189 repeals and reenacts Part 17 of Title 6, Article 1 (replacing 2024's SB 24-205) to replace broad high-risk AI risk-management and impact-assessment mandates with targeted Automated Decision-Making Technology (ADMT) transparency, developer-to-deployer documentation, 3-year recordkeeping, personal-data correction, meaningful human review and reconsideration, and relative-fault anti-discrimination liability across seven consequential domains (education, employment, residential real estate, financial/lending services, insurance, health-care services, and essential government services/public benefits). Harmonizes compliance with federal ECOA/Regulation B, FCRA, FERPA, HIPAA, GLBA, and FDA medical-device oversight.",
+      "canonical_url": "https://leg.colorado.gov/bills/sb26-189"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_copyright_office_ai_part2_copyrightability_2025",
+      "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2025-01-29",
+      "source_portal_ids": [
+        "us_copyright_office"
+      ],
+      "parsed_word_count": 21756,
+      "parsed_non_whitespace_chars": 123913,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 106,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_asset",
+      "source_link_action": "retarget_canonical_url",
+      "fidelity_findings": [
+        "canonical URL resolves to a different document asset"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Part 2 of the U.S. Copyright Office's multi-part report on Copyright and Artificial Intelligence, released January 29, 2025 following the August 2023 Notice of Inquiry (over 10,000 public comments). Reaffirms that U.S. copyright requires human authorship under the Copyright Clause and Title 17, distinguishes assistive AI uses (fully protectable) from generative AI outputs lacking sufficient human expressive control, concludes that prompts alone—even detailed or iteratively revised prompts—do not confer authorship under current technology, confirms protection for perceptible human expressive inputs and creative selection/arrangement/modification of AI outputs on a case-by-case basis, surveys international approaches (South Korea, Japan, China, EU, UK, Canada, Australia), and rejects creating new copyright or sui generis protection for purely AI-generated works. To be operationalized via updated registration guidance and revisions to the Compendium of U.S. Copyright Office Practices.",
+      "canonical_url": "https://www.copyright.gov/ai/"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_copyright_office_ai_part3_training_2025",
+      "title": "Copyright and Artificial Intelligence, Part 3: Generative AI Training",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2025-05-09",
+      "source_portal_ids": [
+        "us_copyright_office"
+      ],
+      "parsed_word_count": 56696,
+      "parsed_non_whitespace_chars": 325929,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 106,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_asset",
+      "source_link_action": "retarget_canonical_url",
+      "fidelity_findings": [
+        "canonical URL resolves to a different document asset"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Pre-publication version of Part 3 of the U.S. Copyright Office's Report on Copyright and Artificial Intelligence, issued May 9, 2025 following over 10,000 Notice of Inquiry comments. Analyzes prima facie reproduction and derivative-work infringement across dataset curation, model training, memorized model weights, RAG, and outputs; provides a four-factor Section 107 fair use framework distinguishing transformative noncommercial research and guarded non-substitutive deployments from commercial expressive market substitution, market dilution (including stylistic imitation), and pirated/unlawful dataset access; surveys EU, Japan, Singapore, UK, Israel, South Korea, China, Brazil, and Spain approaches; rejects compulsory licensing and mandatory opt-outs at this stage; encourages DOJ antitrust clarity for collective licensing; and recommends allowing voluntary direct and collective licensing markets to mature with extended collective licensing (ECL) reserved for demonstrated sector-specific market failures.",
+      "canonical_url": "https://www.copyright.gov/ai/"
     },
     {
       "jurisdiction": "united_states",
@@ -5198,119 +6449,6 @@
       "canonical_url": "https://www.govinfo.gov/app/details/PLAW-119publ12"
     },
     {
-      "jurisdiction": "china",
-      "document_id": "cn_anthropomorphic_interaction_measures_2026",
-      "title": "人工智能拟人化互动服务管理暂行办法",
-      "document_type": "legislation",
-      "binding_strength": "binding_law",
-      "source_tier": "statutory_rule",
-      "corpus_role": "primary_instrument",
-      "publication_date": "2026-04-10",
-      "source_portal_ids": [
-        "cn_cac"
-      ],
-      "parsed_word_count": 1625,
-      "parsed_non_whitespace_chars": 3022,
-      "analysis_present": true,
-      "grounding_ratio": 0.792,
-      "ungrounded_quotes": 5,
-      "score": 106,
-      "audit_bucket": "core",
-      "action": "keep_core",
-      "findings": [
-        "substantive document type",
-        "high-signal source tier",
-        "substantive extracted text",
-        "title or notes indicate a substantive policy instrument"
-      ],
-      "metadata_issues": [],
-      "source_link_status": "direct_document",
-      "source_link_action": null,
-      "fidelity_findings": [
-        "low quote grounding (19/24 matched, ratio=0.79)"
-      ],
-      "remove_matches": [],
-      "context_matches": [],
-      "analysis_notes": "Promulgated as Order No. 21 on 2026-04-10 (approved at the 3rd CAC Executive Meeting on 2026-02-02) pursuant to the Cybersecurity Law, Data Security Law, Personal Information Protection Law, and Regulations on the Protection of Minors Online. Covers continuous emotional interaction services (care, companionship, support via text, image, audio, or video) while explicitly excluding smart customer service, Q&A, work assistants, education, and scientific research lacking continuous emotional interaction. Mandates full-lifecycle safety management, training data governance, AI interaction notices and 2-hour continuous-use reminders, minors' mode and parental consent for users under 14, emergency intervention for self-harm or major financial loss risks, and security assessment filings with provincial CACs upon launch, major updates, or reaching 1 million registered users or 100,000 monthly active users. The provided text is a partial excerpt omitting certain articles (e.g., Articles 3, 5-7, 12, 15, 19-21, 24-28, and 31).",
-      "canonical_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm"
-    },
-    {
-      "jurisdiction": "china",
-      "document_id": "cn_ai_content_labeling_measures_2025",
-      "title": "人工智能生成合成内容标识办法",
-      "document_type": "legislation",
-      "binding_strength": "binding_law",
-      "source_tier": "statutory_rule",
-      "corpus_role": "primary_instrument",
-      "publication_date": "2025-03-14",
-      "source_portal_ids": [
-        "cn_cac",
-        "cn_state_council_policy",
-        "cn_tc260"
-      ],
-      "parsed_word_count": 733,
-      "parsed_non_whitespace_chars": 1363,
-      "analysis_present": true,
-      "grounding_ratio": 0.714,
-      "ungrounded_quotes": 2,
-      "score": 100,
-      "audit_bucket": "core",
-      "action": "keep_core",
-      "findings": [
-        "substantive document type",
-        "high-signal source tier",
-        "moderate extracted text",
-        "title or notes indicate a substantive policy instrument"
-      ],
-      "metadata_issues": [],
-      "source_link_status": "direct_document",
-      "source_link_action": null,
-      "fidelity_findings": [
-        "low quote grounding (5/7 matched, ratio=0.71)"
-      ],
-      "remove_matches": [],
-      "context_matches": [],
-      "analysis_notes": "Jointly promulgated departmental regulation (国信办通字〔2025〕2号) grounded in the Cybersecurity Law and existing algorithm, deep synthesis, and generative AI rules. The provided text (Notice and Articles 1, 3, 4, 5, 6, 10) mandates explicit user-perceptible labels and implicit file-metadata labels for synthetic content providers, metadata verification and labeling by dissemination platforms, and user self-declaration, while encouraging digital watermarks. Effective date and penalty provisions do not appear in the provided text.",
-      "canonical_url": "https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm"
-    },
-    {
-      "jurisdiction": "china",
-      "document_id": "cn_ai_labeling_draft_2024",
-      "title": "国家互联网信息办公室关于《人工智能生成合成内容标识办法（征求意见稿）》公开征求意见的通知",
-      "document_type": "regulatory_guidance",
-      "binding_strength": "regulatory_guidance",
-      "source_tier": "regulatory_guidance",
-      "corpus_role": "draft_consultation",
-      "publication_date": "2024-09-14",
-      "source_portal_ids": [
-        "cn_cac"
-      ],
-      "parsed_word_count": 925,
-      "parsed_non_whitespace_chars": 1799,
-      "analysis_present": true,
-      "grounding_ratio": 0.667,
-      "ungrounded_quotes": 3,
-      "score": 100,
-      "audit_bucket": "core",
-      "action": "keep_core",
-      "findings": [
-        "substantive document type",
-        "high-signal source tier",
-        "moderate extracted text",
-        "title or notes indicate a substantive policy instrument"
-      ],
-      "metadata_issues": [],
-      "source_link_status": "direct_document",
-      "source_link_action": null,
-      "fidelity_findings": [
-        "low quote grounding (6/9 matched, ratio=0.67)"
-      ],
-      "remove_matches": [],
-      "context_matches": [],
-      "analysis_notes": "This document is a public consultation notice and un-enacted draft departmental regulation (征求意见稿) issued by the Cyberspace Administration of China (CAC) on 2024-09-14, so it is coded as regulatory_guidance rather than binding_law. It exempts industry organizations, enterprises, educational/research institutions, public cultural institutions, and professional institutions that develop or apply AI-generated/synthetic content technologies without providing services to the domestic public. The provided text contains Articles 1–6, 10, and 14 (omitting Articles 7–9 and 11–13), and Article 14 leaves the exact 2024 effective date blank.",
-      "canonical_url": "https://www.cac.gov.cn/2024-09/14/c_1728000676244628.htm"
-    },
-    {
       "jurisdiction": "european_union",
       "document_id": "eu_code_practice_transparency_ai_content_2026",
       "title": "Code of Practice on Transparency of AI-Generated Content (EU AI Act Article 50)",
@@ -5425,6 +6563,86 @@
     },
     {
       "jurisdiction": "european_union",
+      "document_id": "eu_ai_scientific_panel_implementing_reg_2025_454",
+      "title": "Commission Implementing Regulation (EU) 2025/454 laying down rules for the establishment of a Scientific Panel of Independent Experts in the field of AI",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2025-03-10",
+      "source_portal_ids": [
+        "eu_eur_lex",
+        "eu_ai_office_policies"
+      ],
+      "parsed_word_count": 4998,
+      "parsed_non_whitespace_chars": 26871,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 106,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Adopted March 7, 2025 and published March 10, 2025 (OJ L 2025/454), directly applicable in all Member States from March 30, 2025. Operationalizes Article 68 of Regulation (EU) 2024/1689 by establishing an independent Scientific Panel of up to 60 multidisciplinary experts (with EU/EEA geographic diversity, at least four-fifths EU/EEA nationals, and gender-balance rules), co-hosted by the AI Office and Joint Research Centre. Codifies strict conflict-of-interest independence from AI/GPAI providers, public transparency of expert CVs/declarations/opinions (subject to trade-secret and strategic-interest exclusions), secure time-limited data-access protocols for Article 91 documentation requests (requiring one-third panel backing), and simple-majority voting plus a dedicated secure transmission interface for Article 90 qualified alerts.",
+      "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0454"
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_coordinated_plan_ai_review_2021",
+      "title": "Fostering a European approach to Artificial Intelligence — 2021 Review of the Coordinated Plan on AI (COM(2021) 205 final)",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "corpus_role": "historical_baseline",
+      "publication_date": "2021-04-21",
+      "source_portal_ids": [
+        "eu_eur_lex",
+        "eu_digital_strategy_ai"
+      ],
+      "parsed_word_count": 34117,
+      "parsed_non_whitespace_chars": 194955,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 64,
+      "audit_bucket": "supporting",
+      "action": "keep_supporting",
+      "findings": [
+        "contextual or strategic document type",
+        "secondary source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument",
+        "context-heavy or companion-page language"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [
+        "\\bbudget\\b",
+        "\\btimeline\\b"
+      ],
+      "analysis_notes": "Published April 21, 2021 as the Annex to COM(2021) 205 final alongside the initial EU AI Act legislative proposal (COM(2021) 206), updating the 2018 Coordinated Plan across 4 strategic pillars and 17 chapters (7 horizontal + 7 high-impact sectoral areas: climate/environment, health, robotics, public sector, law enforcement/migration/asylum, mobility, and agriculture), plus a 40-action 2021–2025+ timeline (Appendix 1) and Member State strategy/budget inventory (Appendix 2). Mobilises Digital Europe, Horizon Europe, InvestEU, and the Recovery and Resilience Facility to scale European data spaces, EuroHPC supercomputing, low-power edge/neuromorphic chips, AI Lighthouse research networks, 210 European Digital Innovation Hubs, Testing and Experimentation Facilities, regulatory sandboxes, AI-on-demand marketplace, and trustworthy public procurement. Retained as a superseded 2021 historical baseline for longitudinal EU policy-framing analysis.",
+      "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0205"
+    },
+    {
+      "jurisdiction": "european_union",
       "document_id": "eu_digital_omnibus_ai_regulation_2026_1744",
       "title": "Regulation (EU) 2026/1744 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 (Digital Omnibus on AI)",
       "document_type": "legislation",
@@ -5461,6 +6679,45 @@
       "context_matches": [],
       "analysis_notes": "Adopted on 8 July 2026 and published on 24 July 2026, this Digital Omnibus on AI amends Regulation (EU) 2024/1689 (EU AI Act), Regulation (EU) 2018/1139 (civil aviation), and Regulation (EU) 2023/1230 (machinery) to simplify implementation and address delays in harmonised standards and national governance. Key changes include postponing high-risk AI obligations to 2 December 2027 (Annex III) and 2 August 2028 (Annex I), extending SME compliance reliefs to SMCs and simplified QMS to all SMEs, refining the 'safety component' definition, revising Article 4 AI literacy to a support duty, broadening Article 4a special-category personal data processing for bias detection and correction, adding Article 5 prohibitions on non-consensual intimate material and CSAM, codifying detailed AI Office supervisory, investigatory, commitment, conformity assessment, and fining powers over GPAI-based systems and VLOP/VLOSE systems (Articles 75-75d), moving the Machinery Regulation from Annex I Section A to Section B, expanding real-world testing to Annex I systems, and adding Annex XIV notified-body designation codes.",
       "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R1744"
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_white_paper_ai_2020",
+      "title": "White Paper on Artificial Intelligence — A European approach to excellence and trust (COM(2020) 65 final)",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "source_tier": "policy_strategy",
+      "corpus_role": "historical_baseline",
+      "publication_date": "2020-02-19",
+      "source_portal_ids": [
+        "eu_eur_lex",
+        "eu_digital_strategy_ai"
+      ],
+      "parsed_word_count": 13984,
+      "parsed_non_whitespace_chars": 77235,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 98,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "contextual or strategic document type",
+        "secondary source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument",
+        "foundational policy framing or strategy document"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Adopted February 19, 2020 (COM(2020) 65 final) alongside the European Strategy for Data and the Report on Safety and Liability Implications of AI, IoT, and Robotics. Serves as the foundational policy blueprint and historical baseline for the EU AI Act (Regulation (EU) 2024/1689). Introduces the twin 'ecosystem of excellence' (six policy actions spanning revised Coordinated Plan, lighthouse research/testing centres, AI master's networks, specialised Digital Innovation Hubs, Horizon Europe AI/data/robotics PPP, and Adopt AI public-sector procurement) and 'ecosystem of trust' (cumulative sector-plus-use high-risk criteria, per-se high-risk recruitment and remote biometric identification, training-data/record-keeping/transparency/robustness/human-oversight requirements, extraterritorial EU market scope, notified-body prior conformity assessment, and a voluntary quality label for non-high-risk AI).",
+      "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0065"
     },
     {
       "jurisdiction": "japan",
@@ -5503,6 +6760,44 @@
     },
     {
       "jurisdiction": "south_korea",
+      "document_id": "kr_fsc_financial_ai_guideline_2021",
+      "title": "금융분야 AI 가이드라인 및 주요 검토 필요사항 (Financial Sector AI Guidelines, 2021)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "corpus_role": "historical_baseline",
+      "publication_date": "2021-07-08",
+      "source_portal_ids": [
+        "kr_fsc"
+      ],
+      "parsed_word_count": 4979,
+      "parsed_non_whitespace_chars": 9753,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 118,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument",
+        "foundational policy framing or strategy document"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Issued July 8, 2021 by the FSC Financial Innovation Bureau (Financial Data Policy Division) as Korea's foundational financial-sector AI governance framework (historical baseline later superseded by updated financial AI guidance). Pairs an introductory policy rationale with the full operational Financial Sector AI Operational Guideline (Annex 1) and ISO AI risk-mitigation reference table (Annex 2), covering governance, high-risk approval officers, lifecycle risk assessment, training-data quality and privacy, performance/fairness testing, explainability, customer notices, security against poisoning/adversarial attacks, and outsourcing controls.",
+      "canonical_url": "https://www.fsc.go.kr/no010101/76206"
+    },
+    {
+      "jurisdiction": "south_korea",
       "document_id": "kr_ai_basic_act_enforcement_decree",
       "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 시행령",
       "document_type": "legislation",
@@ -5514,8 +6809,8 @@
         "kr_law_center",
         "kr_msit_main"
       ],
-      "parsed_word_count": 8612,
-      "parsed_non_whitespace_chars": 16152,
+      "parsed_word_count": 8560,
+      "parsed_non_whitespace_chars": 16045,
       "analysis_present": true,
       "grounding_ratio": 1.0,
       "ungrounded_quotes": 0,
@@ -5538,6 +6833,158 @@
       "context_matches": [],
       "analysis_notes": "Promulgated as Presidential Decree No. 36053 on 2026-01-21 and effective 2026-01-22, replacing the former Decree on the National AI Strategy Committee. Operationalizes Korea's AI Basic Act with key quantitative thresholds: >= 10^26 FLOPs cumulative training compute plus state-of-the-art status and grave-risk criteria for Art. 32 safety duties (Art. 24); domestic representative thresholds of >= KRW 1T total revenue, >= KRW 10B AI service revenue, >= 1M average daily domestic users, or prior Art. 43(1)(3) fine (Art. 29); 5-year documentation retention and public posting of supervisor contact/risk/explanation/user-protection summaries (Art. 27); deployer safe harbors and sectoral equivalence (Annex 1); 7-element fundamental-rights impact assessments (Art. 28); and explicit national-defense, intelligence, and counterterrorism exclusions (Art. 2). Note: Annexes 1–2 and Form 1 are referenced by title in the retrieved law.go.kr text without embedded annex tables.",
       "canonical_url": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%20%EB%B0%9C%EC%A0%84%EA%B3%BC%20%EC%8B%A0%EB%A2%B0%20%EA%B8%B0%EB%B0%98%20%EC%A1%B0%EC%84%B1%20%EB%93%B1%EC%97%90%20%EA%B4%80%ED%95%9C%20%EA%B8%B0%EB%B3%B8%EB%B2%95%20%EC%8B%9C%ED%96%89%EB%A0%B9"
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_fsc_frontier_ai_security_guideline_2026",
+      "title": "프런티어 AI 보안 위협 금융분야 대응 요령 (버전 1.0) / Frontier AI Security Threat Response Guidelines for the Financial Sector (Ver. 1.0)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "source_tier": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2026-07-01",
+      "source_portal_ids": [
+        "kr_fsc"
+      ],
+      "parsed_word_count": 9446,
+      "parsed_non_whitespace_chars": 19640,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 106,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Issued July 1, 2026 by the Financial Security Institute (Publication No. 2026-비정기-AGR-AI안전평가-700, Ver. 1.0) in direct response to the 'Mythos shock' (Anthropic's Mythos System Card and Project Glasswing discovering 10,000+ high-risk vulnerabilities in one month). Synthesizes Korean MSIT, UK DSIT, Singapore CSA, NYDFS, CSA, and FS-ISAC advisories into concrete operational controls for Korean financial firms: Board/CEO KRI governance, CISO Frontier AI Threat Response Teams, CI/CD VulnOps with AI-agent red-teaming, SBOM/SCA supply-chain automation, three-tier human-in-the-loop scoping of autonomous defensive AI agents, BCP automated rollback/ISAC joint response, and Zero Trust microsegmentation with phishing-resistant MFA.",
+      "canonical_url": "https://www.fsc.go.kr/no010101/87240"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_bis_advanced_computing_license_policy_2026",
+      "title": "BIS Final Rule: Revision to License Review Policy for Advanced Computing Commodities (91 FR 1684)",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2026-01-15",
+      "source_portal_ids": [
+        "us_bis_export",
+        "us_federal_register_ai"
+      ],
+      "parsed_word_count": 4730,
+      "parsed_non_whitespace_chars": 25254,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 98,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Published and effective January 15, 2026 (91 FR 1684, Docket No. 260112-0028, RIN 0694-AK43), this BIS final rule amends 15 CFR §§ 742.6, 744.23, 748.8, and Supplement No. 2 to Part 748 (adding paragraph (dd)) to shift U.S. export license review for commercially available mid-tier advanced AI chips (TPP < 21,000 and total DRAM bandwidth < 6,500 GB/s, such as NVIDIA H200 and AMD MI325X) destined to China and Macau from a presumption of denial to case-by-case review. Eligibility requires nine binding certifications: U.S. supply sufficiency and zero global foundry-capacity diversion, a 50% cap relative to aggregate TPP shipped to U.S. commercial customers, prohibition of military/military-intelligence/WMD/part-744 end uses and remote access, consignee KYC and physical security disclosures, IaaS remote end-user reporting across eight countries of concern, IaaS restrictions barring unauthorized transfers of trained model weights or remote access to trained algorithms, and pre-export independent U.S. third-party testing lab verification.",
+      "canonical_url": "https://www.federalregister.gov/documents/2026/01/15/2026-00789/revision-to-license-review-policy-for-advanced-computing-commodities"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_bis_remote_access_semiconductors_2026",
+      "title": "BIS Rule: Addressing Remote Access to Advanced Semiconductors (91 FR 74970)",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2026-11-19",
+      "source_portal_ids": [
+        "us_bis_export",
+        "us_federal_register_ai"
+      ],
+      "parsed_word_count": 29930,
+      "parsed_non_whitespace_chars": 160871,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 98,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Published and effective November 19, 2026 (91 FR 74970, Docket No. 261116-0005, RIN 0694-AK50; using 'Super Intelligence (SI)' terminology pursuant to EO 14434), this sweeping BIS Interim Final Rule establishes four major pillars: (1) new 15 CFR § 744.24 prohibiting unlicensed exports, reexports, or transfers of advanced AI semiconductors to overseas data centers worldwide providing >12,000,000 aggregate TPP (including across physically or digitally linked data centers) to Country Group D:5 or Macau companies, backed by KYC ownership due diligence, no de minimis relief, mandatory recipient end-use notices, and a narrow commercial-recommender-system exclusion (explicitly excluding generative models); (2) new diversion-risk destination license requirements for Indonesia, Malaysia, Singapore, Brazil, and Thailand (§ 742.6(a)(6)(iii)(A)(1)), excluding U.S.-headquartered entities subject to monthly § 743.10 reporting; (3) tighter front-end fabricator/OSAT presumptions under ECCN 3A090.a Note 1 and § 744.23(a)(3)(i)(C); and (4) formal rescission of the January 2025 Biden-era AI Diffusion Rule—eliminating ECCN 4E091 AI model-weights controls, the model-weights FDP rule, country tiers, Data Center VEU authorizations, and License Exceptions AIA and LPP while retaining License Exception ACM and worldwide advanced-computing FDP jurisdiction under § 734.9(h).",
+      "canonical_url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_ca_sb_53_tfaia_2025",
+      "title": "California SB 53: Transparency in Frontier Artificial Intelligence Act (TFAIA)",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "corpus_role": "subnational_overlay",
+      "publication_date": "2025-09-29",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "parsed_word_count": 6891,
+      "parsed_non_whitespace_chars": 38375,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 84,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument",
+        "context-heavy or companion-page language"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [
+        "\\bbudget\\b",
+        "\\bwhistleblower\\b"
+      ],
+      "analysis_notes": "Enacted September 29, 2025, effective January 1, 2026. Adds three distinct statutory pillars: (1) Bus. & Prof. Code §§ 22757.10–22757.16 (TFAIA), imposing a >10^26 FLOPs frontier model threshold and >$500M revenue large-frontier-developer tier, mandatory published frontier AI frameworks covering catastrophic-risk thresholds, mitigations, third-party assessments, and unreleased model-weight cybersecurity, pre-deployment transparency reports (satisfiable via model/system cards), quarterly confidential CalOES internal-use risk summaries, 15-day/24-hour critical safety incident reporting, and CalOES federal-equivalency compliance recognition; (2) Gov. Code § 11546.8 establishing a 14-member CalCompute public cloud cluster consortium (operative upon budget appropriation); and (3) Labor Code §§ 1107–1107.2 granting frontier AI safety whistleblower anti-retaliation protections and requiring anonymous internal reporting channels for large frontier developers. Preempts local California frontier catastrophic-risk regulations adopted on or after January 1, 2025.",
+      "canonical_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53"
     },
     {
       "jurisdiction": "united_states",
@@ -5648,6 +7095,121 @@
       "context_matches": [],
       "analysis_notes": "Signed September 29, 2026 (filed in the Federal Register on October 1, 2026, and published at 91 FR 63129 on October 2, 2026). Directs executive departments and agencies, to the maximum extent permitted by law, to use 'Super Intelligence' and 'SI' instead of 'Artificial Intelligence' and 'AI' in official correspondence, public communications, websites, reports, policy documents, and other non-statutory documents, and not to acknowledge the usage of 'Artificial Intelligence' and 'AI' in applicable settings. Does not require altering previously issued regulations, Presidential actions, contracts, grants, or other historical documents. Adopts the existing statutory definition of 'artificial intelligence' in 15 U.S.C. 9401(3) on an interim basis unless superseded by subsequent Presidential action or Act of Congress. Subject to applicable law and availability of appropriations, and creates no legally enforceable rights or benefits.",
       "canonical_url": "https://www.federalregister.gov/documents/2026/10/02/2026-20321/inaugurating-the-era-of-super-intelligence"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_hhs_onc_hti1_final_rule_2024",
+      "title": "HHS / ONC HTI-1 Final Rule: Health Data, Technology, and Interoperability — Certification Program Updates, Algorithm Transparency, and Information Sharing (89 FR 1192)",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "corpus_role": "primary_instrument",
+      "publication_date": "2024-01-09",
+      "source_portal_ids": [
+        "us_hhs_onc",
+        "us_federal_register_ai"
+      ],
+      "parsed_word_count": 267706,
+      "parsed_non_whitespace_chars": 1505539,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 106,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Published January 9, 2024 (89 FR 1192) and effective February 8, 2024 under the HITECH Act and 21st Century Cures Act. Establishes the first binding U.S. federal regulation setting algorithm transparency and AI risk management obligations for clinical and operational healthcare AI/ML ('Predictive Decision Support Interventions' in 45 CFR § 170.102, explicitly encompassing supervised, semi-supervised, and self-supervised models including LLMs and generative AI, while excluding purely unsupervised similarity models). Replaces legacy CDS (§ 170.315(a)(9)) with DSI (§ 170.315(b)(11)) in the Base EHR definition starting January 1, 2025, requiring: (1) structured 'source attributes' (31+ metadata fields functioning as clinical model nutrition labels covering intended use, out-of-scope cautions, training data criteria and demographic/SDOH/health-status representativeness, fairness approaches, external/local validation, quantitative performance, and update schedules); (2) Intervention Risk Management (IRM) practices covering NIST AI RMF-aligned risk analysis across eight characteristics (validity, reliability, robustness, fairness, intelligibility, safety, security, privacy), risk mitigation, and data governance for all developer-supplied Predictive DSIs; (3) public hyperlink disclosure of IRM summary practices via ONC-ACBs on CHPL (§ 170.523(f)(1)(xxi)); (4) ongoing Assurances Maintenance of Certification review/updates (§ 170.402(b)(4)) and annual Real World Testing (§ 170.405); and (5) complementary interoperability, USCDI v3, SMART App Launch 2.0 / 1-hour API revocation, Insights Condition reporting (§ 170.407), and Part 171 Information Blocking / TEFCA Manner Exception rules.",
+      "canonical_url": "https://www.federalregister.gov/documents/2024/01/09/2023-28857/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_ny_raise_act_2025",
+      "title": "New York S6953A: Responsible AI Safety and Education (RAISE) Act",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "corpus_role": "subnational_overlay",
+      "publication_date": "2025-12-19",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "parsed_word_count": 3375,
+      "parsed_non_whitespace_chars": 17244,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 84,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument",
+        "context-heavy or companion-page language"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [
+        "\\bwhistleblower\\b"
+      ],
+      "analysis_notes": "New York S6953A adds Article 44-B (General Business Law §§ 1420–1426) governing large developers of frontier AI models (>10^26 computational operations and >$100M compute cost, plus knowledge-distilled derivatives) developed, deployed, or operating in whole or in part in New York State. Enforces pre-deployment (and pre-training for prospective large developers) written safety and security protocols covering catastrophic-risk capability evaluation and cybersecurity against sophisticated actors, a prohibition on deploying models posing unreasonable risk of critical harm, mandatory annual independent third-party compliance audits, 72-hour critical safety incident reporting to DHSES, 5-year post-deployment retention of unredacted protocols and replicable test logs, and comprehensive employee/contractor whistleblower protections. Exempts accredited colleges and universities conducting academic research.",
+      "canonical_url": "https://www.nysenate.gov/legislation/bills/2025/S6953/amendment/A"
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_tx_hb_149_traiga_2025",
+      "title": "Texas HB 149: Texas Responsible Artificial Intelligence Governance Act (TRAIGA)",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "source_tier": "statutory_rule",
+      "corpus_role": "subnational_overlay",
+      "publication_date": "2025-06-22",
+      "source_portal_ids": [
+        "us_state_legislatures"
+      ],
+      "parsed_word_count": 5808,
+      "parsed_non_whitespace_chars": 32452,
+      "analysis_present": true,
+      "grounding_ratio": 1.0,
+      "ungrounded_quotes": 0,
+      "score": 106,
+      "audit_bucket": "core",
+      "action": "keep_core",
+      "findings": [
+        "substantive document type",
+        "high-signal source tier",
+        "substantive extracted text",
+        "title or notes indicate a substantive policy instrument"
+      ],
+      "metadata_issues": [],
+      "source_link_status": "resolved_to_different_page",
+      "source_link_action": null,
+      "fidelity_findings": [
+        "canonical URL resolves to a different page"
+      ],
+      "remove_matches": [],
+      "context_matches": [],
+      "analysis_notes": "Enacted in the 89th Texas Legislature (signed June 22, 2025; effective January 1, 2026), TRAIGA adds Subtitle D (Chapters 551–554) to Title 11 of the Texas Business & Commerce Code while amending Texas biometric (§ 503.001), data privacy (§ 541.104), and state-agency IT/Sunset statutes. Rather than imposing European-style risk-tier compliance mandates on private developers, Texas pairs narrow intent-based red-line prohibitions (self-harm/violence/crime incitement, governmental social scoring, rights-infringing governmental biometric scraping, sole-intent constitutional infringement, intentional protected-class discrimination, CSAM/deepfake/child-impersonating sexual chatbots) with statewide local preemption, a 36-month deregulatory AI sandbox administered by DIR, safe harbors for red-teaming and NIST AI RMF compliance, and a seven-member advisory Texas AI Council barred from issuing binding rules. Section 9 conditions mandatory state-agency implementation duties on specific legislative appropriations.",
+      "canonical_url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149"
     }
   ]
 }

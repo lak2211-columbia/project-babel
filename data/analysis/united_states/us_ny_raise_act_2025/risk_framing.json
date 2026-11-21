@@ -1,0 +1,75 @@
+{
+  "dominant_frame": "existential_catastrophic",
+  "secondary_frames": [
+    "consumer_public_safety",
+    "national_security"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.99,
+    "national_security": 0.3,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.15,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.15,
+    "consumer_public_safety": 0.62,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.78,
+    "national_security": 0.07,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.0,
+    "consumer_public_safety": 0.15,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "New York's RAISE Act is overwhelmingly framed around existential and catastrophic risk, orienting every substantive protocol, evaluation, deployment prohibition, third-party audit, incident report, and whistleblower protection toward preventing 'critical harm'—defined as 100 or more deaths or serious injuries or at least $1 billion in damages enabled through chemical, biological, radiological, or nuclear weapons or frontier models acting autonomously with limited human intervention to commit serious crimes, alongside loss-of-control evasion, self-creation of new frontier models, and model-weight escape. Consumer and public safety provides a secondary rationale through explicit public-safety redaction criteria, mass-casualty and property-damage prevention, and public transparency of safety protocols and audit reports. A minor national security dimension enters via protection of frontier model weights against sophisticated actors and routing oversight and 72-hour incident disclosures through the Division of Homeland Security and Emergency Services.",
+  "evidence_spans": [
+    {
+      "quote": "7. \"Critical harm\" means the death or serious injury of one hundred or 34 more people or at least one billion dollars of damages to rights in 35 money or property caused or materially enabled by a large developer's 36 creation, use, storage, or release of a frontier model, through either 37 of the following: 38 (a) The creation or use of a chemical, biological, radiological, or 39 nuclear weapon; or",
+      "source_section": "N.Y. Gen. Bus. Law § 1420(7)(a) (Page 2)",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 3811,
+      "end_char": 4213
+    },
+    {
+      "quote": "(b) An artificial intelligence model engaging in conduct that does 41 both of the following: 42 (i) Acts with limited human intervention; and 43 (ii) Would, if committed by a human, constitute a crime specified in 44 the penal law that requires intent, recklessness, or gross negligence, 45 or the solicitation or aiding and abetting of such a crime.",
+      "source_section": "N.Y. Gen. Bus. Law § 1420(7)(b) (Page 2)",
+      "quote_en": null,
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 4217,
+      "end_char": 4567
+    },
+    {
+      "quote": "(a) protect public safety to the extent the developer can reasonably 20 predict such risks;",
+      "source_section": "N.Y. Gen. Bus. Law § 1420(1)(a) (Page 1)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 1509,
+      "end_char": 1600
+    },
+    {
+      "quote": "not prevent an employee from disclosing, or threatening to disclose, or 48 retaliate against an employee for disclosing or threatening to disclose, 49 information to the large developer or the attorney general, if the 50 employee has reasonable cause to believe that the large developer's 51 activities pose an unreasonable or substantial risk of critical harm,",
+      "source_section": "N.Y. Gen. Bus. Law § 1422(1) (Page 5)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 15336,
+      "end_char": 15697
+    },
+    {
+      "quote": "cybersecurity protections for frontier models within the large develop- 23 er's control that, if successfully implemented, appropriately reduce the 24 risk of unauthorized access to, or misuse of, the frontier models lead- 25 ing to critical harm, including by sophisticated actors;",
+      "source_section": "N.Y. Gen. Bus. Law § 1420(12)(b) (Page 3)",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 6718,
+      "end_char": 7000
+    }
+  ]
+}

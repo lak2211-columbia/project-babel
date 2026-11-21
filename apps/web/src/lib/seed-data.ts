@@ -173,6 +173,10 @@ export type OverviewData = {
   hasData: boolean;
   datasetLabel: string;
   scoringMode: ScoringMode;
+  /** Whether opt-in subnational_overlay instruments (e.g. U.S. state laws) are included (Phase 5A). */
+  includeSubnational: boolean;
+  /** Number of analyzed subnational_overlay instruments present in the corpus. */
+  subnationalCount: number;
   /** Honest taxonomy version reflected by actual artifacts ("1.0-legacy", "2.1.0", or "mixed"). */
   taxonomyVersion: string;
   /** Dataset analysis snapshot version (distinct from latest source publication date). */
@@ -222,11 +226,14 @@ export const matrixLabels = ["US", "EU", "KR", "JP", "CN"];
 export function buildEmptyOverviewData(
   mode: ScoringMode,
   datasetLabel = "No observatory data loaded",
+  includeSubnational = false,
 ): OverviewData {
   return {
     hasData: false,
     datasetLabel,
     scoringMode: mode,
+    includeSubnational,
+    subnationalCount: 0,
     taxonomyVersion: "unloaded",
     datasetVersion: "unloaded",
     snapshotDate: "No data loaded",
@@ -286,6 +293,8 @@ export const seedData: OverviewData = {
   hasData: true,
   datasetLabel: "Local seed dataset (development only)",
   scoringMode: "headline",
+  includeSubnational: false,
+  subnationalCount: 0,
   taxonomyVersion: "2.1.0",
   datasetVersion: "2026-04-15 (dev seed)",
   snapshotDate: "April 10, 2026",

@@ -1,0 +1,421 @@
+{
+  "source_id": "us_co_sb_24_205_ai_act_2024",
+  "title": "Colorado SB 24-205: Consumer Protections for Artificial Intelligence",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "united_states",
+    "issuing_body": "Colorado General Assembly",
+    "document_type": "legislation",
+    "binding_strength": "binding_law",
+    "publication_date": "2024-05-17",
+    "effective_date": "2026-02-01",
+    "covered_actors": [
+      "Developers doing business in Colorado that develop or intentionally and substantially modify a high-risk AI system (or an AI system intended to interact with consumers under § 6-1-1704)",
+      "Deployers doing business in Colorado that deploy a high-risk AI system making or acting as a substantial factor in making consequential decisions concerning Colorado residents (with partial small-deployer exemption under § 6-1-1703(6) for deployers with fewer than 50 full-time equivalent employees that do not train the system on their own data)",
+      "Third parties contracted by deployers to complete impact assessments or annual deployment reviews",
+      "Exemptions and parallel compliance safe harbors apply to federally approved/certified systems (FDA, FAA, FHFA, ONC), certain federal contracts (excluding employment or housing), non-high-risk HIPAA clinician-actionable recommendations, Colorado-regulated insurers under C.R.S. § 10-3-1104.9, and prudentially examined banks and credit unions meeting equivalent anti-discrimination audit rules"
+    ],
+    "covered_application_domains": [
+      "education",
+      "employment",
+      "finance",
+      "public_sector_use",
+      "healthcare"
+    ],
+    "prohibited_practices": [
+      "Failing to exercise reasonable care as a developer or deployer of a high-risk AI system to protect Colorado consumers from known or reasonably foreseeable risks of unlawful algorithmic discrimination based on protected characteristics, or otherwise violating Part 17, which constitutes an unfair or deceptive trade practice under the Colorado Consumer Protection Act (C.R.S. §§ 6-1-1702(1), 6-1-1703(1), 6-1-1706(2), 6-1-105(1)(hhhh))"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.99,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "A DEPLOYER OF A HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM SHALL IMPLEMENT A RISK MANAGEMENT POLICY AND PROGRAM TO GOVERN THE DEPLOYER'S DEPLOYMENT OF THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM. THE RISK MANAGEMENT POLICY AND PROGRAM MUST SPECIFY AND INCORPORATE THE PRINCIPLES, PROCESSES, AND PERSONNEL THAT THE DEPLOYER USES TO IDENTIFY, DOCUMENT, AND MITIGATE",
+            "source_section": "C.R.S. § 6-1-1703(2)(a)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14440,
+            "end_char": 14802
+          },
+          {
+            "quote": "(I) A DEPLOYER, OR A THIRD PARTY CONTRACTED BY THE DEPLOYER, THAT DEPLOYS A HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM ON OR AFTER FEBRUARY 1, 2026, SHALL COMPLETE AN IMPACT ASSESSMENT FOR THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM;",
+            "source_section": "C.R.S. § 6-1-1703(3)(a)(I)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16589,
+            "end_char": 16821
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.89,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "(I) How THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM WAS EVALUATED FOR PERFORMANCE AND MITIGATION OF ALGORITHMIC DISCRIMINATION BEFORE THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM WAS OFFERED, SOLD, LEASED, LICENSED, GIVEN, OR OTHERWISE MADE AVAILABLE TO THE DEPLOYER;",
+            "source_section": "C.R.S. § 6-1-1702(2)(c)(I)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8293,
+            "end_char": 8561
+          },
+          {
+            "quote": "(g) ON OR BEFORE FEBRUARY 1, 2026, AND AT LEAST ANNUALLY THEREAFTER, A DEPLOYER, OR A THIRD PARTY CONTRACTED BY THE DEPLOYER, MUST REVIEW THE DEPLOYMENT OF EACH HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM DEPLOYED BY THE DEPLOYER TO ENSURE THAT THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM IS NOT CAUSING ALGORITHMIC DISCRIMINATION.",
+            "source_section": "C.R.S. § 6-1-1703(3)(g)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20323,
+            "end_char": 20652
+          }
+        ]
+      },
+      {
+        "label": "red_teaming",
+        "confidence": 0.87,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "IT IS AN AFFIRMATIVE DEFENSE THAT THE DEVELOPER, DEPLOYER, OR OTHER PERSON:\n(a) DISCOVERS AND CURES A VIOLATION OF THIS PART 17 AS A RESULT OF:\n(I) FEEDBACK THAT THE DEVELOPER, DEPLOYER, OR OTHER PERSON ENCOURAGES DEPLOYERS OR USERS TO PROVIDE TO THE DEVELOPER, DEPLOYER, OR OTHER PERSON;\n(II) ADVERSARIAL TESTING OR RED TEAMING, AS THOSE TERMS ARE DEFINED OR USED BY THE NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY;",
+            "source_section": "C.R.S. § 6-1-1706(3)(a)(II)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 37373,
+            "end_char": 37792
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.97,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "A DEVELOPER OF A HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM SHALL DISCLOSE TO THE ATTORNEY GENERAL, IN A FORM AND MANNER PRESCRIBED BY THE ATTORNEY GENERAL, AND TO ALL KNOWN DEPLOYERS OR OTHER DEVELOPERS OF THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM, ANY KNOWN OR REASONABLY FORESEEABLE RISKS OF ALGORITHMIC DISCRIMINATION",
+            "source_section": "C.R.S. § 6-1-1702(5)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 11503,
+            "end_char": 11825
+          },
+          {
+            "quote": "IF A DEPLOYER DEPLOYS A HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM ON OR AFTER FEBRUARY 1, 2026, AND SUBSEQUENTLY DISCOVERS THAT THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM HAS CAUSED ALGORITHMIC DISCRIMINATION, THE DEPLOYER, WITHOUT UNREASONABLE DELAY, BUT NO LATER THAN NINETY DAYS AFTER THE DATE OF THE DISCOVERY, SHALL SEND TO THE ATTORNEY GENERAL",
+            "source_section": "C.R.S. § 6-1-1703(7)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 25930,
+            "end_char": 26280
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.99,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "A DEPLOYER OR OTHER DEVELOPER THAT DEPLOYS, OFFERS, SELLS, LEASES, LICENSES, GIVES, OR OTHERWISE MAKES AVAILABLE AN ARTIFICIAL INTELLIGENCE SYSTEM THAT IS INTENDED TO INTERACT WITH CONSUMERS SHALL ENSURE THE DISCLOSURE TO EACH CONSUMER WHO INTERACTS WITH THE ARTIFICIAL INTELLIGENCE SYSTEM THAT THE CONSUMER IS INTERACTING WITH AN ARTIFICIAL INTELLIGENCE SYSTEM.",
+            "source_section": "C.R.S. § 6-1-1704(1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28130,
+            "end_char": 28492
+          },
+          {
+            "quote": "(I) NOTIFY THE CONSUMER THAT THE DEPLOYER HAS DEPLOYED A HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM TO MAKE, OR BE A SUBSTANTIAL FACTOR IN MAKING, A CONSEQUENTIAL DECISION BEFORE THE DECISION IS MADE;",
+            "source_section": "C.R.S. § 6-1-1703(4)(a)(I)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20902,
+            "end_char": 21100
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.97,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "SHALL MAKE AVAILABLE TO THE DEPLOYER OR OTHER DEVELOPER, TO THE EXTENT FEASIBLE, THE DOCUMENTATION AND INFORMATION, THROUGH ARTIFACTS SUCH AS MODEL CARDS, DATASET CARDS, OR OTHER IMPACT ASSESSMENTS, NECESSARY FOR A DEPLOYER, OR FOR A THIRD PARTY CONTRACTED BY A DEPLOYER, TO COMPLETE AN IMPACT ASSESSMENT PURSUANT TO SECTION 6-1-1703 (3).",
+            "source_section": "C.R.S. § 6-1-1702(3)(a)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9789,
+            "end_char": 10127
+          },
+          {
+            "quote": "(f) A DEPLOYER SHALL MAINTAIN THE MOST RECENTLY COMPLETED IMPACT ASSESSMENT FOR A HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM AS REQUIRED UNDER THIS SUBSECTION (3), ALL RECORDS CONCERNING EACH IMPACT ASSESSMENT, AND ALL PRIOR IMPACT ASSESSMENTS, IF ANY, FOR AT LEAST THREE YEARS FOLLOWING THE FINAL DEPLOYMENT OF THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM.",
+            "source_section": "C.R.S. § 6-1-1703(3)(f)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19967,
+            "end_char": 20322
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.91,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "(II) THE DATA GOVERNANCE MEASURES USED TO COVER THE TRAINING DATASETS AND THE MEASURES USED TO EXAMINE THE SUITABILITY OF DATA SOURCES, POSSIBLE BIASES, AND APPROPRIATE MITIGATION;",
+            "source_section": "C.R.S. § 6-1-1702(2)(c)(II)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 8562,
+            "end_char": 8742
+          },
+          {
+            "quote": "(I) HIGH-LEVEL SUMMARIES OF THE TYPE OF DATA USED TO TRAIN THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM;",
+            "source_section": "C.R.S. § 6-1-1702(2)(b)(I)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 7635,
+            "end_char": 7739
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.95,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "(III) AN OPPORTUNITY TO APPEAL AN ADVERSE CONSEQUENTIAL DECISION CONCERNING THE CONSUMER ARISING FROM THE DEPLOYMENT OF A HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM, WHICH APPEAL MUST, IF TECHNICALLY FEASIBLE, ALLOW FOR HUMAN REVIEW UNLESS PROVIDING THE OPPORTUNITY FOR APPEAL IS NOT IN THE BEST INTEREST OF THE CONSUMER",
+            "source_section": "C.R.S. § 6-1-1703(4)(b)(III)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22759,
+            "end_char": 23077
+          },
+          {
+            "quote": "(V) HOW THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM SHOULD BE USED, NOT BE USED, AND BE MONITORED BY AN INDIVIDUAL WHEN THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM IS USED TO MAKE, OR IS A SUBSTANTIAL FACTOR IN MAKING, A CONSEQUENTIAL DECISION;",
+            "source_section": "C.R.S. § 6-1-1702(2)(c)(V)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 9053,
+            "end_char": 9299
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "quote": "(1) NOTWITHSTANDING SECTION 6-1-103, THE ATTORNEY GENERAL HAS EXCLUSIVE AUTHORITY TO ENFORCE THIS PART 17.",
+            "source_section": "C.R.S. § 6-1-1706(1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 36995,
+            "end_char": 37101
+          },
+          {
+            "quote": "THE ATTORNEY GENERAL MAY REQUIRE THAT A DEVELOPER DISCLOSE TO THE ATTORNEY GENERAL, NO LATER THAN NINETY DAYS AFTER THE REQUEST AND IN A FORM AND MANNER\n\nPRESCRIBED BY THE ATTORNEY GENERAL, THE STATEMENT OR DOCUMENTATION DESCRIBED IN SUBSECTION (2) OF THIS SECTION. THE ATTORNEY GENERAL MAY EVALUATE SUCH STATEMENT OR DOCUMENTATION TO ENSURE COMPLIANCE WITH THIS PART 17",
+            "source_section": "C.R.S. § 6-1-1702(7)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 12672,
+            "end_char": 13042
+          }
+        ]
+      },
+      {
+        "label": "civil_penalty",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "quote": "(2) EXCEPT AS PROVIDED IN SUBSECTION (3) OF THIS SECTION, A VIOLATION OF THE REQUIREMENTS ESTABLISHED IN THIS PART 17 CONSTITUTES AN UNFAIR TRADE PRACTICE PURSUANT TO SECTION 6-1-105 (1)(hhhh).",
+            "source_section": "C.R.S. § 6-1-1706(2)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 37102,
+            "end_char": 37295
+          },
+          {
+            "quote": "6-1-105. Unfair or deceptive trade practices. (1) A person engages in a deceptive trade practice when, in the course of the person's business, vocation, or occupation, the person:\n(hhhh) VIOLATES PART 17 OF THIS ARTICLE 1.",
+            "source_section": "Section 2 (C.R.S. § 6-1-105(1)(hhhh))",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 40453,
+            "end_char": 40675
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "quote": "IF A DEPLOYER DEPLOYS A HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM ON OR AFTER FEBRUARY 1, 2026, AND SUBSEQUENTLY DISCOVERS THAT THE HIGH-RISK ARTIFICIAL INTELLIGENCE SYSTEM HAS CAUSED ALGORITHMIC DISCRIMINATION, THE DEPLOYER, WITHOUT UNREASONABLE DELAY, BUT NO LATER THAN NINETY DAYS AFTER THE DATE OF THE DISCOVERY, SHALL SEND TO THE ATTORNEY GENERAL",
+            "source_section": "C.R.S. § 6-1-1703(7)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 25930,
+            "end_char": 26280
+          },
+          {
+            "quote": "THE ATTORNEY GENERAL MAY REQUIRE THAT A DEPLOYER, OR A THIRD PARTY CONTRACTED BY THE DEPLOYER, DISCLOSE TO THE ATTORNEY GENERAL, NO LATER THAN NINETY DAYS AFTER THE REQUEST AND IN A FORM AND MANNER PRESCRIBED BY THE ATTORNEY GENERAL, THE RISK MANAGEMENT POLICY IMPLEMENTED PURSUANT TO SUBSECTION (2) OF THIS SECTION, THE IMPACT ASSESSMENT COMPLETED PURSUANT TO SUBSECTION (3) OF THIS SECTION,",
+            "source_section": "C.R.S. § 6-1-1703(9)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 26773,
+            "end_char": 27165
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Colorado Attorney General (exclusive enforcement authority, compliance documentation demand and evaluation powers, and implementing rulemaking authority under C.R.S. §§ 6-1-1706 and 6-1-1707)",
+      "Colorado Commissioner of Insurance (parallel sectoral compliance oversight for regulated insurers under C.R.S. § 10-3-1104.9, referenced in § 6-1-1705(7))",
+      "State and federal prudential financial regulators (parallel examination safe harbor for banks and credit unions under § 6-1-1705(8))"
+    ],
+    "compliance_deadlines": [
+      "2026-02-01: Effective date for developer and deployer reasonable-care duties, risk-management programs, impact assessments, consumer notices/appeals, website statements, AI interaction disclosures, and Attorney General reporting",
+      "At least annually and within 90 days after any intentional and substantial modification: Complete/update deployer impact assessments (§ 6-1-1703(3)(a)(II)), conduct annual discrimination deployment reviews starting on or before 2026-02-01 (§ 6-1-1703(3)(g)), and update developer website statements (§ 6-1-1702(4)(b)(II))",
+      "Without unreasonable delay, no later than 90 days after discovery (or credible deployer report): Notify the Colorado Attorney General (and known deployers/developers for developers) of algorithmic discrimination (§§ 6-1-1702(5), 6-1-1703(7))",
+      "No later than 90 days after Attorney General request: Disclose required developer documentation or deployer risk-management policies, impact assessments, and records (§§ 6-1-1702(7), 6-1-1703(9))",
+      "At least 3 years following final deployment: Retain most recent and prior impact assessments and records (§ 6-1-1703(3)(f))"
+    ],
+    "penalties_summary": "Violations of Part 17 constitute an unfair or deceptive trade practice under the Colorado Consumer Protection Act (C.R.S. § 6-1-105(1)(hhhh)), carrying statutory CCPA civil remedies enforceable exclusively by the Colorado Attorney General with no private right of action (§ 6-1-1706(1)–(2), (6)). Full compliance with Part 17 and AG rules creates a rebuttable presumption of reasonable care (§§ 6-1-1702(1), 6-1-1703(1)), and discovering and curing a violation through feedback, NIST-defined adversarial testing/red-teaming, or internal review while complying with NIST AI RMF, ISO/IEC 42001, or an AG-designated framework establishes an affirmative defense in AG enforcement actions (§ 6-1-1706(3)).",
+    "implementation_notes": "Enacted May 17, 2024 as the first comprehensive U.S. state high-risk AI anti-discrimination statute (C.R.S. Title 6, Article 1, Part 17, originally scheduled to take effect February 1, 2026; subsequently repealed and replaced by Colorado SB 26-189 in May 2026 and retained in the subnational overlay as a superseded longitudinal baseline). Covers high-risk AI systems making or acting as a substantial factor in consequential decisions across education, employment, financial/lending services, essential government services, health-care services, housing, insurance, and legal services, plus horizontal consumer AI interaction disclosures (§ 6-1-1704). Incorporates NIST AI RMF and ISO/IEC 42001 as benchmark compliance frameworks, grants trade-secret and Colorado Open Records Act confidentiality for AG-reviewed compliance records, and excludes small deployers (<50 FTEs not training on own data) from risk-program, impact-assessment, and website-statement requirements.",
+    "confidence": 0.98
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.94,
+      "social_stability": 0.05,
+      "innovation_enablement": 0.52,
+      "consumer_public_safety": 0.9,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.52,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.1,
+      "consumer_public_safety": 0.38,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "Colorado SB 24-205 is dominantly framed around fundamental rights, centering its entire regulatory duty of reasonable care on preventing unlawful algorithmic discrimination across protected civil-rights characteristics while guaranteeing individual profiling opt-out rights, personal-data correction, accessible explanations, human appeal review of adverse consequential decisions, and explicit federal and state constitutional free-speech safeguards. Consumer and public safety serves as a closely intertwined secondary frame: the statute is titled as a consumer-protection act, codified directly into the Colorado Consumer Protection Act's unfair and deceptive trade practice provisions, mandates clear AI interaction notices for consumers, preserves emergency life-and-safety actions and product recalls, and invokes the General Assembly's public-health-and-safety clause. Innovation enablement acts as a measured third frame through small-deployer carve-outs, pre-market research and testing exclusions, trade-secret confidentiality, and NIST AI RMF and ISO/IEC 42001 compliance safe harbors.",
+    "evidence_spans": [
+      {
+        "quote": "(1) (a) \"ALGORITHMIC DISCRIMINATION\" MEANS ANY CONDITION IN WHICH THE USE OF AN ARTIFICIAL INTELLIGENCE SYSTEM RESULTS IN AN UNLAWFUL DIFFERENTIAL TREATMENT OR IMPACT THAT DISFAVORS AN INDIVIDUAL OR GROUP OF INDIVIDUALS",
+        "source_section": "C.R.S. § 6-1-1701(1)(a)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 506,
+        "end_char": 725
+      },
+      {
+        "quote": "(4) NOTHING IN THIS PART 17 IMPOSES ANY OBLIGATION ON A DEVELOPER, A DEPLOYER, OR OTHER PERSON THAT ADVERSELY AFFECTS THE RIGHTS OR FREEDOMS OF A PERSON, INCLUDING THE RIGHTS OF A PERSON TO FREEDOM OF SPEECH OR FREEDOM OF THE PRESS THAT ARE GUARANTEED IN:\n(a) THE FIRST AMENDMENT TO THE UNITED STATES CONSTITUTION;\nOR\n(b) SECTION 10 OF ARTICLE II OF THE STATE CONSTITUTION.",
+        "source_section": "C.R.S. § 6-1-1705(4)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 31157,
+        "end_char": 31530
+      },
+      {
+        "quote": "CONCERNING CONSUMER PROTECTIONS IN INTERACTIONS WITH ARTIFICIAL INTELLIGENCE SYSTEMS.",
+        "source_section": "Bill Title / Enacting Clause",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 148,
+        "end_char": 233
+      },
+      {
+        "quote": "Safety clause. The general assembly finds, determines, and declares that this act is necessary for the immediate preservation of the public peace, health, or safety or for appropriations for\n\nthe support and maintenance of the departments of the state and state institutions.",
+        "source_section": "Section 3 (Safety Clause)",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 40687,
+        "end_char": 40962
+      },
+      {
+        "quote": "(h) CONDUCT RESEARCH, TESTING, AND DEVELOPMENT ACTIVITIES REGARDING AN ARTIFICIAL INTELLIGENCE SYSTEM OR MODEL, OTHER THAN TESTING CONDUCTED UNDER REAL-WORLD CONDITIONS, BEFORE THE ARTIFICIAL INTELLIGENCE SYSTEM OR MODEL IS PLACED ON THE MARKET, DEPLOYED, OR PUT INTO SERVICE, AS APPLICABLE;",
+        "source_section": "C.R.S. § 6-1-1705(1)(h)",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 30208,
+        "end_char": 30499
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:06:52.499814Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "a90b876d6ff2bbdb21adff64e1994083083dacc303dfe5b4f42b053ec0059366",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 41289,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 26,
+      "exact_matches": 26,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

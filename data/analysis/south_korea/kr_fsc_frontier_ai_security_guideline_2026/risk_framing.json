@@ -1,0 +1,84 @@
+{
+  "dominant_frame": "consumer_public_safety",
+  "secondary_frames": [
+    "existential_catastrophic",
+    "innovation_enablement"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.8,
+    "national_security": 0.25,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.15,
+    "social_stability": 0.1,
+    "innovation_enablement": 0.62,
+    "consumer_public_safety": 0.94,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.3,
+    "national_security": 0.05,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.0,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.15,
+    "consumer_public_safety": 0.5,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The 2026 FSI/FSC Frontier AI Security Threat Response Guidelines are dominantly framed around consumer and public safety, focusing on protecting financial stability, institutional trust, business continuity, core customer payment and authentication infrastructure, and sensitive customer data against cyber breaches, AI-assisted voice/deepfake phishing, ransomware, and operational service disruptions. Existential and catastrophic risk is a strong secondary frame grounded in the triggering frontier-AI cyber threat—specifically the 'Mythos shock' demonstrating mass-scale zero-day vulnerability discovery exceeding 10,000 high-risk flaws in a single month, autonomous machine-speed attacks outpacing human cognition, and rapid systemic contagion across shared financial infrastructure where perfect defense is unattainable. Innovation enablement plays a supporting secondary role by adopting non-regulatory reference guidance and encouraging financial institutions to harness defensive frontier AI models, DevSecOps agents, and shared FSI security platforms safely.",
+  "evidence_spans": [
+    {
+      "quote": "□ AI 보안 위협은 기술적 위험 외에도 금융회사 등의 신뢰, 업무 연속성, 금융안정, 규제 준수 등 경영 전반에 영향을 미치는 사항\nㅇ 이사회 및 CEO 등 경영진 중심의 전사적 대응이 필요",
+      "source_section": "2. 금융분야 대응 요령 - 가. 경영진 책임 강화",
+      "quote_en": "Beyond technical risk, AI security threats affect overall corporate management including the trust of financial institutions, business continuity, financial stability, and regulatory compliance, necessitating an enterprise-wide response led by the board of directors, CEO, and senior management.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 6665,
+      "end_char": 6772
+    },
+    {
+      "quote": "ㅇ (MFA 강화) 중요 서버 접속, 중요 정보 조회, 이상 행위 탐지시 생체 인증, 하드웨어 보안토큰 등 강화된 추가 인증을 적용하여 침해사고 방지 ※ SMS 인증 및 OTP의 경우 공격자가 AI 보이스, 딥페이크, 피싱 사이트 등을 악용하는 경우 우회 가능성 존재",
+      "source_section": "2. 금융분야 대응 요령 - 바. 침해 확산 방지 (적용 예시)",
+      "quote_en": "(MFA strengthening) Prevent breach incidents by applying strengthened additional authentication such as biometric authentication or hardware security tokens when accessing critical servers, querying critical information, or detecting anomalous behavior. Note: SMS authentication and OTP carry bypass risks if attackers exploit AI voice, deepfakes, or phishing sites.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 24846,
+      "end_char": 24995
+    },
+    {
+      "quote": "□ 앤트로픽社 미토스 시스템 카드*와 글래스윙 프로젝트 중간 결과**를 통해 공개된 높은 성능은 금융 보안 체계에 새로운 위협으로 대두\n* AI 모델의 성능 및 안전성 평가 결과 등이 포함된 기술 문서\n** 한 달 만에 1만 건 이상의 신규 고위험 취약점을 발견",
+      "source_section": "1. 배경",
+      "quote_en": "The high performance disclosed through Anthropic's Mythos System Card (a technical document containing AI model performance and safety evaluation results) and interim results of Project Glasswing (which discovered over 10,000 new high-risk vulnerabilities in a single month) has emerged as a new threat to financial security architectures.",
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 612,
+      "end_char": 758
+    },
+    {
+      "quote": "□ (회복 중심 리스크 관리) 프런티어 AI 기반 공격에 대한 완벽한 방어는 매우 어렵기 때문에, 신속한 회복력(Resilience) 중심 사후 관리 대책 수립",
+      "source_section": "2. 금융분야 대응 요령 - 마. 금융권 공동 대응 및 시스템 복원력 강화",
+      "quote_en": "(Resilience-centered risk management) Because perfect defense against frontier AI-based attacks is extremely difficult, establish post-incident management measures centered on rapid resilience.",
+      "frame": "existential_catastrophic",
+      "grounding_status": "verbatim",
+      "start_char": 22197,
+      "end_char": 22286
+    },
+    {
+      "quote": "□ 취약점 점검에 활용할 수 있는 프런티어 AI 모델 중 금융회사 여건에 적합한 모델을 활용하여 내부 SW 점검\nㅇ 영향도ㆍ노출도가 높은 시스템ㆍ서비스를 우선적으로 점검을 수행하고 발견된 취약점에 대해 검토 후 조치",
+      "source_section": "2. 금융분야 대응 요령 - 나. 취약점 및 패치 관리",
+      "quote_en": "Utilize frontier AI models suited to the financial company's conditions among those available for vulnerability inspection to inspect internal software, prioritizing high-impact and high-exposure systems and services and remediating discovered vulnerabilities after review.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 10060,
+      "end_char": 10180
+    },
+    {
+      "quote": "※ 본 대응 요령은 규제적 성격이 아니며, 프런티어 AI 보안 위협 대응을 위한 안내로서 참고",
+      "source_section": "1. 배경",
+      "quote_en": "Note: These response guidelines are not regulatory in nature and serve as reference guidance for responding to frontier AI security threats.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 960,
+      "end_char": 1012
+    }
+  ]
+}

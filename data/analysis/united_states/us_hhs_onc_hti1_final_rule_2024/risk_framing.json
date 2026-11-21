@@ -1,0 +1,103 @@
+{
+  "dominant_frame": "consumer_public_safety",
+  "secondary_frames": [
+    "fundamental_rights",
+    "innovation_enablement",
+    "economic_competitiveness"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.6,
+    "fundamental_rights": 0.88,
+    "social_stability": 0.08,
+    "innovation_enablement": 0.78,
+    "consumer_public_safety": 0.94,
+    "labor_transition": 0.05
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.1,
+    "fundamental_rights": 0.3,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.18,
+    "consumer_public_safety": 0.42,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "The HHS/ONC HTI-1 Final Rule is dominantly framed around consumer and public safety, grounding its Predictive Decision Support Intervention transparency, risk-management, and interoperability mandates in protecting patients from clinical harm, reducing medical errors, improving sepsis and care outcomes, and ensuring healthcare AI tools are fair, appropriate, valid, effective, and safe. Fundamental rights forms a deeply intertwined secondary frame anchored in advancing 'health equity by design,' rooting out algorithmic bias and discrimination against historically underserved and marginalized communities (implementing Executive Orders 13985 and 14091), and strengthening patient data privacy, access, and authorization-revocation rights. Innovation enablement plays a major supporting role: ONC calibrates transparency guardrails without rigid performance thresholds to build public trust, unlock wider adoption of promising clinical AI tools, and foster a vibrant standards-based FHIR application ecosystem. Economic competitiveness serves as a distinct supporting frame tied to Executive Order 14036, curbing information blocking and market consolidation while correcting information asymmetry so healthcare markets reward higher-quality predictive models.",
+  "evidence_spans": [
+    {
+      "quote": "It also promotes the responsible development and use of artificial intelligence through transparency and improves patient care through policies that advance standards-based interoperability and EHI exchange, which are central to the Department of Health and Human Services' efforts to enhance and protect the health and well-being of all Americans.",
+      "source_section": "I.A Purpose of Regulatory Action",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 8914,
+      "end_char": 9262
+    },
+    {
+      "quote": "The finalized DSI requirements will improve transparency, promote trustworthiness, and incentivize the development and wider use of fair, appropriate, valid, effective, and safe Predictive DSIs to aid decision-making in healthcare.",
+      "source_section": "I.A.2 Administration Executive Orders",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 18080,
+      "end_char": 18311
+    },
+    {
+      "quote": "In this final rule we apply the concept of health equity by design to bring transparency to the quality and performance of intelligence and machine learning-based decision support tools in healthcare.",
+      "source_section": "I.A.2 Administration Executive Orders",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 16621,
+      "end_char": 16821
+    },
+    {
+      "quote": "Section 8 of\nE.O. 14091\nrequires agencies to “prevent and address discrimination and advance equity for all” and to “consider opportunities to prevent and remedy discrimination, including by protecting the public from algorithmic discrimination.”",
+      "source_section": "I.A.2 Administration Executive Orders",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 15725,
+      "end_char": 15971
+    },
+    {
+      "quote": "Thus, we sought to establish appropriate guardrails for information transparency about Predictive DSIs that do not undercut the value that could be offered to patients and clinicians from such promising technologies.",
+      "source_section": "III.C.5 Objectives of the Policies To Address Predictive Modeling in DSI",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 294653,
+      "end_char": 294869
+    },
+    {
+      "quote": "We believe that increased transparency into the performance of models and risk management practices related to their development will result in (1) wider uptake of Predictive DSIs overall due to greater certainty about the intervention's performance, and (2) selection of fairer, more appropriate, more accurate, more effective and safer models through greater information on the available choices.",
+      "source_section": "VII.C.1.a Regulatory Impact Analysis — DSI Benefits",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 1534637,
+      "end_char": 1535035
+    },
+    {
+      "quote": "The implementation of the new information blocking provisions detailed in section IV of this final rule promote innovation, encourage market competition, and address consolidation in the interest of the patient to advance interoperability, improve transparency, and support the access, exchange, and use of EHI.",
+      "source_section": "I.A.2 Administration Executive Orders",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 23090,
+      "end_char": 23401
+    },
+    {
+      "quote": "We believe that increased transparency will lead to an effective market for predictive models that adequately incentivizes and rewards high-quality models.",
+      "source_section": "VII.C.1.a Regulatory Impact Analysis — DSI Benefits",
+      "quote_en": null,
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 1547063,
+      "end_char": 1547218
+    }
+  ]
+}

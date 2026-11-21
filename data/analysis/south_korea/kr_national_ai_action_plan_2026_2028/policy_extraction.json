@@ -1,0 +1,173 @@
+{
+  "jurisdiction": "south_korea",
+  "issuing_body": "Presidential Council on National AI Strategy (국가인공지능전략위원회)",
+  "document_type": "strategy_paper",
+  "binding_strength": "strategy_statement",
+  "publication_date": "2026-02-25",
+  "effective_date": "2026-02-25",
+  "covered_actors": [
+    "Central government ministries and public agencies implementing 99 execution tasks and 326 policy recommendations (MSIT, MOE, MOTIE, MOIS, MND, MOHW, MSS, MOLIT, NIS, PIPC, MOJ, MCST, PPS, etc.)",
+    "Government Chief AI Officers (CAIOs), Chief Data Officers (CDOs), Chief Technical Officers (CTOs), and the AI Government Infrastructure Governance and Innovation Promotion Group",
+    "Private enterprises, public institutions, critical IT/cloud operators, white-hat hackers participating in CVD/VDP vulnerability disclosure, and industry-academia-research consortia in K-Moonshot"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models",
+    "public_sector_use",
+    "critical_infrastructure",
+    "defense",
+    "healthcare",
+    "education",
+    "employment"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "red_teaming",
+      "confidence": 0.89,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "ㅇ(운영 방식) 美·EU와 동일하게 대상 기관, 기업이 정한 정책 범위 내 화이트 해커에게 모든 정보통신망·서비스에 대한 취약점 탐지 허용",
+          "source_section": "붙임2-3 보안 취약점 신고·조치·공개 제도 도입 로드맵 - Ⅲ. 도입 방안",
+          "quote_en": "(Operational method) As in the US and EU, allow white-hat hackers to continuously probe vulnerabilities across all information and communications networks and services within the policy scope defined by the target institution or company.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19901,
+          "end_char": 19978
+        },
+        {
+          "quote": "ㅇ 민간의 화이트해커를 활용한 선제적･상시 보안점검체계 도입 등 보안 패러다임을 사후 대처에서 사전 예방 중심으로 전환",
+          "source_section": "붙임2-1 대한민국 인공지능행동계획 주요 내용 - 정책축 1",
+          "quote_en": "Shift the security paradigm from reactive post-incident response to proactive prevention, including introducing a proactive, continuous security inspection system utilizing private-sector white-hat hackers.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 11538,
+          "end_char": 11604
+        }
+      ]
+    },
+    {
+      "label": "incident_reporting",
+      "confidence": 0.9,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "-피신고 기업·기관은 취약점을 조치하고 조치한 이후, 화이트해커와의 협의를 통해 일정시일 내 기업·기관명/취약점 등 공개\n-다만, 기업·기관·화이트해커 실명은 본인 의사를 고려해 익명 공개 허용",
+          "source_section": "붙임2-3 보안 취약점 신고·조치·공개 제도 도입 로드맵 - Ⅲ. 도입 방안",
+          "quote_en": "Notified companies and institutions remediate the reported vulnerabilities and, after remediation, disclose the organization name and vulnerability details within a set period in consultation with the white-hat hacker, while permitting anonymous disclosure of real names considering the parties' wishes.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 19979,
+          "end_char": 20087
+        },
+        {
+          "quote": "“착한 해커(화이트해커)가 기업·기관의 보안 취약점을 상시로 찾아 신고하고, 피신고 기관은 신고된 취약점을 조치하며 그 이후 투명하게 공개함으로써 해킹 등 보안 사고를 예방”",
+          "source_section": "안건 3. 보안 취약점 신고·조치·공개 제도 도입 단계별 이행안(로드맵)",
+          "quote_en": "White-hat hackers continuously find and report security vulnerabilities of enterprises and institutions, notified organizations remediate the reported vulnerabilities, and subsequently disclose them transparently to prevent hacking and other security incidents.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4259,
+          "end_char": 4356
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.87,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "󰊵 (AI규제혁신) AI학습에 필요한 원본 개인정보와 저작물 활용*이 권리 침해나 이용자의 법적 불확실성 없이 안전하고 자유롭게 이루어지도록 관련 법제 정비\n* (거래시장 有) 거래 활성화 지원, (거래시장 無) AI학습 거부권 행사 지원, 거부 표시 없는 경우에만 선사용·후보상 원칙 적용",
+          "source_section": "붙임2-1 대한민국 인공지능행동계획 주요 내용 - 정책축 1",
+          "quote_en": "(AI regulatory innovation) Reform relevant legal systems so that raw personal data and copyrighted works needed for AI training can be utilized safely and freely without rights infringement or legal uncertainty for users: where a licensing market exists, support transaction activation; where none exists, support exercising AI training opt-out rights and apply a use-first, compensate-later principle only when no opt-out is indicated.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 12146,
+          "end_char": 12308
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.84,
+      "obligation_strength": "aspirational",
+      "evidence": [
+        {
+          "quote": "ㅇ 민간 수준 이상으로 배터리 안전기준 강화를 위해 공공 정보시스템 운영시설 안정성 기준(전자정부법 하위 고시) 개정(’26.2.11 개정 고시 시행)\nㅇ 전체 행정･공공 시스템 운영시설(1,474개) 특별조사(∼’26.1분기) 및 1･2등급 시스템 운영시설 중심 배터리･서버 분리 여부 현장점검(∼’26.2분기)\nㅇ 국정자원 대전센터는 ’30년까지 폐쇄 및 시스템 단계적 이전 추진",
+          "source_section": "붙임2-2 AI정부 인프라 거버넌스·혁신 추진방향 - 3. 중점 추진방향",
+          "quote_en": "To strengthen battery safety standards above private-sector levels, revise the stability standards for public information system operating facilities (subordinate notice under the Electronic Government Act, effective Feb. 11, 2026), conduct special inspections of all 1,474 administrative and public facilities (by Q1 2026) and on-site inspections of battery/server separation at Tier 1–2 facilities (by Q2 2026), and close the NIRS Daejeon Center by 2030 with phased system migration.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14113,
+          "end_char": 14327
+        },
+        {
+          "quote": "ㅇ 데이터 중요도에 따라 C등급(기밀) 데이터는 정부･공공 데이터센터, S(민감)･O등급(공개) 데이터는 민간 클라우드로 이관하는 방향으로 추진",
+          "source_section": "붙임2-2 AI정부 인프라 거버넌스·혁신 추진방향 - 3. 중점 추진방향",
+          "quote_en": "Pursue data-tier placement by sensitivity, keeping Class C (Classified) data in government/public datacenters while migrating Class S (Sensitive) and Class O (Open) data to private clouds.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 14933,
+          "end_char": 15013
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "quote": "위원회는 부처별 이행 상황을 체계적으로 점검해 나갈 계획이며, 부처와 긴밀한 협력을 통해 국민이 체감할 수 있는 성과를 창출할 수 있도록 노력해 나갈 것이다.",
+          "source_section": "안건 1. 대한민국 인공지능 행동계획",
+          "quote_en": "The Council plans to systematically monitor implementation status by each ministry and strive to generate tangible outcomes felt by citizens through close inter-ministerial cooperation.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 2863,
+          "end_char": 2951
+        },
+        {
+          "quote": "ㅇ 행동계획에는 각 부처가 이행해야 하는 정책권고 및 추진기한을 제시\n* (주관부처) 과기(121), 교육(32), 산업(31), 행안(25), 국방(23), 복지(17), 중기(12), 국토(11), 국정원(10), AI전략위(9) 등(추진기한) ‘26.1분기 81개(24.8%), ’26.2~4분기 185개(56.7%), ‘27년 이후 60개(18.4%)",
+          "source_section": "붙임2-1 대한민국 인공지능행동계획 주요 내용 - Ⅱ. 추진 경과",
+          "quote_en": "The Action Plan presents policy recommendations and implementation deadlines for each ministry (lead ministries: MSIT 121, MOE 32, MOTIE 31, MOIS 25, MND 23, MOHW 17, MSS 12, MOLIT 11, NIS 10, NAISC 9; deadlines: Q1 2026 81 items [24.8%], Q2–Q4 2026 185 items [56.7%], 2027 onward 60 items [18.4%]).",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 10990,
+          "end_char": 11190
+        }
+      ]
+    },
+    {
+      "label": "procurement_condition",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "quote": "ㅇ (참여 유인) 공공은 기관 평가 연계, 민간은 보안인증 가점·공공조달 우대, 화이트 해커는 신고 포상제 활성화로 초기 참여 유도\n- 특히 개보법에 따른 사고시 과징금에 해당제도 운영 노력을 감경요소로 반영",
+          "source_section": "붙임2-3 보안 취약점 신고·조치·공개 제도 도입 로드맵 - Ⅲ. 도입 방안",
+          "quote_en": "(Participation incentives) Induce early participation by linking public agencies to institutional evaluations, granting private companies security-certification bonus points and public procurement preference, invigorating bug bounty programs for white-hat hackers, and notably reflecting CVD/VDP operational efforts as a mitigating factor for PIPA incident fines.",
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 20203,
+          "end_char": 20319
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "Presidential Council on National AI Strategy (국가인공지능전략위원회)",
+    "Ministry of Science and ICT (MSIT / 과학기술정보통신부)",
+    "National Intelligence Service (NIS / 국가정보원)",
+    "Ministry of the Interior and Safety (MOIS / 행정안전부), Personal Information Protection Commission (PIPC), Ministry of Justice (MOJ), Public Procurement Service (PPS), and KISA"
+  ],
+  "compliance_deadlines": [
+    "2026-02-11: Effective date of revised public information system facility safety standards (Electronic Government Act subordinate notice)",
+    "Q1 2026: Special inspection of 1,474 public IT facilities; 81 Action Plan policy recommendations due; K-Moonshot mission confirmation and Program Director appointments (March 2026)",
+    "Q2–Q4 2026: 185 Action Plan recommendations due; on-site inspection of Tier 1–2 public facilities (Q2); H2 2026 launch of MSIT/NIS CVD/VDP white-hat pilot programs; 134 NIRS DR systems and 50 cloud migrations",
+    "2027: Stage 2 CVD/VDP expansion guidelines and institutionalization of procurement/PIPA fine-mitigation incentives; 60 remaining Action Plan recommendations (2027–2028)",
+    "2030: Target year for #1 globally in Physical AI and Manufacturing AI and closure of NIRS Daejeon Center; 2035 target for K-Moonshot 12 national S&T missions"
+  ],
+  "penalties_summary": "No direct penalties are enacted in this strategy decision. Implementation relies on inter-ministerial monitoring of 326 policy recommendations, public-agency evaluations, security-certification bonus points, public procurement preference, and planned PIPA fine-mitigation incentives for CVD/VDP participants, alongside future statutory amendments (Stage 3) to mandate public-sector CVD/VDP and grant civil/criminal safe harbor to good-faith white-hat hackers.",
+  "implementation_notes": "Official press release and plenary decision annexes from the 2nd Plenary Meeting of the Presidential Council on National AI Strategy (NAISC, chaired by President Lee Jae-myung, Feb. 25, 2026). Formally finalizes the Korea National AI Action Plan (2026–2028) as the statutory AI Basic Plan under Article 6 of Korea's AI Basic Act (effective Jan. 22, 2026), together with four companion decisions: AI Government Infrastructure Governance & Innovation Direction (post-NIRS Daejeon fire), Coordinated Vulnerability Disclosure (CVD/VDP) Roadmap, K-Moonshot S&T AI Strategy, and NAISC operating-rule revisions adding AI Democracy and Education/Talent subcommittees plus Security and Regional Special Committees.",
+  "confidence": 0.94
+}

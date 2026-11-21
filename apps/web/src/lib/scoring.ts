@@ -261,19 +261,26 @@ export function isKnownFrameLabel(value?: string | null): value is FrameLabel {
 }
 
 /**
- * Codebook §8.2 headline population predicate (A3, A4):
- * Only documents explicitly tagged as primary_instrument AND active or
- * adopted_not_yet_effective enter headline scoring. Missing/unclassified rows
- * are strictly excluded.
+ * Codebook §8.2 headline population predicate (A3, A4, Phase 5A):
+ * Only documents explicitly tagged as `primary_instrument` (or `subnational_overlay`
+ * ONLY when `options.includeSubnational === true`) AND `active` or
+ * `adopted_not_yet_effective` enter headline scoring. Missing/unclassified rows
+ * are strictly excluded, and subnational overlays are excluded by default so the
+ * federal-sovereign baseline remains unpolluted.
  */
 export function isHeadlineEligible(
   doc: Pick<ScoringDocumentInput, "corpusRole" | "lifecycleStage">,
+  options?: { includeSubnational?: boolean },
 ): boolean {
-  return (
-    doc.corpusRole === "primary_instrument" &&
-    (doc.lifecycleStage === "active" ||
-      doc.lifecycleStage === "adopted_not_yet_effective")
-  );
+  const activeStage =
+    doc.lifecycleStage === "active" ||
+    doc.lifecycleStage === "adopted_not_yet_effective";
+  if (!activeStage) return false;
+  if (doc.corpusRole === "primary_instrument") return true;
+  if (doc.corpusRole === "subnational_overlay") {
+    return Boolean(options?.includeSubnational);
+  }
+  return false;
 }
 
 export function isLowConfidenceDocument(
@@ -987,11 +994,18 @@ function groupByJurisdiction(
 
 export function computeWeightSensitivityGrid(
   allDocs: readonly ScoringDocumentInput[],
+  options?: { includeSubnational?: boolean },
 ): SensitivityModeRow[] {
-  const headlineDocs = allDocs.filter(isHeadlineEligible);
-  const headlinePool = headlineDocs.length > 0 ? headlineDocs : allDocs;
+  const includeSubnational = Boolean(options?.includeSubnational);
+  const scopedAll = includeSubnational
+    ? allDocs
+    : allDocs.filter((doc) => doc.corpusRole !== "subnational_overlay");
+  const headlineDocs = scopedAll.filter((doc) =>
+    isHeadlineEligible(doc, { includeSubnational }),
+  );
+  const headlinePool = headlineDocs.length > 0 ? headlineDocs : scopedAll;
   const headlineMap = groupByJurisdiction(headlinePool);
-  const allMap = groupByJurisdiction(allDocs);
+  const allMap = groupByJurisdiction(scopedAll);
 
   const evalHeadline = evaluateCore(headlineMap, "standard");
   const evalWeighted = evaluateCore(headlineMap, "binding_weighted");
@@ -1143,9 +1157,18 @@ function buildDynamicFindings(
   byJurisdiction: Map<JurisdictionKey, JurisdictionScoreOutput>,
   pairwiseDetails: PairwiseDetail[],
   mode: ScoringMode,
+  includeSubnational = false,
 ): HeadlineFinding[] {
   const findings: HeadlineFinding[] = [];
-  const modeSuffix = mode === "all" ? "&mode=all" : "";
+  const modeSuffix =
+    (mode === "all" ? "&mode=all" : "") + (includeSubnational ? "&states=1" : "");
+  const matrixQueryParts: string[] = [];
+  if (mode === "all") matrixQueryParts.push("mode=all");
+  if (includeSubnational) matrixQueryParts.push("states=1");
+  const matrixHref =
+    matrixQueryParts.length > 0
+      ? `/matrix?${matrixQueryParts.join("&")}`
+      : "/matrix";
 
   // 1. Widest Policy–Framing Decoupling Pair (largest |POL - FRM|)
   const uniquePairs = pairwiseDetails.filter(
@@ -1212,7 +1235,7 @@ function buildDynamicFindings(
       kicker: "regime coverage gap",
       headline: `${NAME_BY_KEY[leader.j]} imposes ${leader.statutoryControls}/${COVERAGE_CONTROL_KEYS.length} controls via binding law vs. ${trailer.statutoryControls} in ${NAME_BY_KEY[trailer.j]}`,
       detail: `Measured by strongest binding level per control (0–4), unaffected by FAQ or companion-page volume.`,
-      href: mode === "all" ? "/matrix?mode=all" : "/matrix",
+      href: matrixHref,
       hrefLabel: "Open obligation matrix →",
     });
   }
@@ -1223,26 +1246,38 @@ function buildDynamicFindings(
 export function computeScoringEngine(
   allDocs: readonly ScoringDocumentInput[],
   mode: ScoringMode = "headline",
+  options?: { includeSubnational?: boolean },
 ): ScoringEngineOutput {
+  const includeSubnational = Boolean(options?.includeSubnational);
+  const scopedCorpus = includeSubnational
+    ? allDocs
+    : allDocs.filter((doc) => doc.corpusRole !== "subnational_overlay");
+
   const totalCountsByJur = new Map<JurisdictionKey, number>(
     SCORING_JURISDICTION_ORDER.map((j) => [j, 0]),
   );
-  for (const doc of allDocs) {
+  for (const doc of scopedCorpus) {
     totalCountsByJur.set(
       doc.jurisdiction,
       (totalCountsByJur.get(doc.jurisdiction) ?? 0) + 1,
     );
   }
 
-  // Codebook §8.2 strict filtering in headline mode (A3, A4)
+  // Codebook §8.2 strict filtering in headline mode (A3, A4, Phase 5A)
   const activeDocs =
-    mode === "headline" ? allDocs.filter(isHeadlineEligible) : [...allDocs];
+    mode === "headline"
+      ? scopedCorpus.filter((doc) =>
+          isHeadlineEligible(doc, { includeSubnational }),
+        )
+      : [...scopedCorpus];
 
   const docsByJur = groupByJurisdiction(activeDocs);
   const core = evaluateCore(docsByJur, "standard");
   const bootstrapCIs = computeBootstrapCIs(docsByJur);
   const nullCalibration = computePermutationNull(docsByJur);
-  const sensitivityGrid = computeWeightSensitivityGrid(allDocs);
+  const sensitivityGrid = computeWeightSensitivityGrid(allDocs, {
+    includeSubnational,
+  });
 
   type YearBucket = {
     totalDocuments: number;
@@ -1518,7 +1553,12 @@ export function computeScoringEngine(
     timelineByJurisdiction[j] = mapYearBuckets(jurYearBuckets.get(j)!);
   }
 
-  const findings = buildDynamicFindings(byJurisdiction, pairwiseDetails, mode);
+  const findings = buildDynamicFindings(
+    byJurisdiction,
+    pairwiseDetails,
+    mode,
+    includeSubnational,
+  );
 
   return {
     mode,

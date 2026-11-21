@@ -1,0 +1,103 @@
+{
+  "dominant_frame": "consumer_public_safety",
+  "secondary_frames": [
+    "innovation_enablement",
+    "national_security",
+    "fundamental_rights"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.68,
+    "economic_competitiveness": 0.15,
+    "fundamental_rights": 0.62,
+    "social_stability": 0.12,
+    "innovation_enablement": 0.8,
+    "consumer_public_safety": 0.94,
+    "labor_transition": 0.1
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.16,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.12,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.24,
+    "consumer_public_safety": 0.48,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "Treasury's report is dominantly framed around consumer and public safety, centering on protecting financial institutions, their personnel, and consumers from escalating cyber-enabled fraud, deepfake identity impersonation, synthetic identity theft, data poisoning, and operational IT disruptions. Innovation enablement serves as a strong secondary rationale: Treasury stresses the importance of prudent technological innovation, flexible non-prescriptive guidance, and public-private collaboration to help firms of all sizes safely adopt AI tools for cyber defense and anti-fraud operations. National security is a meaningful secondary frame rooted in protecting the financial services critical infrastructure sector against sophisticated cyberthreat and nation-state actors, alongside anti-money laundering and counter-terrorist financing resilience. Fundamental rights appears as a supporting secondary concern, highlighting consumer privacy, data protection, fairness, and the risk that financial AI systems could perpetuate or amplify inequities against historically marginalized groups.",
+  "evidence_spans": [
+    {
+      "quote": "Financial institutions’ primary cybersecurity goal generally remains the protection of their important assets: their personnel and customers, and their data, including internal information and information received from counterparties.",
+      "source_section": "2.4 Cybersecurity and Risks Related to AI Models",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 34161,
+      "end_char": 34395
+    },
+    {
+      "quote": "Fraudsters can use AI to mimic voice, video, and other behavioral identity factors that financial institutions use to verify a customer’s identity. Financial institution representatives that participated in our discussions consistently identified this kind of sophisticated identity impersonation as a chief concern about the malicious use of AI.",
+      "source_section": "3.3 Identity Impersonation and Synthetic Identity",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 46190,
+      "end_char": 46536
+    },
+    {
+      "quote": "The U.S. Department of the Treasury (Treasury) recognizes both the importance of responsible technological innovation across the financial sector and the increasing opportunities surrounding AI systems in the financial sector.",
+      "source_section": "Executive Summary",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 828,
+      "end_char": 1054
+    },
+    {
+      "quote": "This effort will explore potentially enhancing coordination across regulators with the goal of fostering responsible AI advancements, while addressing risk, and understanding applicable regulatory regimes.",
+      "source_section": "6.4 Regulation of AI in Financial Services Remains an Open Question",
+      "quote_en": null,
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 96156,
+      "end_char": 96361
+    },
+    {
+      "quote": "Like other critical infrastructure sectors, the financial services sector is increasingly subject to costly cybersecurity threats and cyber-enabled fraud.",
+      "source_section": "Executive Summary",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 3093,
+      "end_char": 3247
+    },
+    {
+      "quote": "The potential for nation state actors to exploit GenAI for misinformation campaigns poses a significant and evolving threat.",
+      "source_section": "Annex A: FSSCC R&D Committee Paper",
+      "quote_en": null,
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 122598,
+      "end_char": 122722
+    },
+    {
+      "quote": "Applications of AI in consumer financial services, insurance underwriting, fraud detection, and other areas of financial services have the potential to perpetuate or amplify existing inequities. Use of AI in these contexts also raises questions regarding consumer privacy and data security.",
+      "source_section": "7. Conclusion and Other Treasury AI Work",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 109851,
+      "end_char": 110141
+    },
+    {
+      "quote": "Beyond legal compliance, interview participants point to a growing demand for ethical considerations in AI development and deployment. This includes ensuring AI systems are fair, transparent, and accountable, and do not perpetuate biases or discrimination.",
+      "source_section": "3.4 Third-Party Risks and Magnified Data Security and Privacy",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 52098,
+      "end_char": 52354
+    }
+  ]
+}

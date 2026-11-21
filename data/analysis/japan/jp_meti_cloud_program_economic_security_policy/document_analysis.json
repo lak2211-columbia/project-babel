@@ -1,0 +1,377 @@
+{
+  "source_id": "jp_meti_cloud_program_economic_security_policy",
+  "title": "クラウドプログラムに係る安定供給確保を図るための取組方針 (METI Stable Supply Support Policy for Cloud Programs under the Economic Security Promotion Act)",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
+    "document_type": "strategy_paper",
+    "binding_strength": "executive_action",
+    "publication_date": "2024-02-05",
+    "effective_date": "2024-02-05",
+    "covered_actors": [
+      "Domestic-based foundational cloud service providers and cloud program developers applying for Supply Security Plan certification (認定供給確保事業者)",
+      "Providers deploying advanced electronic computers (supercomputers, AI computers, quantum computers) supplying domestic cloud compute capacity to startups and enterprises",
+      "New Energy and Industrial Technology Development Organization (NEDO) administering the Stable Supply Support Fund, and Japan Finance Corporation (JFC) administering two-step financing",
+      "METI, Cabinet Office/NISC, and related administrative organs coordinating under the Economic Security Promotion Act"
+    ],
+    "covered_application_domains": [
+      "critical_infrastructure",
+      "public_sector_use",
+      "finance",
+      "healthcare",
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [
+      "Certification of multi-operator Supply Security Plans that would unduly impede competing businesses in the same industry or trigger unreasonable price increases harming general consumers and related businesses"
+    ],
+    "safety_requirements": [
+      {
+        "label": "compute_governance",
+        "confidence": 0.94,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "① 2025 年度上期までに提供開始される計画である計算資源については、当該事業者において2025 年度上期までに提供開始される計算資源量が理論ピーク性能（※）で合計0.75[EFLOPS]以上であり、取組期間中は合計0.75[EFLOPS]以上を維持する事業計画を有すること。",
+            "source_section": "供給確保計画の認定要件 - （２）次世代に向けた基盤クラウドプログラムの開発に必要な生産基盤の整備",
+            "quote_en": "(1) For computing resources scheduled to commence provision by the first half of FY2025, the operator must have a business plan providing a combined theoretical peak performance of at least 0.75 EFLOPS (FP16, excluding sparsity-based acceleration) by H1 FY2025 and maintaining at least 0.75 EFLOPS throughout the project period.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16298,
+            "end_char": 16437
+          },
+          {
+            "quote": "② 2025 年度下期から2027 年度末までに提供開始される計画である計算資源については、当該事業者において2027 年度末までに提供開始される計算資源量が理論ピーク性能（※）で合計7.5[EFLOPS]以上であり、取組期間中は合計7.5[EFLOPS]以上を維持する事業計画を有すること。",
+            "source_section": "供給確保計画の認定要件 - （２）次世代に向けた基盤クラウドプログラムの開発に必要な生産基盤の整備",
+            "quote_en": "(2) For computing resources scheduled to commence provision between the second half of FY2025 and the end of FY2027, the operator must have a business plan providing a combined theoretical peak performance of at least 7.5 EFLOPS (FP16, excluding sparsity-based acceleration) by the end of FY2027 and maintaining at least 7.5 EFLOPS throughout the project period.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16438,
+            "end_char": 16584
+          }
+        ]
+      },
+      {
+        "label": "registration_licensing",
+        "confidence": 0.9,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "供給確保計画の認定の対象とする取組は、経済施策を一体的に講ずることによる安全保障\nの確保の推進に関する法律施行令（令和４年政令第394 号。以下「施行令」という。）第１ 条第８号に規定するインターネットその他の高度情報通信ネットワークを通じて電子計算機（入出力装置を含む。）を他人の情報処理の用に供するシステムに用いるプログラム（クラウドプログラム）のうち、高い機密性や可用性等が求められるクラウドを自律的に確保するために不可欠な基盤的技術のうち、我が国が保持すべき重要な技術の実装に資する取組であって、その技術開発又は生産基盤の整備のいずれかに該当するものとする。",
+            "source_section": "供給確保計画の認定要件",
+            "quote_en": "Initiatives eligible for Supply Security Plan certification must concern cloud programs designated under Article 1(8) of the Enforcement Order of the Economic Security Promotion Act that contribute to implementing essential foundational technologies Japan must retain to autonomously secure high-confidentiality and high-availability clouds, falling under either technology development or production-base development.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15438,
+            "end_char": 15721
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.9,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "（３）供給確保計画の対象とする取組に関するものを含め、生産・調達や保有技術等の情報\nを適切に管理するための体制が構築されていること。",
+            "source_section": "供給確保計画の認定要件（実施体制の確実性）",
+            "quote_en": "(3) A system must be established to appropriately manage information on production, procurement, proprietary technologies, and other matters including those related to initiatives covered by the Supply Security Plan.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17674,
+            "end_char": 17740
+          },
+          {
+            "quote": "（２）外国為替及び外国貿易法（昭和24 年法律第228 号）や、クラウドプログラムの安定供給に係る国内関係法令を遵守すること。 （３）事業継続性確保のため、事業継続計画が策定されていること。",
+            "source_section": "供給確保計画の認定要件（安定供給確保の信頼性）",
+            "quote_en": "(2) Compliance with the Foreign Exchange and Foreign Trade Act (Act No. 228 of 1949) and domestic laws and regulations relating to the stable supply of cloud programs. (3) Formulation of a Business Continuity Plan to ensure business continuity.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17068,
+            "end_char": 17163
+          }
+        ]
+      },
+      {
+        "label": "incident_reporting",
+        "confidence": 0.88,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "また、経済産業大臣は、クラウドプログラムの施行令による指定及び取組方針の策定後、\n毎年度、供給確保計画の定期報告、取組の実施の支障時等の報告を通じ、クラウドプログラ\nム等の安定供給確保の状況について確認を行い、必要に応じて、供給確保計画の的確な実施\nのための措置を講じるものとする。",
+            "source_section": "施行状況の確認・見直し",
+            "quote_en": "Furthermore, following designation of cloud programs by Cabinet Order and formulation of this Policy, the Minister of Economy, Trade and Industry shall verify the stable supply status of cloud programs annually through periodic reports on Supply Security Plans and reports on impediments/disruptions to implementation, and take necessary measures to ensure proper execution of certified plans.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 21796,
+            "end_char": 21937
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.84,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "⚫ 当該プログラムを活用して提供されるクラウドサービスが、利用者の求めに応じてシス\nテム構成や運用体制の透明性や管理可能性に対応できるものであること。",
+            "source_section": "供給確保計画の認定要件 - （１）基盤クラウドプログラムの技術開発",
+            "quote_en": "Cloud services provided using the certified program must be capable of responding to user requests for transparency and manageability regarding system architecture and operational governance.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 16092,
+            "end_char": 16167
+          }
+        ]
+      },
+      {
+        "label": "risk_assessment",
+        "confidence": 0.83,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "供給確保計画の認定の対象とする取組は、安定供給確保を取り組もうとする品目について、\n次に掲げる基準を総合的に考慮し、サプライチェーンの供給途絶によるリスクの緩和につな\nがるものとして、安定供給確保に十分効果的と認められるものであるものとする。",
+            "source_section": "供給確保計画の認定要件",
+            "quote_en": "Initiatives eligible for Supply Security Plan certification must be recognized as sufficiently effective for securing stable supply by mitigating risks of supply-chain disruption, based on a comprehensive assessment of the specified criteria.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15723,
+            "end_char": 15844
+          },
+          {
+            "quote": "（２）外国為替及び外国貿易法（昭和24 年法律第228 号）や、クラウドプログラムの安定供給に係る国内関係法令を遵守すること。 （３）事業継続性確保のため、事業継続計画が策定されていること。",
+            "source_section": "供給確保計画の認定要件（安定供給確保の信頼性）",
+            "quote_en": "(2) Compliance with the Foreign Exchange and Foreign Trade Act (Act No. 228 of 1949) and domestic laws and regulations relating to the stable supply of cloud programs. (3) Formulation of a Business Continuity Plan to ensure business continuity.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 17068,
+            "end_char": 17163
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "procurement_condition",
+        "confidence": 0.94,
+        "evidence": [
+          {
+            "quote": "⚫ また、経済産業大臣が認定供給確保計画の変更を指示する、認定を取り消す等の措置を\n講じた場合には、その措置の内容に応じ、助成金等の返還等の所要の手続きを実施する\nものとする。",
+            "source_section": "安定供給確保支援独立行政法人基金",
+            "quote_en": "In addition, where the Minister of Economy, Trade and Industry directs modification of a certified Supply Security Plan or revokes certification, NEDO shall execute required procedures such as demanding repayment (clawback) of grants according to the nature of the measure.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 18871,
+            "end_char": 18959
+          },
+          {
+            "quote": "このほか、「クラウド・バイ・デフォルト原則」を踏まえつつ、「経済財政運営と改革\nの基本方針 2023（令和５年６月16 日閣議決定） 」や「新しい資本主義のグランドデザイン及び実行計画 2023 改訂版（令和５年６月16 日閣議決定） 」において定められた方針を踏まえ、必要なクラウドの技術開発等の支援とその成果の公共調達への反映や計算資源の整備・拡充等を推進していく。",
+            "source_section": "（１）関連する戦略・取組及び施策を取り巻く環境",
+            "quote_en": "In addition, based on the 'Cloud-by-Default Principle' and Cabinet Decisions including the Basic Policy on Economic and Fiscal Management and Reform 2023 and Grand Design for a New Capitalism 2023, the government will support necessary cloud technology development, reflect its outcomes in public procurement, and expand computing resources.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14031,
+            "end_char": 14216
+          }
+        ]
+      },
+      {
+        "label": "reporting_obligation",
+        "confidence": 0.92,
+        "evidence": [
+          {
+            "quote": "また、経済産業大臣は、クラウドプログラムの施行令による指定及び取組方針の策定後、\n毎年度、供給確保計画の定期報告、取組の実施の支障時等の報告を通じ、クラウドプログラ\nム等の安定供給確保の状況について確認を行い、必要に応じて、供給確保計画の的確な実施\nのための措置を講じるものとする。",
+            "source_section": "施行状況の確認・見直し",
+            "quote_en": "Furthermore, following designation of cloud programs by Cabinet Order and formulation of this Policy, the Minister of Economy, Trade and Industry shall verify the stable supply status of cloud programs annually through periodic reports on Supply Security Plans and reports on impediments/disruptions to implementation, and take necessary measures to ensure proper execution of certified plans.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 21796,
+            "end_char": 21937
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.92,
+        "evidence": [
+          {
+            "quote": "具体的には、経済産業大臣は、クラウドプログラムのサプライチェーンの状況を的確\nに把握するため、必要と認めるときは、法第48 条第１項等を活用し、重要な物資のサ\nプライチェーン把握のための調査を実施すること等により、その調達及び供給の現状並\nびにサプライチェーンの抱える課題の把握に努めるものとする。",
+            "source_section": "（３）サプライチェーンの状況の的確な把握及び調査の推進",
+            "quote_en": "Specifically, to accurately grasp the cloud-program supply-chain situation, the Minister of Economy, Trade and Industry shall utilize Article 48(1) of the Act when deemed necessary to conduct supply-chain surveys of critical goods, striving to assess procurement and supply conditions and supply-chain vulnerabilities.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 14634,
+            "end_char": 14783
+          },
+          {
+            "quote": "⚫ 助成金等の執行に当たっては、ＮＥＤＯは、交付申請時の審査、交付決定、交付決定後\nの審査の実施等を通じ、適正な執行に努めるとともに、経済産業大臣等と連携し、認定\n供給確保計画の適正かつ確実な遂行がなされていることを確認するものとする。",
+            "source_section": "安定供給確保支援独立行政法人基金",
+            "quote_en": "In executing grants, NEDO shall ensure proper administration through application screening, grant decisions, and post-grant inspections, coordinating with the Minister of Economy, Trade and Industry to confirm proper and reliable execution of certified Supply Security Plans.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 18752,
+            "end_char": 18870
+          }
+        ]
+      },
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.82,
+        "evidence": [
+          {
+            "quote": "具体的には、経済産業大臣は、当該事業者の事業規模や事業内容の実情に配慮し、「サイ\nバーセキュリティ経営ガイドライン」（経済産業省・ＩＰＡ）又は「中小企業の情報セキュ\nリティ対策ガイドライン」（ＩＰＡ）等を活用させる等、必要に応じ、サプライチェーンに\nおけるサイバーセキュリティの確保を勧奨する等の対応を行うものとする。",
+            "source_section": "サイバーセキュリティの確保",
+            "quote_en": "Specifically, taking into account each operator's business scale and operations, the Minister of Economy, Trade and Industry shall take measures such as recommending supply-chain cybersecurity safeguards through utilization of the METI/IPA Cybersecurity Management Guidelines or IPA SME Information Security Guidelines.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20849,
+            "end_char": 21008
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Ministry of Economy, Trade and Industry (METI / 経済産業省)",
+      "New Energy and Industrial Technology Development Organization (NEDO — Stable Supply Support Fund administrator)",
+      "Japan Finance Corporation (JFC / 日本政策金融公庫 — two-step low-interest financing)",
+      "Cabinet Secretariat / National Center of Incident Readiness and Strategy for Cybersecurity (NISC) and IPA (cybersecurity coordination)"
+    ],
+    "compliance_deadlines": [
+      "2024-02-05: Effective date of the revised Stable Supply Support Policy (originally adopted Jan. 19, 2023)",
+      "H1 FY2025: Minimum 0.75 EFLOPS FP16 theoretical peak compute threshold for Phase 1 advanced compute infrastructure plans",
+      "FY2027 (end of fiscal year): Target milestone for sustainable domestic foundational cloud provision and minimum 7.5 EFLOPS FP16 theoretical peak compute threshold for Phase 2 infrastructure plans",
+      "Project duration limits: Within 3 years from start for foundational cloud program tech development; at least 3 years from deployment for advanced compute infrastructure operation; annual periodic reporting to METI"
+    ],
+    "penalties_summary": "No direct criminal or general civil fines are created by this policy, but certified Supply Security Plan operators face enforceable ministerial modification orders, certification revocation (認定の取消し), and mandatory repayment/clawback of NEDO grants (助成金等の返還) upon non-compliance, alongside mandatory compliance with the Foreign Exchange and Foreign Trade Act, statutory supply-chain investigation powers under Economic Security Promotion Act Art. 48(1), and potential direct government intervention under Art. 44.",
+    "implementation_notes": "Official ministerial Support Policy (取組方針) issued under Article 8(1) of Japan's Economic Security Promotion Act (Act No. 43 of 2022) and Enforcement Order Art. 1(8), revised and effective February 5, 2024. Designates foundational cloud programs and advanced compute production bases (supercomputers, AI computers, quantum computers) as Specified Critical Products eligible for NEDO Stable Supply Support Fund grants and JFC financing, establishing quantitative FP16 compute capacity thresholds (0.75 EFLOPS by H1 FY2025; 7.5 EFLOPS by end of FY2027), domestic management-base and startup-pricing conditions, user-requested architecture transparency, BCP and export-control compliance, annual and disruption reporting, and supply-chain cybersecurity and human-rights recommendations.",
+    "confidence": 0.96
+  },
+  "risk_framing": {
+    "dominant_frame": "national_security",
+    "secondary_frames": [
+      "economic_competitiveness",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.97,
+      "economic_competitiveness": 0.88,
+      "fundamental_rights": 0.25,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.78,
+      "consumer_public_safety": 0.48,
+      "labor_transition": 0.1
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.5,
+      "economic_competitiveness": 0.28,
+      "fundamental_rights": 0.0,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.16,
+      "consumer_public_safety": 0.06,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "METI's Stable Supply Support Policy for Cloud Programs is dominantly framed around national security, promulgated under the Economic Security Promotion Act to prevent situations impairing national and public security amid rapidly shifting global geopolitical conditions, reduce excessive dependence on foreign hyperscalers (noting US and Chinese dominance of ~70% of the global cloud market), mitigate risks of overseas service cutoffs or unauthorized access to sensitive government and critical-infrastructure data beyond Japan's control, and build sovereign domestic cloud and AI-compute capacity. Economic competitiveness is a strong secondary frame emphasizing industrial competitiveness across sectors such as materials, healthcare, and weather forecasting, reversing the decline of domestic cloud providers and outflow of top engineering talent, and ensuring sustainable industrial bases by FY2027. Innovation enablement forms a substantive third frame through testbed expansion and below-market compute pricing for startups and SMEs developing next-generation AI and quantum applications, with a minor consumer and public safety thread addressing supply continuity and supply-chain cyberattacks against vital infrastructure.",
+    "evidence_spans": [
+      {
+        "quote": "他方、日本は、そうしたプログラムの供給を海外に依存していることから、現状が変\nわらなければ、高いセキュリティが求められる領域も含めて、国内に事業基盤を有する\n事業者が基盤クラウド事業から撤退を余儀なくされ、海外からネットワーク経由で提供\nされる基盤クラウドの停止やそれに伴う利用者の事業そのものが停止する、我が国が直\n接管理できない状況下で情報に不当にアクセスされる等のリスクがある。",
+        "source_section": "（３）外部から行われる行為による供給途絶等の蓋然性",
+        "quote_en": "On the other hand, because Japan depends on overseas sources for the supply of such programs, if the current situation does not change, domestic-based operators—even in fields requiring high security—may be forced to exit the foundational cloud business, creating risks that foundational clouds provided from overseas via networks could be suspended, halting users' businesses, or that information could be improperly accessed under circumstances Japan cannot directly control.",
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 8355,
+        "end_char": 8547
+      },
+      {
+        "quote": "我が国にとって重要なデータの自律的管理が可能なクラウドを確保するために、政府や企\n業のニーズを踏まえつつ、2023 年度から国内に事業基盤を有する事業者が保有できていない、利便性やセキュリティを左右する重要な基盤クラウドプログラムの技術の開発を行うとともに、将来の基盤クラウドプログラムの開発に必要な高度な電子計算機の利用環境を整備することで、基盤クラウドプログラムの安定供給を確保し、2027 年度までに国内に事業基盤を有する事業者が基盤クラウドを持続的に提供できるような体制を構築する。",
+        "source_section": "目標",
+        "quote_en": "To secure clouds capable of autonomous management of data critical to Japan, while meeting government and corporate needs, Japan will develop key foundational cloud program technologies lacking among domestic-based providers from FY2023 and establish usage environments for advanced computers required for future cloud program development, securing stable supply so domestic-based operators can sustainably provide foundational clouds by FY2027.",
+        "frame": "national_security",
+        "grounding_status": "verbatim",
+        "start_char": 11899,
+        "end_char": 12144
+      },
+      {
+        "quote": "さらに、材料開発や医療・ヘルスケア、気象予測等の分野でデジタル技術の活用が進んでい\nる状況等を踏まえれば、今後、あらゆる産業における競争力強化のためには、更なるデジタ\nル化促進と、そのニーズに対応できる産業基盤を確保していくことが重要である。また、カ\nーボンニュートラルの実現に向けても、デジタル技術の活用が不可欠であり、その中枢とな\nるクラウドサービスやそれを支える産業基盤の重要性がますます増加している。",
+        "source_section": "はじめに",
+        "quote_en": "Furthermore, given expanding digital technology use in fields such as materials development, healthcare, and weather forecasting, strengthening competitiveness across all industries requires accelerating digitalization and securing an industrial base capable of meeting those needs; digital technology is also indispensable for carbon neutrality, further increasing the importance of cloud services and their supporting industrial base.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 1680,
+        "end_char": 1884
+      },
+      {
+        "quote": "その上で、今後、日本が更なる大量・高速処理のニーズに対応できる基盤クラウド\nプログラムを開発・提供できない場合、情報処理に関する知見を有する組織・人材が\n日本から喪失し、日本が競争力を有する材料開発や医療・ヘルスケア等の産業を含め\nたあらゆる領域において、将来の情報処理を他国に依存するおそれがある。",
+        "source_section": "（２）外部依存性 - ② 将来の重要性及び成長性",
+        "quote_en": "Moreover, if Japan fails to develop and provide foundational cloud programs capable of handling future massive, high-speed processing needs, organizations and talent with information-processing expertise will be lost from Japan, risking future dependence on other countries for information processing across all fields, including industries where Japan holds competitiveness such as materials development and healthcare.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 5660,
+        "end_char": 5810
+      },
+      {
+        "quote": "現在、高度な\n電子計算機の供給は限定的であるため、一部の事業者のみが利用している状況であり、\nスタートアップ等の小規模な事業者等が利用できるように、高度な電子計算機の利用\n機会を拡大していくことが極めて重要である。",
+        "source_section": "（６）クラウドプログラムのサプライチェーンが抱える課題及び動向 - ② 基盤的技術の獲得の必要性",
+        "quote_en": "Because the supply of advanced electronic computers is currently limited and only a subset of operators can access them, expanding access opportunities to advanced electronic computers so that startups and other small-scale operators can utilize them is extremely important.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 10915,
+        "end_char": 11022
+      },
+      {
+        "quote": "⚫ スタートアップ等30による基盤クラウドプログラムの開発を促進するため、当該クラウドサービスが、その他の同種の電子計算機を利用する場合の市場価格等に比べて安価な価格で提供されること。",
+        "source_section": "供給確保計画の認定要件 - （２）次世代に向けた基盤クラウドプログラムの開発に必要な生産基盤の整備",
+        "quote_en": "To promote development of foundational cloud programs by startups and similar entities (including startups developing AI and quantum applications), the cloud service must be provided at a lower price compared to market prices for using comparable advanced computers.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 16847,
+        "end_char": 16939
+      },
+      {
+        "quote": "昨今、複雑化・巧妙化したサイバー攻撃の脅威が増大する中、対策が手薄になりがちな自\n社内の工場や海外拠点等が被害を受ける等の事案が発生しているところ、万一サイバー攻撃\nで事業が停止した場合、物資の安定供給を確保できなくなるおそれがある。このような状況\nを踏まえると、自社内全体を俯瞰したサイバーセキュリティ対策の必要性が増しており、サ\nイバーセキュリティの確保がサプライチェーンの維持ひいては特定重要物資の安定的な供\n給のために不可欠な要素となっている。",
+        "source_section": "サイバーセキュリティの確保",
+        "quote_en": "Amid rising threats from increasingly complex and sophisticated cyberattacks, incidents have occurred damaging factories and overseas bases where defenses tend to be weak, risking an inability to ensure stable supply if operations halt due to a cyberattack; ensuring cybersecurity across the enterprise is indispensable for maintaining supply chains and stable supply of specified critical products.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 20491,
+        "end_char": 20717
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:09:04.734843Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "4d439b2d5e77b2b67288597f586bcb495b642a4ed51182644a49af3356d1630d",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 22185,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 22,
+      "exact_matches": 22,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

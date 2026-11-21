@@ -1,0 +1,65 @@
+{
+  "dominant_frame": "fundamental_rights",
+  "secondary_frames": [
+    "consumer_public_safety"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.1,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.74,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.0,
+    "consumer_public_safety": 0.62,
+    "labor_transition": 0.0
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.0,
+    "fundamental_rights": 0.6,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.0,
+    "consumer_public_safety": 0.4,
+    "labor_transition": 0.0
+  },
+  "rationale_summary": "California AB 2013 contains no legislative findings preamble, so its framing emerges directly from its operative disclosure categories in the Civil Code. Its dominant rationale aligns with fundamental rights—specifically personal-data privacy under California Consumer Privacy Act definitions, intellectual property ownership and licensing transparency, and public accountability over dataset provenance. Consumer and public safety forms a substantial secondary rationale, as the law mandates public-facing website disclosures for all generative AI systems made publicly available to Californians, requires reporting whether aggregate consumer information was used, and carves out dedicated security-and-integrity and national-airspace aviation systems to avoid disrupting operational safety functions.",
+  "evidence_spans": [
+    {
+      "quote": "(7) Whether the datasets include personal information, as defined in subdivision (v) of Section 1798.140.\n(8) Whether the datasets include aggregate consumer information, as defined in subdivision (b) of Section 1798.140.",
+      "source_section": "Civil Code § 3111(a)(7)–(8)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 5086,
+      "end_char": 5307
+    },
+    {
+      "quote": "(5) Whether the datasets include any data protected by copyright, trademark, or patent, or whether the datasets are entirely in the public domain.\n(6) Whether the datasets were purchased or licensed by the developer.",
+      "source_section": "Civil Code § 3111(a)(5)–(6)",
+      "quote_en": null,
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 4858,
+      "end_char": 5074
+    },
+    {
+      "quote": "is made publicly available to Californians for use, regardless of whether the terms of that use include compensation, the developer of the system or service shall post on the developer’s internet website documentation regarding the data used by the developer to train the generative artificial intelligence system or service",
+      "source_section": "Civil Code § 3111",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 3680,
+      "end_char": 4004
+    },
+    {
+      "quote": "(9) Whether there was any cleaning, processing, or other modification to the datasets by the developer, including the intended purpose of those efforts in relation to the artificial intelligence system or service.",
+      "source_section": "Civil Code § 3111(a)(9)",
+      "quote_en": null,
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 5308,
+      "end_char": 5521
+    }
+  ]
+}

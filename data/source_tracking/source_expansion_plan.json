@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-11-21T06:30:54.786627+00:00",
+  "generated_at": "2026-11-21T21:16:47.186134+00:00",
   "jurisdictions": [
     {
       "jurisdiction": "china",
       "description": "Official State Council, CAC, and sectoral sources for China's AI governance regime and implementation measures.",
       "coverage_snapshot": {
         "portal_count": 8,
-        "seed_document_count": 20,
+        "seed_document_count": 21,
         "target_range": {
           "minimum": 30,
           "target": 45,
           "maximum": 60
         },
-        "gap_to_minimum": 10,
+        "gap_to_minimum": 9,
         "document_type_counts": {
           "legislation": 5,
           "regulatory_guidance": 7,
-          "standards_guideline": 4,
+          "standards_guideline": 5,
           "strategy_paper": 4
         },
         "source_tier_counts": {
@@ -24,7 +24,7 @@
           "policy_strategy": 4,
           "regulatory_guidance": 3,
           "statutory_rule": 5,
-          "technical_standard": 4
+          "technical_standard": 5
         },
         "policy_domain_counts": {
           "agentic_ai": 2,
@@ -33,14 +33,14 @@
           "consumer_protection": 10,
           "critical_infrastructure": 1,
           "embodied_physical_ai": 1,
-          "frontier_gpai": 5,
+          "frontier_gpai": 6,
           "healthcare_medical_devices": 1,
-          "industrial_innovation": 6,
+          "industrial_innovation": 7,
           "national_security": 2,
           "platform_content_governance": 11,
           "public_sector_governance": 1,
-          "sovereign_compute": 1,
-          "standards_assurance": 4
+          "sovereign_compute": 2,
+          "standards_assurance": 5
         }
       },
       "portal_operations": [
@@ -179,7 +179,7 @@
             "policy",
             "ai_governance"
           ],
-          "existing_seed_count": 8,
+          "existing_seed_count": 9,
           "candidate_count": 1,
           "family_count": 1,
           "high_signal_family_count": 0,
@@ -202,7 +202,7 @@
             "sectoral_guidance": 2,
             "statutory_rule": 4,
             "strategy_architecture": 2,
-            "technical_standard": 1
+            "technical_standard": 2
           },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
@@ -336,7 +336,7 @@
             "embodied_ai",
             "gb_45438"
           ],
-          "existing_seed_count": 0,
+          "existing_seed_count": 1,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -345,13 +345,16 @@
             "implementation_guidance",
             "technical_standard"
           ],
-          "covered_coverage_buckets": [],
-          "missing_coverage_buckets": [
-            "enforcement_interpretation",
-            "implementation_guidance",
+          "covered_coverage_buckets": [
             "technical_standard"
           ],
-          "covered_bucket_counts": {},
+          "missing_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance"
+          ],
+          "covered_bucket_counts": {
+            "technical_standard": 1
+          },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
@@ -416,34 +419,37 @@
       "description": "Official EU legal text, implementation guidance, and data-protection sources for the AI Act and related governance instruments.",
       "coverage_snapshot": {
         "portal_count": 6,
-        "seed_document_count": 21,
+        "seed_document_count": 24,
         "target_range": {
           "minimum": 40,
           "target": 60,
           "maximum": 80
         },
-        "gap_to_minimum": 19,
+        "gap_to_minimum": 16,
         "document_type_counts": {
-          "legislation": 2,
+          "legislation": 3,
           "regulatory_guidance": 14,
+          "strategy_paper": 2,
           "voluntary_commitment": 5
         },
         "source_tier_counts": {
           "implementation_resource": 8,
+          "policy_strategy": 2,
           "regulatory_guidance": 6,
-          "statutory_rule": 2,
+          "statutory_rule": 3,
           "voluntary_framework": 5
         },
         "policy_domain_counts": {
-          "civil_rights_nondiscrimination": 2,
+          "civil_rights_nondiscrimination": 3,
           "consumer_protection": 5,
           "copyright_ip": 4,
-          "frontier_gpai": 21,
-          "industrial_innovation": 4,
+          "frontier_gpai": 23,
+          "industrial_innovation": 6,
           "platform_content_governance": 2,
           "privacy_data_protection": 4,
-          "public_sector_governance": 1,
-          "standards_assurance": 11
+          "public_sector_governance": 3,
+          "sovereign_compute": 1,
+          "standards_assurance": 14
         }
       },
       "portal_operations": [
@@ -457,7 +463,7 @@
             "implementation",
             "ai_act"
           ],
-          "existing_seed_count": 18,
+          "existing_seed_count": 20,
           "candidate_count": 15,
           "family_count": 15,
           "high_signal_family_count": 3,
@@ -470,23 +476,23 @@
             "implementation_guidance",
             "sectoral_guidance",
             "statutory_rule",
+            "strategy_architecture",
             "voluntary_framework"
           ],
-          "missing_coverage_buckets": [
-            "strategy_architecture"
-          ],
+          "missing_coverage_buckets": [],
           "covered_bucket_counts": {
             "enforcement_interpretation": 2,
             "implementation_guidance": 11,
-            "sectoral_guidance": 4,
+            "sectoral_guidance": 5,
             "statutory_rule": 2,
+            "strategy_architecture": 2,
             "voluntary_framework": 5
           },
           "candidate_bucket_counts": {
             "implementation_guidance": 5,
             "strategy_architecture": 3
           },
-          "suggested_action": "expand_seed_documents",
+          "suggested_action": "inspect_families",
           "priority_families": [
             {
               "family_id": "title:guidelines on the scope of the obligations for providers of gpai models",
@@ -753,7 +759,7 @@
             "official_journal",
             "ai_act"
           ],
-          "existing_seed_count": 2,
+          "existing_seed_count": 5,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -761,11 +767,15 @@
             "statutory_rule"
           ],
           "covered_coverage_buckets": [
-            "statutory_rule"
+            "sectoral_guidance",
+            "statutory_rule",
+            "strategy_architecture"
           ],
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
-            "statutory_rule": 2
+            "sectoral_guidance": 2,
+            "statutory_rule": 3,
+            "strategy_architecture": 2
           },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
@@ -782,7 +792,7 @@
             "apply_ai",
             "high_risk"
           ],
-          "existing_seed_count": 2,
+          "existing_seed_count": 3,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -792,6 +802,8 @@
           ],
           "covered_coverage_buckets": [
             "implementation_guidance",
+            "sectoral_guidance",
+            "statutory_rule",
             "voluntary_framework"
           ],
           "missing_coverage_buckets": [
@@ -799,6 +811,8 @@
           ],
           "covered_bucket_counts": {
             "implementation_guidance": 1,
+            "sectoral_guidance": 1,
+            "statutory_rule": 1,
             "voluntary_framework": 1
           },
           "candidate_bucket_counts": {},
@@ -968,44 +982,48 @@
       "jurisdiction": "japan",
       "description": "Official Cabinet Secretariat, Cabinet Office, Digital Agency, METI, MIC, MEXT, PPC, MHLW, MAFF, CFA, and Cultural Affairs materials for Japan's AI governance approach.",
       "coverage_snapshot": {
-        "portal_count": 17,
-        "seed_document_count": 34,
+        "portal_count": 18,
+        "seed_document_count": 37,
         "target_range": {
           "minimum": 40,
           "target": 55,
           "maximum": 70
         },
-        "gap_to_minimum": 6,
+        "gap_to_minimum": 3,
         "document_type_counts": {
           "legislation": 1,
-          "regulatory_guidance": 12,
+          "regulatory_guidance": 14,
           "standards_guideline": 10,
-          "strategy_paper": 10,
+          "strategy_paper": 11,
           "voluntary_commitment": 1
         },
         "source_tier_counts": {
+          "executive_action": 1,
           "implementation_resource": 9,
           "policy_strategy": 6,
-          "regulatory_guidance": 8,
+          "regulatory_guidance": 10,
           "statutory_rule": 1,
           "technical_standard": 9,
           "voluntary_framework": 1
         },
         "policy_domain_counts": {
-          "agentic_ai": 3,
+          "agentic_ai": 4,
           "civil_rights_nondiscrimination": 1,
-          "copyright_ip": 2,
+          "consumer_protection": 1,
+          "copyright_ip": 3,
+          "critical_infrastructure": 1,
           "education": 3,
           "embodied_physical_ai": 2,
-          "frontier_gpai": 22,
+          "finance": 1,
+          "frontier_gpai": 24,
           "healthcare_medical_devices": 3,
-          "industrial_innovation": 15,
-          "national_security": 2,
-          "platform_content_governance": 2,
+          "industrial_innovation": 16,
+          "national_security": 3,
+          "platform_content_governance": 3,
           "privacy_data_protection": 4,
           "public_sector_governance": 3,
           "public_sector_procurement": 5,
-          "sovereign_compute": 1,
+          "sovereign_compute": 2,
           "standards_assurance": 9
         }
       },
@@ -1020,7 +1038,7 @@
             "culture",
             "intellectual_property"
           ],
-          "existing_seed_count": 1,
+          "existing_seed_count": 2,
           "candidate_count": 15,
           "family_count": 15,
           "high_signal_family_count": 1,
@@ -1037,11 +1055,11 @@
             "strategy_architecture"
           ],
           "covered_bucket_counts": {
-            "implementation_guidance": 1,
-            "sectoral_guidance": 1
+            "implementation_guidance": 2,
+            "sectoral_guidance": 2
           },
           "candidate_bucket_counts": {
-            "implementation_guidance": 15
+            "implementation_guidance": 14
           },
           "suggested_action": "inspect_families",
           "priority_families": [
@@ -1484,7 +1502,7 @@
             "governance_guidelines",
             "expert_group"
           ],
-          "existing_seed_count": 4,
+          "existing_seed_count": 5,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -1493,6 +1511,7 @@
             "strategy_architecture"
           ],
           "covered_coverage_buckets": [
+            "sectoral_guidance",
             "strategy_architecture",
             "technical_standard"
           ],
@@ -1500,6 +1519,7 @@
             "implementation_guidance"
           ],
           "covered_bucket_counts": {
+            "sectoral_guidance": 1,
             "strategy_architecture": 1,
             "technical_standard": 3
           },
@@ -1696,6 +1716,40 @@
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
+        },
+        {
+          "portal_id": "jp_fsa",
+          "portal_name": "Financial Services Agency (FSA) — AI in Financial Services",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "tags": [
+            "finance",
+            "fsa",
+            "supervision"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
         }
       ],
       "priority_families": [
@@ -1810,32 +1864,38 @@
       "jurisdiction": "south_korea",
       "description": "Official legal, public-sector, privacy, and medical-device sources for South Korea's AI framework and implementation.",
       "coverage_snapshot": {
-        "portal_count": 9,
-        "seed_document_count": 17,
+        "portal_count": 11,
+        "seed_document_count": 20,
         "target_range": {
           "minimum": 25,
           "target": 35,
           "maximum": 50
         },
-        "gap_to_minimum": 8,
+        "gap_to_minimum": 5,
         "document_type_counts": {
           "legislation": 3,
-          "regulatory_guidance": 14
+          "regulatory_guidance": 16,
+          "strategy_paper": 1
         },
         "source_tier_counts": {
           "implementation_resource": 2,
-          "regulatory_guidance": 12,
+          "policy_strategy": 1,
+          "regulatory_guidance": 14,
           "statutory_rule": 3
         },
         "policy_domain_counts": {
           "civil_rights_nondiscrimination": 1,
-          "consumer_protection": 1,
-          "critical_infrastructure": 2,
-          "frontier_gpai": 14,
+          "consumer_protection": 2,
+          "critical_infrastructure": 3,
+          "embodied_physical_ai": 1,
+          "finance": 2,
+          "frontier_gpai": 16,
           "healthcare_medical_devices": 1,
+          "industrial_innovation": 1,
           "privacy_data_protection": 7,
-          "public_sector_governance": 10,
-          "standards_assurance": 5
+          "public_sector_governance": 11,
+          "sovereign_compute": 1,
+          "standards_assurance": 7
         }
       },
       "portal_operations": [
@@ -1849,7 +1909,7 @@
             "policy",
             "ai_governance"
           ],
-          "existing_seed_count": 4,
+          "existing_seed_count": 5,
           "candidate_count": 4,
           "family_count": 4,
           "high_signal_family_count": 0,
@@ -1860,15 +1920,15 @@
           "covered_coverage_buckets": [
             "implementation_guidance",
             "sectoral_guidance",
-            "statutory_rule"
-          ],
-          "missing_coverage_buckets": [
+            "statutory_rule",
             "strategy_architecture"
           ],
+          "missing_coverage_buckets": [],
           "covered_bucket_counts": {
             "implementation_guidance": 2,
-            "sectoral_guidance": 4,
-            "statutory_rule": 2
+            "sectoral_guidance": 5,
+            "statutory_rule": 2,
+            "strategy_architecture": 1
           },
           "candidate_bucket_counts": {
             "implementation_guidance": 4
@@ -2137,6 +2197,74 @@
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
           "priority_families": []
+        },
+        {
+          "portal_id": "kr_naisc",
+          "portal_name": "Presidential Council on National AI Strategy (NAISC / Korea.kr)",
+          "issuer_type": "executive",
+          "portal_kind": "portal",
+          "tags": [
+            "strategy",
+            "action_plan",
+            "executive"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "sectoral_guidance",
+            "strategy_architecture"
+          ],
+          "missing_coverage_buckets": [
+            "implementation_guidance"
+          ],
+          "covered_bucket_counts": {
+            "sectoral_guidance": 1,
+            "strategy_architecture": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "kr_fsc",
+          "portal_name": "Financial Services Commission (FSC) — Financial Sector AI Governance",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "tags": [
+            "finance",
+            "fsc",
+            "security",
+            "guideline"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 2,
+            "sectoral_guidance": 2
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
         }
       ],
       "priority_families": []
@@ -2145,45 +2273,47 @@
       "jurisdiction": "united_states",
       "description": "Official executive, standards, civil-rights, consumer-protection, and health-regulation sources for U.S. AI governance.",
       "coverage_snapshot": {
-        "portal_count": 12,
-        "seed_document_count": 29,
+        "portal_count": 18,
+        "seed_document_count": 42,
         "target_range": {
           "minimum": 40,
           "target": 55,
           "maximum": 70
         },
-        "gap_to_minimum": 11,
+        "gap_to_minimum": 0,
         "document_type_counts": {
           "executive_order": 4,
-          "legislation": 1,
-          "regulatory_guidance": 6,
+          "legislation": 10,
+          "regulatory_guidance": 10,
           "standards_guideline": 12,
           "strategy_paper": 6
         },
         "source_tier_counts": {
-          "executive_action": 6,
+          "executive_action": 7,
           "implementation_resource": 7,
           "policy_strategy": 4,
-          "regulatory_guidance": 3,
-          "statutory_rule": 1,
+          "regulatory_guidance": 6,
+          "statutory_rule": 10,
           "technical_standard": 8
         },
         "policy_domain_counts": {
-          "agentic_ai": 2,
-          "civil_rights_nondiscrimination": 6,
-          "consumer_protection": 6,
-          "critical_infrastructure": 1,
-          "finance": 3,
-          "frontier_gpai": 22,
-          "healthcare_medical_devices": 1,
-          "industrial_innovation": 7,
-          "national_security": 4,
-          "platform_content_governance": 1,
-          "privacy_data_protection": 1,
-          "public_sector_governance": 5,
+          "agentic_ai": 3,
+          "civil_rights_nondiscrimination": 10,
+          "consumer_protection": 9,
+          "copyright_ip": 3,
+          "critical_infrastructure": 2,
+          "embodied_physical_ai": 1,
+          "finance": 4,
+          "frontier_gpai": 29,
+          "healthcare_medical_devices": 2,
+          "industrial_innovation": 8,
+          "national_security": 7,
+          "platform_content_governance": 2,
+          "privacy_data_protection": 2,
+          "public_sector_governance": 6,
           "public_sector_procurement": 1,
-          "sovereign_compute": 3,
-          "standards_assurance": 16
+          "sovereign_compute": 7,
+          "standards_assurance": 23
         }
       },
       "portal_operations": [
@@ -2664,7 +2794,7 @@
             "super_intelligence",
             "rulemaking"
           ],
-          "existing_seed_count": 3,
+          "existing_seed_count": 6,
           "candidate_count": 0,
           "family_count": 0,
           "high_signal_family_count": 0,
@@ -2673,14 +2803,14 @@
           ],
           "covered_coverage_buckets": [
             "implementation_guidance",
-            "sectoral_guidance"
-          ],
-          "missing_coverage_buckets": [
+            "sectoral_guidance",
             "statutory_rule"
           ],
+          "missing_coverage_buckets": [],
           "covered_bucket_counts": {
             "implementation_guidance": 1,
-            "sectoral_guidance": 2
+            "sectoral_guidance": 3,
+            "statutory_rule": 3
           },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",
@@ -2742,6 +2872,204 @@
           "missing_coverage_buckets": [],
           "covered_bucket_counts": {
             "statutory_rule": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_hhs_onc",
+          "portal_name": "HHS Assistant Secretary for Technology Policy / ONC Health IT",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "tags": [
+            "healthcare",
+            "onc",
+            "hti1",
+            "algorithm_transparency"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "sectoral_guidance",
+            "statutory_rule"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance"
+          ],
+          "covered_bucket_counts": {
+            "sectoral_guidance": 1,
+            "statutory_rule": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_treasury",
+          "portal_name": "U.S. Department of the Treasury — AI & Cybersecurity in Finance",
+          "issuer_type": "regulator",
+          "portal_kind": "portal",
+          "tags": [
+            "finance",
+            "treasury",
+            "cybersecurity"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1,
+            "sectoral_guidance": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_bis_export",
+          "portal_name": "Bureau of Industry and Security (BIS) — Advanced Computing Export Controls",
+          "issuer_type": "regulator",
+          "portal_kind": "registry",
+          "tags": [
+            "bis",
+            "export_controls",
+            "compute_governance",
+            "national_security"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance"
+          ],
+          "covered_bucket_counts": {
+            "statutory_rule": 2
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_copyright_office",
+          "portal_name": "U.S. Copyright Office — Copyright and Artificial Intelligence",
+          "issuer_type": "regulator",
+          "portal_kind": "library",
+          "tags": [
+            "copyright",
+            "training_data",
+            "intellectual_property"
+          ],
+          "existing_seed_count": 2,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "enforcement_interpretation",
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance",
+            "sectoral_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "enforcement_interpretation"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 2,
+            "sectoral_guidance": 2
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_dod",
+          "portal_name": "U.S. Department of Defense — Directives & AI Autonomy Policy",
+          "issuer_type": "executive",
+          "portal_kind": "library",
+          "tags": [
+            "defense",
+            "national_security",
+            "autonomy"
+          ],
+          "existing_seed_count": 1,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "implementation_guidance",
+            "strategy_architecture"
+          ],
+          "covered_coverage_buckets": [
+            "implementation_guidance"
+          ],
+          "missing_coverage_buckets": [
+            "strategy_architecture"
+          ],
+          "covered_bucket_counts": {
+            "implementation_guidance": 1
+          },
+          "candidate_bucket_counts": {},
+          "suggested_action": "monitor_only",
+          "priority_families": []
+        },
+        {
+          "portal_id": "us_state_legislatures",
+          "portal_name": "U.S. State Legislative Registries (Opt-In Subnational AI Overlay)",
+          "issuer_type": "legal_registry",
+          "portal_kind": "registry",
+          "tags": [
+            "subnational_overlay",
+            "state_law",
+            "legislation"
+          ],
+          "existing_seed_count": 6,
+          "candidate_count": 0,
+          "family_count": 0,
+          "high_signal_family_count": 0,
+          "expected_coverage_buckets": [
+            "statutory_rule"
+          ],
+          "covered_coverage_buckets": [
+            "sectoral_guidance",
+            "statutory_rule"
+          ],
+          "missing_coverage_buckets": [],
+          "covered_bucket_counts": {
+            "sectoral_guidance": 2,
+            "statutory_rule": 6
           },
           "candidate_bucket_counts": {},
           "suggested_action": "monitor_only",

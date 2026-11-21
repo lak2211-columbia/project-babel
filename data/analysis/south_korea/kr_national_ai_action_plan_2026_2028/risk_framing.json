@@ -1,0 +1,113 @@
+{
+  "dominant_frame": "economic_competitiveness",
+  "secondary_frames": [
+    "innovation_enablement",
+    "national_security",
+    "consumer_public_safety",
+    "labor_transition"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.15,
+    "national_security": 0.84,
+    "economic_competitiveness": 0.96,
+    "fundamental_rights": 0.55,
+    "social_stability": 0.35,
+    "innovation_enablement": 0.9,
+    "consumer_public_safety": 0.72,
+    "labor_transition": 0.68
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.18,
+    "economic_competitiveness": 0.36,
+    "fundamental_rights": 0.05,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.24,
+    "consumer_public_safety": 0.1,
+    "labor_transition": 0.07
+  },
+  "rationale_summary": "The Korea National AI Action Plan (2026–2028) and accompanying NAISC 2nd Plenary decisions are dominantly framed around economic competitiveness, establishing a concrete blueprint for Korea to leap into the global top three AI powers, achieve global first place in physical AI and manufacturing AI by 2030, export full-stack Korean AI solutions, and reclaim global scientific leadership through K-Moonshot in direct response to US and Chinese national AI initiatives. Innovation enablement is a major secondary frame, driving the buildout of an 'AI Highway' of compute and data, regulatory reform to resolve legal uncertainty over AI training data and copyright, public-sector digital transformation, and regulatory sandboxes for vulnerability disclosure pilots. National security forms a prominent third frame encompassing sovereign general-purpose models, domestic AI semiconductors, an AI-based defense powerhouse with accelerated military AI acquisition, and overcoming a national cybersecurity crisis across government networks. Consumer and public safety (resilient public datacenter safety, disaster recovery after the NIRS fire, and proactive white-hat cyber defense) and labor and workforce transition (building an AI Basic Society with human-AI collaborative employment ecosystems and proactively addressing job-structure shifts and equitable distribution of AI transition gains) serve as substantial supporting frames, alongside a modest fundamental rights thread reflected in creator/privacy safeguards and the new AI Democracy Subcommittee.",
+  "evidence_spans": [
+    {
+      "quote": "□ 경제 성장 궤도 재진입과 도약이 결정되는 중대한 기로에서 AI는 대한민국의 새로운 혁신 성장과 국민 삶의 질 향상을 견인할 핵심 수단\n☞ 국가AI전략위를 중심으로 민·관 역량을 총결집한 대응전략 마련 추진",
+      "source_section": "붙임2-1 대한민국 인공지능행동계획 주요 내용 - Ⅰ. 추진 배경",
+      "quote_en": "At a critical crossroads determining re-entry into an economic growth trajectory and a national leap forward, AI is the core means to drive Korea's new innovative growth and improve citizens' quality of life; centered on the National AI Strategy Council, Korea is mobilizing public and private capabilities to formulate a comprehensive response strategy.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 10213,
+      "end_char": 10329
+    },
+    {
+      "quote": "󰊶 (산업 AX) 글로벌 제조업 1위(’30)를 위한 「제조 AI 2030 전략」 수립 및 강점 있는 제조･문화･의료분야 AX 통한 한국형 AI풀스택 수출 전략 마련",
+      "source_section": "붙임2-1 대한민국 인공지능행동계획 주요 내용 - 정책축 2",
+      "quote_en": "(Industrial AX) Formulate the 'Manufacturing AI 2030 Strategy' to achieve #1 globally in manufacturing by 2030, and establish a Korean full-stack AI export strategy through AI transformation in strong sectors including manufacturing, culture, and healthcare.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 12349,
+      "end_char": 12441
+    },
+    {
+      "quote": "󰊱 (AI고속도로 구축) 누구나 충분한 AI컴퓨팅･데이터 자원 등을 안전하게 활용해 AI 혁신서비스･기술을 마음껏 창출하는 ‘AI고속도로’ 구축",
+      "source_section": "붙임2-1 대한민국 인공지능행동계획 주요 내용 - 정책축 1",
+      "quote_en": "(Building the AI Highway) Build an 'AI Highway' where anyone can safely utilize sufficient AI computing and data resources to freely create innovative AI services and technologies.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 11243,
+      "end_char": 11323
+    },
+    {
+      "quote": "(AI기반 국방강국) 국방CAIO･관리체계 수립 등 국방 AI거버넌스를 혁신하고, 획득체계 개편*으로 국방 AI 도입 지연 해소\n* AI 발전 주기(3~6개월)을 고려, 국방 AI 도입을 전통적 무기 획득(10년 이상) 대비 획기적으로 단축 추진",
+      "source_section": "붙임2-1 대한민국 인공지능행동계획 주요 내용 - 정책축 2",
+      "quote_en": "(AI-based Defense Powerhouse) Innovate defense AI governance including establishing a Defense CAIO and management system, and reform the acquisition system to resolve delays in adopting defense AI, drastically shortening acquisition compared to traditional weapons (10+ years) given the 3–6 month AI development cycle.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 12854,
+      "end_char": 12991
+    },
+    {
+      "quote": "위원회는 유사한 시대적 상황에서 인공지능을 활용한 신종 위협이 더욱 확산***되는 지금, 미국·유럽이 도입한 해당 제도를 본 따르기(벤치마킹), 공공·민간 전반에 단계적으로 도입해 현재의 국가적 보안 사태를 극복한다는 방침이다.",
+      "source_section": "안건 3. 보안 취약점 신고·조치·공개 제도 도입 단계별 이행안(로드맵)",
+      "quote_en": "In similar circumstances as new AI-enabled threats proliferate further, the Council's policy is to benchmark the CVD/VDP regime adopted by the US and Europe and introduce it in phases across the public and private sectors to overcome the current national cybersecurity crisis.",
+      "frame": "national_security",
+      "grounding_status": "verbatim",
+      "start_char": 4746,
+      "end_char": 4873
+    },
+    {
+      "quote": "□ 이번 국정자원 화재(’25.9.26~9.27)는 정부가 직접 구축･관리하는 폐쇄적 공공 정보화 시스템의 구조적 취약성을 드러낸 사고\n⇨ 대통령 지시(’25.9.28)에 따라 공공 정보화 관리 시스템의 근본적 재설계 추진",
+      "source_section": "붙임2-2 AI정부 인프라 거버넌스·혁신 추진방향 - 1. 배경",
+      "quote_en": "The recent NIRS fire (Sept. 26–27, 2025) exposed structural vulnerabilities in closed public IT systems directly built and managed by the government; following presidential instructions (Sept. 28, 2025), Korea is pursuing a fundamental redesign of public IT management systems.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 13445,
+      "end_char": 13569
+    },
+    {
+      "quote": "아울러 “인공지능을 성장, 고용, 산업 구조, 소득 분배까지 영향을 미치는 핵심 경제 변수인 만큼, 인공지능 사회로의 전환 과정에서 부담과 성과가 공정하게 분배될 수 있도록 일자리 구조 변화와 산업·지역 간 격차에 대한 대응도 지금부터 치열하게 준비해야 한다”라고 강조했다.",
+      "source_section": "본문 (경제부총리 발언)",
+      "quote_en": "Deputy Prime Minister Koo Yun-cheol emphasized that because AI is a core economic variable affecting growth, employment, industrial structure, and income distribution, Korea must rigorously prepare from now to respond to changes in job structures and industrial/regional divides so that burdens and gains are distributed fairly during the transition to an AI society.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 7797,
+      "end_char": 7950
+    },
+    {
+      "quote": "(AI기본사회) 노동, 복지, 교육 등을 포함한 국민 일상 전반을 AI로 보장하는 ‘AI기본사회 추진계획’ 수립\nㅇ 복지 신청주의를 탈피*한 AI기반 복지 모델 수립, 응급･원격의료 혁신으로 AI기본의료를 구현하고, 인간-AI가 협업하는 고용생태계 구축",
+      "source_section": "붙임2-1 대한민국 인공지능행동계획 주요 내용 - 정책축 3",
+      "quote_en": "(AI Basic Society) Establish an 'AI Basic Society Action Plan' guaranteeing citizens' daily lives—including labor, welfare, and education—with AI; build an AI-based welfare model moving beyond application-based claims, realize AI basic healthcare through emergency and telemedicine innovation, and build an employment ecosystem where humans and AI collaborate.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 13034,
+      "end_char": 13175
+    },
+    {
+      "quote": "위원회는 인공지능 민주주의 의제(아젠다) 확대에 대응하여 인공지능 시대 관리 체제(거버넌스) 발전, 국민 통합 등에 관한 사항을 심층 논의하는 ‘인공지능 민주주의 분과’를 신설한다.",
+      "source_section": "안건 5. 국가 인공지능전략위원회 운영세칙 일부개정안",
+      "quote_en": "Responding to the expanding AI democracy agenda, the Council is establishing an 'AI Democracy Subcommittee' to deliberate in depth on governance development in the AI era and national integration.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 7043,
+      "end_char": 7144
+    }
+  ]
+}

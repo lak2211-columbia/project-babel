@@ -167,6 +167,9 @@ BOILERPLATE_LINE_PATTERNS = (
     re.compile(r"^京(?:ICP|公网安)备\d+号$"),
     re.compile(r"^(?:返回顶部|PC版|联系我们)$"),
     re.compile(r"^(无障碍浏览|网站无障碍|关怀版|繁体|ENGLISH|邮箱|微博|微信|客户端)\s*"),
+    re.compile(r"^※\s*본 법령은 공포 후 시행전 개정된 사항을 모두 포함한 법령이며"),
+    re.compile(r"^'?\s*또는 조문 앞의\s*'?$"),
+    re.compile(r"^'?\s*아이콘을 통해 확인할 수 있습니다\.?$"),
 )
 LOW_QUALITY_TITLE_PATTERNS = (
     re.compile(r"^slide\s+\d+$", re.IGNORECASE),
@@ -1003,6 +1006,8 @@ def _prune_noise_nodes(root: Tag) -> None:
         ".shareLayer",
         "#share_popup",
         "#bodyContentError",
+        "#hisComment",
+        ".cont_subtit",
         ".lawico01",
         ".open_mark",
         ".view_nav",

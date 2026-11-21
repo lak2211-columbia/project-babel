@@ -18,7 +18,11 @@ import {
 import { jurisdictionMeta, jurisdictionOrder } from "@/lib/jurisdictions";
 import { getOverviewData, parseScoringMode } from "@/lib/overview-data";
 import { frameLabels } from "@/lib/seed-data";
-import { isCjkText, toHtmlLang } from "@/lib/taxonomy-vocab";
+import {
+  isCjkText,
+  parseIncludeSubnational,
+  toHtmlLang,
+} from "@/lib/taxonomy-vocab";
 
 import { CompareControls } from "./_compare-controls";
 
@@ -53,16 +57,24 @@ export async function generateMetadata({
 export default async function ComparePage({
   searchParams,
 }: {
-  searchParams: Promise<{ a?: string; b?: string; mode?: string }>;
+  searchParams: Promise<{
+    a?: string;
+    b?: string;
+    mode?: string;
+    states?: string;
+  }>;
 }) {
-  const { a, b, mode: rawMode } = await searchParams;
+  const { a, b, mode: rawMode, states: rawStates } = await searchParams;
   const mode = parseScoringMode(rawMode);
+  const requestedStates = parseIncludeSubnational(rawStates);
   const { keyA, keyB } = resolvePairKeys(a, b);
 
   const [diff, overview] = await Promise.all([
-    getBilateralComparison(keyA, keyB, mode),
-    getOverviewData(mode),
+    getBilateralComparison(keyA, keyB, mode, requestedStates),
+    getOverviewData(mode, requestedStates),
   ]);
+  const includeSubnational =
+    overview.subnationalCount > 0 && overview.includeSubnational;
 
   const options = jurisdictionOrder.map((key) => ({
     slug: jurisdictionMeta[key].slug,
@@ -90,7 +102,13 @@ export default async function ComparePage({
   }
 
   const nullCal = overview.nullCalibration;
-  const modeParam = mode === "all" ? "?mode=all" : "";
+  const modeParam = (() => {
+    const qp = new URLSearchParams();
+    if (mode === "all") qp.set("mode", "all");
+    if (includeSubnational) qp.set("states", "1");
+    const s = qp.toString();
+    return s ? `?${s}` : "";
+  })();
   const maxFrameVal = Math.max(
     ...diff.frameDeltas.flatMap((row) => [row.shareA, row.shareB]),
     1,
@@ -146,7 +164,20 @@ export default async function ComparePage({
             slugA={diff.countryA.slug}
             slugB={diff.countryB.slug}
             mode={mode}
+            includeSubnational={includeSubnational}
+            subnationalCount={overview.subnationalCount}
           />
+          {includeSubnational ? (
+            <p className="mt-2 rounded-[2px] border border-[#e6ae49]/35 bg-[#e6ae49]/10 px-3 py-2 text-[12px] leading-relaxed text-[#fef3c7]">
+              <strong className="font-semibold">
+                U.S. state statutory overlay active (+
+                {overview.subnationalCount} state statutes):
+              </strong>{" "}
+              Enacted U.S. state AI statutes are included alongside federal
+              instruments when computing United States policy, coverage, and
+              framing distributions.
+            </p>
+          ) : null}
         </div>
 
         {/* Hero bilateral divergence scoreboard — lead with POL vs FRM + COV L1 */}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CopyButton } from "@/app/_components/copy-button";
 import { TopNav } from "@/app/_components/top-nav";
 import { getGoldSetEvaluation } from "@/lib/eval-data";
+import { getEvolutionData } from "@/lib/evolution-data";
 import { formatObservatoryBibtex } from "@/lib/export-formatters";
 import {
   frameAbbr,
@@ -12,6 +13,7 @@ import {
   frameTextHue,
   scoreHexDark,
 } from "@/lib/frame-vocab";
+import { jurisdictionMeta, type JurisdictionKey } from "@/lib/jurisdictions";
 import { getOverviewData } from "@/lib/overview-data";
 import {
   BOOTSTRAP_RESAMPLES,
@@ -28,6 +30,8 @@ import {
   CANONICAL_THRESHOLDS,
   formatModelDisplayName,
   formatModelList,
+  humanizeEnforcement,
+  humanizeRequirement,
   TAXONOMY_SCHEMA_VERSION,
 } from "@/lib/taxonomy-vocab";
 
@@ -48,11 +52,20 @@ function fmtCI(ci: [number, number] | null): string {
   return ci ? `[${ci[0].toFixed(3)}, ${ci[1].toFixed(3)}]` : "—";
 }
 
+const JURISDICTION_LANG_LABEL: Record<string, string> = {
+  united_states: "EN",
+  european_union: "EN",
+  south_korea: "KO / EN",
+  japan: "JA / EN",
+  china: "ZH / EN",
+};
+
 export default async function MethodologyPage() {
-  const [headline, all, goldSet] = await Promise.all([
-    getOverviewData("headline"),
-    getOverviewData("all"),
+  const [headline, all, goldSet, evolution] = await Promise.all([
+    getOverviewData("headline", false),
+    getOverviewData("all", false),
     getGoldSetEvaluation(),
+    getEvolutionData(false),
   ]);
 
   const bibtex = formatObservatoryBibtex({
@@ -65,6 +78,14 @@ export default async function MethodologyPage() {
   const prov = headline.provenanceSummary;
   const nullCal = headline.nullCalibration;
   const activeModelsDisplay = formatModelList(prov.models);
+  const isExpandedGoldSet = Boolean(goldSet && goldSet.evaluatedCount >= 10);
+  const hasKrippAlpha = Boolean(
+    goldSet &&
+      (goldSet.dominantFrameKrippendorffsAlpha !== null ||
+        goldSet.bindingStrengthKrippendorffsAlpha !== null),
+  );
+  const totalSubnational = evolution.subnationalCount;
+  const totalSupersessions = evolution.supersessionDiffs.length;
 
   return (
     <main className="min-h-screen bg-[#0a0f18] font-sans text-[14px] text-[#cdd6e1]">
@@ -152,21 +173,44 @@ export default async function MethodologyPage() {
               </p>
               <p>
                 <strong className="font-semibold text-[#f1f5f9]">
-                  Starter evaluation benchmark:
+                  {isExpandedGoldSet
+                    ? "Stratified multilingual evaluation benchmark:"
+                    : "Starter evaluation benchmark:"}
                 </strong>{" "}
-                An internal starter gold set (
-                <code className="font-mono text-[12px] text-[#e2e8f0]">
-                  data/eval/gold_set_v1.json
-                </code>
-                , status{" "}
-                <code className="font-mono text-[12px] text-[#e2e8f0]">
-                  starter_v0.1_internal
-                </code>
-                , 5 multilingual reference instruments across US, EU, KR, JP,
-                and CN) establishes the automated regression scaffold. Full
-                blind dual-annotator inter-rater reliability (Krippendorff&apos;s
-                α / Cohen&apos;s κ) across a stratified sample has not yet been
-                published.
+                {isExpandedGoldSet && goldSet ? (
+                  <>
+                    Evaluated against a{" "}
+                    <strong className="font-medium text-[#f8fafc]">
+                      {goldSet.evaluatedCount}-document stratified multilingual
+                      gold set
+                    </strong>{" "}
+                    (status{" "}
+                    <code className="font-mono text-[12px] text-[#e2e8f0]">
+                      {goldSet.benchmarkStatus}
+                    </code>
+                    ) spanning US, EU, KR, JP, and CN across EN, KO, JA, and ZH
+                    with per-jurisdiction metrics, nominal Krippendorff&apos;s α,
+                    Cohen&apos;s κ, and 95% bootstrap confidence intervals.
+                    {goldSet.annotatorNote ? ` ${goldSet.annotatorNote}` : ""}
+                  </>
+                ) : (
+                  <>
+                    An internal starter gold set (
+                    <code className="font-mono text-[12px] text-[#e2e8f0]">
+                      data/eval/gold_set_v1.json
+                    </code>
+                    , status{" "}
+                    <code className="font-mono text-[12px] text-[#e2e8f0]">
+                      {goldSet?.benchmarkStatus ?? "starter_v0.1_internal"}
+                    </code>
+                    , {goldSet?.evaluatedCount ?? 5} multilingual reference
+                    instruments across US, EU, KR, JP, and CN) establishes the
+                    automated regression scaffold. Full blind dual-annotator
+                    inter-rater reliability (Krippendorff&apos;s α / Cohen&apos;s
+                    κ) across a stratified sample is tracked under active
+                    validation expansion.
+                  </>
+                )}
               </p>
             </div>
 
@@ -217,12 +261,14 @@ export default async function MethodologyPage() {
             </div>
           </div>
 
-          {/* Live Starter Gold-Set Benchmark Scorecard (Stage 4A / D12) */}
+          {/* Live Gold-Set Benchmark Scorecard (Stage 4A / Phase 5A) */}
           {goldSet ? (
             <div className="mt-4 rounded-[2px] border border-white/10 bg-[#0a0f18] p-3.5">
               <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-white/10 pb-2">
                 <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-[#67e8f9]">
-                  starter gold-set benchmark scorecard · n={goldSet.evaluatedCount}
+                  {isExpandedGoldSet
+                    ? `stratified multilingual gold-set scorecard · n=${goldSet.evaluatedCount}`
+                    : `starter gold-set benchmark scorecard · n=${goldSet.evaluatedCount}`}
                 </p>
                 <span className="font-mono text-[11px] text-[#94a3b8]">
                   status: {goldSet.benchmarkStatus}
@@ -249,7 +295,7 @@ export default async function MethodologyPage() {
                         95% bootstrap CI
                       </th>
                       <th className="pb-1.5 text-right font-medium">
-                        macro F1 / κ
+                        {hasKrippAlpha ? "macro F1 / κ · α" : "macro F1 / κ"}
                       </th>
                     </tr>
                   </thead>
@@ -305,6 +351,9 @@ export default async function MethodologyPage() {
                       </td>
                       <td className="py-1.5 text-right tabular-nums text-[#cbd5e1]">
                         κ {fmtMetric(goldSet.dominantFrameCohensKappa)}
+                        {goldSet.dominantFrameKrippendorffsAlpha !== null
+                          ? ` · α ${fmtMetric(goldSet.dominantFrameKrippendorffsAlpha)}`
+                          : ""}
                       </td>
                     </tr>
                     <tr>
@@ -322,16 +371,190 @@ export default async function MethodologyPage() {
                       </td>
                       <td className="py-1.5 text-right tabular-nums text-[#cbd5e1]">
                         κ {fmtMetric(goldSet.bindingStrengthCohensKappa)}
+                        {goldSet.bindingStrengthKrippendorffsAlpha !== null
+                          ? ` · α ${fmtMetric(goldSet.bindingStrengthKrippendorffsAlpha)}`
+                          : ""}
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <p className="mt-2 text-[12px] text-[#94a3b8]">
-                Caveat: Evaluated on the internal {goldSet.evaluatedCount}-document
-                starter set ({goldSet.benchmarkStatus}) across US, EU, KR, JP,
-                and CN — intended for automated pipeline regression testing
-                rather than blind external inter-rater certification.
+
+              {/* Per-Jurisdiction Multilingual Breakdown (Phase 5A) */}
+              {goldSet.byJurisdiction.length > 0 ? (
+                <div className="mt-3.5 border-t border-white/10 pt-3">
+                  <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-[#94a3b8]">
+                    per-jurisdiction &amp; multilingual validation breakdown
+                  </p>
+                  <div className="mt-2 overflow-x-auto">
+                    <table className="w-full text-left font-mono text-[12px]">
+                      <thead>
+                        <tr className="border-b border-white/10 text-[11px] uppercase tracking-wider text-[#94a3b8]">
+                          <th className="pb-1.5 pr-3 font-medium">
+                            jurisdiction
+                          </th>
+                          <th className="pb-1.5 pr-3 font-medium">lang</th>
+                          <th className="pb-1.5 pr-3 text-right font-medium">
+                            n
+                          </th>
+                          <th className="pb-1.5 pr-3 text-right font-medium">
+                            req F1
+                          </th>
+                          <th className="pb-1.5 pr-3 text-right font-medium">
+                            enf F1
+                          </th>
+                          <th className="pb-1.5 pr-3 text-right font-medium">
+                            frame acc
+                          </th>
+                          <th className="pb-1.5 text-right font-medium">
+                            binding acc
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-white/5">
+                        {goldSet.byJurisdiction.map((row) => {
+                          const meta =
+                            jurisdictionMeta[
+                              row.jurisdiction as JurisdictionKey
+                            ];
+                          return (
+                            <tr key={row.jurisdiction}>
+                              <td className="py-1.5 pr-3 font-sans text-[#f1f5f9]">
+                                {meta
+                                  ? `${meta.shortName} · ${meta.name}`
+                                  : row.jurisdiction}
+                              </td>
+                              <td className="py-1.5 pr-3 text-[11px] text-[#94a3b8]">
+                                {JURISDICTION_LANG_LABEL[row.jurisdiction] ??
+                                  "—"}
+                              </td>
+                              <td className="py-1.5 pr-3 text-right tabular-nums text-[#cbd5e1]">
+                                {row.evaluatedCount}
+                              </td>
+                              <td className="py-1.5 pr-3 text-right tabular-nums text-[#67e8f9]">
+                                {fmtMetric(row.requirementMicroF1)}
+                              </td>
+                              <td className="py-1.5 pr-3 text-right tabular-nums text-[#67e8f9]">
+                                {fmtMetric(row.enforcementMicroF1)}
+                              </td>
+                              <td className="py-1.5 pr-3 text-right tabular-nums text-[#38bdf8]">
+                                {fmtMetric(row.dominantFrameAccuracy)}
+                              </td>
+                              <td className="py-1.5 text-right tabular-nums text-[#38bdf8]">
+                                {fmtMetric(row.bindingStrengthAccuracy)}
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ) : null}
+
+              {/* Collapsible Per-Label Precision / Recall / F1 Table */}
+              {goldSet.perLabelRequirements.length > 0 ||
+              goldSet.perLabelEnforcement.length > 0 ? (
+                <details className="mt-3.5 border-t border-white/10 pt-3">
+                  <summary className="cursor-pointer font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-[#67e8f9] hover:text-white">
+                    per-label precision / recall / F1 breakdown (
+                    {goldSet.perLabelRequirements.length} requirements ·{" "}
+                    {goldSet.perLabelEnforcement.length} enforcement)
+                  </summary>
+                  <div className="mt-3 grid gap-4 lg:grid-cols-2">
+                    {goldSet.perLabelRequirements.length > 0 ? (
+                      <div className="overflow-x-auto">
+                        <p className="mb-1.5 font-mono text-[11px] uppercase tracking-wider text-[#94a3b8]">
+                          safeguard requirements
+                        </p>
+                        <table className="w-full text-left font-mono text-[11px]">
+                          <thead>
+                            <tr className="border-b border-white/10 uppercase text-[#94a3b8]">
+                              <th className="pb-1 pr-2 font-medium">label</th>
+                              <th className="pb-1 pr-2 text-right font-medium">
+                                sup
+                              </th>
+                              <th className="pb-1 pr-2 text-right font-medium">
+                                P / R
+                              </th>
+                              <th className="pb-1 text-right font-medium">
+                                F1
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-white/5">
+                            {goldSet.perLabelRequirements.map((item) => (
+                              <tr key={item.label}>
+                                <td className="py-1 pr-2 font-sans text-[12px] text-[#e2e8f0]">
+                                  {humanizeRequirement(item.label)}
+                                </td>
+                                <td className="py-1 pr-2 text-right tabular-nums text-[#94a3b8]">
+                                  {item.support}
+                                </td>
+                                <td className="py-1 pr-2 text-right tabular-nums text-[#cbd5e1]">
+                                  {fmtMetric(item.precision)} /{" "}
+                                  {fmtMetric(item.recall)}
+                                </td>
+                                <td className="py-1 text-right font-semibold tabular-nums text-[#67e8f9]">
+                                  {fmtMetric(item.f1)}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ) : null}
+
+                    {goldSet.perLabelEnforcement.length > 0 ? (
+                      <div className="overflow-x-auto">
+                        <p className="mb-1.5 font-mono text-[11px] uppercase tracking-wider text-[#94a3b8]">
+                          enforcement mechanisms
+                        </p>
+                        <table className="w-full text-left font-mono text-[11px]">
+                          <thead>
+                            <tr className="border-b border-white/10 uppercase text-[#94a3b8]">
+                              <th className="pb-1 pr-2 font-medium">label</th>
+                              <th className="pb-1 pr-2 text-right font-medium">
+                                sup
+                              </th>
+                              <th className="pb-1 pr-2 text-right font-medium">
+                                P / R
+                              </th>
+                              <th className="pb-1 text-right font-medium">
+                                F1
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-white/5">
+                            {goldSet.perLabelEnforcement.map((item) => (
+                              <tr key={item.label}>
+                                <td className="py-1 pr-2 font-sans text-[12px] text-[#e2e8f0]">
+                                  {humanizeEnforcement(item.label)}
+                                </td>
+                                <td className="py-1 pr-2 text-right tabular-nums text-[#94a3b8]">
+                                  {item.support}
+                                </td>
+                                <td className="py-1 pr-2 text-right tabular-nums text-[#cbd5e1]">
+                                  {fmtMetric(item.precision)} /{" "}
+                                  {fmtMetric(item.recall)}
+                                </td>
+                                <td className="py-1 text-right font-semibold tabular-nums text-[#67e8f9]">
+                                  {fmtMetric(item.f1)}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ) : null}
+                  </div>
+                </details>
+              ) : null}
+
+              <p className="mt-2.5 text-[12px] text-[#94a3b8]">
+                {isExpandedGoldSet
+                  ? `Caveat: Evaluated on ${goldSet.evaluatedCount} stratified official instruments (${goldSet.benchmarkStatus}) spanning EN, KO, JA, and ZH across US, EU, KR, JP, and CN. All production labels remain machine-coded without an active human review queue.`
+                  : `Caveat: Evaluated on the internal ${goldSet.evaluatedCount}-document starter set (${goldSet.benchmarkStatus}) across US, EU, KR, JP, and CN — intended for automated pipeline regression testing rather than blind external inter-rater certification.`}
               </p>
             </div>
           ) : null}
@@ -414,6 +637,22 @@ CMP(J)    = round(${COMPOSITE_WEIGHTS.policy.toFixed(2)} × POL(J) + ${COMPOSITE
                   </strong>{" "}
                   All 8-frame percentages use Largest Remainder rounding so
                   displayed shares always sum to exact 100%.
+                </li>
+                <li>
+                  <strong className="text-[#e2e8f0]">
+                    Opt-in U.S. state statutory overlay (
+                    <code className="font-mono text-[#cbd5e1]">?states=1</code>
+                    ):
+                  </strong>{" "}
+                  Enacted U.S. state AI statutes (
+                  <code className="font-mono text-[#cbd5e1]">
+                    corpus_role = subnational_overlay
+                  </code>
+                  ) are strictly excluded from the default sovereign national
+                  baseline so federal vs. national comparisons stay
+                  apples-to-apples, and can be opted into across every
+                  observatory view and public API via{" "}
+                  <code className="font-mono text-[#cbd5e1]">?states=1</code>.
                 </li>
               </ul>
             </div>
@@ -685,10 +924,126 @@ CMP(J)    = round(${COMPOSITE_WEIGHTS.policy.toFixed(2)} × POL(J) + ${COMPOSITE
           </div>
         </section>
 
-        {/* 6. Eight-frame codebook v2.1.0 reference (A13) */}
+        {/* 6. Corpus Freshness & Supersession Ledger (Phase 5A) */}
+        <section
+          id="freshness"
+          className="mt-4 rounded-sm border border-white/10 bg-[#0f1623] px-5 py-4"
+        >
+          <header className="flex flex-wrap items-baseline justify-between gap-2 border-b border-white/10 pb-2.5">
+            <h2 className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-[#94a3b8]">
+              6. Corpus Freshness &amp; Supersession Ledger
+            </h2>
+            <p className="font-mono text-[11px] text-[#94a3b8]">
+              weekly source freshness watch · {totalSupersessions} tracked
+              supersession chain{totalSupersessions === 1 ? "" : "s"}
+              {totalSubnational > 0
+                ? ` · ${totalSubnational} opt-in U.S. state statutes`
+                : ""}
+            </p>
+          </header>
+
+          <p className="mt-3 text-[13px] leading-relaxed text-[#cbd5e1]">
+            An automated weekly GitHub Action (
+            <code className="font-mono text-[12px] text-[#e2e8f0]">
+              freshness-watch.yml
+            </code>{" "}
+            running{" "}
+            <code className="font-mono text-[12px] text-[#e2e8f0]">
+              observatory check-freshness
+            </code>{" "}
+            every Monday at 06:00 UTC) audits all official government URLs with
+            polite conditional HTTP probes (
+            <code className="font-mono text-[12px] text-[#e2e8f0]">ETag</code> /{" "}
+            <code className="font-mono text-[12px] text-[#e2e8f0]">
+              Last-Modified
+            </code>
+            ) and flags upstream document revisions or broken links without
+            mutating verified snapshots. Statutory replacements linked via{" "}
+            <code className="font-mono text-[12px] text-[#e2e8f0]">
+              supersedes_id
+            </code>{" "}
+            are diffed on the{" "}
+            <Link
+              href="/evolution#supersessions"
+              className="text-[#67e8f9] underline decoration-[#67e8f9]/40 underline-offset-2 hover:text-white"
+            >
+              Regime Evolution workbench →
+            </Link>
+          </p>
+
+          {evolution.freshnessByJurisdiction.length > 0 ? (
+            <div className="mt-3 overflow-x-auto">
+              <table className="w-full text-left font-mono text-[12px]">
+                <thead>
+                  <tr className="border-b border-white/10 text-[11px] uppercase tracking-wider text-[#94a3b8]">
+                    <th className="pb-2 pr-3 font-medium">jurisdiction</th>
+                    <th className="pb-2 pr-3 text-right font-medium">
+                      total corpus
+                    </th>
+                    <th className="pb-2 pr-3 text-right font-medium">
+                      active primary
+                    </th>
+                    <th className="pb-2 pr-3 text-right font-medium">
+                      binding law
+                    </th>
+                    <th className="pb-2 pr-3 text-right font-medium">
+                      state overlay
+                    </th>
+                    <th className="pb-2 pr-3 text-right font-medium">
+                      supersessions
+                    </th>
+                    <th className="pb-2 pr-3 text-right font-medium">
+                      latest published
+                    </th>
+                    <th className="pb-2 text-right font-medium">
+                      latest ISO
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  {evolution.freshnessByJurisdiction.map((row) => (
+                    <tr key={row.jurisdictionKey}>
+                      <td className="py-2 pr-3 font-sans font-medium text-[#f1f5f9]">
+                        <Link
+                          href={`/jurisdictions/${row.slug}`}
+                          className="underline decoration-white/25 underline-offset-2 hover:text-[#67e8f9]"
+                        >
+                          {row.shortName} · {row.name}
+                        </Link>
+                      </td>
+                      <td className="py-2 pr-3 text-right tabular-nums text-[#cbd5e1]">
+                        {row.totalDocuments}
+                      </td>
+                      <td className="py-2 pr-3 text-right tabular-nums text-[#38bdf8]">
+                        {row.headlinePrimaryCount}
+                      </td>
+                      <td className="py-2 pr-3 text-right tabular-nums text-[#67e8f9]">
+                        {row.bindingLawCount}
+                      </td>
+                      <td className="py-2 pr-3 text-right tabular-nums text-[#e6ae49]">
+                        {row.subnationalCount}
+                      </td>
+                      <td className="py-2 pr-3 text-right tabular-nums text-[#cbd5e1]">
+                        {row.supersessionChainCount}
+                      </td>
+                      <td className="py-2 pr-3 text-right tabular-nums text-[#94a3b8]">
+                        {row.latestPublicationDate}
+                      </td>
+                      <td className="py-2 text-right tabular-nums text-[#94a3b8]">
+                        {row.latestPublicationIso ?? "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : null}
+        </section>
+
+        {/* 7. Eight-frame codebook v2.1.0 reference (A13) */}
         <section className="mt-4 rounded-sm border border-white/10 bg-[#0f1623] px-5 py-4">
           <h2 className="border-b border-white/10 pb-2 font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-[#94a3b8]">
-            6. The Eight Risk Framing Labels (Codebook v
+            7. The Eight Risk Framing Labels (Codebook v
             {TAXONOMY_SCHEMA_VERSION} · Include / Exclude Rules)
           </h2>
           <div className="mt-3 grid gap-3 md:grid-cols-2">
@@ -734,29 +1089,37 @@ CMP(J)    = round(${COMPOSITE_WEIGHTS.policy.toFixed(2)} × POL(J) + ${COMPOSITE
           </div>
         </section>
 
-        {/* 7. Public Read-Only API & Versioned BibTeX Citation (C8) */}
+        {/* 8. Public Read-Only API & Versioned BibTeX Citation (C8 / Phase 5A) */}
         <section className="mt-4 grid gap-4 lg:grid-cols-2">
           <div className="rounded-sm border border-white/10 bg-[#0f1623] px-5 py-4">
             <h2 className="border-b border-white/10 pb-2 font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-[#94a3b8]">
-              7. Public Read-Only API &amp; Research Exports (CORS-Enabled)
+              8. Public Read-Only API &amp; Research Exports (CORS-Enabled)
             </h2>
             <ul className="mt-3 space-y-2 text-[12px]">
               {[
                 {
                   path: "/api/overview?mode=headline",
-                  desc: "Full overview snapshot, POL/FRM/COV scores, 90% CIs, null calibration, sensitivity grid & timeline",
+                  desc: "Full overview snapshot, POL/FRM/COV scores, 90% CIs, null calibration, sensitivity grid & timeline (supports states=1)",
                 },
                 {
                   path: "/api/matrix?mode=headline",
-                  desc: "25×5 AI Legal Obligation & Clause Matrix with strongest binding level (0–4) and quoted instruments",
+                  desc: "25×5 AI Legal Obligation & Clause Matrix with strongest binding level (0–4) and quoted instruments (supports states=1)",
+                },
+                {
+                  path: "/api/clauses?category=requirement&control=red_teaming",
+                  desc: "Cross-jurisdiction verbatim multilingual clause & citation explorer (supports mode, states, category, control, j, minLevel, obligation, q, format=json|csv, limit, offset)",
+                },
+                {
+                  path: "/api/evolution",
+                  desc: "Longitudinal 2019–2026 annual regime trajectories, supersedes_id amendment diffs & corpus freshness ledger (supports states=1)",
                 },
                 {
                   path: "/api/jurisdictions",
-                  desc: "All five jurisdiction profiles, CIs & bilateral matrix",
+                  desc: "All five jurisdiction profiles, CIs & bilateral matrix (supports mode, states=1)",
                 },
                 {
                   path: "/api/jurisdictions/china",
-                  desc: "Single jurisdiction readout, narrative synthesis & latest documents",
+                  desc: "Single jurisdiction readout, narrative synthesis & latest documents (supports mode, states=1)",
                 },
                 {
                   path: "/api/documents?j=european-union&role=primary_instrument",
@@ -786,7 +1149,7 @@ CMP(J)    = round(${COMPOSITE_WEIGHTS.policy.toFixed(2)} × POL(J) + ${COMPOSITE
           <div className="rounded-sm border border-white/10 bg-[#0f1623] px-5 py-4">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <h2 className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-[#94a3b8]">
-                8. Cite Project Babel (Versioned BibTeX)
+                9. Cite Project Babel (Versioned BibTeX)
               </h2>
               <CopyButton text={bibtex} label="copy bibtex" />
             </div>

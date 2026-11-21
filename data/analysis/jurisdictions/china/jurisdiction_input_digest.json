@@ -1,6 +1,6 @@
 {
   "jurisdiction": "china",
-  "source_count": 20,
+  "source_count": 21,
   "source_window_start": "2017-07-20",
   "source_window_end": "2026-09-14",
   "documents": [
@@ -467,6 +467,32 @@
       "confidence": 0.875
     },
     {
+      "document_id": "cn_miit_ai_industry_standardization_guidelines_2024",
+      "title": "国家人工智能产业综合标准化体系建设指南（2024版）(工信部联科〔2024〕113号 / MIIT Guidelines for Construction of National AI Industry Comprehensive Standardization System)",
+      "publication_date": "2024-06-05",
+      "issuing_body": "Cyberspace Administration of China (CAC)",
+      "document_type": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "economic_competitiveness",
+      "secondary_frames": [
+        "innovation_enablement",
+        "consumer_public_safety"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "pre_deployment_testing",
+        "access_controls"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "implementation_notes": "Jointly issued under Document MIIT-Lian-Ke [2024] No. 113 (2024 Edition) by MIIT, CAC, NDRC, and SAC. Establishes a seven-pillar national AI industry standardization architecture covering foundational common standards, foundational support (data, chips, sensors, compute centers, frameworks), key technologies (including large models, AI agents, and embodied intelligence), smart products/services, new industrialization, sector applications, and safety/governance. Operative standard topics are coded as aspirational because the document sets a 2026 standard-development roadmap rather than imposing standalone operational compliance procedures.",
+      "framing_rationale_summary": "The 2024 National AI Industry Comprehensive Standardization System Construction Guidelines are dominantly framed around economic competitiveness, positioning AI as a strategic engine for new quality productive forces, industrial upgrading, deep integration with the real economy, and building a manufacturing and digital power while seizing first-mover global industrial advantage and shaping international standards. Innovation enablement is a major secondary frame, emphasizing innovation-driven conversion of R&D breakthroughs into technical standards, market-oriented enterprise adoption across large and small firms, and broad AI-plus industry empowerment. Consumer and public safety serves as a supporting secondary frame through its call to balance high-quality development with high-level security and to establish full-lifecycle AI safety, content labeling, reliability, and ethical risk-assessment standards.",
+      "confidence": 0.94
+    },
+    {
       "document_id": "cn_new_generation_ai_plan_2017",
       "title": "国务院关于印发新一代人工智能发展规划的通知",
       "publication_date": "2017-07-20",
@@ -562,439 +588,449 @@
       {
         "label": "regulatory_guidance",
         "count": 7,
-        "share": 0.35
+        "share": 0.333
       },
       {
         "label": "legislation",
         "count": 5,
-        "share": 0.25
+        "share": 0.238
       },
       {
         "label": "standards_guideline",
-        "count": 4,
-        "share": 0.2
+        "count": 5,
+        "share": 0.238
       },
       {
         "label": "strategy_paper",
         "count": 4,
-        "share": 0.2
+        "share": 0.19
       }
     ],
     "binding_strengths": [
       {
         "label": "regulatory_guidance",
         "count": 7,
-        "share": 0.35
+        "share": 0.333
       },
       {
         "label": "binding_law",
         "count": 5,
-        "share": 0.25
+        "share": 0.238
       },
       {
         "label": "standards_guideline",
-        "count": 4,
-        "share": 0.2
+        "count": 5,
+        "share": 0.238
       },
       {
         "label": "strategy_statement",
         "count": 3,
-        "share": 0.15
+        "share": 0.143
       },
       {
         "label": "executive_action",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       }
     ],
     "requirements": [
       {
         "label": "risk_assessment",
-        "count": 15,
-        "share": 0.75
+        "count": 16,
+        "share": 0.762
       },
       {
         "label": "content_provenance",
-        "count": 12,
-        "share": 0.6
+        "count": 13,
+        "share": 0.619
+      },
+      {
+        "label": "access_controls",
+        "count": 11,
+        "share": 0.524
       },
       {
         "label": "transparency_disclosure",
         "count": 11,
-        "share": 0.55
-      },
-      {
-        "label": "access_controls",
-        "count": 10,
-        "share": 0.5
+        "share": 0.524
       },
       {
         "label": "registration_licensing",
         "count": 10,
-        "share": 0.5
+        "share": 0.476
       },
       {
         "label": "training_data_governance",
-        "count": 9,
-        "share": 0.45
+        "count": 10,
+        "share": 0.476
+      },
+      {
+        "label": "pre_deployment_testing",
+        "count": 7,
+        "share": 0.333
       },
       {
         "label": "human_oversight",
         "count": 6,
-        "share": 0.3
-      },
-      {
-        "label": "pre_deployment_testing",
-        "count": 6,
-        "share": 0.3
+        "share": 0.286
       },
       {
         "label": "incident_reporting",
         "count": 5,
-        "share": 0.25
+        "share": 0.238
       },
       {
         "label": "model_documentation",
         "count": 5,
-        "share": 0.25
+        "share": 0.238
       },
       {
         "label": "red_teaming",
         "count": 2,
-        "share": 0.1
+        "share": 0.095
       },
       {
         "label": "agentic_autonomy_controls",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "compute_governance",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "frontier_safety_evaluation",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "open_weight_obligations",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "third_party_audit",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       }
     ],
     "enforcement_mechanisms": [
       {
         "label": "regulatory_supervision",
         "count": 11,
-        "share": 0.55
+        "share": 0.524
+      },
+      {
+        "label": "soft_enforcement",
+        "count": 10,
+        "share": 0.476
       },
       {
         "label": "reporting_obligation",
         "count": 9,
-        "share": 0.45
-      },
-      {
-        "label": "soft_enforcement",
-        "count": 9,
-        "share": 0.45
+        "share": 0.429
       },
       {
         "label": "market_access_restriction",
         "count": 5,
-        "share": 0.25
+        "share": 0.238
       },
       {
         "label": "civil_penalty",
         "count": 4,
-        "share": 0.2
+        "share": 0.19
       },
       {
         "label": "criminal_penalty",
         "count": 3,
-        "share": 0.15
+        "share": 0.143
       },
       {
         "label": "licensing_requirement",
         "count": 3,
-        "share": 0.15
+        "share": 0.143
       },
       {
         "label": "none_specified",
         "count": 2,
-        "share": 0.1
+        "share": 0.095
       }
     ],
     "institutions": [
       {
         "label": "Cyberspace Administration of China (CAC)",
-        "count": 13,
-        "share": 0.65
+        "count": 14,
+        "share": 0.667
       },
       {
         "label": "Ministry of Industry and Information Technology (MIIT)",
-        "count": 6,
-        "share": 0.3
+        "count": 7,
+        "share": 0.333
       },
       {
         "label": "Ministry of Science and Technology (MOST)",
         "count": 4,
-        "share": 0.2
+        "share": 0.19
       },
       {
         "label": "State Council of China",
         "count": 3,
-        "share": 0.15
+        "share": 0.143
       },
       {
         "label": "Ministry of Public Security (MPS) and local public security departments",
         "count": 2,
-        "share": 0.1
+        "share": 0.095
       },
       {
         "label": "Ministry of Public Security (公安部)",
         "count": 2,
-        "share": 0.1
+        "share": 0.095
+      },
+      {
+        "label": "National Development and Reform Commission (NDRC)",
+        "count": 2,
+        "share": 0.095
       },
       {
         "label": "National Development and Reform Commission (国家发展改革委)",
         "count": 2,
-        "share": 0.1
+        "share": 0.095
       },
       {
         "label": "State Administration for Market Regulation (SAMR) and local market regulation departments",
         "count": 2,
-        "share": 0.1
+        "share": 0.095
       },
       {
         "label": "TC260 (National Cybersecurity Standardization Technical Committee)",
         "count": 2,
-        "share": 0.1
+        "share": 0.095
       },
       {
         "label": "AI Plan Promotion Office (人工智能规划推进办公室)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
+      },
+      {
+        "label": "AI standardization technical organizations and industry associations (人工智能领域标准化技术组织、行业协会)",
+        "count": 1,
+        "share": 0.048
       },
       {
         "label": "China Meteorological Administration (CMA)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Competent authorities (主管部门)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Drug regulatory departments at all levels (各级药品监管部门)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Government departments (政府部门)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Government of the People's Republic of China (specific issuing ministries not named in document text)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Inter-Ministerial Joint Conference on National Science and Technology Plan Management (国家科技计划管理部际联席会议)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Local counterpart departments at the provincial, autonomous region, municipal, and Xinjiang Production and Construction Corps levels",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Local cyberspace administration offices (各地网信部门, including Beijing, Shanghai, Zhejiang, Jiangsu, Tianjin, and Guangdong)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Ministry of Culture and Tourism",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Ministry of Education",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Ministry of Education (MOE)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Ministry of Public Security",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Ministry of Public Security (MPS)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Ministry of Public Security and local public security organs",
         "count": 1,
-        "share": 0.05
-      },
-      {
-        "label": "National Development and Reform Commission (NDRC)",
-        "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "National Development and Reform Commission (NDRC) and local development and reform departments",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "National Leading Group for Science and Technology System Reform and Innovation System Construction (国家科技体制改革和创新体系建设领导小组)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "National Medical Products Administration (NMPA)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "National Press and Publication Administration (NPPA)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "National Radio and Television Administration",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "National Radio and Television Administration (NRTA)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "National Radio and Television Administration (国家广播电视总局)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Press and publication departments (national and local)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Press and publication, culture and tourism, and radio and television authorities (for sectoral online publishing, cultural, and audiovisual services)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Provincial Communications Administration (省通信管理局, specifically Jiangsu)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Provincial, autonomous region, and municipal people's governments (各省、自治区、直辖市人民政府)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Provincial, autonomous region, municipal, and Xinjiang Production and Construction Corps cyberspace, communications/industry, public security, and radio/television authorities",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Provincial-level drug regulatory bureaus (各省级局)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Publicity Department of the CPC Central Committee",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "Sectoral competent and regulatory authorities",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
+      },
+      {
+        "label": "Standardization Administration of China (SAC)",
+        "count": 1,
+        "share": 0.048
       },
       {
         "label": "State Administration for Market Regulation",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "State Administration for Market Regulation (市场监管总局)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       },
       {
         "label": "国家新一代人工智能治理专业委员会 (National New Generation Artificial Intelligence Governance Expert Committee)",
         "count": 1,
-        "share": 0.05
+        "share": 0.048
       }
     ],
     "frames": [
       {
-        "label": "social_stability",
-        "score": 4.69,
+        "label": "innovation_enablement",
+        "score": 4.91,
         "share": 0.234,
-        "document_mentions": 18
+        "document_mentions": 20
       },
       {
-        "label": "innovation_enablement",
-        "score": 4.61,
-        "share": 0.23,
+        "label": "social_stability",
+        "score": 4.69,
+        "share": 0.223,
         "document_mentions": 19
       },
       {
         "label": "consumer_public_safety",
-        "score": 3.82,
-        "share": 0.191,
-        "document_mentions": 19
+        "score": 3.97,
+        "share": 0.189,
+        "document_mentions": 20
       },
       {
         "label": "fundamental_rights",
         "score": 2.83,
-        "share": 0.142,
-        "document_mentions": 18
+        "share": 0.135,
+        "document_mentions": 19
       },
       {
         "label": "economic_competitiveness",
-        "score": 1.76,
-        "share": 0.088,
-        "document_mentions": 11
+        "score": 2.26,
+        "share": 0.108,
+        "document_mentions": 12
       },
       {
         "label": "national_security",
-        "score": 1.64,
-        "share": 0.082,
-        "document_mentions": 13
+        "score": 1.69,
+        "share": 0.08,
+        "document_mentions": 14
       },
       {
         "label": "existential_catastrophic",
         "score": 0.36,
-        "share": 0.018,
+        "share": 0.017,
         "document_mentions": 4
       },
       {
         "label": "labor_transition",
         "score": 0.29,
-        "share": 0.015,
+        "share": 0.014,
         "document_mentions": 5
       }
     ]

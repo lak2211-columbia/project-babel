@@ -2,16 +2,18 @@
   "jurisdiction": "european_union",
   "analysis_method": "deterministic_v2",
   "analysis_version": "0.2.0",
-  "generated_at": "2026-11-21T06:36:37.456298Z",
-  "source_count": 21,
+  "generated_at": "2026-11-21T21:16:36.784932Z",
+  "source_count": 24,
   "source_document_ids": [
     "eu_ai_act_navigation_qa",
     "eu_ai_act_regulation_2024_1689",
     "eu_ai_act_standardisation_page",
     "eu_ai_pact_page",
+    "eu_ai_scientific_panel_implementing_reg_2025_454",
     "eu_ai_system_definition_guidelines",
     "eu_article_50_transparency_guidelines_2026",
     "eu_code_practice_transparency_ai_content_2026",
+    "eu_coordinated_plan_ai_review_2021",
     "eu_digital_omnibus_ai_regulation_2026_1744",
     "eu_edpb_ai_models_opinion_28_2024",
     "eu_edps_genai_guidance_2025",
@@ -25,15 +27,16 @@
     "eu_prohibited_ai_practices_guidelines",
     "eu_request_for_an_article_64_2_opinion_from_efe0d88a",
     "eu_training_content_public_summary_template_2025",
-    "eu_training_content_template_faq_2025"
+    "eu_training_content_template_faq_2025",
+    "eu_white_paper_ai_2020"
   ],
-  "source_window_start": "2024-07-12",
+  "source_window_start": "2020-02-19",
   "source_window_end": "2026-11-05",
-  "summary": "European Union's current AI governance record is guidance-heavy, with European Commission (AI Office) and European Artificial Intelligence Board (AI Board) appearing most often in the source base. Across the analyzed documents, Fundamental rights and Innovation enablement both materially shape the jurisdiction's rationale, while model documentation, open-weight obligations, and training data governance recur most often in the operative expectations.",
+  "summary": "European Union's current AI governance record is guidance-heavy, with European Commission (AI Office) and European Artificial Intelligence Board (AI Board) appearing most often in the source base. Across the analyzed documents, Fundamental rights and Innovation enablement both materially shape the jurisdiction's rationale, while model documentation, training data governance, and open-weight obligations recur most often in the operative expectations.",
   "governance_posture": "The source base is guidance-heavy, so implementation detail appears more often than hard-edged statutory obligations. The strongest institutional signals come from European Commission (AI Office), European Artificial Intelligence Board (AI Board), and European Data Protection Supervisor (EDPS), and the corpus is weighted toward regulatory guidance and voluntary commitment.",
   "framing_landscape": "The framing mix is relatively split: Fundamental rights leads, but Innovation enablement is close enough that the jurisdiction should not be read through a single rationale alone.",
-  "implementation_and_enforcement": "Operationally, the sources most often point to model documentation, open-weight obligations, and training data governance. Enforcement language is comparatively soft and usually framed through soft enforcement and regulatory supervision rather than hard sanctions.",
-  "source_coverage_note": "This readout is based on 21 analyzed documents spanning 2024-07-12 to 2026-11-05. The corpus is weighted toward regulatory guidance and voluntary commitment. On the binding side it leans toward regulatory guidance and voluntary commitment, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are Commission Guidelines on the Implementation of Transparency Obligations for Certain AI Systems under Article 50 of the AI Act (C(2026) 7702 final) and Regulation (EU) 2026/1744 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 (Digital Omnibus on AI).",
+  "implementation_and_enforcement": "Operationally, the sources most often point to model documentation, training data governance, and open-weight obligations. When the corpus gets concrete about consequences, it most often references regulatory supervision and soft enforcement.",
+  "source_coverage_note": "This readout is based on 24 analyzed documents spanning 2020-02-19 to 2026-11-05. The corpus is weighted toward regulatory guidance and voluntary commitment. On the binding side it leans toward regulatory guidance and voluntary commitment, so it captures official policy posture more directly than downstream enforcement practice. The most recent additions in the current mix are Commission Guidelines on the Implementation of Transparency Obligations for Certain AI Systems under Article 50 of the AI Act (C(2026) 7702 final) and Regulation (EU) 2026/1744 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 (Digital Omnibus on AI).",
   "key_sources": [
     {
       "document_id": "eu_digital_omnibus_ai_regulation_2026_1744",
@@ -76,104 +79,104 @@
     {
       "label": "regulatory_guidance",
       "count": 13,
-      "share": 0.619
+      "share": 0.542
     },
     {
       "label": "voluntary_commitment",
       "count": 6,
-      "share": 0.286
+      "share": 0.25
     },
     {
       "label": "legislation",
-      "count": 2,
-      "share": 0.095
+      "count": 3,
+      "share": 0.125
     }
   ],
   "top_binding_strengths": [
     {
       "label": "regulatory_guidance",
       "count": 14,
-      "share": 0.667
+      "share": 0.583
     },
     {
       "label": "voluntary_commitment",
       "count": 5,
-      "share": 0.238
+      "share": 0.208
     },
     {
       "label": "binding_law",
-      "count": 2,
-      "share": 0.095
+      "count": 3,
+      "share": 0.125
     }
   ],
   "top_requirements": [
     {
       "label": "model_documentation",
-      "count": 13,
-      "share": 0.619
+      "count": 15,
+      "share": 0.625
+    },
+    {
+      "label": "training_data_governance",
+      "count": 14,
+      "share": 0.583
     },
     {
       "label": "open_weight_obligations",
       "count": 13,
-      "share": 0.619
-    },
-    {
-      "label": "training_data_governance",
-      "count": 12,
-      "share": 0.571
+      "share": 0.542
     },
     {
       "label": "risk_assessment",
-      "count": 11,
-      "share": 0.524
+      "count": 13,
+      "share": 0.542
     }
   ],
   "top_enforcement_mechanisms": [
     {
-      "label": "soft_enforcement",
-      "count": 17,
-      "share": 0.81
+      "label": "regulatory_supervision",
+      "count": 19,
+      "share": 0.792
     },
     {
-      "label": "regulatory_supervision",
-      "count": 16,
-      "share": 0.762
+      "label": "soft_enforcement",
+      "count": 19,
+      "share": 0.792
     },
     {
       "label": "civil_penalty",
       "count": 11,
-      "share": 0.524
+      "share": 0.458
     },
     {
       "label": "reporting_obligation",
       "count": 9,
-      "share": 0.429
+      "share": 0.375
     }
   ],
   "top_frames": [
     {
       "label": "fundamental_rights",
-      "score": 8.39,
-      "share": 0.4,
-      "document_mentions": 19
+      "score": 9.34,
+      "share": 0.389,
+      "document_mentions": 22
     },
     {
       "label": "innovation_enablement",
-      "score": 7.2,
-      "share": 0.343,
-      "document_mentions": 20
+      "score": 7.84,
+      "share": 0.327,
+      "document_mentions": 23
     },
     {
       "label": "consumer_public_safety",
-      "score": 2.81,
-      "share": 0.134,
-      "document_mentions": 19
+      "score": 3.48,
+      "share": 0.145,
+      "document_mentions": 22
     },
     {
       "label": "economic_competitiveness",
-      "score": 1.09,
-      "share": 0.052,
-      "document_mentions": 11
+      "score": 1.65,
+      "share": 0.069,
+      "document_mentions": 13
     }
   ],
   "key_institutions": [
@@ -182,5 +185,5 @@
     "European Data Protection Supervisor (EDPS)",
     "National competent authorities"
   ],
-  "confidence": 0.926
+  "confidence": 0.925
 }

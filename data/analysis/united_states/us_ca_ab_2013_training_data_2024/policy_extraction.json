@@ -1,0 +1,102 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "California State Legislature",
+  "document_type": "legislation",
+  "binding_strength": "binding_law",
+  "publication_date": "2024-09-28",
+  "effective_date": "2026-01-01",
+  "covered_actors": [
+    "Developers of generative artificial intelligence systems or services (any person, partnership, state or local government agency, or corporation that designs, codes, produces, or substantially modifies an AI system or service for use by members of the public) released on or after January 1, 2022 and made publicly available to Californians, regardless of compensation",
+    "Exemptions apply for generative AI systems whose sole purpose is ensuring security and integrity, operating aircraft in the national airspace, or serving national security, military, or defense purposes made available solely to a federal entity"
+  ],
+  "covered_application_domains": [
+    "general_purpose_models"
+  ],
+  "prohibited_practices": [],
+  "safety_requirements": [
+    {
+      "label": "training_data_governance",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "the developer of the system or service shall post on the developer’s internet website documentation regarding the data used by the developer to train the generative artificial intelligence system or service, including, but not be limited to, all of the following:\n(a) A high-level summary of the datasets used in the development of the generative artificial intelligence system or service",
+          "source_section": "Civil Code § 3111(a)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3798,
+          "end_char": 4186
+        },
+        {
+          "quote": "(5) Whether the datasets include any data protected by copyright, trademark, or patent, or whether the datasets are entirely in the public domain.\n(6) Whether the datasets were purchased or licensed by the developer.",
+          "source_section": "Civil Code § 3111(a)(5)–(6)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 4858,
+          "end_char": 5074
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.94,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "On or before January 1, 2026, and before each time thereafter that a generative artificial intelligence system or service, or a substantial modification to a generative artificial intelligence system or service, released on or after January 1, 2022, is made publicly available to Californians for use, regardless of whether the terms of that use include compensation, the developer",
+          "source_section": "Civil Code § 3111",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 3430,
+          "end_char": 3811
+        },
+        {
+          "quote": "(10) The time period during which the data in the datasets were collected, including a notice if the data collection is ongoing.\n(11) The dates the datasets were first used during the development of the artificial intelligence system or service.",
+          "source_section": "Civil Code § 3111(a)(10)–(11)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 5522,
+          "end_char": 5767
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "none_specified",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "SECTION 1. Title 15.2 (commencing with Section 3110) is added to\nPart 4 of Division 3 of the Civil Code, to read:",
+          "source_section": "Section 1 (Adding Civil Code Title 15.2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1567,
+          "end_char": 1680
+        },
+        {
+          "quote": "(b) A developer shall not be required to post documentation regarding the data used to train a generative artificial intelligence system or service for any of the following:\n(1) A generative artificial intelligence system or service whose sole purpose is to help ensure security and integrity.",
+          "source_section": "Civil Code § 3111(b)(1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 6074,
+          "end_char": 6367
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [],
+  "compliance_deadlines": [
+    "2026-01-01: Developers must post public website documentation of training datasets for covered generative AI systems released on or after January 1, 2022 and made publicly available to Californians (Civil Code § 3111)",
+    "Before each subsequent release or substantial modification (including retraining or fine-tuning that materially changes functionality or performance): Developers must post updated training-data documentation on their internet website (Civil Code §§ 3110(d), 3111)"
+  ],
+  "penalties_summary": "AB 2013 adds Title 15.2 (Civil Code §§ 3110–3111) as a binding California statute but contains no express civil penalties, criminal sanctions, designated regulatory enforcement agency, or private right of action within the statutory text itself.",
+  "implementation_notes": "Enacted September 28, 2024 (Chapter 817, Statutes of 2024), adding Title 15.2 to Part 4 of Division 3 of the California Civil Code with a compliance deadline of January 1, 2026. Mandates a 12-item public website summary of training datasets—including dataset sources/owners, intended purpose alignment, data point counts and types/labels, intellectual property status, purchasing/licensing status, personal and aggregate consumer information under CCPA § 1798.140, cleaning/processing modifications, collection time windows, first-use dates, and synthetic data generation—with retrospective reach to systems released on or after January 1, 2022 and narrow carve-outs for security/integrity, national-airspace aircraft operation, and federal defense systems.",
+  "confidence": 0.97
+}

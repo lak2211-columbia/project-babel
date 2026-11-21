@@ -1,0 +1,739 @@
+{
+  "benchmark_id": "gold_set_v2",
+  "benchmark_status": "stratified_v1.0_blind_internal",
+  "taxonomy_version": "2.1.0",
+  "created_at": "2026-11-21",
+  "annotator_note": "Stratified 25-document multilingual blind gold-set benchmark (5 documents per jurisdiction across EN/KO/JA/ZH spanning all 6 binding-strength strata and all 17 Taxonomy v2.1.0 policy requirements). Every document was coded strictly blind from its full parsed primary text (data/parsed/<jurisdiction>/<document_id>/normalized.json) against Codebook v2.1.0 (docs/research/codebook.md) and canonical label definitions (data/taxonomies/label-definitions.json) without consulting any pipeline outputs under data/analysis/. Includes all 5 starter anchors from gold_set_v1.json re-verified against Parser 0.3.0 texts plus 20 newly blind-coded instruments. External multi-institution dual-annotator inter-rater review remains the next academic milestone.",
+  "documents": [
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_take_it_down_act_2025",
+      "title": "TAKE IT DOWN Act (Pub. L. 119-12 / S. 146)",
+      "language": "en",
+      "document_type": "legislation",
+      "stratum": "binding_law",
+      "binding_strength": "binding_law",
+      "policy_requirements": [
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "criminal_penalty",
+        "regulatory_supervision"
+      ],
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "fundamental_rights"
+      ],
+      "coding_rationale": "Enacted federal statute (Pub. L. 119-12, May 19, 2025) criminalizing intentional nonconsensual disclosure of authentic intimate visual depictions and AI-generated 'digital forgeries' (Sec. 2, 47 U.S.C. 223(h)) and mandating a 48-hour covered-platform notice-and-removal process (Sec. 3(a)(1)-(3)). Operatively requires covered platforms to post a clear, conspicuous, plain-language notice explaining platform responsibilities and individual takedown recourse (Sec. 3(a)(2)), without imposing synthetic-content watermarking or metadata provenance mandates. Enforced through federal criminal imprisonment up to 2 years (adults) or 3 years (minors), Title 18 fines, criminal forfeiture, and restitution (Sec. 2(a), 47 U.S.C. 223(h)(4), (6)-(8)), alongside FTC supervisory enforcement and civil penalties treating noncompliance as an FTC Act Section 18 unfair or deceptive act or practice rule violation (Sec. 3(b)(1)-(2)). Framed primarily around preventing exploitation, abuse, humiliation, and psychological or reputational harm to minors and platform users via FTC consumer-protection enforcement (Secs. 1, 2(h)(2)-(3), 3(b)), with a secondary grounding in personal privacy expectations and affirmative individual consent (Sec. 2(h)(1)(A), (2)(A)(i))."
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_eo_14409_advanced_ai_innovation_security_2026",
+      "title": "Executive Order 14409: Promoting Advanced AI Innovation and Security (91 FR 34565)",
+      "language": "en",
+      "document_type": "executive_order",
+      "stratum": "executive_action",
+      "binding_strength": "executive_action",
+      "policy_requirements": [
+        "access_controls",
+        "frontier_safety_evaluation"
+      ],
+      "enforcement_mechanisms": [
+        "criminal_penalty",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "national_security",
+      "secondary_frames": [
+        "innovation_enablement",
+        "economic_competitiveness"
+      ],
+      "coding_rationale": "Presidential Executive Order (June 2, 2026) directing federal agencies to harden National Security Systems, Department of War networks, and civilian federal systems via CISA Binding Operational Directives and a voluntary industry-government AI cybersecurity clearinghouse (Sec. 2(a)-(d)), while establishing an NSA/CISA/Treasury/NIST classified cyber-capability benchmarking process and voluntary 30-day pre-release federal evaluation access for designated 'covered frontier models' under strict cybersecurity and insider-risk protections (Sec. 3(a)-(b)). Expressly disclaims mandatory governmental licensing or preclearance (Sec. 3(c)) and relies on voluntary developer collaboration alongside prioritized DOJ criminal prosecution under 18 U.S.C. 1028, 1030, and 1343 against AI-enabled unauthorized computer access (Sec. 4). Dominantly framed around national security, America First cybersecurity, critical-infrastructure defense, and protecting U.S. systems and IP from foreign adversaries (Secs. 1-3), with secondary rationales in slashing burdensome regulation to accelerate responsible AI innovation and sustaining global U.S. AI dominance (Sec. 1)."
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_joint_statement_ai_discrimination_2023",
+      "title": "Joint Statement on Enforcement Efforts Against Discrimination and Bias in Automated Systems",
+      "language": "en",
+      "document_type": "regulatory_guidance",
+      "stratum": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "policy_requirements": [
+        "risk_assessment",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "innovation_enablement"
+      ],
+      "coding_rationale": "Joint CFPB/DOJ/EEOC/FTC regulatory statement anchoring federal enforcement posture in civil rights, fairness, equality, and non-discrimination under existing statutes (ECOA, Title VII, Fair Housing Act, FTC Act). Articulates expectations for algorithmic bias and impact risk assessments, adverse-action transparency notices explaining credit denials from complex black-box models, and lawful, unskewed training-data governance backed by FTC algorithmic-disgorgement remedies for unlawfully collected data. Explicitly carries a non-binding guidance disclaimer while signaling vigorous supervisory investigation and enforcement under existing agency authorities; secondarily notes consumer harm prevention and responsible innovation."
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_nist_ai_rmf_1_0",
+      "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+      "language": "en",
+      "document_type": "standards_guideline",
+      "stratum": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "policy_requirements": [
+        "access_controls",
+        "human_oversight",
+        "incident_reporting",
+        "model_documentation",
+        "pre_deployment_testing",
+        "risk_assessment",
+        "third_party_audit",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "fundamental_rights",
+        "innovation_enablement"
+      ],
+      "coding_rationale": "Voluntary NIST technical framework (NIST AI 100-1, Jan. 2023) organized around GOVERN, MAP, MEASURE, and MANAGE functions (Sec. 5, Tables 1-4) and seven trustworthiness characteristics (Sec. 3.1-3.7). Prescribes continuous lifecycle risk assessments and impact mapping (Sec. 1, GOVERN 1, MAP 1-5, MANAGE 1), pre-deployment and ongoing TEVV testing and validation (Sec. 3.1, 5.3, MEASURE 2.1-2.6), independent non-developer/external review and auditing (Fig. 3, MEASURE 1.3, Appendix A), cybersecurity and unauthorized-access resilience controls (Sec. 3.3, MEASURE 2.7), training-data provenance, copyright, privacy, and bias curation (Sec. 3.4, 3.6-3.7, GOVERN 6.1, MAP 2.3, 4.1), structured TEVV and residual-risk documentation (GOVERN 1.6, 4.2, MAP 2.2, MEASURE 2.1, MANAGE 1.4), user-facing transparency, explainability, and redress mechanisms (Sec. 3.4-3.5, MEASURE 2.8-2.9, 3.3), explicit human-AI oversight, intervention, and deactivation controls (Sec. 3.1-3.2, GOVERN 3.2, MAP 3.5, MANAGE 2.4, 4.1, Appendix C), and incident tracking and communication to affected communities (GOVERN 4.3, MANAGE 4.3); contains no adversarial red-teaming protocol. Relies exclusively on voluntary, non-prescriptive, law-agnostic adoption (Exec. Summary, Appendix D). Dominantly framed around managing socio-technical AI risks, operational reliability, and preventing safety harms to individuals and society (Exec. Summary, Sec. 1.1, 3.1-3.2), paired with explicit rights-preserving civil-liberties, privacy, and equity protections (Exec. Summary, Sec. 1, 2, 3.6-3.7) and pro-innovation trustworthy adoption (Appendix D)."
+    },
+    {
+      "jurisdiction": "united_states",
+      "document_id": "us_ai_action_plan_pdf",
+      "title": "Winning the Race: America's AI Action Plan",
+      "language": "en",
+      "document_type": "strategy_paper",
+      "stratum": "strategy_statement",
+      "binding_strength": "strategy_statement",
+      "policy_requirements": [
+        "access_controls",
+        "compute_governance",
+        "frontier_safety_evaluation",
+        "incident_reporting",
+        "pre_deployment_testing",
+        "training_data_governance"
+      ],
+      "enforcement_mechanisms": [
+        "market_access_restriction",
+        "procurement_condition",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "economic_competitiveness",
+      "secondary_frames": [
+        "national_security",
+        "innovation_enablement",
+        "labor_transition"
+      ],
+      "coding_rationale": "White House national AI strategy (July 2025) structured around three pillars—Accelerate AI Innovation, Build American AI Infrastructure, and Lead in International AI Diplomacy and Security—offering Recommended Policy Actions rather than binding rules. Calls for federally funded dataset disclosure and NSTC scientific training-data quality standards (Pillar I, pp. 8-9), NIST/CAISI agency evaluation guidelines and DOE/NSF real-world testbeds (Pillar I, p. 10), high-security data-center standards, secure-by-design AI, and DHS AI-ISAC cyber protections (Pillar I p. 12, Pillar II pp. 16-18), NIST/CISA AI incident-response playbooks and vulnerability sharing (Pillar II, p. 19), chip location-verification and end-use compute export monitoring (Pillar III, p. 21), and CAISI national-security CBRNE/cyber evaluations of U.S. and adversary frontier models (Pillar I p. 4, Pillar III p. 22). Combines soft voluntary partnerships/sandboxes with federal procurement and research-grant conditions (state-regulation funding limits, federal LLM objectivity contracting rules, mandatory nucleic-acid screening for funded research; Pillar I pp. 3-4, 8, Pillar III p. 23) and export controls, FDPR, and secondary tariffs (Pillar III, pp. 21-22). Dominantly framed around winning the global AI race, industrial dominance, energy/semiconductor reshoring, and full-stack American AI exports (Intro, Pillars I-III), with strong secondary frames in national security against adversaries (Epigraph, Pillars II-III), deregulation and try-first innovation enablement (Pillar I pp. 3-5), and American worker retraining and displacement support (Pillar I pp. 6-7, Pillar II p. 17)."
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_digital_omnibus_ai_regulation_2026_1744",
+      "title": "Regulation (EU) 2026/1744 of the European Parliament and of the Council of 8 July 2026 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 (Digital Omnibus on AI)",
+      "language": "en",
+      "document_type": "legislation",
+      "stratum": "binding_law",
+      "binding_strength": "binding_law",
+      "policy_requirements": [
+        "access_controls",
+        "content_provenance",
+        "incident_reporting",
+        "model_documentation",
+        "open_weight_obligations",
+        "pre_deployment_testing",
+        "registration_licensing",
+        "risk_assessment",
+        "third_party_audit",
+        "training_data_governance"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "market_access_restriction",
+        "regulatory_supervision",
+        "reporting_obligation",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "fundamental_rights",
+        "consumer_public_safety"
+      ],
+      "coding_rationale": "Directly applicable EU Regulation (July 8, 2026, Art. 4) amending the AI Act primarily to simplify implementation, reduce compliance burdens for SMEs/start-ups/SMCs, expand regulatory sandboxes and real-world testing, and stagger high-risk compliance deadlines (Recitals 2-8, 17-28, 37-42; Art. 1(1)), while preserving fundamental-rights and safety safeguards including new Article 5(1)(ba)-(bb) bans on non-consensual intimate material and CSAM and an expanded Article 4a bias-correction legal basis (Recitals 9-16, 33, 36, 42; Arts. 2-3). Operatively amends binding controls on bias-correction training data and access/cybersecurity safeguards (Art. 1(6)/Art. 4a, Art. 1(9)/Art. 10, Art. 1(18)/Art. 42(3)), technical documentation and post-market monitoring (Art. 1(10)/Art. 11, Art. 1(12)(a)/Art. 25(2), Art. 1(30)/Art. 72(3)), FRIA/DPIA cross-referenced risk assessments (Art. 1(13)/Art. 27, Recitals 22, 32, 37), notified-body and AI Office pre-market conformity assessments and real-world testing (Art. 1(14)-(16), (19), (22), (24)-(25), (31)(c)/Art. 75(1e), (43)/Annex XIV), synthetic-content marking timelines and codes (Art. 1(20)/Art. 50(7), Art. 1(39)(b)/Art. 111(4)), serious incident reporting to the AI Office (Art. 1(31)(c)/Art. 75(1a)), streamlined EU database registration (Recital 22, Art. 1(42)/Annex VIII), and free/open-source supply-chain carve-outs excluding GPAI models (Art. 1(12)(b)/Art. 25(4), Recital 12). Enforcement spans exclusive AI Office supervision and inspections (Arts. 75-75d, 77), administrative fines and periodic penalties up to 5% of turnover (Arts. 75c(4)-(5), 99), market prohibitions/withdrawals/recalls (Arts. 5(1)(ba)-(bb), 75(1d), 75a(1)), mandatory incident/database filings, and adequacy-assessed codes of practice and voluntary codes of conduct (Arts. 50(7), 56(6), 95(4))."
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_article_50_transparency_guidelines_2026",
+      "title": "Guidelines on the implementation of the transparency obligations applicable to certain AI systems in Article 50 AI Act",
+      "language": "en",
+      "document_type": "regulatory_guidance",
+      "stratum": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "policy_requirements": [
+        "agentic_autonomy_controls",
+        "content_provenance",
+        "human_oversight",
+        "open_weight_obligations",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "social_stability"
+      ],
+      "coding_rationale": "Non-binding Commission guidance under Article 96(1)(d) AI Act (Sec. 1, paras. 3, 5) operationalizing Article 50 transparency obligations. Anchored primarily in upholding EU fundamental rights—autonomy, human dignity, privacy, freedom of thought/expression, electoral democracy, non-discrimination, and disability accessibility (Secs. 1, 2.2, 5, 6.1.3, 7.3; paras. 1, 9, 95, 100, 122, 124, 144)—alongside protecting consumers, children, and vulnerable users from deception, impersonation, and fraud (paras. 9, 34-45, 50, 113-116) and preserving information-ecosystem integrity against disinformation (paras. 9, 16, 27, 54-55, 67, 79, 95, 97, 154). Details user-facing interaction, emotion/biometric, deepfake, and public-interest text disclosures (Secs. 3, 5-7; paras. 28-53, 99-144), machine-readable watermarking, metadata provenance, and detection tools for synthetic outputs (Sec. 4; paras. 54-98), verifiable AI agent identity, delegated-authority attribution, and authorization disclosures for multi-step/multi-agent systems (Sec. 3.1.1-3.1.2; paras. 31, 36 fn. 21, 40), substantive human-in-the-loop review and editorial control criteria for the Art. 50(4) text exception (Sec. 6.2.3; paras. 133-138), and free/open-source AI system versus component carve-out rules (Sec. 2.4.3; paras. 23-24). Section 8 details national market-surveillance, AI Office, and EDPS supervision and complaints (Sec. 8.2; paras. 148, 151), Art. 99 fines up to EUR 15M or 3% of global turnover (Sec. 8.3; para. 152), and voluntary adequacy-assessed Art. 50(7) Codes of Practice (Sec. 8.1; paras. 146-150)."
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_gpai_scope_obligations_guidelines_2025",
+      "title": "Commission Guidelines on the Scope of the Obligations for Providers of General-Purpose AI Models (C(2025) 7719 final)",
+      "language": "en",
+      "document_type": "regulatory_guidance",
+      "stratum": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "policy_requirements": [
+        "access_controls",
+        "compute_governance",
+        "domestic_representative",
+        "frontier_safety_evaluation",
+        "incident_reporting",
+        "model_documentation",
+        "open_weight_obligations",
+        "risk_assessment",
+        "training_data_governance"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "market_access_restriction",
+        "regulatory_supervision",
+        "reporting_obligation",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "fundamental_rights"
+      ],
+      "coding_rationale": "Non-binding Commission enforcement guidance under Article 96(1) AI Act (Sec. 1, paras. 7, 9) framing GPAI scope primarily around clear, proportionate rules that foster innovation, downstream value-chain uptake, open-source R&D, and collaborative staged compliance while limiting burdens on smaller actors and fine-tuners (Secs. 1, 2.1, 3.2, 4.1, 5.2-5.3; paras. 1-3, 13, 16, 58-63, 71, 99, 107-111), balanced against public health, safety, public security, and fundamental-rights/copyright protection from systemic risks (paras. 1, 4-5, 24, 35, 72, 81, 84, 105). Specifies quantitative compute governance (10^23 FLOP GPAI criterion, 10^25 FLOP systemic-risk threshold, 1/3 modifier rule, lifecycle compute monitoring, Annex A.1-A.3 FLOP accounting; paras. 15-20, 27-31, 60-63, 114-141), open-weight/open-source exemption conditions and systemic-risk override (Sec. 4; paras. 69-89), technical documentation for authorities and downstream providers (paras. 3, 23, 65, 70, 120), copyright/TDM opt-outs and public training-content summaries (paras. 4, 23, 65, 72, 108), third-country authorized representatives under Art. 54 (paras. 48, 66, 69-70), and systemic-risk assessment, frontier/AI Office model evaluations, serious incident reporting including weight exfiltration, and lifecycle cybersecurity (paras. 5, 21-25, 27, 34, 92, 100-103, 111). Enforcement combines exclusive AI Office supervision and ex officio designations (Secs. 2.3.4, 5.2), two-week compute-threshold and incident reporting (Secs. 2.3.2, 5.2), Art. 93 market recall powers (para. 103), Art. 101 fines up to 3% or EUR 15M (paras. 43, 103, 112), and voluntary Codes of Practice and collaborative transition enforcement (Secs. 5.1, 5.3)."
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_edpb_ai_models_opinion_28_2024",
+      "title": "Opinion 28/2024 on certain data protection aspects related to the processing of personal data in the context of AI models",
+      "language": "en",
+      "document_type": "regulatory_guidance",
+      "stratum": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "policy_requirements": [
+        "access_controls",
+        "model_documentation",
+        "red_teaming",
+        "risk_assessment",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "market_access_restriction",
+        "regulatory_supervision"
+      ],
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "innovation_enablement"
+      ],
+      "coding_rationale": "EDPB Article 64(2) GDPR supervisory opinion for EEA data protection authorities (Secs. 1.2, 2.1; paras. 8, 14-15), squarely anchored in EU Charter fundamental rights to personal data protection, privacy, freedom of expression, non-discrimination, and data-subject self-determination (Exec. Summary, Secs. 3.3.1, 3.3.2.3, 3.4; paras. 63-65, 76-81, 88, 113), while secondarily emphasizing GDPR as an enabling framework for responsible AI innovation (Exec. Summary, paras. 8, 69, 81-82). Details re-identification risk evaluations, DPIAs, three-step legitimate-interest balancing tests, and downstream due diligence (Secs. 3.2.1, 3.3.2, 3.4.2; paras. 40-43, 56-58, 66-96, 129-130), rigorous training-data curation, minimization, anonymization, differential privacy, robots.txt/ai.txt exclusions, opt-out lists, and unlearning (Secs. 3.2.2.1, 3.3.2.3; paras. 49-52, 64, 73, 100-106), structured adversarial attack testing against attribute/membership inference, exfiltration, regurgitation, model inversion, and reconstruction (Sec. 3.2.2.3; paras. 46, 55, 58(e)), technical access limits and output filters (paras. 41(b) fn. 34, 53, 85, 107(a), 132), accountability documentation including dataset URLs, threat models, attack-test reports, and model cards (Sec. 3.2.2.4; paras. 54, 56-58, 66, 103(b)), and GDPR Arts. 12-14 transparency, automated-decision logic disclosures, and Art. 21 opt-outs (paras. 58(f), 63, 65, 102-103, 106, 108). Enforcement relies on national DPA Arts. 51 and 58 supervision and corrective orders (paras. 14-15, 57, 113-116), administrative fines (para. 114), and temporary processing bans or orders to erase unlawfully trained datasets or the AI model itself (Sec. 3.4; paras. 114-115, 120, 133)."
+    },
+    {
+      "jurisdiction": "european_union",
+      "document_id": "eu_gpai_code_transparency_chapter_2025",
+      "title": "Code of Practice for General-Purpose AI Models — Transparency Chapter",
+      "language": "en",
+      "document_type": "voluntary_commitment",
+      "stratum": "voluntary_commitment",
+      "binding_strength": "voluntary_commitment",
+      "policy_requirements": [
+        "access_controls",
+        "model_documentation",
+        "open_weight_obligations",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision",
+        "reporting_obligation",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "innovation_enablement",
+        "economic_competitiveness"
+      ],
+      "coding_rationale": "Voluntary signatory Code of Practice Transparency Chapter (Measures 1.1-1.3) operationalizing AI Act Art. 53(1)(a)-(b) via a standardized Model Documentation Form retained for 10 years, structured disclosure to downstream providers and the AI Office within 14 days, Art. 78 confidentiality and cybersecurity/integrity access controls over documentation, and an explicit Art. 53(2) open-source license exemption with systemic-risk override. Enforced through voluntary signatory adherence offering presumption of conformity alongside AI Office supervisory requests and mandatory documentation submission upon request. Objectives anchor primarily in Art. 1(1) Charter fundamental rights alongside health/safety, innovation, and internal market competitiveness."
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_ai_basic_act",
+      "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 (약칭: 인공지능기본법)",
+      "language": "ko",
+      "document_type": "legislation",
+      "stratum": "binding_law",
+      "binding_strength": "binding_law",
+      "policy_requirements": [
+        "compute_governance",
+        "content_provenance",
+        "domestic_representative",
+        "frontier_safety_evaluation",
+        "human_oversight",
+        "incident_reporting",
+        "model_documentation",
+        "pre_deployment_testing",
+        "risk_assessment",
+        "third_party_audit",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "criminal_penalty",
+        "procurement_condition",
+        "regulatory_supervision",
+        "reporting_obligation",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "economic_competitiveness",
+        "fundamental_rights",
+        "consumer_public_safety"
+      ],
+      "coding_rationale": "Enacted primary statute (Act No. 20676, amended Jan. 20, 2026) pairing AI promotion and ecosystem support with statutory trust and safety obligations. 제31조 mandates prior user AI notices and generative/deepfake output labeling; 제32조 establishes compute-threshold frontier safety lifecycle risk management, safety-incident monitoring/response, and MSIT submissions supported by Korea AISI (제12조); 제30조 and 제33조-제36조 establish prior external verification/certification endeavors, high-impact AI review, risk management, training-data overview explanations, human oversight, compliance documentation, fundamental-rights impact assessments, and foreign domestic representatives. Enforcement combines MSIT fact-finding, on-site inspections, and cease/corrective orders (제40조), administrative fines up to 30M KRW (제43조), narrow criminal penalties for NAISC secret leakage (제41조-제42조), mandatory MSIT filings (제32조제2항, 제36조제1항), public procurement priority for certified or impact-assessed high-impact AI (제30조제4항, 제35조제2항), and voluntary ethics/recommendations (제8조, 제14조, 제27조-제30조). Framed primarily around sound AI development, regulatory sandboxes, and a trust foundation enabling adoption (제1조, 제3조, 제13조-제26조), balanced with national competitiveness (제1조, 제6조, 제22조-제23조), citizens' rights/dignity (제1조, 제2조, 제35조), and safety of human life and body (제12조, 제27조, 제29조, 제34조)."
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_ai_basic_act_enforcement_decree",
+      "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 시행령",
+      "language": "ko",
+      "document_type": "legislation",
+      "stratum": "binding_law",
+      "binding_strength": "binding_law",
+      "policy_requirements": [
+        "compute_governance",
+        "content_provenance",
+        "domestic_representative",
+        "frontier_safety_evaluation",
+        "human_oversight",
+        "model_documentation",
+        "risk_assessment",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "regulatory_supervision",
+        "reporting_obligation",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "fundamental_rights",
+        "consumer_public_safety",
+        "economic_competitiveness"
+      ],
+      "coding_rationale": "Presidential Enforcement Decree (No. 36053, effective Jan. 22, 2026) implementing the AI Basic Act (제1조). Operatively specifies prior user notice and visible/machine-readable generative and deepfake labeling duties (제23조), the 10^26 FLOPs + state-of-the-art + broad/serious risk frontier safety threshold (제24조) alongside Korea AISI's safety evaluation system (제10조제1항제2호), high-impact confirmation dossiers including training-data overviews (제25조), public posting of risk-management policy, explanation measures, user protection, and human supervisor details plus 5-year compliance record retention (제27조), seven-element fundamental-rights impact assessments (제28조), and revenue/user thresholds for foreign domestic representatives (제29조). Enforcement specifies administrative fine schedules (제32조, Annex 2), MSIT high-impact adjudication, equivalency review, and cluster-agency corrective/revocation oversight (제18조, 제25조, 제27조제5항), mandatory periodic reporting to NAISC/MSIT (제7조, 제10조, 제18조), and voluntary ethics/certification support endeavors (제21조-제22조, 제27조제4항, 제28조). Framing mirrors the parent Act's innovation-and-trust foundation (제1조, 제11조-제22조, 제33조), with secondary emphasis on fundamental rights (제24조-제25조, 제28조), life/physical/user safety (제10조, 제15조, 제23조-제25조, 제27조), and industrial competitiveness and exports (제12조, 제16조-제17조)."
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_ai_transparency_guideline_2026",
+      "title": "인공지능 투명성 확보 가이드라인 (AI Transparency Guideline)",
+      "language": "ko",
+      "document_type": "regulatory_guidance",
+      "stratum": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "policy_requirements": [
+        "content_provenance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "social_stability",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "fundamental_rights"
+      ],
+      "coding_rationale": "MSIT interpretive guideline operationalizing AI Basic Act 제31조 and Enforcement Decree 제23조 prior-notice duties (사전 고지 의무) and visible/machine-readable watermarking and metadata labeling for general AI and deepfake outputs (표시 의무). Functions as non-binding practical guidance informing MSIT supervisory oversight and fact-finding under the parent Act. Framed primarily around preventing public confusion, misinformation, and election disinformation while strengthening collective social trust (사회적 신뢰 제고), with secondary rationales in protecting consumers/deepfake victims and balancing creative-expression rights."
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_ai_safety_guideline_2026_draft",
+      "title": "인공지능 안전성 확보 가이드라인(안)",
+      "language": "ko",
+      "document_type": "regulatory_guidance",
+      "stratum": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "policy_requirements": [
+        "access_controls",
+        "compute_governance",
+        "frontier_safety_evaluation",
+        "human_oversight",
+        "incident_reporting",
+        "model_documentation",
+        "pre_deployment_testing",
+        "red_teaming",
+        "risk_assessment",
+        "third_party_audit"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision",
+        "reporting_obligation",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "existential_catastrophic",
+        "fundamental_rights"
+      ],
+      "coding_rationale": "MSIT regulatory compliance guideline (Ch. 1 pp. 5-13) operationalizing AI Basic Act 제32조, Decree 제24조, and MSIT Draft Notice 2026-126 Arts. 3-8 for frontier state-of-the-art models at or above 10^26 FLOPs. Prescribes FLOP calculation/monitoring and third-party verification (Ch. 2-1 pp. 14-18), lifecycle risk identification/evaluation/mitigation with independent evaluation teams and external expert/audit validation (Ch. 3 pp. 26-53), empirical safety/performance benchmarking and pre-deployment adversarial red-teaming (pp. 25, 27, 32-37, 42, 67), API/user access controls and staged release (pp. 49-54, 59-60), CAIO/CAISO human intervention and service-halt controls (pp. 48, 52, 55-59), risk registers, logs, and submission dossiers (pp. 35-37, 46-47, 50-51, 63-68), and staged 24h/7d/15d incident reporting to MSIT plus affected-user notification (Ch. 4-5 pp. 55-61, 69-73). Non-binding as a draft reference with voluntary checklists (pp. 2, 5), yet informs MSIT supervision, verification, and supplementation demands (pp. 5, 9, 25, 66) and details mandatory statutory compliance and incident filings (Ch. 5). Dominantly framed around preventing serious AI safety incidents and harms to human life, physical safety, and public safety (pp. 8, 13, 20-21, 58, 69), with material secondary frames in catastrophic systemic risks (CBRN/bioweapons, critical-infrastructure cyberattacks, loss of control; pp. 26, 29, 31, 33-34, 38, 54) and fundamental rights (pp. 8, 13-14, 20-21, 40, 69)."
+    },
+    {
+      "jurisdiction": "south_korea",
+      "document_id": "kr_genai_personal_data_guide_2025",
+      "title": "생성형 인공지능(AI) 개발·활용을 위한 개인정보 처리 안내서",
+      "language": "ko",
+      "document_type": "regulatory_guidance",
+      "stratum": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "policy_requirements": [
+        "access_controls",
+        "human_oversight",
+        "incident_reporting",
+        "model_documentation",
+        "open_weight_obligations",
+        "pre_deployment_testing",
+        "red_teaming",
+        "risk_assessment",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "regulatory_supervision",
+        "reporting_obligation",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "innovation_enablement"
+      ],
+      "coding_rationale": "PIPC interpretive compliance guide (Aug. 2025, Chs. I-III & Annex) applying Korea's Personal Information Protection Act (PIPA) across generative AI lifecycles. Covers lawful training-data curation, web-scraping opt-outs (robots.txt/CAPTCHA/noai), pseudonymization/anonymization, PII/financial ID removal (PIPA 제34조의2), and PETs (Ch. III-1, III-3 pp. 12-18, 27-30, 41-42); mandatory public-sector and recommended private-sector PIAs (PIPA 제33조, Ch. III-2 pp. 20-22); distinct upstream/downstream compliance responsibilities for open-weight models (Ch. III-2 p. 25, Annex p. 46); API authentication, RBAC, input/output filters, and RAG access controls (Ch. III-3 pp. 34-35, Ch. III-5 p. 44); pre-deployment privacy/accuracy benchmarking and CPO-led AI privacy red-teaming (Ch. III-3-5 pp. 36-37, 43-45); model cards, AUPs, test documentation, privacy notices, and PIPA 제37조의2 automated-decision refusal/human-intervention rights (Ch. III-4 pp. 38-42); and user infringement reporting, post-release notices, and sharing critical vulnerabilities with authorities (pp. 25, 39, 42-43). Combines non-binding guidance, Prior Adequacy Review safe harbors, and sandboxes (pp. 2, 5-7, 22, 46) with PIPC pre-inspections, corrective orders, public-agency PIA filings, and PIPA fines/surcharges (pp. 5, 21-22, 29). Dominantly framed around individual freedom, dignity, and personal-data rights (PIPA 제1조, Ch. I pp. 2-3), alongside reducing legal uncertainty to enable safe AI innovation (Ch. I p. 2, Ch. III-2 p. 21)."
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_ai_promotion_act_statute_2025",
+      "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（令和七年法律第五十三号）",
+      "language": "ja",
+      "document_type": "legislation",
+      "stratum": "binding_law",
+      "binding_strength": "binding_law",
+      "policy_requirements": [
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "economic_competitiveness",
+      "secondary_frames": [
+        "innovation_enablement",
+        "national_security",
+        "fundamental_rights"
+      ],
+      "coding_rationale": "Enacted Diet statute (Act No. 53 of 2025, Arts. 1-28) establishing Japan's AI Basic Plan (Art. 18) and Cabinet AI Strategy Headquarters (Arts. 19-28) without prescriptive technical compliance mandates or monetary penalties. The sole operative governance control named in the statute is Art. 3(4)'s Basic Principle mandating measures to ensure transparency in AI R&D and utilization processes (透明性の確保), paired with Art. 7 requiring AI operators to respect Basic Principles and cooperate with national/local measures; Art. 12 promotes shared compute/dataset infrastructure rather than regulatory oversight. Enforcement relies strictly on state investigation and analysis of rights-infringement cases coupled with non-coercive guidance, advice, and information provision (Art. 16), non-binding international-norm guidelines (Art. 13), operator cooperation duties (Art. 7), and HQ material requests (Art. 25), with zero civil/criminal penalties or market bans. Framed primarily around economic growth, new industry creation, and strengthening Japan's international AI competitiveness (Art. 1, Art. 3(2)), alongside R&D/adoption enablement (Arts. 1, 3(1)-(3), 4-15), national security and domestic R&D capability (Art. 3(2)), and preventing infringement of citizens' rights, privacy, and copyright (Arts. 3(4), 16)."
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_second_basic_ai_plan_2026",
+      "title": "人工知能基本計画 ～日本ＡＸ、より強く、より豊かに～ (Second AI Basic Plan — Cabinet Decision of July 14, 2026)",
+      "language": "ja",
+      "document_type": "strategy_paper",
+      "stratum": "strategy_statement",
+      "binding_strength": "strategy_statement",
+      "policy_requirements": [
+        "frontier_safety_evaluation"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "economic_competitiveness",
+      "secondary_frames": [
+        "innovation_enablement",
+        "national_security",
+        "labor_transition"
+      ],
+      "coding_rationale": "Cabinet-approved national AI strategy (July 14, 2026) under AI Promotion Act Art. 18(1) detailing four pillars across Chs. 1-4 without directly imposing private-sector compliance mandates. Operatively, Ch. 3 Sec. 3 (pp. 14-16, items (1)4-5, 7, (2)3) explicitly builds and expands Japan AISI's proactive capability to evaluate high-performance/frontier models and cyber capabilities against national-security, CBRNE, and autonomous cyber threats in coordination with US CAISI and UK AISI; other sections preview future agentic-AI guidelines, infrastructure investments, and separate APPI amendments rather than setting operator rules directly. Combines Responsible Agile Governance through voluntary guidelines and standards (Chs. 2-3 Sec. 3) with agile execution of AI Promotion Act Art. 16 state investigations and central risk-incident aggregation at AI Strategy HQ (Ch. 3 Sec. 3 (1)1, 3). Dominantly framed around economic competitiveness, Japan's comeback ('反転攻勢'), closing the US/China adoption gap, and industrial leadership in Vertical/Physical AI (Ch. 1, Ch. 3 Sec. 2), with major secondary frames in pro-innovation enablement ('most AI-friendly country', Chs. 1-2), national security and 'AI Sovereignty' for defense and critical infrastructure (Ch. 1, Ch. 3 Secs. 1-3), and workforce employment transitions and AI reskilling (Ch. 1, Ch. 2 Pillar 4, Ch. 3 Sec. 4)."
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_ai_guidelines_for_business_ver_1_2_2026",
+      "title": "AI事業者ガイドライン (第1.2版) / AI Guidelines for Business Ver. 1.2",
+      "language": "ja",
+      "document_type": "standards_guideline",
+      "stratum": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "policy_requirements": [
+        "access_controls",
+        "content_provenance",
+        "frontier_safety_evaluation",
+        "human_oversight",
+        "incident_reporting",
+        "model_documentation",
+        "pre_deployment_testing",
+        "red_teaming",
+        "risk_assessment",
+        "third_party_audit",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "fundamental_rights",
+        "consumer_public_safety"
+      ],
+      "coding_rationale": "Joint MIC/METI non-binding goal-based soft-law Living Document (Ver. 1.2, March 31, 2026) integrating Common Guidelines (Part 2), role-specific rules for Developers/Providers/Users (Parts 3-5), and the G7 Hiroshima AI Process Guiding Principles and International Code of Conduct (Part 2 D, Part 3 pp. 33-37). Prescribes agile risk assessments (Intro pp. 4-5, Part 2 C.2 & E), pre-deployment internal and independent external testing, red-teaming, and frontier capability/systemic-risk evaluations covering CBRN, offensive cyber, and self-replication (Part 3 Hiroshima Code I & III), human controllability and intervention against automation bias (Part 2 C.1-C.3, Part 5 U-7), training-data quality, copyright, and privacy safeguards (Part 2 C.2-C.3, Part 3 D-2/D-3 & Code XI), model-weight and data cyber/physical access controls (Part 2 C.5, Part 3 Code VI), watermarking and content provenance (Part 2 C.2 fn. 30, Part 3 Code VII & X), transparency disclosures and technical/log documentation (Part 2 C.6-C.7, Parts 3-5, Code III), and vulnerability/incident reporting to stakeholders and public authorities (Part 2 C.7, Part 3 Code II & IV, Part 4 P-6). Relies solely on non-binding soft enforcement, voluntary multistakeholder governance, and voluntary OECD Hiroshima Reporting Framework participation (Intro pp. 3-5, Part 3 p. 37). Dominantly framed around agile soft law balancing innovation promotion with risk mitigation to avoid stifling AI adoption (Intro pp. 3-5, Part 2 E), with strong secondary frames in human dignity, human rights, democracy, fairness, and privacy (Part 2 A-C) and safeguarding life, body, property, and mental health (Part 2 C.2)."
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_aisi_red_teaming_guide_2025",
+      "title": "AI セーフティに関するレッドチーミング手法ガイド（第 1.10 版）",
+      "language": "ja",
+      "document_type": "standards_guideline",
+      "stratum": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "policy_requirements": [
+        "access_controls",
+        "model_documentation",
+        "red_teaming",
+        "risk_assessment",
+        "third_party_audit"
+      ],
+      "enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "fundamental_rights"
+      ],
+      "coding_rationale": "Japan AISI technical Living Document (Ver. 1.10, March 31, 2025) specifying a 15-step enterprise adversarial red-teaming methodology for LLM and multimodal AI systems (Chs. 1-8). Focuses on adversarial attack simulation—prompt injection, prompt leaking, poisoning, evasion, model extraction, membership inference, and model inversion—before release and post-deployment (Chs. 2-3, 5, 7; excluded from pre_deployment_testing per codebook exclusion of specialized adversarial testing and from frontier_safety_evaluation as the guide contains zero CBRN/self-replication/government-evaluation provisions); pairs red-teaming with risk-scenario and business-impact risk assessment (Secs. 2.2, 5.1, 7.1, 8.3), independent external third-party evaluator selection and contracting (Secs. 4.1.1, 6.2 STEP 2), technical defenses including input/output filters, prompt separation, plugin permission checks, rate limiting, model protection, and temporary credential revocation (Secs. 3, 6.3-6.4, 7.5, 8.4), and complete log/trace preservation and final reporting (Secs. 7.4, 8.2-8.3; internal escalation in Secs. 6.5/8.1 does not cover regulatory or affected-user incident reporting). Relies solely on voluntary best-practice adoption and business/reputational incentives (Secs. 1.1-1.3, 4.3, 7.1.3, 8.4-8.5). Dominantly framed around AI safety and preventing operational, physical, psychological, and economic harms from misuse and vulnerabilities (Secs. 1.1-1.2, 2.1-2.2), with a secondary frame in human-centric fundamental rights, fairness, and privacy protection (Sec. 1.2 pp. 7-8, Sec. 7.1 pp. 41, 49-50)."
+    },
+    {
+      "jurisdiction": "japan",
+      "document_id": "jp_ai_guideline_2025_page",
+      "title": "人工知能関連技術の研究開発及び活用の適正性確保に関する指針 (Guidelines for Ensuring the Proper Development and Use of AI-Related Technologies)",
+      "language": "ja",
+      "document_type": "standards_guideline",
+      "stratum": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "policy_requirements": [
+        "access_controls",
+        "content_provenance",
+        "human_oversight",
+        "pre_deployment_testing",
+        "red_teaming",
+        "risk_assessment",
+        "third_party_audit",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "soft_enforcement"
+      ],
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "fundamental_rights",
+        "consumer_public_safety",
+        "economic_competitiveness"
+      ],
+      "coding_rationale": "AI Strategy Headquarters Art. 13 Guideline establishing an explicitly non-binding voluntary/agile PDCA framework designed to promote social implementation and lower adoption barriers. Specifies risk-based assessment (Sec. 1(3)1), internal and independent external pre-deployment testing and red-teaming (fn. 8), user transparency and synthetic-output provenance/watermarking (Sec. 2(2)-(3)), final human judgment and oversight (Secs. 1(2), 4(2)), AI security and access controls against unauthorized manipulation (Sec. 1(2)), and training-data IP/privacy provenance and creator benefit-sharing (Sec. 2(2), (5)). Relies solely on non-binding soft enforcement; dominantly framed around innovation enablement and agile adoption, with secondary frames in fundamental rights, consumer/public safety, and economic competitiveness."
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_genai_interim_measures_2023",
+      "title": "生成式人工智能服务管理暂行办法 (Interim Measures for the Management of Generative AI Services)",
+      "language": "zh",
+      "document_type": "legislation",
+      "stratum": "binding_law",
+      "binding_strength": "binding_law",
+      "policy_requirements": [
+        "access_controls",
+        "content_provenance",
+        "incident_reporting",
+        "model_documentation",
+        "registration_licensing",
+        "risk_assessment",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "criminal_penalty",
+        "licensing_requirement",
+        "market_access_restriction",
+        "regulatory_supervision",
+        "reporting_obligation"
+      ],
+      "dominant_frame": "social_stability",
+      "secondary_frames": [
+        "innovation_enablement",
+        "national_security",
+        "fundamental_rights",
+        "consumer_public_safety"
+      ],
+      "coding_rationale": "CAC and six-ministry binding departmental regulation (24 articles, effective Aug. 15, 2023) centering its purpose and core principles on upholding socialist core values, social stability, public order, and national security alongside inclusive-prudential innovation (Arts. 1, 3-6). Mandates lawful training-data curation and annotation quality control (Arts. 7-8), user transparency and minor anti-addiction notices (Art. 10), security/access safeguards and incident/illegal-content reporting (Arts. 9, 11, 14), synthetic-content labeling (Art. 12), security assessment and algorithm filing for public-opinion/social-mobilization services (Art. 17), and technical documentation for regulatory inspections (Art. 19). Enforced through multi-ministry supervisory inspections, service suspension and offshore technical blocking, administrative fines, criminal prosecution, mandatory filings, and prior licensing (Arts. 16-23)."
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_deep_synthesis_provisions_2022",
+      "title": "互联网信息服务深度合成管理规定 (Provisions on the Administration of Deep Synthesis Internet Information Services)",
+      "language": "zh",
+      "document_type": "legislation",
+      "stratum": "binding_law",
+      "binding_strength": "binding_law",
+      "policy_requirements": [
+        "access_controls",
+        "content_provenance",
+        "human_oversight",
+        "incident_reporting",
+        "model_documentation",
+        "registration_licensing",
+        "risk_assessment",
+        "third_party_audit",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "criminal_penalty",
+        "licensing_requirement",
+        "market_access_restriction",
+        "regulatory_supervision",
+        "reporting_obligation"
+      ],
+      "dominant_frame": "social_stability",
+      "secondary_frames": [
+        "national_security",
+        "fundamental_rights",
+        "consumer_public_safety"
+      ],
+      "coding_rationale": "Binding CAC/MIIT/MPS departmental regulation (25 articles, effective Jan. 10, 2023) governing deep-synthesis internet services. Mandates real-name identity authentication and data/technical security safeguards (Arts. 7, 9), technical or human content moderation (Art. 10), network log retention (Arts. 10, 16), prompt reporting of illegal content and rumors to authorities (Arts. 10-11), public disclosure of rules, complaint portals, and biometric separate-consent notices (Arts. 8, 12, 14), training-data security and PIPA compliance (Art. 14), periodic algorithm review and mandatory internal or commissioned third-party professional security assessments (Arts. 15, 20), mandatory implicit and conspicuous explicit synthetic-content marks with anti-tampering bans (Arts. 16-18), and algorithm filing plus public filing-number display for public-opinion/social-mobilization services (Art. 19). Enforced via CAC/MIIT/MPS inspections and rectification orders (Arts. 3, 21), app-store listing refusal/delisting and service/registration suspension (Arts. 13, 21), mandatory filing verification and reporting (Arts. 10-11, 13, 19), administrative/public-security penalties, and criminal liability (Art. 22). Dominantly framed around socialist core values, correct political and public-opinion orientation, anti-rumor containment, and social order (Arts. 1, 4, 6, 11, 19), with secondary frames in national security (Arts. 1, 6, 15), citizen rights/personal info (Arts. 1, 14), and anti-fraud/anti-deception safety (Arts. 7, 17)."
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_ai_content_labeling_measures_2025",
+      "title": "人工智能生成合成内容标识办法 (Measures for Labeling AI-Generated Synthetic Content)",
+      "language": "zh",
+      "document_type": "legislation",
+      "stratum": "binding_law",
+      "binding_strength": "binding_law",
+      "policy_requirements": [
+        "content_provenance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision"
+      ],
+      "dominant_frame": "social_stability",
+      "secondary_frames": [
+        "innovation_enablement",
+        "fundamental_rights",
+        "consumer_public_safety"
+      ],
+      "coding_rationale": "Binding four-ministry (CAC/MIIT/MPS/NRTA) departmental measure (March 7, 2025) issued under the Cybersecurity Law and CAC regulations for strict provincial regulatory execution. Operatively mandates explicit perceptual labeling across text, audio, image, video, and virtual scenes (including exports/downloads), implicit file-header metadata provenance and encouraged digital watermarks, distribution-platform verification and propagation of metadata plus public synthetic-content notices and user-declaration prompts, and an absolute ban on maliciously deleting, tampering with, forging, or concealing labels. Grounded strictly in the parsed text, enforcement is articulated through mandatory provincial CAC/MIIT/MPS/NRTA execution and supervisory oversight without standalone penalty schedules appearing in the parsed text. Framed primarily around governing the public information ecosystem and safeguarding social public interest against unlabeled synthetic-media confusion (Art. 1 and platform public-notice clauses), alongside promoting healthy AI development, protecting lawful rights of citizens and organizations, and preventing user deception."
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_anthropomorphic_interaction_measures_2026",
+      "title": "人工智能拟人化互动服务管理暂行办法 (Interim Measures for the Administration of Anthropomorphic AI Interactive Services)",
+      "language": "zh",
+      "document_type": "legislation",
+      "stratum": "binding_law",
+      "binding_strength": "binding_law",
+      "policy_requirements": [
+        "access_controls",
+        "human_oversight",
+        "model_documentation",
+        "risk_assessment",
+        "third_party_audit",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "civil_penalty",
+        "market_access_restriction",
+        "regulatory_supervision"
+      ],
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "social_stability",
+        "fundamental_rights",
+        "national_security"
+      ],
+      "coding_rationale": "Binding five-ministry (CAC/NDRC/MIIT/MPS/SAMR) departmental regulation (Order No. 21, April 10, 2026, effective July 15, 2026) governing emotional-companion and anthropomorphic AI services. Mandates full-lifecycle security monitoring, risk assessment, and triggered security assessments (at launch, major updates, 1M+ registered or 100k+ MAU, or provincial CAC notice; Art. 10 and assessment clauses), lawful network log retention (Art. 10), lawful training-data cleaning, anti-poisoning, adversarial training, synthetic-data safety checks, and bans on training on sensitive interaction data without separate consent, data-security/minor-mode/parental-blocking access controls and user data-deletion options, internal or commissioned professional third-party compliance audits for minor personal data, dynamic popup AI-identity and 2-hour usage-duration reminders, and human crisis-intervention/guardian-contact duties for self-harm or major financial loss. Enforced via multi-ministry supervisory inspections, legal-representative interviews (约谈), rectification orders (Art. 29), registration/service suspension and cease-service orders, and administrative fines of RMB 10k-100k—doubled to RMB 100k-200k where citizen life or health is harmed (Art. 30). Dominantly framed around preventing user psychological harm, self-harm/suicide, emotional manipulation, addiction, and harm to minors and elderly users, with secondary frames in socialist core values and social stability, personal privacy/dignity rights, and national security (Art. 1 and prohibited-content clauses)."
+    },
+    {
+      "jurisdiction": "china",
+      "document_id": "cn_tc260_ai_safety_governance_framework_3_0_2026",
+      "title": "人工智能安全治理框架3.0 (AI Safety Governance Framework 3.0)",
+      "language": "zh",
+      "document_type": "standards_guideline",
+      "stratum": "standards_guideline",
+      "binding_strength": "standards_guideline",
+      "policy_requirements": [
+        "access_controls",
+        "agentic_autonomy_controls",
+        "content_provenance",
+        "frontier_safety_evaluation",
+        "human_oversight",
+        "incident_reporting",
+        "model_documentation",
+        "open_weight_obligations",
+        "pre_deployment_testing",
+        "red_teaming",
+        "registration_licensing",
+        "risk_assessment",
+        "third_party_audit",
+        "training_data_governance",
+        "transparency_disclosure"
+      ],
+      "enforcement_mechanisms": [
+        "regulatory_supervision",
+        "reporting_obligation",
+        "soft_enforcement"
+      ],
+      "dominant_frame": "consumer_public_safety",
+      "secondary_frames": [
+        "existential_catastrophic",
+        "innovation_enablement",
+        "national_security",
+        "social_stability",
+        "fundamental_rights",
+        "labor_transition"
+      ],
+      "coding_rationale": "National technical safety governance framework issued by TC260/SAC under CAC guidance (Sept. 2026) updating v1.0/v2.0 with comprehensive controls across models, embodied robotics, and autonomous agents (Chs. 1-5, Appendices 1-3). Prescribes 5-tier risk classification and assessments (Sec. 4.4.1, 5.2.1, Appendix 1), pre-deployment sandbox/simulation testing (Secs. 3.2.2, 4.2.1, 5.1.7-5.1.8, Appendix 2 II.6(5)), red-teaming and crowdsourced vulnerability testing (Secs. 3.1.1(c), 4.2.1, 4.4.3, Appendix 2 II.6(6)), objective/impartial testing-certification and PIPL compliance audits (Sec. 3.2.5(b), Appendix 3 §5), full-chain cybersecurity/API/memory access controls (Secs. 3.2.6(c), 5.1.2, 5.2.4-5.2.6, 5.3.2), explicit/implicit synthetic-content provenance (Secs. 3.2.4(c), 4.4.2, 5.3.4), human-in-the-loop approval, kill switches, and ultimate human control (Secs. 1.5, 3.2.6(b), 5.3.1, Appendix 2 II.3, Appendix 3 §1), critical-infrastructure AI registration/filing (Sec. 4.4.1), dedicated agentic autonomy controls including unique non-shared agent IDs, least-privilege dynamic revocable credentials, default-deny human approval, execution caps, and teardown (Sec. 3.2.1, Appendix 2), training-data legality, cross-annotation, and synthetic-data checks (Secs. 3.1.3, 5.1.3-5.1.5), frontier loss-of-control/CBRN/autonomous-cyber capability testing (Secs. 1.5, 2.1.1 Box 1, 2.2.3 Box 2, 2.2.6(d), 4.5.1, Appendix 3 §7), open-source/open-weight safety notices, prohibited-use rules, and downstream provenance verification (Secs. 4.4.4, 5.1.14), 6-month tamper-proof logs and commercial test reports (Secs. 5.1.8, 5.1.11, 5.3.6, Appendix 2 II.6(3)), user disclosures (Secs. 5.3.8-5.3.10, 5.3.20), and major security-incident reporting to regulators and affected users (Secs. 4.1.3, 4.4.5, 5.3.18); contains no compute-FLOP thresholds or domestic-representative rules. Relies primarily on voluntary technical standards, industry self-regulation, and flexible liability-exempt sandboxes (Secs. 1.3, 4.1.2, 4.3), paired with sector-regulator oversight/filing and statutory incident reporting (Secs. 4.4.1, 5.3.18). Dominantly framed around end-to-end operational, technical, physical, cyber, and user/minor safety across AI systems (Preface, Sec. 1), strongly paired with catastrophic/loss-of-control risks (Preface, Secs. 1.5, 2.3.4(d), 4.5.1), inclusive-prudent innovation enablement (Secs. 1.1-1.2, 4.3), national security, social stability, personal rights, and labor-displacement monitoring (Secs. 2.3.1(a), 3.3.1(a))."
+    }
+  ]
+}

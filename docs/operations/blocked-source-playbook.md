@@ -1,86 +1,62 @@
 # Blocked Source & Corpus Recovery Playbook
 
-Operational runbook and audit ledger for JS-rendered portal capture (`law.go.kr`), manual-import provenance rules, completed Stage 4A/4B recoveries, and remaining deferred sovereign targets.
+Operational runbook and audit ledger for JS-rendered portal capture (`law.go.kr`), manual-import provenance rules, completed Phase 4 & Phase 5A corpus expansions (`144 / 144` seeds present locally), and the remaining deferred sovereign targets.
 
-Machine-readable tracking files:
-- [`data/source_tracking/kr_statutory_recovery_status.json`](../../data/source_tracking/kr_statutory_recovery_status.json)
-- [`data/source_tracking/late_2026_priority_targets.json`](../../data/source_tracking/late_2026_priority_targets.json)
-- [`docs/operations/source-inventory.md`](source-inventory.md) and [`docs/operations/source-quality-audit.md`](source-quality-audit.md)
+*(Note: `make coverage` / `report-source-coverage` checks live inventory completeness — all **144 / 144** registered seed documents are present in the local corpus with `0` missing artifacts.)*
 
 ---
 
-## 0. Status Summary (As of November 21, 2026)
+## 1. Current Corpus Health (Phase 5 Verified)
 
-All Phase 3 / Section 0 corpus integrity blockers have been **resolved and verified**:
-- **121 / 121** curated official documents (`US 29`, `EU 21`, `KR 17`, `JP 34`, `CN 20`; **77** active primary headline instruments) parsed cleanly under **Parser `0.3.0`** (`77 pymupdf`, `43 beautifulsoup4`, `1 hwpx_xml`; `0` stub/wiped docs, `0` synthetic manual imports remaining).
-- **121 / 121** homogeneously analyzed under **Taxonomy v2.1.0** (`analysis_version: "0.3.0"`, `provider: "gemini"`, `model: "gemini-4-neon"`, `0` legacy artifacts) with **`2,271 / 2,271` (`100.0%`) exact verbatim grounding** and **`133 / 133`** artifacts passing `validate-artifacts` (`0` errors).
+- **144 / 144** curated official documents across **61** official portals (**138** sovereign: `US 36`, `EU 24`, `KR 20`, `JP 37`, `CN 21` with **91** active primary headline instruments + **6** opt-in U.S. state `subnational_overlay` statutes; **12** `supersedes_id` amendment chains; window `2017 – Nov 19, 2026`).
+- **144 / 144** parsed cleanly offline under **Parser `0.3.0`** (`93 pymupdf`, `48 beautifulsoup4`, `3 hwpx_xml`; `0` stub/wiped docs, `0` synthetic manual imports remaining; Korean `law.go.kr` `#hisComment`/`.cont_subtit` and CAC `cac.gov.cn` nav/footer chrome stripped cleanly).
+- **144 / 144** analyzed homogeneously under **Taxonomy v2.1.0** (`analysis_version: "0.3.0"`, `provider: "gemini"`, `model: "gemini-4-neon"`, `0` legacy rows) with **`2,786 / 2,786` (`100.0%`) exact verbatim grounding** (`flagged = 0`).
+- **Weekly Freshness Watch:** Automated every Monday at `06:00 UTC` via `.github/workflows/freshness-watch.yml` (`observatory check-freshness`) to flag source URL drift or portal breakage early.
 
 ---
 
-## 1. Provenance rules for manual imports
+## 2. Manual Import Provenance Rules
 
-When an official portal blocks automated crawlers or times out, acquire the **authentic official file** directly from the government authority and import it with full provenance:
+When an official portal blocks automated HTTP/Playwright requests (WAF/CAPTCHA/viewer-gating), acquire the authentic primary file manually from the official source and import it via:
 
 ```bash
-# POSIX / Windows (with PYTHONPATH=services/pipeline/src)
-python -m observatory.cli import-local-document \
+PYTHONPATH=services/pipeline/src python -m observatory.cli import-local-document \
   <jurisdiction> <document_id> /path/to/official_file.pdf \
-  --source-url=<canonical_url> --content-type=application/pdf
+  --source-url=<canonical_url>
 ```
 
-**Strict provenance guardrails:**
-- **Never import synthetic summaries** or hand-written abstracts as raw PDFs/HTML. Every raw artifact must be the authentic government text or official translation published by the issuing body (the 2 legacy METI synthetic manual imports were replaced by official METI PDFs and deleted).
-- `import-local-document` preserves provenance in `data/retrieval/<jurisdiction>/<document_id>.json` (`transport: "manual_import"`, SHA-256 hash, canonical URL).
-- Follow every manual import with `parse-raw-documents <jurisdiction> <document_id> --refresh`, `report-source-quality-audit`, and `check-grounding`.
+- **Never import synthetic summaries** or hand-written abstracts as raw PDFs/HTML. Every raw artifact must be the authentic government text or official translation published by the issuing body.
+- Re-parse strictly offline (`parse-raw-documents <jurisdiction> <document_id> --refresh`), run analysis (`analyze-documents` or `ingest-document-analysis`), check grounding (`check-grounding`), and validate schemas (`validate-artifacts`).
 
 ---
 
-## 2. `browser_required` SPA guard & South Korea `law.go.kr` recovery (Completed)
+## 3. Completed Forensic Recoveries & Expansions
 
-Korea's National Law Information Center (`law.go.kr`) serves an unrendered ~144 KB JavaScript SPA shell to plain HTTP clients. `retrieval.py` now enforces a selector-aware **SPA-overwrite guard** (`blocked_spa_overwrite`, checking `browser_wait_for_selector` `#bodyContent` and nav-stripped length), while Playwright `context.route("**/*", ...)` validates every sub-request URL through `url_safety.py`.
+### South Korea `law.go.kr` SPA Statutes (3 / 3 Recovered & Chrome-Cleaned)
+- `south_korea/kr_ai_basic_act` — full enacted statute (`제1조(목적)`..`부칙`, `#hisComment`/`.cont_subtit` stripped cleanly under Parser `0.3.0`).
+- `south_korea/kr_ai_basic_act_enforcement_decree` — full presidential enforcement decree (`제1조(목적)`..`별표`).
+- `south_korea/kr_ai_and_data_administration_act` — full enacted statute (`제1조(목적)`..`부칙`).
+- Protected permanently by `retrieval.py`'s selector-aware SPA-overwrite guard (`blocked_spa_overwrite` checking `#bodyContent`) and Playwright `context.route("**/*", ...)` SSRF filtering.
 
-All 3 previously wiped South Korean binding statutes have been **recovered via Playwright**, re-parsed with full statutory articles (`제1조`..`부칙`), and re-analyzed under Taxonomy v2.1.0 with `100.0%` verbatim grounding:
-- `kr_ai_basic_act` (`274,592 B` browser HTML → `24,833+` clean parsed chars)
-- `kr_ai_and_data_administration_act` (`260,661 B` browser HTML → `18,217+` clean parsed chars)
-- `kr_ai_basic_act_enforcement_decree` (`255,408 B` browser HTML → `20,835+` clean parsed chars)
+### Phase 4 Upgrades & Late-2026 Ingestion (`6` PDFs Upgraded + `18` Added → `121`)
+- Upgraded 6 stub/mojibake/legacy documents in-place to full official PDFs (`eu_gpai_scope_obligations_guidelines_2025`, `us_cfpb_chatbots_issue_spotlight_2023`, `us_nist_ai_rmf_playbook`, `jp_ai_governance_guidelines_2021`, `jp_ai_governance_ver_1_1_report`, `kr_ai_safety_guideline_2026_draft`).
+- Ingested 18 late-2026 landmarks across US (EO 14409, EO 14434, EO 14365, TAKE IT DOWN Act, NIST CAISI Agent Standards & IR 8596), EU (Digital Omnibus Reg. (EU) 2026/1744, Art. 50 Guidelines, Transparency Code of Practice), KR (High-Impact AI Determination Guideline), JP (Second AI Basic Plan, full AI Promotion Act, Guidelines Ver. 1.2, J-AISI guides, Hiroshima Code), and CN (TC260 Framework 3.0, State Council "AI+" Opinion).
 
-Recovery command template for future `law.go.kr` refreshes:
-```bash
-make browser-install
-PYTHONPATH=services/pipeline/src python -m observatory.cli fetch-seed-documents south_korea --refresh --with-browser
-PYTHONPATH=services/pipeline/src python -m observatory.cli parse-raw-documents south_korea --refresh
-PYTHONPATH=services/pipeline/src python -m observatory.cli report-source-quality-audit
-```
-
----
-
-## 3. Completed Stub Replacements & Full-Context Re-Analysis
-
-All 6 reachable broken/stubbed/synthetic documents were upgraded to full official PDFs and re-analyzed under Parser `0.3.0` + `gemini-4-neon` (1M-token single-pass direct context, zero truncation):
-- `european_union/eu_gpai_scope_obligations_guidelines_2025` — upgraded to full 36-page `C(2025) 7719 final` PDF (`101,485` chars).
-- `united_states/us_cfpb_chatbots_issue_spotlight_2023` — upgraded to official 23-page CFPB PDF (`52,839` chars; stale HTML removed).
-- `united_states/us_nist_ai_rmf_playbook` — upgraded to official 147-page NIST AI RMF Playbook PDF (`339,508` chars; promoted to `primary_instrument`).
-- `japan/jp_ai_governance_guidelines_2021` & `japan/jp_ai_governance_ver_1_1_report` — upgraded to official 82-page (`205,826` chars) and 34-page (`106,215` chars) METI PDFs; synthetic manual imports deleted.
-- `south_korea/kr_ai_safety_guideline_2026_draft` — replaced HWP-CID mojibake PDF with clean 75-page UTF-8 MSIT/KOSA Support Desk PDF (`142,157` chars).
-- Previously truncated mega-statutes (`eu_ai_act_regulation_2024_1689` `581,688c` / `158` sections, `eu_prohibited_ai_practices_guidelines`, `us_nist_ai_rmf_1_0`, `jp_ai_data_contract_guidelines_1_1_2019`, `kr_high_impact_ai_operator_obligations_guideline_2026`, etc.) all completed full single-pass `gemini-4-neon` analysis with `100.0%` verbatim grounding.
+### Phase 5A Surgical Corpus Expansion (`+23` Official Instruments → `144` Total)
+- **United States Federal (`+7` → `36` federal):** HHS ONC HTI-1 Final Rule (`89 FR 1192`), Treasury AI Cybersecurity in Financial Services Report (`2024`), BIS Remote Access Semiconductor Rule (`91 FR 74970`, Nov 19, 2026), BIS Advanced Computing License Policy (`91 FR 1684`, Jan 2026), U.S. Copyright Office AI Reports Part 2 & Part 3 (`2025`), DoD Directive 3000.09 Autonomy in Weapon Systems (`2023`).
+- **United States Opt-In State Overlay (`+6`, `corpus_role: "subnational_overlay"`):** California SB 53 (TFAIA), California AB 2013 (Training Data Transparency), Colorado SB 24-205 (`superseded`), Colorado SB 26-189 ADMT Act (`supersedes: us_co_sb_24_205_ai_act_2024`), Texas HB 149 (TRAIGA), New York RAISE Act (`S6953A`).
+- **European Union (`+3` → `24`):** 2020 AI White Paper (`COM(2020) 65 final`, `historical_baseline`), 2021 Coordinated Plan Review (`COM(2021) 205 final`, `historical_baseline`), Implementing Regulation (EU) 2025/454 (AI Scientific Panel).
+- **South Korea (`+3` → `20`):** National AI Action Plan 2026–2028 (`kr_national_ai_action_plan_2026_2028`, official NAISC HWPX), FSC/FSI Frontier AI Security Guideline (`2026` HWPX), FSC Financial AI Guideline (`2021`, `historical_baseline`).
+- **Japan (`+3` → `37`):** FSA AI Discussion Paper v1.1 (`2026`), METI Cloud Program Economic Security Policy (`2024`), Agency for Cultural Affairs (Bunka) AI Copyright Checklist & Guidance (`2024`).
+- **China (`+1` → `21`):** MIIT Comprehensive Standardization System Guidelines for the AI Industry (`工信部联科〔2024〕113号`).
 
 ---
 
-## 4. Late-2026 Expansion Ledger (`18` Ingested, `6` Honestly Deferred)
+## 4. Remaining Honestly Deferred Sovereign Targets
 
-Tracked in [`data/source_tracking/late_2026_priority_targets.json`](../../data/source_tracking/late_2026_priority_targets.json) and `kr_statutory_recovery_status.json`:
+Tracked transparently in [`data/source_tracking/late_2026_priority_targets.json`](../../data/source_tracking/late_2026_priority_targets.json) (zero unverified mirrors or fabricated captures):
 
-### Newly ingested & v2.1.0-analyzed late-2026 / landmark instruments (`18` added → `121` total)
-- **United States (`29` total):** EO 14409 (*Promoting Advanced AI Innovation and Security*, Jun 2026), EO 14434 (*Inaugurating the Era of Super Intelligence*, Sep 2026), EO 14365 (*Ensuring a National Policy Framework for AI*, Dec 2025), TAKE IT DOWN Act (Pub. L. 119-12), NIST CAISI AI/SI Agent Standards Initiative, and NIST IR 8596 Cyber AI Profile.
-- **European Union (`21` total):** Regulation (EU) 2026/1744 (*Digital Omnibus on AI*, Jul 2026), Article 50 Transparency Guidelines (Nov 2026), and Code of Practice on Transparency of AI-Generated Content.
-- **South Korea (`17` total):** High-Impact AI Determination Guideline (`kr_high_impact_ai_determination_guideline_2026`, 216p official PDF) alongside all 3 recovered `law.go.kr` binding statutes and the in-place clean UTF-8 75-page MSIT AI Safety Guideline revision (`CF00007573`).
-- **Japan (`34` total):** Second AI Basic Plan (Jul 2026), full AI Promotion Act statute (Act No. 53 of 2025), MIC/METI AI Guidelines for Business Ver. 1.2 (Mar 2026), Japan AISI Evaluation Perspectives & Red Teaming Guides, and Hiroshima AI Process Code of Conduct.
-- **China (`20` total):** TC260/CAC AI Safety Governance Framework 3.0 (Sep 2026, superseding 2024 v1.0) and State Council Opinion on Deepening "AI+" Action (`国发〔2025〕11号`).
-
-### Honestly deferred targets (zero unverified or fabricated captures)
-1. `cn_amended_cybersecurity_law_2025_art20` — `flk.npc.gov.cn` returned a non-JSON redirect during Stage 4A; retry or acquire authentic NPC PDF via `import-local-document`.
-2. `GB 45438-2025` (Mandatory AI Content Labeling Standard) — SAMR viewer-gated without downloadable text.
-3. `kr_national_ai_action_plan_2026_2028` — no direct canonical PDF link verified without false-match press releases.
-4. `kr_ai_basic_act_data_amendment_2026` — Oct 2026 amendment bill not yet consolidated on `law.go.kr`.
-5. `cn_ai_ethics_norms_2021` & `cn_ai_governance_principles_2019` — official MOST press releases retained as `historical_baseline` until canonical standalone full-text URLs are reachable.
-6. Sub-national U.S. state statutes (`CA SB 53`, `CO SB 26-189`, `TX TRAIGA`, `NY RAISE`) remain isolated under `subnational_overlay_candidates` in `late_2026_priority_targets.json` to preserve sovereign-level comparability.
+1. `cn_amended_cybersecurity_law_2025_art20` — confirmed live at `flk.npc.gov.cn` (`2025-10-28`, eff. `2026-01-01`), API redirect requires clean manual/browser official PDF capture via `import-local-document`.
+2. `GB 45438-2025` (Mandatory AI Content Labeling Standard) — SAMR portal viewer-gated without downloadable text.
+3. `kr_ai_basic_act_data_amendment_2026` — Oct 2026 Cabinet amendment bill not yet consolidated as enacted law on `law.go.kr`.
+4. `cn_ai_ethics_norms_2021` & `cn_ai_governance_principles_2019` — official MOST press releases retained as primary/baseline texts until canonical standalone full-text URLs are directly retrievable.

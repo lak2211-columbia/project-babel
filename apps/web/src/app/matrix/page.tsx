@@ -14,9 +14,24 @@ export const metadata: Metadata = {
 
 export default async function MatrixPage() {
   const [headline, all] = await Promise.all([
-    getObligationMatrix("headline"),
-    getObligationMatrix("all"),
+    getObligationMatrix("headline", false),
+    getObligationMatrix("all", false),
   ]);
 
-  return <ObligationMatrixClient headline={headline} all={all} />;
+  const [headlineWithStates, allWithStates] =
+    headline.subnationalCount > 0
+      ? await Promise.all([
+          getObligationMatrix("headline", true),
+          getObligationMatrix("all", true),
+        ])
+      : [undefined, undefined];
+
+  return (
+    <ObligationMatrixClient
+      headline={headline}
+      all={all}
+      headlineWithStates={headlineWithStates}
+      allWithStates={allWithStates}
+    />
+  );
 }

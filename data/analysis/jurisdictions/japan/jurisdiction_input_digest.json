@@ -1,6 +1,6 @@
 {
   "jurisdiction": "japan",
-  "source_count": 34,
+  "source_count": 37,
   "source_window_start": "2018-08-17",
   "source_window_end": "2026-07-14",
   "documents": [
@@ -559,6 +559,34 @@
       "confidence": 0.95
     },
     {
+      "document_id": "jp_bunka_ai_copyright_checklist_guidance_2024",
+      "title": "AIと著作権に関するチェックリスト＆ガイダンス (Bunka AI and Copyright Checklist & Guidance)",
+      "publication_date": "2024-07-31",
+      "issuing_body": "Agency for Cultural Affairs (Japan)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "fundamental_rights",
+        "consumer_public_safety"
+      ],
+      "top_requirements": [
+        "training_data_governance",
+        "model_documentation",
+        "transparency_disclosure"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement",
+        "civil_penalty",
+        "criminal_penalty"
+      ],
+      "implementation_notes": "Issued July 31, 2024 by the Copyright Division of the Agency for Cultural Affairs (Bunka), synthesizing the Copyright Subdivision's March 2024 'General Understanding on AI and Copyright', the Cabinet Office IP Secretariat's May 2024 Interim Report, and METI/MIC's April 2024 AI Guidelines for Business (v1.0). Organizes actionable risk-reduction checklists across four stakeholder roles (AI developers, providers, business users, and general users) alongside a dedicated Part 2 rightsholder guidance explaining Copyright Act Art. 30-4 boundaries, robots.txt/login opt-outs, paid AI dataset markets, evidentiary proof of similarity/reliance, civil/criminal remedies, and Bunka's free lawyer consultation desks.",
+      "framing_rationale_summary": "The Agency for Cultural Affairs' AI and Copyright Checklist & Guidance is dominantly framed around innovation enablement, providing voluntary, plain-language risk-reduction checklists and legal clarity across developers, providers, businesses, and general users to dispel stakeholder concerns, navigate Japan's Copyright Act Article 30-4 framework, and build a shared foundation for appropriate generative AI utilization. Fundamental rights is a closely paired secondary frame centered on empowering creators, performers, and copyright holders to protect their individual legal rights, exercise technical and contractual opt-outs, receive fair remuneration, and invoke civil and criminal legal remedies with free legal support. Consumer and public safety plays a supporting secondary role by guiding users away from inadvertent infringement and unintended harm to end users, alongside a modest economic competitiveness thread protecting paid AI training-data licensing markets and commercial transactions.",
+      "confidence": 0.925
+    },
+    {
       "document_id": "jp_childcare_genai_handbook_2025",
       "title": "生成AIの導入・活用に向けた実践ハンドブック",
       "publication_date": "2025-07-09",
@@ -606,6 +634,34 @@
       "implementation_notes": "Non-binding practical guidebook issued by METI's Creative Industries Division (Commerce and Service Industry Policy Group) for the game, anime, and advertising industries, reflecting government discussions and technology levels as of June 2024. It synthesizes legal considerations and practical countermeasures across development/training and generation/use stages covering copyright, design, trademark, unfair competition (trade secrets, shared data with limited access, product indications/configurations), portrait rights, publicity rights, and personal information protection. It explicitly states that it operates under Japanese law, does not constitute authoritative legal interpretation or guarantee legality (leaving final legal interpretation to the judiciary), and should be consulted alongside updated materials from METI/MIC (AI Guidelines for Business v1.0), the Agency for Cultural Affairs, the Cabinet Office Intellectual Property Strategy Secretariat, and the Personal Information Protection Commission.",
       "framing_rationale_summary": "The guidebook's dominant frame is innovation_enablement because its overarching purpose is to promote safe, appropriate adoption and coexistence with generative AI across Japan's game, anime, and advertising industries by providing practical voluntary guidance, real-world use cases, and legal risk-mitigation measures that unlock workflow efficiency and new creative possibilities. While fundamental_rights is a strong runner-up—since the guidebook's operational cautions focus heavily on protecting creators' and individuals' intellectual property rights, personality/portrait rights, publicity rights, and personal-data privacy—innovation_enablement edges it out because rights compliance is explicitly positioned as the means to dispel stakeholder concerns and enable constructive AI utilization rather than as a standalone rights-enforcement regime. Minor secondary touches of economic_competitiveness (the parent overseas-expansion project and references to industrial development), social_stability (brief mentions of misinformation and hallucinations), and consumer_public_safety (passing references to safety and consumer interests) appear without driving the document's core rationale.",
       "confidence": 0.935
+    },
+    {
+      "document_id": "jp_fsa_ai_discussion_paper_v1_1_2026",
+      "title": "AIディスカッションペーパー（第1.1版）— 金融分野におけるAIの健全な利活用の促進に向けた初期的な論点整理 (FSA AI Discussion Paper Ver. 1.1)",
+      "publication_date": "2026-03-03",
+      "issuing_body": "Financial Services Agency (FSA / 金融庁)",
+      "document_type": "regulatory_guidance",
+      "binding_strength": "regulatory_guidance",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "innovation_enablement",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "economic_competitiveness",
+        "fundamental_rights"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "pre_deployment_testing",
+        "red_teaming"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Version 1.1 (March 2026) of the Financial Services Agency's AI Discussion Paper, updating Ver. 1.0 with insights from the June–December 2025 FSA AI Public-Private Forum and reflecting Japan's May 2025 AI Promotion Act and December 2025 Basic AI Plan. Covers conventional AI, generative AI (internal, indirect customer, and direct customer deployments), and emerging AI agents / agentic AI across 130 surveyed financial institutions, detailing emerging customer-facing guardrails (Box 4), AI-agent lifecycle/permission platforms, APPI and FIEA regulatory clarifications, systemic financial-stability risks, regional-bank GenAI DX pilots (Box 5), and FSA's own SupTech AI initiatives.",
+      "framing_rationale_summary": "The FSA AI Discussion Paper (Version 1.1) is dominantly framed around innovation enablement, warning against the 'risk of not taking on challenges', emphasizing agile governance and risk-based soft law over chilling mandates, offering safe harbors, regulatory-clarity desks, and PoC hubs, and encouraging active public-private dialogue so financial institutions can deploy generative AI and AI agents confidently. Consumer and public safety is a prominent secondary frame focused on protecting financial customers and market stability from hallucinations, deceptive solicitation, AI-enabled deepfake fraud and KYC evasion, cyberattacks, and systemic herding or disinformation-driven market instability. Economic competitiveness forms a substantive third frame—positioning Japanese financial innovation to lead globally, transform business models, strengthen regional economies via regional-bank DX, and realize an international financial center—paired with fundamental rights (safeguarding personal data under APPI, mitigating structural algorithmic discrimination in credit and HR, and ensuring explainability) and a notable labor and workforce transition thread addressing labor shortages, employee job-displacement anxiety, and workforce reskilling.",
+      "confidence": 0.965
     },
     {
       "document_id": "jp_genai_privacy_alert_2023",
@@ -793,6 +849,34 @@
       "confidence": 0.945
     },
     {
+      "document_id": "jp_meti_cloud_program_economic_security_policy",
+      "title": "クラウドプログラムに係る安定供給確保を図るための取組方針 (METI Stable Supply Support Policy for Cloud Programs under the Economic Security Promotion Act)",
+      "publication_date": "2024-02-05",
+      "issuing_body": "Ministry of Economy, Trade and Industry (METI)",
+      "document_type": "strategy_paper",
+      "binding_strength": "executive_action",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "national_security",
+      "secondary_frames": [
+        "economic_competitiveness",
+        "innovation_enablement"
+      ],
+      "top_requirements": [
+        "compute_governance",
+        "registration_licensing",
+        "access_controls"
+      ],
+      "top_enforcement_mechanisms": [
+        "procurement_condition",
+        "reporting_obligation",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Official ministerial Support Policy (取組方針) issued under Article 8(1) of Japan's Economic Security Promotion Act (Act No. 43 of 2022) and Enforcement Order Art. 1(8), revised and effective February 5, 2024. Designates foundational cloud programs and advanced compute production bases (supercomputers, AI computers, quantum computers) as Specified Critical Products eligible for NEDO Stable Supply Support Fund grants and JFC financing, establishing quantitative FP16 compute capacity thresholds (0.75 EFLOPS by H1 FY2025; 7.5 EFLOPS by end of FY2027), domestic management-base and startup-pricing conditions, user-requested architecture transparency, BCP and export-control compliance, annual and disruption reporting, and supply-chain cybersecurity and human-rights recommendations.",
+      "framing_rationale_summary": "METI's Stable Supply Support Policy for Cloud Programs is dominantly framed around national security, promulgated under the Economic Security Promotion Act to prevent situations impairing national and public security amid rapidly shifting global geopolitical conditions, reduce excessive dependence on foreign hyperscalers (noting US and Chinese dominance of ~70% of the global cloud market), mitigate risks of overseas service cutoffs or unauthorized access to sensitive government and critical-infrastructure data beyond Japan's control, and build sovereign domestic cloud and AI-compute capacity. Economic competitiveness is a strong secondary frame emphasizing industrial competitiveness across sectors such as materials, healthcare, and weather forecasting, reversing the decline of domestic cloud providers and outflow of top engineering talent, and ensuring sustainable industrial bases by FY2027. Innovation enablement forms a substantive third frame through testbed expansion and below-market compute pricing for startups and SMEs developing next-generation AI and quantum applications, with a minor consumer and public safety thread addressing supply continuity and supply-chain cyberattacks against vital infrastructure.",
+      "confidence": 0.965
+    },
+    {
       "document_id": "jp_school_genai_guideline_ver_2_2024",
       "title": "初等中等教育段階における生成AIの利活用に関するガイドライン",
       "publication_date": "2024-12-26",
@@ -911,460 +995,510 @@
     "document_types": [
       {
         "label": "regulatory_guidance",
-        "count": 15,
-        "share": 0.441
+        "count": 17,
+        "share": 0.459
       },
       {
         "label": "strategy_paper",
-        "count": 10,
-        "share": 0.294
+        "count": 11,
+        "share": 0.297
       },
       {
         "label": "standards_guideline",
         "count": 6,
-        "share": 0.176
+        "share": 0.162
       },
       {
         "label": "executive_order",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "legislation",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "voluntary_commitment",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       }
     ],
     "binding_strengths": [
       {
         "label": "regulatory_guidance",
-        "count": 12,
-        "share": 0.353
+        "count": 14,
+        "share": 0.378
       },
       {
         "label": "standards_guideline",
         "count": 10,
-        "share": 0.294
+        "share": 0.27
       },
       {
         "label": "strategy_statement",
         "count": 10,
-        "share": 0.294
+        "share": 0.27
       },
       {
         "label": "binding_law",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
+      },
+      {
+        "label": "executive_action",
+        "count": 1,
+        "share": 0.027
       },
       {
         "label": "voluntary_commitment",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       }
     ],
     "requirements": [
       {
         "label": "training_data_governance",
-        "count": 25,
-        "share": 0.735
+        "count": 27,
+        "share": 0.73
       },
       {
         "label": "transparency_disclosure",
-        "count": 21,
-        "share": 0.618
+        "count": 24,
+        "share": 0.649
       },
       {
         "label": "access_controls",
-        "count": 19,
-        "share": 0.559
+        "count": 21,
+        "share": 0.568
       },
       {
         "label": "risk_assessment",
-        "count": 16,
-        "share": 0.471
+        "count": 19,
+        "share": 0.514
       },
       {
         "label": "human_oversight",
-        "count": 13,
-        "share": 0.382
+        "count": 14,
+        "share": 0.378
       },
       {
         "label": "model_documentation",
+        "count": 13,
+        "share": 0.351
+      },
+      {
+        "label": "incident_reporting",
         "count": 11,
-        "share": 0.324
+        "share": 0.297
       },
       {
         "label": "pre_deployment_testing",
-        "count": 10,
-        "share": 0.294
+        "count": 11,
+        "share": 0.297
       },
       {
         "label": "content_provenance",
         "count": 9,
-        "share": 0.265
-      },
-      {
-        "label": "incident_reporting",
-        "count": 9,
-        "share": 0.265
+        "share": 0.243
       },
       {
         "label": "red_teaming",
-        "count": 8,
-        "share": 0.235
+        "count": 9,
+        "share": 0.243
       },
       {
         "label": "third_party_audit",
-        "count": 8,
-        "share": 0.235
+        "count": 9,
+        "share": 0.243
       },
       {
         "label": "frontier_safety_evaluation",
         "count": 6,
-        "share": 0.176
+        "share": 0.162
       },
       {
         "label": "agentic_autonomy_controls",
-        "count": 2,
-        "share": 0.059
+        "count": 3,
+        "share": 0.081
+      },
+      {
+        "label": "registration_licensing",
+        "count": 3,
+        "share": 0.081
       },
       {
         "label": "open_weight_obligations",
         "count": 2,
-        "share": 0.059
+        "share": 0.054
       },
       {
-        "label": "registration_licensing",
-        "count": 2,
-        "share": 0.059
+        "label": "compute_governance",
+        "count": 1,
+        "share": 0.027
       }
     ],
     "enforcement_mechanisms": [
       {
         "label": "soft_enforcement",
-        "count": 30,
-        "share": 0.882
+        "count": 33,
+        "share": 0.892
       },
       {
         "label": "regulatory_supervision",
-        "count": 7,
-        "share": 0.206
+        "count": 9,
+        "share": 0.243
+      },
+      {
+        "label": "procurement_condition",
+        "count": 5,
+        "share": 0.135
       },
       {
         "label": "none_specified",
         "count": 4,
-        "share": 0.118
-      },
-      {
-        "label": "procurement_condition",
-        "count": 4,
-        "share": 0.118
+        "share": 0.108
       },
       {
         "label": "civil_penalty",
-        "count": 2,
-        "share": 0.059
+        "count": 3,
+        "share": 0.081
       },
       {
         "label": "reporting_obligation",
-        "count": 2,
-        "share": 0.059
+        "count": 3,
+        "share": 0.081
       },
       {
         "label": "criminal_penalty",
-        "count": 1,
-        "share": 0.029
+        "count": 2,
+        "share": 0.054
       },
       {
         "label": "licensing_requirement",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
+      },
+      {
+        "label": "market_access_restriction",
+        "count": 1,
+        "share": 0.027
       }
     ],
     "institutions": [
       {
         "label": "Ministry of Economy, Trade and Industry (METI)",
-        "count": 10,
-        "share": 0.294
+        "count": 11,
+        "share": 0.297
       },
       {
         "label": "Cabinet Office / Secretariat of Japan",
-        "count": 9,
-        "share": 0.265
+        "count": 10,
+        "share": 0.27
       },
       {
         "label": "AI Safety Institute (AISI)",
         "count": 6,
-        "share": 0.176
+        "share": 0.162
       },
       {
         "label": "Digital Agency of Japan",
         "count": 4,
-        "share": 0.118
+        "share": 0.108
       },
       {
         "label": "Ministry of Health, Labour and Welfare (MHLW)",
         "count": 4,
-        "share": 0.118
+        "share": 0.108
       },
       {
         "label": "Ministry of Internal Affairs and Communications (MIC)",
         "count": 4,
-        "share": 0.118
+        "share": 0.108
       },
       {
         "label": "Personal Information Protection Commission (PPC)",
-        "count": 3,
-        "share": 0.088
+        "count": 4,
+        "share": 0.108
       },
       {
         "label": "AI Strategy Headquarters (人工知能戦略本部)",
         "count": 2,
-        "share": 0.059
+        "share": 0.054
+      },
+      {
+        "label": "Agency for Cultural Affairs (Japan)",
+        "count": 2,
+        "share": 0.054
       },
       {
         "label": "Children and Families Agency (こども家庭庁)",
         "count": 2,
-        "share": 0.059
+        "share": 0.054
       },
       {
         "label": "AI Strategic Headquarters",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "AI Strategy Headquarters",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "AI Strategy Headquarters (Cabinet)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "AI Strategy Headquarters (to be established)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "AI Strategy Promotion Council",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Advanced AI Utilization Advisory Board (先進的AI利活用アドバイザリーボード)",
         "count": 1,
-        "share": 0.029
-      },
-      {
-        "label": "Agency for Cultural Affairs (Japan)",
-        "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Artificial Intelligence Strategic Headquarters",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Cabinet of Japan",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Chief AI Officers (AI統括責任者 / CAIO) of each ministry and agency",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Consumer Affairs Agency",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Consumer Affairs Agency (消費者庁)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Courts (裁判所)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
+      },
+      {
+        "label": "Financial Services Agency (FSA / 金融庁 — including FinTech Support Desk, FinTech Proof-of-Concept Hub, and AI Public-Private Forum)",
+        "count": 1,
+        "share": 0.027
+      },
+      {
+        "label": "Financial Services Agency (FSA / 金融庁)",
+        "count": 1,
+        "share": 0.027
       },
       {
         "label": "Financial Services Agency (金融庁)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Government of Japan",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
+      },
+      {
+        "label": "Investigative and prosecutorial authorities (criminal copyright offenses, generally upon rightsholder complaint)",
+        "count": 1,
+        "share": 0.027
+      },
+      {
+        "label": "Japan Finance Corporation (JFC / 日本政策金融公庫 — two-step low-interest financing)",
+        "count": 1,
+        "share": 0.027
+      },
+      {
+        "label": "Japanese civil courts (injunctions under Copyright Act Art. 112, damages under Civil Code Art. 709, unjust enrichment under Art. 703, document production orders under Copyright Act Art. 114-3 / Code of Civil Procedure Art. 223)",
+        "count": 1,
+        "share": 0.027
       },
       {
         "label": "Ministry of Agriculture, Forestry and Fisheries",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of Agriculture, Forestry and Fisheries (MAFF)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of Agriculture, Forestry and Fisheries (農林水産省)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of Defense",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of Defense (防衛省)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of Education, Culture, Sports, Science and Technology",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of Education, Culture, Sports, Science and Technology (MEXT)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of Education, Culture, Sports, Science and Technology (MEXT) (文部科学省 初等中等教育局)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of Education, Culture, Sports, Science and Technology (MEXT) (文部科学省 高等教育局 専門教育課・大学教育・入試課)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of Foreign Affairs",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of Justice",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Ministry of the Environment",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "National Diet of Japan",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "National Government",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "National Police Agency",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "National Police Agency (警察庁)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "National center of Incident readiness and Strategy for Cybersecurity (NISC / 内閣サイバーセキュリティセンター)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
+      },
+      {
+        "label": "New Energy and Industrial Technology Development Organization (NEDO — Stable Supply Support Fund administrator)",
+        "count": 1,
+        "share": 0.027
       },
       {
         "label": "Personal Information Protection Commission",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Pharmaceuticals and Medical Devices Agency (PMDA / 独立行政法人医薬品医療機器総合機構)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "Prime Minister",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
+      },
+      {
+        "label": "Self-regulatory bodies such as Japan Securities Dealers Association (JSDA) and Center for Financial Industry Information Systems (FISC)",
+        "count": 1,
+        "share": 0.027
       },
       {
         "label": "relevant administrative agencies",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       },
       {
         "label": "人工知能戦略本部 (Artificial Intelligence Strategy Headquarters, Government of Japan)",
         "count": 1,
-        "share": 0.029
+        "share": 0.027
       }
     ],
     "frames": [
       {
         "label": "innovation_enablement",
-        "score": 14.87,
-        "share": 0.437,
-        "document_mentions": 34
+        "score": 15.92,
+        "share": 0.43,
+        "document_mentions": 37
       },
       {
         "label": "fundamental_rights",
-        "score": 6.95,
-        "share": 0.204,
-        "document_mentions": 32
+        "score": 7.41,
+        "share": 0.2,
+        "document_mentions": 35
       },
       {
         "label": "economic_competitiveness",
-        "score": 4.45,
-        "share": 0.131,
-        "document_mentions": 25
+        "score": 4.95,
+        "share": 0.134,
+        "document_mentions": 28
       },
       {
         "label": "consumer_public_safety",
-        "score": 4.43,
-        "share": 0.13,
-        "document_mentions": 31
+        "score": 4.86,
+        "share": 0.131,
+        "document_mentions": 34
       },
       {
         "label": "social_stability",
         "score": 1.38,
-        "share": 0.041,
-        "document_mentions": 20
+        "share": 0.037,
+        "document_mentions": 21
       },
       {
         "label": "national_security",
-        "score": 0.83,
-        "share": 0.024,
-        "document_mentions": 12
+        "score": 1.33,
+        "share": 0.036,
+        "document_mentions": 14
       },
       {
         "label": "labor_transition",
-        "score": 0.74,
+        "score": 0.8,
         "share": 0.022,
-        "document_mentions": 15
+        "document_mentions": 16
       },
       {
         "label": "existential_catastrophic",
         "score": 0.35,
-        "share": 0.01,
+        "share": 0.009,
         "document_mentions": 4
       }
     ]

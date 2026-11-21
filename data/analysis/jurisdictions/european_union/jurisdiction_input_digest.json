@@ -1,7 +1,7 @@
 {
   "jurisdiction": "european_union",
-  "source_count": 21,
-  "source_window_start": "2024-07-12",
+  "source_count": 24,
+  "source_window_start": "2020-02-19",
   "source_window_end": "2026-11-05",
   "documents": [
     {
@@ -119,6 +119,32 @@
       "confidence": 0.935
     },
     {
+      "document_id": "eu_ai_scientific_panel_implementing_reg_2025_454",
+      "title": "Commission Implementing Regulation (EU) 2025/454 laying down rules for the establishment of a Scientific Panel of Independent Experts in the field of AI",
+      "publication_date": "2025-03-10",
+      "issuing_body": "European Commission (AI Office)",
+      "document_type": "legislation",
+      "binding_strength": "binding_law",
+      "corpus_role": "primary_instrument",
+      "lifecycle_stage": "active",
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "consumer_public_safety",
+        "innovation_enablement"
+      ],
+      "top_requirements": [
+        "frontier_safety_evaluation",
+        "access_controls",
+        "model_documentation"
+      ],
+      "top_enforcement_mechanisms": [
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Adopted March 7, 2025 and published March 10, 2025 (OJ L 2025/454), directly applicable in all Member States from March 30, 2025. Operationalizes Article 68 of Regulation (EU) 2024/1689 by establishing an independent Scientific Panel of up to 60 multidisciplinary experts (with EU/EEA geographic diversity, at least four-fifths EU/EEA nationals, and gender-balance rules), co-hosted by the AI Office and Joint Research Centre. Codifies strict conflict-of-interest independence from AI/GPAI providers, public transparency of expert CVs/declarations/opinions (subject to trade-secret and strategic-interest exclusions), secure time-limited data-access protocols for Article 91 documentation requests (requiring one-third panel backing), and simple-majority voting plus a dedicated secure transmission interface for Article 90 qualified alerts.",
+      "framing_rationale_summary": "As an institutional implementing regulation, Commission Implementing Regulation (EU) 2025/454 relies on restrained legal recitals rather than broad policy rhetoric. Its dominant framing aligns with fundamental rights, explicitly mandating panel expertise in fundamental rights and equality alongside strict provider independence, impartiality, gender balance, public-interest commitment, and transparent public reporting. Consumer and public safety is a close secondary rationale, grounding the panel's core mandate to reinforce national market surveillance enforcement and transmit reasoned qualified alerts on general-purpose AI models to trigger Union supervisory intervention. Innovation enablement appears as a measured third rationale through repeated necessity and proportionality safeguards designed to protect providers' trade secrets and confidential business information during regulatory information demands.",
+      "confidence": 0.84
+    },
+    {
       "document_id": "eu_ai_system_definition_guidelines",
       "title": "The Commission publishes guidelines on AI system definition to facilitate the first AI Act's rules application",
       "publication_date": "2025-02-06",
@@ -196,6 +222,37 @@
       "implementation_notes": "Voluntary Code of Practice under EU AI Act Article 50 structured into two sections: Section 1 for providers of generative AI systems (Article 50(2) and (5)) covering multi-layered machine-readable marking (digitally signed metadata and imperceptible watermarking, with a 200-token threshold for free-form text), free detection mechanisms, quality criteria (effectiveness, reliability, robustness, interoperability), and compliance testing; and Section 2 for deployers (Article 50(4) and (5)) covering design and placement rules for labelling deep fakes and AI-generated/manipulated public-interest text, publicly available EU icons (Annex 1), artistic/creative work disclosures, and human review/editorial control policies. Within the Code, 'will' denotes mandatory signatory commitments monitored by competent market surveillance authorities, while 'encouraged' and 'may' denote optional measures; adherence aids in demonstrating compliance with Article 50 but does not constitute conclusive legal evidence of compliance. Includes proportionality provisions for SMEs and SMCs and establishes a task force to advance interoperability standards and EU icon development.",
       "framing_rationale_summary": "The Code of Practice's primary substantive justification for AI content transparency is safeguarding public trust and the integrity of the information ecosystem against misinformation and manipulation at scale (social_stability), which leads both Section 1 and Section 2 Recitals. Innovation enablement is a close runner-up, shaping how the Code is designed through future-proof technical flexibility, open standards, cost reduction, and proportionate compliance for SMEs and startups, but it serves as a design constraint rather than the core harm motivating Article 50 disclosure duties. Fundamental rights (democratic discourse, individual decision-making, privacy/data protection, media freedom, and accessibility) and consumer/public safety (preventing fraud, impersonation, consumer deception, and harms to vulnerable users) serve as substantial secondary justifications.",
       "confidence": 0.935
+    },
+    {
+      "document_id": "eu_coordinated_plan_ai_review_2021",
+      "title": "Fostering a European approach to Artificial Intelligence — 2021 Review of the Coordinated Plan on AI (COM(2021) 205 final)",
+      "publication_date": "2021-04-21",
+      "issuing_body": "European Commission (AI Office)",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
+      "dominant_frame": "economic_competitiveness",
+      "secondary_frames": [
+        "innovation_enablement",
+        "fundamental_rights",
+        "consumer_public_safety",
+        "labor_transition",
+        "national_security"
+      ],
+      "top_requirements": [
+        "pre_deployment_testing",
+        "training_data_governance",
+        "risk_assessment"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement",
+        "procurement_condition",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Published April 21, 2021 as the Annex to COM(2021) 205 final alongside the initial EU AI Act legislative proposal (COM(2021) 206), updating the 2018 Coordinated Plan across 4 strategic pillars and 17 chapters (7 horizontal + 7 high-impact sectoral areas: climate/environment, health, robotics, public sector, law enforcement/migration/asylum, mobility, and agriculture), plus a 40-action 2021–2025+ timeline (Appendix 1) and Member State strategy/budget inventory (Appendix 2). Mobilises Digital Europe, Horizon Europe, InvestEU, and the Recovery and Resilience Facility to scale European data spaces, EuroHPC supercomputing, low-power edge/neuromorphic chips, AI Lighthouse research networks, 210 European Digital Innovation Hubs, Testing and Experimentation Facilities, regulatory sandboxes, AI-on-demand marketplace, and trustworthy public procurement. Retained as a superseded 2021 historical baseline for longitudinal EU policy-framing analysis.",
+      "framing_rationale_summary": "The 2021 Review of the EU Coordinated Plan on AI is dominantly framed around economic competitiveness, explicitly structured around asserting European global leadership, maximising Europe's capacity to compete globally, capturing first-mover adopter advantages, scaling to EUR 20 billion in annual public-private AI investment, and strengthening European industrial leadership across semiconductors, cloud-to-edge computing, robotics, mobility, and precision agriculture. Innovation enablement is a tightly coupled second frame driving the plan's operational architecture: removing single-market fragmentation and transaction costs, launching common European data spaces, funding 210 European Digital Innovation Hubs and Testing and Experimentation Facilities for small and medium-sized enterprises, promoting regulatory sandboxes, and transforming public procurement to move AI from lab to market. Fundamental rights anchors the human-centric trustworthiness pillar—grounding governance in EU values, GDPR compliance, non-discrimination, gender equality, and rule-of-law safeguards in health and law enforcement—while consumer and public safety supports clinical safety, human-robot physical safety, automated-vehicle reliability, victim liability compensation, and citizen security against crime and cybercrime. Labor and workforce transition plays a dedicated role through extensive reskilling, upskilling, and skills-intelligence initiatives to prevent job-market polarisation, and national security enters modestly through semiconductor supply-chain resilience, open strategic autonomy, cybersecurity threat shields against geopolitical tensions, and dual-use export accountability despite excluding military AI.",
+      "confidence": 0.955
     },
     {
       "document_id": "eu_digital_omnibus_ai_regulation_2026_1744",
@@ -567,6 +624,35 @@
       "implementation_notes": "This document is an official European Commission FAQ explaining the mandatory Template for public summaries of training content under Article 53(1)(d) of the EU AI Act. Although the underlying statutory duty and use of the Template are mandatory, this FAQ itself is interpretive regulatory guidance rather than enacted legislation. The publication_date reflects the webpage's last update date (26 March 2026). The FAQ details three required summary sections, trade-secret balancing, SME thresholds for listing scraped domains (top 5% or 1,000 domains, whichever is lower, versus top 10% for other providers), and rules for justifying information gaps for models placed on the market before 2 August 2025.",
       "framing_rationale_summary": "The document's dominant frame is fundamental_rights because it repeatedly justifies the mandatory GPAI training-content summary template as a mechanism to increase transparency so parties with legitimate interests can exercise rights protected under Union law—explicitly citing fundamental rights protection, copyright and intellectual property rights, data protection, non-discrimination, and freedom of science. Innovation_enablement appears as a secondary frame through recurring emphasis on facilitating simple, consistent compliance, minimising administrative burdens, providing SME proportionality, and balancing transparency against the protection of trade secrets and confidential business information. Fundamental_rights edges out innovation_enablement because compliance facilitation is explicitly subordinated to fulfilling the primary objective of enabling rights exercise, while consumer_public_safety receives only a brief passing mention via consumer protection.",
       "confidence": 0.935
+    },
+    {
+      "document_id": "eu_white_paper_ai_2020",
+      "title": "White Paper on Artificial Intelligence — A European approach to excellence and trust (COM(2020) 65 final)",
+      "publication_date": "2020-02-19",
+      "issuing_body": "European Commission (AI Office)",
+      "document_type": "strategy_paper",
+      "binding_strength": "strategy_statement",
+      "corpus_role": "historical_baseline",
+      "lifecycle_stage": "superseded",
+      "dominant_frame": "fundamental_rights",
+      "secondary_frames": [
+        "economic_competitiveness",
+        "consumer_public_safety",
+        "innovation_enablement",
+        "labor_transition"
+      ],
+      "top_requirements": [
+        "risk_assessment",
+        "training_data_governance",
+        "model_documentation"
+      ],
+      "top_enforcement_mechanisms": [
+        "soft_enforcement",
+        "regulatory_supervision"
+      ],
+      "implementation_notes": "Adopted February 19, 2020 (COM(2020) 65 final) alongside the European Strategy for Data and the Report on Safety and Liability Implications of AI, IoT, and Robotics. Serves as the foundational policy blueprint and historical baseline for the EU AI Act (Regulation (EU) 2024/1689). Introduces the twin 'ecosystem of excellence' (six policy actions spanning revised Coordinated Plan, lighthouse research/testing centres, AI master's networks, specialised Digital Innovation Hubs, Horizon Europe AI/data/robotics PPP, and Adopt AI public-sector procurement) and 'ecosystem of trust' (cumulative sector-plus-use high-risk criteria, per-se high-risk recruitment and remote biometric identification, training-data/record-keeping/transparency/robustness/human-oversight requirements, extraterritorial EU market scope, notified-body prior conformity assessment, and a voluntary quality label for non-high-risk AI).",
+      "framing_rationale_summary": "The 2020 EU White Paper on Artificial Intelligence is dominantly framed around fundamental rights, anchoring its proposed 'ecosystem of trust' in European values, human dignity, personal data protection, non-discrimination across protected traits, freedom of expression, effective judicial redress, and Charter constraints on remote biometric identification. Economic competitiveness is a closely paired secondary frame, invoking fierce global competition, Europe's investment gap against North America and Asia, industrial B2B strengths in robotics and low-power electronics, and preventing single-market fragmentation to preserve EU technological leadership and sovereignty. Consumer and public safety serves as the twin regulatory risk pillar alongside rights, targeting physical injury, mental safety, defective AI-enabled products, cybersecurity vulnerabilities, and victim compensation under safety and liability law. Innovation enablement shapes the proportional risk-based design—avoiding excessive burdens on small and medium-sized enterprises, proposing voluntary quality labels, and mobilizing research and testing infrastructures—while labor and workforce transition appears as a targeted secondary rationale emphasizing workforce upskilling, gender inclusion in AI talent, social-partner involvement, and protecting workers' rights in automated recruitment and workplace monitoring.",
+      "confidence": 0.955
     }
   ],
   "aggregates": {
@@ -574,370 +660,415 @@
       {
         "label": "regulatory_guidance",
         "count": 13,
-        "share": 0.619
+        "share": 0.542
       },
       {
         "label": "voluntary_commitment",
         "count": 6,
-        "share": 0.286
+        "share": 0.25
       },
       {
         "label": "legislation",
+        "count": 3,
+        "share": 0.125
+      },
+      {
+        "label": "strategy_paper",
         "count": 2,
-        "share": 0.095
+        "share": 0.083
       }
     ],
     "binding_strengths": [
       {
         "label": "regulatory_guidance",
         "count": 14,
-        "share": 0.667
+        "share": 0.583
       },
       {
         "label": "voluntary_commitment",
         "count": 5,
-        "share": 0.238
+        "share": 0.208
       },
       {
         "label": "binding_law",
+        "count": 3,
+        "share": 0.125
+      },
+      {
+        "label": "strategy_statement",
         "count": 2,
-        "share": 0.095
+        "share": 0.083
       }
     ],
     "requirements": [
       {
         "label": "model_documentation",
-        "count": 13,
-        "share": 0.619
+        "count": 15,
+        "share": 0.625
+      },
+      {
+        "label": "training_data_governance",
+        "count": 14,
+        "share": 0.583
       },
       {
         "label": "open_weight_obligations",
         "count": 13,
-        "share": 0.619
-      },
-      {
-        "label": "training_data_governance",
-        "count": 12,
-        "share": 0.571
+        "share": 0.542
       },
       {
         "label": "risk_assessment",
-        "count": 11,
-        "share": 0.524
+        "count": 13,
+        "share": 0.542
       },
       {
         "label": "transparency_disclosure",
+        "count": 13,
+        "share": 0.542
+      },
+      {
+        "label": "access_controls",
         "count": 11,
-        "share": 0.524
+        "share": 0.458
+      },
+      {
+        "label": "human_oversight",
+        "count": 10,
+        "share": 0.417
       },
       {
         "label": "content_provenance",
         "count": 9,
-        "share": 0.429
-      },
-      {
-        "label": "access_controls",
-        "count": 8,
-        "share": 0.381
-      },
-      {
-        "label": "human_oversight",
-        "count": 8,
-        "share": 0.381
+        "share": 0.375
       },
       {
         "label": "pre_deployment_testing",
+        "count": 9,
+        "share": 0.375
+      },
+      {
+        "label": "registration_licensing",
         "count": 7,
-        "share": 0.333
+        "share": 0.292
+      },
+      {
+        "label": "third_party_audit",
+        "count": 7,
+        "share": 0.292
       },
       {
         "label": "incident_reporting",
         "count": 6,
-        "share": 0.286
+        "share": 0.25
       },
       {
-        "label": "registration_licensing",
-        "count": 6,
-        "share": 0.286
+        "label": "frontier_safety_evaluation",
+        "count": 5,
+        "share": 0.208
       },
       {
         "label": "red_teaming",
         "count": 5,
-        "share": 0.238
-      },
-      {
-        "label": "third_party_audit",
-        "count": 5,
-        "share": 0.238
+        "share": 0.208
       },
       {
         "label": "compute_governance",
         "count": 4,
-        "share": 0.19
-      },
-      {
-        "label": "frontier_safety_evaluation",
-        "count": 4,
-        "share": 0.19
+        "share": 0.167
       },
       {
         "label": "domestic_representative",
         "count": 3,
-        "share": 0.143
+        "share": 0.125
       },
       {
         "label": "agentic_autonomy_controls",
         "count": 2,
-        "share": 0.095
+        "share": 0.083
       }
     ],
     "enforcement_mechanisms": [
       {
-        "label": "soft_enforcement",
-        "count": 17,
-        "share": 0.81
+        "label": "regulatory_supervision",
+        "count": 19,
+        "share": 0.792
       },
       {
-        "label": "regulatory_supervision",
-        "count": 16,
-        "share": 0.762
+        "label": "soft_enforcement",
+        "count": 19,
+        "share": 0.792
       },
       {
         "label": "civil_penalty",
         "count": 11,
-        "share": 0.524
+        "share": 0.458
       },
       {
         "label": "reporting_obligation",
         "count": 9,
-        "share": 0.429
+        "share": 0.375
       },
       {
         "label": "market_access_restriction",
         "count": 6,
-        "share": 0.286
+        "share": 0.25
       },
       {
         "label": "licensing_requirement",
         "count": 3,
-        "share": 0.143
+        "share": 0.125
       },
       {
         "label": "none_specified",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
+      },
+      {
+        "label": "procurement_condition",
+        "count": 1,
+        "share": 0.042
       }
     ],
     "institutions": [
       {
         "label": "European Commission (AI Office)",
-        "count": 18,
-        "share": 0.857
+        "count": 21,
+        "share": 0.875
       },
       {
         "label": "European Artificial Intelligence Board (AI Board)",
-        "count": 8,
-        "share": 0.381
+        "count": 9,
+        "share": 0.375
       },
       {
         "label": "European Data Protection Supervisor (EDPS)",
         "count": 5,
-        "share": 0.238
+        "share": 0.208
       },
       {
         "label": "National competent authorities",
         "count": 4,
-        "share": 0.19
+        "share": 0.167
       },
       {
         "label": "Court of Justice of the European Union",
         "count": 2,
-        "share": 0.095
+        "share": 0.083
       },
       {
         "label": "Court of Justice of the European Union (CJEU)",
         "count": 2,
-        "share": 0.095
+        "share": 0.083
       },
       {
         "label": "European Data Protection Board (EDPB)",
         "count": 2,
-        "share": 0.095
+        "share": 0.083
       },
       {
         "label": "European Parliament and Council",
         "count": 2,
-        "share": 0.095
+        "share": 0.083
       },
       {
         "label": "Competent market surveillance authorities",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
+      },
+      {
+        "label": "Competent national authorities and market surveillance authorities (proposed ex-post compliance monitoring and inspection)",
+        "count": 1,
+        "share": 0.042
       },
       {
         "label": "Competent national data protection authorities",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "Court of Justice of the European Union (judicial review of Commission fines)",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "Courts of EU Member States",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "Data protection authorities",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
+      },
+      {
+        "label": "EU Member States and national competent authorities / notified bodies (national AI strategies, RRF investment plans, and planned ex-ante/ex-post AI Act compliance oversight)",
+        "count": 1,
+        "share": 0.042
+      },
+      {
+        "label": "EU specialised agencies and bodies (ENISA, Joint Research Centre / AI Watch, Eurostat, Europol, Frontex, eu-LISA, EASA)",
+        "count": 1,
+        "share": 0.042
       },
       {
         "label": "EU/EEA Data Protection Supervisory Authorities",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "European Data Protection Supervisor (for Union institutions, bodies, offices and agencies)",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
+      },
+      {
+        "label": "European Union Agency for Cybersecurity (ENISA) (proposed AI threat-landscape assessment support)",
+        "count": 1,
+        "share": 0.042
       },
       {
         "label": "Irish Supervisory Authority (IE SA)",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "Market surveillance authorities",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "Market surveillance authorities designated by the Member States",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
+      },
+      {
+        "label": "Member States' market surveillance authorities",
+        "count": 1,
+        "share": 0.042
       },
       {
         "label": "National Data Protection Authorities",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National Market Surveillance Authorities",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National competent authorities (notifying authorities and market surveillance authorities designated by Member States)",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National competent authorities and national market surveillance authorities (including single points of contact)",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National courts",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National data protection supervisory authorities",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National data protection supervisory authorities (SAs) in the EEA",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National financial supervisory authorities (for regulated financial institutions)",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National judicial authorities (for authorisation of on-site inspections where required under national law)",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National judicial authorities or independent administrative authorities (for prior authorisation of real-time RBI)",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National public authorities or bodies protecting fundamental rights",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "National public authorities or bodies supervising or enforcing Union law protecting fundamental rights",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
+      },
+      {
+        "label": "Notified bodies designated by Member States (proposed independent prior conformity assessment and auditing)",
+        "count": 1,
+        "share": 0.042
       },
       {
         "label": "Notifying authorities",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       },
       {
         "label": "Sectoral market surveillance authorities under Annex I Union harmonisation legislation",
         "count": 1,
-        "share": 0.048
+        "share": 0.042
       }
     ],
     "frames": [
       {
         "label": "fundamental_rights",
-        "score": 8.39,
-        "share": 0.4,
-        "document_mentions": 19
+        "score": 9.34,
+        "share": 0.389,
+        "document_mentions": 22
       },
       {
         "label": "innovation_enablement",
-        "score": 7.2,
-        "share": 0.343,
-        "document_mentions": 20
+        "score": 7.84,
+        "share": 0.327,
+        "document_mentions": 23
       },
       {
         "label": "consumer_public_safety",
-        "score": 2.81,
-        "share": 0.134,
-        "document_mentions": 19
+        "score": 3.48,
+        "share": 0.145,
+        "document_mentions": 22
       },
       {
         "label": "economic_competitiveness",
-        "score": 1.09,
-        "share": 0.052,
-        "document_mentions": 11
+        "score": 1.65,
+        "share": 0.069,
+        "document_mentions": 13
       },
       {
         "label": "social_stability",
         "score": 0.81,
-        "share": 0.039,
-        "document_mentions": 6
+        "share": 0.034,
+        "document_mentions": 8
       },
       {
         "label": "existential_catastrophic",
         "score": 0.59,
-        "share": 0.028,
-        "document_mentions": 3
-      },
-      {
-        "label": "national_security",
-        "score": 0.09,
-        "share": 0.004,
+        "share": 0.025,
         "document_mentions": 3
       },
       {
         "label": "labor_transition",
-        "score": 0.02,
-        "share": 0.001,
-        "document_mentions": 1
+        "score": 0.16,
+        "share": 0.007,
+        "document_mentions": 3
+      },
+      {
+        "label": "national_security",
+        "score": 0.13,
+        "share": 0.005,
+        "document_mentions": 6
       }
     ]
   }

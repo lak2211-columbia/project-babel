@@ -29,6 +29,7 @@ import {
   humanizeEnforcement,
   humanizeRequirement,
   humanizeTaxonomyLabel,
+  parseIncludeSubnational,
   toHtmlLang,
 } from "@/lib/taxonomy-vocab";
 import { replaceUrlQuery, useUrlSearch } from "@/lib/use-url-search";
@@ -40,6 +41,8 @@ export function JurisdictionView({
   jurisdictionKey,
   headline,
   all,
+  headlineWithStates,
+  allWithStates,
   analysis,
   countryDocuments,
 }: {
@@ -47,16 +50,37 @@ export function JurisdictionView({
   jurisdictionKey: JurisdictionKey;
   headline: OverviewData;
   all: OverviewData;
+  headlineWithStates?: OverviewData;
+  allWithStates?: OverviewData;
   analysis: JurisdictionAnalysis | null;
   countryDocuments: SourceEntry[];
 }) {
   const urlSearch = useUrlSearch();
-  const rawMode = new URLSearchParams(urlSearch).get("mode")?.toLowerCase();
+  const sp = new URLSearchParams(urlSearch);
+  const rawMode = sp.get("mode")?.toLowerCase();
   const mode: ScoringMode =
     rawMode === "all" || rawMode === "equal" ? "all" : "headline";
-  const data = mode === "all" ? all : headline;
-  const modeQuery = mode === "all" ? "&mode=all" : "";
-  const modeParam = mode === "all" ? "?mode=all" : "";
+  const subnationalCount = headline.subnationalCount;
+  const canToggleStates =
+    subnationalCount > 0 && Boolean(headlineWithStates && allWithStates);
+  const includeSubnational =
+    canToggleStates && parseIncludeSubnational(sp.get("states"));
+  const data =
+    mode === "all"
+      ? includeSubnational && allWithStates
+        ? allWithStates
+        : all
+      : includeSubnational && headlineWithStates
+        ? headlineWithStates
+        : headline;
+  const modeQuery = `${mode === "all" ? "&mode=all" : ""}${includeSubnational ? "&states=1" : ""}`;
+  const modeParam = (() => {
+    const qp = new URLSearchParams();
+    if (mode === "all") qp.set("mode", "all");
+    if (includeSubnational) qp.set("states", "1");
+    const s = qp.toString();
+    return s ? `?${s}` : "";
+  })();
 
   function selectMode(nextMode: ScoringMode) {
     replaceUrlQuery((params) => {
@@ -64,6 +88,16 @@ export function JurisdictionView({
         params.set("mode", "all");
       } else {
         params.delete("mode");
+      }
+    });
+  }
+
+  function toggleStates() {
+    replaceUrlQuery((params) => {
+      if (includeSubnational) {
+        params.delete("states");
+      } else {
+        params.set("states", "1");
       }
     });
   }
@@ -158,6 +192,21 @@ export function JurisdictionView({
               >
                 full corpus ({country.totalCorpusDocuments})
               </button>
+              {canToggleStates ? (
+                <button
+                  type="button"
+                  aria-pressed={includeSubnational}
+                  onClick={toggleStates}
+                  className={`rounded-[2px] border px-2 py-0.5 transition-colors ${
+                    includeSubnational
+                      ? "border-[#e6ae49]/60 bg-[#e6ae49]/15 text-[#fef3c7]"
+                      : "border-white/15 text-[#94a3b8] hover:border-white/30 hover:text-[#f1f5f9]"
+                  }`}
+                >
+                  {includeSubnational ? "✓ " : "+ "}U.S. State Laws (
+                  {subnationalCount})
+                </button>
+              ) : null}
             </div>
 
             <Link
@@ -173,7 +222,7 @@ export function JurisdictionView({
               csv ↓
             </a>
             <a
-              href={`/api/jurisdictions/${encodeURIComponent(country.slug)}?mode=${mode}`}
+              href={`/api/jurisdictions/${encodeURIComponent(country.slug)}?mode=${mode}${includeSubnational ? "&states=1" : ""}`}
               className="hover:text-[#f1f5f9]"
             >
               json ↗

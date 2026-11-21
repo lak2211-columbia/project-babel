@@ -1,0 +1,252 @@
+{
+  "source_id": "eu_ai_scientific_panel_implementing_reg_2025_454",
+  "title": "Commission Implementing Regulation (EU) 2025/454 laying down rules for the establishment of a Scientific Panel of Independent Experts in the field of AI",
+  "language": "en",
+  "policy_extraction": {
+    "jurisdiction": "european_union",
+    "issuing_body": "European Commission",
+    "document_type": "legislation",
+    "binding_strength": "binding_law",
+    "publication_date": "2025-03-10",
+    "effective_date": "2025-03-30",
+    "covered_actors": [
+      "European Commission, European Artificial Intelligence Office (AI Office), and Joint Research Centre (JRC) jointly providing the Secretariat",
+      "Scientific Panel of Independent Experts in the field of AI (up to 60 independent experts appointed for renewable two-year terms, plus a reserve list)",
+      "Member States' market surveillance authorities requesting technical support from the scientific panel",
+      "European Artificial Intelligence Board (consulted on panel size and informed of assistance requests and qualified alerts)",
+      "Providers of general-purpose AI models subject to Commission documentation/information requests under Article 91, evaluations under Article 92(2), and qualified alerts under Article 90 of Regulation (EU) 2024/1689"
+    ],
+    "covered_application_domains": [
+      "general_purpose_models"
+    ],
+    "prohibited_practices": [],
+    "safety_requirements": [
+      {
+        "label": "frontier_safety_evaluation",
+        "confidence": 0.86,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "Where the Commission appoints an expert from the scientific panel to carry out evaluations on its behalf pursuant to Article 92(2) of Regulation (EU) 2024/1689, the Commission shall assess whether such appointment could affect the ability of the expert to carry out a currently assigned task within the scientific panel independently, impartially and objectively.",
+            "source_section": "Article 7(4)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 15933,
+            "end_char": 16296
+          },
+          {
+            "quote": "A decision by at least a simple majority of the members of the scientific panel shall be necessary to issue a qualified alert to the AI Office pursuant to Article 90(1) of Regulation (EU) 2024/1689.",
+            "source_section": "Article 18(1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28347,
+            "end_char": 28545
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.89,
+        "obligation_strength": "mandatory",
+        "evidence": [
+          {
+            "quote": "The AI Office shall provide secure means through which it can make available the received documentation or information, which the Commission has requested following a request for assistance, to the requesting rapporteur of the scientific panel.\n2. Access to the requested information shall be restricted to the appointed rapporteur and contributors and shall be limited in time",
+            "source_section": "Article 17(1)–(2)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 27206,
+            "end_char": 27583
+          },
+          {
+            "quote": "The AI Office shall be able to refuse access to the requested data, where on the basis of the information submitted pursuant to paragraph 3, it has grounds to assume that there are reasonably foreseeable risks related to data security or confidentiality.",
+            "source_section": "Article 17(4)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 28015,
+            "end_char": 28269
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.78,
+        "obligation_strength": "conditional",
+        "evidence": [
+          {
+            "quote": "Where the scientific panel requests, in accordance with Article 91(3) of Regulation (EU) 2024/1689, the Commission to issue a request for documentation or information to a provider of general-purpose AI models and to grant access to the information received to the extent this is necessary and proportionate for the fulfilment of a task referred to in Article 68(3) of Regulation (EU) 2024/1689",
+            "source_section": "Article 15(1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23994,
+            "end_char": 24388
+          },
+          {
+            "quote": "it may prepare a decision for the Commission to issue a request for documentation or information to a provider of a general-purpose AI model pursuant to Article 91 of Regulation (EU) 2024/1689 and grant the scientific panel access to the received documentation or information.",
+            "source_section": "Article 16(2)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 26144,
+            "end_char": 26420
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "quote": "The AI Office shall provide for practical means for market surveillance authorities to request assistance from the scientific panel for their market surveillance activities under Regulation (EU) 2024/1689.",
+            "source_section": "Article 14(1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 22331,
+            "end_char": 22536
+          },
+          {
+            "quote": "The AI Office shall evaluate the qualified alerts issued pursuant to Article 90(1) of Regulation (EU) 2024/1689 and take a decision whether to launch any measures as provided for in Articles 91 to 93 of that Regulation.",
+            "source_section": "Article 19(1)",
+            "quote_en": null,
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 29243,
+            "end_char": 29462
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "European Commission",
+      "European Artificial Intelligence Office (AI Office)",
+      "Joint Research Centre (JRC) of the European Commission (co-Secretariat)",
+      "Member States' market surveillance authorities",
+      "European Artificial Intelligence Board (AI Board)"
+    ],
+    "compliance_deadlines": [
+      "2025-03-30 (twentieth day following March 10, 2025 Official Journal publication): Entry into force as binding, directly applicable EU law (Article 20)",
+      "Within 2 weeks of receipt of a complete request: AI Office must process market surveillance support requests (Article 14(6)), scientific panel assistance requests (Article 16(5)), and qualified alerts (Article 19(2))",
+      "2-year renewable term of office for appointed experts (Article 4(1)) and biennial review of rules of procedure (Article 8(3))"
+    ],
+    "penalties_summary": "Implementing Regulation (EU) 2025/454 establishes no standalone monetary fines or criminal sanctions on private operators; instead, it operationalizes binding institutional and supervisory procedures under Articles 68 and 90–93 of the EU AI Act (Commission requests for GPAI documentation, independent model evaluations, qualified alerts, and market surveillance support). Appointed panel experts who breach independence, conflict-of-interest, or confidentiality obligations (including Article 339 TFEU and EU classified-information rules) may face Commission or AI Office measures, including dismissal from the panel (Articles 4(2), 10(5), and 13(4)).",
+    "implementation_notes": "Adopted March 7, 2025 and published March 10, 2025 (OJ L 2025/454), directly applicable in all Member States from March 30, 2025. Operationalizes Article 68 of Regulation (EU) 2024/1689 by establishing an independent Scientific Panel of up to 60 multidisciplinary experts (with EU/EEA geographic diversity, at least four-fifths EU/EEA nationals, and gender-balance rules), co-hosted by the AI Office and Joint Research Centre. Codifies strict conflict-of-interest independence from AI/GPAI providers, public transparency of expert CVs/declarations/opinions (subject to trade-secret and strategic-interest exclusions), secure time-limited data-access protocols for Article 91 documentation requests (requiring one-third panel backing), and simple-majority voting plus a dedicated secure transmission interface for Article 90 qualified alerts.",
+    "confidence": 0.96
+  },
+  "risk_framing": {
+    "dominant_frame": "fundamental_rights",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "innovation_enablement"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.15,
+      "economic_competitiveness": 0.1,
+      "fundamental_rights": 0.72,
+      "social_stability": 0.1,
+      "innovation_enablement": 0.48,
+      "consumer_public_safety": 0.66,
+      "labor_transition": 0.0
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.0,
+      "fundamental_rights": 0.45,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.2,
+      "consumer_public_safety": 0.35,
+      "labor_transition": 0.0
+    },
+    "rationale_summary": "As an institutional implementing regulation, Commission Implementing Regulation (EU) 2025/454 relies on restrained legal recitals rather than broad policy rhetoric. Its dominant framing aligns with fundamental rights, explicitly mandating panel expertise in fundamental rights and equality alongside strict provider independence, impartiality, gender balance, public-interest commitment, and transparent public reporting. Consumer and public safety is a close secondary rationale, grounding the panel's core mandate to reinforce national market surveillance enforcement and transmit reasoned qualified alerts on general-purpose AI models to trigger Union supervisory intervention. Innovation enablement appears as a measured third rationale through repeated necessity and proportionality safeguards designed to protect providers' trade secrets and confidential business information during regulatory information demands.",
+    "evidence_spans": [
+      {
+        "quote": "multidisciplinary and interdisciplinary adequate and up-to-date scientific, technical, or sociotechnical expertise related to artificial intelligence, the impacts of artificial intelligence, or otherwise relevant to the effective enforcement of Regulation (EU) 2024/1689, including expertise pertaining to applied sectors, fundamental rights and equality, as appropriate;",
+        "source_section": "Article 3(3)(a)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 10498,
+        "end_char": 10869
+      },
+      {
+        "quote": "To avoid conflicts of interest in the performance of their tasks, experts of the scientific panel should be independent from any provider of AI systems or general-purpose AI models and should act independently, impartially and objectively. To ensure trust in the work of the scientific panel, experts should draw up declarations of interest and commitment to act in the public interest",
+        "source_section": "Recital (8)",
+        "quote_en": null,
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 5128,
+        "end_char": 5513
+      },
+      {
+        "quote": "To allow the reinforcement of national capacities necessary for the effective enforcement of Regulation (EU) 2024/1689, Member States’ market surveillance authorities should be able to call upon support from the scientific panel for their enforcement activities under that Regulation.",
+        "source_section": "Recital (9)",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 5716,
+        "end_char": 6000
+      },
+      {
+        "quote": "To ensure that the scientific panel can effectively issue qualified alerts to the AI Office pursuant to Article 90 of Regulation (EU) 2024/1689, the conditions, procedures and detailed arrangements for the issuance of such qualified alerts should be set out.",
+        "source_section": "Recital (10)",
+        "quote_en": null,
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 6205,
+        "end_char": 6463
+      },
+      {
+        "quote": "The AI Office shall assess whether issuing a request for documentation or information to a provider of a general-purpose AI model is necessary and proportionate for the fulfilment of the tasks of the scientific panel, taking into account the need to protect trade secrets and confidential business information.",
+        "source_section": "Article 16(1)",
+        "quote_en": null,
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 25684,
+        "end_char": 25994
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:05:10.858261Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "e7ee6b0f716b7d7059fcd5dea4fde6079bf953bdf32ec24bf8ee7bcd7e2a311b",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 31894,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 13,
+      "exact_matches": 13,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

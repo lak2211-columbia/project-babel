@@ -1,0 +1,275 @@
+{
+  "jurisdiction": "european_union",
+  "issuing_body": "European Commission",
+  "document_type": "strategy_paper",
+  "binding_strength": "strategy_statement",
+  "publication_date": "2020-02-19",
+  "effective_date": null,
+  "covered_actors": [
+    "European Commission, EU Member States, national competent authorities, market surveillance authorities, and Member State-designated notified conformity-assessment bodies",
+    "Economic operators providing AI-enabled products or services in the EU regardless of place of establishment (developers, deployers, producers, distributors, importers, service providers, and professional/private users)",
+    "Research centres, universities, Digital Innovation Hubs, SMEs, start-ups, public administrations, social partners, and civil society stakeholders (explicitly excluding AI developed and used for military purposes)"
+  ],
+  "covered_application_domains": [
+    "healthcare",
+    "critical_infrastructure",
+    "public_sector_use",
+    "employment",
+    "biometrics",
+    "law_enforcement",
+    "finance",
+    "education"
+  ],
+  "prohibited_practices": [
+    "Reaffirms under existing EU consumer law that algorithmic exploitation of consumer behaviour in violation of EU rules is not permitted, and under GDPR Article 9 / Law Enforcement Directive Article 10 that processing biometric data to uniquely identify a natural person is prohibited in principle absent strict legal grounds and safeguards; launches a European debate on remote biometric identification in public places rather than enacting new prohibitions itself"
+  ],
+  "safety_requirements": [
+    {
+      "label": "risk_assessment",
+      "confidence": 0.94,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "More specifically, an AI application should be considered high-risk where it meets the following two cumulative criteria: • First, the AI application is employed in a sector where, given the characteristics of the activities typically undertaken, significant risks can be expected to occur.",
+          "source_section": "Section 5.C (Scope of a Future EU Regulatory Framework)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 59296,
+          "end_char": 59586
+        },
+        {
+          "quote": "The autonomous behaviour of certain AI systems during its life cycle may entail important product changes having an impact on safety, which may require a new risk assessment.",
+          "source_section": "Section 5.B (Report on Safety and Liability Implications)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 51342,
+          "end_char": 51516
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Requirements to take reasonable measures aimed at ensuring that such subsequent use of AI systems does not lead to outcomes entailing prohibited discrimination. These requirements could entail in particular obligations to use data sets that are sufficiently representative",
+          "source_section": "Section 5.D(a) (Training Data)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 66217,
+          "end_char": 66489
+        },
+        {
+          "quote": "For instance, requirements ensuring that AI systems are trained on data sets that are sufficiently broad and cover all relevant scenarios needed to avoid dangerous situations.",
+          "source_section": "Section 5.D(a) (Training Data)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 66038,
+          "end_char": 66213
+        }
+      ]
+    },
+    {
+      "label": "model_documentation",
+      "confidence": 0.95,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "accurate records regarding the data set used to train and test the AI systems, including a description of the main characteristics and how the data set was selected;\n\n• in certain justified cases, the data sets themselves;",
+          "source_section": "Section 5.D(b) (Keeping of Records and Data)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 67822,
+          "end_char": 68044
+        },
+        {
+          "quote": "documentation on the programming53 and training methodologies, processes and techniques used to build, test and validate the AI systems, including where relevant in respect of safety and avoiding bias that could lead to prohibited discrimination.",
+          "source_section": "Section 5.D(b) (Keeping of Records and Data)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 68048,
+          "end_char": 68294
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.96,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Ensuring clear information to be provided as to the AI system’s capabilities and limitations, in particular the purpose for which the systems are intended, the conditions under which they can be expected to function as intended and the expected level of accuracy in achieving the specified purpose.",
+          "source_section": "Section 5.D(c) (Information Provision)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 69363,
+          "end_char": 69661
+        },
+        {
+          "quote": "Separately, citizens should be clearly informed when they are interacting with an AI system and not a human being.",
+          "source_section": "Section 5.D(c) (Information Provision)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 69811,
+          "end_char": 69925
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.94,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "an objective, prior conformity assessment would be necessary to verify and ensure that certain of the above mentioned mandatory requirements applicable to high-risk applications (see section D above) are complied with. The prior conformity assessment could include procedures for testing, inspection or certification59.",
+          "source_section": "Section 5.F (Compliance and Enforcement)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 79988,
+          "end_char": 80307
+        },
+        {
+          "quote": "Requirements ensuring that the AI systems are robust and accurate, or at least correctly reflect their level of accuracy, during all life cycle phases;\n\n•\nRequirements ensuring that outcomes are reproducible;",
+          "source_section": "Section 5.D(d) (Robustness and Accuracy)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 71072,
+          "end_char": 71280
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.87,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "Requirements ensuring that AI systems are resilient against both overt attacks and more subtle attempts to manipulate data or algorithms themselves, and that mitigating measures are taken in such cases.",
+          "source_section": "Section 5.D(d) (Robustness and Accuracy)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 71712,
+          "end_char": 71914
+        }
+      ]
+    },
+    {
+      "label": "human_oversight",
+      "confidence": 0.97,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "the output of the AI system does not become effective unless it has been previously reviewed and validated by a human (e.g. the rejection of an application for social security benefits may be taken by a human only);",
+          "source_section": "Section 5.D(e) (Human Oversight)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 72793,
+          "end_char": 73008
+        },
+        {
+          "quote": "monitoring of the AI system while in operation and the ability to intervene in real time and deactivate (e.g. a stop button or procedure is available in a driverless car when a human determines that car operation is not safe);",
+          "source_section": "Section 5.D(e) (Human Oversight)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 73256,
+          "end_char": 73482
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.93,
+      "obligation_strength": "recommended",
+      "evidence": [
+        {
+          "quote": "carrying out of conformity assessments could be entrusted to notified bodies designated by Member States. Testing centres should enable the independent audit and assessment of AI-systems in accordance with the requirements outlined above.",
+          "source_section": "Section 5.H (Governance)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 87672,
+          "end_char": 87910
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "soft_enforcement",
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "quote": "establish a voluntary labelling scheme. Under the scheme, interested economic operators that are not covered by the mandatory requirements could decide to make themselves subject, on a voluntary basis, either to those requirements or to a specific set of similar requirements especially established for the purposes of the voluntary scheme.",
+          "source_section": "Section 5.G (Voluntary Labelling for No-High Risk AI Applications)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 84350,
+          "end_char": 84690
+        },
+        {
+          "quote": "The purpose of this White Paper is to set out policy options on how to achieve these objectives.",
+          "source_section": "Introduction (Page 2)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1918,
+          "end_char": 2014
+        }
+      ]
+    },
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.91,
+      "evidence": [
+        {
+          "quote": "Any prior conformity assessment should be without prejudice to monitoring compliance and ex post enforcement by competent national authorities.",
+          "source_section": "Section 5.F (Compliance and Enforcement)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 82818,
+          "end_char": 82961
+        },
+        {
+          "quote": "Such monitoring of compliance should be part of a continuous market surveillance scheme.",
+          "source_section": "Section 5.F (Compliance and Enforcement)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 83581,
+          "end_char": 83669
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "European Commission (policy consultation, future legislative proposals, and coordination)",
+    "Competent national authorities and market surveillance authorities (proposed ex-post compliance monitoring and inspection)",
+    "Notified bodies designated by Member States (proposed independent prior conformity assessment and auditing)",
+    "European Union Agency for Cybersecurity (ENISA) (proposed AI threat-landscape assessment support)"
+  ],
+  "compliance_deadlines": [
+    "2020-05-19: Closing date for open public consultation on the White Paper policy options",
+    "2020-06: Expected finalisation of revised High-Level Expert Group Ethics Guidelines assessment list",
+    "End of 2020: Planned Commission proposal to Member States for a revision of the Coordinated Plan on AI (Action 1)",
+    "Q1 2020 / 2021–2027: Launch of €100M AI/blockchain equity pilot and MFF Digital Europe / Horizon Europe / InvestEU investment cycle targeting >€20B/year in total EU AI investment over the decade"
+  ],
+  "penalties_summary": "As a non-binding Commission White Paper launching public consultation on policy options, COM(2020) 65 final establishes no standalone fines or criminal sanctions. It emphasizes that existing EU consumer, data-protection, product-safety, and liability regimes remain fully enforceable—noting that violations of consumer rules must be punished and victims need effective judicial redress—while proposing future ex-ante notified-body conformity assessments (requiring non-compliant systems to be remedied, such as re-training) and continuous ex-post market surveillance.",
+  "implementation_notes": "Adopted February 19, 2020 (COM(2020) 65 final) alongside the European Strategy for Data and the Report on Safety and Liability Implications of AI, IoT, and Robotics. Serves as the foundational policy blueprint and historical baseline for the EU AI Act (Regulation (EU) 2024/1689). Introduces the twin 'ecosystem of excellence' (six policy actions spanning revised Coordinated Plan, lighthouse research/testing centres, AI master's networks, specialised Digital Innovation Hubs, Horizon Europe AI/data/robotics PPP, and Adopt AI public-sector procurement) and 'ecosystem of trust' (cumulative sector-plus-use high-risk criteria, per-se high-risk recruitment and remote biometric identification, training-data/record-keeping/transparency/robustness/human-oversight requirements, extraterritorial EU market scope, notified-body prior conformity assessment, and a voluntary quality label for non-high-risk AI).",
+  "confidence": 0.97
+}

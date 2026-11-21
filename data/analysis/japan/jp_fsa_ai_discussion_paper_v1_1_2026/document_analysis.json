@@ -1,0 +1,489 @@
+{
+  "source_id": "jp_fsa_ai_discussion_paper_v1_1_2026",
+  "title": "AIディスカッションペーパー（第1.1版）— 金融分野におけるAIの健全な利活用の促進に向けた初期的な論点整理 (FSA AI Discussion Paper Ver. 1.1)",
+  "language": "ja",
+  "policy_extraction": {
+    "jurisdiction": "japan",
+    "issuing_body": "Financial Services Agency (FSA / 金融庁)",
+    "document_type": "regulatory_guidance",
+    "binding_strength": "regulatory_guidance",
+    "publication_date": "2026-03-03",
+    "effective_date": null,
+    "covered_actors": [
+      "Japanese financial institutions across sectors including deposit-taking banks, regional banks, financial instruments business operators (securities firms), insurers, credit rating agencies, fintech intermediaries, moneylenders, prepaid payment issuers, and audit firms",
+      "Boards of directors, senior management, CIOs, compliance/legal/risk management (2nd line), internal audit (3rd line), and frontline business units (1st line)",
+      "Third-party AI foundation-model providers, cloud vendors, data vendors, fintech partners, and the FSA itself in its supervisory technology (SupTech) deployment"
+    ],
+    "covered_application_domains": [
+      "finance",
+      "general_purpose_models",
+      "public_sector_use"
+    ],
+    "prohibited_practices": [
+      "Providing unsubstantiated or definitive profit assurances ('guaranteed profits') or non-compliant investment solicitation via customer-facing AI systems under existing Financial Instruments and Exchange Act conduct rules",
+      "Uncontrolled sharing or leakage of corporate-related non-public information (insider information) across segregated departments without adequate information-management barriers (FIEA Cabinet Office Order Art. 123(1)(v))",
+      "Allowing outsourced generative AI service providers to reuse customer personal data submitted in prompts for additional model training without the financial institution's instruction under the Act on the Protection of Personal Information (APPI)"
+    ],
+    "safety_requirements": [
+      {
+        "label": "risk_assessment",
+        "confidence": 0.96,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "また、リスクベース・アプローチの重要性が指摘され、社内の業務効率化などのリスクの低いAI 利用については、チェックリストに基づく現場判断に委ねつつ、顧客向けにAI を活用するようなリスクの高いAI 利用については、専門部署で事前審査を行っている事例があった。",
+            "source_section": "IV.1.①.ii ガバナンスの構築に向けた取組",
+            "quote_en": "Furthermore, the importance of a risk-based approach was emphasized, with examples where low-risk AI uses such as internal operational efficiency are delegated to frontline judgment based on checklists, whereas high-risk AI uses such as customer-facing applications undergo prior review by specialized departments.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 26590,
+            "end_char": 26719
+          },
+          {
+            "quote": "その際、モデル・リスク管理に関する原則14の「リスクベース・アプローチ」の考えも踏まえると、AI 特有のリスクも含めてモデルに内在するリスクを評価し、その大きさに応じた管理を行うことが適当と考えられる。",
+            "source_section": "IV.1.①.vi モデル・リスク管理",
+            "quote_en": "In doing so, consistent with the 'risk-based approach' in the Principles for Model Risk Management, it is appropriate to assess the risks inherent in models—including AI-specific risks—and apply management commensurate with the magnitude of those risks.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 31824,
+            "end_char": 31925
+          }
+        ]
+      },
+      {
+        "label": "pre_deployment_testing",
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "そして、これらの対策が的確に機能しているかをリリース前にしっかりとテスト・検証することが重要となる。",
+            "source_section": "Box 4. 顧客向けサービスを念頭とするリスク低減に向けた取組事例",
+            "quote_en": "And it is important to thoroughly test and verify before release whether these risk-mitigation measures function accurately.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42527,
+            "end_char": 42577
+          },
+          {
+            "quote": "モデル開発者と独立した検証者によって本番適用前の検証や継続的なモデルのパフォーマンス監視を行っている先、業務知見に基づく特徴量の追加等を行いモデルの性能維持に務めている先などが確認された。",
+            "source_section": "IV.1.①.vi モデル・リスク管理",
+            "quote_en": "Practices observed included conducting pre-production validation and continuous model performance monitoring by validators independent of model developers, and adding domain-informed features to maintain model performance.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 33294,
+            "end_char": 33388
+          }
+        ]
+      },
+      {
+        "label": "red_teaming",
+        "confidence": 0.88,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "こうした多面的なリスクに対応するため、セキュリティ部門だけでなく法務・コンプライアンス部門やモデル・リスク管理部門と連携し、定期的に脆弱性診断やペネトレーションテストを実施する、リスクに応じて内部監査部門による監査を実施するな\n\n17 なお、公益社団法人金融情報システムセンター（FISC）が2024 年9 月に公表した文書においても、情報セキュリティ面に関する課題として、情報漏洩、仕様・設定等、モニタリングの3 点に関する課題を指摘している。 0 20 40 60 80 100 入出力情報が適切に管理できるようなシステム環境としている入力データについて制約を付している利用目的を限定する出力データ（成果物）について検証・評価している管理している管理しているが改善の余地がある検討中 ％\n\nど、統合的な対応を講じる必要がある。",
+            "source_section": "IV.1.①.viii 情報セキュリティ・サイバーセキュリティ",
+            "quote_en": "To respond to these multifaceted risks, an integrated response is necessary—coordinating not only the security department but also legal/compliance and model risk management departments to regularly conduct vulnerability assessments and penetration testing, and conducting internal audits commensurate with risk.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 37204,
+            "end_char": 37569
+          },
+          {
+            "quote": "また、プロンプトインジェクションのような攻撃は、AI システムの誤動作や機密情報の漏洩を引き起こす可能性がある。生成AI によって巧妙なフィッシングメールやなりすましが容易に作成されるだけでなく、AI モデルそのものが攻撃対象となる可能性があり、具体的には、AI モデルの学習データやパラメータを改ざんする「データポイズニング」への警戒や、大量のクエリを投げてモデルの内部構造を推測し、機密情報を引き出す攻撃に対する\n\n16 U.S. Department of the Treasury “Managing Artificial Intelligence-Specific Cybersecurity Risks in the Financial Services Sector”（2024 年3 月公表）\n\n検知・防御策が求められている。",
+            "source_section": "IV.1.①.viii 情報セキュリティ・サイバーセキュリティ",
+            "quote_en": "Furthermore, attacks such as prompt injection can cause AI system malfunctions or confidential information leaks; beyond facilitating sophisticated phishing and impersonation, AI models themselves can be targeted, requiring vigilance against data poisoning altering training data or parameters and detection/defense measures against mass-query attacks inferring model internals to extract sensitive information.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 36025,
+            "end_char": 36396
+          }
+        ]
+      },
+      {
+        "label": "access_controls",
+        "confidence": 0.93,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "また、特に、投資勧誘に際して 「必ず儲かる」といった断定的な判断を示したり、コンプライアンス上不適切な回答を行ったりすることを防止するため、上記に加えて、回答内容にフィルタリングを設けるなどの重層的なガードレールを設定することが検討されている。",
+            "source_section": "Box 4. 顧客向けサービスを念頭とするリスク低減に向けた取組事例",
+            "quote_en": "In addition, particularly to prevent providing definitive assurances such as 'guaranteed profits' in investment solicitation or generating non-compliant responses, setting multi-layered guardrails—such as output content filtering—is being considered.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42246,
+            "end_char": 42368
+          },
+          {
+            "quote": "また、自社専用環境にて生成 AI サービスを導入するなどにより、入出力情報が管理できるシステム環境を構築している先も同様に多数確認された。",
+            "source_section": "IV.1.①.viii 情報セキュリティ・サイバーセキュリティ",
+            "quote_en": "Likewise, many institutions were confirmed to have established system environments capable of controlling input and output information, such as deploying generative AI services within dedicated private environments.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 36589,
+            "end_char": 36658
+          }
+        ]
+      },
+      {
+        "label": "transparency_disclosure",
+        "confidence": 0.93,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "例えば、顧客が生成AI サービスの利用を開始する前に、以後は生成AI による回答であることや、生成AI の特性上誤りが含まれうること等について注意喚起を行うことが挙げられた。",
+            "source_section": "Box 4. 顧客向けサービスを念頭とするリスク低減に向けた取組事例",
+            "quote_en": "For example, before a customer begins using a generative AI service, providing a clear notice and caution that subsequent responses will be generated by AI and may contain errors due to the technical nature of generative AI was highlighted.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42605,
+            "end_char": 42692
+          },
+          {
+            "quote": "また、顧客に回答の根拠・情報ソースを明示する設計とすることや、顧客の選択によりいつでもAI 対応から有人対応へ移行できるようにすることも挙げられた。",
+            "source_section": "Box 4. 顧客向けサービスを念頭とするリスク低減に向けた取組事例",
+            "quote_en": "Designing systems to clearly display the basis and information sources of responses to customers, and enabling customers to transition from AI support to human staff support at any time by customer choice, were also highlighted.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42850,
+            "end_char": 42924
+          }
+        ]
+      },
+      {
+        "label": "model_documentation",
+        "confidence": 0.91,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "例えば、リスクの高い場面を中心に、AI と顧客との会話ログを保存し、不適切な回答がなされていないかのモニタリングと必要な場合に顧客にフォローアップの連絡を行う態勢を整えることが考えられる。",
+            "source_section": "Box 4. 顧客向けサービスを念頭とするリスク低減に向けた取組事例",
+            "quote_en": "For example, particularly in high-risk contexts, institutions can preserve conversation logs between AI and customers, monitor whether inappropriate responses occurred, and establish a framework to follow up with customers when necessary.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 42972,
+            "end_char": 43066
+          },
+          {
+            "quote": "前提条件・限界・不確実性などを含むAI モデルの方法論を文書化している先",
+            "source_section": "IV.1.①.vi モデル・リスク管理",
+            "quote_en": "Institutions documenting AI model methodologies, including assumptions, limitations, and uncertainties.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 33257,
+            "end_char": 33293
+          }
+        ]
+      },
+      {
+        "label": "human_oversight",
+        "confidence": 0.94,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "典型的には、人間の関与を前提とした業務プロセスの構築で、ハルシネーションがゼ\nロにはならないとの前提の下、生成AI の導入に当たっては人間によるレビューのプロセスを設定している先が多い。例えば、社員が生成AI の生成結果をもと顧客や代理店等に回答する場合は、必ず内容の是非を社員が判断してから利用することとしている先などが確認された。",
+            "source_section": "IV.1.②.iii ハルシネーション（幻覚）",
+            "quote_en": "Typically, institutions design workflows premised on human involvement: assuming hallucinations cannot be eliminated entirely, many set up human review processes when deploying generative AI, such as requiring employees to always evaluate the appropriateness of AI outputs before responding to customers or agencies.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 41238,
+            "end_char": 41405
+          },
+          {
+            "quote": "このようなユースケースにおいても、例えば稟議書は融資判断など顧客に重要な影響を及ぼしうるものであり、人の関与（Human in the loop）を必須とする運用が大半となっていることが確認された。",
+            "source_section": "Ⅲ.2.③.ii 対顧客サービスへの間接的な利活用",
+            "quote_en": "Even in such use cases—for instance, approval memos that can significantly affect customers such as lending decisions—it was confirmed that the vast majority of operations mandate human-in-the-loop involvement.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 19586,
+            "end_char": 19685
+          }
+        ]
+      },
+      {
+        "label": "training_data_governance",
+        "confidence": 0.92,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "サービスの選定・契約締結に当たっては、金融機\n\n19 個人情報保護委員会「「個人情報の保護に関する法律についてのガイドライン」に関するＱ＆Ａ」（令和7 年7 月1 日最終改正）2-5。\n\n関が委託に伴って提供する個人データが、当該金融機関の指示なく追加学習に使用されない\nこと等を確認する必要がある20。",
+            "source_section": "IV.1.②.iv 個人情報保護",
+            "quote_en": "When selecting a service and concluding contracts, financial institutions must confirm that personal data provided in connection with outsourcing will not be used for additional model training without the financial institution's instruction.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 44303,
+            "end_char": 44455
+          },
+          {
+            "quote": "AI のトレーニングやカスタマイズには社内データを含む高品質なデータ基盤を整備する必要があり、特に生成 AI を含む複雑なAI の活用においては、データの質や量の確保、モデルの適切なトレーニング、さらには情報セキュリティや個人情報保護に関する規律の遵守が求められる。",
+            "source_section": "IV.1.①.i データ整備・データマネジメント",
+            "quote_en": "Training and customizing AI requires building high-quality data foundations including internal data, and particularly for complex AI including generative AI, ensuring data quality and volume, proper model training, and compliance with information security and personal-data protection rules are required.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 23799,
+            "end_char": 23932
+          }
+        ]
+      },
+      {
+        "label": "agentic_autonomy_controls",
+        "confidence": 0.85,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "また、AI 官民フォーラムでは、AI エージェントの広がりを見越して、現段階からAI エージェントのパフォーマンスの監視、ライフサイクルとコスト管理、インベントリー管理、\n\n権限管理の４つを統合的に管理するプラットフォームの構築を進めているとの事例紹介があ\nった。",
+            "source_section": "IV.1.①.vi モデル・リスク管理",
+            "quote_en": "Additionally, at the AI Public-Private Forum, a case was presented of an institution already building an integrated governance platform in anticipation of expanding AI agent deployment to manage four areas holistically: AI agent performance monitoring, lifecycle and cost management, inventory management, and permission/privilege management.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 33389,
+            "end_char": 33521
+          },
+          {
+            "quote": "AI エージェントとは、特定の目標を達成するために自律的に行動するAI システムであり、LLM は、その思考や判断を担う「頭脳」 として使用される。従来、LLM は、チャットボットとして使用されることが一般的であり、 その用途は、テキスト処理やコーディングが中心であったが、AI エージェントに組み込まれることで、幅広い業務に応用できるようになると考えられる。",
+            "source_section": "Ⅲ.3.② AI エージェント",
+            "quote_en": "An AI agent is an AI system that acts autonomously to achieve a specific goal, using an LLM as the 'brain' responsible for reasoning and judgment; by incorporating LLMs into AI agents, they are expected to become applicable to a wide range of business operations.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 20312,
+            "end_char": 20492
+          }
+        ]
+      },
+      {
+        "label": "third_party_audit",
+        "confidence": 0.76,
+        "obligation_strength": "recommended",
+        "evidence": [
+          {
+            "quote": "また、AI により特定の金融商品に偏った勧誘等を行っていないか等\n\nの客観的な数字を用いた確認・検証や、推奨ロジックの文書化と第三者レビューを通じたモ\nニタリングも考えられる。",
+            "source_section": "Box 4. 顧客向けサービスを念頭とするリスク低減に向けた取組事例",
+            "quote_en": "Monitoring can also include verifying through objective metrics whether AI conducts biased solicitation favoring specific financial products, as well as documenting recommendation logic and conducting monitoring through third-party review.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 43066,
+            "end_char": 43154
+          }
+        ]
+      }
+    ],
+    "enforcement_mechanisms": [
+      {
+        "label": "soft_enforcement",
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "quote": "本文書は、モニタリング上の目線や金融機関等に求める具体的対応を示すものではなく、\n金融庁において2024 年10 月3 日から11 月15 日にかけて実施した「金融機関等のAI の活用実態等に関するアンケート調査2」や一部の金融機関・ベンダー等へのヒアリング結果、国際的な議論の進展等を踏まえ、金融機関等における従来型AI 及び生成AI のユースケースや課題認識、ガバナンス構築に向けた事例などを整理し、今後の対話に向けた初期的な論点及び金融庁としての今後の対応方針を提示するものである。",
+            "source_section": "Ⅱ.1 目的・位置づけ",
+            "quote_en": "This document does not establish supervisory monitoring benchmarks or prescribe specific mandatory measures for financial institutions; rather, based on the 2024 survey of financial institutions' AI use, interviews, and international discussions, it organizes conventional and generative AI use cases, risk perceptions, and governance examples to present initial discussion points and FSA's future policy direction.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 6542,
+            "end_char": 6786
+          },
+          {
+            "quote": "この点、重大な規制上のギャップが特定された場合には、法令上の対応も排除されるものではないが、金融庁では法令による規制は事業者の⾃主的な努⼒による対応が期待できないものに限定して対応していくべきとの政府方針を踏まえて、まずは原則やガイドライン等の改定等を検討する。",
+            "source_section": "IV.2.①.iii 金融庁の今後の対応の方向性",
+            "quote_en": "While statutory measures are not ruled out if serious regulatory gaps are identified, in line with government policy that statutory regulation should be limited to matters where voluntary industry efforts cannot be expected to suffice, the FSA will first consider revising principles and guidelines.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 55255,
+            "end_char": 55386
+          }
+        ]
+      },
+      {
+        "label": "regulatory_supervision",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "quote": "金融庁では、いずれの論点も、AI 利用の有無に関わらず適用される既存の法令や監督指針、 原則、ガイドライン等に沿った対応を金融機関等に促していく。",
+            "source_section": "IV.2.①.iii 金融庁の今後の対応の方向性",
+            "quote_en": "Across all these issues, the FSA will encourage financial institutions to comply with existing statutes, supervisory guidelines, principles, and guidelines that apply regardless of whether AI is utilized.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 54912,
+            "end_char": 54985
+          },
+          {
+            "quote": "金融庁では、国内外の AI を巡る議論の進展と AI の利用状況を踏まえつつ、適切なリスク管理が行われているかについて対話を継続していく。",
+            "source_section": "IV.1.①.vi モデル・リスク管理",
+            "quote_en": "The FSA will continue supervisory dialogue on whether appropriate risk management is being conducted, taking into account domestic and international AI policy developments and actual AI usage.",
+            "frame": null,
+            "grounding_status": "verbatim",
+            "start_char": 33587,
+            "end_char": 33656
+          }
+        ]
+      }
+    ],
+    "enforcement_authorities": [
+      "Financial Services Agency (FSA / 金融庁 — including FinTech Support Desk, FinTech Proof-of-Concept Hub, and AI Public-Private Forum)",
+      "Personal Information Protection Commission (PPC / 個人情報保護委員会 — APPI oversight referenced)",
+      "Self-regulatory bodies such as Japan Securities Dealers Association (JSDA) and Center for Financial Industry Information Systems (FISC)"
+    ],
+    "compliance_deadlines": [
+      "2026-03: Publication of FSA AI Discussion Paper Ver. 1.1 incorporating June–December 2025 AI Public-Private Forum findings and opening ongoing stakeholder comment submission",
+      "FY2025 supplementary budget (令和7年度補正予算): Planned execution of FSA's Regional Financial Institutions Generative AI DX Demonstration Research Project"
+    ],
+    "penalties_summary": "None specified in this Discussion Paper. The paper explicitly disclaims imposing binding monitoring expectations or immediate mandates, prioritizing voluntary industry efforts, agile governance, safe harbors, and ongoing supervisory dialogue—while reiterating that existing technology-neutral financial statutes (such as the Financial Instruments and Exchange Act and APPI) and supervisory guidelines remain enforceable regardless of AI use.",
+    "implementation_notes": "Version 1.1 (March 2026) of the Financial Services Agency's AI Discussion Paper, updating Ver. 1.0 with insights from the June–December 2025 FSA AI Public-Private Forum and reflecting Japan's May 2025 AI Promotion Act and December 2025 Basic AI Plan. Covers conventional AI, generative AI (internal, indirect customer, and direct customer deployments), and emerging AI agents / agentic AI across 130 surveyed financial institutions, detailing emerging customer-facing guardrails (Box 4), AI-agent lifecycle/permission platforms, APPI and FIEA regulatory clarifications, systemic financial-stability risks, regional-bank GenAI DX pilots (Box 5), and FSA's own SupTech AI initiatives.",
+    "confidence": 0.96
+  },
+  "risk_framing": {
+    "dominant_frame": "innovation_enablement",
+    "secondary_frames": [
+      "consumer_public_safety",
+      "economic_competitiveness",
+      "fundamental_rights"
+    ],
+    "frame_confidence": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.2,
+      "economic_competitiveness": 0.78,
+      "fundamental_rights": 0.72,
+      "social_stability": 0.25,
+      "innovation_enablement": 0.97,
+      "consumer_public_safety": 0.88,
+      "labor_transition": 0.52
+    },
+    "frame_share": {
+      "existential_catastrophic": 0.0,
+      "national_security": 0.0,
+      "economic_competitiveness": 0.14,
+      "fundamental_rights": 0.1,
+      "social_stability": 0.0,
+      "innovation_enablement": 0.45,
+      "consumer_public_safety": 0.25,
+      "labor_transition": 0.06
+    },
+    "rationale_summary": "The FSA AI Discussion Paper (Version 1.1) is dominantly framed around innovation enablement, warning against the 'risk of not taking on challenges', emphasizing agile governance and risk-based soft law over chilling mandates, offering safe harbors, regulatory-clarity desks, and PoC hubs, and encouraging active public-private dialogue so financial institutions can deploy generative AI and AI agents confidently. Consumer and public safety is a prominent secondary frame focused on protecting financial customers and market stability from hallucinations, deceptive solicitation, AI-enabled deepfake fraud and KYC evasion, cyberattacks, and systemic herding or disinformation-driven market instability. Economic competitiveness forms a substantive third frame—positioning Japanese financial innovation to lead globally, transform business models, strengthen regional economies via regional-bank DX, and realize an international financial center—paired with fundamental rights (safeguarding personal data under APPI, mitigating structural algorithmic discrimination in credit and HR, and ensuring explainability) and a notable labor and workforce transition thread addressing labor shortages, employee job-displacement anxiety, and workforce reskilling.",
+    "evidence_spans": [
+      {
+        "quote": "こうした観点から、金融庁としては、金融機関等がAI を活用したチャレンジに安心して\n取組むことができる環境整備に努めていく。AI に限らず、イノベーションに向けた取組みを進める中で問題が生じた際には、対話等を通じて問題解決に向けて取り組むなど、金融機関等を過度に委縮させることのないように行政対応を行っていく。また、規制の適用関係の明確化等を通じて、セーフハーバーの提供に努めていく。",
+        "source_section": "Ⅰ. はじめに",
+        "quote_en": "From this perspective, the FSA will strive to create an environment in which financial institutions can safely take on challenges utilizing AI. When issues arise during innovation initiatives, the FSA will handle administration through dialogue toward problem resolution so as not to unduly chill financial institutions, and will strive to provide safe harbors by clarifying regulatory applicability.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 6027,
+        "end_char": 6219
+      },
+      {
+        "quote": "リスクへの対応が重要であることは論を俟たないが、AI はリスクを大きく上回る便益をもたらす可能性が高いとの指摘もあり、技術革新に取り残されて中長期的に良質な金融サービスの提供が困難になる「チャレンジしないリスク」も十分に認識されるべきである。",
+        "source_section": "Ⅰ. はじめに",
+        "quote_en": "While addressing risks is undeniably important, it is also noted that AI is likely to deliver benefits far outweighing its risks, and the 'risk of not taking on challenges'—falling behind technological innovation and becoming unable to provide high-quality financial services over the medium to long term—must also be fully recognized.",
+        "frame": "innovation_enablement",
+        "grounding_status": "verbatim",
+        "start_char": 5683,
+        "end_char": 5804
+      },
+      {
+        "quote": "生成AI の進展により、自然な日本語での文面・音声・映像を生成できるようになったことから、犯罪の手口が巧妙化し、金融機関等やその顧客を取り巻くリスクも拡大する傾向にある18。例えば、AI が生成したメールやフィッシングサイトによる詐欺など、これまでも見受けられた手口が巧妙化することに加え、ディープフェイク技術は、特定の人物になりすました偽動画や偽音声等による詐欺行為を容易にし、その影響は甚大となる可能性がある。",
+        "source_section": "IV.1.①.ix 金融犯罪対策",
+        "quote_en": "Because advances in generative AI enable generating natural Japanese text, audio, and video, criminal methods are growing more sophisticated and risks surrounding financial institutions and their customers are expanding; beyond phishing sites and emails, deepfake technologies facilitate impersonation fraud via fake video and audio with potentially enormous impact.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 37866,
+        "end_char": 38073
+      },
+      {
+        "quote": "金融市場におけるAI の広範な採用は、AI 生成のシグナルに基づいて市場参加者が同様の決定を下す群集行動を引き起こす可能性があり、市場のボラティリティとシステミック・リスクを増幅させる可能性があると指摘されている。また、生成AI によってフェイクニュースを生成してSNS 等で流布させることで、短期間での取り付け騒ぎや株価急落などを引き起こす可能性があり、市場全体の不安を高めるリスクもある。",
+        "source_section": "IV.1.③ その他の金融システム安定上の論点",
+        "quote_en": "Widespread adoption of AI in financial markets may induce herding behavior where market participants make similar decisions based on AI-generated signals, amplifying market volatility and systemic risk, and spreading AI-generated fake news on social media could trigger rapid bank runs or sharp stock drops, heightening market-wide anxiety.",
+        "frame": "consumer_public_safety",
+        "grounding_status": "verbatim",
+        "start_char": 47890,
+        "end_char": 48086
+      },
+      {
+        "quote": "金融庁が先頭に立ち、リスクをコントロールしつつ、我が国の金融分野におけるイノベーションが世界をリードして発展していくことができる環境整備に全力を尽くしていく決意である。",
+        "source_section": "Ⅰ. はじめに",
+        "quote_en": "The FSA is determined to take the lead and make every effort to build an environment where, while keeping risks under control, innovation in Japan's financial sector can develop and lead the world.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 6430,
+        "end_char": 6514
+      },
+      {
+        "quote": "地域金融機関においては、当該情報を参考に、生成AI を活用し、生産性を向上させることによって、融資や本業支援の強化等の金融仲介機能の一層の発揮、ひいては地域企業・地域経済の活性化に繋げていくことが期待される。",
+        "source_section": "Box 5. 生成AI を活用した地域金融機関のDX 化に向けた実証研究事業",
+        "quote_en": "Regional financial institutions are expected to refer to this information to utilize generative AI, improve productivity, further demonstrate financial intermediation functions such as strengthening lending and core-business support, and ultimately revitalize regional enterprises and regional economies.",
+        "frame": "economic_competitiveness",
+        "grounding_status": "verbatim",
+        "start_char": 59058,
+        "end_char": 59162
+      },
+      {
+        "quote": "学習データやアルゴリズム、さらにはモデルの推論結果に偏りが含まれると、特定の属性を持つ顧客に対して構造的な差別その他の不公平な処遇が行われるリスクが高まる。",
+        "source_section": "IV.1.②.ii 公平性・バイアス",
+        "quote_en": "If bias is embedded in training data, algorithms, or model inference results, the risk increases that customers with specific attributes will suffer structural discrimination or other unfair treatment.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 39839,
+        "end_char": 39917
+      },
+      {
+        "quote": "金融機関等においては、個人情報保護に係る適切な対応と個人情報を含むデータの効果的な活用の両立が求められており、金融庁としても、継続的な対話を通じて金融機関の取組みの把握を行っていく。",
+        "source_section": "IV.1.②.iv 個人情報保護",
+        "quote_en": "Financial institutions are required to balance appropriate personal-information protection with effective utilization of data including personal information, and the FSA will continue monitoring institutions' efforts through ongoing dialogue.",
+        "frame": "fundamental_rights",
+        "grounding_status": "verbatim",
+        "start_char": 45255,
+        "end_char": 45346
+      },
+      {
+        "quote": "加えて、AI に対する個々人の理解度に差があることや、自分の業務がAI に代替されるのではないかとの不安感から、ユースケースのアイデア出しや部門横断的な協力体制を構築しづらいとの声も多い。",
+        "source_section": "IV.1.①.iv 専門人材の確保・育成及び社内教育",
+        "quote_en": "In addition, many voices note that disparities in individual AI comprehension and anxiety that one's own job may be replaced by AI make it difficult to generate use-case ideas and build cross-departmental collaboration.",
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 29129,
+        "end_char": 29223
+      },
+      {
+        "quote": "AI の導入が進む中で、金融機関等に求められる人材も大きく変容していく可能性があり、重要な経営課題の一つと認識して人材育成や社内教育に取り組んでいくことが期待される。",
+        "source_section": "IV.1.①.iv 専門人材の確保・育成及び社内教育",
+        "quote_en": "As AI adoption progresses, the talent required at financial institutions may also transform significantly, and institutions are expected to recognize talent development and internal education as a key management priority.",
+        "frame": "labor_transition",
+        "grounding_status": "verbatim",
+        "start_char": 30407,
+        "end_char": 30490
+      }
+    ]
+  },
+  "analysis_metadata": {
+    "provider": "gemini",
+    "model": "gemini-4-neon",
+    "effort": "xhigh",
+    "temperature": 0.0,
+    "analyzed_at": "2026-11-21T21:11:42.336312Z",
+    "analysis_version": "0.3.0",
+    "taxonomy_version": "2.1.0",
+    "taxonomy_hash": "a515f89a73bbb653aecd8c848dd6379c7a99406326b405721151b6ed736c786d",
+    "extraction_prompt_hash": "ae1cc58e458254047ac7c0e440a153ba19d9fd40af80b12974a46e7d06a518fe",
+    "framing_prompt_hash": "7445ba0317cc08224bf2fa18f86ad091b79c6b7c5307a30ec46fee1299f880b4",
+    "input_sha256": "be3d2ea34d5a47a80ed41cb1273dd7230d9d4f584b1c7a440211469e4975297e",
+    "chunked": false,
+    "chunk_count": 1,
+    "usage": {
+      "execution_mode": "subscription_harness",
+      "total_chars": 63993,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "thoughts_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "grounding_summary": {
+      "total_quotes": 33,
+      "exact_matches": 33,
+      "fuzzy_matches": 0,
+      "ungrounded_quotes": 0,
+      "exact_ratio": 1.0,
+      "grounding_ratio": 1.0,
+      "ungrounded_samples": [],
+      "snapped_quotes": 0
+    }
+  }
+}

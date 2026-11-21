@@ -27,6 +27,7 @@ import type { SourceEntry } from "@/lib/sources-data";
 import {
   formatModelList,
   getProvenanceBannerKind,
+  parseIncludeSubnational,
 } from "@/lib/taxonomy-vocab";
 import { replaceUrlQuery, useUrlSearch } from "@/lib/use-url-search";
 
@@ -39,20 +40,31 @@ const ALL_FRAMES: FrameLabel[] = allFrameLabels;
 export function OverviewDashboard({
   headline,
   all,
+  headlineWithStates,
+  allWithStates,
   latestSources,
 }: {
   headline: OverviewData;
   all: OverviewData;
+  headlineWithStates?: OverviewData;
+  allWithStates?: OverviewData;
   latestSources: SourceEntry[];
 }) {
   const urlSearch = useUrlSearch();
   const [cardView, setCardView] = useState<"cards" | "table">("cards");
 
-  const rawMode = new URLSearchParams(urlSearch).get("mode")?.toLowerCase();
+  const searchParams = new URLSearchParams(urlSearch);
+  const rawMode = searchParams.get("mode")?.toLowerCase();
   const mode: ScoringMode =
     rawMode === "all" || rawMode === "equal" ? "all" : "headline";
+  const hasSubnationalDocs = headline.subnationalCount > 0;
+  const includeSubnational =
+    hasSubnationalDocs && parseIncludeSubnational(searchParams.get("states"));
 
-  const data = mode === "all" ? all : headline;
+  const activeHeadline =
+    includeSubnational && headlineWithStates ? headlineWithStates : headline;
+  const activeAll = includeSubnational && allWithStates ? allWithStates : all;
+  const data = mode === "all" ? activeAll : activeHeadline;
 
   function selectMode(nextMode: ScoringMode) {
     replaceUrlQuery((params) => {
@@ -63,6 +75,22 @@ export function OverviewDashboard({
       }
     });
   }
+
+  function toggleSubnational() {
+    replaceUrlQuery((params) => {
+      if (includeSubnational) {
+        params.delete("states");
+      } else {
+        params.set("states", "1");
+      }
+    });
+  }
+
+  const scopeQueryParams: string[] = [];
+  if (mode === "all") scopeQueryParams.push("mode=all");
+  if (includeSubnational) scopeQueryParams.push("states=1");
+  const scopeQuery =
+    scopeQueryParams.length > 0 ? `?${scopeQueryParams.join("&")}` : "";
 
   // A1: Explicit empty-state refusal instead of silent fake seed data
   if (!data.hasData || data.countries.length === 0) {
@@ -254,7 +282,7 @@ export function OverviewDashboard({
                   : `full corpus (n=${data.summary.reviewedOutputs})`}
               </h2>
               <Link
-                href={mode === "all" ? "/matrix?mode=all" : "/matrix"}
+                href={`/matrix${scopeQuery}`}
                 className="font-mono text-[11px] uppercase tracking-wider text-[#67e8f9] underline decoration-[#67e8f9]/40 underline-offset-2 hover:text-white"
               >
                 inspect 25×5 obligation matrix →
@@ -349,7 +377,7 @@ export function OverviewDashboard({
                   : "border-white/15 text-[#94a3b8] hover:border-white/30 hover:text-[#f1f5f9]"
               }`}
             >
-              headline · active primary ({headline.summary.headlineDocuments})
+              headline · active primary ({activeHeadline.summary.headlineDocuments})
             </button>
             <button
               type="button"
@@ -361,10 +389,48 @@ export function OverviewDashboard({
                   : "border-white/15 text-[#94a3b8] hover:border-white/30 hover:text-[#f1f5f9]"
               }`}
             >
-              all · full corpus ({all.summary.reviewedOutputs})
+              all · full corpus ({activeAll.summary.reviewedOutputs})
             </button>
+            {hasSubnationalDocs ? (
+              <button
+                type="button"
+                aria-pressed={includeSubnational}
+                onClick={toggleSubnational}
+                className={`rounded-[2px] border px-2.5 py-1 transition-colors ${
+                  includeSubnational
+                    ? "border-[#67e8f9]/70 bg-[#67e8f9]/15 font-semibold text-[#f8fafc]"
+                    : "border-white/15 text-[#94a3b8] hover:border-white/30 hover:text-[#f1f5f9]"
+                }`}
+              >
+                + U.S. State Laws ({headline.subnationalCount})
+              </button>
+            ) : null}
           </div>
         </section>
+
+        {/* Opt-in U.S. State Law Overlay methodological note (Phase 5A) */}
+        {includeSubnational ? (
+          <div
+            role="note"
+            className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-sm border border-[#67e8f9]/30 bg-[#0f1623] px-3.5 py-2 text-[12px] text-[#cbd5e1]"
+          >
+            <p className="leading-snug">
+              <span className="mr-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-[#67e8f9]">
+                state-law overlay active
+              </span>
+              Including {headline.subnationalCount} subnational U.S. state AI
+              statutes alongside sovereign federal instruments. Toggle off to
+              return to the strict national/supranational federal baseline.
+            </p>
+            <button
+              type="button"
+              onClick={toggleSubnational}
+              className="shrink-0 font-mono text-[11px] uppercase tracking-wider text-[#67e8f9] underline decoration-[#67e8f9]/40 underline-offset-2 hover:text-white"
+            >
+              federal baseline only →
+            </button>
+          </div>
+        ) : null}
 
         {/* Country Scorecards — leading with POL vs FRM + 90% CIs + Distinctive Gaps */}
         <section className="mt-4" aria-label="Jurisdiction scorecards">
@@ -530,6 +596,7 @@ export function OverviewDashboard({
             pairwiseDetails={data.pairwiseDetails}
             nullCalibration={nullCal}
             mode={mode}
+            includeSubnational={includeSubnational}
           />
 
           <PairwiseMatrixPanel
@@ -538,6 +605,7 @@ export function OverviewDashboard({
             nullCalibration={nullCal}
             hiddenFaultLine={data.summary.hiddenFaultLine}
             mode={mode}
+            includeSubnational={includeSubnational}
           />
         </section>
 
@@ -787,7 +855,7 @@ function CountryCard({
       {/* Primary pair: POL vs FRM side-by-side with 90% CIs (B2/B6) */}
       <div className="grid grid-cols-2 gap-2 border-t border-white/10 pt-2.5">
         <div className="rounded-[2px] border border-white/10 bg-[#0a0f18] px-2.5 py-2">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-[#94a3b8]">
+          <p className="whitespace-nowrap font-mono text-[11px] uppercase tracking-wider text-[#94a3b8]">
             POL · rules
           </p>
           <p
@@ -796,12 +864,12 @@ function CountryCard({
           >
             {country.policyDivergence}
           </p>
-          <p className="mt-1 font-mono text-[11px] tabular-nums text-[#94a3b8]">
+          <p className="mt-1 whitespace-nowrap font-mono text-[11px] tabular-nums text-[#94a3b8]">
             90% [{country.policyCI.low}–{country.policyCI.high}]
           </p>
         </div>
         <div className="rounded-[2px] border border-white/10 bg-[#0a0f18] px-2.5 py-2">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-[#94a3b8]">
+          <p className="whitespace-nowrap font-mono text-[11px] uppercase tracking-wider text-[#94a3b8]">
             FRM · reasons
           </p>
           <p
@@ -810,7 +878,7 @@ function CountryCard({
           >
             {country.framingDivergence}
           </p>
-          <p className="mt-1 font-mono text-[11px] tabular-nums text-[#94a3b8]">
+          <p className="mt-1 whitespace-nowrap font-mono text-[11px] tabular-nums text-[#94a3b8]">
             90% [{country.framingCI.low}–{country.framingCI.high}]
           </p>
         </div>
@@ -1019,18 +1087,22 @@ function PairwiseMatrixPanel({
   nullCalibration,
   hiddenFaultLine,
   mode,
+  includeSubnational = false,
 }: {
   countries: CountrySnapshot[];
   pairwiseDetails: PairwiseDetail[];
   nullCalibration: NullCalibration;
   hiddenFaultLine: string;
   mode: ScoringMode;
+  includeSubnational?: boolean;
 }) {
   const pairLookup = new Map<string, PairwiseDetail>();
   for (const detail of pairwiseDetails) {
     pairLookup.set(`${detail.leftSlug}__${detail.rightSlug}`, detail);
   }
-  const modeQuery = mode === "all" ? "&mode=all" : "";
+  const modeQuery =
+    (mode === "all" ? "&mode=all" : "") + (includeSubnational ? "&states=1" : "");
+  const compareHeaderQuery = modeQuery ? `?${modeQuery.slice(1)}` : "";
 
   return (
     <div className="flex flex-col justify-between rounded-sm border border-white/10 bg-[#0f1623] px-4 py-4">
@@ -1046,7 +1118,7 @@ function PairwiseMatrixPanel({
             </p>
           </div>
           <Link
-            href={`/compare${mode === "all" ? "?mode=all" : ""}`}
+            href={`/compare${compareHeaderQuery}`}
             className="font-mono text-[11px] uppercase tracking-wider text-[#67e8f9] underline decoration-[#67e8f9]/40 underline-offset-2 hover:text-white"
           >
             open compare →

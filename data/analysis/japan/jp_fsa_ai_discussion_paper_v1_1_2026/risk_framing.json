@@ -1,0 +1,121 @@
+{
+  "dominant_frame": "innovation_enablement",
+  "secondary_frames": [
+    "consumer_public_safety",
+    "economic_competitiveness",
+    "fundamental_rights"
+  ],
+  "frame_confidence": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.2,
+    "economic_competitiveness": 0.78,
+    "fundamental_rights": 0.72,
+    "social_stability": 0.25,
+    "innovation_enablement": 0.97,
+    "consumer_public_safety": 0.88,
+    "labor_transition": 0.52
+  },
+  "frame_share": {
+    "existential_catastrophic": 0.0,
+    "national_security": 0.0,
+    "economic_competitiveness": 0.14,
+    "fundamental_rights": 0.1,
+    "social_stability": 0.0,
+    "innovation_enablement": 0.45,
+    "consumer_public_safety": 0.25,
+    "labor_transition": 0.06
+  },
+  "rationale_summary": "The FSA AI Discussion Paper (Version 1.1) is dominantly framed around innovation enablement, warning against the 'risk of not taking on challenges', emphasizing agile governance and risk-based soft law over chilling mandates, offering safe harbors, regulatory-clarity desks, and PoC hubs, and encouraging active public-private dialogue so financial institutions can deploy generative AI and AI agents confidently. Consumer and public safety is a prominent secondary frame focused on protecting financial customers and market stability from hallucinations, deceptive solicitation, AI-enabled deepfake fraud and KYC evasion, cyberattacks, and systemic herding or disinformation-driven market instability. Economic competitiveness forms a substantive third frame—positioning Japanese financial innovation to lead globally, transform business models, strengthen regional economies via regional-bank DX, and realize an international financial center—paired with fundamental rights (safeguarding personal data under APPI, mitigating structural algorithmic discrimination in credit and HR, and ensuring explainability) and a notable labor and workforce transition thread addressing labor shortages, employee job-displacement anxiety, and workforce reskilling.",
+  "evidence_spans": [
+    {
+      "quote": "こうした観点から、金融庁としては、金融機関等がAI を活用したチャレンジに安心して\n取組むことができる環境整備に努めていく。AI に限らず、イノベーションに向けた取組みを進める中で問題が生じた際には、対話等を通じて問題解決に向けて取り組むなど、金融機関等を過度に委縮させることのないように行政対応を行っていく。また、規制の適用関係の明確化等を通じて、セーフハーバーの提供に努めていく。",
+      "source_section": "Ⅰ. はじめに",
+      "quote_en": "From this perspective, the FSA will strive to create an environment in which financial institutions can safely take on challenges utilizing AI. When issues arise during innovation initiatives, the FSA will handle administration through dialogue toward problem resolution so as not to unduly chill financial institutions, and will strive to provide safe harbors by clarifying regulatory applicability.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 6027,
+      "end_char": 6219
+    },
+    {
+      "quote": "リスクへの対応が重要であることは論を俟たないが、AI はリスクを大きく上回る便益をもたらす可能性が高いとの指摘もあり、技術革新に取り残されて中長期的に良質な金融サービスの提供が困難になる「チャレンジしないリスク」も十分に認識されるべきである。",
+      "source_section": "Ⅰ. はじめに",
+      "quote_en": "While addressing risks is undeniably important, it is also noted that AI is likely to deliver benefits far outweighing its risks, and the 'risk of not taking on challenges'—falling behind technological innovation and becoming unable to provide high-quality financial services over the medium to long term—must also be fully recognized.",
+      "frame": "innovation_enablement",
+      "grounding_status": "verbatim",
+      "start_char": 5683,
+      "end_char": 5804
+    },
+    {
+      "quote": "生成AI の進展により、自然な日本語での文面・音声・映像を生成できるようになったことから、犯罪の手口が巧妙化し、金融機関等やその顧客を取り巻くリスクも拡大する傾向にある18。例えば、AI が生成したメールやフィッシングサイトによる詐欺など、これまでも見受けられた手口が巧妙化することに加え、ディープフェイク技術は、特定の人物になりすました偽動画や偽音声等による詐欺行為を容易にし、その影響は甚大となる可能性がある。",
+      "source_section": "IV.1.①.ix 金融犯罪対策",
+      "quote_en": "Because advances in generative AI enable generating natural Japanese text, audio, and video, criminal methods are growing more sophisticated and risks surrounding financial institutions and their customers are expanding; beyond phishing sites and emails, deepfake technologies facilitate impersonation fraud via fake video and audio with potentially enormous impact.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 37866,
+      "end_char": 38073
+    },
+    {
+      "quote": "金融市場におけるAI の広範な採用は、AI 生成のシグナルに基づいて市場参加者が同様の決定を下す群集行動を引き起こす可能性があり、市場のボラティリティとシステミック・リスクを増幅させる可能性があると指摘されている。また、生成AI によってフェイクニュースを生成してSNS 等で流布させることで、短期間での取り付け騒ぎや株価急落などを引き起こす可能性があり、市場全体の不安を高めるリスクもある。",
+      "source_section": "IV.1.③ その他の金融システム安定上の論点",
+      "quote_en": "Widespread adoption of AI in financial markets may induce herding behavior where market participants make similar decisions based on AI-generated signals, amplifying market volatility and systemic risk, and spreading AI-generated fake news on social media could trigger rapid bank runs or sharp stock drops, heightening market-wide anxiety.",
+      "frame": "consumer_public_safety",
+      "grounding_status": "verbatim",
+      "start_char": 47890,
+      "end_char": 48086
+    },
+    {
+      "quote": "金融庁が先頭に立ち、リスクをコントロールしつつ、我が国の金融分野におけるイノベーションが世界をリードして発展していくことができる環境整備に全力を尽くしていく決意である。",
+      "source_section": "Ⅰ. はじめに",
+      "quote_en": "The FSA is determined to take the lead and make every effort to build an environment where, while keeping risks under control, innovation in Japan's financial sector can develop and lead the world.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 6430,
+      "end_char": 6514
+    },
+    {
+      "quote": "地域金融機関においては、当該情報を参考に、生成AI を活用し、生産性を向上させることによって、融資や本業支援の強化等の金融仲介機能の一層の発揮、ひいては地域企業・地域経済の活性化に繋げていくことが期待される。",
+      "source_section": "Box 5. 生成AI を活用した地域金融機関のDX 化に向けた実証研究事業",
+      "quote_en": "Regional financial institutions are expected to refer to this information to utilize generative AI, improve productivity, further demonstrate financial intermediation functions such as strengthening lending and core-business support, and ultimately revitalize regional enterprises and regional economies.",
+      "frame": "economic_competitiveness",
+      "grounding_status": "verbatim",
+      "start_char": 59058,
+      "end_char": 59162
+    },
+    {
+      "quote": "学習データやアルゴリズム、さらにはモデルの推論結果に偏りが含まれると、特定の属性を持つ顧客に対して構造的な差別その他の不公平な処遇が行われるリスクが高まる。",
+      "source_section": "IV.1.②.ii 公平性・バイアス",
+      "quote_en": "If bias is embedded in training data, algorithms, or model inference results, the risk increases that customers with specific attributes will suffer structural discrimination or other unfair treatment.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 39839,
+      "end_char": 39917
+    },
+    {
+      "quote": "金融機関等においては、個人情報保護に係る適切な対応と個人情報を含むデータの効果的な活用の両立が求められており、金融庁としても、継続的な対話を通じて金融機関の取組みの把握を行っていく。",
+      "source_section": "IV.1.②.iv 個人情報保護",
+      "quote_en": "Financial institutions are required to balance appropriate personal-information protection with effective utilization of data including personal information, and the FSA will continue monitoring institutions' efforts through ongoing dialogue.",
+      "frame": "fundamental_rights",
+      "grounding_status": "verbatim",
+      "start_char": 45255,
+      "end_char": 45346
+    },
+    {
+      "quote": "加えて、AI に対する個々人の理解度に差があることや、自分の業務がAI に代替されるのではないかとの不安感から、ユースケースのアイデア出しや部門横断的な協力体制を構築しづらいとの声も多い。",
+      "source_section": "IV.1.①.iv 専門人材の確保・育成及び社内教育",
+      "quote_en": "In addition, many voices note that disparities in individual AI comprehension and anxiety that one's own job may be replaced by AI make it difficult to generate use-case ideas and build cross-departmental collaboration.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 29129,
+      "end_char": 29223
+    },
+    {
+      "quote": "AI の導入が進む中で、金融機関等に求められる人材も大きく変容していく可能性があり、重要な経営課題の一つと認識して人材育成や社内教育に取り組んでいくことが期待される。",
+      "source_section": "IV.1.①.iv 専門人材の確保・育成及び社内教育",
+      "quote_en": "As AI adoption progresses, the talent required at financial institutions may also transform significantly, and institutions are expected to recognize talent development and internal education as a key management priority.",
+      "frame": "labor_transition",
+      "grounding_status": "verbatim",
+      "start_char": 30407,
+      "end_char": 30490
+    }
+  ]
+}

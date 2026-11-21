@@ -1,0 +1,314 @@
+{
+  "jurisdiction": "united_states",
+  "issuing_body": "U.S. Department of Health and Human Services (HHS / ONC)",
+  "document_type": "legislation",
+  "binding_strength": "binding_law",
+  "publication_date": "2024-01-09",
+  "effective_date": "2024-02-08",
+  "covered_actors": [
+    "Health IT developers participating in the ONC Health IT Certification Program (especially developers of Health IT Modules certified to 45 CFR § 170.315(b)(11) Decision Support Interventions, the Base EHR definition, § 170.315(g)(10) FHIR APIs, and developers meeting Insights Condition thresholds of at least 50 hospital sites or 500 individual clinician users)",
+    "ONC-Authorized Certification Bodies (ONC-ACBs) and ONC-Authorized Testing Laboratories (ONC-ATLs) certifying, testing, and conducting surveillance over certified Health IT Modules under 45 CFR Part 170",
+    "Actors subject to 45 CFR Part 171 Information Blocking regulations (health IT developers of certified health IT, health information networks/exchanges, and health care providers) and healthcare organizations adopting CEHRT for CMS Medicare Promoting Interoperability and MIPS programs"
+  ],
+  "covered_application_domains": [
+    "healthcare",
+    "general_purpose_models"
+  ],
+  "prohibited_practices": [
+    "Information blocking: practices by a health IT developer of certified health IT, health information network/exchange, or health care provider that are likely to interfere with the access, exchange, or use of electronic health information (EHI), unless required by law or covered by an exception in 45 CFR Part 171 (§ 171.103)",
+    "Inhibiting a customer's timely access to interoperable health IT certified under the ONC Health IT Certification Program, including failing to update and provide Health IT Modules certified to revised certification criteria within regulatory timeframes (§ 170.402(a)(5) and (b)(3))",
+    "Discriminating when determining whether requestors are similarly situated under the Manner Exception Exhausted condition based on whether the requestor is an individual, health care provider type/size, or a competitor (§ 171.204(a)(4)(iv))"
+  ],
+  "safety_requirements": [
+    {
+      "label": "model_documentation",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "For evidence-based decision support interventions and Predictive Decision Support Interventions supplied by the health IT developer as part of its Health IT Module, the Health IT Module must enable a limited set of identified users to access complete and up-to-date plain language descriptions of source attribute information specified in paragraphs (b)(11)(iv)(A) and (B) of this section.",
+          "source_section": "45 CFR § 170.315(b)(11)(v)(A)(1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1647561,
+          "end_char": 1647950
+        },
+        {
+          "quote": "For developers of Health IT Modules certified to § 170.315(b)(11), starting January 1, 2025, and on an ongoing basis thereafter, review and update as necessary source attribute information in § 170.315(b)(11)(iv)(A) and (B), intervention risk management practices described in § 170.315(b)(11)(vi), and summary information provided through § 170.523(f)(1)(xxi).",
+          "source_section": "45 CFR § 170.402(b)(4)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1661523,
+          "end_char": 1661884
+        }
+      ]
+    },
+    {
+      "label": "transparency_disclosure",
+      "confidence": 0.98,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "Where applicable, summary information of the intervention risk management practices listed in § 170.315(b)(11)(vi) is submitted by the health IT developer via publicly accessible hyperlink that allows any person to access the summary information directly without any preconditions or additional steps.",
+          "source_section": "45 CFR § 170.523(f)(1)(xxi)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1670736,
+          "end_char": 1671037
+        },
+        {
+          "quote": "Source attributes listed in paragraphs (b)(11)(iv)(A) and (B) of this section must be supported.",
+          "source_section": "45 CFR § 170.315(b)(11)(iv)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1642437,
+          "end_char": 1642533
+        }
+      ]
+    },
+    {
+      "label": "risk_assessment",
+      "confidence": 0.98,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "Intervention risk management practices must be applied for each Predictive Decision Support Intervention supplied by the health IT developer as part of its Health IT Module.",
+          "source_section": "45 CFR § 170.315(b)(11)(vi)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1648892,
+          "end_char": 1649065
+        },
+        {
+          "quote": "We have also finalized in § 170.315(b)(11)(vi) that intervention risk management (IRM) practices must be applied for each Predictive DSI supplied by the health IT developer as part of its Health IT Module, including requirements to subject Predictive DSIs to risk analysis and risk mitigation related to validity, reliability, robustness, fairness, intelligibility, safety, security, and privacy.",
+          "source_section": "I.B.1.b.v Decision Support Interventions and Predictive Models",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 32500,
+          "end_char": 32896
+        }
+      ]
+    },
+    {
+      "label": "training_data_governance",
+      "confidence": 0.93,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "The Predictive Decision Support Intervention(s) must be subject to policies and implemented controls for governance, including how data are acquired, managed, and used.",
+          "source_section": "45 CFR § 170.315(b)(11)(vi)(C)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1649571,
+          "end_char": 1649739
+        },
+        {
+          "quote": "Description of demographic representativeness according to variables in paragraphs (b)(11)(iv)(A)(\n5\n) through (\n13\n) of this section including, at a minimum, those used as input features in the intervention;",
+          "source_section": "45 CFR § 170.315(b)(11)(iv)(B)(4)(iii)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1644962,
+          "end_char": 1645170
+        }
+      ]
+    },
+    {
+      "label": "pre_deployment_testing",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "User-centered design processes must be applied to each capability technology includes that is specified in the following certification criteria: paragraphs (a)(1) through (5), (9) until the criterion's expiration date, and (14), and (b)(2), (3), and (11) of this section.",
+          "source_section": "45 CFR § 170.315(g)(3)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1654792,
+          "end_char": 1655063
+        },
+        {
+          "quote": "developers of certified health IT with Health IT Module(s) certified to § 170.315(b)(11) are required to submit real world testing plans and corresponding real world testing results, consistent with § 170.405, demonstrating the real world use of each type of DSI in § 170.315(b)(11), including evidence-based DSIs and Predictive DSIs.",
+          "source_section": "III.C.5.a.i Structural Revisions and New Criterion Categorization",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 318402,
+          "end_char": 318736
+        }
+      ]
+    },
+    {
+      "label": "access_controls",
+      "confidence": 0.92,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "Enable interventions specified in paragraphs (b)(11)(iii) of this section to be configured by a limited set of identified users based on a user's role.",
+          "source_section": "45 CFR § 170.315(b)(11)(ii)(A)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1640837,
+          "end_char": 1640988
+        },
+        {
+          "quote": "a Health IT Module's authorization server must be able to revoke and must revoke an authorized application's access at a patient's direction within 1 hour of the request.",
+          "source_section": "45 CFR § 170.315(g)(10)(vi)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 682903,
+          "end_char": 683073
+        }
+      ]
+    },
+    {
+      "label": "third_party_audit",
+      "confidence": 0.9,
+      "obligation_strength": "mandatory",
+      "evidence": [
+        {
+          "quote": "“This Health IT Module is compliant with the ONC Certification Criteria for Health IT and has been certified by an ONC-ACB in accordance with the applicable certification criteria adopted by the Secretary of Health and Human Services. This certification does not represent an endorsement by the U.S. Department of Health and Human Services.”",
+          "source_section": "45 CFR § 170.523(k)(1)(i)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1671489,
+          "end_char": 1671830
+        },
+        {
+          "quote": "Confirm that developers of certified health IT submit responses for Insights Conditions and Maintenance of Certification requirements in accordance with § 170.407.",
+          "source_section": "45 CFR § 170.523(u)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1672085,
+          "end_char": 1672248
+        }
+      ]
+    },
+    {
+      "label": "registration_licensing",
+      "confidence": 0.86,
+      "obligation_strength": "conditional",
+      "evidence": [
+        {
+          "quote": "On and after January 1, 2025, only the DSI criterion in § 170.315(b)(11) will be included in the Base EHR definition and the adoption of the criterion in § 170.315(a)(9) will expire on January 1, 2025.",
+          "source_section": "I.B.1.b.v Decision Support Interventions and Predictive Models",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 34787,
+          "end_char": 34988
+        },
+        {
+          "quote": "When certifying a Health IT Module to the ONC Certification Criteria for Health IT, an ONC-ACB must certify the Health IT Module in accordance with the certification criteria at:",
+          "source_section": "45 CFR § 170.550(g)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1672880,
+          "end_char": 1673058
+        }
+      ]
+    }
+  ],
+  "enforcement_mechanisms": [
+    {
+      "label": "regulatory_supervision",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "The EOA Final Rule created a regulatory framework for our direct review of health IT certified under the Program, including, when necessary, requiring the correction of non-conformities found in health IT certified under the Program and suspending and terminating certifications issued to Complete EHRs and Health IT Modules.",
+          "source_section": "II.B Regulatory History",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 73813,
+          "end_char": 74138
+        },
+        {
+          "quote": "Therefore, a developer of certified health IT that is required to meet the Insights Condition's requirements must submit responses or may be subject to ONC direct review of the Conditions and Maintenance of Certification requirements, corrective action, and enforcement procedures under the Program.",
+          "source_section": "III.F.4 Insights Condition and Maintenance of Certification—Process for Reporting",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1089701,
+          "end_char": 1090000
+        }
+      ]
+    },
+    {
+      "label": "reporting_obligation",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "quote": "For certified Health IT Modules included in paragraph (a) of this section that are updated using Inherited Certified Status after August 31 of the year in which the plan is submitted, a health IT developer must include the newer version of the certified Health IT Module(s) in its annual real world testing results report.",
+          "source_section": "45 CFR § 170.405(b)(2)(ii)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1664512,
+          "end_char": 1664834
+        },
+        {
+          "quote": "A health IT developer must provide responses to the Insights Condition of Certification specified in paragraph (a) of this section annually for any Health IT Module that has or has had an active certification at any time under the ONC Health IT Certification Program during the prior six months:",
+          "source_section": "45 CFR § 170.407(b)(1)",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 1669755,
+          "end_char": 1670050
+        }
+      ]
+    },
+    {
+      "label": "procurement_condition",
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "quote": "health care providers participating in the Medicare Promoting Interoperability Program and eligible clinicians participating in the Quality Payment Program must use certified health IT that satisfies the definitions of CEHRT at\n42 CFR 495.4\nand\n414.1305\n, respectively, and is certified under the Program",
+          "source_section": "III.C.11 Requirement for Health IT Developers To Update Their Previously Certified Health IT",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 805381,
+          "end_char": 805685
+        },
+        {
+          "quote": "ONC works with the Centers for Medicare & Medicaid Services (CMS) to ensure that the certification timelines we have established complement timelines for CMS programs that reference ONC regulations, such as the Medicare Promoting Interoperability Program",
+          "source_section": "I.A.3 Federal Coordination",
+          "quote_en": null,
+          "frame": null,
+          "grounding_status": "verbatim",
+          "start_char": 24882,
+          "end_char": 25136
+        }
+      ]
+    }
+  ],
+  "enforcement_authorities": [
+    "Office of the National Coordinator for Health Information Technology (ONC / ASTP), U.S. Department of Health and Human Services (direct review under 45 CFR § 170.580, corrective action orders, and certification suspension or termination)",
+    "ONC-Authorized Certification Bodies (ONC-ACBs) and ONC-Authorized Testing Laboratories (ONC-ATLs) (accredited certification, surveillance, CHPL publication, and records retention)",
+    "HHS Office of Inspector General (OIG) (enforcement of 45 CFR Part 171 Information Blocking penalties and provider disincentive referrals)",
+    "Centers for Medicare & Medicaid Services (CMS) (Medicare Promoting Interoperability Program and MIPS Quality Payment Program CEHRT compliance linkage)"
+  ],
+  "compliance_deadlines": [
+    "2024-02-08: Final rule effective date and Incorporation by Reference (IBR) approval date (89 FR 1192)",
+    "2024-12-31: Deadline for health IT developers certified to § 170.315(a)(9) to certify to § 170.315(b)(11) DSI criterion, apply IRM practices, submit public IRM summary hyperlinks to ONC-ACBs (§ 170.523(f)(1)(xxi)), and publish FHIR service base URLs (§ 170.404(b)(2))",
+    "2025-01-01: Expiration of legacy CDS criterion § 170.315(a)(9); § 170.315(b)(11) becomes mandatory in Base EHR definition (§ 170.102); Assurances Maintenance of Certification ongoing review/update duty (§ 170.402(b)(4)) takes effect",
+    "2026-01-01: Expiration of USCDI v1, C-CDA Companion Guide R2, FHIR US Core IG 3.1.1, SMART App Launch 1.0, and legacy demographic standards; mandatory conformance with USCDI v3, Patient Right to Request Restrictions (§ 170.315(e)(1)(iii)), and standards-based Electronic Case Reporting (§ 170.315(f)(5)(ii))",
+    "2027-07 / 2028-07 / 2029-07: Phased annual Insights Condition reporting deadlines (§ 170.407(b)(1)) for Year 1 (CY 2026 data), Year 2 (CY 2027 data), and Year 3 (CY 2028 data)"
+  ],
+  "penalties_summary": "Under the ONC Health IT Certification Program (45 CFR Part 170), non-compliance with § 170.315(b)(11) DSI transparency, IRM, Assurances Maintenance of Certification (§ 170.402), Real World Testing (§ 170.405), or Insights Condition (§ 170.407) subjects developers to ONC-ACB surveillance, ONC Direct Review (§ 170.580), mandatory corrective action plans (potentially including notification to all customers), and suspension or termination of Health IT Module certification—jeopardizing Base EHR / CEHRT status required for customer participation in CMS Medicare Promoting Interoperability and MIPS payment programs. Separate violations of 45 CFR Part 171 Information Blocking rules are subject to HHS OIG enforcement, statutory civil monetary penalties for developers/HINs/HIEs, and appropriate disincentives for health care providers under PHSA § 3022(b)(2).",
+  "implementation_notes": "Published January 9, 2024 (89 FR 1192) and effective February 8, 2024 under the HITECH Act and 21st Century Cures Act. Establishes the first binding U.S. federal regulation setting algorithm transparency and AI risk management obligations for clinical and operational healthcare AI/ML ('Predictive Decision Support Interventions' in 45 CFR § 170.102, explicitly encompassing supervised, semi-supervised, and self-supervised models including LLMs and generative AI, while excluding purely unsupervised similarity models). Replaces legacy CDS (§ 170.315(a)(9)) with DSI (§ 170.315(b)(11)) in the Base EHR definition starting January 1, 2025, requiring: (1) structured 'source attributes' (31+ metadata fields functioning as clinical model nutrition labels covering intended use, out-of-scope cautions, training data criteria and demographic/SDOH/health-status representativeness, fairness approaches, external/local validation, quantitative performance, and update schedules); (2) Intervention Risk Management (IRM) practices covering NIST AI RMF-aligned risk analysis across eight characteristics (validity, reliability, robustness, fairness, intelligibility, safety, security, privacy), risk mitigation, and data governance for all developer-supplied Predictive DSIs; (3) public hyperlink disclosure of IRM summary practices via ONC-ACBs on CHPL (§ 170.523(f)(1)(xxi)); (4) ongoing Assurances Maintenance of Certification review/updates (§ 170.402(b)(4)) and annual Real World Testing (§ 170.405); and (5) complementary interoperability, USCDI v3, SMART App Launch 2.0 / 1-hour API revocation, Insights Condition reporting (§ 170.407), and Part 171 Information Blocking / TEFCA Manner Exception rules.",
+  "confidence": 0.97
+}

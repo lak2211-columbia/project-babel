@@ -9,6 +9,7 @@ import {
   parseGoldSetEvaluation,
   type GoldSetEvaluationSummary,
 } from "@/lib/eval-parser";
+import goldSetSnapshot from "@/lib/gold-set-results.snapshot.json";
 
 const WORKSPACE_ROOT = path.resolve(
   /*turbopackIgnore: true*/ process.cwd(),
@@ -37,13 +38,9 @@ async function readGoldSetEvaluationUncached(): Promise<GoldSetEvaluationSummary
   const fromRepo = await tryReadEvalFile(repoEvalPath);
   if (fromRepo) return fromRepo;
 
-  const snapshotPath = path.join(
-    /*turbopackIgnore: true*/ process.cwd(),
-    "src",
-    "lib",
-    "gold-set-results.snapshot.json",
-  );
-  return tryReadEvalFile(snapshotPath);
+  // Statically bundled snapshot ensures Vercel serverless functions always render
+  // the Starter Gold-Set Benchmark Scorecard even when monorepo data/ is absent.
+  return parseGoldSetEvaluation(goldSetSnapshot);
 }
 
 const getGoldSetEvaluationCached = unstable_cache(
